@@ -10,34 +10,65 @@ const CenterDetail = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const { city, centerId } = useParams();
 
-  // For now, we'll hardcode the Veda5 center details
-  const centerDetails = {
-    name: "Veda5 Ayurveda & Yoga Retreat",
-    city: "Goa",
-    region: "North Goa",
-    description: "They specialise in authentic classical Ayurvedic therapies & Retreats including Panchakarma, yoga & naturopathy integration.",
-    specialties: ["Panchakarma", "Yoga", "Naturopathy", "Rejuvenation"],
-    rating: 4.8,
-    reviews: [
-      {
-        text: "Quiet, clean and well kept resort. Staff was very genuine, helpful and accommodating. We enjoyed the delicious vegetarian food and the ayurvedic treatments. Both the doctor and the nutritionist were helpful and attentive to our needs.",
-        source: "vedafive.com"
-      },
-      {
-        text: "The rooms and vegetarian food was amazing! … good quality yoga classes and ayurvedic spa. Happy, relaxed stay.",
-        source: "Booking.com"
-      }
-    ],
-    highlights: [
-      "Strong retreat-feel with full wellness integration",
-      "Diet, yoga, and accommodation integration",
-      "Credible reviews and international standards",
-      "Good for international/long-stay segment",
-      "Premium packages available"
-    ],
-    website: "vedafive.com",
-    images: ["/images/Goa/Ved5/1-Veda5.jpg", "/images/Goa/Ved5/2-Veda5.jpg", "/images/Goa/Ved5/3-veda5.jpg"]
+  // details for all centers (lookup by centerId param)
+  const centersData: Record<string, any> = {
+    veda5: {
+      id: "veda5",
+      name: "Veda5 Ayurveda & Yoga Retreat",
+      city: "Goa",
+      region: "North Goa",
+      description: "They specialise in authentic classical Ayurvedic therapies & Retreats including Panchakarma, yoga & naturopathy integration.",
+      specialties: ["Panchakarma", "Yoga", "Naturopathy", "Rejuvenation"],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "Quiet, clean and well kept resort. Staff was very genuine, helpful and accommodating. We enjoyed the delicious vegetarian food and the ayurvedic treatments.",
+          source: "vedafive.com"
+        },
+        {
+          text: "The rooms and vegetarian food was amazing! Good quality yoga classes and ayurvedic spa. Happy, relaxed stay.",
+          source: "Booking.com"
+        }
+      ],
+      highlights: [
+        "Strong retreat-feel with full wellness integration",
+        "Diet, yoga, and accommodation integration",
+        "Credible reviews and international standards",
+        "Good for international/long-stay segment"
+      ],
+      website: "https://vedafive.com",
+      images: ["/images/Goa/Ved5/1-Veda5.jpg", "/images/Goa/Ved5/2-Veda5.jpg", "/images/Goa/Ved5/3-veda5.jpg"]
+    },
+    ayurclinic: {
+      id: "ayurclinic",
+      name: "Ayurclinic Goa",
+      city: "Goa",
+      region: "North Goa",
+      description: "Professional Ayurvedic treatment tailored to each individual, with locations in Arpora and Mandrem Beach. Services include doctor diagnosis and panchakarma programs.",
+      specialties: ["Panchakarma", "Therapeutic Packages", "Personalized Treatment"],
+      rating: 4.7,
+      reviews: [
+        {
+          text: "The two weeks I spent in Goa under the care of Ayurclinic Goa were the most relaxing weeks I have ever spent.",
+          source: "Tripadvisor"
+        },
+        {
+          text: "Dr. Rohit's clinic is one of the best value places in town for medicine-based relaxing and rejuvenating Ayurveda.",
+          source: "Tripadvisor"
+        }
+      ],
+      highlights: [
+        "Genuine Ayurvedic therapy with doctor consultation",
+        "Multiple locations in North Goa",
+        "Specialized 7-day therapeutic packages"
+      ],
+      website: "https://ayurclinicgoa.com",
+      images: ["/images/Goa/Ayurclinic Goa/1.jpg", "/images/Goa/Ayurclinic Goa/2.jpg", "/images/Goa/Ayurclinic Goa/3.jpg"]
+    }
   };
+
+  const centerKey = (centerId || "").toLowerCase();
+  const centerDetails = centersData[centerKey] || centersData["veda5"];
 
   return (
     <div className="min-h-screen font-poppins">

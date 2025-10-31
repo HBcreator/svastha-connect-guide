@@ -218,7 +218,7 @@ const TopCenters = () => {
                   <Button
                     variant="outline"
                     className="flex-1 font-semibold"
-                    onClick={() => window.location.href = `/centers/${center.city.toLowerCase()}/${center.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    onClick={() => (window.location.href = `/centers/${center.city.toLowerCase()}`)}
                   >
                     View Centers
                   </Button>
