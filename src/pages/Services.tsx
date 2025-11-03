@@ -8,7 +8,7 @@ const serviceCards = [
   {
     title: "Ayurveda",
     description: "Discover the ancient wisdom of holistic healing through authentic Ayurvedic treatments.",
-    image: "/Services-images/Ayurveda/thumbnail.jpg",
+    image: "/Services-images/Ayurveda.png",
     href: "/services/ayurveda",
   },
   {

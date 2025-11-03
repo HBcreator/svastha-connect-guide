@@ -86,21 +86,21 @@ consciousness.
 
 ### The Three Doshas (Tridosha)
 
-**Vatha (Wind Energy)** Vatha is about subtle movement, consisting of
+Vatha (Wind Energy) Vatha is about subtle movement, consisting of
 air and space. It governs processes like breathing, muscle actions,
 heart rhythm, and cell activity. When balanced, Vatha fosters creativity
 and adaptability; when it's off, it can lead to fear and anxiety.
 Disruption often shows up as gas or muscle stiffness, causing
 discomfort.
 
-**Kapha (Phlegm Energy)** Kapha serves as the body's structure,
+Kapha (Phlegm Energy) Kapha serves as the body's structure,
 comprising earth and water elements. It keeps all systems hydrated,
 lubricates joints, moisturizes the skin, and supports immune health.
 Balanced Kapha brings love, tranquility, and compassion; imbalanced
 Kapha can lead to greed and jealousy. When Kapha is disrupted, it often
 results in excess fluid and mucus, leading to swelling.
 
-**Pitha (Bile Energy)** Pitha is the body's metabolic fire, made up of
+Pitha (Bile Energy) Pitha is the body's metabolic fire, made up of
 water and fire elements. It regulates digestion, nutrient absorption,
 metabolism, and temperature. When balanced, Pitha nourishes intelligence
 and comprehension; when it's unbalanced, it can lead to anger and
@@ -109,37 +109,37 @@ causing inflammation.
 
 ### The Three Mental Qualities Explained
 
-**Rajas (Motion & Stimulation)** Rajas signifies motion and stimulation;
+Rajas (Motion & Stimulation) Rajas signifies motion and stimulation;
 all cravings and ambitions arise from this quality. Many psychological
 issues can stem from an imbalance in Rajas.
 
-**Satva (Clarity & Awareness)** Satva represents lightness, awareness,
+Satva (Clarity & Awareness) Satva represents lightness, awareness,
 and clarity of mind, remaining free of disease. It's essential for
 perception, enabling knowledge gain.
 
-**Tamas (Heaviness & Inertia)** Tamas represents heaviness and inertia,
+Tamas (Heaviness & Inertia) Tamas represents heaviness and inertia,
 which can interfere with perception and mental function. Confusion,
 misunderstandings, lethargy, and excessive sleep can all result from
 tamasic influence.
 
-**Rasa** (Plasma tissue) comes from digested nutrients, fueling every
+Rasa (Plasma tissue) comes from digested nutrients, fueling every
 cell and tissue system.
 
-**Raktha** (Blood tissue) is crucial for nourishing body tissues and
+Raktha (Blood tissue) is crucial for nourishing body tissues and
 providing physical vitality.
 
-**Mamsa** (Muscle tissue) gives physical strength and supports fat
+Mamsa (Muscle tissue) gives physical strength and supports fat
 structures.
 
-**Meda** (Adipose tissue) supports the skeletal system.
+Meda (Adipose tissue) supports the skeletal system.
 
-**Asthi** (Bone tissue) includes the skeletal framework and cartilage,
+Asthi (Bone tissue) includes the skeletal framework and cartilage,
 providing a base for muscles.
 
-**Majja** (Bone Marrow) fills the cavities in bones and lubricates the
+Majja (Bone Marrow) fills the cavities in bones and lubricates the
 body.
 
-**Sukra** (Reproductive tissue) aids reproduction and boosts body
+Sukra (Reproductive tissue) aids reproduction and boosts body
 strength.
 
 Ayurvedic theory posits that an imbalance in Vatha, Pitha, and Kapha
@@ -151,7 +151,7 @@ assessment (Dasavidha Pareeksha) or Eightfold assessment (Ashtasthana
 Pareeksha), which are particularly helpful in assessing both patient and
 disease strength.
 
-### **Tenfold Assessment (Dasavidha Pareeksha)**
+### Tenfold Assessment (Dasavidha Pareeksha)
 
 This consists of: constitutional type (Prakriti), pathological condition
 (Vikruthi), tissue quality (Sara), physical structure (Samhanana), body
@@ -159,66 +159,66 @@ proportions (Pramana), adaptability (Satmya), mental constitution
 (Satva), digestive capacity (Aharasakthi), exercise tolerance
 (Vyayamasakthi), and age (Vayas).
 
-### **Eightfold Assessment (Ashtasthana Pareeksha)**
+### Eightfold Assessment (Ashtasthana Pareeksha)
 
 This includes examining: pulse (Nadi), tongue (Jihwa), voice (Sabda),
 skin (Sparsa), vision (Drik), overall appearance (Akruthi), urine
 (Muthra), and stool (Mala).
 
-## **Ayurvedic Medicinal Preparations**
+## Ayurvedic Medicinal Preparations
 
 Ayurvedic medicines mainly use herbs and plant combinations, following
 traditional pharmacological methods outlined in ancient texts. Forms
 include:
 
-**Swarasa** -- Fresh plant juice, with or without water added.
+Swarasa -- Fresh plant juice, with or without water added.
 
-**Kalka** -- A paste made from ground herbs, sometimes soaked in water.
+Kalka -- A paste made from ground herbs, sometimes soaked in water.
 
-**Kashaya/Decoction** -- Coarsely ground herbs boiled in specific water
+Kashaya/Decoction -- Coarsely ground herbs boiled in specific water
 ratios until reduced.
 
-**Choorna** -- Finely powdered single or compound herbs.
+Choorna -- Finely powdered single or compound herbs.
 
-**Vati/Gulika** -- Tablets or pills from various herbs.
+Vati/Gulika -- Tablets or pills from various herbs.
 
-**Asava** -- Fermented herbal mixtures, filtered after soaking.
+Asava -- Fermented herbal mixtures, filtered after soaking.
 
-**Arishta** -- Similar to asava but involves decoctions for longer shelf
+Arishta -- Similar to asava but involves decoctions for longer shelf
 life.
 
-**Avaleha** -- Semi-solid preparations made with sugar or jaggery.
+Avaleha -- Semi-solid preparations made with sugar or jaggery.
 
-**Thaila** -- Oil preparations with herbs boiled in specific oils.
+Thaila -- Oil preparations with herbs boiled in specific oils.
 
-**Ghritha** -- Similar to Thaila, but using ghee as the base.
+Ghritha -- Similar to Thaila, but using ghee as the base.
 
-**Lepa** -- Herbal pastes for external application.
+Lepa -- Herbal pastes for external application.
 
-**Bhasma** -- Calcinated mineral-herbal preparations.
+Bhasma -- Calcinated mineral-herbal preparations.
 
 These represent the commonly utilized forms in Ayurvedic medicine.
 
-## **Four Essential Elements for Disease Cure**
+## Four Essential Elements for Disease Cure
 
 Classical Ayurvedic texts highlight four key components for recovery:
 skilled Physicians, effective Medicaments, proficient Nursing support,
 and cooperative patients.
 
-**Physician Qualities:** Comprehensive knowledge, proper medical
+Physician Qualities: Comprehensive knowledge, proper medical
 education, rigorous theoretical and practical training, and extensive
 clinical experience, combined with physical and mental cleanliness.
 
-**Medication Qualities:** Adequate stock, suitability for the condition,
+Medication Qualities: Adequate stock, suitability for the condition,
 diverse forms, and therapeutic strength.
 
-**Nursing Qualities:** Rational mindset, nursing knowledge, technical
+Nursing Qualities: Rational mindset, nursing knowledge, technical
 skill, compassion, cleanliness, and mental and physical purity.
 
-**Patient Qualities:** Compliance with physician instructions, bravery,
+Patient Qualities: Compliance with physician instructions, bravery,
 and openness about symptoms.
 
-## **Nutritional Approach**
+## Nutritional Approach
 
 In Ayurveda, food is seen as essential to life. Proper digestion,
 influenced by digestive fire (jataragni)---gastric secretions and
@@ -255,34 +255,34 @@ Ayurveda advises daily living practices called Dinacharya, outlining
 routines from morning to bedtime. Ignoring natural laws and virtuous
 living leads to health problems.
 
-### **Daily Routine (Dinacharya)**
+### Daily Routine (Dinacharya)
 
-**Morning Awakening:** It's advised to get up before sunrise. After
+Morning Awakening: It's advised to get up before sunrise. After
 morning prayers, attend to natural needs while facing north. Then, brush
 teeth thoroughly, rinse the mouth, eyes, and face with water, and
 occasionally trim nails and hair for longevity, purity, and mental
 peace.
 
-**Bathing:** Cold baths help remove impurities, heat, and surface
+Bathing: Cold baths help remove impurities, heat, and surface
 irritation, purifying blood. Warm herbal baths have more general or
 localized benefits. Steam baths can ease pain. Patients also receive oil
 massages before relaxing on wooden benches. Applying oil benefits the
 system deeply.
 
-**Attire & Environment:** In winter, wear warm, silk clothes; in hot
+Attire & Environment: In winter, wear warm, silk clothes; in hot
 weather, light and cool garments are best. For cold or rainy weather,
 medium-weight clothing is ideal. Clean living spaces and well-ventilated
 rooms are equally important.
 
-**Rest & Activity:** Getting enough good-quality sleep in comfortable
+Rest & Activity: Getting enough good-quality sleep in comfortable
 spaces maintains health and improves complexion and strength. Daytime
 sleep is generally discouraged. Ayurveda recommends physical activities
 to boost strength and keep the body fit. Morning or evening walks are
 better for those who consume richer foods.
 
-## **Traditional Therapeutic Procedures from India**
+## Traditional Therapeutic Procedures from India
 
-### **Preparatory Treatments (Poorva Karma)**
+### Preparatory Treatments (Poorva Karma)
 
 Preparatory treatments are essential for getting patients ready for
 Panchakarma. Snehana (oleation) and Swedana (sudation) are two key
@@ -290,7 +290,7 @@ preparatory steps. Snehana can be done through internal (oral) or
 external means, while Swedana includes techniques like Kizhi, Pizhichil,
 Dhara, and steam baths among others.
 
-### **Panchakarma**
+### Panchakarma
 
 Panchakarma is a unique purification process with five therapies
 designed to completely detoxify the body. This cleansing consists of
@@ -299,7 +299,7 @@ administration (Nasya), and Bloodletting (Rakthamokshana). It follows
 three main stages: Poorvakarma (preparatory treatments), Pradhanakarma
 (primary treatment), and Paschathkarma (post-treatment care).
 
-### **Abhyanga**
+### Abhyanga
 
 Abhyanga is about massaging the body with medicated oils using gentle
 pressure. This time-honored therapy involves a warm oil massage covering
@@ -319,7 +319,7 @@ smoother movements by eliminating metabolic waste, enhancing blood flow,
 and alleviating fatigue and stress-related issues. Our facility offers
 Abhyanga for both preventive wellness and therapeutic purposes.
 
-### **Pizhichil**
+### Pizhichil
 
 Pizhichil is a specialized form of Parisheka Sweda, unique to regional
 Ayurvedic traditions. This treatment promotes perspiration by pouring
@@ -338,7 +338,7 @@ are typically prescribed. This method stimulates the neuromuscular
 system, boosts circulation, enhances skin and sensory function, and
 nourishes the body.
 
-### **Shirodhara**
+### Shirodhara
 
 Shirodhara involves the continuous pouring of medicated oil or liquid
 over the forehead, allowing a flow across the scalp from specific
@@ -356,7 +356,7 @@ from 7 to 21 days, depending on severity. Light diets, preferably
 semi-solids and liquids, are recommended. The constant flow of liquid
 relaxes and calms the mind.
 
-### **Upanaham**
+### Upanaham
 
 Upanaha is a sudation technique where a herbal paste, made by boiling
 herbs with suitable liquids, is applied to specific areas and then
@@ -369,9 +369,9 @@ followed by an oil application. Regular diets are usually advised. This
 method provides localized heat, alleviating swelling and pain, while
 improving circulation and mobilizing waste.
 
-### **Kizhi Treatments**
+### Kizhi Treatments
 
-**Pathra Pinda Sweda/Elakizhi**
+Pathra Pinda Sweda/Elakizhi
 
 This sudation uses specially prepared medicinal leaf packets. Leaves are
 chopped, fried with rock salt and medicated oil, then tied in cotton
@@ -388,7 +388,7 @@ inflammation. Elakizhi is effective in detoxifying skin areas, making it
 suitable for those with back pain, joint issues, muscle cramps, and
 anxiety, while also boosting immunity and slowing aging.
 
-**Churna Pinda Sweda/Podikizhi**
+Churna Pinda Sweda/Podikizhi
 
 This method uses powdered herb packets applied after heating. Plant
 powders, seeds, lemon, and rock salt are mixed and fried with medicated
@@ -400,7 +400,7 @@ given, and patients rest before bathing with warm water. Light diets of
 liquid and semi-solid foods are suggested. This treatment stimulates
 nerve endings, relaxes muscles, and alleviates pain.
 
-**Njavarakizhi**
+Njavarakizhi
 
 This specialized treatment uses heated Njavara rice pudding boluses
 applied externally to induce perspiration. Special Njavara rice is
@@ -417,7 +417,7 @@ vegetarian liquid or semi-solid diets are recommended. This procedure
 offers a blend of massage, heat, and pressure that nourishes muscles and
 nerves.
 
-### **Shirolepana**
+### Shirolepana
 
 This involves applying a medicinal paste to the head for specific
 durations. Patients' heads are shaved, medicated oil is applied to their
@@ -428,7 +428,7 @@ cranial tranquility, soothes the mind, and nourishes brain cells, also
 proving effective for mental retardation, memory loss, and psychiatric
 conditions.
 
-### **Shirovasthi**
+### Shirovasthi
 
 Shirovasti retains medicated oil on the head using a cap for a specified
 time. Medicated oil, heated slightly above body temperature, is poured
@@ -439,7 +439,7 @@ patients may receive gentle massages on shoulders and neck as per the
 physician\'s recommendation. Light liquid and semi-solid diets are
 preferred.
 
-### **Kativasthi**
+### Kativasthi
 
 Kativasthi retains warm medicated oil over the lower back using cap-like
 devices for a set time. Patients undergo full-body Abhyanga followed by
@@ -450,7 +450,7 @@ with lukewarm water. Patients rest afterward, and a normal diet is
 typically suggested. This oil retention nourishes nerves, muscles, and
 joints in the area, providing soothing warmth and relief from symptoms.
 
-### **Uro Vasthi**
+### Uro Vasthi
 
 Uro Vasthi involves keeping warm medicated oil on specific areas of the
 chest for designated periods. A dough trough is formed on the chest or
@@ -459,7 +459,7 @@ Once done, the oil is cleaned off, and patients rest afterward.
 Treatments usually last around 7 days with a normal diet recommended.
 Retaining the oil fosters nourishment and support in the targeted areas.
 
-### **Akshi Tharpana**
+### Akshi Tharpana
 
 In this process, medicated ghee is kept over the eyes for 15-20 minutes
 while a gentle massage is given to the head, eyes, and face. Dough
@@ -471,7 +471,7 @@ Eyes may be covered with rose or lotus petals, and patients should avoid
 sunlight for a day. This treatment can range from 7 to 14 days,
 nourishing the ocular structures and strengthening the optic nerves.
 
-### **Post-Treatment Protocol (Paschath Karma)**
+### Post-Treatment Protocol (Paschath Karma)
 
 After treatment, patients are advised to rest for an amount of time
 equivalent to their therapy duration. Paschath Karma helps patients
@@ -483,3 +483,4 @@ physical and mental exertion, as well as extreme temperatures and
 environments. Moreover, prolonged sitting, loud speaking, and travel
 should be limited. Soft pillows are recommended, and internal medicines
 should be taken as prescribed to maximize effectiveness.
+
