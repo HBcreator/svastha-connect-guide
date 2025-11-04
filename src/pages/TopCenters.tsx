@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
@@ -29,6 +30,8 @@ const TopCenters = () => {
     "Stress & Wellness",
     "Weight Management",
   ];
+
+  const navigate = useNavigate();
 
   const centers = [
     {
@@ -218,7 +221,7 @@ const TopCenters = () => {
                   <Button
                     variant="outline"
                     className="flex-1 font-semibold"
-                    onClick={() => (window.location.href = `/centers/${center.city.toLowerCase()}`)}
+                    onClick={() => navigate(`/centers/${center.city.toLowerCase()}`)}
                   >
                     View Centers
                   </Button>

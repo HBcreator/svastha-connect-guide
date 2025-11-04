@@ -14,37 +14,37 @@ const serviceCards = [
   {
     title: "Panchakarma",
     description: "Experience deep cleansing and rejuvenation with traditional five-fold purification therapy.",
-    image: "/Services-images/Panchakarma/thumbnail.jpg",
+    image: "/Services-images/Panchakarma.png",
     href: "/services/panchakarma",
   },
   {
     title: "Yoga and Meditation",
     description: "Transform your mind and body through ancient practices of yoga and meditation.",
-    image: "/Services-images/Yoga/thumbnail.jpg",
+    image: "/Services-images/Yoga and Meditation.png",
     href: "/services/yoga-meditation",
   },
   {
     title: "Ayurvedic Massage",
     description: "Relax and heal with therapeutic Ayurvedic massage techniques.",
-    image: "/Services-images/Massage/thumbnail.jpg",
+    image: "/Services-images/Ayurvedic Massage.jpg",
     href: "/services/ayurvedic-massage",
   },
   {
     title: "Ayurvedic Diet",
     description: "Learn about personalized nutrition based on your unique constitution.",
-    image: "/Services-images/Diet/thumbnail.jpg",
+    image: "/Services-images/Ayurvedic Diet.jpeg",
     href: "/services/ayurvedic-diet",
   },
   {
     title: "Physiotherapy",
     description: "Recover and strengthen with modern physiotherapy treatments.",
-    image: "/Services-images/Physio/thumbnail.jpg",
+    image: "/Services-images/Physiotherapy.png",
     href: "/services/physiotherapy",
   },
   {
     title: "Kalari & Marma",
     description: "Experience the healing power of Kerala's martial arts and vital point therapy.",
-    image: "/Services-images/Kalari/thumbnail.jpg",
+    image: "/Services-images/Kalari & Marma.png",
     href: "/services/kalari-marma",
   },
 ]
@@ -59,7 +59,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {serviceCards.map((service) => (
           <Card key={service.title} className="flex flex-col overflow-hidden hover:shadow-card transition-all duration-300">
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative w-full aspect-video overflow-hidden">
               <img
                 src={service.image}
                 alt={service.title}

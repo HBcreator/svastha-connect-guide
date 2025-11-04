@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import Layout from '@/components/Layout';
 import { Card } from '@/components/ui/card';
 
-const Ayurveda = () => {
+const KalariMarma = () => {
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    fetch('/content/services/ayurveda.txt')
+    fetch('/content/services/Kalari & Marma Treatment.txt')
       .then((res) => res.text())
       .then((text) => setContent(text))
       .catch((err) => console.error('Error loading content:', err));
@@ -100,7 +100,7 @@ const Ayurveda = () => {
     }
 
     return elements;
-  }
+  };
 
   return (
     <Layout>
@@ -108,10 +108,10 @@ const Ayurveda = () => {
         {/* Hero Section */}
         <div className="text-center mb-6 md:mb-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 md:mb-4">
-            Ayurveda: Ancient Wisdom for Modern Wellness
+            Kalari & Marma: Ancient Martial Healing Art
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Experience authentic Ayurvedic healing combining traditional wisdom with modern diagnostics for holistic health
+            Unlock your body's vital energy points through Kerala's sacred healing tradition
           </p>
         </div>
 
@@ -119,8 +119,8 @@ const Ayurveda = () => {
         <div className="mb-8 md:mb-12 max-w-4xl mx-auto">
           <div className="aspect-video w-full overflow-hidden rounded-lg shadow-lg">
             <img
-              src="/Services-images/Ayurveda.png"
-              alt="Ayurveda Healing"
+              src="/Services-images/Kalari & Marma.png"
+              alt="Kalari and Marma Therapy"
               className="w-full h-full object-cover"
             />
           </div>
@@ -137,13 +137,13 @@ const Ayurveda = () => {
         <Card className="p-6 sm:p-8 md:p-10 shadow-lg mb-8 md:mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3 md:mb-4">
-              Begin Your Ayurvedic Journey
+              Experience Ancient Healing Wisdom
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              Experience authentic Ayurvedic treatments supervised by expert physicians. Let us guide you towards optimal health and balance.
+              Discover the profound healing power of Marma therapy with authentic Kalari masters. Unlock your body's vital energy for deep transformation.
             </p>
             <button className="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-primary/90 transition-colors">
-              Book Your Ayurveda Session
+              Book Your Kalari & Marma Treatment
             </button>
           </div>
         </Card>
@@ -151,24 +151,24 @@ const Ayurveda = () => {
         {/* Icon Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-            <div className="text-4xl mb-3">🌿</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Traditional Wisdom</h3>
+            <div className="text-4xl mb-3">🥋</div>
+            <h3 className="text-xl font-semibold text-primary mb-2">Martial Heritage</h3>
             <p className="text-muted-foreground">
-              5000+ years of authentic Ayurvedic knowledge and practices
+              Ancient Kalaripayattu wisdom passed through generations
             </p>
           </Card>
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-            <div className="text-4xl mb-3">⚖️</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Dosha Balance</h3>
+            <div className="text-4xl mb-3">⚡</div>
+            <h3 className="text-xl font-semibold text-primary mb-2">Vital Points</h3>
             <p className="text-muted-foreground">
-              Personalized treatments to balance Vata, Pitta, and Kapha
+              Precise treatment of 108 marma energy centers
             </p>
           </Card>
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
-            <div className="text-4xl mb-3">🔬</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Modern Diagnosis</h3>
+            <div className="text-4xl mb-3">🌟</div>
+            <h3 className="text-xl font-semibold text-primary mb-2">Deep Healing</h3>
             <p className="text-muted-foreground">
-              Advanced lab tests and imaging for accurate assessment
+              Profound physical and energetic transformation
             </p>
           </Card>
         </div>
@@ -177,4 +177,4 @@ const Ayurveda = () => {
   );
 };
 
-export default Ayurveda;
+export default KalariMarma;
