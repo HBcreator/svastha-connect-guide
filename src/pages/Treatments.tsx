@@ -68,7 +68,7 @@ const Treatments = () => {
       category: "Detox & Wellness",
       description: "Seasonal rejuvenation program designed to strengthen immunity and prevent monsoon-related ailments through specialized therapies.",
       benefits: ["Boosts immunity", "Prevents infections", "Balances doshas", "Seasonal wellness"],
-      image: null,
+      image: "/Treatments-images/Monsoon Treatment.jpg",
     },
     {
       name: "Parkinson's Disease Treatment",
@@ -76,7 +76,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Comprehensive Ayurvedic care to manage Parkinson's symptoms and improve quality of life through herbal medicines and therapies.",
       benefits: ["Reduces tremors", "Improves mobility", "Better muscle control", "Enhanced quality of life"],
-      image: null,
+      image: "/Treatments-images/Parkinson's Treatment.jpg",
     },
     {
       name: "Sciatica Treatment",
@@ -84,7 +84,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Effective nerve pain relief through specialized herbal oils, therapeutic massages, and internal medicines targeting sciatic nerve inflammation.",
       benefits: ["Pain relief", "Improved mobility", "Reduced inflammation", "Prevents recurrence"],
-      image: null,
+      image: "/Treatments-images/Sciatica Treatment.jpg",
     },
     {
       name: "Stroke Treatment",
@@ -92,7 +92,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Post-stroke rehabilitation combining Ayurvedic therapies, physiotherapy, and herbal medications for optimal recovery and prevention.",
       benefits: ["Faster recovery", "Improves motor functions", "Speech improvement", "Prevents recurrence"],
-      image: null,
+      image: "/Treatments-images/Stroke Treatment.jpg",
     },
     {
       name: "Varicose Ulcer",
@@ -100,7 +100,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Natural healing for varicose ulcers using specialized herbal dressings, internal medicines, and vascular strengthening therapies.",
       benefits: ["Wound healing", "Reduces swelling", "Improves circulation", "Prevents complications"],
-      image: null,
+      image: "/Treatments-images/Varicose Veins Treatment.jpg",
     },
     {
       name: "Knee Pain",
