@@ -158,11 +158,11 @@ const WeightLossTreatment = () => {
       {/* Main Content */}
       <section className="container mx-auto px-4 py-12">
         {/* Treatment Image */}
-        <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg w-full aspect-video">
           <img 
             src="/Treatments-images/Weight Loss.jpg" 
             alt="Weight Loss Treatment" 
-            className="w-full"
+            className="w-full h-full object-cover"
           />
         </div>
 

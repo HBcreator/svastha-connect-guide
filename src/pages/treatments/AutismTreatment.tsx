@@ -158,11 +158,11 @@ const AutismTreatment = () => {
       {/* Main Content */}
       <section className="container mx-auto px-4 py-12">
         {/* Treatment Image */}
-        <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg w-full aspect-video">
           <img 
             src="/Treatments-images/Autism Treatment.jpg" 
             alt="Autism Treatment" 
-            className="w-full"
+            className="w-full h-full object-cover"
           />
         </div>
 

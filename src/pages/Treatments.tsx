@@ -108,7 +108,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Effective joint care through medicated oil treatments, herbal formulations, and strengthening exercises for lasting knee health.",
       benefits: ["Pain relief", "Improved flexibility", "Cartilage protection", "Enhanced mobility"],
-      image: null,
+      image: "/Treatments-images/knee pain treatment.jpg",
     },
     {
       name: "Post Natal Care",
@@ -116,7 +116,7 @@ const Treatments = () => {
       category: "Women's Health",
       description: "Complete postnatal recovery program with specialized massages, nutritional support, and rejuvenation therapies for new mothers.",
       benefits: ["Faster recovery", "Lactation support", "Hormone balance", "Stress relief"],
-      image: null,
+      image: "/Treatments-images/Post Natal Treatment.jpg",
     },
     {
       name: "Cervical Spondylosis",
@@ -124,7 +124,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Comprehensive neck and spine care using therapeutic oils, herbal medicines, and specialized treatments for cervical health.",
       benefits: ["Neck pain relief", "Improved flexibility", "Reduces stiffness", "Prevents degeneration"],
-      image: null,
+      image: "/Treatments-images/Cervical Spondylosis Treatment.jpg",
     },
     {
       name: "Psoriasis",
@@ -255,7 +255,7 @@ const Treatments = () => {
                   <img 
                     src={treatment.image} 
                     alt={treatment.name}
-                    className="w-full hover:scale-105 transition-transform duration-300"
+                    className="w-full h-[200px] object-cover object-center hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               )}

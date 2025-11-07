@@ -158,11 +158,11 @@ const SinusitisTreatment = () => {
       {/* Main Content */}
       <section className="container mx-auto px-4 py-12">
         {/* Treatment Image */}
-        <div className="mb-8 rounded-lg overflow-hidden shadow-lg">
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg w-full aspect-video">
           <img 
             src="/Treatments-images/Sinusitis Treatment.jpg" 
             alt="Sinusitis Treatment" 
-            className="w-full"
+            className="w-full h-full object-cover"
           />
         </div>
 
