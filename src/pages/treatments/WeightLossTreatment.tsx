@@ -162,8 +162,7 @@ const WeightLossTreatment = () => {
           <img 
             src="/Treatments-images/Weight Loss.jpg" 
             alt="Weight Loss Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

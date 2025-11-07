@@ -162,8 +162,7 @@ const AutismTreatment = () => {
           <img 
             src="/Treatments-images/Autism Treatment.jpg" 
             alt="Autism Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

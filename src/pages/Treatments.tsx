@@ -255,7 +255,7 @@ const Treatments = () => {
                   <img 
                     src={treatment.image} 
                     alt={treatment.name}
-                    className="w-full h-[200px] object-cover object-center hover:scale-105 transition-transform duration-300"
+                    className="w-full hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               )}

@@ -158,8 +158,7 @@ const MonsoonTreatment = () => {
           <img 
             src="/Treatments-images/Monsoon Treatment.jpg" 
             alt="Monsoon Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

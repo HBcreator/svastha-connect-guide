@@ -150,8 +150,7 @@ const SciaticaTreatment = () => {
           <img 
             src="/Treatments-images/Sciatica Treatment.jpg" 
             alt="Sciatica Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

@@ -162,8 +162,7 @@ const SinusitisTreatment = () => {
           <img 
             src="/Treatments-images/Sinusitis Treatment.jpg" 
             alt="Sinusitis Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

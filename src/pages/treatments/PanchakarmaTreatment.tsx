@@ -158,8 +158,7 @@ const PanchakarmaTreatment = () => {
           <img 
             src="/Treatments-images/Panchakarma Treatment.jpg" 
             alt="Panchakarma Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 

@@ -150,8 +150,7 @@ const VaricoseUlcer = () => {
           <img 
             src="/Treatments-images/Varicose Veins Treatment.jpg" 
             alt="Varicose Veins Treatment" 
-            className="w-full h-[300px] object-cover"
-            style={{ aspectRatio: '1400/300' }}
+            className="w-full"
           />
         </div>
 
