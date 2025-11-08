@@ -132,7 +132,7 @@ const Treatments = () => {
       category: "Skin & Hair",
       description: "Natural skin healing through Panchakarma detoxification, herbal applications, and dietary modifications for lasting psoriasis relief.",
       benefits: ["Reduces patches", "Relieves itching", "Prevents flare-ups", "Improves skin texture"],
-      image: null,
+      image: "/Treatments-images/Psoriasis Treatment.jpg",
     },
     {
       name: "Lumbar Spondylosis",
@@ -140,7 +140,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Lower back strengthening program with medicated therapies, herbal oils, and lifestyle modifications for spinal health.",
       benefits: ["Back pain relief", "Improved posture", "Increased mobility", "Prevents progression"],
-      image: null,
+      image: "/Treatments-images/Lumbar Spondylosis Treatment.jpg",
     },
     {
       name: "Gastroesophageal Reflux Disease",
@@ -148,7 +148,7 @@ const Treatments = () => {
       category: "Digestive Health",
       description: "Natural relief from acid reflux and GERD through Ayurvedic medicines, dietary changes, and digestive fire enhancement.",
       benefits: ["Reduces acidity", "Improves digestion", "Prevents reflux", "Heals esophagus"],
-      image: null,
+      image: "/Treatments-images/Gastroesophageal Reflux Disease Treatment.jpg",
     },
     {
       name: "Arthritis Treatment",
@@ -156,7 +156,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Joint inflammation management with specialized oil treatments, herbal formulations, and pain-relieving therapies.",
       benefits: ["Reduces inflammation", "Pain relief", "Improved joint function", "Better mobility"],
-      image: null,
+      image: "/Treatments-images/Arthritis treatment.jpg",
     },
     {
       name: "Dysmenorrhea Treatment",
@@ -164,7 +164,7 @@ const Treatments = () => {
       category: "Women's Health",
       description: "Natural relief from painful menstruation through herbal medicines, abdominal therapies, and hormonal balance treatments.",
       benefits: ["Pain relief", "Regular cycles", "Hormonal balance", "Reduced cramping"],
-      image: null,
+      image: "/Treatments-images/Ayurvedic Treatment for Menstrual Pain.jpg",
     },
     {
       name: "Ulcerative Colitis Treatment",
