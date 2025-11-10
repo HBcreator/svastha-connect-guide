@@ -172,7 +172,7 @@ const Treatments = () => {
       category: "Digestive Health",
       description: "Intestinal healing program with herbal medications, dietary protocols, and detoxification therapies for lasting digestive health.",
       benefits: ["Reduces inflammation", "Heals intestinal lining", "Prevents flare-ups", "Improves digestion"],
-      image: null,
+      image: "/Treatments-images/Ulcerative Colitis Treatment.jpg",
     },
     {
       name: "Disc Bulge Protrusion",
@@ -180,7 +180,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Non-surgical spinal care with specialized therapies, herbal oils, and strengthening exercises for disc health and pain relief.",
       benefits: ["Pain reduction", "Improved mobility", "Prevents surgery", "Strengthens spine"],
-      image: null,
+      image: "/Treatments-images/Ayurvedic Treatment for Disc Bulge.jpg",
     },
     {
       name: "Back Pain",
@@ -188,7 +188,7 @@ const Treatments = () => {
       category: "Pain Management",
       description: "Comprehensive back care program addressing all types of back pain through therapeutic massages, oils, and herbal medicines.",
       benefits: ["Quick pain relief", "Improved flexibility", "Muscle relaxation", "Long-term solution"],
-      image: null,
+      image: "/Treatments-images/Back pain Treatment.jpg",
     },
     {
       name: "Stress",
@@ -196,7 +196,7 @@ const Treatments = () => {
       category: "Mental Health",
       description: "Holistic stress management combining Ayurvedic therapies, meditation, yoga, and herbal adaptogens for mental peace.",
       benefits: ["Reduces anxiety", "Improves sleep", "Mental clarity", "Emotional balance"],
-      image: null,
+      image: "/Treatments-images/Ayurvedic Treatment for Stress.jpg",
     },
     {
       name: "Alopecia",
@@ -204,7 +204,7 @@ const Treatments = () => {
       category: "Skin & Hair",
       description: "Natural hair regrowth treatment using herbal oils, scalp therapies, and internal medicines that address root causes of hair loss.",
       benefits: ["Hair regrowth", "Strengthens roots", "Prevents hair fall", "Improves scalp health"],
-      image: null,
+      image: "/Treatments-images/Hair Loss.jpg",
     },
   ];
 
