@@ -35,6 +35,17 @@ const TopCenters = () => {
 
   const centers = [
     {
+      name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+      city: "Bangalore",
+      description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
+      specialties: ["Panchakarma", "Yoga", "Naturopathy"],
+      rating: 4.9,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/SOUKYA/27 soukya.jpg",
+      slug: "bangalore/soukya" as string | undefined,
+    },
+    {
       name: "Kerala Ayurveda Wellness Center",
       city: "Kochi",
       description: "Premier Ayurvedic center specializing in traditional Panchakarma detox and rejuvenation therapies",
@@ -43,6 +54,7 @@ const TopCenters = () => {
       reviews: 234,
       priceRange: "$$$",
       image: centerKerala,
+      slug: undefined,
     },
     {
       name: "Goa Holistic Healing Retreat",
@@ -53,6 +65,7 @@ const TopCenters = () => {
       reviews: 189,
       priceRange: "$$",
       image: centerGoa,
+      slug: undefined,
     },
     {
       name: "Bangalore Wellness Institute",
@@ -63,6 +76,7 @@ const TopCenters = () => {
       reviews: 156,
       priceRange: "$$$",
       image: centerBangalore,
+      slug: undefined,
     },
     {
       name: "Rishikesh Ayurvedic Spa",
@@ -73,6 +87,7 @@ const TopCenters = () => {
       reviews: 201,
       priceRange: "$$",
       image: centerRishikesh,
+      slug: undefined,
     },
     {
       name: "Mumbai Ayurveda Clinic",
@@ -83,6 +98,7 @@ const TopCenters = () => {
       reviews: 143,
       priceRange: "$$$",
       image: centerMumbai,
+      slug: undefined,
     },
     {
       name: "Chennai Traditional Healing",
@@ -93,6 +109,7 @@ const TopCenters = () => {
       reviews: 178,
       priceRange: "$$",
       image: centerChennai,
+      slug: undefined,
     },
   ];
 
@@ -187,7 +204,13 @@ const TopCenters = () => {
             })
             .map((center, index) => (
             <div key={index} className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
-              <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${center.image})` }}></div>
+              <div className="w-full aspect-video overflow-hidden">
+                <img 
+                  src={center.image}
+                  alt={center.name}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               
               <div className="p-6">
                 <div className="flex items-start justify-between mb-2">
@@ -221,9 +244,9 @@ const TopCenters = () => {
                   <Button
                     variant="outline"
                     className="flex-1 font-semibold"
-                    onClick={() => navigate(`/centers/${center.city.toLowerCase()}`)}
+                    onClick={() => navigate(center.slug ? `/centers/${center.slug}` : `/centers/${center.city.toLowerCase()}`)}
                   >
-                    View Centers
+                    {center.slug ? "View Details" : "View Centers"}
                   </Button>
                   <Button 
                     onClick={() => setQuoteModalOpen(true)}

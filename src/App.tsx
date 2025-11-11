@@ -11,6 +11,7 @@ import Treatments from "./pages/Treatments";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import CenterDetail from "./pages/CenterDetail";
+import SOUKYACenter from "./pages/centers/SOUKYACenter";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -56,6 +57,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/centers" element={<TopCenters />} />
           <Route path="/centers/:location" element={<LocationCenters />} />
+          <Route path="/centers/bangalore/soukya" element={<SOUKYACenter />} />
+          <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/ayurveda" element={<AyurvedaService />} />
