@@ -158,7 +158,7 @@ const AyurvedaTreatment = () => {
       {/* Main Content */}
       <section className="container mx-auto px-4 py-12">
         {/* Treatment Image */}
-        <div className="mb-8 rounded-lg overflow-hidden shadow-lg w-full max-w-5xl mx-auto aspect-video">
+        <div className="mb-8 rounded-lg overflow-hidden shadow-lg w-full aspect-video">
           <img 
             src="/Treatments-images/Ayurveda Treatment.jpg" 
             alt="Ayurveda Treatment" 

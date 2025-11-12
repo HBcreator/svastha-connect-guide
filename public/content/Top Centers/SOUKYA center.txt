@@ -1,36 +1,29 @@
-**SOUKYA - Dr. Mathai's International Holistic Health Centre, Bangalore**
+http://localhost:8080/**SOUKYA - Dr. Mathai's International Holistic Health Centre, Bangalore**
 
 ### About SOUKYA
-
 SOUKYA is a residential medical institute located on a 30-acre organic farm in Bangalore, focused on health promotion, early intervention, and treatment of illnesses through an integrated approach combining Ayurveda, Homeopathy, Yoga, and Naturopathy. The name SOUKYA is derived from the Sanskrit word Soukhyam, meaning wellbeing and a harmonious state of mind, body, and spirit.
 
 This sustainably conceived health and wellness destination is home to several species of flora, exotic birds, and other fauna, creating a serene healing environment. The center features nine major structures built around an oval with lawns, flowers, trees, and a symbolic open Portal at the center. All buildings are ground-level structures in South Indian traditional style, using local and handmade materials.
 
 
 ### Accreditations & Recognition
-
 SOUKYA is India's first NABH-accredited AYUSH Hospital for Ayurveda, Homeopathy, Yoga and Naturopathy since 2012, and is the only facility in India accredited in the latter two systems of medicine. People from over a hundred countries have experienced healing, prevention, and rejuvenation at SOUKYA, making it a globally recognized holistic health destination.
 
 
 ### Treatment Philosophy & Approach
-
 SOUKYA follows a unique treatment approach that integrates different traditional, time-tested, and natural systems of medicine. Every patient undergoes a comprehensive medical evaluation by doctors qualified and experienced in their respective system of medicine. Based on a joint review by the medical team, a suitable treatment protocol is designed to address individual needs.
 
 The treatment program is monitored and reviewed daily to ensure optimal results. SOUKYA offers wellness and medical treatment programs that address lifestyle issues like addiction, rare and complex conditions, and chronic diseases through individualized treatment schedules and custom-prepared medicines.
 
 
 ### Systems of Medicine Practiced
-
 **Ayurveda - Ancient Healing Science**
-
 Ayurveda is an ancient traditional system of medicine considered to be the oldest system of healthcare, with literature going back 5000 years and an oral tradition that is much older. Ayurveda helps the healthy person maintain health and the diseased person regain health through natural therapies, herbal medicines, dietary modifications, and lifestyle changes.
 
 **Homeopathy - Natural Remedies**
-
 Homeopathy originated in 1796 in Germany and was discovered by Dr. Samuel Hahnemann, a German scientist. Homeopathic medicines are derived from natural and herbal sources. A remedy chosen on the basis of a person's whole being including psychological, emotional, and hereditary information, instead of just an individual illness, will trigger the self-healing mechanism of the body.
 
 **Yoga - Mind-Body Union**
-
 The word Yoga comes from the Sanskrit word yuj meaning union, a union of the Mind, Body, and Spirit. It also embodies a union of one's self with the Universal Self, with the Supreme Spirit. This holistic science emphasizes that such a union is necessary for a person seeking good health and wellbeing.
 
 **Naturopathy - Nature's Healing Power**
@@ -78,35 +71,27 @@ SOUKYA offers a wide range of health programs that help cleanse, de-stress, soot
 ### Facilities & Amenities
 
 **Medical Centre**
-
 State-of-the-art diagnostic facilities with modern equipment integrated with traditional assessment methods. The medical center is equipped for comprehensive health evaluations and continuous monitoring of treatment progress.
 
 **Therapy Centre**
-
 Dedicated spaces for traditional Ayurvedic therapies including Panchakarma treatments, therapeutic massages, Shirodhara, Abhyanga, and other specialized treatments. The therapy center maintains strict hygiene standards and uses authentic traditional techniques.
 
 **Yoga Hall**
-
 Spacious yoga hall for daily yoga sessions, meditation practices, and pranayama. Experienced yoga instructors conduct personalized sessions based on individual health conditions and fitness levels.
 
 **Organic Farm**
-
 A sprawling 30-acre organic farm surrounds the center, providing fresh organic vegetables, fruits, and herbs used in meals and medicines. The farm creates a peaceful natural environment conducive to healing.
 
 **Dining Hall**
-
 Nutritious organic meals are prepared fresh daily, tailored to individual dietary requirements and health conditions. The dining experience emphasizes mindful eating in a pleasant communal setting.
 
 **Residential Accommodation**
-
 Comfortable rooms and cottages designed in traditional South Indian architecture, equipped with modern amenities while maintaining a natural aesthetic. Options include single rooms, double rooms, and family suites.
 
 **Custom Medicine Preparation**
-
 In-house pharmacy prepares individualized Ayurvedic and Homeopathic medicines based on each patient's specific needs, ensuring freshness and authenticity of all formulations.
 
 **Counseling Services**
-
 Individual and family counseling sessions, psychotherapy, and emotional support services are available to address mental and emotional aspects of health and healing.
 
 
@@ -131,27 +116,21 @@ SOUKYA offers authentic Ayurveda delivered by 4th generation Ayurvedic doctors t
 ### Treatment Process & Patient Journey
 
 **1. Initial Consultation & Medical Evaluation**
-
 Upon arrival, every patient undergoes a comprehensive medical evaluation by doctors from each system of medicine. This includes detailed health history, current complaints, lifestyle assessment, and diagnostic tests if required.
 
 **2. Personalized Treatment Plan**
-
 Based on the joint medical review, a customized treatment protocol is designed specifically for the individual. The plan includes therapies, medicines, dietary guidelines, and lifestyle recommendations.
 
 **3. Daily Treatment & Monitoring**
-
 Patients receive daily treatments according to their schedule, which may include Ayurvedic therapies, homeopathic medicines, yoga sessions, and naturopathic treatments. Progress is monitored daily by the medical team.
 
 **4. Diet & Nutrition Management**
-
 Personalized meal plans are prepared using organic ingredients from the farm. Dietary therapy plays a crucial role in the healing process and is adjusted based on individual needs.
 
 **5. Lifestyle Counseling & Education**
-
 Patients receive guidance on lifestyle modifications, stress management techniques, and practices to continue at home for sustained health benefits.
 
 **6. Follow-up Care**
-
 After completing the residential program, patients receive detailed discharge instructions, continuation medicines, and follow-up consultations to ensure long-term health maintenance.
 
 
@@ -163,88 +142,68 @@ Serious medical conditions are covered by Indian Insurance. SOUKYA works with ma
 ### Why Choose SOUKYA for Your Holistic Health Journey
 
 **India's Premier NABH-Accredited AYUSH Hospital**
-
 SOUKYA holds the distinction of being India's first and only NABH-accredited facility for Ayurveda, Homeopathy, Yoga, and Naturopathy, ensuring the highest standards of care and safety.
 
 **Integrated Multi-System Approach**
-
 Unlike conventional centers focusing on a single system, SOUKYA integrates four powerful healing traditions - Ayurveda, Homeopathy, Yoga, and Naturopathy - providing comprehensive treatment addressing all aspects of health.
 
 **Personalized Care & Attention**
-
 Every patient receives individualized treatment protocols designed specifically for their condition, constitution, and health goals. No two treatment plans are identical, ensuring optimal results.
 
 **Experienced Fourth-Generation Doctors**
-
 The medical team includes 4th generation Ayurvedic doctors with traditional lineage and training from world-renowned institutions, combining ancient wisdom with modern medical knowledge.
 
 **Global Recognition & Trust**
-
 Patients from over 100 countries have chosen SOUKYA for their healing journey, establishing it as a globally trusted destination for holistic health and wellness.
 
 **Sustainable Healing Environment**
-
 The 30-acre organic farm creates a naturally therapeutic environment with fresh air, green spaces, medicinal plants, and peaceful surroundings conducive to healing and rejuvenation.
 
 **Comprehensive Treatment Range**
-
 From acute conditions requiring immediate intervention to chronic diseases needing long-term management, SOUKYA addresses all health concerns through natural and holistic methods.
 
 **Custom Medicine Preparation**
-
 All medicines are freshly prepared in-house according to traditional formulations, customized for each patient's specific needs, ensuring maximum efficacy and purity.
 
 **Organic & Therapeutic Nutrition**
-
 Meals prepared from organic farm produce are not just nutritious but therapeutic, designed as part of the treatment protocol to support healing from within.
 
 **Insurance Coverage Available**
-
 With support for Indian insurance claims for serious medical conditions, SOUKYA makes holistic healthcare accessible and affordable.
 
 
 ### Patient Success Stories & Reviews
 
 **Review 1 - Sarah Thompson, United Kingdom**
-
 *"Life-Changing Experience for Chronic Pain Management"*
-
 I traveled to SOUKYA suffering from severe rheumatoid arthritis that conventional medicine couldn't help. After 28 days of integrated Ayurvedic treatments, yoga therapy, and dietary modifications, my pain reduced by 70%. The doctors were incredibly knowledgeable and compassionate. The organic food was delicious and healing. Six months later, I'm still following their recommendations and feeling better than I have in years. SOUKYA gave me my life back!
 
 **Rating: ⭐⭐⭐⭐⭐ (5/5)**
 
 
 **Review 2 - Rajesh Kumar, Mumbai, India**
-
 *"Remarkable Recovery from Diabetes & Hypertension"*
-
 I came to SOUKYA with uncontrolled diabetes and high blood pressure despite multiple medications. Dr. Mathai and his team designed a comprehensive 21-day program combining Ayurveda, homeopathy, and naturopathy. Within three weeks, my blood sugar normalized, and blood pressure stabilized. The best part - I reduced my medication by 60% under medical supervision. The peaceful environment and organic meals made the experience truly therapeutic. Highly recommend SOUKYA for lifestyle diseases!
 
 **Rating: ⭐⭐⭐⭐⭐ (5/5)**
 
 
 **Review 3 - Maria Rodriguez, Spain**
-
 *"Holistic Approach Cured My Chronic Insomnia"*
-
 After struggling with severe insomnia for 5 years and trying every sleeping pill available, I was desperate. SOUKYA's integrated approach with Shirodhara treatments, yoga nidra, homeopathic remedies, and counseling worked like magic. Within two weeks, I started sleeping naturally without medication. The medical team addressed the root cause - stress and hormonal imbalance - rather than just symptoms. Three months post-treatment, I sleep peacefully every night. Forever grateful to SOUKYA!
 
 **Rating: ⭐⭐⭐⭐⭐ (5/5)**
 
 
 **Review 4 - David Chen, Singapore**
-
 *"Exceptional Care for Stroke Rehabilitation"*
-
 My father suffered a major stroke, and we brought him to SOUKYA for rehabilitation. The specialized stroke treatment program combining Ayurvedic therapies, yoga therapy, and physiotherapy showed remarkable results. In 45 days, he regained 80% mobility, speech improved significantly, and his overall vitality returned. The staff's dedication, daily medical monitoring, and personalized care were outstanding. SOUKYA's holistic approach accelerated his recovery beyond our expectations. Thank you for giving us hope!
 
 **Rating: ⭐⭐⭐⭐⭐ (5/5)**
 
 
 **Review 5 - Priya Sharma, Delhi, India**
-
 *"Complete Transformation Through Panchakarma Detox"*
-
 I underwent a 21-day Panchakarma detoxification program at SOUKYA, and it completely transformed my health. I had been suffering from chronic fatigue, digestive issues, and skin problems for years. The authentic Ayurvedic treatments, combined with yoga, organic diet, and the serene farm environment, worked wonders. I lost 8 kgs of toxic weight, my energy levels soared, digestion normalized, and skin glowed naturally. The 4th generation Ayurvedic doctors are truly masters of their craft. SOUKYA is not just a treatment center; it's a sanctuary for complete healing. Worth every penny!
 
 **Rating: ⭐⭐⭐⭐⭐ (5/5)**

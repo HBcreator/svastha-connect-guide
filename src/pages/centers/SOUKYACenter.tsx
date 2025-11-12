@@ -123,6 +123,15 @@ export default function SOUKYACenter() {
     lines.forEach((line, index) => {
       const trimmedLine = line.trim();
 
+      // Check for section separator (---)
+      if (trimmedLine === '---') {
+        flushList();
+        elements.push(
+          <div key={`separator-${index}`} className="h-8"></div>
+        );
+        return;
+      }
+
       if (!trimmedLine) {
         flushList();
         emptyLineCount++;
@@ -205,7 +214,23 @@ export default function SOUKYACenter() {
         return;
       }
 
-      // Rule 6 & 7: Regular paragraphs
+      // Rule 6: Full-line bold text (sub-headings) - NO spacing below
+      if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
+        flushList();
+        const content = trimmedLine.replace(/^\*\*/, '').replace(/\*\*$/, '');
+        elements.push(
+          <p
+            key={`bold-${index}`}
+            className="mb-0 leading-relaxed"
+            style={{ color: '#7F543D' }}
+          >
+            <strong className="font-semibold text-primary">{content}</strong>
+          </p>
+        );
+        return;
+      }
+
+      // Rule 7: Regular paragraphs
       flushList();
       elements.push(
         <p
