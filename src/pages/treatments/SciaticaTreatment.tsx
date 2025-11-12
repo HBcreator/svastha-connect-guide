@@ -31,7 +31,7 @@ const SciaticaTreatment = () => {
       if (line.startsWith("### ")) {
         const text = line.replace(/^### /, "");
         elements.push(
-          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-3">
+          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-0">
             {processInlineFormatting(text)}
           </h3>
         );
@@ -39,7 +39,7 @@ const SciaticaTreatment = () => {
       else if (line.match(/^\*\*(.+)\*\*$/) && line.replace(/\*\*/g, "").length > 30) {
         const text = line.replace(/^\*\*|\*\*$/g, "");
         elements.push(
-          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-4">
+          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-0">
             {processInlineFormatting(text)}
           </h2>
         );
@@ -49,7 +49,7 @@ const SciaticaTreatment = () => {
         if (match) {
           const [, number, text] = match;
           elements.push(
-            <h4 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-3">
+            <h4 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-0">
               {number}{processInlineFormatting(text)}
             </h4>
           );
@@ -58,7 +58,7 @@ const SciaticaTreatment = () => {
       else if (line.match(/^\*\*(.+)\*\*$/)) {
         const text = line.replace(/^\*\*|\*\*$/g, "");
         elements.push(
-          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-2">
+          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-0">
             {processInlineFormatting(text)}
           </h4>
         );
@@ -140,7 +140,7 @@ const SciaticaTreatment = () => {
     <Layout>
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Sciatica Treatment</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-0">Sciatica Treatment</h1>
           <p className="text-lg text-white/90">Holistic Path to Lasting Relief from Nerve Pain</p>
         </div>
       </section>
@@ -162,7 +162,7 @@ const SciaticaTreatment = () => {
 
         <Card className="p-6 sm:p-8 md:p-10 shadow-lg mb-8 md:mb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary mb-4">Get Relief from Sciatica Pain</h2>
+            <h2 className="text-3xl font-bold text-primary mb-0">Get Relief from Sciatica Pain</h2>
             <p className="text-foreground mb-6 max-w-2xl mx-auto">
               Experience lasting relief from nerve pain with our specialized Ayurvedic therapies and personalized treatment approach.
             </p>
@@ -173,21 +173,21 @@ const SciaticaTreatment = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-2">Targeted Relief</h3>
+            <h3 className="text-xl font-semibold mb-0">Targeted Relief</h3>
             <p className="text-muted-foreground">
               Specialized therapies like Kati Vasti directly target the sciatic nerve area for effective pain relief
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">⚖️</div>
-            <h3 className="text-xl font-semibold mb-2">Vata Balance</h3>
+            <h3 className="text-xl font-semibold mb-0">Vata Balance</h3>
             <p className="text-muted-foreground">
               Pacify aggravated Vata dosha to restore normal nerve function and eliminate pain at its root
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">💪</div>
-            <h3 className="text-xl font-semibold mb-2">Strengthen & Heal</h3>
+            <h3 className="text-xl font-semibold mb-0">Strengthen & Heal</h3>
             <p className="text-muted-foreground">
               Nourish nerves and muscles while preventing recurrence through holistic Ayurvedic care
             </p>

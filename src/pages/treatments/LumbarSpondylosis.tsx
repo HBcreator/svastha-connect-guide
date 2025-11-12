@@ -33,7 +33,7 @@ const LumbarSpondylosis = () => {
       if (line.startsWith("### ")) {
         const text = line.replace(/^### /, "");
         elements.push(
-          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-3">
+          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-0">
             {processInlineFormatting(text)}
           </h3>
         );
@@ -42,7 +42,7 @@ const LumbarSpondylosis = () => {
       else if (line.match(/^\*\*(.+)\*\*$/) && line.replace(/\*\*/g, "").length > 30) {
         const text = line.replace(/^\*\*|\*\*$/g, "");
         elements.push(
-          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-4">
+          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-0">
             {processInlineFormatting(text)}
           </h2>
         );
@@ -53,7 +53,7 @@ const LumbarSpondylosis = () => {
         if (match) {
           const [, number, text] = match;
           elements.push(
-            <h4 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-3">
+            <h4 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-0">
               {number}{processInlineFormatting(text)}
             </h4>
           );
@@ -63,7 +63,7 @@ const LumbarSpondylosis = () => {
       else if (line.match(/^\*\*(.+)\*\*$/)) {
         const text = line.replace(/^\*\*|\*\*$/g, "");
         elements.push(
-          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-2">
+          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-0">
             {processInlineFormatting(text)}
           </h4>
         );
@@ -148,7 +148,7 @@ const LumbarSpondylosis = () => {
     <Layout>
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Lumbar Spondylosis Treatment</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-0">Lumbar Spondylosis Treatment</h1>
           <p className="text-lg text-white/90">Holistic Lower Back Pain Relief Through Ayurveda</p>
         </div>
       </section>
@@ -170,7 +170,7 @@ const LumbarSpondylosis = () => {
 
         <Card className="p-6 sm:p-8 md:p-10 shadow-lg mb-8 md:mb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary mb-4">Strengthen Your Lower Back</h2>
+            <h2 className="text-3xl font-bold text-primary mb-0">Strengthen Your Lower Back</h2>
             <p className="text-foreground mb-6 max-w-2xl mx-auto">
               Experience powerful Kati Vasti therapy, specialized Basti treatments, and personalized yoga guidance for lasting relief from lumbar spondylosis pain.
             </p>
@@ -181,21 +181,21 @@ const LumbarSpondylosis = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">🎯</div>
-            <h3 className="text-xl font-semibold mb-2">Kati Vasti</h3>
+            <h3 className="text-xl font-semibold mb-0">Kati Vasti</h3>
             <p className="text-muted-foreground">
               Warm medicated oil therapy deeply lubricates spinal discs and provides profound pain relief
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">💊</div>
-            <h3 className="text-xl font-semibold mb-2">Basti Therapy</h3>
+            <h3 className="text-xl font-semibold mb-0">Basti Therapy</h3>
             <p className="text-muted-foreground">
               Ultimate Vata-pacifying medicated enema treatment for nervous system and lower back strength
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-4">🧘</div>
-            <h3 className="text-xl font-semibold mb-2">Posture & Yoga</h3>
+            <h3 className="text-xl font-semibold mb-0">Posture & Yoga</h3>
             <p className="text-muted-foreground">
               Expert guidance on correct posture and gentle yoga poses for spinal flexibility and strength
             </p>

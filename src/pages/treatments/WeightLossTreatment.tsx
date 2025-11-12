@@ -29,7 +29,7 @@ const WeightLossTreatment = () => {
       // Sub-headings with ###
       if (line.startsWith("### ")) {
         elements.push(
-          <h3 key={key++} className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mt-4 mb-2">
+          <h3 key={key++} className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary mt-4 mb-0">
             {line.replace("### ", "")}
           </h3>
         );
@@ -40,7 +40,7 @@ const WeightLossTreatment = () => {
       const longHeadingMatch = line.match(/^\*\*(.{30,}?)\*\*$/);
       if (longHeadingMatch) {
         elements.push(
-          <h2 key={key++} className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-6 mb-3 pb-2 border-b-2 border-primary/20">
+          <h2 key={key++} className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-6 mb-0 pb-2 border-b-2 border-primary/20">
             {longHeadingMatch[1]}
           </h2>
         );
@@ -51,7 +51,7 @@ const WeightLossTreatment = () => {
       const numberedMatch = line.match(/^(\d+)\.\s+\*\*(.+?)\*\*$/);
       if (numberedMatch) {
         elements.push(
-          <h3 key={key++} className="text-lg sm:text-xl md:text-2xl font-semibold text-primary mt-4 mb-2">
+          <h3 key={key++} className="text-lg sm:text-xl md:text-2xl font-semibold text-primary mt-4 mb-0">
             {numberedMatch[1]}. {numberedMatch[2]}
           </h3>
         );
@@ -62,7 +62,7 @@ const WeightLossTreatment = () => {
       const shortHeadingMatch = line.match(/^\*\*(.+?)\*\*$/);
       if (shortHeadingMatch) {
         elements.push(
-          <h3 key={key++} className="text-lg sm:text-xl md:text-2xl font-semibold text-primary mt-4 mb-2">
+          <h3 key={key++} className="text-lg sm:text-xl md:text-2xl font-semibold text-primary mt-4 mb-0">
             {shortHeadingMatch[1]}
           </h3>
         );
@@ -148,7 +148,7 @@ const WeightLossTreatment = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Weight Loss Treatment</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-0">Weight Loss Treatment</h1>
           <p className="text-lg text-white/90">
             Sustainable weight management program
           </p>
@@ -176,7 +176,7 @@ const WeightLossTreatment = () => {
         {/* Book Your Session CTA */}
         <Card className="p-6 sm:p-8 md:p-10 shadow-lg mb-8 md:mb-12 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
           <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-0">
               Start Your Weight Loss Journey
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
@@ -192,21 +192,21 @@ const WeightLossTreatment = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-3">⚖️</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Natural Weight Loss</h3>
+            <h3 className="text-xl font-semibold text-primary mb-0">Natural Weight Loss</h3>
             <p className="text-muted-foreground">
               Healthy reduction through Ayurvedic therapies like Udwarthanam and Panchakarma
             </p>
           </Card>
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-3">🔥</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Boost Metabolism</h3>
+            <h3 className="text-xl font-semibold text-primary mb-0">Boost Metabolism</h3>
             <p className="text-muted-foreground">
               Strengthen digestive fire (Agni) and eliminate toxins (Ama) for optimal metabolism
             </p>
           </Card>
           <Card className="p-6 text-center shadow-md hover:shadow-lg transition-shadow">
             <div className="text-4xl mb-3">🌱</div>
-            <h3 className="text-xl font-semibold text-primary mb-2">Sustainable Results</h3>
+            <h3 className="text-xl font-semibold text-primary mb-0">Sustainable Results</h3>
             <p className="text-muted-foreground">
               Holistic lifestyle changes and dietary guidance for long-term weight management
             </p>

@@ -31,14 +31,14 @@ const Alopecia = () => {
       if (line.startsWith("### ")) {
         const heading = line.replace("### ", "");
         elements.push(
-          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-3">
+          <h3 key={key++} className="text-2xl font-bold text-primary mt-6 mb-0">
             {heading}
           </h3>
         );
       } else if (line.match(/^\*\*(.+)\*\*$/) && line.replace(/\*\*/g, "").length > 30) {
         const heading = line.replace(/\*\*/g, "");
         elements.push(
-          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-4">
+          <h2 key={key++} className="text-3xl font-bold text-primary border-b-2 border-primary/20 pb-2 mt-8 mb-0">
             {heading}
           </h2>
         );
@@ -46,7 +46,7 @@ const Alopecia = () => {
         const match = line.match(/^(\d+)\.\s+\*\*(.+)\*\*/);
         if (match) {
           elements.push(
-            <h3 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-3">
+            <h3 key={key++} className="text-xl font-semibold text-primary/80 mt-6 mb-0">
               {match[1]}. {match[2]}
             </h3>
           );
@@ -54,7 +54,7 @@ const Alopecia = () => {
       } else if (line.match(/^\*\*(.+)\*\*$/)) {
         const heading = line.replace(/\*\*/g, "");
         elements.push(
-          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-2">
+          <h4 key={key++} className="text-lg font-semibold text-primary mt-4 mb-0">
             {heading}
           </h4>
         );
@@ -131,7 +131,7 @@ const Alopecia = () => {
     <Layout>
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Alopecia</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-0">Alopecia</h1>
           <p className="text-lg text-white/90">Ayurvedic Treatment for Hair Loss</p>
         </div>
       </section>
@@ -153,7 +153,7 @@ const Alopecia = () => {
 
         <Card className="p-6 sm:p-8 md:p-10 shadow-lg mb-8 md:mb-12 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-3 sm:mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-0">
               Restore Your Hair Naturally
             </h2>
             <p className="text-base sm:text-lg text-foreground/80 mb-4 sm:mb-6 max-w-2xl mx-auto">
@@ -168,7 +168,7 @@ const Alopecia = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="p-6 text-center hover:shadow-xl transition-all">
             <div className="text-4xl mb-4">💆</div>
-            <h3 className="text-xl font-bold text-primary mb-3">Shiro Abhyanga</h3>
+            <h3 className="text-xl font-bold text-primary mb-0">Shiro Abhyanga</h3>
             <p className="text-foreground/70">
               Deep scalp massage with nourishing oils to strengthen hair roots
             </p>
@@ -176,7 +176,7 @@ const Alopecia = () => {
 
           <Card className="p-6 text-center hover:shadow-xl transition-all">
             <div className="text-4xl mb-4">🌿</div>
-            <h3 className="text-xl font-bold text-primary mb-3">Herbal Therapy</h3>
+            <h3 className="text-xl font-bold text-primary mb-0">Herbal Therapy</h3>
             <p className="text-foreground/70">
               Powerful herbs like Bhringraj and Amla for hair rejuvenation
             </p>
@@ -184,7 +184,7 @@ const Alopecia = () => {
 
           <Card className="p-6 text-center hover:shadow-xl transition-all">
             <div className="text-4xl mb-4">🔬</div>
-            <h3 className="text-xl font-bold text-primary mb-3">Dosha Balance</h3>
+            <h3 className="text-xl font-bold text-primary mb-0">Dosha Balance</h3>
             <p className="text-foreground/70">
               Addressing Pitta-Vata imbalances to prevent hair loss
             </p>
