@@ -1,0 +1,114 @@
+FINAL UNIQUE VIEWPORT LIST (WITH COMPANY + MODEL GROUPS)
+320 × 568
+
+Apple – iPhone SE (1st Gen), older iPhones
+
+360 × 640
+
+Google – Pixel 2 (some variants)
+
+Android low-end devices (old models)
+
+360 × 740
+
+Samsung – Galaxy S8, S9
+
+Vivo / Oppo – Many older models
+
+Redmi – Budget devices (old)
+
+360 × 760
+
+Samsung – Galaxy S10 Series
+
+360 × 780
+
+Google – Pixel 6, Pixel 6a
+
+OnePlus – 6/7 series
+
+Xiaomi / Redmi – Note Series (Note 8, 9, 10 base models)
+
+Vivo / Oppo / Realme – Mid-range phones
+
+360 × 800
+
+Samsung – M Series, A Series
+
+Xiaomi / Redmi – Note 10/11/12 series
+
+Realme – Narzo Series
+
+Vivo – Y Series
+
+Oppo – A Series
+(India’s most common Android viewport)
+
+390 × 844
+
+Apple – iPhone 12, 13, 14 (standard models)
+
+393 × 786
+
+Google – Pixel 3
+
+393 × 851
+
+Google – Pixel 4, Pixel 5
+
+393 × 852
+
+Apple – iPhone 15 (base model)
+
+411 × 731
+
+Google – Pixel 2 XL
+
+411 × 869
+
+Google – Pixel 4 XL
+
+412 × 915
+
+Samsung – Galaxy S20+, S23 Ultra
+
+OnePlus – 8, 9, 10, 11 series
+
+Pixel 7 Pro
+(High-end Android devices)
+
+414 × 736
+
+Apple – iPhone 6 Plus, 7 Plus, 8 Plus
+
+414 × 896
+
+Apple – iPhone XR
+
+Apple – iPhone 11
+
+Apple – iPhone 11 Pro Max
+
+428 × 926
+
+Apple – iPhone 12/13/14 Pro Max
+
+430 × 932
+
+Apple – iPhone 15 Plus
+
+768 × 1024 (Tablet)
+
+Apple – iPad
+
+Android Tablets (similar viewport)
+
+800 × 1280 (Tablet)
+
+Samsung – Galaxy Tab A / Tab S Base
+
+Lenovo Tablets
+
+834 × 1194 (Pro Tablet)
+
+Apple – iPad Pro 11”
