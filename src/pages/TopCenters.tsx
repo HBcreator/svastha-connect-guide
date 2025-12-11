@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom"];
   
   const treatments = [
     "All",
@@ -137,6 +137,26 @@ const TopCenters = () => {
       image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
       locationText: "Kerala, India",
       slug: "kerala/agni-ayurvedic-village" as string | undefined,
+    },
+    {
+      name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+      city: "Kumarakom",
+      description:
+        "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Stress Relief",
+        "Pain Management",
+        "Wellness & Rejuvenation",
+        "Lakeside Retreat",
+      ],
+      rating: 4.9,
+      reviews: 150,
+      priceRange: "$$$",
+      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+      locationText: "Kumarakom, Kerala, India",
+      slug: "kerala/dheemahi-kumarakom" as string | undefined,
     },
   ];
 

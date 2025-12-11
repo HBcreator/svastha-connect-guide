@@ -920,7 +920,7 @@ export default function AgniAyurvedicVillage() {
                   </button>
 
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-                    <div className="text-center text-primary text-lg md:text-2xl font-bold mb-3 leading-relaxed whitespace-nowrap">
+                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
                       Agni Ayurvedic Village Resort
                     </div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
@@ -986,10 +986,8 @@ export default function AgniAyurvedicVillage() {
           )}
 
           <Card className="mb-12">
-            <CardContent className="px-5 sm:px-6 md:px-8 py-8 md:py-10 prose prose-lg max-w-none prose-p:leading-relaxed prose-p:my-4 md:prose-p:text-left prose-p:text-justify prose-h2:mt-6 prose-h2:mb-3 prose-h3:mt-5 prose-h3:mb-2">
-              <div className="mx-auto max-w-none sm:max-w-[50ch] md:max-w-none md:mx-0">
-                <MarkdownContent contentPath="/content/Top Centers/Agni Ayurvedic Village/Agni Ayurvedic Village.txt" />
-              </div>
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
+              <MarkdownContent contentPath="/content/Top Centers/Agni Ayurvedic Village/Agni Ayurvedic Village.txt" />
             </CardContent>
           </Card>
 
@@ -1328,7 +1326,7 @@ export default function AgniAyurvedicVillage() {
                 <ChevronRight className="h-6 w-6" />
               </button>
               <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-                <div className="text-center text-primary text-lg md:text-2xl font-bold mb-3 leading-relaxed whitespace-nowrap">Agni Ayurvedic Village Resort</div>
+                <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Agni Ayurvedic Village Resort</div>
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                   <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
                   <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
