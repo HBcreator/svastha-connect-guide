@@ -40,8 +40,10 @@ import {
   UserCheck,
   Phone,
   MessageCircle,
+  MessageCircleHeart,
   Building2,
   Utensils,
+  Mail,
   Globe,
   TreePine,
 } from "lucide-react";
@@ -74,6 +76,60 @@ export default function DheemahiKumarakom() {
   const [currentFacilityImage, setCurrentFacilityImage] = useState(0);
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
+  const [founderName, setFounderName] = useState("");
+  const [founderQual, setFounderQual] = useState("");
+  const [founderDesc, setFounderDesc] = useState("");
+  const [founderTags, setFounderTags] = useState<string[]>([]);
+  const [founderTagline, setFounderTagline] = useState("");
+  const [teamTitle, setTeamTitle] = useState("");
+  const [teamSubheading, setTeamSubheading] = useState("");
+  const [teamDesc, setTeamDesc] = useState("");
+  const [teamItems, setTeamItems] = useState<string[]>([]);
+  const [teamImageError, setTeamImageError] = useState(false);
+  const [reviews, setReviews] = useState<{ name: string; location: string; title: string; description: string; rating: number }[]>([]);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [insuranceIntro, setInsuranceIntro] = useState("");
+  const [insuranceBullets, setInsuranceBullets] = useState<string[]>([]);
+  const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
+  const [internationalText, setInternationalText] = useState("");
+  const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
+  const [contactCenters, setContactCenters] = useState<
+    { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string }[]
+  >([]);
+  const [reachInfo, setReachInfo] = useState<{ air?: string; train?: string; road?: string }>({});
+  const renderStars = (rating: number) => {
+    return (
+      <div className="flex gap-1">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            className={`h-5 w-5 ${i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
+          />
+        ))}
+      </div>
+    );
+  };
+  const processInlineFormatting = (text: string) => {
+    const parts: (string | JSX.Element)[] = [];
+    let lastIndex = 0;
+    const regex = /\*\*(.*?)\*\*/g;
+    let match;
+    while ((match = regex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(text.substring(lastIndex, match.index));
+      }
+      parts.push(
+        <strong key={match.index} className="font-semibold text-primary">
+          {match[1]}
+        </strong>
+      );
+      lastIndex = regex.lastIndex;
+    }
+    if (lastIndex < text.length) {
+      parts.push(text.substring(lastIndex));
+    }
+    return parts.length > 0 ? parts : text;
+  };
 
   useEffect(() => {
     fetch("/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CDN images-data.txt")
@@ -81,6 +137,266 @@ export default function DheemahiKumarakom() {
       .then((text) => {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
         setImages(urls);
+      })
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Patient Stories & Reviews.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { name: string; location: string; title: string; description: string; rating: number }[] = [];
+        let curr: { name: string; location: string; title: string; description: string; rating: number } | null = null;
+        for (const line of lines) {
+          if (!line) continue;
+          if (/^Patient Stories/i.test(line)) continue;
+          const headerMatch = line.match(/^\*\*Review\s+\d+\s+-\s+(.+?),\s*(.+?)\*\*$/);
+          if (headerMatch) {
+            if (curr) items.push(curr);
+            curr = {
+              name: headerMatch[1].trim(),
+              location: headerMatch[2].trim(),
+              title: "",
+              description: "",
+              rating: 5,
+            };
+            continue;
+          }
+          if (/Rating:/i.test(line)) {
+            if (curr) {
+              const m = line.match(/\((\d+)\/\d+\)/);
+              if (m) curr.rating = parseInt(m[1], 10);
+              items.push(curr);
+              curr = null;
+            }
+            continue;
+          }
+          if (curr) {
+            const titleMatch = line.match(/^\*\"(.+?)\"\*$/) || line.match(/^\"(.+?)\"$/);
+            if (titleMatch) {
+              curr.title = titleMatch[1];
+              continue;
+            }
+            curr.description = curr.description ? `${curr.description} ${line}` : line;
+          }
+        }
+        if (curr) items.push(curr);
+        setReviews(items);
+      })
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    if (reviews.length === 0) return;
+    const id = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [reviews]);
+  useEffect(() => {
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Founder & Expert Medical Team.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let tagline = "";
+        let currentSection: "none" | "founder" | "team" = "none";
+        let fName = "";
+        let fQual = "";
+        let fDesc = "";
+        const fTags: string[] = [];
+        let tTitle = "";
+        let tSub = "";
+        let tDesc = "";
+        const tItems: string[] = [];
+        let inLeader = false;
+        let inTeamIncludes = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            const title = line.slice(4).trim();
+            if (title.toLowerCase().includes("dr.")) {
+              currentSection = "founder";
+              fName = title;
+            } else {
+              currentSection = "team";
+              tTitle = title;
+            }
+            continue;
+          }
+          if (currentSection === "none") {
+            if (!line.startsWith("**")) tagline = tagline ? `${tagline} ${line}` : line;
+            continue;
+          }
+          if (currentSection === "founder") {
+            if (line.startsWith("**") && line.endsWith("**")) {
+              if (line.toLowerCase().includes("leadership")) inLeader = true;
+              continue;
+            }
+            if (inLeader) {
+              if (line.startsWith("*")) {
+                fTags.push(line.replace(/^\*+\s*/, ""));
+                continue;
+              } else {
+                inLeader = false;
+              }
+            }
+            if (!fQual && (line.includes("|") || /^[A-Z]{2,}/.test(line))) {
+              fQual = line;
+            } else {
+              fDesc = fDesc ? `${fDesc} ${line}` : line;
+            }
+            continue;
+          }
+          if (currentSection === "team") {
+            if (!tSub && !line.startsWith("**") && !line.startsWith("*")) {
+              tSub = line;
+              continue;
+            }
+            if (line.startsWith("**") && line.endsWith("**")) {
+              if (line.toLowerCase().includes("collaborative")) inTeamIncludes = true;
+              continue;
+            }
+            if (inTeamIncludes) {
+              if (line.startsWith("*")) {
+                tItems.push(line.replace(/^\*+\s*/, ""));
+                continue;
+              } else {
+                inTeamIncludes = false;
+              }
+            }
+            if (!line.startsWith("**")) {
+              tDesc = tDesc ? `${tDesc} ${line}` : line;
+            }
+            continue;
+          }
+        }
+        setFounderTagline(tagline);
+        setFounderName(fName || "Dr. B. Gireesh");
+        setFounderQual(fQual || "BAMS | Managing Partner & Chief Physician");
+        setFounderDesc(fDesc);
+        setFounderTags(fTags);
+        setTeamTitle(tTitle || "Our Expert Medical Team");
+        setTeamSubheading(tSub || "Five Generations of Healing Expertise");
+        setTeamDesc(tDesc);
+        setTeamItems(tItems);
+      })
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Insurance & Payment Info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const ins: string[] = [];
+        const pay: string[] = [];
+        let intl = "";
+        let section: "intro" | "ins" | "pay" | "intl" = "intro";
+        for (const line of lines) {
+          if (!line) continue;
+          if (/^Insurance\s*&\s*Payment Info$/i.test(line)) { section = "intro"; continue; }
+          const lower = line.toLowerCase();
+          if (lower.includes("insurance coverage")) { section = "ins"; continue; }
+          if (lower.includes("payment options")) { section = "pay"; continue; }
+          if (lower.includes("international patients")) { section = "intl"; continue; }
+          if (section === "ins") { ins.push(line); continue; }
+          if (section === "pay") { pay.push(line); continue; }
+          if (section === "intl") { intl = intl ? `${intl} ${line}` : line; continue; }
+          intro = intro ? `${intro} ${line}` : line;
+        }
+        setInsuranceIntro(intro);
+        setInsuranceBullets(ins);
+        setPaymentBullets(pay);
+        setInternationalText(intl);
+      })
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Frequently Asked Questions.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { question: string; answer: string }[] = [];
+        let currentQ = "";
+        let currentA = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (currentQ) items.push({ question: currentQ, answer: currentA });
+            currentQ = line.slice(2, -2).replace(/^\d+\.\s*/, "");
+            currentA = "";
+            continue;
+          }
+          currentA = currentA ? `${currentA} ${line}` : line;
+        }
+        if (currentQ) items.push({ question: currentQ, answer: currentA });
+        setFaqItems(items);
+      })
+      .catch(() => {});
+  }, []);
+  useEffect(() => {
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/contact info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const centers: { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string }[] = [];
+        let current: { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string } | null = null;
+        let inHowToReach = false;
+        let collectingAddress = false;
+        const reach: { air?: string; train?: string; road?: string } = {};
+        for (const line of lines) {
+          if (!line) {
+            collectingAddress = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const title = line.slice(2, -2);
+            if (/^How to Reach/i.test(title)) {
+              if (current) {
+                centers.push(current);
+                current = null;
+              }
+              inHowToReach = true;
+              continue;
+            }
+            if (!inHowToReach) {
+              if (current) centers.push(current);
+              current = { name: title, address: [] };
+              collectingAddress = false;
+              continue;
+            }
+          }
+          if (!inHowToReach && current) {
+            if (/^Address:/i.test(line)) {
+              collectingAddress = true;
+              continue;
+            }
+            if (collectingAddress) {
+              if (/^(Phone|Mobile|Email|Website):/i.test(line)) {
+                collectingAddress = false;
+              } else {
+                current.address.push(line);
+                continue;
+              }
+            }
+            if (/^Phone:/i.test(line)) current.phone = line.replace(/^Phone:\s*/i, "");
+            else if (/^Mobile:/i.test(line)) current.mobile = line.replace(/^Mobile:\s*/i, "");
+            else if (/^Email:/i.test(line)) current.email = line.replace(/^Email:\s*/i, "");
+            else if (/^Website:/i.test(line)) current.website = line.replace(/^Website:\s*/i, "");
+            continue;
+          }
+          if (inHowToReach) {
+            const air = line.match(/^\*\*By Air:\*\*\s*(.+)$/i);
+            const train = line.match(/^\*\*By Train:\*\*\s*(.+)$/i);
+            const road = line.match(/^\*\*By Road:\*\*\s*(.+)$/i);
+            if (air) reach.air = air[1];
+            else if (train) reach.train = train[1];
+            else if (road) reach.road = road[1];
+          }
+        }
+        if (current) centers.push(current);
+        setContactCenters(centers);
+        setReachInfo(reach);
       })
       .catch(() => {});
   }, []);
@@ -645,11 +961,13 @@ export default function DheemahiKumarakom() {
                     className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
                   >
                     <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                      <div className="flex items-center gap-2 md:gap-3">
+                      <div className="flex items-center gap-2 md:gap-3 w-full min-w-0">
                         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                         </div>
-                        <span className="text-base md:text-lg font-semibold text-primary">{sec.title}</span>
+                        <span className="text-sm md:text-lg font-semibold text-primary whitespace-nowrap truncate flex-1 min-w-0 text-left">
+                          {sec.title}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -726,11 +1044,13 @@ export default function DheemahiKumarakom() {
                     className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
                   >
                     <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                      <div className="flex items-center gap-2 md:gap-3">
+                      <div className="flex items-center gap-2 md:gap-3 w-full min-w-0">
                         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                         </div>
-                        <span className="text-base md:text-lg font-semibold text-primary">{sec.title}</span>
+                        <span className="text-sm md:text-lg font-semibold text-primary whitespace-nowrap truncate flex-1 min-w-0 text-left">
+                          {sec.title}
+                        </span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -1005,10 +1325,388 @@ export default function DheemahiKumarakom() {
                       </CardContent>
                     </Card>
                   ))}
-                </div>
+                  </div>
               </div>
           </div>
           </div>
+
+          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
+            <div className="text-center mb-6 md:mb-10">
+              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
+              {founderTagline && (
+                <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+                  {founderTagline}
+                </p>
+              )}
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
+                <CardContent className="p-4 md:p-8">
+                  <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                      <img
+                        src="/Center Images/Dheemahi Ayurvedic Centre/founder.jpg"
+                        alt={founderName || "Founder"}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founderName || "Founder"}</h3>
+                      {founderQual && (
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>
+                          {founderQual}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  {founderDesc && (
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {founderDesc}
+                    </p>
+                  )}
+                  {founderTags.length > 0 && (
+                    <div className="pt-3 md:pt-4 border-t border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
+                      <div className="flex flex-wrap gap-2">
+                        {founderTags.map((t, i) => (
+                          <span key={i} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
+                <CardContent className="p-4 md:p-8">
+                  <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                      <img
+                        src={
+                          teamImageError
+                            ? "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg"
+                            : "/Center Images/Dheemahi Ayurvedic Centre/Team.jpg"
+                        }
+                        alt="Expert Medical Team"
+                        className="w-full h-full object-cover"
+                        onError={() => setTeamImageError(true)}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{teamTitle || "Expert Medical Team"}</h3>
+                      {teamSubheading && (
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>
+                          {teamSubheading}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  {teamDesc && (
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {teamDesc}
+                    </p>
+                  )}
+                  {teamItems.length > 0 && (
+                    <div className="space-y-2 pt-3 md:pt-4 border-t border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-2 md:mb-3">Our Collaborative Team Includes:</p>
+                      <div className="grid grid-cols-1 gap-2">
+                        {teamItems.map((item, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-primary rounded-full"></span>
+                            <span className="text-xs" style={{ color: "#7F543D" }}>{processInlineFormatting(item)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          <div className="mb-12">
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
+                Hear from our patients about their transformational healing journeys
+              </p>
+            </div>
+            <div className="relative">
+              <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+                <CardContent className="p-4 md:p-12">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-primary/20 mb-3 md:mb-4">
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
+                    </div>
+                    <div className="mb-4 md:mb-6">
+                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-3" style={{ color: "#7F543D" }}>
+                        {reviews.length > 0 ? `"${reviews[currentReview].title}"` : ""}
+                      </p>
+                      <p className="text-sm md:text-lg leading-relaxed" style={{ color: "#7F543D" }}>
+                        {reviews.length > 0 ? reviews[currentReview].description : ""}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                        {reviews.length > 0
+                          ? `${(reviews[currentReview].name.split(" ")[0] || "").slice(0, 1)}${(reviews[currentReview].name.split(" ").slice(-1)[0] || "").slice(0, 1)}`.toUpperCase()
+                          : ""}
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-primary">
+                            {reviews.length > 0 ? reviews[currentReview].name : ""}
+                          </h4>
+                        </div>
+                        <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                          {reviews.length > 0 ? reviews[currentReview].location : ""}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3">
+                      {reviews.length > 0 ? renderStars(reviews[currentReview].rating) : null}
+                      {reviews.length > 0 ? (
+                        <span className="text-xs md:text-sm font-semibold text-primary">
+                          {reviews[currentReview].rating}.0
+                        </span>
+                      ) : null}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <button
+                onClick={() => setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={() => setCurrentReview((prev) => (prev + 1) % reviews.length)}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Next review"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Auto
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-6">
+              {reviews.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentReview(idx)}
+                  className={`transition-all rounded-full ${
+                    currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                  }`}
+                  aria-label={`Go to review ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {insuranceBullets.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <ShieldCheck className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>{insuranceIntro}</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <ShieldCheck className="h-6 w-6 text-green-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {insuranceBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                        <Pill className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-primary">Payment Options</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {paymentBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              {internationalText && (
+                <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
+                        <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{internationalText}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
+          {faqItems.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <MessageCircleHeart className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                  Find answers to common questions about treatments, facilities, and your healing journey
+                </p>
+              </div>
+              <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+                {faqItems.map((it, idx) => (
+                  <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                    <AccordionTrigger className="hover:no-underline py-4">
+                      <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pb-6 bg-white">
+                      <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{it.answer}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+          {contactCenters.length > 0 && (
+            <Card className="mb-12 border-2 border-primary">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {contactCenters.map((c, idx) => (
+                    <div key={idx} className="space-y-4">
+                      <h3 className="text-xl font-bold text-primary">{c.name}</h3>
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Address</h4>
+                          <p style={{ color: "#7F543D" }}>
+                            {c.address.map((line, i) => (
+                              <span key={i}>
+                                {line}
+                                <br />
+                              </span>
+                            ))}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Phone</h4>
+                          <p style={{ color: "#7F543D" }}>
+                            {c.phone ? `${c.phone}` : ""}
+                            {c.mobile ? <><br />{`Mobile: ${c.mobile}`}</> : null}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Email</h4>
+                          <p style={{ color: "#7F543D" }}>{c.email}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Website</h4>
+                          {c.website ? (
+                            <a
+                              href={c.website.startsWith("http") ? c.website : `https://${c.website}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline"
+                            >
+                              {c.website}
+                            </a>
+                          ) : (
+                            <p style={{ color: "#7F543D" }}>—</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {(reachInfo.air || reachInfo.train || reachInfo.road) && (
+                  <div className="mt-8 p-6 bg-primary/5 rounded-lg">
+                    <h4 className="font-semibold text-primary mb-2">How to Reach</h4>
+                    <div className="space-y-2" style={{ color: "#7F543D" }}>
+                      {reachInfo.air && (
+                        <p>
+                          <span className="font-semibold text-primary">By Air: </span>
+                          {reachInfo.air}
+                        </p>
+                      )}
+                      {reachInfo.train && (
+                        <p>
+                          <span className="font-semibold text-primary">By Train: </span>
+                          {reachInfo.train}
+                        </p>
+                      )}
+                      {reachInfo.road && (
+                        <p>
+                          <span className="font-semibold text-primary">By Road: </span>
+                          {reachInfo.road}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
+          {contactCenters.length > 0 && (
+            <Card className="bg-primary text-primary-foreground">
+              <CardContent className="p-6 md:p-8 text-center">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
+                  Begin Your Holistic Healing Journey at Dheemahi Ayurvedic Village
+                </h3>
+                <p className="mb-6 text-sm md:text-base lg:text-lg opacity-90 max-w-3xl mx-auto px-2">
+                </p>
+                <div className="flex justify-center">
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="bg-white text-primary hover:bg-white/90 font-semibold text-xs md:text-sm px-4 py-5 md:px-8 md:py-6 w-full md:w-auto max-w-sm"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                    Book Your Consultation Today
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          )}
 
           {facilityLightboxOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">

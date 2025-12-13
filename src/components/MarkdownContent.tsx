@@ -35,14 +35,14 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
     const flushList = () => {
       if (!listItems) return
       elements.push(
-        <ul key={`ul-${elements.length}`} className="space-y-2 mb-6 ml-4">
+        <ul key={`ul-${elements.length}`} className="not-prose space-y-1 mb-3 ml-4">
           {listItems.items.map((item, i) => (
-            <li key={i} className="leading-relaxed" style={{ color: '#7F543D' }}>
-              <span className="inline-flex items-start">
-                <span className="mr-2 mt-1">•</span>
-                <span className="flex-1">{processInline(item)}</span>
-              </span>
-            </li>
+          <li key={i} className="leading-normal" style={{ color: '#7F543D' }}>
+            <span className="inline-flex items-start">
+              <span className="mr-2 mt-1">•</span>
+              <span className="flex-1">{processInline(item)}</span>
+            </span>
+          </li>
           ))}
         </ul>
       )
@@ -53,7 +53,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
       const line = raw.trim()
       if (!line) {
         flushList()
-        elements.push(<div key={`sp-${elements.length}`} className="h-4" />)
+        elements.push(<div key={`sp-${elements.length}`} className="h-2" />)
         continue
       }
 
@@ -114,18 +114,14 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
       }
 
       flushList()
-      elements.push(<p key={`p-${elements.length}`} className="leading-relaxed" style={{ color: '#7F543D' }}>{processInline(line)}</p>)
+      elements.push(<p key={`p-${elements.length}`} className="leading-normal" style={{ color: '#7F543D' }}>{processInline(line)}</p>)
     }
 
     flushList()
     return elements
   }
 
-  return (
-    <div className="prose prose-lg max-w-none">
-      {renderMarkdown(content)}
-    </div>
-  )
+  return <div className="max-w-none">{renderMarkdown(content)}</div>
 }
 
 export default MarkdownContent
