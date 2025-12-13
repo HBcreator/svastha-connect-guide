@@ -1603,13 +1603,13 @@ export default function DheemahiKumarakom() {
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {contactCenters.map((c, idx) => (
-                    <div key={idx} className="space-y-4">
-                      <h3 className="text-xl font-bold text-primary">{c.name}</h3>
-                      <div className="flex items-start gap-3">
+                    <div key={idx} className="space-y-4 min-w-0">
+                      <h3 className="text-xl font-bold text-primary break-words">{c.name}</h3>
+                      <div className="flex items-start gap-3 min-w-0">
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-primary mb-1">Address</h4>
-                          <p style={{ color: "#7F543D" }}>
+                          <p className="break-words whitespace-normal" style={{ color: "#7F543D" }}>
                             {c.address.map((line, i) => (
                               <span key={i}>
                                 {line}
@@ -1619,33 +1619,33 @@ export default function DheemahiKumarakom() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
+                      <div className="flex items-start gap-3 min-w-0">
                         <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                          <p style={{ color: "#7F543D" }}>
+                          <p className="break-words whitespace-normal" style={{ color: "#7F543D" }}>
                             {c.phone ? `${c.phone}` : ""}
                             {c.mobile ? <><br />{`Mobile: ${c.mobile}`}</> : null}
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
+                      <div className="flex items-start gap-3 min-w-0">
                         <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-primary mb-1">Email</h4>
-                          <p style={{ color: "#7F543D" }}>{c.email}</p>
+                          <p className="break-all" style={{ color: "#7F543D" }}>{c.email}</p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3">
+                      <div className="flex items-start gap-3 min-w-0">
                         <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
+                        <div className="min-w-0">
                           <h4 className="font-semibold text-primary mb-1">Website</h4>
                           {c.website ? (
                             <a
                               href={c.website.startsWith("http") ? c.website : `https://${c.website}`}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-primary hover:underline"
+                              className="text-primary hover:underline break-all inline-block max-w-full"
                             >
                               {c.website}
                             </a>
