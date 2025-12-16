@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad"];
   
   const treatments = [
     "All",
@@ -55,6 +55,30 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/somatheeram/Somatheeram 01.jpg",
       slug: "kerala/somatheeram" as string | undefined,
+    },
+    {
+      name: "Kairali – The Ayurvedic Healing Village",
+      city: "Palakkad",
+      description:
+        "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Chronic Disease Management",
+        "Weight Management",
+        "Yoga & Meditation",
+        "Holistic Healing",
+        "Wellness Retreat",
+        "Kerala Ayurveda",
+      ],
+      rating: 4.9,
+      reviews: 280,
+      priceRange: "$$$$",
+      image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+      locationText: "Palakkad, Kerala, India",
+      slug: "kerala/kairali-ayurvedic-healing-village" as string | undefined,
     },
     {
       name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
