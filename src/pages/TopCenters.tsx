@@ -182,6 +182,26 @@ const TopCenters = () => {
       locationText: "Kumarakom, Kerala, India",
       slug: "kerala/dheemahi-kumarakom" as string | undefined,
     },
+    {
+      name: "Nagarjuna Ayurveda Centre",
+      city: "Kerala",
+      description:
+        "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Chronic Disease Management",
+        "Detox & Cleansing",
+        "Pain Management",
+        "Wellness & Rejuvenation",
+      ],
+      rating: 4.8,
+      reviews: 200,
+      priceRange: "$$$",
+      image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+      locationText: "Kerala, India",
+      slug: "kerala/nagarjuna-ayurveda-centre" as string | undefined,
+    },
   ];
 
   return (
@@ -280,6 +300,7 @@ const TopCenters = () => {
                   src={center.image}
                   alt={center.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  onError={(e) => { e.currentTarget.src = centerKerala; }}
                 />
               </div>
               

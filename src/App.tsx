@@ -19,6 +19,7 @@ import AgniAyurvedicVillage from "./pages/centers/AgniAyurvedicVillage";
 import DheemahiKumarakom from "./pages/centers/DheemahiKumarakom";
 import NamasteDwaar from "./pages/centers/namastedwaar";
 import KairaliHealingVillage from "./pages/centers/KairaliHealingVillage";
+import NagarjunaAyurvedaCentre from "./pages/centers/NagarjunaAyurvedaCentre";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -69,6 +70,7 @@ const App = () => (
           <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />
           <Route path="/centers/kerala/kairali-ayurvedic-healing-village" element={<KairaliHealingVillage />} />
           <Route path="/centers/kerala/agni-ayurvedic-village" element={<AgniAyurvedicVillage />} />
+          <Route path="/centers/kerala/nagarjuna-ayurveda-centre" element={<NagarjunaAyurvedaCentre />} />
           <Route path="/centers/kerala/dheemahi-kumarakom" element={<DheemahiKumarakom />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
