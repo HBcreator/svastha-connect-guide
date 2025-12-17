@@ -461,7 +461,7 @@ export default function KairaliHealingVillage() {
     }
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [facilityLightboxOpen, facilityImages])
+  }, [facilityLightboxOpen, facilityImages.length, images.length, lightboxOpen])
 
   const renderInlineBold = (text: string) => {
     const parts: (string | JSX.Element)[] = []
@@ -546,7 +546,7 @@ export default function KairaliHealingVillage() {
         setTeamCardIntro(cardIntro)
       })
       .catch(() => {})
-  }, [])
+  }, [teamSubtitle])
 
   useEffect(() => {}, [])
 
@@ -675,7 +675,7 @@ export default function KairaliHealingVillage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                <h1 className="text-4xl md:text-4xl font-bold leading-relaxed mb-4">
-                  Kairali - The Ayurvedic Healing Village
+                  Kairali - <br /> The Ayurvedic Healing Village
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
                   NABH-accredited Ayurvedic Retreat & Panchakarma Center
