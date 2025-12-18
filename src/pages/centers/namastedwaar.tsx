@@ -1153,7 +1153,7 @@ export default function NamasteDwaar() {
           </div>
         </div>
 
-        <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#D9E3DC' }}>
+        <div className="mb-12 rounded-3xl p-8 md:p-12">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Facilities & Amenities</h2>
             <p className="text-sm md:text-base" style={{ color: '#7F543D' }}>
