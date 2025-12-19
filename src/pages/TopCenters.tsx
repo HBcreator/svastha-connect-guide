@@ -202,6 +202,25 @@ const TopCenters = () => {
       locationText: "Kerala, India",
       slug: "kerala/nagarjuna-ayurveda-centre" as string | undefined,
     },
+    {
+      name: "Sanjeevanam Ayurveda Hospital",
+      city: "Kochi",
+      description:
+        "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+      specialties: [
+        "Integrative Medicine",
+        "Panchakarma",
+        "Pain Management",
+        "Diabetes Care",
+        "Yoga & Naturopathy",
+      ],
+      rating: 4.8,
+      reviews: 1700,
+      priceRange: "$$$",
+      image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+      locationText: "Kochi, Kerala, India",
+      slug: "kerala/sanjeevanam-ayurveda-hospital" as string | undefined,
+    },
   ];
 
   return (
