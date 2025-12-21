@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import MarkdownContent from "@/components/MarkdownContent";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Star, Calendar, Video, ChevronLeft, ChevronRight, Images, Heart, TrendingUp, Users, Droplet, Brain, Sparkles, ShieldCheck, HeartPulse, Activity, UserCheck, Stethoscope, Pill, Award, Hospital, Home, FileSearch, Leaf, ClipboardList, Utensils, Phone, MessageCircle, Building2, Globe, TreePine } from "lucide-react";
+import { MapPin, Star, Calendar, Video, ChevronLeft, ChevronRight, Images, Heart, TrendingUp, Users, Droplet, Brain, Sparkles, ShieldCheck, HeartPulse, Activity, UserCheck, Stethoscope, Pill, Award, Hospital, Home, FileSearch, Leaf, ClipboardList, Utensils, Phone, MessageCircle, MessageCircleHeart, Mail, Building2, Globe, TreePine } from "lucide-react";
 
 export default function SanjeevanamAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -47,6 +47,13 @@ export default function SanjeevanamAyurvedaHospital() {
   const [insuranceBullets, setInsuranceBullets] = useState<string[]>([]);
   const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
   const [internationalText, setInternationalText] = useState("");
+  const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactPhones, setContactPhones] = useState<string[]>([]);
+  const [contactEmails, setContactEmails] = useState<string[]>([]);
+  const [contactWebsite, setContactWebsite] = useState("");
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
 
   const thumbnailImages = [
     images[0],
@@ -70,6 +77,72 @@ export default function SanjeevanamAyurvedaHospital() {
       .then((text) => {
         const links = text.split("\n").map((l) => l.trim()).filter((l) => l);
         setVideos(links);
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Sanjeevanam Ayurvedic center/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let section: "none" | "address" | "phones" | "emails" | "website" | "distances" | "transport" = "none";
+        const addr: string[] = [];
+        const phones: string[] = [];
+        const emails: string[] = [];
+        const dists: string[] = [];
+        let site = "";
+        let transport = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) { section = "none"; continue; }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("address")) { section = "address"; continue; }
+            if (t.includes("phone")) { section = "phones"; continue; }
+            if (t.includes("email")) { section = "emails"; continue; }
+            if (t.includes("website")) { section = "website"; continue; }
+            if (t.includes("distance")) { section = "distances"; continue; }
+            if (t.includes("transportation")) { section = "transport"; continue; }
+          }
+          if (section === "address") { addr.push(line); continue; }
+          if (section === "phones") { if (/^\*/.test(line)) phones.push(line.replace(/^\*+\s*/, "")); else if (line) phones.push(line); continue; }
+          if (section === "emails") { if (/^\*/.test(line)) emails.push(line.replace(/^\*+\s*/, "")); else if (line) emails.push(line); continue; }
+          if (section === "website") { site = site ? `${site} ${line}` : line; continue; }
+          if (section === "distances") { if (line.startsWith("*")) dists.push(line.replace(/^\*+\s*/, "")); continue; }
+          if (section === "transport") { transport = transport ? `${transport} ${line}` : line; continue; }
+        }
+        setContactAddress(addr);
+        setContactPhones(phones);
+        setContactEmails(emails);
+        setContactWebsite(site);
+        setContactDistances(dists);
+        setTransportText(transport);
+      })
+      .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Sanjeevanam Ayurvedic center/Frequently Asked Questions.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { question: string; answer: string }[] = [];
+        let currentQ = "";
+        let currentA = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (currentQ) items.push({ question: currentQ, answer: currentA });
+            currentQ = line.slice(2, -2).replace(/^\d+\.\s*/, "");
+            currentA = "";
+            continue;
+          }
+          currentA = currentA ? `${currentA} ${line}` : line;
+        }
+        if (currentQ) items.push({ question: currentQ, answer: currentA });
+        setFaqItems(items);
       })
       .catch(() => {});
   }, []);
@@ -1552,6 +1625,130 @@ export default function SanjeevanamAyurvedaHospital() {
               )}
             </div>
           )}
+
+          {faqItems.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <MessageCircleHeart className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                  Find answers to common questions about treatments, facilities, and your healing journey
+                </p>
+              </div>
+              <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+                {faqItems.map((it, idx) => (
+                  <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                    <AccordionTrigger className="hover:no-underline py-4">
+                      <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pb-6 bg-white">
+                      <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{it.answer}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
+          {(contactAddress.length > 0 || contactWebsite) && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Address</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.map((l, i) => (
+                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Phone</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactPhones.map((p, i) => (
+                            <span key={i}>{p}{i < contactPhones.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Email</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactEmails.map((e, i) => (
+                            <span key={i}>{e}{i < contactEmails.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                    {contactWebsite && (
+                      <div className="flex items-start gap-3">
+                        <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Website</h4>
+                          <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                            <a href={contactWebsite.startsWith("http") ? contactWebsite : `https://${contactWebsite}`} target="_blank" rel="noreferrer" className="underline hover:text-primary">
+                              {contactWebsite}
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                {contactDistances.length > 0 && (
+                  <div className="mt-6">
+                    <h3 className="text-xl font-semibold text-primary mb-2">Distance from Major Locations</h3>
+                    <ul className="space-y-2">
+                      {contactDistances.map((d, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">•</span>
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {transportText && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                    <div className="flex items-start gap-4">
+                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>{transportText}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          <div className="mb-12">
+            <div className="rounded-3xl p-10" style={{ backgroundColor: "#234A50" }}>
+              <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Sanjeevanam Ayurveda Hospital
+</h2>
+              <p className="text-center text-white/90 mb-6"></p>
+              <div className="flex items-center justify-center">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Your Consultation Today
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
