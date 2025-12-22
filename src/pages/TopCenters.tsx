@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki"];
   
   const treatments = [
     "All",
@@ -220,6 +220,24 @@ const TopCenters = () => {
       image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
       locationText: "Kochi, Kerala, India",
       slug: "kerala/sanjeevanam-ayurveda-hospital" as string | undefined,
+    },
+    {
+      name: "Back to Roots Ayurveda Retreat",
+      city: "Idukki",
+      description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Pain Management",
+        "Stress Relief",
+        "Lakeside Retreat",
+      ],
+      rating: 4.9,
+      reviews: 100,
+      priceRange: "$$$",
+      image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+      locationText: "Idukki, Kerala, India",
+      slug: "kerala/back-to-roots" as string | undefined,
     },
   ];
 

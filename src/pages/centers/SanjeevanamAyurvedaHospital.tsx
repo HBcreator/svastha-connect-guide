@@ -1058,7 +1058,7 @@ export default function SanjeevanamAyurvedaHospital() {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1000+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1700+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
