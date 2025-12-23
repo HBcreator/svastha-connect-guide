@@ -24,33 +24,6 @@ const CenterDetail = () => {
     website: string;
     images: string[];
   }> = {
-    "back-to-roots": {
-      id: "back-to-roots",
-      name: "Back to Roots Ayurveda Retreat",
-      city: "Idukki",
-      region: "Kerala",
-      description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
-      specialties: ["Panchakarma", "Authentic Ayurveda", "Pain Management", "Stress Relief", "Lakeside Retreat"],
-      rating: 4.9,
-      reviews: [
-        {
-          text: "An amazing experience rediscovering authentic Ayurveda.",
-          source: "Google Reviews"
-        }
-      ],
-      highlights: [
-        "4th generation Ayurvedic physicians",
-        "NABH-accredited retreat",
-        "Classical Panchakarma",
-        "Pristine lakeside setting",
-        "Focus on pure, undiluted Ayurveda"
-      ],
-      website: "#",
-      images: [
-        "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-        "/Center Images/Back to Roots Ayurveda Retreat/CTA.jpg"
-      ]
-    },
     veda5: {
       id: "veda5",
       name: "Veda5 Ayurveda & Yoga Retreat",
