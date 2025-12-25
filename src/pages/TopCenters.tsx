@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam"];
   
   const treatments = [
     "All",
@@ -238,6 +238,24 @@ const TopCenters = () => {
       image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
       locationText: "Idukki, Kerala, India",
       slug: "kerala/back-to-roots" as string | undefined,
+    },
+    {
+      name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+      city: "Kayamkulam",
+      description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Backwater Retreat",
+        "Pain Management",
+        "Stress Relief",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+      locationText: "Kayamkulam, Kerala, India",
+      slug: "kerala/dhathri-ayurveda" as string | undefined,
     },
   ];
 
