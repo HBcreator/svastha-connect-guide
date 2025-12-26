@@ -1301,9 +1301,9 @@ export default function DhathriAyurvedicHospital() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center md:justify-items-stretch">
                   {facilityCards.map((card, idx) => (
-                    <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                    <Card key={idx} className="w-full max-w-sm md:max-w-none group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
                       <CardContent className="p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
