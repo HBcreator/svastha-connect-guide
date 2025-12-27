@@ -257,6 +257,26 @@ const TopCenters = () => {
       locationText: "Kayamkulam, Kerala, India",
       slug: "kerala/dhathri-ayurveda" as string | undefined,
     },
+    {
+      name: "Krishnendu Ayurveda Hospital",
+      city: "Alappuzha",
+      description: "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Pain Management",
+        "Backwater Retreat",
+        "Arthritis Care",
+        "PCOD/PCOS Treatment",
+        "Anti-Aging Therapy",
+      ],
+      rating: 4.9,
+      reviews: 1500,
+      priceRange: "$$$",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
+      locationText: "Alappuzha, Kerala, India",
+      slug: "kerala/krishnendu-ayurveda-hospital" as string | undefined,
+    },
   ];
 
   return (
