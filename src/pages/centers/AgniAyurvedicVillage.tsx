@@ -995,7 +995,7 @@ export default function AgniAyurvedicVillage() {
             </CardContent>
           </Card>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
+          <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: "#EDE8D0" }}>
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
@@ -1032,13 +1032,13 @@ export default function AgniAyurvedicVillage() {
 
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
-                <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-5 md:px-8 data-[state=open]:border-green-500 transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 text-left">
+                    <div className="flex items-center gap-2 md:gap-3 w-full">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                         {iconForTitle(p.title)}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-primary">{p.title}</span>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -1061,7 +1061,7 @@ export default function AgniAyurvedicVillage() {
             </Accordion>
           </div>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
@@ -1074,13 +1074,13 @@ export default function AgniAyurvedicVillage() {
 
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
-                <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-5 md:px-8 data-[state=open]:border-blue-500 transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 text-left">
+                    <div className="flex items-center gap-2 md:gap-3 w-full">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                         {medicalIconForTitle(p.title)}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-primary">{p.title}</span>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
