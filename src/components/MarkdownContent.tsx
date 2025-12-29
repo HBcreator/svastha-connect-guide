@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 
 interface MarkdownContentProps {
   contentPath: string;
+  h3ClassName?: string;
+  titleClassName?: string;
 }
 
-const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
+const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath, h3ClassName, titleClassName }) => {
   const [content, setContent] = useState<string>('')
 
   useEffect(() => {
@@ -31,6 +33,9 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
     const lines = text.split('\n')
     const elements: React.ReactNode[] = []
     let listItems: { items: string[]; marker: '*' | '-' } | null = null
+
+    const h3Cls = h3ClassName ?? "text-2xl font-medium text-primary"
+    const titleCls = titleClassName ?? "text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
 
     const flushList = () => {
       if (!listItems) return
@@ -60,14 +65,14 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
       if (/^[*-]\s+###\s+/.test(line)) {
         flushList()
         const headerText = line.replace(/^[*-]\s+###\s+/, '')
-        elements.push(<h3 key={`h3-${elements.length}`} className="text-2xl font-medium text-primary">{headerText}</h3>)
+        elements.push(<h3 key={`h3-${elements.length}`} className={h3Cls}>{headerText}</h3>)
         continue
       }
 
       if (/^###\s+/.test(line)) {
         flushList()
         const headerText = line.replace(/^###\s+/, '')
-        elements.push(<h3 key={`h3-${elements.length}`} className="text-2xl font-medium text-primary">{headerText}</h3>)
+        elements.push(<h3 key={`h3-${elements.length}`} className={h3Cls}>{headerText}</h3>)
         continue
       }
 
@@ -83,7 +88,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
         const innerBold = line.replace(/^[*-]\s+/, '')
         const innerText = innerBold.slice(2, -2)
         if (innerText.length > 30) {
-          elements.push(<div key={`title-${elements.length}`} className="text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2">{innerText}</div>)
+          elements.push(<div key={`title-${elements.length}`} className={titleCls}>{innerText}</div>)
         } else {
           elements.push(<div key={`sub-${elements.length}`} className="text-lg font-semibold text-primary">{innerText}</div>)
         }
@@ -94,7 +99,7 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath }) => {
         flushList()
         const inner = line.slice(2, -2)
         if (inner.length > 30) {
-          elements.push(<div key={`title-${elements.length}`} className="text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2">{inner}</div>)
+          elements.push(<div key={`title-${elements.length}`} className={titleCls}>{inner}</div>)
         } else {
           elements.push(<div key={`sub-${elements.length}`} className="text-lg font-semibold text-primary">{inner}</div>)
         }

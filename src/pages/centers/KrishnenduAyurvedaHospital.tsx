@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import MarkdownContent from "@/components/MarkdownContent";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, X, Users, TrendingUp, Heart, Droplet, Brain, Sparkles, ShieldCheck, HeartPulse, Activity, UserCheck, Stethoscope, Pill, Award, Leaf, Hospital, Home, Utensils, Globe, TreePine, Building2, ClipboardList, FileSearch, Phone, MessageCircle } from "lucide-react";
+import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, X, Users, TrendingUp, Heart, Droplet, Brain, Sparkles, ShieldCheck, HeartPulse, Activity, UserCheck, Stethoscope, Pill, Award, Leaf, Hospital, Home, Utensils, Globe, TreePine, Building2, ClipboardList, FileSearch, Phone, Mail, MessageCircle, MessageCircleHeart } from "lucide-react";
 
 function VideoThumbnail({
   src,
@@ -145,6 +145,21 @@ export default function KrishnenduAyurvedaHospital() {
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
   const founderImage = "/Center%20Images/Krishnendu%20Ayurveda%20Hospital/Founder%20and%20Team/Founder.webp";
   const teamImage = "/Center%20Images/Krishnendu%20Ayurveda%20Hospital/Founder%20and%20Team/Team.webp";
+  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number }[]>([]);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [insuranceIntro, setInsuranceIntro] = useState("");
+  const [insuranceBullets, setInsuranceBullets] = useState<string[]>([]);
+  const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
+  const [internationalText, setInternationalText] = useState("");
+  const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
+
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactPhones, setContactPhones] = useState<string[]>([]);
+  const [contactEmails, setContactEmails] = useState<string[]>([]);
+  const [contactWebsite, setContactWebsite] = useState("");
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
 
   useEffect(() => {
     fetch("/Center Images/Krishnendu Ayurveda Hospital/Photo Gallery/Photo Gallery Links.txt")
@@ -159,6 +174,116 @@ export default function KrishnenduAyurvedaHospital() {
         setLightboxImage(0);
       })
       .catch((err) => console.error("Error loading Krishnendu photo gallery links:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Krishnendu Ayurveda Hospital/Frequently Asked Questions.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { question: string; answer: string }[] = [];
+        let currentQ = "";
+        let currentA = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (currentQ) items.push({ question: currentQ, answer: currentA });
+            currentQ = line.slice(2, -2).replace(/^\d+\.\s*/, "");
+            currentA = "";
+            continue;
+          }
+          currentA = currentA ? `${currentA} ${line}` : line;
+        }
+        if (currentQ) items.push({ question: currentQ, answer: currentA });
+        setFaqItems(items);
+      })
+      .catch((err) => console.error("Error loading Krishnendu FAQs:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Krishnendu Ayurveda Hospital/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let section: "none" | "address" | "phones" | "emails" | "website" | "distances" | "transport" = "none";
+        const addr: string[] = [];
+        const phones: string[] = [];
+        const emails: string[] = [];
+        const dists: string[] = [];
+        let site = "";
+        let transport = "";
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            section = "none";
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("address")) {
+              section = "address";
+              continue;
+            }
+            if (t.includes("phone")) {
+              section = "phones";
+              continue;
+            }
+            if (t.includes("email")) {
+              section = "emails";
+              continue;
+            }
+            if (t.includes("website")) {
+              section = "website";
+              continue;
+            }
+            if (t.includes("distance")) {
+              section = "distances";
+              continue;
+            }
+            if (t.includes("transportation")) {
+              section = "transport";
+              continue;
+            }
+          }
+
+          if (section === "address") {
+            addr.push(line);
+            continue;
+          }
+          if (section === "phones") {
+            if (/^\*/.test(line)) phones.push(line.replace(/^\*+\s*/, ""));
+            else phones.push(line);
+            continue;
+          }
+          if (section === "emails") {
+            if (/^\*/.test(line)) emails.push(line.replace(/^\*+\s*/, ""));
+            else emails.push(line);
+            continue;
+          }
+          if (section === "website") {
+            site = site ? `${site} ${line}` : line;
+            continue;
+          }
+          if (section === "distances") {
+            if (line.startsWith("*")) dists.push(line.replace(/^\*+\s*/, ""));
+            continue;
+          }
+          if (section === "transport") {
+            transport = transport ? `${transport} ${line}` : line;
+            continue;
+          }
+        }
+
+        setContactAddress(addr);
+        setContactPhones(phones);
+        setContactEmails(emails);
+        setContactWebsite(site);
+        setContactDistances(dists);
+        setTransportText(transport);
+      })
+      .catch((err) => console.error("Error loading Krishnendu contact info:", err));
   }, []);
 
   useEffect(() => {
@@ -524,6 +649,85 @@ export default function KrishnenduAyurvedaHospital() {
     return <Heart className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
   };
 
+  useEffect(() => {
+    fetch("/content/Top Centers/Krishnendu Ayurveda Hospital/Patient Stories & Reviews.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = [];
+        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null;
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          // rating lines come wrapped in ** ... **; handle them before header detection
+          if (/^\*\*Rating:\s*.*\*\*$/.test(line)) {
+            const m = line.match(/\((\d+)\/\d+\)/);
+            if (m && current) current.rating = parseInt(m[1], 10);
+            continue;
+          }
+          const head = line.match(/^\*\*(.+)\*\*$/);
+          if (head) {
+            const full = head[1].trim();
+            if (/^rating:/i.test(full)) {
+              const m = full.match(/\((\d+)\/\d+\)/);
+              if (m && current) current.rating = parseInt(m[1], 10);
+              continue;
+            }
+            if (current) items.push(current);
+            const parts = full.split(",");
+            const name = (parts.shift() || "").trim();
+            const location = parts.map((p) => p.trim()).join(", ");
+            current = { name, location, condition: "", title: "", review: "", rating: 5 };
+            // find next non-empty line for title
+            let j = i + 1;
+            while (j < lines.length && !lines[j]) j++;
+            const next = lines[j] || "";
+            if (/^\*.*\*$/.test(next)) {
+              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
+              current.title = t;
+              current.condition = t;
+              i = j;
+            }
+            continue;
+          }
+          if (current) {
+            // skip decorative title lines wrapped in *...*
+            if (/^\*.*\*$/.test(line)) continue;
+            current.review = current.review ? `${current.review} ${line}` : line;
+          }
+        }
+        if (current) items.push(current);
+        setTestimonials(items);
+      })
+      .catch((err) => console.error("Error loading Krishnendu reviews:", err));
+  }, []);
+
+  useEffect(() => {
+    if (!isReviewAutoPlaying || testimonials.length === 0) return;
+    const id = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isReviewAutoPlaying, testimonials.length]);
+
+  const goToPreviousReview = () => {
+    setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsReviewAutoPlaying(true);
+  };
+  const goToNextReview = () => {
+    setCurrentReview((prev) => (prev + 1) % testimonials.length);
+    setIsReviewAutoPlaying(true);
+  };
+
+  const renderStars = (rating: number) => (
+    <div className="flex gap-1">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className={`h-5 w-5 ${i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+      ))}
+    </div>
+  );
+
   const medicalIconForTitle = (t: string) => {
     const s = t.toLowerCase();
     if (s.includes("panchakarma") || s.includes("detox")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
@@ -537,6 +741,42 @@ export default function KrishnenduAyurvedaHospital() {
     if (s.includes("digest") || s.includes("ibs") || s.includes("gerd") || s.includes("gut")) return <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
   };
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Krishnendu Ayurveda Hospital/Insurance & Payment Info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const ins: string[] = [];
+        const pay: string[] = [];
+        let intl = "";
+        let section: "intro" | "ins" | "pay" | "intl" = "intro";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) { section = "intro"; continue; }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("insurance")) { section = "ins"; continue; }
+            if (t.includes("payment")) { section = "pay"; continue; }
+            if (t.includes("international")) { section = "intl"; continue; }
+          }
+          if (line.startsWith("*")) {
+            const bullet = line.replace(/^\*+\s*/, "");
+            if (section === "ins") ins.push(bullet);
+            else if (section === "pay") pay.push(bullet);
+            continue;
+          }
+          if (section === "intro") intro = intro ? `${intro} ${line}` : line;
+          else if (section === "intl") intl = intl ? `${intl} ${line}` : line;
+        }
+        setInsuranceIntro(intro);
+        setInsuranceBullets(ins);
+        setPaymentBullets(pay);
+        setInternationalText(intl);
+      })
+      .catch((err) => console.error("Error loading Krishnendu insurance content:", err));
+  }, []);
 
   const whyIconForTitle = (t: string) => {
     const s = t.toLowerCase();
@@ -1407,15 +1647,260 @@ export default function KrishnenduAyurvedaHospital() {
                     </ul>
                   </CardContent>
                 </Card>
-                <button onClick={prevTeam} className="absolute -left-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous team card">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-                <button onClick={nextTeam} className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next team card">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
               </div>
             </div>
           </div>
+
+          {testimonials.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+                <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
+              </div>
+              <div className="relative min-h-[420px] md:min-h-[480px]">
+                <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+                  <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                    <div className="max-w-4xl mx-auto flex flex-col h-full">
+                      <div className="text-primary/20 mb-3 md:mb-4">
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H13v6h3z" /></svg>
+                      </div>
+                      <div className="mb-4 md:mb-6 flex-1">
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                          "{testimonials[currentReview].review}"
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                          {testimonials[currentReview].name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                          </div>
+                          <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                            {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 md:gap-3">
+                        {renderStars(testimonials[currentReview].rating)}
+                        <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+                {isReviewAutoPlaying && (
+                  <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Auto
+                  </div>
+                )}
+                <div className="flex justify-center gap-2 mt-4">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setCurrentReview(i);
+                        setIsReviewAutoPlaying(true);
+                      }}
+                      className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                      aria-label={`Go to review ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {(insuranceBullets.length > 0 || paymentBullets.length > 0 || internationalText) && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <ShieldCheck className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>{insuranceIntro}</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {insuranceBullets.length > 0 && (
+                  <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                          <ShieldCheck className="h-6 w-6 text-green-600" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
+                      </div>
+                      <ul className="space-y-3">
+                        {insuranceBullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">✓</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                )}
+                {paymentBullets.length > 0 && (
+                  <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                    <CardContent className="p-8">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                          <Pill className="h-6 w-6 text-blue-600" />
+                        </div>
+                        <h3 className="text-xl font-bold text-primary">Payment Options</h3>
+                      </div>
+                      <ul className="space-y-3">
+                        {paymentBullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">✓</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+              {internationalText && (
+                <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
+                        <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{internationalText}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
+
+          {faqItems.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <MessageCircleHeart className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>Find answers to common questions about treatments, facilities, and your healing journey</p>
+              </div>
+              <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+                {faqItems.map((it, idx) => (
+                  <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                    <AccordionTrigger className="hover:no-underline py-4">
+                      <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pb-6 bg-white">
+                      <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{it.answer}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
+          {(contactAddress.length > 0 || contactWebsite) && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Address</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.map((l, i) => (
+                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Phone</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactPhones.map((p, i) => (
+                            <span key={i}>{p}{i < contactPhones.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Email</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactEmails.map((e, i) => (
+                            <span key={i}>{e}{i < contactEmails.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Website</h4>
+                        <p className="break-all leading-relaxed" style={{ color: "#7F543D" }}>{contactWebsite}</p>
+                      </div>
+                    </div>
+
+                    {contactDistances.length > 0 && (
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {transportText && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                    <div className="flex items-start gap-4">
+                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>{transportText}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          <div className="mb-12">
+            <div className="rounded-3xl p-10" style={{ backgroundColor: "#234A50" }}>
+              <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Krishnendu Ayurveda Hospital</h2>
+              <p className="text-center text-white/90 mb-6"></p>
+              <div className="flex items-center justify-center">
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Your Consultation Today
+                </Button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
