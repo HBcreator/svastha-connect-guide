@@ -733,7 +733,7 @@ export default function BackToRoots() {
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
       <div className="container mx-auto px-3 md:px-4 py-12 max-w-full">
         <div className="max-w-6xl mx-auto">
@@ -978,35 +978,39 @@ export default function BackToRoots() {
           )}
 
           <Card className="mb-12">
-            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
-            <MarkdownContent contentPath="/content/Top Centers/Back to Roots Ayurveda Retreat/main content.txt" />
-          </CardContent>
-        </Card>
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Top Centers/Back to Roots Ayurveda Retreat/main content.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-medium text-primary"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+              />
+            </CardContent>
+          </Card>
 
-        <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
-          <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
-            <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
-              <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
-                <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
+            <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1200+</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
               </div>
-              <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1200+</div>
-              <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
-            </div>
-            <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
-              <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
-                <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.9</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Average Rating</div>
               </div>
-              <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.5/5</div>
-              <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Average Rating</div>
-            </div>
-            <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
-              <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
-                <TrendingUp className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <TrendingUp className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">98%</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
               </div>
-              <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">98%</div>
-              <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
             </div>
-          </div>
 
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
@@ -1022,11 +1026,11 @@ export default function BackToRoots() {
             {programs.map((p, idx) => (
               <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
                 <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                       {iconForTitle(p.title)}
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-primary text-left">{p.title}</span>
+                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -1064,11 +1068,11 @@ export default function BackToRoots() {
             {medicalPrograms.map((p, idx) => (
               <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
                 <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                       {medicalIconForTitle(p.title)}
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-primary text-left">{p.title}</span>
+                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -1137,8 +1141,8 @@ export default function BackToRoots() {
           </div>
           <div className="max-w-4xl mx-auto">
             {treatmentSteps.map((s, idx) => (
-              <div key={idx} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                <div className="flex flex-col items-center flex-shrink-0">
+              <div key={idx} className="relative flex flex-col md:flex-row items-start gap-4 md:gap-6 mb-8 md:mb-12 group">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     {s.number}
                   </div>
@@ -1146,9 +1150,12 @@ export default function BackToRoots() {
                     <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
                   )}
                 </div>
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
-                  <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                <Card className="relative flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                  <div className="md:hidden absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shadow">
+                    {s.number}
+                  </div>
+                  <CardContent className="p-4 pt-8 md:p-6">
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pr-10 md:pr-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         {treatmentIconForTitle(s.title)}
                       </div>
@@ -1399,42 +1406,48 @@ export default function BackToRoots() {
               </div>
               <div className="relative">
                 <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all rounded-2xl shadow-lg">
-                  <CardContent className="p-6 md:p-10">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4">
-                      <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary">
-                        <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H11v6h3z" /></svg>
-                      </div>
-                    </div>
-                    <div className="mb-4 md:mb-6">
-                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
-                        "{testimonials[currentReview].review}"
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                  <CardContent className="p-6 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                    <div className="md:max-w-4xl md:mx-auto md:flex md:flex-col md:h-full">
+                      <div className="flex items-center gap-3 md:gap-4 mb-4">
+                        <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary">
+                          <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H11v6h3z" /></svg>
                         </div>
-                        <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                          {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                      </div>
+                      <div className="mb-4 md:mb-6 flex-1">
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+                          "{testimonials[currentReview].review}"
                         </p>
                       </div>
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-3">
-                      {renderStars(testimonials[currentReview].rating)}
-                      <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                      <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                          </div>
+                          <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
+                            {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 md:gap-3">
+                        {renderStars(testimonials[currentReview].rating)}
+                        <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
+                <div className="absolute inset-y-0 left-0 flex items-center -translate-x-3 md:-translate-x-6">
+                  <button onClick={goToPreviousReview} className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                    <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center translate-x-3 md:translate-x-6">
+                  <button onClick={goToNextReview} className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                    <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                </div>
                 {isReviewAutoPlaying && (
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1544,7 +1557,7 @@ export default function BackToRoots() {
         </div>
       </div>
       )}
-      {(contactAddress.length > 0 || contactWebsite) && (
+      {contactAddress.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
           <div className="max-w-6xl mx-auto mt-6">
             <Card className="mb-12 border-2 border-primary overflow-hidden">
@@ -1563,37 +1576,8 @@ export default function BackToRoots() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                        <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactPhones.map((p, i) => (
-                            <span key={i}>{p}{i < contactPhones.length - 1 ? <br /> : null}</span>
-                          ))}
-                        </p>
-                      </div>
-                    </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Email</h4>
-                        <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactEmails.map((e, i) => (
-                            <span key={i}>{e}{i < contactEmails.length - 1 ? <br /> : null}</span>
-                          ))}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Website</h4>
-                        <p className="break-all leading-relaxed" style={{ color: '#7F543D' }}>{contactWebsite}</p>
-                      </div>
-                    </div>
                     {contactDistances.length > 0 && (
                       <div className="flex items-start gap-3">
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1605,6 +1589,20 @@ export default function BackToRoots() {
                         </div>
                       </div>
                     )}
+
+                    <div className="rounded-xl overflow-hidden border border-border">
+                      <div className="relative w-full aspect-video">
+                        <iframe
+                          title="Back to Roots Ayurveda Retreat & Hospital Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251210.1451997347!2d76.28492809728836!3d10.329196192074253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080189a808a451%3A0x24cd37de024a9832!2sBack%20to%20Roots%20Ayurveda%20Retreat%20%26%20Hospital!5e0!3m2!1sen!2sin!4v1767100956942!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {transportText && (

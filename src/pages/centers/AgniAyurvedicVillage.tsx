@@ -1462,12 +1462,16 @@ export default function AgniAyurvedicVillage() {
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
+                <div className="absolute inset-y-0 left-0 flex items-center -translate-x-3 md:-translate-x-6">
+                  <button onClick={goToPreviousReview} className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                    <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center translate-x-3 md:translate-x-6">
+                  <button onClick={goToNextReview} className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                    <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                </div>
                 {isReviewAutoPlaying && (
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
