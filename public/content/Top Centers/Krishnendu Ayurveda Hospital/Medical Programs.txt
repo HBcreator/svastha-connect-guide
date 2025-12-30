@@ -2,7 +2,7 @@
 
 Our medical programs unite Four generations of expertise treating chronic conditions at the root.
 
-**Back Pain & Spine Care**
+**Back & Spine Care**
 
 This is an intensive program designed to provide lasting relief from chronic lower back pain, sciatica, and disc-related issues. We focus on healing the root cause of your discomfort by reducing inflammation and strengthening your entire spinal structure.
 
@@ -12,7 +12,7 @@ This is an intensive program designed to provide lasting relief from chronic low
 
 *   Combines Ayurvedic therapies with physiotherapy support to restore your natural, pain-free mobility.
 
-**Knee Pain & Arthritis Care**
+**Knee & Arthritis Care**
 
 Rediscover the freedom of comfortable movement with our specialized program for knee pain and arthritis. We go beyond painkillers to reduce inflammation, improve joint lubrication, and help you walk with confidence again.
 
@@ -22,7 +22,7 @@ Rediscover the freedom of comfortable movement with our specialized program for 
 
 *   Reduces pain and swelling with potent, anti-inflammatory herbal poultice massages.
 
-**Neck Pain & Cervical Spondylosis**
+**Cervical Spondylosis**
 
 Free yourself from the constant stiffness, shoulder pain, and headaches caused by cervical spondylosis. Our gentle yet powerful program is designed to relieve nerve compression and restore pain-free movement to your neck.
 
@@ -32,7 +32,7 @@ Free yourself from the constant stiffness, shoulder pain, and headaches caused b
 
 *   Receive practical guidance on posture and simple exercises to prevent future strain from desk work.
 
-**Skin Disorder Treatment**
+**Skin Disorder**
 
 Heal your skin from the inside out with our holistic dermatology programs. We treat the root cause of chronic conditions like psoriasis and eczema by focusing on deep detoxification and blood purification to pacify the underlying imbalances.
 
@@ -42,7 +42,7 @@ Heal your skin from the inside out with our holistic dermatology programs. We tr
 
 *   A natural, steroid-free path to managing chronic and recurring skin diseases.
 
-**Lifestyle Disease Management**
+**Lifestyle Disease**
 
 Take control of your metabolic health with our holistic program for managing diabetes, hypertension, and high cholesterol. We focus on correcting the root cause of these conditions to help you reduce your dependency on long-term medication.
 
@@ -52,7 +52,7 @@ Take control of your metabolic health with our holistic program for managing dia
 
 *   Empowers you with sustainable lifestyle changes to prevent future complications.
 
-**Paralysis & Stroke Rehabilitation**
+**Paralysis & Stroke**
 
 This is an intensive and supportive program designed to help patients regain function and independence after a stroke or paralysis. We combine powerful, nerve-nourishing Ayurvedic therapies with modern physiotherapy to achieve the best possible recovery outcome.
 
@@ -62,7 +62,7 @@ This is an intensive and supportive program designed to help patients regain fun
 
 *   A compassionate and dedicated approach to helping you regain your independence.
 
-**Women's Health (PCOD & Infertility)**
+**Women's Health**
 
 We offer a compassionate and effective clinical approach to managing gynaecological disorders. Our programs focus on correcting hormonal imbalances to treat conditions like PCOS, endometriosis, and to provide natural support for fertility challenges.
 
@@ -72,7 +72,7 @@ We offer a compassionate and effective clinical approach to managing gynaecologi
 
 *   A gentle and nourishing path to restoring female reproductive health and supporting fertility.
 
-**Digestive Disorder Management**
+**Digestive Disorder**
 
 Restore the health of your gut with our specialized programs for digestive diseases. We treat the root cause of conditions like IBS, chronic acidity, and constipation by healing the gut lining and rebalancing your digestive fire (*Agni*).
 

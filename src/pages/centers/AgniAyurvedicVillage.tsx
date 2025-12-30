@@ -1032,18 +1032,18 @@ export default function AgniAyurvedicVillage() {
 
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
-                <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-5 md:px-8 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 text-left">
+                <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-4">
                     <div className="flex items-center gap-2 md:gap-3 w-full">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                         {iconForTitle(p.title)}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
+                      <span className="text-lg font-semibold text-primary text-left">{p.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                  <AccordionContent className="pt-4 pb-6 bg-white">
                     {p.description && (
-                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      <p className="text-sm leading-relaxed text-left mb-4" style={{ color: "#7F543D" }}>
                         {p.description}
                       </p>
                     )}
@@ -1074,18 +1074,18 @@ export default function AgniAyurvedicVillage() {
 
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
-                <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-5 md:px-8 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 text-left">
+                <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-4">
                     <div className="flex items-center gap-2 md:gap-3 w-full">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                         {medicalIconForTitle(p.title)}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
+                      <span className="text-lg font-semibold text-primary text-left">{p.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                  <AccordionContent className="pt-4 pb-6 bg-white">
                     {p.description && (
-                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
+                      <p className="text-sm leading-relaxed text-left mb-4" style={{ color: '#7F543D' }}>
                         {p.description}
                       </p>
                     )}

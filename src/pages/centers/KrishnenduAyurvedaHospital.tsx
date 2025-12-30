@@ -1056,7 +1056,7 @@ export default function KrishnenduAyurvedaHospital() {
                         Back
                       </Button>
                       <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                        Krishnendu Ayurveda Hospital
+                        Krishnendu Gallery
                       </div>
                     </div>
 
@@ -1157,8 +1157,12 @@ export default function KrishnenduAyurvedaHospital() {
       <div className="container mx-auto px-3 md:px-4 py-12 max-w-full">
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12">
-            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
-              <MarkdownContent contentPath="/content/Top Centers/Krishnendu Ayurveda Hospital/Main content.txt" />
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Top Centers/Krishnendu Ayurveda Hospital/Main content.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+              />
             </CardContent>
           </Card>
 
@@ -1169,7 +1173,7 @@ export default function KrishnenduAyurvedaHospital() {
                   <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                     <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                   </div>
-                  <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1000+</div>
+                  <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1500+</div>
                   <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
                 </div>
                 <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -1331,8 +1335,8 @@ export default function KrishnenduAyurvedaHospital() {
               </div>
               <div className="max-w-4xl mx-auto">
                 {treatmentSteps.map((s, idx) => (
-                  <div key={idx} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                    <div className="flex flex-col items-center flex-shrink-0">
+                  <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                    <div className="hidden md:flex flex-col items-center flex-shrink-0">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                         {s.number}
                       </div>
@@ -1340,13 +1344,16 @@ export default function KrishnenduAyurvedaHospital() {
                         <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
                       )}
                     </div>
-                    <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                    <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                       <CardContent className="p-4 md:p-6">
-                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                        <div className="md:hidden absolute top-3 right-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                          {s.number}
+                        </div>
+                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pr-12 md:pr-0">
                           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                             {treatmentIconForTitle(s.title)}
                           </div>
-                          <h3 className="text-base md:text-xl font-bold text-primary">{s.title}</h3>
+                          <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
                         </div>
                         <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>{s.description}</p>
                         {s.bullets && s.bullets.length > 0 && (
@@ -1809,7 +1816,7 @@ export default function KrishnenduAyurvedaHospital() {
             </div>
           )}
 
-          {(contactAddress.length > 0 || contactWebsite) && (
+          {contactAddress.length > 0 && (
             <Card className="mb-12 border-2 border-primary overflow-hidden">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
@@ -1826,39 +1833,9 @@ export default function KrishnenduAyurvedaHospital() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                          {contactPhones.map((p, i) => (
-                            <span key={i}>{p}{i < contactPhones.length - 1 ? <br /> : null}</span>
-                          ))}
-                        </p>
-                      </div>
-                    </div>
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Email</h4>
-                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                          {contactEmails.map((e, i) => (
-                            <span key={i}>{e}{i < contactEmails.length - 1 ? <br /> : null}</span>
-                          ))}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-primary mb-1">Website</h4>
-                        <p className="break-all leading-relaxed" style={{ color: "#7F543D" }}>{contactWebsite}</p>
-                      </div>
-                    </div>
-
                     {contactDistances.length > 0 && (
                       <div className="flex items-start gap-3">
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1870,6 +1847,20 @@ export default function KrishnenduAyurvedaHospital() {
                         </div>
                       </div>
                     )}
+
+                    <div className="rounded-xl overflow-hidden border border-border">
+                      <div className="relative w-full aspect-video">
+                        <iframe
+                          title="Krishnendu Ayurveda Hospital Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7016.669555706909!2d76.44534201305241!3d9.246744976263127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a079fa3c46ff%3A0x54fb85371060750b!2sKrishnendu%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767093052032!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -1906,6 +1897,15 @@ export default function KrishnenduAyurvedaHospital() {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+      </button>
     </div>
   );
 }
