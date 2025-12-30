@@ -1694,6 +1694,15 @@ export default function BackToRoots() {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+      </button>
     </div>
   );
 }
