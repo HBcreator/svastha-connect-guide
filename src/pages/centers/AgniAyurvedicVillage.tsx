@@ -1030,7 +1030,7 @@ export default function AgniAyurvedicVillage() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: '#1A428A' }}>
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
@@ -1072,7 +1072,7 @@ export default function AgniAyurvedicVillage() {
 
           <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-orange-500 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>

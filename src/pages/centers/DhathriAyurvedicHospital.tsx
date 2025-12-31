@@ -761,18 +761,22 @@ export default function DhathriAyurvedicHospital() {
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
               <Button
-                variant={!showVideoGallery ? "default" : "outline"}
+                variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 Photo Gallery
               </Button>
               <Button
-                variant={showVideoGallery ? "default" : "outline"}
+                variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1009,6 +1013,11 @@ export default function DhathriAyurvedicHospital() {
                 contentPath="/content/Top%20Centers/Dhathri%20Ayurveda%20Hospital/Main%20Content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === "quote") {
+                    setQuoteModalOpen(true);
+                  }
+                }}
               />
             </CardContent>
           </Card>
@@ -1039,7 +1048,7 @@ export default function DhathriAyurvedicHospital() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-400 mb-4">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
@@ -1053,7 +1062,7 @@ export default function DhathriAyurvedicHospital() {
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
                   <AccordionTrigger className="hover:no-underline py-3 md:py-4">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 border-2 border-green-400 flex items-center justify-center flex-shrink-0">
                         {iconForTitle(p.title)}
                       </div>
                       <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -1081,7 +1090,7 @@ export default function DhathriAyurvedicHospital() {
 
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-400 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
@@ -1095,7 +1104,7 @@ export default function DhathriAyurvedicHospital() {
                 <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
                   <AccordionTrigger className="hover:no-underline py-3 md:py-4">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center flex-shrink-0">
                         {medicalIconForTitle(p.title)}
                       </div>
                       <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -1442,10 +1451,10 @@ export default function DhathriAyurvedicHospital() {
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute -left-1 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                <button onClick={goToPreviousReview} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
                   <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <button onClick={goToNextReview} className="absolute -right-1 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                <button onClick={goToNextReview} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
                   <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
@@ -1669,6 +1678,7 @@ export default function DhathriAyurvedicHospital() {
       >
         <Phone size={20} />
         <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
       </button>
     </div>
   );
