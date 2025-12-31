@@ -1178,10 +1178,10 @@ export default function DhathriAyurvedicHospital() {
                   </div>
                   <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                     <CardContent className="p-4 md:p-6">
-                      <div className="md:hidden absolute top-3 right-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
                         {s.number ?? idx + 1}
                       </div>
-                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pr-12 md:pr-0">
+                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                         <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                           {treatmentIconForTitle(s.title)}
                         </div>
@@ -1442,11 +1442,11 @@ export default function DhathriAyurvedicHospital() {
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute -left-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                <button onClick={goToPreviousReview} className="absolute -left-1 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <button onClick={goToNextReview} className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                <button onClick={goToNextReview} className="absolute -right-1 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
               <div className="flex justify-center gap-2 mt-6">
@@ -1554,7 +1554,7 @@ export default function DhathriAyurvedicHospital() {
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
@@ -1569,8 +1569,6 @@ export default function DhathriAyurvedicHospital() {
                       </p>
                     </div>
                   </div>
-                </div>
-                <div className="space-y-4">
                   {contactDistances.length > 0 && (
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1584,7 +1582,8 @@ export default function DhathriAyurvedicHospital() {
                       </div>
                     </div>
                   )}
-
+                </div>
+                <div>
                   <div className="rounded-xl overflow-hidden border border-border">
                     <div className="relative w-full aspect-video">
                       <iframe

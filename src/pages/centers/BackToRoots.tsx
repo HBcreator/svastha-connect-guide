@@ -1564,7 +1564,7 @@ export default function BackToRoots() {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div>
@@ -1576,8 +1576,6 @@ export default function BackToRoots() {
                         </p>
                       </div>
                     </div>
-                  </div>
-                  <div className="space-y-4">
                     {contactDistances.length > 0 && (
                       <div className="flex items-start gap-3">
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1589,7 +1587,8 @@ export default function BackToRoots() {
                         </div>
                       </div>
                     )}
-
+                  </div>
+                  <div>
                     <div className="rounded-xl overflow-hidden border border-border">
                       <div className="relative w-full aspect-video">
                         <iframe

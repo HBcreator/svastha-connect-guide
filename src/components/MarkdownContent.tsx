@@ -4,9 +4,10 @@ interface MarkdownContentProps {
   contentPath: string;
   h3ClassName?: string;
   titleClassName?: string;
+  onLinkClick?: (action: string) => void;
 }
 
-const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath, h3ClassName, titleClassName }) => {
+const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath, h3ClassName, titleClassName, onLinkClick }) => {
   const [content, setContent] = useState<string>('')
 
   useEffect(() => {
@@ -40,7 +41,13 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath, h3ClassN
   }
 
   const processInline = (text: string) => {
-    const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g)
+    // Regex matches:
+    // 1. **bold**
+    // 2. *italic*
+    // 3. <bold>bold</bold>
+    // 4. <center>...</center>
+    // 5. [text](action:...) - Custom action link
+    const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|<bold>[^<]+<\/bold>|<center>[\s\S]*?<\/center>|\[.*?\]\(action:.*?\))/g)
     return parts.map((part, i) => {
       if (part.startsWith('**') && part.endsWith('**')) {
         const inner = part.slice(2, -2)
@@ -49,6 +56,37 @@ const MarkdownContent: React.FC<MarkdownContentProps> = ({ contentPath, h3ClassN
       if (part.startsWith('*') && part.endsWith('*')) {
         const inner = part.slice(1, -1)
         return <em key={i}>{renderWithBreaks(inner)}</em>
+      }
+      if (part.startsWith('<bold>') && part.endsWith('</bold>')) {
+        const inner = part.slice(6, -7)
+        return <strong key={i} className="font-semibold">{renderWithBreaks(inner)}</strong>
+      }
+      if (part.startsWith('[') && part.includes('](action:')) {
+         const match = part.match(/^\[(.*?)\]\(action:(.*?)\)$/);
+         if (match) {
+           const linkText = match[1];
+           const action = match[2];
+           return (
+             <span 
+               key={i} 
+               className="text-primary underline cursor-pointer hover:text-primary/80 font-bold"
+               onClick={() => onLinkClick && onLinkClick(action)}
+             >
+               {renderWithBreaks(linkText)}
+             </span>
+           );
+         }
+      }
+      if (part.startsWith('<center>') && part.endsWith('</center>')) {
+        const inner = part.slice(8, -9)
+        const processedInner = processInline(inner)
+        // Check if the inner content starts with ###
+        if (inner.trim().startsWith('### ')) {
+           const headerText = inner.trim().replace(/^###\s+/, '')
+           // Recursively process inline elements within the header
+           return <div key={i} className="text-center w-full block"><h3 className={h3ClassName || "text-2xl font-medium text-primary"}>{processInline(headerText)}</h3></div>
+        }
+        return <div key={i} className="text-center w-full block">{processedInner}</div>
       }
       return <span key={i}>{renderWithBreaks(part)}</span>
     })
