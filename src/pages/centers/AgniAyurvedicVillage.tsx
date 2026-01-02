@@ -1042,7 +1042,7 @@ export default function AgniAyurvedicVillage() {
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2" style={{ borderColor: '#1A428A' }}>
                         {iconForTitle(p.title)}
@@ -1084,7 +1084,7 @@ export default function AgniAyurvedicVillage() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
                 <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-orange-500">
                         {medicalIconForTitle(p.title)}
@@ -1200,7 +1200,7 @@ export default function AgniAyurvedicVillage() {
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-                  <img src="/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg" alt="Agni Ayurvedic Village" className="w-full h-auto rounded-xl mb-4 object-cover" />
+                  <img src="/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg" alt="Agni Ayurvedic Village" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
                     Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
@@ -1244,7 +1244,7 @@ export default function AgniAyurvedicVillage() {
                   </div>
                 </div>
                 <div>
-                  <img src="/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg" alt="Agni Ayurvedic Village" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover" />
+                  <img src="/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg" alt="Agni Ayurvedic Village" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -1587,7 +1587,7 @@ export default function AgniAyurvedicVillage() {
             <Card className="mb-12 border-2 border-primary overflow-hidden">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1612,18 +1612,20 @@ export default function AgniAyurvedicVillage() {
                       </div>
                     )}
                   </div>
-                  <div>
-                    <div className="rounded-xl overflow-hidden border border-border">
-                      <div className="relative w-full aspect-video">
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
                         <iframe
                           title="Agni Ayurvedic Village Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.0254596342747!2d73.17885199999999!3d19.0626182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9545a5c1413%3A0x79f664c1d0e0c35c!2sAgni%20-%20Ayurvedic%20Village!5e0!3m2!1sen!2sin!4v1767013545591!5m2!1sen!2sin"
+                          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7542.037100494718!2d73.178251!3d19.062922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9545a5c1413%3A0x79f664c1d0e0c35c!2sAgni%20-%20Ayurvedic%20Village!5e0!3m2!1sen!2sin!4v1767340989783!5m2!1sen!2sin"
                           className="absolute inset-0 h-full w-full"
                           style={{ border: 0 }}
                           allowFullScreen
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
                         />
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -1644,14 +1646,45 @@ export default function AgniAyurvedicVillage() {
           )}
 
           <div className="mb-12">
-            <div className="rounded-3xl p-10" style={{ backgroundColor: '#234A50' }}>
-              <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Ayurvedic Village</h2>
-              <p className="text-center text-white/90 mb-6"></p>
-              <div className="flex items-center justify-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Your Consultation Today
-                </Button>
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-white/10 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Agni - Ayurvedic Village/CTA-bottom.jpg"
+                    alt="Agni Ayurvedic Village"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Ayurvedic Village</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Calendar className="mr-2 h-5 w-5" />
+                      Book Your Consultation Today
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Ayurvedic Village</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Calendar className="mr-2 h-5 w-5" />
+                      Book Your Consultation Today
+                    </Button>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Agni - Ayurvedic Village/CTA-bottom.jpg"
+                    alt="Agni Ayurvedic Village"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
           </div>
