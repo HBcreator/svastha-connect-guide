@@ -2,7 +2,7 @@
 
 Healing beyond symptoms: An integrative, physician-led journey to restore your lasting health.
 
-**Pain & Arthritis Management**
+**Arthritis Management**
 
 This is a clinical program focused on treating the root cause of chronic joint pain. Our integrative approach combines the powerful anti-inflammatory therapies of Ayurveda with the functional restoration of modern physiotherapy to manage conditions like osteoarthritis and rheumatoid arthritis.
 
@@ -12,7 +12,7 @@ This is a clinical program focused on treating the root cause of chronic joint p
 
 *   Aims to reduce dependency on painkillers and prevent further joint degeneration.
 
-**Diabetes & Metabolic Disorders**
+**Diabetes Disorders**
 
 Take control of your metabolic health with our holistic, physician-led diabetes program. We use modern diagnostics to monitor your progress while applying Ayurvedic principles to correct your metabolism, improve insulin sensitivity, and prevent long-term complications.
 
@@ -32,7 +32,7 @@ This specialized program is designed to treat and manage degenerative and injury
 
 *   A powerful, non-invasive alternative to long-term pain medication or surgery.
 
-**Weight Management (Obesity)**
+**Weight Management**
 
 This is a medically supervised program for treating the disease of obesity and its related health risks. We focus on correcting deep-seated metabolic pathways and hormonal imbalances to facilitate safe, sustainable weight loss and improve your overall health.
 
@@ -42,7 +42,7 @@ This is a medically supervised program for treating the disease of obesity and i
 
 *   Focuses on correcting your body's metabolism for lasting, healthy results.
 
-**Neurological Rehabilitation**
+**Neurological Detox**
 
 We offer a supportive and nourishing clinical program for the management and rehabilitation of neurological disorders. Our integrative team combines Ayurvedic nerve-nourishing therapies with modern physiotherapy to help regain function and improve quality of life.
 
@@ -52,7 +52,7 @@ We offer a supportive and nourishing clinical program for the management and reh
 
 *   Aims to improve motor function, reduce stiffness, and help you regain independence.
 
-**Women's Health & Gynaecology**
+**Women's Health**
 
 We offer a compassionate and effective clinical approach to managing gynaecological disorders. Our integrative program uses the wisdom of Ayurveda to correct hormonal imbalances and treat conditions like PCOS, endometriosis, and severe menstrual irregularities.
 
@@ -62,7 +62,7 @@ We offer a compassionate and effective clinical approach to managing gynaecologi
 
 *   A gentle and nourishing path to restoring female reproductive health.
 
-**Digestive Disease Management**
+**Digestive Disease**
 
 Restore the health of your gut with our specialized programs for digestive diseases. We treat the root cause of conditions like IBS, IBD (Crohn's, Colitis), and GERD by healing the gut lining, reducing inflammation, and rebalancing your digestive fire (*Agni*).
 
@@ -72,7 +72,7 @@ Restore the health of your gut with our specialized programs for digestive disea
 
 *   Aims to restore a healthy gut microbiome for long-term digestive wellness.
 
-**Skin Disorder Treatment (Dermatology)**
+**Skin Care**
 
 Heal your skin from the inside out with our clinical dermatology programs. We treat the root cause of chronic skin diseases like psoriasis and eczema by focusing on deep detoxification and blood purification to pacify the underlying autoimmune response.
 

@@ -927,18 +927,22 @@ export default function KrishnenduAyurvedaHospital() {
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
               <Button
-                variant={!showVideoGallery ? "default" : "outline"}
+                variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 Photo Gallery
               </Button>
               <Button
-                variant={showVideoGallery ? "default" : "outline"}
+                variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1162,6 +1166,11 @@ export default function KrishnenduAyurvedaHospital() {
                 contentPath="/content/Top Centers/Krishnendu Ayurveda Hospital/Main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === 'quote') {
+                    setQuoteModalOpen(true);
+                  }
+                }}
               />
             </CardContent>
           </Card>
@@ -1193,7 +1202,7 @@ export default function KrishnenduAyurvedaHospital() {
               </div>
 
               <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2" style={{ borderColor: '#1A428A' }}>
                   <Heart className="h-8 w-8 text-green-600" />
                 </div>
                 <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
@@ -1209,9 +1218,9 @@ export default function KrishnenduAyurvedaHospital() {
                     value={`prog-${idx}`}
                     className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
                   >
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
                       <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2" style={{ borderColor: '#1A428A' }}>
                           {iconForTitle(p.title)}
                         </div>
                         <span className="text-base md:text-lg font-semibold text-primary">{p.title}</span>
@@ -1241,7 +1250,7 @@ export default function KrishnenduAyurvedaHospital() {
           {medicalPrograms.length > 0 && (
             <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
               <div className="text-center mb-8">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-orange-500">
                   <Stethoscope className="h-8 w-8 text-blue-600" />
                 </div>
                 <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
@@ -1257,9 +1266,9 @@ export default function KrishnenduAyurvedaHospital() {
                     value={`med-${idx}`}
                     className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
                   >
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
                       <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-orange-500">
                           {medicalIconForTitle(p.title)}
                         </div>
                         <span className="text-base md:text-lg font-semibold text-primary">{p.title}</span>
@@ -1346,10 +1355,10 @@ export default function KrishnenduAyurvedaHospital() {
                     </div>
                     <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                       <CardContent className="p-4 md:p-6">
-                        <div className="md:hidden absolute top-3 right-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                        <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
                           {s.number}
                         </div>
-                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pr-12 md:pr-0">
+                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                             {treatmentIconForTitle(s.title)}
                           </div>
@@ -1381,7 +1390,7 @@ export default function KrishnenduAyurvedaHospital() {
                   <img
                     src="/Center%20Images/Krishnendu%20Ayurveda%20Hospital/CTA.jpg"
                     alt="Krishnendu Ayurveda Hospital"
-                    className="w-full h-auto rounded-xl mb-4 object-cover"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: "#7F543D" }}>
@@ -1438,7 +1447,7 @@ export default function KrishnenduAyurvedaHospital() {
                   <img
                     src="/Center%20Images/Krishnendu%20Ayurveda%20Hospital/CTA.jpg"
                     alt="Krishnendu Ayurveda Hospital"
-                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                 </div>
               </div>
@@ -1696,12 +1705,16 @@ export default function KrishnenduAyurvedaHospital() {
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
+                <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                  <button onClick={goToPreviousReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                  <button onClick={goToNextReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
                 {isReviewAutoPlaying && (
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1820,7 +1833,7 @@ export default function KrishnenduAyurvedaHospital() {
             <Card className="mb-12 border-2 border-primary overflow-hidden">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
                   <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1846,18 +1859,20 @@ export default function KrishnenduAyurvedaHospital() {
                     )}
                   </div>
 
-                  <div>
-                    <div className="rounded-xl overflow-hidden border border-border">
-                      <div className="relative w-full aspect-video">
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
                         <iframe
                           title="Krishnendu Ayurveda Hospital Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7016.669555706909!2d76.44534201305241!3d9.246744976263127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a079fa3c46ff%3A0x54fb85371060750b!2sKrishnendu%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767093052032!5m2!1sen!2sin"
+                          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15751.794750700657!2d76.453061!3d9.248883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a079fa3c46ff%3A0x54fb85371060750b!2sKrishnendu%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767357973799!5m2!1sen!2sin"
                           className="absolute inset-0 h-full w-full"
                           style={{ border: 0 }}
                           allowFullScreen
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
                         />
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -1879,14 +1894,66 @@ export default function KrishnenduAyurvedaHospital() {
           )}
 
           <div className="mb-12">
-            <div className="rounded-3xl p-10" style={{ backgroundColor: "#234A50" }}>
-              <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Krishnendu Ayurveda Hospital</h2>
-              <p className="text-center text-white/90 mb-6"></p>
-              <div className="flex items-center justify-center">
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Your Consultation Today
-                </Button>
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Krishnendu Ayurveda Hospital/CTA-bottom.jpg"
+                    alt="Krishnendu Ayurveda Hospital"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Krishnendu Ayurveda Hospital</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Krishnendu Ayurveda Hospital</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Krishnendu Ayurveda Hospital/CTA-bottom.jpg"
+                    alt="Krishnendu Ayurveda Hospital"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -1904,6 +1971,7 @@ export default function KrishnenduAyurvedaHospital() {
       >
         <Phone size={20} />
         <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
       </button>
     </div>
   );
