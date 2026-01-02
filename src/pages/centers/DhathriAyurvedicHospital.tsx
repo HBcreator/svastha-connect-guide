@@ -1060,7 +1060,7 @@ export default function DhathriAyurvedicHospital() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-400">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 border-2 border-green-400 flex items-center justify-center flex-shrink-0">
                         {iconForTitle(p.title)}
@@ -1102,7 +1102,7 @@ export default function DhathriAyurvedicHospital() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
                 <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-400">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 border-2 border-blue-400 flex items-center justify-center flex-shrink-0">
                         {medicalIconForTitle(p.title)}
@@ -1218,7 +1218,7 @@ export default function DhathriAyurvedicHospital() {
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-                  <img src="/Center%20Images/Dhathri%20Ayurveda%20Resort/CTA.jpg" alt="Dhathri Ayurveda Hospital" className="w-full h-auto rounded-xl mb-4 object-cover" />
+                  <img src="/Center%20Images/Dhathri%20Ayurveda%20Resort/CTA.jpg" alt="Dhathri Ayurveda Hospital" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
                     Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
@@ -1232,6 +1232,10 @@ export default function DhathriAyurvedicHospital() {
                       <MessageCircle className="mr-2 h-5 w-5" />
                       Chat With Us
                     </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-5 w-5 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
                   </div>
                 </div>
               </div>
@@ -1251,6 +1255,10 @@ export default function DhathriAyurvedicHospital() {
                       <MessageCircle className="mr-2 h-5 w-5" />
                       Chat With Us
                     </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-5 w-5 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
                   </div>
                 </div>
                 <div>
@@ -1562,7 +1570,7 @@ export default function DhathriAyurvedicHospital() {
           <Card className="mb-12 border-2 border-primary overflow-hidden">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
                 <div className="space-y-6">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1592,18 +1600,20 @@ export default function DhathriAyurvedicHospital() {
                     </div>
                   )}
                 </div>
-                <div>
-                  <div className="rounded-xl overflow-hidden border border-border">
-                    <div className="relative w-full aspect-video">
+                <div className="md:-mt-16 self-start">
+                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden">
+                    <div className="relative w-full aspect-[800/600]">
                       <iframe
                         title="Dhathri Ayurveda Hospital Map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86588.17807529352!2d76.44180279053303!3d9.170377350907332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Centre!5e0!3m2!1sen!2sin!4v1767098734600!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252070.24919101104!2d76.468624!3d9.190718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Centre!5e0!3m2!1sen!2sin!4v1767348975908!5m2!1sen!2sin"
                         className="absolute inset-0 h-full w-full"
                         style={{ border: 0 }}
                         allowFullScreen
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                       />
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -1626,14 +1636,66 @@ export default function DhathriAyurvedicHospital() {
         )}
 
         <div className="mb-12">
-          <div className="rounded-3xl p-10" style={{ backgroundColor: "#234A50" }}>
-            <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
-            <p className="text-center text-white/90 mb-6"></p>
-            <div className="flex items-center justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                <Calendar className="mr-2 h-5 w-5" />
-                Book Your Consultation Today
-              </Button>
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <img
+                  src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                  alt="Dhathri Ayurveda Hospital"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <Phone className="h-4 w-4 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <Phone className="h-5 w-5 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                  alt="Dhathri Ayurveda Hospital"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+              </div>
             </div>
           </div>
         </div>

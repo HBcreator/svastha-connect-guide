@@ -1648,34 +1648,55 @@ export default function AgniAyurvedicVillage() {
           <div className="mb-12">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
               <div className="md:hidden">
-                <div className="max-w-sm mx-auto bg-white/10 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                   <img
                     src="/Center Images/Agni - Ayurvedic Village/CTA-bottom.jpg"
                     alt="Agni Ayurvedic Village"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
-                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Ayurvedic Village</h2>
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Agni Ayurvedic Village</h2>
                   <div className="space-y-3">
                     <Button
                       size="lg"
-                      className="w-full rounded-full bg-white text-primary hover:bg-white/90"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
                       onClick={() => setQuoteModalOpen(true)}
                     >
-                      <Calendar className="mr-2 h-5 w-5" />
-                      Book Your Consultation Today
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
                     </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
                 </div>
               </div>
 
               <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Ayurvedic Village</h2>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Agni Ayurvedic Village</h2>
                   <div className="flex flex-wrap gap-3">
                     <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                      <Calendar className="mr-2 h-5 w-5" />
-                      Book Your Consultation Today
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
                     </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
                 </div>
                 <div>
