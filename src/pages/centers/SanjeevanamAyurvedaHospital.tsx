@@ -71,14 +71,14 @@ export default function SanjeevanamAyurvedaHospital() {
         const links = text.split("\n").map((l) => l.trim()).filter((l) => l);
         setImages(links);
       })
-      .catch(() => {});
+      .catch(() => { });
     fetch("/Center Videos/sanjeevanam/videos/Video links.txt")
       .then((res) => res.text())
       .then((text) => {
         const links = text.split("\n").map((l) => l.trim()).filter((l) => l);
         setVideos(links);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -119,7 +119,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setContactDistances(dists);
         setTransportText(transport);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -144,7 +144,7 @@ export default function SanjeevanamAyurvedaHospital() {
         if (currentQ) items.push({ question: currentQ, answer: currentA });
         setFaqItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -185,7 +185,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setWellnessIntro(intro);
         setPrograms(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -226,7 +226,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setMedicalIntro(intro);
         setMedicalPrograms(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -267,7 +267,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setWhyIntro(intro);
         setWhyItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -310,7 +310,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setTreatmentIntro(intro);
         setTreatmentSteps(steps);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -320,7 +320,7 @@ export default function SanjeevanamAyurvedaHospital() {
         const links = text.split("\n").map((l) => l.trim()).filter((l) => l);
         setFacilityImages(links);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -356,7 +356,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setFacilitiesIntro(intro);
         setFacilityCards(cards);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -406,7 +406,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setPaymentBullets(pay);
         setInternationalText(intl);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -491,7 +491,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setTestimonials(items);
         setCurrentReview(0);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -571,7 +571,7 @@ export default function SanjeevanamAyurvedaHospital() {
         setCurrentTeamSlide(0);
         setIsTeamAutoPlaying(true);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const iconForTitle = (t: string) => {
@@ -701,26 +701,26 @@ export default function SanjeevanamAyurvedaHospital() {
     return t.includes("ayurveda") || t.includes("treatment") || t.includes("therapy")
       ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") || t.includes("consultation")
-      ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("room") || t.includes("accommodation")
-      ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal") || t.includes("kitchen") || t.includes("diet")
-      ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("physio") || t.includes("rehabilitation")
-      ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("diagnostic") || t.includes("laboratory") || t.includes("lab")
-      ? <FileSearch className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("location") || t.includes("accessibility") || t.includes("urban")
-      ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
-      ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("library") || t.includes("reading") || t.includes("education")
-      ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("nature")
-      ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital") || t.includes("accredited")
-      ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        ? <Stethoscope className="h-7 w-7 text-white" />
+        : t.includes("room") || t.includes("accommodation")
+          ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal") || t.includes("kitchen") || t.includes("diet")
+            ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("physio") || t.includes("rehabilitation")
+              ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("diagnostic") || t.includes("laboratory") || t.includes("lab")
+                ? <FileSearch className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("location") || t.includes("accessibility") || t.includes("urban")
+                  ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
+                    ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("library") || t.includes("reading") || t.includes("education")
+                      ? <Globe className="h-7 w-7 text-white" />
+                      : t.includes("garden") || t.includes("nature")
+                        ? <TreePine className="h-7 w-7 text-white" />
+                        : t.includes("nabh") || t.includes("hospital") || t.includes("accredited")
+                          ? <ShieldCheck className="h-7 w-7 text-white" />
+                          : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   useEffect(() => {
@@ -805,9 +805,8 @@ export default function SanjeevanamAyurvedaHospital() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -815,9 +814,8 @@ export default function SanjeevanamAyurvedaHospital() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1052,7 +1050,7 @@ export default function SanjeevanamAyurvedaHospital() {
 
           <Card className="mb-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
-              <MarkdownContent 
+              <MarkdownContent
                 contentPath="/content/Top Centers/Sanjeevanam Ayurvedic center/main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
@@ -1704,17 +1702,17 @@ export default function SanjeevanamAyurvedaHospital() {
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
-                      <div className="relative w-full aspect-[800/600]">
-                        <iframe
-                          title="Sanjeevanam Ayurveda Hospital Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8658011579437!2d76.38649077407801!3d10.027931272555449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080ba3ad719ed7%3A0x73774472f87b66ff!2sSanjeevanam%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767362638650!5m2!1sen!2sin"
-                          className="absolute inset-0 h-full w-full"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                        />
-                      </div>
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Sanjeevanam Ayurveda Hospital Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.8658011579437!2d76.38649077407801!3d10.027931272555449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080ba3ad719ed7%3A0x73774472f87b66ff!2sSanjeevanam%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767362638650!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1849,7 +1847,7 @@ export default function SanjeevanamAyurvedaHospital() {
           </div>
         </div>
       )}
-      
+
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 

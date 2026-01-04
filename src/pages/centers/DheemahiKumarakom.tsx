@@ -93,10 +93,9 @@ export default function DheemahiKumarakom() {
   const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
   const [internationalText, setInternationalText] = useState("");
   const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
-  const [contactCenters, setContactCenters] = useState<
-    { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string }[]
-  >([]);
-  const [reachInfo, setReachInfo] = useState<{ air?: string; train?: string; road?: string }>({});
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
+  const [howToReach, setHowToReach] = useState<{ mode: string; text: string }[]>([]);
   const renderStars = (rating: number) => {
     return (
       <div className="flex gap-1">
@@ -138,7 +137,7 @@ export default function DheemahiKumarakom() {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
         setImages(urls);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Patient Stories & Reviews.txt")
@@ -183,7 +182,7 @@ export default function DheemahiKumarakom() {
         if (curr) items.push(curr);
         setReviews(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     if (reviews.length === 0) return;
@@ -279,7 +278,7 @@ export default function DheemahiKumarakom() {
         setTeamDesc(tDesc);
         setTeamItems(tItems);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Insurance & Payment Info.txt")
@@ -308,7 +307,7 @@ export default function DheemahiKumarakom() {
         setPaymentBullets(pay);
         setInternationalText(intl);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Frequently Asked Questions.txt")
@@ -332,73 +331,73 @@ export default function DheemahiKumarakom() {
         if (currentQ) items.push({ question: currentQ, answer: currentA });
         setFaqItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/contact info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
-        const centers: { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string }[] = [];
-        let current: { name: string; address: string[]; phone?: string; mobile?: string; email?: string; website?: string } | null = null;
-        let inHowToReach = false;
-        let collectingAddress = false;
-        const reach: { air?: string; train?: string; road?: string } = {};
+        let section: "none" | "address" | "transport" | "reach" = "none";
+        const addr: string[] = [];
+        let transport = "";
+        const reach: { mode: string; text: string }[] = [];
+        let currentReach: { mode: string; text: string } | null = null;
+
         for (const line of lines) {
-          if (!line) {
-            collectingAddress = false;
+          if (!line) continue;
+          if (line.startsWith("### ")) { section = "none"; continue; }
+          // Dheemahi's file has explicit "Address:" start, handle it
+          if (/^Address:/i.test(line)) {
+            section = "address";
+            addr.push(line.replace(/^Address:\s*/i, ""));
             continue;
           }
+
+          // Check for section headers
           if (line.startsWith("**") && line.endsWith("**")) {
-            const title = line.slice(2, -2);
-            if (/^How to Reach/i.test(title)) {
-              if (current) {
-                centers.push(current);
-                current = null;
-              }
-              inHowToReach = true;
-              continue;
-            }
-            if (!inHowToReach) {
-              if (current) centers.push(current);
-              current = { name: title, address: [] };
-              collectingAddress = false;
-              continue;
-            }
+            const t = line.slice(2, -2);
+            const lowerT = t.toLowerCase();
+
+            if (lowerT.includes("address")) { section = "address"; continue; }
+            if (lowerT.includes("transportation")) { section = "transport"; continue; }
+            if (lowerT.includes("how to reach")) { section = "reach"; continue; }
           }
-          if (!inHowToReach && current) {
-            if (/^Address:/i.test(line)) {
-              collectingAddress = true;
+
+          if (section === "address") { addr.push(line); continue; }
+          if (section === "transport") { transport = transport ? `${transport} ${line}` : line; continue; }
+
+          if (section === "reach") {
+            // Handle "**By Mode:** Text" format
+            const modeMatch = line.match(/^\*\*(By\s+[^:]+):\*\*\s*(.*)/i);
+            if (modeMatch) {
+              if (currentReach) reach.push(currentReach);
+              currentReach = { mode: modeMatch[1], text: modeMatch[2] };
               continue;
             }
-            if (collectingAddress) {
-              if (/^(Phone|Mobile|Email|Website):/i.test(line)) {
-                collectingAddress = false;
-              } else {
-                current.address.push(line);
+            // Handle standard "**By Mode**" header if it exists separately
+            if (line.startsWith("**") && line.endsWith("**")) {
+              const t = line.slice(2, -2);
+              if (t.toLowerCase().startsWith("by ")) {
+                if (currentReach) reach.push(currentReach);
+                currentReach = { mode: t, text: "" };
                 continue;
               }
             }
-            if (/^Phone:/i.test(line)) current.phone = line.replace(/^Phone:\s*/i, "");
-            else if (/^Mobile:/i.test(line)) current.mobile = line.replace(/^Mobile:\s*/i, "");
-            else if (/^Email:/i.test(line)) current.email = line.replace(/^Email:\s*/i, "");
-            else if (/^Website:/i.test(line)) current.website = line.replace(/^Website:\s*/i, "");
+
+            if (currentReach) {
+              currentReach.text = currentReach.text ? `${currentReach.text} ${line}` : line;
+            }
             continue;
           }
-          if (inHowToReach) {
-            const air = line.match(/^\*\*By Air:\*\*\s*(.+)$/i);
-            const train = line.match(/^\*\*By Train:\*\*\s*(.+)$/i);
-            const road = line.match(/^\*\*By Road:\*\*\s*(.+)$/i);
-            if (air) reach.air = air[1];
-            else if (train) reach.train = train[1];
-            else if (road) reach.road = road[1];
-          }
         }
-        if (current) centers.push(current);
-        setContactCenters(centers);
-        setReachInfo(reach);
+        if (currentReach) reach.push(currentReach);
+
+        setContactAddress(addr);
+        setTransportText(transport);
+        setHowToReach(reach);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -434,7 +433,7 @@ export default function DheemahiKumarakom() {
         setWhyIntro(intro);
         setWhyItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const whyIconForTitle = (t: string) => {
@@ -453,7 +452,7 @@ export default function DheemahiKumarakom() {
   };
   const processIconForTitle = (t: string) => {
     const s = t.toLowerCase();
-    const cls = "h-7 w-7 text-white";
+    const cls = "h-5 w-5 md:h-6 md:w-6 text-primary";
     if (s.includes("pre-arrival") || s.includes("prearrival") || s.includes("pre arrival") || s.includes("preparation")) return <ClipboardList className={cls} />;
     if (s.includes("arrival") || s.includes("diagnosis")) return <FileSearch className={cls} />;
     if (s.includes("blueprint") || s.includes("personalized") || s.includes("plan")) return <ClipboardList className={cls} />;
@@ -485,7 +484,7 @@ export default function DheemahiKumarakom() {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
         setVideos(urls);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -525,7 +524,7 @@ export default function DheemahiKumarakom() {
     )
       .then((res) => res.text())
       .then((text) => setWrpSections(parseWRP(text)))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -565,7 +564,7 @@ export default function DheemahiKumarakom() {
     )
       .then((res) => res.text())
       .then((text) => setMedSections(parseMED(text)))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Treatment Process & Patient Journey.txt")
@@ -599,7 +598,7 @@ export default function DheemahiKumarakom() {
         setProcessIntro(intro);
         setProcessSteps(steps);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Facilities & Amenities.txt")
@@ -629,7 +628,7 @@ export default function DheemahiKumarakom() {
         setFacilitiesIntro(intro);
         setFacilityCards(cards);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/Center Images/Dheemahi Ayurvedic Centre/Facilities and Ameties/CDN-images data.txt")
@@ -638,7 +637,7 @@ export default function DheemahiKumarakom() {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
         setFacilityImages(urls);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     if (facilityLightboxOpen || facilityImages.length === 0) return;
@@ -732,18 +731,20 @@ export default function DheemahiKumarakom() {
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
               <Button
-                variant={!showVideoGallery ? "default" : "outline"}
+                variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
               <Button
-                variant={showVideoGallery ? "default" : "outline"}
+                variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -794,7 +795,7 @@ export default function DheemahiKumarakom() {
 
               <div className="flex flex-col md:flex-row gap-3 mb-6">
                 {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
-                <div 
+                <div
                   className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
                   onClick={() => {
                     setLightboxImage(0);
@@ -890,8 +891,13 @@ export default function DheemahiKumarakom() {
         {/* Content Section */}
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12">
-            <CardContent className="p-8 prose prose-lg max-w-none">
-              <MarkdownContent contentPath="/content/Dheemahi Ayurvedic Centre/Dheemahi Ayurvedic Centre.txt" />
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Dheemahi Ayurvedic Centre/Dheemahi Ayurvedic Centre.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={() => setQuoteModalOpen(true)}
+              />
             </CardContent>
           </Card>
 
@@ -921,7 +927,7 @@ export default function DheemahiKumarakom() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2 border-green-600">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
@@ -936,33 +942,33 @@ export default function DheemahiKumarakom() {
                 const Icon = /detox|panchakarma/i.test(sec.title)
                   ? Droplet
                   : /stress/i.test(sec.title)
-                  ? Brain
-                  : /rejuvenation|anti-?aging/i.test(sec.title)
-                  ? Sparkles
-                  : /immunity|preventive/i.test(sec.title)
-                  ? ShieldCheck
-                  : /beauty|skin/i.test(sec.title)
-                  ? Sparkles
-                  : /post[-\s]?illness|recovery/i.test(sec.title)
-                  ? Hospital
-                  : /karkidaka|monsoon/i.test(sec.title)
-                  ? Droplet
-                  : /pregnancy|prenatal|postnatal/i.test(sec.title)
-                  ? Heart
-                  : /elderly|senior/i.test(sec.title)
-                  ? Users
-                  : /weekend|escape/i.test(sec.title)
-                  ? Activity
-                  : Heart;
+                    ? Brain
+                    : /rejuvenation|anti-?aging/i.test(sec.title)
+                      ? Sparkles
+                      : /immunity|preventive/i.test(sec.title)
+                        ? ShieldCheck
+                        : /beauty|skin/i.test(sec.title)
+                          ? Sparkles
+                          : /post[-\s]?illness|recovery/i.test(sec.title)
+                            ? Hospital
+                            : /karkidaka|monsoon/i.test(sec.title)
+                              ? Droplet
+                              : /pregnancy|prenatal|postnatal/i.test(sec.title)
+                                ? Heart
+                                : /elderly|senior/i.test(sec.title)
+                                  ? Users
+                                  : /weekend|escape/i.test(sec.title)
+                                    ? Activity
+                                    : Heart;
                 return (
                   <AccordionItem
                     key={slug}
                     value={slug}
                     className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
                   >
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
                       <div className="flex items-center gap-2 md:gap-3 w-full min-w-0">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2 border-green-600">
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                         </div>
                         <span className="text-sm md:text-lg font-semibold text-primary whitespace-nowrap truncate flex-1 min-w-0 text-left">
@@ -995,7 +1001,7 @@ export default function DheemahiKumarakom() {
 
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-blue-600">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
@@ -1011,41 +1017,41 @@ export default function DheemahiKumarakom() {
                   /diabetes/i.test(sec.title)
                     ? Activity
                     : /(back pain|spinal)/i.test(sec.title)
-                    ? Activity
-                    : /(pcod|women)/i.test(sec.title)
-                    ? Heart
-                    : /(arthritis|joint)/i.test(sec.title)
-                    ? HeartPulse
-                    : /(mental|neurolog|stress)/i.test(sec.title)
-                    ? Brain
-                    : /(gastro|digest|ibs|gerd)/i.test(sec.title)
-                    ? Pill
-                    : /(chronic|complex|autoimmune)/i.test(sec.title)
-                    ? Hospital
-                    : /(cardio|heart)/i.test(sec.title)
-                    ? Heart
-                    : /(skin|psoriasis|eczema)/i.test(sec.title)
-                    ? Sparkles
-                    : /(weight|obesity)/i.test(sec.title)
-                    ? Activity
-                    : /(respiratory|asthma|bronchitis)/i.test(sec.title)
-                    ? ShieldCheck
-                    : /(thyroid)/i.test(sec.title)
-                    ? Activity
-                    : /(fatigue)/i.test(sec.title)
-                    ? Activity
-                    : /(dark circles)/i.test(sec.title)
-                    ? Sparkles
-                    : Heart;
+                      ? Activity
+                      : /(pcod|women)/i.test(sec.title)
+                        ? Heart
+                        : /(arthritis|joint)/i.test(sec.title)
+                          ? HeartPulse
+                          : /(mental|neurolog|stress)/i.test(sec.title)
+                            ? Brain
+                            : /(gastro|digest|ibs|gerd)/i.test(sec.title)
+                              ? Pill
+                              : /(chronic|complex|autoimmune)/i.test(sec.title)
+                                ? Hospital
+                                : /(cardio|heart)/i.test(sec.title)
+                                  ? Heart
+                                  : /(skin|psoriasis|eczema)/i.test(sec.title)
+                                    ? Sparkles
+                                    : /(weight|obesity)/i.test(sec.title)
+                                      ? Activity
+                                      : /(respiratory|asthma|bronchitis)/i.test(sec.title)
+                                        ? ShieldCheck
+                                        : /(thyroid)/i.test(sec.title)
+                                          ? Activity
+                                          : /(fatigue)/i.test(sec.title)
+                                            ? Activity
+                                            : /(dark circles)/i.test(sec.title)
+                                              ? Sparkles
+                                              : Heart;
                 return (
                   <AccordionItem
                     key={slug}
                     value={slug}
                     className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
                   >
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-600">
                       <div className="flex items-center gap-2 md:gap-3 w-full min-w-0">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-600">
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                         </div>
                         <span className="text-sm md:text-lg font-semibold text-primary whitespace-nowrap truncate flex-1 min-w-0 text-left">
@@ -1126,8 +1132,8 @@ export default function DheemahiKumarakom() {
             </div>
             <div className="max-w-4xl mx-auto">
               {processSteps.map((step, idx) => (
-                <div key={step.n} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                  <div className="flex flex-col items-center flex-shrink-0">
+                <div key={step.n} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                  <div className="hidden md:flex flex-col items-center flex-shrink-0">
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                       {step.n}
                     </div>
@@ -1135,10 +1141,13 @@ export default function DheemahiKumarakom() {
                       <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
                     )}
                   </div>
-                  <Card className="flex-1 group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                        {step.n}
+                      </div>
+                      <div className="flex items-center gap-3 mb-4 pl-12 md:pl-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                           {processIconForTitle(step.title)}
                         </div>
                         <h3 className="text-xl md:text-2xl font-bold text-primary">{step.title}</h3>
@@ -1172,7 +1181,7 @@ export default function DheemahiKumarakom() {
                   <img
                     src={"/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"}
                     alt="Dheemahi Kumarakom Ayurvedic Centre"
-                    className="w-full h-auto rounded-xl mb-4 object-cover"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: "#7F543D" }}>
@@ -1233,7 +1242,7 @@ export default function DheemahiKumarakom() {
                   <img
                     src={"/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"}
                     alt="Dheemahi Kumarakom Ayurvedic Centre"
-                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                 </div>
               </div>
@@ -1325,9 +1334,9 @@ export default function DheemahiKumarakom() {
                       </CardContent>
                     </Card>
                   ))}
-                  </div>
+                </div>
               </div>
-          </div>
+            </div>
           </div>
 
           <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
@@ -1479,14 +1488,14 @@ export default function DheemahiKumarakom() {
               </Card>
               <button
                 onClick={() => setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length)}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-2 md:-translate-x-2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
               <button
                 onClick={() => setCurrentReview((prev) => (prev + 1) % reviews.length)}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-2 md:translate-x-2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                 aria-label="Next review"
               >
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
@@ -1501,9 +1510,8 @@ export default function DheemahiKumarakom() {
                 <button
                   key={idx}
                   onClick={() => setCurrentReview(idx)}
-                  className={`transition-all rounded-full ${
-                    currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                  }`}
+                  className={`transition-all rounded-full ${currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    }`}
                   aria-label={`Go to review ${idx + 1}`}
                 />
               ))}
@@ -1597,20 +1605,19 @@ export default function DheemahiKumarakom() {
               </Accordion>
             </div>
           )}
-          {contactCenters.length > 0 && (
+          {contactAddress.length > 0 && (
             <Card className="mb-12 border-2 border-primary">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {contactCenters.map((c, idx) => (
-                    <div key={idx} className="space-y-4 min-w-0">
-                      <h3 className="text-xl font-bold text-primary break-words">{c.name}</h3>
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+                  <div className="space-y-6">
+                    <div className="space-y-4 min-w-0">
                       <div className="flex items-start gap-3 min-w-0">
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                         <div className="min-w-0">
                           <h4 className="font-semibold text-primary mb-1">Address</h4>
                           <p className="break-words whitespace-normal" style={{ color: "#7F543D" }}>
-                            {c.address.map((line, i) => (
+                            {contactAddress.map((line, i) => (
                               <span key={i}>
                                 {line}
                                 <br />
@@ -1619,94 +1626,123 @@ export default function DheemahiKumarakom() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-start gap-3 min-w-0">
-                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                          <p className="break-words whitespace-normal" style={{ color: "#7F543D" }}>
-                            {c.phone ? `${c.phone}` : ""}
-                            {c.mobile ? <><br />{`Mobile: ${c.mobile}`}</> : null}
-                          </p>
+                    </div>
+
+                    {howToReach.length > 0 && (
+                      <div className="mt-6 space-y-4">
+                        <h4 className="text-lg font-bold text-primary flex items-center gap-2">
+                          <MapPin className="h-5 w-5" />
+                          How to Reach
+                        </h4>
+                        <div className="space-y-4">
+                          {howToReach.map((item, index) => (
+                            <div key={index} className="space-y-1">
+                              <h5 className="font-semibold text-primary text-sm">{item.mode}</h5>
+                              <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>
+                                {processInlineFormatting(item.text)}
+                              </p>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                      <div className="flex items-start gap-3 min-w-0">
-                        <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-primary mb-1">Email</h4>
-                          <p className="break-all" style={{ color: "#7F543D" }}>{c.email}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3 min-w-0">
-                        <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div className="min-w-0">
-                          <h4 className="font-semibold text-primary mb-1">Website</h4>
-                          {c.website ? (
-                            <a
-                              href={c.website.startsWith("http") ? c.website : `https://${c.website}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary hover:underline break-all inline-block max-w-full"
-                            >
-                              {c.website}
-                            </a>
-                          ) : (
-                            <p style={{ color: "#7F543D" }}>—</p>
-                          )}
+                    )}
+                  </div>
+
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Dheemahi Ayurveda Centre Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2863.192817170326!2d76.53378337324679!3d9.622034079427932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062bf01a596b95%3A0xf3d02bd558e91d9d!2sDheemahi%20Ayurvedic%20Centre!5e1!3m2!1sen!2sin!4v1767542221087!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
                         </div>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-                {(reachInfo.air || reachInfo.train || reachInfo.road) && (
-                  <div className="mt-8 p-6 bg-primary/5 rounded-lg">
-                    <h4 className="font-semibold text-primary mb-2">How to Reach</h4>
-                    <div className="space-y-2" style={{ color: "#7F543D" }}>
-                      {reachInfo.air && (
-                        <p>
-                          <span className="font-semibold text-primary">By Air: </span>
-                          {reachInfo.air}
-                        </p>
-                      )}
-                      {reachInfo.train && (
-                        <p>
-                          <span className="font-semibold text-primary">By Train: </span>
-                          {reachInfo.train}
-                        </p>
-                      )}
-                      {reachInfo.road && (
-                        <p>
-                          <span className="font-semibold text-primary">By Road: </span>
-                          {reachInfo.road}
-                        </p>
-                      )}
+                {transportText && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                    <div className="flex items-start gap-4">
+                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                        <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                      </div>
                     </div>
                   </div>
                 )}
               </CardContent>
             </Card>
           )}
-          {contactCenters.length > 0 && (
-            <Card className="bg-primary text-primary-foreground">
-              <CardContent className="p-6 md:p-8 text-center">
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                  Begin Your Holistic Healing Journey at Dheemahi Ayurvedic Village
-                </h3>
-                <p className="mb-6 text-sm md:text-base lg:text-lg opacity-90 max-w-3xl mx-auto px-2">
-                </p>
-                <div className="flex justify-center">
+
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <img
+                  src="/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"
+                  alt="Dheemahi Ayurvedic Center"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Dheemahi Ayurvedic Village</h2>
+                <div className="space-y-3">
                   <Button
                     size="lg"
-                    variant="secondary"
-                    className="bg-white text-primary hover:bg-white/90 font-semibold text-xs md:text-sm px-4 py-5 md:px-8 md:py-6 w-full md:w-auto max-w-sm"
+                    className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
                     onClick={() => setQuoteModalOpen(true)}
                   >
-                    <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                    Book Your Consultation Today
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
                   </Button>
                 </div>
-              </CardContent>
-            </Card>
-          )}
+                <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <Phone className="h-4 w-4 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dheemahi Ayurvedic Village</h2>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <Phone className="h-5 w-5 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"
+                  alt="Dheemahi Ayurvedic Center"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+              </div>
+            </div>
+          </div>
 
           {facilityLightboxOpen && (
             <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
@@ -1874,6 +1910,16 @@ export default function DheemahiKumarakom() {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
     </div>
   );
 }
