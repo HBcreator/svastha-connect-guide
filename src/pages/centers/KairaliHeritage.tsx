@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import MarkdownContent from "@/components/MarkdownContent";
 import { MapPin, Star, Calendar, Phone, Mail, ChevronLeft, ChevronRight, ChevronDown, Video, Images, Users, TrendingUp, Heart, Droplet, Brain, Sparkles, Activity, ShieldCheck, ClipboardList, HeartPulse, Home, Stethoscope, Utensils, Award, TreePine, Globe, Building2, Pill, FileSearch, MessageCircle, CreditCard, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -51,6 +52,7 @@ export default function KairaliHeritage() {
   const [contactPhones, setContactPhones] = useState<string[]>([]);
   const [contactEmails, setContactEmails] = useState<string[]>([]);
   const [contactWebsite, setContactWebsite] = useState("");
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [contactAirportDistance, setContactAirportDistance] = useState("");
   const [contactTransportText, setContactTransportText] = useState("");
   const [contactBookingNotice, setContactBookingNotice] = useState("");
@@ -231,6 +233,7 @@ export default function KairaliHeritage() {
         setContactPhones(phones);
         setContactEmails(emails);
         setContactWebsite(website);
+        setContactDistances(distanceList);
         const airportLine = distanceList.find((d) => /International Airport/i.test(d)) || "Kannur International Airport: 16 km - 25 minutes drive";
         setContactAirportDistance(airportLine);
         setContactTransportText(transport.join(" "));
@@ -521,6 +524,7 @@ export default function KairaliHeritage() {
         const programs: { title: string; description: string; bullets: string[] }[] = [];
         let current: { title: string; description: string; bullets: string[] } | null = null;
         let seenHeading = false;
+        let introLines: string[] = [];
         for (const raw of lines) {
           const line = raw.trim();
           if (line.startsWith("### ")) { seenHeading = true; continue; }
@@ -533,7 +537,7 @@ export default function KairaliHeritage() {
           }
           if (!current) {
             if (line) {
-              setMedicalIntro((prev) => (prev ? prev + " " : "") + line);
+              introLines.push(line);
             }
             continue;
           }
@@ -546,6 +550,7 @@ export default function KairaliHeritage() {
           }
         }
         if (current) programs.push(current);
+        setMedicalIntro(introLines.join(" "));
         setMedicalPrograms(programs);
       })
       .catch(() => {});
@@ -771,18 +776,22 @@ export default function KairaliHeritage() {
             <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
               <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
                 <Button
-                  variant={!showVideoGallery ? "default" : "outline"}
+                  variant={!showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(false)}
-                  className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   Photo Gallery
                 </Button>
                 <Button
-                  variant={showVideoGallery ? "default" : "outline"}
+                  variant={showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(true)}
-                  className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -887,77 +896,93 @@ export default function KairaliHeritage() {
       </div>
 
       {lightboxOpen && (
-        <div
-          className="fixed inset-0 backdrop-blur-lg z-[70] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
-          onClick={() => setLightboxOpen(false)}
-        >
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">Kairali Heritage Resort</h2>
-          </div>
-
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
+          {/* Left Arrow (desktop only) */}
           <button
-            onClick={(e) => { e.stopPropagation(); setLightboxIndex((prev) => (prev - 1 + images.length) % images.length); }}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={() => setLightboxIndex((prev) => (prev - 1 + images.length) % images.length)}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Previous"
           >
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
-
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16" onClick={(e) => e.stopPropagation()}>
-            <div className="relative">
-              <img src={images[lightboxIndex]} alt={`Kairali ${lightboxIndex + 1}`} className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl" />
-              <button
-                onClick={() => setLightboxOpen(false)}
-                className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg"
-                aria-label="Close"
-              >
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
-                {lightboxIndex + 1} / {images.length}
-              </div>
-              <div className="md:hidden absolute -bottom-16 left-4 right-4 flex items-center justify-between">
-                <button onClick={() => setLightboxIndex((prev) => (prev - 1 + images.length) % images.length)} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Previous</button>
-                <button onClick={() => setLightboxIndex((prev) => (prev + 1) % images.length)} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Next</button>
-              </div>
-            </div>
-          </div>
-
+          {/* Right Arrow (desktop only) */}
           <button
-            onClick={(e) => { e.stopPropagation(); setLightboxIndex((prev) => (prev + 1) % images.length); }}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={() => setLightboxIndex((prev) => (prev + 1) % images.length)}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Next"
           >
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronRight className="h-6 w-6" />
           </button>
+
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+              Kairali Heritage Resort
+            </div>
+            <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+              <img
+                src={images[lightboxIndex]}
+                alt={`Kairali ${lightboxIndex + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <button
+                onClick={() => setLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                {lightboxIndex + 1} / {images.length}
+              </div>
+            </div>
+            {/* Mobile prev/next pills */}
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button
+                onClick={() => setLightboxIndex((prev) => (prev - 1 + images.length) % images.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={() => setLightboxIndex((prev) => (prev + 1) % images.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Next
+              </Button>
+            </div>
+          </div>
         </div>
       )}
 
       {showFullGallery && (
         <div
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
+          className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto"
           onClick={() => setShowFullGallery(false)}
         >
-          <div className="relative max-w-7xl w-full mt-12 bg-white/90 rounded-xl shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between px-4 py-3 border-b">
-              <Button variant="outline" onClick={() => setShowFullGallery(false)}>Back</Button>
-              <h2 className="text-xl md:text-2xl font-bold text-primary">Kairali Heritage Resort</h2>
-              <div className="w-16" />
-            </div>
-            <div className="p-4 overflow-auto max-h-[70vh]">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {images.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`Kairali ${i+1}`}
-                    className="w-full h-[160px] md:h-[220px] object-cover rounded-lg cursor-pointer"
-                    onClick={() => { setLightboxIndex(i); setShowFullGallery(false); setLightboxOpen(true); }}
-                  />
-                ))}
+          <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+              <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                Back
+              </Button>
+              <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                Kairali Heritage Resort
               </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {images.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative w-full cursor-pointer"
+                  style={{ paddingBottom: "75%" }}
+                  onClick={() => {
+                    setLightboxIndex(i);
+                    setLightboxOpen(true);
+                  }}
+                >
+                  <img src={img} alt={`Kairali ${i + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -967,7 +992,16 @@ export default function KairaliHeritage() {
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12 max-w-xs md:max-w-none mx-auto">
             <CardContent className="p-4 md:p-8 prose prose-sm md:prose-lg max-w-none">
-              {content ? renderContent() : <p>Loading content...</p>}
+              <MarkdownContent 
+                contentPath="/content/Top Centers/Kairali Heritage/Kairali Heritage.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === 'quote') {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
             </CardContent>
           </Card>
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
@@ -996,7 +1030,7 @@ export default function KairaliHeritage() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2 border-green-600">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h2>
@@ -1020,9 +1054,9 @@ export default function KairaliHeritage() {
                   : <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
                 return (
                   <AccordionItem key={idx} value={`program-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
                       <div className="flex items-center gap-2 md:gap-3 w-full justify-start">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2 border-green-600">
                           {icon}
                         </div>
                         <span className="flex-1 text-base md:text-lg font-semibold text-primary text-center md:text-left">{p.title}</span>
@@ -1053,7 +1087,7 @@ export default function KairaliHeritage() {
 
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-blue-600">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
@@ -1081,9 +1115,9 @@ export default function KairaliHeritage() {
                   : <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
                 return (
                   <AccordionItem key={idx} value={`medical-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-600">
                       <div className="flex items-center gap-2 md:gap-3 w-full justify-start">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-600">
                           {icon}
                         </div>
                         <span className="flex-1 text-base md:text-lg font-semibold text-primary text-center md:text-left">{p.title}</span>
@@ -1112,13 +1146,14 @@ export default function KairaliHeritage() {
             </Accordion>
           </div>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12">
-            <div className="text-center mb-8">
-              <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Why Choose Kairali Heritage for Your Holistic Health Journey</h2>
-              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
+          <div className="mb-12">
+            <div className="text-center mb-10">
+              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Kairali Heritage for Your Holistic Health Journey</h2>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
                 {whyIntro || "Discover what makes Kairali Heritage a unique destination for authentic Ayurvedic healing in North Kerala"}
               </p>
             </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {whyCards.map((c, idx) => {
                 const key = c.title.toLowerCase();
@@ -1142,10 +1177,10 @@ export default function KairaliHeritage() {
                           </div>
                           <h3 className="text-lg font-bold text-primary">{c.title}</h3>
                         </div>
-                        <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>{c.description}</p>
+                        <p className="text-sm leading-relaxed text-left" style={{ color: '#7F543D' }}>{c.description}</p>
                         {c.bullets && c.bullets.length > 0 && (
-                          <ul className="space-y-1.5">
-                            {c.bullets.map((b, i) => (
+                          <ul className="list-none pl-0 space-y-1.5">
+                            {c.bullets.slice(0, 3).map((b, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
                                 <span className="text-primary mt-1">✓</span>
                                 <span>{b}</span>
@@ -1180,8 +1215,8 @@ export default function KairaliHeritage() {
                   : key.includes('follow') || key.includes('maintenance') ? <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                   : <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
                 return (
-                  <div key={idx} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                    <div className="flex flex-col items-center flex-shrink-0">
+                  <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                    <div className="hidden md:flex flex-col items-center flex-shrink-0">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                         {s.number}
                       </div>
@@ -1189,13 +1224,16 @@ export default function KairaliHeritage() {
                         <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
                       )}
                     </div>
-                    <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                    <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                       <CardContent className="p-4 md:p-6">
-                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                        <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                          {s.number}
+                        </div>
+                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                             {icon}
                           </div>
-                          <h3 className="text-base md:text-xl font-bold text-primary">{s.title}</h3>
+                          <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
                         </div>
                         <p className="text-xs md:text-sm leading-relaxed" style={{ color: '#7F543D' }}>
                           {s.description}
@@ -1223,8 +1261,8 @@ export default function KairaliHeritage() {
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-                  <img src="/Center Images/Kairali Heritage/CTA image.jpg" alt="Kairali Heritage" className="w-full h-auto rounded-xl mb-4 object-cover" />
-                  <h3 className="text-xl font-bold text-primary text-center mb-3">Start Your Wellness Journey?</h3>
+                  <img src="/Center Images/Kairali Heritage/CTA image.jpg" alt="Kairali Heritage" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                  <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
                     Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
                   </p>
@@ -1272,7 +1310,7 @@ export default function KairaliHeritage() {
                   <img
                     src="/Center Images/Kairali Heritage/CTA image.jpg"
                     alt="Kairali Heritage"
-                    className="w-full h-auto rounded-2xl shadow-lg object-cover"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                 </div>
               </div>
@@ -1443,64 +1481,74 @@ export default function KairaliHeritage() {
           </div>
 
           {reviews.length > 0 && (
-            <div className="mb-12 rounded-3xl p-4 md:p-10 max-w-6xl mx-auto">
-              <div className="text-center mb-6 md:mb-10">
-                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
-                <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{reviewsIntro}</p>
-              </div>
-              <div className="relative">
-                <button
-                  onClick={() => { setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length); }}
-                  className="absolute -left-3 md:-left-5 top-1/2 -translate-y-1/2 z-10 bg-white text-primary p-2 rounded-full shadow-md hover:bg-white/90"
-                  aria-label="Previous review"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  onClick={() => { setCurrentReview((prev) => (prev + 1) % reviews.length); }}
-                  className="absolute -right-3 md:-right-5 top-1/2 -translate-y-1/2 z-10 bg-white text-primary p-2 rounded-full shadow-md hover:bg-white/90"
-                  aria-label="Next review"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-                <div className="bg-white rounded-2xl shadow-lg p-5 md:p-10">
-                  <div className="text-primary text-3xl mb-3">“”</div>
-                  <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>{reviews[currentReview].review}</p>
-                  <div className="mt-6 pt-4 border-t border-primary/10 flex items-center gap-4">
-                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 text-primary font-bold flex items-center justify-center">
-                      {reviews[currentReview].name.split(" ").map(n => n[0]).join("")}
+            <div className="container mx-auto px-3 md:px-4 max-w-full">
+              <div className="max-w-6xl mx-auto mt-6">
+                <div className="mb-12">
+                  <div className="text-center mb-6 md:mb-10">
+                    <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+                    <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
+                  </div>
+                  <div className="relative">
+                    <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all rounded-2xl shadow-lg">
+                      <CardContent className="p-6 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                        <div className="md:max-w-4xl md:mx-auto md:flex md:flex-col md:h-full">
+                          <div className="flex items-center gap-3 md:gap-4 mb-4">
+                            <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary">
+                              <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H11v6h3z" /></svg>
+                            </div>
+                          </div>
+                          <div className="mb-4 md:mb-6 flex-1">
+                            <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+                              "{reviews[currentReview].review}"
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                              {reviews[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                            </div>
+                            <div className="flex-1">
+                              <div className="flex items-center gap-2 mb-1">
+                                <h4 className="text-base md:text-xl font-semibold text-primary">{reviews[currentReview].name}</h4>
+                              </div>
+                              <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
+                                {reviews[currentReview].location} • {reviews[currentReview].subtitle}
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2 md:gap-3">
+                            {Array.from({ length: 5 }).map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-5 w-5 md:h-6 md:w-6 ${i < reviews[currentReview].rating ? 'text-yellow-500' : 'text-gray-300'}`}
+                              />
+                            ))}
+                            <span className="text-xs md:text-sm font-semibold text-primary">{reviews[currentReview].rating}.0</span>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                    <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                      <button onClick={() => { setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length); }} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                        <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                      </button>
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2">
-                        <p className="text-sm md:text-base font-semibold text-primary">{reviews[currentReview].name}</p>
-                        {reviews[currentReview].subtitle && (
-                          <span className="text-[10px] md:text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full">{reviews[currentReview].subtitle}</span>
-                        )}
+                    <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                      <button onClick={() => { setCurrentReview((prev) => (prev + 1) % reviews.length); }} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                        <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                      </button>
+                    </div>
+                    {isReviewAutoPlaying && (
+                      <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        Auto
                       </div>
-                      <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>{reviews[currentReview].location}</p>
-                      <div className="mt-3 flex items-center gap-1.5">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`h-5 w-5 md:h-6 md:w-6 ${i < reviews[currentReview].rating ? 'text-yellow-500' : 'text-gray-300'}`}
-                          />
-                        ))}
-                        <span className="ml-2 text-xs md:text-sm px-2 py-0.5 bg-primary/10 text-primary rounded-full">
-                          {reviews[currentReview].rating.toFixed(1)}
-                        </span>
-                      </div>
+                    )}
+                    <div className="flex justify-center gap-2 mt-4">
+                      {reviews.map((_, i) => (
+                        <button key={i} onClick={() => { setIsReviewAutoPlaying(true); setCurrentReview(i); }} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
+                      ))}
                     </div>
                   </div>
-                </div>
-                <div className="flex justify-center gap-2 mt-6">
-                  {reviews.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => { setCurrentReview(idx); }}
-                      className={`transition-all rounded-full ${idx === currentReview ? 'w-8 h-3 bg-primary' : 'w-3 h-3 bg-gray-300 hover:bg-primary/50'}`}
-                      aria-label={`Go to review ${idx + 1}`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>
@@ -1592,127 +1640,181 @@ export default function KairaliHeritage() {
             </div>
           </div>
 
-          <div className="mb-8 max-w-xs md:max-w-6xl mx-auto">
-            <div className="rounded-3xl bg-white border-2 border-primary shadow-md p-3 md:p-8">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                <div>
-                  <div className="flex items-start gap-3 mb-4">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <div>
-                      <p className="text-sm md:text-base font-semibold text-primary">Address</p>
-                      <div className="mt-1 space-y-1" style={{ color: '#7F543D' }}>
-                        {contactAddress.map((l, i) => (
-                          <p key={i} className="text-sm md:text-base">{l}</p>
-                        ))}
+          {contactAddress.length > 0 && (
+            <div className="container mx-auto px-3 md:px-4 max-w-full">
+              <div className="max-w-6xl mx-auto mt-6">
+                <div className="mb-12">
+                  <Card className="border-2 border-primary overflow-hidden">
+                    <CardContent className="p-6 md:p-8">
+                      <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">Contact Information</h2>
+                      <div className="grid gap-4 md:gap-6 md:grid-cols-[1fr_1.35fr]">
+                        <div className="space-y-4 md:space-y-6">
+                          <div className="flex items-start gap-3">
+                            <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                            <div>
+                              <h4 className="font-semibold text-primary mb-1">Address</h4>
+                              <p className="break-words leading-relaxed text-sm md:text-base" style={{ color: '#7F543D' }}>
+                                {contactAddress.map((l, i) => (
+                                  <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                                ))}
+                              </p>
+                            </div>
+                          </div>
+                          {contactDistances.length > 0 && (
+                            <div className="flex items-start gap-3">
+                              <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                              <div>
+                                <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                                <ul className="list-disc list-inside break-words leading-relaxed text-sm md:text-base" style={{ color: '#7F543D' }}>
+                                  {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                                </ul>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <div className="md:-mt-8 self-start">
+                          <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                            <div className="rounded-xl overflow-hidden">
+                            <div className="relative w-full aspect-[800/600]">
+                              <iframe
+                                title="Kairali Heritage Resort Map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.4844620741114!2d75.376571874104!3d11.940922936638218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43dcdaaaaaaab%3A0x841381b3eb708856!2sKairali%20Heritage%20River%20Side%20Resort!5e0!3m2!1sen!2sin!4v1767610469005!5m2!1sen!2sin"
+                                className="absolute inset-0 h-full w-full"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                              />
+                            </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-6 w-6 text-primary" />
-                    <div>
-                      <p className="text-sm md:text-base font-semibold text-primary">Phone</p>
-                      <div className="mt-1 space-y-1" style={{ color: '#7F543D' }}>
-                        {contactPhones.map((p, i) => (
-                          <p key={i} className="text-sm md:text-base">{p}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-start gap-3 mb-4">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <div>
-                      <p className="text-sm md:text-base font-semibold text-primary">Email</p>
-                      <div className="mt-1 space-y-1" style={{ color: '#7F543D' }}>
-                        {contactEmails.map((e, i) => (
-                          <p key={i} className="text-sm md:text-base">{e}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 mb-4">
-                    <Globe className="h-6 w-6 text-primary" />
-                    <div>
-                      <p className="text-sm md:text-base font-semibold text-primary">Website</p>
-                      <a href={(contactWebsite || '').startsWith('http') ? contactWebsite : `https://${contactWebsite}`} target="_blank" rel="noreferrer" className="text-sm md:text-base underline" style={{ color: '#7F543D' }}>{contactWebsite}</a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <div>
-                      <p className="text-sm md:text-base font-semibold text-primary">Distance from Airport</p>
-                      <p className="text-sm md:text-base" style={{ color: '#7F543D' }}>{contactAirportDistance}</p>
-                    </div>
-                  </div>
+                      {contactTransportText && (
+                        <div className="mt-4 md:mt-6 p-4 md:p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                          <div className="flex items-start gap-4">
+                            <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                            <div>
+                              <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                              <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{contactTransportText}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
-              {contactBookingNotice && (
-                <div className="mt-6 md:mt-8 rounded-xl bg-primary/5 p-4 md:p-5 border border-primary/20">
-                  <p className="text-sm md:text-base font-semibold text-primary mb-2">Important Booking Notice</p>
-                  <p className="text-sm md:text-base" style={{ color: '#7F543D' }}>{contactBookingNotice}</p>
-                </div>
-              )}
-              {contactTransportText && (
-                <div className="mt-6 md:mt-8 rounded-xl bg-gray-50 p-4 md:p-5 border border-primary/20">
-                  <p className="text-sm md:text-base font-semibold text-primary mb-2">Transportation Services</p>
-                  <p className="text-sm md:text-base" style={{ color: '#7F543D' }}>{contactTransportText}</p>
-                </div>
-              )}
             </div>
-          </div>
+          )}
 
-          <div className="mb-8 max-w-xs md:max-w-6xl mx-auto">
-            <div className="rounded-3xl p-5 md:p-12 text-center" style={{ backgroundColor: '#2F5B63' }}>
-              <h2 className="text-2xl md:text-4xl font-bold text-white mb-2">Begin Your Riverside Healing Journey at Kairali Heritage</h2>
-            
-              <div className="mt-4">
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  onClick={() => setQuoteModalOpen(true)}
-                  className="bg-white text-primary hover:bg-white/90 font-semibold rounded-full px-6"
-                >
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Book Your Consultation Today
-                </Button>
+          <div className="container mx-auto px-3 md:px-4 max-w-full">
+        <div className="max-w-6xl mx-auto mt-6">
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Kairali Heritage/CTA bottom.jpg"
+                    alt="Kairali Heritage Resort"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Kairali Heritage</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Kairali Heritage</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Kairali Heritage/CTA bottom.jpg"
+                    alt="Kairali Heritage Resort"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
           <Footer />
           <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       {facilityLightboxOpen && (
-        <div
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
-          onClick={() => setFacilityLightboxOpen(false)}
-        >
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">Kairali Heritage Facilities</h2>
-          </div>
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16" onClick={(e) => e.stopPropagation()}>
-            <div className="relative">
-              <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl" />
-              <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg" aria-label="Close">
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+            <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
+              <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
+                <ChevronLeft className="h-6 w-6" />
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
-                {facilityLightboxImage + 1} / {facilityImages.length}
+              <button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Next">
+                <ChevronRight className="h-6 w-6" />
+              </button>
+              <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
+                <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Kairali Heritage Resort</div>
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+                  <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+                  <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">{facilityLightboxImage + 1} / {facilityImages.length}</div>
+                </div>
+                <div className="flex md:hidden items-center justify-between mt-4">
+                  <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                    Previous
+                  </Button>
+                  <Button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                    Next
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-          <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Previous">
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
-          <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length); }} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Next">
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
-        </div>
-      )}
+          )}
+
+      {/* Floating CTA Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
     </div>
   );
 }

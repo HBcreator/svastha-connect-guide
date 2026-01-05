@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { 
+import {
   MapPin, Phone, Mail, Globe, Star, Calendar, ChevronLeft, ChevronRight,
   Award, Users, Heart, Leaf, Sparkles, Hospital, UserCheck, Utensils, ShieldCheck,
   ClipboardList, Stethoscope, Pill, Activity, Home, FileSearch, Images,
@@ -17,9 +17,122 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import MarkdownContent from "@/components/MarkdownContent";
+
+interface CardData {
+  title: string;
+  description: string;
+  bullets: string[];
+}
+
+interface SectionData {
+  title: string;
+  description: string;
+  cards: CardData[];
+}
+
+const parseCardSection = (text: string): SectionData => {
+  const lines = text.split('\n');
+  let title = '';
+  let description = '';
+  const cards: CardData[] = [];
+  
+  let currentCard: CardData | null = null;
+  let isHeader = true;
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    
+    if (line.startsWith('### ')) {
+      title = line.replace('### ', '').trim();
+      continue;
+    }
+    
+    if (line.startsWith('**') && line.endsWith('**')) {
+      isHeader = false;
+      if (currentCard) {
+        cards.push(currentCard);
+      }
+      currentCard = {
+        title: line.replace(/\*\*/g, '').trim(),
+        description: '',
+        bullets: []
+      };
+      continue;
+    }
+    
+    if (line.startsWith('* ')) {
+      if (currentCard) {
+        currentCard.bullets.push(line.replace('* ', '').trim());
+      }
+      continue;
+    }
+    
+    // Description text
+    if (isHeader) {
+      description += (description ? ' ' : '') + line;
+    } else if (currentCard) {
+      if (currentCard.bullets.length === 0) { // Only add to description if no bullets yet
+         currentCard.description += (currentCard.description ? ' ' : '') + line;
+      }
+    }
+  }
+  
+  if (currentCard) {
+    cards.push(currentCard);
+  }
+  
+  return { title, description, cards };
+};
+
+const iconForTitle = (t: string) => {
+  const s = t.toLowerCase();
+  // Why Choose icons
+  if (s.includes("nabh") || s.includes("accredited")) return <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("integrated") || s.includes("approach")) return <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("personalized") || s.includes("care")) return <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("doctors") || s.includes("expert")) return <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("global") || s.includes("recognition")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("sustainable") || s.includes("environment")) return <Leaf className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("comprehensive") || s.includes("treatment")) return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("custom") || s.includes("medicine")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("organic") || s.includes("nutrition")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  
+  // Facilities icons
+  if (s.includes("garden") || s.includes("accommodation")) return <Home className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("architecture")) return <Building2 className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("farm") || s.includes("certified")) return <TreePine className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("infrastructure") || s.includes("facility")) return <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("yoga") || s.includes("meditation")) return <Activity className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("dining") || s.includes("food")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("recreation") || s.includes("pool")) return <HeartPulse className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("safety") || s.includes("medical")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  if (s.includes("guest") || s.includes("services")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  return <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+};
+
+const getFacilityIcon = (t: string) => {
+  const s = t.toLowerCase();
+  if (s.includes("garden") || s.includes("accommodation")) return <Home className="h-7 w-7 text-white" />;
+  if (s.includes("architecture")) return <Building2 className="h-7 w-7 text-white" />;
+  if (s.includes("farm") || s.includes("certified")) return <TreePine className="h-7 w-7 text-white" />;
+  if (s.includes("infrastructure") || s.includes("facility")) return <Hospital className="h-7 w-7 text-white" />;
+  if (s.includes("yoga") || s.includes("meditation")) return <Activity className="h-7 w-7 text-white" />;
+  if (s.includes("dining") || s.includes("food")) return <Utensils className="h-7 w-7 text-white" />;
+  if (s.includes("recreation") || s.includes("pool")) return <HeartPulse className="h-7 w-7 text-white" />;
+  if (s.includes("safety") || s.includes("medical")) return <ShieldCheck className="h-7 w-7 text-white" />;
+  if (s.includes("guest") || s.includes("services")) return <Users className="h-7 w-7 text-white" />;
+  return <Heart className="h-7 w-7 text-white" />;
+};
 
 export default function SOUKYACenter() {
-  const [content, setContent] = useState("");
+  const [mainContent, setMainContent] = useState("");
+  const [facilitiesData, setFacilitiesData] = useState<SectionData | null>(null);
+  const [whyChooseData, setWhyChooseData] = useState<SectionData | null>(null);
+  const [content, setContent] = useState(""); // Keeping for compatibility if needed, or remove later
+
   const [selectedImage, setSelectedImage] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -139,12 +252,26 @@ export default function SOUKYACenter() {
 
   // Load content
   useEffect(() => {
-    fetch("/content/Top Centers/SOUKYA center.txt")
+    // Load Main Content
+    fetch("/content/Top Centers/Soukya Center/Main Content.txt")
       .then((res) => res.text())
-      .then((text) => setContent(text))
-      .catch((err) =>
-        console.error("Error loading SOUKYA center content:", err)
-      );
+      .then((text) => setMainContent(text))
+      .catch((err) => console.error("Error loading Main Content:", err));
+
+    // Load Facilities
+    fetch("/content/Top Centers/Soukya Center/Facilities & Amenities.txt")
+      .then((res) => res.text())
+      .then((text) => setFacilitiesData(parseCardSection(text)))
+      .catch((err) => console.error("Error loading Facilities:", err));
+
+    // Load Why Choose
+    fetch("/content/Top Centers/Soukya Center/Why Choose SOUKYA.txt")
+      .then((res) => res.text())
+      .then((text) => setWhyChooseData(parseCardSection(text)))
+      .catch((err) => console.error("Error loading Why Choose:", err));
+      
+    // Keep original fetch for now or just set content to empty to avoid errors in renderContent if called
+    // fetch("/content/Top Centers/SOUKYA center.txt") ...
   }, []);
 
   // Auto-rotation effect
@@ -398,7 +525,7 @@ export default function SOUKYACenter() {
   };
 
   const renderContent = () => {
-    const lines = content.split("\n");
+    const lines = mainContent.split("\n");
     const elements: JSX.Element[] = [];
     let currentList: string[] = [];
     let listType: "bullet" | "number" | null = null;
@@ -804,8 +931,17 @@ export default function SOUKYACenter() {
 
           {/* Content Section */}
           <Card className="mb-12">
-            <CardContent className="p-8 prose prose-lg max-w-none">
-              {content ? renderContent() : <p>Loading content...</p>}
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg prose-strong:text-primary">
+              <MarkdownContent
+                contentPath="/content/Top Centers/Soukya Center/Main Content.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === "quote") {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
             </CardContent>
           </Card>
 
@@ -1198,191 +1334,50 @@ export default function SOUKYACenter() {
             </Accordion>
           </div>
 
-          {/* Why Choose SOUKYA - Infographic Section */}
           <div className="mb-12">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">
-                Why Choose SOUKYA for Your Holistic Health Journey
+                {whyChooseData?.title || "Why Choose SOUKYA"}
               </h2>
-              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
-                Discover what makes SOUKYA India's premier destination for authentic holistic healing
-              </p>
+              {whyChooseData?.description && (
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                  {whyChooseData.description}
+                </p>
+              )}
             </div>
-
-            {/* Icon Grid Cards */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-              {/* Card 1: NABH Accreditation */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+              {(whyChooseData?.cards || []).map((it, idx) => (
+                <Card
+                  key={idx}
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary"
+                >
+                  <CardContent className="p-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                          {iconForTitle(it.title)}
+                        </div>
+                        <h3 className="text-lg font-bold text-primary">{it.title}</h3>
+                      </div>
+                      {it.description && (
+                        <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
+                          {it.description}
+                        </p>
+                      )}
+                      {it.bullets && it.bullets.length > 0 && (
+                        <ul className="list-none pl-0 space-y-1.5">
+                          {it.bullets.slice(0, 3).map((b, bi) => (
+                            <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                              <span className="text-primary mt-1">✓</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        NABH-Accredited AYUSH Hospital
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        India's first NABH-accredited facility ensuring highest standards of care.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 2: Integrated Approach */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Integrated Multi-System Approach
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Four healing traditions - Ayurveda, Homeopathy, Yoga, and Naturopathy.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 3: Personalized Care */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Personalized Care & Attention
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Individualized treatment protocols for your specific health goals.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 4: Expert Doctors */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Fourth-Generation Doctors
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Traditional lineage combining ancient wisdom with modern knowledge.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 5: Global Recognition */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Global Recognition & Trust
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Patients from over 100 countries trust SOUKYA for healing.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 6: Sustainable Environment */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Leaf className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Sustainable Healing Environment
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        30-acre organic farm with naturally therapeutic surroundings.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 7: Comprehensive Treatment */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Comprehensive Treatment Range
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Addresses all health concerns through holistic methods with proven results.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 8: Custom Medicine */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Custom Medicine Preparation
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Freshly prepared medicines customized for maximum efficacy.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Card 9: Organic Nutrition */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                      <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">
-                        Organic & Therapeutic Nutrition
-                      </h3>
-                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                        Therapeutic meals from organic farm supporting healing from within.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
 
@@ -1659,11 +1654,13 @@ export default function SOUKYACenter() {
           <div className="mb-12">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
-                Facilities & Amenities
+                {facilitiesData?.title || "Facilities & Amenities"}
               </h2>
-              <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>
-                Experience healing in comfort with our comprehensive range of traditional and modern facilities
-              </p>
+              {facilitiesData?.description && (
+                <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>
+                  {facilitiesData.description}
+                </p>
+              )}
             </div>
               
             {/* Facilities Images Carousel - 5 at a time */}
@@ -1769,223 +1766,36 @@ export default function SOUKYACenter() {
 
             {/* Category Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-              {/* Category 1: Accommodation */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Building2 className="h-7 w-7 text-white" />
+              {(facilitiesData?.cards || []).map((card, idx) => (
+                <Card
+                  key={idx}
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        {getFacilityIcon(card.title)}
+                      </div>
+                      <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
                     </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Accommodation
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Traditional South Indian architecture cottages</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Air-conditioned single, double & family suites</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Modern amenities with natural aesthetic</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Private bathrooms & comfortable furnishings</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Peaceful garden views from all rooms</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Category 2: Wellness & Therapy */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Droplet className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Wellness & Therapy
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Dedicated Panchakarma therapy centers</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Traditional Ayurvedic massage rooms</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Spacious yoga hall with natural lighting</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Serene meditation pavilions</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Hydrotherapy & naturopathy facilities</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Category 3: Organic Dining */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Utensils className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Organic Dining
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Farm-to-table organic vegetarian cuisine</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Personalized therapeutic meal plans</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Ayurvedic dietary consultations included</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Fresh juices & herbal teas throughout day</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Mindful eating in pleasant communal setting</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Category 4: Natural Environment */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <TreePine className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Natural Environment
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>30-acre certified organic farm surroundings</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Medicinal herb gardens & walking trails</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Bird sanctuary with exotic species</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Tranquil water features & lotus ponds</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Outdoor meditation & yoga spaces</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Category 5: Medical Facilities */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <TestTube2 className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Medical Facilities
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>NABH-accredited diagnostic laboratory</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>In-house Ayurvedic pharmacy</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Custom medicine preparation facility</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>24/7 medical support & monitoring</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Physiotherapy & rehabilitation centers</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              {/* Category 6: Support Services */}
-              <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <MessageCircleHeart className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">
-                      Support Services
-                    </h3>
-                  </div>
-                  <ul className="space-y-2.5">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Professional counseling & psychotherapy</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Airport pickup & drop services</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Multilingual staff assistance</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Library with wellness resources</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">•</span>
-                      <span>Laundry & housekeeping services</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
+                    {card.description && (
+                      <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
+                        {card.description}
+                      </p>
+                    )}
+                    {card.bullets && card.bullets.length > 0 && (
+                      <ul className="space-y-2.5">
+                        {card.bullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">•</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
             </div>
 
             {/* Additional Info Banner */}
@@ -2801,45 +2611,34 @@ export default function SOUKYACenter() {
 
       {/* Full Gallery Modal */}
       {showFullGallery && (
-        <div className="fixed inset-0 backdrop-blur-lg z-50 overflow-y-auto" style={{ backgroundColor: 'rgba(237, 232, 208, 0.95)' }}>
-          <div className="container mx-auto px-4 py-8">
+        <div
+          className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto"
+          onClick={() => setShowFullGallery(false)}
+        >
+          <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
             {/* Header */}
-            <div className="flex items-center justify-between mb-6 sticky top-0 backdrop-blur-md py-4 z-10" style={{ backgroundColor: 'rgba(237, 232, 208, 0.9)' }}>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary">
-                SOUKYA Gallery ({images.length} Photos)
-              </h2>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setShowFullGallery(false)}
-                className="text-primary hover:bg-primary/10 h-10 w-10"
-              >
-                <ChevronLeft className="h-6 w-6" />
+            <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+              <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                Back
               </Button>
+              <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                SOUKYA Gallery
+              </div>
             </div>
 
             {/* Masonry Grid Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {images.map((img, idx) => (
                 <div
                   key={idx}
+                  className="relative w-full cursor-pointer"
+                  style={{ paddingBottom: "75%" }}
                   onClick={() => {
                     setLightboxImage(idx);
                     setLightboxOpen(true);
                   }}
-                  className="relative group cursor-pointer rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300"
                 >
-                  <img
-                    src={img}
-                    alt={`SOUKYA ${idx + 1}`}
-                    className="w-full h-full object-cover aspect-square"
-                  />
-                  {/* Overlay on hover */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <FileSearch className="h-8 w-8" />
-                    </div>
-                  </div>
+                  <img src={img} alt={`SOUKYA ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
                 </div>
               ))}
             </div>
@@ -2847,183 +2646,121 @@ export default function SOUKYACenter() {
         </div>
       )}
 
-      {/* Lightbox Modal for Zoomed Images with Beige Blur Effect */}
       {lightboxOpen && (
-        <div 
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
           onClick={() => setLightboxOpen(false)}
         >
-          {/* Header with Title */}
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">
-              SOUKYA Health Center
-            </h2>
-          </div>
-
-          {/* Desktop: Arrow Previous */}
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
-            }}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Previous"
           >
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
           </button>
 
-          {/* Image Container with Close Button */}
-          <div 
-            className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+              SOUKYA Health Center
+            </div>
+            <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
               <img
                 src={images[lightboxImage]}
                 alt={`SOUKYA ${lightboxImage + 1}`}
-                className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              
-              {/* Close Button - Inside Image at Top Right */}
               <button
                 onClick={() => setLightboxOpen(false)}
-                className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg"
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                 aria-label="Close"
               >
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ✕
               </button>
-
-              
-              
-              {/* Image Counter */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                 {lightboxImage + 1} / {images.length}
               </div>
-
-              {/* Mobile: Previous/Next positioned under image */}
-              <div className="md:hidden absolute -bottom-16 left-4 right-4 flex items-center justify-between">
-                <button
-                  onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Previous
-                </button>
-                <button
-                  onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Next
-                </button>
-              </div>
+            </div>
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button
+                onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Next
+              </Button>
             </div>
           </div>
-
-          {/* Desktop: Arrow Next */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setLightboxImage((prev) => (prev + 1) % images.length);
-            }}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
-            aria-label="Next"
-          >
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
-
-          
         </div>
       )}
 
-      {/* Facilities Lightbox Modal */}
       {facilityLightboxOpen && (
         <div
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
           onClick={() => setFacilityLightboxOpen(false)}
         >
-          {/* Header with Title */}
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">
-              SOUKYA Facilities & Amenities
-            </h2>
-          </div>
-
-          {/* Desktop: Arrow Previous (Facilities) */}
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
-            }}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Previous"
           >
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronLeft className="h-6 w-6" />
+          </button>
+          <button
+            onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
           </button>
 
-          {/* Image Container with Close Button */}
-          <div 
-            className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+              SOUKYA Facilities & Amenities
+            </div>
+            <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
               <img
                 src={facilityImages[facilityLightboxImage]}
                 alt={`SOUKYA Facility ${facilityLightboxImage + 1}`}
-                className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              
-              {/* Close Button */}
               <button
                 onClick={() => setFacilityLightboxOpen(false)}
-                className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg"
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                 aria-label="Close"
               >
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                ✕
               </button>
-
-              
-              
-              {/* Image Counter */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                 {facilityLightboxImage + 1} / {facilityImages.length}
               </div>
-
-              {/* Mobile: Previous/Next positioned under image (Facilities) */}
-              <div className="md:hidden absolute -bottom-12 left-4 right-4 flex items-center justify-between">
-                <button
-                  onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Previous
-                </button>
-                <button
-                  onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Next
-                </button>
-              </div>
+            </div>
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button
+                onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Next
+              </Button>
             </div>
           </div>
-
-          {/* Desktop: Arrow Next (Facilities) */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length);
-            }}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
-            aria-label="Next"
-          >
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
-
-          
         </div>
       )}
     </div>

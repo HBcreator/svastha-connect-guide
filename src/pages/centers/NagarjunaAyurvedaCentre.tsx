@@ -805,18 +805,22 @@ export default function NagarjunaAyurvedaCentre() {
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
               <Button
-                variant={!showVideoGallery ? "default" : "outline"}
+                variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 Photo Gallery
               </Button>
               <Button
-                variant={showVideoGallery ? "default" : "outline"}
+                variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1031,7 +1035,16 @@ export default function NagarjunaAyurvedaCentre() {
 
           <Card className="mb-12 mt-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
-              <MarkdownContent contentPath="/content/Top Centers/Nagarjuna Ayurvedic Centre/main content.txt" />
+              <MarkdownContent 
+                contentPath="/content/Top Centers/Nagarjuna Ayurvedic Centre/main content.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === 'quote') {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
             </CardContent>
           </Card>
 
@@ -1061,7 +1074,7 @@ export default function NagarjunaAyurvedaCentre() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2 border-green-600">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
@@ -1073,9 +1086,9 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
                     <div className="flex items-center gap-2 md:gap-3 w-full">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2 border-green-600">
                         {iconForTitle(p.title)}
                       </div>
                       <div className="flex-1">
@@ -1104,7 +1117,7 @@ export default function NagarjunaAyurvedaCentre() {
           </div>
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-blue-600">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
@@ -1115,9 +1128,9 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
                 <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-600">
                     <div className="flex items-center gap-2 md:gap-3 w-full">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-blue-600">
                         {medicalIconForTitle(p.title)}
                       </div>
                       <div className="flex-1">
@@ -1146,7 +1159,7 @@ export default function NagarjunaAyurvedaCentre() {
           </div>
           <div className="mb-12 rounded-3xl px-0 py-8 md:p-12">
             <div className="text-center mb-10">
-              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Nagarjuna Ayurvedic Centre for Your Healing Journey</h2>
+              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Nagarjuna for Your Healing Journey</h2>
               <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
                 {whyIntro}
               </p>
@@ -1189,8 +1202,8 @@ export default function NagarjunaAyurvedaCentre() {
             </div>
             <div className="max-w-4xl mx-auto">
               {treatmentSteps.map((s, idx) => (
-                <div key={idx} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                  <div className="flex flex-col items-center flex-shrink-0">
+                <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                  <div className="hidden md:flex flex-col items-center flex-shrink-0">
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                       {s.number}
                     </div>
@@ -1198,13 +1211,16 @@ export default function NagarjunaAyurvedaCentre() {
                       <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
                     )}
                   </div>
-                  <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                  <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                     <CardContent className="p-4 md:p-6">
-                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                      <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                        {s.number}
+                      </div>
+                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                         <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                           {treatmentIconForTitle(s.title)}
                         </div>
-                        <h3 className="text-base md:text-xl font-bold text-primary">{s.title}</h3>
+                        <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
                       </div>
                       <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>{s.description}</p>
                       {s.bullets && s.bullets.length > 0 && (
@@ -1214,12 +1230,12 @@ export default function NagarjunaAyurvedaCentre() {
                               <span className="text-primary mt-1">•</span>
                               <span>{b}</span>
                             </li>
-                      ))}
-                    </ul>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
+                          ))}
+                        </ul>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
           ))}
         </div>
       </div>
@@ -1228,7 +1244,7 @@ export default function NagarjunaAyurvedaCentre() {
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-xl mb-4 object-cover" />
+                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
                     Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
@@ -1272,7 +1288,7 @@ export default function NagarjunaAyurvedaCentre() {
                   </div>
                 </div>
                 <div>
-                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover" />
+                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -1581,11 +1597,11 @@ export default function NagarjunaAyurvedaCentre() {
                     </div>
                   </div>
                 </CardContent>
-                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-2 md:-translate-x-6 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-2 md:translate-x-6 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
                 <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1723,7 +1739,7 @@ export default function NagarjunaAyurvedaCentre() {
           <Card className="mb-12 border-2 border-primary overflow-visible md:overflow-hidden">
             <CardContent className="p-8">
               <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-[1fr_1.35fr] gap-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -1734,37 +1750,6 @@ export default function NagarjunaAyurvedaCentre() {
                           <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
                         ))}
                       </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                        {contactPhones.map((p, i) => (
-                          <span key={i}>{p}{i < contactPhones.length - 1 ? <br /> : null}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Email</h4>
-                      <p className="break-all leading-relaxed" style={{ color: '#7F543D' }}>
-                        {contactEmails.map((e, i) => (
-                          <span key={i}>{e}{i < contactEmails.length - 1 ? <br /> : null}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Website</h4>
-                      <p className="break-all leading-relaxed" style={{ color: '#7F543D' }}>{contactWebsite}</p>
                     </div>
                   </div>
                   {contactDistances.length > 0 && (
@@ -1778,6 +1763,23 @@ export default function NagarjunaAyurvedaCentre() {
                       </div>
                     </div>
                   )}
+                </div>
+                <div className="md:-mt-16 self-start">
+                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
+                        <iframe
+                          title="Nagarjuna Ayurvedic Centre Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.356963075815!2d76.4320607740796!3d10.151611570409566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d6a9d2242c7%3A0xabdfbda52b4cdabb!2sNagarjuna%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1767602779315!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               {transportText && (
@@ -1796,20 +1798,99 @@ export default function NagarjunaAyurvedaCentre() {
         )}
 
         <div className="mb-12">
-          <div className="rounded-3xl p-10" style={{ backgroundColor: '#234A50' }}>
-            <h2 className="text-center text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
-            <p className="text-center text-white/90 mb-6"></p>
-            <div className="flex items-center justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                <Calendar className="mr-2 h-5 w-5" />
-                Book Your Consultation Today
-              </Button>
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <img
+                  src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
+                  alt="Nagarjuna Ayurvedic Centre"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                  <a
+                    href="tel:+918028432737"
+                    className="block w-full text-center text-white hover:text-white/80 transition-colors text-sm sm:text-base"
+                  >
+                    Call us: +91 80 2843 2737
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
+                  <p className="text-lg text-white/90 mb-6"></p>
+                  <div className="space-y-4">
+                    <Button
+                      size="lg"
+                      className="rounded-full bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <div className="flex items-center gap-4">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-lg px-8 py-6"
+                        onClick={() => setQuoteModalOpen(true)}
+                      >
+                        <MessageCircle className="mr-2 h-5 w-5" />
+                        Chat With Us
+                      </Button>
+                      <a
+                        href="tel:+918028432737"
+                        className="text-white hover:text-white/80 transition-colors text-lg"
+                      >
+                        Call us: +91 80 2843 2737
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
+                    alt="Nagarjuna Ayurvedic Centre"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      
+      {/* Floating CTA Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
     </div>
   );
 }
