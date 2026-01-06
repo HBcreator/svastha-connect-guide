@@ -5,27 +5,83 @@ import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Star, Phone, Mail, Images, Video, ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut, Heart, Droplet, Brain, Sparkles, Activity, ShieldCheck, Stethoscope, Moon, HeartPulse, Pill, Wind, UserCheck, Award, Users, Globe, Leaf, Utensils, ClipboardList, FileSearch, Home, MessageCircle, TrendingUp } from "lucide-react";
+import MarkdownContent from "@/components/MarkdownContent";
+import { MapPin, Star, Phone, Mail, Images, Video, ChevronLeft, ChevronRight, X, Heart, Droplet, Brain, Sparkles, Activity, ShieldCheck, Stethoscope, Moon, HeartPulse, Pill, Wind, UserCheck, Award, Users, Globe, Leaf, Utensils, ClipboardList, FileSearch, Home, MessageCircle, TrendingUp } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Veda5Center = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [content, setContent] = useState("");
   const [selectedLocation, setSelectedLocation] = useState<"Rishikesh" | "Kerala" | "Goa">("Rishikesh");
   const [selectedGallery, setSelectedGallery] = useState<"photos" | "videos">("photos");
   const [selectedImage, setSelectedImage] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
-  const [zoom, setZoom] = useState(1);
+  const [showFullGallery, setShowFullGallery] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(0);
   const [currentFacilityImage, setCurrentFacilityImage] = useState(0);
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
-  const [facilityZoom, setFacilityZoom] = useState(1);
   const [reviewCity, setReviewCity] = useState<"Rishikesh" | "Kerala" | "Goa">("Rishikesh");
   const [reviewsByCity, setReviewsByCity] = useState<Record<string, { name: string; location: string; title: string; text: string; rating: number }[]>>({ Rishikesh: [], Kerala: [], Goa: [] });
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [contactData, setContactData] = useState<{ city: string; address: string[]; distances: string[] }[]>([]);
+  const [currentContactIdx, setCurrentContactIdx] = useState(0);
+  const [transportText, setTransportText] = useState("");
+
+  useEffect(() => {
+    fetch("/content/Top Centers/veda5/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const locations: { city: string; address: string[]; distances: string[] }[] = [];
+        const sections = text.split(/\*\*([^*]+-(?:\s+The\s+)[^*]+)\*\*/g);
+
+        for (let i = 1; i < sections.length; i += 2) {
+          const city = sections[i].split(" - ")[0].trim();
+          const content = sections[i + 1];
+
+          const addressMatch = content.match(/\*\*Address\*\*\s*([\s\S]*?)(?=\*\*|$)/);
+          const distanceMatch = content.match(/\*\*Distance from Major Locations\*\*\s*([\s\S]*?)(?=\*\*|$)/);
+
+          const address = addressMatch ? addressMatch[1].trim().split("<br/>").map(l => l.trim()).filter(Boolean) : [];
+          const distances = distanceMatch ? distanceMatch[1].trim().split("\n").map(l => l.replace(/^\*\s*/, "").trim()).filter(Boolean) : [];
+
+          locations.push({ city, address, distances });
+        }
+        setContactData(locations);
+
+        const transportMatch = text.match(/\*\*Transportation Services\*\*\s*([\s\S]*?)$/);
+        if (transportMatch) {
+          setTransportText(transportMatch[1].trim());
+        }
+      })
+      .catch((err) => console.error("Error loading Contact Information:", err));
+  }, []);
+
+  const maps = [
+    {
+      city: "Rishikesh",
+      iframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.7823577946774!2d78.38040667463417!3d30.100418915918233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909140066ecb731%3A0x73581c9cd60e7dfe!2sVeda5%20Ayurveda%20%26%20Yoga%20Retreat%20Rishikesh!5e0!3m2!1sen!2sin!4v1767709592204!5m2!1sen!2sin'
+    },
+    {
+      city: "Kerala",
+      iframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.1251699842796!2d76.1142780740818!3d10.331866767238248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f56e8f73b593%3A0x847600b29c9f57b7!2sVeda5%20Ayurveda%20Living%20Village!5e0!3m2!1sen!2sin!4v1767709633043!5m2!1sen!2sin'
+    },
+    {
+      city: "Goa",
+      iframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.395315096163!2d73.70565997417128!3d15.677156249816587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfef14b7771dc7%3A0xdf775064f019fce3!2sVeda5%20Wellness%20Retreat%20%26%20Spa%2C%20Goa!5e0!3m2!1sen!2sin!4v1767709660066!5m2!1sen!2sin'
+    }
+  ];
+
+  const goPrevMap = () => setCurrentContactIdx((prev) => (prev - 1 + maps.length) % maps.length);
+  const goNextMap = () => setCurrentContactIdx((prev) => (prev + 1) % maps.length);
+
+  type ProgramItem = { title: string; description: string; bullets: string[] };
+  type SectionData = { heading: string; intro: string; items: ProgramItem[] };
+  const [wellnessSection, setWellnessSection] = useState<SectionData | null>(null);
+  const [medicalSection, setMedicalSection] = useState<SectionData | null>(null);
+  const [whyChooseSection, setWhyChooseSection] = useState<SectionData | null>(null);
+  const [facilitiesSection, setFacilitiesSection] = useState<SectionData | null>(null);
 
   const facilityImages = [
     "/Center Images/veda5/Facilities & Amenities/veda5-01.jpg",
@@ -191,21 +247,97 @@ const Veda5Center = () => {
 
   const images = assets[selectedLocation].photos;
   const videos = assets[selectedLocation].videos;
+  const isAutoPlaying = true;
 
   if (selectedImage >= images.length && images.length) setSelectedImage(0);
   if (lightboxImage >= images.length && images.length) setLightboxImage(0);
 
-  if (zoom < 1) setZoom(1);
-
   useEffect(() => {
     if (selectedGallery !== "photos") return;
-    if (lightboxOpen) return;
     if (!images.length) return;
     const id = setInterval(() => {
       setSelectedImage((p) => (p + 1) % images.length);
     }, 3000);
     return () => clearInterval(id);
-  }, [selectedGallery, images.length, lightboxOpen]);
+  }, [selectedGallery, images.length]);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxOpen(false);
+      if (e.key === "ArrowLeft") setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+      if (e.key === "ArrowRight") setLightboxImage((prev) => (prev + 1) % images.length);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen, images.length]);
+
+  const parseProgramsFile = (text: string): SectionData => {
+    const lines = text.split("\n").map((l) => l.trim());
+    let heading = "";
+    const introParts: string[] = [];
+    const items: ProgramItem[] = [];
+    let current: ProgramItem | null = null;
+    let inItems = false;
+
+    const flush = () => {
+      if (current) {
+        current.description = current.description.trim();
+        items.push(current);
+        current = null;
+      }
+    };
+
+    for (const raw of lines) {
+      const line = raw.trim();
+      if (!line) continue;
+
+      if (line.startsWith("### ")) {
+        heading = line.replace(/^###\s+/, "").trim();
+        continue;
+      }
+
+      const titleMatch = line.match(/^\*\*(.+?)\*\*$/);
+      if (titleMatch) {
+        flush();
+        current = { title: titleMatch[1].trim(), description: "", bullets: [] };
+        inItems = true;
+        continue;
+      }
+
+      const bulletMatch = line.match(/^[*-]\s+(.*)$/);
+      if (bulletMatch && current) {
+        current.bullets.push(bulletMatch[1].trim());
+        continue;
+      }
+
+      if (!inItems) {
+        introParts.push(line);
+        continue;
+      }
+
+      if (current) {
+        current.description = current.description ? `${current.description} ${line}` : line;
+      }
+    }
+
+    flush();
+    return { heading, intro: introParts.join(" ").trim(), items };
+  };
+
+  useEffect(() => {
+    Promise.all([
+      fetch("/content/Top Centers/veda5/Wellness Programs.txt").then((r) => r.text()).catch(() => ""),
+      fetch("/content/Top Centers/veda5/Medical Programs.txt").then((r) => r.text()).catch(() => ""),
+      fetch("/content/Top Centers/veda5/Why Choose VEDA5.txt").then((r) => r.text()).catch(() => ""),
+      fetch("/content/Top Centers/veda5/Facilities & Amenities.txt").then((r) => r.text()).catch(() => ""),
+    ]).then(([wellnessText, medicalText, whyText, facilitiesText]) => {
+      if (wellnessText) setWellnessSection(parseProgramsFile(wellnessText));
+      if (medicalText) setMedicalSection(parseProgramsFile(medicalText));
+      if (whyText) setWhyChooseSection(parseProgramsFile(whyText));
+      if (facilitiesText) setFacilitiesSection(parseProgramsFile(facilitiesText));
+    });
+  }, []);
 
   useEffect(() => {
     if (facilityLightboxOpen) return;
@@ -239,13 +371,6 @@ const Veda5Center = () => {
       setSelectedImage(0);
     }
   }, [selectedLocation, selectedGallery]);
-
-  useEffect(() => {
-    fetch("/content/Top Centers/veda5 center.txt")
-      .then((res) => res.text())
-      .then((txt) => setContent(txt))
-      .catch(() => {});
-  }, []);
 
   const parseReviews = (text: string) => {
     const lines = text.split("\n");
@@ -337,137 +462,53 @@ const Veda5Center = () => {
     </div>
   );
 
-  const processInlineFormatting = (text: string) => {
-    const parts: (string | JSX.Element)[] = [];
-    let lastIndex = 0;
-    const regex = /\*\*(.*?)\*\*/g;
-    let match;
-    while ((match = regex.exec(text)) !== null) {
-      if (match.index > lastIndex) {
-        parts.push(text.substring(lastIndex, match.index));
-      }
-      parts.push(
-        <strong key={match.index} className="font-semibold text-primary">
-          {match[1]}
-        </strong>
-      );
-      lastIndex = regex.lastIndex;
-    }
-    if (lastIndex < text.length) {
-      parts.push(text.substring(lastIndex));
-    }
-    return parts.length > 0 ? parts : text;
+  const iconForWellnessTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("kaya") || s.includes("rejuven")) return <LotusIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("detox") || s.includes("shuddhi") || s.includes("cleanse")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("panchakarma") || s.includes("purification")) return <OilPotIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("weight") || s.includes("sthoola") || s.includes("hara")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("stress") || s.includes("anxiety") || s.includes("mental")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("immunity") || s.includes("anti-aging") || s.includes("rasayana")) return <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    return <LotusIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
   };
 
-  const renderContent = () => {
-    const lines = content.split("\n");
-    const elements: JSX.Element[] = [];
-    let currentList: string[] = [];
-    let listType: "bullet" | "number" | null = null;
-    let emptyLineCount = 0;
+  const iconForMedicalTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("spine") || s.includes("back") || s.includes("neck")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("joint") || s.includes("arthritis")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("diabetes") || s.includes("metabolic") || s.includes("sugar")) return <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("skin") || s.includes("psoriasis") || s.includes("dermat")) return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("respiratory") || s.includes("sinus") || s.includes("asthma") || s.includes("allerg")) return <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("neuro") || s.includes("nerve") || s.includes("migraine") || s.includes("stroke")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("digest") || s.includes("ibs") || s.includes("gut") || s.includes("gerd")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+  };
 
-    const flushList = () => {
-      if (currentList.length > 0) {
-        if (listType === "bullet") {
-          elements.push(
-            <ul key={`list-${elements.length}`} className="list-disc list-inside mb-6 space-y-2" style={{ color: "#7F543D" }}>
-              {currentList.map((item, idx) => (
-                <li key={idx} className="leading-relaxed">{processInlineFormatting(item)}</li>
-              ))}
-            </ul>
-          );
-        } else if (listType === "number") {
-          elements.push(
-            <ol key={`list-${elements.length}`} className="list-decimal list-inside mb-6 space-y-2" style={{ color: "#7F543D" }}>
-              {currentList.map((item, idx) => (
-                <li key={idx} className="leading-relaxed">{processInlineFormatting(item)}</li>
-              ))}
-            </ol>
-          );
-        }
-        currentList = [];
-        listType = null;
-      }
-    };
+  const iconForFacilityTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("accommod") || s.includes("room") || s.includes("suite") || s.includes("stay")) return <Home className="h-7 w-7 text-white" />;
+    if (s.includes("beach") || s.includes("sea") || s.includes("ocean")) return <MapPin className="h-7 w-7 text-white" />;
+    if (s.includes("treatment") || s.includes("ayurved") || s.includes("panchakarma")) return <Droplet className="h-7 w-7 text-white" />;
+    if (s.includes("yoga") || s.includes("meditat")) return <LotusIcon className="h-7 w-7 text-white" />;
+    if (s.includes("dining") || s.includes("cuisine") || s.includes("food") || s.includes("sattvic")) return <Utensils className="h-7 w-7 text-white" />;
+    if (s.includes("pool") || s.includes("swim")) return <Droplet className="h-7 w-7 text-white" />;
+    if (s.includes("garden") || s.includes("nature") || s.includes("surround")) return <Leaf className="h-7 w-7 text-white" />;
+    if (s.includes("service") || s.includes("wifi") || s.includes("transfer") || s.includes("guest")) return <Users className="h-7 w-7 text-white" />;
+    return <Globe className="h-7 w-7 text-white" />;
+  };
 
-    lines.forEach((line, index) => {
-      const trimmed = line.trim();
-      if (trimmed === "---") {
-        flushList();
-        elements.push(<div key={`sep-${index}`} className="h-8" />);
-        return;
-      }
-      if (!trimmed) {
-        flushList();
-        emptyLineCount++;
-        if (emptyLineCount === 2 && elements.length > 0) {
-          elements.push(<div key={`sp-${index}`} className="h-4" />);
-        }
-        return;
-      }
-      emptyLineCount = 0;
-      if (/^#\s+(.+)/.test(trimmed) && !trimmed.startsWith("##")) {
-        flushList();
-        const t = trimmed.replace(/^#\s+/, "");
-        elements.push(
-          <h1 key={`h1-${index}`} className="text-2xl md:text-4xl font-bold mb-6 text-primary">{processInlineFormatting(t)}</h1>
-        );
-        return;
-      }
-      if (/^##\s+(.+)/.test(trimmed)) {
-        flushList();
-        const t = trimmed.replace(/^##\s+/, "");
-        elements.push(
-          <h2 key={`h2-${index}`} className="text-2xl md:text-3xl font-bold mb-4 mt-8 text-primary">{processInlineFormatting(t)}</h2>
-        );
-        return;
-      }
-      if (/^###\s+(.+)/.test(trimmed)) {
-        flushList();
-        const t = trimmed.replace(/^###\s+/, "");
-        elements.push(
-          <h3 key={`h3-${index}`} className="text-xl md:text-2xl font-semibold mb-3 mt-6 text-primary">{processInlineFormatting(t)}</h3>
-        );
-        return;
-      }
-      if (/^[-*]\s+(.+)/.test(trimmed)) {
-        const item = trimmed.replace(/^[-*]\s+/, "");
-        if (listType !== "bullet") {
-          flushList();
-          listType = "bullet";
-        }
-        currentList.push(item);
-        return;
-      }
-      if (/^\d+\.\s+(.+)/.test(trimmed)) {
-        const item = trimmed.replace(/^\d+\.\s+/, "");
-        if (listType !== "number") {
-          flushList();
-          listType = "number";
-        }
-        currentList.push(item);
-        return;
-      }
-      if (trimmed.startsWith("**") && trimmed.endsWith("**")) {
-        flushList();
-        const t = trimmed.replace(/^\*\*/, "").replace(/\*\*$/, "");
-        elements.push(
-          <p key={`b-${index}`} className="mb-0 leading-relaxed" style={{ color: "#7F543D" }}>
-            <strong className="font-semibold text-primary">{t}</strong>
-          </p>
-        );
-        return;
-      }
-      flushList();
-      elements.push(
-        <p key={`p-${index}`} className="mb-6 leading-relaxed" style={{ color: "#7F543D" }}>
-          {processInlineFormatting(trimmed)}
-        </p>
-      );
-    });
-
-    flushList();
-    return elements;
+  const iconForWhyChooseTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("award") || s.includes("globally") || s.includes("excellence") || s.includes("tripadvisor")) return <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("sanctuar") || s.includes("location") || s.includes("himal") || s.includes("beach") || s.includes("goa") || s.includes("kerala") || s.includes("rish")) return <MapPin className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("cert") || s.includes("authentic") || s.includes("ayur gold") || s.includes("government")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("physician") || s.includes("expert") || s.includes("care") || s.includes("therap")) return <Stethoscope className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("integration") || s.includes("yoga") || s.includes("mind") || s.includes("meditat")) return <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("accommod") || s.includes("room") || s.includes("suite") || s.includes("luxur")) return <Home className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("cuisine") || s.includes("meal") || s.includes("food") || s.includes("organic")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    if (s.includes("guest") || s.includes("transform") || s.includes("experience") || s.includes("review")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+    return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
   };
 
   return (
@@ -488,7 +529,7 @@ const Veda5Center = () => {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(420+ reviews)</span>
+                  <span className="opacity-90">(1000+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -528,7 +569,10 @@ const Veda5Center = () => {
             <Button
               size="lg"
               variant={selectedGallery === "photos" ? "default" : "outline"}
-              className={selectedGallery === "photos" ? "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl" : "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl"}
+              className={`font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl transition-all duration-300 ease-in-out hover:scale-105 ${selectedGallery === "photos"
+                ? "scale-105 shadow-lg"
+                : "bg-accent text-white hover:bg-accent/90"
+                }`}
               onClick={() => setSelectedGallery("photos")}
             >
               <Images className="mr-2 h-5 w-5" /> Photo Gallery
@@ -536,7 +580,10 @@ const Veda5Center = () => {
             <Button
               size="lg"
               variant={selectedGallery === "videos" ? "default" : "outline"}
-              className={selectedGallery === "videos" ? "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl" : "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl"}
+              className={`font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl transition-all duration-300 ease-in-out hover:scale-105 ${selectedGallery === "videos"
+                ? "scale-105 shadow-lg"
+                : "bg-accent text-white hover:bg-accent/90"
+                }`}
               onClick={() => setSelectedGallery("videos")}
             >
               <Video className="mr-2 h-5 w-5" /> Video Gallery
@@ -554,10 +601,30 @@ const Veda5Center = () => {
                     alt={`${selectedLocation} Photo`}
                     className="w-full h-full object-cover transition-all duration-500"
                   />
+                  <button
+                    onClick={() => setSelectedImage((prev) => (prev - 1 + images.length) % images.length)}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={() => setSelectedImage((prev) => (prev + 1) % images.length)}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
                   <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                     {selectedImage + 1} / {images.length}
                   </div>
-                  
+                  {isAutoPlaying && (
+                    <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      Auto
+                    </div>
+                  )}
+
                 </div>
 
                 {(() => {
@@ -605,7 +672,7 @@ const Veda5Center = () => {
                                       size="sm"
                                       onClick={(e) => {
                                         e.stopPropagation();
-                                        setLightboxOpen(true);
+                                        setShowFullGallery(true);
                                       }}
                                       className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-semibold text-xs md:text-sm px-2 md:px-3 py-1 md:py-2 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform w-[90%] max-w-[180px]"
                                     >
@@ -664,69 +731,128 @@ const Veda5Center = () => {
           )}
         </div>
 
-        {lightboxOpen && (
-          <div className="fixed inset-0 backdrop-blur-lg z-50 flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(237, 232, 208, 0.95)' }}>
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-primary font-bold text-xl md:text-3xl whitespace-nowrap">VEDA5 Health Center</div>
-            <div className="relative bg-white rounded-2xl shadow-2xl overflow-visible">
-              <img
-                src={images[lightboxImage]}
-                alt=""
-                className="max-h-[80vh] max-w-[88vw] object-contain"
-                style={{ transform: `scale(${zoom})` }}
-              />
-              <button className="absolute top-3 right-3 bg-white rounded-full p-2 shadow" onClick={() => setLightboxOpen(false)}>
-                <X className="h-5 w-5" />
-              </button>
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-black/60 text-white text-xs px-3 py-1 rounded">
-                {lightboxImage + 1} / {images.length}
+        {showFullGallery && (
+          <div className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto" onClick={() => setShowFullGallery(false)}>
+            <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
+              <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+                <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                  Back
+                </Button>
+                <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                  VEDA5 Health Center
+                </div>
               </div>
 
-              {/* Mobile: Previous/Next positioned under image */}
-              <div className="md:hidden absolute -bottom-16 left-6 right-6 flex items-center justify-between">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className="relative w-full cursor-pointer"
+                    style={{ paddingBottom: "75%" }}
+                    onClick={() => {
+                      setLightboxImage(i);
+                      setLightboxOpen(true);
+                    }}
+                  >
+                    <img src={img} alt={`VEDA5 ${i + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {lightboxOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm" onClick={() => setLightboxOpen(false)}>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+              }}
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage((prev) => (prev + 1) % images.length);
+              }}
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+              <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">VEDA5 Health Center</div>
+              <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+                <img src={images[lightboxImage]} alt={`VEDA5 ${lightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
                 <button
-                  onClick={() => setLightboxImage((i) => (i - 1 + images.length) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
+                  onClick={() => setLightboxOpen(false)}
+                  className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                  {lightboxImage + 1} / {images.length}
+                </div>
+              </div>
+
+              <div className="flex md:hidden items-center justify-between mt-4">
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+                  }}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
                 >
                   Previous
-                </button>
-                <button
-                  onClick={() => setLightboxImage((i) => (i + 1) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
+                </Button>
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setLightboxImage((prev) => (prev + 1) % images.length);
+                  }}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
                 >
                   Next
-                </button>
+                </Button>
               </div>
-
-              {/* Desktop: Arrow controls */}
-              <button className="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow" onClick={() => setLightboxImage((i) => (i - 1 + images.length) % images.length)}>
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button className="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow" onClick={() => setLightboxImage((i) => (i + 1) % images.length)}>
-                <ChevronRight className="h-5 w-5" />
-              </button>
             </div>
           </div>
         )}
 
         <div className="max-w-6xl mx-auto mt-12">
           <Card className="mb-12 rounded-xl">
-            <CardContent className="p-8 prose prose-lg max-w-none">
-              {content ? renderContent() : <p>Loading content...</p>}
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Top Centers/veda5 center.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === "quote") {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
             </CardContent>
           </Card>
         </div>
 
-        
+
 
         {/* Wellness & Rejuvenation Programs */}
-        <div className="mb-12 max-w-5xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
+        <div className="mb-12 max-w-6xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
           {/* Statistics Section */}
           <div className="grid grid-cols-3 gap-3 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10">
             <div className="text-center p-3 md:p-4 bg-white/60 rounded-xl">
               <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                 <Users className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
               </div>
-              <div className="text-xl md:text-3xl font-bold text-primary mb-1">5,000+</div>
+              <div className="text-xl md:text-3xl font-bold text-primary mb-1">1000+</div>
               <div className="text-xs md:text-sm" style={{ color: '#7F543D' }}>Happy Patients</div>
             </div>
             <div className="text-center p-3 md:p-4 bg-white/60 rounded-xl">
@@ -745,780 +871,144 @@ const Veda5Center = () => {
             </div>
           </div>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700/80 mb-4">
               <LotusIcon className="h-8 w-8 text-green-600" />
             </div>
-            <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h3>
+            <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{wellnessSection?.heading || "Wellness Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              Cleanse, de-stress, and revitalize your mind, body, and spirit with our holistic wellness programs
+              {wellnessSection?.intro || "Loading programs…"}
             </p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-            <AccordionItem value="kayakalpa" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <LotusIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
+            {(wellnessSection?.items || []).map((p, idx) => (
+              <AccordionItem
+                key={idx}
+                value={`well-${idx}`}
+                className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
+              >
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-700">
+                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2 border-green-700/80">
+                      {iconForWellnessTitle(p.title)}
+                    </div>
+                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                   </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Kayakalpa Rejuvenation & De-Stress Program</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Heal, restore and transform naturally with anti-aging and vitality enhancement.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Restores body strength & youthfulness</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Improves mental clarity & sleep cycle</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Herbal therapies for stress & fatigue relief</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="samshuddhi" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Samshuddhi Ayurveda Detox Program</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Full-body cleansing and immunity boost through traditional detox protocols.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Panchakarma detox + internal toxin removal</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Better digestion & metabolism</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Enhances immunity & energy levels</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="panchakarma" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <OilPotIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Panchakarma Treatment Program</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Annual total detox and dosha balance with customized therapies.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Deep-rooted toxin elimination</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Custom therapies based on body type</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Stronger immunity & longevity support</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="stress" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Stress Management & Mental Wellness</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Relax your mind and heal your emotions through yoga, meditation and calming therapies.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Reduces anxiety and burnout</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Improves focus, peace and sleep</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Meditation and guided relaxation</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="rejuvenation" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Anti-Aging & Rejuvenation Therapies</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Anti-aging and skin renewal for youthful energy and glow.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Anti-aging & vitality enhancement</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Herbal facials and nourishment</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Improves complexion and texture</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="weight" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Weight Management Programs</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Natural fat loss and lifestyle balance with personalized care.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Personalized diet + fat-burning therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Corrects metabolism & hormones</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Visible inch loss + improved fitness</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="immunity" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Immunity Boosting & Preventive Care</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Natural body defense strengthening with holistic preventive care.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Rasayana & herbal formulations</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Enhanced stamina & disease resistance</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Great for seasonal change & recovery</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="preventive" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Preventive Healthcare Program</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Stay healthy and disease-free through early lifestyle correction.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Strengthens internal systems</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Early lifestyle correction approach</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Builds long-term wellness habits</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="beauty" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Beauty & Skin Care Therapy</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Glow naturally with skin renewal and nourishing care.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Anti-aging & skin renewal treatments</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Herbal facials + nourishment</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Improves complexion & texture</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="liver" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Liver Detox Program</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Revive your liver and support digestion and vitality.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Removes toxin load & supports digestion</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Improves metabolism & skin health</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Boosts vitality & purification</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="mental" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Mental Health Wellness</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Emotional balance and inner harmony with comprehensive care.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Counselling + yoga + relaxation therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Reduces depression & anxiety symptoms</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Builds emotional resilience</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="sleep" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Moon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Sleep Disorder Therapy</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Non-invasive care for insomnia to restore deep, natural sleep.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Nervous system calming treatments</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Restores sleep routine & energy</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Guided relaxation and bedtime routines</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="holiday" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                    <Heart className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Great Escapes Wellness Holiday</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                  Vacation-style wellness combining relaxation with authentic healing.
-                </p>
-                <ul className="space-y-1.5 md:space-y-2">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Serene nature stay + healing programs</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Activities for body, mind & joy</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}><span className="text-green-600 mt-1">✓</span><span>Perfect wellness vacation for everyone</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
+                </AccordionTrigger>
+                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                  {p.description && (
+                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
+                      {p.description}
+                    </p>
+                  )}
+                  {p.bullets.length > 0 && (
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                          <span className="text-green-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
 
-        <div className="mb-12 max-w-5xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
+        <div className="mb-12 max-w-6xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700/80 mb-4">
               <Stethoscope className="h-8 w-8 text-blue-600" />
             </div>
-            <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h3>
+            <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{medicalSection?.heading || "Medical Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              Integrated, natural, and evidence-based Ayurvedic care for acute, chronic & lifestyle disorders.
+              {medicalSection?.intro || "Loading programs…"}
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-            <AccordionItem value="arthritis" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
+            {(medicalSection?.items || []).map((p, idx) => (
+              <AccordionItem
+                key={idx}
+                value={`med-${idx}`}
+                className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
+              >
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
+                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-blue-700/80">
+                      {iconForMedicalTitle(p.title)}
+                    </div>
+                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                   </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Arthritis & Joint Disorders</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Joint pain relief with natural therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Reduces swelling & improves flexibility</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Helps you move freely in daily life</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="spine" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Back Pain & Spine Care</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Relieves sciatica & disc-related pain</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Strengthens posture + spinal support</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Prevents future back problems</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="mentalcare" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Stress, Anxiety & Depression Care</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Deep relaxation for mental peace</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Herbal care for mood & calmness</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Restores sleep and inner balance</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="diabetes" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Diabetes & Metabolic Management</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Natural blood sugar regulation</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Protects nerves & organs</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Boosts daily energy and metabolism</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="hypertension" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Hypertension & Heart Health</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Manages high BP without stress</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Improves blood circulation</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Heart-friendly lifestyle routines</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="obesity" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Obesity & Weight Management</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Fat reduction + metabolic correction</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>No crash dieting — sustainable results</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Builds confidence and healthy routine</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="digestive" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Droplet className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Digestive & Gut Wellness</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Detox for acidity & constipation</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Herbs to heal inflammation</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Better digestion → better lifestyle</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="respiratory" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Asthma & Respiratory Disorders</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Easier breathing with herbal care</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Reduces allergy triggers</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Breathwork to increase lung strength</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="skin" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Skin Diseases & Natural Beauty</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Heals psoriasis, eczema & acne</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Treats root cause inside the body</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Brings clear & glowing skin naturally</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="thyroid" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Thyroid & Hormonal Balance</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Supports thyroid function naturally</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Helps weight, hair & mood balance</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Holistic endocrine system care</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="women" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <UserCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Women’s Wellness & PCOS Care</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Period pain & cycle regulation</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>PCOS & menopause symptom relief</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Enhances hormonal health & fertility</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="neuro" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Neurological Rehab & Nerve Disorders</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Support for paralysis & neuropathy</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Improves coordination & strength</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Helps regain independence gradually</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="cardio" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Cardio-Metabolic Support</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Controls cholesterol & weight</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Stress-free heart strengthening</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Long-term protective care</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="autoimmune" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Autoimmune Disorder Support</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Reduces flare-ups gently</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Gut detox for immune balance</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Improves comfort & energy levels</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="fatigue" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Heart className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                  </div>
-                  <span className="text-base md:text-lg font-semibold text-primary">Chronic Fatigue & Low Energy</span>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Deep energy restoration therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Boosts stamina & immunity</span></li>
-                  <li className="flex items-start gap-2 text-sm"><span className="text-blue-600 mt-1">✓</span><span>Enhances mood & productivity</span></li>
-                </ul>
-              </AccordionContent>
-            </AccordionItem>
+                </AccordionTrigger>
+                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                  {p.description && (
+                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
+                      {p.description}
+                    </p>
+                  )}
+                  {p.bullets.length > 0 && (
+                    <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm">
+                          <span className="text-blue-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
 
         {/* Why Choose VEDA5 - Infographic Section */}
-        <div className="mb-12 container mx-auto px-4 max-w-6xl">
+        <div className="mb-12 max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">
-              Why Choose VEDA5 for Your Holistic Health Journey
+              {whyChooseSection?.heading || "Why Choose VEDA5 for Your Holistic Health Journey"}
             </h2>
-            <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
-              Discover what makes VEDA5 India's premier destination for authentic luxury wellness and Ayurvedic healing
+            <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+              {whyChooseSection?.intro || "Loading…"}
             </p>
           </div>
 
-          {/* Icon Grid Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {(whyChooseSection?.items || []).map((it, idx) => (
+              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        {iconForWhyChooseTitle(it.title)}
+                      </div>
+                      <h3 className="text-lg font-bold text-primary">{it.title}</h3>
+                    </div>
+                    {it.description && (
+                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
+                        {it.description}
+                      </p>
+                    )}
+                    {it.bullets.length > 0 && (
+                      <ul className="list-none pl-0 space-y-1.5">
+                        {it.bullets.slice(0, 3).map((b, bi) => (
+                          <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">✓</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Tripadvisor Best of the Best Winner</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Six consecutive years of Travelers' Choice Awards (2020-2025) with 9.1/10 rating.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <MapPin className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Three Breathtaking Locations</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Rishikesh Himalayas, Kerala beachfront, and Goa lakefront healing environments.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Stethoscope className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Integrated Multi-System Approach</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Ayurveda, Panchakarma, Naturopathy, Hatha Yoga, and meditation combined.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Experienced Ayurvedic Physicians</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Qualified Vaidyas perform pulse diagnosis and personalized treatment protocols.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Completely Personalized Care</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Every plan customized to your constitution, conditions, and wellness goals.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Ayur Gold Certified Excellence</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Kerala location holds prestigious Ayur Gold certification.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Luxury Meets Authentic Healing</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Modern amenities with genuine therapies and hospitality.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Award-Winning Organic Cuisine</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Satvik vegetarian meals customized to your dosha type.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Leaf className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Fresh Herbal Medicine Preparation</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      VEDA5 Naturals creates natural, toxin-free Ayurvedic products.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Global Recognition & Trust</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Guests from 50+ countries with exceptional reviews.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <ClipboardList className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Flexible Comprehensive Programs</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Weekend escapes to month-long intensive therapies.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Globe className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-primary mb-2">Natural Environment & Digital Detox</h3>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
-                      Healing natural energy and mindful disconnection for deep rest.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
+        {/* Treatment Process & Patient Journey */}
         <div className="mb-12">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
@@ -1526,19 +1016,20 @@ const Veda5Center = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">1</div>
                 <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">1</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Initial Consultation & Wellness Evaluation</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Initial Consultation & Wellness Evaluation</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Day 1</span>
                     </div>
                   </div>
@@ -1549,19 +1040,20 @@ const Veda5Center = () => {
               </Card>
             </div>
 
-            <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">2</div>
                 <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">2</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Personalized Wellness Blueprint</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Personalized Wellness Blueprint</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Day 1–2</span>
                     </div>
                   </div>
@@ -1572,19 +1064,20 @@ const Veda5Center = () => {
               </Card>
             </div>
 
-            <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">3</div>
                 <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">3</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Daily Therapies & Mindful Practices</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Daily Therapies & Mindful Practices</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Ongoing</span>
                     </div>
                   </div>
@@ -1595,19 +1088,20 @@ const Veda5Center = () => {
               </Card>
             </div>
 
-            <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">4</div>
                 <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">4</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Ayurvedic Diet & Nutritional Support</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Ayurvedic Diet & Nutritional Support</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Daily</span>
                     </div>
                   </div>
@@ -1618,19 +1112,20 @@ const Veda5Center = () => {
               </Card>
             </div>
 
-            <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">5</div>
                 <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">5</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Activity className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Lifestyle Guidance & Wellness Education</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Lifestyle Guidance & Wellness Education</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Throughout Stay</span>
                     </div>
                   </div>
@@ -1641,18 +1136,19 @@ const Veda5Center = () => {
               </Card>
             </div>
 
-            <div className="relative flex items-start gap-3 md:gap-6 group">
-              <div className="flex flex-col items-center flex-shrink-0">
+            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 group">
+              <div className="hidden md:flex flex-col items-center flex-shrink-0">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">6</div>
               </div>
-              <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                 <CardContent className="p-4 md:p-6">
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">6</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                     </div>
                     <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary">Post-Retreat Care & Continued Wellness</h3>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Post-Retreat Care & Continued Wellness</h3>
                       <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Post‑Retreat</span>
                     </div>
                   </div>
@@ -1666,7 +1162,7 @@ const Veda5Center = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mb-12 rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+        <div className="mb-12 max-w-6xl mx-auto rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             <div className="text-center lg:text-left">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4">Ready to Start Your Wellness Journey?</h2>
@@ -1692,20 +1188,20 @@ const Veda5Center = () => {
               </p>
             </div>
             <div className="order-first lg:order-last">
-              <img src="/Center Images/veda5/CTA-image.jpg" alt="VEDA5 Wellness Center" className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg" />
+              <img src="/Center Images/veda5/CTA-image.jpg" alt="VEDA5 Wellness Center" className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg border-2 border-primary/30 transition-transform duration-700 ease-out hover:scale-105" />
             </div>
           </div>
         </div>
-        
-        <div className="mb-12">
+
+        <div className="mb-12 max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
-            <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>
-              Experience healing in comfort with our comprehensive range of traditional and modern facilities
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">{facilitiesSection?.heading || "Facilities & Amenities"}</h2>
+            <p className="text-base md:text-lg mx-auto mb-8" style={{ color: "#7F543D" }}>
+              {facilitiesSection?.intro || "Experience healing in comfort with our comprehensive range of traditional and modern facilities"}
             </p>
           </div>
 
-          <div className="max-w-7xl mx-auto relative mb-10">
+          <div className="max-w-6xl mx-auto relative mb-10">
             <button
               onClick={() => setCurrentFacilityImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
               className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
@@ -1734,7 +1230,6 @@ const Veda5Center = () => {
                         onClick={() => {
                           setFacilityLightboxImage(index);
                           setFacilityLightboxOpen(true);
-                          setFacilityZoom(1);
                         }}
                       >
                         <img src={image} alt={`VEDA5 Facility ${index + 1}`} className="w-full aspect-video object-cover rounded-lg" />
@@ -1756,7 +1251,6 @@ const Veda5Center = () => {
                         onClick={() => {
                           setFacilityLightboxImage(index);
                           setFacilityLightboxOpen(true);
-                          setFacilityZoom(1);
                         }}
                       >
                         <img src={image} alt={`VEDA5 Facility ${index + 1}`} className="w-full aspect-video object-cover rounded-lg" />
@@ -1780,238 +1274,92 @@ const Veda5Center = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Stethoscope className="h-7 w-7 text-white" />
+            {(facilitiesSection?.items || []).map((it, idx) => (
+              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {iconForFacilityTitle(it.title)}
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary">{it.title}</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-primary">Medical Consultation Centre</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Experienced Ayurveda physicians</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Personalized diagnosis and treatment plans</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Regular progress monitoring</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Droplet className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Ayurveda Therapy Centre</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Panchakarma and detox therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Authentic herbal treatments</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Skilled therapists and dedicated rooms</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <LotusIcon className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Yoga & Meditation Hall</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Daily yoga sessions</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Guided meditation</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Peaceful, spacious environment</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <HeartPulse className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Spa & Wellness Centre</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Herbal massages and relaxation therapies</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Holistic rejuvenation spaces</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Utensils className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Organic Dining Restaurant</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Wholesome vegetarian cuisine</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Customized diet plans</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Locally sourced ingredients</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Home className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Luxury Accommodation</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Comfortable rooms and suites</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Nature views and serene ambience</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Modern amenities</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Droplet className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Swimming Pool</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Relaxing poolside environment</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Ideal for gentle aquatic activity</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Leaf className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Ayurvedic Product Shop</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Authentic oils, herbs and wellness products</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Doctor-recommended formulations</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Users className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Activity & Recreation Facilities</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Nature walks and outdoor relaxation</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Community spaces for group activities</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Globe className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Additional Amenities</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Wi‑Fi and on‑site assistance</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Airport transfers on request</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Doctor on call and emergency support</span></li>
-                </ul>
-              </CardContent>
-            </Card>
+                  {it.description && (
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
+                      {it.description}
+                    </p>
+                  )}
+                  {it.bullets.length > 0 && (
+                    <ul className="space-y-2.5">
+                      {it.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
 
           {facilityLightboxOpen && (
-            <div
-              className="fixed inset-0 backdrop-blur-lg z-50 flex items-center justify-center p-4"
-              style={{ backgroundColor: 'rgba(237, 232, 208, 0.95)' }}
-              onClick={() => setFacilityLightboxOpen(false)}
-            >
-              <div className="absolute top-6 left-1/2 -translate-x-1/2 text-primary font-bold text-xl md:text-3xl whitespace-nowrap">VEDA5 Health Center</div>
+            <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
               <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
-                }}
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+                onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
                 aria-label="Previous"
               >
-                <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              <button
+                onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+                aria-label="Next"
+              >
+                <ChevronRight className="h-6 w-6" />
               </button>
 
-              <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16 overflow-visible" onClick={(e) => e.stopPropagation()}>
-                <div className="relative" style={{ transform: `scale(${facilityZoom})` }}>
+              <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+                <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">VEDA5 Health Center</div>
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                   <img
                     src={facilityImages[facilityLightboxImage]}
                     alt={`VEDA5 Facility ${facilityLightboxImage + 1}`}
-                    className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-
                   <button
                     onClick={() => setFacilityLightboxOpen(false)}
-                    className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg"
+                    className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                     aria-label="Close"
                   >
-                    <X className="h-6 w-6 md:h-7 md:w-7" />
+                    ✕
                   </button>
-
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                     {facilityLightboxImage + 1} / {facilityImages.length}
                   </div>
+                </div>
 
-                  {/* Mobile: Previous/Next positioned under image (Facilities) */}
-                  <div className="md:hidden absolute -bottom-16 left-6 right-6 flex items-center justify-between">
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }}
-                      className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                    >
-                      Previous
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length); }}
-                      className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                    >
-                      Next
-                    </button>
-                  </div>
+                <div className="flex md:hidden items-center justify-between mt-4">
+                  <Button
+                    onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                  >
+                    Previous
+                  </Button>
+                  <Button
+                    onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                  >
+                    Next
+                  </Button>
                 </div>
               </div>
-
-              
-
-              
-
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length);
-                }}
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
-                aria-label="Next"
-              >
-                <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-              </button>
             </div>
           )}
         </div>
 
-        <div className="mb-12 rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+        <div className="mb-12 max-w-6xl mx-auto rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Expert Medical Team</h2>
             <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
@@ -2026,7 +1374,7 @@ const Veda5Center = () => {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
                     <Stethoscope className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Ayurvedic Physicians (Vaidyas)</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-primary">Ayurvedic Physicians</h3>
                 </div>
                 <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
                   <li>Experienced doctors holding BAMS degrees from prestigious Ayurvedic medical colleges</li>
@@ -2125,27 +1473,26 @@ const Veda5Center = () => {
         </div>
 
         {/* Patient Success Stories & Reviews (below Expert Medical Team) */}
-        <div className="mb-12">
+        <div className="mb-12 max-w-6xl mx-auto">
           <div className="text-center mb-6 md:mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews
-</h2>
-            <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from guests across Rishikesh, Kerala, and Goa about their transformational healing journeys</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+            <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Hear from guests across Rishikesh, Kerala, and Goa about their transformational healing journeys</p>
           </div>
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-6">
             {(["Rishikesh", "Kerala", "Goa"] as const).map((c) => (
               <Button key={c} onClick={() => setReviewCity(c)} className={`px-3 py-2 md:px-8 md:py-4 text-xs md:text-base font-semibold ${reviewCity === c ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary border-2 border-primary hover:bg-primary/10"}`}>{c}</Button>
             ))}
           </div>
-          <div className="relative">
+          <div className="relative min-h-[420px] md:min-h-[480px]">
             <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-              <CardContent className="p-4 md:p-8">
-                <div className="max-w-7xl mx-auto">
+              <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                <div className="max-w-4xl mx-auto flex flex-col h-full">
                   <div className="text-primary/20 mb-3 md:mb-4">
-                    <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+                    <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
                   </div>
                   {reviewsByCity[reviewCity]?.length ? (
                     <div>
-                      <div className="mb-4 md:mb-6">
+                      <div className="mb-4 md:mb-6 flex-1">
                         <p className="text-sm md:text-xl leading-relaxed mb-2" style={{ color: "#7F543D" }}>
                           "{reviewsByCity[reviewCity][currentReview].title}"
                         </p>
@@ -2176,8 +1523,24 @@ const Veda5Center = () => {
                 </div>
               </CardContent>
             </Card>
-            <button onClick={goPrevReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review"><ChevronLeft className="h-4 w-4 md:h-6 md:w-6" /></button>
-            <button onClick={goNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review"><ChevronRight className="h-4 w-4 md:h-6 md:w-6" /></button>
+            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+              <button
+                onClick={goPrevReview}
+                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+              <button
+                onClick={goNextReview}
+                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Next review"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+            </div>
             {isReviewAutoPlaying && (
               <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>Auto</div>
             )}
@@ -2276,13 +1639,13 @@ const Veda5Center = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 md:mt-16 mb-12">
+        <div className="mt-12 md:mt-16 mb-12 max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
               <ShieldCheck className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Information</h2>
-            <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>Flexible payment options and insurance support to make holistic healthcare accessible</p>
+            <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>Flexible payment options and insurance support to make holistic healthcare accessible</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -2359,14 +1722,14 @@ const Veda5Center = () => {
             </CardContent>
           </Card>
         </div>
-        
-        <div className="mb-12">
+
+        <div className="mb-12 max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
               <MessageCircle className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions About VEDA5</h2>
-            <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+            <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
               Find answers to common questions about treatments, facilities, and your healing journey
             </p>
           </div>
@@ -2462,99 +1825,179 @@ const Veda5Center = () => {
           </Accordion>
         </div>
 
-        <div className="mb-12">
-          <Card className="border-2 border-primary">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Address – Rishikesh</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        VEDA5 Ayurveda & Yoga Retreat<br />
-                        Neelkanth Road, Rattapani<br />
-                        Rishikesh - 249137<br />
-                        Uttarakhand, INDIA
-                      </p>
-                    </div>
-                  </div>
+        <div className="mb-12 max-w-6xl mx-auto">
+          <Card className="border-none shadow-none rounded-3xl overflow-hidden bg-white">
+            <CardContent className="p-8 md:p-12">
+              <h2 className="text-3xl font-bold text-primary mb-10">Contact Information</h2>
 
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Address – Kerala</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        VEDA5 Ayurveda & Yoga Retreat<br />
-                        Kurikuri Beach, Kaipamangalam<br />
-                        Thrissur District - 680615<br />
-                        Kerala, INDIA
-                      </p>
-                    </div>
-                  </div>
+              <div className="grid gap-12 md:grid-cols-[1fr_1.2fr] lg:gap-16">
+                <div className="space-y-10">
+                  {contactData[currentContactIdx] && (
+                    <>
+                      {/* Address Section */}
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-2">Address</h4>
+                          <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                            {contactData[currentContactIdx].address.map((l, i) => (
+                              <span key={i}>{l}{i < contactData[currentContactIdx].address.length - 1 ? <br /> : null}</span>
+                            ))}
+                          </p>
+                        </div>
+                      </div>
 
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Address – Goa</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        VEDA5 Luxury Ayurveda & Yoga Retreat<br />
-                        Arambol, Pernem<br />
-                        North Goa - 403524<br />
-                        Goa, INDIA
-                      </p>
-                    </div>
-                  </div>
+                      {/* Distances Section */}
+                      {contactData[currentContactIdx].distances.length > 0 && (
+                        <div className="flex items-start gap-3">
+                          <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                          <div>
+                            <h4 className="font-semibold text-primary mb-2">Distance from Major Locations</h4>
+                            <ul className="list-disc list-inside break-words leading-relaxed space-y-1" style={{ color: '#7F543D' }}>
+                              {contactData[currentContactIdx].distances.map((d, i) => (
+                                <li key={i}>{d}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )}
                 </div>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        +91 135 304 7777<br />
-                        Mobile: +91 98370 48016
-                      </p>
+                {/* Map Slider Section */}
+                <div className="relative group/map self-start">
+                  <div className="rounded-2xl bg-white p-1 shadow-lg border border-primary/10 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden relative">
+                      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
+                        <div className="bg-primary/90 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
+                          {maps[currentContactIdx].city}
+                        </div>
+                      </div>
+                      <div className="relative w-full aspect-[4/3]">
+                        <iframe
+                          title={`Veda5 ${maps[currentContactIdx].city} Map`}
+                          src={maps[currentContactIdx].iframe}
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Email</h4>
-                      <p style={{ color: "#7F543D" }}>info@vedafive.com</p>
-                    </div>
+                  {/* Navigation Arrows */}
+                  <div className="absolute inset-y-0 left-0 flex items-center -translate-x-4 md:-translate-x-6">
+                    <button
+                      onClick={goPrevMap}
+                      className="bg-white/80 hover:bg-primary hover:text-white text-primary p-2 md:p-2.5 rounded-full shadow-md transition-all border border-primary/20 z-20"
+                      aria-label="Previous map"
+                    >
+                      <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
+                    </button>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Website</h4>
-                      <a href="https://www.vedafive.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.vedafive.com</a>
-                    </div>
+                  <div className="absolute inset-y-0 right-0 flex items-center translate-x-4 md:translate-x-6">
+                    <button
+                      onClick={goNextMap}
+                      className="bg-white/80 hover:bg-primary hover:text-white text-primary p-2 md:p-2.5 rounded-full shadow-md transition-all border border-primary/20 z-20"
+                      aria-label="Next map"
+                    >
+                      <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
+                    </button>
                   </div>
                 </div>
               </div>
+
+              {/* Transportation Services Section */}
+              {transportText && (
+                <div className="mt-12 bg-[#F1F5F5] rounded-xl p-6 border-l-4 border-[#2F5B63]">
+                  <div className="flex items-start gap-4">
+                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="font-bold text-primary mb-2">Transportation Services</h4>
+                      <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>{transportText}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
 
-        <div className="max-w-4xl mx-auto rounded-2xl p-8 md:p-10 bg-primary text-primary-foreground shadow-md mt-10 md:mt-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-3">Begin Your Holistic Healing Journey at Veda5</h2>
-          <p className="text-center mb-6 opacity-90">
-            Experience premium Ayurveda and yoga in tranquil natural settings across Rishikesh, Kerala, and Goa.
-          </p>
-          <div className="flex justify-center">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="bg-white text-primary hover:bg-white/90 font-semibold"
-              onClick={() => setQuoteModalOpen(true)}
-            >
-              Book Your Consultation Today
-            </Button>
+        <div className="mb-12 max-w-6xl mx-auto">
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <img
+                  src="/Center Images/veda5/CTA bottom.jpg"
+                  alt="VEDA5 Health Center"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Veda5</h2>
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <Phone className="h-4 w-4 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Veda5</h2>
+                <div className="flex flex-wrap gap-3">
+                  <Button
+                    size="lg"
+                    className="rounded-full px-6 bg-white text-primary hover:bg-white/90"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <Phone className="h-5 w-5 text-red-400" />
+                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/Center Images/veda5/CTA bottom.jpg"
+                  alt="VEDA5 Health Center"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2568,6 +2011,7 @@ const Veda5Center = () => {
       >
         <Phone size={20} />
         <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
       </button>
     </div>
   );

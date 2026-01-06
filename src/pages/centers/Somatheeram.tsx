@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import MarkdownContent from "@/components/MarkdownContent";
 import {
   Accordion,
   AccordionContent,
@@ -25,12 +26,26 @@ export default function Somatheeram() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   
   const [showVideoGalleryTop, setShowVideoGalleryTop] = useState(false);
-  const [content, setContent] = useState("");
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
-  const [autoReview, setAutoReview] = useState(true);
+
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactPhones, setContactPhones] = useState<string[]>([]);
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
+
+  const [wellnessIntro, setWellnessIntro] = useState("");
+  const [wellnessPrograms, setWellnessPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [medicalIntro, setMedicalIntro] = useState("");
+  const [medicalPrograms, setMedicalPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [treatmentIntro, setTreatmentIntro] = useState("");
+  const [treatmentSteps, setTreatmentSteps] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [whyChooseIntro, setWhyChooseIntro] = useState("");
+  const [whyChooseItems, setWhyChooseItems] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [facilitiesIntro, setFacilitiesIntro] = useState("");
+  const [facilitiesItems, setFacilitiesItems] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
 
   const [selectedImage, setSelectedImage] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const isAutoPlaying = true;
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [galleryLightboxOpen, setGalleryLightboxOpen] = useState(false);
   const [galleryLightboxImage, setGalleryLightboxImage] = useState(0);
@@ -138,14 +153,21 @@ export default function Somatheeram() {
 
   useEffect(() => {
     const avatarFor = (idx:number) => `https://i.pravatar.cc/120?img=${(idx % 70) + 1}`;
-    fetch("/content/Top Centers/somatheeram center patient reviews.txt")
+    fetch("/content/Top Centers/somatheeram/patient reviews.txt")
       .then((r) => r.text())
       .then((t) => {
-        const lines = t.split(/\r?\n/);
+        const lines = t.split(/\r?\n/).map((l) => l.trim());
         const reviews: {name:string,country:string,condition:string,date:string,rating:number,photo:string,verified:boolean,quote:string}[] = [];
         let current: any = null;
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i].trim();
+        let inReview = false;
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inReview = false;
+            continue;
+          }
+
           const headerMatch = /^\*\*Review\s+\d+\s+-\s+(.+?)\,\s+(.+?)\*\*$/.exec(line);
           if (headerMatch) {
             if (current) reviews.push(current);
@@ -158,30 +180,84 @@ export default function Somatheeram() {
               photo: avatarFor(reviews.length),
               verified: true,
               quote: "",
+              _title: "",
             };
+            inReview = true;
             continue;
           }
+
+          if (!inReview || !current) continue;
+
           const titleMatch = /^\*"(.+?)"\*$/.exec(line);
-          if (titleMatch && current) {
-            current.quote = `${titleMatch[1]}\n`;
+          if (titleMatch) {
+            current._title = titleMatch[1];
             continue;
           }
-          const ratingMatch = /^\*\*Rating:\s*[^\d]*\((\d)\/5\)\*\*$/.exec(line);
-          if (ratingMatch && current) {
+
+          const ratingMatch = /^\*\*Rating:\s*.*\((\d)\/5\)\*\*$/.exec(line);
+          if (ratingMatch) {
             current.rating = parseInt(ratingMatch[1], 10);
             continue;
           }
-          if (line && current && !line.startsWith("###")) {
-            // Append body text
-            current.quote += (current.quote ? "\n" : "") + line;
+
+          // body
+          current.quote += (current.quote ? "\n" : "") + line;
+        }
+
+        if (current) reviews.push(current);
+
+        const normalized = reviews.map((r: any) => {
+          const title = r._title ? `${r._title}\n\n` : "";
+          return { ...r, quote: `${title}${r.quote}`.trim() };
+        });
+        setPatientReviews(normalized);
+      })
+      .catch((err) => console.error("Error loading Somatheeram patient reviews:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/somatheeram/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const address: string[] = [];
+        const phones: string[] = [];
+        const distances: string[] = [];
+        let transport = "";
+
+        let section: "" | "address" | "phone" | "distances" | "transport" = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const title = line.slice(2, -2).toLowerCase();
+            if (title.includes("address")) section = "address";
+            else if (title.includes("phone")) section = "phone";
+            else if (title.includes("distance")) section = "distances";
+            else if (title.includes("transport")) section = "transport";
+            else section = "";
+            continue;
+          }
+
+          if (section === "address") {
+            address.push(line);
+          } else if (section === "phone") {
+            if (line.startsWith("*")) phones.push(line.replace(/^\*+\s*/, ""));
+            else phones.push(line);
+          } else if (section === "distances") {
+            if (line.startsWith("*")) distances.push(line.replace(/^\*+\s*/, ""));
+            else distances.push(line);
+          } else if (section === "transport") {
+            transport = transport ? `${transport} ${line}` : line;
           }
         }
-        if (current) reviews.push(current);
-        setPatientReviews(reviews);
+
+        setContactAddress(address);
+        setContactPhones(phones);
+        setContactDistances(distances);
+        setTransportText(transport);
       })
-      .catch(() => {
-        // Fallback: keep empty or previous
-      });
+      .catch((err) => console.error("Error loading Somatheeram contact info:", err));
   }, []);
 
   const mediaItems = [
@@ -194,19 +270,261 @@ export default function Somatheeram() {
   const prevFacility = () => setCurrentFacilityIndex((i) => (i - 1 + facilityImages.length) % facilityImages.length);
 
   useEffect(() => {
-    fetch("/content/Top Centers/somatheeram center.txt")
-      .then((r) => r.text())
-      .then((t) => setContent(t))
-      .catch(() => {});
+    fetch("/content/Top Centers/somatheeram/Wellness Programs.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inSection = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inSection = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inSection = true;
+            continue;
+          }
+          if (!inSection) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            if (line.startsWith("*")) {
+              const bullet = line.replace(/^\*+\s*/, "");
+              current.bullets.push(bullet);
+            } else {
+              current.description = current.description ? `${current.description} ${line}` : line;
+            }
+          }
+        }
+        if (current) items.push(current);
+        setWellnessIntro(intro);
+        setWellnessPrograms(items);
+      })
+      .catch((err) => console.error("Error loading Somatheeram wellness programs:", err));
+
+    fetch("/content/Top Centers/somatheeram/Medical Programs.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inSection = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inSection = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inSection = true;
+            continue;
+          }
+          if (!inSection) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            if (line.startsWith("*")) {
+              const bullet = line.replace(/^\*+\s*/, "");
+              current.bullets.push(bullet);
+            } else {
+              current.description = current.description ? `${current.description} ${line}` : line;
+            }
+          }
+        }
+        if (current) items.push(current);
+        setMedicalIntro(intro);
+        setMedicalPrograms(items);
+      })
+      .catch((err) => console.error("Error loading Somatheeram medical programs:", err));
+
+    fetch("/content/Top Centers/somatheeram/Treatment Process & Patient Journey.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inSection = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inSection = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inSection = true;
+            continue;
+          }
+          if (!inSection) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            if (line.startsWith("*")) {
+              const bullet = line.replace(/^\*+\s*/, "");
+              current.bullets.push(bullet);
+            } else {
+              current.description = current.description ? `${current.description} ${line}` : line;
+            }
+          }
+        }
+        if (current) items.push(current);
+        setTreatmentIntro(intro);
+        setTreatmentSteps(items);
+      })
+      .catch((err) => console.error("Error loading Somatheeram treatment process:", err));
+
+    fetch("/content/Top Centers/somatheeram/Why Choose Somatheeram.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inSection = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inSection = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inSection = true;
+            continue;
+          }
+          if (!inSection) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            if (line.startsWith("*")) {
+              const bullet = line.replace(/^\*+\s*/, "");
+              current.bullets.push(bullet);
+            } else {
+              current.description = current.description ? `${current.description} ${line}` : line;
+            }
+          }
+        }
+        if (current) items.push(current);
+        setWhyChooseIntro(intro);
+        setWhyChooseItems(items);
+      })
+      .catch((err) => console.error("Error loading Somatheeram why choose content:", err));
+
+    fetch("/content/Top Centers/somatheeram/Facilities & Amenities.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inSection = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inSection = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inSection = true;
+            continue;
+          }
+          if (!inSection) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            if (line.startsWith("*")) {
+              const bullet = line.replace(/^\*+\s*/, "");
+              current.bullets.push(bullet);
+            } else {
+              current.description = current.description ? `${current.description} ${line}` : line;
+            }
+          }
+        }
+        if (current) items.push(current);
+        setFacilitiesIntro(intro);
+        setFacilitiesItems(items);
+      })
+      .catch((err) => console.error("Error loading Somatheeram facilities content:", err));
   }, []);
 
+  const wellnessIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("panchakarma") || s.includes("purification") || s.includes("detox")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("stress") || s.includes("mental") || s.includes("burnout") || s.includes("insomnia")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("slim") || s.includes("weight")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("immun")) return <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("beauty") || s.includes("skin") || s.includes("glow")) return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    if (s.includes("rejuven") || s.includes("rasayana") || s.includes("anti")) return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    return <Heart className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+  };
+
+  const medicalIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("musculoskeletal") || s.includes("joint") || s.includes("arthritis") || s.includes("back") || s.includes("spine")) return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("metabolic") || s.includes("diabetes") || s.includes("hypertension") || s.includes("cholesterol") || s.includes("lifestyle")) return <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("digest") || s.includes("gastro") || s.includes("ibs") || s.includes("acidity")) return <Utensils className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("skin") || s.includes("allerg")) return <Leaf className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("respir" ) || s.includes("asthma") || s.includes("bronch")) return <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("women") || s.includes("gyn") || s.includes("pcos") || s.includes("menop")) return <UserCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("neuro") || s.includes("mental") || s.includes("anxiety") || s.includes("depress") || s.includes("insomnia")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("cardio") || s.includes("heart") || s.includes("circulation")) return <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+  };
+
+  const treatmentIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("pre-arrival") || s.includes("planning") || s.includes("consultation")) return <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("arrival") || s.includes("comprehensive")) return <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("daily") || s.includes("routine")) return <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("meals") || s.includes("diet") || s.includes("nutrition")) return <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("monitor") || s.includes("adjust")) return <HeartPulse className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("final") || s.includes("home") || s.includes("empower")) return <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    if (s.includes("post") || s.includes("follow")) return <MessageCircle className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    return <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+  };
+
+  const whyChooseIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    const cls = "h-6 w-6 text-primary group-hover:text-white transition-colors";
+    if (s.includes("first") || s.includes("world")) return <Award className={cls} />;
+    if (s.includes("recogn") || s.includes("award")) return <Award className={cls} />;
+    if (s.includes("expert") || s.includes("modern") || s.includes("concern") || s.includes("health")) return <ShieldCheck className={cls} />;
+    if (s.includes("beach") || s.includes("sanctuary") || s.includes("serene") || s.includes("nature")) return <Leaf className={cls} />;
+    if (s.includes("holistic") || s.includes("program")) return <TrendingUp className={cls} />;
+    if (s.includes("accommod") || s.includes("comfort") || s.includes("cottage") || s.includes("room")) return <Users className={cls} />;
+    if (s.includes("authentic") || s.includes("purity") || s.includes("commit")) return <TestTube2 className={cls} />;
+    if (s.includes("guest") || s.includes("experience") || s.includes("transform")) return <Heart className={cls} />;
+    return <Award className={cls} />;
+  };
+
+  const facilityIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("accommod") || s.includes("room") || s.includes("suite") || s.includes("cottage")) return <Home className="h-7 w-7 text-white" />;
+    if (s.includes("treatment") || s.includes("therapy") || s.includes("ayurvedic") || s.includes("center")) return <Droplet className="h-7 w-7 text-white" />;
+    if (s.includes("restaurant") || s.includes("dining") || s.includes("meals") || s.includes("diet")) return <Utensils className="h-7 w-7 text-white" />;
+    if (s.includes("yoga") || s.includes("meditation")) return <Activity className="h-7 w-7 text-white" />;
+    if (s.includes("beach") || s.includes("gardens") || s.includes("tropical") || s.includes("nature")) return <TreePine className="h-7 w-7 text-white" />;
+    if (s.includes("pool") || s.includes("swimming") || s.includes("relax")) return <Droplet className="h-7 w-7 text-white" />;
+    if (s.includes("shop") || s.includes("store")) return <ShoppingBag className="h-7 w-7 text-white" />;
+    if (s.includes("digital") || s.includes("detox") || s.includes("wifi")) return <BookOpen className="h-7 w-7 text-white" />;
+    return <Home className="h-7 w-7 text-white" />;
+  };
+
   useEffect(() => {
-    if (!isAutoPlaying) return;
     const id = setInterval(() => {
       setSelectedImage((p) => (p + 1) % images.length);
     }, 3000);
     return () => clearInterval(id);
-  }, [isAutoPlaying, images.length]);
+  }, [images.length]);
 
   useEffect(() => {
     if (!galleryLightboxOpen) return;
@@ -238,67 +556,12 @@ export default function Somatheeram() {
   }, [lightboxOpen, lightboxIndex, facilityImages.length]);
 
   useEffect(() => {
-    if (!autoReview) return;
+    if (patientReviews.length === 0) return;
     const id = setInterval(() => {
       setCurrentReviewIndex((i) => (i + 1) % patientReviews.length);
     }, 5000);
     return () => clearInterval(id);
-  }, [autoReview, patientReviews.length]);
-  
-
-  const parsedContent = useMemo(() => {
-    if (!content) return null;
-    const renderInline = (text: string, keyBase: string) => {
-      const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).filter(Boolean);
-      return parts.map((part, i) => {
-        if (/^\*\*.*\*\*$/.test(part)) return <strong key={keyBase + i} className="font-semibold text-[#7F543D]">{part.slice(2, -2)}</strong>;
-        if (/^\*[^*]+\*$/.test(part)) return <em key={keyBase + i} className="italic text-[#7F543D]">{part.slice(1, -1)}</em>;
-        return <span key={keyBase + i}>{part}</span>;
-      });
-    };
-    const lines = content.split(/\r?\n/);
-    const nodes: any[] = [];
-    let paragraphBuffer: string[] = [];
-    let listBuffer: { items: string[]; type: 'star' | 'dash' } | null = null;
-    const flushParagraph = (k: string) => {
-      if (!paragraphBuffer.length) return;
-      nodes.push(<p key={k} className="text-[#7F543D] mb-4">{renderInline(paragraphBuffer.join(" "), k)}</p>);
-      paragraphBuffer = [];
-    };
-    const flushList = (k: string) => {
-      if (!listBuffer || !listBuffer.items.length) return;
-      nodes.push(
-        <ul key={k} className="list-disc pl-5 mb-4 text-[#7F543D]">
-          {listBuffer.items.map((li, i) => <li key={k + i}>{renderInline(li, k + "-" + i)}</li>)}
-        </ul>
-      );
-      listBuffer = null;
-    };
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      if (!line) { flushParagraph("p" + i); flushList("l" + i); continue; }
-      if (line.startsWith("### ")) { flushParagraph("p" + i); flushList("l" + i); nodes.push(<h2 key={"h2-" + i} className="text-2xl text-primary font-semibold mb-3">{renderInline(line.replace(/^###\s+/, ""), "h2-" + i)}</h2>); continue; }
-      const boldMatch = line.match(/^\*\*(.+)\*\*$/);
-      if (boldMatch) { flushParagraph("p" + i); flushList("l" + i); const inner = boldMatch[1].trim(); if (inner.length > 30) nodes.push(<h1 key={"h1-" + i} className="text-3xl text-primary font-bold border-b pb-2 mb-4">{renderInline(inner, "h1-" + i)}</h1>); else nodes.push(<h3 key={"h3-" + i} className="text-lg text-primary font-semibold mb-2">{renderInline(inner, "h3-" + i)}</h3>); continue; }
-      if (/^[*-]\s+/.test(line)) {
-        const isStar = /^\*\s+/.test(line);
-        const item = line.replace(/^[*-]\s+/, "").trim();
-        if (!listBuffer) {
-          listBuffer = { items: [], type: isStar ? 'star' : 'dash' };
-        } else if (listBuffer.type !== (isStar ? 'star' : 'dash')) {
-          flushList('l' + i);
-          listBuffer = { items: [], type: isStar ? 'star' : 'dash' };
-        }
-        listBuffer.items.push(item);
-        continue;
-      }
-      const numberedBold = line.match(/^\d+\.\s*(?:\*\*(.+)\*\*|(.+))/);
-      if (numberedBold) { flushParagraph("p" + i); flushList("l" + i); const inner = numberedBold[1] || numberedBold[2] || line; nodes.push(<h3 key={"num-" + i} className="text-xl text-primary font-semibold mb-2">{renderInline(inner.trim(), "num-" + i)}</h3>); continue; }
-      paragraphBuffer.push(line);
-    }
-    flushParagraph("end"); flushList("end");
-    return nodes;
-  }, [content]);
+  }, [patientReviews.length]);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
@@ -326,22 +589,16 @@ export default function Somatheeram() {
                   size="lg"
                   variant="secondary"
                   className="bg-white text-primary hover:bg-white/90 font-semibold"
-                  asChild
+                  onClick={() => setQuoteModalOpen(true)}
                 >
-                  <Link to="/contact">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Book Consultation
-                  </Link>
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Consultation
                 </Button>
               </div>
             </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-
-  
-
-      
 
       
 
@@ -356,7 +613,11 @@ export default function Somatheeram() {
                   variant={!showVideoGalleryTop ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(false)}
-                  className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    !showVideoGalleryTop
+                      ? "scale-105 shadow-lg"
+                      : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   Photo Gallery
                 </Button>
@@ -364,7 +625,11 @@ export default function Somatheeram() {
                   variant={showVideoGalleryTop ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(true)}
-                  className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    showVideoGalleryTop
+                      ? "scale-105 shadow-lg"
+                      : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -382,7 +647,6 @@ export default function Somatheeram() {
                   />
                   <button
                     onClick={() => {
-                      setIsAutoPlaying(false);
                       setSelectedImage((prev) => (prev - 1 + images.length) % images.length);
                     }}
                     className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
@@ -392,7 +656,6 @@ export default function Somatheeram() {
                   </button>
                   <button
                     onClick={() => {
-                      setIsAutoPlaying(false);
                       setSelectedImage((prev) => (prev + 1) % images.length);
                     }}
                     className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
@@ -522,19 +785,33 @@ export default function Somatheeram() {
       </div>
 
       {showFullGallery && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex flex-col">
-          <div className="flex justify-end p-4">
-            <button
-              className="bg-white text-primary px-4 py-2 rounded-lg"
-              onClick={() => setShowFullGallery(false)}
-            >
-              Close
-            </button>
-          </div>
-          <div className="flex-1 overflow-auto p-4">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-6xl mx-auto">
-              {images.map((src, i) => (
-                <img key={i} src={src} alt={`Somatheeram ${i + 1}`} className="w-full h-full object-cover rounded-lg" />
+        <div
+          className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto"
+          onClick={() => setShowFullGallery(false)}
+        >
+          <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+              <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                Back
+              </Button>
+              <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                Somatheeram Ayurvedic Health Resort
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {images.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative w-full cursor-pointer"
+                  style={{ paddingBottom: "75%" }}
+                  onClick={() => {
+                    setGalleryLightboxImage(i);
+                    setGalleryLightboxOpen(true);
+                  }}
+                >
+                  <img src={img} alt={`Somatheeram ${i + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
+                </div>
               ))}
             </div>
           </div>
@@ -543,90 +820,91 @@ export default function Somatheeram() {
 
       {galleryLightboxOpen && (
         <div
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
+          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
           onClick={() => setGalleryLightboxOpen(false)}
         >
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">
-              Somatheeram Ayurvedic Health Resort
-            </h2>
-          </div>
-
-          {/* Desktop: Arrow Previous */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               setGalleryLightboxImage((prev) => (prev - 1 + images.length) % images.length);
             }}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Previous"
           >
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
 
-          <div
-            className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="relative">
-              <img
-                src={images[galleryLightboxImage]}
-                alt={`Somatheeram ${galleryLightboxImage + 1}`}
-                className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl"
-              />
-
-              <button
-                onClick={() => setGalleryLightboxOpen(false)}
-                className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg"
-                aria-label="Close"
-              >
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
-                {galleryLightboxImage + 1} / {images.length}
-              </div>
-
-              {/* Mobile: Previous/Next positioned under image */}
-              <div className="md:hidden absolute -bottom-12 left-4 right-4 flex items-center justify-between">
-                <button
-                  onClick={() => setGalleryLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Previous
-                </button>
-                <button
-                  onClick={() => setGalleryLightboxImage((prev) => (prev + 1) % images.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop: Arrow Next */}
           <button
             onClick={(e) => {
               e.stopPropagation();
               setGalleryLightboxImage((prev) => (prev + 1) % images.length);
             }}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Next"
           >
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronRight className="h-6 w-6" />
           </button>
+
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+              Somatheeram Ayurvedic Health Resort
+            </div>
+            <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+              <img
+                src={images[galleryLightboxImage]}
+                alt={`Somatheeram ${galleryLightboxImage + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <button
+                onClick={() => setGalleryLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                {galleryLightboxImage + 1} / {images.length}
+              </div>
+            </div>
+
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setGalleryLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+                }}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setGalleryLightboxImage((prev) => (prev + 1) % images.length);
+                }}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Next
+              </Button>
+            </div>
+          </div>
         </div>
       )}
       
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12">
-            <CardContent className="p-8 prose prose-lg max-w-none">
-              {parsedContent}
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Top Centers/somatheeram/somatheeram center.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === "quote") {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
             </CardContent>
           </Card>
         </div>
@@ -659,448 +937,96 @@ export default function Somatheeram() {
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
               </div>
             </div>
-            <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Wellness Programs</h2>
-              <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Cleanse, de-stress, and revitalize with holistic Ayurveda</p>
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: "#1A428A" }}>
+                <Heart className="h-8 w-8 text-green-600" />
+              </div>
+              <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
+              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
+                {wellnessIntro}
+              </p>
             </div>
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="detox" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Droplet className="h-5 w-5 text-green-600" />
+            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+              {wellnessPrograms.map((p, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`well-${idx}`}
+                  className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
+                >
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2" style={{ borderColor: "#1A428A" }}>
+                        {wellnessIconForTitle(p.title)}
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <span className="text-lg font-semibold text-primary">Detoxification Programs</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Authentic Panchakarma cleansing following classical texts to eliminate deep toxins and balance doshas.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Snehana oleation and Swedana herbal steam</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Vamana therapeutic emesis (Kapha)</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Virechana purgation (Pitta)</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Basti medicated enema (Vata)</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Nasya nasal medication</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="stress" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Brain className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Stress Management & Mental Wellness</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Calming therapies with yoga, meditation, and counseling for anxiety, burnout, and insomnia.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Shirodhara for deep relaxation</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Shirobasti oil retention on head</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Takradhara cooling buttermilk therapy</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Pranayama breathing practices</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Meditation & mindfulness</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Psychological counseling support</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="rejuvenation" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Sparkles className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Anti‑Aging & Rejuvenation (Rasayana)</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Vitalization of body and mind with Rasayanas to slow aging, enhance immunity, and boost vitality.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Abhyanga and Pizhichil therapies</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Shirodhara for mental peace</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Rejuvenating Rasayana herbal supplements</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Personalized diet for tissue regeneration</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="weight" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Activity className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Weight Management Programs</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Metabolism correction and sustainable weight loss with therapies, medicines, yoga, and diet.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Udvartana powder massage</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Kizhi herbal bundle therapy</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Metabolic enhancement medicines</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Constitution‑specific diet plans & yoga</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="immunity" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <ShieldCheck className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Immunity Boosting & Preventive Care</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Immune‑enhancing Rasayanas and therapies to strengthen natural defense mechanisms.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Immune‑enhancing herbal preparations</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Rejuvenating oil therapies</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Pranayama for respiratory strength</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Nutritional counseling for resilience</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="beauty" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Sparkles className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Beauty & Skin Care Programs</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Natural aesthetic therapies for skin rejuvenation, complexion enhancement, and anti‑aging care.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Mukhalepam herbal face treatments</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Body polishing with natural ingredients</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Hair care therapies with traditional oils</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Anti‑aging treatments</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="purification" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Droplet className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Body Purification Package</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm" style={{ color: "#7F543D" }}>Authentic Panchakarma detoxification focusing on deep cleansing and dosha balance.</p>
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Personalized Panchakarma plan</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Herbal internal medicines</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Dosha‑balancing diet guidance</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="preventive" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <ShieldCheck className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Preventive Healthcare</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm" style={{ color: "#7F543D" }}>Disease prevention and health promotion through lifestyle, diet, and supportive therapies.</p>
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Lifestyle counseling</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Seasonal Ritucharya routines</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Immunity‑boosting Rasayanas</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="couple" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Users className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Couple Wellness Retreats</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm" style={{ color: "#7F543D" }}>Joint healing experiences designed for partners to rejuvenate together.</p>
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Joint therapy sessions</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Private yoga & meditation</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Customized diet for two</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="post-surgical" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Stethoscope className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Post‑Surgical Recovery</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm" style={{ color: "#7F543D" }}>Rehabilitation and strength building to support recovery after surgical procedures.</p>
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Gentle physiotherapy integration</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Circulation‑enhancing oil therapies</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Strength‑building yoga</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="sports-injury" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Activity className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Sports Injury Recovery</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm" style={{ color: "#7F543D" }}>Therapeutic treatments tailored for athletes to restore mobility and function.</p>
-                  <ul className="space-y-2 mt-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Kizhi & localized therapies</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Mobility restoration exercises</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Anti‑inflammatory herbal oils</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    {p.description && (
+                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                        {p.description}
+                      </p>
+                    )}
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-green-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
       </div>
+
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
             <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Medical Programs</h2>
-              <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Condition‑focused care using authentic Ayurveda protocols</p>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-orange-500 mb-4">
+                <Stethoscope className="h-8 w-8 text-blue-600" />
+              </div>
+              <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
+              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
+                {medicalIntro}
+              </p>
             </div>
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="arthritis" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Stethoscope className="h-5 w-5 text-green-600" />
+              {medicalPrograms.map((p, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`med-${idx}`}
+                  className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
+                >
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-orange-500">
+                        {medicalIconForTitle(p.title)}
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <span className="text-lg font-semibold text-primary">Arthritis & Joint Disorders</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Rheumatoid arthritis, osteoarthritis, gout, and chronic joint pain management with personalized therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Rheumatoid & osteoarthritis care</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Gout & joint inflammation protocols</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Functional mobility improvement</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="spine" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <ClipboardList className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Back Pain & Spinal Problems</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Sciatica, disc prolapse, spondylosis, and chronic backache addressed by targeted therapies and strengthening.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Sciatica nerve pain relief</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Disc prolapse & spondylosis protocols</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Chronic backache management</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="skin" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Leaf className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Skin Diseases</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Psoriasis, eczema, dermatitis, acne, and vitiligo with internal and external therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Psoriasis & eczema management</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Dermatitis & acne protocols</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Vitiligo support</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="digestive" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Utensils className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Digestive Disorders</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>IBS, chronic constipation, acidity, and liver disorders treated with diet, medicines, and therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>IBS & chronic constipation</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Hyperacidity protocols</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Liver function support</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="neuro" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Brain className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Neurological Conditions</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Paralysis, Parkinson’s disease, neuropathy, and migraine care through integrated Ayurvedic protocols.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Post‑paralysis rehabilitation</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Parkinson’s symptom management</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Neuropathy & migraine protocols</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="metabolic" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Pill className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Metabolic Diseases</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Diabetes, thyroid disorders, obesity, and cholesterol issues managed with diet, medicines, and therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Diabetes & thyroid balance</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Obesity & lipid management</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Constitution‑specific nutrition</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="respiratory" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <Wind className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Respiratory Conditions</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Asthma, chronic bronchitis, sinusitis, and allergies treated with targeted therapies and lifestyle care.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Asthma & bronchitis support</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Sinusitis & allergy care</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Breathwork & lifestyle guidance</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="gyne" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <UserCheck className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Gynecological Issues</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>PCOS, irregular menstruation, and menopausal symptoms addressed with hormone‑supportive Ayurvedic care.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>PCOS protocols</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Cycle regulation care</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Menopause symptom relief</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="cardio" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <HeartPulse className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Cardiovascular Problems</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Hypertension and heart health management with diet, lifestyle, and supportive therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Blood pressure regulation</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Cardiac wellness support</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Diet & lifestyle guidance</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="autoimmune" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <ShieldCheck className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Autoimmune Disorders</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Lupus and multiple sclerosis support with immune‑modulating Ayurvedic care.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Lupus management support</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Multiple sclerosis supportive care</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Inflammation modulation</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="cancer" className="bg-white rounded-xl border-2 border-green-200 data-[state=open]:border-green-500">
-                <AccordionTrigger className="px-4 py-3 hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-100">
-                      <TestTube2 className="h-5 w-5 text-green-600" />
-                    </div>
-                    <span className="text-lg font-semibold text-primary">Cancer Rehabilitation</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4">
-                  <p className="text-sm mb-3" style={{ color: "#7F543D" }}>Post‑chemotherapy rejuvenation and immunity building with safe supportive therapies.</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Strength & vitality restoration</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Immune system support</span></li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><Check className="h-4 w-4 text-green-600 mt-0.5" /><span>Nutrition & lifestyle guidance</span></li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    {p.description && (
+                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                        {p.description}
+                      </p>
+                    )}
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-blue-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
@@ -1109,105 +1035,39 @@ export default function Somatheeram() {
       <section className="py-12 md:py-16 lg:py-20 mt-5">
         <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary mb-3 md:mb-4 font-poppins lg:whitespace-nowrap leading-tight">
-                Why Choose Somatheeram for Your Holistic Health Journey
-              </h2>
-
-              <p className="text-sm md:text-lg text-[#7F543D] font-poppins mx-auto md:max-w-none lg:whitespace-nowrap leading-snug">
-                Discover what makes Somatheeram India's premier destination for authentic holistic healing
+              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Somatheeram for Your Holistic Health Journey</h2>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                {whyChooseIntro}
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <Award className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      Award‑Winning Authentic Ayurveda
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      Ten‑time Kerala State Best Ayurvedic Centre with global recognition.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      Medical Leadership & Safety
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      Led by Kerala's former Director of Ayurveda; 24‑hour physician availability.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <Users className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      30+ Years International Trust
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      German‑Indian management excellence and high guest satisfaction.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <Leaf className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      Healing Beach Locale
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      Pristine Malabar coast setting enhances natural recovery and calm.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <TestTube2 className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      In‑House Ayurvedic Pharmacy
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      Freshly prepared medicines aligned with your constitution and needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary group">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                    <TrendingUp className="h-6 w-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg md:text-xl font-bold text-primary mb-2 font-poppins leading-snug">
-                      Comprehensive Wellness & Medical Care
-                    </h3>
-                    <p className="text-sm md:text-base text-[#7F543D] leading-relaxed">
-                      Programs from detox and rejuvenation to disease‑specific treatments.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {whyChooseItems.map((item, idx) => (
+                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
+                  <CardContent className="p-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                          {whyChooseIconForTitle(item.title)}
+                        </div>
+                        <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+                      </div>
+                      {item.description && (
+                        <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>{item.description}</p>
+                      )}
+                      {item.bullets.length > 0 && (
+                        <ul className="list-none pl-0 space-y-1.5">
+                          {item.bullets.slice(0, 3).map((b, bi) => (
+                            <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                              <span className="text-primary mt-1">✓</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
         </div>
       </section>
@@ -1216,49 +1076,44 @@ export default function Somatheeram() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
-            <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Your personalized healing journey at Somatheeram, step by step</p>
+            <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+              {treatmentIntro}
+            </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            {[
-              {n:1, title:"Arrival & Welcome Orientation", desc:"Traditional welcome, orientation on facilities and schedules, room allocation per medical needs.", tag:"Day 1", icon:"ClipboardList"},
-              {n:2, title:"Initial Medical Consultation", desc:"Constitution assessment, dosha imbalance identification, review of health history and labs if required.", tag:"Day 1", icon:"FileSearch"},
-              {n:3, title:"Personalized Treatment Plan", desc:"Therapy schedule, internal medicines, diet and yoga recommendations tailored to goals.", tag:"Day 1–2", icon:"Stethoscope"},
-              {n:4, title:"Daily Treatment Schedule", desc:"1.5–2 hours of authentic therapies performed each day with fresh herbal preparations.", tag:"Daily", icon:"Pill"},
-              {n:5, title:"Dosha‑Specific Meals", desc:"Three vegetarian meals daily following Ayurvedic nutrition, optimized for digestion.", tag:"Daily", icon:"Utensils"},
-              {n:6, title:"Yoga & Meditation Practice", desc:"Daily sessions for stress reduction, mental balance, and deeper healing.", tag:"Daily", icon:"Activity"},
-              {n:7, title:"Daily Medical Monitoring", desc:"Brief physician check‑ins to adjust therapies and medicines based on progress.", tag:"Ongoing", icon:"HeartPulse"},
-              {n:8, title:"Mid‑Stay Consultation", desc:"Detailed progress evaluation and fine‑tuning of remaining program.", tag:"Mid‑Stay", icon:"FileSearch"},
-              {n:9, title:"Final Consultation & Home Care", desc:"Discharge summary with diet, lifestyle guidance, continuation medicines, follow‑up plan.", tag:"Discharge", icon:"Home"},
-              {n:10, title:"Post‑Treatment Support", desc:"Ongoing support via service office for queries and follow‑up coordination.", tag:"Follow‑up", icon:"MessageCircle"},
-            ].map((step, idx) => (
-              <div key={step.n} className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                <div className="flex flex-col items-center flex-shrink-0">
+            {treatmentSteps.map((s, idx) => (
+              <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
-                    {step.n}
+                    {idx + 1}
                   </div>
-                  {idx < 9 && <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>}
+                  {idx < treatmentSteps.length - 1 && (
+                    <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
+                  )}
                 </div>
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        {step.icon === "ClipboardList" && <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "FileSearch" && <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "Stethoscope" && <Stethoscope className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "Pill" && <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "Utensils" && <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "Activity" && <Activity className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "HeartPulse" && <HeartPulse className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "Home" && <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                        {step.icon === "MessageCircle" && <MessageCircle className="h-5 w-5 md:h-6 md:w-6 text-primary" />}
-                      </div>
-                      <div>
-                        <h3 className="text-base md:text-xl font-bold text-primary">{step.title}</h3>
-                        <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">{step.tag}</span>
-                      </div>
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      {idx + 1}
                     </div>
-                    <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>{step.desc}</p>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        {treatmentIconForTitle(s.title)}
+                      </div>
+                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
+                    </div>
+                    <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>{s.description}</p>
+                    {s.bullets.length > 0 && (
+                      <ul className="mt-3 space-y-1.5">
+                        {s.bullets.map((b, bi) => (
+                          <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">•</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </CardContent>
                 </Card>
               </div>
@@ -1270,44 +1125,69 @@ export default function Somatheeram() {
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: "#EDE8D0" }}>
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-              <div className="text-center lg:text-left">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4">
-                  Ready to Start Your Wellness Journey?
-                </h2>
-                <p className="text-sm md:text-base lg:text-lg mb-6" style={{ color: "#7F543D" }}>
-                  Take the first step towards holistic healing. Our expert team is here to guide you through personalized treatment plans tailored to your unique needs.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start mb-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-white px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    asChild
-                  >
-                    <Link to="/contact">
-                      <Phone className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                      Book Consultation Now
-                    </Link>
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-2 border-primary text-primary hover:bg-primary/10 px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    onClick={() => setQuoteModalOpen(true)}
-                  >
-                    <MessageCircle className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                    Chat With Us
-                  </Button>
-                </div>
-                <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                  📞 Call us: <a href="tel:+914712266501" className="text-primary font-semibold hover:underline">+91 471 22 665 01/02/03</a>
-                </p>
-              </div>
-              <div className="order-first lg:order-last">
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
                 <img
                   src="/Center Images/somatheeram/Facilities & Amenities/Somatheeram-34.jpg"
                   alt="Somatheeram"
-                  className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
+                <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-sm text-center mb-4" style={{ color: "#7F543D" }}>
+                  Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
+                </p>
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center justify-center gap-2" style={{ color: "#7F543D" }}>
+                  <Phone className="h-4 w-4 text-red-600" />
+                  <a href="tel:+914712266501" className="underline hover:text-primary">Call us: +91 471 22 665 01/02/03</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-base md:text-lg mb-6" style={{ color: "#7F543D" }}>
+                  Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2" style={{ color: "#7F543D" }}>
+                  <Phone className="h-5 w-5 text-red-600" />
+                  <a href="tel:+914712266501" className="underline hover:text-primary">Call us: +91 471 22 665 01/02/03</a>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/Center Images/somatheeram/Facilities & Amenities/Somatheeram-34.jpg"
+                  alt="Somatheeram"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
               </div>
             </div>
@@ -1319,7 +1199,7 @@ export default function Somatheeram() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
-            <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>Experience healing in comfort with our comprehensive range of traditional and modern facilities</p>
+            <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>{facilitiesIntro}</p>
           </div>
 
           <div className="max-w-7xl mx-auto relative mb-10">
@@ -1363,251 +1243,100 @@ export default function Somatheeram() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Home className="h-7 w-7 text-white" />
+            {facilitiesItems.map((item, idx) => (
+              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      {facilityIconForTitle(item.title)}
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-primary">{item.title}</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-primary">Accommodation</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Traditional cottages and suites</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Air‑conditioned rooms with modern amenities</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Comfortable furnishings and ensuite bathrooms</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Calming garden and sea views</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Droplet className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Wellness & Therapy</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Dedicated Panchakarma therapy centers</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Traditional Ayurvedic massage rooms</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Spacious yoga hall & meditation pavilions</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Hydrotherapy & supportive facilities</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Utensils className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Organic Dining</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Dosha‑specific vegetarian cuisine</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Personalized therapeutic meal plans</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Ayurvedic diet consultations</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Fresh juices & herbal teas</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <TreePine className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Natural Environment</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Tropical gardens & walking trails</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Medicinal plant collections</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Tranquil water features</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Outdoor meditation & yoga spaces</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <TestTube2 className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Medical Facilities</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>In‑house Ayurvedic pharmacy</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Custom medicine preparation</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>24/7 medical support</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Physiotherapy & rehabilitation</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <MessageCircleHeart className="h-7 w-7 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-primary">Support Services</h3>
-                </div>
-                <ul className="space-y-2.5">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Professional counseling</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Airport pickup & drop</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Multilingual assistance</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">•</span><span>Library & housekeeping</span></li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="mt-8 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-            <div className="flex items-start gap-4">
-              <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="text-lg font-semibold text-primary mb-2">All Facilities Meet International Healthcare Standards</h4>
-                <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                  Somatheeram maintains the highest levels of safety, hygiene, and quality care, ensuring world‑class holistic treatment in a serene, naturally therapeutic environment.
-                </p>
-              </div>
-            </div>
+                  {item.description && (
+                    <p className="text-sm mb-3" style={{ color: "#7F543D" }}>
+                      {item.description}
+                    </p>
+                  )}
+                  {item.bullets.length > 0 && (
+                    <ul className="space-y-2.5">
+                      {item.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">•</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
-
-      
 
       {lightboxOpen && (
-        <div
-          className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4"
-          style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }}
-          onClick={() => setLightboxOpen(false)}
-        >
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">Somatheeram Facilities & Amenities</h2>
-          </div>
-
-          {/* Desktop: Arrow Previous (Facilities) */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm" onClick={() => setLightboxOpen(false)}>
           <button
-            onClick={(e) => { e.stopPropagation(); setLightboxIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
+            }}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Previous"
           >
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
 
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16" onClick={(e) => e.stopPropagation()}>
-            <div className="relative">
-              <img src={facilityImages[lightboxIndex]} alt={`Facility ${lightboxIndex + 1}`} className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl" />
-              <button onClick={() => setLightboxOpen(false)} className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg" aria-label="Close">
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
-                {lightboxIndex + 1} / {facilityImages.length}
-              </div>
-
-              {/* Mobile: Previous/Next positioned under image (Facilities) */}
-              <div className="md:hidden absolute -bottom-12 left-4 right-4 flex items-center justify-between">
-                <button
-                  onClick={() => setLightboxIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Previous
-                </button>
-                <button
-                  onClick={() => setLightboxIndex((prev) => (prev + 1) % facilityImages.length)}
-                  className="bg-white text-primary px-4 py-2 rounded-full shadow-md"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop: Arrow Next (Facilities) */}
           <button
-            onClick={(e) => { e.stopPropagation(); setLightboxIndex((prev) => (prev + 1) % facilityImages.length); }}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex((prev) => (prev + 1) % facilityImages.length);
+            }}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
             aria-label="Next"
           >
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
+            <ChevronRight className="h-6 w-6" />
           </button>
-        </div>
-      )}
 
-      
-      
-      <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
-            <div className="text-center mb-6 md:mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Founder & Team Info</h2>
-              <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Led by visionary expertise and supported by generations of traditional healing knowledge</p>
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Somatheeram Ayurvedic Health Resort</div>
+            <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+              <img src={facilityImages[lightboxIndex]} alt={`Facility ${lightboxIndex + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+              <button
+                onClick={() => setLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                {lightboxIndex + 1} / {facilityImages.length}
+              </div>
             </div>
-            <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
-              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src="/Center Images/somatheeram/medical team and founder image/Founder Dr. Raman.jpg" alt="Dr. Raman" className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">Dr. Raman</h3>
-                      <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>Chief Medical Officer</p>
-                      <p className="text-xs md:text-sm mt-1 text-primary/70">Former Director of Ayurveda, Kerala</p>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Dr. Raman leads Somatheeram's medical team with decades of experience in classical Ayurvedic medicine, specializing in Panchakarma and chronic disease management for international patients.
-                  </p>
-                  <div className="pt-3 md:pt-4 border-t border-primary/10">
-                    <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">Ayurvedic Medicine</span>
-                      <span className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">Panchakarma</span>
-                      <span className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">Integrative Care</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src="/Center Images/somatheeram/medical team and founder image/Somatheerm-medical team.jpg" alt="Expert Medical Team" className="w-full h-full object-cover" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">Expert Medical Team</h3>
-                      <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>4th Generation Ayurvedic Doctors</p>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Somatheeram employs thirteen full‑time Ayurvedic physicians trained at prestigious institutions, with specializations across Panchakarma, Rasayana rejuvenation, and disease‑specific care.
-                  </p>
-                  <div className="space-y-2 pt-3 md:pt-4 border-t border-primary/10">
-                    <p className="text-xs font-semibold text-primary mb-2 md:mb-3">Specialized Practitioners:</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>Panchakarma Specialists</span></div>
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>Rasayana Therapy Experts</span></div>
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>General Ayurvedic Physicians</span></div>
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>Yoga Therapy Specialists</span></div>
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>Pulse Diagnosis Masters</span></div>
-                      <div className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span><span className="text-xs" style={{ color: "#7F543D" }}>Marma Therapy Practitioners</span></div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
+                }}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setLightboxIndex((prev) => (prev + 1) % facilityImages.length);
+                }}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
+                Next
+              </Button>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
         <div className="max-w-6xl mx-auto">
@@ -1615,69 +1344,64 @@ export default function Somatheeram() {
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Patient Stories & Reviews</h2>
             <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
           </div>
-          <div className="relative">
-            <button onClick={() => setCurrentReviewIndex((i) => (i - 1 + patientReviews.length) % patientReviews.length)} className="absolute -left-5 md:-left-8 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full bg-white shadow border border-[#DCE8E1] flex items-center justify-center text-[#214E41]">
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button onClick={() => setCurrentReviewIndex((i) => (i + 1) % patientReviews.length)} className="absolute -right-5 md:-right-8 top-1/2 -translate-y-1/2 h-10 w-10 md:h-12 md:w-12 rounded-full bg-white shadow border border-[#DCE8E1] flex items-center justify-center text-[#214E41]">
-              <ChevronRight className="h-5 w-5" />
-            </button>
-
-            <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-              <CardContent className="p-4 md:p-12">
-                <div className="flex justify-end">
-                  <button onClick={() => setAutoReview((v) => !v)} className="px-3 py-1 rounded-full bg-[#EFEFEF] text-sm flex items-center gap-2">
-                  <span className={`h-2.5 w-2.5 rounded-full ${autoReview ? "bg-green-500" : "bg-gray-400"}`}></span>
-                  Auto
-                  </button>
-                </div>
-                <div className="overflow-hidden">
-                  <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentReviewIndex * 100}%)` }}>
-                    {patientReviews.map((r, idx) => (
-                      <div key={idx} className="w-full flex-shrink-0">
-                        <div className="relative max-w-4xl mx-auto">
-                          <div className="text-primary/20 mb-3 md:mb-4">
-                            <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
-                          </div>
-                          <p className="mt-2 md:mt-4 text-lg md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
-                            “{r.quote}”
-                          </p>
-                          <div className="mt-6 flex items-center gap-4">
-                            <img src={r.photo} alt={r.name} className="h-14 w-14 rounded-full object-cover shadow" />
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2">
-                                <span className="text-lg md:text-xl font-bold text-primary">{r.name}</span>
-                                {r.verified && (
-                                  <span className="inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full" style={{ backgroundColor: "#E6F4EA", color: "#1E3A36", borderColor: "#CADBCF", borderWidth: 1 }}>
-                                    <UserCheck className="h-3.5 w-3.5" /> verified
-                                  </span>
-                                )}
-                              </div>
-                              <div className="text-sm" style={{ color: "#7F543D" }}>{r.country} • {r.condition}</div>
-                              <div className="text-xs" style={{ color: "#7F543D" }}>{r.date}</div>
-                            </div>
-                          </div>
-                          <div className="mt-4 flex items-center gap-2">
-                            {Array.from({ length: 5 }).map((_, i) => (
-                              <Star key={i} className="h-5 w-5 text-yellow-500" fill={i < Math.round(r.rating) ? "#F5C518" : "none"} />
-                            ))}
-                            <span className="ml-2 text-sm" style={{ color: "#7F543D" }}>{r.rating.toFixed(1)}</span>
-                          </div>
-                        </div>
+          {patientReviews.length > 0 && (
+            <div className="relative min-h-[420px] md:min-h-[480px]">
+              <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+                <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                  <div className="max-w-4xl mx-auto flex flex-col h-full">
+                    <div className="text-primary/20 mb-3 md:mb-4">
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                    </div>
+                    <div className="mb-4 md:mb-6 flex-1">
+                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6 whitespace-pre-line" style={{ color: "#7F543D" }}>
+                        "{patientReviews[currentReviewIndex].quote}"
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                        {patientReviews[currentReviewIndex].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
                       </div>
-                    ))}
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-primary">{patientReviews[currentReviewIndex].name}</h4>
+                        </div>
+                        <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                          {patientReviews[currentReviewIndex].country}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-yellow-500" fill={i < Math.round(patientReviews[currentReviewIndex].rating) ? "#F5C518" : "none"} />
+                      ))}
+                      <span className="text-xs md:text-sm font-semibold text-primary">{patientReviews[currentReviewIndex].rating}.0</span>
+                    </div>
                   </div>
-                </div>
-                <div className="mt-6 flex justify-center gap-2">
-                  {patientReviews.map((_, i) => (
-                    <button key={i} onClick={() => setCurrentReviewIndex(i)} className={`h-2 w-2 rounded-full ${i===currentReviewIndex?"bg-[#2F6B5F]":"bg-[#D3E3DA]"}`}></button>
-                  ))}
-                </div>
-      </CardContent>
-    </Card>
-  </div>
-</div>
-</div>
+                </CardContent>
+              </Card>
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                <button onClick={() => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                <button onClick={() => setCurrentReviewIndex((prev) => (prev + 1) % patientReviews.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+              </div>
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Auto
+              </div>
+              <div className="flex justify-center gap-2 mt-4">
+                {patientReviews.map((_, i) => (
+                  <button key={i} onClick={() => setCurrentReviewIndex(i)} className={`transition-all ${i === currentReviewIndex ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
 
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
         <div className="max-w-6xl mx-auto">
@@ -1893,66 +1617,162 @@ export default function Somatheeram() {
 
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
         <div className="max-w-6xl mx-auto">
-          <Card className="mb-12 border-2 border-primary">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        Somatheeram Ayurvedic Health Resort<br />
-                        Kovalam, Thiruvananthapuram<br />
-                        Kerala, India
-                      </p>
+          {contactAddress.length > 0 && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Address</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.map((l, i) => (
+                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                          ))}
+                        </p>
+                      </div>
                     </div>
+                    {contactPhones.length > 0 && (
+                      <div className="flex items-start gap-3">
+                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Phone</h4>
+                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactPhones.map((p, i) => (<li key={i}>{p}</li>))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                    {contactDistances.length > 0 && (
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                      <p style={{ color: "#7F543D" }}>+91 471 22 665 01/02/03</p>
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Somatheeram Ayurvedic Health Resort Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7894.884427226679!2d77.00942229650515!3d8.358084099999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05afd4228d8785%3A0x8ed578c993f1df1e!2sSomatheeram%20Ayurvedic%20Health%20Resort!5e0!3m2!1sen!2sin!4v1767702365966!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Email</h4>
-                      <p style={{ color: "#7F543D" }}>info@somatheeram.org</p>
+                {transportText && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                    <div className="flex items-start gap-4">
+                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>{transportText}</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Website</h4>
-                      <a href="https://www.somatheeram.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.somatheeram.org</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                )}
+              </CardContent>
+            </Card>
+          )}
 
-          <Card className="bg-primary text-primary-foreground">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center max-w-3xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Begin Your Healing Journey</h3>
-                <p className="opacity-90 mb-6">Authentic Ayurveda by the sea with expert medical care and personalized programs.</p>
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-                  <Link to="/contact"><Phone className="mr-2 h-4 w-4" />Book Consultation</Link>
-                </Button>
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#234A50" }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/somatheeram/CTA bottom.jpg"
+                    alt="Somatheeram"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Somatheeram Ayurvedic Health Resort</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Somatheeram Ayurvedic Health Resort</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/somatheeram/CTA bottom.jpg"
+                    alt="Somatheeram"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
     </div>
   );
 }

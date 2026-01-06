@@ -36,19 +36,19 @@ const parseCardSection = (text: string): SectionData => {
   let title = '';
   let description = '';
   const cards: CardData[] = [];
-  
+
   let currentCard: CardData | null = null;
   let isHeader = true;
-  
+
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
-    
+
     if (line.startsWith('### ')) {
       title = line.replace('### ', '').trim();
       continue;
     }
-    
+
     if (line.startsWith('**') && line.endsWith('**')) {
       isHeader = false;
       if (currentCard) {
@@ -61,28 +61,28 @@ const parseCardSection = (text: string): SectionData => {
       };
       continue;
     }
-    
+
     if (line.startsWith('* ')) {
       if (currentCard) {
         currentCard.bullets.push(line.replace('* ', '').trim());
       }
       continue;
     }
-    
+
     // Description text
     if (isHeader) {
       description += (description ? ' ' : '') + line;
     } else if (currentCard) {
       if (currentCard.bullets.length === 0) { // Only add to description if no bullets yet
-         currentCard.description += (currentCard.description ? ' ' : '') + line;
+        currentCard.description += (currentCard.description ? ' ' : '') + line;
       }
     }
   }
-  
+
   if (currentCard) {
     cards.push(currentCard);
   }
-  
+
   return { title, description, cards };
 };
 
@@ -98,7 +98,7 @@ const iconForTitle = (t: string) => {
   if (s.includes("comprehensive") || s.includes("treatment")) return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
   if (s.includes("custom") || s.includes("medicine")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
   if (s.includes("organic") || s.includes("nutrition")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  
+
   // Facilities icons
   if (s.includes("garden") || s.includes("accommodation")) return <Home className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
   if (s.includes("architecture")) return <Building2 className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
@@ -131,13 +131,20 @@ export default function SOUKYACenter() {
   const [mainContent, setMainContent] = useState("");
   const [facilitiesData, setFacilitiesData] = useState<SectionData | null>(null);
   const [whyChooseData, setWhyChooseData] = useState<SectionData | null>(null);
+  const [wellnessIntro, setWellnessIntro] = useState("");
+  const [wellnessPrograms, setWellnessPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [medicalIntro, setMedicalIntro] = useState("");
+  const [medicalPrograms, setMedicalPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
   const [content, setContent] = useState(""); // Keeping for compatibility if needed, or remove later
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const isReviewAutoPlaying = true;
   const [showVideoGallery, setShowVideoGallery] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(0);
   const [showFullGallery, setShowFullGallery] = useState(false);
@@ -258,6 +265,80 @@ export default function SOUKYACenter() {
       .then((text) => setMainContent(text))
       .catch((err) => console.error("Error loading Main Content:", err));
 
+    fetch("/content/Top Centers/Soukya Center/Wellness Programs.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inPrograms = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inPrograms = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inPrograms = true;
+            continue;
+          }
+          if (line.startsWith("*")) {
+            const bullet = line.replace(/^\*+\s*/, "");
+            if (current) current.bullets.push(bullet);
+            continue;
+          }
+          if (!inPrograms) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            current.description = current.description ? `${current.description} ${line}` : line;
+          }
+        }
+        if (current) items.push(current);
+        setWellnessIntro(intro);
+        setWellnessPrograms(items);
+      })
+      .catch((err) => console.error("Error loading wellness programs:", err));
+
+    fetch("/content/Top Centers/Soukya Center/Medical Programs.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const items: { title: string; description: string; bullets: string[] }[] = [];
+        let current: { title: string; description: string; bullets: string[] } | null = null;
+        let inPrograms = false;
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            inPrograms = false;
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (current) items.push(current);
+            current = { title: line.slice(2, -2), description: "", bullets: [] };
+            inPrograms = true;
+            continue;
+          }
+          if (line.startsWith("*")) {
+            const bullet = line.replace(/^\*+\s*/, "");
+            if (current) current.bullets.push(bullet);
+            continue;
+          }
+          if (!inPrograms) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (current) {
+            current.description = current.description ? `${current.description} ${line}` : line;
+          }
+        }
+        if (current) items.push(current);
+        setMedicalIntro(intro);
+        setMedicalPrograms(items);
+      })
+      .catch((err) => console.error("Error loading medical programs:", err));
+
     // Load Facilities
     fetch("/content/Top Centers/Soukya Center/Facilities & Amenities.txt")
       .then((res) => res.text())
@@ -269,15 +350,104 @@ export default function SOUKYACenter() {
       .then((res) => res.text())
       .then((text) => setWhyChooseData(parseCardSection(text)))
       .catch((err) => console.error("Error loading Why Choose:", err));
-      
+
+    // Load Contact Information
+    fetch("/content/Top Centers/Soukya Center/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let section: "none" | "address" | "distances" | "transport" = "none";
+        const addr: string[] = [];
+        const dists: string[] = [];
+        let transport = "";
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) { section = "none"; continue; }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("address")) { section = "address"; continue; }
+            if (t.includes("distance")) { section = "distances"; continue; }
+            if (t.includes("transportation")) { section = "transport"; continue; }
+          }
+          if (section === "address") {
+            // Split by <br/> if present
+            if (line.includes("<br/>")) {
+              addr.push(...line.split("<br/>").map(p => p.trim()));
+            } else {
+              addr.push(line);
+            }
+            continue;
+          }
+          if (section === "distances") {
+            if (line.startsWith("*")) dists.push(line.replace(/^\*+\s*/, "").replace(/<br\/>/g, " "));
+            continue;
+          }
+          if (section === "transport") {
+            transport = transport ? `${transport} ${line}` : line;
+            continue;
+          }
+        }
+        setContactAddress(addr);
+        setContactDistances(dists);
+        setTransportText(transport);
+      })
+      .catch((err) => console.error("Error loading Contact Info:", err));
+
     // Keep original fetch for now or just set content to empty to avoid errors in renderContent if called
     // fetch("/content/Top Centers/SOUKYA center.txt") ...
   }, []);
 
+  const wellnessIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("detox") || s.includes("purification") || s.includes("panchakarma") || s.includes("shudha")) {
+      return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    if (s.includes("stress") || s.includes("mental") || s.includes("prakrithi")) {
+      return <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    if (s.includes("anti-aging") || s.includes("rejuvenation") || s.includes("beauty") || s.includes("shakthi")) {
+      return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    if (s.includes("weight") || s.includes("shareera")) {
+      return <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    if (s.includes("immunity")) {
+      return <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    if (s.includes("taste") || s.includes("introduction")) {
+      return <Leaf className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    }
+    return <Heart className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+  };
+
+  const medicalIconForTitle = (t: string) => {
+    const s = t.toLowerCase();
+    if (s.includes("addict") || s.includes("addiction")) return <Heart className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("cancer")) return <Hospital className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("metabolic") || s.includes("lifestyle") || s.includes("diabetes") || s.includes("hypertension") || s.includes("cholesterol")) {
+      return <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    }
+    if (s.includes("musculoskeletal") || s.includes("neurological") || s.includes("arthritis") || s.includes("stroke")) {
+      return <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    }
+    if (s.includes("mental") || s.includes("emotional")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("respiratory") || s.includes("allergic") || s.includes("allergy")) {
+      return <TreePine className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    }
+    if (s.includes("skin") || s.includes("dermat")) return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("reproductive") || s.includes("gynec") || s.includes("gynaec")) {
+      return <Users className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    }
+    if (s.includes("pediatric") || s.includes("development")) {
+      return <UserCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    }
+    return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+  };
+
   // Auto-rotation effect
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setSelectedImage((prev) => (prev + 1) % images.length);
     }, 3000); // Change image every 3 seconds
@@ -346,7 +516,7 @@ export default function SOUKYACenter() {
   // Videos from SOUKYA folder
   const videos = [
     "/Center Videos/Soukya/Video-1.mp4",
-    "/Center Videos/Soukya/Video-2.mp4", ];
+    "/Center Videos/Soukya/Video-2.mp4",];
 
   // Media carousel navigation
   const handleNextMedia = () => {
@@ -457,27 +627,22 @@ export default function SOUKYACenter() {
 
   // Review carousel auto-rotation
   useEffect(() => {
-    if (!isReviewAutoPlaying) return;
-    
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % testimonials.length);
     }, 5000); // Change review every 5 seconds
 
     return () => clearInterval(interval);
-  }, [isReviewAutoPlaying, testimonials.length]);
+  }, [testimonials.length]);
 
   const goToPreviousReview = () => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToNextReview = () => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview((prev) => (prev + 1) % testimonials.length);
   };
 
   const selectReview = (index: number) => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview(index);
   };
 
@@ -488,11 +653,10 @@ export default function SOUKYACenter() {
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={`h-5 w-5 ${
-              i < rating
-                ? "fill-yellow-400 text-yellow-400"
-                : "fill-gray-200 text-gray-200"
-            }`}
+            className={`h-5 w-5 ${i < rating
+              ? "fill-yellow-400 text-yellow-400"
+              : "fill-gray-200 text-gray-200"
+              }`}
           />
         ))}
       </div>
@@ -696,7 +860,7 @@ export default function SOUKYACenter() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
-      
+
       {/* Hero Section */}
       <div className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -716,7 +880,7 @@ export default function SOUKYACenter() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(500+ reviews)</span>
+                  <span className="opacity-90">(5000+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -740,7 +904,7 @@ export default function SOUKYACenter() {
       {/* Main Content */}
       <div className="container mx-auto px-3 md:px-4 py-12 max-w-full">
         <div className="max-w-6xl mx-auto">
-          
+
           {/* Photo/Video Gallery Section */}
           <div className="mb-12">
             {/* Gallery Toggle Header */}
@@ -750,7 +914,9 @@ export default function SOUKYACenter() {
                   variant={!showVideoGallery ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGallery(false)}
-                  className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   Photo Gallery
                 </Button>
@@ -758,7 +924,9 @@ export default function SOUKYACenter() {
                   variant={showVideoGallery ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGallery(true)}
-                  className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
+                    showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -768,163 +936,162 @@ export default function SOUKYACenter() {
 
             {!showVideoGallery ? (
               <>
-            {/* Main Carousel */}
-            <div className="relative mb-8 rounded-lg overflow-hidden shadow-lg w-full h-[200px] md:h-[500px] lg:h-[400px] group">
-              <img
-                src={images[selectedImage]}
-                alt={`SOUKYA Center ${selectedImage + 1}`}
-                className="w-full h-full object-cover transition-all duration-500"
-              />
-              
-              {/* Navigation Buttons */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-              </button>
-              
-              <button
-                onClick={goToNext}
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
-                aria-label="Next image"
-              >
-                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-              </button>
-
-              {/* Image Counter */}
-              <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {selectedImage + 1} / {images.length}
-              </div>
-
-              {/* Auto-play indicator */}
-              {isAutoPlaying && (
-                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                  Auto
-                </div>
-              )}
-            </div>
-
-            {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
-            <div className="flex flex-col md:flex-row gap-3 mb-6">
-              {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
-              <div 
-                className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
-                onClick={() => {
-                  setLightboxImage(images.indexOf(thumbnailImages[0]));
-                  setLightboxOpen(true);
-                }}
-              >
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                {/* Main Carousel */}
+                <div className="relative mb-8 rounded-lg overflow-hidden shadow-lg w-full h-[200px] md:h-[500px] lg:h-[400px] group">
                   <img
-                    src={thumbnailImages[0]}
-                    alt="SOUKYA 1"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    src={images[selectedImage]}
+                    alt={`SOUKYA Center ${selectedImage + 1}`}
+                    className="w-full h-full object-cover transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                </div>
-              </div>
 
-              {/* Small Images - Right Side - Fixed 2×2 Grid */}
-              <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
-                {thumbnailImages.slice(1, 5).map((img, idx) => {
-                  const actualIndex = images.indexOf(img);
-                  const isLastImage = idx === 3; // Last small image (bottom-right)
-                  
-                  return (
-                    <div
-                      key={idx}
-                      className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
-                      onClick={() => {
-                        setLightboxImage(actualIndex);
-                        setLightboxOpen(true);
-                      }}
-                    >
-                      <div className="relative w-full" style={{ paddingBottom: '100%' }}>
-                        <img
-                          src={img}
-                          alt={`SOUKYA ${actualIndex + 1}`}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                        
-                        {/* Show Gallery Button - Floating on Bottom-Right Image */}
-                        {isLastImage && (
-                          <div className="absolute inset-0 flex items-end justify-center pb-4 bg-black/40">
-                            <Button
-                              size="sm"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setShowFullGallery(true);
-                              }}
-                              className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-semibold text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform"
-                            >
-                              <Images className="mr-1.5 h-3.5 w-3.5 md:h-4 md:w-4" />
-                              <span className="hidden sm:inline">Show Full Gallery</span>
-                              <span className="sm:hidden">Gallery</span>
-                            </Button>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            </>
-            ) : (
-              <>
-              {/* Video Gallery */}
-              <div className="space-y-6">
-                {/* Main Video Player */}
-                <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video">
-                  <video
-                    key={selectedVideo}
-                    controls
-                    controlsList="nodownload"
-                    preload="metadata"
-                    className="w-full h-full object-cover"
+                  {/* Navigation Buttons */}
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Previous image"
                   >
-                    <source src={videos[selectedVideo]} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  
-                  {/* Video Counter */}
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+
+                  <button
+                    onClick={goToNext}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+
+                  {/* Image Counter */}
                   <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    Video {selectedVideo + 1} / {videos.length}
+                    {selectedImage + 1} / {images.length}
+                  </div>
+
+                  {/* Auto-play indicator */}
+                  {isAutoPlaying && (
+                    <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      Auto
+                    </div>
+                  )}
+                </div>
+
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                <div className="flex flex-col md:flex-row gap-3 mb-6">
+                  {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
+                  <div
+                    className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
+                    onClick={() => {
+                      setLightboxImage(images.indexOf(thumbnailImages[0]));
+                      setLightboxOpen(true);
+                    }}
+                  >
+                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                      <img
+                        src={thumbnailImages[0]}
+                        alt="SOUKYA 1"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+                    </div>
+                  </div>
+
+                  {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                  <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
+                    {thumbnailImages.slice(1, 5).map((img, idx) => {
+                      const actualIndex = images.indexOf(img);
+                      const isLastImage = idx === 3; // Last small image (bottom-right)
+
+                      return (
+                        <div
+                          key={idx}
+                          className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
+                          onClick={() => {
+                            setLightboxImage(actualIndex);
+                            setLightboxOpen(true);
+                          }}
+                        >
+                          <div className="relative w-full" style={{ paddingBottom: '100%' }}>
+                            <img
+                              src={img}
+                              alt={`SOUKYA ${actualIndex + 1}`}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+
+                            {/* Show Gallery Button - Floating on Bottom-Right Image */}
+                            {isLastImage && (
+                              <div className="absolute inset-0 flex items-end justify-center pb-4 bg-black/40">
+                                <Button
+                                  size="sm"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowFullGallery(true);
+                                  }}
+                                  className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-semibold text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform"
+                                >
+                                  <Images className="mr-1.5 h-3.5 w-3.5 md:h-4 md:w-4" />
+                                  <span className="hidden sm:inline">Show Full Gallery</span>
+                                  <span className="sm:hidden">Gallery</span>
+                                </Button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-
-                {/* Video Thumbnails */}
-                <div className="grid grid-cols-2 gap-4">
-                  {videos.map((video, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => setSelectedVideo(idx)}
-                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                        selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
-                      }`}
+              </>
+            ) : (
+              <>
+                {/* Video Gallery */}
+                <div className="space-y-6">
+                  {/* Main Video Player */}
+                  <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video">
+                    <video
+                      key={selectedVideo}
+                      controls
+                      controlsList="nodownload"
+                      preload="metadata"
+                      className="w-full h-full object-cover"
                     >
-                      {/* Video thumbnail images */}
-                      <img 
-                        src={`/Center Images/SOUKYA/Video gallery images/${idx + 1}.jpg`}
-                        alt={`Video ${idx + 1} Thumbnail`}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
-                        <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
-                          <Video className="h-8 w-8 text-primary" />
+                      <source src={videos[selectedVideo]} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
+                    {/* Video Counter */}
+                    <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                      Video {selectedVideo + 1} / {videos.length}
+                    </div>
+                  </div>
+
+                  {/* Video Thumbnails */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {videos.map((video, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => setSelectedVideo(idx)}
+                        className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
+                          }`}
+                      >
+                        {/* Video thumbnail images */}
+                        <img
+                          src={`/Center Images/SOUKYA/Video gallery images/${idx + 1}.jpg`}
+                          alt={`Video ${idx + 1} Thumbnail`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
+                          <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
+                            <Video className="h-8 w-8 text-primary" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">
+                          Video {idx + 1}
                         </div>
                       </div>
-                      <div className="absolute bottom-2 left-2 bg-black/60 text-white px-2 py-1 rounded text-xs">
-                        Video {idx + 1}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
               </>
             )}
           </div>
@@ -973,364 +1140,94 @@ export default function SOUKYACenter() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700 mb-4">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">
                 Wellness Programs
               </h1>
               <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
-                Cleanse, de-stress, and revitalize your mind, body, and spirit with our holistic wellness programs
+                {wellnessIntro}
               </p>
             </div>
 
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-              <AccordionItem value="detox" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
+              {wellnessPrograms.map((p, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`wellness-${idx}`}
+                  className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
+                >
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-700">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2 border-green-700">
+                        {wellnessIconForTitle(p.title)}
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Detoxification Programs</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Complete body cleansing and toxin elimination through Panchakarma and naturopathic therapies.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Traditional Panchakarma detoxification protocols</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Colon cleansing and digestive system rejuvenation</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Herbal medicines and therapeutic diets</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="stress" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Stress Management & Mental Wellness</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Relaxation therapies, meditation, and mental wellness programs to overcome modern life stress.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Guided meditation and mindfulness practices</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Shirodhara and Ayurvedic stress-relief therapies</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Professional counseling and emotional support</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="rejuvenation" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Anti-Aging & Rejuvenation Therapies</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Vitality enhancement and anti-aging treatments to restore youthful energy and appearance.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Rasayana (rejuvenation) Ayurvedic therapies</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Natural skin care and beauty treatments</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Hormone balancing and vitality restoration</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="weight" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Weight Management Programs</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Healthy and sustainable weight loss through holistic Ayurvedic approaches and lifestyle modifications.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Personalized diet plans and nutritional counseling</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Metabolism-boosting Ayurvedic treatments</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Yoga and exercise programs for fitness</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="immunity" className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
-                      <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Immunity Boosting & Preventive Care</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Strengthen natural defense systems and prevent diseases through holistic health promotion.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Rasayana therapies for immune enhancement</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Herbal supplements and immunity tonics</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-green-600 mt-1">✓</span>
-                      <span>Lifestyle disease prevention protocols</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {p.description}
+                    </p>
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-green-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
 
           {/* Medical Treatment Programs */}
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">
                 Medical Programs
               </h2>
               <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
-                Comprehensive holistic treatment for acute, chronic, and complex medical conditions
+                {medicalIntro}
               </p>
             </div>
 
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-              <AccordionItem value="addiction" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Heart className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
+              {medicalPrograms.map((p, idx) => (
+                <AccordionItem
+                  key={idx}
+                  value={`medical-${idx}`}
+                  className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
+                >
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-700">
+                        {medicalIconForTitle(p.title)}
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Addiction Treatment & Recovery</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Drug, alcohol, and smoking cessation programs with holistic detoxification and counseling support.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Natural detoxification without harsh medications</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Psychological counseling and behavioral therapy</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Long-term recovery support and relapse prevention</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="diabetes" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Diabetes Management & Control</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Comprehensive blood sugar control and prevention of diabetes complications through integrated care.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Ayurvedic medicines for blood sugar regulation</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Diabetic diet planning and lifestyle modifications</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Complication prevention and organ protection</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="arthritis" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Arthritis & Joint Pain Treatment</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Pain management and mobility improvement for all types of arthritis through Ayurvedic therapies.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Specialized Panchakarma for joint disorders</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Therapeutic massage and physiotherapy</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Anti-inflammatory herbal medications</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="mental" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Mental Health & Neurological Disorders</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Treatment for depression, anxiety, stress disorders, and neurological conditions through holistic care.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Ayurvedic psychotherapy and mind-body healing</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Professional counseling and emotional support</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Meditation, yoga, and stress reduction techniques</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="digestive" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Gastrointestinal & Digestive Disorders</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Comprehensive treatment for IBS, colitis, GERD, and other digestive system conditions.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Digestive fire (Agni) enhancement therapies</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Therapeutic diets for gut healing</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Herbal formulations for digestive health</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="chronic" className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                  <div className="flex items-center gap-2 md:gap-3">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Hospital className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary">Chronic & Complex Conditions</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                    Specialized care for stroke recovery, Parkinson's, cancer support, skin conditions, and more.
-                  </p>
-                  <ul className="space-y-1.5 md:space-y-2">
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Personalized integrated treatment protocols</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Multi-system holistic approach for rare diseases</span>
-                    </li>
-                    <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-blue-600 mt-1">✓</span>
-                      <span>Quality of life improvement and symptom management</span>
-                    </li>
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {p.description}
+                    </p>
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-blue-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
 
@@ -1394,11 +1291,11 @@ export default function SOUKYACenter() {
 
             {/* Vertical Timeline */}
             <div className="max-w-4xl mx-auto">
-              
+
               {/* Step 1: Initial Consultation */}
               <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
                 {/* Timeline Circle & Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     1
                   </div>
@@ -1406,9 +1303,12 @@ export default function SOUKYACenter() {
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      1
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1431,7 +1331,7 @@ export default function SOUKYACenter() {
               {/* Step 2: Personalized Treatment Plan */}
               <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
                 {/* Timeline Circle & Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     2
                   </div>
@@ -1439,9 +1339,12 @@ export default function SOUKYACenter() {
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      2
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1464,7 +1367,7 @@ export default function SOUKYACenter() {
               {/* Step 3: Daily Treatment */}
               <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
                 {/* Timeline Circle & Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     3
                   </div>
@@ -1472,9 +1375,12 @@ export default function SOUKYACenter() {
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      3
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1497,7 +1403,7 @@ export default function SOUKYACenter() {
               {/* Step 4: Diet & Nutrition */}
               <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
                 {/* Timeline Circle & Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     4
                   </div>
@@ -1505,9 +1411,12 @@ export default function SOUKYACenter() {
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      4
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1530,7 +1439,7 @@ export default function SOUKYACenter() {
               {/* Step 5: Lifestyle Counseling */}
               <div className="relative flex items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
                 {/* Timeline Circle & Line */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     5
                   </div>
@@ -1538,9 +1447,12 @@ export default function SOUKYACenter() {
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      5
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Activity className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1563,16 +1475,19 @@ export default function SOUKYACenter() {
               {/* Step 6: Follow-up Care */}
               <div className="relative flex items-start gap-3 md:gap-6 group">
                 {/* Timeline Circle - No line after last step */}
-                <div className="flex flex-col items-center flex-shrink-0">
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                     6
                   </div>
                 </div>
 
                 {/* Content Card */}
-                <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                   <CardContent className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                      6
+                    </div>
+                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-10 md:pl-0">
                       <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
@@ -1596,57 +1511,74 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Call to Action Section */}
-          <div className="mb-12 rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: '#EDE8D0' }}>
-            {/* Grid Layout - Mobile & Tablet: Stacked, Desktop: Side by Side */}
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-              
-              {/* Left Side: Text Content and Buttons */}
-              <div className="text-center lg:text-left">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4">
-                  Ready to Start Your Wellness Journey?
-                </h2>
-                <p className="text-sm md:text-base lg:text-lg mb-6" style={{ color: "#7F543D" }}>
-                  Take the first step towards holistic healing. Our expert team is here to guide you through personalized treatment plans tailored to your unique needs.
-                </p>
-                
-                {/* Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start mb-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-white px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    asChild
-                  >
-                    <Link to="/contact">
-                      <Phone className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
+                  <img
+                    src="/Center Images/SOUKYA/cta-pathway.jpg"
+                    alt="SOUKYA Wellness Center"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
+                  <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
+                    Take the first step towards holistic healing. Our expert team is here to guide you through personalized treatment plans tailored to your unique needs.
+                  </p>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
                       Book Consultation Now
-                    </Link>
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-2 border-primary text-primary hover:bg-primary/10 px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    asChild
-                  >
-                    <Link to="/contact">
-                      <MessageCircle className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
                       Chat With Us
-                    </Link>
-                  </Button>
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-4 w-4 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                  </div>
                 </div>
-                <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                  📞 Call us: <a href="tel:+918028432737" className="text-primary font-semibold hover:underline">+91 80 2843 2737</a>
-                </p>
               </div>
 
-              {/* Right Side: Image */}
-              <div className="order-first lg:order-last">
-                <img
-                  src="/Center Images/SOUKYA/cta-pathway.jpg"
-                  alt="SOUKYA Wellness Center"
-                  className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
-                />
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
+                  <p className="text-base md:text-lg mb-6" style={{ color: '#7F543D' }}>
+                    Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-5 w-5 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/SOUKYA/cta-pathway.jpg"
+                    alt="SOUKYA Wellness Center"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
               </div>
-
             </div>
           </div>
 
@@ -1662,10 +1594,10 @@ export default function SOUKYACenter() {
                 </p>
               )}
             </div>
-              
+
             {/* Facilities Images Carousel - 5 at a time */}
             <div className="max-w-7xl mx-auto relative mb-10">
-              
+
               {/* Navigation Arrows */}
               <button
                 onClick={() => setCurrentFacilityImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
@@ -1686,18 +1618,18 @@ export default function SOUKYACenter() {
               <div className="overflow-hidden px-10 md:px-12">
                 {/* Mobile: Show 1 at a time */}
                 <div className="md:hidden">
-                  <div 
+                  <div
                     className="flex transition-transform duration-500 ease-in-out"
-                    style={{ 
+                    style={{
                       transform: `translateX(-${currentFacilityImage * 100}%)`
                     }}
                   >
                     {facilityImages.map((image, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="w-full flex-shrink-0 px-2"
                       >
-                        <div 
+                        <div
                           className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all"
                           onClick={() => {
                             setFacilityLightboxImage(index);
@@ -1717,18 +1649,18 @@ export default function SOUKYACenter() {
 
                 {/* Desktop: Show 5 at a time */}
                 <div className="hidden md:block">
-                  <div 
+                  <div
                     className="flex transition-transform duration-500 ease-in-out"
-                    style={{ 
+                    style={{
                       transform: `translateX(-${Math.min(currentFacilityImage, facilityImages.length - 5) * 20}%)`
                     }}
                   >
                     {facilityImages.map((image, index) => (
-                      <div 
+                      <div
                         key={index}
                         className="w-1/5 flex-shrink-0 px-2"
                       >
-                        <div 
+                        <div
                           className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all"
                           onClick={() => {
                             setFacilityLightboxImage(index);
@@ -1753,11 +1685,10 @@ export default function SOUKYACenter() {
                   <button
                     key={index}
                     onClick={() => setCurrentFacilityImage(index)}
-                    className={`transition-all ${
-                      index === currentFacilityImage
-                        ? "w-8 h-3 bg-primary"
-                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                    className={`transition-all ${index === currentFacilityImage
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
                     aria-label={`Go to facility image ${index + 1}`}
                   />
                 ))}
@@ -1807,8 +1738,8 @@ export default function SOUKYACenter() {
                     All Facilities Meet International Healthcare Standards
                   </h4>
                   <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Every facility at SOUKYA is designed and maintained according to NABH accreditation standards, 
-                    ensuring the highest levels of safety, hygiene, and quality care. Our commitment to excellence 
+                    Every facility at SOUKYA is designed and maintained according to NABH accreditation standards,
+                    ensuring the highest levels of safety, hygiene, and quality care. Our commitment to excellence
                     means you receive world-class holistic treatment in a serene, naturally therapeutic environment.
                   </p>
                 </div>
@@ -1833,8 +1764,8 @@ export default function SOUKYACenter() {
                 <CardContent className="p-4 md:p-8">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img 
-                        src="/Center Images/SOUKYA/soukya founder/dr_mathai.jpg" 
+                      <img
+                        src="/Center Images/SOUKYA/soukya founder/dr_mathai.jpg"
                         alt="Dr. Issac Mathai"
                         className="w-full h-full object-cover"
                       />
@@ -1870,8 +1801,8 @@ export default function SOUKYACenter() {
                 <CardContent className="p-4 md:p-8">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img 
-                        src="/Center Images/SOUKYA/soukya founder/Team.jpg" 
+                      <img
+                        src="/Center Images/SOUKYA/soukya founder/Team.jpg"
                         alt="Expert Medical Team"
                         className="w-full h-full object-cover"
                       />
@@ -1970,7 +1901,7 @@ export default function SOUKYACenter() {
                           {testimonials[currentReview].avatar}
                         </div>
                       )}
-                      
+
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h4 className="text-base md:text-xl font-semibold text-primary">
@@ -2003,21 +1934,25 @@ export default function SOUKYACenter() {
               </Card>
 
               {/* Navigation Buttons */}
-              <button
-                onClick={goToPreviousReview}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                aria-label="Previous review"
-              >
-                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
-              
-              <button
-                onClick={goToNextReview}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                aria-label="Next review"
-              >
-                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                <button
+                  onClick={goToPreviousReview}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Previous review"
+                >
+                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                <button
+                  onClick={goToNextReview}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Next review"
+                >
+                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
 
               {/* Auto-play indicator */}
               {isReviewAutoPlaying && (
@@ -2034,11 +1969,10 @@ export default function SOUKYACenter() {
                 <button
                   key={idx}
                   onClick={() => selectReview(idx)}
-                  className={`transition-all rounded-full ${
-                    currentReview === idx
-                      ? "w-8 h-3 bg-primary"
-                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                  }`}
+                  className={`transition-all rounded-full ${currentReview === idx
+                    ? "w-8 h-3 bg-primary"
+                    : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    }`}
                   aria-label={`Go to review ${idx + 1}`}
                 />
               ))}
@@ -2049,27 +1983,25 @@ export default function SOUKYACenter() {
               <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">
                 Awards & Media
               </h3>
-              
+
               {/* Toggle Buttons */}
               <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
                 <Button
                   onClick={() => setShowAwards(true)}
-                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${
-                    showAwards
-                      ? "bg-primary text-white hover:bg-primary/90"
-                      : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
-                  }`}
+                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${showAwards
+                    ? "bg-primary text-white hover:bg-primary/90"
+                    : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
+                    }`}
                 >
                   <Award className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
                   Awards
                 </Button>
                 <Button
                   onClick={() => setShowAwards(false)}
-                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${
-                    !showAwards
-                      ? "bg-primary text-white hover:bg-primary/90"
-                      : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
-                  }`}
+                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${!showAwards
+                    ? "bg-primary text-white hover:bg-primary/90"
+                    : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
+                    }`}
                 >
                   <FileSearch className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
                   Media Recognition
@@ -2078,205 +2010,204 @@ export default function SOUKYACenter() {
 
               {/* Awards Section */}
               {showAwards && (
-              <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-                
-                {/* Award 1: Condé Nast Johansens */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="flex flex-col items-center mb-4">
-                    <img
-                      src="/Center Images/SOUKYA/Awards/Award 1.jpg"
-                      alt="Condé Nast Johansens - Recommended Retreat"
-                      className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
-                    />
-                    <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
-                      Condé Nast Johansens – Recommended Retreat
-                    </h4>
-                  </div>
-                  
-                  <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                    <p>
-                      Soukya has been officially recognized as a <span className="font-semibold">Recommended Retreat</span> by Condé Nast Johansens, one of the world's most trusted authorities on luxury travel and wellness.
-                    </p>
-                    <p className="font-medium">This distinction is awarded only to select properties that consistently deliver:</p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>exceptional hospitality</li>
-                      <li>world-class wellness and healing services</li>
-                      <li>a serene, nature-rich environment</li>
-                      <li>outstanding guest satisfaction</li>
-                    </ul>
-                    <p className="font-semibold text-primary pt-2">
-                      This recognition reinforces Soukya's position as a globally trusted holistic healing destination.
-                    </p>
-                  </div>
-                </div>
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
 
-                {/* Award 2: Condé Nast Traveller */}
-                <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="flex flex-col items-center mb-4">
-                    <img
-                      src="/Center Images/SOUKYA/Awards/Award 2.jpg"
-                      alt="Condé Nast Traveller - Award Winner"
-                      className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
-                    />
-                    <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
-                      Condé Nast Traveller – Award Winner
-                    </h4>
-                  </div>
-                  
-                  <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                    <p>
-                      Soukya is also a proud <span className="font-semibold">Award Winner</span> by Condé Nast Traveller, a prestigious global travel publication known for celebrating excellence in luxury, wellness, and hospitality.
-                    </p>
-                    <p className="font-medium">This award highlights Soukya for offering:</p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>an outstanding guest experience</li>
-                      <li>innovative and authentic holistic therapies</li>
-                      <li>sustainable, nature-based healing practices</li>
-                      <li>the highest standards of care and comfort</li>
-                    </ul>
-                    <p className="font-semibold text-primary pt-2">
-                      This international honor places Soukya among the top wellness retreats in the world, trusted by guests from across the globe.
-                    </p>
-                  </div>
-                </div>
+                  {/* Award 1: Condé Nast Johansens */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                    <div className="flex flex-col items-center mb-4">
+                      <img
+                        src="/Center Images/SOUKYA/Awards/Award 1.jpg"
+                        alt="Condé Nast Johansens - Recommended Retreat"
+                        className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
+                      />
+                      <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
+                        Condé Nast Johansens – Recommended Retreat
+                      </h4>
+                    </div>
 
-              </div>
+                    <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
+                      <p>
+                        Soukya has been officially recognized as a <span className="font-semibold">Recommended Retreat</span> by Condé Nast Johansens, one of the world's most trusted authorities on luxury travel and wellness.
+                      </p>
+                      <p className="font-medium">This distinction is awarded only to select properties that consistently deliver:</p>
+                      <ul className="list-disc list-inside space-y-1 ml-2">
+                        <li>exceptional hospitality</li>
+                        <li>world-class wellness and healing services</li>
+                        <li>a serene, nature-rich environment</li>
+                        <li>outstanding guest satisfaction</li>
+                      </ul>
+                      <p className="font-semibold text-primary pt-2">
+                        This recognition reinforces Soukya's position as a globally trusted holistic healing destination.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Award 2: Condé Nast Traveller */}
+                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                    <div className="flex flex-col items-center mb-4">
+                      <img
+                        src="/Center Images/SOUKYA/Awards/Award 2.jpg"
+                        alt="Condé Nast Traveller - Award Winner"
+                        className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
+                      />
+                      <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
+                        Condé Nast Traveller – Award Winner
+                      </h4>
+                    </div>
+
+                    <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
+                      <p>
+                        Soukya is also a proud <span className="font-semibold">Award Winner</span> by Condé Nast Traveller, a prestigious global travel publication known for celebrating excellence in luxury, wellness, and hospitality.
+                      </p>
+                      <p className="font-medium">This award highlights Soukya for offering:</p>
+                      <ul className="list-disc list-inside space-y-1 ml-2">
+                        <li>an outstanding guest experience</li>
+                        <li>innovative and authentic holistic therapies</li>
+                        <li>sustainable, nature-based healing practices</li>
+                        <li>the highest standards of care and comfort</li>
+                      </ul>
+                      <p className="font-semibold text-primary pt-2">
+                        This international honor places Soukya among the top wellness retreats in the world, trusted by guests from across the globe.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               )}
 
               {/* Media Recognition Section - Carousel */}
               {!showAwards && (
-              <div className="max-w-7xl mx-auto relative">
-                
-                {/* Navigation Arrows */}
-                <button
-                  onClick={handlePrevMedia}
-                  className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
-                  aria-label="Previous media"
-                >
-                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
-                <button
-                  onClick={handleNextMedia}
-                  className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
-                  aria-label="Next media"
-                >
-                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
+                <div className="max-w-7xl mx-auto relative">
 
-                {/* Carousel Container */}
-                <div className="overflow-hidden px-10 md:px-12">
-                  {/* Mobile: Show 1 at a time */}
-                  <div className="md:hidden">
-                    <div 
-                      className="flex transition-transform duration-500 ease-in-out"
-                      style={{ 
-                        transform: `translateX(-${currentMediaIndex * 100}%)`
-                      }}
-                    >
-                      {mediaItems.map((item, index) => (
-                        <div 
-                          key={index}
-                          className="w-full flex-shrink-0 px-2"
-                        >
-                          <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                            <a
-                              href={item.pdf}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block group"
-                            >
-                              <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
-                                <img
-                                  src={item.image}
-                                  alt={`SOUKYA Featured in ${item.title}`}
-                                  className="w-full h-auto object-cover"
-                                />
-                                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
-                                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
-                                    <p className="text-primary font-bold text-xs flex items-center gap-2">
-                                      <FileSearch className="h-4 w-4" />
-                                      View PDF
-                                    </p>
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={handlePrevMedia}
+                    className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                    aria-label="Previous media"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={handleNextMedia}
+                    className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                    aria-label="Next media"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+
+                  {/* Carousel Container */}
+                  <div className="overflow-hidden px-10 md:px-12">
+                    {/* Mobile: Show 1 at a time */}
+                    <div className="md:hidden">
+                      <div
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{
+                          transform: `translateX(-${currentMediaIndex * 100}%)`
+                        }}
+                      >
+                        {mediaItems.map((item, index) => (
+                          <div
+                            key={index}
+                            className="w-full flex-shrink-0 px-2"
+                          >
+                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                              <a
+                                href={item.pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block group"
+                              >
+                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+                                  <img
+                                    src={item.image}
+                                    alt={`SOUKYA Featured in ${item.title}`}
+                                    className="w-full h-auto object-cover"
+                                  />
+                                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
+                                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
+                                      <p className="text-primary font-bold text-xs flex items-center gap-2">
+                                        <FileSearch className="h-4 w-4" />
+                                        View PDF
+                                      </p>
+                                    </div>
                                   </div>
                                 </div>
-                              </div>
-                            </a>
-                            <p className="text-center mt-3 text-xs font-semibold text-primary">
-                              {item.title}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Desktop: Show 4 at a time */}
-                  <div className="hidden md:block">
-                    <div 
-                      className="flex transition-transform duration-500 ease-in-out"
-                      style={{ 
-                        transform: `translateX(-${currentMediaIndex * 25}%)`
-                      }}
-                    >
-                    {mediaItems.map((item, index) => (
-                      <div 
-                        key={index}
-                        className="w-1/4 flex-shrink-0 px-3"
-                      >
-                        <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                          <a
-                            href={item.pdf}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block group"
-                          >
-                            <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
-                              <img
-                                src={item.image}
-                                alt={`SOUKYA Featured in ${item.title}`}
-                                className="w-full h-auto object-cover"
-                              />
-                              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
-                                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
-                                  <p className="text-primary font-bold text-sm flex items-center gap-2">
-                                    <FileSearch className="h-4 w-4" />
-                                    View PDF
-                                  </p>
-                                </div>
-                              </div>
+                              </a>
+                              <p className="text-center mt-3 text-xs font-semibold text-primary">
+                                {item.title}
+                              </p>
                             </div>
-                          </a>
-                          <p className="text-center mt-3 text-sm font-semibold text-primary">
-                            {item.title}
-                          </p>
-                        </div>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Desktop: Show 4 at a time */}
+                    <div className="hidden md:block">
+                      <div
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{
+                          transform: `translateX(-${currentMediaIndex * 25}%)`
+                        }}
+                      >
+                        {mediaItems.map((item, index) => (
+                          <div
+                            key={index}
+                            className="w-1/4 flex-shrink-0 px-3"
+                          >
+                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                              <a
+                                href={item.pdf}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block group"
+                              >
+                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+                                  <img
+                                    src={item.image}
+                                    alt={`SOUKYA Featured in ${item.title}`}
+                                    className="w-full h-auto object-cover"
+                                  />
+                                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
+                                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
+                                      <p className="text-primary font-bold text-sm flex items-center gap-2">
+                                        <FileSearch className="h-4 w-4" />
+                                        View PDF
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
+                              <p className="text-center mt-3 text-sm font-semibold text-primary">
+                                {item.title}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Navigation Dots */}
-                <div className="flex justify-center gap-2 mt-6">
-                  {mediaItems.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentMediaIndex(index)}
-                      className={`transition-all ${
-                        index === currentMediaIndex
+                  {/* Navigation Dots */}
+                  <div className="flex justify-center gap-2 mt-6">
+                    {mediaItems.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentMediaIndex(index)}
+                        className={`transition-all ${index === currentMediaIndex
                           ? "w-8 h-3 bg-primary"
                           : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                      } rounded-full`}
-                      aria-label={`Go to media ${index + 1}`}
-                    />
-                  ))}
+                          } rounded-full`}
+                        aria-label={`Go to media ${index + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-center mt-8 text-sm md:text-base max-w-3xl mx-auto" style={{ color: "#7F543D" }}>
+                    Soukya has been featured in prestigious luxury travel and wellness publications worldwide,
+                    showcasing our commitment to holistic healing and exceptional guest experiences.
+                  </p>
                 </div>
-                
-                <p className="text-center mt-8 text-sm md:text-base max-w-3xl mx-auto" style={{ color: "#7F543D" }}>
-                  Soukya has been featured in prestigious luxury travel and wellness publications worldwide, 
-                  showcasing our commitment to holistic healing and exceptional guest experiences.
-                </p>
-              </div>
               )}
             </div>
           </div>
@@ -2497,111 +2428,144 @@ export default function SOUKYACenter() {
             </Accordion>
           </div>
 
-          {/* Contact Information Card */
-          <Card className="mb-12 border-2 border-primary">
+          {/* Contact Information Card */}
+          <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
             <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+              <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
+                <div className="space-y-6">
+                  {/* Address Section */}
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        SOUKYA - Dr. Mathai's International Holistic Health Centre<br />
-                        Soukya Road, Samethanahalli<br />
-                        Whitefield, Bangalore - 560067<br />
-                        Karnataka, INDIA
+                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                        {contactAddress.map((l, i) => (
+                          <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                        ))}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        +91 80 2801 7000 to 08<br />
-                        Mobile: +91 98453 74400
-                      </p>
+                  {/* Distances Section */}
+                  {contactDistances.length > 0 && (
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactDistances.map((d, i) => (
+                            <li key={i}>{d}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Email</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        info@soukya.org
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Website</h4>
-                      <a 
-                        href="https://www.soukya.com" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        www.soukya.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Distance from Airport</h4>
-                      <p style={{ color: "#7F543D" }}>
-                        30 minutes from Kempegowda International Airport (25 km)
-                      </p>
+                {/* Map Section */}
+                <div className="md:-mt-16 self-start">
+                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
+                        <iframe
+                          title="SOUKYA Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5497.959697916405!2d77.79023769497957!3d12.994569447709578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae0e8be52b809d%3A0x4a7c24726456ffc4!2sSOUKYA!5e0!3m2!1sen!2sin!4v1767686261555!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-primary/5 rounded-lg">
-                <h4 className="font-semibold text-primary mb-2">Transportation Services</h4>
-                <p style={{ color: "#7F543D" }}>
-                  Pick-up and drop services available on request for international and domestic patients 
-                  arriving at Bangalore Airport or Railway Station.
-                </p>
-              </div>
+              {/* Transportation Services Section */}
+              {transportText && (
+                <div className="mt-10 p-6 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <ShieldCheck className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-primary mb-2">Transportation Services</h4>
+                      <p className="text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                        {transportText}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
-          }
           {/* CTA Card */}
-          <Card className="bg-primary text-primary-foreground">
-            <CardContent className="p-6 md:p-8 text-center">
-              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
-                Begin Your Holistic Healing Journey at SOUKYA
-              </h3>
-              <p className="mb-6 text-sm md:text-base lg:text-lg opacity-90 max-w-3xl mx-auto px-2">
-                Experience world-class integrated holistic healthcare at India's premier 
-                NABH-accredited AYUSH hospital, set in a serene 30-acre organic farm.
-              </p>
-              <div className="flex justify-center">
-                <Button
-                  size="lg"
-                  variant="secondary"
-                  className="bg-white text-primary hover:bg-white/90 font-semibold text-xs md:text-sm px-4 py-5 md:px-8 md:py-6 w-full md:w-auto max-w-sm"
-                  asChild
-                >
-                  <Link to="/contact" className="flex items-center justify-center">
-                    <Calendar className="mr-2 h-4 w-4 md:h-5 md:w-5" />
-                    Book Your Consultation Today
-                  </Link>
-                </Button>
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/SOUKYA/CTA bottom.jpg"
+                    alt="SOUKYA Wellness Center"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at SOUKYA</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
               </div>
-            </CardContent>
-          </Card>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at SOUKYA</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/SOUKYA/CTA bottom.jpg"
+                    alt="SOUKYA Wellness Center"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -2609,160 +2573,176 @@ export default function SOUKYACenter() {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
+
       {/* Full Gallery Modal */}
-      {showFullGallery && (
-        <div
-          className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto"
-          onClick={() => setShowFullGallery(false)}
-        >
-          <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
-            {/* Header */}
-            <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
-              <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
-                Back
-              </Button>
-              <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                SOUKYA Gallery
-              </div>
-            </div>
-
-            {/* Masonry Grid Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {images.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="relative w-full cursor-pointer"
-                  style={{ paddingBottom: "75%" }}
-                  onClick={() => {
-                    setLightboxImage(idx);
-                    setLightboxOpen(true);
-                  }}
-                >
-                  <img src={img} alt={`SOUKYA ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
+      {
+        showFullGallery && (
+          <div
+            className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto"
+            onClick={() => setShowFullGallery(false)}
+          >
+            <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+                <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                  Back
+                </Button>
+                <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                  SOUKYA Gallery
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+              </div>
 
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
-          onClick={() => setLightboxOpen(false)}
-        >
-          <button
-            onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
-            aria-label="Previous"
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          <button
-            onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
-            aria-label="Next"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
-
-          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-              SOUKYA Health Center
-            </div>
-            <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
-              <img
-                src={images[lightboxImage]}
-                alt={`SOUKYA ${lightboxImage + 1}`}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <button
-                onClick={() => setLightboxOpen(false)}
-                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {lightboxImage + 1} / {images.length}
+              {/* Masonry Grid Gallery */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {images.map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="relative w-full cursor-pointer"
+                    style={{ paddingBottom: "75%" }}
+                    onClick={() => {
+                      setLightboxImage(idx);
+                      setLightboxOpen(true);
+                    }}
+                  >
+                    <img src={img} alt={`SOUKYA ${idx + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="flex md:hidden items-center justify-between mt-4">
-              <Button
-                onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
-                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
-              >
-                Previous
-              </Button>
-              <Button
-                onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
-                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
-              >
-                Next
-              </Button>
-            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
-      {facilityLightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
-          onClick={() => setFacilityLightboxOpen(false)}
-        >
-          <button
-            onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
-            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
-            aria-label="Previous"
+      {
+        lightboxOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
+            onClick={() => setLightboxOpen(false)}
           >
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-          <button
-            onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
-            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
-            aria-label="Next"
-          >
-            <ChevronRight className="h-6 w-6" />
-          </button>
+            <button
+              onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
 
-          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
-            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-              SOUKYA Facilities & Amenities
-            </div>
-            <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
-              <img
-                src={facilityImages[facilityLightboxImage]}
-                alt={`SOUKYA Facility ${facilityLightboxImage + 1}`}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <button
-                onClick={() => setFacilityLightboxOpen(false)}
-                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {facilityLightboxImage + 1} / {facilityImages.length}
+            <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+              <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+                SOUKYA Health Center
+              </div>
+              <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
+                <img
+                  src={images[lightboxImage]}
+                  alt={`SOUKYA ${lightboxImage + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setLightboxOpen(false)}
+                  className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                  {lightboxImage + 1} / {images.length}
+                </div>
+              </div>
+              <div className="flex md:hidden items-center justify-between mt-4">
+                <Button
+                  onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                >
+                  Next
+                </Button>
               </div>
             </div>
-            <div className="flex md:hidden items-center justify-between mt-4">
-              <Button
-                onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
-                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
-              >
-                Previous
-              </Button>
-              <Button
-                onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
-                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
-              >
-                Next
-              </Button>
+          </div>
+        )
+      }
+
+      {
+        facilityLightboxOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm"
+            onClick={() => setFacilityLightboxOpen(false)}
+          >
+            <button
+              onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Previous"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+              aria-label="Next"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
+            <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+              <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+                SOUKYA Facilities & Amenities
+              </div>
+              <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
+                <img
+                  src={facilityImages[facilityLightboxImage]}
+                  alt={`SOUKYA Facility ${facilityLightboxImage + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <button
+                  onClick={() => setFacilityLightboxOpen(false)}
+                  className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                  {facilityLightboxImage + 1} / {facilityImages.length}
+                </div>
+              </div>
+              <div className="flex md:hidden items-center justify-between mt-4">
+                <Button
+                  onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+                >
+                  Next
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 }
