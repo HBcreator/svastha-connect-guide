@@ -111,12 +111,10 @@ export default function AgniAyurvedicVillage() {
   }, [isAwardAutoPlaying, awards.length]);
 
   const goToPreviousAward = () => {
-    setIsAwardAutoPlaying(false);
     setCurrentAward((prev) => (prev - 1 + awards.length) % awards.length);
   };
 
   const goToNextAward = () => {
-    setIsAwardAutoPlaying(false);
     setCurrentAward((prev) => (prev + 1) % awards.length);
   };
 
@@ -1547,70 +1545,92 @@ export default function AgniAyurvedicVillage() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
                 <Award className="h-8 w-8" />
               </div>
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and rewards</h2>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
             </div>
 
-            <div className="relative max-w-2xl mx-auto group">
-              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white min-h-[450px] md:min-h-[500px]">
-                <CardContent className="p-6 md:p-10 flex flex-col items-center h-full">
-                  {/* Image Container - Top */}
-                  <div className="w-full h-48 md:h-64 flex items-center justify-center bg-primary/5 rounded-2xl mb-8 p-6 relative">
-                    <img
-                      src={awards[currentAward].image}
-                      alt={awards[currentAward].title}
-                      className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-500 hover:scale-105"
-                    />
+            <div className="relative group max-w-7xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-[4/5] bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                            <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
+                </div>
 
-                  {/* Text Content - Bottom */}
-                  <div className="text-center flex flex-col flex-1 justify-center w-full">
-                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 leading-tight">
-                      {awards[currentAward].title}
-                    </h3>
-                    <div className="min-h-[60px] md:min-h-[80px] flex items-center justify-center">
-                      <p className="text-sm md:text-base leading-relaxed italic" style={{ color: '#7F543D' }}>
-                        "{awards[currentAward].description}"
-                      </p>
-                    </div>
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-[4/5] bg-primary/5 rounded-xl mb-6 p-6 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3">{award.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
               {/* Navigation Arrows */}
               <button
                 onClick={goToPreviousAward}
-                className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10 opacity-0 group-hover:opacity-100 md:opacity-100"
+                className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                 aria-label="Previous award"
               >
                 <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
               </button>
               <button
                 onClick={goToNextAward}
-                className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10 opacity-0 group-hover:opacity-100 md:opacity-100"
+                className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                 aria-label="Next award"
               >
                 <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
               </button>
 
               {/* Indicators */}
-              <div className="flex justify-center gap-2 mt-6">
+              <div className="flex justify-center gap-2 mt-8">
                 {awards.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => { setIsAwardAutoPlaying(false); setCurrentAward(i); }}
+                    onClick={() => { setCurrentAward(i); }}
                     className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
                     aria-label={`Go to award ${i + 1}`}
                   />
                 ))}
               </div>
-
-              {isAwardAutoPlaying && (
-                <div className="absolute top-2 right-2 bg-black/60 text-white px-2 py-0.5 rounded-full text-[10px] md:text-xs flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                  Auto
-                </div>
-              )}
             </div>
           </div>
 
@@ -1689,7 +1709,7 @@ export default function AgniAyurvedicVillage() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500 transition-colors">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
