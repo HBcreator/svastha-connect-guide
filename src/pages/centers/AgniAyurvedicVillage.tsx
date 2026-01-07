@@ -102,20 +102,36 @@ export default function AgniAyurvedicVillage() {
     }
   ];
 
+  const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : 2; // On desktop (3 items), index 2 puts last award in center
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awards.length]);
+
   useEffect(() => {
     if (!isAwardAutoPlaying) return;
     const id = setInterval(() => {
-      setCurrentAward((prev) => (prev + 1) % awards.length);
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(id);
-  }, [isAwardAutoPlaying, awards.length]);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
 
   const goToPreviousAward = () => {
-    setCurrentAward((prev) => (prev - 1 + awards.length) % awards.length);
+    setIsAwardAutoPlaying(false);
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
   };
 
   const goToNextAward = () => {
-    setCurrentAward((prev) => (prev + 1) % awards.length);
+    setIsAwardAutoPlaying(false);
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
   };
 
   const images = [
@@ -1549,7 +1565,7 @@ export default function AgniAyurvedicVillage() {
               <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
             </div>
 
-            <div className="relative group max-w-7xl mx-auto">
+            <div className="relative group max-w-5xl mx-auto">
               <div className="overflow-hidden px-4 md:px-10">
                 {/* Mobile Slider (1 card) */}
                 <div className="md:hidden">
@@ -1560,11 +1576,11 @@ export default function AgniAyurvedicVillage() {
                     {awards.map((award, i) => (
                       <div key={i} className="w-full flex-shrink-0 px-2">
                         <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
-                          <div className="w-full aspect-[4/5] bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
                             <img
                               src={award.image}
                               alt={award.title}
-                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
                             />
                           </div>
                           <div className="text-center">
@@ -1586,11 +1602,11 @@ export default function AgniAyurvedicVillage() {
                     {awards.map((award, i) => (
                       <div key={i} className="w-1/3 flex-shrink-0 px-4">
                         <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
-                          <div className="w-full aspect-[4/5] bg-primary/5 rounded-xl mb-6 p-6 flex items-center justify-center overflow-hidden">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
                             <img
                               src={award.image}
                               alt={award.title}
-                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
                             />
                           </div>
                           <div className="text-center">
@@ -1607,14 +1623,14 @@ export default function AgniAyurvedicVillage() {
               {/* Navigation Arrows */}
               <button
                 onClick={goToPreviousAward}
-                className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                className="absolute left-8 md:-left-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                 aria-label="Previous award"
               >
                 <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
               </button>
               <button
                 onClick={goToNextAward}
-                className="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                className="absolute right-8 md:-right-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                 aria-label="Next award"
               >
                 <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
@@ -1622,10 +1638,10 @@ export default function AgniAyurvedicVillage() {
 
               {/* Indicators */}
               <div className="flex justify-center gap-2 mt-8">
-                {awards.map((_, i) => (
+                {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => { setCurrentAward(i); }}
+                    onClick={() => { setIsAwardAutoPlaying(false); setCurrentAward(i); }}
                     className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
                     aria-label={`Go to award ${i + 1}`}
                   />
