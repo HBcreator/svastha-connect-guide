@@ -83,6 +83,8 @@ const Veda5Center = () => {
   const [whyChooseSection, setWhyChooseSection] = useState<SectionData | null>(null);
   const [facilitiesSection, setFacilitiesSection] = useState<SectionData | null>(null);
 
+
+
   const facilityImages = [
     "/Center Images/veda5/Facilities & Amenities/veda5-01.jpg",
     "/Center Images/veda5/Facilities & Amenities/veda5-02.jpg",
@@ -248,6 +250,93 @@ const Veda5Center = () => {
   const images = assets[selectedLocation].photos;
   const videos = assets[selectedLocation].videos;
   const isAutoPlaying = true;
+
+  const [currentTeamSlide, setCurrentTeamSlide] = useState(0);
+  const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
+
+  const teamIntro = "A dedicated team of wellness masters powers VEDA5, creating authentic and life-transforming healing experiences.";
+  const founderImage = images[0];
+  const teamImage = images[1] || images[0];
+
+  const teamGroups = [
+    {
+      title: "Ayurvedic Physicians",
+      description: "",
+      items: [
+        "Experienced doctors holding BAMS degrees from prestigious Ayurvedic medical colleges",
+        "Specialized in classical diagnostics including pulse examination (Nadi Pariksha)",
+        "Experts in Panchakarma therapies and chronic disease management",
+        "Design personalized treatment protocols tailored to individual wellness goals",
+      ],
+    },
+    {
+      title: "Panchakarma Therapy Specialists",
+      description: "",
+      items: [
+        "Expert therapists trained in authentic Panchakarma procedures and protocols",
+        "Proficient in preparatory therapies and main elimination treatments",
+        "Skilled in post-purification rejuvenation care and follow-up protocols",
+        "Undergo continuous training to maintain highest international treatment standards",
+      ],
+    },
+    {
+      title: "Hatha Yoga Masters",
+      description: "",
+      items: [
+        "Certified instructors trained in traditional Hatha Yoga lineages and philosophy",
+        "Expertise in asana styles, pranayama breathing, and meditation practices",
+        "Provide personalized attention and safe modifications for health conditions",
+        "Conduct sessions suitable for all levels from beginners to advanced",
+      ],
+    },
+    {
+      title: "Naturopathy Practitioners",
+      description: "",
+      items: [
+        "Qualified naturopathic doctors with specialized training in natural healing",
+        "Experts in dietary planning, hydrotherapy, mud therapy, and detox protocols",
+        "Design individualized lifestyle modifications complementing Ayurvedic treatments",
+        "Create comprehensive wellness strategies for sustainable long-term health",
+      ],
+    },
+    {
+      title: "Wellness Counselors & Support Staff",
+      description: "",
+      items: [
+        "Professional counselors providing lifestyle guidance and wellness education",
+        "Experts in stress management coaching and emotional support services",
+        "Help guests understand Ayurvedic principles and maintain healthy habits",
+        "Offer post-treatment follow-up and ongoing wellness consultation support",
+      ],
+    },
+    {
+      title: "Medical Support & Care Team",
+      description: "",
+      items: [
+        "24/7 medical professionals available at each VEDA5 location for emergencies",
+        "Continuous monitoring of treatment progress and guest health conditions",
+        "Ensure safety, comfort, and immediate attention when needed",
+        "Coordinate between different specialists for integrated comprehensive care",
+      ],
+    },
+  ];
+
+  useEffect(() => {
+    if (!isTeamAutoPlaying || teamGroups.length === 0) return;
+    const id = setInterval(() => {
+      setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isTeamAutoPlaying, teamGroups.length]);
+
+  const prevTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((prev) => (prev - 1 + teamGroups.length) % teamGroups.length);
+  };
+  const nextTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
+  };
 
   if (selectedImage >= images.length && images.length) setSelectedImage(0);
   if (lightboxImage >= images.length && images.length) setLightboxImage(0);
@@ -554,8 +643,12 @@ const Veda5Center = () => {
               <Button
                 key={loc}
                 size="lg"
-                variant={selectedLocation === loc ? "default" : "outline"}
-                className={selectedLocation === loc ? "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl" : "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl"}
+                variant="outline"
+                className={
+                  selectedLocation === loc
+                    ? "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl bg-accent text-white border-2 border-accent hover:bg-accent/90 hover:text-white"
+                    : "font-semibold px-5 md:px-8 py-2.5 md:py-3 rounded-xl bg-white text-primary border-2 border-primary hover:bg-accent hover:text-white hover:border-accent"
+                }
                 onClick={() => setSelectedLocation(loc)}
               >
                 {loc}
@@ -871,7 +964,7 @@ const Veda5Center = () => {
             </div>
           </div>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700/80 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: '#1A428A' }}>
               <LotusIcon className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{wellnessSection?.heading || "Wellness Programs"}</h3>
@@ -887,9 +980,9 @@ const Veda5Center = () => {
                 value={`well-${idx}`}
                 className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
               >
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-700">
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
                   <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2 border-green-700/80">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2" style={{ borderColor: '#1A428A' }}>
                       {iconForWellnessTitle(p.title)}
                     </div>
                     <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -919,7 +1012,7 @@ const Veda5Center = () => {
 
         <div className="mb-12 max-w-6xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700/80 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-orange-500 mb-4">
               <Stethoscope className="h-8 w-8 text-blue-600" />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{medicalSection?.heading || "Medical Programs"}</h3>
@@ -934,9 +1027,9 @@ const Veda5Center = () => {
                 value={`med-${idx}`}
                 className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
               >
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
                   <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-blue-700/80">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-orange-500">
                       {iconForMedicalTitle(p.title)}
                     </div>
                     <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -1162,33 +1255,56 @@ const Veda5Center = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mb-12 max-w-6xl mx-auto rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: '#EDE8D0' }}>
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-            <div className="text-center lg:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4">Ready to Start Your Wellness Journey?</h2>
-              <p className="text-sm md:text-base lg:text-lg mb-6" style={{ color: '#7F543D' }}>
-                Take the first step towards holistic healing. Our expert team is here to guide you through personalized treatment plans tailored to your unique needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start mb-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base" asChild>
-                  <Link to="/contact">
-                    <Phone className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+        <div className="mb-12 max-w-6xl mx-auto">
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
+                <img src="/Center Images/veda5/CTA-image.jpg" alt="VEDA5 Wellness Center" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
+                  Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
+                </p>
+                <div className="space-y-3">
+                  <Button size="lg" className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
                     Book Consultation Now
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="border-2 border-primary text-primary hover:bg-primary/10 px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base" asChild>
-                  <Link to="/contact">
-                    <MessageCircle className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
                     Chat With Us
-                  </Link>
-                </Button>
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
+                  <Phone className="h-4 w-4 text-red-600" />
+                  <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                </div>
               </div>
-              <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                📞 Call us: <a href="tel:+918028432737" className="text-primary font-semibold hover:underline">+91 80 2843 2737</a>
-              </p>
             </div>
-            <div className="order-first lg:order-last">
-              <img src="/Center Images/veda5/CTA-image.jpg" alt="VEDA5 Wellness Center" className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg border-2 border-primary/30 transition-transform duration-700 ease-out hover:scale-105" />
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-base md:text-lg mb-6" style={{ color: '#7F543D' }}>
+                  Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
+                  <Phone className="h-5 w-5 text-red-600" />
+                  <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                </div>
+              </div>
+              <div>
+                <img src="/Center Images/veda5/CTA-image.jpg" alt="VEDA5 Wellness Center" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+              </div>
             </div>
           </div>
         </div>
@@ -1359,116 +1475,69 @@ const Veda5Center = () => {
           )}
         </div>
 
-        <div className="mb-12 max-w-6xl mx-auto rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+        <div className="mb-12 max-w-6xl mx-auto rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Expert Medical Team</h2>
-            <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
-              A dedicated team of wellness masters powers VEDA5, creating authentic and life-transforming healing experiences.
-            </p>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h2>
+            <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{teamIntro}</p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <Stethoscope className="h-6 w-6" />
+          <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
+            <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
+              <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
+                <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                    <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Ayurvedic Physicians</h3>
+                  <div>
+                    <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">VEDA5 Leadership</h3>
+                    <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>Ayurveda • Yoga • Naturopathy</p>
+                    <p className="text-xs md:text-sm mt-1 text-primary/70">Guided by experienced wellness experts</p>
+                  </div>
                 </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>Experienced doctors holding BAMS degrees from prestigious Ayurvedic medical colleges</li>
-                  <li>Specialized in classical diagnostics including pulse examination (Nadi Pariksha)</li>
-                  <li>Experts in Panchakarma therapies and chronic disease management</li>
-                  <li>Design personalized treatment protocols tailored to individual wellness goals</li>
-                </ul>
+                <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>
+                  Our leadership team brings together classical Ayurvedic wisdom and modern wellness hospitality to craft safe, personalized, and results-driven healing journeys.
+                </p>
+                <div className="pt-3 md:pt-4 border-t border-primary/10">
+                  <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Clinical Oversight", "Personalized Protocols", "Guest Experience", "Holistic Care"].map((e) => (
+                      <span key={e} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">{e}</span>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <Droplet className="h-6 w-6" />
+            <div className="relative">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
+                <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
+                  <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                      <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
+                    </div>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Panchakarma Therapy Specialists</h3>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>Expert therapists trained in authentic Panchakarma procedures and protocols</li>
-                  <li>Proficient in preparatory therapies and main elimination treatments</li>
-                  <li>Skilled in post-purification rejuvenation care and follow-up protocols</li>
-                  <li>Undergo continuous training to maintain highest international treatment standards</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <LotusIcon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Hatha Yoga Masters</h3>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>Certified instructors trained in traditional Hatha Yoga lineages and philosophy</li>
-                  <li>Expertise in asana styles, pranayama breathing, and meditation practices</li>
-                  <li>Provide personalized attention and safe modifications for health conditions</li>
-                  <li>Conduct sessions suitable for all levels from beginners to advanced</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <Leaf className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Naturopathy Practitioners</h3>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>Qualified naturopathic doctors with specialized training in natural healing</li>
-                  <li>Experts in dietary planning, hydrotherapy, mud therapy, and detox protocols</li>
-                  <li>Design individualized lifestyle modifications complementing Ayurvedic treatments</li>
-                  <li>Create comprehensive wellness strategies for sustainable long-term health</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <Brain className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Wellness Counselors & Support Staff</h3>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>Professional counselors providing lifestyle guidance and wellness education</li>
-                  <li>Experts in stress management coaching and emotional support services</li>
-                  <li>Help guests understand Ayurvedic principles and maintain healthy habits</li>
-                  <li>Offer post-treatment follow-up and ongoing wellness consultation support</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-xl">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 text-white flex items-center justify-center">
-                    <ShieldCheck className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-primary">Medical Support & Care Team</h3>
-                </div>
-                <ul className="list-disc list-inside space-y-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <li>24/7 medical professionals available at each VEDA5 location for emergencies</li>
-                  <li>Continuous monitoring of treatment progress and guest health conditions</li>
-                  <li>Ensure safety, comfort, and immediate attention when needed</li>
-                  <li>Coordinate between different specialists for integrated comprehensive care</li>
-                </ul>
-              </CardContent>
-            </Card>
+                  {teamGroups[currentTeamSlide]?.description && (
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
+                  )}
+                  <ul className="space-y-2.5">
+                    {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                        <span className="text-primary mt-1">•</span>
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+              <button onClick={prevTeam} className="absolute -left-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous team card">
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+              <button onClick={nextTeam} className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next team card">
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1736,7 +1805,7 @@ const Veda5Center = () => {
 
           <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
             <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">What is the minimum duration of treatment at VEDA5?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">

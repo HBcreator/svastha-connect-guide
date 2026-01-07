@@ -277,26 +277,26 @@ export default function BackToRoots() {
     return t.includes("ayurveda") || t.includes("treatment") || t.includes("therapy")
       ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") || t.includes("physician") || t.includes("consultation")
-      ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("room") || t.includes("accommodation") || t.includes("cottage")
-      ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal") || t.includes("kitchen") || t.includes("diet")
-      ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("pool") || t.includes("recreation") || t.includes("swimming") || t.includes("physio")
-      ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("diagnostic") || t.includes("laboratory") || t.includes("lab")
-      ? <FileSearch className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("transportation") || t.includes("accessibility")
-      ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
-      ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("library") || t.includes("reading") || t.includes("education")
-      ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("nature") || t.includes("lakeside") || t.includes("outdoor") || t.includes("walk")
-      ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital") || t.includes("accredited")
-      ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        ? <Stethoscope className="h-7 w-7 text-white" />
+        : t.includes("room") || t.includes("accommodation") || t.includes("cottage")
+          ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal") || t.includes("kitchen") || t.includes("diet")
+            ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("pool") || t.includes("recreation") || t.includes("swimming") || t.includes("physio")
+              ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("diagnostic") || t.includes("laboratory") || t.includes("lab")
+                ? <FileSearch className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("transportation") || t.includes("accessibility")
+                  ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
+                    ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("library") || t.includes("reading") || t.includes("education")
+                      ? <Globe className="h-7 w-7 text-white" />
+                      : t.includes("garden") || t.includes("nature") || t.includes("lakeside") || t.includes("outdoor") || t.includes("walk")
+                        ? <TreePine className="h-7 w-7 text-white" />
+                        : t.includes("nabh") || t.includes("hospital") || t.includes("accredited")
+                          ? <ShieldCheck className="h-7 w-7 text-white" />
+                          : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   useEffect(() => {
@@ -367,7 +367,7 @@ export default function BackToRoots() {
         setTreatmentIntro(intro);
         setTreatmentSteps(steps);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Back to Roots Ayurveda Retreat/Frequently Asked Questions.txt")
@@ -391,7 +391,7 @@ export default function BackToRoots() {
         if (currentQ) items.push({ question: currentQ, answer: currentA });
         setFaqItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Back to Roots Ayurveda Retreat/Contact Information.txt")
@@ -431,7 +431,7 @@ export default function BackToRoots() {
         setContactDistances(dists);
         setTransportText(transport);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/content/Top Centers/Back to Roots Ayurveda Retreat/Facilities & Amenities.txt")
@@ -467,7 +467,7 @@ export default function BackToRoots() {
         setFacilitiesIntro(introCollected.join(" "));
         setFacilityCards(cards);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     fetch("/Center Images/Back to Roots Ayurveda Retreat/Facilities and Ameties img/Facilities and Amenities links.txt")
@@ -476,7 +476,7 @@ export default function BackToRoots() {
         const imgs = text.split("\n").map((l) => l.trim()).filter((l) => l.length > 0);
         setFacilityImages(imgs);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     if (facilityImages.length === 0) return;
@@ -556,7 +556,7 @@ export default function BackToRoots() {
         setFounderExpertise(expertise);
         setTeamGroups(groups);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     if (!isTeamAutoPlaying || teamGroups.length <= 1) return;
@@ -625,7 +625,7 @@ export default function BackToRoots() {
         }
         setTestimonials(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
   useEffect(() => {
     if (!isReviewAutoPlaying || testimonials.length === 0) return;
@@ -690,7 +690,7 @@ export default function BackToRoots() {
         setPaymentBullets(payment);
         setInternationalText(international);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
@@ -743,9 +743,8 @@ export default function BackToRoots() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -753,9 +752,8 @@ export default function BackToRoots() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -890,11 +888,11 @@ export default function BackToRoots() {
                         </div>
                       ))}
                     </div>
-        </div>
-      </div>
-      )}
-      
-      
+                  </div>
+                </div>
+              )}
+
+
 
               {lightboxOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
@@ -1021,223 +1019,223 @@ export default function BackToRoots() {
               </div>
             </div>
 
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2" style={{ borderColor: '#1A428A' }}>
-              <Heart className="h-8 w-8 text-green-600" />
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4 border-2" style={{ borderColor: '#1A428A' }}>
+                <Heart className="h-8 w-8 text-green-600" />
+              </div>
+              <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
+              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
+                {wellnessIntro}
+              </p>
             </div>
-            <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">Wellness Programs</h1>
-            <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
-              {wellnessIntro}
-            </p>
+
+            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+              {programs.map((p, idx) => (
+                <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2" style={{ borderColor: '#1A428A' }}>
+                        {iconForTitle(p.title)}
+                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    {p.description && (
+                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                        {p.description}
+                      </p>
+                    )}
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-green-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-            {programs.map((p, idx) => (
-              <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
-                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2" style={{ borderColor: '#1A428A' }}>
-                      {iconForTitle(p.title)}
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  {p.description && (
-                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                      {p.description}
-                    </p>
-                  )}
-                  <ul className="space-y-1.5 md:space-y-2">
-                    {p.bullets.map((b, bi) => (
-                      <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                        <span className="text-green-600 mt-1">✓</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-orange-500">
-              <Stethoscope className="h-8 w-8 text-blue-600" />
+          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-orange-500">
+                <Stethoscope className="h-8 w-8 text-blue-600" />
+              </div>
+              <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
+              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
+                {medicalIntro}
+              </p>
             </div>
-            <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">Medical Programs</h2>
-            <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              {medicalIntro}
-            </p>
-          </div>
 
-          <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-            {medicalPrograms.map((p, idx) => (
-              <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
-                  <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-orange-500">
-                      {medicalIconForTitle(p.title)}
-                    </div>
-                    <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                  {p.description && (
-                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
-                      {p.description}
-                    </p>
-                  )}
-                  <ul className="space-y-1.5 md:space-y-2">
-                    {p.bullets.map((b, bi) => (
-                      <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-blue-600 mt-1">✓</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        <div className="mb-12">
-          <div className="text-center mb-10">
-            <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Back to Roots Ayurveda for Your Healing Journey</h2>
-            <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
-              {whyIntro}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {whyItems.map((it, idx) => (
-              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                <CardContent className="p-6">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                        {whyIconForTitle(it.title)}
+            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+              {medicalPrograms.map((p, idx) => (
+                <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-orange-500">
+                        {medicalIconForTitle(p.title)}
                       </div>
-                      <h3 className="text-lg font-bold text-primary">{it.title}</h3>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <p className="text-sm leading-relaxed text-left" style={{ color: '#7F543D' }}>{it.description}</p>
-                    {it.bullets.length > 0 && (
-                      <ul className="list-none pl-0 space-y-1.5">
-                        {it.bullets.slice(0, 3).map((b, bi) => (
-                          <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                            <span className="text-primary mt-1">✓</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    {p.description && (
+                      <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: '#7F543D' }}>
+                        {p.description}
+                      </p>
                     )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                          <span className="text-blue-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
-        </div>
 
-        <div className="mb-12">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
-            <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
-              {treatmentIntro}
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            {treatmentSteps.map((s, idx) => (
-              <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-                <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
-                    {s.number}
-                  </div>
-                  {idx < treatmentSteps.length - 1 && (
-                    <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
-                  )}
-                </div>
-                <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                  <CardContent className="p-4 md:p-6">
-                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
-                      {s.number}
-                    </div>
-                    <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        {treatmentIconForTitle(s.title)}
+          <div className="mb-12">
+            <div className="text-center mb-10">
+              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Back to Roots Ayurveda for Your Healing Journey</h2>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
+                {whyIntro}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {whyItems.map((it, idx) => (
+                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
+                  <CardContent className="p-6">
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                          {whyIconForTitle(it.title)}
+                        </div>
+                        <h3 className="text-lg font-bold text-primary">{it.title}</h3>
                       </div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
+                      <p className="text-sm leading-relaxed text-left" style={{ color: '#7F543D' }}>{it.description}</p>
+                      {it.bullets.length > 0 && (
+                        <ul className="list-none pl-0 space-y-1.5">
+                          {it.bullets.slice(0, 3).map((b, bi) => (
+                            <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                              <span className="text-primary mt-1">✓</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
-                    <p className="text-xs md:text-sm leading-relaxed" style={{ color: '#7F543D' }}>{s.description}</p>
-                    {s.bullets && s.bullets.length > 0 && (
-                      <ul className="mt-3 space-y-1.5">
-                        {s.bullets.map((b, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                            <span className="text-primary mt-1">•</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
                   </CardContent>
                 </Card>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        
-        <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
-          <div className="md:hidden">
-            <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-              <img src="/Center Images/Back to Roots Ayurveda Retreat/CTA.jpg" alt="Back to Roots Ayurveda Retreat" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
-              <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
-              <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
-                Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
+
+          <div className="mb-12">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
+              <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
+                {treatmentIntro}
               </p>
-              <div className="space-y-3">
-                <Button size="lg" className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white" onClick={() => setQuoteModalOpen(true)}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Book Consultation Now
-                </Button>
-                <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]" onClick={() => setQuoteModalOpen(true)}>
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Chat With Us
-                </Button>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              {treatmentSteps.map((s, idx) => (
+                <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                  <div className="hidden md:flex flex-col items-center flex-shrink-0">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                      {s.number}
+                    </div>
+                    {idx < treatmentSteps.length - 1 && (
+                      <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
+                    )}
+                  </div>
+                  <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                        {s.number}
+                      </div>
+                      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          {treatmentIconForTitle(s.title)}
+                        </div>
+                        <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
+                      </div>
+                      <p className="text-xs md:text-sm leading-relaxed" style={{ color: '#7F543D' }}>{s.description}</p>
+                      {s.bullets && s.bullets.length > 0 && (
+                        <ul className="mt-3 space-y-1.5">
+                          {s.bullets.map((b, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                              <span className="text-primary mt-1">•</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
+                <img src="/Center Images/Back to Roots Ayurveda Retreat/CTA.jpg" alt="Back to Roots Ayurveda Retreat" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
+                  Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
+                </p>
+                <div className="space-y-3">
+                  <Button size="lg" className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
+                  <Phone className="h-4 w-4 text-red-600" />
+                  <a href="tel:+91XXXYYYYYY" className="underline hover:text-primary">Call us: +91 XXX YYYYYY</a>
+                </div>
               </div>
-              <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
-                <Phone className="h-4 w-4 text-red-600" />
-                <a href="tel:+91XXXYYYYYY" className="underline hover:text-primary">Call us: +91 XXX YYYYYY</a>
+            </div>
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
+                <p className="text-base md:text-lg mb-6" style={{ color: '#7F543D' }}>
+                  Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+                <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
+                  <Phone className="h-5 w-5 text-red-600" />
+                  <a href="tel:+91XXXYYYYYY" className="underline hover:text-primary">Call us: +91 XXX YYYYYY</a>
+                </div>
+              </div>
+              <div>
+                <img src="/Center Images/Back to Roots Ayurveda Retreat/CTA.jpg" alt="Back to Roots Ayurveda Retreat" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
               </div>
             </div>
           </div>
-          <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
-              <p className="text-base md:text-lg mb-6" style={{ color: '#7F543D' }}>
-                Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Book Consultation Now
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Chat With Us
-                </Button>
-              </div>
-              <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
-                <Phone className="h-5 w-5 text-red-600" />
-                <a href="tel:+91XXXYYYYYY" className="underline hover:text-primary">Call us: +91 XXX YYYYYY</a>
-              </div>
-            </div>
-            <div>
-              <img src="/Center Images/Back to Roots Ayurveda Retreat/CTA.jpg" alt="Back to Roots Ayurveda Retreat" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
-            </div>
-          </div>
-        </div>
         </div>
       </div>
 
@@ -1404,7 +1402,7 @@ export default function BackToRoots() {
           </div>
         </div>
       </div>
-      
+
       {testimonials.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
           <div className="max-w-6xl mx-auto mt-6">
@@ -1429,7 +1427,7 @@ export default function BackToRoots() {
                       </div>
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
@@ -1470,8 +1468,8 @@ export default function BackToRoots() {
                 </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
       )}
       {insuranceBullets.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -1536,8 +1534,8 @@ export default function BackToRoots() {
                 </Card>
               )}
             </div>
+          </div>
         </div>
-      </div>
       )}
       {faqItems.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -1553,7 +1551,7 @@ export default function BackToRoots() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1563,8 +1561,8 @@ export default function BackToRoots() {
                 ))}
               </Accordion>
             </div>
+          </div>
         </div>
-      </div>
       )}
       {contactAddress.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -1600,17 +1598,17 @@ export default function BackToRoots() {
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
-                      <div className="relative w-full aspect-[800/600]">
-                        <iframe
-                          title="Back to Roots Ayurveda Retreat & Hospital Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251210.1451997347!2d76.28492809728836!3d10.329196192074253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080189a808a451%3A0x24cd37de024a9832!2sBack%20to%20Roots%20Ayurveda%20Retreat%20%26%20Hospital!5e0!3m2!1sen!2sin!4v1767100956942!5m2!1sen!2sin"
-                          className="absolute inset-0 h-full w-full"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                        />
-                      </div>
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Back to Roots Ayurveda Retreat & Hospital Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251210.1451997347!2d76.28492809728836!3d10.329196192074253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080189a808a451%3A0x24cd37de024a9832!2sBack%20to%20Roots%20Ayurveda%20Retreat%20%26%20Hospital!5e0!3m2!1sen!2sin!4v1767100956942!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1628,8 +1626,8 @@ export default function BackToRoots() {
                 )}
               </CardContent>
             </Card>
+          </div>
         </div>
-      </div>
       )}
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto mt-6">

@@ -357,17 +357,17 @@ export default function DhathriAyurvedicHospital() {
     const t = title.toLowerCase();
     return t.includes("ayurveda") || t.includes("treatment") ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("pool") || t.includes("recreation") || t.includes("swimming") ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("library") || t.includes("reading") ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("nature") || t.includes("wilderness") ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("steam") || t.includes("therapy") ? <Droplet className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital") ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("pool") || t.includes("recreation") || t.includes("swimming") ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("library") || t.includes("reading") ? <Globe className="h-7 w-7 text-white" />
+                      : t.includes("garden") || t.includes("nature") || t.includes("wilderness") ? <TreePine className="h-7 w-7 text-white" />
+                        : t.includes("steam") || t.includes("therapy") ? <Droplet className="h-7 w-7 text-white" />
+                          : t.includes("nabh") || t.includes("hospital") ? <ShieldCheck className="h-7 w-7 text-white" />
+                            : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   useEffect(() => {
@@ -764,9 +764,8 @@ export default function DhathriAyurvedicHospital() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -774,9 +773,8 @@ export default function DhathriAyurvedicHospital() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1415,13 +1413,13 @@ export default function DhathriAyurvedicHospital() {
                     </ul>
                   </CardContent>
                 </Card>
-                
-              </div>
-          </div>
-        </div>
 
-        {testimonials.length > 0 && (
-          <div className="mb-12">
+              </div>
+            </div>
+          </div>
+
+          {testimonials.length > 0 && (
+            <div className="mb-12">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
@@ -1441,7 +1439,7 @@ export default function DhathriAyurvedicHospital() {
                       </div>
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
@@ -1470,241 +1468,241 @@ export default function DhathriAyurvedicHospital() {
                 {testimonials.map((_, index) => (
                   <button key={index} onClick={() => { setCurrentReview(index); }} className={`transition-all ${index === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${index + 1}`} />
                 ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {(insuranceItems.length > 0 || paymentItems.length > 0) && (
-          <div className="mb-12">
-            <div className="text-center mb-6 md:mb-8">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
-              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>{insuranceIntro}</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-              <Card className="border-2 border-primary/20 bg-white/80">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <ShieldCheck className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg md:text-2xl font-bold text-primary">Insurance Coverage</h3>
-                  </div>
-                  <ul className="space-y-2 md:space-y-3">
-                    {insuranceItems.map((it, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                        <span className="text-green-600 mt-0.5">✓</span>
-                        <span>{it}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card className="border-2 border-primary/20 bg-white/80">
-                <CardContent className="p-4 md:p-8">
-                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <CreditCard className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg md:text-2xl font-bold text-primary">Payment Options</h3>
-                  </div>
-                  <ul className="space-y-2 md:space-y-3">
-                    {paymentItems.map((it, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                        <span className="text-green-600 mt-0.5">✓</span>
-                        <span>{it}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-            {internationalText && (
-              <div className="mt-6">
-                <Card className="border-2 border-primary/30 bg-white/70">
-                  <CardContent className="p-4 md:p-6">
-                    <div className="flex items-start gap-3 md:gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Globe className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+          {(insuranceItems.length > 0 || paymentItems.length > 0) && (
+            <div className="mb-12">
+              <div className="text-center mb-6 md:mb-8">
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
+                <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>{insuranceIntro}</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+                <Card className="border-2 border-primary/20 bg-white/80">
+                  <CardContent className="p-4 md:p-8">
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <ShieldCheck className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-base md:text-xl font-semibold text-primary mb-1">For International Patients</h4>
-                        <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>{internationalText}</p>
-                      </div>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary">Insurance Coverage</h3>
                     </div>
+                    <ul className="space-y-2 md:space-y-3">
+                      {insuranceItems.map((it, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card className="border-2 border-primary/20 bg-white/80">
+                  <CardContent className="p-4 md:p-8">
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <CreditCard className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+                      </div>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary">Payment Options</h3>
+                    </div>
+                    <ul className="space-y-2 md:space-y-3">
+                      {paymentItems.map((it, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
+                          <span className="text-green-600 mt-0.5">✓</span>
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               </div>
-            )}
-          </div>
-        )}
-
-        {faqs.length > 0 && (
-          <div className="mb-12">
-            <div className="text-center mb-6 md:mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                <FileSearch className="h-8 w-8 text-primary" />
-              </div>
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
-              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>
-                {faqIntro || "Find answers to common questions about treatments, facilities, and your healing journey."}
-              </p>
+              {internationalText && (
+                <div className="mt-6">
+                  <Card className="border-2 border-primary/30 bg-white/70">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="flex items-start gap-3 md:gap-4">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <Globe className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-base md:text-xl font-semibold text-primary mb-1">For International Patients</h4>
+                          <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>{internationalText}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              )}
             </div>
-            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
-              {faqs.map((q, idx) => (
-                <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-4 md:px-6 data-[state=open]:border-primary transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4">
-                    <span className="text-base md:text-lg font-semibold text-primary text-left w-full">{q.question}</span>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                    <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
-                      {renderInlineBold(q.answer)}
-                    </p>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        )}
+          )}
 
-        {contactAddress.length > 0 && (
-          <Card className="mb-12 border-2 border-primary overflow-hidden">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                        {contactAddress.map((l, i) => (
-                          <span key={i}>
-                            {l}
-                            {i < contactAddress.length - 1 ? <br /> : null}
-                          </span>
-                        ))}
+          {faqs.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-6 md:mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <FileSearch className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>
+                  {faqIntro || "Find answers to common questions about treatments, facilities, and your healing journey."}
+                </p>
+              </div>
+              <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+                {faqs.map((q, idx) => (
+                  <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-4 md:px-6 data-[state=open]:border-primary transition-colors bg-white">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-primary">
+                      <span className="text-base md:text-lg font-semibold text-primary text-left w-full">{q.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                        {renderInlineBold(q.answer)}
                       </p>
-                    </div>
-                  </div>
-                  {contactDistances.length > 0 && (
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
+          {contactAddress.length > 0 && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+                  <div className="space-y-6">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                          {contactDistances.map((d, i) => (
-                            <li key={i}>{d}</li>
+                        <h4 className="font-semibold text-primary mb-1">Address</h4>
+                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.map((l, i) => (
+                            <span key={i}>
+                              {l}
+                              {i < contactAddress.length - 1 ? <br /> : null}
+                            </span>
                           ))}
-                        </ul>
+                        </p>
                       </div>
                     </div>
-                  )}
-                </div>
-                <div className="md:-mt-16 self-start">
-                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
-                    <div className="rounded-xl overflow-hidden">
-                    <div className="relative w-full aspect-[800/600]">
-                      <iframe
-                        title="Dhathri Ayurveda Hospital Map"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252070.24919101104!2d76.468624!3d9.190718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Centre!5e0!3m2!1sen!2sin!4v1767348975908!5m2!1sen!2sin"
-                        className="absolute inset-0 h-full w-full"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                      />
-                    </div>
+                    {contactDistances.length > 0 && (
+                      <div className="flex items-start gap-3">
+                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i}>{d}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Dhathri Ayurveda Hospital Map"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252070.24919101104!2d76.468624!3d9.190718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Centre!5e0!3m2!1sen!2sin!4v1767348975908!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              {transportText && (
-                <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                      <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>
-                        {transportText}
-                      </p>
+                {transportText && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                    <div className="flex items-start gap-4">
+                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>
+                          {transportText}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </CardContent>
-          </Card>
-        )}
+                )}
+              </CardContent>
+            </Card>
+          )}
 
-        <div className="mb-12">
-          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
-            <div className="md:hidden">
-              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
-                <img
-                  src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
-                  alt="Dhathri Ayurveda Hospital"
-                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
-                <div className="space-y-3">
-                  <Button
-                    size="lg"
-                    className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
-                    onClick={() => setQuoteModalOpen(true)}
-                  >
-                    <Phone className="mr-2 h-5 w-5" />
-                    Book Consultation Now
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
-                    onClick={() => setQuoteModalOpen(true)}
-                  >
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Chat With Us
-                  </Button>
-                </div>
-                <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
-                  <Phone className="h-4 w-4 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                    alt="Dhathri Ayurveda Hospital"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
-                <div className="flex flex-wrap gap-3">
-                  <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                    <Phone className="mr-2 h-5 w-5" />
-                    Book Consultation Now
-                  </Button>
-                  <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
-                    <MessageCircle className="mr-2 h-5 w-5" />
-                    Chat With Us
-                  </Button>
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-white/90">
-                  <Phone className="h-5 w-5 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                <div>
+                  <img
+                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                    alt="Dhathri Ayurveda Hospital"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
                 </div>
-              </div>
-              <div>
-                <img
-                  src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
-                  alt="Dhathri Ayurveda Hospital"
-                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                />
               </div>
             </div>
           </div>
-        </div>
 
-        {facilityLightboxOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
-            <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
-              <ChevronLeft className="h-6 w-6" />
-            </button>
+          {facilityLightboxOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
+              <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
+                <ChevronLeft className="h-6 w-6" />
+              </button>
               <button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Next">
                 <ChevronRight className="h-6 w-6" />
               </button>

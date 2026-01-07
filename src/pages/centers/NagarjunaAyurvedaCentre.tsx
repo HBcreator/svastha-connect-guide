@@ -67,7 +67,7 @@ export default function NagarjunaAyurvedaCentre() {
         const lines = text.split("\n").map(l => l.trim()).filter(l => l);
         const items: { title: string; description: string; image: string }[] = [];
         let currentTitle = "";
-        
+
         // Mapping index to images as per user instruction (1-5)
         const images = [
           "/Awards and rewards/Nagarjuna-ayurveda/Award-1.png",
@@ -86,7 +86,7 @@ export default function NagarjunaAyurvedaCentre() {
           // Based on file content: 
           // Line 1: Title
           // Line 2: Description
-          
+
           if (!currentTitle) {
             currentTitle = line;
           } else {
@@ -116,35 +116,35 @@ export default function NagarjunaAyurvedaCentre() {
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
           if (!line) continue;
-          
+
           if (line.startsWith("**") && line.endsWith("**") && !line.includes("Rating:")) {
-             if (current) items.push(current);
-             const content = line.slice(2, -2);
-             const parts = content.split(",");
-             const name = parts.shift()?.trim() || "";
-             const location = parts.map(p => p.trim()).join(", ");
-             current = { name, location, condition: "", title: "", review: "", rating: 5 };
-             
-             const next = lines[i + 1] || "";
-             if (next.startsWith("*") && (next.endsWith("*") || next.endsWith('"'))) {
-                const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
-                current.title = t;
-                if (t.includes(" - ")) {
-                    current.condition = t.split(" - ")[0];
-                }
-                i++;
-             }
-             continue;
+            if (current) items.push(current);
+            const content = line.slice(2, -2);
+            const parts = content.split(",");
+            const name = parts.shift()?.trim() || "";
+            const location = parts.map(p => p.trim()).join(", ");
+            current = { name, location, condition: "", title: "", review: "", rating: 5 };
+
+            const next = lines[i + 1] || "";
+            if (next.startsWith("*") && (next.endsWith("*") || next.endsWith('"'))) {
+              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
+              current.title = t;
+              if (t.includes(" - ")) {
+                current.condition = t.split(" - ")[0];
+              }
+              i++;
+            }
+            continue;
           }
 
           if (line.startsWith("**Rating:")) {
-             const m = line.match(/\((\d+)\/\d+\)/);
-             if (m && current) current.rating = parseInt(m[1], 10);
-             continue;
+            const m = line.match(/\((\d+)\/\d+\)/);
+            if (m && current) current.rating = parseInt(m[1], 10);
+            continue;
           }
 
           if (current) {
-             current.review = current.review ? `${current.review} ${line}` : line;
+            current.review = current.review ? `${current.review} ${line}` : line;
           }
         }
         if (current) items.push(current);
@@ -194,58 +194,58 @@ export default function NagarjunaAyurvedaCentre() {
         const expertise: string[] = [];
         const groups: { title: string; description: string; items: string[] }[] = [];
         let currentGroup: { title: string; description: string; items: string[] } | null = null;
-        
+
         let section: "intro" | "founder" | "expertise" | "team_group" = "intro";
 
         for (const line of lines) {
           if (!line) continue;
           if (line.startsWith("### ")) continue;
-          
+
           if (line.startsWith("**") && line.endsWith("**")) {
             const t = line.slice(2, -2);
             if (t.includes("Sri. V. C. Devanandan")) {
-                section = "founder";
-                name = t;
-                continue;
+              section = "founder";
+              name = t;
+              continue;
             }
             if (t.includes("Leadership & Expertise")) {
-                section = "expertise";
-                continue;
+              section = "expertise";
+              continue;
             }
             if (t.includes("Our Expert Medical Team")) {
-                if (currentGroup) groups.push(currentGroup);
-                currentGroup = { title: t, description: "", items: [] };
-                section = "team_group";
-                continue;
+              if (currentGroup) groups.push(currentGroup);
+              currentGroup = { title: t, description: "", items: [] };
+              section = "team_group";
+              continue;
             }
           }
 
           if (line.startsWith("*")) {
-              const bullet = line.replace(/^\*+\s*/, "");
-              if (section === "expertise") {
-                  expertise.push(bullet);
-                  continue;
-              }
-              if (section === "team_group" && currentGroup) {
-                  currentGroup.items.push(bullet);
-                  continue;
-              }
+            const bullet = line.replace(/^\*+\s*/, "");
+            if (section === "expertise") {
+              expertise.push(bullet);
+              continue;
+            }
+            if (section === "team_group" && currentGroup) {
+              currentGroup.items.push(bullet);
+              continue;
+            }
           }
 
           // Normal text
           if (section === "intro") {
-              intro = intro ? `${intro} ${line}` : line;
+            intro = intro ? `${intro} ${line}` : line;
           } else if (section === "founder") {
-              if (!role) {
-                  role = line;
-              } else {
-                  fdesc = fdesc ? `${fdesc} ${line}` : line;
-              }
+            if (!role) {
+              role = line;
+            } else {
+              fdesc = fdesc ? `${fdesc} ${line}` : line;
+            }
           } else if (section === "team_group" && currentGroup) {
-              currentGroup.description = currentGroup.description ? `${currentGroup.description} ${line}` : line;
+            currentGroup.description = currentGroup.description ? `${currentGroup.description} ${line}` : line;
           }
         }
-        
+
         if (currentGroup) groups.push(currentGroup);
 
         setTeamIntro(intro);
@@ -282,7 +282,7 @@ export default function NagarjunaAyurvedaCentre() {
         setImages(lines);
         setSelectedImage(0);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -292,7 +292,7 @@ export default function NagarjunaAyurvedaCentre() {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
         setVideos(urls);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -385,7 +385,7 @@ export default function NagarjunaAyurvedaCentre() {
         setWellnessIntro(intro);
         setPrograms(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -424,7 +424,7 @@ export default function NagarjunaAyurvedaCentre() {
         setMedicalIntro(intro);
         setMedicalPrograms(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -463,7 +463,7 @@ export default function NagarjunaAyurvedaCentre() {
         setWhyIntro(intro);
         setWhyItems(items);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -501,7 +501,7 @@ export default function NagarjunaAyurvedaCentre() {
         setTreatmentIntro(intro);
         setTreatmentSteps(steps);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -538,7 +538,7 @@ export default function NagarjunaAyurvedaCentre() {
         setFacilitiesIntro(introCollected.join(" "));
         setFacilityCards(cards);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -552,7 +552,7 @@ export default function NagarjunaAyurvedaCentre() {
         setFacilityImages(urls);
         setCurrentFacilityImage(0);
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   useEffect(() => {
@@ -726,28 +726,28 @@ export default function NagarjunaAyurvedaCentre() {
     return t.includes("ayurveda") || t.includes("treatment")
       ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") || t.includes("physician")
-      ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("cottage") || t.includes("room") || t.includes("accommodation") || t.includes("architecture")
-      ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal")
-      ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("pool") || t.includes("recreation") || t.includes("swimming")
-      ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("conference") || t.includes("group")
-      ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("transportation")
-      ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
-      ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("library") || t.includes("reading")
-      ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("nature") || t.includes("riverside") || t.includes("walking")
-      ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("steam") || t.includes("therapy")
-      ? <Droplet className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital")
-      ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        ? <Stethoscope className="h-7 w-7 text-white" />
+        : t.includes("cottage") || t.includes("room") || t.includes("accommodation") || t.includes("architecture")
+          ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal")
+            ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("pool") || t.includes("recreation") || t.includes("swimming")
+              ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("conference") || t.includes("group")
+                ? <Globe className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") || t.includes("transportation")
+                  ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") || t.includes("support")
+                    ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("library") || t.includes("reading")
+                      ? <Globe className="h-7 w-7 text-white" />
+                      : t.includes("garden") || t.includes("nature") || t.includes("riverside") || t.includes("walking")
+                        ? <TreePine className="h-7 w-7 text-white" />
+                        : t.includes("steam") || t.includes("therapy")
+                          ? <Droplet className="h-7 w-7 text-white" />
+                          : t.includes("nabh") || t.includes("hospital")
+                            ? <ShieldCheck className="h-7 w-7 text-white" />
+                            : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   const goToPrevious = () => {
@@ -808,9 +808,8 @@ export default function NagarjunaAyurvedaCentre() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -818,9 +817,8 @@ export default function NagarjunaAyurvedaCentre() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1035,7 +1033,7 @@ export default function NagarjunaAyurvedaCentre() {
 
           <Card className="mb-12 mt-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
-              <MarkdownContent 
+              <MarkdownContent
                 contentPath="/content/Top Centers/Nagarjuna Ayurvedic Centre/main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
@@ -1236,11 +1234,11 @@ export default function NagarjunaAyurvedaCentre() {
                     </CardContent>
                   </Card>
                 </div>
-          ))}
-        </div>
-      </div>
+              ))}
+            </div>
+          </div>
 
-      <div className="mb-12">
+          <div className="mb-12">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
@@ -1382,11 +1380,10 @@ export default function NagarjunaAyurvedaCentre() {
                   <button
                     key={index}
                     onClick={() => setCurrentFacilityImage(index)}
-                    className={`transition-all ${
-                      index === currentFacilityImage
+                    className={`transition-all ${index === currentFacilityImage
                         ? "w-8 h-3 bg-primary"
                         : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                      } rounded-full`}
                     aria-label={`Go to facility image ${index + 1}`}
                   />
                 ))}
@@ -1548,11 +1545,11 @@ export default function NagarjunaAyurvedaCentre() {
                       </li>
                     ))}
                   </ul>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4">
@@ -1576,7 +1573,7 @@ export default function NagarjunaAyurvedaCentre() {
                     </div>
                     <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                        {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
@@ -1631,9 +1628,9 @@ export default function NagarjunaAyurvedaCentre() {
                 <Card key={idx} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-primary/10">
                   <CardContent className="p-6 text-center h-full flex flex-col items-center">
                     <div className="w-24 h-24 mb-4 flex items-center justify-center p-2 bg-white rounded-full shadow-md">
-                      <img 
-                        src={award.image} 
-                        alt={award.title} 
+                      <img
+                        src={award.image}
+                        alt={award.title}
                         className="max-w-full max-h-full object-contain"
                       />
                     </div>
@@ -1723,7 +1720,7 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
               {faqItems.map((it, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-4">
+                  <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                     <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1881,7 +1878,7 @@ export default function NagarjunaAyurvedaCentre() {
       </div>
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-      
+
       {/* Floating CTA Button */}
       <button
         onClick={() => setQuoteModalOpen(true)}

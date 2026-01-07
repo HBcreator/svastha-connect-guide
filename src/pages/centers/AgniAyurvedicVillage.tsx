@@ -76,6 +76,50 @@ export default function AgniAyurvedicVillage() {
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
 
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+
+  const awards = [
+    {
+      title: "NABH Accredited Center",
+      description: "Recognized for maintaining the highest standards in healthcare quality and patient safety by the National Accreditation Board for Hospitals.",
+      image: "/Center Images/Agni - Ayurvedic Village/Awards and rewards/1.webp"
+    },
+    {
+      title: "Best Kerala Ayurvedic Center",
+      description: "Voted as a top destination for authentic Panchakarma and classical Kerala Ayurveda treatments in India.",
+      image: "/Center Images/Agni - Ayurvedic Village/Awards and rewards/2.webp"
+    },
+    {
+      title: "Excellence in Wellness",
+      description: "Honored for our commitment to holistic healing and providing a transformational wellness experience to global guests.",
+      image: "/Center Images/Agni - Ayurvedic Village/Awards and rewards/3.webp"
+    },
+    {
+      title: "Guest Choice Award",
+      description: "Highly rated by domestic and international guests on major travel platforms for exceptional service and healing results.",
+      image: "/Center Images/Agni - Ayurvedic Village/Awards and rewards/4.webp"
+    }
+  ];
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev + 1) % awards.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, awards.length]);
+
+  const goToPreviousAward = () => {
+    setIsAwardAutoPlaying(false);
+    setCurrentAward((prev) => (prev - 1 + awards.length) % awards.length);
+  };
+
+  const goToNextAward = () => {
+    setIsAwardAutoPlaying(false);
+    setCurrentAward((prev) => (prev + 1) % awards.length);
+  };
+
   const images = [
     "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
     "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-02.jpg",
@@ -472,17 +516,17 @@ export default function AgniAyurvedicVillage() {
     const t = title.toLowerCase();
     return t.includes("ayurveda") || t.includes("treatment") ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("pool") || t.includes("recreation") || t.includes("swimming") ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("library") || t.includes("reading") ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("nature") || t.includes("wilderness") ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("steam") || t.includes("therapy") ? <Droplet className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital") ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("pool") || t.includes("recreation") || t.includes("swimming") ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("library") || t.includes("reading") ? <Globe className="h-7 w-7 text-white" />
+                      : t.includes("garden") || t.includes("nature") || t.includes("wilderness") ? <TreePine className="h-7 w-7 text-white" />
+                        : t.includes("steam") || t.includes("therapy") ? <Droplet className="h-7 w-7 text-white" />
+                          : t.includes("nabh") || t.includes("hospital") ? <ShieldCheck className="h-7 w-7 text-white" />
+                            : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   const renderInlineBold = (text: string) => {
@@ -753,9 +797,8 @@ export default function AgniAyurvedicVillage() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -763,9 +806,8 @@ export default function AgniAyurvedicVillage() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1039,7 +1081,7 @@ export default function AgniAyurvedicVillage() {
               </p>
             </div>
 
-          <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
                   <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
@@ -1330,7 +1372,7 @@ export default function AgniAyurvedicVillage() {
                   ))}
                 </div>
               </div>
-          </div>
+            </div>
           </div>
 
           {facilityLightboxOpen && (
@@ -1370,8 +1412,10 @@ export default function AgniAyurvedicVillage() {
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                 <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
@@ -1403,8 +1447,10 @@ export default function AgniAyurvedicVillage() {
                 <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                   <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                        <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                        </div>
                       </div>
                       <div>
                         <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
@@ -1453,7 +1499,7 @@ export default function AgniAyurvedicVillage() {
                       </div>
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
@@ -1495,7 +1541,79 @@ export default function AgniAyurvedicVillage() {
               </div>
             </div>
           )}
-          
+
+          <div className="mb-12">
+            <div className="text-center mb-6 md:mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and rewards</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
+            </div>
+
+            <div className="relative max-w-2xl mx-auto group">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white min-h-[450px] md:min-h-[500px]">
+                <CardContent className="p-6 md:p-10 flex flex-col items-center h-full">
+                  {/* Image Container - Top */}
+                  <div className="w-full h-48 md:h-64 flex items-center justify-center bg-primary/5 rounded-2xl mb-8 p-6 relative">
+                    <img
+                      src={awards[currentAward].image}
+                      alt={awards[currentAward].title}
+                      className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Text Content - Bottom */}
+                  <div className="text-center flex flex-col flex-1 justify-center w-full">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 leading-tight">
+                      {awards[currentAward].title}
+                    </h3>
+                    <div className="min-h-[60px] md:min-h-[80px] flex items-center justify-center">
+                      <p className="text-sm md:text-base leading-relaxed italic" style={{ color: '#7F543D' }}>
+                        "{awards[currentAward].description}"
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPreviousAward}
+                className="absolute left-0 md:-left-6 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10 opacity-0 group-hover:opacity-100 md:opacity-100"
+                aria-label="Previous award"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={goToNextAward}
+                className="absolute right-0 md:-right-6 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10 opacity-0 group-hover:opacity-100 md:opacity-100"
+                aria-label="Next award"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-6">
+                {awards.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setIsAwardAutoPlaying(false); setCurrentAward(i); }}
+                    className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                    aria-label={`Go to award ${i + 1}`}
+                  />
+                ))}
+              </div>
+
+              {isAwardAutoPlaying && (
+                <div className="absolute top-2 right-2 bg-black/60 text-white px-2 py-0.5 rounded-full text-[10px] md:text-xs flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                  Auto
+                </div>
+              )}
+            </div>
+          </div>
+
           {insuranceBullets.length > 0 && (
             <div className="mb-12">
               <div className="text-center mb-8">
@@ -1571,7 +1689,7 @@ export default function AgniAyurvedicVillage() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1615,17 +1733,17 @@ export default function AgniAyurvedicVillage() {
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
-                      <div className="relative w-full aspect-[800/600]">
-                        <iframe
-                          title="Agni Ayurvedic Village Map"
-                          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7542.037100494718!2d73.178251!3d19.062922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9545a5c1413%3A0x79f664c1d0e0c35c!2sAgni%20-%20Ayurvedic%20Village!5e0!3m2!1sen!2sin!4v1767340989783!5m2!1sen!2sin"
-                          className="absolute inset-0 h-full w-full"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                        />
-                      </div>
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Agni Ayurvedic Village Map"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7542.037100494718!2d73.178251!3d19.062922!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e9545a5c1413%3A0x79f664c1d0e0c35c!2sAgni%20-%20Ayurvedic%20Village!5e0!3m2!1sen!2sin!4v1767340989783!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1710,7 +1828,7 @@ export default function AgniAyurvedicVillage() {
             </div>
           </div>
 
-          
+
         </div>
       </div>
 

@@ -24,7 +24,7 @@ export default function Somatheeram() {
   const [currentFacilityIndex, setCurrentFacilityIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  
+
   const [showVideoGalleryTop, setShowVideoGalleryTop] = useState(false);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
@@ -50,7 +50,7 @@ export default function Somatheeram() {
   const [galleryLightboxOpen, setGalleryLightboxOpen] = useState(false);
   const [galleryLightboxImage, setGalleryLightboxImage] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState(0);
-  const [patientReviews, setPatientReviews] = useState<{name:string,country:string,condition:string,date:string,rating:number,photo:string,verified:boolean,quote:string}[]>([]);
+  const [patientReviews, setPatientReviews] = useState<{ name: string, country: string, condition: string, date: string, rating: number, photo: string, verified: boolean, quote: string }[]>([]);
 
   const heroImages = [
     "/Center Images/somatheeram/Somatheeram 01.jpg",
@@ -152,12 +152,12 @@ export default function Somatheeram() {
   ];
 
   useEffect(() => {
-    const avatarFor = (idx:number) => `https://i.pravatar.cc/120?img=${(idx % 70) + 1}`;
+    const avatarFor = (idx: number) => `https://i.pravatar.cc/120?img=${(idx % 70) + 1}`;
     fetch("/content/Top Centers/somatheeram/patient reviews.txt")
       .then((r) => r.text())
       .then((t) => {
         const lines = t.split(/\r?\n/).map((l) => l.trim());
-        const reviews: {name:string,country:string,condition:string,date:string,rating:number,photo:string,verified:boolean,quote:string}[] = [];
+        const reviews: { name: string, country: string, condition: string, date: string, rating: number, photo: string, verified: boolean, quote: string }[] = [];
         let current: any = null;
         let inReview = false;
 
@@ -473,7 +473,7 @@ export default function Somatheeram() {
     if (s.includes("metabolic") || s.includes("diabetes") || s.includes("hypertension") || s.includes("cholesterol") || s.includes("lifestyle")) return <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     if (s.includes("digest") || s.includes("gastro") || s.includes("ibs") || s.includes("acidity")) return <Utensils className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     if (s.includes("skin") || s.includes("allerg")) return <Leaf className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("respir" ) || s.includes("asthma") || s.includes("bronch")) return <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    if (s.includes("respir") || s.includes("asthma") || s.includes("bronch")) return <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     if (s.includes("women") || s.includes("gyn") || s.includes("pcos") || s.includes("menop")) return <UserCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     if (s.includes("neuro") || s.includes("mental") || s.includes("anxiety") || s.includes("depress") || s.includes("insomnia")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
     if (s.includes("cardio") || s.includes("heart") || s.includes("circulation")) return <HeartPulse className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
@@ -600,24 +600,23 @@ export default function Somatheeram() {
         </div>
       </div>
 
-      
 
-      
+
+
 
       <div className="container mx-auto px-3 md:px-4 py-12 max-w-full">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
-              <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
-                <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
+            <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
+              <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
                 <Button
                   variant={!showVideoGalleryTop ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showVideoGalleryTop
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGalleryTop
                       ? "scale-105 shadow-lg"
                       : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -625,11 +624,10 @@ export default function Somatheeram() {
                   variant={showVideoGalleryTop ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showVideoGalleryTop
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGalleryTop
                       ? "scale-105 shadow-lg"
                       : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -757,9 +755,8 @@ export default function Somatheeram() {
                       <div
                         key={idx}
                         onClick={() => setSelectedVideo(idx)}
-                        className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                          selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
-                        }`}
+                        className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
+                          }`}
                       >
                         <img
                           src={thumbnailImages[idx]}
@@ -890,7 +887,7 @@ export default function Somatheeram() {
           </div>
         </div>
       )}
-      
+
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12">
@@ -1031,47 +1028,47 @@ export default function Somatheeram() {
           </div>
         </div>
       </div>
-      
+
       <section className="py-12 md:py-16 lg:py-20 mt-5">
         <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Somatheeram for Your Holistic Health Journey</h2>
-              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
-                {whyChooseIntro}
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {whyChooseItems.map((item, idx) => (
-                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                  <CardContent className="p-6">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                          {whyChooseIconForTitle(item.title)}
-                        </div>
-                        <h3 className="text-lg font-bold text-primary">{item.title}</h3>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Somatheeram for Your Holistic Health Journey</h2>
+            <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+              {whyChooseIntro}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {whyChooseItems.map((item, idx) => (
+              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
+                <CardContent className="p-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        {whyChooseIconForTitle(item.title)}
                       </div>
-                      {item.description && (
-                        <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>{item.description}</p>
-                      )}
-                      {item.bullets.length > 0 && (
-                        <ul className="list-none pl-0 space-y-1.5">
-                          {item.bullets.slice(0, 3).map((b, bi) => (
-                            <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
-                              <span>{b}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
+                      <h3 className="text-lg font-bold text-primary">{item.title}</h3>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                    {item.description && (
+                      <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>{item.description}</p>
+                    )}
+                    {item.bullets.length > 0 && (
+                      <ul className="list-none pl-0 space-y-1.5">
+                        {item.bullets.slice(0, 3).map((b, bi) => (
+                          <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1">✓</span>
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
-      
+
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
@@ -1119,9 +1116,9 @@ export default function Somatheeram() {
               </div>
             ))}
           </div>
+        </div>
       </div>
-      </div>
-      
+
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: "#EDE8D0" }}>
@@ -1194,7 +1191,7 @@ export default function Somatheeram() {
           </div>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -1237,7 +1234,7 @@ export default function Somatheeram() {
 
             <div className="flex justify-center gap-2 mt-6">
               {facilityImages.map((_, index) => (
-                <button key={index} onClick={() => setCurrentFacilityIndex(index)} className={`${index===currentFacilityIndex?"w-8 h-3 bg-primary":"w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full transition-all`} />
+                <button key={index} onClick={() => setCurrentFacilityIndex(index)} className={`${index === currentFacilityIndex ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full transition-all`} />
               ))}
             </div>
           </div>
@@ -1359,7 +1356,7 @@ export default function Somatheeram() {
                     </div>
                     <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {patientReviews[currentReviewIndex].name.split(' ').map((p) => p[0]).slice(0,2).join('')}
+                        {patientReviews[currentReviewIndex].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
@@ -1525,9 +1522,9 @@ export default function Somatheeram() {
         </div>
       </div>
 
-      
 
-      
+
+
 
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
         <div className="max-w-6xl mx-auto">
@@ -1541,7 +1538,7 @@ export default function Somatheeram() {
 
           <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
             <AccordionItem value="item-1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">What is the minimum duration of treatment at Somatheeram?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1550,7 +1547,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Do I need to bring my medical records?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1559,7 +1556,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Is Somatheeram suitable for elderly patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1568,7 +1565,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Can I continue my regular medications during treatment?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1577,7 +1574,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">What should I pack for my stay at Somatheeram?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1586,7 +1583,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Is vegetarian food mandatory?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1595,7 +1592,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Can family members stay with patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1604,7 +1601,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                 <span className="text-lg font-semibold text-primary text-left">Is WiFi and mobile connectivity available?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">

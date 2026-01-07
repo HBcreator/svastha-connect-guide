@@ -31,6 +31,8 @@ export default function NamasteDwaar() {
   const [teamDesc, setTeamDesc] = useState("");
   const [teamBullets, setTeamBullets] = useState<string[]>([]);
   const [founderTeamSubtitle, setFounderTeamSubtitle] = useState("");
+  const [currentTeamSlide, setCurrentTeamSlide] = useState(0);
+  const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
   const [testimonials, setTestimonials] = useState<Array<{ id: number; name: string; location: string; condition: string; rating: number; date?: string; avatar: string; image?: string; review: string; verified: boolean }>>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
@@ -42,6 +44,9 @@ export default function NamasteDwaar() {
   const [mediaLightboxOpen, setMediaLightboxOpen] = useState(false);
   const [mediaLightboxIndex, setMediaLightboxIndex] = useState(0);
   const [mediaZoom, setMediaZoom] = useState(1);
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
   const [wellnessText, setWellnessText] = useState("");
   const [wellnessHeading, setWellnessHeading] = useState("Wellness Programs");
   const [wellnessIntro, setWellnessIntro] = useState("");
@@ -205,6 +210,70 @@ export default function NamasteDwaar() {
   }, []);
 
   useEffect(() => {
+    fetch("/content/Top Centers/Namastedwaar/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let section: "none" | "address" | "distances" | "transport" = "none";
+        const addr: string[] = [];
+        const dists: string[] = [];
+        let transport = "";
+
+        const cleanLine = (s: string) =>
+          s
+            .replace(/<br\s*\/>/gi, " ")
+            .replace(/\s*mob\s*/gi, " ")
+            .replace(/\s+/g, " ")
+            .trim();
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            section = "none";
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("address")) {
+              section = "address";
+              continue;
+            }
+            if (t.includes("distance")) {
+              section = "distances";
+              continue;
+            }
+            if (t.includes("transportation")) {
+              section = "transport";
+              continue;
+            }
+          }
+
+          if (section === "address") {
+            addr.push(cleanLine(line));
+            continue;
+          }
+          if (section === "distances") {
+            if (line.startsWith("*")) dists.push(cleanLine(line.replace(/^\*+\s*/, "")));
+            continue;
+          }
+          if (section === "transport") {
+            transport = transport ? `${transport} ${cleanLine(line)}` : cleanLine(line);
+            continue;
+          }
+        }
+
+        setContactAddress(addr);
+        setContactDistances(dists);
+        setTransportText(transport);
+      })
+      .catch(() => {
+        setContactAddress([]);
+        setContactDistances([]);
+        setTransportText("");
+      });
+  }, []);
+
+  useEffect(() => {
     fetch("/content/Top Centers/Namastedwaar/Patient Success Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
@@ -330,6 +399,43 @@ export default function NamasteDwaar() {
     setCurrentReview(index);
   };
 
+  const teamGroups = [
+    {
+      title: teamTitle,
+      description: teamDesc,
+      items: teamBullets,
+    },
+  ];
+
+  useEffect(() => {
+    if (!isTeamAutoPlaying || teamGroups.length <= 1) return;
+    const id = setInterval(() => {
+      setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isTeamAutoPlaying, teamGroups.length]);
+
+  const prevTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((prev) => (prev - 1 + teamGroups.length) % teamGroups.length);
+  };
+
+  const nextTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
+  };
+
+  const renderInlineBold = (text: string) => {
+    const parts = text.split(/\*\*(.+?)\*\*/g);
+    return (
+      <>
+        {parts.map((part, idx) =>
+          idx % 2 === 1 ? <strong key={idx}>{part}</strong> : <span key={idx}>{part}</span>
+        )}
+      </>
+    );
+  };
+
   const renderStars = (rating: number) => {
     return (
       <div className="flex gap-1">
@@ -396,6 +502,10 @@ export default function NamasteDwaar() {
               subSection = "leadership";
             } else if (lower.includes("specialized")) {
               subSection = "specialized";
+            } else if (!section && !founderTitleLocal) {
+              section = "founder";
+              founderTitleLocal = title;
+              subSection = null;
             }
             continue;
           }
@@ -662,7 +772,7 @@ export default function NamasteDwaar() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(500+ reviews)</span>
+                  <span className="opacity-90">(1000+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -687,18 +797,20 @@ export default function NamasteDwaar() {
             <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
               <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
                 <Button
-                  variant={!showVideoGallery ? "default" : "outline"}
+                  variant={!showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(false)}
-                  className="text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   Photo Gallery
                 </Button>
                 <Button
-                  variant={showVideoGallery ? "default" : "outline"}
+                  variant={showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(true)}
-                  className="flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none"
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -713,18 +825,20 @@ export default function NamasteDwaar() {
                     src={images[selectedImage]}
                     alt={`Namaste Dwaar ${selectedImage + 1}`}
                     className="w-full h-full object-cover transition-all duration-500"
-                    onClick={() => { setLightboxImage(selectedImage); setLightboxOpen(true); }}
+                    onClick={() => {
+
+                    }}
                   />
                   <button
-                    onClick={() => { setIsAutoPlaying(false); setSelectedImage((prev) => (prev - 1 + images.length) % images.length); }}
-                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    onClick={() => { setSelectedImage((prev) => (prev - 1 + images.length) % images.length); }}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
                   <button
-                    onClick={() => { setIsAutoPlaying(false); setSelectedImage((prev) => (prev + 1) % images.length); }}
-                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    onClick={() => { setSelectedImage((prev) => (prev + 1) % images.length); }}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all"
                     aria-label="Next image"
                   >
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
@@ -741,9 +855,14 @@ export default function NamasteDwaar() {
                 </div>
 
                 <div className="flex flex-col md:flex-row gap-3 mb-6">
-                  <div 
+                  <div
                     className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
-                    onClick={() => { setLightboxImage(images.indexOf(thumbnailImages[0])); setLightboxOpen(true); }}
+                    onClick={() => {
+                      const idx = images.indexOf(thumbnailImages[0]);
+                      if (idx < 0) return;
+                      setLightboxImage(idx);
+                      setLightboxOpen(true);
+                    }}
                   >
                     <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                       <img
@@ -760,7 +879,12 @@ export default function NamasteDwaar() {
                       <div
                         key={idx}
                         className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
-                        onClick={() => { const actualIndex = images.indexOf(img); setLightboxImage(actualIndex); setLightboxOpen(true); }}
+                        onClick={() => {
+                          const actualIndex = images.indexOf(img);
+                          if (actualIndex < 0) return;
+                          setLightboxImage(actualIndex);
+                          setLightboxOpen(true);
+                        }}
                       >
                         <div className="relative w-full" style={{ paddingBottom: '100%' }}>
                           <img
@@ -812,11 +936,10 @@ export default function NamasteDwaar() {
                       <div
                         key={idx}
                         onClick={() => setSelectedVideo(idx)}
-                        className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                          selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
-                        }`}
+                        className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
+                          }`}
                       >
-                        <img 
+                        <img
                           src={images[(idx + 1) % images.length]}
                           alt={`Video ${idx + 1} Thumbnail`}
                           className="w-full h-full object-cover"
@@ -836,18 +959,29 @@ export default function NamasteDwaar() {
               </>
             )}
           </div>
-          <div className="bg-white rounded-2xl shadow-md border border-primary/10 p-6 md:p-8">
-            <MarkdownContent contentPath="/content/Top Centers/Namastedwaar/Namastedwaar.txt" />
-          </div>
+          <Card className="mb-12">
+            <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
+              <MarkdownContent
+                contentPath="/content/Top Centers/Namastedwaar/Namastedwaar.txt"
+                h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
+                titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
+                onLinkClick={(action) => {
+                  if (action === "quote") {
+                    setQuoteModalOpen(true);
+                  }
+                }}
+              />
+            </CardContent>
+          </Card>
 
           {/* Wellness Programs Section */}
-          <div className="mt-8 md:mt-12 mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">5000+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1000+</div>
                 <div className="text-xs md:text-sm" style={{ color: '#7F543D' }}>Happy Patients</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -867,7 +1001,7 @@ export default function NamasteDwaar() {
             </div>
 
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: '#1A428A' }}>
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
               <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">
@@ -885,15 +1019,15 @@ export default function NamasteDwaar() {
                 const lower = item.title.toLowerCase();
                 const Icon = lower.includes('detox') || lower.includes('panchakarma') ? Droplet
                   : lower.includes('stress') ? Brain
-                  : lower.includes('rejuvenation') || lower.includes('anti-aging') ? Sparkles
-                  : lower.includes('weight') ? Activity
-                  : lower.includes('immunity') || lower.includes('prevent') ? ShieldCheck
-                  : Leaf;
+                    : lower.includes('rejuvenation') || lower.includes('anti-aging') ? Sparkles
+                      : lower.includes('weight') ? Activity
+                        : lower.includes('immunity') || lower.includes('prevent') ? ShieldCheck
+                          : Leaf;
                 return (
                   <AccordionItem key={idx} value={`item-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
                       <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center border-2" style={{ borderColor: '#1A428A' }}>
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
                         </div>
                         <span className="text-base md:text-lg font-semibold text-primary">{item.title}</span>
@@ -923,9 +1057,9 @@ export default function NamasteDwaar() {
           </div>
 
           {/* Medical Treatment Programs */}
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-orange-500 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
               <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">
@@ -943,15 +1077,15 @@ export default function NamasteDwaar() {
                 const lower = item.title.toLowerCase();
                 const Icon = lower.includes('diabetes') ? Activity
                   : lower.includes('arthritis') || lower.includes('pain') ? Heart
-                  : lower.includes('mental') || lower.includes('neurolog') ? Brain
-                  : lower.includes('digest') || lower.includes('gastro') ? Leaf
-                  : lower.includes('chronic') || lower.includes('complex') ? Hospital
-                  : ShieldCheck;
+                    : lower.includes('mental') || lower.includes('neurolog') ? Brain
+                      : lower.includes('digest') || lower.includes('gastro') ? Leaf
+                        : lower.includes('chronic') || lower.includes('complex') ? Hospital
+                          : ShieldCheck;
                 return (
                   <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
                       <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-orange-500">
                           <Icon className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                         </div>
                         <span className="text-base md:text-lg font-semibold text-primary">{item.title}</span>
@@ -993,46 +1127,42 @@ export default function NamasteDwaar() {
               )}
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {whyItems.map((item, idx) => {
                 const t = item.title.toLowerCase();
                 const Icon = t.includes('accessible') || t.includes('delhi') ? MapPin
                   : t.includes('rural') || t.includes('village') ? TreePine
-                  : t.includes('architecture') ? Award
-                  : t.includes('restaurant') || t.includes('culinary') ? Utensils
-                  : t.includes('doctor') || t.includes('ayush') ? Stethoscope
-                  : t.includes('arthritis') || t.includes('diabetes') ? HeartPulse
-                  : t.includes('dog') || t.includes('pet') ? PawPrint
-                  : t.includes('eco') || t.includes('nature') ? Leaf
-                  : t.includes('value') || t.includes('hospitality') ? Home
-                  : t.includes('recreational') || t.includes('activities') ? Activity
-                  : t.includes('family') ? Users
-                  : Home;
+                    : t.includes('architecture') ? Award
+                      : t.includes('restaurant') || t.includes('culinary') ? Utensils
+                        : t.includes('doctor') || t.includes('ayush') ? Stethoscope
+                          : t.includes('arthritis') || t.includes('diabetes') ? HeartPulse
+                            : t.includes('dog') || t.includes('pet') ? PawPrint
+                              : t.includes('eco') || t.includes('nature') ? Leaf
+                                : t.includes('value') || t.includes('hospitality') ? Home
+                                  : t.includes('recreational') || t.includes('activities') ? Activity
+                                    : t.includes('family') ? Users
+                                      : Home;
                 return (
                   <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
                     <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                          <Icon className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-4">
+                          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                            <Icon className="h-6 w-6 text-primary group-hover:text-white transition-colors" />
+                          </div>
+                          <h3 className="text-lg font-bold text-primary">{item.title}</h3>
                         </div>
-                        <div>
-                          <h3 className="text-lg font-bold text-primary mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-sm leading-relaxed text-left" style={{ color: '#7F543D' }}>
-                            {item.description}
-                          </p>
-                          {item.bullets && item.bullets.length > 0 && (
-                            <ul className="mt-3 space-y-1.5">
-                              {item.bullets.map((b, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                                  <span className="mt-1">•</span>
-                                  <span>{b}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
+                        <p className="text-sm leading-relaxed text-left" style={{ color: '#7F543D' }}>{item.description}</p>
+                        {item.bullets && item.bullets.length > 0 && (
+                          <ul className="list-none pl-0 space-y-1.5">
+                            {item.bullets.slice(0, 3).map((b, bi) => (
+                              <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                                <span className="text-primary mt-1">✓</span>
+                                <span>{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -1040,15 +1170,12 @@ export default function NamasteDwaar() {
               })}
             </div>
           </div>
-
           {/* Call to Action Section */}
 
           {/* Treatment Process & Patient Journey - Timeline */}
           <div className="mb-12">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
-                {processHeading}
-              </h2>
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary text-center mb-6">{processHeading}</h2>
               {processIntro && (
                 <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
                   {processIntro}
@@ -1061,35 +1188,32 @@ export default function NamasteDwaar() {
                 const num = step.index;
                 const Icon = num === 1 ? ClipboardList
                   : num === 2 ? FileSearch
-                  : num === 3 ? Pill
-                  : num === 4 ? Utensils
-                  : num === 5 ? Activity
-                  : Home;
-                const badgeText = num === 1 ? 'Day 1' : num === 2 ? 'Day 1-2' : num === 3 ? 'Ongoing' : num === 4 ? 'Daily' : num === 5 ? 'Throughout Stay' : 'Post-Discharge';
+                    : num === 3 ? Pill
+                      : num === 4 ? Utensils
+                        : num === 5 ? Activity
+                          : Home;
                 const showLine = idx < processSteps.length - 1;
                 return (
-                  <div key={idx} className={`relative flex items-start gap-3 md:gap-6 ${idx < processSteps.length - 1 ? 'mb-8 md:mb-12' : ''} group`}>
-                    <div className="flex flex-col items-center flex-shrink-0">
+                  <div key={idx} className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
+                    <div className="hidden md:flex flex-col items-center flex-shrink-0">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
                         {num}
                       </div>
-                      {showLine && <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>}
+                      {showLine && (
+                        <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
+                      )}
                     </div>
-                    <Card className="flex-1 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-l-primary">
+                    <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
                       <CardContent className="p-4 md:p-6">
-                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                        <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">
+                          {num}
+                        </div>
+                        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
                           <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
                             <Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
                           </div>
-                          <div>
-                            <h3 className="text-base md:text-xl font-bold text-primary">
-                              {step.title}
-                            </h3>
-                            <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                              {badgeText}
-                            </span>
-        </div>
-        </div>
+                          <h3 className="text-base md:text-xl font-bold text-primary pr-2">{step.title}</h3>
+                        </div>
                         <p className="text-xs md:text-sm leading-relaxed" style={{ color: '#7F543D' }}>
                           {step.description}
                         </p>
@@ -1097,7 +1221,7 @@ export default function NamasteDwaar() {
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, i) => (
                               <li key={i} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                                <span className="mt-1">•</span>
+                                <span className="text-primary mt-1">•</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1110,208 +1234,251 @@ export default function NamasteDwaar() {
               })}
             </div>
           </div>
-          <div className="mb-12 rounded-3xl overflow-hidden p-6 md:p-8 lg:p-10" style={{ backgroundColor: '#EDE8D0' }}>
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-              <div className="text-center lg:text-left">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-4">
-                  Ready to Start Your Wellness Journey?
-                </h2>
-                <p className="text-sm md:text-base lg:text-lg mb-6" style={{ color: '#7F543D' }}>
-                  Take the first step towards holistic healing. Our expert team is here to guide you through personalized treatment plans tailored to your unique needs.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start mb-4">
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-white px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    onClick={() => setQuoteModalOpen(true)}
-                  >
-                    <Phone className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                    Book Consultation Now
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    variant="outline"
-                    className="border-2 border-primary text-primary hover:bg-primary/10 px-6 py-5 lg:px-8 lg:py-6 text-sm md:text-base"
-                    onClick={() => setQuoteModalOpen(true)}
-                  >
-                    <MessageCircle className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                    Chat With Us
-                  </Button>
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
+                  <img src="/Center Images/Namastedwaar/image gallery/Namastedwaar-01.jpg" alt="Namaste Dwaar" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                  <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
+                  <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
+                    Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
+                  </p>
+                  <div className="space-y-3">
+                    <Button size="lg" className="w-full rounded-full bg-[#2F5B63] hover:bg-[#234A50] text-white" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-[#2F5B63] text-[#2F5B63]" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-4 w-4 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                  </div>
                 </div>
-                <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                  📞 Call us: <a href="tel:+919999999999" className="text-primary font-semibold hover:underline">+91 99 9999 9999</a>
-                </p>
               </div>
-              <div className="order-first lg:order-last">
-                <img
-                  src="/Center Images/Namastedwaar/image gallery/Namastedwaar-01.jpg"
-                  alt="Namaste Dwaar"
-                  className="w-full h-[250px] md:h-[300px] lg:h-[400px] object-cover rounded-2xl shadow-lg"
-                />
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
+                  <p className="text-base md:text-lg mb-6" style={{ color: '#7F543D' }}>
+                    Take the first step toward holistic healing. Our team will guide you with personalized plans tailored to your needs.
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2" style={{ color: '#7F543D' }}>
+                    <Phone className="h-5 w-5 text-red-600" />
+                    <a href="tel:+918028432737" className="underline hover:text-primary">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img src="/Center Images/Namastedwaar/image gallery/Namastedwaar-01.jpg" alt="Namaste Dwaar" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mb-12 rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-2">Facilities & Amenities</h2>
-            <p className="text-sm md:text-base" style={{ color: '#7F543D' }}>
-              Experience healing in comfort with our comprehensive range of traditional and modern facilities
-            </p>
-          </div>
-          <div className="relative max-w-6xl mx-auto mb-8">
-            <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all" onClick={() => { setFacilityAutoPlay(false); setFacilityIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }} aria-label="Prev">
-              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
-            <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all" onClick={() => { setFacilityAutoPlay(false); setFacilityIndex((prev) => (prev + 1) % facilityImages.length); }} aria-label="Next">
-              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-            </button>
+        <div className="container mx-auto px-3 md:px-4 max-w-full">
+          <div className="max-w-6xl mx-auto mt-6">
+            <div className="mb-12">
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
+                <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: '#7F543D' }}>
+                  Experience healing in comfort with our comprehensive range of traditional and modern facilities
+                </p>
+              </div>
 
-            <div className="overflow-hidden px-6 md:px-10">
-              <div className="md:hidden">
-                <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${facilityIndex * 100}%)` }}>
-                  {facilityImages.map((image, index) => (
-                    <div key={index} className="w-full flex-shrink-0 px-2">
-                      <div className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all" onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}>
-                        <img src={image} alt={`Facility ${index + 1}`} className="w-full aspect-video object-cover rounded-lg" />
-                      </div>
+              <div className="max-w-7xl mx-auto relative mb-10">
+                <button
+                  onClick={() => {
+                    setFacilityAutoPlay(false);
+                    setFacilityIndex((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
+                  }}
+                  className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  aria-label="Previous facility image"
+                >
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+                <button
+                  onClick={() => {
+                    setFacilityAutoPlay(false);
+                    setFacilityIndex((prev) => (prev + 1) % facilityImages.length);
+                  }}
+                  className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                  aria-label="Next facility image"
+                >
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+
+                <div className="overflow-hidden px-10 md:px-12">
+                  <div className="md:hidden">
+                    <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${facilityIndex * 100}%)` }}>
+                      {facilityImages.map((image, index) => (
+                        <div key={index} className="w-full flex-shrink-0 px-2">
+                          <div className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all" onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}>
+                            <img src={image} alt={`Facility ${index + 1}`} className="w-full aspect-video object-cover rounded-lg" />
+                          </div>
+                        </div>
+                      ))}
                     </div>
+                  </div>
+                  <div className="hidden md:block">
+                    <div
+                      className="flex transition-transform duration-500 ease-in-out"
+                      style={{ transform: `translateX(-${Math.min(facilityIndex, facilityImages.length - 5) * 20}%)` }}
+                    >
+                      {facilityImages.map((image, index) => (
+                        <div key={index} className="w-1/5 flex-shrink-0 px-2">
+                          <div
+                            className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all"
+                            onClick={() => {
+                              setFacilityLightboxImage(index);
+                              setFacilityLightboxOpen(true);
+                            }}
+                          >
+                            <img src={image} alt={`Facility ${index + 1}`} className="w-full aspect-video object-cover rounded-lg" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex justify-center gap-2 mt-6">
+                  {facilityImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        setFacilityAutoPlay(false);
+                        setFacilityIndex(index);
+                      }}
+                      className={`transition-all ${index === facilityIndex ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                      aria-label={`Go to facility image ${index + 1}`}
+                    />
                   ))}
                 </div>
               </div>
-              {/* Tablet: Show 4 at a time (md) */}
-              <div className="hidden md:block lg:hidden">
-                <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${Math.min(facilityIndex, facilityImages.length - 4) * 25}%)` }}>
-                  {facilityImages.map((image, index) => (
-                    <div key={index} className="md:w-1/4 flex-shrink-0 px-2">
-                      <div className="bg-white rounded-xl md:p-2 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all" onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}>
-                        <img src={image} alt={`Facility ${index + 1}`} className="w-full md:aspect-[3/2] object-cover rounded-lg" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Desktop: Show 5 at a time (lg+) */}
-              <div className="hidden lg:block">
-                <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${Math.min(facilityIndex, facilityImages.length - 5) * 20}%)` }}>
-                  {facilityImages.map((image, index) => (
-                    <div key={index} className="lg:w-1/5 flex-shrink-0 px-3">
-                      <div className="bg-white rounded-xl lg:p-3 shadow-lg border border-primary/10 cursor-pointer hover:border-primary/30 transition-all" onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}>
-                        <img src={image} alt={`Facility ${index + 1}`} className="w-full lg:aspect-[4/3] object-cover rounded-lg" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {facilityItems.map((item, idx) => {
+                  const t = item.title.toLowerCase();
+                  const Icon = t.includes('spa') || t.includes('wellness') ? Droplet
+                    : t.includes('consultation') || t.includes('doctor') || t.includes('ayush') ? ClipboardList
+                      : t.includes('yoga') || t.includes('meditation') ? Brain
+                        : t.includes('pool') ? Activity
+                          : t.includes('restaurant') || t.includes('dining') ? Utensils
+                            : t.includes('garden') || t.includes('herb') || t.includes('organic') ? Leaf
+                              : t.includes('accommodation') || t.includes('suite') || t.includes('room') ? Home
+                                : t.includes('machaan') || t.includes('lounge') ? Building2
+                                  : t.includes('game') || t.includes('recreation') ? Activity
+                                    : t.includes('library') || t.includes('reading') ? BookOpen
+                                      : t.includes('conference') || t.includes('event') || t.includes('wedding') ? Award
+                                        : t.includes('pet') || t.includes('dog') ? PawPrint
+                                          : Home;
+                  return (
+                    <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                      <CardContent className="p-6">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <Icon className="h-7 w-7 text-white" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-primary">{item.title}</h3>
+                        </div>
+                        <ul className="space-y-2.5">
+                          {item.bullets.slice(0, 4).map((b, bi) => (
+                            <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                              <span className="text-primary mt-1">•</span>
+                              <span>{b}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
             </div>
-            <div className="mt-4 flex items-center justify-center gap-1">
-              {facilityImages.map((_, i) => (
-                <span key={i} onClick={() => { setFacilityAutoPlay(false); setFacilityIndex(i); }} className={`inline-block w-2 h-2 rounded-full cursor-pointer ${i === facilityIndex ? 'bg-primary' : 'bg-primary/30'}`}></span>
-              ))}
-            </div>
           </div>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilityItems.map((item, idx) => {
-              const t = item.title.toLowerCase();
-              const Icon = t.includes('spa') || t.includes('wellness') ? Droplet
-                : t.includes('consultation') || t.includes('doctor') || t.includes('ayush') ? ClipboardList
-                : t.includes('yoga') || t.includes('meditation') ? Brain
-                : t.includes('pool') ? Activity
-                : t.includes('restaurant') || t.includes('dining') ? Utensils
-                : t.includes('garden') || t.includes('herb') || t.includes('organic') ? Leaf
-                : t.includes('accommodation') || t.includes('suite') || t.includes('room') ? Home
-                : t.includes('machaan') || t.includes('lounge') ? Building2
-                : t.includes('game') || t.includes('recreation') ? Activity
-                : t.includes('library') || t.includes('reading') ? BookOpen
-                : t.includes('conference') || t.includes('event') || t.includes('wedding') ? Award
-                : t.includes('pet') || t.includes('dog') ? PawPrint
-                : Home;
-              return (
-              <Card key={idx} className="border-2 border-transparent hover:border-primary transition-all hover:shadow-md">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Icon className="h-6 w-6 text-primary" />
+        <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
+          <div className="rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+            <div className="text-center mb-6 md:mb-10">
+              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
+              {(founderTeamSubtitle || '').length > 0 && (
+                <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{founderTeamSubtitle}</p>
+              )}
+            </div>
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
+                <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto flex flex-col">
+                  <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                      <img src="/Center Images/Namastedwaar/Founder and team/Founder Arvind adn charul Rathi.jpg" alt="Founder" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-                      <ul className="space-y-1.5">
-                        {item.bullets.slice(0, 4).map((b, i) => (
-                          <li key={i} className="flex items-start gap-2" style={{ color: '#7F543D' }}>
-                            <span className="mt-1">•</span>
-                            <span>{b}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founderTitle}</h3>
+                      {founderSubtitle && (
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>{founderSubtitle}</p>
+                      )}
                     </div>
                   </div>
+                  {founderDesc && (
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{founderDesc}</p>
+                  )}
+                  {founderBullets.length > 0 && (
+                    <div className="pt-3 md:pt-4 border-t border-primary/10">
+                      <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
+                      <div className="flex flex-wrap gap-2">
+                        {founderBullets.slice(0, 6).map((b, i) => (
+                          <span key={i} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">{b}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
-              );
-            })}
-          </div>
-        </div>
 
-        <div className="mb-12 rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
-          <div className="text-center mb-6 md:mb-8 max-w-5xl mx-auto">
-            <h2 className="text-xl md:text-3xl font-bold text-primary mb-2">Founder & Team Info</h2>
-            { (founderTeamSubtitle || '').length > 0 && (
-              <p className="text-sm md:text-base max-w-3xl mx-auto" style={{ color: '#7F543D' }}>
-                {founderTeamSubtitle}
-              </p>
-            )}
-          </div>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
-            <Card className="border-2 border-transparent hover:border-primary transition-all hover:shadow-md">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex items-start gap-4">
-                  <img src="/Center Images/Namastedwaar/Founder and team/Founder Arvind adn charul Rathi.jpg" alt="Founder" className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover" />
-                  <div className="flex-1">
-                    <h3 className="text-base md:text-lg font-bold text-primary mb-1">{founderTitle}</h3>
-                    {founderSubtitle && (<div className="text-xs md:text-sm mb-2" style={{ color: '#7F543D' }}>{founderSubtitle}</div>)}
-                    {founderDesc && (<p className="text-sm md:text-base leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{founderDesc}</p>)}
-                    {founderBullets.length > 0 && (
-                      <div>
-                        <div className="text-sm font-semibold mb-2" style={{ color: '#7F543D' }}>Leadership & Expertise</div>
-                        <div className="flex flex-wrap gap-2">
-                          {founderBullets.slice(0, 6).map((b, i) => (
-                            <span key={i} className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary">{b}</span>
-                          ))}
-                        </div>
+              <div className="relative">
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
+                  <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
+                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
+                        <img src="/Center Images/Namastedwaar/Founder and team/Medical team.jpg" alt="Team" className="w-full h-full object-cover" />
                       </div>
-                    )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="border-2 border-transparent hover:border-primary transition-all hover:shadow-md">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex items-start gap-4">
-                  <img src="/Center Images/Namastedwaar/Founder and team/Medical team.jpg" alt="Medical Team" className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover" />
-                  <div className="flex-1">
-                    <h3 className="text-base md:text-lg font-bold text-primary mb-1">{teamTitle}</h3>
-                    {teamSubtitle && (<div className="text-xs md:text-sm mb-2" style={{ color: '#7F543D' }}>{teamSubtitle}</div>)}
-                    {teamDesc && (<p className="text-sm md:text-base leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamDesc}</p>)}
-                    {teamBullets.length > 0 && (
                       <div>
-                        <div className="text-sm font-semibold mb-2" style={{ color: '#7F543D' }}>Specialized Practitioners</div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {teamBullets.slice(0, 8).map((b, i) => (
-                            <div key={i} className="text-xs flex items-center gap-2 text-primary">
-                              <span className="inline-block w-2 h-2 rounded-full bg-primary"></span>
-                              <span className="" style={{ color: '#7F543D' }}>{b}</span>
-                            </div>
-                          ))}
-                        </div>
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
+                        {teamSubtitle && (
+                          <p className="text-xs md:text-sm mt-1 text-primary/70">{teamSubtitle}</p>
+                        )}
                       </div>
+                    </div>
+                    {teamGroups[currentTeamSlide]?.description && (
+                      <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
                     )}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                    <ul className="space-y-2.5">
+                      {(teamGroups[currentTeamSlide]?.items || []).slice(0, 12).map((it, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                          <span className="text-primary mt-1">•</span>
+                          <span>{renderInlineBold(it)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1334,56 +1501,60 @@ export default function NamasteDwaar() {
                   </div>
 
                   {testimonials.length > 0 && (
-                  <div className="mb-4 md:mb-6">
-                    <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
-                      "{testimonials[currentReview].review}"
-                    </p>
-                  </div>
-                  )}
-
-                  {testimonials.length > 0 && (
-                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    {testimonials[currentReview].image ? (
-                      <img src={testimonials[currentReview].image} alt={testimonials[currentReview].name} className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0 select-none pointer-events-none" />
-                    ) : (
-                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {testimonials[currentReview].avatar}
-                      </div>
-                    )}
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
-                        {testimonials[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
-                        )}
-                      </div>
-                      <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        {testimonials[currentReview].location}{testimonials[currentReview].condition ? ` • ${testimonials[currentReview].condition}` : ''}
+                    <div className="mb-4 md:mb-6">
+                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+                        "{testimonials[currentReview].review}"
                       </p>
-                      {testimonials[currentReview].date && (<p className="text-xs text-gray-500 mt-1">{testimonials[currentReview].date}</p>)}
                     </div>
-                  </div>
                   )}
 
                   {testimonials.length > 0 && (
-                  <div className="flex items-center gap-2 md:gap-3">
-                    {renderStars(testimonials[currentReview].rating)}
-                    <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
-                  </div>
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      {testimonials[currentReview].image ? (
+                        <img src={testimonials[currentReview].image} alt={testimonials[currentReview].name} className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0 select-none pointer-events-none" />
+                      ) : (
+                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                          {testimonials[currentReview].avatar}
+                        </div>
+                      )}
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                          {testimonials[currentReview].verified && (
+                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
+                          )}
+                        </div>
+                        <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
+                          {testimonials[currentReview].location}{testimonials[currentReview].condition ? ` • ${testimonials[currentReview].condition}` : ''}
+                        </p>
+                        {testimonials[currentReview].date && (<p className="text-xs text-gray-500 mt-1">{testimonials[currentReview].date}</p>)}
+                      </div>
+                    </div>
+                  )}
+
+                  {testimonials.length > 0 && (
+                    <div className="flex items-center gap-2 md:gap-3">
+                      {renderStars(testimonials[currentReview].rating)}
+                      <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                    </div>
                   )}
                 </div>
               </CardContent>
             </Card>
 
             {testimonials.length > 1 && (
-            <>
-              <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
-              <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
-            </>
+              <>
+                <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                  <button onClick={goToPreviousReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                  <button onClick={goToNextReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
+              </>
             )}
 
             {isReviewAutoPlaying && testimonials.length > 0 && (
@@ -1394,13 +1565,13 @@ export default function NamasteDwaar() {
             )}
           </div>
 
-        {testimonials.length > 1 && (
-          <div className="flex justify-center gap-2 mt-6">
-            {testimonials.map((_, idx) => (
-              <button key={idx} onClick={() => selectReview(idx)} className={`transition-all rounded-full ${currentReview === idx ? 'w-8 h-3 bg-primary' : 'w-3 h-3 bg-gray-300 hover:bg-primary/50'}`} aria-label={`Go to review ${idx + 1}`} />
-            ))}
-          </div>
-        )}
+          {testimonials.length > 1 && (
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, idx) => (
+                <button key={idx} onClick={() => selectReview(idx)} className={`transition-all rounded-full ${currentReview === idx ? 'w-8 h-3 bg-primary' : 'w-3 h-3 bg-gray-300 hover:bg-primary/50'}`} aria-label={`Go to review ${idx + 1}`} />
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="mb-12">
@@ -1417,19 +1588,19 @@ export default function NamasteDwaar() {
           </div>
 
           {showAwards && (
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {(awardsList.length ? awardsList : awardsDescriptions.map((d, i) => ({ title: `Award ${i+1}`, desc: d }))).map((item, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                <div className="flex flex-col items-center mb-4">
-                  <img src={`/Center Images/Namastedwaar/Awards and media/Award-0${idx+1}.jpg`} alt={`Award ${idx+1}`} className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4" />
-                  <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">{item.title}</h4>
+            <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
+              {(awardsList.length ? awardsList : awardsDescriptions.map((d, i) => ({ title: `Award ${i + 1}`, desc: d }))).map((item, idx) => (
+                <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                  <div className="flex flex-col items-center mb-4">
+                    <img src={`/Center Images/Namastedwaar/Awards and media/Award-0${idx + 1}.jpg`} alt={`Award ${idx + 1}`} className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4" />
+                    <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">{item.title}</h4>
+                  </div>
+                  <div className="space-y-3 text-sm md:text-base" style={{ color: '#7F543D' }}>
+                    <p>{item.desc}</p>
+                  </div>
                 </div>
-                <div className="space-y-3 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
           )}
 
           {!showAwards && (
@@ -1444,13 +1615,13 @@ export default function NamasteDwaar() {
                       <div key={i} className="w-full flex-shrink-0 px-2">
                         <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
                           <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group hover:shadow-xl hover:scale-[1.02]">
-                            <img src={img} alt={`Media ${i+1}`} className="w-full h-auto object-cover" onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }} />
+                            <img src={img} alt={`Media ${i + 1}`} className="w-full h-auto object-cover" onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }} />
                             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
                               <button
                                 type="button"
                                 onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }}
                                 className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full cursor-pointer shadow"
-                                aria-label={`Open media ${i+1}`}
+                                aria-label={`Open media ${i + 1}`}
                               >
                                 <span className="text-primary font-bold text-xs flex items-center gap-2">
                                   <FileSearch className="h-4 w-4" />
@@ -1474,13 +1645,13 @@ export default function NamasteDwaar() {
                       <div key={i} className="w-1/4 flex-shrink-0 px-3">
                         <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
                           <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group hover:shadow-xl hover:scale-[1.02]">
-                            <img src={img} alt={`Media ${i+1}`} className="w-full h-auto object-cover" onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }} />
+                            <img src={img} alt={`Media ${i + 1}`} className="w-full h-auto object-cover" onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }} />
                             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
                               <button
                                 type="button"
                                 onClick={() => { setMediaLightboxIndex(i); setMediaLightboxOpen(true); setMediaZoom(1); }}
                                 className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full cursor-pointer shadow"
-                                aria-label={`Open media ${i+1}`}
+                                aria-label={`Open media ${i + 1}`}
                               >
                                 <span className="text-primary font-bold text-xs flex items-center gap-2">
                                   <FileSearch className="h-4 w-4" />
@@ -1508,24 +1679,24 @@ export default function NamasteDwaar() {
                 </div>
               )}
 
-        {mediaLightboxOpen && (
-          <div className="fixed inset-0 z-[70] flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }} onClick={() => setMediaLightboxOpen(false)}>
-            <button onClick={(e) => { e.stopPropagation(); setMediaLightboxIndex((prev) => (prev - 1 + mediaImages.length) % mediaImages.length); }} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all" aria-label="Previous">
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <div className="relative max-w-7xl max-h-[85vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-              <img src={mediaImages[mediaLightboxIndex]} alt="Media" className="max-w-full max-h-[85vh] object-contain" style={{ transform: `scale(${mediaZoom})` }} />
-              <div className="absolute top-4 right-4 flex items-center gap-2">
-                <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaZoom((z) => Math.min(3, z + 0.2))}>+</button>
-                <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaZoom((z) => Math.max(1, z - 0.2))}>-</button>
-                <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaLightboxOpen(false)}>Close</button>
-              </div>
-            </div>
-            <button onClick={(e) => { e.stopPropagation(); setMediaLightboxIndex((prev) => (prev + 1) % mediaImages.length); }} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all" aria-label="Next">
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-        )}
+              {mediaLightboxOpen && (
+                <div className="fixed inset-0 z-[70] flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }} onClick={() => setMediaLightboxOpen(false)}>
+                  <button onClick={(e) => { e.stopPropagation(); setMediaLightboxIndex((prev) => (prev - 1 + mediaImages.length) % mediaImages.length); }} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all" aria-label="Previous">
+                    <ChevronLeft className="h-6 w-6" />
+                  </button>
+                  <div className="relative max-w-7xl max-h-[85vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+                    <img src={mediaImages[mediaLightboxIndex]} alt="Media" className="max-w-full max-h-[85vh] object-contain" style={{ transform: `scale(${mediaZoom})` }} />
+                    <div className="absolute top-4 right-4 flex items-center gap-2">
+                      <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaZoom((z) => Math.min(3, z + 0.2))}>+</button>
+                      <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaZoom((z) => Math.max(1, z - 0.2))}>-</button>
+                      <button className="bg-white text-primary px-3 py-2 rounded-full shadow" onClick={() => setMediaLightboxOpen(false)}>Close</button>
+                    </div>
+                  </div>
+                  <button onClick={(e) => { e.stopPropagation(); setMediaLightboxIndex((prev) => (prev + 1) % mediaImages.length); }} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-white bg-white/20 hover:bg-white/30 p-3 rounded-full transition-all" aria-label="Next">
+                    <ChevronRight className="h-6 w-6" />
+                  </button>
+                </div>
+              )}
               <div className="flex justify-center gap-2 mt-6">
                 {mediaImages.map((_, idx) => (
                   <button key={idx} onClick={() => { setIsMediaAutoPlaying(false); setCurrentMediaIndex(idx); }} className={`transition-all rounded-full ${currentMediaIndex === idx ? 'w-8 h-3 bg-primary' : 'w-3 h-3 bg-gray-300 hover:bg-primary/50'}`} aria-label={`Go to media ${idx + 1}`} />
@@ -1534,79 +1705,72 @@ export default function NamasteDwaar() {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+            <ShieldCheck className="h-8 w-8 text-primary" />
+          </div>
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
+          <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
+            Flexible payment options and insurance support to make holistic healthcare accessible
+          </p>
         </div>
 
-        <div className="mb-12">
-          <div className="text-center mb-6 md:mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
-            <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>
-              Flexible payment options and insurance support to make holistic healthcare accessible
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-            <Card className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border-2 border-primary/20 hover:border-primary/50">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <ShieldCheck className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base md:text-lg font-bold text-primary mb-2">Insurance Coverage</h3>
-                    <ul className="space-y-1.5">
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Guests with Indian health insurance may check coverage eligibility for Ayurvedic and wellness treatments.</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Detailed invoices, treatment reports, and medical documentation provided to support claims and reimbursements.</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Assistance with claim processing and paperwork when applicable.</span>
-                      </li>
-                    </ul>
-                  </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                  <ShieldCheck className="h-6 w-6 text-green-600" />
                 </div>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Guests with Indian health insurance may check coverage eligibility for Ayurvedic and wellness treatments.",
+                  "Detailed invoices, treatment reports, and medical documentation provided to support claims and reimbursements.",
+                  "Assistance with claim processing and paperwork when applicable.",
+                ].map((b, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                    <span className="text-primary mt-1">✓</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
 
-            <Card className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all border-2 border-primary/20 hover:border-primary/50">
-              <CardContent className="p-4 md:p-6">
-                <div className="flex items-start gap-4 md:gap-5">
-                  <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <ClipboardList className="h-5 w-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base md:text-lg font-bold text-primary mb-2">Payment Options</h3>
-                    <ul className="space-y-1.5">
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Cash, credit cards, debit cards, and bank transfers accepted for stays, dining, and wellness fees.</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Detailed pricing for wellness packages and treatment programs available on inquiry with the reservations team.</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Corporate wellness and group bookings customized with special pricing arrangements.</span>
-                      </li>
-                      <li className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
-                        <span>Early booking discounts and seasonal promotional offers available periodically.</span>
-                      </li>
-                    </ul>
-                  </div>
+          <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+            <CardContent className="p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Pill className="h-6 w-6 text-blue-600" />
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+                <h3 className="text-xl font-bold text-primary">Payment Options</h3>
+              </div>
+              <ul className="space-y-3">
+                {[
+                  "Cash, credit cards, debit cards, and bank transfers accepted for stays, dining, and wellness fees.",
+                  "Detailed pricing for wellness packages and treatment programs available on inquiry with the reservations team.",
+                  "Corporate wellness and group bookings customized with special pricing arrangements.",
+                  "Early booking discounts and seasonal promotional offers available periodically.",
+                ].map((b, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                    <span className="text-primary mt-1">✓</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
 
-          <div className="mt-8 p-6 bg-primary/5 rounded-xl border-2 border-primary/20 max-w-5xl mx-auto">
+        <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary">
+          <CardContent className="p-6">
             <div className="flex items-start gap-4">
-              <Users className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
                 <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
@@ -1617,218 +1781,302 @@ export default function NamasteDwaar() {
                 </p>
               </div>
             </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="mb-12">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+            <MessageCircle className="h-8 w-8 text-primary" />
           </div>
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+          <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
+            Find answers to common questions about treatments, facilities, and your healing journey
+          </p>
         </div>
 
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-              <MessageCircle className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
-            <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
-              Find answers to common questions about treatments, facilities, and your healing journey
-            </p>
-          </div>
+        <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+          <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                What is the minimum duration for wellness programs at Namaste Dwaar?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Wellness programs range from weekend detox packages (3 days/2 nights) to comprehensive seven-day retreats and extended Panchakarma programs (14-21 days). Minimum stay depends on chosen wellness package and individual health goals. Even brief weekend retreats provide noticeable benefits, while longer durations offer deeper therapeutic results.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-          <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
-            <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  What is the minimum duration for wellness programs at Namaste Dwaar?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Wellness programs range from weekend detox packages (3 days/2 nights) to comprehensive seven-day retreats and extended Panchakarma programs (14-21 days). Minimum stay depends on chosen wellness package and individual health goals. Even brief weekend retreats provide noticeable benefits, while longer durations offer deeper therapeutic results.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                How far is Namaste Dwaar from Delhi and major cities?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                is located just 2 hours drive from Delhi on the Delhi-Haridwar National Highway 58, at the 105 km milestone near Muzaffarnagar in Uttar Pradesh. The convenient location makes it an ideal weekend getaway or extended wellness retreat for residents of Delhi-NCR, being closer than traditional Kerala or Goa wellness destinations.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  How far is Namaste Dwaar from Delhi and major cities?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                   is located just 2 hours drive from Delhi on the Delhi-Haridwar National Highway 58, at the 105 km milestone near Muzaffarnagar in Uttar Pradesh. The convenient location makes it an ideal weekend getaway or extended wellness retreat for residents of Delhi-NCR, being closer than traditional Kerala or Goa wellness destinations.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                Do I need prior experience with Ayurveda or Yoga?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                No prior experience is necessary. Namaste Dwaar welcomes complete beginners and provides introductory consultations, gentle treatments, and beginner-friendly yoga classes. The experienced medical team and instructors personalize all programs according to individual fitness levels, health conditions, and familiarity with wellness practices.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  Do I need prior experience with Ayurveda or Yoga?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  No prior experience is necessary. Namaste Dwaar welcomes complete beginners and provides introductory consultations, gentle treatments, and beginner-friendly yoga classes. The experienced medical team and instructors personalize all programs according to individual fitness levels, health conditions, and familiarity with wellness practices.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                What type of food is served at Namaste Dwaar?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Namaste Dwaar offers exceptional culinary diversity with 14 restaurants serving multiple cuisines including authentic Rajasthani, South Indian, Uttarakhand traditional food, and international options. For wellness program guests, therapeutic Ayurvedic vegetarian meals are prepared using organic ingredients according to individual dietary requirements and dosha constitutions.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  What type of food is served at Namaste Dwaar?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Namaste Dwaar offers exceptional culinary diversity with 14 restaurants serving multiple cuisines including authentic Rajasthani, South Indian, Uttarakhand traditional food, and international options. For wellness program guests, therapeutic Ayurvedic vegetarian meals are prepared using organic ingredients according to individual dietary requirements and dosha constitutions.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                Is Namaste Dwaar suitable for families with children?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Absolutely. Namaste Dwaar is family-friendly with facilities for all ages including children's pools, outdoor games, tractor rides, farm experiences, and various recreational activities. The spacious property allows children to explore safely while adults enjoy wellness treatments. Family suites accommodate multiple members comfortably.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  Is Namaste Dwaar suitable for families with children?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Absolutely. Namaste Dwaar is family-friendly with facilities for all ages including children's pools, outdoor games, tractor rides, farm experiences, and various recreational activities. The spacious property allows children to explore safely while adults enjoy wellness treatments. Family suites accommodate multiple members comfortably.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                Can I bring my pet dog to Namaste Dwaar?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Yes! Namaste Dwaar is proudly dog-friendly and welcomes four-legged family members. The resort understands the joy and companionship dogs bring and extends the same warmth and hospitality to furry companions, making it an ideal destination for pet owners seeking wellness retreats.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  Can I bring my pet dog to Namaste Dwaar?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Yes! Namaste Dwaar is proudly dog-friendly and welcomes four-legged family members. The resort understands the joy and companionship dogs bring and extends the same warmth and hospitality to furry companions, making it an ideal destination for pet owners seeking wellness retreats.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                What should I pack for my wellness retreat at Namaste Dwaar?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Comfortable loose cotton clothing suitable for treatments and yoga, personal toiletries, any regular medications, previous medical reports if applicable, sunscreen, insect repellent, walking shoes for farm tours, and an open mind for healing. The resort provides treatment gowns, towels, and all necessary wellness amenities.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
 
-            <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  What should I pack for my wellness retreat at Namaste Dwaar?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Comfortable loose cotton clothing suitable for treatments and yoga, personal toiletries, any regular medications, previous medical reports if applicable, sunscreen, insect repellent, walking shoes for farm tours, and an open mind for healing. The resort provides treatment gowns, towels, and all necessary wellness amenities.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <span className="text-lg font-semibold text-primary text-left">
+                Are wellness treatments suitable for elderly guests or those with health conditions?
+              </span>
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 pb-6 bg-white">
+              <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
+                Yes, Namaste Dwaar specializes in providing gentle, age-appropriate treatments for senior citizens and guests with various health conditions. AYUSH doctors carefully assess individual health status and design safe, therapeutic protocols. Treatments are monitored and adjusted based on comfort and response, ensuring safety throughout the wellness journey.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </div>
 
-            <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
-                <span className="text-lg font-semibold text-primary text-left">
-                  Are wellness treatments suitable for elderly guests or those with health conditions?
-                </span>
-              </AccordionTrigger>
-              <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                  Yes, Namaste Dwaar specializes in providing gentle, age-appropriate treatments for senior citizens and guests with various health conditions. AYUSH doctors carefully assess individual health status and design safe, therapeutic protocols. Treatments are monitored and adjusted based on comfort and response, ensuring safety throughout the wellness journey.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-
+      {contactAddress.length > 0 && (
         <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
-          <Card className="mb-12 border-2 border-primary">
+          <Card className="border-2 border-primary overflow-hidden">
             <CardContent className="p-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">Contact Information</h2>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+              <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+                <div className="space-y-6">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p style={{ color: '#7F543D' }}>
-                        Namaste Dwaar – Countryside Wellness Retreat<br />
-                        NH‑58 Delhi–Haridwar Highway, 105 km milestone<br />
-                        Near Muzaffarnagar, Uttar Pradesh – India
+                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                        {contactAddress.map((l, i) => (
+                          <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                        ))}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                      <p style={{ color: '#7F543D' }}>Reservations team available for pricing and booking assistance</p>
+                  {contactDistances.length > 0 && (
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Email</h4>
-                      <p style={{ color: '#7F543D' }}>Contact the reservations desk for detailed package information</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Website</h4>
-                      <p className="text-primary">Official website and brochures available on request</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold text-primary mb-1">Distance from Delhi</h4>
-                      <p style={{ color: '#7F543D' }}>Approx. 2 hours by road via NH‑58 (about 105 km)</p>
+                <div className="md:-mt-16 self-start">
+                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
+                        <iframe
+                          title="Namaste Dwaar Location"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.860612857214!2d77.71095427368053!3d29.34508049676093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c11ba6b561b07%3A0x71399c32e76dca79!2sNamaste%20Dwaar!5e0!3m2!1sen!2sin!4v1767773407166!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-            </CardContent>
-          </Card>
-
-          <Card className="bg-primary text-primary-foreground">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center max-w-3xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">Begin Your Holistic Healing Journey at Namaste Dwaar</h3>
-                <p className="opacity-90 mb-6">Experience integrated Ayurveda, nature therapy, and compassionate care—just a short drive from Delhi.</p>
-                <Button size="lg" className="bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
-                  <Phone className="mr-2 h-4 w-4" /> Book Your Consultation Today
-                </Button>
-              </div>
+              {transportText && (
+                <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
+                  <div className="flex items-start gap-4">
+                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
+                      <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
+      )}
 
-        <Footer />
-        <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
-      {/* Full Gallery Modal */}
-      {showFullGallery && (
-        <div className="fixed inset-0 backdrop-blur-lg z-50 overflow-y-auto" style={{ backgroundColor: 'rgba(237, 232, 208, 0.95)' }} onClick={() => setShowFullGallery(false)}>
-          <div className="container mx-auto px-4 py-8" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between mb-6 sticky top-0 backdrop-blur-md py-4 z-10" style={{ backgroundColor: 'rgba(237, 232, 208, 0.9)' }}>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary">Namaste Dwaar Gallery ({images.length} Photos)</h2>
-              <Button variant="ghost" size="icon" onClick={() => setShowFullGallery(false)} className="text-primary hover:bg-primary/10 h-10 w-10">
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
+      <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
+        <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
+          <div className="md:hidden">
+            <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+              <img
+                src="/Center Images/Namastedwaar/CTA bottom.jpg"
+                alt="Namaste Dwaar"
+                className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+              />
+              <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Namaste Dwaar</h2>
+              <div className="space-y-3">
+                <Button
+                  size="lg"
+                  className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Book Consultation Now
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Chat With Us
+                </Button>
+              </div>
+              <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                <Phone className="h-4 w-4 text-red-400" />
+                <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+              </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-              {images.map((img, idx) => (
-                <div key={idx} onClick={() => { setLightboxImage(idx); setLightboxOpen(true); }} className="relative group cursor-pointer rounded-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-                  <img src={img} alt={`Namaste Dwaar ${idx + 1}`} className="w-full h-full object-cover aspect-square" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
-                    <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <FileSearch className="h-8 w-8" />
-                    </div>
-                  </div>
+          </div>
+
+          <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Namaste Dwaar</h2>
+              <div className="flex flex-wrap gap-3">
+                <Button
+                  size="lg"
+                  className="rounded-full px-6 bg-white text-primary hover:bg-white/90"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  Book Consultation Now
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  Chat With Us
+                </Button>
+              </div>
+              <div className="mt-4 flex items-center gap-2 text-white/90">
+                <Phone className="h-5 w-5 text-red-400" />
+                <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+              </div>
+            </div>
+            <div>
+              <img src="/Center Images/Namastedwaar/CTA bottom.jpg" alt="Namaste Dwaar" className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-4 py-3 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+        aria-label="Get Free Quote"
+      >
+        <Phone className="h-5 w-5" />
+        <span className="hidden md:inline">Get Free Quote</span>
+        <span className="md:hidden">Quote</span>
+      </button>
+
+      {showFullGallery && (
+        <div className="fixed inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm z-50 overflow-auto" onClick={() => setShowFullGallery(false)}>
+          <div className="container mx-auto px-4 py-10" onClick={(e) => e.stopPropagation()}>
+            <div className="relative flex items-center justify-center mb-4 pl-16 md:pl-0">
+              <Button onClick={() => setShowFullGallery(false)} className="absolute left-0 bg-white text-primary hover:bg-white/90">
+                Back
+              </Button>
+              <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
+                Namaste Dwaar
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {images.map((img, i) => (
+                <div
+                  key={i}
+                  className="relative w-full cursor-pointer"
+                  style={{ paddingBottom: "75%" }}
+                  onClick={() => {
+                    setLightboxImage(i);
+                    setLightboxOpen(true);
+                  }}
+                >
+                  <img src={img} alt={`Namaste Dwaar ${i + 1}`} className="absolute inset-0 w-full h-full object-cover rounded-lg" />
                 </div>
               ))}
             </div>
@@ -1836,64 +2084,103 @@ export default function NamasteDwaar() {
         </div>
       )}
 
-      {/* Lightbox Modal */}
       {lightboxOpen && (
-        <div className="fixed inset-0 backdrop-blur-lg z-[60] flex flex-col items-center justify-center p-4" style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }} onClick={() => setLightboxOpen(false)}>
-          <div className="absolute top-0 left-0 right-0 py-6 px-4 text-center z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary">Namaste Dwaar</h2>
-          </div>
-          <button onClick={(e) => { e.stopPropagation(); setLightboxImage((prev) => (prev - 1 + images.length) % images.length); }} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Previous">
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm" onClick={() => setLightboxOpen(false)}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+            }}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="h-6 w-6" />
           </button>
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center mt-16" onClick={(e) => e.stopPropagation()}>
-            <div className="relative">
-              <img src={images[lightboxImage]} alt={`Namaste Dwaar ${lightboxImage + 1}`} className="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl" />
-              <button onClick={() => setLightboxOpen(false)} className="absolute top-3 right-3 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg" aria-label="Close">
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxImage((prev) => (prev + 1) % images.length);
+            }}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Namaste Dwaar</div>
+            <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+              <img src={images[lightboxImage]} alt={`Namaste Dwaar ${lightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+              <button
+                onClick={() => setLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-primary/90 text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                 {lightboxImage + 1} / {images.length}
               </div>
-              <div className="md:hidden absolute -bottom-16 left-4 right-4 flex items-center justify-between">
-                <button onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Previous</button>
-                <button onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Next</button>
-              </div>
+            </div>
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                Previous
+              </Button>
+              <Button onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                Next
+              </Button>
             </div>
           </div>
-          <button onClick={(e) => { e.stopPropagation(); setLightboxImage((prev) => (prev + 1) % images.length); }} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Next">
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
         </div>
       )}
 
       {facilityLightboxOpen && (
-        <div className="fixed inset-0 backdrop-blur-lg z-[60] flex items-center justify-center p-4" style={{ backgroundColor: 'rgba(237, 232, 208, 0.85)' }} onClick={() => setFacilityLightboxOpen(false)}>
-          <div className="absolute top-5 left-0 right-0 text-center pointer-events-none">
-            <div className="inline-block bg-white/80 px-4 py-1 rounded-full shadow">
-              <span className="text-primary font-bold text-sm md:text-lg">Namaste Dwaar for your Healing Journey</span>
-            </div>
-          </div>
-          <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Previous">
-            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm" onClick={() => setFacilityLightboxOpen(false)}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
+            }}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="h-6 w-6" />
           </button>
-          <div className="relative max-w-7xl max-h-[80vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <div className="relative inline-block">
-              <img src={facilityImages[facilityLightboxImage]} alt="Facility" className="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl" />
-              <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-2 right-2 text-primary hover:text-primary/80 bg-white/90 hover:bg-white p-2 rounded-full transition-all z-20 shadow-lg" aria-label="Close">
-                <svg className="h-6 w-6 md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length);
+            }}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Next"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+
+          <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Namaste Dwaar</div>
+            <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+              <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+              <button
+                onClick={() => setFacilityLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
               </button>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                 {facilityLightboxImage + 1} / {facilityImages.length}
               </div>
-              <div className="md:hidden absolute -bottom-12 left-4 right-4 flex items-center justify-between">
-                <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length); }} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Previous</button>
-                <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length); }} className="bg-white text-primary px-4 py-2 rounded-full shadow-md">Next</button>
-              </div>
+            </div>
+            <div className="flex md:hidden items-center justify-between mt-4">
+              <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                Previous
+              </Button>
+              <Button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                Next
+              </Button>
             </div>
           </div>
-          <button onClick={(e) => { e.stopPropagation(); setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length); }} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-3 rounded-full transition-all z-10 bg-white/80 shadow-lg" aria-label="Next">
-            <ChevronRight className="h-6 w-6 md:h-8 md:w-8" />
-          </button>
         </div>
       )}
     </div>

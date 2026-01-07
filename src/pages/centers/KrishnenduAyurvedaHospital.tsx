@@ -812,15 +812,15 @@ export default function KrishnenduAyurvedaHospital() {
     const t = title.toLowerCase();
     return t.includes("ayurveda") || t.includes("treatment") || t.includes("therapy") ? <Droplet className="h-7 w-7 text-white" />
       : t.includes("doctor") || t.includes("consult") ? <Stethoscope className="h-7 w-7 text-white" />
-      : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
-      : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
-      : t.includes("pool") || t.includes("hydro") || t.includes("swimming") || t.includes("recreation") ? <Activity className="h-7 w-7 text-white" />
-      : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
-      : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
-      : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
-      : t.includes("garden") || t.includes("herbal") || t.includes("nature") || t.includes("medicinal") ? <TreePine className="h-7 w-7 text-white" />
-      : t.includes("nabh") || t.includes("hospital") || t.includes("safety") ? <ShieldCheck className="h-7 w-7 text-white" />
-      : <ShieldCheck className="h-7 w-7 text-white" />;
+        : t.includes("cottage") || t.includes("room") || t.includes("accommodation") ? <Building2 className="h-7 w-7 text-white" />
+          : t.includes("restaurant") || t.includes("dining") || t.includes("meal") ? <Utensils className="h-7 w-7 text-white" />
+            : t.includes("pool") || t.includes("hydro") || t.includes("swimming") || t.includes("recreation") ? <Activity className="h-7 w-7 text-white" />
+              : t.includes("conference") || t.includes("group") ? <Globe className="h-7 w-7 text-white" />
+                : t.includes("travel") || t.includes("airport") || t.includes("station") ? <MapPin className="h-7 w-7 text-white" />
+                  : t.includes("laundry") || t.includes("housekeeping") ? <Sparkles className="h-7 w-7 text-white" />
+                    : t.includes("garden") || t.includes("herbal") || t.includes("nature") || t.includes("medicinal") ? <TreePine className="h-7 w-7 text-white" />
+                      : t.includes("nabh") || t.includes("hospital") || t.includes("safety") ? <ShieldCheck className="h-7 w-7 text-white" />
+                        : <ShieldCheck className="h-7 w-7 text-white" />;
   };
 
   useEffect(() => {
@@ -930,9 +930,8 @@ export default function KrishnenduAyurvedaHospital() {
                 variant={!showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(false)}
-                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 Photo Gallery
               </Button>
@@ -940,9 +939,8 @@ export default function KrishnenduAyurvedaHospital() {
                 variant={showVideoGallery ? "default" : "secondary"}
                 size="lg"
                 onClick={() => setShowVideoGallery(true)}
-                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                  showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                }`}
+                className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                  }`}
               >
                 <Video className="h-4 w-4 md:h-6 md:w-6" />
                 Video Gallery
@@ -1817,7 +1815,7 @@ export default function KrishnenduAyurvedaHospital() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1862,17 +1860,17 @@ export default function KrishnenduAyurvedaHospital() {
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
-                      <div className="relative w-full aspect-[800/600]">
-                        <iframe
-                          title="Krishnendu Ayurveda Hospital Map"
-                          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15751.794750700657!2d76.453061!3d9.248883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a079fa3c46ff%3A0x54fb85371060750b!2sKrishnendu%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767357973799!5m2!1sen!2sin"
-                          className="absolute inset-0 h-full w-full"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                        />
-                      </div>
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Krishnendu Ayurveda Hospital Map"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15751.794750700657!2d76.453061!3d9.248883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08a079fa3c46ff%3A0x54fb85371060750b!2sKrishnendu%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1767357973799!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>

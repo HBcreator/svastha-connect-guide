@@ -914,9 +914,8 @@ export default function SOUKYACenter() {
                   variant={!showVideoGallery ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -924,9 +923,8 @@ export default function SOUKYACenter() {
                   variant={showVideoGallery ? "default" : "outline"}
                   size="lg"
                   onClick={() => setShowVideoGallery(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -2323,7 +2321,7 @@ export default function SOUKYACenter() {
 
             <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
               <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     What is the minimum duration of treatment at SOUKYA?
                   </span>
@@ -2336,7 +2334,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Do I need to bring my medical records?
                   </span>
@@ -2349,7 +2347,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is SOUKYA suitable for elderly patients?
                   </span>
@@ -2362,7 +2360,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Can I continue my regular medications during treatment?
                   </span>
@@ -2375,7 +2373,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     What should I pack for my stay at SOUKYA?
                   </span>
@@ -2388,7 +2386,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is vegetarian food mandatory?
                   </span>
@@ -2401,7 +2399,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Can family members stay with patients?
                   </span>
@@ -2414,7 +2412,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is WiFi and mobile connectivity available?
                   </span>
