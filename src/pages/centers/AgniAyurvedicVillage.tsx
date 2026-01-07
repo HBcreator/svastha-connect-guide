@@ -125,12 +125,10 @@ export default function AgniAyurvedicVillage() {
   }, [isAwardAutoPlaying, maxAwardIndex]);
 
   const goToPreviousAward = () => {
-    setIsAwardAutoPlaying(false);
     setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
   };
 
   const goToNextAward = () => {
-    setIsAwardAutoPlaying(false);
     setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
   };
 
@@ -1641,7 +1639,7 @@ export default function AgniAyurvedicVillage() {
                 {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => { setIsAwardAutoPlaying(false); setCurrentAward(i); }}
+                    onClick={() => { setCurrentAward(i); }}
                     className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
                     aria-label={`Go to award ${i + 1}`}
                   />
