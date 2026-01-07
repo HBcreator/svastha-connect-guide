@@ -923,7 +923,7 @@ export default function AgniAyurvedicVillage() {
                         Back
                       </Button>
                       <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                        Agni Ayurvedic Village Resort
+                        Agni Gallery
                       </div>
                     </div>
 
