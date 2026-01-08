@@ -58,12 +58,12 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       toast.error("Maximum 3 files allowed");
       return;
     }
-    
+
     const validFiles = selectedFiles.filter(file => file.size <= 10 * 1024 * 1024);
     if (validFiles.length < selectedFiles.length) {
       toast.error("Some files exceed 10MB limit");
     }
-    
+
     setFiles([...files, ...validFiles].slice(0, 3));
   };
 
@@ -73,7 +73,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.fullName || !formData.email || !formData.country || !formData.phone) {
       toast.error("Please fill in all required fields");
@@ -82,7 +82,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
 
     const ticketId = `#SG${Math.floor(100000 + Math.random() * 900000)}`;
     toast.success(`Thank you! Your request (ID: ${ticketId}) is received. Our expert will contact you within 24–48 hours.`);
-    
+
     // Reset form
     setFormData({
       fullName: "",
@@ -101,7 +101,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="sm:max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="sm:max-w-2xl max-h-[90vh] overflow-y-auto bg-[#FDFCF7] border-none shadow-2xl [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#EDE8D0] [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb]:rounded-full cursor-default"
         onOpenAutoFocus={(e) => {
           e.preventDefault();
         }}
@@ -114,7 +114,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             Find the right Ayurvedic center for your healing journey
           </p>
         </DialogHeader>
-        
+
         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
           <div className="space-y-2">
             <Label htmlFor="fullName">Full Name *</Label>
@@ -124,6 +124,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
               placeholder="Enter your full name"
               required
+              className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus-visible:ring-primary/20"
             />
           </div>
 
@@ -136,6 +137,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="your.email@example.com"
               required
+              className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus-visible:ring-primary/20"
             />
           </div>
 
@@ -149,7 +151,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
                 if (country) setCountryCode(country.code);
               }}
             >
-              <SelectTrigger>
+              <SelectTrigger className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus:ring-primary/20">
                 <SelectValue placeholder="Select your country" />
               </SelectTrigger>
               <SelectContent className="bg-card z-[100]">
@@ -168,7 +170,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               <Input
                 value={countryCode}
                 disabled
-                className="w-20"
+                className="w-20 bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl"
               />
               <Input
                 id="phone"
@@ -177,6 +179,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="1234567890"
                 required
+                className="flex-1 bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus-visible:ring-primary/20"
               />
             </div>
           </div>
@@ -188,6 +191,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               value={formData.preferredCenter}
               onChange={(e) => setFormData({ ...formData, preferredCenter: e.target.value })}
               placeholder="e.g., Goa, Kerala, Bangalore"
+              className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus-visible:ring-primary/20"
             />
           </div>
 
@@ -197,7 +201,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               value={formData.treatment}
               onValueChange={(value) => setFormData({ ...formData, treatment: value })}
             >
-              <SelectTrigger>
+              <SelectTrigger className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus:ring-primary/20">
                 <SelectValue placeholder="Select treatment" />
               </SelectTrigger>
               <SelectContent className="bg-card z-[100]">
@@ -218,6 +222,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               onChange={(e) => setFormData({ ...formData, condition: e.target.value })}
               placeholder="Tell us about your health concerns and goals..."
               rows={4}
+              className="bg-[#E9E3D0]/40 border-primary/10 rounded-xl focus-visible:ring-primary/20"
             />
           </div>
 
@@ -264,6 +269,7 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               type="date"
               value={formData.travelDates}
               onChange={(e) => setFormData({ ...formData, travelDates: e.target.value })}
+              className="bg-[#E9E3D0]/40 border-primary/10 h-12 rounded-xl focus-visible:ring-primary/20"
             />
           </div>
 

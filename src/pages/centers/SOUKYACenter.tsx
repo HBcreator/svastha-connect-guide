@@ -966,12 +966,10 @@ export default function SOUKYACenter() {
                   size="lg"
                   variant="secondary"
                   className="bg-white text-primary hover:bg-white/90 font-semibold"
-                  asChild
+                  onClick={() => setQuoteModalOpen(true)}
                 >
-                  <Link to="/contact">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Book Consultation
-                  </Link>
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Consultation
                 </Button>
               </div>
             </div>
@@ -2742,14 +2740,20 @@ export default function SOUKYACenter() {
             onClick={() => setLightboxOpen(false)}
           >
             <button
-              onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage((prev) => (prev - 1 + images.length) % images.length);
+              }}
               className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
               aria-label="Previous"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
-              onClick={() => setLightboxImage((prev) => (prev + 1) % images.length)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setLightboxImage((prev) => (prev + 1) % images.length);
+              }}
               className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
               aria-label="Next"
             >
@@ -2803,14 +2807,20 @@ export default function SOUKYACenter() {
             onClick={() => setFacilityLightboxOpen(false)}
           >
             <button
-              onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length);
+              }}
               className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
               aria-label="Previous"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
-              onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length);
+              }}
               className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
               aria-label="Next"
             >
