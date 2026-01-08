@@ -82,6 +82,7 @@ const Veda5Center = () => {
   const [medicalSection, setMedicalSection] = useState<SectionData | null>(null);
   const [whyChooseSection, setWhyChooseSection] = useState<SectionData | null>(null);
   const [facilitiesSection, setFacilitiesSection] = useState<SectionData | null>(null);
+  const [treatmentSection, setTreatmentSection] = useState<SectionData | null>(null);
 
 
 
@@ -330,11 +331,9 @@ const Veda5Center = () => {
   }, [isTeamAutoPlaying, teamGroups.length]);
 
   const prevTeam = () => {
-    setIsTeamAutoPlaying(false);
     setCurrentTeamSlide((prev) => (prev - 1 + teamGroups.length) % teamGroups.length);
   };
   const nextTeam = () => {
-    setIsTeamAutoPlaying(false);
     setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
   };
 
@@ -350,6 +349,8 @@ const Veda5Center = () => {
     return () => clearInterval(id);
   }, [selectedGallery, images.length]);
 
+
+
   useEffect(() => {
     if (!lightboxOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -360,6 +361,44 @@ const Veda5Center = () => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen, images.length]);
+
+  const parseTreatmentProcess = (text: string) => {
+    const lines = text.split("\n").map(l => l.trim());
+    let heading = "";
+    let intro = "";
+    const items: { title: string; description: string; step: number }[] = [];
+    let current: any = null;
+
+    for (const line of lines) {
+      if (!line) continue;
+
+      if (line.startsWith("**") && line.endsWith("**")) {
+        if (!heading) {
+          heading = line.replace(/\*\*/g, "");
+          continue;
+        }
+      }
+
+      const stepMatch = line.match(/^(\d+)\.\s+\*\*(.+?)\*\*$/);
+      if (stepMatch) {
+        if (current) items.push(current);
+        current = {
+          step: parseInt(stepMatch[1]),
+          title: stepMatch[2].trim(),
+          description: ""
+        };
+        continue;
+      }
+
+      if (!current && heading) {
+        intro += (intro ? " " : "") + line;
+      } else if (current) {
+        current.description += (current.description ? " " : "") + line;
+      }
+    }
+    if (current) items.push(current);
+    return { heading, intro, items };
+  };
 
   const parseProgramsFile = (text: string): SectionData => {
     const lines = text.split("\n").map((l) => l.trim());
@@ -420,11 +459,13 @@ const Veda5Center = () => {
       fetch("/content/Top Centers/veda5/Medical Programs.txt").then((r) => r.text()).catch(() => ""),
       fetch("/content/Top Centers/veda5/Why Choose VEDA5.txt").then((r) => r.text()).catch(() => ""),
       fetch("/content/Top Centers/veda5/Facilities & Amenities.txt").then((r) => r.text()).catch(() => ""),
-    ]).then(([wellnessText, medicalText, whyText, facilitiesText]) => {
+      fetch("/content/Top Centers/veda5/Veda5 Treatment Process & Patient Journey.txt").then((r) => r.text()).catch(() => ""),
+    ]).then(([wellnessText, medicalText, whyText, facilitiesText, treatmentText]) => {
       if (wellnessText) setWellnessSection(parseProgramsFile(wellnessText));
       if (medicalText) setMedicalSection(parseProgramsFile(medicalText));
       if (whyText) setWhyChooseSection(parseProgramsFile(whyText));
       if (facilitiesText) setFacilitiesSection(parseProgramsFile(facilitiesText));
+      if (treatmentText) setTreatmentSection(parseTreatmentProcess(treatmentText) as any);
     });
   }, []);
 
@@ -451,6 +492,30 @@ const Veda5Center = () => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [facilityLightboxOpen, facilityImages.length]);
+
+  const getTreatmentStepIcon = (step: number) => {
+    switch (step) {
+      case 1: return <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      case 2: return <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      case 3: return <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      case 4: return <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      case 5: return <Activity className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      case 6: return <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+      default: return <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-primary" />;
+    }
+  };
+
+  const getStepTag = (step: number) => {
+    switch (step) {
+      case 1: return "Day 1";
+      case 2: return "Day 1–2";
+      case 3: return "Ongoing";
+      case 4: return "Daily";
+      case 5: return "Throughout Stay";
+      case 6: return "Post-Retreat";
+      default: return "";
+    }
+  };
 
   useEffect(() => {
     if (selectedGallery === "videos") {
@@ -553,25 +618,44 @@ const Veda5Center = () => {
 
   const iconForWellnessTitle = (t: string) => {
     const s = t.toLowerCase();
-    if (s.includes("kaya") || s.includes("rejuven")) return <LotusIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    if (s.includes("detox") || s.includes("shuddhi") || s.includes("cleanse")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    if (s.includes("panchakarma") || s.includes("purification")) return <OilPotIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    if (s.includes("weight") || s.includes("sthoola") || s.includes("hara")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    if (s.includes("stress") || s.includes("anxiety") || s.includes("mental")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    if (s.includes("immunity") || s.includes("anti-aging") || s.includes("rasayana")) return <ShieldCheck className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
-    return <LotusIcon className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
+    const color = "text-green-600";
+    const size = "h-4 w-4 md:h-5 md:w-5";
+
+    if (s.includes("rejuvenation")) return <Sparkles className={`${size} ${color}`} />;
+    if (s.includes("ayurveda detox")) return <Leaf className={`${size} ${color}`} />;
+    if (s.includes("panchakarma")) return <OilPotIcon className={`${size} ${color}`} />;
+    if (s.includes("weight")) return <Activity className={`${size} ${color}`} />;
+    if (s.includes("stress") || s.includes("anxiety")) return <Brain className={`${size} ${color}`} />;
+    if (s.includes("immunity")) return <ShieldCheck className={`${size} ${color}`} />;
+    if (s.includes("anti-aging")) return <Sparkles className={`${size} ${color}`} />;
+    if (s.includes("beauty") || s.includes("skin")) return <Droplet className={`${size} ${color}`} />;
+    if (s.includes("digital detox")) return <Moon className={`${size} ${color}`} />;
+    if (s.includes("yoga") || s.includes("meditation")) return <LotusIcon className={`${size} ${color}`} />;
+    if (s.includes("spine") || s.includes("joint")) return <Activity className={`${size} ${color}`} />;
+    if (s.includes("women")) return <Heart className={`${size} ${color}`} />;
+
+    return <LotusIcon className={`${size} ${color}`} />;
   };
 
   const iconForMedicalTitle = (t: string) => {
     const s = t.toLowerCase();
-    if (s.includes("spine") || s.includes("back") || s.includes("neck")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("joint") || s.includes("arthritis")) return <Activity className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("diabetes") || s.includes("metabolic") || s.includes("sugar")) return <Pill className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("skin") || s.includes("psoriasis") || s.includes("dermat")) return <Sparkles className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("respiratory") || s.includes("sinus") || s.includes("asthma") || s.includes("allerg")) return <Wind className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("neuro") || s.includes("nerve") || s.includes("migraine") || s.includes("stroke")) return <Brain className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    if (s.includes("digest") || s.includes("ibs") || s.includes("gut") || s.includes("gerd")) return <Droplet className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
-    return <Stethoscope className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />;
+    const color = "text-blue-600";
+    const size = "h-4 w-4 md:h-5 md:w-5";
+
+    if (s.includes("spine") || s.includes("back") || s.includes("neck")) return <Activity className={`${size} ${color}`} />;
+    if (s.includes("joint") || s.includes("arthritis")) return <Activity className={`${size} ${color}`} />;
+    if (s.includes("diabetes")) return <Pill className={`${size} ${color}`} />;
+    if (s.includes("skin") || s.includes("psoriasis")) return <Sparkles className={`${size} ${color}`} />;
+    if (s.includes("respiratory")) return <Wind className={`${size} ${color}`} />;
+    if (s.includes("neuro")) return <Brain className={`${size} ${color}`} />;
+    if (s.includes("digest")) return <Droplet className={`${size} ${color}`} />;
+    if (s.includes("weight")) return <Activity className={`${size} ${color}`} />;
+    if (s.includes("women")) return <Heart className={`${size} ${color}`} />;
+    if (s.includes("cardio") || s.includes("heart")) return <HeartPulse className={`${size} ${color}`} />;
+    if (s.includes("post-natal")) return <Users className={`${size} ${color}`} />;
+    if (s.includes("post-covid")) return <ShieldCheck className={`${size} ${color}`} />;
+
+    return <Stethoscope className={`${size} ${color}`} />;
   };
 
   const iconForFacilityTitle = (t: string) => {
@@ -922,7 +1006,7 @@ const Veda5Center = () => {
           <Card className="mb-12 rounded-xl">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
               <MarkdownContent
-                contentPath="/content/Top Centers/veda5 center.txt"
+                contentPath="/content/Top Centers/veda5/veda5 Main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                 onLinkClick={(action) => {
@@ -964,7 +1048,7 @@ const Veda5Center = () => {
             </div>
           </div>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: '#1A428A' }}>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700 mb-4">
               <LotusIcon className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{wellnessSection?.heading || "Wellness Programs"}</h3>
@@ -980,9 +1064,9 @@ const Veda5Center = () => {
                 value={`well-${idx}`}
                 className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white"
               >
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-[#1A428A]">
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-700">
                   <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2" style={{ borderColor: '#1A428A' }}>
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2 border-green-700">
                       {iconForWellnessTitle(p.title)}
                     </div>
                     <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -1012,7 +1096,7 @@ const Veda5Center = () => {
 
         <div className="mb-12 max-w-6xl mx-auto rounded-xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-orange-500 mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700 mb-4">
               <Stethoscope className="h-8 w-8 text-blue-600" />
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{medicalSection?.heading || "Medical Programs"}</h3>
@@ -1027,9 +1111,9 @@ const Veda5Center = () => {
                 value={`med-${idx}`}
                 className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
               >
-                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-orange-500">
+                <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
                   <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-orange-500">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-blue-700">
                       {iconForMedicalTitle(p.title)}
                     </div>
                     <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
@@ -1102,155 +1186,46 @@ const Veda5Center = () => {
         </div>
 
         {/* Treatment Process & Patient Journey */}
-        <div className="mb-12">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
-            <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>Your personalized healing journey at Veda5, step by step</p>
+        <div className="mb-12 py-10 md:py-16" style={{ backgroundColor: "#D4E0D6" }}>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">{(treatmentSection as any)?.heading || "Treatment Process & Patient Journey"}</h2>
+            <p className="text-base md:text-lg mx-auto px-4 max-w-2xl" style={{ color: "#7F543D" }}>{(treatmentSection as any)?.intro || "Your personalized healing journey at Veda5, step by step"}</p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">1</div>
-                <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
-              </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">1</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <ClipboardList className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Initial Consultation & Wellness Evaluation</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Day 1</span>
-                    </div>
+          <div className="max-w-5xl mx-auto px-4">
+            {((treatmentSection as any)?.items || []).map((it: any, idx: number) => (
+              <div key={idx} className={`relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 group ${idx !== ((treatmentSection as any).items.length - 1) ? "mb-10 md:mb-16" : ""}`}>
+                <div className="hidden md:flex flex-col items-center flex-shrink-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
+                    {it.step}
                   </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Your journey starts with a warm welcome and a comprehensive consultation with our Ayurvedic physician using pulse diagnosis and a detailed discussion of your goals and constitution.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">2</div>
-                <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
+                  {idx !== ((treatmentSection as any).items.length - 1) && (
+                    <div className="w-0.5 md:w-1 h-full bg-[#2F5B63]/20 mt-2"></div>
+                  )}
+                </div>
+                <Card className="relative w-full md:flex-1 hover:shadow-2xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary bg-white rounded-2xl shadow-xl">
+                  <CardContent className="p-4 md:p-8">
+                    <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md z-10">
+                      {it.step}
+                    </div>
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 pl-10 md:pl-0">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#2F5B63]/10 flex items-center justify-center flex-shrink-0">
+                        {getTreatmentStepIcon(it.step)}
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="text-base md:text-xl font-bold text-primary leading-tight">{it.title}</h3>
+                        <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full font-semibold mt-1 inline-block">
+                          {getStepTag(it.step)}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      {it.description}
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">2</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <FileSearch className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Personalized Wellness Blueprint</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Day 1–2</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    A customized plan outlines your therapies, yoga and meditation sessions, and a personalized Ayurvedic diet tailored to balance your doshas.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">3</div>
-                <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
-              </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">3</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Pill className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Daily Therapies & Mindful Practices</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Ongoing</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Receive prescribed therapies each day alongside guided yoga and meditation, delivered by skilled therapists and masters.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">4</div>
-                <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
-              </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">4</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Utensils className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Ayurvedic Diet & Nutritional Support</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Daily</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Delicious vegetarian meals prepared with local ingredients, tailored to your dosha and treatment plan to heal from within.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 mb-8 md:mb-12 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">5</div>
-                <div className="w-0.5 md:w-1 h-full bg-gradient-to-b from-primary to-primary/30 mt-2"></div>
-              </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">5</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Activity className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Lifestyle Guidance & Wellness Education</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Throughout Stay</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Practical guidance on stress management, mindful routines, and healthy habits to continue at home for sustained wellness.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="relative flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-6 group">
-              <div className="hidden md:flex flex-col items-center flex-shrink-0">
-                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-lg md:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">6</div>
-              </div>
-              <Card className="relative w-full max-w-md md:max-w-none mx-auto md:mx-0 md:flex-1 hover:shadow-xl transition-all duration-300 md:hover:-translate-y-1 border-l-4 border-l-primary">
-                <CardContent className="p-4 md:p-6">
-                  <div className="md:hidden absolute top-3 left-3 w-9 h-9 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white text-sm font-bold shadow-md">6</div>
-                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3 pl-12 md:pl-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Home className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-base md:text-xl font-bold text-primary pr-2">Post-Retreat Care & Continued Wellness</h3>
-                      <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Post‑Retreat</span>
-                    </div>
-                  </div>
-                  <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Final consultation with post‑retreat recommendations, dietary advice, lifestyle practices, and follow‑up support to sustain your results.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            ))}
           </div>
         </div>
 
@@ -1391,13 +1366,13 @@ const Veda5Center = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(facilitiesSection?.items || []).map((it, idx) => (
-              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+              <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary bg-white h-full flex flex-col">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                       {iconForFacilityTitle(it.title)}
                     </div>
-                    <h3 className="text-2xl font-bold text-primary">{it.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">{it.title}</h3>
                   </div>
                   {it.description && (
                     <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
@@ -1405,11 +1380,11 @@ const Veda5Center = () => {
                     </p>
                   )}
                   {it.bullets.length > 0 && (
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-2">
                       {it.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
-                          <span>{b}</span>
+                          <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                          <span className="leading-snug">{b}</span>
                         </li>
                       ))}
                     </ul>
@@ -1477,12 +1452,12 @@ const Veda5Center = () => {
 
         <div className="mb-12 max-w-6xl mx-auto rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-6 md:mb-10">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Center & Team Info</h2>
             <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{teamIntro}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
             <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-              <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
+              <CardContent className="p-4 md:p-8 h-full flex flex-col">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
                   <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
                     <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
@@ -1509,7 +1484,7 @@ const Veda5Center = () => {
 
             <div className="relative">
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
+                <CardContent className="p-4 md:p-8 h-full">
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
                     <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
                       <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
@@ -1621,7 +1596,7 @@ const Veda5Center = () => {
           </div>
         </div>
         <div className="mt-8 md:mt-12 mb-10 md:mb-14">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">Awards & Recognition</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">Awards & Media</h3>
           <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
             <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
               <div className="flex flex-col items-center mb-4">

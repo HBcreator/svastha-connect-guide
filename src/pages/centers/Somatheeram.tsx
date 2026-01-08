@@ -151,66 +151,119 @@ export default function Somatheeram() {
     "/Center Images/somatheeram/Facilities & Amenities/Somatheeram-39.jpg",
   ];
 
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+
+  const awards = [
+    {
+      title: "Best Ayurvedic Centre Award",
+      description: "Recognized multiple times by the Government of Kerala for excellence in authentic Ayurvedic treatments and patient care.",
+      image: "/Center Images/somatheeram/Awards/Lay_BestAyurvedic.png"
+    },
+    {
+      title: "National Tourism Award",
+      description: "Government of India's prestigious recognition for pioneering Ayurveda wellness tourism.",
+      image: "/Center Images/somatheeram/Awards/Lay_NationalTourism.png"
+    },
+    {
+      title: "Green Leaf Certification",
+      description: "The highest classification for Ayurvedic centers by the Department of Tourism, Government of Kerala.",
+      image: "/Center Images/somatheeram/Awards/Lay_GreenLeaf.png"
+    },
+    {
+      title: "Best Food Award",
+      description: "Honored for excellence in Ayurvedic vegetarian cuisine that supports healing and well-being.",
+      image: "/Center Images/somatheeram/Awards/Lay_Food_Award.png"
+    },
+    {
+      title: "Kerala State Award",
+      description: "Multiple-time winner for maintaining the highest standards in clinical expertise.",
+      image: "/Center Images/somatheeram/Awards/Lay_Kerala_Award.png"
+    }
+  ];
+
+  const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
   useEffect(() => {
-    const avatarFor = (idx: number) => `https://i.pravatar.cc/120?img=${(idx % 70) + 1}`;
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : Math.max(0, awards.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awards.length]);
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
     fetch("/content/Top Centers/somatheeram/patient reviews.txt")
       .then((r) => r.text())
       .then((t) => {
         const lines = t.split(/\r?\n/).map((l) => l.trim());
-        const reviews: { name: string, country: string, condition: string, date: string, rating: number, photo: string, verified: boolean, quote: string }[] = [];
+        const reviews: { name: string, location: string, title: string, review: string, rating: number, photo: string, verified: boolean }[] = [];
         let current: any = null;
-        let inReview = false;
 
         for (const line of lines) {
-          if (!line) continue;
-          if (line.startsWith("### ")) {
-            inReview = false;
-            continue;
-          }
+          if (!line || line.startsWith("### ")) continue;
 
-          const headerMatch = /^\*\*Review\s+\d+\s+-\s+(.+?)\,\s+(.+?)\*\*$/.exec(line);
-          if (headerMatch) {
+          // Header: **Name - Location**
+          const nameMatch = /^\*\*(.+?)\s*-\s*(.+?)\*\*$/.exec(line);
+          if (nameMatch) {
             if (current) reviews.push(current);
             current = {
-              name: headerMatch[1],
-              country: headerMatch[2],
-              condition: "",
-              date: "",
+              name: nameMatch[1],
+              location: nameMatch[2],
+              title: "",
+              review: "",
               rating: 5,
-              photo: avatarFor(reviews.length),
-              verified: true,
-              quote: "",
-              _title: "",
+              photo: `https://i.pravatar.cc/120?img=${(reviews.length % 70) + 1}`,
+              verified: true
             };
-            inReview = true;
             continue;
           }
 
-          if (!inReview || !current) continue;
+          if (!current) continue;
 
+          // Title: *"Title"*
           const titleMatch = /^\*"(.+?)"\*$/.exec(line);
           if (titleMatch) {
-            current._title = titleMatch[1];
+            current.title = titleMatch[1];
             continue;
           }
 
-          const ratingMatch = /^\*\*Rating:\s*.*\((\d)\/5\)\*\*$/.exec(line);
+          // Rating: **Rating: ... (5/5)**
+          const ratingMatch = /Rating:.*?\((\d)\/5\)/.exec(line);
           if (ratingMatch) {
             current.rating = parseInt(ratingMatch[1], 10);
             continue;
           }
 
-          // body
-          current.quote += (current.quote ? "\n" : "") + line;
+          // Review Body (Text paragraphs or bullets)
+          // Avoid adding the rating line itself to the body if the regex above didn't catch it perfectly
+          if (!line.includes("Rating:")) {
+            current.review += (current.review ? "\n\n" : "") + line.replace(/^\*+\s*/, "• ");
+          }
         }
 
         if (current) reviews.push(current);
-
-        const normalized = reviews.map((r: any) => {
-          const title = r._title ? `${r._title}\n\n` : "";
-          return { ...r, quote: `${title}${r.quote}`.trim() };
-        });
-        setPatientReviews(normalized);
+        setPatientReviews(reviews as any);
       })
       .catch((err) => console.error("Error loading Somatheeram patient reviews:", err));
   }, []);
@@ -614,8 +667,8 @@ export default function Somatheeram() {
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(false)}
                   className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGalleryTop
-                      ? "scale-105 shadow-lg"
-                      : "bg-accent text-white hover:bg-accent/90"
+                    ? "scale-105 shadow-lg"
+                    : "bg-accent text-white hover:bg-accent/90"
                     }`}
                 >
                   Photo Gallery
@@ -625,8 +678,8 @@ export default function Somatheeram() {
                   size="lg"
                   onClick={() => setShowVideoGalleryTop(true)}
                   className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGalleryTop
-                      ? "scale-105 shadow-lg"
-                      : "bg-accent text-white hover:bg-accent/90"
+                    ? "scale-105 shadow-lg"
+                    : "bg-accent text-white hover:bg-accent/90"
                     }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
@@ -792,7 +845,7 @@ export default function Somatheeram() {
                 Back
               </Button>
               <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                Somatheeram Ayurvedic Health Resort
+                Somatheeram Gallery
               </div>
             </div>
 
@@ -1154,7 +1207,7 @@ export default function Somatheeram() {
                 </div>
                 <div className="mt-4 flex items-center justify-center gap-2" style={{ color: "#7F543D" }}>
                   <Phone className="h-4 w-4 text-red-600" />
-                  <a href="tel:+914712266501" className="underline hover:text-primary">Call us: +91 471 22 665 01/02/03</a>
+                  <a href="tel:+914712266501" className="underline hover:text-primary font-medium">Call us: +91 471 226 6501</a>
                 </div>
               </div>
             </div>
@@ -1175,9 +1228,9 @@ export default function Somatheeram() {
                     Chat With Us
                   </Button>
                 </div>
-                <div className="mt-4 flex items-center gap-2" style={{ color: "#7F543D" }}>
+                <div className="mt-6 flex items-center gap-2" style={{ color: "#7F543D" }}>
                   <Phone className="h-5 w-5 text-red-600" />
-                  <a href="tel:+914712266501" className="underline hover:text-primary">Call us: +91 471 22 665 01/02/03</a>
+                  <a href="tel:+914712266501" className="underline hover:text-primary font-medium text-lg">Call us: +91 471 226 6501</a>
                 </div>
               </div>
               <div>
@@ -1243,23 +1296,27 @@ export default function Somatheeram() {
             {facilitiesItems.map((item, idx) => (
               <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                       {facilityIconForTitle(item.title)}
                     </div>
-                    <h3 className="text-xl md:text-2xl font-bold text-primary">{item.title}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                      {item.title}
+                    </h3>
                   </div>
+
                   {item.description && (
-                    <p className="text-sm mb-3" style={{ color: "#7F543D" }}>
+                    <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
                       {item.description}
                     </p>
                   )}
+
                   {item.bullets.length > 0 && (
-                    <ul className="space-y-2.5">
+                    <ul className="space-y-2">
                       {item.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
-                          <span>{b}</span>
+                          <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                          <span className="leading-snug">{b}</span>
                         </li>
                       ))}
                     </ul>
@@ -1342,125 +1399,206 @@ export default function Somatheeram() {
             <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
           </div>
           {patientReviews.length > 0 && (
-            <div className="relative min-h-[420px] md:min-h-[480px]">
+            <div className="relative">
               <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-                <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
-                  <div className="max-w-4xl mx-auto flex flex-col h-full">
+                <CardContent className="p-4 md:p-12">
+                  <div className="max-w-4xl mx-auto">
+                    {/* Quote Icon */}
                     <div className="text-primary/20 mb-3 md:mb-4">
-                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
                     </div>
-                    <div className="mb-4 md:mb-6 flex-1">
+
+                    {/* Review Content */}
+                    <div className="mb-4 md:mb-6">
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                        {(patientReviews[currentReviewIndex] as any).title}
+                      </h3>
                       <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6 whitespace-pre-line" style={{ color: "#7F543D" }}>
-                        "{patientReviews[currentReviewIndex].quote}"
+                        "{(patientReviews[currentReviewIndex] as any).review}"
                       </p>
                     </div>
+
+                    {/* Reviewer Info */}
                     <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {patientReviews[currentReviewIndex].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+                        {patientReviews[currentReviewIndex].name.charAt(0)}
                       </div>
+
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-primary">{patientReviews[currentReviewIndex].name}</h4>
+                          <h4 className="text-base md:text-xl font-semibold text-primary">
+                            {patientReviews[currentReviewIndex].name}
+                          </h4>
+                          {(patientReviews[currentReviewIndex] as any).verified && (
+                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                              ✓ Verified
+                            </span>
+                          )}
                         </div>
                         <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                          {patientReviews[currentReviewIndex].country}
+                          {(patientReviews[currentReviewIndex] as any).location}
                         </p>
                       </div>
                     </div>
+
+                    {/* Star Rating */}
                     <div className="flex items-center gap-2 md:gap-3">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-500" fill={i < Math.round(patientReviews[currentReviewIndex].rating) ? "#F5C518" : "none"} />
-                      ))}
-                      <span className="text-xs md:text-sm font-semibold text-primary">{patientReviews[currentReviewIndex].rating}.0</span>
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <Star key={i} className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" fill={i < Math.round(patientReviews[currentReviewIndex].rating) ? "#F5C518" : "none"} />
+                        ))}
+                      </div>
+                      <span className="text-xs md:text-sm font-semibold text-primary">
+                        {patientReviews[currentReviewIndex].rating}.0
+                      </span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Navigation Arrows */}
               <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
-                <button onClick={() => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                <button
+                  onClick={() => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length)}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Previous review"
+                >
                   <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
+
               <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
-                <button onClick={() => setCurrentReviewIndex((prev) => (prev + 1) % patientReviews.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                <button
+                  onClick={() => setCurrentReviewIndex((prev) => (prev + 1) % patientReviews.length)}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Next review"
+                >
                   <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
+
+              {/* Auto-play indicator */}
               <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                 Auto
               </div>
-              <div className="flex justify-center gap-2 mt-4">
-                {patientReviews.map((_, i) => (
-                  <button key={i} onClick={() => setCurrentReviewIndex(i)} className={`transition-all ${i === currentReviewIndex ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
-                ))}
-              </div>
+            </div>
+          )}
+
+          {/* Dots Navigation */}
+          {patientReviews.length > 0 && (
+            <div className="flex justify-center gap-2 mt-6">
+              {patientReviews.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentReviewIndex(i)}
+                  className={`transition-all rounded-full ${i === currentReviewIndex ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"}`}
+                  aria-label={`Go to review ${i + 1}`}
+                />
+              ))}
             </div>
           )}
         </div>
       </div>
 
-      <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">Awards & Recognition</h3>
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Center Images/somatheeram/Awards/Lay_BestAyurvedic.png" alt="Best Ayurvedic Centre" className="w-48 h-48 md:w-56 md:h-56 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Best Ayurvedic Centre — Kerala State Awards</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <p>Recognized multiple times by Kerala Tourism for excellence in authentic Ayurveda care and guest experience.</p>
-                <p className="font-semibold text-primary">Honors consistent quality, clinical expertise, and holistic hospitality.</p>
+      <div className="mb-12 mt-12 px-4">
+        <div className="text-center mb-6 md:mb-10">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+            <Award className="h-8 w-8" />
+          </div>
+          <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+          <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+            Recognition of our excellence in authentic Ayurvedic healing and patient care
+          </p>
+        </div>
+
+        <div className="relative group max-w-5xl mx-auto">
+          <div className="overflow-hidden px-4 md:px-10">
+            {/* Mobile Slider (1 card) */}
+            <div className="md:hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentAward * 100}%)` }}
+              >
+                {awards.map((award, i) => (
+                  <div key={i} className="w-full flex-shrink-0 px-2">
+                    <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                      <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-2 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={award.image}
+                          alt={award.title}
+                          className="max-h-[95%] max-w-[95%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                        <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Center Images/somatheeram/Awards/Lay_NationalTourism.png" alt="National Tourism Award" className="w-48 h-48 md:w-56 md:h-56 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">National Tourism Award — Government of India</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <p>National-level recognition for pioneering Ayurveda wellness tourism and maintaining high standards of service.</p>
-                <p className="font-semibold text-primary">Highlights leadership in integrated healing and guest satisfaction.</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Center Images/somatheeram/Awards/Lay_GreenLeaf.png" alt="Green Leaf Certification" className="w-48 h-48 md:w-56 md:h-56 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Kerala Tourism — Green Leaf Certification</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <p>Certification awarded to authentic Ayurvedic centers meeting rigorous benchmarks for quality, hygiene, and ethics.</p>
-                <p className="font-semibold text-primary">Affirms clinical standards and patient safety.</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Center Images/somatheeram/Awards/Lay_Kerala_Award.png" alt="Kerala Tourism Awards" className="w-48 h-48 md:w-56 md:h-56 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Kerala Tourism Awards</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <p>State-level awards across years recognizing excellence in Ayurveda services, sustainability, and hospitality.</p>
-                <p className="font-semibold text-primary">Reflects long-standing trust and credibility.</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Center Images/somatheeram/Awards/Lay_Food_Award.png" alt="Ayurvedic Cuisine Award" className="w-48 h-48 md:w-56 md:h-56 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Award-Winning Ayurvedic Cuisine</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <p>Recognition for authentic, dosha-specific vegetarian menus crafted by experienced Ayurvedic chefs.</p>
-                <p className="font-semibold text-primary">Emphasizes nutrition, taste, and therapeutic value.</p>
+            {/* Desktop Slider (3 cards visible) */}
+            <div className="hidden md:block">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+              >
+                {awards.map((award, i) => (
+                  <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                      <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-2 md:p-3 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={award.image}
+                          alt={award.title}
+                          className="max-h-[95%] max-w-[95%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                        <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={goToPreviousAward}
+            className="absolute left-12 md:-left-4 top-[54%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+            aria-label="Previous award"
+          >
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+          <button
+            onClick={goToNextAward}
+            className="absolute right-12 md:-right-4 top-[54%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+            aria-label="Next award"
+          >
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+
+          {/* Indicators */}
+          <div className="flex justify-center gap-2 mt-8">
+            {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { setCurrentAward(i); }}
+                className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                aria-label={`Go to award ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
+
 
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-8">
         <div className="max-w-6xl mx-auto">
@@ -1538,7 +1676,7 @@ export default function Somatheeram() {
 
           <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
             <AccordionItem value="item-1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">What is the minimum duration of treatment at Somatheeram?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1547,7 +1685,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Do I need to bring my medical records?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1556,7 +1694,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Is Somatheeram suitable for elderly patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1565,7 +1703,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Can I continue my regular medications during treatment?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1574,7 +1712,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">What should I pack for my stay at Somatheeram?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1583,7 +1721,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Is vegetarian food mandatory?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1592,7 +1730,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Can family members stay with patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1601,7 +1739,7 @@ export default function Somatheeram() {
             </AccordionItem>
 
             <AccordionItem value="item-8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                 <span className="text-lg font-semibold text-primary text-left">Is WiFi and mobile connectivity available?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1615,40 +1753,34 @@ export default function Somatheeram() {
       <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
         <div className="max-w-6xl mx-auto">
           {contactAddress.length > 0 && (
-            <Card className="mb-12 border-2 border-primary overflow-hidden">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
                 <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
                   <div className="space-y-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Address</h4>
-                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                          {contactAddress.map((l, i) => (
-                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.filter(l => l.trim() !== "").map((l, i) => (
+                            <span key={i}>{l}</span>
                           ))}
                         </p>
                       </div>
                     </div>
-                    {contactPhones.length > 0 && (
-                      <div className="flex items-start gap-3">
-                        <Phone className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                        <div>
-                          <h4 className="font-semibold text-primary mb-1">Phone</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                            {contactPhones.map((p, i) => (<li key={i}>{p}</li>))}
-                          </ul>
-                        </div>
-                      </div>
-                    )}
                     {contactDistances.length > 0 && (
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
-                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
@@ -1673,12 +1805,18 @@ export default function Somatheeram() {
                   </div>
                 </div>
                 {transportText && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                    <div className="flex items-start gap-4">
-                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>{transportText}</p>
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1716,9 +1854,9 @@ export default function Somatheeram() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
                     <Phone className="h-4 w-4 text-red-400" />
-                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                    <a href="tel:+914712266501" className="underline hover:text-white font-medium">Call us: +91 471 226 6501</a>
                   </div>
                 </div>
               </div>
@@ -1741,9 +1879,9 @@ export default function Somatheeram() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <div className="mt-8 flex items-center gap-2 text-white/90">
                     <Phone className="h-5 w-5 text-red-400" />
-                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                    <a href="tel:+914712266501" className="underline hover:text-white font-semibold text-lg">Call us: +91 471 226 6501</a>
                   </div>
                 </div>
                 <div>

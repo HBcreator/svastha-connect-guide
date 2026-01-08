@@ -88,42 +88,87 @@ const parseCardSection = (text: string): SectionData => {
 
 const iconForTitle = (t: string) => {
   const s = t.toLowerCase();
-  // Why Choose icons
-  if (s.includes("nabh") || s.includes("accredited")) return <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("integrated") || s.includes("approach")) return <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("personalized") || s.includes("care")) return <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("doctors") || s.includes("expert")) return <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("global") || s.includes("recognition")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("sustainable") || s.includes("environment")) return <Leaf className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("comprehensive") || s.includes("treatment")) return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("custom") || s.includes("medicine")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("organic") || s.includes("nutrition")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
 
-  // Facilities icons
-  if (s.includes("garden") || s.includes("accommodation")) return <Home className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("architecture")) return <Building2 className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("farm") || s.includes("certified")) return <TreePine className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("infrastructure") || s.includes("facility")) return <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("yoga") || s.includes("meditation")) return <Activity className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("dining") || s.includes("food")) return <Utensils className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("recreation") || s.includes("pool")) return <HeartPulse className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("safety") || s.includes("medical")) return <ShieldCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
-  if (s.includes("guest") || s.includes("services")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+  // Integrative / Synergy / World's First
+  if (s.includes("integrative") || s.includes("approach") || s.includes("synergy") || s.includes("first"))
+    return <Hospital className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Pioneers / Led by / Founders / Doctors / Expert
+  if (s.includes("pioneers") || s.includes("renowned") || s.includes("founder") || s.includes("expert") || s.includes("doctors"))
+    return <UserCheck className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Accreditation / NABH / Clinical
+  if (s.includes("nabh") || s.includes("accredited") || s.includes("clinical") || s.includes("standard"))
+    return <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Royalty / Luminaries / Trusted / Global
+  if (s.includes("royalty") || s.includes("luminaries") || s.includes("trusted") || s.includes("global") || s.includes("recognition"))
+    return <Star className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // 30-Acre / Organic / Farm / Haven / Nature / Sustainable
+  if (s.includes("acre") || s.includes("organic") || s.includes("farm") || s.includes("nature") || s.includes("sustainable") || s.includes("environment"))
+    return <TreePine className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Medicines / Uniquely / Fresh / Pharmacy / Custom
+  if (s.includes("medicine") || s.includes("unique") || s.includes("pharmacy") || s.includes("remedies") || s.includes("custom"))
+    return <Pill className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Rare / Complex / Conditions / Hope
+  if (s.includes("rare") || s.includes("complex") || s.includes("conditions") || s.includes("hope") || s.includes("treatment"))
+    return <HeartPulse className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Globally Recognized / Awarded / Travel
+  if (s.includes("recognized") || s.includes("awarded") || s.includes("travel") || s.includes("prestigious"))
+    return <Award className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
+
+  // Lifestyle / Transformation / Holistic / Tools
+  if (s.includes("lifestyle") || s.includes("transformation") || s.includes("holistic") || s.includes("tools"))
+    return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
 
   return <Heart className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
 };
 
 const getFacilityIcon = (t: string) => {
   const s = t.toLowerCase();
-  if (s.includes("garden") || s.includes("accommodation")) return <Home className="h-7 w-7 text-white" />;
-  if (s.includes("architecture")) return <Building2 className="h-7 w-7 text-white" />;
-  if (s.includes("farm") || s.includes("certified")) return <TreePine className="h-7 w-7 text-white" />;
-  if (s.includes("infrastructure") || s.includes("facility")) return <Hospital className="h-7 w-7 text-white" />;
-  if (s.includes("yoga") || s.includes("meditation")) return <Activity className="h-7 w-7 text-white" />;
-  if (s.includes("dining") || s.includes("food")) return <Utensils className="h-7 w-7 text-white" />;
-  if (s.includes("recreation") || s.includes("pool")) return <HeartPulse className="h-7 w-7 text-white" />;
-  if (s.includes("safety") || s.includes("medical")) return <ShieldCheck className="h-7 w-7 text-white" />;
-  if (s.includes("guest") || s.includes("services")) return <Users className="h-7 w-7 text-white" />;
+
+  // Accommodations
+  if (s.includes("accommodation") || s.includes("room") || s.includes("suite") || s.includes("stay") || s.includes("private"))
+    return <Home className="h-7 w-7 text-white" />;
+
+  // Architecture & Design
+  if (s.includes("architecture") || s.includes("design") || s.includes("building"))
+    return <Building2 className="h-7 w-7 text-white" />;
+
+  // Farm & Agriculture
+  if (s.includes("farm") || s.includes("organic") || s.includes("garden") || s.includes("acre"))
+    return <TreePine className="h-7 w-7 text-white" />;
+
+  // Infrastructure / Therapy / Pharmacy
+  if (s.includes("infrastructure") || s.includes("treatment") || s.includes("therapy") || s.includes("pharmacy"))
+    return <Stethoscope className="h-7 w-7 text-white" />;
+
+  // Yoga & Meditation
+  if (s.includes("yoga") || s.includes("meditation") || s.includes("hall") || s.includes("mindful"))
+    return <Sparkles className="h-7 w-7 text-white" />;
+
+  // Dining & Food
+  if (s.includes("dining") || s.includes("cuisine") || s.includes("food") || s.includes("meal") || s.includes("table"))
+    return <Utensils className="h-7 w-7 text-white" />;
+
+  // Recreation / Pool / Wellness
+  if (s.includes("recreation") || s.includes("pool") || s.includes("swimming") || s.includes("activity")) {
+    if (s.includes("pool") || s.includes("swimming") || s.includes("water")) return <Droplet className="h-7 w-7 text-white" />;
+    return <Activity className="h-7 w-7 text-white" />;
+  }
+
+  // Safety & Clinical
+  if (s.includes("safety") || s.includes("nabh") || s.includes("standard") || s.includes("medical"))
+    return <ShieldCheck className="h-7 w-7 text-white" />;
+
+  // Guest Services / Transfers / Housekeeping
+  if (s.includes("services") || s.includes("housekeeping") || s.includes("laundry") || s.includes("guest") || s.includes("transfer"))
+    return <Users className="h-7 w-7 text-white" />;
+
   return <Heart className="h-7 w-7 text-white" />;
 };
 
@@ -139,6 +184,7 @@ export default function SOUKYACenter() {
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
   const [content, setContent] = useState(""); // Keeping for compatibility if needed, or remove later
+  const [testimonials, setTestimonials] = useState<{ id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -156,6 +202,8 @@ export default function SOUKYACenter() {
   const [currentFacilityImage, setCurrentFacilityImage] = useState(0);
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
 
   // Facilities images
   const facilityImages = [
@@ -256,6 +304,54 @@ export default function SOUKYACenter() {
     "/Center Images/SOUKYA/29 soukya.jpg",
     "/Center Images/SOUKYA/30 soukya.jpg",
   ];
+
+  const awards = [
+    {
+      title: "Condé Nast Johansens – Recommended Retreat",
+      description: "Officially recognized for exceptional hospitality and world-class wellness services by one of the world's most trusted authorities.",
+      image: "/Center Images/SOUKYA/Awards/Award 1.jpg"
+    },
+    {
+      title: "Condé Nast Traveller – Award Winner",
+      description: "Winner of the prestigious global travel publication award for celebrating excellence in luxury, wellness, and hospitality.",
+      image: "/Center Images/SOUKYA/Awards/Award 2.jpg"
+    },
+    {
+      title: "NABH Accredited Center",
+      description: "India's first NABH-accredited AYUSH hospital, recognized for maintaining the highest standards in healthcare quality and patient safety.",
+      image: "/Center Images/SOUKYA/Awards/Award 3.png"
+    }
+  ];
+
+  const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : Math.max(0, awards.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awards.length]);
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying || !showAwards) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex, showAwards]);
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
 
   // Load content
   useEffect(() => {
@@ -393,6 +489,66 @@ export default function SOUKYACenter() {
       })
       .catch((err) => console.error("Error loading Contact Info:", err));
 
+    // Load Testimonials
+    fetch("/content/Top Centers/Soukya Center/Patient Stories & Reviews.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
+        let idCounter = 1;
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (!line || line.startsWith("###")) continue;
+
+          // Match Name - Location: **Name - Location**
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
+            if (current) items.push(current);
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { id: idCounter++, name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
+
+          // Match Title: *"Title"*
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
+            continue;
+          }
+
+          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\/5\)/);
+            if (ratingMatch) {
+              current.rating = parseInt(ratingMatch[1]);
+            }
+            continue;
+          }
+
+          // Everything else is review content
+          if (current && line && !line.startsWith("**") && !line.startsWith("*")) {
+            current.review = current.review ? current.review + " " + line : line;
+            // Extract condition if possible from title or first sentence
+            if (!current.condition && current.title) {
+              const knownConditions = ["Arthritis", "Burnout", "Back Pain", "PCOD", "Addiction", "Diabetes", "Insomnia", "Psoriasis", "Cancer"];
+              for (const c of knownConditions) {
+                if (current.title.includes(c)) {
+                  current.condition = c;
+                  break;
+                }
+              }
+            }
+          }
+        }
+        if (current) items.push(current);
+        setTestimonials(items);
+      })
+      .catch((err) => console.error("Error loading reviews:", err));
+
     // Keep original fetch for now or just set content to empty to avoid errors in renderContent if called
     // fetch("/content/Top Centers/SOUKYA center.txt") ...
   }, []);
@@ -489,17 +645,14 @@ export default function SOUKYACenter() {
 
   // Navigation functions
   const goToPrevious = () => {
-    setIsAutoPlaying(false);
     setSelectedImage((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const goToNext = () => {
-    setIsAutoPlaying(false);
     setSelectedImage((prev) => (prev + 1) % images.length);
   };
 
   const selectImage = (index: number) => {
-    setIsAutoPlaying(false);
     setSelectedImage(index);
   };
 
@@ -521,12 +674,10 @@ export default function SOUKYACenter() {
   // Media carousel navigation
   const handleNextMedia = () => {
     setCurrentMediaIndex((prev) => (prev + 1) % mediaItems.length);
-    setIsMediaAutoPlaying(false);
   };
 
   const handlePrevMedia = () => {
     setCurrentMediaIndex((prev) => (prev - 1 + mediaItems.length) % mediaItems.length);
-    setIsMediaAutoPlaying(false);
   };
 
   // Auto-play for media carousel
@@ -549,84 +700,9 @@ export default function SOUKYACenter() {
     return () => clearInterval(interval);
   }, [facilityImages.length]);
 
-  // Patient testimonials data
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      location: "United States",
-      condition: "Chronic Back Pain",
-      rating: 5,
-      date: "October 2024",
-      avatar: "SJ",
-      image: "/Center Images/SOUKYA/Reviews Images/Sarah Johnson.png",
-      review: "My experience at SOUKYA was transformational. After years of struggling with chronic back pain, the personalized Panchakarma treatments and therapeutic yoga sessions provided relief I never thought possible. The doctors were incredibly knowledgeable, and the serene environment accelerated my healing journey.",
-      verified: true
-    },
-    {
-      id: 2,
-      name: "Rajesh Kumar",
-      location: "Mumbai, India",
-      condition: "Stress & Anxiety",
-      rating: 5,
-      date: "September 2024",
-      avatar: "RK",
-      image: "/Center Images/SOUKYA/Reviews Images/Rajesh Kumar.png",
-      review: "SOUKYA is a sanctuary of healing. The holistic approach combining Ayurveda, meditation, and naturopathy helped me overcome years of work-related stress. Dr. Mathai's team created a personalized treatment plan that addressed not just symptoms but root causes. Highly recommended!",
-      verified: true
-    },
-    {
-      id: 3,
-      name: "Emma Thompson",
-      location: "United Kingdom",
-      condition: "Digestive Issues",
-      rating: 5,
-      date: "August 2024",
-      avatar: "ET",
-      image: "/Center Images/SOUKYA/Reviews Images/Emma Thompson.png",
-      review: "The authentic Ayurvedic treatments at SOUKYA exceeded all expectations. The organic food, peaceful surroundings, and expert therapists made my 14-day program incredibly effective. My digestive issues have significantly improved, and I feel more energetic than I have in years.",
-      verified: true
-    },
-    {
-      id: 4,
-      name: "Michael Chen",
-      location: "Singapore",
-      condition: "Post-Surgery Recovery",
-      rating: 5,
-      date: "July 2024",
-      avatar: "MC",
-      image: "/Center Images/SOUKYA/Reviews Images/Michael Chen.png",
-      review: "After my knee surgery, SOUKYA's combination of physiotherapy and Ayurvedic treatments accelerated my recovery remarkably. The personalized care and attention from the medical team was exceptional. The 30-acre organic farm setting provided the perfect healing atmosphere.",
-      verified: true
-    },
-    {
-      id: 5,
-      name: "Priya Sharma",
-      location: "Delhi, India",
-      condition: "Weight Management",
-      rating: 5,
-      date: "June 2024",
-      avatar: "PS",
-      image: "/Center Images/SOUKYA/Reviews Images/Priya Sharma.png",
-      review: "SOUKYA's holistic approach to weight management changed my life. The combination of Ayurvedic diet consultation, yoga, and personalized treatments helped me lose 15 kg sustainably. More importantly, I learned lifestyle changes that I can maintain long-term.",
-      verified: true
-    },
-    {
-      id: 6,
-      name: "David Martinez",
-      location: "Spain",
-      condition: "Arthritis",
-      rating: 5,
-      date: "May 2024",
-      avatar: "DM",
-      image: "/Center Images/SOUKYA/Reviews Images/David Martinez.png",
-      review: "As someone with rheumatoid arthritis, I was skeptical about alternative treatments. SOUKYA proved me wrong. The specialized Ayurvedic therapies, combined with yoga and meditation, significantly reduced my pain and improved my mobility. The NABH accreditation gave me confidence in the quality of care.",
-      verified: true
-    }
-  ];
-
   // Review carousel auto-rotation
   useEffect(() => {
+    if (testimonials.length === 0) return;
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % testimonials.length);
     }, 5000); // Change review every 5 seconds
@@ -635,10 +711,12 @@ export default function SOUKYACenter() {
   }, [testimonials.length]);
 
   const goToPreviousReview = () => {
+    if (testimonials.length === 0) return;
     setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToNextReview = () => {
+    if (testimonials.length === 0) return;
     setCurrentReview((prev) => (prev + 1) % testimonials.length);
   };
 
@@ -1111,7 +1189,7 @@ export default function SOUKYACenter() {
           </Card>
 
           {/* Wellness & Rejuvenation Programs */}
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             {/* Statistics Section */}
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -1183,7 +1261,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Medical Treatment Programs */}
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
@@ -1249,10 +1327,10 @@ export default function SOUKYACenter() {
                   <CardContent className="p-6">
                     <div className="space-y-3">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                           {iconForTitle(it.title)}
                         </div>
-                        <h3 className="text-lg font-bold text-primary">{it.title}</h3>
+                        <h3 className="text-base md:text-lg font-bold text-primary leading-tight flex-1">{it.title}</h3>
                       </div>
                       {it.description && (
                         <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
@@ -1701,23 +1779,27 @@ export default function SOUKYACenter() {
                   className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
                 >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                         {getFacilityIcon(card.title)}
                       </div>
-                      <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                        {card.title}
+                      </h3>
                     </div>
+
                     {card.description && (
                       <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
                         {card.description}
                       </p>
                     )}
+
                     {card.bullets && card.bullets.length > 0 && (
-                      <ul className="space-y-2.5">
+                      <ul className="space-y-2">
                         {card.bullets.map((b, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">•</span>
-                            <span>{b}</span>
+                            <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                            <span className="leading-snug">{b}</span>
                           </li>
                         ))}
                       </ul>
@@ -1761,12 +1843,14 @@ export default function SOUKYACenter() {
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
                 <CardContent className="p-4 md:p-8">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img
-                        src="/Center Images/SOUKYA/soukya founder/dr_mathai.jpg"
-                        alt="Dr. Issac Mathai"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img
+                          src="/Center Images/SOUKYA/soukya founder/dr_mathai.jpg"
+                          alt="Dr. Issac Mathai"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">
@@ -1798,12 +1882,14 @@ export default function SOUKYACenter() {
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl">
                 <CardContent className="p-4 md:p-8">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img
-                        src="/Center Images/SOUKYA/soukya founder/Team.jpg"
-                        alt="Expert Medical Team"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img
+                          src="/Center Images/SOUKYA/soukya founder/Team.jpg"
+                          alt="Expert Medical Team"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">
@@ -1867,66 +1953,57 @@ export default function SOUKYACenter() {
               <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
                 <CardContent className="p-4 md:p-12">
                   <div className="max-w-4xl mx-auto">
-                    {/* Quote Icon */}
-                    <div className="text-primary/20 mb-3 md:mb-4">
-                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                      </svg>
-                    </div>
-
-                    {/* Review Content */}
-                    <div className="mb-4 md:mb-6">
-                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
-                        "{testimonials[currentReview].review}"
-                      </p>
-                    </div>
-
-                    {/* Reviewer Info */}
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      {/* Avatar */}
-                      {testimonials[currentReview].image ? (
-                        <img
-                          src={testimonials[currentReview].image}
-                          alt={testimonials[currentReview].name}
-                          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0 select-none pointer-events-none"
-                          draggable="false"
-                          onContextMenu={(e) => e.preventDefault()}
-                          onDragStart={(e) => e.preventDefault()}
-                          style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none', msUserSelect: 'none' }}
-                        />
-                      ) : (
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].avatar}
+                    {testimonials.length > 0 && (
+                      <>
+                        {/* Quote Icon */}
+                        <div className="text-primary/20 mb-3 md:mb-4">
+                          <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                          </svg>
                         </div>
-                      )}
 
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-primary">
-                            {testimonials[currentReview].name}
-                          </h4>
-                          {testimonials[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                              ✓ Verified
-                            </span>
-                          )}
+                        {/* Review Content */}
+                        <div className="mb-4 md:mb-6">
+                          <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                            {testimonials[currentReview].title}
+                          </h3>
+                          <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                            "{testimonials[currentReview].review}"
+                          </p>
                         </div>
-                        <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                          {testimonials[currentReview].location} • {testimonials[currentReview].condition}
-                        </p>
-                        <p className="text-xs text-gray-500 mt-1">
-                          {testimonials[currentReview].date}
-                        </p>
-                      </div>
-                    </div>
 
-                    {/* Star Rating */}
-                    <div className="flex items-center gap-2 md:gap-3">
-                      {renderStars(testimonials[currentReview].rating)}
-                      <span className="text-xs md:text-sm font-semibold text-primary">
-                        {testimonials[currentReview].rating}.0
-                      </span>
-                    </div>
+                        {/* Reviewer Info */}
+                        <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                            {testimonials[currentReview].name.charAt(0)}
+                          </div>
+
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <h4 className="text-base md:text-xl font-semibold text-primary">
+                                {testimonials[currentReview].name}
+                              </h4>
+                              {testimonials[currentReview].verified && (
+                                <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                  ✓ Verified
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Star Rating */}
+                        <div className="flex items-center gap-2 md:gap-3">
+                          {renderStars(testimonials[currentReview].rating)}
+                          <span className="text-xs md:text-sm font-semibold text-primary">
+                            {testimonials[currentReview].rating}.0
+                          </span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -1977,124 +2054,155 @@ export default function SOUKYACenter() {
             </div>
 
             {/* Awards & Media Recognition */}
-            <div className="mt-8 md:mt-12">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">
-                Awards & Media
-              </h3>
+            <div className="mt-16 md:mt-24">
+              <div className="text-center mb-8 md:mb-12">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                  <Award className="h-8 w-8" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+                <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+                  Recognition of SOUKYA's global excellence in integrated holistic healing and patient care
+                </p>
+              </div>
 
               {/* Toggle Buttons */}
-              <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
+              <div className="flex items-center justify-center gap-2 md:gap-4 mb-10">
                 <Button
                   onClick={() => setShowAwards(true)}
-                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${showAwards
-                    ? "bg-primary text-white hover:bg-primary/90"
-                    : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
+                  className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${showAwards
+                    ? "bg-primary text-white shadow-xl scale-105"
+                    : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
                     }`}
                 >
-                  <Award className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
+                  <Award className="mr-2 h-4 w-4 md:h-6 md:w-6" />
                   Awards
                 </Button>
                 <Button
                   onClick={() => setShowAwards(false)}
-                  className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${!showAwards
-                    ? "bg-primary text-white hover:bg-primary/90"
-                    : "bg-white text-primary border-2 border-primary hover:bg-primary/10"
+                  className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${!showAwards
+                    ? "bg-primary text-white shadow-xl scale-105"
+                    : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
                     }`}
                 >
-                  <FileSearch className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
+                  <FileSearch className="mr-2 h-4 w-4 md:h-6 md:w-6" />
                   Media Recognition
                 </Button>
               </div>
 
               {/* Awards Section */}
               {showAwards && (
-                <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
-
-                  {/* Award 1: Condé Nast Johansens */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                    <div className="flex flex-col items-center mb-4">
-                      <img
-                        src="/Center Images/SOUKYA/Awards/Award 1.jpg"
-                        alt="Condé Nast Johansens - Recommended Retreat"
-                        className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
-                      />
-                      <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
-                        Condé Nast Johansens – Recommended Retreat
-                      </h4>
+                <div className="relative group max-w-5xl mx-auto">
+                  <div className="overflow-hidden px-4 md:px-10">
+                    {/* Mobile Slider (1 card) */}
+                    <div className="md:hidden">
+                      <div
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                      >
+                        {awards.map((award, i) => (
+                          <div key={i} className="w-full flex-shrink-0 px-2">
+                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                              <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                                <img
+                                  src={award.image}
+                                  alt={award.title}
+                                  className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                                />
+                              </div>
+                              <div className="text-center">
+                                <h4 className="text-lg font-bold text-primary mb-2 line-clamp-2">{award.title}</h4>
+                                <p className="text-xs italic line-clamp-4" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                      <p>
-                        Soukya has been officially recognized as a <span className="font-semibold">Recommended Retreat</span> by Condé Nast Johansens, one of the world's most trusted authorities on luxury travel and wellness.
-                      </p>
-                      <p className="font-medium">This distinction is awarded only to select properties that consistently deliver:</p>
-                      <ul className="list-disc list-inside space-y-1 ml-2">
-                        <li>exceptional hospitality</li>
-                        <li>world-class wellness and healing services</li>
-                        <li>a serene, nature-rich environment</li>
-                        <li>outstanding guest satisfaction</li>
-                      </ul>
-                      <p className="font-semibold text-primary pt-2">
-                        This recognition reinforces Soukya's position as a globally trusted holistic healing destination.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Award 2: Condé Nast Traveller */}
-                  <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                    <div className="flex flex-col items-center mb-4">
-                      <img
-                        src="/Center Images/SOUKYA/Awards/Award 2.jpg"
-                        alt="Condé Nast Traveller - Award Winner"
-                        className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4"
-                      />
-                      <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">
-                        Condé Nast Traveller – Award Winner
-                      </h4>
-                    </div>
-
-                    <div className="space-y-3 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                      <p>
-                        Soukya is also a proud <span className="font-semibold">Award Winner</span> by Condé Nast Traveller, a prestigious global travel publication known for celebrating excellence in luxury, wellness, and hospitality.
-                      </p>
-                      <p className="font-medium">This award highlights Soukya for offering:</p>
-                      <ul className="list-disc list-inside space-y-1 ml-2">
-                        <li>an outstanding guest experience</li>
-                        <li>innovative and authentic holistic therapies</li>
-                        <li>sustainable, nature-based healing practices</li>
-                        <li>the highest standards of care and comfort</li>
-                      </ul>
-                      <p className="font-semibold text-primary pt-2">
-                        This international honor places Soukya among the top wellness retreats in the world, trusted by guests from across the globe.
-                      </p>
+                    {/* Desktop Slider (3 cards visible) */}
+                    <div className="hidden md:block">
+                      <div
+                        className="flex transition-transform duration-500 ease-in-out"
+                        style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                      >
+                        {awards.map((award, i) => (
+                          <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                              <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                                <img
+                                  src={award.image}
+                                  alt={award.title}
+                                  className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                                />
+                              </div>
+                              <div className="text-center">
+                                <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                                <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
+                  {/* Navigation Arrows */}
+                  {maxAwardIndex > 0 && (
+                    <>
+                      <button
+                        onClick={goToPreviousAward}
+                        className="absolute left-8 md:-left-4 top-[52%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                        aria-label="Previous award"
+                      >
+                        <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                      </button>
+                      <button
+                        onClick={goToNextAward}
+                        className="absolute right-8 md:-right-4 top-[52%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                        aria-label="Next award"
+                      >
+                        <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Indicators */}
+                  {maxAwardIndex > 0 && (
+                    <div className="flex justify-center gap-2 mt-8">
+                      {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => { setCurrentAward(i); }}
+                          className={`transition-all ${i === currentAward ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                          aria-label={`Go to award ${i + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 
               {/* Media Recognition Section - Carousel */}
               {!showAwards && (
-                <div className="max-w-7xl mx-auto relative">
-
+                <div className="max-w-7xl mx-auto relative group">
                   {/* Navigation Arrows */}
                   <button
                     onClick={handlePrevMedia}
-                    className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                    className="absolute left-4 md:-left-4 top-[48%] md:top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                     aria-label="Previous media"
                   >
                     <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
                   <button
                     onClick={handleNextMedia}
-                    className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all hover:scale-110"
+                    className="absolute right-4 md:-right-4 top-[48%] md:top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                     aria-label="Next media"
                   >
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
 
                   {/* Carousel Container */}
-                  <div className="overflow-hidden px-10 md:px-12">
+                  <div className="overflow-hidden px-4 md:px-12">
                     {/* Mobile: Show 1 at a time */}
                     <div className="md:hidden">
                       <div
@@ -2108,21 +2216,21 @@ export default function SOUKYACenter() {
                             key={index}
                             className="w-full flex-shrink-0 px-2"
                           >
-                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full">
                               <a
                                 href={item.pdf}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block group"
+                                className="block group/link"
                               >
-                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover/link:shadow-xl group-hover/link:scale-[1.02]">
                                   <img
                                     src={item.image}
                                     alt={`SOUKYA Featured in ${item.title}`}
                                     className="w-full h-auto object-cover"
                                   />
-                                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
-                                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
+                                  <div className="absolute inset-0 bg-primary/0 group-hover/link:bg-primary/10 transition-all duration-300 flex items-center justify-center">
+                                    <div className="opacity-0 group-hover/link:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
                                       <p className="text-primary font-bold text-xs flex items-center gap-2">
                                         <FileSearch className="h-4 w-4" />
                                         View PDF
@@ -2131,7 +2239,7 @@ export default function SOUKYACenter() {
                                   </div>
                                 </div>
                               </a>
-                              <p className="text-center mt-3 text-xs font-semibold text-primary">
+                              <p className="text-center mt-4 text-sm font-bold text-primary">
                                 {item.title}
                               </p>
                             </div>
@@ -2153,21 +2261,21 @@ export default function SOUKYACenter() {
                             key={index}
                             className="w-1/4 flex-shrink-0 px-3"
                           >
-                            <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
+                            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full">
                               <a
                                 href={item.pdf}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block group"
+                                className="block group/link"
                               >
-                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
+                                <div className="relative overflow-hidden rounded-xl shadow-md transition-all duration-300 group-hover/link:shadow-xl group-hover/link:scale-[1.02]">
                                   <img
                                     src={item.image}
                                     alt={`SOUKYA Featured in ${item.title}`}
                                     className="w-full h-auto object-cover"
                                   />
-                                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-300 flex items-center justify-center">
-                                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
+                                  <div className="absolute inset-0 bg-primary/0 group-hover/link:bg-primary/10 transition-all duration-300 flex items-center justify-center">
+                                    <div className="opacity-0 group-hover/link:opacity-100 transition-all duration-300 bg-white/90 px-4 py-2 rounded-full">
                                       <p className="text-primary font-bold text-sm flex items-center gap-2">
                                         <FileSearch className="h-4 w-4" />
                                         View PDF
@@ -2176,7 +2284,7 @@ export default function SOUKYACenter() {
                                   </div>
                                 </div>
                               </a>
-                              <p className="text-center mt-3 text-sm font-semibold text-primary">
+                              <p className="text-center mt-4 text-base font-bold text-primary">
                                 {item.title}
                               </p>
                             </div>
@@ -2187,11 +2295,11 @@ export default function SOUKYACenter() {
                   </div>
 
                   {/* Navigation Dots */}
-                  <div className="flex justify-center gap-2 mt-6">
+                  <div className="flex justify-center gap-2 mt-10">
                     {mediaItems.map((_, index) => (
                       <button
                         key={index}
-                        onClick={() => setCurrentMediaIndex(index)}
+                        onClick={() => { setCurrentMediaIndex(index); }}
                         className={`transition-all ${index === currentMediaIndex
                           ? "w-8 h-3 bg-primary"
                           : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
@@ -2201,9 +2309,9 @@ export default function SOUKYACenter() {
                     ))}
                   </div>
 
-                  <p className="text-center mt-8 text-sm md:text-base max-w-3xl mx-auto" style={{ color: "#7F543D" }}>
-                    Soukya has been featured in prestigious luxury travel and wellness publications worldwide,
-                    showcasing our commitment to holistic healing and exceptional guest experiences.
+                  <p className="text-center mt-12 text-sm md:text-lg italic max-w-3xl mx-auto" style={{ color: "#7F543D" }}>
+                    "SOUKYA has been featured in prestigious luxury travel and wellness publications worldwide,
+                    showcasing our globally recognized commitment to authentic holistic healing."
                   </p>
                 </div>
               )}
@@ -2321,7 +2429,7 @@ export default function SOUKYACenter() {
 
             <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
               <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     What is the minimum duration of treatment at SOUKYA?
                   </span>
@@ -2334,7 +2442,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Do I need to bring my medical records?
                   </span>
@@ -2347,7 +2455,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is SOUKYA suitable for elderly patients?
                   </span>
@@ -2360,7 +2468,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Can I continue my regular medications during treatment?
                   </span>
@@ -2373,7 +2481,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     What should I pack for my stay at SOUKYA?
                   </span>
@@ -2386,7 +2494,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is vegetarian food mandatory?
                   </span>
@@ -2399,7 +2507,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Can family members stay with patients?
                   </span>
@@ -2412,7 +2520,7 @@ export default function SOUKYACenter() {
               </AccordionItem>
 
               <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                   <span className="text-lg font-semibold text-primary text-left">
                     Is WiFi and mobile connectivity available?
                   </span>
@@ -2428,18 +2536,18 @@ export default function SOUKYACenter() {
 
           {/* Contact Information Card */}
           <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
-            <CardContent className="p-8">
+            <CardContent className="p-5 md:p-8">
               <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
               <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
                 <div className="space-y-6">
                   {/* Address Section */}
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                        {contactAddress.map((l, i) => (
-                          <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                      <h4 className="font-bold text-primary mb-1">Address</h4>
+                      <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                        {contactAddress.filter(l => l.trim() !== "").map((l, i) => (
+                          <span key={i}>{l}</span>
                         ))}
                       </p>
                     </div>
@@ -2447,13 +2555,16 @@ export default function SOUKYACenter() {
 
                   {/* Distances Section */}
                   {contactDistances.length > 0 && (
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                        <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
                           {contactDistances.map((d, i) => (
-                            <li key={i}>{d}</li>
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              <span>{d}</span>
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -2483,16 +2594,18 @@ export default function SOUKYACenter() {
 
               {/* Transportation Services Section */}
               {transportText && (
-                <div className="mt-10 p-6 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <ShieldCheck className="h-6 w-6 text-primary" />
+                <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <ShieldCheck className="h-7 w-7 text-primary" />
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-primary mb-2">Transportation Services</h4>
-                      <p className="text-base leading-relaxed" style={{ color: '#7F543D' }}>
-                        {transportText}
-                      </p>
+                    <div className="text-center md:text-left w-full">
+                      <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                      <div className="max-w-none w-full">
+                        <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                          {transportText}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2509,8 +2622,8 @@ export default function SOUKYACenter() {
                     alt="SOUKYA Wellness Center"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
-                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at SOUKYA</h2>
-                  <div className="space-y-3">
+                  <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at SOUKYA</h2>
+                  <div className="space-y-4">
                     <Button
                       size="lg"
                       className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
@@ -2529,7 +2642,7 @@ export default function SOUKYACenter() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
                     <Phone className="h-4 w-4 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
@@ -2538,8 +2651,10 @@ export default function SOUKYACenter() {
 
               <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at SOUKYA</h2>
-                  <div className="flex flex-wrap gap-3">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                    Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">SOUKYA</span>
+                  </h2>
+                  <div className="flex flex-wrap gap-5">
                     <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                       <Phone className="mr-2 h-5 w-5" />
                       Book Consultation Now
@@ -2549,7 +2664,7 @@ export default function SOUKYACenter() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <div className="mt-8 flex items-center gap-2 text-white/90">
                     <Phone className="h-5 w-5 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
