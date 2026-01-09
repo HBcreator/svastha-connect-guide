@@ -21,7 +21,7 @@ export default function NamasteDwaar() {
   const [facilityAutoPlay, setFacilityAutoPlay] = useState(true);
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
-  const [facilityItems, setFacilityItems] = useState<{ title: string; bullets: string[] }[]>([]);
+  const [facilityItems, setFacilityItems] = useState<{ title: string; description?: string; bullets: string[] }[]>([]);
   const [founderTitle, setFounderTitle] = useState("Founder");
   const [founderSubtitle, setFounderSubtitle] = useState("");
   const [founderDesc, setFounderDesc] = useState("");
@@ -33,12 +33,15 @@ export default function NamasteDwaar() {
   const [founderTeamSubtitle, setFounderTeamSubtitle] = useState("");
   const [currentTeamSlide, setCurrentTeamSlide] = useState(0);
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
-  const [testimonials, setTestimonials] = useState<Array<{ id: number; name: string; location: string; condition: string; rating: number; date?: string; avatar: string; image?: string; review: string; verified: boolean }>>([]);
+  const [testimonials, setTestimonials] = useState<Array<{ id: number; name: string; location: string; title: string; condition: string; rating: number; date?: string; avatar: string; image?: string; review: string; verified: boolean }>>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [showAwards, setShowAwards] = useState(true);
   const [awardsDescriptions, setAwardsDescriptions] = useState<string[]>([]);
   const [awardsList, setAwardsList] = useState<{ title: string; desc: string }[]>([]);
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+  const [maxAwardIndex, setMaxAwardIndex] = useState(0);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [isMediaAutoPlaying, setIsMediaAutoPlaying] = useState(true);
   const [mediaLightboxOpen, setMediaLightboxOpen] = useState(false);
@@ -111,6 +114,15 @@ export default function NamasteDwaar() {
     "/Center Images/Namastedwaar/image gallery/Namastedwaar-47.jpg",
     "/Center Images/Namastedwaar/image gallery/Namastedwaar-48.jpg",
   ];
+
+  // ... (previous images/videos arrays kept implicit or can be re-declared if needed, but tool replaces contiguous block)
+  // To avoid deleting images variable, I started from line 36. 
+  // Wait, I am replacing a huge chunk. Let me narrow it down to just the state and parser effect.
+
+  // Actually, I can just replace the definition at line 36 and the parser effect at lines 280-310.
+  // This tool call is becoming too large/risky if I replace everything.
+  // I will split it. First update the State Definition.
+
 
   const thumbnailImages = [
     images[0],
@@ -277,12 +289,13 @@ export default function NamasteDwaar() {
     fetch("/content/Top Centers/Namastedwaar/Patient Success Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
-        const items: Array<{ id: number; name: string; location: string; condition: string; rating: number; date?: string; avatar: string; image?: string; review: string; verified: boolean }> = [];
+        const items: Array<{ id: number; name: string; location: string; title: string; condition: string; rating: number; date?: string; avatar: string; image?: string; review: string; verified: boolean }> = [];
         const lines = text.split("\n");
         let current: {
           id: number;
           name: string;
           location: string;
+          title: string;
           condition: string;
           rating: number;
           date?: string;
@@ -294,19 +307,31 @@ export default function NamasteDwaar() {
         for (const raw of lines) {
           const line = raw.trim();
           if (!line) continue;
-          if (/^\*\*Review\s+\d+\s+-\s+/.test(line)) {
+
+          const isReviewHeader = (line.startsWith("**") && line.endsWith("**") && line.includes("-") && !line.includes("Rating:"));
+
+          if (isReviewHeader || /^\*\*Review\s+\d+\s+-\s+/.test(line)) {
             if (current) items.push(current);
             const title = line.replace(/^\*\*|\*\*$/g, "");
-            const afterDash = title.split("-")[1].trim();
-            const parts = afterDash.split(",");
+            // Handle "Review 1 - " prefix if present, otherwise just extract from "Name - Location"
+            const content = title.startsWith("Review") ? title.split("-").slice(1).join("-").trim() : title;
+
+            const parts = content.split("-");
+            // Assuming format "Name - Location" or "Name, Location" (Review header had combo)
+            // The file format is "**Sophia Müller - Berlin, Germany**"
             const name = parts[0].trim();
-            const location = parts.slice(1).join(",").trim();
-            current = { id: items.length + 1, name, location, condition: "", rating: 5, date: undefined, avatar: (name.split(" ")[0][0] + (name.split(" ")[1]?.[0] || "")).toUpperCase(), image: undefined, review: "", verified: true };
+            const location = parts.length > 1 ? parts.slice(1).join("-").trim() : "";
+
+            current = { id: items.length + 1, name, location, title: "", condition: "", rating: 5, date: undefined, avatar: (name.split(" ")[0][0] + (name.split(" ")[1]?.[0] || "")).toUpperCase(), image: undefined, review: "", verified: true };
             continue;
           }
+
           if (/^\*".*"\*$/.test(line)) {
             const quote = line.replace(/^\*"|"\*$/g, "");
-            if (current) current.condition = quote;
+            if (current) {
+              current.condition = quote;
+              current.title = quote;
+            }
             continue;
           }
           if (/^\*\*Rating:\s*.*\*\*$/.test(line)) {
@@ -315,7 +340,6 @@ export default function NamasteDwaar() {
             if (current) current.rating = r;
             continue;
           }
-          // otherwise part of review body
           if (current) {
             current.review = current.review ? current.review + " " + line : line;
           }
@@ -325,7 +349,7 @@ export default function NamasteDwaar() {
       })
       .catch(() => {
         setTestimonials([
-          { id: 1, name: "Guest", location: "India", condition: "Transformational healing", rating: 5, avatar: "G", review: "Authentic therapies and compassionate care.", verified: true }
+          { id: 1, name: "Guest", location: "India", title: "Transformational healing", condition: "Transformational healing", rating: 5, avatar: "G", review: "Authentic therapies and compassionate care.", verified: true }
         ]);
       });
   }, []);
@@ -368,6 +392,37 @@ export default function NamasteDwaar() {
       });
   }, []);
 
+  // Award carousel navigation functions
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
+  // Handle responsive award display
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? Math.max(0, awardsList.length - 1) : Math.max(0, awardsList.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awardsList.length]);
+
+  // Auto-play for awards carousel
+  useEffect(() => {
+    if (!isAwardAutoPlaying || !showAwards) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex, showAwards]);
+
   useEffect(() => {
     if (!isMediaAutoPlaying) return;
     const id = setInterval(() => {
@@ -385,17 +440,14 @@ export default function NamasteDwaar() {
   }, [isReviewAutoPlaying, testimonials.length]);
 
   const goToPreviousReview = () => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToNextReview = () => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview((prev) => (prev + 1) % testimonials.length);
   };
 
   const selectReview = (index: number) => {
-    setIsReviewAutoPlaying(false);
     setCurrentReview(index);
   };
 
@@ -1389,17 +1441,26 @@ export default function NamasteDwaar() {
                   return (
                     <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
                       <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Icon className="h-7 w-7 text-white" />
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
+                            <Icon className="h-6 w-6 text-white" />
                           </div>
-                          <h3 className="text-2xl font-bold text-primary">{item.title}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                            {item.title}
+                          </h3>
                         </div>
-                        <ul className="space-y-2.5">
+
+                        {item.description && (
+                          <p className="text-sm leading-relaxed mb-3" style={{ color: "#7F543D" }}>
+                            {item.description}
+                          </p>
+                        )}
+
+                        <ul className="space-y-2">
                           {item.bullets.slice(0, 4).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-primary mt-1">•</span>
-                              <span>{b}</span>
+                              <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                              <span className="leading-snug">{b}</span>
                             </li>
                           ))}
                         </ul>
@@ -1413,36 +1474,56 @@ export default function NamasteDwaar() {
         </div>
 
         <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
-          <div className="rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-6 md:mb-10">
-              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
+              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">
+                Founder & Team Info
+              </h1>
               {(founderTeamSubtitle || '').length > 0 && (
-                <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{founderTeamSubtitle}</p>
+                <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+                  {founderTeamSubtitle}
+                </p>
               )}
             </div>
-            <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
-              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto flex flex-col">
+
+            <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-12">
+              {/* Founder Card */}
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl bg-white">
+                <CardContent className="p-4 md:p-8">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src="/Center Images/Namastedwaar/Founder and team/Founder Arvind adn charul Rathi.jpg" alt="Founder" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img
+                          src="/Center Images/Namastedwaar/Founder and team/Founder Arvind adn charul Rathi.jpg"
+                          alt="Founder"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     <div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founderTitle}</h3>
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">
+                        {founderTitle}
+                      </h3>
                       {founderSubtitle && (
-                        <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>{founderSubtitle}</p>
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>
+                          {founderSubtitle}
+                        </p>
                       )}
                     </div>
                   </div>
                   {founderDesc && (
-                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{founderDesc}</p>
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {founderDesc}
+                    </p>
                   )}
                   {founderBullets.length > 0 && (
                     <div className="pt-3 md:pt-4 border-t border-primary/10">
                       <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
                       <div className="flex flex-wrap gap-2">
                         {founderBullets.slice(0, 6).map((b, i) => (
-                          <span key={i} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">{b}</span>
+                          <span key={i} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full">
+                            {b}
+                          </span>
                         ))}
                       </div>
                     </div>
@@ -1450,26 +1531,37 @@ export default function NamasteDwaar() {
                 </CardContent>
               </Card>
 
+              {/* Medical Team Card */}
               <div className="relative">
-                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full bg-white">
                   <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                        <img src="/Center Images/Namastedwaar/Founder and team/Medical team.jpg" alt="Team" className="w-full h-full object-cover" />
+                    <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img
+                            src="/Center Images/Namastedwaar/Founder and team/Medical team.jpg"
+                            alt="Team"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </div>
                       <div>
-                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">
+                          {teamGroups[currentTeamSlide]?.title || "Team"}
+                        </h3>
                         {teamSubtitle && (
                           <p className="text-xs md:text-sm mt-1 text-primary/70">{teamSubtitle}</p>
                         )}
                       </div>
                     </div>
                     {teamGroups[currentTeamSlide]?.description && (
-                      <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
+                      <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                        {teamGroups[currentTeamSlide].description}
+                      </p>
                     )}
                     <ul className="space-y-2.5">
                       {(teamGroups[currentTeamSlide]?.items || []).slice(0, 12).map((it, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                        <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                           <span className="text-primary mt-1">•</span>
                           <span>{renderInlineBold(it)}</span>
                         </li>
@@ -1482,6 +1574,7 @@ export default function NamasteDwaar() {
           </div>
         </div>
 
+
         <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
@@ -1491,52 +1584,53 @@ export default function NamasteDwaar() {
           </div>
 
           <div className="relative max-w-5xl mx-auto">
-            <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+            <Card className="border-2 border-primary/20 shadow-lg overflow-hidden bg-white">
               <CardContent className="p-4 md:p-12">
                 <div className="max-w-4xl mx-auto">
-                  <div className="text-primary/20 mb-3 md:mb-4">
-                    <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                    </svg>
-                  </div>
-
                   {testimonials.length > 0 && (
-                    <div className="mb-4 md:mb-6">
-                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
-                        "{testimonials[currentReview].review}"
-                      </p>
-                    </div>
-                  )}
-
-                  {testimonials.length > 0 && (
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      {testimonials[currentReview].image ? (
-                        <img src={testimonials[currentReview].image} alt={testimonials[currentReview].name} className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0 select-none pointer-events-none" />
-                      ) : (
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].avatar}
-                        </div>
-                      )}
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
-                          {testimonials[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
-                          )}
-                        </div>
-                        <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                          {testimonials[currentReview].location}{testimonials[currentReview].condition ? ` • ${testimonials[currentReview].condition}` : ''}
-                        </p>
-                        {testimonials[currentReview].date && (<p className="text-xs text-gray-500 mt-1">{testimonials[currentReview].date}</p>)}
+                    <>
+                      <div className="text-primary/20 mb-3 md:mb-4">
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
                       </div>
-                    </div>
-                  )}
 
-                  {testimonials.length > 0 && (
-                    <div className="flex items-center gap-2 md:gap-3">
-                      {renderStars(testimonials[currentReview].rating)}
-                      <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
-                    </div>
+                      <div className="mb-4 md:mb-6">
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                          {testimonials[currentReview].title}
+                        </h3>
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+                          "{testimonials[currentReview].review}"
+                        </p>
+                      </div>
+
+                      <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                        {testimonials[currentReview].image ? (
+                          <img src={testimonials[currentReview].image} alt={testimonials[currentReview].name} className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-primary shadow-lg flex-shrink-0 select-none pointer-events-none" />
+                        ) : (
+                          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                            {testimonials[currentReview].avatar}
+                          </div>
+                        )}
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                            {testimonials[currentReview].verified && (
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
+                            )}
+                          </div>
+                          <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
+                            {testimonials[currentReview].location}
+                          </p>
+                          {testimonials[currentReview].date && (<p className="text-xs text-gray-500 mt-1">{testimonials[currentReview].date}</p>)}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 md:gap-3">
+                        {renderStars(testimonials[currentReview].rating)}
+                        <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                      </div>
+                    </>
                   )}
                 </div>
               </CardContent>
@@ -1556,13 +1650,6 @@ export default function NamasteDwaar() {
                 </div>
               </>
             )}
-
-            {isReviewAutoPlaying && testimonials.length > 0 && (
-              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                Auto
-              </div>
-            )}
           </div>
 
           {testimonials.length > 1 && (
@@ -1574,32 +1661,130 @@ export default function NamasteDwaar() {
           )}
         </div>
 
-        <div className="mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold text-primary text-center mb-6">Awards & Media</h2>
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-8">
-            <Button onClick={() => setShowAwards(true)} className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${showAwards ? 'bg-primary text-white hover:bg-primary/90' : 'bg-white text-primary border-2 border-primary hover:bg-primary/10'}`}>
-              <Award className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
+        <div className="mb-12 md:mb-16">
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+              <Award className="h-8 w-8" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+            <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+              Recognition of Namaste Dwaar's global excellence in integrated holistic healing and patient care
+            </p>
+          </div>
+
+          {/* Toggle Buttons */}
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-10">
+            <Button
+              onClick={() => setShowAwards(true)}
+              className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${showAwards
+                ? "bg-primary text-white shadow-xl scale-105"
+                : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
+                }`}
+            >
+              <Award className="mr-2 h-4 w-4 md:h-6 md:w-6" />
               Awards
             </Button>
-            <Button onClick={() => setShowAwards(false)} className={`px-3 py-2 md:px-8 md:py-6 text-xs md:text-base font-semibold transition-all ${!showAwards ? 'bg-primary text-white hover:bg-primary/90' : 'bg-white text-primary border-2 border-primary hover:bg-primary/10'}`}>
-              <FileSearch className="mr-1 md:mr-2 h-3 w-3 md:h-5 md:w-5" />
+            <Button
+              onClick={() => setShowAwards(false)}
+              className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${!showAwards
+                ? "bg-primary text-white shadow-xl scale-105"
+                : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
+                }`}
+            >
+              <FileSearch className="mr-2 h-4 w-4 md:h-6 md:w-6" />
               Media Recognition
             </Button>
           </div>
 
+          {/* Awards Carousel */}
           {showAwards && (
-            <div className="grid md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
-              {(awardsList.length ? awardsList : awardsDescriptions.map((d, i) => ({ title: `Award ${i + 1}`, desc: d }))).map((item, idx) => (
-                <div key={idx} className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-                  <div className="flex flex-col items-center mb-4">
-                    <img src={`/Center Images/Namastedwaar/Awards and media/Award-0${idx + 1}.jpg`} alt={`Award ${idx + 1}`} className="w-40 h-40 md:w-48 md:h-48 object-contain mb-4" />
-                    <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">{item.title}</h4>
-                  </div>
-                  <div className="space-y-3 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                    <p>{item.desc}</p>
+            <div className="relative group max-w-5xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awardsList.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={`/Center Images/Namastedwaar/Awards and media/Award-0${i + 1}.jpg`}
+                              alt={award.title}
+                              className="max-h-[90%] max-w-[90%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-2">{award.title}</h4>
+                            <p className="text-xs italic" style={{ color: '#7F543D' }}>"{award.desc}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
+
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                  >
+                    {awardsList.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={`/Center Images/Namastedwaar/Awards and media/Award-0${i + 1}.jpg`}
+                              alt={award.title}
+                              className="max-h-[90%] max-w-[90%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.desc}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              {maxAwardIndex > 0 && (
+                <>
+                  <button
+                    onClick={goToPreviousAward}
+                    className="absolute left-6 md:-left-4 top-1/2 -translate-y-[65%] md:-translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    aria-label="Previous award"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={goToNextAward}
+                    className="absolute right-6 md:-right-4 top-1/2 -translate-y-[65%] md:-translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    aria-label="Next award"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </>
+              )}
+
+              {/* Indicator Dots */}
+              <div className="flex justify-center gap-2 mt-8">
+                {awardsList.slice(0, maxAwardIndex + 1).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setCurrentAward(i); }}
+                    className={`transition-all rounded-full ${currentAward === i ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      }`}
+                    aria-label={`Go to award ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
@@ -1666,10 +1851,10 @@ export default function NamasteDwaar() {
                   </div>
                 </div>
               </div>
-              <button onClick={() => { setIsMediaAutoPlaying(false); setCurrentMediaIndex((prev) => (prev - 1 + mediaImages.length) % mediaImages.length); }} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous">
+              <button onClick={() => { setIsMediaAutoPlaying(false); setCurrentMediaIndex((prev) => (prev - 1 + mediaImages.length) % mediaImages.length); }} className="absolute left-0 top-1/2 -translate-y-[65%] md:-translate-y-1/2 translate-x-6 md:-translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous">
                 <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
-              <button onClick={() => { setIsMediaAutoPlaying(false); setCurrentMediaIndex((prev) => (prev + 1) % mediaImages.length); }} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next">
+              <button onClick={() => { setIsMediaAutoPlaying(false); setCurrentMediaIndex((prev) => (prev + 1) % mediaImages.length); }} className="absolute right-0 top-1/2 -translate-y-[65%] md:-translate-y-1/2 -translate-x-6 md:translate-x-6 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next">
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
               {isMediaAutoPlaying && (
@@ -1798,7 +1983,7 @@ export default function NamasteDwaar() {
 
         <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
           <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 What is the minimum duration for wellness programs at Namaste Dwaar?
               </span>
@@ -1811,7 +1996,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 How far is Namaste Dwaar from Delhi and major cities?
               </span>
@@ -1824,7 +2009,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 Do I need prior experience with Ayurveda or Yoga?
               </span>
@@ -1837,7 +2022,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 What type of food is served at Namaste Dwaar?
               </span>
@@ -1850,7 +2035,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 Is Namaste Dwaar suitable for families with children?
               </span>
@@ -1863,7 +2048,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 Can I bring my pet dog to Namaste Dwaar?
               </span>
@@ -1876,7 +2061,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 What should I pack for my wellness retreat at Namaste Dwaar?
               </span>
@@ -1889,7 +2074,7 @@ export default function NamasteDwaar() {
           </AccordionItem>
 
           <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+            <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
               <span className="text-lg font-semibold text-primary text-left">
                 Are wellness treatments suitable for elderly guests or those with health conditions?
               </span>
@@ -1905,30 +2090,37 @@ export default function NamasteDwaar() {
 
       {contactAddress.length > 0 && (
         <div className="mb-12 max-w-6xl mx-auto px-3 md:px-4">
-          <Card className="border-2 border-primary overflow-hidden">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+          <Card className="border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+            <CardContent className="p-5 md:p-8">
+              <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+              <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
                 <div className="space-y-6">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  {/* Address Section */}
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                      <h4 className="font-bold text-primary mb-1">Address</h4>
+                      <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
                         {contactAddress.map((l, i) => (
-                          <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                          <span key={i}>{l}</span>
                         ))}
                       </p>
                     </div>
                   </div>
 
+                  {/* Distances Section */}
                   {contactDistances.length > 0 && (
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                        <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactDistances.map((d, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              <span>{d}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -1955,12 +2147,18 @@ export default function NamasteDwaar() {
               </div>
 
               {transportText && (
-                <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                      <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <ShieldCheck className="h-7 w-7 text-primary" />
+                    </div>
+                    <div className="text-center md:text-left w-full">
+                      <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                      <div className="max-w-none w-full">
+                        <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                          {transportText}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2186,3 +2384,4 @@ export default function NamasteDwaar() {
     </div>
   );
 }
+

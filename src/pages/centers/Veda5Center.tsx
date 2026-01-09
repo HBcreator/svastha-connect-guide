@@ -22,12 +22,73 @@ const Veda5Center = () => {
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
   const [reviewCity, setReviewCity] = useState<"Rishikesh" | "Kerala" | "Goa">("Rishikesh");
-  const [reviewsByCity, setReviewsByCity] = useState<Record<string, { name: string; location: string; title: string; text: string; rating: number }[]>>({ Rishikesh: [], Kerala: [], Goa: [] });
+  const [reviewsByCity, setReviewsByCity] = useState<Record<string, { name: string; location: string; title: string; text: string; rating: number; verified?: boolean; condition?: string }[]>>({ Rishikesh: [], Kerala: [], Goa: [] });
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [contactData, setContactData] = useState<{ city: string; address: string[]; distances: string[] }[]>([]);
   const [currentContactIdx, setCurrentContactIdx] = useState(0);
   const [transportText, setTransportText] = useState("");
+  const [currentAward, setCurrentAward] = useState(0);
+
+  const awards = [
+    {
+      image: "/Awards and rewards/VEDA5/award-01.png",
+      title: "International Wellness Recognition",
+      description: "Excellence in holistic wellness and care. Authentic Ayurveda and yoga programs. High guest satisfaction and trust."
+    },
+    {
+      image: "/Awards and rewards/VEDA5/award-02.png",
+      title: "Luxury Retreat Distinction",
+      description: "Premium facilities. Personalized care and comfort. Consistent service quality."
+    },
+    {
+      image: "/Awards and rewards/VEDA5/award-03.png",
+      title: "Trusted Healing Destination",
+      description: "Evidence-based Ayurvedic protocols. Experienced physicians and therapists. Long-term wellness outcomes."
+    },
+    {
+      image: "/Awards and rewards/VEDA5/award-04.png",
+      title: "Sustainable Wellness Leadership",
+      description: "Nature-based healing practices. Clean, mindful living environments. Ethical and responsible operations."
+    },
+    {
+      image: "/Awards and rewards/VEDA5/award-05.png",
+      title: "Guest Experience Excellence",
+      description: "Warm hospitality and attentive care. Comfortable, serene accommodations. Consistent 5-star feedback."
+    },
+    {
+      image: "/Awards and rewards/VEDA5/award-06.png",
+      title: "Global Wellness Community",
+      description: "Holistic programs for diverse needs. Integrative therapies and education. Recognition from wellness bodies."
+    }
+  ];
+
+  const maxAwardIndex = awards.length - 1;
+
+  // Auto-rotate awards
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentAward((prev) => {
+        // Desktop shows 3 items, Mobile shows 1
+        const isDesktop = window.innerWidth >= 768;
+        const maxIndex = isDesktop ? awards.length - 3 : awards.length - 1;
+        return prev >= maxIndex ? 0 : prev + 1;
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToPreviousAward = () => {
+    const isDesktop = window.innerWidth >= 768;
+    const maxIndex = isDesktop ? awards.length - 3 : awards.length - 1;
+    setCurrentAward((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    const isDesktop = window.innerWidth >= 768;
+    const maxIndex = isDesktop ? awards.length - 3 : awards.length - 1;
+    setCurrentAward((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     fetch("/content/Top Centers/veda5/Contact Information.txt")
@@ -527,42 +588,59 @@ const Veda5Center = () => {
   }, [selectedLocation, selectedGallery]);
 
   const parseReviews = (text: string) => {
-    const lines = text.split("\n");
-    const result: { name: string; location: string; title: string; text: string; rating: number }[] = [];
-    let i = 0;
-    while (i < lines.length) {
-      const line = lines[i].trim();
-      if (line.startsWith("**Review")) {
-        const heading = line.replace(/^\*\*/, "").replace(/\*\*$/, "");
-        const afterDash = heading.split(" - ")[1] || "";
-        const namePart = afterDash.split(",")[0]?.trim() || "";
-        const locationPart = afterDash.split(",").slice(1).join(",").trim();
-        i++;
-        while (i < lines.length && !lines[i].trim()) i++;
-        let title = "";
-        if (i < lines.length && /\*"[\s\S]*"\*/.test(lines[i].trim())) {
-          title = lines[i].trim().replace(/^\*"/, "").replace(/"\*$/, "");
-          i++;
-        }
-        while (i < lines.length && !lines[i].trim()) i++;
-        const paragraph: string[] = [];
-        while (i < lines.length && !lines[i].trim().startsWith("**Rating:")) {
-          if (lines[i].trim().startsWith("**Review")) break;
-          paragraph.push(lines[i]);
-          i++;
-        }
-        let rating = 5;
-        if (i < lines.length && lines[i].trim().startsWith("**Rating:")) {
-          const match = lines[i].match(/(\d)\/5/);
-          rating = match ? parseInt(match[1], 10) : 5;
-          i++;
-        }
-        result.push({ name: namePart || afterDash, location: locationPart, title, text: paragraph.join("\n").trim(), rating });
+    const lines = text.split("\n").map((l) => l.trim());
+    const items: { name: string; location: string; title: string; text: string; rating: number; verified: boolean; condition?: string }[] = [];
+    let current: { name: string; location: string; title: string; text: string; rating: number; verified: boolean; condition?: string } | null = null;
+
+    for (const line of lines) {
+      if (!line || line.startsWith("###")) continue;
+
+      // New format: **Name - Location**
+      const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+      if (nameMatch && !line.includes("Rating:")) {
+        if (current) items.push(current);
+        const fullStr = nameMatch[1];
+        const parts = fullStr.split(" - ");
+        current = {
+          name: parts[0] || "",
+          location: parts[1] || "",
+          title: "",
+          text: "",
+          rating: 5,
+          verified: true,
+          condition: ""
+        };
         continue;
       }
-      i++;
+
+      // Title: *"Title"*
+      if (current && line.startsWith('*\"') && line.endsWith('\"*')) {
+        current.title = line.replace(/^\*"/, "").replace(/"\*$/, "");
+        // condition extraction logic like Soukya
+        const knownConditions = ["Arthritis", "Burnout", "Back Pain", "PCOD", "Addiction", "Diabetes", "Insomnia", "Psoriasis", "Cancer", "Detox", "Weight Loss", "Stress"];
+        for (const c of knownConditions) {
+          if (current.title.includes(c) || current.text.includes(c)) {
+            current.condition = c;
+            break;
+          }
+        }
+        continue;
+      }
+
+      // Rating
+      if (current && line.startsWith("**Rating:")) {
+        const match = line.match(/(\d)\/5/);
+        current.rating = match ? parseInt(match[1], 10) : 5;
+        continue;
+      }
+
+      // Review Text
+      if (current) {
+        current.text = current.text ? current.text + " " + line : line;
+      }
     }
-    return result;
+    if (current) items.push(current);
+    return items;
   };
 
   useEffect(() => {
@@ -683,6 +761,13 @@ const Veda5Center = () => {
     if (s.includes("guest") || s.includes("transform") || s.includes("experience") || s.includes("review")) return <Users className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
     return <Sparkles className="h-6 w-6 text-primary group-hover:text-white transition-colors" />;
   };
+
+  // Helper to get initials
+  const getInitials = (name: string) => {
+    return name?.split(" ").map(w => w[0]).join("").slice(0, 2) || "";
+  };
+
+
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -1459,8 +1544,10 @@ const Veda5Center = () => {
             <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
               <CardContent className="p-4 md:p-8 h-full flex flex-col">
                 <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                    <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                  <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                      <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                    </div>
                   </div>
                   <div>
                     <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">VEDA5 Leadership</h3>
@@ -1486,8 +1573,10 @@ const Veda5Center = () => {
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                 <CardContent className="p-4 md:p-8 h-full">
                   <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
@@ -1527,159 +1616,197 @@ const Veda5Center = () => {
               <Button key={c} onClick={() => setReviewCity(c)} className={`px-3 py-2 md:px-8 md:py-4 text-xs md:text-base font-semibold ${reviewCity === c ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary border-2 border-primary hover:bg-primary/10"}`}>{c}</Button>
             ))}
           </div>
-          <div className="relative min-h-[420px] md:min-h-[480px]">
+          <div className="relative">
             <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-              <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
-                <div className="max-w-4xl mx-auto flex flex-col h-full">
-                  <div className="text-primary/20 mb-3 md:mb-4">
-                    <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
-                  </div>
-                  {reviewsByCity[reviewCity]?.length ? (
-                    <div>
-                      <div className="mb-4 md:mb-6 flex-1">
-                        <p className="text-sm md:text-xl leading-relaxed mb-2" style={{ color: "#7F543D" }}>
-                          "{reviewsByCity[reviewCity][currentReview].title}"
-                        </p>
-                        <p className="text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
-                          {reviewsByCity[reviewCity][currentReview].text}
+              <CardContent className="p-4 md:p-12">
+                <div className="max-w-4xl mx-auto">
+                  {reviewsByCity[reviewCity]?.length > 0 ? (
+                    <>
+                      <div className="text-primary/20 mb-3 md:mb-4">
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
+                      </div>
+
+                      <div className="mb-4 md:mb-6">
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                          {reviewsByCity[reviewCity][currentReview].title}
+                        </h3>
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                          "{reviewsByCity[reviewCity][currentReview].text}"
                         </p>
                       </div>
+
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {reviewsByCity[reviewCity][currentReview].name.split(" ").map((w) => w[0]).join("")}
+                          {reviewsByCity[reviewCity][currentReview].name.charAt(0)}
                         </div>
+
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="text-base md:text-xl font-semibold text-primary">{reviewsByCity[reviewCity][currentReview].name}</h4>
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
+                            <h4 className="text-base md:text-xl font-semibold text-primary">
+                              {reviewsByCity[reviewCity][currentReview].name}
+                            </h4>
+                            {reviewsByCity[reviewCity][currentReview].verified && (
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                ✓ Verified
+                              </span>
+                            )}
                           </div>
-                          <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>{reviewsByCity[reviewCity][currentReview].location}</p>
+                          <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                            {reviewsByCity[reviewCity][currentReview].location} {reviewsByCity[reviewCity][currentReview].condition && `• ${reviewsByCity[reviewCity][currentReview].condition}`}
+                          </p>
                         </div>
                       </div>
+
                       <div className="flex items-center gap-2 md:gap-3">
                         {renderStars(reviewsByCity[reviewCity][currentReview].rating)}
-                        <span className="text-xs md:text-sm font-semibold text-primary">{reviewsByCity[reviewCity][currentReview].rating}.0</span>
+                        <span className="text-xs md:text-sm font-semibold text-primary">
+                          {reviewsByCity[reviewCity][currentReview].rating}.0
+                        </span>
                       </div>
-                    </div>
+                    </>
                   ) : (
-                    <div className="text-center text-sm md:text-base" style={{ color: "#7F543D" }}>Loading reviews…</div>
+                    <div className="text-center py-12 text-lg text-primary/60">Loading reviews...</div>
                   )}
                 </div>
               </CardContent>
             </Card>
+
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
               <button
                 onClick={goPrevReview}
                 className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                 aria-label="Previous review"
               >
-                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
+
             <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
               <button
                 onClick={goNextReview}
                 className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
                 aria-label="Next review"
               >
-                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
+
             {isReviewAutoPlaying && (
-              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>Auto</div>
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Auto
+              </div>
             )}
+
             <div className="flex justify-center gap-2 mt-6">
               {(reviewsByCity[reviewCity] || []).map((_, idx) => (
-                <button key={idx} onClick={() => selectReviewDot(idx)} className={`transition-all rounded-full ${currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"}`} aria-label={`Go to review ${idx + 1}`} />
+                <button
+                  key={idx}
+                  onClick={() => selectReviewDot(idx)}
+                  className={`transition-all rounded-full ${currentReview === idx
+                    ? "w-8 h-3 bg-primary"
+                    : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    }`}
+                  aria-label={`Go to review ${idx + 1}`}
+                />
               ))}
             </div>
           </div>
         </div>
-        <div className="mt-8 md:mt-12 mb-10 md:mb-14">
-          <h3 className="text-2xl md:text-3xl font-bold text-primary text-center mb-6">Awards & Media</h3>
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-01.png" alt="VEDA5 Award 01" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">International Wellness Recognition</h4>
+        <div className="mt-8 md:mt-12 mb-10 md:mb-14 px-4">
+          <div className="text-center mb-6 md:mb-10">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+              <Award className="h-8 w-8" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+            <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+              Recognition of our excellence in authentic Ayurvedic healing and patient care
+            </p>
+          </div>
+
+          <div className="relative group max-w-5xl mx-auto">
+            <div className="overflow-hidden px-4 md:px-10">
+              {/* Mobile Slider (1 card) */}
+              <div className="md:hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                >
+                  {awards.map((award, i) => (
+                    <div key={i} className="w-full flex-shrink-0 px-2">
+                      <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                        <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={award.image}
+                            alt={award.title}
+                            className="max-h-[85%] max-w-[85%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                          <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Excellence in holistic wellness and care</li>
-                  <li>Authentic Ayurveda and yoga programs</li>
-                  <li>High guest satisfaction and trust</li>
-                </ul>
+
+              {/* Desktop Slider (3 cards visible) */}
+              <div className="hidden md:block">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${Math.min(currentAward, awards.length - 3) * (100 / 3)}%)` }}
+                >
+                  {awards.map((award, i) => (
+                    <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                      <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                        <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-2 md:p-3 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={award.image}
+                            alt={award.title}
+                            className="max-h-[95%] max-w-[95%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                          <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-02.png" alt="VEDA5 Award 02" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Luxury Retreat Distinction</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Premium facilities </li>
-                  <li>Personalized care and comfort</li>
-                  <li>Consistent service quality</li>
-                </ul>
-              </div>
-            </div>
+            {/* Navigation Arrows */}
+            <button
+              onClick={goToPreviousAward}
+              className="absolute left-8 md:-left-4 top-[58%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              aria-label="Previous award"
+            >
+              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+            </button>
+            <button
+              onClick={goToNextAward}
+              className="absolute right-8 md:-right-4 top-[58%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              aria-label="Next award"
+            >
+              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+            </button>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-03.png" alt="VEDA5 Award 03" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Trusted Healing Destination</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Evidence-based Ayurvedic protocols</li>
-                  <li>Experienced physicians and therapists</li>
-                  <li>Long-term wellness outcomes</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-04.png" alt="VEDA5 Award 04" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Sustainable Wellness Leadership</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Nature-based healing practices</li>
-                  <li>Clean, mindful living environments</li>
-                  <li>Ethical and responsible operations</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-05.png" alt="VEDA5 Award 05" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Guest Experience Excellence</h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Warm hospitality and attentive care</li>
-                  <li>Comfortable, serene accommodations</li>
-                  <li>Consistent 5-star feedback</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all">
-              <div className="flex flex-col items-center mb-4">
-                <img src="/Awards and rewards/VEDA5/award-06.png" alt="VEDA5 Award 06" className="w-32 h-32 md:w-40 md:h-40 object-contain mb-4" />
-                <h4 className="text-lg md:text-xl font-bold text-primary text-center mb-2">Global Wellness Community </h4>
-              </div>
-              <div className="space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li>Holistic programs for diverse needs</li>
-                  <li>Integrative therapies and education</li>
-                  <li>Recognition from wellness bodies</li>
-                </ul>
-              </div>
+            {/* Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setCurrentAward(i); }}
+                  className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                  aria-label={`Go to award ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -1780,7 +1907,7 @@ const Veda5Center = () => {
 
           <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
             <AccordionItem value="faq1" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">What is the minimum duration of treatment at VEDA5?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1791,7 +1918,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq2" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Do I need to bring my medical records?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1802,7 +1929,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq3" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Is VEDA5 suitable for elderly patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1813,7 +1940,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq4" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Can I continue my regular medications during treatment?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1824,7 +1951,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq5" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">What should I pack for my stay at VEDA5?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1835,7 +1962,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq6" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Is vegetarian food mandatory?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1846,7 +1973,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq7" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Can family members stay with patients?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1857,7 +1984,7 @@ const Veda5Center = () => {
             </AccordionItem>
 
             <AccordionItem value="faq8" className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-              <AccordionTrigger className="hover:no-underline py-4">
+              <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                 <span className="text-lg font-semibold text-primary text-left">Is WiFi and mobile connectivity available?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1870,105 +1997,104 @@ const Veda5Center = () => {
         </div>
 
         <div className="mb-12 max-w-6xl mx-auto">
-          <Card className="border-none shadow-none rounded-3xl overflow-hidden bg-white">
-            <CardContent className="p-8 md:p-12">
-              <h2 className="text-3xl font-bold text-primary mb-10">Contact Information</h2>
-
-              <div className="grid gap-12 md:grid-cols-[1fr_1.2fr] lg:gap-16">
-                <div className="space-y-10">
-                  {contactData[currentContactIdx] && (
-                    <>
-                      {/* Address Section */}
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+          {contactData.length > 0 && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <div className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactData[currentContactIdx].address.map((l, i) => (
+                            <span key={i}>{l}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    {contactData[currentContactIdx].distances.length > 0 && (
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                         <div>
-                          <h4 className="font-semibold text-primary mb-2">Address</h4>
-                          <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                            {contactData[currentContactIdx].address.map((l, i) => (
-                              <span key={i}>{l}{i < contactData[currentContactIdx].address.length - 1 ? <br /> : null}</span>
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactData[currentContactIdx].distances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
                             ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="md:-mt-16 self-start relative group/map">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden relative">
+                        <div className="absolute top-4 right-4 z-10">
+                          <div className="bg-white/95 text-primary px-4 py-2 rounded-full text-xs md:text-sm font-bold shadow-xl border-2 border-primary/20 backdrop-blur-sm flex items-center gap-2">
+                            <MapPin className="h-3 w-3 md:h-4 md:w-4 fill-primary/10" />
+                            {maps[currentContactIdx].city}
+                          </div>
+                        </div>
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title={`Veda5 ${maps[currentContactIdx].city} Map`}
+                            src={maps[currentContactIdx].iframe}
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    {/* Navigation Arrows */}
+                    <div className="absolute inset-y-0 left-0 flex items-center -translate-x-3 md:-translate-x-5">
+                      <button
+                        onClick={goPrevMap}
+                        className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-20"
+                        aria-label="Previous location"
+                      >
+                        <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
+                      </button>
+                    </div>
+
+                    <div className="absolute inset-y-0 right-0 flex items-center translate-x-3 md:translate-x-5">
+                      <button
+                        onClick={goNextMap}
+                        className="bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-20"
+                        aria-label="Next location"
+                      >
+                        <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {transportText && (
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
                           </p>
                         </div>
                       </div>
-
-                      {/* Distances Section */}
-                      {contactData[currentContactIdx].distances.length > 0 && (
-                        <div className="flex items-start gap-3">
-                          <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
-                          <div>
-                            <h4 className="font-semibold text-primary mb-2">Distance from Major Locations</h4>
-                            <ul className="list-disc list-inside break-words leading-relaxed space-y-1" style={{ color: '#7F543D' }}>
-                              {contactData[currentContactIdx].distances.map((d, i) => (
-                                <li key={i}>{d}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-
-                {/* Map Slider Section */}
-                <div className="relative group/map self-start">
-                  <div className="rounded-2xl bg-white p-1 shadow-lg border border-primary/10 overflow-hidden">
-                    <div className="rounded-xl overflow-hidden relative">
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-                        <div className="bg-primary/90 text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg backdrop-blur-sm">
-                          {maps[currentContactIdx].city}
-                        </div>
-                      </div>
-                      <div className="relative w-full aspect-[4/3]">
-                        <iframe
-                          title={`Veda5 ${maps[currentContactIdx].city} Map`}
-                          src={maps[currentContactIdx].iframe}
-                          className="absolute inset-0 h-full w-full"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                        />
-                      </div>
                     </div>
                   </div>
-
-                  {/* Navigation Arrows */}
-                  <div className="absolute inset-y-0 left-0 flex items-center -translate-x-4 md:-translate-x-6">
-                    <button
-                      onClick={goPrevMap}
-                      className="bg-white/80 hover:bg-primary hover:text-white text-primary p-2 md:p-2.5 rounded-full shadow-md transition-all border border-primary/20 z-20"
-                      aria-label="Previous map"
-                    >
-                      <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
-                    </button>
-                  </div>
-
-                  <div className="absolute inset-y-0 right-0 flex items-center translate-x-4 md:translate-x-6">
-                    <button
-                      onClick={goNextMap}
-                      className="bg-white/80 hover:bg-primary hover:text-white text-primary p-2 md:p-2.5 rounded-full shadow-md transition-all border border-primary/20 z-20"
-                      aria-label="Next map"
-                    >
-                      <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Transportation Services Section */}
-              {transportText && (
-                <div className="mt-12 bg-[#F1F5F5] rounded-xl p-6 border-l-4 border-[#2F5B63]">
-                  <div className="flex items-start gap-4">
-                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h4 className="font-bold text-primary mb-2">Transportation Services</h4>
-                      <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>{transportText}</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+                )}
+              </CardContent>
+            </Card>
+          )}
         </div>
 
         <div className="mb-12 max-w-6xl mx-auto">
@@ -1980,8 +2106,8 @@ const Veda5Center = () => {
                   alt="VEDA5 Health Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Veda5</h2>
-                <div className="space-y-3">
+                <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Veda5</h2>
+                <div className="space-y-4">
                   <Button
                     size="lg"
                     className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
@@ -2000,7 +2126,7 @@ const Veda5Center = () => {
                     Chat With Us
                   </Button>
                 </div>
-                <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
                   <Phone className="h-4 w-4 text-red-400" />
                   <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                 </div>
@@ -2009,11 +2135,11 @@ const Veda5Center = () => {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Veda5</h2>
-                <div className="flex flex-wrap gap-3">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Veda5</h2>
+                <div className="flex flex-wrap gap-4">
                   <Button
                     size="lg"
-                    className="rounded-full px-6 bg-white text-primary hover:bg-white/90"
+                    className="rounded-full px-8 bg-white text-primary hover:bg-white/90 text-base font-semibold"
                     onClick={() => setQuoteModalOpen(true)}
                   >
                     <Phone className="mr-2 h-5 w-5" />
@@ -2022,16 +2148,16 @@ const Veda5Center = () => {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500"
+                    className="rounded-full px-8 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-base font-semibold"
                     onClick={() => setQuoteModalOpen(true)}
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Chat With Us
                   </Button>
                 </div>
-                <div className="mt-4 flex items-center gap-2 text-white/90">
+                <div className="mt-8 flex items-center gap-3 text-white/90">
                   <Phone className="h-5 w-5 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  <a href="tel:+918028432737" className="underline hover:text-white font-semibold text-lg">Call us: +91 80 2843 2737</a>
                 </div>
               </div>
               <div>
