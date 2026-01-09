@@ -61,7 +61,7 @@ export default function AgniAyurvedicVillage() {
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
   const founderImage = "/Center Images/Agni - Ayurvedic Village/Founder & team Image/Founder.jpg";
   const teamImage = "/Center Images/Agni - Ayurvedic Village/Founder & team Image/Team.jpg";
-  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number }[]>([]);
+  const [testimonials, setTestimonials] = useState<{ id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [insuranceIntro, setInsuranceIntro] = useState("");
@@ -637,35 +637,44 @@ export default function AgniAyurvedicVillage() {
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
-        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = [];
-        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null;
+        const items: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
+        let idCounter = 1;
+
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (!line) continue;
-          const head = line.match(/^\*\*Review\s+\d+\s+-\s+(.+?)\*\*$/);
-          if (head) {
+          if (!line || line.startsWith("###")) continue;
+
+          // Match Name - Location: **Name - Location**
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
             if (current) items.push(current);
-            const full = head[1];
-            const parts = full.split(",");
-            const name = parts.shift()?.trim() || "";
-            const location = parts.map((p) => p.trim()).join(", ");
-            current = { name, location, condition: "", title: "", review: "", rating: 5 };
-            const next = lines[i + 1] || "";
-            if (/^\*"/.test(next) || /^\*.+\*$/.test(next)) {
-              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
-              current.title = t;
-              current.condition = t.split(" - ")[0];
-              i++;
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { id: idCounter++, name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
+
+          // Match Title: *"Title"*
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
+            continue;
+          }
+
+          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\//);
+            if (ratingMatch) {
+              current.rating = parseInt(ratingMatch[1]);
             }
             continue;
           }
-          if (/^\*\*Rating:\s*.*\*\*$/.test(line)) {
-            const m = line.match(/\((\d+)\/\d+\)/);
-            if (m && current) current.rating = parseInt(m[1], 10);
-            continue;
-          }
-          if (current) {
-            current.review = current.review ? `${current.review} ${line}` : line;
+
+          // Everything else is review content
+          if (current && line && !line.startsWith("**") && !line.startsWith("*")) {
+            current.review = current.review ? current.review + " " + line : line;
           }
         }
         if (current) items.push(current);
@@ -1363,18 +1372,24 @@ export default function AgniAyurvedicVillage() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {facilityCards.map((card, idx) => (
-                    <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                    <Card
+                      key={idx}
+                      className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
+                    >
                       <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                             {getFacilityIcon(card.title)}
                           </div>
-                          <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                            {card.title}
+                          </h3>
                         </div>
-                        <ul className="space-y-2.5">
+
+                        <ul className="space-y-2">
                           {card.bullets.map((b, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-primary mt-1">•</span>
+                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                              <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1494,62 +1509,112 @@ export default function AgniAyurvedicVillage() {
           {testimonials.length > 0 && (
             <div className="mb-12">
               <div className="text-center mb-6 md:mb-8">
-                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
-                <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
+                  Patient Stories & Reviews
+                </h2>
+                <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
+                  Hear from our patients about their transformational healing journeys
+                </p>
               </div>
-              <div className="relative min-h-[420px] md:min-h-[480px]">
+
+              {/* Review Carousel */}
+              <div className="relative">
                 <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-                  <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
-                    <div className="max-w-4xl mx-auto flex flex-col h-full">
+                  <CardContent className="p-4 md:p-12">
+                    <div className="max-w-4xl mx-auto">
+                      {/* Quote Icon */}
                       <div className="text-primary/20 mb-3 md:mb-4">
-                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
                       </div>
-                      <div className="mb-4 md:mb-6 flex-1">
-                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+
+                      {/* Review Content */}
+                      <div className="mb-4 md:mb-6">
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                          {testimonials[currentReview].title}
+                        </h3>
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
                           "{testimonials[currentReview].review}"
                         </p>
                       </div>
+
+                      {/* Reviewer Info */}
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+                          {testimonials[currentReview].name.charAt(0)}
                         </div>
+
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                            <h4 className="text-base md:text-xl font-semibold text-primary">
+                              {testimonials[currentReview].name}
+                            </h4>
+                            {testimonials[currentReview].verified && (
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                ✓ Verified
+                              </span>
+                            )}
                           </div>
-                          <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                            {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                          <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
+
+                      {/* Star Rating */}
                       <div className="flex items-center gap-2 md:gap-3">
                         {renderStars(testimonials[currentReview].rating)}
-                        <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                        <span className="text-xs md:text-sm font-semibold text-primary">
+                          {testimonials[currentReview].rating}.0
+                        </span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
+
+                {/* Navigation Buttons */}
                 <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
-                  <button onClick={goToPreviousReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  <button
+                    onClick={goToPreviousReview}
+                    className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                    aria-label="Previous review"
+                  >
+                    <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
                   </button>
                 </div>
+
                 <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
-                  <button onClick={goToNextReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  <button
+                    onClick={goToNextReview}
+                    className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                    aria-label="Next review"
+                  >
+                    <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
                   </button>
                 </div>
+
                 {isReviewAutoPlaying && (
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                     Auto
                   </div>
                 )}
-                <div className="flex justify-center gap-2 mt-4">
-                  {testimonials.map((_, i) => (
-                    <button key={i} onClick={() => { setIsReviewAutoPlaying(true); setCurrentReview(i); }} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
-                  ))}
-                </div>
+              </div>
+
+              {/* Dots Navigation */}
+              <div className="flex justify-center gap-2 mt-6">
+                {testimonials.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => { setIsReviewAutoPlaying(true); setCurrentReview(idx); }}
+                    className={`transition-all rounded-full ${currentReview === idx
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      }`}
+                    aria-label={`Go to review ${idx + 1}`}
+                  />
+                ))}
               </div>
             </div>
           )}
@@ -1736,34 +1801,44 @@ export default function AgniAyurvedicVillage() {
           )}
 
           {contactAddress.length > 0 && (
-            <Card className="mb-12 border-2 border-primary overflow-hidden">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+                <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
                   <div className="space-y-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    {/* Address Section */}
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Address</h4>
-                        <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactAddress.map((l, i) => (
-                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactAddress.filter(l => l.trim() !== "").map((l, i) => (
+                            <span key={i}>{l}</span>
                           ))}
                         </p>
                       </div>
                     </div>
+
+                    {/* Distances Section */}
                     {contactDistances.length > 0 && (
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
                     )}
                   </div>
+
+                  {/* Map Section */}
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
@@ -1782,13 +1857,21 @@ export default function AgniAyurvedicVillage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Transportation Services Section */}
                 {transportText && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                    <div className="flex items-start gap-4">
-                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                        <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
