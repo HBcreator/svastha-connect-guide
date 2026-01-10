@@ -13,6 +13,58 @@ export default function KairaliHeritage() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [showVideoGallery, setShowVideoGallery] = useState(false);
   const [showFullGallery, setShowFullGallery] = useState(false);
+  const [currentAward, setCurrentAward] = useState(0);
+  const [maxAwardIndex, setMaxAwardIndex] = useState(0);
+
+  const awardsData = [
+    {
+      title: "100-Year Ayurvedic Legacy",
+      description: "Our retreat is backed by the trusted Kairali Group, a name with a 100-year legacy in authentic Ayurveda and holistic hospitality.",
+      image: "/Center Images/Kairali Heritage/Awards/1.   Our retreat is backed by the trusted Kairali Group, a name with a 100-year legacy in authentic Ayurveda and holistic hospitality..jpg"
+    },
+    {
+      title: "Authentic Practice Standards",
+      description: "We are committed to the highest standards of authentic practice, ensuring every treatment you receive is genuine, safe, and effective.",
+      image: "/Center Images/Kairali Heritage/Awards/2.   We are committed to the highest standards of authentic practice, ensuring every treatment you receive is genuine, safe, and effective..jpg"
+    },
+    {
+      title: "Expert Medical Guidance",
+      description: "Your entire journey is guided and supervised by our team of qualified and experienced Ayurvedic physicians.",
+      image: "/Center Images/Kairali Heritage/Awards/3.   Your entire journey is guided and supervised by our team of qualified and experienced Ayurvedic physicians..png"
+    },
+    {
+      title: "Genuine Malabar Hospitality",
+      description: "Experience the heartfelt and genuine hospitality of the Malabar region, for which North Kerala is justly famous.",
+      image: "/Center Images/Kairali Heritage/Awards/4.   Experience the heartfelt and genuine hospitality of the Malabar region, for which North Kerala is justly famous..png"
+    }
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+      const newMax = isMobile ? awardsData.length - 1 : Math.max(0, awardsData.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward((prev) => (prev > newMax ? 0 : prev));
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awardsData.length]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [maxAwardIndex]);
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
   const [wellnessPrograms, setWellnessPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
   const [wellnessIntro, setWellnessIntro] = useState("");
   const [medicalPrograms, setMedicalPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
@@ -38,7 +90,6 @@ export default function KairaliHeritage() {
   const [reviewsIntro, setReviewsIntro] = useState("");
   const [reviews, setReviews] = useState<{ id: number; name: string; location: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [insuranceIntro, setInsuranceIntro] = useState("");
   const [insuranceCoverage, setInsuranceCoverage] = useState<string[]>([]);
   const [paymentOptions, setPaymentOptions] = useState<string[]>([]);
@@ -394,12 +445,12 @@ export default function KairaliHeritage() {
   }, []);
 
   useEffect(() => {
-    if (!isReviewAutoPlaying || reviews.length === 0) return;
+    if (reviews.length === 0) return;
     const id = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % reviews.length);
     }, 5000);
     return () => clearInterval(id);
-  }, [isReviewAutoPlaying, reviews.length]);
+  }, [reviews.length]);
 
   useEffect(() => {
     fetch("/content/Top Centers/Kairali Heritage/Insurance  and payment.txt")
@@ -1570,14 +1621,6 @@ export default function KairaliHeritage() {
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
                 </div>
-
-                {/* Auto-play indicator */}
-                {isReviewAutoPlaying && (
-                  <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-[10px] md:text-xs flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-400 rounded-full animate-pulse"></span>
-                    Auto
-                  </div>
-                )}
               </div>
 
               {/* Dots Navigation */}
@@ -1598,6 +1641,103 @@ export default function KairaliHeritage() {
           </div>
         </div>
       )}
+
+      {/* Awards & Recognition Section */}
+      <div className="container mx-auto px-3 md:px-4 max-w-full">
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="text-center mb-8 md:mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary shadow-sm">
+              <Award className="h-8 w-8" />
+            </div>
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 text-center">Awards & Media</h2>
+            <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
+          </div>
+
+          <div className="relative group max-w-5xl mx-auto">
+            <div className="overflow-hidden px-4 md:px-10">
+              {/* Mobile Slider (1 card) */}
+              <div className="md:hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                >
+                  {awardsData.map((award, i) => (
+                    <div key={i} className="w-full flex-shrink-0 px-2">
+                      <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                        <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={award.image}
+                            alt={award.title}
+                            className="max-h-[90%] max-w-[90%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                          <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desktop Slider (3 cards visible) */}
+              <div className="hidden md:block">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                >
+                  {awardsData.map((award, i) => (
+                    <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                      <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center text-center">
+                        <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={award.image}
+                            alt={award.title}
+                            className="max-h-[90%] max-w-[90%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                          <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={goToPreviousAward}
+              className="absolute left-8 md:-left-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              aria-label="Previous award"
+            >
+              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+            </button>
+            <button
+              onClick={goToNextAward}
+              className="absolute right-8 md:-right-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              aria-label="Next award"
+            >
+              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+            </button>
+
+            {/* Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {awardsData.slice(0, maxAwardIndex + 1).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setCurrentAward(i); }}
+                  className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                  aria-label={`Go to award ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto">

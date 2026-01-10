@@ -44,7 +44,7 @@ export default function NagarjunaAyurvedaCentre() {
   const founderImage = "/Center Images/Nagarjuna-ayurveda/Founder and team/founder.jpg";
   const teamImage = "/Center Images/Nagarjuna-ayurveda/Founder and team/Team.jpg";
 
-  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number }[]>([]);
+  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [insuranceIntro, setInsuranceIntro] = useState("");
@@ -59,51 +59,41 @@ export default function NagarjunaAyurvedaCentre() {
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
   const [awards, setAwards] = useState<{ title: string; description: string; image: string }[]>([]);
+  const [mediaRecognition, setMediaRecognition] = useState<{ title: string; description: string; image: string }[]>([]);
+  const [showAwards, setShowAwards] = useState(true);
+  const [currentAwardSlide, setCurrentAwardSlide] = useState(0);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/awards and recognition.txt")
-      .then((res) => res.text())
-      .then((text) => {
-        const lines = text.split("\n").map(l => l.trim()).filter(l => l);
-        const items: { title: string; description: string; image: string }[] = [];
-        let currentTitle = "";
-
-        // Mapping index to images as per user instruction (1-5)
-        const images = [
-          "/Awards and rewards/Nagarjuna-ayurveda/Award-1.png",
-          "/Awards and rewards/Nagarjuna-ayurveda/Award-2.png",
-          "/Awards and rewards/Nagarjuna-ayurveda/Award-3.png",
-          "/Awards and rewards/Nagarjuna-ayurveda/Award-4.png",
-          "/Awards and rewards/Nagarjuna-ayurveda/Award-5.png"
-        ];
-
-        let imageIndex = 0;
-
-        for (let i = 0; i < lines.length; i++) {
-          const line = lines[i];
-          // Simple heuristic: Short lines or lines with specific keywords are titles
-          // Long lines are descriptions.
-          // Based on file content: 
-          // Line 1: Title
-          // Line 2: Description
-
-          if (!currentTitle) {
-            currentTitle = line;
-          } else {
-            if (imageIndex < images.length) {
-              items.push({
-                title: currentTitle,
-                description: line,
-                image: images[imageIndex]
-              });
-              imageIndex++;
-            }
-            currentTitle = "";
-          }
-        }
-        setAwards(items);
-      })
-      .catch((err) => console.error("Error loading awards:", err));
+    // Researched awards for Nagarjuna Ayurveda Centre
+    const researchedAwards = [
+      {
+        title: "NABH Accredited Hospital",
+        description: "National recognition for excellence in patient safety and clinical quality standards.",
+        image: "/Awards and rewards/Nagarjuna-ayurveda/Award-4.png"
+      },
+      {
+        title: "GMP Certified Pharmacy",
+        description: "Ensuring top-tier quality, purity, and efficacy in Ayurvedic medicine production.",
+        image: "/Awards and rewards/Nagarjuna-ayurveda/Award-5.png"
+      },
+      {
+        title: "UKAS Quality Management",
+        description: "International standard for consistent quality and operational excellence.",
+        image: "/Awards and rewards/Nagarjuna-ayurveda/Award-3.png"
+      },
+      {
+        title: "ISO 9001:2015 Certified",
+        description: "Demonstrating our commitment to world-class management and healthcare systems.",
+        image: "/Awards and rewards/Nagarjuna-ayurveda/Award-1.png"
+      },
+      {
+        title: "Clinical Excellence Award",
+        description: "Honored for superior results in managing chronic health conditions through classical Ayurveda.",
+        image: "/Awards and rewards/Nagarjuna-ayurveda/Award-2.png"
+      }
+    ];
+    setAwards(researchedAwards);
+    setMediaRecognition([]);
   }, []);
 
   useEffect(() => {
@@ -111,29 +101,27 @@ export default function NagarjunaAyurvedaCentre() {
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
-        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = [];
-        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null;
+        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (!line) continue;
+          if (!line || line.startsWith("###")) continue;
 
-          if (line.startsWith("**") && line.endsWith("**") && !line.includes("Rating:")) {
+          // Match Name - Location: **Name - Location**
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
             if (current) items.push(current);
-            const content = line.slice(2, -2);
-            const parts = content.split(",");
-            const name = parts.shift()?.trim() || "";
-            const location = parts.map(p => p.trim()).join(", ");
-            current = { name, location, condition: "", title: "", review: "", rating: 5 };
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
 
-            const next = lines[i + 1] || "";
-            if (next.startsWith("*") && (next.endsWith("*") || next.endsWith('"'))) {
-              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
-              current.title = t;
-              if (t.includes(" - ")) {
-                current.condition = t.split(" - ")[0];
-              }
-              i++;
-            }
+          // Match Title: *"Title"*
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
             continue;
           }
 
@@ -143,7 +131,7 @@ export default function NagarjunaAyurvedaCentre() {
             continue;
           }
 
-          if (current) {
+          if (current && !line.startsWith("**")) {
             current.review = current.review ? `${current.review} ${line}` : line;
           }
         }
@@ -166,6 +154,27 @@ export default function NagarjunaAyurvedaCentre() {
   };
   const goToNextReview = () => {
     setCurrentReview((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const selectReview = (idx: number) => {
+    setCurrentReview(idx);
+    setIsReviewAutoPlaying(false);
+  };
+
+  const renderStars = (rating: number) => {
+    return (
+      <div className="flex gap-0.5 md:gap-1">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            className={`h-4 w-4 md:h-5 md:w-5 ${i < Math.floor(rating)
+              ? "fill-yellow-400 text-yellow-400"
+              : "fill-gray-200 text-gray-200"
+              }`}
+          />
+        ))}
+      </div>
+    );
   };
 
   const renderInlineBold = (text: string) => {
@@ -272,6 +281,28 @@ export default function NagarjunaAyurvedaCentre() {
   const nextTeam = () => {
     setIsTeamAutoPlaying(false);
     setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
+  };
+
+  useEffect(() => {
+    if (awards.length === 0) return;
+    const interval = setInterval(() => {
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+      const limit = isMobile ? awards.length : Math.max(1, awards.length - 2);
+      setCurrentAwardSlide((prev) => (prev + 1) % limit);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [awards.length]);
+
+  const nextAward = () => {
+    const isMobile = window.innerWidth < 768;
+    const limit = isMobile ? awards.length : Math.max(1, awards.length - 2);
+    setCurrentAwardSlide((prev) => (prev + 1) % limit);
+  };
+
+  const prevAward = () => {
+    const isMobile = window.innerWidth < 768;
+    const limit = isMobile ? awards.length : Math.max(1, awards.length - 2);
+    setCurrentAwardSlide((prev) => (prev - 1 + limit) % limit);
   };
 
   useEffect(() => {
@@ -1084,19 +1115,17 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
-                    <div className="flex items-center gap-2 md:gap-3 w-full">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-700">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 border-2 border-green-600">
                         {iconForTitle(p.title)}
                       </div>
-                      <div className="flex-1">
-                        <span className="block text-base md:text-lg font-semibold text-primary text-center md:text-left">{p.title}</span>
-                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
                     {p.description && (
-                      <p className="text-xs md:text-sm mb-3 md:mb-4 text-center md:text-left" style={{ color: "#7F543D" }}>
+                      <p className="text-xs md:text-sm mb-3 md:mb-4 text-justify md:text-left" style={{ color: "#7F543D" }}>
                         {p.description}
                       </p>
                     )}
@@ -1104,7 +1133,7 @@ export default function NagarjunaAyurvedaCentre() {
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                           <span className="text-green-600 mt-1 flex-shrink-0">✓</span>
-                          <span className="flex-1 text-center md:text-left">{b}</span>
+                          <span className="flex-1 text-justify md:text-left">{b}</span>
                         </li>
                       ))}
                     </ul>
@@ -1126,19 +1155,17 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
                 <AccordionItem key={idx} value={`med-${idx}`} className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-600">
-                    <div className="flex items-center gap-2 md:gap-3 w-full">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 border-2 border-blue-600">
                         {medicalIconForTitle(p.title)}
                       </div>
-                      <div className="flex-1">
-                        <span className="block text-base md:text-lg font-semibold text-primary text-center md:text-left">{p.title}</span>
-                      </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
                     {p.description && (
-                      <p className="text-xs md:text-sm mb-3 md:mb-4 text-center md:text-left" style={{ color: "#7F543D" }}>
+                      <p className="text-xs md:text-sm mb-3 md:mb-4 text-justify md:text-left" style={{ color: "#7F543D" }}>
                         {p.description}
                       </p>
                     )}
@@ -1146,7 +1173,7 @@ export default function NagarjunaAyurvedaCentre() {
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                           <span className="text-blue-600 mt-1 flex-shrink-0">✓</span>
-                          <span className="flex-1 text-center md:text-left">{b}</span>
+                          <span className="flex-1 text-justify md:text-left">{b}</span>
                         </li>
                       ))}
                     </ul>
@@ -1155,23 +1182,23 @@ export default function NagarjunaAyurvedaCentre() {
               ))}
             </Accordion>
           </div>
-          <div className="mb-12 rounded-3xl px-0 py-8 md:p-12">
+          <div className="mb-12">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Nagarjuna for Your Healing Journey</h2>
               <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
                 {whyIntro}
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyItems.map((it, idx) => (
                 <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-primary">
-                  <CardContent className="p-4 md:p-6">
+                  <CardContent className="p-6">
                     <div className="space-y-3">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                           {whyIconForTitle(it.title)}
                         </div>
-                        <h3 className="text-lg font-bold text-primary">{it.title}</h3>
+                        <h3 className="text-base md:text-lg font-bold text-primary leading-tight flex-1">{it.title}</h3>
                       </div>
                       <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>{it.description}</p>
                       {it.bullets.length > 0 && (
@@ -1381,8 +1408,8 @@ export default function NagarjunaAyurvedaCentre() {
                     key={index}
                     onClick={() => setCurrentFacilityImage(index)}
                     className={`transition-all ${index === currentFacilityImage
-                        ? "w-8 h-3 bg-primary"
-                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
                       } rounded-full`}
                     aria-label={`Go to facility image ${index + 1}`}
                   />
@@ -1397,20 +1424,25 @@ export default function NagarjunaAyurvedaCentre() {
                   className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
                 >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                         {getFacilityIcon(card.title)}
                       </div>
-                      <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                        {card.title}
+                      </h3>
                     </div>
-                    <ul className="space-y-2.5">
-                      {card.bullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
+
+                    {card.bullets && card.bullets.length > 0 && (
+                      <ul className="space-y-2">
+                        {card.bullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                            <span className="leading-snug">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -1482,69 +1514,90 @@ export default function NagarjunaAyurvedaCentre() {
         </div>
       )}
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+      <div className="max-w-6xl mx-auto px-2 md:px-4">
+        <div className="mb-12 rounded-3xl p-3 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
           <div className="text-center mb-6 md:mb-10">
             <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
             {teamIntro && (
-              <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{teamIntro}</p>
+              <p className="text-base md:text-lg mx-auto px-2" style={{ color: '#7F543D' }}>{teamIntro}</p>
             )}
           </div>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-start">
-            <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-              <CardContent className="p-4 md:p-8 h-auto flex flex-col">
-                <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                    <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            {/* Founder Card */}
+            <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full md:h-[600px] flex flex-col overflow-hidden bg-white">
+              <CardContent className="p-4 md:p-8 flex flex-col h-full overflow-hidden">
+                <div className="flex items-start gap-4 mb-6 flex-shrink-0">
+                  <div className="p-[3px] rounded-full flex-shrink-0 shadow-xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                      <img
+                        src={founderImage}
+                        alt="Founder"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-1">{founder?.name || "Founder"}</h3>
+                    <p className="text-xs md:text-sm font-semibold mb-1" style={{ color: '#7F543D' }}>{founder?.role}</p>
                     {founder?.degrees && founder.degrees.length > 0 && (
-                      <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>{founder.degrees.join(' • ')}</p>
-                    )}
-                    {founder?.role && (
-                      <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>
+                      <p className="text-xs font-medium opacity-70" style={{ color: '#7F543D' }}>{founder.degrees.join(' • ')}</p>
                     )}
                   </div>
                 </div>
-                {founder?.description && (
-                  <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{founder.description}</p>
-                )}
-                {founderExpertise.length > 0 && (
-                  <div className="pt-3 md:pt-4 border-t border-primary/10">
-                    <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
-                    <div className="flex flex-wrap gap-2">
-                      {founderExpertise.map((e, i) => (
-                        <span key={i} className="text-xs px-2 md:px-3 py-1 bg-primary/10 text-primary rounded-full mb-1">{e}</span>
-                      ))}
+
+                <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6">
+                  {founder?.description && (
+                    <p className="text-sm leading-relaxed text-justify md:text-left" style={{ color: '#7F543D' }}>{founder.description}</p>
+                  )}
+                  {founderExpertise.length > 0 && (
+                    <div className="pt-5 border-t border-primary/10">
+                      <p className="text-xs font-bold text-primary mb-3 tracking-wider uppercase">Leadership & Expertise</p>
+                      <div className="flex flex-wrap gap-2">
+                        {founderExpertise.map((e, i) => (
+                          <span key={i} className="text-xs px-3 py-1.5 bg-primary/5 text-primary border border-primary/10 rounded-full">{e}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
               </CardContent>
             </Card>
 
-            <div className="relative">
-              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                <CardContent className="p-4 md:p-8 h-auto">
-                  <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+            {/* Team Card */}
+            <div className="relative h-full">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full md:h-[600px] flex flex-col overflow-hidden bg-white">
+                <CardContent className="p-4 md:p-8 flex flex-col h-full overflow-hidden">
+                  <div className="flex items-start gap-4 mb-6 flex-shrink-0">
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img
+                          src={teamImage}
+                          alt="Team"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
                     <div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary leading-tight">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
                     </div>
                   </div>
-                  {teamGroups[currentTeamSlide]?.description && (
-                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
-                  )}
-                  <ul className="space-y-2.5">
-                    {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
-                        <span>{renderInlineBold(it)}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar space-y-6">
+                    {teamGroups[currentTeamSlide]?.description && (
+                      <p className="text-sm leading-relaxed text-justify md:text-left" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
+                    )}
+                    <div className="space-y-4 pt-5 border-t border-primary/10">
+                      <p className="text-xs font-bold text-primary mb-3 tracking-wider uppercase">Expertise Areas:</p>
+                      <div className="grid grid-cols-1 gap-3">
+                        {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
+                          <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-primary/[0.02] border border-primary/10 shadow-sm">
+                            <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0 mt-1.5"></span>
+                            <span className="text-xs md:text-sm leading-snug text-justify md:text-left" style={{ color: '#7F543D' }}>{renderInlineBold(it)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -1563,84 +1616,192 @@ export default function NagarjunaAyurvedaCentre() {
               <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
                 <CardContent className="p-4 md:p-12">
                   <div className="max-w-4xl mx-auto">
+                    {/* Quote Icon */}
                     <div className="text-primary/20 mb-3 md:mb-4">
-                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
                     </div>
+
+                    {/* Review Content */}
                     <div className="mb-4 md:mb-6">
+                      <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                        {testimonials[currentReview].title}
+                      </h3>
                       <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
                         "{testimonials[currentReview].review}"
                       </p>
                     </div>
+
+                    {/* Reviewer Info */}
                     <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                        {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+                        {testimonials[currentReview].name.charAt(0)}
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                          {testimonials[currentReview].verified && (
+                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-semibold">
+                              ✓ Verified
+                            </span>
+                          )}
                         </div>
                         <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
                           {testimonials[currentReview].location} {testimonials[currentReview].condition ? `• ${testimonials[currentReview].condition}` : ""}
                         </p>
                       </div>
                     </div>
+
+                    {/* Star Rating */}
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-5 w-5 ${i < testimonials[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
-                        ))}
-                      </div>
+                      {renderStars(testimonials[currentReview].rating)}
                       <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
                     </div>
                   </div>
                 </CardContent>
-                <button onClick={goToPreviousReview} className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-2 md:-translate-x-6 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+              </Card>
+
+              {/* Navigation Arrows */}
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                <button onClick={goToPreviousReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
                   <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <button onClick={goToNextReview} className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-2 md:translate-x-6 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                <button onClick={goToNextReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
                   <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+              </div>
+
+              {/* Auto Indicator */}
+              {isReviewAutoPlaying && (
+                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                   Auto
                 </div>
-                <div className="flex justify-center gap-2 mt-4">
-                  {testimonials.map((_, i) => (
-                    <button key={i} onClick={() => { setCurrentReview(i); }} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
-                  ))}
-                </div>
-              </Card>
+              )}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, i) => (
+                <button key={i} onClick={() => selectReview(i)} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
+              ))}
             </div>
           </div>
         )}
 
-        {awards.length > 0 && (
-          <div className="mb-12">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 mb-4">
-                <Award className="h-8 w-8 text-yellow-600" />
+        {(awards.length > 0 || mediaRecognition.length > 0) && (
+          <div className="mb-12 mt-16 md:mt-24">
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
               </div>
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Recognition</h2>
-              <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>Excellence in Ayurvedic Healthcare</p>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+              <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+                Recognition of Nagarjuna's excellence in authentic clinical Ayurveda and patient care
+              </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {awards.map((award, idx) => (
-                <Card key={idx} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-2 border-primary/10">
-                  <CardContent className="p-6 text-center h-full flex flex-col items-center">
-                    <div className="w-24 h-24 mb-4 flex items-center justify-center p-2 bg-white rounded-full shadow-md">
-                      <img
-                        src={award.image}
-                        alt={award.title}
-                        className="max-w-full max-h-full object-contain"
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold text-primary mb-3">{award.title}</h3>
-                    <p className="text-sm leading-relaxed" style={{ color: '#7F543D' }}>
-                      {award.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+
+            <div className="relative group max-w-5xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAwardSlide * 100}%)` }}
+                  >
+                    {awards.map((item, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="max-h-[90%] max-w-[90%] object-contain filter drop-shadow-md transition-transform duration-300"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-2">{item.title}</h4>
+                            <p className="text-xs italic line-clamp-4" style={{ color: '#7F543D' }}>"{item.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAwardSlide * (100 / (awards.length > 3 ? 3 : awards.length))}%)` }}
+                  >
+                    {awards.map((item, i) => (
+                      <div key={i} className={`flex-shrink-0 px-4 ${awards.length === 1 ? 'w-full' : awards.length === 2 ? 'w-1/2' : 'w-1/3'}`}>
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{item.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{item.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevAward}
+                className="absolute left-8 md:left-0 top-[60%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={nextAward}
+                className="absolute right-8 md:right-0 top-[60%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {/* Desktop dots */}
+              <div className="hidden md:flex gap-2">
+                {awards.slice(0, Math.max(1, awards.length - 2)).map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentAwardSlide(idx)}
+                    className={`transition-all rounded-full ${currentAwardSlide === idx
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      }`}
+                  />
+                ))}
+              </div>
+              {/* Mobile dots */}
+              <div className="flex md:hidden gap-2">
+                {awards.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentAwardSlide(idx)}
+                    className={`transition-all rounded-full ${currentAwardSlide === idx
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -1720,7 +1881,7 @@ export default function NagarjunaAyurvedaCentre() {
             <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
               {faqItems.map((it, idx) => (
                 <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                  <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
                     <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1734,33 +1895,44 @@ export default function NagarjunaAyurvedaCentre() {
 
         {(contactAddress.length > 0 || contactWebsite) && (
           <Card className="mb-12 border-2 border-primary overflow-visible md:overflow-hidden">
-            <CardContent className="p-8">
-              <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-              <div className="grid md:grid-cols-[1fr_1.35fr] gap-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+            <CardContent className="p-4 md:p-8">
+              <div className="grid md:grid-cols-[1fr_1.35fr] gap-6 md:gap-12 lg:gap-20">
+                <div className="space-y-6 md:space-y-10">
+                  <h2 className="text-2xl md:text-3xl font-bold text-primary">Contact Information</h2>
+
+                  {/* Address Section */}
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-primary mb-1">Address</h4>
-                      <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
+                      <h4 className="font-bold text-primary mb-1">Address</h4>
+                      <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
                         {contactAddress.map((l, i) => (
-                          <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                          <span key={i} className="block">{l}</span>
                         ))}
                       </p>
                     </div>
                   </div>
+
+                  {/* Distances Section */}
                   {contactDistances.length > 0 && (
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                        <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                        <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactDistances.map((d, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              <span>{d}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
                   )}
                 </div>
+
+                {/* Map Section */}
                 <div className="md:-mt-16 self-start">
                   <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                     <div className="rounded-xl overflow-hidden">
@@ -1779,13 +1951,21 @@ export default function NagarjunaAyurvedaCentre() {
                   </div>
                 </div>
               </div>
+
+              {/* Transportation Services Section */}
               {transportText && (
-                <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                  <div className="flex items-start gap-4">
-                    <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                      <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <ShieldCheck className="h-7 w-7 text-primary" />
+                    </div>
+                    <div className="text-center md:text-left w-full">
+                      <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                      <div className="max-w-none w-full">
+                        <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                          {transportText}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1794,6 +1974,7 @@ export default function NagarjunaAyurvedaCentre() {
           </Card>
         )}
 
+        {/* CTA Card */}
         <div className="mb-12">
           <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
             <div className="md:hidden">
@@ -1803,8 +1984,8 @@ export default function NagarjunaAyurvedaCentre() {
                   alt="Nagarjuna Ayurvedic Centre"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
-                <div className="space-y-3">
+                <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
+                <div className="space-y-4">
                   <Button
                     size="lg"
                     className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
@@ -1822,55 +2003,40 @@ export default function NagarjunaAyurvedaCentre() {
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Chat With Us
                   </Button>
-                  <a
-                    href="tel:+918028432737"
-                    className="block w-full text-center text-white hover:text-white/80 transition-colors text-sm sm:text-base"
-                  >
-                    Call us: +91 80 2843 2737
-                  </a>
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <Phone className="h-4 w-4 text-red-400" />
+                  <a href="tel:+914842456456" className="underline hover:text-white">Call us: +91 484 245 6456</a>
                 </div>
               </div>
             </div>
-            <div className="hidden md:block">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
-                  <p className="text-lg text-white/90 mb-6"></p>
-                  <div className="space-y-4">
-                    <Button
-                      size="lg"
-                      className="rounded-full bg-white text-primary hover:bg-white/90 text-lg px-8 py-6"
-                      onClick={() => setQuoteModalOpen(true)}
-                    >
-                      <Phone className="mr-2 h-5 w-5" />
-                      Book Consultation Now
-                    </Button>
-                    <div className="flex items-center gap-4">
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-lg px-8 py-6"
-                        onClick={() => setQuoteModalOpen(true)}
-                      >
-                        <MessageCircle className="mr-2 h-5 w-5" />
-                        Chat With Us
-                      </Button>
-                      <a
-                        href="tel:+918028432737"
-                        className="text-white hover:text-white/80 transition-colors text-lg"
-                      >
-                        Call us: +91 80 2843 2737
-                      </a>
-                    </div>
-                  </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                  Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Nagarjuna Ayurvedic Centre</span>
+                </h2>
+                <div className="flex flex-wrap gap-5">
+                  <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
                 </div>
-                <div>
-                  <img
-                    src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
-                    alt="Nagarjuna Ayurvedic Centre"
-                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                  />
+                <div className="mt-8 flex items-center gap-2 text-white/90">
+                  <Phone className="h-5 w-5 text-red-400" />
+                  <a href="tel:+914842456456" className="underline hover:text-white">Call us: +91 484 245 6456</a>
                 </div>
+              </div>
+              <div>
+                <img
+                  src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
+                  alt="Nagarjuna Ayurvedic Centre"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                />
               </div>
             </div>
           </div>

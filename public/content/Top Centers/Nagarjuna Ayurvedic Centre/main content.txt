@@ -1,8 +1,7 @@
 **Nagarjuna Ayurvedic Centre: Where Tradition Meets Science**
 
-### About Nagarjuna Ayurvedic Centre
+**About Nagarjuna**
 Nestled on the serene banks of the river Periyar in Kalady, Nagarjuna Ayurvedic Centre is a sanctuary of authentic healing. As the treatment wing of the renowned Nagarjuna Ayurvedic Group, we represent a powerful legacy of quality and trust. Our centre is a harmonious blend of traditional Kerala architecture and the tranquil beauty of nature, creating the perfect environment to disconnect from the world and reconnect with your health.
-
 
 
 
@@ -22,8 +21,7 @@ Nestled on the serene banks of the river Periyar in Kalady, Nagarjuna Ayurvedic 
 
 
 
-
-### Treatment Philosophy & Approach
+### Philosophy & Approach
 Our philosophy is a unique and powerful fusion of ancient wisdom and modern scientific validation. We honor the classical principles of Ayurveda while ensuring our approach is evidence-based, safe, and effective for today's health challenges. Our goal is not just to manage your symptoms, but to heal the root cause of your imbalance.
 
 
@@ -40,7 +38,7 @@ Our philosophy is a unique and powerful fusion of ancient wisdom and modern scie
 
 
 
-### Systems of Medicine Practiced
+**Systems of Medicine Practiced**
 Our approach to healing is built on a foundation of authentic, time-tested practices.
 
 1. **Authentic Ayurveda**

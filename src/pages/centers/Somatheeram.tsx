@@ -25,6 +25,13 @@ export default function Somatheeram() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  const [founder, setFounder] = useState<{ name: string; role: string; description: string } | null>(null);
+  const [founderExpertise, setFounderExpertise] = useState<string[]>([]);
+  const [teamIntro, setTeamIntro] = useState("");
+  const [teamGroups, setTeamGroups] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
+  const [currentTeamSlide, setCurrentTeamSlide] = useState(0);
+  const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
+
   const [showVideoGalleryTop, setShowVideoGalleryTop] = useState(false);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
@@ -507,7 +514,86 @@ export default function Somatheeram() {
         setFacilitiesItems(items);
       })
       .catch((err) => console.error("Error loading Somatheeram facilities content:", err));
+
+    fetch("/content/Top Centers/somatheeram/Founder & Team Info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        let name = "";
+        let role = "";
+        let fdesc = "";
+        const expertise: string[] = [];
+        const groups: { title: string; description: string; bullets: string[] }[] = [];
+        let currentGroup: { title: string; description: string; bullets: string[] } | null = null;
+        let section: "" | "founder" | "expertise" | "team" = "";
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const title = line.slice(2, -2).replace(/\*\*/g, "").trim();
+            if (title.toLowerCase().includes("mathew")) {
+              name = title;
+              section = "founder";
+            } else if (title.includes("Leadership & Expertise")) {
+              section = "expertise";
+            } else if (title.includes("Medical Team")) {
+              section = "team";
+            } else if (section === "team") {
+              if (currentGroup) groups.push(currentGroup);
+              currentGroup = { title, description: "", bullets: [] };
+            }
+            continue;
+          }
+
+          if (section === "" && !line.startsWith("**")) {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (section === "founder") {
+            if (!role) role = line.replace(/\*\*/g, "").trim();
+            else fdesc = fdesc ? `${fdesc} ${line.replace(/\*\*/g, "").trim()}` : line.replace(/\*\*/g, "").trim();
+          } else if (section === "expertise") {
+            if (line.startsWith("*")) expertise.push(line.replace(/^\*+\s*/, "").replace(/\*\*/g, "").trim());
+          } else if (section === "team") {
+            if (!currentGroup) {
+              intro = intro ? `${intro} ${line.replace(/\*\*/g, "").trim()}` : line.replace(/\*\*/g, "").trim();
+            } else {
+              if (line.startsWith("*")) {
+                currentGroup.bullets.push(line.replace(/^\*+\s*/, "").replace(/\*\*/g, "").trim());
+              } else {
+                currentGroup.description = currentGroup.description ? `${currentGroup.description} ${line.replace(/\*\*/g, "").trim()}` : line.replace(/\*\*/g, "").trim();
+              }
+            }
+          }
+        }
+        if (currentGroup) groups.push(currentGroup);
+
+        setTeamIntro(intro);
+        setFounder({ name, role, description: fdesc });
+        setFounderExpertise(expertise);
+        setTeamGroups(groups);
+      })
+      .catch((err) => console.error("Error loading Somatheeram founder content:", err));
   }, []);
+
+  useEffect(() => {
+    if (!isTeamAutoPlaying || teamGroups.length === 0) return;
+    const id = setInterval(() => {
+      setCurrentTeamSlide((p) => (p + 1) % teamGroups.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isTeamAutoPlaying, teamGroups.length]);
+
+  const prevTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((p) => (p - 1 + teamGroups.length) % teamGroups.length);
+  };
+
+  const nextTeam = () => {
+    setIsTeamAutoPlaying(false);
+    setCurrentTeamSlide((p) => (p + 1) % teamGroups.length);
+  };
 
   const wellnessIconForTitle = (t: string) => {
     const s = t.toLowerCase();
@@ -1324,6 +1410,170 @@ export default function Somatheeram() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-3 md:px-4 max-w-full mt-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h2>
+              <p className="text-base md:text-lg" style={{ color: "#7F543D" }}>Led by visionary expertise and supported by generations of traditional healing knowledge</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {/* Founder Card */}
+              {founder && (
+                <Card className="overflow-hidden border-2 border-primary/10 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white">
+                  <CardContent className="p-0">
+                    <div className="flex flex-col h-full">
+                      <div className="p-6 md:p-8 flex items-center gap-4 md:gap-6 border-b border-gray-100">
+                        <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                          <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                            <img
+                              src="/Center Images/somatheeram/Founder/Founder.jpg"
+                              alt={founder.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-bold text-primary mb-1">{founder.name}</h3>
+                          <p className="text-sm md:text-base font-medium text-primary/70 mb-1 uppercase tracking-wider">{founder.role}</p>
+                        </div>
+                      </div>
+                      <div className="p-6 md:p-8 flex-1">
+                        <p className="text-sm md:text-base leading-relaxed text-justify mb-6" style={{ color: "#7F543D" }}>
+                          {founder.description}
+                        </p>
+
+                        <div className="mt-auto">
+                          <h4 className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-widest mb-3">Leadership & Expertise</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {founderExpertise.map((exp, idx) => (
+                              <span key={idx} className="bg-primary/10 text-primary text-[10px] md:text-[11px] px-3 py-1.5 rounded-full border border-primary/20 font-semibold">
+                                {exp}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Medical Team Card */}
+              <Card className="overflow-hidden border-2 border-primary/10 shadow-xl hover:shadow-2xl transition-all duration-300 bg-white">
+                <CardContent className="p-0">
+                  <div className="flex flex-col h-full">
+                    <div className="p-6 md:p-8 flex items-center gap-4 md:gap-6 border-b border-gray-100">
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img
+                            src="/Center Images/somatheeram/expert-team.png"
+                            alt="Expert Medical Team"
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              (e.target as any).src = "https://images.unsplash.com/photo-1576091160550-217359f4ecf8?auto=format&fit=crop&q=80&w=200&h=200";
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-primary mb-1">Expert Medical Team</h3>
+                        <p className="text-sm md:text-base font-medium text-primary/70 mb-1 uppercase tracking-wider">Ayurvedic Experts</p>
+                        <div className="flex items-center gap-2 text-green-600 font-semibold text-[10px] md:text-xs uppercase tracking-widest">
+                          <UserCheck className="h-3.5 w-3.5" />
+                          <span>13+ Expert Physicians</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-6 md:p-8 flex-1 flex flex-col">
+                      <div className="relative flex-1 flex flex-col">
+                        <div className="overflow-hidden mb-4 flex-1">
+                          <div
+                            className="flex transition-transform duration-500 ease-in-out"
+                            style={{ transform: `translateX(-${currentTeamSlide * 100}%)` }}
+                          >
+                            {teamGroups.map((group, idx) => (
+                              <div key={idx} className="w-full flex-shrink-0">
+                                {group.description && group.description.trim() !== "" && (
+                                  <p className="text-[13px] md:text-sm italic mb-6 opacity-90 leading-relaxed" style={{ color: "#7F543D" }}>
+                                    {group.description}
+                                  </p>
+                                )}
+
+                                <div className="space-y-6">
+                                  <h4 className="text-[11px] md:text-xs font-bold text-primary uppercase tracking-[0.15em] opacity-80">Our Collaborative Team Includes:</h4>
+                                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                                    {group.bullets.map((bullet, bIdx) => {
+                                      const colonIndex = bullet.indexOf(':');
+                                      const hasLabel = colonIndex !== -1 && colonIndex < 35; // Ensure it's a short label, not part of a sentence
+                                      const label = hasLabel ? bullet.slice(0, colonIndex + 1) : "";
+                                      const content = hasLabel ? bullet.slice(colonIndex + 1) : bullet;
+
+                                      return (
+                                        <div key={bIdx} className="flex items-start gap-3 text-[13px] md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                                          <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                                          <span className="font-medium">
+                                            {hasLabel ? (
+                                              <>
+                                                <span className="font-bold text-primary">{label}</span>
+                                                {content}
+                                              </>
+                                            ) : bullet}
+                                          </span>
+                                        </div>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Carousel Controls */}
+                        {teamGroups.length > 1 && (
+                          <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                            <div className="flex gap-2">
+                              {teamGroups.map((_, idx) => (
+                                <button
+                                  key={idx}
+                                  onClick={() => {
+                                    setCurrentTeamSlide(idx);
+                                    setIsTeamAutoPlaying(false);
+                                  }}
+                                  className={`h-2 md:h-2 rounded-full transition-all duration-300 ${currentTeamSlide === idx ? "w-6 md:w-8 bg-primary" : "w-2 md:w-2 bg-gray-300 hover:bg-primary/40"
+                                    }`}
+                                />
+                              ))}
+                            </div>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={prevTeam}
+                                className="p-1.5 md:p-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white text-primary transition-all duration-300"
+                              >
+                                <ChevronLeft className="h-4 w-4" />
+                              </button>
+                              <button
+                                onClick={nextTeam}
+                                className="p-1.5 md:p-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white text-primary transition-all duration-300"
+                              >
+                                <ChevronRight className="h-4 w-4" />
+                              </button>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>

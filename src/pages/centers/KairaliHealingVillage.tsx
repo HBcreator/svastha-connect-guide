@@ -3,7 +3,7 @@ import Footer from "@/components/Footer"
 import QuoteModal from "@/components/QuoteModal"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, Users, Heart, TrendingUp, Droplet, Brain, Sparkles, ShieldCheck, Activity, Stethoscope, Pill, Award, Leaf, Home, Hospital, ClipboardList, FileSearch, Utensils, Phone, MessageCircle, Globe, Mail } from "lucide-react"
+import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, Users, Heart, TrendingUp, Droplet, Brain, Sparkles, ShieldCheck, Activity, Stethoscope, Pill, Award, Leaf, Home, Hospital, ClipboardList, FileSearch, Utensils, Phone, MessageCircle, Globe, Mail, MessageCircleHeart } from "lucide-react"
 import { useState } from "react"
 import { useEffect } from "react"
 import MarkdownContent from "@/components/MarkdownContent"
@@ -58,6 +58,123 @@ export default function KairaliHealingVillage() {
   const [contactWebsite, setContactWebsite] = useState("")
   const [contactDistances, setContactDistances] = useState<string[]>([])
   const [transportText, setTransportText] = useState("")
+
+  const [showAwards, setShowAwards] = useState(true)
+  const [currentAward, setCurrentAward] = useState(0)
+
+  // Data for the 'Awards' tab
+  const awardsData = [
+    {
+      title: "Certificate of Excellence - TripAdvisor",
+      description: "Awarded for consistent excellence and top-tier guest experiences for 5 consecutive years.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Awards/Award 1 (5 Times in Row- Certificate of Excellence by Trip Advisor).jpg"
+    },
+    {
+      title: "NABH Accredited Hospital",
+      description: "A testament to our rigorous standards of safety, hygiene, and medical care quality.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Awards/Award 2.jpg"
+    },
+    {
+      title: "Ayurveda Excellence",
+      description: "Recognized for preserving authentic Ayurvedic traditions and therapies.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Awards/Award 3.jfif"
+    },
+    {
+      title: "Quality Certification",
+      description: "Certified for maintaining the highest quality standards in Ayurvedic treatments.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Awards/Award 4.jfif"
+    }
+  ]
+
+  // Data for the 'Media Recognition' tab
+  const mediaData = [
+    {
+      title: "National Geographic Top 50",
+      description: "Featured in National Geographic's coveted list of the 'Top 50 Wellness Destinations' worldwide.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/1 (Our sanctuary has been featured in National Geographic's coveted list of the 'Top 50 Wellness Destinations' worldwide.).jpg"
+    },
+    {
+      title: "Best Wellness Destination",
+      description: "Winner of 'Best Wellness Destination of the Year', celebrating our holistic environment.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/3 (Kairali Healing Village wins the Best Wellness Destination of the Year).jpg"
+    },
+    {
+      title: "Brand Brilliance Award",
+      description: "Kairali Ayurvedic Products Wins Brand Brilliance Award for its purity and efficacy.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/4 (Karali Ayurvedic Products Wins Brand Brilliance Award in 2019).jpg"
+    },
+    {
+      title: "World Luxury Spa Awards",
+      description: "Multiple-time winner, securing our place as a global leader in spa and wellness.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/5 (Three Years in a Row & Kairali Health Resorts Bags the World Luxury Spa Awards 2019 Again).jpg"
+    },
+    {
+      title: "Best Ayurveda Brand",
+      description: "Conferred the 'Best Ayurveda Brand of the Year' for our commitment to authentic traditions.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/6 (Glorious Appreciation conferred upon Kairali as the Best Ayurveda Brand of the Year).jpg"
+    },
+    {
+      title: "Tourism & Wellness",
+      description: "FICCI Travel & Tourism Award for promoting India as a premier Wellness Tourism destination.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/7 (FICCI Travel & Tourism Award for Promoting Wellness Tourism).jpg"
+    },
+    {
+      title: "South Asian Travel Awards",
+      description: "Top Ayurveda Health Farm winner, recognized for exceptional facilities and care.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/8 (Top Ayurveda Health Farm, Kairali, wins South Asian Travel Awards Again).jpg"
+    },
+    {
+      title: "Green Leaf Certified",
+      description: "Government of Kerala certification for meeting the highest standards of Ayurvedic practice.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/9 (Kairali Healing Village moving forward with Green leaf Certificate in 2020 by Government of Kerala).jpg"
+    },
+    {
+      title: "Asian African Leadership",
+      description: "Awarded for promoting Healthcare & Wellness through authentic Ayurveda globally.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/10 (Asian African Leadership Awards 2020 for promoting Healthcare & Wellness in Ayurveda).jpg"
+    },
+    {
+      title: "Best Luxury Ayurveda Spa",
+      description: "Recognized as the pinnacle of luxury and authentic Ayurvedic healing.",
+      image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/15 (Kairali Ayurvedic Healing Village is declared the Winner of Best Luxury Ayurveda Spa for 2020).jpg"
+    }
+  ]
+
+  // Use either awardsData or mediaData based on toggle state
+  const awards = showAwards ? awardsData : mediaData
+
+  // Reset carousel to start when switching categories
+  useEffect(() => {
+    setCurrentAward(0)
+  }, [showAwards])
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAward((prev) => {
+        // On desktop (showing 3 cards), stop at length-2; otherwise cycle through all
+        const maxIndex = window.innerWidth >= 768 ? awards.length - 2 : awards.length
+        return (prev + 1) % maxIndex
+      })
+    }, 4000)
+    return () => clearInterval(interval)
+  }, [currentAward, awards.length])
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => {
+      const maxIndex = window.innerWidth >= 768 ? awards.length - 2 : awards.length
+      return (prev - 1 + maxIndex) % maxIndex
+    })
+  }
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => {
+      const maxIndex = window.innerWidth >= 768 ? awards.length - 2 : awards.length
+      return (prev + 1) % maxIndex
+    })
+  }
+
+
 
   useEffect(() => {
     fetch("/Center Images/The Ayurvedic Healing Village/Photo Gallery/Photo Gallery.txt")
@@ -554,29 +671,43 @@ export default function KairaliHealingVillage() {
     fetch("/content/Top Centers/Kairali - The Ayurvedic Healing Village/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
-        const lines = text.split("\n").map((l) => (l || "").trim())
+        const lines = text.split("\n").map((l) => l.trim()).filter(Boolean)
         const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = []
         let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null
+
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i]
-          if (!line) continue
           if (/^###\s+Patient Stories & Reviews/i.test(line)) continue
+
           if (/^\*\*(.+?)\*\*$/.test(line) && !/Rating:/i.test(line)) {
             if (current) items.push(current)
-            const inside = line.replace(/^\*\*/, "").replace(/\*\*$/, "")
-            const parts = inside.split(",")
-            const name = parts.shift()?.trim() || ""
-            const location = parts.map((p) => p.trim()).join(", ")
+            const inside = line.slice(2, -2)
+            let name = inside
+            let location = ""
+
+            if (inside.includes(" - ")) {
+              const parts = inside.split(" - ")
+              name = parts[0].trim()
+              location = parts.slice(1).join(" - ").trim()
+            } else if (inside.includes(",")) {
+              const parts = inside.split(",")
+              name = parts[0].trim()
+              location = parts.slice(1).join(",").trim()
+            }
+
             current = { name, location, condition: "", title: "", review: "", rating: 5 }
+
+            // Check next line for title
             const next = lines[i + 1] || ""
-            if (/^\*"?/.test(next)) {
-              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "")
-              current.title = t
-              current.condition = (t.split(" - ")[0] || "").replace(/^"+|"+$/g, "")
-              i++
+            if (/^\*?".*"?\*?$/.test(next) || /^\*".*"\*$/.test(next) || next.startsWith('"')) {
+              let t = next.replace(/^\*+/, "").replace(/\*+$/, "")
+              t = t.replace(/^"/, "").replace(/"$/, "")
+              current.title = t.trim()
+              i++ // Skip title line
             }
             continue
           }
+
           if (/^\*\*Rating:\s*/i.test(line)) {
             const m = line.match(/\((\d+)\/\d+\)/)
             if (m && current) current.rating = parseInt(m[1], 10) || 5
@@ -584,6 +715,7 @@ export default function KairaliHealingVillage() {
             current = null
             continue
           }
+
           if (current) {
             current.review = current.review ? `${current.review} ${line}` : line
           }
@@ -1271,20 +1403,26 @@ export default function KairaliHealingVillage() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {facilityCards.map((card, idx) => (
-                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                <Card
+                  key={idx}
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
+                >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                         <Droplet className="h-6 w-6 text-white" />
                       </div>
-                      <h3 className="text-lg font-bold text-primary">{card.title}</h3>
+                      <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                        {card.title}
+                      </h3>
                     </div>
-                    {card.bullets.length > 0 && (
-                      <ul className="list-none pl-0 space-y-1.5">
-                        {card.bullets.map((b, bi) => (
-                          <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">•</span>
-                            <span>{b}</span>
+
+                    {card.bullets && card.bullets.length > 0 && (
+                      <ul className="space-y-2">
+                        {card.bullets.map((b, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                            <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                            <span className="leading-snug">{b}</span>
                           </li>
                         ))}
                       </ul>
@@ -1350,17 +1488,19 @@ export default function KairaliHealingVillage() {
           </div>
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
             <div className="text-center mb-6 md:mb-10">
-              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h2>
               {teamIntro && (
                 <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>{teamIntro}</p>
               )}
             </div>
             <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
-              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full bg-white">
+                <CardContent className="p-4 md:p-8 h-full flex flex-col">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
@@ -1373,7 +1513,7 @@ export default function KairaliHealingVillage() {
                     <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>{founder.description}</p>
                   )}
                   {founderExpertise.length > 0 && (
-                    <div className="pt-3 md:pt-4 border-t border-primary/10">
+                    <div className="pt-3 md:pt-4 border-t border-primary/10 mt-auto">
                       <p className="text-xs font-semibold text-primary mb-2">Leadership & Expertise</p>
                       <div className="flex flex-wrap gap-2">
                         {founderExpertise.map((e, i) => (
@@ -1385,11 +1525,13 @@ export default function KairaliHealingVillage() {
                 </CardContent>
               </Card>
               <div className="relative">
-                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                  <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                        <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full bg-white">
+                  <CardContent className="p-4 md:p-8 h-full flex flex-col">
+                    <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                        </div>
                       </div>
                       <div>
                         <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-1 leading-snug break-words whitespace-normal">
@@ -1409,8 +1551,8 @@ export default function KairaliHealingVillage() {
                     )}
                     <ul className="space-y-2.5">
                       {teamGroups.map((it, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
+                        <li key={idx} className="grid grid-cols-[auto_1fr] gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0"></span>
                           <span>{renderInlineBold(`**${it.title}:** ${it.description}`)}</span>
                         </li>
                       ))}
@@ -1425,67 +1567,223 @@ export default function KairaliHealingVillage() {
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
             </div>
+            {/* Review Carousel */}
             <div className="relative">
               <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
                 <CardContent className="p-4 md:p-12">
                   <div className="max-w-4xl mx-auto">
-                    <div className="text-primary/20 mb-3 md:mb-4">
-                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
-                    </div>
                     {testimonials.length > 0 && (
                       <>
+                        {/* Quote Icon */}
+                        <div className="text-primary/20 mb-3 md:mb-4">
+                          <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                          </svg>
+                        </div>
+
+                        {/* Review Content */}
                         <div className="mb-4 md:mb-6">
+                          <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                            {testimonials[currentReview].title}
+                          </h3>
                           <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
-                            <span>&ldquo;</span>{testimonials[currentReview].review}<span>&rdquo;</span>
+                            &quot;{testimonials[currentReview].review}&quot;
                           </p>
                         </div>
+
+                        {/* Reviewer Info */}
                         <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                           <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
                             {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
                           </div>
+
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
-                              <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                              <h4 className="text-base md:text-xl font-semibold text-primary">
+                                {testimonials[currentReview].name}
+                              </h4>
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                ✓ Verified
+                              </span>
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                              {testimonials[currentReview].location}
+                              {testimonials[currentReview].condition && testimonials[currentReview].condition !== testimonials[currentReview].title && ` • ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
+
+                        {/* Star Rating */}
                         <div className="flex items-center gap-2 md:gap-3">
                           {Array.from({ length: 5 }).map((_, i) => (
                             <Star key={i} className={`h-4 w-4 ${i < testimonials[currentReview].rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
                           ))}
-                          <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                          <span className="text-xs md:text-sm font-semibold text-primary">
+                            {testimonials[currentReview].rating}.0
+                          </span>
                         </div>
                       </>
                     )}
                   </div>
                 </CardContent>
               </Card>
+
+              {/* Navigation Buttons */}
               <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
-                <button onClick={() => setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                <button
+                  onClick={() => setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Previous review"
+                >
                   <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
+
               <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
-                <button onClick={() => setCurrentReview((prev) => (prev + 1) % testimonials.length)} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                <button
+                  onClick={() => setCurrentReview((prev) => (prev + 1) % testimonials.length)}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Next review"
+                >
                   <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
               </div>
+
+              {/* Auto-play indicator */}
               {isReviewAutoPlaying && (
                 <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                   Auto
                 </div>
               )}
-              <div className="flex justify-center gap-2 mt-4">
-                {testimonials.map((_, i) => (
-                  <button key={i} onClick={() => setCurrentReview(i)} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
-                ))}
-              </div>
+            </div>
+
+            {/* Dots Navigation */}
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentReview(idx)}
+                  className={`transition-all rounded-full ${currentReview === idx
+                    ? "w-8 h-3 bg-primary"
+                    : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    }`}
+                  aria-label={`Go to review ${idx + 1}`}
+                />
+              ))}
             </div>
           </div>
+
+          {/* Awards & Media Recognition */}
+          <div className="mb-24 mt-16 md:mt-24">
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+              <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+                Recognition of Kairali's global excellence in integrated holistic healing and patient care
+              </p>
+            </div>
+
+            {/* Toggle Buttons */}
+            <div className="flex items-center justify-center gap-2 md:gap-4 mb-10">
+              <Button
+                onClick={() => setShowAwards(true)}
+                className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${showAwards
+                  ? "bg-primary text-white shadow-xl scale-105"
+                  : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
+                  }`}
+              >
+                <Award className="mr-2 h-4 w-4 md:h-6 md:w-6" />
+                Awards
+              </Button>
+              <Button
+                onClick={() => setShowAwards(false)}
+                className={`px-4 py-2 md:px-10 md:py-7 text-sm md:text-lg font-bold transition-all rounded-full ${!showAwards
+                  ? "bg-primary text-white shadow-xl scale-105"
+                  : "bg-white text-primary border-2 border-primary hover:bg-primary/5"
+                  }`}
+              >
+                <FileSearch className="mr-2 h-4 w-4 md:h-6 md:w-6" />
+                Media Recognition
+              </Button>
+            </div>
+
+            {/* Awards Section */}
+            <div className="relative group max-w-6xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-2">{award.title}</h4>
+                            <p className="text-xs italic line-clamp-4" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPreviousAward}
+                className="absolute left-8 md:-left-8 top-[60%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Previous award"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={goToNextAward}
+                className="absolute right-8 md:-right-8 top-[60%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Next award"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+            </div>
+          </div>
+
           {insuranceBullets.length > 0 && (
             <div className="mb-12">
               <div className="text-center mb-8">
@@ -1551,6 +1849,9 @@ export default function KairaliHealingVillage() {
           {faqItems.length > 0 && (
             <div className="mb-12">
               <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <MessageCircleHeart className="h-8 w-8 text-primary" />
+                </div>
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
                 <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
                   Find answers to common questions about treatments, facilities, and your healing journey
@@ -1559,7 +1860,7 @@ export default function KairaliHealingVillage() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1571,34 +1872,44 @@ export default function KairaliHealingVillage() {
             </div>
           )}
           {(contactAddress.length > 0 || contactWebsite) && (
-            <Card className="mb-12 border-2 border-primary overflow-hidden">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+                <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
                   <div className="space-y-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    {/* Address Section */}
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Address</h4>
-                        <p className="break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
                           {contactAddress.map((l, i) => (
-                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                            <span key={i}>{l}</span>
                           ))}
                         </p>
                       </div>
                     </div>
+
+                    {/* Distances Section */}
                     {contactDistances.length > 0 && (
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
                     )}
                   </div>
+
+                  {/* Map Section */}
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
@@ -1617,13 +1928,21 @@ export default function KairaliHealingVillage() {
                     </div>
                   </div>
                 </div>
+
+                {/* Transportation Services Section */}
                 {transportText && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                    <div className="flex items-start gap-4">
-                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>{transportText}</p>
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1631,6 +1950,7 @@ export default function KairaliHealingVillage() {
               </CardContent>
             </Card>
           )}
+
           <div className="mb-12">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#234A50' }}>
               <div className="md:hidden">
@@ -1640,8 +1960,8 @@ export default function KairaliHealingVillage() {
                     alt="Kairali - The Ayurvedic Healing Village"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
-                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Kairali - The Ayurvedic Healing Village</h2>
-                  <div className="space-y-3">
+                  <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Kairali - The Ayurvedic Healing Village</h2>
+                  <div className="space-y-4">
                     <Button
                       size="lg"
                       className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
@@ -1660,7 +1980,7 @@ export default function KairaliHealingVillage() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
                     <Phone className="h-4 w-4 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
@@ -1669,8 +1989,10 @@ export default function KairaliHealingVillage() {
 
               <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Kairali - The Ayurvedic Healing Village</h2>
-                  <div className="flex flex-wrap gap-3">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                    Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Kairali - The Ayurvedic Healing Village</span>
+                  </h2>
+                  <div className="flex flex-wrap gap-5">
                     <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                       <Phone className="mr-2 h-5 w-5" />
                       Book Consultation Now
@@ -1680,7 +2002,7 @@ export default function KairaliHealingVillage() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <div className="mt-8 flex items-center gap-2 text-white/90">
                     <Phone className="h-5 w-5 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
@@ -1710,6 +2032,6 @@ export default function KairaliHealingVillage() {
         <span className="hidden md:inline">Get Free Quote</span>
         <span className="md:hidden">Quote</span>
       </button>
-    </div>
+    </div >
   )
 }
