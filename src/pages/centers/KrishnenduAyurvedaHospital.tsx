@@ -161,6 +161,62 @@ export default function KrishnenduAyurvedaHospital() {
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
 
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+
+  const awards = [
+    {
+      title: "116 Years of Heritage",
+      description: "Since 1908, our hospital has offered interrupted service across four generations, making us one of the oldest and most trusted centers in India.",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Awards/Award 4th Our greatest accreditation is our 116-year history of uninterrupted service,.jpg"
+    },
+    {
+      title: "Best Ayurveda Hospital",
+      description: "Voted 'Best Ayurveda Hospital in Kerala' three times, our commitment to patient satisfaction and effective outcomes remains unparalleled.",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Awards/Award 2( Having been voted 'Best Ayurveda Hospital in Kerala' three times, our commitment to patient satisfaction and effective outco).jpg"
+    },
+    {
+      title: "NABH Accredited Facility",
+      description: "Certified by the National Accreditation Board for Hospitals, recognizing our adherence to the highest standards of safety and quality care.",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Awards/Award 1 NABH.png"
+    },
+    {
+      title: "Clinical Excellence Gold Standard",
+      description: "The gold standard for patient safety and clinical excellence in India, ensuring top-tier medical protocols and holistic healing.",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Awards/Award 3 (This is the gold standard for patient safety and clinical excellence in India, ) (2).jpg"
+    }
+  ];
+
+  const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : 2; // On desktop (3 items), index 2 puts last award in center
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awards.length]);
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
   useEffect(() => {
     fetch("/Center Images/Krishnendu Ayurveda Hospital/Photo Gallery/Photo Gallery Links.txt")
       .then((res) => res.text())
@@ -1819,6 +1875,101 @@ export default function KrishnenduAyurvedaHospital() {
               </div>
             </div>
           )}
+
+          {/* Awards and Media Section */}
+          <div className="mb-12">
+            <div className="text-center mb-6 md:mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care over 116 years</p>
+            </div>
+
+            <div className="relative group max-w-5xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                            <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3">{award.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={goToPreviousAward}
+                className="absolute left-8 md:-left-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Previous award"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={goToNextAward}
+                className="absolute right-8 md:-right-4 top-[57%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Next award"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-8">
+                {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setCurrentAward(i); }}
+                    className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                    aria-label={`Go to award ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
 
           {(insuranceBullets.length > 0 || paymentBullets.length > 0 || internationalText) && (
             <div className="mb-12">
