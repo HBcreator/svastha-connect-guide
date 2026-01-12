@@ -55,6 +55,65 @@ export default function DhathriAyurvedicHospital() {
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
 
+  const awards = [
+    {
+      image: "/Center Images/Dhathri Ayurveda Resort/Awards/Award  1.jpg",
+      title: "NABH Accredited Hospital",
+      description: "Recognized for maintaining the highest standards of healthcare excellence and patient safety protocols."
+    },
+    {
+      image: "/Center Images/Dhathri Ayurveda Resort/Awards/Award 2 (Green Leaf Certified).png",
+      title: "Green Leaf Certification",
+      description: "The highest honor for authenticity and quality in Ayurveda, awarded by the Government of Kerala."
+    },
+    {
+      image: "/Center Images/Dhathri Ayurveda Resort/Awards/Award 3 ( A 300-Year Legacy of Trust).png",
+      title: "300-Year Legacy of Trust",
+      description: "Celebrating four generations of profound expertise and unwavering commitment to authentic Ayurvedic healing."
+    }
+  ];
+
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+  const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : Math.max(0, awards.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward(prev => prev > newMax ? 0 : prev);
+      if (isMobile) {
+        setIsAwardAutoPlaying(true);
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [awards.length]);
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
+
+  const goToPreviousAward = () => {
+    if (window.innerWidth >= 768) {
+      setIsAwardAutoPlaying(false);
+    }
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    if (window.innerWidth >= 768) {
+      setIsAwardAutoPlaying(false);
+    }
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
   useEffect(() => {
     fetch("/content/Top Centers/Dhathri Ayurveda Hospital/Wellness Programs.txt")
       .then((res) => res.text())
@@ -444,34 +503,50 @@ export default function DhathriAyurvedicHospital() {
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
-        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = [];
-        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null;
+        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (!line) continue;
-          if (/^\*\*.+?,/.test(line) && line.endsWith("**")) {
+          if (!line || line.startsWith("###")) continue;
+
+          // Match Name - Location: **Name - Location**
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
             if (current) items.push(current);
-            const full = line.slice(2, -2);
-            const parts = full.split(",");
-            const name = parts.shift()?.trim() || "";
-            const location = parts.map((p) => p.trim()).join(", ");
-            current = { name, location, condition: "", title: "", review: "", rating: 5 };
-            const next = lines[i + 1] || "";
-            if (/^\*\s*".+"\*$/.test(next) || /^\*.+\*$/.test(next)) {
-              const t = next.replace(/^\*\s*"?/, "").replace(/"?\*$/, "");
-              current.title = t;
-              current.condition = t.split(" - ")[0];
-              i++;
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
+
+          // Match Title: *"Title"*
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
+            // Extract potential condition from title
+            const knownConditions = ["Pain", "Weight", "Stiffness", "Psoriasis", "Burnout", "Cycle", "Diabetes", "Headache", "Panchakarma"];
+            for (const c of knownConditions) {
+              if (current.title.toLowerCase().includes(c.toLowerCase())) {
+                current.condition = c;
+                break;
+              }
             }
             continue;
           }
-          if (/^\*\*Rating:\s*.*\*\*$/.test(line)) {
-            const m = line.match(/\((\d+)\/\d+\)/);
-            if (m && current) current.rating = parseInt(m[1], 10);
+
+          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\/5\)/);
+            if (ratingMatch) {
+              current.rating = parseInt(ratingMatch[1]);
+            }
             continue;
           }
+
+          // Everything else is review content
           if (current) {
-            current.review = current.review ? `${current.review} ${line}` : line;
+            current.review = current.review ? current.review + " " + line : line;
           }
         }
         if (current) items.push(current);
@@ -1058,7 +1133,7 @@ export default function DhathriAyurvedicHospital() {
             <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {programs.map((p, idx) => (
                 <AccordionItem key={idx} value={`prog-${idx}`} className="border-2 border-green-200 rounded-lg px-4 md:px-6 data-[state=open]:border-green-500 transition-colors bg-white">
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-400">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
                     <div className="flex items-center gap-2 md:gap-3 min-w-0">
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 border-2 border-green-400 flex items-center justify-center flex-shrink-0">
                         {iconForTitle(p.title)}
@@ -1323,24 +1398,32 @@ export default function DhathriAyurvedicHospital() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center md:justify-items-stretch">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {facilityCards.map((card, idx) => (
-                    <Card key={idx} className="w-full max-w-sm md:max-w-none group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                    <Card
+                      key={idx}
+                      className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
+                    >
                       <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                             {getFacilityIcon(card.title)}
                           </div>
-                          <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
+                          <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                            {card.title}
+                          </h3>
                         </div>
-                        <ul className="space-y-2.5">
-                          {card.bullets.map((b, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-primary mt-1">•</span>
-                              <span>{b}</span>
-                            </li>
-                          ))}
-                        </ul>
+
+                        {card.bullets && card.bullets.length > 0 && (
+                          <ul className="space-y-2">
+                            {card.bullets.map((b, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                                <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                                <span className="leading-snug">{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
@@ -1360,8 +1443,10 @@ export default function DhathriAyurvedicHospital() {
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                 <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
@@ -1393,8 +1478,10 @@ export default function DhathriAyurvedicHospital() {
                 <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                   <CardContent className="p-4 md:p-8 h-full md:h-[480px] md:overflow-y-auto">
                     <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                        <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                        </div>
                       </div>
                       <div>
                         <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Our Expert Medical Team"}</h3>
@@ -1424,32 +1511,48 @@ export default function DhathriAyurvedicHospital() {
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
               </div>
-              <div className="relative min-h-[420px] md:min-h-[480px]">
+              <div className="relative">
                 <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-                  <CardContent className="p-4 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
+                  <CardContent className="p-4 md:p-12">
                     <div className="max-w-4xl mx-auto flex flex-col h-full">
+                      {/* Quote Icon */}
                       <div className="text-primary/20 mb-3 md:mb-4">
-                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" /></svg>
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
                       </div>
-                      <div className="mb-4 md:mb-6 flex-1 relative">
-                        <span className="absolute top-0 right-0 text-xs px-2 py-1 rounded-full bg-primary/20 text-primary">Auto</span>
+
+                      {/* Review Content */}
+                      <div className="mb-4 md:mb-6">
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                          {testimonials[currentReview].title}
+                        </h3>
                         <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
                           "{testimonials[currentReview].review}"
                         </p>
                       </div>
+
+                      {/* Reviewer Info */}
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+                          {testimonials[currentReview].name.charAt(0)}
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
                             <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                            {testimonials[currentReview].verified && (
+                              <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 md:py-1 rounded-full font-semibold flex items-center gap-1">
+                                <span>✓</span> Verified
+                              </span>
+                            )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                            {testimonials[currentReview].location} • {testimonials[currentReview].condition || testimonials[currentReview].title}
+                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
+
+                      {/* Star Rating */}
                       <div className="flex items-center gap-2 md:gap-3">
                         {renderStars(testimonials[currentReview].rating)}
                         <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
@@ -1457,13 +1560,29 @@ export default function DhathriAyurvedicHospital() {
                     </div>
                   </CardContent>
                 </Card>
-                <button onClick={goToPreviousReview} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
-                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
-                <button onClick={goToNextReview} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
-                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
+
+                {/* Navigation Buttons */}
+                <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                  <button onClick={goToPreviousReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous review">
+                    <ChevronLeft className="h-4 md:h-6 w-4 md:w-6" />
+                  </button>
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                  <button onClick={goToNextReview} className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next review">
+                    <ChevronRight className="h-4 md:h-6 w-4 md:w-6" />
+                  </button>
+                </div>
+
+                {/* Auto-play indicator */}
+                {isReviewAutoPlaying && (
+                  <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-[10px] md:text-sm flex items-center gap-2">
+                    <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    Auto
+                  </div>
+                )}
               </div>
+
+              {/* Dots Navigation */}
               <div className="flex justify-center gap-2 mt-6">
                 {testimonials.map((_, index) => (
                   <button key={index} onClick={() => { setCurrentReview(index); }} className={`transition-all ${index === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${index + 1}`} />
@@ -1472,43 +1591,152 @@ export default function DhathriAyurvedicHospital() {
             </div>
           )}
 
+          {/* Awards & Recognition */}
+          <div className="mb-16 md:mb-24 px-4 overflow-hidden">
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Recognition</h2>
+              <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
+                Recognition of Dhathri's 300-year legacy of excellence in authentic Ayurvedic healing
+              </p>
+            </div>
+
+            <div className="relative group max-w-5xl mx-auto">
+              {/* Navigation Arrows */}
+              {maxAwardIndex > 0 && (
+                <>
+                  <button
+                    onClick={goToPreviousAward}
+                    className="absolute left-6 md:-left-4 top-[58%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    aria-label="Previous award"
+                  >
+                    <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={goToNextAward}
+                    className="absolute right-6 md:-right-4 top-[58%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    aria-label="Next award"
+                  >
+                    <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                  </button>
+                </>
+              )}
+
+              <div className="overflow-hidden px-2 md:px-0">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-1 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-2">{award.title}</h4>
+                            <p className="text-xs italic line-clamp-4" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop Slider (3 cards visible) */}
+                <div className="hidden md:block">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-2 md:p-3 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-full max-w-full object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">{award.title}</h4>
+                            <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Indicators */}
+              {maxAwardIndex > 0 && (
+                <div className="flex justify-center gap-2 mt-8">
+                  {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        if (window.innerWidth >= 768) {
+                          setIsAwardAutoPlaying(false);
+                        }
+                        setCurrentAward(i);
+                      }}
+                      className={`transition-all ${i === currentAward ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                      aria-label={`Go to award ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
           {(insuranceItems.length > 0 || paymentItems.length > 0) && (
             <div className="mb-12">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>{insuranceIntro}</p>
               </div>
-              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                <Card className="border-2 border-primary/20 bg-white/80">
-                  <CardContent className="p-4 md:p-8">
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <ShieldCheck className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all shadow-sm">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <ShieldCheck className="h-6 w-6 text-green-600" />
                       </div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary">Insurance Coverage</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary">Insurance Coverage</h3>
                     </div>
-                    <ul className="space-y-2 md:space-y-3">
+                    <ul className="space-y-4">
                       {insuranceItems.map((it, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                          <span className="text-green-600 mt-0.5">✓</span>
+                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          <span className="text-primary mt-1 font-bold">✓</span>
                           <span>{it}</span>
                         </li>
                       ))}
                     </ul>
                   </CardContent>
                 </Card>
-                <Card className="border-2 border-primary/20 bg-white/80">
-                  <CardContent className="p-4 md:p-8">
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                        <CreditCard className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all shadow-sm">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                        <Pill className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h3 className="text-lg md:text-2xl font-bold text-primary">Payment Options</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-primary">Payment Options</h3>
                     </div>
-                    <ul className="space-y-2 md:space-y-3">
+                    <ul className="space-y-4">
                       {paymentItems.map((it, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                          <span className="text-green-600 mt-0.5">✓</span>
+                        <li key={idx} className="flex items-start gap-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          <span className="text-primary mt-1 font-bold">✓</span>
                           <span>{it}</span>
                         </li>
                       ))}
@@ -1517,21 +1745,19 @@ export default function DhathriAyurvedicHospital() {
                 </Card>
               </div>
               {internationalText && (
-                <div className="mt-6">
-                  <Card className="border-2 border-primary/30 bg-white/70">
-                    <CardContent className="p-4 md:p-6">
-                      <div className="flex items-start gap-3 md:gap-4">
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Globe className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="text-base md:text-xl font-semibold text-primary mb-1">For International Patients</h4>
-                          <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>{internationalText}</p>
-                        </div>
+                <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary shadow-sm">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <Globe className="h-6 w-6 text-primary" />
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                      <div className="flex-1">
+                        <h4 className="text-xl font-bold text-primary mb-2">For International Patients</h4>
+                        <p className="text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>{internationalText}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               )}
             </div>
           )}
@@ -1550,7 +1776,7 @@ export default function DhathriAyurvedicHospital() {
               <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
                 {faqs.map((q, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-4 md:px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-primary">
+                    <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-green-600">
                       <span className="text-base md:text-lg font-semibold text-primary text-left w-full">{q.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
@@ -1589,9 +1815,12 @@ export default function DhathriAyurvedicHospital() {
                         <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: "#7F543D" }}>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
                             {contactDistances.map((d, i) => (
-                              <li key={i}>{d}</li>
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -1617,14 +1846,18 @@ export default function DhathriAyurvedicHospital() {
                   </div>
                 </div>
                 {transportText && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                    <div className="flex items-start gap-4">
-                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                        <p className="text-sm leading-relaxed break-words" style={{ color: "#7F543D" }}>
-                          {transportText}
-                        </p>
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1638,12 +1871,12 @@ export default function DhathriAyurvedicHospital() {
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                   <img
-                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.jpg"
                     alt="Dhathri Ayurveda Hospital"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
-                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
-                  <div className="space-y-3">
+                  <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
+                  <div className="space-y-4">
                     <Button
                       size="lg"
                       className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
@@ -1662,7 +1895,7 @@ export default function DhathriAyurvedicHospital() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                  <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
                     <Phone className="h-4 w-4 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
@@ -1671,8 +1904,10 @@ export default function DhathriAyurvedicHospital() {
 
               <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Dhathri Ayurveda Hospital</h2>
-                  <div className="flex flex-wrap gap-3">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                    Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Dhathri Ayurveda Hospital</span>
+                  </h2>
+                  <div className="flex flex-wrap gap-5">
                     <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                       <Phone className="mr-2 h-5 w-5" />
                       Book Consultation Now
@@ -1682,14 +1917,14 @@ export default function DhathriAyurvedicHospital() {
                       Chat With Us
                     </Button>
                   </div>
-                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                  <div className="mt-8 flex items-center gap-2 text-white/90">
                     <Phone className="h-5 w-5 text-red-400" />
                     <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
                   </div>
                 </div>
                 <div>
                   <img
-                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.png"
+                    src="/Center Images/Dhathri Ayurveda Resort/CTA-bottom.jpg"
                     alt="Dhathri Ayurveda Hospital"
                     className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -1740,6 +1975,6 @@ export default function DhathriAyurvedicHospital() {
         <span className="hidden md:inline">Get Free Quote</span>
         <span className="md:hidden">Quote</span>
       </button>
-    </div>
+    </div >
   );
 }

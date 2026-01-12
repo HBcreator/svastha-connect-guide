@@ -1,6 +1,6 @@
 **Sanjeevanam: The Future of Integrative Healing**
 
-### About Sanjeevanam Ayurveda Hospital
+**About Sanjeevanam**
 Welcome to Sanjeevanam, a pioneering integrative medical center in the heart of Kochi, where the timeless wisdom of Ayurveda is seamlessly blended with the precision of modern medicine. As the flagship hospital of the trusted AVA Group (AVN Arogya), we bring a 90-year legacy of pharmaceutical excellence into a state-of-the-art clinical setting. Our facility is not a secluded retreat; it is a modern, professional hospital designed for those who seek evidence-based, holistic healing without compromising on quality or scientific validation.
 
 
@@ -20,9 +20,7 @@ Welcome to Sanjeevanam, a pioneering integrative medical center in the heart of 
 
 
 
-### Treatment Philosophy & Approach
-At Sanjeevanam, you don't have to choose between ancient wisdom and modern science—you get the best of both worlds. Our core philosophy is **integrative medicine**, where we use the diagnostic precision of modern medicine to inform and enhance the deep, holistic healing of Ayurveda. Our goal is to create a transparent, evidence-based, and profoundly effective path to your long-term health.
-
+### Philosophy & Approach
 
 1.  **Evidence-Based Diagnosis**
     Your journey begins with a complete picture of your health. We utilize modern diagnostic tools, including lab tests and scans, to gain a precise understanding of your condition, which then guides your personalized Ayurvedic treatment plan.
@@ -36,9 +34,7 @@ At Sanjeevanam, you don't have to choose between ancient wisdom and modern scien
 
 
 
-**Systems of Medicine Practiced: Multiple approaches for holistic care.**
-
-Our unique strength lies in our ability to seamlessly integrate multiple powerful medical systems under one roof, providing you with the most comprehensive care possible.
+**Systems of Medicine Practiced**
 
 1. **Authentic Ayurveda**
        This is the soul of our healing. We practice classical Ayurveda, offering powerful treatments like *Panchakarma* and using potent herbal medicines to restore your body's natural state of balance.

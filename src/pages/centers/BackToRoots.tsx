@@ -43,7 +43,7 @@ export default function BackToRoots() {
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
   const founderImage = "/Center Images/Back to Roots Ayurveda Retreat/Founder and Team/Founder.jpg";
   const teamImage = "/Center Images/Back to Roots Ayurveda Retreat/Founder and Team/Team.webp";
-  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number }[]>([]);
+  const [testimonials, setTestimonials] = useState<{ id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [insuranceIntro, setInsuranceIntro] = useState("");
@@ -57,6 +57,45 @@ export default function BackToRoots() {
   const [contactWebsite, setContactWebsite] = useState("");
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
+
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+
+  const awards = [
+    {
+      title: "Best Kerala Ayurveda Center",
+      description: "Recognized for excellence in delivering authentic traditional Kerala Ayurveda treatments with traditional expertise.",
+      image: "/Center Images/Back to Roots Ayurveda Retreat/Awards/Award 2 (best Kerala Ayurveda center awards).jpg"
+    },
+    {
+      title: "NABH Certified Standards",
+      description: "Adhering to the highest standards of healthcare quality and patient safety through rigorous certification processes.",
+      image: "/Center Images/Back to Roots Ayurveda Retreat/Awards/Awards 1 (nabh-certification-consultant-service).jpg"
+    },
+    {
+      title: "Trust & Legacy of Ayurveda",
+      description: "Honored for preserving the pure legacy and age-old traditions of Ayurvedic healing for future generations.",
+      image: "/Center Images/Back to Roots Ayurveda Retreat/Awards/Awards 3 (Trust and legacy of auyuveda).jpg"
+    }
+  ];
+
+  const maxAwardIndex = awards.length - 1;
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
 
   const images = [
     "https://Savastha.b-cdn.net/Centers/Back%20to%20Roots%20Ayurveda%20Retreat/Images/Photo%20Gallery/root-1.jpg",
@@ -591,41 +630,66 @@ export default function BackToRoots() {
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
-        const items: { name: string; location: string; condition: string; title: string; review: string; rating: number }[] = [];
-        let current: { name: string; location: string; condition: string; title: string; review: string; rating: number } | null = null;
+        const items: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
+        let idCounter = 1;
+
         for (let i = 0; i < lines.length; i++) {
           const line = lines[i];
-          if (!line) continue;
-          if (line.startsWith("### ")) continue;
-          if (line.startsWith("**") && line.endsWith("**")) {
-            if (/^\*\*Rating:/i.test(line)) {
-              const m = line.match(/\((\d+)\/\d+\)/);
-              if (m && current) current.rating = parseInt(m[1], 10);
-              if (current) items.push(current);
-              current = null;
-              continue;
-            }
-            const content = line.slice(2, -2);
-            const parts = content.split(",");
-            const name = parts.shift()?.trim() || "";
-            const location = parts.map((p) => p.trim()).join(", ");
-            current = { name, location, condition: "", title: "", review: "", rating: 5 };
-            const next = lines[i + 1] || "";
-            if (/^\*.*\*$/.test(next)) {
-              const t = next.replace(/^\*+"?/, "").replace(/"?\*+$/, "");
-              current.title = t;
-              current.condition = t.split(" - ")[0];
-              i++;
+          if (!line || line.startsWith("###")) continue;
+
+          // Match Name - Location: **Name - Location**
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
+            if (current) items.push(current);
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { id: idCounter++, name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
+
+          // Match Title: *"Title"*
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
+            // Guess condition from title if possible
+            const conds = ["Sciatica", "Weight", "Psoriasis", "Burnout", "Joint Pain", "Migraines", "Diabetes", "Detox"];
+            for (const c of conds) {
+              if (line.toLowerCase().includes(c.toLowerCase())) {
+                current.condition = c;
+                break;
+              }
             }
             continue;
           }
-          if (current) {
-            current.review = current.review ? `${current.review} ${line}` : line;
+
+          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\//);
+            if (ratingMatch) current.rating = parseInt(ratingMatch[1]);
+            continue;
+          }
+
+          // Everything else is review content
+          if (current && line && !line.startsWith("**") && !line.startsWith("*")) {
+            current.review = current.review ? current.review + " " + line : line;
+            // Also guess condition from content if not yet found
+            if (!current.condition) {
+              const conds = ["Sciatica", "Weight", "Psoriasis", "Burnout", "Joint Pain", "Migraines", "Diabetes", "Detox"];
+              for (const c of conds) {
+                if (line.toLowerCase().includes(c.toLowerCase())) {
+                  current.condition = c;
+                  break;
+                }
+              }
+            }
           }
         }
+        if (current) items.push(current);
         setTestimonials(items);
       })
-      .catch(() => { });
+      .catch((err) => console.error("Error loading Back to Roots reviews:", err));
   }, []);
   useEffect(() => {
     if (!isReviewAutoPlaying || testimonials.length === 0) return;
@@ -869,7 +933,7 @@ export default function BackToRoots() {
                         Back
                       </Button>
                       <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                        Back to Roots Ayurveda Retreat
+                        Back to Root Gallery
                       </div>
                     </div>
 
@@ -915,7 +979,7 @@ export default function BackToRoots() {
 
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
                     <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-                      Back to Roots Ayurveda Retreat
+                      Back to Root Gallery
                     </div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                       <img
@@ -1298,19 +1362,22 @@ export default function BackToRoots() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {facilityCards.map((card, idx) => (
-                <Card key={idx} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary">
+                <Card
+                  key={idx}
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-t-4 border-t-primary"
+                >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                         {getFacilityIcon(card.title)}
                       </div>
-                      <h3 className="text-2xl font-bold text-primary">{card.title}</h3>
+                      <h3 className="text-xl font-bold text-primary">{card.title}</h3>
                     </div>
-                    <ul className="space-y-2.5">
-                      {card.bullets.map((b, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                          <span className="text-primary mt-1">•</span>
-                          <span>{b}</span>
+                    <ul className="space-y-2">
+                      {card.bullets.map((bullet, bi) => (
+                        <li key={bi} className="flex items-start gap-3 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1.5 h-1 w-1 rounded-full bg-primary flex-shrink-0" />
+                          <span>{bullet}</span>
                         </li>
                       ))}
                     </ul>
@@ -1324,19 +1391,21 @@ export default function BackToRoots() {
 
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto mt-6">
-          <div className="mb-12 rounded-3xl p-6 md:p-8" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl p-4 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-6 md:mb-10">
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
-              {teamIntro && (
-                <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{teamIntro}</p>
-              )}
+              <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
+                Led by traditional wisdom and supported by a dedicated team of Ayurvedic specialists
+              </p>
             </div>
             <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
               <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                <CardContent className="p-4 md:p-8 h-full md:h-[600px] flex flex-col">
+                <CardContent className="p-4 md:p-8 flex flex-col h-full">
                   <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                      <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                    <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                        <img src={founderImage} alt="Founder" className="w-full h-full object-cover" />
+                      </div>
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
@@ -1349,7 +1418,7 @@ export default function BackToRoots() {
                     </div>
                   </div>
                   {founder?.description && (
-                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{founder.description}</p>
+                    <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4 text-justify" style={{ color: '#7F543D' }}>{founder.description}</p>
                   )}
                   {founderExpertise.length > 0 && (
                     <div className="pt-3 md:pt-4 border-t border-primary/10">
@@ -1363,36 +1432,40 @@ export default function BackToRoots() {
                   )}
                 </CardContent>
               </Card>
-              <div className="relative">
+              <div className="relative h-full">
                 <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
-                  <CardContent className="p-4 md:p-8 h-full md:h-[600px]">
-                    <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-primary/20 flex-shrink-0">
-                        <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                  <CardContent className="p-4 md:p-8 flex flex-col h-full">
+                    <div className="flex items-start gap-4 md:gap-5 mb-4 md:mb-6">
+                      <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
+                          <img src={teamImage} alt="Team" className="w-full h-full object-cover" />
+                        </div>
                       </div>
                       <div>
                         <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words whitespace-normal">{teamGroups[currentTeamSlide]?.title || "Team"}</h3>
                       </div>
                     </div>
                     {teamGroups[currentTeamSlide]?.description && (
-                      <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
+                      <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4 text-justify" style={{ color: '#7F543D' }}>{teamGroups[currentTeamSlide].description}</p>
                     )}
-                    <ul className="space-y-2.5">
-                      {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                          <span className="text-primary mt-1">•</span>
-                          <span>{renderInlineBold(it)}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="pt-3 md:pt-4 border-t border-primary/10">
+                      <ul className="space-y-2.5">
+                        {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
+                            <span className="text-primary mt-1">•</span>
+                            <span>{renderInlineBold(it)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </CardContent>
                 </Card>
                 {teamGroups.length > 1 && (
                   <>
-                    <button onClick={prevTeam} className="absolute -left-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Previous team card">
+                    <button onClick={prevTeam} className="absolute -left-3 top-[40%] -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10" aria-label="Previous team card">
                       <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
                     </button>
-                    <button onClick={nextTeam} className="absolute -right-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary" aria-label="Next team card">
+                    <button onClick={nextTeam} className="absolute -right-3 top-[40%] -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10" aria-label="Next team card">
                       <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
                     </button>
                   </>
@@ -1412,35 +1485,55 @@ export default function BackToRoots() {
                 <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
               </div>
               <div className="relative">
-                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all rounded-2xl shadow-lg">
-                  <CardContent className="p-6 md:p-12 min-h-[420px] md:min-h-[480px] flex flex-col">
-                    <div className="md:max-w-4xl md:mx-auto md:flex md:flex-col md:h-full">
-                      <div className="flex items-center gap-3 md:gap-4 mb-4">
-                        <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary">
-                          <svg className="w-6 h-6 md:w-8 md:h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H11v6h3z" /></svg>
-                        </div>
+                <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+                  <CardContent className="p-4 md:p-12">
+                    <div className="max-w-4xl mx-auto">
+                      {/* Quote Icon */}
+                      <div className="text-primary/20 mb-3 md:mb-4">
+                        <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                        </svg>
                       </div>
-                      <div className="mb-4 md:mb-6 flex-1">
-                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: '#7F543D' }}>
+
+                      {/* Review Content */}
+                      <div className="mb-4 md:mb-6">
+                        <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                          {testimonials[currentReview].title}
+                        </h3>
+                        <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
                           "{testimonials[currentReview].review}"
                         </p>
                       </div>
+
+                      {/* Reviewer Info */}
                       <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
-                          {testimonials[currentReview].name.split(' ').map((p) => p[0]).slice(0, 2).join('')}
+                          {testimonials[currentReview].name.charAt(0)}
                         </div>
+
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                            <h4 className="text-base md:text-xl font-semibold text-primary">
+                              {testimonials[currentReview].name}
+                            </h4>
+                            {testimonials[currentReview].verified && (
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                ✓ Verified
+                              </span>
+                            )}
                           </div>
-                          <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                            {testimonials[currentReview].location} • {testimonials[currentReview].condition}
+                          <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
+
+                      {/* Star Rating */}
                       <div className="flex items-center gap-2 md:gap-3">
                         {renderStars(testimonials[currentReview].rating)}
-                        <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                        <span className="text-xs md:text-sm font-semibold text-primary">
+                          {testimonials[currentReview].rating}.0
+                        </span>
                       </div>
                     </div>
                   </CardContent>
@@ -1461,9 +1554,17 @@ export default function BackToRoots() {
                     Auto
                   </div>
                 )}
-                <div className="flex justify-center gap-2 mt-4">
-                  {testimonials.map((_, i) => (
-                    <button key={i} onClick={() => { setIsReviewAutoPlaying(true); setCurrentReview(i); }} className={`transition-all ${i === currentReview ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"} rounded-full`} aria-label={`Go to review ${i + 1}`} />
+                <div className="flex justify-center gap-2 mt-6">
+                  {testimonials.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => { setIsReviewAutoPlaying(true); setCurrentReview(idx); }}
+                      className={`transition-all rounded-full ${currentReview === idx
+                        ? "w-8 h-3 bg-primary"
+                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                        }`}
+                      aria-label={`Go to review ${idx + 1}`}
+                    />
                   ))}
                 </div>
               </div>
@@ -1471,6 +1572,100 @@ export default function BackToRoots() {
           </div>
         </div>
       )}
+
+      {/* Awards and Media Section */}
+      <div className="container mx-auto px-3 md:px-4 max-w-full">
+        <div className="max-w-6xl mx-auto">
+          <div className="mb-12">
+            <div className="text-center mb-6 md:mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
+            </div>
+
+            <div className="relative group max-w-5xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                {/* Mobile Slider (1 card) */}
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentAward * 100}%)` }}
+                  >
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-4 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                            <p className="text-sm italic line-clamp-3" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop Grid (3 cards visible, static) */}
+                <div className="hidden md:grid md:grid-cols-3 md:gap-8">
+                  {awards.map((award, i) => (
+                    <div key={i} className="w-full">
+                      <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                        <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-4 md:p-6 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={award.image}
+                            alt={award.title}
+                            className="max-h-[80%] max-w-[80%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                          />
+                        </div>
+                        <div className="text-center">
+                          <h4 className="text-xl font-bold text-primary mb-3">{award.title}</h4>
+                          <p className="text-base italic" style={{ color: '#7F543D' }}>"{award.description}"</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Arrows (Mobile Only) */}
+              <button
+                onClick={goToPreviousAward}
+                className="absolute left-10 top-[55%] -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 rounded-full shadow-lg transition-all border-2 border-primary z-10 md:hidden"
+                aria-label="Previous award"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={goToNextAward}
+                className="absolute right-10 top-[55%] -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 rounded-full shadow-lg transition-all border-2 border-primary z-10 md:hidden"
+                aria-label="Next award"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              {/* Indicators (Mobile Only) */}
+              <div className="flex justify-center gap-2 mt-8 md:hidden">
+                {awards.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setCurrentAward(i); }}
+                    className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"} rounded-full`}
+                    aria-label={`Go to award ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       {insuranceBullets.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
           <div className="max-w-6xl mx-auto mt-6">
@@ -1551,7 +1746,7 @@ export default function BackToRoots() {
               <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
                 {faqItems.map((it, idx) => (
                   <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
-                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-primary">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500">
                       <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
                     </AccordionTrigger>
                     <AccordionContent className="pt-4 pb-6 bg-white">
@@ -1567,34 +1762,44 @@ export default function BackToRoots() {
       {contactAddress.length > 0 && (
         <div className="container mx-auto px-3 md:px-4 max-w-full">
           <div className="max-w-6xl mx-auto mt-6">
-            <Card className="mb-12 border-2 border-primary overflow-hidden">
-              <CardContent className="p-8">
-                <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
-                <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+                <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
                   <div className="space-y-6">
-                    <div className="flex items-start gap-3">
-                      <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                    {/* Address Section */}
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">Address</h4>
-                        <p className="break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                          {contactAddress.map((l, i) => (
-                            <span key={i}>{l}{i < contactAddress.length - 1 ? <br /> : null}</span>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                          {contactAddress.filter(l => l.trim() !== "").map((l, i) => (
+                            <span key={i}>{l}</span>
                           ))}
                         </p>
                       </div>
                     </div>
+
+                    {/* Distances Section */}
                     {contactDistances.length > 0 && (
-                      <div className="flex items-start gap-3">
-                        <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                         <div>
-                          <h4 className="font-semibold text-primary mb-1">Distance from Major Locations</h4>
-                          <ul className="list-disc list-inside break-words leading-relaxed" style={{ color: '#7F543D' }}>
-                            {contactDistances.map((d, i) => (<li key={i}>{d}</li>))}
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: '#7F543D' }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
+                            ))}
                           </ul>
                         </div>
                       </div>
                     )}
                   </div>
+
+                  {/* Map Section */}
                   <div className="md:-mt-16 self-start">
                     <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
                       <div className="rounded-xl overflow-hidden">
@@ -1613,13 +1818,21 @@ export default function BackToRoots() {
                     </div>
                   </div>
                 </div>
+
+                {/* Transportation Services Section */}
                 {transportText && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-xl border-l-4 border-l-primary">
-                    <div className="flex items-start gap-4">
-                      <ShieldCheck className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">Transportation Services</h4>
-                        <p className="text-sm leading-relaxed break-words" style={{ color: '#7F543D' }}>{transportText}</p>
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: '#7F543D' }}>
+                            {transportText}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1640,7 +1853,7 @@ export default function BackToRoots() {
                     alt="Back to Roots Ayurveda Retreat"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
-                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Back to Roots Ayurveda</h2>
+                  <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Back to Roots Ayurveda</h2>
                   <div className="space-y-3">
                     <Button
                       size="lg"
@@ -1669,8 +1882,10 @@ export default function BackToRoots() {
 
               <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Back to Roots Ayurveda</h2>
-                  <div className="flex flex-wrap gap-3">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                    Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Back to Roots</span>
+                  </h2>
+                  <div className="flex flex-wrap gap-5">
                     <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                       <Phone className="mr-2 h-5 w-5" />
                       Book Consultation Now

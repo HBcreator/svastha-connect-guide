@@ -983,7 +983,7 @@ export default function KairaliHealingVillage() {
                         Back
                       </Button>
                       <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                        Kairali Ayurvedic Healing Village
+                        Kairali Gallery
                       </div>
                     </div>
 
@@ -1025,7 +1025,7 @@ export default function KairaliHealingVillage() {
                   </button>
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
                     <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-                      Kairali Ayurvedic Healing Village
+                      Kairali Gallery
                     </div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                       <img
