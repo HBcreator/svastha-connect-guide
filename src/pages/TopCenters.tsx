@@ -20,7 +20,7 @@ const TopCenters = () => {
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
   const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam"];
-  
+
   const treatments = [
     "All",
     "Panchakarma",
@@ -42,7 +42,7 @@ const TopCenters = () => {
       rating: 4.9,
       reviews: 500,
       priceRange: "$$$$",
-      image: "/Center Images/SOUKYA/27 soukya.jpg",
+      image: "/Center Images/SOUKYA/top center Thumb.jpg",
       slug: "bangalore/soukya" as string | undefined,
     },
     {
@@ -282,7 +282,7 @@ const TopCenters = () => {
   return (
     <div className="min-h-screen font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
-      
+
       {/* Header */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4">
@@ -369,72 +369,72 @@ const TopCenters = () => {
               return cityMatch && treatmentMatch;
             })
             .map((center, index) => (
-            <div key={index} className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
-              <div className="w-full aspect-video overflow-hidden">
-                <img 
-                  src={center.image}
-                  alt={center.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  onError={(e) => { e.currentTarget.src = centerKerala; }}
-                />
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl font-bold text-primary">{center.name}</h3>
+              <div key={index} className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
+                <div className="w-full aspect-video overflow-hidden">
+                  <img
+                    src={center.image}
+                    alt={center.name}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    onError={(e) => { e.currentTarget.src = centerKerala; }}
+                  />
                 </div>
-                
-                <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1">
-                  <MapPin size={14} /> {(center as { locationText?: string }).locationText || `${center.city}, India`}
-                </p>
-                
-                <p className="text-foreground text-sm mb-4">{center.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {center.specialties.map((specialty, i) => (
-                    <span
-                      key={i}
-                      className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground"
-                      style={(center as { badgeColor?: string }).badgeColor ? { backgroundColor: (center as { badgeColor?: string }).badgeColor } : undefined}
-                    >
-                      {specialty}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
-                  <div className="flex items-center gap-1">
-                    <Star className="text-yellow-500 fill-yellow-500" size={16} />
-                    <span className="font-semibold">{center.rating}</span>
-                    <span className="text-xs text-muted-foreground">({center.reviews} reviews)</span>
+
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-bold text-primary">{center.name}</h3>
                   </div>
-                  <span className="text-muted-foreground font-medium">{center.priceRange}</span>
-                </div>
-                
-                <div className="flex gap-2">
-                  <Button
-                    variant="outline"
-                    className="flex-1 font-semibold"
-                    onClick={() => center.slug ? navigate(`/centers/${center.slug}`) : navigate("#")}
-                  >
-                    View Details
-                  </Button>
-                  <Button 
-                    onClick={() => setQuoteModalOpen(true)}
-                    className="flex-1 font-semibold"
-                  >
-                    Get Quote
-                  </Button>
+
+                  <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1">
+                    <MapPin size={14} /> {(center as { locationText?: string }).locationText || `${center.city}, India`}
+                  </p>
+
+                  <p className="text-foreground text-sm mb-4">{center.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {center.specialties.map((specialty, i) => (
+                      <span
+                        key={i}
+                        className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground"
+                        style={(center as { badgeColor?: string }).badgeColor ? { backgroundColor: (center as { badgeColor?: string }).badgeColor } : undefined}
+                      >
+                        {specialty}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
+                    <div className="flex items-center gap-1">
+                      <Star className="text-yellow-500 fill-yellow-500" size={16} />
+                      <span className="font-semibold">{center.rating}</span>
+                      <span className="text-xs text-muted-foreground">({center.reviews} reviews)</span>
+                    </div>
+                    <span className="text-muted-foreground font-medium">{center.priceRange}</span>
+                  </div>
+
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      className="flex-1 font-semibold"
+                      onClick={() => center.slug ? navigate(`/centers/${center.slug}`) : navigate("#")}
+                    >
+                      View Details
+                    </Button>
+                    <Button
+                      onClick={() => setQuoteModalOpen(true)}
+                      className="flex-1 font-semibold"
+                    >
+                      Get Quote
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-      
+
       {/* Floating Quote Button */}
       <button
         onClick={() => setQuoteModalOpen(true)}
