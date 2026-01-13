@@ -12,7 +12,7 @@ import {
   MapPin, Phone, Mail, Globe, Star, Calendar, ChevronLeft, ChevronRight,
   Award, Users, Heart, Leaf, Sparkles, Hospital, UserCheck, Utensils, ShieldCheck,
   ClipboardList, Stethoscope, Pill, Activity, Home, FileSearch, Images,
-  Building2, Droplet, TreePine, TestTube2, MessageCircleHeart, HeartPulse, Brain, Video, TrendingUp, MessageCircle
+  Building2, Droplet, TreePine, TestTube2, MessageCircleHeart, HeartPulse, Brain, Video, TrendingUp, MessageCircle, Compass, ChevronDown, X
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -185,6 +185,7 @@ export default function SOUKYACenter() {
   const [transportText, setTransportText] = useState("");
   const [content, setContent] = useState(""); // Keeping for compatibility if needed, or remove later
   const [testimonials, setTestimonials] = useState<{ id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
+  const [selectedMedicalProgram, setSelectedMedicalProgram] = useState<any>(null);
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -196,6 +197,53 @@ export default function SOUKYACenter() {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  // Body Scroll Lock for Modals/Drawers
+  useEffect(() => {
+    if (isJumpModalOpen || selectedMedicalProgram) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isJumpModalOpen, selectedMedicalProgram]);
+
+  // Jump Sections Data
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "why-choose", title: "Why Choose SOUKYA" },
+    { id: "process", title: "Process & Journey" },
+    { id: "facilities", title: "Facilities & Amenities" },
+    { id: "team", title: "Founder & Team Info" },
+    { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "faq", title: "F&Q" },
+    { id: "contact", title: "Contact Information" }
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80; // height of any floating header
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 300);
+  };
   const [showAwards, setShowAwards] = useState(true);
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
   const [isMediaAutoPlaying, setIsMediaAutoPlaying] = useState(true);
@@ -207,19 +255,19 @@ export default function SOUKYACenter() {
 
   // Facilities images
   const facilityImages = [
-    "/Center Images/SOUKYA/Facilities & Amenities/2 Soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/3 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/4 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/5 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/6 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/7 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/8 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/9 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/19 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/20 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/21 soukkya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/22 soukya.jpg",
-    "/Center Images/SOUKYA/Facilities & Amenities/23 Soukya.jpg"
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/19%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/2%20Soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/3%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/4%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/5%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/6%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/7%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/8%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/9%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/20%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/21%20soukkya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/22%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Facilities/23%20Soukya.jpg"
   ];
 
   // Media items with matching images and PDFs
@@ -273,36 +321,36 @@ export default function SOUKYACenter() {
 
   // SOUKYA gallery images (1–30)
   const images = [
-    "/Center Images/SOUKYA/1 Soukya.jpg",
-    "/Center Images/SOUKYA/2 Soukya.jpg",
-    "/Center Images/SOUKYA/3 soukya.jpg",
-    "/Center Images/SOUKYA/4 soukya.jpg",
-    "/Center Images/SOUKYA/5 soukya.jpg",
-    "/Center Images/SOUKYA/6 soukya.jpg",
-    "/Center Images/SOUKYA/7 soukya.jpg",
-    "/Center Images/SOUKYA/8 soukya.jpg",
-    "/Center Images/SOUKYA/9 soukya.jpg",
-    "/Center Images/SOUKYA/10 soukya.jpg",
-    "/Center Images/SOUKYA/11 soukya.jpg",
-    "/Center Images/SOUKYA/12 soukya.jpeg",
-    "/Center Images/SOUKYA/13 soukya.jpg",
-    "/Center Images/SOUKYA/14 soukya.jpg",
-    "/Center Images/SOUKYA/15 soukya.jpg",
-    "/Center Images/SOUKYA/16 soukya.jpg",
-    "/Center Images/SOUKYA/17 soukya.jpg",
-    "/Center Images/SOUKYA/18 soukya.jpg",
-    "/Center Images/SOUKYA/19 soukya.jpg",
-    "/Center Images/SOUKYA/20 soukya.jpg",
-    "/Center Images/SOUKYA/21 soukya.jpg",
-    "/Center Images/SOUKYA/22 soukya.jpg",
-    "/Center Images/SOUKYA/23 soukya.jpg",
-    "/Center Images/SOUKYA/24 soukya.jpg",
-    "/Center Images/SOUKYA/25 soukya.jpg",
-    "/Center Images/SOUKYA/26 soukya.jpg",
-    "/Center Images/SOUKYA/27 soukya.jpg",
-    "/Center Images/SOUKYA/28 soukya.jpg",
-    "/Center Images/SOUKYA/29 soukya.jpg",
-    "/Center Images/SOUKYA/30 soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/1%20Soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/2%20Soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/3%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/4%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/5%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/6%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/7%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/8%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/9%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/10%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/11%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/12%20soukya.jpeg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/13%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/14%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/15%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/16%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/17%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/18%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/19%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/20%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/21%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/22%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/23%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/24%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/25%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/26%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/27%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/28%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/29%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/30%20soukya.jpg",
   ];
 
   const awards = [
@@ -658,18 +706,19 @@ export default function SOUKYACenter() {
 
   // Select 6 specific images for thumbnail grid
   const thumbnailImages = [
-    "/Center Images/SOUKYA/1 Soukya.jpg",
-    "/Center Images/SOUKYA/2 Soukya.jpg",
-    "/Center Images/SOUKYA/12 soukya.jpeg",
-    "/Center Images/SOUKYA/7 soukya.jpg",
-    "/Center Images/SOUKYA/29 soukya.jpg",
-    "/Center Images/SOUKYA/24 soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/1%20Soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/2%20Soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/12%20soukya.jpeg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/7%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/29%20soukya.jpg",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/24%20soukya.jpg",
   ];
 
   // Videos from SOUKYA folder
   const videos = [
-    "/Center Videos/Soukya/Video-1.mp4",
-    "/Center Videos/Soukya/Video-2.mp4",];
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Videos/Video%20Gallery/Video-1.mp4",
+    "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Videos/Video%20Gallery/Video-2.mp4",
+  ];
 
   // Media carousel navigation
   const handleNextMedia = () => {
@@ -982,7 +1031,7 @@ export default function SOUKYACenter() {
         <div className="max-w-6xl mx-auto">
 
           {/* Photo/Video Gallery Section */}
-          <div className="mb-12">
+          <div className="mb-12" id="gallery">
             {/* Gallery Toggle Header */}
             <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
               <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
@@ -1148,11 +1197,12 @@ export default function SOUKYACenter() {
                         className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-4 ring-primary" : "ring-2 ring-transparent hover:ring-primary/30"
                           }`}
                       >
-                        {/* Video thumbnail images */}
-                        <img
-                          src={`/Center Images/SOUKYA/Video gallery images/${idx + 1}.jpg`}
-                          alt={`Video ${idx + 1} Thumbnail`}
+                        {/* Auto Video Thumbnail */}
+                        <video
+                          src={video + "#t=0.1"}
                           className="w-full h-full object-cover"
+                          preload="metadata"
+                          muted
                         />
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-colors">
                           <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center">
@@ -1187,7 +1237,7 @@ export default function SOUKYACenter() {
           </Card>
 
           {/* Wellness & Rejuvenation Programs */}
-          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }} id="wellness">
             {/* Statistics Section */}
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -1259,7 +1309,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Medical Treatment Programs */}
-          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }} id="medical">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
@@ -1272,40 +1322,43 @@ export default function SOUKYACenter() {
               </p>
             </div>
 
-            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
               {medicalPrograms.map((p, idx) => (
-                <AccordionItem
+                <div
                   key={idx}
-                  value={`medical-${idx}`}
-                  className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
+                  onClick={() => setSelectedMedicalProgram(p)}
+                  className="group relative h-48 md:h-64 rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-white/20 hover:border-blue-400"
                 >
-                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
-                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
-                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-700">
+                  {/* Background Image using Photo Gallery links */}
+                  <img
+                    src={images[idx % images.length]}
+                    alt={p.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
+
+                  {/* Icon and Title */}
+                  <div className="absolute inset-0 p-3 md:p-5 flex flex-col justify-end">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center mb-2 border border-white/30 group-hover:bg-blue-600 group-hover:border-transparent transition-all">
+                      <div className="text-white">
                         {medicalIconForTitle(p.title)}
                       </div>
-                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
-                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
-                      {p.description}
-                    </p>
-                    <ul className="space-y-1.5 md:space-y-2">
-                      {p.bullets.map((b, bi) => (
-                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </AccordionContent>
-                </AccordionItem>
+                    <h3 className="text-[13px] md:text-lg font-bold text-white leading-tight line-clamp-2 md:line-clamp-none">
+                      {p.title}
+                    </h3>
+                    <div className="mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="text-[10px] md:text-xs text-blue-300 font-bold uppercase tracking-wider">Explore Details</span>
+                      <ChevronRight className="h-3 w-3 text-blue-300" />
+                    </div>
+                  </div>
+                </div>
               ))}
-            </Accordion>
+            </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-12" id="why-choose">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">
                 {whyChooseData?.title || "Why Choose SOUKYA"}
@@ -1353,7 +1406,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Treatment Process & Patient Journey - Timeline */}
-          <div className="mb-12">
+          <div className="mb-12" id="process">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Treatment Process & Patient Journey
@@ -1657,7 +1710,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Facilities & Amenities - Category-Based Grid */}
-          <div className="mb-12">
+          <div className="mb-12" id="facilities">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 {facilitiesData?.title || "Facilities & Amenities"}
@@ -1826,7 +1879,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Founder & Expert Medical Team */}
-          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: '#EDE8D0' }} id="team">
             <div className="text-center mb-6 md:mb-10">
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Founder & Team Info
@@ -1936,7 +1989,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Patient Success Stories & Reviews */}
-          <div className="mb-12">
+          <div className="mb-12" id="reviews">
             <div className="text-center mb-6 md:mb-8">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Patient Stories & Reviews
@@ -2052,7 +2105,7 @@ export default function SOUKYACenter() {
             </div>
 
             {/* Awards & Media Recognition */}
-            <div className="mt-16 md:mt-24">
+            <div className="mt-16 md:mt-24" id="awards">
               <div className="text-center mb-8 md:mb-12">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
                   <Award className="h-8 w-8" />
@@ -2412,7 +2465,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Frequently Asked Questions */}
-          <div className="mb-12">
+          <div className="mb-12" id="faq">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <MessageCircleHeart className="h-8 w-8 text-primary" />
@@ -2533,7 +2586,7 @@ export default function SOUKYACenter() {
           </div>
 
           {/* Contact Information Card */}
-          <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
+          <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl" id="contact">
             <CardContent className="p-5 md:p-8">
               <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
               <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
@@ -2684,15 +2737,28 @@ export default function SOUKYACenter() {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Floating Quote Button */}
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
-      >
-        <Phone size={20} />
-        <span className="hidden md:inline">Get Free Quote</span>
-        <span className="md:hidden">Quote</span>
-      </button>
+      {/* Mobile JUMP Action (Bottom Left) - Hidden when lightbox/gallery is open */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-6 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95"
+        >
+          <Compass size={18} />
+          <span>JUMP</span>
+        </button>
+      )}
+
+      {/* Floating Quote Action (Bottom Right) */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold active:scale-95"
+        >
+          <Phone size={18} />
+          <span className="hidden md:inline">Get Free Quote</span>
+          <span className="md:hidden">Quote</span>
+        </button>
+      </div>
 
       {/* Full Gallery Modal */}
       {
@@ -2866,6 +2932,191 @@ export default function SOUKYACenter() {
           </div>
         )
       }
+      {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 flex-col items-end">
+          {/* JUMP Button */}
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-8 px-4 rounded-l-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.2)] border-y-2 border-l-2 border-white/40 hover:border-white hover:shadow-[0_0_40px_rgba(47,91,99,0.4)] hover:pr-7 transition-all duration-500 group flex flex-col items-center justify-center gap-3 font-black text-lg md:text-2xl tracking-tighter overflow-hidden relative"
+          >
+            {/* Shine effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000" />
+
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">J</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">U</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">M</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">P</span>
+          </button>
+        </div>
+      )}
+
+      {/* JUMP Modal / Drawer */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        {/* Dark Overlay */}
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        {/* Drawer Content */}
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Decorative Top Accent */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          {/* Header Area */}
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Sections of Soukya
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white text-white hover:text-primary rounded-xl transition-all duration-300 shadow-lg"
+                title="Close Menu"
+              >
+                <ChevronRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Directly navigate to any section on this page."
+              </p>
+            </div>
+          </div>
+
+          {/* List of Sections */}
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5 custom-scrollbar">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-200 p-3 rounded-xl border-2 border-primary/20 hover:border-transparent flex items-center justify-between shadow-md hover:shadow-2xl hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+
+                {/* Left Accent Bar */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+
+          {/* Footer Branding */}
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">
+              Holistic Healing Sanctuary
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Medical Program Details Drawer */}
+      <div
+        className={`fixed inset-0 z-[100] transition-all duration-500 flex items-end justify-center ${selectedMedicalProgram ? "visible" : "invisible"}`}
+        onClick={() => setSelectedMedicalProgram(null)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${selectedMedicalProgram ? "opacity-100" : "opacity-0"}`} />
+        <div
+          className={`relative w-full max-w-2xl bg-[#FCFBF7] rounded-t-[2.5rem] shadow-2xl transition-transform duration-500 ease-out transform ${selectedMedicalProgram ? "translate-y-0" : "translate-y-full"} flex flex-col max-h-[90vh]`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Drawer Header with Close */}
+          <div className="p-6 pb-2 flex items-center justify-end">
+            <button
+              onClick={() => setSelectedMedicalProgram(null)}
+              className="p-2 bg-primary/5 hover:bg-primary/10 text-primary rounded-full transition-all"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-6 pb-12 pt-2 custom-scrollbar">
+            {/* Title & Icon Section */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center border-2 border-blue-600 flex-shrink-0 animate-bounce-subtle">
+                <div className="text-blue-600 scale-150">
+                  {selectedMedicalProgram && medicalIconForTitle(selectedMedicalProgram.title)}
+                </div>
+              </div>
+              <h2 className="text-2xl md:text-3xl font-black text-primary leading-tight">
+                {selectedMedicalProgram?.title}
+              </h2>
+            </div>
+
+            {/* Description Card */}
+            <div className="relative mb-8 p-5 bg-blue-50/50 rounded-2xl border border-blue-100">
+              <div className="absolute top-0 left-4 -translate-y-1/2 bg-blue-600 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                Overview
+              </div>
+              <p className="text-base md:text-lg leading-relaxed text-primary/80 italic">
+                "{selectedMedicalProgram?.description}"
+              </p>
+            </div>
+
+            {/* Key Focus Areas (Bullets) */}
+            <h4 className="text-sm font-black text-blue-600 uppercase tracking-[0.2em] mb-4 pl-1 border-l-4 border-blue-600">
+              Key Focus Areas
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {selectedMedicalProgram?.bullets?.map((b: string, i: number) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all group hover:border-blue-200"
+                >
+                  <div className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center flex-shrink-0 text-xs mt-0.5 group-hover:rotate-12 transition-transform">
+                    ✓
+                  </div>
+                  <span className="text-sm md:text-base text-primary/90 font-semibold">{b}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Action Call */}
+            <div className="mt-10 p-6 bg-primary rounded-2xl text-center text-white">
+              <p className="text-sm opacity-80 mb-4">Interested in this program? Our specialists are here to guide you.</p>
+              <button
+                onClick={() => {
+                  setSelectedMedicalProgram(null);
+                  setQuoteModalOpen(true);
+                }}
+                className="w-full md:w-auto px-8 py-3 bg-white text-primary font-bold rounded-xl hover:bg-gray-100 transition-all active:scale-95"
+              >
+                Inquire About This Program
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div >
   );
 }
