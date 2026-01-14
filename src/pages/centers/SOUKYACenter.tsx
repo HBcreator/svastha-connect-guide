@@ -11,7 +11,7 @@ import {
 import {
   MapPin, Phone, Mail, Globe, Star, Calendar, ChevronLeft, ChevronRight,
   Award, Users, Heart, Leaf, Sparkles, Hospital, UserCheck, Utensils, ShieldCheck,
-  ClipboardList, Stethoscope, Pill, Activity, Home, FileSearch, Images,
+  ClipboardList, Stethoscope, Pill, Activity, Home, FileSearch, Images, Search,
   Building2, Droplet, TreePine, TestTube2, MessageCircleHeart, HeartPulse, Brain, Video, TrendingUp, MessageCircle, Compass, ChevronDown, X
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -194,11 +194,14 @@ export default function SOUKYACenter() {
   const isReviewAutoPlaying = true;
   const [selectedVideo, setSelectedVideo] = useState(0);
   const [selectedTestimonialVideo, setSelectedTestimonialVideo] = useState(0);
+  const [showTopVideoGallery, setShowTopVideoGallery] = useState(false);
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [isTestimonialsInView, setIsTestimonialsInView] = useState(false);
+  const [videoTestimonials, setVideoTestimonials] = useState<{ name: string; location: string; feedback: string }[]>([]);
+  const [isFeedbackExpanded, setIsFeedbackExpanded] = useState(false);
   const galleryVideoRef = useRef<HTMLVideoElement>(null);
   const testimonialSectionRef = useRef<HTMLDivElement>(null);
 
@@ -280,12 +283,13 @@ export default function SOUKYACenter() {
     { id: "medical", title: "Medical Programs" },
     { id: "videos", title: "Video Gallery" },
     { id: "why-choose", title: "Why Choose SOUKYA" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
     { id: "process", title: "Process & Journey" },
     { id: "facilities", title: "Facilities & Amenities" },
     { id: "team", title: "Founder & Team Info" },
-    { id: "awards", title: "Awards & Media" },
-    { id: "testimonial-videos", title: "Testimonials (Videos)" },
     { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "insurance", title: "Insurance & Payment" },
     { id: "faq", title: "F&Q" },
     { id: "contact", title: "Contact Information" }
   ];
@@ -600,6 +604,46 @@ export default function SOUKYACenter() {
         setTransportText(transport);
       })
       .catch((err) => console.error("Error loading Contact Info:", err));
+
+    // Load Video Testimonials Data
+    fetch("/content/Testimonies/Soukya/testimonies.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        // Splitting by number followed by dot and newline (e.g., "2.\n")
+        const blocks = text.split(/\n\s*\d+\.\s*\n/).filter(b => b.trim());
+        const parsed = blocks.map((block, idx) => {
+          const lines = block.split('\n').map(l => l.trim()).filter(l => l);
+          let name = "Not mentioned";
+          let location = "Not mentioned";
+          let feedback = "";
+
+          lines.forEach(line => {
+            const lower = line.toLowerCase();
+            if (lower.startsWith('name:')) {
+              name = line.split(':')[1].trim();
+            } else if (lower.startsWith('location:')) {
+              location = line.split(':')[1].trim();
+            } else if (lower.includes('short description') || lower.startsWith('center:')) {
+              // skip label lines
+            } else if (line.includes('|')) {
+              const parts = line.split('|');
+              name = parts[0].trim();
+              if (name === "atie Kidder") name = "Katie Kidder"; // Fix typo in file
+              location = parts[1].trim();
+            } else {
+              feedback += (feedback ? " " : "") + line;
+            }
+          });
+
+          return {
+            name: name === "Not mentioned" ? "" : name,
+            location: location === "Not mentioned" ? "" : location,
+            feedback: feedback.trim()
+          };
+        });
+        setVideoTestimonials(parsed);
+      })
+      .catch((err) => console.error("Error loading Video Testimonials:", err));
 
     // Load Testimonials
     fetch("/content/Top Centers/Soukya Center/Patient Stories & Reviews.txt")
@@ -1106,116 +1150,171 @@ export default function SOUKYACenter() {
 
           {/* Photo/Video Gallery Section */}
           <div className="mb-12" id="gallery">
-            {/* Gallery Header */}
-            <div className="flex items-center mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-primary">Photo Gallery</h2>
-            </div>
-
-            {/* Main Carousel */}
-            <div className="relative mb-8 rounded-lg overflow-hidden shadow-lg w-full h-[200px] md:h-[500px] lg:h-[400px] group">
-              <img
-                src={images[selectedImage]}
-                alt={`SOUKYA Center ${selectedImage + 1}`}
-                className="w-full h-full object-cover transition-all duration-500"
-              />
-
-              {/* Navigation Buttons */}
-              <button
-                onClick={goToPrevious}
-                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
-                aria-label="Previous image"
-              >
-                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-              </button>
-
-              <button
-                onClick={goToNext}
-                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
-                aria-label="Next image"
-              >
-                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-              </button>
-
-              {/* Image Counter */}
-              <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {selectedImage + 1} / {images.length}
+            {/* Gallery Header with Toggle */}
+            <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
+              <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
+                <Button
+                  variant={!showTopVideoGallery ? "default" : "secondary"}
+                  size="lg"
+                  onClick={() => setShowTopVideoGallery(false)}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
+                >
+                  Photo Gallery
+                </Button>
+                <Button
+                  variant={showTopVideoGallery ? "default" : "secondary"}
+                  size="lg"
+                  onClick={() => setShowTopVideoGallery(true)}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
+                >
+                  <Video className="h-4 w-4 md:h-6 md:w-6" />
+                  Video Gallery
+                </Button>
               </div>
-
-              {/* Auto-play indicator */}
-              {isAutoPlaying && (
-                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                  Auto
-                </div>
-              )}
             </div>
 
-            {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
-            <div className="flex flex-col md:flex-row gap-3 mb-6">
-              {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
-              <div
-                className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
-                onClick={() => {
-                  setLightboxImage(images.indexOf(thumbnailImages[0]));
-                  setLightboxOpen(true);
-                }}
-              >
-                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            {!showTopVideoGallery ? (
+              <>
+                {/* Main Carousel */}
+                <div className="relative mb-8 rounded-lg overflow-hidden shadow-lg w-full h-[200px] md:h-[500px] lg:h-[400px] group">
                   <img
-                    src={thumbnailImages[0]}
-                    alt="SOUKYA 1"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    src={images[selectedImage]}
+                    alt={`SOUKYA Center ${selectedImage + 1}`}
+                    className="w-full h-full object-cover transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+
+                  {/* Navigation Buttons */}
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+
+                  <button
+                    onClick={goToNext}
+                    className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+
+                  {/* Image Counter */}
+                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                    {selectedImage + 1} / {images.length}
+                  </div>
+
+                  {/* Auto-play indicator */}
+                  {isAutoPlaying && (
+                    <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      Auto
+                    </div>
+                  )}
                 </div>
-              </div>
 
-              {/* Small Images - Right Side - Fixed 2×2 Grid */}
-              <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
-                {thumbnailImages.slice(1, 5).map((img, idx) => {
-                  const actualIndex = images.indexOf(img);
-                  const isLastImage = idx === 3; // Last small image (bottom-right)
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                <div className="flex flex-col md:flex-row gap-3 mb-6">
+                  {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
+                  <div
+                    className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
+                    onClick={() => {
+                      setLightboxImage(images.indexOf(thumbnailImages[0]));
+                      setLightboxOpen(true);
+                    }}
+                  >
+                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                      <img
+                        src={thumbnailImages[0]}
+                        alt="SOUKYA 1"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+                    </div>
+                  </div>
 
-                  return (
+                  {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                  <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
+                    {thumbnailImages.slice(1, 5).map((img, idx) => {
+                      const actualIndex = images.indexOf(img);
+                      const isLastImage = idx === 3; // Last small image (bottom-right)
+
+                      return (
+                        <div
+                          key={idx}
+                          className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
+                          onClick={() => {
+                            setLightboxImage(actualIndex);
+                            setLightboxOpen(true);
+                          }}
+                        >
+                          <div className="relative w-full" style={{ paddingBottom: '100%' }}>
+                            <img
+                              src={img}
+                              alt={`SOUKYA ${actualIndex + 1}`}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+
+                            {/* Show Gallery Button - Floating on Bottom-Right Image */}
+                            {isLastImage && (
+                              <div className="absolute inset-0 flex items-end justify-center pb-4 bg-black/40">
+                                <Button
+                                  size="sm"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowFullGallery(true);
+                                  }}
+                                  className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-semibold text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform"
+                                >
+                                  <Images className="mr-1.5 h-3.5 w-3.5 md:h-4 md:w-4" />
+                                  <span className="hidden sm:inline">Show Full Gallery</span>
+                                  <span className="sm:hidden">Gallery</span>
+                                </Button>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video mb-8">
+                  <video
+                    key={selectedVideo}
+                    controls
+                    controlsList="nodownload"
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  >
+                    <source src={videos[selectedVideo]} type="video/mp4" />
+                  </video>
+                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
+                    Video {selectedVideo + 1} / {videos.length}
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {videos.map((video, idx) => (
                     <div
                       key={idx}
-                      className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
-                      onClick={() => {
-                        setLightboxImage(actualIndex);
-                        setLightboxOpen(true);
-                      }}
+                      onClick={() => setSelectedVideo(idx)}
+                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""
+                        }`}
                     >
-                      <div className="relative w-full" style={{ paddingBottom: '100%' }}>
-                        <img
-                          src={img}
-                          alt={`SOUKYA ${actualIndex + 1}`}
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-
-                        {/* Show Gallery Button - Floating on Bottom-Right Image */}
-                        {isLastImage && (
-                          <div className="absolute inset-0 flex items-end justify-center pb-4 bg-black/40">
-                            <Button
-                              size="sm"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setShowFullGallery(true);
-                              }}
-                              className="bg-white text-primary hover:bg-white/95 hover:scale-105 font-semibold text-xs md:text-sm px-3 py-2 md:px-4 md:py-3 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform"
-                            >
-                              <Images className="mr-1.5 h-3.5 w-3.5 md:h-4 md:w-4" />
-                              <span className="hidden sm:inline">Show Full Gallery</span>
-                              <span className="sm:hidden">Gallery</span>
-                            </Button>
-                          </div>
-                        )}
-                      </div>
+                      <video muted className="w-full h-full object-cover">
+                        <source src={video} type="video/mp4" />
+                      </video>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Content Section */}
@@ -1320,40 +1419,37 @@ export default function SOUKYACenter() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+            <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
               {medicalPrograms.map((p, idx) => (
-                <div
+                <AccordionItem
                   key={idx}
-                  onClick={() => setSelectedMedicalProgram(p)}
-                  className="group relative h-48 md:h-64 rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-white/20 hover:border-blue-400"
+                  value={`medical-${idx}`}
+                  className="border-2 border-blue-200 rounded-lg px-4 md:px-6 data-[state=open]:border-blue-500 transition-colors bg-white"
                 >
-                  {/* Background Image using Photo Gallery links */}
-                  <img
-                    src={images[idx % images.length]}
-                    alt={p.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-
-                  {/* Icon and Title */}
-                  <div className="absolute inset-0 p-3 md:p-5 flex flex-col justify-end">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-blue-500/20 backdrop-blur-md flex items-center justify-center mb-2 border border-white/30 group-hover:bg-blue-600 group-hover:border-transparent transition-all">
-                      <div className="text-white">
+                  <AccordionTrigger className="hover:no-underline py-3 md:py-4 [&>svg]:text-blue-700">
+                    <div className="flex items-center gap-2 md:gap-3 min-w-0">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 flex items-center justify-center border-2 border-blue-700">
                         {medicalIconForTitle(p.title)}
                       </div>
+                      <span className="text-base md:text-lg font-semibold text-primary truncate">{p.title}</span>
                     </div>
-                    <h3 className="text-[13px] md:text-lg font-bold text-white leading-tight line-clamp-2 md:line-clamp-none">
-                      {p.title}
-                    </h3>
-                    <div className="mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-[10px] md:text-xs text-blue-300 font-bold uppercase tracking-wider">Explore Details</span>
-                      <ChevronRight className="h-3 w-3 text-blue-300" />
-                    </div>
-                  </div>
-                </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-3 pb-4 md:pt-4 md:pb-6 bg-white">
+                    <p className="text-xs md:text-sm mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                      {p.description}
+                    </p>
+                    <ul className="space-y-1.5 md:space-y-2">
+                      {p.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-blue-600 mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
 
 
@@ -1479,6 +1575,177 @@ export default function SOUKYACenter() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Testimonials of SOUKYA Center - Video Section */}
+          <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
+            <div className="text-center mb-6 lg:mb-10">
+              <h2 className="text-xl md:text-4xl font-bold text-primary mb-2">
+                Testimonials of SOUKYA Center
+              </h2>
+              <p className="text-sm md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                Watch inspiring stories of recovery and wellness from our global family of patients.
+              </p>
+            </div>
+
+            <div className="max-w-6xl mx-auto relative px-3 md:px-0">
+              <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 items-stretch">
+                {/* Left Side: Video Player */}
+                <div className="w-full lg:w-[60%] relative">
+                  <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-2xl md:rounded-3xl h-full">
+                    <CardContent className="p-0 h-full flex items-center bg-black">
+                      <div className="aspect-video w-full relative">
+                        <iframe
+                          key={testimonialVideos[selectedTestimonialVideo]}
+                          src={`${testimonialVideos[selectedTestimonialVideo]}?autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
+                          title="SOUKYA Testimonial Video"
+                          className="w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Navigation Arrows - Desktop Only (Overlay on Video) */}
+                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 -mx-6 pointer-events-none">
+                    <button
+                      onClick={() => {
+                        setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length);
+                        setIsFeedbackExpanded(false);
+                      }}
+                      className="bg-white/90 hover:bg-primary hover:text-white text-primary p-3 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                      aria-label="Previous testimonial"
+                    >
+                      <ChevronLeft className="h-6 w-6" />
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length);
+                        setIsFeedbackExpanded(false);
+                      }}
+                      className="bg-white/90 hover:bg-primary hover:text-white text-primary p-3 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                      aria-label="Next testimonial"
+                    >
+                      <ChevronRight className="h-6 w-6" />
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Side: Dynamic Data Card */}
+                <div className="w-full lg:w-[40%]">
+                  {videoTestimonials[selectedTestimonialVideo] && (
+                    <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-xl border-2 border-primary/10 h-full flex flex-col justify-center relative overflow-hidden group">
+                      {/* Decorative Background */}
+                      <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+
+                      <div className="relative z-10 flex flex-col h-full">
+                        {/* Header Info: Name // Location */}
+                        <div className="mb-4 md:mb-6 space-y-1 text-primary">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm md:text-lg font-bold">
+                            {videoTestimonials[selectedTestimonialVideo].name && (
+                              <span className="text-primary font-black uppercase tracking-tight">
+                                Name: {videoTestimonials[selectedTestimonialVideo].name}
+                              </span>
+                            )}
+                            {videoTestimonials[selectedTestimonialVideo].name && videoTestimonials[selectedTestimonialVideo].location && (
+                              <span className="text-primary/30 mx-1 font-normal">//</span>
+                            )}
+                            {videoTestimonials[selectedTestimonialVideo].location && (
+                              <span className="text-accent italic font-black">
+                                Location: {videoTestimonials[selectedTestimonialVideo].location}
+                              </span>
+                            )}
+                          </div>
+                          <div className="h-1 w-12 bg-primary/20 rounded-full mt-2" />
+                        </div>
+
+                        {/* Feedback Section */}
+                        <div className="flex-1">
+                          <div className="flex items-start gap-2">
+                            <span className="text-lg md:text-xl font-black text-primary/40 mt-1 flex-shrink-0">Feedback ::</span>
+                            <div className="flex-1">
+                              <p className={`text-sm md:text-lg leading-relaxed text-primary/70 italic ${!isFeedbackExpanded ? "line-clamp-3 lg:line-clamp-6" : ""}`}>
+                                "{videoTestimonials[selectedTestimonialVideo].feedback}"
+                              </p>
+
+                              {/* Read More Toggle */}
+                              {videoTestimonials[selectedTestimonialVideo].feedback.length > 150 && (
+                                <button
+                                  onClick={() => setIsFeedbackExpanded(!isFeedbackExpanded)}
+                                  className="mt-2 text-xs font-bold text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn"
+                                >
+                                  {isFeedbackExpanded ? "Show Less" : "Read More"}
+                                  <ChevronDown className={`h-4 w-4 transition-transform ${isFeedbackExpanded ? "rotate-180" : "group-hover/btn:translate-y-0.5"}`} />
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Mobile Navigation inside Data Card (Small indicators) */}
+                        <div className="lg:hidden mt-4 flex justify-center gap-1.5">
+                          {testimonialVideos.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => {
+                                setSelectedTestimonialVideo(index);
+                                setIsFeedbackExpanded(false);
+                              }}
+                              className={`transition-all ${index === selectedTestimonialVideo
+                                ? "w-5 h-1.5 bg-primary"
+                                : "w-1.5 h-1.5 bg-gray-300"
+                                } rounded-full`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Navigation Buttons - Mobile Only (Below the container) */}
+              <div className="flex lg:hidden items-center justify-between mt-4 px-8">
+                <Button
+                  onClick={() => {
+                    setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length);
+                    setIsFeedbackExpanded(false);
+                  }}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow text-xs px-6 h-10 border-2 border-primary/20"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={() => {
+                    setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length);
+                    setIsFeedbackExpanded(false);
+                  }}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow text-xs px-6 h-10 border-2 border-primary/20"
+                >
+                  Next
+                </Button>
+              </div>
+
+              {/* Desktop Indicators (Below everything) */}
+              <div className="hidden lg:flex justify-center gap-2 mt-8">
+                {testimonialVideos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      setSelectedTestimonialVideo(index);
+                      setIsFeedbackExpanded(false);
+                    }}
+                    className={`transition-all ${index === selectedTestimonialVideo
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -2065,84 +2332,6 @@ export default function SOUKYACenter() {
             </div>
           </div>
 
-          {/* Testimonials of SOUKYA Center - Video Section */}
-          <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
-                Testimonials of SOUKYA Center
-              </h2>
-              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
-                Watch inspiring stories of recovery and wellness from our global family of patients.
-              </p>
-            </div>
-
-            <div className="relative max-w-4xl mx-auto">
-              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
-                <CardContent className="p-0">
-                  <div className="aspect-video w-full relative">
-                    <iframe
-                      key={testimonialVideos[selectedTestimonialVideo]}
-                      src={`${testimonialVideos[selectedTestimonialVideo]}?autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
-                      title="SOUKYA Testimonial Video"
-                      className="w-full h-full"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Navigation Arrows - Desktop Only */}
-              <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
-                <button
-                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
-                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
-                <button
-                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
-                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
-                </button>
-              </div>
-
-              {/* Navigation Buttons - Mobile Only */}
-              <div className="flex md:hidden items-center justify-between mt-4 px-6">
-                <Button
-                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
-                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
-                >
-                  Previous
-                </Button>
-                <Button
-                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
-                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
-                >
-                  Next
-                </Button>
-              </div>
-
-              {/* Indicators */}
-              <div className="flex justify-center gap-2 mt-6 md:mt-8">
-                {testimonialVideos.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedTestimonialVideo(index)}
-                    className={`transition-all ${index === selectedTestimonialVideo
-                      ? "w-8 h-3 bg-primary"
-                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                      } rounded-full`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* Patient Success Stories & Reviews */}
           <div className="mb-12" id="reviews">
@@ -2527,7 +2716,7 @@ export default function SOUKYACenter() {
 
 
           {/* Insurance & Payment Information */}
-          <div className="mb-12">
+          <div className="mb-12" id="insurance">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                 <ShieldCheck className="h-8 w-8 text-primary" />
@@ -2894,28 +3083,28 @@ export default function SOUKYACenter() {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Mobile JUMP Action (Bottom Left) - Hidden when lightbox/gallery is open */}
+      {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="md:hidden fixed bottom-6 left-6 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95"
+          className="md:hidden fixed bottom-6 left-6 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
         >
-          <Compass size={18} />
-          <span>JUMP</span>
+          <Search size={18} />
+          <span>BROWSE</span>
         </button>
       )}
 
       {/* Floating Quote Action (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-40">
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <button
           onClick={() => setQuoteModalOpen(true)}
-          className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold active:scale-95"
+          className="fixed bottom-6 right-6 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
         >
           <Phone size={18} />
-          <span className="hidden md:inline">Get Free Quote</span>
-          <span className="md:hidden">Quote</span>
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
         </button>
-      </div>
+      )}
 
       {/* Full Gallery Modal */}
       {
@@ -3092,7 +3281,7 @@ export default function SOUKYACenter() {
       {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 flex-col items-end">
-          {/* JUMP Button */}
+          {/* BROWSE Button */}
           <button
             onClick={() => setIsJumpModalOpen(true)}
             className="bg-[#2F5B63] text-white py-8 px-4 rounded-l-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.2)] border-y-2 border-l-2 border-white/40 hover:border-white hover:shadow-[0_0_40px_rgba(47,91,99,0.4)] hover:pr-7 transition-all duration-500 group flex flex-col items-center justify-center gap-3 font-black text-lg md:text-2xl tracking-tighter overflow-hidden relative"
@@ -3100,10 +3289,12 @@ export default function SOUKYACenter() {
             {/* Shine effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000" />
 
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">J</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">U</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">M</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">P</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">B</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">R</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">O</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">W</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">S</span>
+            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">E</span>
           </button>
         </div>
       )}
@@ -3140,10 +3331,10 @@ export default function SOUKYACenter() {
               </div>
               <button
                 onClick={() => setIsJumpModalOpen(false)}
-                className="group p-2 bg-white/10 hover:bg-white text-white hover:text-primary rounded-xl transition-all duration-300 shadow-lg"
+                className="group p-2 bg-white/10 hover:bg-red-500 text-white rounded-xl transition-all duration-300 shadow-lg border border-white/10 hover:border-red-400"
                 title="Close Menu"
               >
-                <ChevronRight className="h-6 w-6 group-hover:translate-x-0.5 transition-transform" />
+                <X className="h-6 w-6 group-hover:rotate-90 transition-transform" />
               </button>
             </div>
 
@@ -3161,7 +3352,7 @@ export default function SOUKYACenter() {
               <button
                 key={section.id}
                 onClick={() => jumpToSection(section.id)}
-                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-200 p-3 rounded-xl border-2 border-primary/20 hover:border-transparent flex items-center justify-between shadow-md hover:shadow-2xl hover:-translate-y-1"
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
               >
                 <div className="flex items-center gap-4 relative z-10">
                   <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
