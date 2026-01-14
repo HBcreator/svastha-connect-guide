@@ -1663,26 +1663,22 @@ export default function SOUKYACenter() {
                         </div>
 
                         {/* Feedback Section */}
-                        <div className="flex-1">
-                          <div className="flex items-start gap-2">
-                            <span className="text-lg md:text-xl font-black text-primary/40 mt-1 flex-shrink-0">Feedback ::</span>
-                            <div className="flex-1">
-                              <p className={`text-sm md:text-lg leading-relaxed text-primary/70 italic ${!isFeedbackExpanded ? "line-clamp-3 lg:line-clamp-6" : ""}`}>
-                                "{videoTestimonials[selectedTestimonialVideo].feedback}"
-                              </p>
+                        <div className="flex-1 mt-2">
+                          <p className={`text-sm md:text-lg leading-relaxed text-primary/70 italic ${!isFeedbackExpanded ? "line-clamp-2 md:line-clamp-3" : ""}`}>
+                            <span className="text-primary/50 font-black not-italic mr-1">Feedback:</span>
+                            "{videoTestimonials[selectedTestimonialVideo].feedback}"
+                          </p>
 
-                              {/* Read More Toggle */}
-                              {videoTestimonials[selectedTestimonialVideo].feedback.length > 150 && (
-                                <button
-                                  onClick={() => setIsFeedbackExpanded(!isFeedbackExpanded)}
-                                  className="mt-2 text-xs font-bold text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn"
-                                >
-                                  {isFeedbackExpanded ? "Show Less" : "Read More"}
-                                  <ChevronDown className={`h-4 w-4 transition-transform ${isFeedbackExpanded ? "rotate-180" : "group-hover/btn:translate-y-0.5"}`} />
-                                </button>
-                              )}
-                            </div>
-                          </div>
+                          {/* Read More Toggle */}
+                          {videoTestimonials[selectedTestimonialVideo].feedback.length > 120 && (
+                            <button
+                              onClick={() => setIsFeedbackExpanded(!isFeedbackExpanded)}
+                              className="mt-2 text-xs font-bold text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn"
+                            >
+                              {isFeedbackExpanded ? "Show Less" : "Read More"}
+                              <ChevronDown className={`h-4 w-4 transition-transform ${isFeedbackExpanded ? "rotate-180" : "group-hover/btn:translate-y-0.5"}`} />
+                            </button>
+                          )}
                         </div>
 
                         {/* Mobile Navigation inside Data Card (Small indicators) */}
