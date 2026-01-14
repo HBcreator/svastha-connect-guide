@@ -1364,10 +1364,10 @@ export default function SOUKYACenter() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700 mb-4">
                 <Heart className="h-8 w-8 text-green-600" />
               </div>
-              <h1 className="text-xl md:text-3xl font-bold text-primary mb-3">
+              <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Wellness Programs
               </h1>
-              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
+              <p className="text-base md:text-lg mb-8 max-w-4xl mx-auto px-4" style={{ color: "#7F543D" }}>
                 {wellnessIntro}
               </p>
             </div>
@@ -1411,10 +1411,10 @@ export default function SOUKYACenter() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-700 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
               </div>
-              <h2 className="text-xl md:text-3xl font-bold text-primary mb-3">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Medical Programs
               </h2>
-              <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: "#7F543D" }}>
+              <p className="text-base md:text-lg mb-8 max-w-4xl mx-auto px-4" style={{ color: "#7F543D" }}>
                 {medicalIntro}
               </p>
             </div>
@@ -1459,7 +1459,7 @@ export default function SOUKYACenter() {
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Video Gallery of Soukya
               </h2>
-              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+              <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
                 Experience the serene atmosphere and holistic healing journey at SOUKYA through our video gallery.
               </p>
             </div>
@@ -1533,7 +1533,7 @@ export default function SOUKYACenter() {
 
           <div className="mb-12" id="why-choose">
             <div className="text-center mb-10">
-              <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 {whyChooseData?.title || "Why Choose SOUKYA"}
               </h2>
               {whyChooseData?.description && (
@@ -1551,10 +1551,10 @@ export default function SOUKYACenter() {
                   <CardContent className="p-6">
                     <div className="space-y-3">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300 flex-shrink-0">
                           {iconForTitle(it.title)}
                         </div>
-                        <h3 className="text-base md:text-lg font-bold text-primary leading-tight flex-1">{it.title}</h3>
+                        <h3 className="text-base md:text-lg font-bold text-primary leading-tight flex-1 min-h-[2rem] md:min-h-[2.5rem] flex items-center">{it.title}</h3>
                       </div>
                       {it.description && (
                         <p className="text-sm leading-relaxed text-left" style={{ color: "#7F543D" }}>
@@ -1580,160 +1580,73 @@ export default function SOUKYACenter() {
 
           {/* Testimonials of SOUKYA Center - Video Section */}
           <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
-            <div className="text-center mb-6 lg:mb-10">
-              <h2 className="text-xl md:text-4xl font-bold text-primary mb-2">
+            <div className="text-center mb-8 md:mb-10 px-4">
+              <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
                 Testimonials of SOUKYA Center
               </h2>
-              <p className="text-sm md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+              <div className="w-12 h-1 bg-primary/20 mx-auto mb-3 rounded-full hidden md:block" />
+              <p className="text-sm md:text-lg mx-auto max-w-none leading-relaxed italic" style={{ color: "#7F543D" }}>
                 Watch inspiring stories of recovery and wellness from our global family of patients.
               </p>
             </div>
 
-            <div className="max-w-6xl mx-auto relative px-3 md:px-0">
-              <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 items-stretch">
-                {/* Left Side: Video Player */}
-                <div className="w-full lg:w-[60%] relative">
-                  <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-2xl md:rounded-3xl h-full">
-                    <CardContent className="p-0 h-full flex items-center bg-black">
-                      <div className="aspect-video w-full relative">
-                        <iframe
-                          key={testimonialVideos[selectedTestimonialVideo]}
-                          src={`${testimonialVideos[selectedTestimonialVideo]}?autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
-                          title="SOUKYA Testimonial Video"
-                          className="w-full h-full"
-                          frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Navigation Arrows - Desktop Only (Overlay on Video) */}
-                  <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 -mx-6 pointer-events-none">
-                    <button
-                      onClick={() => {
-                        setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length);
-                        setIsFeedbackExpanded(false);
-                      }}
-                      className="bg-white/90 hover:bg-primary hover:text-white text-primary p-3 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
-                      aria-label="Previous testimonial"
-                    >
-                      <ChevronLeft className="h-6 w-6" />
-                    </button>
-                    <button
-                      onClick={() => {
-                        setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length);
-                        setIsFeedbackExpanded(false);
-                      }}
-                      className="bg-white/90 hover:bg-primary hover:text-white text-primary p-3 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
-                      aria-label="Next testimonial"
-                    >
-                      <ChevronRight className="h-6 w-6" />
-                    </button>
+            <div className="relative max-w-4xl mx-auto px-4 md:px-0">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full relative">
+                    <iframe
+                      key={testimonialVideos[selectedTestimonialVideo]}
+                      src={`${testimonialVideos[selectedTestimonialVideo]}?autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
+                      title="SOUKYA Testimonial Video"
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
                   </div>
-                </div>
+                </CardContent>
+              </Card>
 
-                {/* Right Side: Dynamic Data Card */}
-                <div className="w-full lg:w-[40%]">
-                  {videoTestimonials[selectedTestimonialVideo] && (
-                    <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 shadow-xl border-2 border-primary/10 h-full flex flex-col justify-center relative overflow-hidden group">
-                      {/* Decorative Background */}
-                      <div className="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
-
-                      <div className="relative z-10 flex flex-col h-full">
-                        {/* Header Info: Name // Location */}
-                        <div className="mb-4 md:mb-6 space-y-1 text-primary">
-                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm md:text-lg font-bold">
-                            {videoTestimonials[selectedTestimonialVideo].name && (
-                              <span className="text-primary font-black uppercase tracking-tight">
-                                Name: {videoTestimonials[selectedTestimonialVideo].name}
-                              </span>
-                            )}
-                            {videoTestimonials[selectedTestimonialVideo].name && videoTestimonials[selectedTestimonialVideo].location && (
-                              <span className="text-primary/30 mx-1 font-normal">//</span>
-                            )}
-                            {videoTestimonials[selectedTestimonialVideo].location && (
-                              <span className="text-accent italic font-black">
-                                Location: {videoTestimonials[selectedTestimonialVideo].location}
-                              </span>
-                            )}
-                          </div>
-                          <div className="h-1 w-12 bg-primary/20 rounded-full mt-2" />
-                        </div>
-
-                        {/* Feedback Section */}
-                        <div className="flex-1 mt-2">
-                          <p className={`text-sm md:text-lg leading-relaxed text-primary/70 italic ${!isFeedbackExpanded ? "line-clamp-2 md:line-clamp-3" : ""}`}>
-                            <span className="text-primary/50 font-black not-italic mr-1">Feedback:</span>
-                            "{videoTestimonials[selectedTestimonialVideo].feedback}"
-                          </p>
-
-                          {/* Read More Toggle */}
-                          {videoTestimonials[selectedTestimonialVideo].feedback.length > 120 && (
-                            <button
-                              onClick={() => setIsFeedbackExpanded(!isFeedbackExpanded)}
-                              className="mt-2 text-xs font-bold text-primary hover:text-accent transition-colors flex items-center gap-1 group/btn"
-                            >
-                              {isFeedbackExpanded ? "Show Less" : "Read More"}
-                              <ChevronDown className={`h-4 w-4 transition-transform ${isFeedbackExpanded ? "rotate-180" : "group-hover/btn:translate-y-0.5"}`} />
-                            </button>
-                          )}
-                        </div>
-
-                        {/* Mobile Navigation inside Data Card (Small indicators) */}
-                        <div className="lg:hidden mt-4 flex justify-center gap-1.5">
-                          {testimonialVideos.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => {
-                                setSelectedTestimonialVideo(index);
-                                setIsFeedbackExpanded(false);
-                              }}
-                              className={`transition-all ${index === selectedTestimonialVideo
-                                ? "w-5 h-1.5 bg-primary"
-                                : "w-1.5 h-1.5 bg-gray-300"
-                                } rounded-full`}
-                            />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
+              {/* Navigation Arrows - Desktop Only */}
+              <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+                <button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+                <button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
               </div>
 
-              {/* Navigation Buttons - Mobile Only (Below the container) */}
-              <div className="flex lg:hidden items-center justify-between mt-4 px-8">
+              {/* Navigation Buttons - Mobile Only */}
+              <div className="flex md:hidden items-center justify-between mt-4 px-6">
                 <Button
-                  onClick={() => {
-                    setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length);
-                    setIsFeedbackExpanded(false);
-                  }}
-                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow text-xs px-6 h-10 border-2 border-primary/20"
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
                 >
                   Previous
                 </Button>
                 <Button
-                  onClick={() => {
-                    setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length);
-                    setIsFeedbackExpanded(false);
-                  }}
-                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow text-xs px-6 h-10 border-2 border-primary/20"
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
                 >
                   Next
                 </Button>
               </div>
 
-              {/* Desktop Indicators (Below everything) */}
-              <div className="hidden lg:flex justify-center gap-2 mt-8">
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-6 md:mt-8">
                 {testimonialVideos.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => {
-                      setSelectedTestimonialVideo(index);
-                      setIsFeedbackExpanded(false);
-                    }}
+                    onClick={() => setSelectedTestimonialVideo(index)}
                     className={`transition-all ${index === selectedTestimonialVideo
                       ? "w-8 h-3 bg-primary"
                       : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
@@ -1751,7 +1664,7 @@ export default function SOUKYACenter() {
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Treatment Process & Patient Journey
               </h2>
-              <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
                 Your personalized healing journey at SOUKYA, step by step
               </p>
             </div>
@@ -2171,10 +2084,10 @@ export default function SOUKYACenter() {
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-4 mb-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
+                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center group-hover:scale-110 transition-transform flex-shrink-0 shadow-sm">
                         {getFacilityIcon(card.title)}
                       </div>
-                      <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1">
+                      <h3 className="text-lg md:text-xl font-bold text-primary leading-tight flex-1 min-h-[2.5rem] flex items-center">
                         {card.title}
                       </h3>
                     </div>
@@ -2224,7 +2137,7 @@ export default function SOUKYACenter() {
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Founder & Team Info
               </h1>
-              <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
                 Led by visionary expertise and supported by generations of traditional healing knowledge
               </p>
             </div>
@@ -2631,7 +2544,7 @@ export default function SOUKYACenter() {
                                   </div>
                                 </div>
                               </a>
-                              <p className="text-center mt-4 text-sm font-bold text-primary">
+                              <p className="text-center mt-4 text-sm font-bold text-primary min-h-[2.5rem] flex items-center justify-center line-clamp-2">
                                 {item.title}
                               </p>
                             </div>
@@ -2676,7 +2589,7 @@ export default function SOUKYACenter() {
                                   </div>
                                 </div>
                               </a>
-                              <p className="text-center mt-4 text-base font-bold text-primary">
+                              <p className="text-center mt-4 text-base font-bold text-primary min-h-[3rem] flex items-center justify-center line-clamp-2">
                                 {item.title}
                               </p>
                             </div>
@@ -3083,9 +2996,9 @@ export default function SOUKYACenter() {
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="md:hidden fixed bottom-6 left-6 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
         >
-          <Search size={18} />
+          <Search size={18} className="-ml-1" />
           <span>BROWSE</span>
         </button>
       )}
@@ -3094,9 +3007,9 @@ export default function SOUKYACenter() {
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <button
           onClick={() => setQuoteModalOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 px-6 shadow-lg hover:shadow-xl transition-all flex items-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
         >
-          <Phone size={18} />
+          <Phone size={18} className="-ml-1" />
           <span className="hidden md:inline">GET FREE QUOTE</span>
           <span className="md:hidden">QUOTE</span>
         </button>
@@ -3277,20 +3190,18 @@ export default function SOUKYACenter() {
       {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 flex-col items-end">
-          {/* BROWSE Button */}
+          {/* BROWSE Button - Static Clean Version */}
           <button
             onClick={() => setIsJumpModalOpen(true)}
-            className="bg-[#2F5B63] text-white py-8 px-4 rounded-l-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.2)] border-y-2 border-l-2 border-white/40 hover:border-white hover:shadow-[0_0_40px_rgba(47,91,99,0.4)] hover:pr-7 transition-all duration-500 group flex flex-col items-center justify-center gap-3 font-black text-lg md:text-2xl tracking-tighter overflow-hidden relative"
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
           >
-            {/* Shine effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000" />
-
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">B</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">R</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">O</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">W</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">S</span>
-            <span className="group-hover:scale-125 group-hover:text-white transition-all duration-300 drop-shadow-md">E</span>
+            {/* Letters with search icon replacing 'O' */}
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
           </button>
         </div>
       )}
@@ -3327,10 +3238,10 @@ export default function SOUKYACenter() {
               </div>
               <button
                 onClick={() => setIsJumpModalOpen(false)}
-                className="group p-2 bg-white/10 hover:bg-red-500 text-white rounded-xl transition-all duration-300 shadow-lg border border-white/10 hover:border-red-400"
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
                 title="Close Menu"
               >
-                <X className="h-6 w-6 group-hover:rotate-90 transition-transform" />
+                <X className="h-6 w-6 transition-transform" />
               </button>
             </div>
 
