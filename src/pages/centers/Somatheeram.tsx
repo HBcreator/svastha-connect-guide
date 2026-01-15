@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -57,7 +57,44 @@ export default function Somatheeram() {
   const [galleryLightboxOpen, setGalleryLightboxOpen] = useState(false);
   const [galleryLightboxImage, setGalleryLightboxImage] = useState(0);
   const [selectedVideo, setSelectedVideo] = useState(0);
+  const galleryVideoRef = useRef<HTMLVideoElement>(null);
   const [patientReviews, setPatientReviews] = useState<{ name: string, country: string, condition: string, date: string, rating: number, photo: string, verified: boolean, quote: string }[]>([]);
+
+  // Video Gallery Intersection Observer for Autoplay/Pause
+  useEffect(() => {
+    const videoElement = galleryVideoRef.current;
+    if (!videoElement) return;
+
+    // Set volume to 50%
+    videoElement.volume = 0.5;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Browsers often block autoplay with sound. We attempt to play unmuted first.
+            videoElement.play().catch(error => {
+              console.log("Autoplay with sound prevented:", error);
+              // Fallback: Mute and play if unmuted play is blocked
+              videoElement.muted = true;
+              videoElement.play();
+            });
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 } // 50% visibility
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      if (videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, [selectedVideo]);
 
   const heroImages = [
     "/Center Images/somatheeram/Somatheeram 01.jpg",
@@ -1164,6 +1201,86 @@ export default function Somatheeram() {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+        </div>
+      </div>
+
+      {/* Video Gallery Section */}
+      <div className="container mx-auto px-3 md:px-4 max-w-full mt-12 mb-12" id="videos">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
+              Video Gallery of Somatheeram
+            </h2>
+            <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
+              Experience the serene atmosphere and holistic healing journey at Somatheeram through our video gallery.
+            </p>
+          </div>
+
+          <div className="relative max-w-4xl mx-auto">
+            <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+              <CardContent className="p-0">
+                <div className="aspect-video w-full relative">
+                  <video
+                    ref={galleryVideoRef}
+                    key={videos[selectedVideo]}
+                    src={videos[selectedVideo]}
+                    className="w-full h-full object-cover"
+                    controls
+                    playsInline
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Navigation Arrows - Desktop Only */}
+            <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+              <button
+                onClick={() => setSelectedVideo((prev) => (prev - 1 + videos.length) % videos.length)}
+                className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                aria-label="Previous video"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={() => setSelectedVideo((prev) => (prev + 1) % videos.length)}
+                className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                aria-label="Next video"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            {/* Navigation Buttons - Mobile Only */}
+            <div className="flex md:hidden items-center justify-between mt-4 px-6">
+              <Button
+                onClick={() => setSelectedVideo((prev) => (prev - 1 + videos.length) % videos.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+              >
+                Previous
+              </Button>
+              <Button
+                onClick={() => setSelectedVideo((prev) => (prev + 1) % videos.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+              >
+                Next
+              </Button>
+            </div>
+
+            {/* Indicators */}
+            <div className="flex justify-center gap-2 mt-6 md:mt-8">
+              {videos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedVideo(index)}
+                  className={`transition-all ${index === selectedVideo
+                    ? "w-8 h-3 bg-primary"
+                    : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    } rounded-full`}
+                  aria-label={`Go to video ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
