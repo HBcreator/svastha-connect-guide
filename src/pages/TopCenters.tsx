@@ -123,6 +123,18 @@ const TopCenters = () => {
       locationText: "Near NCR, Delhi, India",
     },
     {
+      name: "Ayurmana",
+      city: "Kerala",
+      description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+      specialties: ["Ayurveda", "Panchakarma", "Wellness"],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayurmana center/top center thumb.jpg",
+      slug: "kerala/ayurmana" as string | undefined,
+      locationText: "Kerala, India",
+    },
+    {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
       city: "Kerala",
       description:
@@ -415,7 +427,18 @@ const TopCenters = () => {
                     <Button
                       variant="outline"
                       className="flex-1 font-semibold"
-                      onClick={() => center.slug ? navigate(`/centers/${center.slug}`) : navigate("#")}
+                      onClick={() => {
+                        const ext = (center as { externalLink?: string }).externalLink;
+                        if (ext) {
+                          window.open(ext, "_blank", "noopener,noreferrer");
+                          return;
+                        }
+                        if (center.slug) {
+                          navigate(`/centers/${center.slug}`);
+                          return;
+                        }
+                        navigate("#");
+                      }}
                     >
                       View Details
                     </Button>

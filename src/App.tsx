@@ -24,6 +24,7 @@ import SanjeevanamAyurvedaHospital from "./pages/centers/SanjeevanamAyurvedaHosp
 import BackToRoots from "./pages/centers/BackToRoots";
 import DhathriAyurvedicHospital from "./pages/centers/DhathriAyurvedicHospital";
 import KrishnenduAyurvedaHospital from "./pages/centers/KrishnenduAyurvedaHospital";
+import AyurmanaCenter from "./pages/centers/AyurmanaCenter";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -80,6 +81,7 @@ const App = () => (
           <Route path="/centers/kerala/back-to-roots" element={<BackToRoots />} />
           <Route path="/centers/kerala/dhathri-ayurveda" element={<DhathriAyurvedicHospital />} />
           <Route path="/centers/kerala/krishnendu-ayurveda-hospital" element={<KrishnenduAyurvedaHospital />} />
+          <Route path="/centers/kerala/ayurmana" element={<AyurmanaCenter />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
