@@ -247,6 +247,12 @@ export default function AyurmanaCenter() {
 
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
 
+  const [showVideoEndOverlay, setShowVideoEndOverlay] = useState(false);
+  const [showTestimonialEndOverlay, setShowTestimonialEndOverlay] = useState(false);
+
+  const galleryTimePollRef = useRef<number | null>(null);
+  const testimonialTimePollRef = useRef<number | null>(null);
+
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
 
   const [currentAward, setCurrentAward] = useState(0);
@@ -336,6 +342,13 @@ export default function AyurmanaCenter() {
     );
   };
 
+  const clearPoll = (ref: { current: number | null }) => {
+    if (ref.current) {
+      window.clearInterval(ref.current);
+      ref.current = null;
+    }
+  };
+
   useEffect(() => {
     if (hasUserInteracted) return;
 
@@ -353,19 +366,80 @@ export default function AyurmanaCenter() {
   }, [hasUserInteracted]);
 
   useEffect(() => {
+    setShowVideoEndOverlay(false);
+    clearPoll(galleryTimePollRef);
+  }, [selectedVideo, isVideoGalleryInView]);
+
+  useEffect(() => {
+    setShowTestimonialEndOverlay(false);
+    clearPoll(testimonialTimePollRef);
+  }, [selectedTestimonialVideo, isTestimonialsInView]);
+
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (typeof e.data !== "string") return;
+      if (!e.origin.includes("youtube") && !e.origin.includes("youtube-nocookie")) return;
+
+      let payload: any;
+      try {
+        payload = JSON.parse(e.data);
+      } catch {
+        return;
+      }
+
+      const playerState =
+        payload?.event === "onStateChange"
+          ? payload?.info
+          : payload?.event === "infoDelivery"
+            ? payload?.info?.playerState
+            : undefined;
+
+      const currentTime = payload?.event === "infoDelivery" ? payload?.info?.currentTime : undefined;
+      const duration = payload?.event === "infoDelivery" ? payload?.info?.duration : undefined;
+
+      const isGallery = e.source === videoGalleryIframeRef.current?.contentWindow;
+      const isTestimonial = e.source === testimonialIframeRef.current?.contentWindow;
+
+      if (typeof currentTime === "number" && typeof duration === "number" && duration > 0) {
+        const remaining = duration - currentTime;
+        if (remaining <= 20) {
+          if (isGallery) setShowVideoEndOverlay(true);
+          if (isTestimonial) setShowTestimonialEndOverlay(true);
+        }
+      }
+
+      if (playerState !== 0) return;
+
+      if (isGallery) setShowVideoEndOverlay(true);
+      if (isTestimonial) setShowTestimonialEndOverlay(true);
+    };
+
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
+
+  useEffect(() => {
     if (!isVideoGalleryInView) {
       postToYouTube(videoGalleryIframeRef.current, "mute");
       postToYouTube(videoGalleryIframeRef.current, "pauseVideo");
+      clearPoll(galleryTimePollRef);
       return;
     }
 
     const t = window.setTimeout(() => {
+      postToYouTube(videoGalleryIframeRef.current, "addEventListener", ["onStateChange"]);
       postToYouTube(videoGalleryIframeRef.current, "setVolume", [90]);
       postToYouTube(videoGalleryIframeRef.current, "playVideo");
 
       if (hasUserInteracted) {
         postToYouTube(videoGalleryIframeRef.current, "unMute");
       }
+
+      clearPoll(galleryTimePollRef);
+      galleryTimePollRef.current = window.setInterval(() => {
+        postToYouTube(videoGalleryIframeRef.current, "getDuration");
+        postToYouTube(videoGalleryIframeRef.current, "getCurrentTime");
+      }, 1000);
     }, 300);
 
     const t2 = window.setTimeout(() => {
@@ -378,6 +452,7 @@ export default function AyurmanaCenter() {
     return () => {
       window.clearTimeout(t);
       window.clearTimeout(t2);
+      clearPoll(galleryTimePollRef);
     };
   }, [isVideoGalleryInView, selectedVideo, hasUserInteracted]);
 
@@ -385,16 +460,24 @@ export default function AyurmanaCenter() {
     if (!isTestimonialsInView) {
       postToYouTube(testimonialIframeRef.current, "mute");
       postToYouTube(testimonialIframeRef.current, "pauseVideo");
+      clearPoll(testimonialTimePollRef);
       return;
     }
 
     const t = window.setTimeout(() => {
+      postToYouTube(testimonialIframeRef.current, "addEventListener", ["onStateChange"]);
       postToYouTube(testimonialIframeRef.current, "setVolume", [90]);
       postToYouTube(testimonialIframeRef.current, "playVideo");
 
       if (hasUserInteracted) {
         postToYouTube(testimonialIframeRef.current, "unMute");
       }
+
+      clearPoll(testimonialTimePollRef);
+      testimonialTimePollRef.current = window.setInterval(() => {
+        postToYouTube(testimonialIframeRef.current, "getDuration");
+        postToYouTube(testimonialIframeRef.current, "getCurrentTime");
+      }, 1000);
     }, 300);
 
     const t2 = window.setTimeout(() => {
@@ -407,6 +490,7 @@ export default function AyurmanaCenter() {
     return () => {
       window.clearTimeout(t);
       window.clearTimeout(t2);
+      clearPoll(testimonialTimePollRef);
     };
   }, [isTestimonialsInView, selectedTestimonialVideo, hasUserInteracted]);
 
@@ -1481,6 +1565,10 @@ export default function AyurmanaCenter() {
                         mute: isVideoGalleryInView ? (hasUserInteracted ? "0" : "1") : "0",
                         enablejsapi: "1",
                         playsinline: "1",
+                        modestbranding: "1",
+                        iv_load_policy: "3",
+                        disablekb: "1",
+                        fs: "0",
                         origin: typeof window !== "undefined" ? window.location.origin : "",
                         rel: "0",
                       })}
@@ -1490,7 +1578,52 @@ export default function AyurmanaCenter() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       ref={videoGalleryIframeRef}
+                      id="ayurmana-video-gallery"
                     ></iframe>
+
+                    {showVideoEndOverlay && (
+                      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+                        <div className="w-full max-w-md bg-white rounded-2xl p-5 md:p-7 shadow-2xl border-2 border-white/20 text-center">
+                          <h3 className="text-xl md:text-2xl font-extrabold text-primary mb-2">Ready to start your healing journey?</h3>
+                          <p className="text-sm md:text-base mb-5" style={{ color: "#7F543D" }}>
+                            Book a consultation now or reach out on WhatsApp.
+                          </p>
+                          <div className="grid grid-cols-1 gap-3">
+                            <Button
+                              size="lg"
+                              className="w-full rounded-full bg-primary text-white hover:bg-primary/90"
+                              onClick={() => setQuoteModalOpen(true)}
+                            >
+                              Book Consultation
+                            </Button>
+                            <a
+                              href="https://wa.me/918028432737"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="w-full"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                            >
+                              <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white">
+                                WhatsApp Now
+                              </Button>
+                            </a>
+                            <Button
+                              size="lg"
+                              variant="secondary"
+                              className="w-full rounded-full"
+                              onClick={() => {
+                                setShowVideoEndOverlay(false);
+                                setSelectedVideo((prev) => (prev + 1) % videos.length);
+                              }}
+                            >
+                              Watch Next Video
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -1611,6 +1744,10 @@ export default function AyurmanaCenter() {
                         mute: isTestimonialsInView ? (hasUserInteracted ? "0" : "1") : "0",
                         enablejsapi: "1",
                         playsinline: "1",
+                        modestbranding: "1",
+                        iv_load_policy: "3",
+                        disablekb: "1",
+                        fs: "0",
                         origin: typeof window !== "undefined" ? window.location.origin : "",
                         rel: "0",
                       })}
@@ -1620,7 +1757,52 @@ export default function AyurmanaCenter() {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                       ref={testimonialIframeRef}
+                      id="ayurmana-testimonial"
                     ></iframe>
+
+                    {showTestimonialEndOverlay && (
+                      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+                        <div className="w-full max-w-md bg-white rounded-2xl p-5 md:p-7 shadow-2xl border-2 border-white/20 text-center">
+                          <h3 className="text-xl md:text-2xl font-extrabold text-primary mb-2">Want results like this?</h3>
+                          <p className="text-sm md:text-base mb-5" style={{ color: "#7F543D" }}>
+                            Talk to our team for the right program and availability.
+                          </p>
+                          <div className="grid grid-cols-1 gap-3">
+                            <Button
+                              size="lg"
+                              className="w-full rounded-full bg-primary text-white hover:bg-primary/90"
+                              onClick={() => setQuoteModalOpen(true)}
+                            >
+                              Book Consultation
+                            </Button>
+                            <a
+                              href="https://wa.me/918028432737"
+                              target="_blank"
+                              rel="noreferrer"
+                              className="w-full"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                            >
+                              <Button size="lg" variant="outline" className="w-full rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white">
+                                WhatsApp Now
+                              </Button>
+                            </a>
+                            <Button
+                              size="lg"
+                              variant="secondary"
+                              className="w-full rounded-full"
+                              onClick={() => {
+                                setShowTestimonialEndOverlay(false);
+                                setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length);
+                              }}
+                            >
+                              Watch Next Testimonial
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
