@@ -2,7 +2,7 @@
 
 Healing beyond symptoms: A physician-led journey to treat the root cause of your illness.
 
-**Pain & Arthritis Management**
+**Pain & Arthritis**
 
 This is a clinical program focused on treating the root cause of chronic joint pain, rooted in our family's renowned expertise. We use a combination of powerful anti-inflammatory therapies and unique Dharma family formulations to manage conditions like osteoarthritis and rheumatoid arthritis.
 
@@ -12,7 +12,7 @@ This is a clinical program focused on treating the root cause of chronic joint p
 
 *   Aims to reduce dependency on painkillers and restore long-term, pain-free mobility.
 
-**Spine & Back Care (Disc Prolapse)**
+**Spine & Back**
 
 This specialized program is designed to heal and strengthen the entire spinal column, an area of deep expertise for our physicians. Using powerful, localized therapies, we focus on relieving nerve compression, nourishing the discs, and providing lasting relief.
 
@@ -22,7 +22,7 @@ This specialized program is designed to heal and strengthen the entire spinal co
 
 *   A powerful, non-invasive alternative to long-term pain medication or surgery.
 
-**Multiple Sclerosis (MS) Care**
+**Multiple Sclerosis**
 
 This is one of our most specialized programs, offering a supportive and holistic path to managing Multiple Sclerosis. Our approach focuses on calming the autoimmune response, nourishing the nervous system, and improving the overall quality of life.
 
@@ -32,7 +32,7 @@ This is one of our most specialized programs, offering a supportive and holistic
 
 *   Focuses on nourishing the nervous system to improve mobility and manage symptoms.
 
-**Psoriasis & Skin Disorder Treatment**
+**Skin Disorder**
 
 Heal your skin from the inside out with our clinical dermatology programs. We treat the root cause of chronic skin diseases like psoriasis and eczema by focusing on deep detoxification and blood purification to pacify the underlying imbalances.
 
@@ -42,7 +42,7 @@ Heal your skin from the inside out with our clinical dermatology programs. We tr
 
 *   A natural, steroid-free path to managing chronic and recurring skin diseases.
 
-**Stress, Anxiety & Sleep Disorders**
+**Stress, Anxiety**
 
 This is a targeted therapeutic program for managing diagnosed conditions like chronic anxiety, depression, and insomnia. We use a combination of nervine-soothing therapies and our unique family formulations to treat the underlying imbalances and restore mental health.
 
@@ -52,7 +52,7 @@ This is a targeted therapeutic program for managing diagnosed conditions like ch
 
 *   A natural, non-addictive path to restoring your emotional and mental well-being.
 
-**Weight Management (Obesity)**
+**Weight Management**
 
 This is a medically supervised program for treating the disease of obesity and its related health risks. We focus on correcting deep-seated metabolic pathways, strengthening your digestive fire (*Agni*), and facilitating safe, sustainable weight loss.
 
@@ -62,7 +62,7 @@ This is a medically supervised program for treating the disease of obesity and i
 
 *   Focuses on correcting your body's metabolism for lasting, healthy results.
 
-**Diabetes & Lifestyle Disorders**
+**Diabetes & Lifestyle**
 
 Take control of your metabolic health with our holistic program for managing diabetes and hypertension. We focus on correcting the root cause of these conditions to help you reduce your dependency on long-term medication and prevent future complications.
 
@@ -72,7 +72,7 @@ Take control of your metabolic health with our holistic program for managing dia
 
 *   Empowers you with sustainable lifestyle changes to prevent future complications.
 
-**Digestive Disease Management**
+**Digestive Disease**
 
 Restore the health of your gut with our specialized programs for digestive diseases. We treat the root cause of conditions like IBS, IBD (Crohn's, Colitis), and GERD by healing the gut lining, reducing inflammation, and rebalancing your digestive fire.
 
@@ -82,7 +82,7 @@ Restore the health of your gut with our specialized programs for digestive disea
 
 *   Aims to restore a healthy gut microbiome for long-term digestive wellness.
 
-**Women's Health & Gynaecology**
+**Women's Health**
 
 We offer a compassionate and effective clinical approach to managing gynaecological disorders. Our programs, guided by our family's deep expertise, focus on correcting hormonal imbalances to treat conditions like PCOS, endometriosis, and fertility challenges.
 
@@ -92,7 +92,7 @@ We offer a compassionate and effective clinical approach to managing gynaecologi
 
 *   A gentle and nourishing path to restoring female reproductive health.
 
-**Neurological Care (Migraine & Stroke)**
+**Neurological Care**
 
 We offer a supportive and nourishing clinical program for the management and rehabilitation of neurological disorders. Our therapies, rooted in our family's deep knowledge, focus on healing and strengthening the nervous system.
 
@@ -112,7 +112,7 @@ Breathe easier with our natural program for respiratory wellness. We use a combi
 
 *   Provides natural, long-term relief from chronic allergies, asthma, and sinusitis.
 
-**Autoimmune Disorders Support**
+**Autoimmune Disorders**
 
 This is a compassionate and supportive program for those living with chronic autoimmune conditions. Our goal is to calm the overactive immune response, reduce systemic inflammation, and strengthen the body's natural resilience to manage flare-ups.
 

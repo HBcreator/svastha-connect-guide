@@ -14,6 +14,7 @@ import {
   Sparkles,
   Activity,
   ShieldCheck,
+  Globe,
   Leaf,
   Heart,
   Phone,
@@ -37,7 +38,10 @@ import {
   MapPin,
   Star,
   Video,
+  MessageCircleHeart,
   MessageCircle,
+  Search,
+  X,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -241,6 +245,32 @@ const iconForTitle = (t: string) => {
 export default function AyurmanaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
+
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  const [currentAward, setCurrentAward] = useState(0);
+  const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
+  const [maxAwardIndex, setMaxAwardIndex] = useState(0);
+
+  const [insuranceIntro, setInsuranceIntro] = useState("");
+  const [insuranceBullets, setInsuranceBullets] = useState<string[]>([]);
+  const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
+  const [internationalInsuranceText, setInternationalInsuranceText] = useState("");
+
+  const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
+
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactEmails, setContactEmails] = useState<string[]>([]);
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
+
+  const [testimonials, setTestimonials] = useState<
+    { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]
+  >([]);
+  const [currentReview, setCurrentReview] = useState(0);
+  const isReviewAutoPlaying = true;
+
   const [wellnessIntro, setWellnessIntro] = useState("");
   const [wellnessPrograms, setWellnessPrograms] = useState<
     { title: string; description: string; bullets: string[] }[]
@@ -275,10 +305,12 @@ export default function AyurmanaCenter() {
   const [selectedVideo, setSelectedVideo] = useState(0);
   const [isVideoGalleryInView, setIsVideoGalleryInView] = useState(false);
   const videoGallerySectionRef = useRef<HTMLDivElement>(null);
+  const videoGalleryIframeRef = useRef<HTMLIFrameElement>(null);
 
   const [selectedTestimonialVideo, setSelectedTestimonialVideo] = useState(0);
   const [isTestimonialsInView, setIsTestimonialsInView] = useState(false);
   const testimonialSectionRef = useRef<HTMLDivElement>(null);
+  const testimonialIframeRef = useRef<HTMLIFrameElement>(null);
 
   const withYouTubeParams = (baseSrc: string, params: Record<string, string>) => {
     const [base, existingQuery] = baseSrc.split("?");
@@ -291,6 +323,92 @@ export default function AyurmanaCenter() {
     const q = existing.toString();
     return q ? `${base}?${q}` : base;
   };
+
+  const postToYouTube = (iframe: HTMLIFrameElement | null, func: string, args: any[] = []) => {
+    if (!iframe?.contentWindow) return;
+    iframe.contentWindow.postMessage(
+      JSON.stringify({
+        event: "command",
+        func,
+        args,
+      }),
+      "*"
+    );
+  };
+
+  useEffect(() => {
+    if (hasUserInteracted) return;
+
+    const onFirstInteract = () => {
+      setHasUserInteracted(true);
+    };
+
+    window.addEventListener("pointerdown", onFirstInteract, { once: true });
+    window.addEventListener("keydown", onFirstInteract, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", onFirstInteract);
+      window.removeEventListener("keydown", onFirstInteract);
+    };
+  }, [hasUserInteracted]);
+
+  useEffect(() => {
+    if (!isVideoGalleryInView) {
+      postToYouTube(videoGalleryIframeRef.current, "mute");
+      postToYouTube(videoGalleryIframeRef.current, "pauseVideo");
+      return;
+    }
+
+    const t = window.setTimeout(() => {
+      postToYouTube(videoGalleryIframeRef.current, "setVolume", [90]);
+      postToYouTube(videoGalleryIframeRef.current, "playVideo");
+
+      if (hasUserInteracted) {
+        postToYouTube(videoGalleryIframeRef.current, "unMute");
+      }
+    }, 300);
+
+    const t2 = window.setTimeout(() => {
+      if (!hasUserInteracted) return;
+      postToYouTube(videoGalleryIframeRef.current, "setVolume", [90]);
+      postToYouTube(videoGalleryIframeRef.current, "unMute");
+      postToYouTube(videoGalleryIframeRef.current, "playVideo");
+    }, 1200);
+
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+    };
+  }, [isVideoGalleryInView, selectedVideo, hasUserInteracted]);
+
+  useEffect(() => {
+    if (!isTestimonialsInView) {
+      postToYouTube(testimonialIframeRef.current, "mute");
+      postToYouTube(testimonialIframeRef.current, "pauseVideo");
+      return;
+    }
+
+    const t = window.setTimeout(() => {
+      postToYouTube(testimonialIframeRef.current, "setVolume", [90]);
+      postToYouTube(testimonialIframeRef.current, "playVideo");
+
+      if (hasUserInteracted) {
+        postToYouTube(testimonialIframeRef.current, "unMute");
+      }
+    }, 300);
+
+    const t2 = window.setTimeout(() => {
+      if (!hasUserInteracted) return;
+      postToYouTube(testimonialIframeRef.current, "setVolume", [90]);
+      postToYouTube(testimonialIframeRef.current, "unMute");
+      postToYouTube(testimonialIframeRef.current, "playVideo");
+    }, 1200);
+
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+    };
+  }, [isTestimonialsInView, selectedTestimonialVideo, hasUserInteracted]);
 
   const images = [
     "https://Savastha.b-cdn.net/Centers/Ayurmana%20Ayurvedic%20Center/Images/Photo%20Galley/img%201.jpg",
@@ -412,7 +530,98 @@ export default function AyurmanaCenter() {
         setMedicalPrograms(items);
       })
       .catch((err) => console.error("Error loading medical programs:", err));
+
+    fetch("/content/Top Centers/Ayurmana/Patient Stories & Reviews.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
+        let idCounter = 1;
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (!line || line.startsWith("###")) continue;
+
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
+            if (current) items.push(current);
+            const fullStr = nameMatch[1];
+            const parts = fullStr.split(" - ");
+            const name = parts[0] || "";
+            const location = parts[1] || "";
+            current = { id: idCounter++, name, location, condition: "", title: "", review: "", rating: 5, verified: true };
+            continue;
+          }
+
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2);
+            continue;
+          }
+
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\/5\)/);
+            if (ratingMatch) {
+              current.rating = parseInt(ratingMatch[1]);
+            }
+            continue;
+          }
+
+          if (current && line && !line.startsWith("**") && !line.startsWith("*")) {
+            current.review = current.review ? current.review + " " + line : line;
+            if (!current.condition && current.title) {
+              const knownConditions = ["Arthritis", "Burnout", "Back Pain", "PCOD", "Addiction", "Diabetes", "Insomnia", "Psoriasis", "Cancer", "Multiple Sclerosis", "Stroke", "Migraine", "Rheumatoid Arthritis"];
+              for (const c of knownConditions) {
+                if (current.title.includes(c)) {
+                  current.condition = c;
+                  break;
+                }
+              }
+            }
+          }
+        }
+
+        if (current) items.push(current);
+        setTestimonials(items);
+      })
+      .catch((err) => console.error("Error loading reviews:", err));
   }, []);
+
+  useEffect(() => {
+    if (testimonials.length === 0) return;
+    const interval = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const goToPreviousReview = () => {
+    if (testimonials.length === 0) return;
+    setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const goToNextReview = () => {
+    if (testimonials.length === 0) return;
+    setCurrentReview((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const selectReview = (index: number) => {
+    setCurrentReview(index);
+  };
+
+  const renderStars = (rating: number) => {
+    return (
+      <div className="flex gap-1">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            className={`h-4 w-4 md:h-5 md:w-5 ${i < rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
+          />
+        ))}
+      </div>
+    );
+  };
 
   useEffect(() => {
     fetch("/content/Top Centers/Ayurmana/Why Choose Ayurmana.txt")
@@ -694,6 +903,251 @@ export default function AyurmanaCenter() {
     setLightboxImage(idx);
     setLightboxOpen(true);
   };
+
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "videos", title: "Video Gallery" },
+    { id: "why-choose", title: "Why Choose Ayurmana" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
+    { id: "process", title: "Treatment Process" },
+    { id: "facilities", title: "Facilities & Amenities" },
+    { id: "team", title: "Founder & Team Info" },
+    { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "insurance", title: "Insurance & Payment" },
+    { id: "faq", title: "Frequently Asked Questions" },
+    { id: "contact", title: "Contact Information" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+  };
+
+  const awards = [
+    {
+      title: "ISO 9001:2015 Certified",
+      image: "/Center Images/Ayurmana center/Awards/Award1 (iso-9001-2015.png).webp",
+      description: "Quality management standards ensuring consistent, safe, and process-driven care.",
+    },
+    {
+      title: "Approved by Govt. of Kerala",
+      image: "/Center Images/Ayurmana center/Awards/Award 2 (Approved-by-Govt-of-Kerala.png).webp",
+      description: "Official recognition supporting authenticity, standards, and trusted Ayurvedic practice.",
+    },
+    {
+      title: "God's Own Country – Kerala Tourism",
+      image: "/Center Images/Ayurmana center/Awards/Award 3 (gods-own-country).webp",
+      description: "Association with Kerala’s globally recognized wellness and tourism identity.",
+    },
+    {
+      title: "Green Leaf Accreditation",
+      image: "/Center Images/Ayurmana center/Awards/Award 4 (Greenleaf-accreditation.png).webp",
+      description: "Kerala Tourism’s highest Ayurvedic certification for authentic treatments and excellence.",
+    },
+    {
+      title: "Tripadvisor Recognition",
+      image: "/Center Images/Ayurmana center/Awards/Award 5 (Tripadvisor).webp",
+      description: "Guest satisfaction and credible reviews recognized by a global travel community.",
+    },
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      const newMax = isMobile ? awards.length - 1 : Math.max(0, awards.length - 3);
+      setMaxAwardIndex(newMax);
+      setCurrentAward((prev) => (prev > newMax ? 0 : prev));
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [awards.length]);
+
+  useEffect(() => {
+    if (!isAwardAutoPlaying) return;
+    const id = setInterval(() => {
+      setCurrentAward((prev) => (prev >= maxAwardIndex ? 0 : prev + 1));
+    }, 5000);
+
+    return () => clearInterval(id);
+  }, [isAwardAutoPlaying, maxAwardIndex]);
+
+  const goToPreviousAward = () => {
+    setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
+  };
+
+  const goToNextAward = () => {
+    setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Ayurmana/Insurance & Payment Info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+        let intro = "";
+        const insurance: string[] = [];
+        const payment: string[] = [];
+        let international = "";
+
+        type Mode = "intro" | "insurance" | "payment" | "international";
+        let mode: Mode = "intro";
+
+        for (const line of lines) {
+          if (line.startsWith("###")) continue;
+
+          if (line === "**Insurance Coverage**") {
+            mode = "insurance";
+            continue;
+          }
+          if (line === "**Payment Options**") {
+            mode = "payment";
+            continue;
+          }
+          if (line === "**For International Patients**") {
+            mode = "international";
+            continue;
+          }
+
+          if (line.startsWith("*")) {
+            const bullet = line.replace(/^\*+\s*/, "").trim();
+            if (mode === "insurance") insurance.push(bullet);
+            if (mode === "payment") payment.push(bullet);
+            continue;
+          }
+
+          if (mode === "intro") {
+            intro = intro ? `${intro} ${line}` : line;
+          } else if (mode === "international") {
+            international = international ? `${international} ${line}` : line;
+          }
+        }
+
+        setInsuranceIntro(intro);
+        setInsuranceBullets(insurance);
+        setPaymentBullets(payment);
+        setInternationalInsuranceText(international);
+      })
+      .catch((err) => console.error("Error loading Insurance & Payment Info:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Ayurmana/Frequently Asked Questions.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+
+        const items: { question: string; answer: string }[] = [];
+        let currentQuestion = "";
+        let currentAnswer: string[] = [];
+
+        const push = () => {
+          if (!currentQuestion) return;
+          items.push({ question: currentQuestion, answer: currentAnswer.join(" ").trim() });
+          currentQuestion = "";
+          currentAnswer = [];
+        };
+
+        for (const line of lines) {
+          if (line.startsWith("###")) continue;
+
+          const isQuestion = line.startsWith("**") && line.endsWith("**");
+          if (isQuestion) {
+            push();
+            currentQuestion = line
+              .replace(/^\*\*\s*/, "")
+              .replace(/\s*\*\*$/, "")
+              .replace(/^\d+\.\s*/, "")
+              .trim();
+            continue;
+          }
+
+          if (currentQuestion) currentAnswer.push(line);
+        }
+
+        push();
+        setFaqItems(items);
+      })
+      .catch((err) => console.error("Error loading FAQ:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Ayurmana/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+
+        const address: string[] = [];
+        const emails: string[] = [];
+        const distances: string[] = [];
+        let transport = "";
+
+        type Mode = "none" | "address" | "email" | "distance" | "transport";
+        let mode: Mode = "none";
+
+        for (const line of lines) {
+          if (line.startsWith("###")) continue;
+
+          if (line === "**Address**") {
+            mode = "address";
+            continue;
+          }
+          if (line === "**Email**") {
+            mode = "email";
+            continue;
+          }
+          if (line === "**Distance from Major Locations**") {
+            mode = "distance";
+            continue;
+          }
+          if (line === "**Transportation Services**") {
+            mode = "transport";
+            continue;
+          }
+
+          if (mode === "address") {
+            const parts = line.split(/<br\s*\/>/i).map((p) => p.trim());
+            parts.filter(Boolean).forEach((p) => address.push(p));
+            continue;
+          }
+
+          if (mode === "email") {
+            emails.push(line);
+            continue;
+          }
+
+          if (mode === "distance") {
+            if (line.startsWith("*")) {
+              distances.push(line.replace(/^\*+\s*/, "").trim());
+            }
+            continue;
+          }
+
+          if (mode === "transport") {
+            transport = transport ? `${transport} ${line}` : line;
+          }
+        }
+
+        setContactAddress(address);
+        setContactEmails(emails);
+        setContactDistances(distances);
+        setTransportText(transport);
+      })
+      .catch((err) => console.error("Error loading Contact Information:", err));
+  }, []);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -1021,10 +1475,13 @@ export default function AyurmanaCenter() {
                 <CardContent className="p-0">
                   <div className="aspect-video w-full relative">
                     <iframe
-                      key={`${videos[selectedVideo]}-${isVideoGalleryInView ? "play" : "stop"}`}
+                      key={`${videos[selectedVideo]}-${isVideoGalleryInView ? "play" : "stop"}-${hasUserInteracted ? "sound" : "muted"}`}
                       src={withYouTubeParams(videos[selectedVideo], {
                         autoplay: isVideoGalleryInView ? "1" : "0",
-                        mute: isVideoGalleryInView ? "1" : "0",
+                        mute: isVideoGalleryInView ? (hasUserInteracted ? "0" : "1") : "0",
+                        enablejsapi: "1",
+                        playsinline: "1",
+                        origin: typeof window !== "undefined" ? window.location.origin : "",
                         rel: "0",
                       })}
                       title="Ayurmana Video"
@@ -1032,6 +1489,7 @@ export default function AyurmanaCenter() {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
+                      ref={videoGalleryIframeRef}
                     ></iframe>
                   </div>
                 </CardContent>
@@ -1147,10 +1605,13 @@ export default function AyurmanaCenter() {
                 <CardContent className="p-0">
                   <div className="aspect-video w-full relative">
                     <iframe
-                      key={`${testimonialVideos[selectedTestimonialVideo]}-${isTestimonialsInView ? "play" : "stop"}`}
+                      key={`${testimonialVideos[selectedTestimonialVideo]}-${isTestimonialsInView ? "play" : "stop"}-${hasUserInteracted ? "sound" : "muted"}`}
                       src={withYouTubeParams(testimonialVideos[selectedTestimonialVideo], {
                         autoplay: isTestimonialsInView ? "1" : "0",
-                        mute: isTestimonialsInView ? "1" : "0",
+                        mute: isTestimonialsInView ? (hasUserInteracted ? "0" : "1") : "0",
+                        enablejsapi: "1",
+                        playsinline: "1",
+                        origin: typeof window !== "undefined" ? window.location.origin : "",
                         rel: "0",
                       })}
                       title="Ayurmana Testimonial Video"
@@ -1158,6 +1619,7 @@ export default function AyurmanaCenter() {
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
+                      ref={testimonialIframeRef}
                     ></iframe>
                   </div>
                 </CardContent>
@@ -1592,8 +2054,7 @@ export default function AyurmanaCenter() {
                   </p>
                   <div className="space-y-2 pt-3 md:pt-4 border-t border-primary/10">
                     <p className="text-xs font-semibold text-primary mb-2 md:mb-3">Key Highlights:</p>
-                    <div className="max-h-40 overflow-y-auto pr-1">
-                      <div className="grid grid-cols-1 gap-2">
+                    <div className="grid grid-cols-1 gap-2">
                       {(founderTeamData?.cards?.[1]?.bullets || []).map((b, i) => (
                         <div key={i} className="flex items-start gap-2">
                           <span className="w-2 h-2 bg-primary rounded-full mt-1.5 flex-shrink-0"></span>
@@ -1602,12 +2063,581 @@ export default function AyurmanaCenter() {
                           </span>
                         </div>
                       ))}
-                      </div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          <div className="mb-12" id="reviews">
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
+                Hear from our patients about their transformational healing journeys
+              </p>
+            </div>
+
+            <div className="relative">
+              <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+                <CardContent className="p-4 md:p-12">
+                  <div className="max-w-4xl mx-auto">
+                    {testimonials.length > 0 && (
+                      <>
+                        <div className="text-primary/20 mb-3 md:mb-4">
+                          <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                          </svg>
+                        </div>
+
+                        <div className="mb-4 md:mb-6">
+                          <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                            {testimonials[currentReview].title}
+                          </h3>
+                          <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                            "{testimonials[currentReview].review}"
+                          </p>
+                        </div>
+
+                        <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                            {testimonials[currentReview].name.charAt(0)}
+                          </div>
+
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                              <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
+                              {testimonials[currentReview].verified && (
+                                <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                                  ✓ Verified
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                              {testimonials[currentReview].location}{" "}
+                              {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 md:gap-3">
+                          {renderStars(testimonials[currentReview].rating)}
+                          <span className="text-xs md:text-sm font-semibold text-primary">{testimonials[currentReview].rating}.0</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+                <button
+                  onClick={goToPreviousReview}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Previous review"
+                >
+                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+                <button
+                  onClick={goToNextReview}
+                  className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                  aria-label="Next review"
+                >
+                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              {isReviewAutoPlaying && (
+                <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                  Auto
+                </div>
+              )}
+            </div>
+
+            <div className="flex justify-center gap-2 mt-6">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => selectReview(idx)}
+                  className={`transition-all rounded-full ${
+                    currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                  }`}
+                  aria-label={`Go to review ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-12 mt-12 px-4" id="awards">
+            <div className="text-center mb-6 md:mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
+                <Award className="h-8 w-8" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
+              <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: "#7F543D" }}>
+                Recognition of Ayurmana's excellence in authentic Ayurvedic healing and patient care
+              </p>
+            </div>
+
+            <div className="relative group max-w-5xl mx-auto">
+              <div className="overflow-hidden px-4 md:px-10">
+                <div className="md:hidden">
+                  <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentAward * 100}%)` }}>
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-full flex-shrink-0 px-2">
+                        <div className="bg-white rounded-2xl p-4 md:p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 p-2 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-[95%] max-w-[95%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-lg font-bold text-primary mb-2 line-clamp-1">{award.title}</h4>
+                            <p className="text-sm italic line-clamp-3" style={{ color: "#7F543D" }}>
+                              "{award.description}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentAward * (100 / 3)}%)` }}>
+                    {awards.map((award, i) => (
+                      <div key={i} className="w-1/3 flex-shrink-0 px-4">
+                        <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-primary/10 hover:border-primary/30 transition-all h-full flex flex-col items-center">
+                          <div className="w-full aspect-square bg-primary/5 rounded-xl mb-4 md:mb-6 p-2 md:p-3 flex items-center justify-center overflow-hidden">
+                            <img
+                              src={award.image}
+                              alt={award.title}
+                              className="max-h-[95%] max-w-[95%] object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-110"
+                            />
+                          </div>
+                          <div className="text-center">
+                            <h4 className="text-xl font-bold text-primary mb-3 min-h-[56px] flex items-center justify-center leading-tight">
+                              {award.title}
+                            </h4>
+                            <p className="text-base italic" style={{ color: "#7F543D" }}>
+                              "{award.description}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={goToPreviousAward}
+                className="absolute left-12 md:-left-4 top-[54%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Previous award"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+              <button
+                onClick={goToNextAward}
+                className="absolute right-12 md:-right-4 top-[54%] md:top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                aria-label="Next award"
+              >
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+              </button>
+
+              <div className="flex justify-center gap-2 mt-8">
+                {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setCurrentAward(i);
+                      setIsAwardAutoPlaying(false);
+                    }}
+                    className={`transition-all duration-300 ${
+                      i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"
+                    } rounded-full`}
+                    aria-label={`Go to award ${i + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-12" id="insurance">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                <ShieldCheck className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance &amp; Payment Info</h2>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                {insuranceIntro}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                      <ShieldCheck className="h-6 w-6 text-green-600" />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {insuranceBullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                        <span className="text-primary mt-1">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                <CardContent className="p-8">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Pill className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-bold text-primary">Payment Options</h3>
+                  </div>
+                  <ul className="space-y-3">
+                    {paymentBullets.map((b, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                        <span className="text-primary mt-1">✓</span>
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
+                    <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      {internationalInsuranceText}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mb-12" id="faq">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                <MessageCircleHeart className="h-8 w-8 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+              <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                Find answers to common questions about treatments, facilities, and your healing journey
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+              {faqItems.map((f, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`faq${i + 1}`}
+                  className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white"
+                >
+                  <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-green-600">
+                    <span className="text-lg font-semibold text-primary text-left">{f.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pt-4 pb-6 bg-white">
+                    <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      {f.answer}
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl" id="contact">
+            <CardContent className="p-5 md:p-8">
+              <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+              <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-primary mb-1">Address</h4>
+                      <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                        {contactAddress.filter((l) => l.trim() !== "").map((l, i) => (
+                          <span key={i}>{l}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </div>
+
+                  {contactEmails.length > 0 && (
+                    <div className="flex items-start gap-4">
+                      <MessageCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-primary mb-1">Email</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactEmails.map((e, i) => (
+                            <a key={i} href={`mailto:${e}`} className="underline hover:text-primary">
+                              {e}
+                            </a>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {contactDistances.length > 0 && (
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                        <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactDistances.map((d, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              <span>{d}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="md:-mt-16 self-start">
+                  <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                    <div className="rounded-xl overflow-hidden">
+                      <div className="relative w-full aspect-[800/600]">
+                        <iframe
+                          title="Ayurmana Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.932453995799!2d76.91816697421514!3d8.602483995521123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b8acfe00e83b%3A0x51423f7abcbba53!2sAyurMana%20%7C%20Dharma%20Ayurveda%20Centre%20for%20Advanced%20Healing!5e0!3m2!1sen!2sin!4v1768652250943!5m2!1sen!2sin"
+                          className="absolute inset-0 h-full w-full"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {transportText && (
+                <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                  <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <ShieldCheck className="h-7 w-7 text-primary" />
+                    </div>
+                    <div className="text-center md:text-left w-full">
+                      <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                      <div className="max-w-none w-full">
+                        <p
+                          className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4"
+                          style={{ color: "#7F543D" }}
+                        >
+                          {transportText}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#234A50" }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Ayurmana center/CTA bottom.jpg"
+                    alt="Ayurmana Wellness Center"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">
+                    Begin Your Holistic Healing Journey at Ayurmana
+                  </h2>
+                  <div className="space-y-4">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-6 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">
+                      Call us: +91 80 2843 2737
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
+                    Begin Your <span className="text-white/90">Holistic Healing Journey</span> at{" "}
+                    <span className="text-white underline decoration-white/20 underline-offset-8">Ayurmana</span>
+                  </h2>
+                  <div className="flex flex-wrap gap-5">
+                    <Button
+                      size="lg"
+                      className="rounded-full px-6 bg-white text-primary hover:bg-white/90"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-8 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">
+                      Call us: +91 80 2843 2737
+                    </a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Ayurmana center/CTA bottom.jpg"
+                    alt="Ayurmana Wellness Center"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-4 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
+      )}
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div
+          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`}
+        />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Sections of Ayurmana
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Directly navigate to any section on this page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5 custom-scrollbar">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">Holistic Healing Sanctuary</p>
           </div>
         </div>
       </div>
@@ -1800,6 +2830,26 @@ export default function AyurmanaCenter() {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
+        </button>
+      )}
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="md:hidden fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span>QUOTE</span>
+        </button>
+      )}
     </div>
   );
 }

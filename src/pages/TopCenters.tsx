@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore"];
 
   const treatments = [
     "All",
@@ -133,6 +133,18 @@ const TopCenters = () => {
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
       slug: "kerala/ayurmana" as string | undefined,
       locationText: "Kerala, India",
+    },
+    {
+      name: "Chamundi Hill Palace Ayurvedic Resort",
+      city: "Mysore",
+      description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
+      specialties: ["Ayurveda", "Panchakarma", "Rejuvenation"],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+      locationText: "Edakkunnam, Kerala",
+      slug: "mysore/chamundi-hill-palace" as string | undefined,
     },
     {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",

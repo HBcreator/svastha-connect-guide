@@ -3189,7 +3189,7 @@ export default function SOUKYACenter() {
       }
       {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
-        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 flex-col items-end">
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
           {/* BROWSE Button - Static Clean Version */}
           <button
             onClick={() => setIsJumpModalOpen(true)}
