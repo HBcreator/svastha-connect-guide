@@ -301,6 +301,18 @@ const TopCenters = () => {
       locationText: "Alappuzha, Kerala, India",
       slug: "kerala/krishnendu-ayurveda-hospital" as string | undefined,
     },
+    {
+      name: "Athreya Ayurvedic Centre",
+      city: "Kerala",
+      description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
+      specialties: ["Ayurveda", "Panchakarma", "Wellness"],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+      locationText: "Kerala, India",
+      slug: "kerala/athreya-ayurvedic-centre" as string | undefined,
+    },
   ];
 
   return (
