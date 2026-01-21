@@ -143,7 +143,7 @@ const TopCenters = () => {
       reviews: 0,
       priceRange: "$$$$",
       image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-      locationText: "Edakkunnam, Kerala",
+      locationText: "Edakkunnam, Keralak",
       slug: "mysore/chamundi-hill-palace" as string | undefined,
     },
     {
