@@ -313,6 +313,26 @@ const TopCenters = () => {
       locationText: "Kerala, India",
       slug: "kerala/athreya-ayurvedic-centre" as string | undefined,
     },
+    {
+      name: "Ayur Bethaniya Ayurveda Hospital",
+      city: "Kerala",
+      description:
+        "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Relief",
+        "Lifestyle Disorders",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Ayur Bethaniya/CTA.jpg",
+      locationText: "Kerala, India",
+      slug: "kerala/ayur-bethaniya-ayurveda-hospital" as string | undefined,
+    },
   ];
 
   return (
