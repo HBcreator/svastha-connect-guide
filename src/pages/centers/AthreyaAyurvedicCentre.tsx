@@ -1956,22 +1956,6 @@ export default function AthreyaAyurvedicCentre() {
                         </ul>
                       </CardContent>
                     </Card>
-                    <button
-                      onClick={prevTeam}
-                      className="hidden md:flex absolute -left-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                      aria-label="Previous team card"
-                      disabled={teamGroups.length === 0}
-                    >
-                      <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                    </button>
-                    <button
-                      onClick={nextTeam}
-                      className="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 bg-white hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                      aria-label="Next team card"
-                      disabled={teamGroups.length === 0}
-                    >
-                      <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                    </button>
                   </div>
                 </div>
               </div>
