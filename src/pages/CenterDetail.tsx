@@ -51,6 +51,37 @@ const CenterDetail = () => {
       website: "https://vedafive.com",
       images: ["/images/Goa/Ved5/1-Veda5.jpg", "/images/Goa/Ved5/2-Veda5.jpg", "/images/Goa/Ved5/3-veda5.jpg"]
     },
+    ayurvedagram: {
+      id: "ayurvedagram",
+      name: "AyurvedaGram Heritage Wellness Centre",
+      city: "Bangalore",
+      region: "India",
+      description:
+        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.7,
+      reviews: [
+        {
+          text: "600+ reviews",
+          source: "Listing"
+        }
+      ],
+      highlights: [
+        "Classical Ayurveda in a serene heritage village setting",
+        "Personalized therapies guided by experienced Vaidyas",
+        "Holistic approach for body, mind, and spirit",
+        "Detox, rejuvenation, and chronic disease management"
+      ],
+      website: "",
+      images: ["/Center Images/AyurvedaGram/Thumb.jpg"]
+    },
     ayurclinic: {
       id: "ayurclinic",
       name: "Ayurclinic Goa",

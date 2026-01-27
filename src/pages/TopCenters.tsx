@@ -46,6 +46,26 @@ const TopCenters = () => {
       slug: "bangalore/soukya" as string | undefined,
     },
     {
+      name: "AyurvedaGram Heritage Wellness Centre",
+      city: "Bangalore",
+      description:
+        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.7,
+      reviews: 600,
+      priceRange: "$$$$",
+      image: "/Center Images/AyurvedaGram/Thumb.jpg",
+      locationText: "Bangalore, India",
+      slug: "bangalore/ayurvedagram" as string | undefined,
+    },
+    {
       name: "Somatheeram Ayurvedic Health Resort",
       city: "Kerala",
       description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
