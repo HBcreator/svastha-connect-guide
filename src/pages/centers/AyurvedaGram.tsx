@@ -830,7 +830,8 @@ const AyurvedaGram = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsTestimonialsInView(entry.isIntersecting);
+          const isMobile = window.innerWidth < 768;
+          setIsTestimonialsInView(isMobile && entry.isIntersecting);
         });
       },
       { threshold: 0.3 }
@@ -1520,7 +1521,7 @@ const AyurvedaGram = () => {
                   <CardContent className="p-0">
                     <div className="aspect-video w-full relative">
                       <iframe
-                        key={testimonialVideos[selectedTestimonialVideo]}
+                        key={`${testimonialVideos[selectedTestimonialVideo]}-${isTestimonialsInView ? "play" : "pause"}`}
                         src={`${testimonialVideos[selectedTestimonialVideo]}?autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
                         title="AyurvedaGram Testimonial Video"
                         className="w-full h-full"
