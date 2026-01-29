@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand"];
 
   const treatments = [
     "All",
@@ -121,6 +121,25 @@ const TopCenters = () => {
       slug: "veda5",
       badgeColor: "#D9E3DC",
       locationText: "Rishikesh, Kerala, Goa, India",
+    },
+    {
+      name: "Ananda In The Himalayas",
+      city: "Uttarakhand",
+      description:
+        "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+      specialties: [
+        "Ayurveda Therapies",
+        "Yoga & Meditation",
+        "Detox & Weight Management",
+        "Stress Management",
+        "Holistic Healing Programs",
+      ],
+      rating: 4.8,
+      reviews: 900,
+      priceRange: "$$$$$",
+      image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+      locationText: "Uttarakhand, India",
+      slug: "uttarakhand/ananda-in-the-himalayas" as string | undefined,
     },
     {
       name: "Namaste Dwaar – Countryside Wellness Retreat",

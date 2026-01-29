@@ -768,6 +768,15 @@ const AyurvedaGram = () => {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
+  useEffect(() => {
+    if (!facilityImages.length) return;
+    if (facilityLightboxOpen) return;
+    const id = setInterval(() => {
+      setCurrentFacilityImage((prev) => (prev + 1) % facilityImages.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [facilityImages.length, facilityLightboxOpen]);
+
   const goToPreviousReview = () => {
     if (testimonials.length === 0) return;
     setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);

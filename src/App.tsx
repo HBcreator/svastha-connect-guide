@@ -29,6 +29,7 @@ import ChamundiHillPalace from "./pages/centers/ChamundiHillPalace";
 import AthreyaAyurvedicCentre from "./pages/centers/AthreyaAyurvedicCentre";
 import AyurBethaniyaAyurvedaHospital from "./pages/centers/AyurBethaniyaAyurvedaHospital";
 import AyurvedaGram from "./pages/centers/AyurvedaGram";
+import AnandaInTheHimalayas from "./pages/centers/AnandaInTheHimalayas";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -76,6 +77,7 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/bangalore/soukya" element={<SOUKYACenter />} />
           <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
+          <Route path="/centers/uttarakhand/ananda-in-the-himalayas" element={<AnandaInTheHimalayas />} />
           <Route path="/centers/kerala/somatheeram" element={<Somatheeram />} />
           <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />
           <Route path="/centers/kerala/kairali-ayurvedic-healing-village" element={<KairaliHealingVillage />} />
