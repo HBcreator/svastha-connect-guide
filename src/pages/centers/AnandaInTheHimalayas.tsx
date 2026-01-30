@@ -222,7 +222,7 @@ const AnandaInTheHimalayas = () => {
     {
       title: "Condé Nast Traveller & Travel + Leisure",
       description: "Recognized among the world's most inspiring wellness destinations.",
-      image: "/Center Images/Ananda in the Himalayas/Awards/Condé Nast Traveller and Travel + Leisure..png",
+      image: "/Center Images/Ananda in the Himalayas/Awards/Nast Traveller.png",
     },
     {
       title: "Spa Excellence Award",
