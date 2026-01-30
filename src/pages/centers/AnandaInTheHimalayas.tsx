@@ -222,7 +222,7 @@ const AnandaInTheHimalayas = () => {
     {
       title: "Condé Nast Traveller & Travel + Leisure",
       description: "Recognized among the world's most inspiring wellness destinations.",
-      image: "/Center Images/Ananda in the Himalayas/Awards/Condé Nast Traveller and Travel + Leisure..JPG",
+      image: "/Center Images/Ananda in the Himalayas/Awards/Condé Nast Traveller and Travel + Leisure..png",
     },
     {
       title: "Spa Excellence Award",
@@ -232,7 +232,7 @@ const AnandaInTheHimalayas = () => {
     {
       title: "Wellness Seeker Choice",
       description: "Loved by wellness travelers for transformative retreats and programs.",
-      image: "/Center Images/Ananda in the Himalayas/Awards/Wellness seeker.avif",
+      image: "/Center Images/Ananda in the Himalayas/Awards/Wellness seeker.png",
     },
   ];
 
