@@ -925,8 +925,8 @@ const Veda5Center = () => {
                                 setLightboxOpen(true);
                               }}
                             >
-                              <div className="relative w-full" style={{ paddingBottom: "100%" }}>
-                                <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                              <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "100%" }}>
+                                <img src={img} alt="" className="absolute inset-0 w-full h-full object-cover rounded-xl" />
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                                 {isLast && (
                                   <div className="absolute inset-0 flex items-end justify-center pb-2 md:pb-4 bg-black/40">

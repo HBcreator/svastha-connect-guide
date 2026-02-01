@@ -1369,11 +1369,11 @@ export default function AyurmanaCenter() {
                           onClick={() => openLightbox(actualIndex)}
                           role="button"
                         >
-                          <div className="relative w-full" style={{ paddingBottom: "100%" }}>
+                          <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "100%" }}>
                             <img
                               src={img}
                               alt={`Ayurmana ${actualIndex + 1}`}
-                              className="absolute inset-0 w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover rounded-xl"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
 

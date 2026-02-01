@@ -1188,15 +1188,16 @@ const AyurvedaGram = () => {
                           key={idx}
                           className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group"
                           onClick={() => {
+                            setSelectedImage(actualIndex);
                             setLightboxImage(actualIndex);
                             setLightboxOpen(true);
                           }}
                         >
-                          <div className="relative w-full" style={{ paddingBottom: "100%" }}>
+                          <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "100%" }}>
                             <img
                               src={img}
                               alt={`AyurvedaGram ${actualIndex + 1}`}
-                              className="absolute inset-0 w-full h-full object-cover"
+                              className="absolute inset-0 w-full h-full object-cover rounded-xl"
                             />
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
 

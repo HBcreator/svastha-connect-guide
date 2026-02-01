@@ -1073,14 +1073,15 @@ export default function KrishnenduAyurvedaHospital() {
                               setLightboxOpen(true);
                             }}
                           >
-                            <div className="relative w-full" style={{ paddingBottom: "100%" }}>
+                            <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: "100%" }}>
                               <img
                                 src={img}
                                 alt={`Krishnendu ${actualIndex + 1}`}
-                                className="absolute inset-0 w-full h-full object-cover"
+                                className="absolute inset-0 w-full h-full object-cover rounded-xl"
                               />
                               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                              {isLastImage && images.length > 5 && (
+
+                              {isLastImage && (
                                 <div className="absolute inset-0 flex items-end justify-center pb-4 bg-black/40">
                                   <Button
                                     size="sm"
