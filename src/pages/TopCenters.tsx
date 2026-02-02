@@ -123,6 +123,27 @@ const TopCenters = () => {
       locationText: "Rishikesh, Kerala, Goa, India",
     },
     {
+      name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+      city: "Rishikesh",
+      description:
+        "Yan Cure Yoga Retreat & Ayurveda Centre mein aap paayenge yoga, Ayurveda aur holistic healing ka perfect sangam. Yeh centre ek shaant aur prakritik environment mein sthit hai, jahan traditional Ayurvedic therapies aur yogic practices ke zariye body, mind aur soul ko balance kiya jaata hai. Experienced Ayurvedic doctors aur certified yoga instructors ke guidance mein, Yan Cure personalized treatment programs offer karta hai jo detoxification, stress relief aur overall rejuvenation par focus karte hain. Yahan ki healing therapies ancient wisdom aur modern wellness approaches ka ek powerful combination hain, jo long-term health aur inner peace ko promote karti hain.",
+      specialties: [
+        "Panchakarma Therapy",
+        "Authentic Ayurveda Treatments",
+        "Yoga & Meditation Programs",
+        "Detox & Rejuvenation",
+        "Stress & Anxiety Management",
+        "Lifestyle Disorder Treatment",
+        "Wellness Retreat Programs",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
+      locationText: "Rishikesh, Uttarakhand, India",
+      slug: "rishikesh/yan-cure" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
