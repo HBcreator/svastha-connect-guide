@@ -17,6 +17,7 @@ import {
   ClipboardList,
   Droplet,
   FileSearch,
+  Globe,
   Heart,
   HeartPulse,
   Home,
@@ -25,8 +26,10 @@ import {
   Leaf,
   MapPin,
   MessageCircle,
+  MessageCircleHeart,
   Pill,
   Phone,
+  Search,
   ShieldCheck,
   Sparkles,
   Star,
@@ -37,6 +40,7 @@ import {
   Users,
   UserCheck,
   Video,
+  X,
 } from "lucide-react";
 
 interface CardData {
@@ -245,7 +249,6 @@ const getFacilityIcon = (t: string) => {
 
 const YanCureYogaRetreat = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-
   const [images, setImages] = useState<string[]>([]);
   const [videos, setVideos] = useState<string[]>([]);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -255,7 +258,7 @@ const YanCureYogaRetreat = () => {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
-
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [selectedCenterVideo, setSelectedCenterVideo] = useState(0);
   const galleryVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -304,6 +307,20 @@ const YanCureYogaRetreat = () => {
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
 
+  const [insuranceIntro, setInsuranceIntro] = useState("");
+  const [insuranceBullets, setInsuranceBullets] = useState<string[]>([]);
+  const [paymentBullets, setPaymentBullets] = useState<string[]>([]);
+  const [internationalText, setInternationalText] = useState("");
+
+  const [faqItems, setFaqItems] = useState<{ question: string; answer: string }[]>([]);
+
+  const [contactAddress, setContactAddress] = useState<string[]>([]);
+  const [contactPhones, setContactPhones] = useState<string[]>([]);
+  const [contactEmails, setContactEmails] = useState<string[]>([]);
+  const [contactWebsite, setContactWebsite] = useState("");
+  const [contactDistances, setContactDistances] = useState<string[]>([]);
+  const [transportText, setTransportText] = useState("");
+
   const [currentAward, setCurrentAward] = useState(0);
   const [isAwardAutoPlaying, setIsAwardAutoPlaying] = useState(true);
 
@@ -336,6 +353,53 @@ const YanCureYogaRetreat = () => {
   ];
 
   const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
+
+  useEffect(() => {
+    if (isJumpModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isJumpModalOpen]);
+
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "videos", title: "Video Gallery" },
+    { id: "why-choose", title: "Why Choose Yan Cure" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
+    { id: "process", title: "Process & Journey" },
+    { id: "facilities", title: "Facilities & Amenities" },
+    { id: "team", title: "Founder & Team Info" },
+    { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "insurance", title: "Insurance & Payment" },
+    { id: "faq", title: "F&Q" },
+    { id: "contact", title: "Contact Information" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }, 300);
+  };
 
   useEffect(() => {
     fetch("/Center Images/Yan Cure Yoga Retreat/Photo Gallery/Photo Gallery Links.txt")
@@ -650,6 +714,173 @@ const YanCureYogaRetreat = () => {
   }, [isAwardAutoPlaying, maxAwardIndex]);
 
   useEffect(() => {
+    fetch("/content/Top Centers/Yan Cure Yoga Retreat/Insurance & Payment Info.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let intro = "";
+        const ins: string[] = [];
+        const pay: string[] = [];
+        let intl = "";
+        let section: "intro" | "ins" | "pay" | "intl" = "intro";
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            section = "intro";
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("insurance")) {
+              section = "ins";
+              continue;
+            }
+            if (t.includes("payment")) {
+              section = "pay";
+              continue;
+            }
+            if (t.includes("international")) {
+              section = "intl";
+              continue;
+            }
+          }
+          if (line.startsWith("*")) {
+            const bullet = line.replace(/^\*+\s*/, "");
+            if (section === "ins") ins.push(bullet);
+            else if (section === "pay") pay.push(bullet);
+            continue;
+          }
+          if (section === "intro") intro = intro ? `${intro} ${line}` : line;
+          else if (section === "intl") intl = intl ? `${intl} ${line}` : line;
+        }
+
+        setInsuranceIntro(intro);
+        setInsuranceBullets(ins);
+        setPaymentBullets(pay);
+        setInternationalText(intl);
+      })
+      .catch((err) => console.error("Error loading Yan Cure insurance content:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Yan Cure Yoga Retreat/Frequently Asked Questions.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { question: string; answer: string }[] = [];
+        let currentQ = "";
+        let currentA = "";
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) continue;
+          if (line.startsWith("**") && line.endsWith("**")) {
+            if (currentQ) items.push({ question: currentQ, answer: currentA });
+            currentQ = line.slice(2, -2).replace(/^\d+\.\s*/, "");
+            currentA = "";
+            continue;
+          }
+          currentA = currentA ? `${currentA} ${line}` : line;
+        }
+
+        if (currentQ) items.push({ question: currentQ, answer: currentA });
+        setFaqItems(items);
+      })
+      .catch((err) => console.error("Error loading Yan Cure FAQs:", err));
+  }, []);
+
+  useEffect(() => {
+    fetch("/content/Top Centers/Yan Cure Yoga Retreat/Contact Information.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        let section: "none" | "address" | "phones" | "emails" | "website" | "distances" | "transport" = "none";
+        const addr: string[] = [];
+        const phones: string[] = [];
+        const emails: string[] = [];
+        const dists: string[] = [];
+        let site = "";
+        let transport = "";
+
+        for (const line of lines) {
+          if (!line) continue;
+          if (line.startsWith("### ")) {
+            section = "none";
+            continue;
+          }
+          if (line.startsWith("**") && line.endsWith("**")) {
+            const t = line.slice(2, -2).toLowerCase();
+            if (t.includes("address")) {
+              section = "address";
+              continue;
+            }
+            if (t.includes("phone")) {
+              section = "phones";
+              continue;
+            }
+            if (t.includes("email")) {
+              section = "emails";
+              continue;
+            }
+            if (t.includes("website")) {
+              section = "website";
+              continue;
+            }
+            if (t.includes("distance")) {
+              section = "distances";
+              continue;
+            }
+            if (t.includes("transportation")) {
+              section = "transport";
+              continue;
+            }
+          }
+
+          if (section === "address") {
+            const clean = line.replace(/<br\s*\/?\s*>/gi, "\n");
+            clean
+              .split("\n")
+              .map((s) => s.trim())
+              .filter(Boolean)
+              .forEach((s) => addr.push(s));
+            continue;
+          }
+          if (section === "phones") {
+            if (/^\*/.test(line)) phones.push(line.replace(/^\*+\s*/, ""));
+            else if (line) phones.push(line);
+            continue;
+          }
+          if (section === "emails") {
+            if (/^\*/.test(line)) emails.push(line.replace(/^\*+\s*/, ""));
+            else if (line) emails.push(line);
+            continue;
+          }
+          if (section === "website") {
+            site = site ? `${site} ${line}` : line;
+            continue;
+          }
+          if (section === "distances") {
+            if (line.startsWith("*")) dists.push(line.replace(/^\*+\s*/, ""));
+            continue;
+          }
+          if (section === "transport") {
+            transport = transport ? `${transport} ${line}` : line;
+            continue;
+          }
+        }
+
+        setContactAddress(addr);
+        setContactPhones(phones);
+        setContactEmails(emails);
+        setContactWebsite(site);
+        setContactDistances(dists);
+        setTransportText(transport);
+      })
+      .catch((err) => console.error("Error loading Yan Cure contact info:", err));
+  }, []);
+
+  useEffect(() => {
     if (!isTeamAutoPlaying || teamGroups.length === 0) return;
     const id = setInterval(() => {
       setCurrentTeamSlide((prev) => (prev + 1) % teamGroups.length);
@@ -908,7 +1139,7 @@ const YanCureYogaRetreat = () => {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(Highly reviewed)</span>
+                  <span className="opacity-90">(500+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -1122,7 +1353,7 @@ const YanCureYogaRetreat = () => {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">5000+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">500+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                   Happy Patients
                 </div>
@@ -1721,7 +1952,7 @@ const YanCureYogaRetreat = () => {
             </div>
           </div>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
+          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }} id="team">
             <div className="text-center mb-6 md:mb-10">
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
               {teamIntro && <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>{teamIntro}</p>}
@@ -1792,7 +2023,7 @@ const YanCureYogaRetreat = () => {
           </div>
 
           {testimonials.length > 0 && (
-            <div className="mb-12">
+            <div className="mb-12" id="reviews">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
@@ -1888,7 +2119,7 @@ const YanCureYogaRetreat = () => {
             </div>
           )}
 
-          <div className="mb-12">
+          <div className="mb-12" id="awards">
             <div className="text-center mb-6 md:mb-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
                 <Award className="h-8 w-8" />
@@ -1980,11 +2211,351 @@ const YanCureYogaRetreat = () => {
               </div>
             </div>
           </div>
+
+          {insuranceBullets.length > 0 && (
+            <div className="mb-12" id="insurance">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <ShieldCheck className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>{insuranceIntro}</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
+                        <ShieldCheck className="h-6 w-6 text-green-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {insuranceBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+                <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all">
+                  <CardContent className="p-8">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                        <Pill className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <h3 className="text-xl font-bold text-primary">Payment Options</h3>
+                    </div>
+                    <ul className="space-y-3">
+                      {paymentBullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                          <span className="text-primary mt-1">✓</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </div>
+              {internationalText && (
+                <Card className="mt-6 bg-primary/5 border-l-4 border-l-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <Globe className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
+                        <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{internationalText}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
+
+          {faqItems.length > 0 && (
+            <div className="mb-12" id="faq">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <MessageCircleHeart className="h-8 w-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Frequently Asked Questions</h2>
+                <p className="text-base md:text-lg mx-auto px-4" style={{ color: "#7F543D" }}>
+                  Find answers to common questions about treatments, facilities, and your healing journey
+                </p>
+              </div>
+              <Accordion type="single" collapsible className="space-y-4 max-w-4xl mx-auto">
+                {faqItems.map((it, idx) => (
+                  <AccordionItem key={idx} value={`faq-${idx}`} className="border-2 border-primary/20 rounded-lg px-6 data-[state=open]:border-primary transition-colors bg-white">
+                    <AccordionTrigger className="hover:no-underline py-4 [&>svg]:text-orange-500 transition-colors">
+                      <span className="text-lg font-semibold text-primary text-left">{it.question}</span>
+                    </AccordionTrigger>
+                    <AccordionContent className="pt-4 pb-6 bg-white">
+                      <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>{it.answer}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          )}
+
+          {contactAddress.length > 0 && (
+            <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl" id="contact">
+              <CardContent className="p-5 md:p-8">
+                <h2 className="text-3xl font-bold text-primary mb-8 border-b-2 border-primary/10 pb-4">Contact Information</h2>
+                <div className="grid gap-8 md:grid-cols-[1fr_1.35fr] lg:gap-12">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-bold text-primary mb-1">Address</h4>
+                        <p className="flex flex-col space-y-0.5 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                          {contactAddress.filter((l) => l.trim() !== "").map((l, i) => (
+                            <span key={i}>{l}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </div>
+
+                    {contactDistances.length > 0 && (
+                      <div className="flex items-start gap-4">
+                        <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                        <div>
+                          <h4 className="font-bold text-primary mb-1">Distance from Major Locations</h4>
+                          <ul className="space-y-2 text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                            {contactDistances.map((d, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                <span>{d}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="md:-mt-16 self-start">
+                    <div className="rounded-2xl bg-white/70 p-1 shadow-lg border-2 border-primary/20 overflow-hidden">
+                      <div className="rounded-xl overflow-hidden">
+                        <div className="relative w-full aspect-[800/600]">
+                          <iframe
+                            title="Yan Cure Yoga Retreat Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.4177054449747!2d78.25905977463218!3d30.053559118140498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909173f10633013%3A0x13c870ee662edecf!2sYan%20Cure%20Yoga%20Retreat%20%26%20Ayurveda%20Centre!5e0!3m2!1sen!2sin!4v1770106099959!5m2!1sen!2sin"
+                            className="absolute inset-0 h-full w-full"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {transportText && (
+                  <div className="mt-10 p-5 md:p-8 bg-primary/5 rounded-2xl border-l-4 border-l-primary shadow-inner">
+                    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <ShieldCheck className="h-7 w-7 text-primary" />
+                      </div>
+                      <div className="text-center md:text-left w-full">
+                        <h4 className="text-xl md:text-2xl font-bold text-primary mb-3">Transportation Services</h4>
+                        <div className="max-w-none w-full">
+                          <p className="text-sm md:text-base leading-relaxed text-justify md:text-left md:pr-4" style={{ color: "#7F543D" }}>
+                            {transportText}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          <div className="mb-12">
+            <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#234A50" }}>
+              <div className="md:hidden">
+                <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                  <img
+                    src="/Center Images/Yan Cure Yoga Retreat/CTA bottom.jpg"
+                    alt="Yan Cure Yoga Retreat"
+                    className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                  <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Yan Cure Yoga Retreat</h2>
+                  <div className="space-y-3">
+                    <Button
+                      size="lg"
+                      className="w-full rounded-full bg-white text-primary hover:bg-white/90 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                      onClick={() => setQuoteModalOpen(true)}
+                    >
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
+                    <Phone className="h-4 w-4 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Yan Cure Yoga Retreat</h2>
+                  <div className="flex flex-wrap gap-3">
+                    <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                      <Phone className="mr-2 h-5 w-5" />
+                      Book Consultation Now
+                    </Button>
+                    <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                      <MessageCircle className="mr-2 h-5 w-5" />
+                      Chat With Us
+                    </Button>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-white/90">
+                    <Phone className="h-5 w-5 text-red-400" />
+                    <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="/Center Images/Yan Cure Yoga Retreat/CTA bottom.jpg"
+                    alt="Yan Cure Yoga Retreat"
+                    className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
+        </button>
+      )}
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
+        </button>
+      )}
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
+      )}
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div
+          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`}
+        />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Sections of Yan Cure</h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Directly navigate to any section on this page."</p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5 custom-scrollbar">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">{section.title}</span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">Holistic Healing Sanctuary</p>
+          </div>
+        </div>
+      </div>
 
       {showFullGallery && (
         <div

@@ -144,6 +144,25 @@ const TopCenters = () => {
       slug: "rishikesh/yan-cure" as string | undefined,
     },
     {
+      name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
+      city: "Goa",
+      description:
+        "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort nestled near the tranquil beaches of South Goa. This destination blends serene coastal living with holistic healing, offering an ideal retreat for those seeking relaxation, stress relief, and natural wellness. Rooted in traditional Ayurvedic principles and enhanced with modern wellness therapies, Soul Vacation provides personalized care designed to restore balance to the body, mind, and spirit — promoting deep rejuvenation through time-honored healing practices.",
+      specialties: [
+        "Panchakarma & Ayurvedic Detox",
+        "Holistic Wellness & Stress Relief",
+        "Yoga, Meditation & Breathwork",
+        "Rejuvenation & Relaxation Packages",
+        "Personalized Wellness Planning",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$",
+      image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
+      locationText: "South Goa, India",
+      slug: "goa/soul-vacation" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:

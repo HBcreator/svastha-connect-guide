@@ -2,7 +2,7 @@
 
 Healing beyond symptoms: A physician-led journey to treat the root cause of your illness.
 
-**Pain & Arthritis Management**
+**Pain & Arthritis**
 
 This is a clinical program focused on treating the root cause of chronic joint pain. Guided by Dr. Neha, we use a combination of powerful anti-inflammatory therapies and therapeutic yoga to manage conditions like osteoarthritis and rheumatoid arthritis.
 
@@ -12,7 +12,7 @@ This is a clinical program focused on treating the root cause of chronic joint p
 
 *   Aims to reduce dependency on painkillers and restore long-term, pain-free mobility.
 
-**Spine & Back Care (Disc Prolapse)**
+**Spine & Back Care**
 
 This specialized program is designed to heal and strengthen the entire spinal column. Using powerful, localized therapies and targeted yoga, we focus on relieving nerve compression, nourishing the discs, and providing lasting relief.
 
@@ -22,7 +22,7 @@ This specialized program is designed to heal and strengthen the entire spinal co
 
 *   A powerful, non-invasive alternative to long-term pain medication or surgery.
 
-**Psoriasis & Skin Disorder Treatment**
+**Psoriasis & Skin Disorder**
 
 Heal your skin from the inside out with our clinical dermatology programs. We treat the root cause of chronic skin diseases like psoriasis and eczema by focusing on deep detoxification and blood purification to pacify the underlying imbalances.
 
@@ -32,7 +32,7 @@ Heal your skin from the inside out with our clinical dermatology programs. We tr
 
 *   A natural, steroid-free path to managing chronic and recurring skin diseases.
 
-**Stress, Anxiety & Sleep Disorders**
+**Stress & Anxiety**
 
 This is a targeted therapeutic program for managing diagnosed conditions like chronic anxiety, depression, and insomnia. We use a combination of nervine-soothing therapies, herbal support, and mindful practices to treat the underlying imbalances and restore mental health.
 
@@ -42,7 +42,7 @@ This is a targeted therapeutic program for managing diagnosed conditions like ch
 
 *   A natural, non-addictive path to restoring your emotional and mental well-being.
 
-**Weight Management (Obesity)**
+**Weight Management**
 
 This is a medically supervised program for treating the disease of obesity. We focus on correcting deep-seated metabolic pathways, strengthening your digestive fire (*Agni*), and facilitating safe, sustainable weight loss in our supportive, healing environment.
 
@@ -52,7 +52,7 @@ This is a medically supervised program for treating the disease of obesity. We f
 
 *   Focuses on correcting your body's metabolism for lasting, healthy results.
 
-**Infertility & Women's Health**
+**Infertility Treatment**
 
 We offer a compassionate and effective clinical approach to managing gynaecological disorders and infertility. Our programs, guided by Dr. Neha, focus on correcting hormonal imbalances to create the optimal conditions for natural conception.
 
@@ -62,7 +62,7 @@ We offer a compassionate and effective clinical approach to managing gynaecologi
 
 *   A gentle and nourishing path to restoring both male and female reproductive health.
 
-**Panchakarma for Chronic Disease**
+**Panchakarma for Disease**
 
 This is a powerful, medically supervised detoxification therapy prescribed specifically for the management of chronic disease. The goal is to eliminate the deep-seated metabolic toxins (*Ama*) that are the root cause of many long-term illnesses.
 
@@ -72,7 +72,7 @@ This is a powerful, medically supervised detoxification therapy prescribed speci
 
 *   Prescribed and monitored daily by our physicians to ensure a safe and effective clinical outcome.
 
-**Neurological Care (Migraine & Stroke)**
+**NeuroCare (Migraine)**
 
 We offer a supportive and nourishing clinical program for the management and rehabilitation of neurological disorders. Our therapies focus on healing and strengthening the nervous system to aid in recovery and slow the progression of degenerative conditions.
 
@@ -82,7 +82,7 @@ We offer a supportive and nourishing clinical program for the management and reh
 
 *   Offers effective, holistic relief from the frequency and intensity of chronic migraines.
 
-**Digestive Disease Management**
+**Digestive Disease**
 
 Restore the health of your gut with our specialized programs for digestive diseases. We treat the root cause of conditions like IBS, IBD (Crohn's, Colitis), and GERD by healing the gut lining, reducing inflammation, and rebalancing your digestive fire.
 
@@ -92,7 +92,7 @@ Restore the health of your gut with our specialized programs for digestive disea
 
 *   Aims to restore a healthy gut microbiome for long-term digestive wellness.
 
-**Diabetes & Lifestyle Disorders**
+**Diabetes & Lifestyle**
 
 Take control of your metabolic health with our holistic program for managing diabetes and hypertension. We focus on correcting the root cause of these conditions to help you reduce medication dependency and prevent future complications.
 
@@ -112,7 +112,7 @@ Breathe easier with our natural program for respiratory wellness. We use a combi
 
 *   Provides natural, long-term relief from chronic allergies, asthma, and sinusitis.
 
-**Autoimmune Disorders Support**
+**Autoimmune Disorders**
 
 This is a compassionate and supportive program for those living with chronic autoimmune conditions. Our goal is to calm the overactive immune response, reduce systemic inflammation, and strengthen the body's natural resilience to manage flare-ups.
 
