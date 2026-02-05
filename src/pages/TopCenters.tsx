@@ -163,6 +163,25 @@ const TopCenters = () => {
       slug: "goa/soul-vacation" as string | undefined,
     },
     {
+      name: "SWAN Yoga Retreat & Ayurveda",
+      city: "Goa",
+      description:
+        "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, a peaceful ashram-style wellness centre set in the lush hills of North Goa. Rooted in classical Yoga and Ayurveda, the retreat offers a calm space for healing, mental clarity, and inner growth.",
+      specialties: [
+        "Yoga Retreats & Teacher Training",
+        "Authentic Ayurveda Therapies",
+        "Panchakarma & Detox Programs",
+        "Meditation & Pranayama",
+        "Stress Relief & Lifestyle Balance",
+      ],
+      rating: 4.6,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
+      locationText: "Assagao, North Goa, India",
+      slug: "goa/swan-yoga-retreat" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
