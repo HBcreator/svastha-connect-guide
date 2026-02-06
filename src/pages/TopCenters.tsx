@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala"];
 
   const treatments = [
     "All",
@@ -64,6 +64,27 @@ const TopCenters = () => {
       image: "/Center Images/AyurvedaGram/Thumb.jpg",
       locationText: "Bangalore, India",
       slug: "bangalore/ayurvedagram" as string | undefined,
+    },
+    {
+      name: "HimVeda Heritage Wellness Centre",
+      city: "Dharamshala",
+      description:
+        "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Himalayan Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress & Anxiety Management",
+        "Lifestyle Disorder Treatment",
+        "Yoga & Meditation Therapy",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "Premium Wellness Retreat",
+      image: "/Center Images/HimVeda/Thumb.jpeg",
+      locationText: "Dharamshala, Himachal Pradesh, India",
+      slug: "dharamshala/himveda" as string | undefined,
     },
     {
       name: "Somatheeram Ayurvedic Health Resort",
