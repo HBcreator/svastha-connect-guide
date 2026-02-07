@@ -992,9 +992,8 @@ const SoulVacationResort = () => {
                   variant={!showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Images className="h-4 w-4 md:h-6 md:w-6 mr-2" />
                   Photo Gallery
@@ -1003,9 +1002,8 @@ const SoulVacationResort = () => {
                   variant={showVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowVideoGallery(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -1063,13 +1061,11 @@ const SoulVacationResort = () => {
                         setLightboxOpen(true);
                       }}
                     >
-                      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                        <img
-                          src={thumbnailImages[0]}
-                          alt="Soul Vacation 1"
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      </div>
+                      <img
+                        src={thumbnailImages[0]}
+                        alt="Soul Vacation 1"
+                        className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
                     </div>
 
                     <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
@@ -1240,11 +1236,10 @@ const SoulVacationResort = () => {
                     <button
                       key={v}
                       onClick={() => setSelectedVideo(idx)}
-                      className={`w-full text-left p-4 rounded-xl border-2 transition-all ${
-                        idx === selectedVideo
+                      className={`w-full text-left p-4 rounded-xl border-2 transition-all ${idx === selectedVideo
                           ? "border-primary bg-primary/5 shadow"
                           : "border-primary/20 bg-white hover:border-primary/40"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">

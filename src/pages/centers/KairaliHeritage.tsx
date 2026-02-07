@@ -849,7 +849,11 @@ export default function KairaliHeritage() {
                     className="flex-none w-full md:w-[calc(66.666%-0.375rem)] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-2xl group relative"
                     onClick={() => { setLightboxIndex(0); setLightboxOpen(true); }}
                   >
-                    <img src={images[0]} alt="Kairali" className="w-full h-[220px] md:h-[380px] object-cover" />
+                    <img
+                      src={images[0]}
+                      alt="Kairali"
+                      className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                     {images.slice(1, 5).map((src, idx) => {

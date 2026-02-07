@@ -897,16 +897,14 @@ export default function DheemahiKumarakom() {
                     setLightboxOpen(true);
                   }}
                 >
-                  <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                    {images[0] && (
-                      <img
-                        src={images[0]}
-                        alt="Dheemahi 1"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                  </div>
+                  {images[0] && (
+                    <img
+                      src={images[0]}
+                      alt="Dheemahi 1"
+                      className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>
 
                 {/* Small Images - Right Side - Fixed 2×2 Grid */}

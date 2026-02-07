@@ -1099,9 +1099,8 @@ const AyurvedaGram = () => {
                   variant={!showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -1109,9 +1108,8 @@ const AyurvedaGram = () => {
                   variant={showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -1166,16 +1164,14 @@ const AyurvedaGram = () => {
                       setLightboxOpen(true);
                     }}
                   >
-                    <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                      {thumbnailImages[0] && (
-                        <img
-                          src={thumbnailImages[0]}
-                          alt="AyurvedaGram 1"
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                    </div>
+                    {thumbnailImages[0] && (
+                      <img
+                        src={thumbnailImages[0]}
+                        alt="AyurvedaGram 1"
+                        className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
@@ -1241,9 +1237,8 @@ const AyurvedaGram = () => {
                     <div
                       key={idx}
                       onClick={() => setSelectedVideo(idx)}
-                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                        selectedVideo === idx ? "ring-2 ring-primary" : ""
-                      }`}
+                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""
+                        }`}
                     >
                       <video muted className="w-full h-full object-cover">
                         <source src={video} type="video/mp4" />

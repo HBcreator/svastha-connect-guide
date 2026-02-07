@@ -1113,16 +1113,14 @@ export default function ChamundiHillPalace() {
                     onClick={() => openLightbox(images.indexOf(thumbnailImages[0]))}
                     role="button"
                   >
-                    <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                      {thumbnailImages[0] && (
-                        <img
-                          src={thumbnailImages[0]}
-                          alt="Chamundi 1"
-                          className="absolute inset-0 w-full h-full object-cover"
-                        />
-                      )}
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                    </div>
+                    {thumbnailImages[0] && (
+                      <img
+                        src={thumbnailImages[0]}
+                        alt="Chamundi 1"
+                        className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">

@@ -1281,11 +1281,10 @@ export default function AyurmanaCenter() {
                   variant={!showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showTopVideoGallery
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showTopVideoGallery
                       ? "scale-105 shadow-lg"
                       : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -1294,11 +1293,10 @@ export default function AyurmanaCenter() {
                   variant={showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(true)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showTopVideoGallery
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showTopVideoGallery
                       ? "scale-105 shadow-lg"
                       : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                    }`}
                 >
                   <Video className="mr-2 h-5 w-5" />
                   Video Gallery
@@ -1347,14 +1345,12 @@ export default function AyurmanaCenter() {
                     onClick={() => openLightbox(images.indexOf(thumbnailImages[0]))}
                     role="button"
                   >
-                    <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
-                      <img
-                        src={thumbnailImages[0]}
-                        alt="Ayurmana 1"
-                        className="absolute inset-0 w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-                    </div>
+                    <img
+                      src={thumbnailImages[0]}
+                      alt="Ayurmana 1"
+                      className="w-full h-[220px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
@@ -1848,9 +1844,8 @@ export default function AyurmanaCenter() {
                   <button
                     key={index}
                     onClick={() => setSelectedTestimonialVideo(index)}
-                    className={`transition-all ${
-                      index === selectedTestimonialVideo ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                    className={`transition-all ${index === selectedTestimonialVideo ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
@@ -2345,9 +2340,8 @@ export default function AyurmanaCenter() {
                 <button
                   key={idx}
                   onClick={() => selectReview(idx)}
-                  className={`transition-all rounded-full ${
-                    currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                  }`}
+                  className={`transition-all rounded-full ${currentReview === idx ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                    }`}
                   aria-label={`Go to review ${idx + 1}`}
                 />
               ))}
@@ -2441,9 +2435,8 @@ export default function AyurmanaCenter() {
                       setCurrentAward(i);
                       setIsAwardAutoPlaying(false);
                     }}
-                    className={`transition-all duration-300 ${
-                      i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                    className={`transition-all duration-300 ${i === currentAward ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
                     aria-label={`Go to award ${i + 1}`}
                   />
                 ))}
