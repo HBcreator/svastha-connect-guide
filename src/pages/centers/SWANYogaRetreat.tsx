@@ -1120,9 +1120,8 @@ const SWANYogaRetreat = () => {
                   variant={!showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -1130,9 +1129,8 @@ const SWANYogaRetreat = () => {
                   variant={showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showTopVideoGallery ? "scale-105 shadow-lg" : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -1259,9 +1257,8 @@ const SWANYogaRetreat = () => {
                     <div
                       key={idx}
                       onClick={() => setSelectedVideo(idx)}
-                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                        selectedVideo === idx ? "ring-2 ring-primary" : ""
-                      }`}
+                      className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""
+                        }`}
                     >
                       <video muted className="w-full h-full object-cover">
                         <source src={video} type="video/mp4" />
@@ -1289,6 +1286,31 @@ const SWANYogaRetreat = () => {
           </Card>
 
           <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }} id="wellness">
+            {/* Statistics Section */}
+            <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">500+</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.5/5</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Average Rating</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <TrendingUp className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">98%</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
+              </div>
+            </div>
+
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 border-green-700 mb-4">
                 <Heart className="h-8 w-8 text-green-600" />
@@ -1449,9 +1471,8 @@ const SWANYogaRetreat = () => {
                   <button
                     key={index}
                     onClick={() => setSelectedCenterVideo(index)}
-                    className={`transition-all ${
-                      index === selectedCenterVideo ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                    className={`transition-all ${index === selectedCenterVideo ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
                     aria-label={`Go to video ${index + 1}`}
                   />
                 ))}
@@ -1582,11 +1603,10 @@ const SWANYogaRetreat = () => {
                       <button
                         key={index}
                         onClick={() => setSelectedTestimonialVideo(index)}
-                        className={`transition-all ${
-                          index === selectedTestimonialVideo
-                            ? "w-8 h-3 bg-primary"
-                            : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                        } rounded-full`}
+                        className={`transition-all ${index === selectedTestimonialVideo
+                          ? "w-8 h-3 bg-primary"
+                          : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                          } rounded-full`}
                         aria-label={`Go to testimonial ${index + 1}`}
                       />
                     ))}
@@ -1810,9 +1830,8 @@ const SWANYogaRetreat = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentFacilityImage(index)}
-                    className={`transition-all ${
-                      index === currentFacilityImage ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    } rounded-full`}
+                    className={`transition-all ${index === currentFacilityImage ? "w-8 h-3 bg-primary" : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
                     aria-label={`Go to facility image ${index + 1}`}
                   />
                 ))}
