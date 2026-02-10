@@ -87,6 +87,29 @@ const TopCenters = () => {
       slug: "dharamshala/himveda" as string | undefined,
     },
     {
+      name: "Ayuskama Ayurveda",
+      city: "Dharamshala",
+      description:
+        "Ayuskama Ayurveda ek authentic Ayurvedic wellness center hai jo traditional Ayurveda ko modern lifestyle ke saath integrate karta hai. Yeh center Ayurveda, Panchakarma aur holistic healing therapies par focus karta hai, jahan personalized treatment plans experienced Ayurvedic doctors ke guidance mein design kiye jaate hain. Natural therapies, herbal medicines aur sattvic lifestyle ke through Ayuskama long-term health, detoxification aur overall rejuvenation ko promote karta hai. Yeh center chronic health issues, stress management aur preventive healthcare ke liye ek holistic approach provide karta hai.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Chronic Disease Management",
+        "Weight Management",
+        "Yoga & Meditation",
+        "Holistic Healing",
+        "Wellness Retreat",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
+      locationText: "33 Ayurveda Street, After Tipa, Dharamkot Rd, Dharamkot, Dharamshala, Himachal Pradesh 176216",
+      slug: "dharamshala/ayuskama-ayurveda" as string | undefined,
+    },
+    {
       name: "Somatheeram Ayurvedic Health Resort",
       city: "Kerala",
       description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
@@ -559,8 +582,14 @@ const TopCenters = () => {
                     <h3 className="text-xl font-bold text-primary">{center.name}</h3>
                   </div>
 
-                  <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1">
-                    <MapPin size={14} /> {(center as { locationText?: string }).locationText || `${center.city}, India`}
+                  <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1 min-w-0">
+                    <MapPin size={14} className="shrink-0 text-primary" />
+                    <span
+                      className="truncate"
+                      title={(center as { locationText?: string }).locationText || `${center.city}, India`}
+                    >
+                      {(center as { locationText?: string }).locationText || `${center.city}, India`}
+                    </span>
                   </p>
 
                   <p className="text-foreground text-sm mb-4">{center.description}</p>
