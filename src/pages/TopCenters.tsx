@@ -121,6 +121,18 @@ const TopCenters = () => {
       slug: "kerala/somatheeram" as string | undefined,
     },
     {
+      name: "AyurSoma Ayurveda Royal Retreat",
+      city: "Kerala",
+      description:
+        "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+      specialties: ["Panchakarma", "Royal Retreat", "Beachfront Wellness", "Rejuvenation"],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$$",
+      image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
+      slug: "kerala/ayursoma" as string | undefined,
+    },
+    {
       name: "Kairali – The Ayurvedic Healing Village",
       city: "Palakkad",
       description:
