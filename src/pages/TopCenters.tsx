@@ -487,6 +487,26 @@ const TopCenters = () => {
       locationText: "Kerala, India",
       slug: "kerala/ayur-bethaniya-ayurveda-hospital" as string | undefined,
     },
+    {
+      name: "Ayushi Ayurvedic Retreat",
+      city: "Kerala",
+      description:
+        "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
+      locationText: "N Cliff Rd, near Helipad, Varkala, Kerala 695141",
+      slug: "kerala/ayushi-ayurvedic-retreat" as string | undefined,
+    },
   ];
 
   return (

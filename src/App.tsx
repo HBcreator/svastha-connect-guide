@@ -36,6 +36,7 @@ import SWANYogaRetreat from "./pages/centers/SWANYogaRetreat";
 import HimVeda from "./pages/centers/HimVeda";
 import AyuskamaAyurveda from "./pages/centers/AyuskamaAyurveda";
 import AyurSomaAyurvedaRoyalRetreat from "./pages/centers/AyurSomaAyurvedaRoyalRetreat";
+import AyushiAyurvedicRetreat from "./pages/centers/AyushiAyurvedicRetreat";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -89,6 +90,7 @@ const App = () => (
           <Route path="/centers/goa/swan-yoga-retreat" element={<SWANYogaRetreat />} />
           <Route path="/centers/dharamshala/himveda" element={<HimVeda />} />
           <Route path="/centers/dharamshala/ayuskama-ayurveda" element={<AyuskamaAyurveda />} />
+          <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
           <Route path="/centers/kerala/ayursoma" element={<AyurSomaAyurvedaRoyalRetreat />} />
           <Route path="/centers/kerala/somatheeram" element={<Somatheeram />} />
           <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />

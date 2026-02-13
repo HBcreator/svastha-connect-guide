@@ -107,6 +107,37 @@ const CenterDetail = () => {
       ],
       website: "https://ayurclinicgoa.com",
       images: ["/images/Goa/Ayurclinic Goa/1.jpg", "/images/Goa/Ayurclinic Goa/2.jpg", "/images/Goa/Ayurclinic Goa/3.jpg"]
+    },
+    "ayushi-ayurvedic-retreat": {
+      id: "ayushi-ayurvedic-retreat",
+      name: "Ayushi Ayurvedic Retreat",
+      city: "Kerala",
+      region: "Varkala",
+      description:
+        "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit. Led by experienced Ayurvedic doctors, each plan is tailored to your needs—from detoxification to rejuvenation—supporting sustainable healing in a serene and nurturing environment.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "500+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "Peaceful Varkala cliffside setting near Helipad",
+        "Personalized Ayurvedic therapies guided by experienced doctors",
+        "Classical Panchakarma, detox and rejuvenation programs",
+        "Strong focus on chronic and lifestyle disorders",
+      ],
+      website: "",
+      images: ["/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg"],
     }
   };
 
