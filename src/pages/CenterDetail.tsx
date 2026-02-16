@@ -138,7 +138,69 @@ const CenterDetail = () => {
       ],
       website: "",
       images: ["/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg"],
-    }
+    },
+    "sitaram-mountain-retreat": {
+      id: "sitaram-mountain-retreat",
+      name: "Sitaram Mountain Retreat",
+      city: "Kerala",
+      region: "Munnar",
+      description:
+        "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature. Set within lush spice plantations and tea gardens at high altitude, the retreat offers personalized Panchakarma therapies guided by experienced Vaidyas, each treatment customized based on pulse diagnosis, Tridosha assessment, and individual Prakriti.",
+      specialties: [
+        "Authentic Panchakarma",
+        "Chronic Disease Management",
+        "Neurological & Lifestyle Disorders",
+        "Stress & Mental Health Support",
+        "Hormonal Balance & Weight Management",
+        "Post-Treatment Rasayana Therapies",
+      ],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "928+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "104-year family legacy in traditional Ayurvedic healing",
+        "NABH-accredited retreat in the hills of Munnar",
+        "Personalized Panchakarma guided by experienced Vaidyas",
+        "Nature-immersed setting within spice plantations and tea gardens",
+      ],
+      website: "",
+      images: ["/Center Images/Sitaram Mountain Retreat/thumb.jpg"],
+    },
+    "akanta-ayurveda-and-yoga-resort": {
+      id: "akanta-ayurveda-and-yoga-resort",
+      name: "Akanta Ayurveda and Yoga Resort",
+      city: "Kerala",
+      region: "Cherai Beach, Kochi",
+      description:
+        "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. Established in 2018 and rebranded in 2025, this wellness destination integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols, ensuring authenticity and safety at every step.",
+      specialties: [
+        "Licensed Ayurvedic Hospital Treatments",
+        "Detox & Rejuvenation Programs",
+        "Stress Relief & Emotional Wellness",
+        "Panchakarma & Traditional Therapies",
+        "Yoga & Meditation Retreats",
+        "Lifestyle Disorder Management",
+      ],
+      rating: 4.5,
+      reviews: [
+        {
+          text: "479+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "Fully-licensed Ayurveda resort between sea and backwaters",
+        "Only Cherai Beach yoga retreat licensed as an Ayurvedic hospital",
+        "Government-verified medicines with personalized therapeutic protocols",
+        "Traditional Kerala Ayurveda therapies plus Prakriti-based yoga and meditation",
+      ],
+      website: "",
+      images: ["/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg"],
+    },
   };
 
   const centerKey = (centerId || "").toLowerCase();

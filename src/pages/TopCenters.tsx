@@ -507,6 +507,46 @@ const TopCenters = () => {
       locationText: "N Cliff Rd, near Helipad, Varkala, Kerala 695141",
       slug: "kerala/ayushi-ayurvedic-retreat" as string | undefined,
     },
+    {
+      name: "Sitaram Mountain Retreat",
+      city: "Idukki",
+      description:
+        "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
+      specialties: [
+        "Authentic Panchakarma",
+        "Chronic Disease Management",
+        "Neurological & Lifestyle Disorders",
+        "Stress & Mental Health Support",
+        "Hormonal Balance & Weight Management",
+        "Post-Treatment Rasayana Therapies",
+      ],
+      rating: 4.8,
+      reviews: 928,
+      priceRange: "$$$$",
+      image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
+      locationText: "Munnar, Kerala, India",
+      slug: "idukki/sitaram-mountain-retreat" as string | undefined,
+    },
+    {
+      name: "Akanta Ayurveda and Yoga Resort",
+      city: "Kochi",
+      description:
+        "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. As the only yoga retreat center at Cherai Beach licensed as an Ayurvedic hospital, Akanta integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols.",
+      specialties: [
+        "Licensed Ayurvedic Hospital Treatments",
+        "Detox & Rejuvenation Programs",
+        "Stress Relief & Emotional Wellness",
+        "Panchakarma & Traditional Therapies",
+        "Yoga & Meditation Retreats",
+        "Lifestyle Disorder Management",
+      ],
+      rating: 4.5,
+      reviews: 479,
+      priceRange: "$$$$",
+      image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
+      locationText: "Cherai Beach, Kochi, Kerala, India",
+      slug: "kochi/akanta-ayurveda-and-yoga-resort" as string | undefined,
+    },
   ];
 
   return (
