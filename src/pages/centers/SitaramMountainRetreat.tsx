@@ -1329,6 +1329,31 @@ export default function SitaramMountainRetreat() {
           </Card>
 
           <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: "#EDE8D0" }} id="wellness">
+            {/* Statistics Section */}
+            <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">928+</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.8/5</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Average Rating</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <TrendingUp className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">96%</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
+              </div>
+            </div>
+
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: "#1A428A" }}>
                 <Heart className="h-8 w-8 text-green-600" />
@@ -1657,8 +1682,8 @@ export default function SitaramMountainRetreat() {
                       {s.bullets && s.bullets.length > 0 && (
                         <ul className="mt-3 space-y-1.5">
                           {s.bullets.map((b, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">•</span>
+                            <li key={i} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                              <span className="text-primary mt-1">✓</span>
                               <span>{b}</span>
                             </li>
                           ))}

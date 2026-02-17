@@ -1237,8 +1237,8 @@ const SoulVacationResort = () => {
                       key={v}
                       onClick={() => setSelectedVideo(idx)}
                       className={`w-full text-left p-4 rounded-xl border-2 transition-all ${idx === selectedVideo
-                          ? "border-primary bg-primary/5 shadow"
-                          : "border-primary/20 bg-white hover:border-primary/40"
+                        ? "border-primary bg-primary/5 shadow"
+                        : "border-primary/20 bg-white hover:border-primary/40"
                         }`}
                     >
                       <div className="flex items-center gap-3">
@@ -1273,6 +1273,31 @@ const SoulVacationResort = () => {
           </Card>
 
           <div className="mb-12 rounded-3xl p-6 md:p-6 lg:p-12" style={{ backgroundColor: "#EDE8D0" }} id="wellness">
+            {/* Statistics Section */}
+            <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">850+</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.8/5</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Average Rating</div>
+              </div>
+              <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
+                <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
+                  <TrendingUp className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
+                </div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">94%</div>
+                <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Success Rate</div>
+              </div>
+            </div>
+
             <div className="text-center">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 border-2 mb-4" style={{ borderColor: "#1A428A" }}>
                 <Heart className="h-8 w-8 text-green-600" />

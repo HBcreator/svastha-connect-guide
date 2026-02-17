@@ -1610,7 +1610,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                         {step.bullets.length > 0 && (
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, bi) => (
-                              <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                              <li key={bi} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
                                 <span className="text-primary mt-1">✓</span>
                                 <span>{b}</span>
                               </li>

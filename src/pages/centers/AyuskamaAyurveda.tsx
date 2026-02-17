@@ -1732,7 +1732,7 @@ const AyuskamaAyurveda = () => {
                             {icon}
                           </div>
                           <div>
-                            <h3 className="text-base md:text-xl font-bold text-primary">
+                            <h3 className="text-sm md:text-xl font-bold text-primary">
                               {step.title}
                             </h3>
                             <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Step {stepNumber}</span>
@@ -1748,7 +1748,7 @@ const AyuskamaAyurveda = () => {
                         {step.bullets.length > 0 && (
                           <ul className="space-y-1.5 md:space-y-2">
                             {step.bullets.map((b, bi) => (
-                              <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
+                              <li key={bi} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
                                 <span className="text-primary mt-1">✓</span>
                                 <span>{b}</span>
                               </li>
