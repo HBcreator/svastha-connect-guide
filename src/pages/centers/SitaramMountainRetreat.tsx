@@ -1391,7 +1391,7 @@ export default function SitaramMountainRetreat() {
                     <ul className="space-y-2">
                       {p.bullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                          <span className="mt-1.5 w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
+                          <span className="text-green-600 mt-1 flex-shrink-0">✓</span>
                           <span>{b}</span>
                         </li>
                       ))}
