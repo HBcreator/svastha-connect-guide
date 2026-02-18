@@ -1347,13 +1347,13 @@ export default function AkantaAyurvedaYogaResort() {
                             </h3>
                           </div>
                         </div>
-                        <p className="text-xs md:text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
+                        <p className="text-sm leading-relaxed mb-3 md:mb-4" style={{ color: "#7F543D" }}>
                           {step.description}
                         </p>
                         {step.bullets && step.bullets.length > 0 && (
                           <ul className="space-y-1.5 md:space-y-2">
                             {step.bullets.map((bullet, bi) => (
-                              <li key={bi} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                              <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                                 <span className="text-primary mt-1">✓</span>
                                 <span>{bullet}</span>
                               </li>

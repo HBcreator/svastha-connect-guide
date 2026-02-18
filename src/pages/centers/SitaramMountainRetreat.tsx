@@ -1676,13 +1676,13 @@ export default function SitaramMountainRetreat() {
                         </div>
                         <h3 className="text-base md:text-xl font-bold text-primary pr-2">{s.title}</h3>
                       </div>
-                      <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
                         {s.description}
                       </p>
                       {s.bullets && s.bullets.length > 0 && (
                         <ul className="mt-3 space-y-1.5">
                           {s.bullets.map((b, i) => (
-                            <li key={i} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                               <span className="text-primary mt-1">✓</span>
                               <span>{b}</span>
                             </li>

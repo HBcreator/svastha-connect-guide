@@ -747,7 +747,7 @@ export default function AyushiAyurvedicRetreat() {
 
     if (isTestimonialsInView) {
       const p = videoEl.play();
-      if (p) p.catch(() => {});
+      if (p) p.catch(() => { });
     } else {
       videoEl.pause();
     }
@@ -1054,11 +1054,10 @@ export default function AyushiAyurvedicRetreat() {
         {[...Array(5)].map((_, i) => (
           <Star
             key={i}
-            className={`h-5 w-5 ${
-              i < rating
-                ? "fill-yellow-400 text-yellow-400"
-                : "fill-gray-200 text-gray-200"
-            }`}
+            className={`h-5 w-5 ${i < rating
+              ? "fill-yellow-400 text-yellow-400"
+              : "fill-gray-200 text-gray-200"
+              }`}
           />
         ))}
       </div>
@@ -1129,11 +1128,10 @@ export default function AyushiAyurvedicRetreat() {
                   variant={!showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(false)}
-                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    !showTopVideoGallery
-                      ? "scale-105 shadow-lg"
-                      : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${!showTopVideoGallery
+                    ? "scale-105 shadow-lg"
+                    : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   Photo Gallery
                 </Button>
@@ -1141,11 +1139,10 @@ export default function AyushiAyurvedicRetreat() {
                   variant={showTopVideoGallery ? "default" : "secondary"}
                   size="lg"
                   onClick={() => setShowTopVideoGallery(true)}
-                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${
-                    showTopVideoGallery
-                      ? "scale-105 shadow-lg"
-                      : "bg-accent text-white hover:bg-accent/90"
-                  }`}
+                  className={`flex items-center gap-1 md:gap-2 text-sm md:text-xl font-bold px-3 py-4 md:px-6 md:py-6 flex-1 md:flex-none transition-all duration-300 ease-in-out hover:scale-105 ${showTopVideoGallery
+                    ? "scale-105 shadow-lg"
+                    : "bg-accent text-white hover:bg-accent/90"
+                    }`}
                 >
                   <Video className="h-4 w-4 md:h-6 md:w-6" />
                   Video Gallery
@@ -1286,9 +1283,8 @@ export default function AyushiAyurvedicRetreat() {
                     <div
                       key={idx}
                       onClick={() => setSelectedVideo(idx)}
-                      className={`relative aspect-[9/16] rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${
-                        selectedVideo === idx ? "ring-2 ring-primary" : ""
-                      }`}
+                      className={`relative aspect-[9/16] rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""
+                        }`}
                     >
                       <video muted className="w-full h-full object-contain bg-transparent">
                         <source src={video} type="video/mp4" />
@@ -1498,11 +1494,10 @@ export default function AyushiAyurvedicRetreat() {
                       <button
                         key={index}
                         onClick={() => setSelectedVideo(index)}
-                        className={`transition-all ${
-                          index === selectedVideo
-                            ? "w-8 h-3 bg-primary"
-                            : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                        } rounded-full`}
+                        className={`transition-all ${index === selectedVideo
+                          ? "w-8 h-3 bg-primary"
+                          : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                          } rounded-full`}
                         aria-label={`Go to video ${index + 1}`}
                       />
                     ))}
@@ -1644,11 +1639,10 @@ export default function AyushiAyurvedicRetreat() {
                       <button
                         key={index}
                         onClick={() => setSelectedTestimonialVideo(index)}
-                        className={`transition-all ${
-                          index === selectedTestimonialVideo
-                            ? "w-8 h-3 bg-primary"
-                            : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                        } rounded-full`}
+                        className={`transition-all ${index === selectedTestimonialVideo
+                          ? "w-8 h-3 bg-primary"
+                          : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                          } rounded-full`}
                         aria-label={`Go to testimonial video ${index + 1}`}
                       />
                     ))}
@@ -1701,7 +1695,7 @@ export default function AyushiAyurvedicRetreat() {
                         </div>
 
                         {step.description && (
-                          <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                          <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
                             {step.description}
                           </p>
                         )}
@@ -1709,7 +1703,7 @@ export default function AyushiAyurvedicRetreat() {
                         {step.bullets.length > 0 && (
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, bi) => (
-                              <li key={bi} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                              <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
                                 <span className="text-primary mt-1">✓</span>
                                 <span>{b}</span>
                               </li>
@@ -2132,11 +2126,10 @@ export default function AyushiAyurvedicRetreat() {
                   <button
                     key={idx}
                     onClick={() => selectReview(idx)}
-                    className={`transition-all rounded-full ${
-                      currentReview === idx
-                        ? "w-8 h-3 bg-primary"
-                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                    }`}
+                    className={`transition-all rounded-full ${currentReview === idx
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      }`}
                     aria-label={`Go to review ${idx + 1}`}
                   />
                 ))}
@@ -2249,11 +2242,10 @@ export default function AyushiAyurvedicRetreat() {
                         setIsAwardAutoPlaying(false);
                         setCurrentAward(i);
                       }}
-                      className={`transition-all ${
-                        i === currentAward
-                          ? "w-8 h-3 bg-primary"
-                          : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
-                      } rounded-full`}
+                      className={`transition-all ${i === currentAward
+                        ? "w-8 h-3 bg-primary"
+                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                        } rounded-full`}
                       aria-label={`Go to award ${i + 1}`}
                     />
                   ))}
@@ -2589,21 +2581,18 @@ export default function AyushiAyurvedicRetreat() {
       )}
 
       <div
-        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${
-          isJumpModalOpen ? "visible" : "invisible"
-        }`}
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"
+          }`}
         onClick={() => setIsJumpModalOpen(false)}
       >
         <div
-          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${
-            isJumpModalOpen ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"
+            }`}
         />
 
         <div
-          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${
-            isJumpModalOpen ? "translate-x-0" : "translate-x-full"
-          } flex flex-col`}
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"
+            } flex flex-col`}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
