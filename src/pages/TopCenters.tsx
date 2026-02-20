@@ -547,6 +547,28 @@ const TopCenters = () => {
       locationText: "Cherai Beach, Kochi, Kerala, India",
       slug: "kochi/akanta-ayurveda-and-yoga-resort" as string | undefined,
     },
+    {
+      name: "Indus Valley Ayurvedic Centre",
+      city: "Mysore",
+      description:
+        "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+      specialties: [
+        "Panchakarma",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Weight Management",
+        "Chronic Disease Management",
+        "Pain Management",
+        "Lifestyle Disorder Treatment",
+        "Beauty & Anti-Aging Therapies",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+      locationText: "Mysuru (Mysore), Karnataka, India",
+      slug: "mysore/indus-valley-ayurvedic-centre" as string | undefined,
+    },
   ];
 
   return (

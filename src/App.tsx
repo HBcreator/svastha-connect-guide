@@ -39,6 +39,7 @@ import AyurSomaAyurvedaRoyalRetreat from "./pages/centers/AyurSomaAyurvedaRoyalR
 import AyushiAyurvedicRetreat from "./pages/centers/AyushiAyurvedicRetreat";
 import SitaramMountainRetreat from "./pages/centers/SitaramMountainRetreat";
 import AkantaAyurvedaYogaResort from "./pages/centers/AkantaAyurvedaYogaResort";
+import IndusValleyAyurvedicCentre from "./pages/centers/IndusValleyAyurvedicCentre";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -95,6 +96,7 @@ const App = () => (
           <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
           <Route path="/centers/idukki/sitaram-mountain-retreat" element={<SitaramMountainRetreat />} />
           <Route path="/centers/kochi/akanta-ayurveda-and-yoga-resort" element={<AkantaAyurvedaYogaResort />} />
+          <Route path="/centers/mysore/indus-valley-ayurvedic-centre" element={<IndusValleyAyurvedicCentre />} />
           <Route path="/centers/kerala/ayursoma" element={<AyurSomaAyurvedaRoyalRetreat />} />
           <Route path="/centers/kerala/somatheeram" element={<Somatheeram />} />
           <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />
