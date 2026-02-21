@@ -2,7 +2,7 @@
 
 Targeted healing protocols for chronic conditions, guided by our expert physicians in a serene and authentic healing ashram.
 
-**Arthritis & Rheumatism Management**
+**Arthritis & Rheumatism**
 
 This is a comprehensive program designed to manage various forms of arthritis and chronic joint pain. It focuses on reducing inflammation, pacifying the aggravated *Vata Dosha*, and deeply nourishing the joints.
 
@@ -10,7 +10,7 @@ This is a comprehensive program designed to manage various forms of arthritis an
 *   Aims to reduce pain and stiffness, improve mobility, and arrest the progression of joint degeneration.
 *   This holistic approach helps to reduce dependency on painkillers and improve quality of life.
 
-**Psoriasis & Chronic Skin Disease Treatment**
+**Psoriasis & Skin**
 
 This is a holistic treatment plan that heals chronic skin conditions from the inside out. It focuses on deep detoxification and blood purification to address the root cause of the issue.
 
@@ -18,7 +18,7 @@ This is a holistic treatment plan that heals chronic skin conditions from the in
 *   Integrates stress management techniques, as stress is often a key trigger for skin conditions.
 *   Includes a specific diet plan to prevent aggravation and support the skin's healing process.
 
-**Diabetes & Metabolic Control**
+**Diabetes Control**
 
 This is a holistic program designed to help manage Diabetes Mellitus. It works by improving the body's natural insulin sensitivity and supporting pancreatic function.
 
@@ -26,7 +26,7 @@ This is a holistic program designed to help manage Diabetes Mellitus. It works b
 *   Focuses on preventing the long-term complications associated with diabetes through comprehensive care.
 *   Empowers you with the knowledge for sustainable, long-term management of your health.
 
-**Hypertension & Cardiac Care**
+**Cardiac Care**
 
 This is a natural and supportive program for managing high blood pressure and improving cardiovascular health. Our gentle approach aims to reduce stress and strengthen the heart muscle without harsh side effects.
 
@@ -34,7 +34,7 @@ This is a natural and supportive program for managing high blood pressure and im
 *   Recommends specific dietary changes, meditation, and heart-supportive (*hridya*) herbal supplements.
 *   It is a proactive approach to protecting the heart and preventing serious cardiovascular events.
 
-**Chronic Back & Neck Pain Management**
+**Back & Neck Pain**
 
 This is a powerful, non-invasive approach to healing chronic spinal conditions like Spondylosis, Sciatica, and muscular pain. It focuses on relieving the root cause of the pain.
 
@@ -42,7 +42,7 @@ This is a powerful, non-invasive approach to healing chronic spinal conditions l
 *   Focuses on reducing nerve compression and strengthening the supporting muscles of the spinal column.
 *   Provides effective and lasting relief where conventional treatments may have failed.
 
-**Digestive Disorders (IBS, Acidity) Treatment**
+**Digestive Disorders**
 
 This program is designed to treat chronic digestive ailments. It works by restoring the primary digestive fire (*Agni*) and healing the delicate lining of the gut.
 
@@ -50,7 +50,7 @@ This program is designed to treat chronic digestive ailments. It works by restor
 *   Aims to regulate bowel movements, reduce inflammation, and relieve symptoms like bloating and discomfort.
 *   This approach restores long-term gut health by addressing the fundamental imbalance.
 
-**Infertility & Conception Support**
+**Infertility program**
 
 This is a specialized program for couples facing challenges in conception. It focuses on holistically preparing both the male and female bodies for a healthy and successful pregnancy.
 
@@ -58,7 +58,7 @@ This is a specialized program for couples facing challenges in conception. It fo
 *   Nourishing therapies (*Brimhana*) are then used to strengthen the entire reproductive system.
 *   This program provides a natural, holistic, and supportive pathway on your journey to parenthood.
 
-**Gynaecological & Women's Health Disorders**
+**Gynaecological Disorders**
 
 This is a specialized program dedicated to addressing chronic and complex gynaecological issues. It provides a natural and effective alternative to hormonal treatments and surgery.
 
@@ -66,7 +66,7 @@ This is a specialized program dedicated to addressing chronic and complex gynaec
 *   The program focuses on deep purification of the reproductive system followed by therapies to balance hormones.
 *   It integrates specific yoga postures and a supportive diet to restore the natural female cycle.
 
-**Autoimmune Disorder Management**
+**Autoimmune Disorder**
 
 This is a supportive program designed to manage various autoimmune conditions. It works by calming the hyperactive immune response and reducing systemic inflammation.
 
@@ -74,7 +74,7 @@ This is a supportive program designed to manage various autoimmune conditions. I
 *   Integrates stress management, as stress is a major trigger for autoimmune flare-ups.
 *   This holistic approach aims to improve quality of life and reduce dependency on immunosuppressant drugs.
 
-**Neurological & Post-Stroke Rehabilitation**
+**Neurological care**
 
 This is a dedicated Ayurvedic support program for various neurological conditions and post-stroke recovery. It focuses on nourishing and revitalizing the entire nervous system (*Majja Dhatu*).
 
@@ -82,7 +82,7 @@ This is a dedicated Ayurvedic support program for various neurological condition
 *   Aims to improve nerve function, reduce muscle spasticity, and enhance motor and sensory skills.
 *   Provides comprehensive, holistic care to significantly improve the patient's quality of life.
 
-**Liver Care & Detoxification**
+**Liver Care & Detox**
 
 This is a focused program for cleansing, protecting, and rejuvenating the liver. It is highly beneficial for a range of conditions, from fatty liver disease to supporting recovery from liver ailments.
 
@@ -90,7 +90,7 @@ This is a focused program for cleansing, protecting, and rejuvenating the liver.
 *   Utilizes potent, liver-protective herbs (*hepatoprotective*) to restore healthy liver function.
 *   This program helps to improve metabolism, purify the blood, and boost overall energy levels.
 
-**Respiratory Wellness (Asthma & Allergy)**
+**Respiratory Wellness**
 
 This is a targeted program designed to manage asthma, allergies, and other chronic respiratory conditions. It aims to strengthen the lungs and reduce dependency on medications.
 
