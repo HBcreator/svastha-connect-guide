@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi"];
 
   const treatments = [
     "All",
@@ -568,6 +568,28 @@ const TopCenters = () => {
       image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
       locationText: "Mysuru (Mysore), Karnataka, India",
       slug: "mysore/indus-valley-ayurvedic-centre" as string | undefined,
+    },
+    {
+      name: "Shathayu Ayurveda Yoga Retreat",
+      city: "Udupi",
+      description:
+        "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Yoga & Meditation",
+        "Detox Programs",
+        "Stress Management",
+        "Weight Management",
+        "Rejuvenation Therapy",
+        "Lifestyle Disorders Treatment",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$",
+      image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
+      locationText: "Udupi, Karnataka, India",
+      slug: "udupi/shathayu-ayurveda-yoga-retreat" as string | undefined,
     },
   ];
 
