@@ -17,6 +17,7 @@ export default function AgniAyurvedicVillage() {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState(0);
+  const [videos, setVideos] = useState<string[]>([]);
   const [wellnessIntro, setWellnessIntro] = useState("");
   const [programs, setPrograms] = useState<{ title: string; description: string; bullets: string[] }[]>([]);
   const [medicalIntro, setMedicalIntro] = useState("");
@@ -184,11 +185,26 @@ export default function AgniAyurvedicVillage() {
     images[29],
   ];
 
-  const videos = [
-    "https://Savastha.b-cdn.net/Centers/Agni%20Ayurvedic%20Village/Videos/Agni%20Ayurvedic%20Village-video-01.mp4",
-    "https://Savastha.b-cdn.net/Centers/Agni%20Ayurvedic%20Village/Videos/Agni%20Ayurvedic%20Village-video-02.mp4",
-    "https://Savastha.b-cdn.net/Centers/Agni%20Ayurvedic%20Village/Videos/Agni%20Ayurvedic%20Village-video-03.mp4",
-  ];
+  useEffect(() => {
+    fetch("/Center Videos/Agni Ayurveda/video gallery links.txt")
+      .then((r) => r.text())
+      .then((t) => {
+        const urls = t
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+        setVideos(urls);
+        setSelectedVideo(0);
+      })
+      .catch(() => {
+        setVideos([]);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (!videos.length) return;
+    setSelectedVideo((prev) => (prev >= videos.length ? 0 : prev));
+  }, [videos.length]);
 
   useEffect(() => {
     if (!isAutoPlaying) return;

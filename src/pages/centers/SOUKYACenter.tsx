@@ -3155,9 +3155,6 @@ export default function SOUKYACenter() {
                 >
                   ✕
                 </button>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                  {facilityLightboxImage + 1} / {facilityImages.length}
-                </div>
               </div>
               <div className="flex md:hidden items-center justify-between mt-4">
                 <Button

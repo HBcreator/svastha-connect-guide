@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import MarkdownContent from "@/components/MarkdownContent";
-import { MapPin, Star, Calendar, Phone, Mail, ChevronLeft, ChevronRight, ChevronDown, Video, Images, Users, TrendingUp, Heart, Droplet, Brain, Sparkles, Activity, ShieldCheck, ClipboardList, HeartPulse, Home, Stethoscope, Utensils, Award, TreePine, Globe, Building2, Pill, FileSearch, MessageCircle, CreditCard, HelpCircle, MessageCircleHeart } from "lucide-react";
+import { MapPin, Star, Calendar, Phone, Mail, ChevronLeft, ChevronRight, ChevronDown, Video, Images, Users, TrendingUp, Heart, Droplet, Brain, Sparkles, Activity, ShieldCheck, ClipboardList, HeartPulse, Home, Stethoscope, Utensils, Award, TreePine, Globe, Building2, Pill, FileSearch, MessageCircle, CreditCard, HelpCircle, MessageCircleHeart, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +15,47 @@ export default function KairaliHeritage() {
   const [showFullGallery, setShowFullGallery] = useState(false);
   const [currentAward, setCurrentAward] = useState(0);
   const [maxAwardIndex, setMaxAwardIndex] = useState(0);
+
+  // Video Gallery (SOUKYA-style)
+  const [galleryVideos, setGalleryVideos] = useState<string[]>([]);
+  const [selectedGalleryVideo, setSelectedGalleryVideo] = useState(0);
+  const galleryVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Testimonials (Videos) (SOUKYA-style)
+  const [testimonialVideos, setTestimonialVideos] = useState<string[]>([]);
+  const [selectedTestimonialVideo, setSelectedTestimonialVideo] = useState(0);
+  const [isTestimonialsInView, setIsTestimonialsInView] = useState(false);
+  const testimonialSectionRef = useRef<HTMLDivElement>(null);
+
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "videos", title: "Video Gallery" },
+    { id: "why-choose", title: "Why Choose Kairali Heritage" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
+    { id: "process", title: "Process & Journey" },
+    { id: "facilities", title: "Facilities & Amenities" },
+    { id: "team", title: "Founder & Team Info" },
+    { id: "reviews", title: "Patient Stories" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "insurance", title: "Insurance & Payment" },
+    { id: "faq", title: "F&Q" },
+    { id: "contact", title: "Contact Information" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+  };
 
   const awardsData = [
     {
@@ -57,6 +98,84 @@ export default function KairaliHeritage() {
     }, 5000);
     return () => clearInterval(id);
   }, [maxAwardIndex]);
+
+  useEffect(() => {
+    fetch("/Center Videos/Kairali - The Ayurvedic Healing Village/testimonies/yt i frame.txt")
+      .then((r) => r.text())
+      .then((t) => {
+        const srcs = t
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean)
+          .map((line) => {
+            const m = line.match(/src=["']([^"']+)["']/i);
+            return m ? m[1] : "";
+          })
+          .filter(Boolean);
+        setTestimonialVideos(srcs);
+        setSelectedTestimonialVideo(0);
+      })
+      .catch(() => {
+        setTestimonialVideos([]);
+      });
+  }, []);
+
+  useEffect(() => {
+    const sectionElement = testimonialSectionRef.current;
+    if (!sectionElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsTestimonialsInView(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(sectionElement);
+    return () => observer.disconnect();
+  }, []);
+
+  const buildTestimonialIframeSrc = (raw: string) => {
+    try {
+      const u = new URL(raw);
+      u.searchParams.set("autoplay", isTestimonialsInView ? "1" : "0");
+      u.searchParams.set("mute", "0");
+      u.searchParams.set("rel", "0");
+      return u.toString();
+    } catch {
+      const joiner = raw.includes("?") ? "&" : "?";
+      return `${raw}${joiner}autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`;
+    }
+  };
+
+  useEffect(() => {
+    fetch("/Center Videos/Kairali - The Ayurvedic Healing Village/Video Gallery.txt")
+      .then((r) => r.text())
+      .then((t) => {
+        const urls = t
+          .split("\n")
+          .map((l) => l.trim())
+          .filter(Boolean);
+        setGalleryVideos(urls);
+        setSelectedGalleryVideo(0);
+      })
+      .catch(() => {
+        setGalleryVideos([]);
+      });
+  }, []);
+
+  useEffect(() => {
+    const videoEl = galleryVideoRef.current;
+    if (!videoEl) return;
+    try {
+      videoEl.currentTime = 0;
+      videoEl.play().catch(() => { });
+    } catch {
+      // ignore
+    }
+  }, [selectedGalleryVideo]);
 
   const goToPreviousAward = () => {
     setCurrentAward((prev) => (prev - 1 < 0 ? maxAwardIndex : prev - 1));
@@ -788,7 +907,7 @@ export default function KairaliHeritage() {
 
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto mt-6">
-          <div className="mb-12">
+          <div className="mb-12" id="gallery">
             <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
               <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
                 <Button
@@ -947,9 +1066,6 @@ export default function KairaliHeritage() {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {lightboxIndex + 1} / {images.length}
-              </div>
             </div>
             {/* Mobile prev/next pills */}
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -1020,7 +1136,7 @@ export default function KairaliHeritage() {
               />
             </CardContent>
           </Card>
-          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }} id="wellness">
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
@@ -1101,7 +1217,7 @@ export default function KairaliHeritage() {
             </Accordion>
           </div>
 
-          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-12 rounded-3xl px-6 py-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }} id="medical">
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4 border-2 border-blue-700">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
@@ -1162,7 +1278,93 @@ export default function KairaliHeritage() {
             </Accordion>
           </div>
 
-          <div className="mb-12">
+          {/* Video Gallery Section */}
+          <div className="mb-12" id="videos">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
+                Video Gallery of Kairali Heritage
+              </h2>
+              <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
+                Experience the serene riverside atmosphere and authentic Ayurvedic healing journey at Kairali Heritage through our video gallery.
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full relative">
+                    {galleryVideos[selectedGalleryVideo] && (
+                      <video
+                        ref={galleryVideoRef}
+                        key={galleryVideos[selectedGalleryVideo]}
+                        src={galleryVideos[selectedGalleryVideo]}
+                        className="w-full h-full object-cover"
+                        controls
+                        playsInline
+                      />
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Navigation Arrows - Desktop Only */}
+              {galleryVideos.length > 1 && (
+                <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+                  <button
+                    onClick={() => setSelectedGalleryVideo((prev) => (prev - 1 + galleryVideos.length) % galleryVideos.length)}
+                    className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                    aria-label="Previous video"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={() => setSelectedGalleryVideo((prev) => (prev + 1) % galleryVideos.length)}
+                    className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                    aria-label="Next video"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
+              )}
+
+              {/* Navigation Buttons - Mobile Only */}
+              {galleryVideos.length > 1 && (
+                <div className="flex md:hidden items-center justify-between mt-4 px-6">
+                  <Button
+                    onClick={() => setSelectedGalleryVideo((prev) => (prev - 1 + galleryVideos.length) % galleryVideos.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                  >
+                    Previous
+                  </Button>
+                  <Button
+                    onClick={() => setSelectedGalleryVideo((prev) => (prev + 1) % galleryVideos.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                  >
+                    Next
+                  </Button>
+                </div>
+              )}
+
+              {/* Indicators */}
+              {galleryVideos.length > 1 && (
+                <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                  {galleryVideos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedGalleryVideo(index)}
+                      className={`transition-all ${index === selectedGalleryVideo
+                        ? "w-8 h-3 bg-primary"
+                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                        } rounded-full`}
+                      aria-label={`Go to video ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="mb-12" id="why-choose">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Kairali Heritage for Your Holistic Health Journey</h2>
               <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
@@ -1212,8 +1414,96 @@ export default function KairaliHeritage() {
             </div>
           </div>
 
+          {/* Testimonials of Kairali Heritage - Video Section */}
+          <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
+            <div className="text-center mb-8 md:mb-10 px-4">
+              <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
+                Testimonials of Kairali Heritage
+              </h2>
+              <div className="w-12 h-1 bg-primary/20 mx-auto mb-3 rounded-full hidden md:block" />
+              <p className="text-sm md:text-lg mx-auto max-w-none leading-relaxed italic" style={{ color: "#7F543D" }}>
+                Watch inspiring stories of recovery and wellness from our global family of patients.
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto px-4 md:px-0">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full relative">
+                    {testimonialVideos[selectedTestimonialVideo] && (
+                      <iframe
+                        key={testimonialVideos[selectedTestimonialVideo]}
+                        src={buildTestimonialIframeSrc(testimonialVideos[selectedTestimonialVideo])}
+                        title="Kairali Heritage Testimonial Video"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Navigation Arrows - Desktop Only */}
+              {testimonialVideos.length > 1 && (
+                <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+                  <button
+                    onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                    className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                    aria-label="Previous testimonial"
+                  >
+                    <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                  <button
+                    onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                    className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                    aria-label="Next testimonial"
+                  >
+                    <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                  </button>
+                </div>
+              )}
+
+              {/* Navigation Buttons - Mobile Only */}
+              {testimonialVideos.length > 1 && (
+                <div className="flex md:hidden items-center justify-between mt-4 px-6">
+                  <Button
+                    onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                  >
+                    Previous
+                  </Button>
+                  <Button
+                    onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                    className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                  >
+                    Next
+                  </Button>
+                </div>
+              )}
+
+              {/* Indicators */}
+              {testimonialVideos.length > 1 && (
+                <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                  {testimonialVideos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedTestimonialVideo(index)}
+                      className={`transition-all ${index === selectedTestimonialVideo
+                        ? "w-8 h-3 bg-primary"
+                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                        } rounded-full`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
           {/* Treatment Process & Patient Journey */}
-          <div className="mb-12">
+          <div className="mb-12" id="process">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
               <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
@@ -1338,7 +1628,7 @@ export default function KairaliHeritage() {
 
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto mt-6">
-          <div className="mb-12">
+          <div className="mb-12" id="facilities">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
               <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: '#7F543D' }}>{facilitiesIntro}</p>
@@ -1466,7 +1756,7 @@ export default function KairaliHeritage() {
 
       <div className="container mx-auto px-3 md:px-4 max-w-full">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
+          <div className="mb-10 rounded-3xl p-4 md:p-10" style={{ backgroundColor: '#EDE8D0' }} id="team">
             <div className="text-center mb-6 md:mb-10">
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
               <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>{founderIntro}</p>
@@ -1538,7 +1828,7 @@ export default function KairaliHeritage() {
       </div>
 
       {reviews.length > 0 && (
-        <div className="container mx-auto px-3 md:px-4 max-w-full">
+        <div className="container mx-auto px-3 md:px-4 max-w-full" id="reviews">
           <div className="max-w-6xl mx-auto mt-6">
             <div className="mb-12">
               <div className="text-center mb-8 md:mb-12">
@@ -1647,7 +1937,7 @@ export default function KairaliHeritage() {
       )}
 
       {/* Awards & Recognition Section */}
-      <div className="container mx-auto px-3 md:px-4 max-w-full">
+      <div className="container mx-auto px-3 md:px-4 max-w-full" id="awards">
         <div className="max-w-6xl mx-auto mb-16">
           <div className="text-center mb-8 md:mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary shadow-sm">
@@ -1743,7 +2033,7 @@ export default function KairaliHeritage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 md:px-4 max-w-full">
+      <div className="container mx-auto px-3 md:px-4 max-w-full" id="insurance">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="text-center mb-8 md:mb-12">
@@ -1810,7 +2100,7 @@ export default function KairaliHeritage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 md:px-4 max-w-full">
+      <div className="container mx-auto px-3 md:px-4 max-w-full" id="faq">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <div className="text-center mb-8">
@@ -1836,7 +2126,7 @@ export default function KairaliHeritage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 md:px-4 max-w-full">
+      <div className="container mx-auto px-3 md:px-4 max-w-full" id="contact">
         <div className="max-w-6xl mx-auto mt-6">
           <div className="mb-12">
             <Card className="mb-12 border-2 border-primary overflow-hidden transition-all duration-300 hover:shadow-2xl">
@@ -1991,42 +2281,177 @@ export default function KairaliHeritage() {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && !isJumpModalOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
+        </button>
+      )}
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && !isJumpModalOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
+        </button>
+      )}
+
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && !isJumpModalOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
+      )}
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start gap-3 mb-3 relative z-10">
+              <div className="space-y-0.5 flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[24px] md:text-[26px] font-extrabold leading-tight tracking-tight text-white break-words">
+                  Sections of Kairali Heritage
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50 flex-shrink-0"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Directly navigate to any section on this page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5 custom-scrollbar">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">
+              Holistic Healing Retreat
+            </p>
+          </div>
+        </div>
+      </div>
       {facilityLightboxOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
-          <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
+          <button
+            onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+            className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Previous"
+          >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Next">
+          <button
+            onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+            className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90"
+            aria-label="Next"
+          >
             <ChevronRight className="h-6 w-6" />
           </button>
+
           <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Kairali Heritage Resort</div>
+            <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
+              Facilities & Amenities
+            </div>
             <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
-              <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
-              <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">{facilityLightboxImage + 1} / {facilityImages.length}</div>
+              <img
+                src={facilityImages[facilityLightboxImage]}
+                alt={`Facility ${facilityLightboxImage + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <button
+                onClick={() => setFacilityLightboxOpen(false)}
+                className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
+                aria-label="Close"
+              >
+                ✕
+              </button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
-              <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+              <Button
+                onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
                 Previous
               </Button>
-              <Button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+              <Button
+                onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)}
+                className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5"
+              >
                 Next
               </Button>
             </div>
           </div>
         </div>
       )}
-
-      {/* Floating CTA Button */}
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
-      >
-        <Phone size={20} />
-        <span className="hidden md:inline">Get Free Quote</span>
-        <span className="md:hidden">Quote</span>
-      </button>
     </div>
   );
 }
