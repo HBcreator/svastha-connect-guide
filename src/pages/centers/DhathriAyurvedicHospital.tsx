@@ -1,16 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import MarkdownContent from "@/components/MarkdownContent";
-import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, X, Users, Heart, TrendingUp, Droplet, Brain, Sparkles, Activity, HeartPulse, ShieldCheck, UserCheck, Stethoscope, Pill, Award, Hospital, Leaf, Home, FileSearch, ClipboardList, Utensils, Phone, Mail, MessageCircle, Building2, Globe, TreePine, CreditCard } from "lucide-react";
+import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, X, Users, Heart, TrendingUp, Droplet, Brain, Sparkles, Activity, HeartPulse, ShieldCheck, UserCheck, Stethoscope, Pill, Award, Hospital, Leaf, Home, FileSearch, ClipboardList, Utensils, Phone, Mail, MessageCircle, Building2, Globe, TreePine, CreditCard, Search } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function DhathriAyurvedicHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [showVideoGallery, setShowVideoGallery] = useState(false);
+  const [medSections, setMedSections] = useState<
+    { title: string; desc: string[]; bullets: string[] }[]
+  >([]);
+  const [images, setImages] = useState<string[]>([]);
+  const [videos, setVideos] = useState<string[]>([]);
   const [selectedImage, setSelectedImage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState(0);
@@ -31,6 +37,7 @@ export default function DhathriAyurvedicHospital() {
   const [currentFacilityImage, setCurrentFacilityImage] = useState(0);
   const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
   const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
+  const galleryVideoRef = useRef<HTMLVideoElement>(null);
   const [teamIntro, setTeamIntro] = useState("");
   const [founder, setFounder] = useState<{ name: string; degrees: string[]; role: string; description: string } | null>(null);
   const [founderExpertise, setFounderExpertise] = useState<string[]>([]);
@@ -39,10 +46,14 @@ export default function DhathriAyurvedicHospital() {
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
   const founderImage = "/Center Images/Dhathri Ayurveda Resort/Founder/Founder.webp";
   const teamImage = "/Center Images/Dhathri Ayurveda Resort/Founder/team.webp";
-  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number }[]>([]);
+  const [testimonials, setTestimonials] = useState<{ name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
   const [insuranceIntro, setInsuranceIntro] = useState("");
+  const [testimonialVideos, setTestimonialVideos] = useState<string[]>([]);
+  const [selectedTestimonialVideo, setSelectedTestimonialVideo] = useState(0);
+  const [isTestimonialsInView, setIsTestimonialsInView] = useState(false);
+  const testimonialSectionRef = useRef<HTMLDivElement>(null);
   const [insuranceItems, setInsuranceItems] = useState<string[]>([]);
   const [paymentItems, setPaymentItems] = useState<string[]>([]);
   const [internationalText, setInternationalText] = useState("");
@@ -54,6 +65,49 @@ export default function DhathriAyurvedicHospital() {
   const [contactWebsite, setContactWebsite] = useState("");
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
+
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "videos", title: "Video Gallery" },
+    { id: "why-choose", title: "Why Choose" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
+    { id: "process", title: "Treatment Process" },
+    { id: "facilities", title: "Facilities" },
+    { id: "team", title: "Founder & Team" },
+    { id: "reviews", title: "Patient Stories" },
+    { id: "awards", title: "Awards & Recognition" },
+    { id: "insurance", title: "Insurance & Payment" },
+    { id: "faq", title: "FAQ" },
+    { id: "contact", title: "Contact Information" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+      }
+    }, 300);
+  };
+
+  useEffect(() => {
+    if (isJumpModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isJumpModalOpen]);
 
   const awards = [
     {
@@ -113,6 +167,36 @@ export default function DhathriAyurvedicHospital() {
     }
     setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
   };
+
+  useEffect(() => {
+    fetch("/Center Videos/Dhathri Ayurveda Resort/YT i frame testimonies.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "text/html");
+        const iframes = doc.querySelectorAll("iframe");
+        const urls = Array.from(iframes).map((iframe) => iframe.getAttribute("src")).filter(Boolean) as string[];
+        setTestimonialVideos(urls);
+      })
+      .catch((err) => console.error("Error loading Dhathri testimonials:", err));
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsTestimonialsInView(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+    if (testimonialSectionRef.current) {
+      observer.observe(testimonialSectionRef.current);
+    }
+    return () => {
+      if (testimonialSectionRef.current) {
+        observer.unobserve(testimonialSectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     fetch("/content/Top Centers/Dhathri Ayurveda Hospital/Wellness Programs.txt")
@@ -327,6 +411,52 @@ export default function DhathriAyurvedicHospital() {
     }, 4000);
     return () => clearInterval(id);
   }, [facilityImages.length, facilityLightboxOpen]);
+
+  useEffect(() => {
+    fetch("/Center Images/Dhathri Ayurveda Resort/Photo Gallery/Photo Gallery Links.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const links = text.split("\n").map((l) => l.trim()).filter((l) => l);
+        setImages(links);
+      })
+      .catch(() => { });
+  }, []);
+
+  useEffect(() => {
+    fetch("/Center Videos/Dhathri Ayurveda Resort/video links.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
+        setVideos(lines);
+        setSelectedVideo(0);
+      })
+      .catch((err) => console.error("Error loading Dhathri videos:", err));
+  }, []);
+
+  useEffect(() => {
+    const videoElement = galleryVideoRef.current;
+    if (!videoElement) return;
+    videoElement.volume = 0.5;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play().catch(() => {
+              videoElement.muted = true;
+              videoElement.play();
+            });
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(videoElement);
+    return () => {
+      if (videoElement) observer.unobserve(videoElement);
+    };
+  }, [selectedVideo, (videos || []).length]);
 
   const renderInlineBold = (text: string) => {
     const parts: (string | JSX.Element)[] = [];
@@ -731,27 +861,7 @@ export default function DhathriAyurvedicHospital() {
       ))}
     </div>
   );
-  const images = [
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-1.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-2.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-3.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-4.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-5.webp",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-6.png",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-7.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-8.jpg",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-9.png",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-10.png",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-11.png",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Images/Photo%20Gallery/Dhathri-12.webp"
-  ];
-
-  const videos = [
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Videos/video-1.mp4",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Videos/video-2.mp4",
-    "https://Savastha.b-cdn.net/Centers/Dhathri%20Ayurveda%20Resort/Videos/video-3.mp4"
-  ];
-
+  // Photo gallery logic
   // Pick first 5 images for the thumbnail grid
   const thumbnailImages = images.slice(0, 5);
 
@@ -830,7 +940,7 @@ export default function DhathriAyurvedicHospital() {
       </div>
 
       {/* Gallery Section */}
-      <div className="container mx-auto px-3 md:px-4 py-12 max-w-full">
+      <div id="gallery" className="container mx-auto px-3 md:px-4 py-12 max-w-full">
         <div className="max-w-6xl mx-auto">
           {/* Tab Switcher */}
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
@@ -880,9 +990,6 @@ export default function DhathriAyurvedicHospital() {
                 >
                   <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                 </button>
-                <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                  {selectedImage + 1} / {images.length}
-                </div>
                 {isAutoPlaying && (
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1028,9 +1135,6 @@ export default function DhathriAyurvedicHospital() {
                       >
                         <X className="w-5 h-5" />
                       </button>
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                        {lightboxImage + 1} / {images.length}
-                      </div>
                     </div>
                     {/* Mobile prev/next pills */}
                     <div className="flex md:hidden items-center justify-between mt-4">
@@ -1058,9 +1162,6 @@ export default function DhathriAyurvedicHospital() {
                 <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
                   <source src={videos[selectedVideo]} type="video/mp4" />
                 </video>
-                <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                  Video {selectedVideo + 1} / {videos.length}
-                </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {videos.map((video, idx) => (
@@ -1093,7 +1194,7 @@ export default function DhathriAyurvedicHospital() {
             </CardContent>
           </Card>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
+          <div id="wellness" className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }}>
             <div className="grid grid-cols-3 gap-2 md:gap-6 max-w-3xl mx-auto mb-8 md:mb-10 overflow-hidden">
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
@@ -1159,7 +1260,7 @@ export default function DhathriAyurvedicHospital() {
             </Accordion>
           </div>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div id="medical" className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 border-2 border-blue-400 mb-4">
                 <Stethoscope className="h-8 w-8 text-blue-600" />
@@ -1201,7 +1302,85 @@ export default function DhathriAyurvedicHospital() {
             </Accordion>
           </div>
 
-          <div className="mb-12">
+          {/* Video Gallery Section */}
+          <div className="mb-12" id="videos">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
+                Video Gallery of Dhathri Ayurveda Resort
+              </h2>
+              <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
+                Experience the serene atmosphere and holistic healing journey at Dhathri Ayurveda Resort through our video gallery.
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full relative">
+                    <video
+                      ref={galleryVideoRef}
+                      key={videos[selectedVideo]}
+                      src={videos[selectedVideo]}
+                      className="w-full h-full object-cover"
+                      controls
+                      playsInline
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Navigation Arrows - Desktop Only */}
+              <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+                <button
+                  onClick={() => setSelectedVideo((prev) => (prev - 1 + videos.length) % videos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Previous video"
+                >
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+                <button
+                  onClick={() => setSelectedVideo((prev) => (prev + 1) % videos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Next video"
+                >
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              {/* Navigation Buttons - Mobile Only */}
+              <div className="flex md:hidden items-center justify-between mt-4 px-6">
+                <Button
+                  onClick={() => setSelectedVideo((prev) => (prev - 1 + videos.length) % videos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={() => setSelectedVideo((prev) => (prev + 1) % videos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                >
+                  Next
+                </Button>
+              </div>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                {videos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedVideo(index)}
+                    className={`transition-all ${index === selectedVideo
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
+                    aria-label={`Go to video ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div id="why-choose" className="mb-12">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Dhathri Ayurveda for Your Healing Journey</h2>
               <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
@@ -1238,7 +1417,89 @@ export default function DhathriAyurvedicHospital() {
             </div>
           </div>
 
-          <div className="mb-12">
+          {/* Testimonials of Dhathri Ayurvedic Hospital - Video Section */}
+          <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
+            <div className="text-center mb-8 md:mb-10 px-4">
+              <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
+                Testimonials of Dhathri Ayurvedic Hospital
+              </h2>
+              <div className="w-12 h-1 bg-primary/20 mx-auto mb-3 rounded-full hidden md:block" />
+              <p className="text-sm md:text-lg mx-auto max-w-none leading-relaxed italic" style={{ color: "#7F543D" }}>
+                Watch inspiring stories of recovery and wellness from our global family of patients.
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto px-4 md:px-0">
+              <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
+                <CardContent className="p-0">
+                  <div className="aspect-video w-full relative">
+                    {testimonialVideos.length > 0 && (
+                      <iframe
+                        key={testimonialVideos[selectedTestimonialVideo]}
+                        src={`${testimonialVideos[selectedTestimonialVideo]}${testimonialVideos[selectedTestimonialVideo].includes('?') ? '&' : '?'}autoplay=${isTestimonialsInView ? "1" : "0"}&mute=0&rel=0`}
+                        title="Dhathri Testimonial Video"
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Navigation Arrows - Desktop Only */}
+              <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 right-0 justify-between px-2 md:-mx-8 pointer-events-none">
+                <button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Previous testimonial"
+                >
+                  <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+                <button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                  className="bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-4 rounded-full shadow-lg transition-all border-2 border-primary pointer-events-auto"
+                  aria-label="Next testimonial"
+                >
+                  <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              {/* Navigation Buttons - Mobile Only */}
+              <div className="flex md:hidden items-center justify-between mt-4 px-6">
+                <Button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev - 1 + testimonialVideos.length) % testimonialVideos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                >
+                  Previous
+                </Button>
+                <Button
+                  onClick={() => setSelectedTestimonialVideo((prev) => (prev + 1) % testimonialVideos.length)}
+                  className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5 border-2 border-primary/20"
+                >
+                  Next
+                </Button>
+              </div>
+
+              {/* Indicators */}
+              <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                {testimonialVideos.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedTestimonialVideo(index)}
+                    className={`transition-all ${index === selectedTestimonialVideo
+                      ? "w-8 h-3 bg-primary"
+                      : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                      } rounded-full`}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div id="process" className="mb-12">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
               <p className="text-base md:text-lg mx-auto" style={{ color: '#7F543D' }}>
@@ -1341,7 +1602,7 @@ export default function DhathriAyurvedicHospital() {
 
           <div className="container mx-auto px-3 md:px-4 max-w-full">
             <div className="max-w-6xl mx-auto mt-6">
-              <div className="mb-12">
+              <div id="facilities" className="mb-12">
                 <div className="text-center mb-10">
                   <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
                   <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: '#7F543D' }}>{facilitiesIntro}</p>
@@ -1430,7 +1691,7 @@ export default function DhathriAyurvedicHospital() {
             </div>
           </div>
 
-          <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
+          <div id="team" className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }}>
             <div className="text-center mb-6 md:mb-10">
               <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
               {teamIntro && (
@@ -1504,7 +1765,7 @@ export default function DhathriAyurvedicHospital() {
           </div>
 
           {testimonials.length > 0 && (
-            <div className="mb-12">
+            <div id="reviews" className="mb-12">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Hear from our patients about their transformational healing journeys</p>
@@ -1590,7 +1851,7 @@ export default function DhathriAyurvedicHospital() {
           )}
 
           {/* Awards & Recognition */}
-          <div className="mb-16 md:mb-24 px-4 overflow-hidden">
+          <div id="awards" className="mb-16 md:mb-24 px-4 overflow-hidden">
             <div className="text-center mb-8 md:mb-12">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
                 <Award className="h-8 w-8" />
@@ -1698,7 +1959,7 @@ export default function DhathriAyurvedicHospital() {
           </div>
 
           {(insuranceItems.length > 0 || paymentItems.length > 0) && (
-            <div className="mb-12">
+            <div id="insurance" className="mb-12">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Insurance & Payment Info</h2>
                 <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>{insuranceIntro}</p>
@@ -1761,7 +2022,7 @@ export default function DhathriAyurvedicHospital() {
           )}
 
           {faqs.length > 0 && (
-            <div className="mb-12">
+            <div id="faq" className="mb-12">
               <div className="text-center mb-6 md:mb-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                   <FileSearch className="h-8 w-8 text-primary" />
@@ -1789,7 +2050,7 @@ export default function DhathriAyurvedicHospital() {
           )}
 
           {contactAddress.length > 0 && (
-            <Card className="mb-12 border-2 border-primary overflow-hidden">
+            <Card id="contact" className="mb-12 border-2 border-primary overflow-hidden">
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-primary mb-6">Contact Information</h2>
                 <div className="grid gap-6 md:grid-cols-[1fr_1.35fr] lg:gap-8">
@@ -1944,7 +2205,6 @@ export default function DhathriAyurvedicHospital() {
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                   <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
                   <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">{facilityLightboxImage + 1} / {facilityImages.length}</div>
                 </div>
                 <div className="flex md:hidden items-center justify-between mt-4">
                   <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
@@ -1964,15 +2224,119 @@ export default function DhathriAyurvedicHospital() {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Floating Quote Button */}
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      {/* Mobile BROWSE Button (Bottom Left) */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
+        </button>
+      )}
+
+      {/* Floating Quote Button (Bottom Right) */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
+        </button>
+      )}
+
+      {/* Desktop Vertical BROWSE Button */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span>B</span>
+            <span>R</span>
+            <Search size={16} strokeWidth={3.5} />
+            <span>W</span>
+            <span>S</span>
+            <span>E</span>
+          </button>
+        </div>
+      )}
+
+      {/* JUMP Modal / Drawer */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
       >
-        <Phone size={20} />
-        <span className="hidden md:inline">Get Free Quote</span>
-        <span className="md:hidden">Quote</span>
-      </button>
-    </div >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Sections of Dhathri Ayurveda
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Directly navigate to any section on this page."
+              </p>
+            </div>
+          </div>
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">
+              Dhathri Ayurveda Resort
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -1127,9 +1127,6 @@ export default function IndusValleyAyurvedicCentre() {
                     >
                       <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                     </button>
-                    <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                      {images.length === 0 ? "0 / 0" : `${selectedImage + 1} / ${images.length}`}
-                    </div>
                     {isAutoPlaying && images.length > 0 && (
                       <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                         <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1303,9 +1300,6 @@ export default function IndusValleyAyurvedicCentre() {
                     <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
                       <source src={videos[selectedVideo]} type="video/mp4" />
                     </video>
-                    <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                      {`Video ${selectedVideo + 1} / ${videos.length}`}
-                    </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     {videos.map((video, idx) => (

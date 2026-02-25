@@ -1026,9 +1026,6 @@ const AnandaInTheHimalayas = () => {
                         <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                       </button>
 
-                      <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                        {selectedImage + 1} / {images.length}
-                      </div>
 
                       {isAutoPlaying && (
                         <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
@@ -1111,9 +1108,6 @@ const AnandaInTheHimalayas = () => {
                       <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
                         <source src={videos[selectedVideo]} type="video/mp4" />
                       </video>
-                      <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                        Video {selectedVideo + 1} / {videos.length}
-                      </div>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       {videos.map((video, idx) => (
@@ -1713,9 +1707,6 @@ const AnandaInTheHimalayas = () => {
                   >
                     ✕
                   </button>
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {facilityLightboxImage + 1} / {facilityImages.length}
-                  </div>
                 </div>
                 <div className="flex md:hidden items-center justify-between mt-4">
                   <Button
@@ -2342,9 +2333,6 @@ const AnandaInTheHimalayas = () => {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {lightboxImage + 1} / {images.length}
-              </div>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button

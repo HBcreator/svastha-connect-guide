@@ -972,9 +972,6 @@ const Veda5Center = () => {
                   >
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {selectedImage + 1} / {images.length}
-                  </div>
                   {isAutoPlaying && (
                     <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                       <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -1061,9 +1058,6 @@ const Veda5Center = () => {
                 >
                   <source src={videos[selectedVideo]} type="video/mp4" />
                 </video>
-                <div className="absolute bottom-2 right-2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                  Video {selectedVideo + 1} / {videos.length}
-                </div>
               </div>
               <div key={selectedLocation} className="grid grid-cols-2 gap-4">
                 {videos.map((src, idx) => (

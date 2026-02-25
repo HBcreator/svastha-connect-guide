@@ -954,9 +954,6 @@ export default function KairaliHeritage() {
                   >
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {selectedImage + 1} / {images.length}
-                  </div>
                   <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                     <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                     Auto
@@ -1010,9 +1007,6 @@ export default function KairaliHeritage() {
                   <AspectRatio ratio={16 / 9}>
                     <video key={selectedVideo} src={videoFiles[selectedVideo]} controls className="w-full h-full object-cover bg-black"></video>
                   </AspectRatio>
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    Video {selectedVideo + 1} / {videoFiles.length}
-                  </div>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {images.slice(0, 2).map((src, i) => (

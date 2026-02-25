@@ -1246,9 +1246,6 @@ const HimVeda = () => {
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
 
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {images.length > 0 ? `${selectedImage + 1} / ${images.length}` : "0 / 0"}
-                  </div>
 
                   {isAutoPlaying && images.length > 0 && (
                     <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
@@ -1338,11 +1335,6 @@ const HimVeda = () => {
                       <source src={videos[selectedVideo]} type="video/mp4" />
                     )}
                   </video>
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {videos.length > 0
-                      ? `Video ${selectedVideo + 1} / ${videos.length}`
-                      : "Video 0 / 0"}
-                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   {videos.map((video, idx) => (
@@ -2749,9 +2741,6 @@ const HimVeda = () => {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {lightboxImage + 1} / {images.length}
-              </div>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2812,9 +2801,6 @@ const HimVeda = () => {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {facilityLightboxImage + 1} / {facilityImages.length}
-              </div>
             </div>
 
             <div className="flex md:hidden items-center justify-between mt-4">

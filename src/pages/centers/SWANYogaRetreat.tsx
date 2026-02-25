@@ -1165,9 +1165,6 @@ const SWANYogaRetreat = () => {
                     <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
                   </button>
 
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    {selectedImage + 1} / {images.length}
-                  </div>
 
                   {isAutoPlaying && (
                     <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
@@ -1250,9 +1247,6 @@ const SWANYogaRetreat = () => {
                   >
                     <source src={videos[selectedVideo]} type="video/mp4" />
                   </video>
-                  <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                    Video {selectedVideo + 1} / {videos.length}
-                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   {videos.map((video, idx) => (
@@ -2604,9 +2598,6 @@ const SWANYogaRetreat = () => {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {lightboxImage + 1} / {images.length}
-              </div>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button onClick={() => setLightboxImage((prev) => (prev - 1 + images.length) % images.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
@@ -2654,9 +2645,6 @@ const SWANYogaRetreat = () => {
               >
                 ✕
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
-                {facilityLightboxImage + 1} / {facilityImages.length}
-              </div>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
