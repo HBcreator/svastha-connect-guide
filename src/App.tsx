@@ -41,6 +41,7 @@ import SitaramMountainRetreat from "./pages/centers/SitaramMountainRetreat";
 import AkantaAyurvedaYogaResort from "./pages/centers/AkantaAyurvedaYogaResort";
 import IndusValleyAyurvedicCentre from "./pages/centers/IndusValleyAyurvedicCentre";
 import ShathayuAyurvedaYogaRetreat from "./pages/centers/ShathayuAyurvedaYogaRetreat";
+import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -85,6 +86,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/centers" element={<TopCenters />} />
+          <Route path="/centers/bangalore-hyderabad-chennai-south-india" element={<SouthIndiaCenters />} />
+          <Route path="/centers/south-india" element={<SouthIndiaCenters />} />
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/bangalore/soukya" element={<SOUKYACenter />} />
           <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ServicesDropdown } from "@/components/ui/dropdown-services";
 
@@ -12,6 +12,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [centersDropdownOpen, setCentersDropdownOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -37,7 +38,6 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/services", label: "Services" },
-    { path: "/centers", label: "Top Centers" },
     { path: "/treatments", label: "Treatments" },
     { path: "/about", label: "About Us" },
   ];
@@ -55,19 +55,82 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
+              <Link
+                to="/"
+                className={`font-poppins font-medium transition-colors ${
+                  location.pathname === "/"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                Home
+              </Link>
+              
+              <Link
+                to="/services"
+                className={`font-poppins font-medium transition-colors ${
+                  location.pathname === "/services"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                Services
+              </Link>
+
+              {/* Top Centers Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setCentersDropdownOpen(true)}
+                onMouseLeave={() => setCentersDropdownOpen(false)}
+              >
                 <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`font-poppins font-medium transition-colors ${
-                    location.pathname === link.path
+                  to="/centers"
+                  className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
+                    location.pathname.startsWith("/centers")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
                 >
-                  {link.label}
+                  Top Centers
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${centersDropdownOpen ? 'rotate-180' : ''}`} />
                 </Link>
-              ))}
+                
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${centersDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px]">
+                    <Link
+                      to="/centers/bangalore-hyderabad-chennai-south-india"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Bangalore, Hyderabad, Chennai & South India.
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                to="/treatments"
+                className={`font-poppins font-medium transition-colors ${
+                  location.pathname === "/treatments"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                Treatments
+              </Link>
+
+              <Link
+                to="/about"
+                className={`font-poppins font-medium transition-colors ${
+                  location.pathname === "/about"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                About Us
+              </Link>
+
               <Button onClick={onQuoteClick} className="font-poppins font-semibold">
                 Get Free Quote
               </Button>
@@ -119,20 +182,73 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               </div>
               
               <div className="space-y-4">
-                {navLinks.map((link) => (
+                <Link
+                  to="/"
+                  className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                    location.pathname === "/"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:bg-gray-100"
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/services"
+                  className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                    location.pathname === "/services"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:bg-gray-100"
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Services
+                </Link>
+                
+                {/* Mobile Centers Section */}
+                <div className="space-y-1">
                   <Link
-                    key={link.path}
-                    to={link.path}
+                    to="/centers"
                     className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                      location.pathname === link.path
+                      location.pathname === "/centers"
                         ? "text-primary bg-primary/10"
                         : "text-foreground hover:bg-gray-100"
                     }`}
                     onClick={closeMenu}
                   >
-                    {link.label}
+                    Top Centers
                   </Link>
-                ))}
+                  <Link
+                    to="/centers/bangalore-hyderabad-chennai-south-india"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Bangalore, Hyderabad, Chennai & South India.
+                  </Link>
+                </div>
+
+                <Link
+                  to="/treatments"
+                  className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                    location.pathname === "/treatments"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:bg-gray-100"
+                  }`}
+                  onClick={closeMenu}
+                >
+                  Treatments
+                </Link>
+                <Link
+                  to="/about"
+                  className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                    location.pathname === "/about"
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:bg-gray-100"
+                  }`}
+                  onClick={closeMenu}
+                >
+                  About Us
+                </Link>
                 <Button
                   onClick={() => {
                     onQuoteClick();
