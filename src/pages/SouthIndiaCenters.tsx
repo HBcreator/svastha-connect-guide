@@ -109,7 +109,7 @@ const SouthIndiaCenters = () => {
             <div key={index} className="flex items-start">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
                 {/* Image Section */}
-                <div className="relative aspect-[16/9.5] sm:aspect-video md:aspect-[16/8.2] overflow-hidden">
+                <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={center.image}
                     alt={center.name}
