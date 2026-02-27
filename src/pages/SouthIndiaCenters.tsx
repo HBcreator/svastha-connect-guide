@@ -1,20 +1,27 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SouthIndiaCenters = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
+  const [expandedCardSlug, setExpandedCardSlug] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
+  const enabledDetailSlugs = new Set([
+    "bangalore/soukya",
+    "bangalore/ayurvedagram",
+    "mysore/indus-valley-ayurvedic-centre",
+    "udupi/shathayu-ayurveda-yoga-retreat",
+  ]);
 
   const centers = [
     {
       name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
-      city: "Bangalore, India",
+      city: "Bengaluru, Karnataka, India",
       description:
         "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene, nature-rich environment. Guests benefit from preventive care, restorative therapies, and integrated healing plans designed to improve long-term physical and mental well-being.",
       rating: 4.9,
@@ -25,7 +32,7 @@ const SouthIndiaCenters = () => {
     },
     {
       name: "AyurvedaGram Heritage Wellness Centre",
-      city: "Bangalore, India",
+      city: "Bengaluru, Karnataka, India",
       description:
         "AyurvedaGram Heritage Wellness Centre is a globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by therapeutic yoga, mindful routines, and sattvic nutrition. Each program is tailored to restore balance of body and mind through time-tested, evidence-informed care.",
       rating: 4.7,
@@ -35,8 +42,224 @@ const SouthIndiaCenters = () => {
       slug: "bangalore/ayurvedagram",
     },
     {
+      name: "Sri Sri Ayurveda Hospital Bengaluru",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A NABH-accredited, ISO-certified multispecialty Ayurvedic hospital administered by Sri Sri Ravi Shankar Vidya Mandir Trust. Spanning over 1 lakh sq. ft. with 268 beds, the hospital blends classical Ayurveda, Naturopathy, Yoga, and modern diagnostics. Specialties include Panchakarma, Cancer Care, Pulse Diagnosis, Gynaecology, and Pediatrics. Offers free Nadi Pariksha consultations, 24/7 emergency services, and online consultations worldwide.",
+      rating: 4.4,
+      reviews: 1200,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
+      slug: "bangalore/sri-sri-ayurveda-hospital-bengaluru",
+    },
+    {
+      name: "Vedam Ayurveda Multispeciality Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A trusted Ayurvedic multispeciality hospital in Bangalore with over a decade of healing excellence. Led by Dr. Raviraj M, Vedam specializes in treating Psoriasis, Eczema, Arthritis, PCOD/PCOS, Weight Loss, and Piles through authentic Panchakarma therapies. Built in a peaceful, herb-rich environment, the hospital combines classical Ayurvedic science with modern care principles to offer patients natural, long-lasting relief.",
+      rating: 4.5,
+      reviews: 850,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/2.jpg",
+      slug: "bangalore/vedam-ayurveda-multispeciality-hospital",
+    },
+    {
+      name: "Adyant Ayurveda – Jayanagar",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "One of Bangalore's most established Ayurvedic clinic chains with multiple branches across the city including Jayanagar, Indiranagar, RR Nagar, Kalyan Nagar, and Bannerghatta Road. Adyant Ayurveda specializes in Panchakarma detox, spine and joint care, skin disorders, infertility, insomnia, and PCOD. Also offers Swarna Bindu Prashana for children's immunity and comprehensive Ayurvedic beauty and rejuvenation therapies. Open daily 8 AM to 8 PM.",
+      rating: 4.6,
+      reviews: 2000,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg",
+      slug: "bangalore/adyant-ayurveda-jayanagar",
+    },
+    {
+      name: "Vydehi Ayurveda Hospital (VAYU)",
+      city: "Bengaluru (Whitefield), Karnataka, India",
+      description:
+        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Centre in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurvedic treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
+      rating: 4.3,
+      reviews: 600,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/4.jpg",
+      slug: "bangalore/vydehi-ayurveda-hospital-vayu",
+    },
+    {
+      name: "Keva Ayurveda – BTM Layout",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A well-rounded Ayurvedic clinic offering a wide spectrum of treatments from Weight Management and Panchakarma to Infertility, Paralysis, and Women's Care. Keva Ayurveda also accepts medical insurance and features specialized programs like corporate wellness, traveler's detox, and geriatric care packages. Integrates Yoga and Naturopathy alongside classical Ayurvedic treatments, providing end-to-end personalized wellness solutions under one roof.",
+      rating: 4.5,
+      reviews: 1100,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp",
+      slug: "bangalore/keva-ayurveda-btm-layout",
+    },
+    {
+      name: "Travancore Ayurveda – Jayanagar",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
+      rating: 4.6,
+      reviews: 3500,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/6.jpg",
+      slug: "bangalore/travancore-ayurveda-jayanagar",
+    },
+    {
+      name: "Jayadev Memorial – Rashtrotthana Hospital Ayurveda Dept.",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "The Ayurveda Department at Rashtrotthana Hospital offers integrative Ayurvedic care within a trusted multispeciality hospital setting in RR Nagar, Bangalore. Combining the wisdom of classical Ayurveda with modern diagnostic support, the department provides comprehensive treatment for lifestyle disorders, musculoskeletal conditions, and chronic ailments. Patients benefit from a full hospital ecosystem including diagnostics, specialist consultations, and inpatient facilities.",
+      rating: 4.2,
+      reviews: 400,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/7.jpg",
+      slug: "bangalore/jayadev-memorial-rashtrotthana-ayurveda",
+    },
+    {
+      name: "Healing Earth Ayurveda Hospital Bangalore",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Healing Earth is a dedicated Ayurvedic wellness center in Bangalore focused on holistic healing through evidence-based Ayurvedic therapies. The center offers personalized Panchakarma programs, rejuvenation treatments, and chronic disease management using authentic herbal medicines and classical treatment protocols. With a serene, therapeutic environment, Healing Earth is designed to restore balance of body, mind, and spirit for patients seeking genuine Ayurvedic care.",
+      rating: 4.4,
+      reviews: 500,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/8.jpg",
+      slug: "bangalore/healing-earth-ayurveda-hospital",
+    },
+    {
+      name: "Ayushman Ayurveda",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A specialized Ayurvedic treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
+      rating: 4.5,
+      reviews: 750,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
+      slug: "bangalore/ayushman-ayurveda",
+    },
+    {
+      name: "Adivaidyam Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Adivaidyam is a unique Ayurvedic clinic in Banashankari, Bangalore, that combines classical Ayurveda and Yoga under one roof. Led by Dr. Savitha Sagar, the center focuses on reviving traditional healing practices for chronic disorders. Offerings include Panchakarma detox, Kerala treatments, beauty therapies, skin & hair care, and Swarnaprashana for children's immunity. Open daily from 6 AM to 9 PM with a patient-centered, compassionate approach.",
+      rating: 4.7,
+      reviews: 900,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/10.JPG",
+      slug: "bangalore/adivaidyam-ayurveda-hospital",
+    },
+    {
+      name: "IAIM Healthcare Center",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "The Institute of Ayurveda and Integrative Medicine (I-AIM) Healthcare Center is a NABH-accredited Ayurvedic hospital in North Bangalore backed by the Foundation for Revitalization of Local Health Traditions (FRLHT). I-AIM integrates evidence-based Ayurvedic medicine with contemporary healthcare, offering specialized Panchakarma therapies including Shirodhara, Basti, Nasyam, Vamana, and Raktamokshana. The center is committed to research, education, and patient-centered integrative care.",
+      rating: 4.5,
+      reviews: 700,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg",
+      slug: "bangalore/iaim-healthcare-center",
+    },
+    {
+      name: "HLC Ayurveda and Nature Cure Hospital",
+      city: "Bengaluru (Electronic City), Karnataka, India",
+      description:
+        "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic healing combined with naturopathic support.",
+      rating: 4.4,
+      reviews: 550,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/12.JPG",
+      slug: "bangalore/hlc-ayurveda-and-nature-cure-hospital",
+    },
+    {
+      name: "PraanaVaidya Ayurvedic Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A premier Ayurvedic healthcare network in Bangalore with 50+ doctors and a track record of 5,000+ surgeries, 13,000+ therapies, and 45,000+ patients treated. PraanaVaidya specializes in a vast range of conditions including Piles, Fistula, Diabetes Reversal, Stroke Rehabilitation, Autoimmune Diseases, Infertility, Varicose Veins, and Keloid Scars. The center combines Ayurvedic medicine with surgical expertise, offering a truly integrative approach to healing.",
+      rating: 4.6,
+      reviews: 2800,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/13.jpg",
+      slug: "bangalore/praanavaidya-ayurvedic-hospital",
+    },
+    {
+      name: "Ramaiah Indic Specialty Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic healing with the standards of a full-fledged medical institution.",
+      rating: 4.4,
+      reviews: 650,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg",
+      slug: "bangalore/ramaiah-indic-specialty-ayurveda-hospital",
+    },
+    {
+      name: "AyurKutira – Panchakarma Centre",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "AyurKutira is a sanctuary for holistic healing in Mahalakshmipuram, Bengaluru, guided by experienced Ayurvedic practitioners with deep expertise in classical treatments. Specialties include personalized Ayurvedic consultations, Panchakarma detox, Rasayana Chikitsa for vitality, post-chemo or post-surgery rejuvenation, and fertility treatments. The center has a particularly strong track record in treating infertility cases, with multiple patient success stories. Open daily 7 AM to 9 PM.",
+      rating: 4.6,
+      reviews: 480,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG",
+      slug: "bangalore/ayurkutira-panchakarma-centre",
+    },
+    {
+      name: "Tatkshana Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Tatkshana Ayurveda Hospital is a dedicated Ayurvedic treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
+      rating: 4.3,
+      reviews: 350,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/16.png",
+      slug: "bangalore/tatkshana-ayurveda-hospital",
+    },
+    {
+      name: "Varaprada Ayurvedic Centre",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Varaprada Ayurvedic Centre is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
+      rating: 4.2,
+      reviews: 300,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG",
+      slug: "bangalore/varaprada-ayurvedic-centre",
+    },
+    {
+      name: "SD Ayurveda Mane – Holistic Wellness Centre",
+      city: "Bengaluru (RT Nagar), Karnataka, India",
+      description:
+        "Operating under Lotus Ayur Care, SD Ayurveda Mane is a holistic Ayurvedic wellness center in RT Nagar, Bangalore. The center specializes in Panchakarma, skin & hair care, piles & fissure treatment, stress management, women's health, and Ayurvedic beauty therapies. Also retails a curated range of Ayurvedic personal care products. Features Swarna Bindhu Prashana events for children and a warm, community-focused healing environment.",
+      rating: 4.4,
+      reviews: 420,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg",
+      slug: "bangalore/sd-ayurveda-mane-holistic-wellness-centre",
+    },
+    {
       name: "Indus Valley Ayurvedic Centre",
-      city: "Mysore, India",
+      city: "Mysuru, Karnataka, India",
       description:
         "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
       rating: 4.8,
@@ -47,7 +270,7 @@ const SouthIndiaCenters = () => {
     },
     {
       name: "Shathayu Ayurveda Yoga Retreat",
-      city: "Udupi, India",
+      city: "Bengaluru Rural, Karnataka, India",
       description:
         "Shathayu Ayurveda Yoga Retreat is a serene coastal sanctuary focused on authentic Ayurveda and yogic living. The retreat combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement. Led by experienced doctors and wellness practitioners, each treatment plan is personalized for restorative outcomes in a peaceful natural environment.",
       rating: 4.8,
@@ -57,28 +280,48 @@ const SouthIndiaCenters = () => {
       slug: "udupi/shathayu-ayurveda-yoga-retreat",
     },
     {
-      name: "Somatheeram Ayurvedic Health Resort",
-      city: "Kerala, India",
+      name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
+      city: "Bengaluru (Mahalingapuram), Karnataka, India",
       description:
-        "Somatheeram Ayurvedic Health Resort is one of Kerala's most recognized wellness destinations, known for authentic Ayurveda in a peaceful coastal setting. The center offers personalized consultations, classical Panchakarma therapies, rejuvenation treatments, yoga, and guided lifestyle programs designed for long-term health improvement. With experienced doctors and structured care pathways, guests receive focused support for detoxification, recovery, and holistic balance.",
-      rating: 4.9,
-      reviews: 320,
+        "The Mahalingapuram branch of Arya Vaidya Sala (AVS), one of India's most iconic Ayurvedic institutions founded in 1902 by Vaidyaratnam P.S. Varier. With over a century of healing heritage, AVS offers classical Ayurvedic medicines, authentic Panchakarma therapies, and doctor consultations rooted in Kerala tradition. This branch provides Vaidya consultations, Oushadhi sales, and Panchakarma services including Shirodhara, Nasyam, Elakizhi, and Navarakizhi using genuine AVS-manufactured herbal oils and formulations.",
+      rating: 4.6,
+      reviews: 1800,
       priceRange: "$$$",
-      image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-      slug: "kerala/somatheeram",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/19.jpg",
+      slug: "bangalore/kottakkal-arya-vaidya-sala-mahalingapuram",
     },
     {
-      name: "Agni Ayurvedic Village Resort",
-      city: "Kerala, India",
+      name: "Ayurillam - Home of Ayurvedic Therapy Centre",
+      city: "Chennai, Tamil Nadu, India",
       description:
-        "Agni Ayurvedic Village Resort is a calm wellness retreat in Kerala that combines traditional Ayurvedic healing with a nature-led restorative environment. The center focuses on personalized plans including Panchakarma, detox therapies, stress management, and preventive wellness routines based on each guest's health profile. Supported by trained therapists and Ayurveda specialists, Agni offers a grounded healing journey for recovery, stability, and lifestyle transformation.",
+        "Ayurillam is a premium Kerala-rooted Ayurvedic therapy centre offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The centre addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
       rating: 4.7,
-      reviews: 190,
+      reviews: 950,
       priceRange: "$$$",
-      image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-      slug: "kerala/agni-ayurvedic-village",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/20.jpg",
+      slug: "chennai/ayurillam-home-of-ayurvedic-therapy-centre",
+    },
+    {
+      name: "Dhanwanthralaya Ayurveda Speciality Hospital",
+      city: "Chennai (West Tambaram), Tamil Nadu, India",
+      description:
+        "Established in 2001 by Dr. Vanitha Muralikumar, Dhanwanthralaya is a 30-bed Ayurvedic speciality hospital treating both medical and surgical conditions using natural procedures rooted in classical Ayurvedic Samhithas. Specialities include Kayachikitsa, Gynaecology, Paediatrics, ENT, Surgery, and Psychiatry. Known for effective Panchakarma for back pain, disc bulge, arthritis, fistula, and chronic ailments. Branches in Chennai (West Tambaram, Nandanam) and Delhi, with an international presence through Smrithi Ayur Care in Malaysia.",
+      rating: 4.5,
+      reviews: 1100,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/21.jpg",
+      slug: "chennai/dhanwanthralaya-ayurveda-speciality-hospital",
     },
   ];
+  const totalPages = 2;
+  const paginatedCenters = currentPage === 1 ? centers.slice(0, 12) : centers.slice(12);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen bg-background font-poppins">
@@ -105,7 +348,7 @@ const SouthIndiaCenters = () => {
       {/* Centers Grid */}
       <section className="container mx-auto px-4 pt-4 pb-6 md:pt-8 md:pb-16">
         <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
-          {centers.map((center, index) => (
+          {paginatedCenters.map((center, index) => (
             <div key={index} className="flex items-start">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
                 {/* Image Section */}
@@ -137,7 +380,7 @@ const SouthIndiaCenters = () => {
                   </div>
 
                 <p
-                  className={`text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-1 md:mb-2 ${expandedCardIndex === index ? "" : "line-clamp-6 md:line-clamp-6"}`}
+                  className={`text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-1 md:mb-2 ${expandedCardSlug === center.slug ? "" : "line-clamp-6 md:line-clamp-6"}`}
                 >
                   {center.description}
                 </p>
@@ -146,10 +389,10 @@ const SouthIndiaCenters = () => {
                     type="button"
                     className="inline-flex text-xs font-semibold text-primary hover:text-primary/80 w-fit mb-2"
                     onClick={() =>
-                      setExpandedCardIndex((prev) => (prev === index ? null : index))
+                      setExpandedCardSlug((prev) => (prev === center.slug ? null : center.slug))
                     }
                   >
-                      {expandedCardIndex === index ? "Read Less" : "Read More"}
+                      {expandedCardSlug === center.slug ? "Read Less" : "Read More"}
                     </button>
                   )}
 
@@ -159,7 +402,11 @@ const SouthIndiaCenters = () => {
                       <Button
                         variant="outline"
                         className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => navigate(`/centers/${center.slug}`)}
+                        onClick={() => {
+                          if (enabledDetailSlugs.has(center.slug)) {
+                            navigate(`/centers/${center.slug}`);
+                          }
+                        }}
                       >
                         View Details
                       </Button>
@@ -175,6 +422,33 @@ const SouthIndiaCenters = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-8 flex items-center justify-center gap-3">
+          <Button
+            variant="outline"
+            disabled={currentPage === 1}
+            onClick={() => {
+              setCurrentPage((prev) => Math.max(prev - 1, 1));
+              setExpandedCardSlug(null);
+            }}
+            className="rounded-xl"
+          >
+            Previous
+          </Button>
+          <span className="text-sm font-semibold text-foreground/80">
+            Page {currentPage} of {totalPages}
+          </span>
+          <Button
+            variant="outline"
+            disabled={currentPage === totalPages}
+            onClick={() => {
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+              setExpandedCardSlug(null);
+            }}
+            className="rounded-xl"
+          >
+            Next
+          </Button>
         </div>
       </section>
 
