@@ -1,4 +1,4 @@
-import Navigation from "@/components/Navigation";
+﻿import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useState } from "react";
@@ -102,16 +102,15 @@ const SouthIndiaCenters = () => {
       slug: "bangalore/keva-ayurveda-btm-layout",
     },
     {
-      name: "Travancore Ayurveda – Jayanagar",
-      city: "Bengaluru, Karnataka, India",
+      name: "Shathayu Ayurveda Yoga Retreat",
+      city: "Bengaluru Rural, Karnataka, India",
       description:
-        "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
-      rating: 4.6,
-      reviews: 3500,
+        "Shathayu Ayurveda Yoga Retreat is a serene coastal sanctuary focused on authentic Ayurveda and yogic living. The retreat combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement. Led by experienced doctors and wellness practitioners, each treatment plan is personalized for restorative outcomes in a peaceful natural environment.",
+      rating: 4.8,
+      reviews: 380,
       priceRange: "$$$",
-      image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/6.jpg",
-      slug: "bangalore/travancore-ayurveda-jayanagar",
+      image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
+      slug: "udupi/shathayu-ayurveda-yoga-retreat",
     },
     {
       name: "Jayadev Memorial – Rashtrotthana Hospital Ayurveda Dept.",
@@ -138,16 +137,15 @@ const SouthIndiaCenters = () => {
       slug: "bangalore/healing-earth-ayurveda-hospital",
     },
     {
-      name: "Ayushman Ayurveda",
-      city: "Bengaluru, Karnataka, India",
+      name: "Indus Valley Ayurvedic Centre",
+      city: "Mysuru, Karnataka, India",
       description:
-        "A specialized Ayurvedic treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
-      rating: 4.5,
-      reviews: 750,
-      priceRange: "$$$",
-      image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
-      slug: "bangalore/ayushman-ayurveda",
+        "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
+      rating: 4.8,
+      reviews: 450,
+      priceRange: "$$$$",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+      slug: "mysore/indus-valley-ayurvedic-centre",
     },
     {
       name: "Adivaidyam Ayurveda Hospital",
@@ -258,26 +256,28 @@ const SouthIndiaCenters = () => {
       slug: "bangalore/sd-ayurveda-mane-holistic-wellness-centre",
     },
     {
-      name: "Indus Valley Ayurvedic Centre",
-      city: "Mysuru, Karnataka, India",
+      name: "Ayushman Ayurveda",
+      city: "Bengaluru, Karnataka, India",
       description:
-        "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
-      rating: 4.8,
-      reviews: 450,
-      priceRange: "$$$$",
-      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-      slug: "mysore/indus-valley-ayurvedic-centre",
+        "A specialized Ayurvedic treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
+      rating: 4.5,
+      reviews: 750,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
+      slug: "bangalore/ayushman-ayurveda",
     },
     {
-      name: "Shathayu Ayurveda Yoga Retreat",
-      city: "Bengaluru Rural, Karnataka, India",
+      name: "Travancore Ayurveda – Jayanagar",
+      city: "Bengaluru, Karnataka, India",
       description:
-        "Shathayu Ayurveda Yoga Retreat is a serene coastal sanctuary focused on authentic Ayurveda and yogic living. The retreat combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement. Led by experienced doctors and wellness practitioners, each treatment plan is personalized for restorative outcomes in a peaceful natural environment.",
-      rating: 4.8,
-      reviews: 380,
+        "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
+      rating: 4.6,
+      reviews: 3500,
       priceRange: "$$$",
-      image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-      slug: "udupi/shathayu-ayurveda-yoga-retreat",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/6.jpg",
+      slug: "bangalore/travancore-ayurveda-jayanagar",
     },
     {
       name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
@@ -459,3 +459,5 @@ const SouthIndiaCenters = () => {
 };
 
 export default SouthIndiaCenters;
+
+

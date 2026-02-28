@@ -105,6 +105,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     >
                       Bangalore, Hyderabad, Chennai & South India.
                     </Link>
+                    <Link
+                      to="/kerala-ayurvedic-centers-and-hospitals"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Kerala Ayurvedic Centers and Hospitals
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -224,6 +231,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onClick={closeMenu}
                   >
                     Bangalore, Hyderabad, Chennai & South India.
+                  </Link>
+                  <Link
+                    to="/kerala-ayurvedic-centers-and-hospitals"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Kerala Ayurvedic Centers and Hospitals
                   </Link>
                 </div>
 
