@@ -215,7 +215,7 @@ const TopCenters = () => {
       reviews: 0,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-      locationText: "South Goa, India",
+      locationText: "Colva Beach,South Goa, India",
       slug: "goa/soul-vacation" as string | undefined,
     },
     {

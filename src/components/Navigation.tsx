@@ -86,7 +86,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 <Link
                   to="/centers"
                   className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
-                    location.pathname.startsWith("/centers")
+                    location.pathname.startsWith("/centers") ||
+                    location.pathname === "/kerala-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/goa-ayurvedic-centers-and-hospitals"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -111,6 +113,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Kerala Ayurvedic Centers and Hospitals
+                    </Link>
+                    <Link
+                      to="/goa-ayurvedic-centers-and-hospitals"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Goa Ayurvedic centers and Hospitals
                     </Link>
                   </div>
                 </div>
@@ -238,6 +247,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onClick={closeMenu}
                   >
                     Kerala Ayurvedic Centers and Hospitals
+                  </Link>
+                  <Link
+                    to="/goa-ayurvedic-centers-and-hospitals"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Goa Ayurvedic centers and Hospitals
                   </Link>
                 </div>
 

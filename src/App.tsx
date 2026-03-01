@@ -43,6 +43,7 @@ import IndusValleyAyurvedicCentre from "./pages/centers/IndusValleyAyurvedicCent
 import ShathayuAyurvedaYogaRetreat from "./pages/centers/ShathayuAyurvedaYogaRetreat";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
+import GoaCenters from "./pages/GoaCenters";
 import Services from "./pages/Services";
 import AyurvedaService from "./pages/services/Ayurveda";
 import PanchakarmaService from "./pages/services/Panchakarma";
@@ -90,6 +91,7 @@ const App = () => (
           <Route path="/centers/bangalore-hyderabad-chennai-south-india" element={<SouthIndiaCenters />} />
           <Route path="/centers/south-india" element={<SouthIndiaCenters />} />
           <Route path="/kerala-ayurvedic-centers-and-hospitals" element={<KeralaCenters />} />
+          <Route path="/goa-ayurvedic-centers-and-hospitals" element={<GoaCenters />} />
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/bangalore/soukya" element={<SOUKYACenter />} />
           <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
