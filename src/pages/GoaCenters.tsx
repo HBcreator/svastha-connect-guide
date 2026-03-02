@@ -19,7 +19,7 @@ const GoaCenters = () => {
       description:
         "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort near South Goa beaches. It blends serene coastal living with authentic Ayurveda, stress-relief therapies, and personalized wellness plans for deep rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.8,
-      reviews: 0,
+      reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       slug: "goa/soul-vacation",
@@ -92,7 +92,7 @@ const GoaCenters = () => {
     },
     {
       name: "Natural Touch Ayurveda",
-      city: "Patnem Beach, Canacona, South Goa, India",
+      city: "Canacona, South Goa, India",
       description:
         "Rooted in Kerala traditional Ayurveda since 1960, Natural Touch offers beachside Abhyanga, Shirodhara, herbal steam therapies, and Panchakarma in a calm natural setting ideal for long-stay wellness seekers. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.5,
@@ -358,8 +358,8 @@ const GoaCenters = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-bold text-foreground/90">{center.rating}</span>
-                      <span className="text-[11px] text-foreground/60">({center.reviews})</span>
+                      <span className="text-xs font-black text-foreground">{center.rating}</span>
+                      <span className="text-xs font-semibold text-foreground/80">({center.reviews})</span>
                     </div>
                   </div>
 

@@ -75,6 +75,7 @@ import DiscBulgeProtrusion from "./pages/treatments/DiscBulgeProtrusion";
 import BackPain from "./pages/treatments/BackPain";
 import Stress from "./pages/treatments/Stress";
 import Alopecia from "./pages/treatments/Alopecia";
+import HimalayasRishikeshUttarakhandNorthEastCenters from "./pages/HimalayasRishikeshUttarakhandNorthEastCenters";
 
 const queryClient = new QueryClient();
 
@@ -90,6 +91,7 @@ const App = () => (
           <Route path="/centers" element={<TopCenters />} />
           <Route path="/centers/bangalore-hyderabad-chennai-south-india" element={<SouthIndiaCenters />} />
           <Route path="/centers/south-india" element={<SouthIndiaCenters />} />
+          <Route path="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers" element={<HimalayasRishikeshUttarakhandNorthEastCenters />} />
           <Route path="/kerala-ayurvedic-centers-and-hospitals" element={<KeralaCenters />} />
           <Route path="/goa-ayurvedic-centers-and-hospitals" element={<GoaCenters />} />
           <Route path="/centers/:location" element={<LocationCenters />} />

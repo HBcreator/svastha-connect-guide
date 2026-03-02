@@ -374,8 +374,8 @@ const SouthIndiaCenters = () => {
                     </div>
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-bold text-foreground/90">{center.rating}</span>
-                      <span className="text-[11px] text-foreground/60">({center.reviews})</span>
+                      <span className="text-xs font-black text-foreground">{center.rating}</span>
+                      <span className="text-xs font-semibold text-foreground/80">({center.reviews})</span>
                     </div>
                   </div>
 

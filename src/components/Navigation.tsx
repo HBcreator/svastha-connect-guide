@@ -88,7 +88,8 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
                     location.pathname.startsWith("/centers") ||
                     location.pathname === "/kerala-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/goa-ayurvedic-centers-and-hospitals"
+                    location.pathname === "/goa-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -120,6 +121,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Goa Ayurvedic centers and Hospitals
+                    </Link>
+                    <Link
+                      to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Top Ayurvedic Centers and Hospitals in Himalayas rishikesh uttarakhand and north east.
                     </Link>
                   </div>
                 </div>
@@ -254,6 +262,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onClick={closeMenu}
                   >
                     Goa Ayurvedic centers and Hospitals
+                  </Link>
+                  <Link
+                    to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Top Ayurvedic Centers and Hospitals in Himalayas rishikesh uttarakhand and north east.
                   </Link>
                 </div>
 
