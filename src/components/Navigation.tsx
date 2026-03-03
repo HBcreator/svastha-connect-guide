@@ -127,7 +127,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
-                      Top Ayurvedic Centers and Hospitals in Himalayas rishikesh uttarakhand and north east.
+                      Himalaysa , rishikesh, uttrakhand & north east
                     </Link>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
-                    Top Ayurvedic Centers and Hospitals in Himalayas rishikesh uttarakhand and north east.
+                    Himalaysa , rishikesh, uttrakhand & north east
                   </Link>
                 </div>
 

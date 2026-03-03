@@ -37,6 +37,8 @@ const ANCHOR_IMAGE_BY_SERIES: Record<number, string> = {
   21: "/Anchor pages/Himalayan/images/21.jpg",
   22: "/Anchor pages/Himalayan/images/22.jpg",
   23: "/Anchor pages/Himalayan/images/23.jpg",
+  24: "/Anchor pages/Himalayan/images/24.webp",
+  25: "/Anchor pages/Himalayan/images/25.webp",
 };
 
 const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
@@ -46,7 +48,7 @@ const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
   10: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
 };
 
-const SLUG_BY_SERIES: Record<number, string> = {
+const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   3: "uttarakhand/ananda-in-the-himalayas",
   4: "dharamshala/ayuskama-ayurveda",
   6: "veda5",
@@ -60,6 +62,39 @@ const cleanMarkdownText = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
+const formatHimalayanLocation = (value: string) => {
+  const cleaned = value.replace(/\s+/g, " ").trim();
+  if (!cleaned) return cleaned;
+
+  const commaParts = cleaned
+    .split(",")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  if (commaParts.length >= 3) {
+    return commaParts.join(", ");
+  }
+
+  const mainPart = commaParts.length === 2 ? commaParts[1] : commaParts[0];
+  const words = mainPart.split(" ").filter(Boolean);
+
+  if (words.length >= 3) {
+    const country = words[words.length - 1];
+
+    if (country === "India" && words.length >= 4 && words[words.length - 2] === "Pradesh") {
+      const state = `${words[words.length - 3]} ${words[words.length - 2]}`;
+      const city = words.slice(0, -3).join(" ");
+      return city ? `${city}, ${state}, ${country}` : `${state}, ${country}`;
+    }
+
+    const state = words[words.length - 2];
+    const city = words.slice(0, -2).join(" ");
+    return `${city}, ${state}, ${country}`;
+  }
+
+  return mainPart;
+};
+
 const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
   const lines = markdown
     .split("\n")
@@ -67,7 +102,7 @@ const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
     .filter((line) => /^\|\s*\*\*\d+\*\*/.test(line));
 
   return lines
-    .map((line) => {
+    .map((line): HimalayanCenter | null => {
       const parts = line.split("|").map((part) => part.trim());
       if (parts.length < 6) return null;
 
@@ -95,9 +130,9 @@ const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
         reviews,
         image,
         slug: SLUG_BY_SERIES[series],
-      } satisfies HimalayanCenter;
+      };
     })
-    .filter((center): center is HimalayanCenter => Boolean(center))
+    .filter((center): center is HimalayanCenter => center !== null)
     .sort((a, b) => a.series - b.series);
 };
 
@@ -188,7 +223,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1.5 text-foreground/80">
                       <MapPin className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs font-semibold">{center.city}</span>
+                      <span className="text-xs font-semibold">{formatHimalayanLocation(center.city)}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
