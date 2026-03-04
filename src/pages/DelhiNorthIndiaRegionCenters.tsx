@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type HimalayanCenter = {
+type DelhiCenter = {
   series: number;
   name: string;
   city: string;
@@ -17,42 +17,45 @@ type HimalayanCenter = {
   slug?: string;
 };
 
-const ANCHOR_IMAGE_BY_SERIES: Record<number, string> = {
-  1: "/Anchor pages/Himalayan/images/1.jpg",
-  2: "/Anchor pages/Himalayan/images/2.jpg",
-  5: "/Anchor pages/Himalayan/images/5.jpg",
-  7: "/Anchor pages/Himalayan/images/7.webp",
-  8: "/Anchor pages/Himalayan/images/8.webp",
-  9: "/Anchor pages/Himalayan/images/9.jpg",
-  11: "/Anchor pages/Himalayan/images/11.jpg",
-  12: "/Anchor pages/Himalayan/images/12.webp",
-  13: "/Anchor pages/Himalayan/images/13.jpg",
-  14: "/Anchor pages/Himalayan/images/14.JPG",
-  15: "/Anchor pages/Himalayan/images/15.webp",
-  16: "/Anchor pages/Himalayan/images/16.webp",
-  17: "/Anchor pages/Himalayan/images/17.JPG",
-  18: "/Anchor pages/Himalayan/images/18.webp",
-  19: "/Anchor pages/Himalayan/images/19.jpeg",
-  20: "/Anchor pages/Himalayan/images/20.jpg",
-  21: "/Anchor pages/Himalayan/images/21.jpg",
-  22: "/Anchor pages/Himalayan/images/22.jpg",
-  23: "/Anchor pages/Himalayan/images/23.jpg",
-  24: "/Anchor pages/Himalayan/images/24.webp",
-  25: "/Anchor pages/Himalayan/images/25.webp",
+const IMAGE_BY_SERIES: Record<number, string> = {
+  1: "/Anchor pages/Delhi/images/1.webp",
+  2: "/Anchor pages/Delhi/images/2.jpg",
+  3: "/Anchor pages/Delhi/images/3.jpg",
+  4: "/Anchor pages/Delhi/images/4.webp",
+  5: "/Anchor pages/Delhi/images/5.webp",
+  6: "/Anchor pages/Delhi/images/6.webp",
+  7: "/Anchor pages/Delhi/images/7.webp",
+  8: "/Anchor pages/Delhi/images/8.webp",
+  9: "/Anchor pages/Delhi/images/9.jpg",
+  10: "/Anchor pages/Delhi/images/10.webp",
+  11: "/Anchor pages/Delhi/images/11.webp",
+  12: "/Anchor pages/Delhi/images/12.jpg",
+  13: "/Anchor pages/Delhi/images/13.jpg",
+  14: "/Anchor pages/Delhi/images/14.jpg",
+  15: "/Anchor pages/Delhi/images/15.webp",
+  16: "/Anchor pages/Delhi/images/16.webp",
+  17: "/Anchor pages/Delhi/images/17.webp",
+  18: "/Anchor pages/Delhi/images/18.webp",
+  19: "/Anchor pages/Delhi/images/19.jpg",
+  20: "/Anchor pages/Delhi/images/20.webp",
+  21: "/Anchor pages/Delhi/images/21.webp",
+  22: "/Anchor pages/Delhi/images/22.webp",
+  23: "/Anchor pages/Delhi/images/23.webp",
+  24: "/Anchor pages/Delhi/images/24.jpg",
+  25: "/Anchor pages/Delhi/images/25.webp",
 };
 
-const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
-  3: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-  4: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-  6: "/Center Images/veda5/veda5-1.jpg",
-  10: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-};
-
-const SLUG_BY_SERIES: Partial<Record<number, string>> = {
-  3: "uttarakhand/ananda-in-the-himalayas",
-  4: "dharamshala/ayuskama-ayurveda",
-  6: "veda5",
-  10: "rishikesh/yan-cure",
+const LOCATION_OVERRIDE_BY_CENTER: Record<string, string> = {
+  "Nirmal Ayurved & Panchkarm Clinic": "Shahdara, New Delhi, India",
+  "Ch. Brahm Prakash Ayurved Charak Sansthan (CBPACS)": "Khera Dabar, New Delhi, India",
+  "Kairali The Ayurvedic Healing Village – Delhi NCR": "Mehrauli, New Delhi, India",
+  "SKK Ayurveda & Panchakarma": "Janak Puri, New Delhi, India",
+  "Sri Sri Ayurveda Panchakarma Ayurveda Center": "Jhilmil, Delhi, India",
+  "Mirasa Ayurveda": "East Of Kailash, Delhi, India",
+  "Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)": "Green Park, New Delhi, India",
+  "Sri Vaidya Ayurveda Panchakarma": "Vasant Kunj, Delhi, India",
+  "Sanjivani Ayurvedic Research Institute": "Vijay Nagar, Delhi, India",
+  "Sri Sri Tattva Panchakarma Centre – Delhi": "Jhilmil, Delhi, India",
 };
 
 const cleanMarkdownText = (value: string) =>
@@ -62,64 +65,46 @@ const cleanMarkdownText = (value: string) =>
     .replace(/\s+/g, " ")
     .trim();
 
-const formatHimalayanLocation = (value: string) => {
-  const cleaned = value.replace(/\s+/g, " ").trim();
-  if (!cleaned) return cleaned;
-
-  const commaParts = cleaned
-    .split(",")
-    .map((part) => part.trim())
-    .filter(Boolean);
-
-  if (commaParts.length >= 3) {
-    return commaParts.join(", ");
-  }
-
-  const mainPart = commaParts.length === 2 ? commaParts[1] : commaParts[0];
-  const words = mainPart.split(" ").filter(Boolean);
-
-  if (words.length >= 3) {
-    const country = words[words.length - 1];
-
-    if (country === "India" && words.length >= 4 && words[words.length - 2] === "Pradesh") {
-      const state = `${words[words.length - 3]} ${words[words.length - 2]}`;
-      const city = words.slice(0, -3).join(" ");
-      return city ? `${city}, ${state}, ${country}` : `${state}, ${country}`;
-    }
-
-    const state = words[words.length - 2];
-    const city = words.slice(0, -2).join(" ");
-    return `${city}, ${state}, ${country}`;
-  }
-
-  return mainPart;
-};
-
-const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
+const parseCentersFromMarkdown = (markdown: string): DelhiCenter[] => {
   const lines = markdown
     .split("\n")
     .map((line) => line.trim())
     .filter((line) => /^\|\s*\*\*\d+\*\*/.test(line));
 
   return lines
-    .map((line): HimalayanCenter | null => {
+    .map((line): DelhiCenter | null => {
       const parts = line.split("|").map((part) => part.trim());
       if (parts.length < 6) return null;
 
       const series = Number(cleanMarkdownText(parts[1]));
-      const name = cleanMarkdownText(parts[2]);
+      if (!series || series > 25) return null;
+
+      let name = cleanMarkdownText(parts[2]);
+      if (name === "Sri Sri Ayurveda Panchakarma (PanchkarmaTreatment.com)") {
+        name = "Sri Sri Ayurveda Panchakarma Ayurveda Center";
+      }
       const description = cleanMarkdownText(parts[3]);
       const ratingCell = cleanMarkdownText(parts[4]);
-      const city = cleanMarkdownText(parts[5]);
+      let city = cleanMarkdownText(parts[5]).replace(/\s+/g, " ").trim();
+      city = city.replace(/\s*Delhi India$/i, ", India");
+      if (!/India$/i.test(city)) {
+        city = `${city}, India`;
+      }
+      city = city
+        .replace(/\s+,/g, ",")
+        .replace(/,\s*,/g, ", ")
+        .replace(/\s{2,}/g, " ")
+        .replace(/,\s*India$/i, ", India")
+        .trim();
+      if (LOCATION_OVERRIDE_BY_CENTER[name]) {
+        city = LOCATION_OVERRIDE_BY_CENTER[name];
+      }
 
       const ratingMatch = ratingCell.match(/\d+(?:\.\d+)?/);
       const reviewsMatch = ratingCell.match(/\(([^)]+)\)/);
       const rating = ratingMatch ? Number(ratingMatch[0]) : 0;
       const reviews = reviewsMatch ? reviewsMatch[1].replace(/\+/g, "").trim() : "0";
-      const image =
-        ANCHOR_IMAGE_BY_SERIES[series] ||
-        TOP_CENTER_IMAGE_FALLBACK_BY_SERIES[series] ||
-        "/Anchor pages/Himalayan/images/1.jpg";
+      const image = IMAGE_BY_SERIES[series] || "/Anchor pages/Delhi/images/1.webp";
 
       return {
         series,
@@ -129,24 +114,34 @@ const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
         rating,
         reviews,
         image,
-        slug: SLUG_BY_SERIES[series],
       };
     })
-    .filter((center): center is HimalayanCenter => center !== null)
+    .filter((center): center is DelhiCenter => center !== null)
     .sort((a, b) => a.series - b.series);
 };
 
-const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
+const DelhiNorthIndiaRegionCenters = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [expandedCardSeries, setExpandedCardSeries] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [centers, setCenters] = useState<HimalayanCenter[]>([]);
+  const [centers, setCenters] = useState<DelhiCenter[]>([]);
   const navigate = useNavigate();
+  const namasteDwaarCenter: DelhiCenter = {
+    series: 0,
+    name: "Namaste Dwaar – Countryside Wellness Retreat",
+    city: "Mansurpur, Delhi, India",
+    description:
+      "Namaste Dwaar is an award-winning countryside wellness retreat near Delhi NCR that blends authentic Ayurvedic healing with a peaceful rural environment. The center offers physician-led Panchakarma, detox, stress-relief, and rejuvenation programs tailored to each guest's health goals. Guests benefit from classical therapies, yoga, mindful routines, and farm-fresh sattvic meals designed to support long-term recovery and balance. Its calm natural setting, spacious campus, and personalized hospitality make it ideal for lifestyle reset, preventive wellness, and deeper therapeutic stays. With a focus on holistic care, Namaste Dwaar combines comfort, tradition, and structured healing for sustainable results.",
+    rating: 4.7,
+    reviews: "300",
+    image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
+    slug: "delhi/namastedwaar",
+  };
 
   useEffect(() => {
     let isMounted = true;
 
-    fetch("/Anchor pages/Himalayan/savastha_himalaya_centers.md")
+    fetch("/Anchor pages/Delhi/savastha_delhi 25_centers .md")
       .then((response) => response.text())
       .then((markdown) => {
         if (isMounted) {
@@ -154,7 +149,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
         }
       })
       .catch((error) => {
-        console.error("Failed to load Himalayan centers:", error);
+        console.error("Failed to load Delhi centers:", error);
       });
 
     return () => {
@@ -163,8 +158,12 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
   }, []);
 
   const { pageOneCenters, pageTwoCenters } = useMemo(() => {
-    const firstPage = centers.filter((center) => center.series <= 12);
-    const secondPage = centers.filter((center) => center.series > 12);
+    const pageOneSeries = new Set([1, 2, 4, 6, 7, 10, 11, 17, 18, 21, 23]);
+    const firstPage = [
+      namasteDwaarCenter,
+      ...centers.filter((center) => pageOneSeries.has(center.series)),
+    ];
+    const secondPage = centers.filter((center) => !pageOneSeries.has(center.series));
     return { pageOneCenters: firstPage, pageTwoCenters: secondPage };
   }, [centers]);
 
@@ -190,13 +189,13 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
-              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Himalayas rishikesh uttarakhand and north east.</span>
+              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Delhi and North India Region.</span>
             </h2>
             <p
               className="text-[13px] md:text-lg text-white/80 mt-4 md:mt-8 animate-fade-in max-w-4xl mx-auto md:whitespace-nowrap"
               style={{ animationDelay: "200ms" }}
             >
-              Discover Himalayan region&apos;s finest Ayurvedic centers and wellness retreats.
+              Discover Delhi and North India region&apos;s finest Ayurvedic centers and wellness retreats.
             </p>
           </div>
         </div>
@@ -231,7 +230,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1.5 text-foreground/80">
                       <MapPin className="w-3.5 h-3.5 text-primary" />
-                      <span className="text-xs font-semibold">{formatHimalayanLocation(center.city)}</span>
+                      <span className="text-xs font-semibold">{center.city}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
@@ -322,4 +321,4 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
   );
 };
 
-export default HimalayasRishikeshUttarakhandNorthEastCenters;
+export default DelhiNorthIndiaRegionCenters;

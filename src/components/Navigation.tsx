@@ -89,7 +89,8 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     location.pathname.startsWith("/centers") ||
                     location.pathname === "/kerala-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/goa-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
+                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers" ||
+                    location.pathname === "/delhi-and-north-india-region-ayurvedic-centers"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -128,6 +129,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Himalaysa , rishikesh, uttrakhand & north east
+                    </Link>
+                    <Link
+                      to="/delhi-and-north-india-region-ayurvedic-centers"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Delhi and North India Region
                     </Link>
                   </div>
                 </div>
@@ -269,6 +277,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onClick={closeMenu}
                   >
                     Himalaysa , rishikesh, uttrakhand & north east
+                  </Link>
+                  <Link
+                    to="/delhi-and-north-india-region-ayurvedic-centers"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Delhi and North India Region
                   </Link>
                 </div>
 

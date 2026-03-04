@@ -348,7 +348,9 @@ const SouthIndiaCenters = () => {
       {/* Centers Grid */}
       <section className="container mx-auto px-4 pt-4 pb-6 md:pt-8 md:pb-16">
         <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
-          {paginatedCenters.map((center, index) => (
+          {paginatedCenters.map((center, index) => {
+            const cardKey = center.slug ?? center.name;
+            return (
             <div key={index} className="flex items-start">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
                 {/* Image Section */}
@@ -362,7 +364,13 @@ const SouthIndiaCenters = () => {
 
                 {/* Content Section */}
                 <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-[#2C4E5A] mb-2 line-clamp-2 md:line-clamp-1 leading-tight min-h-[2.5rem] md:min-h-[1.6rem]">
+                  <h3
+                    title={center.name}
+                    className={`text-lg font-bold text-[#2C4E5A] mb-2 leading-tight cursor-pointer ${expandedCardSlug === cardKey ? "" : "line-clamp-2 md:line-clamp-1 min-h-[2.5rem] md:min-h-[1.6rem]"}`}
+                    onClick={() =>
+                      setExpandedCardSlug((prev) => (prev === cardKey ? null : cardKey))
+                    }
+                  >
                     {center.name}
                   </h3>
 
@@ -380,7 +388,7 @@ const SouthIndiaCenters = () => {
                   </div>
 
                 <p
-                  className={`text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-1 md:mb-2 ${expandedCardSlug === center.slug ? "" : "line-clamp-6 md:line-clamp-6"}`}
+                  className={`text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-1 md:mb-2 ${expandedCardSlug === cardKey ? "" : "line-clamp-6 md:line-clamp-6"}`}
                 >
                   {center.description}
                 </p>
@@ -389,10 +397,10 @@ const SouthIndiaCenters = () => {
                     type="button"
                     className="inline-flex text-xs font-semibold text-primary hover:text-primary/80 w-fit mb-2"
                     onClick={() =>
-                      setExpandedCardSlug((prev) => (prev === center.slug ? null : center.slug))
+                      setExpandedCardSlug((prev) => (prev === cardKey ? null : cardKey))
                     }
                   >
-                      {expandedCardSlug === center.slug ? "Read Less" : "Read More"}
+                      {expandedCardSlug === cardKey ? "Read Less" : "Read More"}
                     </button>
                   )}
 
@@ -421,7 +429,7 @@ const SouthIndiaCenters = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )})}
         </div>
         <div className="mt-8 flex items-center justify-center gap-3">
           <Button
