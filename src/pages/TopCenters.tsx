@@ -286,7 +286,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
       slug: "kerala/ayurmana" as string | undefined,
-      locationText: "Kerala, India",
+        locationText: "Panvel, Mumbai, India",
     },
     {
       name: "Chamundi Hill Palace Ayurvedic Resort",

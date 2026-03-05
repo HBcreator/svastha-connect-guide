@@ -89,8 +89,10 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     location.pathname.startsWith("/centers") ||
                     location.pathname === "/kerala-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/goa-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers" ||
-                    location.pathname === "/delhi-and-north-india-region-ayurvedic-centers"
+                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -103,7 +105,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${centersDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                   <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px]">
                     <Link
-                      to="/centers/bangalore-hyderabad-chennai-south-india"
+                      to="/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
@@ -114,28 +116,35 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
-                      Kerala Ayurvedic Centers and Hospitals
+                      Kerala and South West Region
                     </Link>
                     <Link
                       to="/goa-ayurvedic-centers-and-hospitals"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
-                      Goa Ayurvedic centers and Hospitals
+                      Goa and South West Region
                     </Link>
                     <Link
-                      to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
+                      to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
-                      Himalaysa , rishikesh, uttrakhand & north east
+                      Himalayas, Rishikesh, Uttarakhand & North East
                     </Link>
                     <Link
-                      to="/delhi-and-north-india-region-ayurvedic-centers"
+                      to="/delhi-and-north-india-region-ayurvedic-centers-and-hospitals"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Delhi and North India Region
+                    </Link>
+                    <Link
+                      to="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setCentersDropdownOpen(false)}
+                    >
+                      Mumbai, Pune, Rajasthan & West India.
                     </Link>
                   </div>
                 </div>
@@ -251,7 +260,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     Top Centers
                   </Link>
                   <Link
-                    to="/centers/bangalore-hyderabad-chennai-south-india"
+                    to="/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
@@ -262,28 +271,35 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
-                    Kerala Ayurvedic Centers and Hospitals
+                    Kerala and South West Region
                   </Link>
                   <Link
                     to="/goa-ayurvedic-centers-and-hospitals"
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
-                    Goa Ayurvedic centers and Hospitals
+                    Goa and South West Region
                   </Link>
                   <Link
-                    to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers"
+                    to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals"
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
-                    Himalaysa , rishikesh, uttrakhand & north east
+                    Himalayas, Rishikesh, Uttarakhand & North East
                   </Link>
                   <Link
-                    to="/delhi-and-north-india-region-ayurvedic-centers"
+                    to="/delhi-and-north-india-region-ayurvedic-centers-and-hospitals"
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
                     Delhi and North India Region
+                  </Link>
+                  <Link
+                    to="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Mumbai, Pune, Rajasthan & West India.
                   </Link>
                 </div>
 

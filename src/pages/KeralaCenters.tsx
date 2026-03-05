@@ -80,6 +80,17 @@ const KeralaCenters = () => {
       slug: undefined,
     },
     {
+      name: "Madukkakuzhy Ayurveda",
+      city: "Idukki, Kerala, India",
+      description:
+        "A family-owned Ayurveda institution with 9 generations of unbroken healing tradition since 1938 - Green Leaf Certified by Kerala Tourism (the highest government recognition for authentic Ayurvedic care) and Diamond Certified Homestay by the Kerala Tourism Department. Founded by Vaidyakalanidhi M.C. Mathew, now stewarded by the 9th generation of the Madukkakuzhy family in the lush mountain landscapes of Idukki. All medicines are prepared in-house from organically grown herbs, customized to each patient's Prakriti. Specialties include arthritis, fibromyalgia, digestive disorders, skin conditions, post-natal care, and pre-conception care with 3-week Panchakarma programs. Global reach spanning 42+ countries with a European center in Bad Bocklet, Germany. Endorsed by Kerala celebrities and international wellness seekers who return year after year.",
+      rating: 4.7,
+      reviews: 1800,
+      priceRange: "$$$",
+      image: "/Center Images/Madukkakuzhy Ayurveda/Thumb.jpg",
+      slug: undefined,
+    },
+    {
       name: "Somatheeram Ayurvedic Health Resort",
       city: "Kovalam, Kerala, India",
       description:
@@ -321,7 +332,7 @@ const KeralaCenters = () => {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
-              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Kerala.</span>
+              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Kerala and South West Region.</span>
             </h2>
             <p
               className="text-[13px] md:text-lg text-white/80 mt-4 md:mt-8 animate-fade-in max-w-4xl mx-auto md:whitespace-nowrap"
