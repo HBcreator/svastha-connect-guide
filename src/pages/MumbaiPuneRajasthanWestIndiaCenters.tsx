@@ -38,10 +38,10 @@ const IMAGE_BY_SERIES: Record<number, string> = {
   19: "/Anchor pages/mumbai/images/19.jpg",
   20: "/Anchor pages/mumbai/images/20.jpg",
   21: "/Anchor pages/mumbai/images/21.jpg",
-  22: "/Anchor pages/mumbai/images/22.jpg",
+  22: "/Anchor pages/mumbai/images/22.webp",
   23: "/Anchor pages/mumbai/images/23.webp",
   24: "/Anchor pages/mumbai/images/24.jpg",
-  25: "/Anchor pages/mumbai/images/25.jpg",
+  25: "/Anchor pages/mumbai/images/25.webp",
 };
 
 const LOCATION_OVERRIDE_BY_SERIES: Record<number, string> = {
@@ -52,9 +52,10 @@ const LOCATION_OVERRIDE_BY_SERIES: Record<number, string> = {
   17: "Andheri East, Mumbai, Maharashtra, India",
   18: "Nerul, Navi Mumbai, Maharashtra, India",
   19: "Dhankawadi, Pune, Maharashtra, India",
-  22: "Amer Rd, Jaipur, Rajasthan, India",
-  24: "Hiran Magri, Udaipur, Rajasthan, India",
-  25: "Shanti Path, Jaipur, Rajasthan, India",
+  22: "Panchavati, Nashik, Maharashtra, India",
+  23: "Gangapur Road, Nashik, Maharashtra, India",
+  24: "Panchavati, Nashik, Maharashtra, India",
+  25: "Canada Corner, Nashik, Maharashtra, India",
 };
 
 const cleanMarkdownText = (value: string) =>
@@ -134,7 +135,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
   useEffect(() => {
     let isMounted = true;
 
-    fetch("/Anchor pages/mumbai/savastha_mumbai_centers.md")
+    fetch("/Anchor pages/mumbai/savastha_mumbai_centers-updated.md")
       .then((response) => response.text())
       .then((markdown) => {
         if (isMounted) {
@@ -152,7 +153,9 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 
   const { pageOneCenters, pageTwoCenters } = useMemo(() => {
     const centerBySeries = new Map(centers.map((center) => [center.series, center]));
-    const pageOneSeries = [1, 3, 6, 7, 10, 11, 12, 14, 19, 24, 25];
+    const prioritySeries = [10, 19, 25]; // Atmantan, Bharati, Sukhayu
+    const baseSeries = [1, 3, 6, 7, 11, 12, 14, 24];
+    const pageOneSeries = [...prioritySeries, ...baseSeries];
     const pageOne = [
       agniFeaturedCenter,
       ...pageOneSeries.map((series) => centerBySeries.get(series)).filter(Boolean),

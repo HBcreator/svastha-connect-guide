@@ -337,7 +337,7 @@ const TopCenters = () => {
       reviews: 190,
       priceRange: "$$$",
       image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-      locationText: "Kerala, India",
+        locationText: "Panvel, Mumbai, Maharashtra, India",
       slug: "kerala/agni-ayurvedic-village" as string | undefined,
     },
     {

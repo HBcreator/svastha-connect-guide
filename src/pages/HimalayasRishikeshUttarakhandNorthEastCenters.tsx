@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { prioritizeTopCenters } from "@/lib/top-centers";
 
 type HimalayanCenter = {
   series: number;
@@ -162,14 +163,12 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     };
   }, []);
 
-  const { pageOneCenters, pageTwoCenters } = useMemo(() => {
-    const firstPage = centers.filter((center) => center.series <= 12);
-    const secondPage = centers.filter((center) => center.series > 12);
-    return { pageOneCenters: firstPage, pageTwoCenters: secondPage };
-  }, [centers]);
-
-  const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
-  const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
+  const { orderedCenters, totalPages, paginatedCenters } = useMemo(() => {
+    const ordered = prioritizeTopCenters(centers);
+    const pages = ordered.length > 12 ? 2 : 1;
+    const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
+    return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
+  }, [centers, currentPage]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

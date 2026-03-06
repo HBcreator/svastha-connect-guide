@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { prioritizeTopCenters } from "@/lib/top-centers";
 
 const SouthIndiaCenters = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -316,8 +317,9 @@ const SouthIndiaCenters = () => {
       slug: "chennai/dhanwanthralaya-ayurveda-speciality-hospital",
     },
   ];
-  const totalPages = 2;
-  const paginatedCenters = currentPage === 1 ? centers.slice(0, 12) : centers.slice(12);
+  const orderedCenters = prioritizeTopCenters(centers);
+  const totalPages = orderedCenters.length > 12 ? 2 : 1;
+  const paginatedCenters = currentPage === 1 ? orderedCenters.slice(0, 12) : orderedCenters.slice(12);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

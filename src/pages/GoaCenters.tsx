@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { prioritizeTopCenters } from "@/lib/top-centers";
 
 const GoaCenters = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -289,24 +290,9 @@ const GoaCenters = () => {
       slug: undefined,
     },
   ];
-  const pageOneNames = new Set([
-    "Soul Vacation Resort & Wellness Centre",
-    "SWAN Yoga Retreat & Ayurveda",
-    "Health and Ayurveda (ANHC Goa)",
-    "Yashraj Ayurveda Clinic",
-    "KARE Ayurveda at Soul Vacation Resort",
-    "SreeShanti Wellness",
-    "Veda5 Wellness Retreat - Arambol",
-    "Tattvam on the Beach",
-    "Nalanda Retreat",
-    "Ashiyana Goa",
-    "Yoga Goa - Ayurveda Retreats",
-    "Ayurcare Goa",
-  ]);
-  const pageOneCenters = centers.filter((center) => pageOneNames.has(center.name));
-  const pageTwoCenters = centers.filter((center) => !pageOneNames.has(center.name));
-  const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
-  const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
+  const orderedCenters = prioritizeTopCenters(centers);
+  const totalPages = orderedCenters.length > 12 ? 2 : 1;
+  const paginatedCenters = currentPage === 1 ? orderedCenters.slice(0, 12) : orderedCenters.slice(12);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { prioritizeTopCenters } from "@/lib/top-centers";
 
 const KeralaCenters = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -87,7 +88,7 @@ const KeralaCenters = () => {
       rating: 4.7,
       reviews: 1800,
       priceRange: "$$$",
-      image: "/Center Images/Madukkakuzhy Ayurveda/Thumb.jpg",
+      image: "/Anchor pages/Kerala centers/images/Madukkakuzhy Ayurveda.webp",
       slug: undefined,
     },
     {
@@ -122,17 +123,6 @@ const KeralaCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
       slug: "kerala/kairali-heritage",
-    },
-    {
-      name: "Agni Ayurvedic Village Resort",
-      city: "Kovalam, Kerala, India",
-      description:
-        "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it's a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
-      rating: 4.7,
-      reviews: 190,
-      priceRange: "$$$",
-      image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-      slug: "kerala/agni-ayurvedic-village",
     },
     {
       name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -300,24 +290,9 @@ const KeralaCenters = () => {
       slug: "kochi/akanta-ayurveda-and-yoga-resort",
     },
   ];
-  const pageOneSlugs = new Set([
-    "kerala/somatheeram",
-    "veda5",
-    "kerala/kairali-heritage",
-    "kerala/agni-ayurvedic-village",
-    "kerala/dheemahi-kumarakom",
-    "kerala/kairali-ayurvedic-healing-village",
-    "kerala/nagarjuna-ayurveda-centre",
-    "kerala/sanjeevanam-ayurveda-hospital",
-    "kerala/back-to-roots",
-    "kerala/dhathri-ayurveda",
-    "kerala/krishnendu-ayurveda-hospital",
-    "kerala/ayursoma",
-  ]);
-  const pageOneCenters = centers.filter((center) => center.slug && pageOneSlugs.has(center.slug));
-  const pageTwoCenters = centers.filter((center) => !(center.slug && pageOneSlugs.has(center.slug)));
-  const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
-  const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
+  const orderedCenters = prioritizeTopCenters(centers);
+  const totalPages = orderedCenters.length > 12 ? 2 : 1;
+  const paginatedCenters = currentPage === 1 ? orderedCenters.slice(0, 12) : orderedCenters.slice(12);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });

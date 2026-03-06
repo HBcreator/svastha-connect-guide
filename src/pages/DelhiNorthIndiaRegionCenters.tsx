@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { prioritizeTopCenters } from "@/lib/top-centers";
 
 type DelhiCenter = {
   series: number;
@@ -157,18 +158,13 @@ const DelhiNorthIndiaRegionCenters = () => {
     };
   }, []);
 
-  const { pageOneCenters, pageTwoCenters } = useMemo(() => {
-    const pageOneSeries = new Set([1, 2, 4, 6, 7, 10, 11, 17, 18, 21, 23]);
-    const firstPage = [
-      namasteDwaarCenter,
-      ...centers.filter((center) => pageOneSeries.has(center.series)),
-    ];
-    const secondPage = centers.filter((center) => !pageOneSeries.has(center.series));
-    return { pageOneCenters: firstPage, pageTwoCenters: secondPage };
-  }, [centers]);
-
-  const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
-  const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
+  const { orderedCenters, totalPages, paginatedCenters } = useMemo(() => {
+    const baseCenters = [namasteDwaarCenter, ...centers];
+    const ordered = prioritizeTopCenters(baseCenters);
+    const pages = ordered.length > 12 ? 2 : 1;
+    const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
+    return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
+  }, [centers, currentPage, namasteDwaarCenter]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
