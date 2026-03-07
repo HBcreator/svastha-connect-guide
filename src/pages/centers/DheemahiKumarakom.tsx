@@ -925,7 +925,7 @@ export default function DheemahiKumarakom() {
         </div>
       </div>
 
-      <section id="gallery" className="container mx-auto px-3 md:px-4 py-12 max-w-full">
+      <section id="gallery" className="container mx-auto px-3 md:px-4 pt-12 pb-2 max-w-full">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
@@ -1525,7 +1525,7 @@ export default function DheemahiKumarakom() {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-2 md:mb-3">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
@@ -2409,7 +2409,9 @@ export default function DheemahiKumarakom() {
       }
 
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}

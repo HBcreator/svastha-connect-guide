@@ -66,6 +66,26 @@ const TopCenters = () => {
       slug: "bangalore/ayurvedagram" as string | undefined,
     },
     {
+      name: "Shreyas Yoga Retreat (Nelamangala)",
+      city: "Bangalore",
+      description:
+        "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+      specialties: [
+        "Yoga Retreat",
+        "Meditation & Mindfulness",
+        "Ayurveda Therapies",
+        "Detox & Rejuvenation",
+        "Stress Relief",
+        "Holistic Wellness Programs",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+      locationText: "Nelamangala, Bangalore, India",
+      slug: "bangalore/shreyas-yoga-retreat" as string | undefined,
+    },
+    {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala",
       description:

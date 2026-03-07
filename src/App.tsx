@@ -41,6 +41,7 @@ import SitaramMountainRetreat from "./pages/centers/SitaramMountainRetreat";
 import AkantaAyurvedaYogaResort from "./pages/centers/AkantaAyurvedaYogaResort";
 import IndusValleyAyurvedicCentre from "./pages/centers/IndusValleyAyurvedicCentre";
 import ShathayuAyurvedaYogaRetreat from "./pages/centers/ShathayuAyurvedaYogaRetreat";
+import ShreyasYogaRetreat from "./pages/centers/ShreyasYogaRetreat";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -127,6 +128,7 @@ const App = () => (
           <Route path="/centers/mysore/chamundi-hill-palace" element={<ChamundiHillPalace />} />
           <Route path="/centers/kerala/athreya-ayurvedic-centre" element={<AthreyaAyurvedicCentre />} />
           <Route path="/centers/kerala/ayur-bethaniya-ayurveda-hospital" element={<AyurBethaniyaAyurvedaHospital />} />
+          <Route path="/centers/bangalore/shreyas-yoga-retreat" element={<ShreyasYogaRetreat />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
