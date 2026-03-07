@@ -1163,21 +1163,21 @@ const ShreyasYogaRetreat = () => {
           ) : (
             <>
               <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video mb-8">
-                <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
+                <video key={selectedVideo} controls controlsList="nodownload noplaybackrate noremoteplayback" disablePictureInPicture preload="metadata" poster={selectedVideo === 1 ? "https://Savastha.b-cdn.net/Centers/Shreyas%20Yoga%20Retreat/images/Photo%20Gallery/2.jpg" : (thumbnailImages[selectedVideo] || images[selectedVideo] || images[0])} className="w-full h-full object-cover">
                   <source src={videos[selectedVideo]} type="video/mp4" />
                 </video>
                 <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
                   Video {selectedVideo + 1} / {videos.length}
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 mb-10">
                 {videos.map((video, idx) => (
                   <div
                     key={idx}
                     onClick={() => setSelectedVideo(idx)}
                     className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""}`}
                   >
-                    <video muted className="w-full h-full object-cover">
+                    <video muted playsInline preload="metadata" poster={idx === 1 ? "https://Savastha.b-cdn.net/Centers/Shreyas%20Yoga%20Retreat/images/Photo%20Gallery/2.jpg" : (thumbnailImages[idx] || images[idx] || images[0])} className="w-full h-full object-cover">
                       <source src={video} type="video/mp4" />
                     </video>
                   </div>
@@ -1186,7 +1186,7 @@ const ShreyasYogaRetreat = () => {
             </>
           )}
 
-          <Card className="mb-12">
+          <Card className="mb-12 mt-6">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
               <MarkdownContent
                 contentPath="/content/Top Centers/Shreyas Yoga Retreat/Main content.txt"
@@ -1309,7 +1309,7 @@ const ShreyasYogaRetreat = () => {
             </Accordion>
           </div>
 
-          <div className="mb-12" id="videos" ref={videoGallerySectionRef}>
+          <div className="mb-12 mt-6" id="videos" ref={videoGallerySectionRef}>
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Video Gallery of Shreyas Yoga Retreat
@@ -1388,7 +1388,7 @@ const ShreyasYogaRetreat = () => {
             </div>
           </div>
 
-          <div className="mb-12" id="why-choose">
+          <div className="mb-12 mt-6" id="why-choose">
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">
                 Why Choose Shreyas Yoga Retreat for Your Healing Journey
@@ -1427,7 +1427,7 @@ const ShreyasYogaRetreat = () => {
             </div>
           </div>
 
-          <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
+          <div className="mb-12 mt-6" id="testimonial-videos" ref={testimonialSectionRef}>
             <div className="text-center mb-8 md:mb-10 px-4">
               <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
                 Testimonials of Shreyas Yoga Retreat
@@ -1511,7 +1511,7 @@ const ShreyasYogaRetreat = () => {
             </div>
           </div>
 
-          <div className="mb-12" id="process">
+          <div className="mb-12 mt-6" id="process">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Treatment Process & Patient Journey</h2>
               <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
@@ -1558,7 +1558,7 @@ const ShreyasYogaRetreat = () => {
             </div>
           </div>
 
-          <div className="mb-12">
+          <div className="mb-12 mt-6">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#EDE8D0" }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
@@ -1622,7 +1622,7 @@ const ShreyasYogaRetreat = () => {
 
           <div className="container mx-auto px-3 md:px-4 max-w-full">
             <div className="max-w-6xl mx-auto w-full mt-6">
-              <div className="mb-12" id="facilities">
+              <div className="mb-12 mt-6" id="facilities">
                 <div className="text-center mb-10">
                   <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
                   <p className="text-base md:text-lg mx-auto px-4 mb-8" style={{ color: "#7F543D" }}>{facilitiesIntro}</p>
@@ -1711,7 +1711,7 @@ const ShreyasYogaRetreat = () => {
 
           <div className="container mx-auto px-3 md:px-4 max-w-full">
             <div className="max-w-6xl mx-auto w-full mt-6">
-              <div className="mb-12" id="team">
+              <div className="mb-12 mt-6" id="team">
                 <div className="text-center mb-8 md:mb-10">
                   <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
                   {teamIntro && (
@@ -1786,7 +1786,7 @@ const ShreyasYogaRetreat = () => {
           </div>
 
           {testimonials.length > 0 && (
-            <div className="mb-12" id="reviews">
+            <div className="mb-12 mt-6" id="reviews">
               <div className="text-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                   Patient Stories & Reviews
@@ -1891,7 +1891,7 @@ const ShreyasYogaRetreat = () => {
             </div>
           )}
 
-          <div className="mb-12" id="awards">
+          <div className="mb-12 mt-6" id="awards">
             <div className="text-center mb-6 md:mb-10">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4 text-primary">
                 <Award className="h-8 w-8" />
@@ -1984,7 +1984,7 @@ const ShreyasYogaRetreat = () => {
           </div>
 
           {insuranceBullets.length > 0 && (
-            <div className="mb-12" id="insurance">
+            <div className="mb-12 mt-6" id="insurance">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                   <ShieldCheck className="h-8 w-8 text-primary" />
@@ -2047,7 +2047,7 @@ const ShreyasYogaRetreat = () => {
           )}
 
           {faqItems.length > 0 && (
-            <div className="mb-12" id="faq">
+            <div className="mb-12 mt-6" id="faq">
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                   <MessageCircleHeart className="h-8 w-8 text-primary" />
@@ -2186,7 +2186,7 @@ const ShreyasYogaRetreat = () => {
             </Card>
           )}
 
-          <div className="mb-12">
+          <div className="mb-12 mt-6">
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#234A50" }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
@@ -2427,6 +2427,9 @@ const ShreyasYogaRetreat = () => {
 };
 
 export default ShreyasYogaRetreat;
+
+
+
 
 
 
