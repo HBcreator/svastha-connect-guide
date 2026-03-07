@@ -3,7 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
-import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, Users, Heart, TrendingUp, Activity, Brain, Droplet, HeartPulse, UserCheck, ShieldCheck, Sparkles, Stethoscope, Pill, Award, Hospital, Home, Leaf, Utensils, ClipboardList, FileSearch, Phone, MessageCircle, MessageCircleHeart, Building2, Globe, TreePine } from "lucide-react";
+import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, Users, Heart, TrendingUp, Activity, Brain, Droplet, HeartPulse, UserCheck, ShieldCheck, Sparkles, Stethoscope, Pill, Award, Hospital, Home, Leaf, Utensils, ClipboardList, FileSearch, Phone, MessageCircle, MessageCircleHeart, Building2, Globe, TreePine, Search, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import MarkdownContent from "@/components/MarkdownContent";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -58,11 +58,12 @@ const ShreyasYogaRetreat = () => {
   const [contactWebsite, setContactWebsite] = useState("");
   const [contactDistances, setContactDistances] = useState<string[]>([]);
   const [transportText, setTransportText] = useState("");
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const awards = [
     {
-      title: "Condé Nast Traveller Wellness & Spa Awards 2026",
-      description: "Recognized in the Wellness & Spa Awards 2026 coverage under the “Peace Makers” category for Shreyas Retreat.",
-      image: "/Center Images/Shreyas Yoga Retreat/Awards/1  (Condé Nast Traveller Wellness & Spa Awards (2026)).png"
+      title: "Cond� Nast Traveller Wellness & Spa Awards 2026",
+      description: "Recognized in the Wellness & Spa Awards 2026 coverage under the �Peace Makers� category for Shreyas Retreat.",
+      image: "/Center Images/Shreyas Yoga Retreat/Awards/1  (Cond� Nast Traveller Wellness & Spa Awards (2026)).png"
     },
     {
       title: "World Luxury Spa Awards",
@@ -86,8 +87,10 @@ const ShreyasYogaRetreat = () => {
   const [testimonialVideos, setTestimonialVideos] = useState<string[]>([]);
   const [selectedTestimonialVideo, setSelectedTestimonialVideo] = useState(0);
   const [isTestimonialsInView, setIsTestimonialsInView] = useState(false);
+  const [isVideoGalleryInView, setIsVideoGalleryInView] = useState(false);
   const testimonialSectionRef = useRef<HTMLDivElement>(null);
   const testimonialVideoRef = useRef<HTMLVideoElement>(null);
+  const videoGallerySectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     fetch("/Center Images/Shreyas Yoga Retreat/photo gallery/Photo Gallery Links.txt")
@@ -625,6 +628,22 @@ const ShreyasYogaRetreat = () => {
   }, []);
 
   useEffect(() => {
+    const sectionElement = videoGallerySectionRef.current;
+    if (!sectionElement) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVideoGalleryInView(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(sectionElement);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
     const videoEl = testimonialVideoRef.current;
     if (!videoEl) return;
     if (isTestimonialsInView) {
@@ -747,6 +766,41 @@ const ShreyasYogaRetreat = () => {
   const goToNextAward = () => {
     setCurrentAward((prev) => (prev + 1 > maxAwardIndex ? 0 : prev + 1));
   };
+  const jumpSections = [
+    { id: "gallery", title: "Photo Gallery" },
+    { id: "wellness", title: "Wellness Programs" },
+    { id: "medical", title: "Medical Programs" },
+    { id: "videos", title: "Video Gallery" },
+    { id: "why-choose", title: "Why Choose Shreyas" },
+    { id: "testimonial-videos", title: "Testimonials (Videos)" },
+    { id: "process", title: "Process & Journey" },
+    { id: "facilities", title: "Facilities & Amenities" },
+    { id: "team", title: "Founder & Team Info" },
+    { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "awards", title: "Awards & Media" },
+    { id: "insurance", title: "Insurance & Payment" },
+    { id: "faq", title: "F&Q" },
+    { id: "contact", title: "Contact Information" }
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 300);
+  };
 
   const nextTeam = () => {
     if (!teamGroups.length) return;
@@ -825,13 +879,18 @@ const ShreyasYogaRetreat = () => {
   useEffect(() => {
     const videoEl = soukyaStyleVideoRef.current;
     if (!videoEl) return;
+    const shouldPlay = isVideoGalleryInView && !isTestimonialsInView;
     try {
-      videoEl.currentTime = 0;
-      videoEl.play().catch(() => {});
+      if (shouldPlay) {
+        videoEl.currentTime = 0;
+        videoEl.play().catch(() => {});
+      } else {
+        videoEl.pause();
+      }
     } catch {
       // ignore
     }
-  }, [soukyaStyleVideoIndex, videos]);
+  }, [soukyaStyleVideoIndex, videos, isVideoGalleryInView, isTestimonialsInView]);
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -861,12 +920,12 @@ const ShreyasYogaRetreat = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background font-poppins">
+    <div className="min-h-screen bg-background font-poppins overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
       <div className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-3 md:px-4 max-w-full">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto w-full">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -882,7 +941,7 @@ const ShreyasYogaRetreat = () => {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(0 reviews)</span>
+                  <span className="opacity-90">(500+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -902,7 +961,7 @@ const ShreyasYogaRetreat = () => {
       </div>
 
       <div className="container mx-auto px-3 md:px-4 py-12 max-w-full" id="gallery">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="flex items-center mb-6 flex-wrap gap-3 md:gap-4">
             <div className="flex items-center gap-2 md:gap-4 w-full md:w-auto">
               <Button
@@ -1081,10 +1140,7 @@ const ShreyasYogaRetreat = () => {
                       <button
                         onClick={() => setLightboxOpen(false)}
                         className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                        aria-label="Close"
-                      >
-                        ✕
-                      </button>
+                        aria-label="Close">X</button>
                     </div>
                     <div className="flex md:hidden items-center justify-between mt-4">
                       <Button
@@ -1200,7 +1256,7 @@ const ShreyasYogaRetreat = () => {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1242,7 +1298,7 @@ const ShreyasYogaRetreat = () => {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1253,7 +1309,7 @@ const ShreyasYogaRetreat = () => {
             </Accordion>
           </div>
 
-          <div className="mb-12" id="videos">
+          <div className="mb-12" id="videos" ref={videoGallerySectionRef}>
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">
                 Video Gallery of Shreyas Yoga Retreat
@@ -1358,7 +1414,7 @@ const ShreyasYogaRetreat = () => {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1489,7 +1545,7 @@ const ShreyasYogaRetreat = () => {
                         <ul className="mt-3 space-y-1.5">
                           {s.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">•</span>
+                              <span className="text-primary mt-1">&bull;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1565,7 +1621,7 @@ const ShreyasYogaRetreat = () => {
           </div>
 
           <div className="container mx-auto px-3 md:px-4 max-w-full">
-            <div className="max-w-6xl mx-auto mt-6">
+            <div className="max-w-6xl mx-auto w-full mt-6">
               <div className="mb-12" id="facilities">
                 <div className="text-center mb-10">
                   <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Facilities & Amenities</h2>
@@ -1654,7 +1710,7 @@ const ShreyasYogaRetreat = () => {
           </div>
 
           <div className="container mx-auto px-3 md:px-4 max-w-full">
-            <div className="max-w-6xl mx-auto mt-6">
+            <div className="max-w-6xl mx-auto w-full mt-6">
               <div className="mb-12" id="team">
                 <div className="text-center mb-8 md:mb-10">
                   <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
@@ -1674,7 +1730,7 @@ const ShreyasYogaRetreat = () => {
                         <div>
                           <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                           {founder?.degrees && founder.degrees.length > 0 && (
-                            <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                            <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" � ")}</p>
                           )}
                           {founder?.role && (
                             <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>
@@ -1716,7 +1772,7 @@ const ShreyasYogaRetreat = () => {
                         <ul className="space-y-2.5">
                           {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">•</span>
+                              <span className="text-primary mt-1">&bull;</span>
                               <span>{renderInlineBold(it)}</span>
                             </li>
                           ))}
@@ -1771,12 +1827,12 @@ const ShreyasYogaRetreat = () => {
                             </h4>
                             {testimonials[currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                ✓ Verified
+                                ? Verified
                               </span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `� ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -1948,7 +2004,7 @@ const ShreyasYogaRetreat = () => {
                     <ul className="space-y-3">
                       {insuranceBullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">✓</span>
+                          <span className="text-primary mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1966,7 +2022,7 @@ const ShreyasYogaRetreat = () => {
                     <ul className="space-y-3">
                       {paymentBullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">✓</span>
+                          <span className="text-primary mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -2217,7 +2273,7 @@ const ShreyasYogaRetreat = () => {
             <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Shreyas Yoga Retreat</div>
             <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
               <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
-              <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
+              <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
@@ -2231,10 +2287,156 @@ const ShreyasYogaRetreat = () => {
         </div>
       )}
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
+        </button>
+      )}
+
+      {/* Floating Quote Action (Bottom Right) */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
+        </button>
+      )}
+
+      {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          {/* BROWSE Button - Static Clean Version */}
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            {/* Letters with search icon replacing 'O' */}
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
+      )}
+
+      {/* JUMP Modal / Drawer */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        {/* Dark Overlay */}
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        {/* Drawer Content */}
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Decorative Top Accent */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          {/* Header Area */}
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Sections of Shreyas
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Directly navigate to any section on this page."
+              </p>
+            </div>
+          </div>
+
+          {/* List of Sections */}
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5 custom-scrollbar">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+
+                {/* Left Accent Bar */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+
+          {/* Footer Branding */}
+          <div className="p-4 text-center border-t border-primary/5 bg-[#F9F8F4]">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <div className="w-8 h-[1px] bg-primary/20" />
+              <div className="w-2 h-2 rounded-full border border-primary/30" />
+              <div className="w-8 h-[1px] bg-primary/20" />
+            </div>
+            <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">
+              Authentic Ayurvedic Healing
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default ShreyasYogaRetreat;
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -664,7 +664,7 @@ const Veda5Center = () => {
   const getStepTag = (step: number) => {
     switch (step) {
       case 1: return "Day 1";
-      case 2: return "Day 1–2";
+      case 2: return "Day 1�2";
       case 3: return "Ongoing";
       case 4: return "Daily";
       case 5: return "Throughout Stay";
@@ -1141,10 +1141,7 @@ const Veda5Center = () => {
                 <button
                   onClick={() => setLightboxOpen(false)}
                   className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
+                  aria-label="Close">X</button>
               </div>
 
               <div className="flex md:hidden items-center justify-between mt-4">
@@ -1222,7 +1219,7 @@ const Veda5Center = () => {
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{wellnessSection?.heading || "Wellness Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              {wellnessSection?.intro || "Loading programs…"}
+              {wellnessSection?.intro || "Loading programs�"}
             </p>
           </div>
 
@@ -1251,7 +1248,7 @@ const Veda5Center = () => {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1270,7 +1267,7 @@ const Veda5Center = () => {
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{medicalSection?.heading || "Medical Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              {medicalSection?.intro || "Loading programs…"}
+              {medicalSection?.intro || "Loading programs�"}
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
@@ -1298,7 +1295,7 @@ const Veda5Center = () => {
                     <ul className="space-y-1.5 md:space-y-2" style={{ color: '#7F543D' }}>
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm">
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1418,7 +1415,7 @@ const Veda5Center = () => {
               {whyChooseSection?.heading || "Why Choose VEDA5 for Your Holistic Health Journey"}
             </h2>
             <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
-              {whyChooseSection?.intro || "Loading…"}
+              {whyChooseSection?.intro || "Loading�"}
             </p>
           </div>
 
@@ -1442,7 +1439,7 @@ const Veda5Center = () => {
                       <ul className="list-none pl-0 space-y-1.5">
                         {it.bullets.slice(0, 3).map((b, bi) => (
                           <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">✓</span>
+                            <span className="text-primary mt-1">&#10003;</span>
                             <span>{b}</span>
                           </li>
                         ))}
@@ -1782,10 +1779,7 @@ const Veda5Center = () => {
                   <button
                     onClick={() => setFacilityLightboxOpen(false)}
                     className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                    aria-label="Close"
-                  >
-                    ✕
-                  </button>
+                    aria-label="Close">X</button>
                 </div>
 
                 <div className="flex md:hidden items-center justify-between mt-4">
@@ -1823,7 +1817,7 @@ const Veda5Center = () => {
                   </div>
                   <div>
                     <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">VEDA5 Leadership</h3>
-                    <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>Ayurveda • Yoga • Naturopathy</p>
+                    <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>Ayurveda � Yoga � Naturopathy</p>
                     <p className="text-xs md:text-sm mt-1 text-primary/70">Guided by experienced wellness experts</p>
                   </div>
                 </div>
@@ -1860,7 +1854,7 @@ const Veda5Center = () => {
                   <ul className="space-y-2.5">
                     {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1">&bull;</span>
                         <span>{it}</span>
                       </li>
                     ))}
@@ -1921,12 +1915,12 @@ const Veda5Center = () => {
                             </h4>
                             {reviewsByCity[reviewCity][currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                ✓ Verified
+                                ? Verified
                               </span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                            {reviewsByCity[reviewCity][currentReview].location} {reviewsByCity[reviewCity][currentReview].condition && `• ${reviewsByCity[reviewCity][currentReview].condition}`}
+                            {reviewsByCity[reviewCity][currentReview].location} {reviewsByCity[reviewCity][currentReview].condition && `� ${reviewsByCity[reviewCity][currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2102,19 +2096,19 @@ const Veda5Center = () => {
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>International health insurance may cover Ayurvedic wellness treatments</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Guests should verify eligibility and claim procedures with providers</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>VEDA5 supplies detailed medical documentation, reports, and invoices</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Support provided for claims and reimbursement processes</span>
                   </li>
                 </ul>
@@ -2131,19 +2125,19 @@ const Veda5Center = () => {
                 </div>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Accepts international cards, bank transfers, and cash payments</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Detailed pricing via tariff brochure or reservations team</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Early booking discounts, seasonal offers, and special promotions</span>
                   </li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>Group bookings, extended stays, and payment plans for longer programs</span>
                   </li>
                 </ul>
@@ -2444,7 +2438,9 @@ const Veda5Center = () => {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
@@ -2574,3 +2570,6 @@ const Veda5Center = () => {
 };
 
 export default Veda5Center;
+
+
+

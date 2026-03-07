@@ -543,7 +543,7 @@ export default function KairaliHeritage() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\/5\)/);
             if (ratingMatch) {
@@ -1056,10 +1056,7 @@ export default function KairaliHeritage() {
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             {/* Mobile prev/next pills */}
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -1198,7 +1195,7 @@ export default function KairaliHeritage() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {p.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-green-600 mt-1">✓</span>
+                              <span className="text-green-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1259,7 +1256,7 @@ export default function KairaliHeritage() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {p.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-blue-600 mt-1">✓</span>
+                              <span className="text-blue-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1394,7 +1391,7 @@ export default function KairaliHeritage() {
                           <ul className="list-none pl-0 space-y-1.5">
                             {c.bullets.slice(0, 3).map((b, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1542,7 +1539,7 @@ export default function KairaliHeritage() {
                           <ul className="mt-3 space-y-1.5">
                             {s.bullets.map((b, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                                <span className="text-primary mt-1">•</span>
+                                <span className="text-primary mt-1">&bull;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1868,7 +1865,7 @@ export default function KairaliHeritage() {
                             </h4>
                             {reviews[currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold">
-                                ✓ Verified
+                                ? Verified
                               </span>
                             )}
                           </div>
@@ -2049,7 +2046,7 @@ export default function KairaliHeritage() {
                   <ul className="space-y-3">
                     {insuranceCoverage.map((b, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                        <span className="text-green-600 font-bold mt-0.5">✓</span>
+                        <span className="text-green-600 font-bold mt-0.5">&#10003;</span>
                         <span className="leading-relaxed">{b}</span>
                       </li>
                     ))}
@@ -2067,7 +2064,7 @@ export default function KairaliHeritage() {
                   <ul className="space-y-3">
                     {paymentOptions.map((b, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm md:text-base" style={{ color: '#7F543D' }}>
-                        <span className="text-blue-600 font-bold mt-0.5">✓</span>
+                        <span className="text-blue-600 font-bold mt-0.5">&#10003;</span>
                         <span className="leading-relaxed">{b}</span>
                       </li>
                     ))}
@@ -2273,7 +2270,9 @@ export default function KairaliHeritage() {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && !isJumpModalOpen && (
@@ -2424,10 +2423,7 @@ export default function KairaliHeritage() {
               <button
                 onClick={() => setFacilityLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2449,3 +2445,6 @@ export default function KairaliHeritage() {
     </div>
   );
 }
+
+
+

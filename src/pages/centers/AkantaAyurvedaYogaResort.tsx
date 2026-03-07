@@ -396,7 +396,7 @@ export default function AkantaAyurvedaYogaResort() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\/5\)/);
             if (ratingMatch) {
@@ -767,7 +767,7 @@ export default function AkantaAyurvedaYogaResort() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Akanta Ayurveda and Yoga Resort</h1>
-                <p className="text-xl mb-4 opacity-90">Ayurveda Hospital Licensed • Yoga & Meditation Retreat</p>
+                <p className="text-xl mb-4 opacity-90">Ayurveda Hospital Licensed � Yoga & Meditation Retreat</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Cherai Beach, Kochi, Kerala</span>
@@ -860,7 +860,7 @@ export default function AkantaAyurvedaYogaResort() {
                   )}
                 </div>
 
-                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2�2) */}
                 <div className="flex flex-col md:flex-row gap-3 mb-6" id="gallery">
                   {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
                   <div
@@ -878,7 +878,7 @@ export default function AkantaAyurvedaYogaResort() {
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
-                  {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                  {/* Small Images - Right Side - Fixed 2�2 Grid */}
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                     {thumbnailImages.slice(1, 5).map((img, idx) => {
                       const actualIndex = images.indexOf(img);
@@ -1037,7 +1037,7 @@ export default function AkantaAyurvedaYogaResort() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1084,7 +1084,7 @@ export default function AkantaAyurvedaYogaResort() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1210,7 +1210,7 @@ export default function AkantaAyurvedaYogaResort() {
                           <ul className="list-none pl-0 space-y-1.5">
                             {it.bullets.map((b, bi) => (
                               <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1354,7 +1354,7 @@ export default function AkantaAyurvedaYogaResort() {
                           <ul className="space-y-1.5 md:space-y-2">
                             {step.bullets.map((bullet, bi) => (
                               <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{bullet}</span>
                               </li>
                             ))}
@@ -1755,12 +1755,12 @@ export default function AkantaAyurvedaYogaResort() {
                               </h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ✓ Verified
+                                  ? Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `� ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -1962,7 +1962,7 @@ export default function AkantaAyurvedaYogaResort() {
                     <ul className="space-y-3">
                       {card.bullets.map((bullet, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-2 text-sm text-justify" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">✓</span>
+                          <span className="text-primary mt-1">&#10003;</span>
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -1989,7 +1989,7 @@ export default function AkantaAyurvedaYogaResort() {
                       <ul className="space-y-2">
                         {insuranceData.cards[2].bullets.map((bullet, bIdx) => (
                           <li key={bIdx} className="flex items-start gap-2 text-sm text-justify" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">✓</span>
+                            <span className="text-primary mt-1">&#10003;</span>
                             <span>{bullet}</span>
                           </li>
                         ))}
@@ -2038,7 +2038,7 @@ export default function AkantaAyurvedaYogaResort() {
                         <ul className="space-y-2">
                           {faq.bullets.map((bullet, bIdx) => (
                             <li key={bIdx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{bullet}</span>
                             </li>
                           ))}
@@ -2201,7 +2201,9 @@ export default function AkantaAyurvedaYogaResort() {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
@@ -2591,3 +2593,5 @@ export default function AkantaAyurvedaYogaResort() {
     </div>
   );
 }
+
+

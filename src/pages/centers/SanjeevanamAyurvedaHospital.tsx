@@ -2378,3 +2378,4 @@ export default function SanjeevanamAyurvedaHospital() {
     </div>
   );
 }
+

@@ -391,7 +391,7 @@ export default function NamasteDwaar() {
 
             const parts = content.split("-");
             // Assuming format "Name - Location" or "Name, Location" (Review header had combo)
-            // The file format is "**Sophia Müller - Berlin, Germany**"
+            // The file format is "**Sophia M�ller - Berlin, Germany**"
             const name = parts[0].trim();
             const location = parts.length > 1 ? parts.slice(1).join("-").trim() : "";
 
@@ -457,7 +457,7 @@ export default function NamasteDwaar() {
       .catch(() => {
         setAwardsList([
           { title: "Best Spa & Wellness Property", desc: "Recognized for excellence in spa and wellness services." },
-          { title: "Hotel of the Year – Mid Market", desc: "Awarded for hospitality leadership and guest satisfaction." },
+          { title: "Hotel of the Year � Mid Market", desc: "Awarded for hospitality leadership and guest satisfaction." },
           { title: "Best New Hospitality Product", desc: "Celebrated as an innovative new hospitality product." },
           { title: "Appreciation for Promoting Wellness Tourism", desc: "Appreciated for promoting wellness tourism in the region." },
           { title: "A Mark of Professional Excellence", desc: "Affiliated with leading industry bodies for professional excellence." }
@@ -1174,7 +1174,7 @@ export default function NamasteDwaar() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {item.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-green-600 mt-1">✓</span>
+                              <span className="text-green-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1232,7 +1232,7 @@ export default function NamasteDwaar() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {item.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                              <span className="text-blue-600 mt-1">✓</span>
+                              <span className="text-blue-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1357,7 +1357,7 @@ export default function NamasteDwaar() {
                           <ul className="list-none pl-0 space-y-1.5">
                             {item.bullets.slice(0, 3).map((b, bi) => (
                               <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1508,7 +1508,7 @@ export default function NamasteDwaar() {
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, i) => (
                               <li key={i} className="flex items-start gap-2 text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                                <span className="text-primary mt-1">•</span>
+                                <span className="text-primary mt-1">&bull;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1797,7 +1797,7 @@ export default function NamasteDwaar() {
                     <ul className="space-y-2.5">
                       {(teamGroups[currentTeamSlide]?.items || []).slice(0, 12).map((it, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-primary mt-1">&bull;</span>
                           <span>{renderInlineBold(it)}</span>
                         </li>
                       ))}
@@ -1851,7 +1851,7 @@ export default function NamasteDwaar() {
                           <div className="flex items-center gap-2 mb-1">
                             <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
                             {testimonials[currentReview].verified && (
-                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">? Verified</span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
@@ -2154,7 +2154,7 @@ export default function NamasteDwaar() {
                   "Assistance with claim processing and paperwork when applicable.",
                 ].map((b, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>{b}</span>
                   </li>
                 ))}
@@ -2178,7 +2178,7 @@ export default function NamasteDwaar() {
                   "Early booking discounts and seasonal promotional offers available periodically.",
                 ].map((b, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                    <span className="text-primary mt-1">✓</span>
+                    <span className="text-primary mt-1">&#10003;</span>
                     <span>{b}</span>
                   </li>
                 ))}
@@ -2473,7 +2473,9 @@ export default function NamasteDwaar() {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
@@ -2670,10 +2672,7 @@ export default function NamasteDwaar() {
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2730,10 +2729,7 @@ export default function NamasteDwaar() {
               <button
                 onClick={() => setFacilityLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2755,4 +2751,7 @@ export default function NamasteDwaar() {
     </div>
   );
 }
+
+
+
 

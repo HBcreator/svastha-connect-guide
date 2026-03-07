@@ -1306,7 +1306,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1350,7 +1350,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1472,7 +1472,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1611,7 +1611,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, bi) => (
                               <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -1844,7 +1844,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                       {founder?.degrees && founder.degrees.length > 0 && (
-                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" � ")}</p>
                       )}
                       {founder?.role && <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>}
                     </div>
@@ -1884,7 +1884,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <ul className="space-y-2.5">
                       {(teamGroups[currentTeamSlide]?.items || []).map((it, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">•</span>
+                          <span className="text-primary mt-1">&bull;</span>
                           <span>{renderInlineBold(it)}</span>
                         </li>
                       ))}
@@ -1941,11 +1941,11 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                             <div className="flex items-center gap-2 mb-1">
                               <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
                               {testimonials[currentReview].verified && (
-                                <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">✓ Verified</span>
+                                <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">? Verified</span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `� ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2126,7 +2126,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <ul className="space-y-3">
                       {insuranceBullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">✓</span>
+                          <span className="text-primary mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -2147,7 +2147,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
                     <ul className="space-y-3">
                       {paymentBullets.map((b, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-primary mt-1">✓</span>
+                          <span className="text-primary mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -2365,7 +2365,9 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {showFullGallery && (
@@ -2435,10 +2437,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2495,10 +2494,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
               <button
                 onClick={() => setFacilityLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2639,3 +2635,6 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
 };
 
 export default AyurSomaAyurvedaRoyalRetreat;
+
+
+

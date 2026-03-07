@@ -1188,7 +1188,7 @@ export default function AyushiAyurvedicRetreat() {
                   )}
                 </div>
 
-                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2�2) */}
                 {thumbnailImages.length > 0 && (
                   <div className="flex flex-col md:flex-row gap-3 mb-6">
                     {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
@@ -1207,7 +1207,7 @@ export default function AyushiAyurvedicRetreat() {
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                     </div>
 
-                    {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                    {/* Small Images - Right Side - Fixed 2�2 Grid */}
                     <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                       {thumbnailImages.slice(1, 5).map((img, idx) => {
                         const actualIndex = images.indexOf(img);
@@ -1370,7 +1370,7 @@ export default function AyushiAyurvedicRetreat() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1416,7 +1416,7 @@ export default function AyushiAyurvedicRetreat() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1546,7 +1546,7 @@ export default function AyushiAyurvedicRetreat() {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1704,7 +1704,7 @@ export default function AyushiAyurvedicRetreat() {
                           <ul className="mt-3 space-y-1.5">
                             {step.bullets.map((b, bi) => (
                               <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                                <span className="text-primary mt-1">✓</span>
+                                <span className="text-primary mt-1">&#10003;</span>
                                 <span>{b}</span>
                               </li>
                             ))}
@@ -2008,19 +2008,19 @@ export default function AyushiAyurvedicRetreat() {
                     </p>
                     <ul className="space-y-2.5">
                       <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1">&bull;</span>
                         <span><strong>Lead Physician:</strong> Dr. Divya Prakash - Your healing is personally designed and supervised by our expert lead Ayurvedic doctor, renowned for her deep expertise and nurturing approach.</span>
                       </li>
                       <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1">&bull;</span>
                         <span><strong>Supporting Doctors:</strong> Dr. Hazna and Dr. S. Shaheen provide specialized support for a range of health conditions.</span>
                       </li>
                       <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1">&bull;</span>
                         <span><strong>Skilled Therapists:</strong> Highly trained therapists who perform every treatment with precision, care, and a compassionate touch.</span>
                       </li>
                       <li className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">•</span>
+                        <span className="text-primary mt-1">&bull;</span>
                         <span><strong>Support Team:</strong> Led by our dedicated manager Subin, our team works together to ensure you feel cared for 24/7.</span>
                       </li>
                     </ul>
@@ -2072,13 +2072,13 @@ export default function AyushiAyurvedicRetreat() {
                             </h4>
                             {testimonials[currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                ✓ Verified
+                                ? Verified
                               </span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                             {testimonials[currentReview].location}{" "}
-                            {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            {testimonials[currentReview].condition && `� ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2287,7 +2287,7 @@ export default function AyushiAyurvedicRetreat() {
                         className="flex items-start gap-2 text-sm"
                         style={{ color: "#7F543D" }}
                       >
-                        <span className="text-primary mt-1">✓</span>
+                        <span className="text-primary mt-1">&#10003;</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -2312,7 +2312,7 @@ export default function AyushiAyurvedicRetreat() {
                         className="flex items-start gap-2 text-sm"
                         style={{ color: "#7F543D" }}
                       >
-                        <span className="text-primary mt-1">✓</span>
+                        <span className="text-primary mt-1">&#10003;</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -2691,7 +2691,9 @@ export default function AyushiAyurvedicRetreat() {
         </button>
       )}
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Full Gallery Modal */}
@@ -2783,10 +2785,7 @@ export default function AyushiAyurvedicRetreat() {
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2849,10 +2848,7 @@ export default function AyushiAyurvedicRetreat() {
               <button
                 onClick={() => setFacilityLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
               <Button
@@ -2874,3 +2870,6 @@ export default function AyushiAyurvedicRetreat() {
     </div>
   );
 }
+
+
+

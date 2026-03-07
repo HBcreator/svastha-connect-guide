@@ -364,7 +364,7 @@ export default function Somatheeram() {
           // Review Body (Text paragraphs or bullets)
           // Avoid adding the rating line itself to the body if the regex above didn't catch it perfectly
           if (!line.includes("Rating:")) {
-            current.review += (current.review ? "\n\n" : "") + line.replace(/^\*+\s*/, "• ");
+            current.review += (current.review ? "\n\n" : "") + line.replace(/^\*+\s*/, "� ");
           }
         }
 
@@ -1103,10 +1103,7 @@ export default function Somatheeram() {
               <button
                 onClick={() => setGalleryLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
 
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -1212,7 +1209,7 @@ export default function Somatheeram() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1261,7 +1258,7 @@ export default function Somatheeram() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1380,7 +1377,7 @@ export default function Somatheeram() {
                       <ul className="list-none pl-0 space-y-1.5">
                         {item.bullets.slice(0, 3).map((b, bi) => (
                           <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">✓</span>
+                            <span className="text-primary mt-1">&#10003;</span>
                             <span>{b}</span>
                           </li>
                         ))}
@@ -1520,7 +1517,7 @@ export default function Somatheeram() {
                       <ul className="mt-3 space-y-1.5">
                         {s.bullets.map((b, bi) => (
                           <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">•</span>
+                            <span className="text-primary mt-1">&bull;</span>
                             <span>{b}</span>
                           </li>
                         ))}
@@ -1885,10 +1882,7 @@ export default function Somatheeram() {
               <button
                 onClick={() => setLightboxOpen(false)}
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                aria-label="Close"
-              >
-                ✕
-              </button>
+                aria-label="Close">X</button>
             </div>
 
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -1956,7 +1950,7 @@ export default function Somatheeram() {
                           </h4>
                           {(patientReviews[currentReviewIndex] as any).verified && (
                             <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                              ✓ Verified
+                              ? Verified
                             </span>
                           )}
                         </div>
@@ -2143,10 +2137,10 @@ export default function Somatheeram() {
                   <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
                 </div>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>International policies may cover Ayurvedic treatments</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Documentation provided for claim procedures</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Support with major insurance providers</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Check eligibility with your insurer</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>International policies may cover Ayurvedic treatments</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Documentation provided for claim procedures</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Support with major insurance providers</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Check eligibility with your insurer</span></li>
                 </ul>
               </CardContent>
             </Card>
@@ -2160,10 +2154,10 @@ export default function Somatheeram() {
                   <h3 className="text-xl font-bold text-primary">Payment Options</h3>
                 </div>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Bank transfers, credit cards, and cash</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Transparent pricing with detailed tariff</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>Early booking discounts available</span></li>
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">✓</span><span>European service office assistance</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Bank transfers, credit cards, and cash</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Transparent pricing with detailed tariff</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Early booking discounts available</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>European service office assistance</span></li>
                 </ul>
               </CardContent>
             </Card>
@@ -2420,7 +2414,9 @@ export default function Somatheeram() {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
@@ -2557,4 +2553,7 @@ export default function Somatheeram() {
     </div>
   );
 }
+
+
+
 

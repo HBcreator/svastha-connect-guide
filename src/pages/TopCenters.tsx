@@ -79,7 +79,7 @@ const TopCenters = () => {
         "Holistic Wellness Programs",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       locationText: "Nelamangala, Bangalore, India",
@@ -100,7 +100,7 @@ const TopCenters = () => {
         "Yoga & Meditation Therapy",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "Premium Wellness Retreat",
       image: "/Center Images/HimVeda/Thumb.jpeg",
       locationText: "Dharamshala, Himachal Pradesh, India",
@@ -123,7 +123,7 @@ const TopCenters = () => {
         "Wellness Retreat",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
       locationText: "33 Ayurveda Street, After Tipa, Dharamkot Rd, Dharamkot, Dharamshala, Himachal Pradesh 176216",
@@ -147,7 +147,7 @@ const TopCenters = () => {
         "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
       specialties: ["Panchakarma", "Royal Retreat", "Beachfront Wellness", "Rejuvenation"],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$$",
       image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
       slug: "kerala/ayursoma" as string | undefined,
@@ -213,7 +213,7 @@ const TopCenters = () => {
         "Wellness Retreat Programs",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
       locationText: "Rishikesh, Uttarakhand, India",
@@ -232,7 +232,7 @@ const TopCenters = () => {
         "Personalized Wellness Planning",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       locationText: "South Goa, India",
@@ -302,7 +302,7 @@ const TopCenters = () => {
       description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
       specialties: ["Ayurveda", "Panchakarma", "Wellness"],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
       slug: "kerala/ayurmana" as string | undefined,
@@ -314,7 +314,7 @@ const TopCenters = () => {
       description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
       specialties: ["Ayurveda", "Panchakarma", "Rejuvenation"],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
       locationText: "Edakkunnam, Keralak",
@@ -481,7 +481,7 @@ const TopCenters = () => {
       description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
       specialties: ["Ayurveda", "Panchakarma", "Wellness"],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
       locationText: "Kerala, India",
@@ -583,7 +583,7 @@ const TopCenters = () => {
         "Beauty & Anti-Aging Therapies",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
       locationText: "Mysuru (Mysore), Karnataka, India",
@@ -605,7 +605,7 @@ const TopCenters = () => {
         "Lifestyle Disorders Treatment",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 500,
       priceRange: "$$$",
       image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
       locationText: "Udupi, Karnataka, India",
@@ -746,7 +746,7 @@ const TopCenters = () => {
                     <div className="flex items-center gap-1">
                       <Star className="text-yellow-500 fill-yellow-500" size={16} />
                       <span className="font-semibold">{center.rating}</span>
-                      <span className="text-xs text-muted-foreground">({center.reviews} reviews)</span>
+                      <span className="text-xs text-muted-foreground">({center.reviews}{center.reviews >= 500 ? "+" : ""} reviews)</span>
                     </div>
                     <span className="text-muted-foreground font-medium">{center.priceRange}</span>
                   </div>
@@ -799,3 +799,4 @@ const TopCenters = () => {
 };
 
 export default TopCenters;
+

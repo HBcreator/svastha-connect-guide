@@ -2390,3 +2390,4 @@ export default function KairaliHealingVillage() {
     </div >
   )
 }
+

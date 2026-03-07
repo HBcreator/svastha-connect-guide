@@ -2584,3 +2584,4 @@ export default function KrishnenduAyurvedaHospital() {
     </div>
   );
 }
+

@@ -387,7 +387,7 @@ export default function SOUKYACenter() {
     }
   ];
 
-  // SOUKYA gallery images (1–30)
+  // SOUKYA gallery images (1�30)
   const images = [
     "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/1%20Soukya.jpg",
     "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/2%20Soukya.jpg",
@@ -423,12 +423,12 @@ export default function SOUKYACenter() {
 
   const awards = [
     {
-      title: "Condé Nast Johansens – Recommended Retreat",
+      title: "Cond� Nast Johansens � Recommended Retreat",
       description: "Officially recognized for exceptional hospitality and world-class wellness services by one of the world's most trusted authorities.",
       image: "/Center Images/SOUKYA/Awards/Award 1.jpg"
     },
     {
-      title: "Condé Nast Traveller – Award Winner",
+      title: "Cond� Nast Traveller � Award Winner",
       description: "Winner of the prestigious global travel publication award for celebrating excellence in luxury, wellness, and hospitality.",
       image: "/Center Images/SOUKYA/Awards/Award 2.jpg"
     },
@@ -676,7 +676,7 @@ export default function SOUKYACenter() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\/5\)/);
             if (ratingMatch) {
@@ -1211,7 +1211,7 @@ export default function SOUKYACenter() {
                   )}
                 </div>
 
-                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2�2) */}
                 <div className="flex flex-col md:flex-row gap-3 mb-6">
                   {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
                   <div
@@ -1229,7 +1229,7 @@ export default function SOUKYACenter() {
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
-                  {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                  {/* Small Images - Right Side - Fixed 2�2 Grid */}
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                     {thumbnailImages.slice(1, 5).map((img, idx) => {
                       const actualIndex = images.indexOf(img);
@@ -1387,7 +1387,7 @@ export default function SOUKYACenter() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1434,7 +1434,7 @@ export default function SOUKYACenter() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1">✓</span>
+                          <span className="text-blue-600 mt-1">&#10003;</span>
                           <span>{b}</span>
                         </li>
                       ))}
@@ -1558,7 +1558,7 @@ export default function SOUKYACenter() {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -2283,12 +2283,12 @@ export default function SOUKYACenter() {
                               </h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ✓ Verified
+                                  ? Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `� ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2644,19 +2644,19 @@ export default function SOUKYACenter() {
                   </div>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Serious medical conditions covered by Indian Insurance providers</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Cashless treatment facility available for eligible conditions</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Support with major insurance providers in India</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>International patients can check with their insurance providers</span>
                     </li>
                   </ul>
@@ -2675,19 +2675,19 @@ export default function SOUKYACenter() {
                   </div>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Payment plans available for eligible patients</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Financial assistance programs for qualifying cases</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Multiple payment methods accepted (cards, bank transfer, etc.)</span>
                     </li>
                     <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-primary mt-1">&#10003;</span>
                       <span>Transparent pricing with no hidden costs</span>
                     </li>
                   </ul>
@@ -2982,7 +2982,9 @@ export default function SOUKYACenter() {
         </div>
       </div>
 
-      <Footer />
+      <div className="[&>footer]:mt-0">
+        <Footer />
+      </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) - Hidden when lightbox/gallery is open */}
@@ -3087,10 +3089,7 @@ export default function SOUKYACenter() {
                 <button
                   onClick={() => setLightboxOpen(false)}
                   className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
+                  aria-label="Close">X</button>
               </div>
               <div className="flex md:hidden items-center justify-between mt-4">
                 <Button
@@ -3151,10 +3150,7 @@ export default function SOUKYACenter() {
                 <button
                   onClick={() => setFacilityLightboxOpen(false)}
                   className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
-                  aria-label="Close"
-                >
-                  ✕
-                </button>
+                  aria-label="Close">X</button>
               </div>
               <div className="flex md:hidden items-center justify-between mt-4">
                 <Button
@@ -3336,7 +3332,7 @@ export default function SOUKYACenter() {
                   className="flex items-start gap-3 p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all group hover:border-blue-200"
                 >
                   <div className="w-6 h-6 rounded-full bg-blue-500 text-white flex items-center justify-center flex-shrink-0 text-xs mt-0.5 group-hover:rotate-12 transition-transform">
-                    ✓
+                    ?
                   </div>
                   <span className="text-sm md:text-base text-primary/90 font-semibold">{b}</span>
                 </div>
@@ -3362,3 +3358,6 @@ export default function SOUKYACenter() {
     </div >
   );
 }
+
+
+

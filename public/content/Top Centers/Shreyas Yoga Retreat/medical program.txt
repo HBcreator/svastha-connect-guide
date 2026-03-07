@@ -2,7 +2,7 @@
 
 Targeted wellness protocols designed to address specific lifestyle conditions through the integrated wisdom of Yoga, Ayurveda, and Naturopathy.
 
-**Stress & Burnout Management**
+**Stress & Burnout**
 
 This is a comprehensive program designed to heal the nervous system from the effects of chronic stress and professional burnout. It provides a sanctuary for deep rest and effective, lasting recovery.
 
@@ -10,7 +10,7 @@ This is a comprehensive program designed to heal the nervous system from the eff
 *   Focuses on balancing the body's stress-response system and improving sleep quality naturally.
 *   Empowers you with mindfulness tools and techniques to build resilience against future stress.
 
-**Insomnia & Sleep Restoration**
+**Insomnia & Sleep**
 
 This is a specialized program designed to address the root causes of poor sleep. It uses a range of holistic therapies to reset your natural sleep-wake cycle (*circadian rhythm*).
 
@@ -18,7 +18,7 @@ This is a specialized program designed to address the root causes of poor sleep.
 *   Integrates specific Ayurvedic herbs and therapies known to calm the mind and promote restful sleep.
 *   Includes personalized lifestyle and dietary guidance to help you cultivate healthy, long-term sleep hygiene.
 
-**Hypertension & Cardiac Wellness Support**
+**Hypertension**
 
 This is a gentle and supportive program designed to help manage high blood pressure and improve cardiovascular health. It focuses on the primary lifestyle factors that contribute to these conditions.
 
@@ -34,7 +34,7 @@ This program is designed to treat common digestive ailments like IBS, acidity, a
 *   Combines this with a personalized Ayurvedic and naturopathic diet of organic, easy-to-digest foods.
 *   Includes gentle detoxification therapies to cleanse the digestive tract and reduce inflammation.
 
-**Women's Health & Hormonal Balance**
+**Women's Health**
 
 This is a supportive program designed to help manage lifestyle-related hormonal imbalances. It provides natural and holistic support for conditions like PMS, perimenopause, and stress-induced cycle irregularities.
 
@@ -42,7 +42,7 @@ This is a supportive program designed to help manage lifestyle-related hormonal 
 *   Integrates balancing Ayurvedic herbs and diet to help regulate the menstrual cycle naturally.
 *   This is a nurturing and empowering program for women seeking to harmonize their natural rhythms.
 
-**Chronic Pain & Stiffness Management**
+**Chronic Pain**
 
 This program is designed to address lifestyle-related chronic pain, such as back pain, neck tension, and general stiffness. It focuses on improving flexibility, reducing inflammation, and correcting posture.
 
@@ -50,7 +50,7 @@ This program is designed to address lifestyle-related chronic pain, such as back
 *   Integrates potent Ayurvedic therapies with anti-inflammatory properties to soothe sore muscles and joints.
 *   Empowers you with the knowledge of correct posture and movement to prevent future recurrence.
 
-**Type 2 Diabetes Management Support**
+**Diabetes Management**
 
 This is a holistic program designed to support the management of Type 2 Diabetes. It focuses on improving insulin sensitivity and regulating blood sugar levels through natural, lifestyle-based interventions.
 
@@ -58,7 +58,7 @@ This is a holistic program designed to support the management of Type 2 Diabetes
 *   Includes a carefully managed diet of low-glycemic, high-fiber organic foods.
 *   This program is designed to work in conjunction with your medical advice to improve overall health outcomes.
 
-**Healthy Aging & Mobility**
+**Aging & Mobility**
 
 This program is specifically designed for seniors or those looking to maintain vitality and mobility as they age. It is a gentle yet effective approach to preserving strength, balance, and cognitive function.
 
@@ -66,7 +66,7 @@ This program is specifically designed for seniors or those looking to maintain v
 *   Integrates nourishing Ayurvedic therapies (*Brimhana*) to strengthen tissues and prevent degeneration.
 *   Includes mind-stimulating practices like meditation to support cognitive sharpness and memory.
 
-**Postural Alignment & Correction**
+**Alignment & Correction**
 
 This is a targeted program designed for those suffering from the effects of a sedentary lifestyle and poor posture. It works to realign the body, release chronic tension, and build core strength.
 
@@ -74,7 +74,7 @@ This is a targeted program designed for those suffering from the effects of a se
 *   Integrates deep tissue Ayurvedic massages to release chronic knots and muscular imbalances.
 *   It is a highly effective program for preventing long-term spinal issues and relieving posture-related pain.
 
-**Anxiety & Mind Management**
+**Anxiety Management**
 
 This program is specifically designed to manage the symptoms of anxiety. It provides you with a set of powerful tools from the yogic tradition to calm a racing mind and regulate the nervous system.
 
@@ -82,7 +82,7 @@ This program is specifically designed to manage the symptoms of anxiety. It prov
 *   Integrates grounding yoga practices and mindfulness techniques to keep you centered in the present moment.
 *   This is an empowering program that teaches you how to actively manage your own mental state.
 
-**Post-Viral Fatigue Recovery**
+**Fatigue Recovery**
 
 This is a gentle and restorative program for those recovering from viral illnesses, including long COVID. It is designed to gently rebuild energy levels and support the respiratory and immune systems.
 
@@ -90,7 +90,7 @@ This is a gentle and restorative program for those recovering from viral illness
 *   Integrates powerful immune-boosting (*Ojas* building) Ayurvedic herbs and a nutrient-dense diet.
 *   This is a slow, supportive, and deeply nourishing program designed for sustainable recovery.
 
-**Grief & Emotional Release**
+**Grief Release**
 
 This is a compassionate and supportive program for those navigating the difficult process of grief or emotional trauma. It provides a safe and nurturing space to process emotions and begin to heal.
 

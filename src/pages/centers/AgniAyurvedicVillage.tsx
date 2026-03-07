@@ -1696,7 +1696,7 @@ export default function AgniAyurvedicVillage() {
                 <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Agni Ayurvedic Village Resort</div>
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                   <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
-                  <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">✕</button>
+                  <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">X</button>
                 </div>
                 <div className="flex md:hidden items-center justify-between mt-4">
                   <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
@@ -2369,3 +2369,5 @@ export default function AgniAyurvedicVillage() {
     </div>
   );
 }
+
+
