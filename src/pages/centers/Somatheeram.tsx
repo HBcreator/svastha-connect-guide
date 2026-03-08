@@ -1950,7 +1950,7 @@ export default function Somatheeram() {
                           </h4>
                           {(patientReviews[currentReviewIndex] as any).verified && (
                             <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                              ? Verified
+                              &#10003; Verified
                             </span>
                           )}
                         </div>
@@ -2553,6 +2553,7 @@ export default function Somatheeram() {
     </div>
   );
 }
+
 
 
 

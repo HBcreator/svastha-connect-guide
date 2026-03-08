@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+ï»¿import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -767,7 +767,7 @@ export default function AkantaAyurvedaYogaResort() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Akanta Ayurveda and Yoga Resort</h1>
-                <p className="text-xl mb-4 opacity-90">Ayurveda Hospital Licensed • Yoga & Meditation Retreat</p>
+                <p className="text-xl mb-4 opacity-90">Ayurveda Hospital Licensed - Yoga & Meditation Retreat</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Cherai Beach, Kochi, Kerala</span>
@@ -860,7 +860,7 @@ export default function AkantaAyurvedaYogaResort() {
                   )}
                 </div>
 
-                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2x2) */}
                 <div className="flex flex-col md:flex-row gap-3 mb-6" id="gallery">
                   {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
                   <div
@@ -878,7 +878,7 @@ export default function AkantaAyurvedaYogaResort() {
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                   </div>
 
-                  {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                  {/* Small Images - Right Side - Fixed 2x2 Grid */}
                   <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                     {thumbnailImages.slice(1, 5).map((img, idx) => {
                       const actualIndex = images.indexOf(img);
@@ -1755,12 +1755,12 @@ export default function AkantaAyurvedaYogaResort() {
                               </h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ? Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2593,5 +2593,7 @@ export default function AkantaAyurvedaYogaResort() {
     </div>
   );
 }
+
+
 
 

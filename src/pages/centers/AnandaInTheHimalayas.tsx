@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+ï»¿import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -220,7 +220,7 @@ const AnandaInTheHimalayas = () => {
 
   const awards = [
     {
-      title: "Condé Nast Traveller & Travel + Leisure",
+      title: "Conde Nast Traveller & Travel + Leisure",
       description: "Recognized among the world's most inspiring wellness destinations.",
       image: "/Center Images/Ananda in the Himalayas/Awards/Nast Traveller.png",
     },
@@ -1498,7 +1498,7 @@ const AnandaInTheHimalayas = () => {
                           <ul className="mt-2 space-y-1">
                             {step.bullets.map((b, bi) => (
                               <li key={bi} className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                                • {b}
+                                <span className="text-primary">&bull;</span> {b}
                               </li>
                             ))}
                           </ul>
@@ -1742,7 +1742,7 @@ const AnandaInTheHimalayas = () => {
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                       {founder?.degrees && founder.degrees.length > 0 && (
-                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" | ")}</p>
                       )}
                       {founder?.role && (
                         <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>
@@ -1848,12 +1848,12 @@ const AnandaInTheHimalayas = () => {
                               </h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ? Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].location} {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2472,6 +2472,9 @@ const AnandaInTheHimalayas = () => {
 };
 
 export default AnandaInTheHimalayas;
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+ï»¿import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -1025,14 +1025,14 @@ export default function AyurmanaCenter() {
       description: "Official recognition supporting authenticity, standards, and trusted Ayurvedic practice.",
     },
     {
-      title: "God's Own Country – Kerala Tourism",
+      title: "God's Own Country - Kerala Tourism",
       image: "/Center Images/Ayurmana center/Awards/Award 3 (gods-own-country).webp",
-      description: "Association with Kerala’s globally recognized wellness and tourism identity.",
+      description: "Association with Kerala's globally recognized wellness and tourism identity.",
     },
     {
       title: "Green Leaf Accreditation",
       image: "/Center Images/Ayurmana center/Awards/Award 4 (Greenleaf-accreditation.png).webp",
-      description: "Kerala Tourism’s highest Ayurvedic certification for authentic treatments and excellence.",
+      description: "Kerala Tourism's highest Ayurvedic certification for authentic treatments and excellence.",
     },
     {
       title: "Tripadvisor Recognition",
@@ -2283,13 +2283,13 @@ export default function AyurmanaCenter() {
                               <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ? Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                               {testimonials[currentReview].location}{" "}
-                              {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -3015,6 +3015,9 @@ export default function AyurmanaCenter() {
     </div>
   );
 }
+
+
+
 
 
 

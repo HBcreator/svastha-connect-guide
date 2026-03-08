@@ -1956,7 +1956,7 @@ const YanCureYogaRetreat = () => {
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                       {founder?.degrees && founder.degrees.length > 0 && (
-                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" | ")}</p>
                       )}
                       {founder?.role && <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>}
                     </div>
@@ -2044,12 +2044,12 @@ const YanCureYogaRetreat = () => {
                           <div className="flex items-center gap-2 mb-1">
                             <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
                             {testimonials[currentReview].verified && (
-                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">? Verified</span>
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">&#10003; Verified</span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                             {testimonials[currentReview].location}{" "}
-                            {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2710,6 +2710,7 @@ const YanCureYogaRetreat = () => {
 };
 
 export default YanCureYogaRetreat;
+
 
 
 

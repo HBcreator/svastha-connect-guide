@@ -2001,7 +2001,7 @@ const AyuskamaAyurveda = () => {
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                       {founder?.degrees && founder.degrees.length > 0 && (
-                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                        <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" | ")}</p>
                       )}
                       {founder?.role && (
                         <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>
@@ -2111,12 +2111,12 @@ const AyuskamaAyurveda = () => {
                               </h4>
                               {patientReviews[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ? Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `• ${patientReviews[currentReview].condition}`}
+                              {patientReviews[currentReview].location} {patientReviews[currentReview].condition && ` - ${patientReviews[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2816,6 +2816,7 @@ const AyuskamaAyurveda = () => {
 };
 
 export default AyuskamaAyurveda;
+
 
 
 

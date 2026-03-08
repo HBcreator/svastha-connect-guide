@@ -1915,12 +1915,12 @@ const Veda5Center = () => {
                             </h4>
                             {reviewsByCity[reviewCity][currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                ? Verified
+                                &#10003; Verified
                               </span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                            {reviewsByCity[reviewCity][currentReview].location} {reviewsByCity[reviewCity][currentReview].condition && `• ${reviewsByCity[reviewCity][currentReview].condition}`}
+                            {reviewsByCity[reviewCity][currentReview].location} {reviewsByCity[reviewCity][currentReview].condition && ` - ${reviewsByCity[reviewCity][currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2570,6 +2570,7 @@ const Veda5Center = () => {
 };
 
 export default Veda5Center;
+
 
 
 

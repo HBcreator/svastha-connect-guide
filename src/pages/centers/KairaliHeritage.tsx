@@ -1865,7 +1865,7 @@ export default function KairaliHeritage() {
                             </h4>
                             {reviews[currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold">
-                                ? Verified
+                                &#10003; Verified
                               </span>
                             )}
                           </div>
@@ -2445,6 +2445,7 @@ export default function KairaliHeritage() {
     </div>
   );
 }
+
 
 
 

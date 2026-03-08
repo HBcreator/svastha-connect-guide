@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+﻿import { useEffect, useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -1109,7 +1109,7 @@ export default function NagarjunaAyurvedaCentre() {
                         className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                         aria-label="Close"
                       >
-                        ✕
+                        X
                       </button>
                     </div>
                     <div className="flex md:hidden items-center justify-between mt-4">
@@ -1224,7 +1224,7 @@ export default function NagarjunaAyurvedaCentre() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-green-600 mt-1 flex-shrink-0">✓</span>
+                          <span className="text-green-600 mt-1 flex-shrink-0">&#10003;</span>
                           <span className="flex-1 text-justify md:text-left">{b}</span>
                         </li>
                       ))}
@@ -1264,7 +1264,7 @@ export default function NagarjunaAyurvedaCentre() {
                     <ul className="space-y-1.5 md:space-y-2">
                       {p.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                          <span className="text-blue-600 mt-1 flex-shrink-0">✓</span>
+                          <span className="text-blue-600 mt-1 flex-shrink-0">&#10003;</span>
                           <span className="flex-1 text-justify md:text-left">{b}</span>
                         </li>
                       ))}
@@ -1376,7 +1376,7 @@ export default function NagarjunaAyurvedaCentre() {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1505,7 +1505,7 @@ export default function NagarjunaAyurvedaCentre() {
                         <ul className="mt-3 space-y-1.5">
                           {s.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">•</span>
+                              <span className="text-primary mt-1">&bull;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1739,7 +1739,7 @@ export default function NagarjunaAyurvedaCentre() {
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                 aria-label="Close facility lightbox"
               >
-                ✕
+                X
               </button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -1790,7 +1790,7 @@ export default function NagarjunaAyurvedaCentre() {
                     <h3 className="text-xl md:text-2xl font-bold text-primary mb-1">{founder?.name || "Founder"}</h3>
                     <p className="text-xs md:text-sm font-semibold mb-1" style={{ color: '#7F543D' }}>{founder?.role}</p>
                     {founder?.degrees && founder.degrees.length > 0 && (
-                      <p className="text-xs font-medium opacity-70" style={{ color: '#7F543D' }}>{founder.degrees.join(' • ')}</p>
+                      <p className="text-xs font-medium opacity-70" style={{ color: '#7F543D' }}>{founder.degrees.join(' - ')}</p>
                     )}
                   </div>
                 </div>
@@ -1893,12 +1893,12 @@ export default function NagarjunaAyurvedaCentre() {
                           <h4 className="text-base md:text-xl font-semibold text-primary">{testimonials[currentReview].name}</h4>
                           {testimonials[currentReview].verified && (
                             <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-semibold">
-                              ✓ Verified
+                              &#10003; Verified
                             </span>
                           )}
                         </div>
                         <p className="text-xs md:text-sm" style={{ color: '#7F543D' }}>
-                          {testimonials[currentReview].location} {testimonials[currentReview].condition ? `• ${testimonials[currentReview].condition}` : ""}
+                          {testimonials[currentReview].location} {testimonials[currentReview].condition ? `- ${testimonials[currentReview].condition}` : ""}
                         </p>
                       </div>
                     </div>
@@ -2077,7 +2077,7 @@ export default function NagarjunaAyurvedaCentre() {
                   <ul className="space-y-3">
                     {insuranceBullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
+                        <span className="text-primary mt-1">&#10003;</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -2095,7 +2095,7 @@ export default function NagarjunaAyurvedaCentre() {
                   <ul className="space-y-3">
                     {paymentBullets.map((b, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm" style={{ color: '#7F543D' }}>
-                        <span className="text-primary mt-1">✓</span>
+                        <span className="text-primary mt-1">&#10003;</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -2414,4 +2414,8 @@ export default function NagarjunaAyurvedaCentre() {
     </div>
   );
 }
+
+
+
+
 

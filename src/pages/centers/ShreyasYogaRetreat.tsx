@@ -61,9 +61,9 @@ const ShreyasYogaRetreat = () => {
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const awards = [
     {
-      title: "Condé Nast Traveller Wellness & Spa Awards 2026",
-      description: "Recognized in the Wellness & Spa Awards 2026 coverage under the “Peace Makers” category for Shreyas Retreat.",
-      image: "/Center Images/Shreyas Yoga Retreat/Awards/1  (Condé Nast Traveller Wellness & Spa Awards (2026)).png"
+      title: "Conde Nast Traveller Wellness & Spa Awards 2026",
+      description: "Recognized in the Wellness & Spa Awards 2026 coverage under the \"Peace Makers\" category for Shreyas Retreat.",
+      image: "/Center Images/Shreyas Yoga Retreat/Awards/1 (Conde Nast Traveller Wellness & Spa Awards 2026).png"
     },
     {
       title: "World Luxury Spa Awards",
@@ -1730,7 +1730,7 @@ const ShreyasYogaRetreat = () => {
                         <div>
                           <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
                           {founder?.degrees && founder.degrees.length > 0 && (
-                            <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" • ")}</p>
+                            <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" | ")}</p>
                           )}
                           {founder?.role && (
                             <p className="text-xs md:text-sm mt-1 text-primary/70">{founder.role}</p>
@@ -1827,12 +1827,12 @@ const ShreyasYogaRetreat = () => {
                             </h4>
                             {testimonials[currentReview].verified && (
                               <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                ? Verified
+                                &#10003; Verified
                               </span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                            {testimonials[currentReview].location} {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                            {testimonials[currentReview].location} {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2427,6 +2427,9 @@ const ShreyasYogaRetreat = () => {
 };
 
 export default ShreyasYogaRetreat;
+
+
+
 
 
 

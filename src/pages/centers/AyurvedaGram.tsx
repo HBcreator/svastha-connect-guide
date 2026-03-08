@@ -2025,13 +2025,13 @@ const AyurvedaGram = () => {
                               </h4>
                               {testimonials[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ? Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                               {testimonials[currentReview].location}{" "}
-                              {testimonials[currentReview].condition && `• ${testimonials[currentReview].condition}`}
+                              {testimonials[currentReview].condition && ` - ${testimonials[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2734,6 +2734,7 @@ const AyurvedaGram = () => {
 };
 
 export default AyurvedaGram;
+
 
 
 

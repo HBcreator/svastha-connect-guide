@@ -2030,12 +2030,12 @@ export default function SitaramMountainRetreat() {
                           <div className="flex items-center gap-2 mb-1">
                             <h4 className="text-base md:text-xl font-semibold text-primary">{patientReviews[currentReview].name}</h4>
                             {patientReviews[currentReview].verified && (
-                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">? Verified</span>
+                              <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">&#10003; Verified</span>
                             )}
                           </div>
                           <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                             {patientReviews[currentReview].location}{" "}
-                            {patientReviews[currentReview].condition && `• ${patientReviews[currentReview].condition}`}
+                            {patientReviews[currentReview].condition && ` - ${patientReviews[currentReview].condition}`}
                           </p>
                         </div>
                       </div>
@@ -2657,6 +2657,7 @@ export default function SitaramMountainRetreat() {
     </div>
   );
 }
+
 
 
 

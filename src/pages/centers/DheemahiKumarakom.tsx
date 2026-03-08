@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -1177,7 +1177,7 @@ export default function DheemahiKumarakom() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {sec.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-green-600 mt-1">✓</span>
+                              <span className="text-green-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1260,7 +1260,7 @@ export default function DheemahiKumarakom() {
                         <ul className="space-y-1.5 md:space-y-2">
                           {sec.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-blue-600 mt-1">✓</span>
+                              <span className="text-blue-600 mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1379,7 +1379,7 @@ export default function DheemahiKumarakom() {
                         <ul className="list-none pl-0 space-y-1.5">
                           {it.bullets.slice(0, 3).map((b, bi) => (
                             <li key={bi} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-primary mt-1">&#10003;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1512,7 +1512,7 @@ export default function DheemahiKumarakom() {
                         <ul className="mt-3 space-y-2">
                           {step.bullets.map((b, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                              <span className="text-primary mt-1">•</span>
+                              <span className="text-primary mt-1">&bull;</span>
                               <span>{b}</span>
                             </li>
                           ))}
@@ -1849,12 +1849,12 @@ export default function DheemahiKumarakom() {
                               </h4>
                               {reviews[currentReview].verified && (
                                 <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                                  ✓ Verified
+                                  &#10003; Verified
                                 </span>
                               )}
                             </div>
                             <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                              {reviews[currentReview].location} {reviews[currentReview].condition && `• ${reviews[currentReview].condition}`}
+                              {reviews[currentReview].location} {reviews[currentReview].condition && `- ${reviews[currentReview].condition}`}
                             </p>
                           </div>
                         </div>
@@ -2027,7 +2027,7 @@ export default function DheemahiKumarakom() {
                       <ul className="space-y-3">
                         {insuranceBullets.map((b, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">✓</span>
+                            <span className="text-primary mt-1">&#10003;</span>
                             <span>{b}</span>
                           </li>
                         ))}
@@ -2045,7 +2045,7 @@ export default function DheemahiKumarakom() {
                       <ul className="space-y-3">
                         {paymentBullets.map((b, i) => (
                           <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}>
-                            <span className="text-primary mt-1">✓</span>
+                            <span className="text-primary mt-1">&#10003;</span>
                             <span>{b}</span>
                           </li>
                         ))}
@@ -2282,7 +2282,7 @@ export default function DheemahiKumarakom() {
                       className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                       aria-label="Close"
                     >
-                      ✕
+                      X
                     </button>
                   </div>
                   <div className="flex md:hidden items-center justify-between mt-4">
@@ -2349,7 +2349,7 @@ export default function DheemahiKumarakom() {
                 className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow"
                 aria-label="Close"
               >
-                ✕
+                X
               </button>
             </div>
             <div className="flex md:hidden items-center justify-between mt-4">
@@ -2547,4 +2547,8 @@ export default function DheemahiKumarakom() {
     </div >
   );
 }
+
+
+
+
 
