@@ -2133,19 +2133,19 @@ export default function NaadWellness() {
           <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
           <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
             <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
-            <div className="flex justify-between items-start mb-3 relative z-10">
-              <div className="space-y-0.5">
+            <div className="flex justify-between items-start gap-2 mb-3 relative z-10">
+              <div className="space-y-0.5 min-w-0 flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="h-px w-6 bg-white/30" />
                   <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
                 </div>
-                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                <h2 className="text-[26px] font-extrabold leading-tight tracking-tight whitespace-normal text-white pr-2">
                   Sections of Naad Wellness
                 </h2>
               </div>
               <button
                 onClick={() => setIsJumpModalOpen(false)}
-                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50 shrink-0 relative z-20"
               >
                 <X className="h-6 w-6" />
               </button>
