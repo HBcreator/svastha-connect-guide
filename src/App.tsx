@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import TopCenters from "./pages/TopCenters";
@@ -42,6 +42,7 @@ import AkantaAyurvedaYogaResort from "./pages/centers/AkantaAyurvedaYogaResort";
 import IndusValleyAyurvedicCentre from "./pages/centers/IndusValleyAyurvedicCentre";
 import ShathayuAyurvedaYogaRetreat from "./pages/centers/ShathayuAyurvedaYogaRetreat";
 import ShreyasYogaRetreat from "./pages/centers/ShreyasYogaRetreat";
+import NaadWellness from "./pages/centers/NaadWellness";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -96,7 +97,8 @@ const App = () => (
           <Route path="/centers/south-india" element={<SouthIndiaCenters />} />
           <Route path="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals" element={<HimalayasRishikeshUttarakhandNorthEastCenters />} />
           <Route path="/delhi-and-north-india-region-ayurvedic-centers-and-hospitals" element={<DelhiNorthIndiaRegionCenters />} />
-          <Route path="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals" element={<MumbaiPuneRajasthanWestIndiaCenters />} />
+          <Route path="/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals" element={<MumbaiPuneRajasthanWestIndiaCenters />} />
+          <Route path="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals" element={<Navigate to="/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals" replace />} />
           <Route path="/kerala-ayurvedic-centers-and-hospitals" element={<KeralaCenters />} />
           <Route path="/goa-ayurvedic-centers-and-hospitals" element={<GoaCenters />} />
           <Route path="/centers/:location" element={<LocationCenters />} />
@@ -129,6 +131,7 @@ const App = () => (
           <Route path="/centers/kerala/athreya-ayurvedic-centre" element={<AthreyaAyurvedicCentre />} />
           <Route path="/centers/kerala/ayur-bethaniya-ayurveda-hospital" element={<AyurBethaniyaAyurvedaHospital />} />
           <Route path="/centers/bangalore/shreyas-yoga-retreat" element={<ShreyasYogaRetreat />} />
+          <Route path="/centers/sonepat/naad-wellness" element={<NaadWellness />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />

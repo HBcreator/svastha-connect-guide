@@ -15,6 +15,7 @@ type MumbaiCenter = {
   reviews: string;
   image: string;
   slug?: string;
+  website?: string;
 };
 
 const IMAGE_BY_SERIES: Record<number, string> = {
@@ -94,6 +95,8 @@ const parseCentersFromMarkdown = (markdown: string): MumbaiCenter[] => {
       const description = cleanMarkdownText(parts[3]);
       const ratingCell = cleanMarkdownText(parts[4]);
       const city = LOCATION_OVERRIDE_BY_SERIES[series] || formatMumbaiLocation(cleanMarkdownText(parts[5]));
+      const websiteRaw = parts[6] ? cleanMarkdownText(parts[6]) : "";
+      const website = /^https?:\/\//i.test(websiteRaw) ? websiteRaw : undefined;
 
       const ratingMatch = ratingCell.match(/\d+(?:\.\d+)?/);
       const reviewsMatch = ratingCell.match(/\(([^)]+)\)/);
@@ -109,6 +112,7 @@ const parseCentersFromMarkdown = (markdown: string): MumbaiCenter[] => {
         rating,
         reviews,
         image,
+        website,
       };
     })
     .filter((center): center is MumbaiCenter => center !== null)
@@ -180,7 +184,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
-              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Mumbai, Pune, Rajasthan &amp; West India.</span>
+              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Mumbai, Pune, Nashik &amp; West India.</span>
             </h2>
             <p
               className="text-[13px] md:text-lg text-white/80 mt-4 md:mt-8 animate-fade-in max-w-4xl mx-auto md:whitespace-nowrap"
@@ -257,6 +261,10 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
                         onClick={() => {
                           if (center.slug) {
                             navigate(`/centers/${center.slug}`);
+                            return;
+                          }
+                          if (center.website) {
+                            window.open(center.website, "_blank", "noopener,noreferrer");
                             return;
                           }
                           navigate("#");

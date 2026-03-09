@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
 
   const treatments = [
     "All",
@@ -84,6 +84,26 @@ const TopCenters = () => {
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       locationText: "Nelamangala, Bangalore, India",
       slug: "bangalore/shreyas-yoga-retreat" as string | undefined,
+    },
+    {
+      name: "Naad Wellness",
+      city: "Sonepat",
+      description:
+        "Reconnect with your inner balance at Naad Wellness, a luxury integrative wellness retreat dedicated to holistic healing and mindful living. Inspired by ancient Ayurvedic wisdom and modern therapeutic practices, Naad Wellness offers personalized programs designed to restore harmony between body, mind, and spirit. Set within a tranquil natural environment, the retreat combines expert guidance, therapeutic treatments, and mindful experiences to support long-term health, rejuvenation, and inner transformation. Each wellness journey is carefully curated by experienced practitioners, integrating Ayurveda, yoga, naturopathy, and mindfulness to create sustainable lifestyle changes and deep healing.",
+      specialties: [
+        "Ayurveda Therapies",
+        "Detox & Rejuvenation",
+        "Stress & Anxiety Management",
+        "Yoga & Meditation",
+        "Holistic Wellness Programs",
+        "Lifestyle & Preventive Health",
+      ],
+      rating: 4.8,
+      reviews: 200,
+      priceRange: "$$$$",
+      image: "/Center Images/Naad Wellness/Thumb.jpg",
+      locationText: "Sonepat, Haryana, Near Delhi NCR, India",
+      slug: "sonepat/naad-wellness" as string | undefined,
     },
     {
       name: "HimVeda Heritage Wellness Centre",

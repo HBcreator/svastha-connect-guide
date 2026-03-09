@@ -92,6 +92,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
@@ -140,11 +141,11 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       Delhi and North India Region
                     </Link>
                     <Link
-                      to="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals"
+                      to="/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
-                      Mumbai, Pune, Rajasthan & West India.
+                      Mumbai, Pune, Nashik & West India.
                     </Link>
                   </div>
                 </div>
@@ -295,11 +296,11 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     Delhi and North India Region
                   </Link>
                   <Link
-                    to="/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals"
+                    to="/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals"
                     className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
                     onClick={closeMenu}
                   >
-                    Mumbai, Pune, Rajasthan & West India.
+                    Mumbai, Pune, Nashik & West India.
                   </Link>
                 </div>
 
