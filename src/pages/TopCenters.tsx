@@ -106,6 +106,26 @@ const TopCenters = () => {
       slug: "sonepat/naad-wellness" as string | undefined,
     },
     {
+      name: "Fazlani Nature's Nest Wellness Centre",
+      city: "Mumbai",
+      description:
+        "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+      specialties: [
+        "Naturopathy Therapies",
+        "Detox & Rejuvenation",
+        "Stress Relief Programs",
+        "Lifestyle Wellness Programs",
+        "Holistic Healing Treatments",
+        "Nutrition & Wellness Guidance",
+      ],
+      rating: 4.7,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+      locationText: "Near Lonavala, District Pune, Maharashtra, India",
+      slug: "maharashtra/fazlani-natures-nest" as string | undefined,
+    },
+    {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala",
       description:
