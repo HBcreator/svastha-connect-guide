@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
 
   const treatments = [
     "All",
@@ -124,6 +124,27 @@ const TopCenters = () => {
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
       locationText: "Near Lonavala, District Pune, Maharashtra, India",
       slug: "maharashtra/fazlani-natures-nest" as string | undefined,
+    },
+    {
+      name: "Atmantan Wellness Resort",
+      city: "Pune",
+      description:
+        "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+      specialties: [
+        "Ayurveda Wellness Programs",
+        "Detox & Rejuvenation",
+        "Yoga & Meditation Retreats",
+        "Stress Relief Programs",
+        "Fitness & Weight Management",
+        "Holistic Healing Therapies",
+        "Nutrition & Wellness Guidance",
+      ],
+      rating: 4.7,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+      locationText: "Mulshi, Near Pune, Maharashtra, India",
+      slug: "pune/atmantan-wellness-resort" as string | undefined,
     },
     {
       name: "HimVeda Heritage Wellness Centre",
