@@ -147,6 +147,26 @@ const TopCenters = () => {
       slug: "pune/atmantan-wellness-resort" as string | undefined,
     },
     {
+      name: "Dharana At Shillim",
+      city: "Pune",
+      description:
+        "Immerse yourself in a journey of deep wellness at Dharana At Shillim, a tranquil retreat dedicated to holistic healing and mindful living. Surrounded by the serene Sahyadri mountains, the center blends traditional healing wisdom with modern wellness practices to create a truly transformative experience. Guided by experienced practitioners, every program is thoughtfully designed to restore harmony between body, mind, and spirit. From personalized therapies to mindfulness and rejuvenation programs, Dharana At Shillim offers a peaceful sanctuary for those seeking balance, vitality, and long-term well-being.",
+      specialties: [
+        "Holistic Wellness",
+        "Mindfulness & Meditation",
+        "Detox & Rejuvenation",
+        "Stress Relief Programs",
+        "Yoga & Healing Therapies",
+        "Lifestyle Transformation",
+      ],
+      rating: 4.8,
+      reviews: 3900,
+      priceRange: "$$$$",
+      image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+      locationText: "Shillim, Pune, Maharashtra, India",
+      slug: "pune/dharana-at-shillim" as string | undefined,
+    },
+    {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala",
       description:

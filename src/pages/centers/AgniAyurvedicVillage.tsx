@@ -2230,6 +2230,7 @@ export default function AgniAyurvedicVillage() {
         </div>
       </div>
 
+      <div className="h-10 md:h-14" />
       <div className="[&>footer]:mt-0">
         <Footer />
       </div>
