@@ -46,6 +46,7 @@ import NaadWellness from "./pages/centers/NaadWellness";
 import FazlaniNaturesNest from "./pages/centers/FazlaniNaturesNest";
 import AtmantanWellnessResort from "./pages/centers/AtmantanWellnessResort";
 import DharanaAtShillim from "./pages/centers/DharanaAtShillim";
+import ToyamByOrchidHotels from "./pages/centers/ToyamByOrchidHotels";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -138,6 +139,7 @@ const App = () => (
           <Route path="/centers/maharashtra/fazlani-natures-nest" element={<FazlaniNaturesNest />} />
           <Route path="/centers/pune/atmantan-wellness-resort" element={<AtmantanWellnessResort />} />
           <Route path="/centers/pune/dharana-at-shillim" element={<DharanaAtShillim />} />
+          <Route path="/centers/pune/toyam-by-orchid-hotels" element={<ToyamByOrchidHotels />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />

@@ -147,6 +147,25 @@ const TopCenters = () => {
       slug: "pune/atmantan-wellness-resort" as string | undefined,
     },
     {
+      name: "Toyam By Orchid Hotels",
+      city: "Pune",
+      description:
+        "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+      specialties: [
+        "Panchakarma",
+        "Ayurvedic Wellness",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Yoga & Meditation",
+      ],
+      rating: 4.7,
+      reviews: 0,
+      priceRange: "$$$",
+      image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+      locationText: "Pune (Bhor), Maharashtra, India",
+      slug: "pune/toyam-by-orchid-hotels" as string | undefined,
+    },
+    {
       name: "Dharana At Shillim",
       city: "Pune",
       description:
