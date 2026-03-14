@@ -1906,7 +1906,7 @@ export default function DharanaAtShillim() {
                 </>
               )}
 
-              <div className="flex justify-center gap-2 mt-8">
+              <div className="flex justify-center gap-2 mt-8 md:hidden">
                 {awards.slice(0, maxAwardIndex + 1).map((_, i) => (
                   <button
                     key={i}

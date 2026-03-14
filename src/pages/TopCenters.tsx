@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
 
   const treatments = [
     "All",
@@ -84,6 +84,28 @@ const TopCenters = () => {
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       locationText: "Nelamangala, Bangalore, India",
       slug: "bangalore/shreyas-yoga-retreat" as string | undefined,
+    },
+    {
+      name: "Viveda Wellness Village",
+      city: "Nashik",
+      description:
+        "Immerse yourself in a transformative wellness retreat at Viveda Wellness Village, an integrated wellness destination nestled in the serene surroundings of Trimbakeshwar near Nashik. Designed to reconnect individuals with nature and holistic living, Viveda blends ancient Indian healing sciences with modern wellness practices for complete mind-body rejuvenation. Surrounded by the tranquil landscapes of the Sahyadri ranges, the retreat offers personalized wellness programs guided by experienced practitioners. Guests experience a combination of Ayurveda, naturopathy, yoga, meditation, and therapeutic spa treatments that promote detoxification, stress relief, and long-term vitality.",
+      specialties: [
+        "Ayurveda & Holistic Therapies",
+        "Naturopathy Treatments",
+        "Detox & Rejuvenation Programs",
+        "Stress & Burnout Management",
+        "Yoga & Meditation",
+        "Nutrition & Lifestyle Programs",
+        "Fitness & Wellness Retreats",
+        "Spa & Therapeutic Massages",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
+      locationText: "Nashik, Maharashtra, India",
+      slug: "maharashtra/viveda-wellness-village" as string | undefined,
     },
     {
       name: "Naad Wellness",
