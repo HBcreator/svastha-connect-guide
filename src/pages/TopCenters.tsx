@@ -208,6 +208,26 @@ const TopCenters = () => {
       slug: "pune/dharana-at-shillim" as string | undefined,
     },
     {
+      name: "The Imperial Spa and Wellness",
+      city: "Delhi",
+      description:
+        "Step into a world of refined relaxation at The Imperial Spa and Wellness, a luxury wellness destination designed to restore balance, calm, and vitality. Blending timeless healing traditions with modern wellness therapies, the centre offers a peaceful retreat for guests seeking deep rejuvenation of body and mind. From personalized spa rituals to restorative wellness experiences, every treatment is thoughtfully curated by skilled professionals to deliver comfort, renewal, and holistic well-being in an elegant setting.",
+      specialties: [
+        "Luxury Spa",
+        "Holistic Wellness",
+        "Massage Therapy",
+        "Body Rejuvenation",
+        "Stress Relief",
+        "Relaxation Therapy",
+      ],
+      rating: 4.8,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
+      locationText: "New Delhi, India",
+      slug: "delhi/the-imperial-spa-and-wellness" as string | undefined,
+    },
+    {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala",
       description:
