@@ -249,6 +249,26 @@ const TopCenters = () => {
       slug: "dharamshala/himveda" as string | undefined,
     },
     {
+      name: "Sandhya Hot Spring Health Care",
+      city: "Manikaran",
+      description:
+        "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters. Surrounded by tranquil landscapes, the center blends traditional healing practices with the restorative benefits of geothermal therapy. Rooted in holistic wellness principles, Sandhya offers personalized treatments designed to detoxify the body, relieve stress, and rejuvenate the mind.",
+      specialties: [
+        "Hot Spring Therapy",
+        "Detox & Rejuvenation",
+        "Stress Relief",
+        "Natural Healing",
+        "Wellness Retreat",
+        "Body Relaxation",
+      ],
+      rating: 4.6,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
+      locationText: "Manikaran, Himachal Pradesh, India",
+      slug: "himachal/sandhya-hot-spring-health-care" as string | undefined,
+    },
+    {
       name: "Ayuskama Ayurveda",
       city: "Dharamshala",
       description:

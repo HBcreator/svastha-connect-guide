@@ -822,7 +822,7 @@ const TheImperialSpaAndWellness = () => {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(0 reviews)</span>
+                  <span className="opacity-90">(8000+)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -1084,8 +1084,8 @@ const TheImperialSpaAndWellness = () => {
         <div className="max-w-6xl mx-auto">
           <Card className="mb-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
-              <MarkdownContent
-                contentPath="/content/Top Centers/The Imperial Spa & Salon/Mian content.txt"
+          <MarkdownContent
+            contentPath="/content/Top Centers/The Imperial Spa & Salon/Main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                 onLinkClick={(action) => {
@@ -1103,7 +1103,7 @@ const TheImperialSpaAndWellness = () => {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1000+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">8000+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -1610,14 +1610,14 @@ const TheImperialSpaAndWellness = () => {
                 </div>
               </div>
 
-              <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: "#EDE8D0" }} id="team">
+              <div className="mb-12 rounded-3xl p-6 md:p-12" style={{ backgroundColor: "#EDE8D0" }} id="team">
                 <div className="text-center mb-6 md:mb-10">
                   <h1 className="text-2xl md:text-4xl font-bold text-primary mb-3">Founder & Team Info</h1>
                   {teamIntro && (
                     <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>{teamIntro}</p>
                   )}
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 md:gap-8 items-stretch">
+                <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-stretch px-1 md:px-0">
                   <Card className="border-2 border-primary/20 hover:border-primary/50 transition-all hover:shadow-xl h-full">
                     <CardContent className="p-4 md:p-8 h-full md:h-[480px] flex flex-col">
                       <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
@@ -1627,7 +1627,9 @@ const TheImperialSpaAndWellness = () => {
                           </div>
                         </div>
                         <div>
-                          <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">{founder?.name || "Founder"}</h3>
+                          <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2 leading-snug break-words">
+                            {founder?.name || "Founder"}
+                          </h3>
                           {founder?.degrees && founder.degrees.length > 0 && (
                             <p className="text-xs md:text-sm font-semibold" style={{ color: "#7F543D" }}>{founder.degrees.join(" - ")}</p>
                           )}
@@ -2167,38 +2169,44 @@ const TheImperialSpaAndWellness = () => {
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Mobile BROWSE Action (Bottom Left) */}
-      <button
-        onClick={() => setIsJumpModalOpen(true)}
-        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Search size={18} className="-ml-1" />
-        <span>BROWSE</span>
-      </button>
-
-      {/* Floating Quote Action (Bottom Right) */}
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Phone size={18} className="-ml-1" />
-        <span className="hidden md:inline">GET FREE QUOTE</span>
-        <span className="md:hidden">QUOTE</span>
-      </button>
-
-      {/* Desktop Vertical JUMP Button */}
-      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
         >
-          <span className="drop-shadow-sm">B</span>
-          <span className="drop-shadow-sm">R</span>
-          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
-          <span className="drop-shadow-sm">W</span>
-          <span className="drop-shadow-sm">S</span>
-          <span className="drop-shadow-sm">E</span>
+          <Search size={18} className="-ml-1" />
+          <span>BROWSE</span>
         </button>
-      </div>
+      )}
+
+      {/* Floating Quote Action (Bottom Right) */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <button
+          onClick={() => setQuoteModalOpen(true)}
+          className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        >
+          <Phone size={18} className="-ml-1" />
+          <span className="hidden md:inline">GET FREE QUOTE</span>
+          <span className="md:hidden">QUOTE</span>
+        </button>
+      )}
+
+      {/* Desktop Vertical JUMP Button */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
+      )}
 
       {/* JUMP Modal / Drawer */}
       <div

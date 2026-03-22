@@ -79,6 +79,7 @@ const GoaCenters = () => {
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/4.jpg",
       slug: "goa/soul-vacation",
+      detailsDisabled: true,
     },
     {
       name: "SreeShanti Wellness",
@@ -112,6 +113,7 @@ const GoaCenters = () => {
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/7.jpg",
       slug: "veda5",
+      detailsDisabled: true,
     },
     {
       name: "Tattvam on the Beach",
@@ -381,7 +383,9 @@ const GoaCenters = () => {
                       <Button
                         variant="outline"
                         className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        disabled={(center as { detailsDisabled?: boolean }).detailsDisabled}
                         onClick={() => {
+                          if ((center as { detailsDisabled?: boolean }).detailsDisabled) return;
                           if (center.slug) {
                             navigate(`/centers/${center.slug}`);
                             return;
@@ -389,7 +393,7 @@ const GoaCenters = () => {
                           navigate("#");
                         }}
                       >
-                        View Details
+                        {(center as { detailsDisabled?: boolean }).detailsDisabled ? "Coming Soon" : "View Details"}
                       </Button>
                       <Button
                         onClick={() => setQuoteModalOpen(true)}

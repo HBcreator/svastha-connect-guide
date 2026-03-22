@@ -49,6 +49,7 @@ import DharanaAtShillim from "./pages/centers/DharanaAtShillim";
 import ToyamByOrchidHotels from "./pages/centers/ToyamByOrchidHotels";
 import VivedaWellnessVillage from "./pages/centers/VivedaWellnessVillage";
 import TheImperialSpaAndWellness from "./pages/centers/TheImperialSpaAndWellness";
+import SandhyaHotSpringHealthCare from "./pages/centers/SandhyaHotSpringHealthCare";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -144,6 +145,7 @@ const App = () => (
           <Route path="/centers/pune/toyam-by-orchid-hotels" element={<ToyamByOrchidHotels />} />
           <Route path="/centers/maharashtra/viveda-wellness-village" element={<VivedaWellnessVillage />} />
           <Route path="/centers/delhi/the-imperial-spa-and-wellness" element={<TheImperialSpaAndWellness />} />
+          <Route path="/centers/himachal/sandhya-hot-spring-health-care" element={<SandhyaHotSpringHealthCare />} />
           <Route path="/centers/veda5" element={<Veda5Center />} />
           <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
