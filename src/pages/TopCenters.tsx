@@ -420,6 +420,26 @@ const TopCenters = () => {
       slug: "goa/swan-yoga-retreat" as string | undefined,
     },
     {
+      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+      city: "Goa",
+      description:
+        "Step into a sanctuary of healing at the Ayurveda Wellness Centre at Mercure Goa Devaaya Resort, where ancient Ayurvedic wisdom meets tranquil island living. Nestled along the serene backwaters of Divar Island, this wellness retreat offers an immersive experience rooted in authentic Ayurvedic traditions. Guided by experienced Ayurvedic doctors and therapists, the centre delivers personalized therapies designed to restore the natural balance of body, mind, and spirit.",
+      specialties: [
+        "Panchakarma Therapies",
+        "Authentic Ayurveda Treatments",
+        "Detox & Rejuvenation Programs",
+        "Stress & Lifestyle Disorder Management",
+        "Chronic Disease Support Therapies",
+        "Yoga & Meditation Integration",
+      ],
+      rating: 4.7,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
+      locationText: "Divar Island, Goa, India",
+      slug: "goa/mercure-goa-devaaya-resort" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
