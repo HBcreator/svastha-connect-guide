@@ -100,6 +100,9 @@ const SandhyaHotSpringHealthCare = () => {
     "/Center Videos/Sandhya Hot Spring Health Care/testimonies/testimonies 1.mp4",
     "/Center Videos/Sandhya Hot Spring Health Care/testimonies/testimonies 2.mp4",
   ];
+  const videoThumbnails = [
+    "/Center Images/Sandhya Hot Spring Health Care/Video Gallery images/Video 1 image.jpg",
+  ];
 
   const awards = [
     {
@@ -1044,7 +1047,14 @@ const SandhyaHotSpringHealthCare = () => {
             <>
               <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video mb-8">
                 {videos[selectedVideo] && (
-                  <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
+                  <video
+                    key={selectedVideo}
+                    controls
+                    controlsList="nodownload"
+                    preload="metadata"
+                    poster={videoThumbnails[selectedVideo]}
+                    className="w-full h-full object-cover"
+                  >
                     <source src={videos[selectedVideo]} type="video/mp4" />
                   </video>
                 )}
@@ -1059,9 +1069,24 @@ const SandhyaHotSpringHealthCare = () => {
                     onClick={() => setSelectedVideo(idx)}
                     className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""}`}
                   >
-                    <video muted className="w-full h-full object-cover">
-                      <source src={video} type="video/mp4" />
-                    </video>
+                    {videoThumbnails[idx] ? (
+                      <div className="w-full h-full relative">
+                        <img
+                          src={videoThumbnails[idx]}
+                          alt={`Sandhya video ${idx + 1} thumbnail`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                          <div className="h-12 w-12 rounded-full bg-white/80 flex items-center justify-center shadow">
+                            <div className="ml-1 h-0 w-0 border-y-[7px] border-y-transparent border-l-[12px] border-l-primary" />
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <video muted preload="metadata" className="w-full h-full object-cover">
+                        <source src={video} type="video/mp4" />
+                      </video>
+                    )}
                   </div>
                 ))}
               </div>
@@ -1072,7 +1097,7 @@ const SandhyaHotSpringHealthCare = () => {
 
       <div className="container mx-auto px-3 md:px-4 pb-2 max-w-full">
         <div className="max-w-6xl mx-auto">
-          <Card className="mb-12">
+          <Card className="mt-6 md:mt-10 mb-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
               <MarkdownContent
                 contentPath="/content/Top Centers/Sandhya Hot Spring Health Care/Main content.txt"
