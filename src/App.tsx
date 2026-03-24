@@ -50,6 +50,7 @@ import ToyamByOrchidHotels from "./pages/centers/ToyamByOrchidHotels";
 import VivedaWellnessVillage from "./pages/centers/VivedaWellnessVillage";
 import TheImperialSpaAndWellness from "./pages/centers/TheImperialSpaAndWellness";
 import SandhyaHotSpringHealthCare from "./pages/centers/SandhyaHotSpringHealthCare";
+import MercureGoaDevaayaResort from "./pages/centers/MercureGoaDevaayaResort";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -115,6 +116,7 @@ const App = () => (
           <Route path="/centers/rishikesh/yan-cure" element={<YanCureYogaRetreat />} />
           <Route path="/centers/goa/soul-vacation" element={<SoulVacationResort />} />
           <Route path="/centers/goa/swan-yoga-retreat" element={<SWANYogaRetreat />} />
+          <Route path="/centers/goa/mercure-goa-devaaya-resort" element={<MercureGoaDevaayaResort />} />
           <Route path="/centers/dharamshala/himveda" element={<HimVeda />} />
           <Route path="/centers/dharamshala/ayuskama-ayurveda" element={<AyuskamaAyurveda />} />
           <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
