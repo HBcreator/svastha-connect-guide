@@ -440,6 +440,26 @@ const TopCenters = () => {
       slug: "goa/mercure-goa-devaaya-resort" as string | undefined,
     },
     {
+      name: "Ashiyana Yoga Retreat",
+      city: "Goa",
+      description:
+        "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, a globally renowned destination for transformation and self-discovery. Set amidst lush tropical gardens along the serene Mandrem Beach, Ashiyana offers a unique blend of traditional yoga, meditation, and healing therapies. Rooted in authentic yogic philosophy and mindful living, the retreat provides holistic programs guided by experienced teachers and therapists. Each experience is thoughtfully curated to restore harmony in body, mind, and spirit, promoting deep relaxation, inner balance, and long-lasting wellbeing through natural and time-tested practices.",
+      specialties: [
+        "Yoga Retreats",
+        "Meditation & Mindfulness",
+        "Detox & Rejuvenation",
+        "Ayurvedic Therapies",
+        "Stress Management",
+        "Teacher Training",
+      ],
+      rating: 4.7,
+      reviews: 600,
+      priceRange: "$$$$",
+      image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
+      locationText: "Mandrem Beach, Goa, India",
+      slug: "goa/ashiyana-yoga-retreat" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
