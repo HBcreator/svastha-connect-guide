@@ -460,6 +460,26 @@ const TopCenters = () => {
       slug: "goa/ashiyana-yoga-retreat" as string | undefined,
     },
     {
+      name: "Nalanda Retreat Goa",
+      city: "Goa",
+      description:
+        "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+      specialties: [
+        "Yoga Retreats",
+        "Ayurveda Healing",
+        "Detox Programs",
+        "Meditation & Mindfulness",
+        "Stress Relief",
+        "Holistic Wellness",
+      ],
+      rating: 4.5,
+      reviews: 0,
+      priceRange: "$$$$",
+      image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+      locationText: "Mandrem, North Goa, India",
+      slug: "goa/nalanda-retreat-goa" as string | undefined,
+    },
+    {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
