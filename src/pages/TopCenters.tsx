@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
 
   const treatments = [
     "All",
@@ -226,6 +226,26 @@ const TopCenters = () => {
       image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
       locationText: "New Delhi, India",
       slug: "delhi/the-imperial-spa-and-wellness" as string | undefined,
+    },
+    {
+      name: "ITC Grand Bharat",
+      city: "Gurugram",
+      description:
+        "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape. Each stay is defined by personalized service, spacious suites, and a tranquil environment that encourages slow, mindful living.",
+      specialties: [
+        "Luxury Wellness",
+        "Ayurvedic Spa",
+        "Holistic Healing",
+        "Detox Retreat",
+        "Stress Relief",
+        "Lifestyle Wellness",
+      ],
+      rating: 4.8,
+      reviews: 17000,
+      priceRange: "$$$$",
+      image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+      locationText: "Gurugram (near New Delhi), India",
+      slug: "gurugram/itc-grand-bharat" as string | undefined,
     },
     {
       name: "HimVeda Heritage Wellness Centre",

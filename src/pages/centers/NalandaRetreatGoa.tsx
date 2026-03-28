@@ -123,7 +123,7 @@ const renderInlineBlueBold = (text: string) => {
   while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
     parts.push(
-      <strong key={match.index} className="font-semibold text-blue-700">
+      <strong key={match.index} className="font-semibold text-primary">
         {match[1]}
       </strong>
     );
@@ -838,7 +838,7 @@ const NalandaRetreatGoa = () => {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.5+</span>
-                  <span className="opacity-90">(guest experiences)</span>
+                  <span className="opacity-90">(1300+)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -1108,7 +1108,7 @@ const NalandaRetreatGoa = () => {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">4.5+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">1300+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Guest Rating</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
@@ -2230,6 +2230,23 @@ const NalandaRetreatGoa = () => {
           <Phone className="h-5 w-5" />
           <span>GET FREE QUOTE</span>
         </button>
+      )}
+
+      {/* Desktop Vertical JUMP Button - Hidden when lightbox/gallery is open */}
+      {!lightboxOpen && !showFullGallery && !facilityLightboxOpen && (
+        <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+          <button
+            onClick={() => setIsJumpModalOpen(true)}
+            className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          >
+            <span className="drop-shadow-sm">B</span>
+            <span className="drop-shadow-sm">R</span>
+            <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+            <span className="drop-shadow-sm">W</span>
+            <span className="drop-shadow-sm">S</span>
+            <span className="drop-shadow-sm">E</span>
+          </button>
+        </div>
       )}
 
       {/* JUMP Modal / Drawer */}
