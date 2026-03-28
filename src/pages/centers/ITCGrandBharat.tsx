@@ -569,7 +569,7 @@ export default function ITCGrandBharat() {
 
   const whyIconForTitle = (t: string) => {
     const s = t.toLowerCase();
-    const cls = "h-6 w-6 text-primary";
+    const cls = "h-6 w-6 text-primary group-hover:text-white transition-colors";
     if (s.includes("heritage") || s.includes("royal") || s.includes("luxury")) return <Star className={cls} />;
     if (s.includes("spa") || s.includes("kaya") || s.includes("therapy")) return <Sparkles className={cls} />;
     if (s.includes("nature") || s.includes("aravalli") || s.includes("hills")) return <Leaf className={cls} />;
