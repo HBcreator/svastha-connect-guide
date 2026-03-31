@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
 
   const treatments = [
     "All",
@@ -246,6 +246,26 @@ const TopCenters = () => {
       image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
       locationText: "Gurugram (near New Delhi), India",
       slug: "gurugram/itc-grand-bharat" as string | undefined,
+    },
+    {
+      name: "Amanbagh Heritage Wellness Retreat",
+      city: "Alwar",
+      description:
+        "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
+      specialties: [
+        "Holistic Wellness Therapies",
+        "Yoga & Meditation Sessions",
+        "Detox & Rejuvenation Programs",
+        "Ayurvedic-Inspired Treatments",
+        "Stress Relief & Mindfulness",
+        "Lifestyle Wellness Plans",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/Amanbagh/thumb.jpg",
+      locationText: "Alwar, Rajasthan, India",
+      slug: "rajasthan/amanbagh-heritage-wellness-retreat" as string | undefined,
     },
     {
       name: "HimVeda Heritage Wellness Centre",
