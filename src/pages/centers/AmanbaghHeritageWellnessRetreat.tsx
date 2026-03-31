@@ -985,8 +985,8 @@ export default function AmanbaghHeritageWellnessRetreat() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(500+ reviews)</span>
-                  <span className="opacity-90 font-semibold">$$$$</span>
+                  <span className="opacity-90">(600+)</span>
+                  <span className="opacity-90 font-semibold"></span>
                 </div>
               </div>
 
@@ -1194,7 +1194,7 @@ export default function AmanbaghHeritageWellnessRetreat() {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Star className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">500+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">600+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Reviews</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">
