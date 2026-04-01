@@ -355,6 +355,26 @@ const TopCenters = () => {
       slug: "kerala/ayursoma" as string | undefined,
     },
     {
+      name: "Kalari Kovilakom - The Palace For Ayurveda",
+      city: "Palakkad",
+      description:
+        "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom – The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+        "Holistic Healing",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+      locationText: "Palakkad, Kerala, India",
+      slug: "kerala/kalari-kovilakom" as string | undefined,
+    },
+    {
       name: "Kairali â€“ The Ayurvedic Healing Village",
       city: "Palakkad",
       description:
@@ -1061,4 +1081,5 @@ const TopCenters = () => {
 };
 
 export default TopCenters;
+
 
