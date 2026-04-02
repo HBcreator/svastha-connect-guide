@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
@@ -358,7 +358,7 @@ const TopCenters = () => {
       name: "Kalari Kovilakom - The Palace For Ayurveda",
       city: "Palakkad",
       description:
-        "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+        "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -373,6 +373,25 @@ const TopCenters = () => {
       image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
       locationText: "Palakkad, Kerala, India",
       slug: "kerala/kalari-kovilakom" as string | undefined,
+    },    {
+      name: "Carnoustie Ayurveda & Wellness Resort",
+      city: "Mararikulam",
+      description:
+        "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Rejuvenation Therapy",
+        "Weight Management",
+        "Stress Management",
+        "Pain & Injury Care",
+      ],
+      rating: 4.7,
+      reviews: 500,
+      priceRange: "",
+      image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+      locationText: "Mararikulam, Kerala, India",
+      slug: "kerala/carnoustie-ayurveda-wellness-resort" as string | undefined,
     },
     {
       name: "Kairali – The Ayurvedic Healing Village",
@@ -1081,5 +1100,6 @@ const TopCenters = () => {
 };
 
 export default TopCenters;
+
 
 
