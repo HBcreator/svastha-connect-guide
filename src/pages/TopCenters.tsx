@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat"];
+  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat", "Thrissur"];
 
   const treatments = [
     "All",
@@ -392,6 +392,26 @@ const TopCenters = () => {
       image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
       locationText: "Mararikulam, Kerala, India",
       slug: "kerala/carnoustie-ayurveda-wellness-resort" as string | undefined,
+    },
+    {
+      name: "The Nattika Beach Resort",
+      city: "Thrissur",
+      description:
+        "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Weight Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+      locationText: "Thrissur, Kerala, India",
+      slug: "kerala/the-nattika-beach-resort" as string | undefined,
     },
     {
       name: "Kairali – The Ayurvedic Healing Village",
