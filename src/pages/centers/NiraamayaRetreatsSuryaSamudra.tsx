@@ -36,6 +36,8 @@ export default function NiraamayaRetreatsSuryaSamudra() {
   const [facilitiesData, setFacilitiesData] = useState<{ title: string; description: string; cards: { title: string; description: string; bullets: string[] }[] } | null>(null);
   const [facilityImages, setFacilityImages] = useState<string[]>([]);
   const [currentFacilityImage, setCurrentFacilityImage] = useState(0);
+  const [facilityLightboxOpen, setFacilityLightboxOpen] = useState(false);
+  const [facilityLightboxImage, setFacilityLightboxImage] = useState(0);
 
   const [teamIntro, setTeamIntro] = useState("");
   const [founder, setFounder] = useState<{ name: string; degrees: string[]; role: string; description: string } | null>(null);
@@ -133,6 +135,14 @@ export default function NiraamayaRetreatsSuryaSamudra() {
     if (!testimonialVideos.length) return;
     setSelectedTestimonialVideo((prev) => (prev >= testimonialVideos.length ? 0 : prev));
   }, [testimonialVideos.length]);
+
+  useEffect(() => {
+    if (!isReviewAutoPlaying || testimonials.length === 0) return;
+    const id = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, [isReviewAutoPlaying, testimonials.length]);
 
   useEffect(() => {
     const sectionElement = testimonialSectionRef.current;
@@ -809,6 +819,13 @@ export default function NiraamayaRetreatsSuryaSamudra() {
     return <div className="flex items-center gap-1">{stars}</div>;
   };
 
+  const videoPosterForIndex = (idx: number) => {
+    if (images.length > 0) {
+      return images[idx % images.length];
+    }
+    return "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg";
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
@@ -1054,7 +1071,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
           ) : (
             <>
               <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video mb-8">
-                <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
+                <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover" poster={videoPosterForIndex(selectedVideo)}>
                   <source src={videos[selectedVideo]} type="video/mp4" />
                 </video>
                 <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
@@ -1068,7 +1085,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                     onClick={() => setSelectedVideo(idx)}
                     className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""}`}
                   >
-                    <video muted className="w-full h-full object-cover">
+                    <video muted className="w-full h-full object-cover" poster={videoPosterForIndex(idx)}>
                       <source src={video} type="video/mp4" />
                     </video>
                   </div>
@@ -1234,6 +1251,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                       className="w-full h-full object-cover"
                       controls
                       playsInline
+                      poster={videoPosterForIndex(selectedVideo)}
                     />
                   </div>
                 </CardContent>
@@ -1345,7 +1363,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                 </p>
               </div>
 
-              <div className="relative max-w-4xl mx-auto px-4 md:px-0">
+              <div className="relative max-w-4xl mx-auto px-4 md:px-0 md:max-w-sm">
                 <Card className="border-2 border-primary/20 shadow-xl overflow-hidden bg-white rounded-3xl">
                   <CardContent className="p-0">
                     <div className="w-full relative bg-black flex items-center justify-center aspect-[9/16]">
@@ -1580,7 +1598,13 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                     >
                       {facilityImages.map((image, index) => (
                         <div key={index} className="w-full flex-shrink-0 px-2">
-                          <div className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 transition-all">
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 transition-all cursor-pointer hover:border-primary/30"
+                            onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}
+                            onTouchStart={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}
+                          >
                             <img
                               src={image}
                               alt={`Niraamaya Facility ${index + 1}`}
@@ -1599,7 +1623,13 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                     >
                       {facilityImages.map((image, index) => (
                         <div key={index} className="w-1/5 flex-shrink-0 px-2">
-                          <div className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 transition-all">
+                          <div
+                            role="button"
+                            tabIndex={0}
+                            className="bg-white rounded-xl p-2 shadow-lg border border-primary/10 transition-all cursor-pointer hover:border-primary/30"
+                            onClick={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}
+                            onTouchStart={() => { setFacilityLightboxImage(index); setFacilityLightboxOpen(true); }}
+                          >
                             <img
                               src={image}
                               alt={`Niraamaya Facility ${index + 1}`}
@@ -1664,6 +1694,36 @@ export default function NiraamayaRetreatsSuryaSamudra() {
               ))}
             </div>
           </div>
+
+          {facilityLightboxOpen && (
+            <div className="fixed inset-0 z-[80] flex items-center justify-center px-4">
+              <div
+                className="absolute inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm"
+                onClick={() => setFacilityLightboxOpen(false)}
+              />
+              <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+              <button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Next">
+                <ChevronRight className="h-6 w-6" />
+              </button>
+              <div className="relative bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
+                <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Niraamaya Retreats Surya Samudra</div>
+                <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
+                  <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
+                  <button onClick={() => setFacilityLightboxOpen(false)} className="absolute top-3 right-3 bg-white/90 text-primary rounded-full h-8 w-8 flex items-center justify-center shadow" aria-label="Close">X</button>
+                </div>
+                <div className="flex md:hidden items-center justify-between mt-4">
+                  <Button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                    Previous
+                  </Button>
+                  <Button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="bg-white text-primary hover:bg-white/90 rounded-full shadow px-5">
+                    Next
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Founder & Team Info (Agni Style) */}
           <div className="mb-12 rounded-3xl p-8 md:p-12" style={{ backgroundColor: '#EDE8D0' }} id="team">
@@ -1937,7 +1997,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                       setIsAwardAutoPlaying(false);
                       goToPreviousAward();
                     }}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                     aria-label="Previous award"
                   >
                     <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
@@ -1947,7 +2007,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
                       setIsAwardAutoPlaying(false);
                       goToNextAward();
                     }}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
+                    className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary z-10"
                     aria-label="Next award"
                   >
                     <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />

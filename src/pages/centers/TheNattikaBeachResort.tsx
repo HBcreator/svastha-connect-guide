@@ -2130,14 +2130,18 @@ export default function TheNattikaBeachResort() {
           </div>
 
           {facilityLightboxOpen && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-[#EDE8D0]/80 backdrop-blur-sm">
+            <div className="fixed inset-0 z-[80] flex items-center justify-center px-4">
+              <div
+                className="absolute inset-0 bg-[#EDE8D0]/80 backdrop-blur-sm"
+                onClick={() => setFacilityLightboxOpen(false)}
+              />
               <button onClick={() => setFacilityLightboxImage((prev) => (prev - 1 + facilityImages.length) % facilityImages.length)} className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Previous">
                 <ChevronLeft className="h-6 w-6" />
               </button>
               <button onClick={() => setFacilityLightboxImage((prev) => (prev + 1) % facilityImages.length)} className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white text-primary h-10 w-10 md:h-12 md:w-12 rounded-full shadow-lg items-center justify-center hover:bg-white/90" aria-label="Next">
                 <ChevronRight className="h-6 w-6" />
               </button>
-              <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
+              <div className="relative bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
                 <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">The Nattika Beach Resort</div>
                 <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                   <img src={facilityImages[facilityLightboxImage]} alt={`Facility ${facilityLightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
