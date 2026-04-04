@@ -19,7 +19,7 @@ const TopCenters = () => {
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
 
-  const cities = ["All", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat", "Thrissur"];
+  const cities = ["All", "Kerala", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat", "Thrissur"];
 
   const treatments = [
     "All",
@@ -246,6 +246,27 @@ const TopCenters = () => {
       image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
       locationText: "Gurugram (near New Delhi), India",
       slug: "gurugram/itc-grand-bharat" as string | undefined,
+    },
+
+    {
+      name: "Niraamaya Retreats Surya Samudra",
+      city: "Kerala",
+      description:
+        "Immerse yourself in the serene beauty of coastal Ayurveda at Niraamaya Retreats Surya Samudra, a luxurious wellness destination on Kerala's pristine shores. Known for authentic therapies and tranquil ocean views, it blends traditional healing with modern comfort for deep rejuvenation.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Luxury Wellness Retreat",
+        "Holistic Healing",
+      ],
+      rating: 4.7,
+      reviews: 600,
+      priceRange: "$$$$",
+      image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
+      locationText: "Kerala, India",
+      slug: "kerala/niraamaya-retreats-surya-samudra" as string | undefined,
     },
     {
       name: "Amanbagh Heritage Wellness Retreat",

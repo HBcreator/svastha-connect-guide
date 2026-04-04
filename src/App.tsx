@@ -54,6 +54,7 @@ import AshiyanaYogaRetreat from "./pages/centers/AshiyanaYogaRetreat";
 import MercureGoaDevaayaResort from "./pages/centers/MercureGoaDevaayaResort";
 import NalandaRetreatGoa from "./pages/centers/NalandaRetreatGoa";
 import ITCGrandBharat from "./pages/centers/ITCGrandBharat";
+import NiraamayaRetreatsSuryaSamudra from "./pages/centers/NiraamayaRetreatsSuryaSamudra";
 import AmanbaghHeritageWellnessRetreat from "./pages/centers/AmanbaghHeritageWellnessRetreat";
 import KalariKovilakomPalaceForAyurveda from "./pages/centers/KalariKovilakomPalaceForAyurveda";
 import CarnoustieAyurvedaWellnessResort from "./pages/centers/CarnoustieAyurvedaWellnessResort";
@@ -127,6 +128,7 @@ const App = () => (
           <Route path="/centers/goa/ashiyana-yoga-retreat" element={<AshiyanaYogaRetreat />} />
           <Route path="/centers/goa/nalanda-retreat-goa" element={<NalandaRetreatGoa />} />
           <Route path="/centers/gurugram/itc-grand-bharat" element={<ITCGrandBharat />} />
+<Route path="/centers/kerala/niraamaya-retreats-surya-samudra" element={<NiraamayaRetreatsSuryaSamudra />} />
           <Route path="/centers/rajasthan/amanbagh-heritage-wellness-retreat" element={<AmanbaghHeritageWellnessRetreat />} />
           <Route path="/centers/dharamshala/himveda" element={<HimVeda />} />
           <Route path="/centers/kerala/kalari-kovilakom" element={<KalariKovilakomPalaceForAyurveda />} />
