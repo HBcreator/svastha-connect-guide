@@ -114,6 +114,17 @@ const KeralaCenters = () => {
       slug: "veda5",
     },
     {
+      name: "Sitaram Beach Retreat",
+      city: "Kerala, India",
+      description:
+        "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit.",
+      rating: 4.6,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+      slug: "kerala/sitaram-beach-retreat",
+    },
+    {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
       city: "Palakkad, Kerala, India",
       description:

@@ -59,6 +59,7 @@ import AmanbaghHeritageWellnessRetreat from "./pages/centers/AmanbaghHeritageWel
 import KalariKovilakomPalaceForAyurveda from "./pages/centers/KalariKovilakomPalaceForAyurveda";
 import CarnoustieAyurvedaWellnessResort from "./pages/centers/CarnoustieAyurvedaWellnessResort";
 import TheNattikaBeachResort from "./pages/centers/TheNattikaBeachResort";
+import SitaramBeachRetreat from "./pages/centers/SitaramBeachRetreat";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
 import KeralaCenters from "./pages/KeralaCenters";
 import GoaCenters from "./pages/GoaCenters";
@@ -134,6 +135,7 @@ const App = () => (
           <Route path="/centers/kerala/kalari-kovilakom" element={<KalariKovilakomPalaceForAyurveda />} />
           <Route path="/centers/kerala/carnoustie-ayurveda-wellness-resort" element={<CarnoustieAyurvedaWellnessResort />} />
           <Route path="/centers/kerala/the-nattika-beach-resort" element={<TheNattikaBeachResort />} />
+          <Route path="/centers/kerala/sitaram-beach-retreat" element={<SitaramBeachRetreat />} />
           <Route path="/centers/dharamshala/ayuskama-ayurveda" element={<AyuskamaAyurveda />} />
           <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
           <Route path="/centers/idukki/sitaram-mountain-retreat" element={<SitaramMountainRetreat />} />

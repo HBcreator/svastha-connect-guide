@@ -435,6 +435,26 @@ const TopCenters = () => {
       slug: "kerala/the-nattika-beach-resort" as string | undefined,
     },
     {
+      name: "Sitaram Beach Retreat",
+      city: "Kerala",
+      description:
+        "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+      specialties: [
+        "Panchakarma Therapy",
+        "Detox & Rejuvenation Programs",
+        "Stress & Anxiety Management",
+        "Chronic Disease Treatment",
+        "Yoga & Meditation",
+        "Personalized Ayurvedic Consultations",
+      ],
+      rating: 4.6,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+      locationText: "Kerala, India",
+      slug: "kerala/sitaram-beach-retreat" as string | undefined,
+    },
+    {
       name: "Kairali – The Ayurvedic Healing Village",
       city: "Palakkad",
       description:
