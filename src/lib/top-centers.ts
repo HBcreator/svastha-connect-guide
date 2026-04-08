@@ -17,6 +17,7 @@ export const TOP_CENTER_SLUGS = new Set<string>([
   "kerala/kairali-heritage",
   "kerala/agni-ayurvedic-village",
   "kerala/dheemahi-kumarakom",
+  "kerala/kumarakom-lake-resort",
   "kerala/nagarjuna-ayurveda-centre",
   "kerala/sanjeevanam-ayurveda-hospital",
   "kerala/back-to-roots",

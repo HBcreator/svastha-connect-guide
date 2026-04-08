@@ -17,6 +17,7 @@ import Veda5Center from "./pages/centers/Veda5Center";
 import KairaliHeritage from "./pages/centers/KairaliHeritage";
 import AgniAyurvedicVillage from "./pages/centers/AgniAyurvedicVillage";
 import DheemahiKumarakom from "./pages/centers/DheemahiKumarakom";
+import KumarakomLakeResort from "./pages/centers/KumarakomLakeResort";
 import NamasteDwaar from "./pages/centers/namastedwaar";
 import KairaliHealingVillage from "./pages/centers/KairaliHealingVillage";
 import NagarjunaAyurvedaCentre from "./pages/centers/NagarjunaAyurvedaCentre";
@@ -152,6 +153,7 @@ const App = () => (
           <Route path="/centers/kerala/nagarjuna-ayurveda-centre" element={<NagarjunaAyurvedaCentre />} />
           <Route path="/centers/kerala/sanjeevanam-ayurveda-hospital" element={<SanjeevanamAyurvedaHospital />} />
           <Route path="/centers/kerala/dheemahi-kumarakom" element={<DheemahiKumarakom />} />
+          <Route path="/centers/kerala/kumarakom-lake-resort" element={<KumarakomLakeResort />} />
           <Route path="/centers/kerala/back-to-roots" element={<BackToRoots />} />
           <Route path="/centers/kerala/dhathri-ayurveda" element={<DhathriAyurvedicHospital />} />
           <Route path="/centers/kerala/krishnendu-ayurveda-hospital" element={<KrishnenduAyurvedaHospital />} />

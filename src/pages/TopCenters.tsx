@@ -743,6 +743,25 @@ const TopCenters = () => {
       slug: "kerala/dheemahi-kumarakom" as string | undefined,
     },
     {
+      name: "Kumarakom Lake Resort",
+      city: "Kumarakom",
+      description:
+        "Experience the tranquil charm of Kerala's backwaters at Kumarakom Lake Resort, an award-winning heritage retreat on serene Vembanad Lake. Designed with traditional Kerala architecture, the resort blends luxury with cultural authenticity, offering Ayurvedic wellness, private villas, and peaceful nature-led rejuvenation.",
+      specialties: [
+        "Ayurvedic Wellness & Rejuvenation",
+        "Luxury Heritage Villas",
+        "Backwater Cruises",
+        "Traditional Kerala Cuisine",
+        "Yoga & Holistic Wellness",
+      ],
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/kumarakom lake resort/Thumb.jpg",
+      locationText: "Kumarakom, Kerala, India",
+      slug: "kerala/kumarakom-lake-resort" as string | undefined,
+    },
+    {
       name: "Nagarjuna Ayurveda Centre",
       city: "Kerala",
       description:
