@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
@@ -972,6 +972,26 @@ const TopCenters = () => {
       image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
       locationText: "Udupi, Karnataka, India",
       slug: "udupi/shathayu-ayurveda-yoga-retreat" as string | undefined,
+    },
+    {
+      name: "Ideal Ayurvedic Resort",
+      city: "Kerala",
+      description:
+        "Nestled on a tranquil hillside in Chowara village, just a short walk from Kovalam beach, Ideal Ayurvedic Resort is a 'Green Leaf' certified sanctuary surrounded by 15 acres of lush coconut groves. Authentic, physician-led Ayurveda is practiced with heartfelt dedication — from classical Panchakarma to personalized healing programs — in one of Kerala's most genuinely non-commercialized healing environments.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Green Leaf Certified",
+      ],
+      rating: 4.5,
+      reviews: 400,
+      priceRange: "$$$",
+      image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
+      locationText: "Kovalam (Chowara), Kerala, India",
+      slug: "kerala/ideal-ayurvedic-resort" as string | undefined,
     },
   ];
 
