@@ -1394,6 +1394,22 @@ export default function TheNattikaBeachResort() {
                   </Button>
                 </div>
               )}
+
+              {testimonialVideos.length > 1 && (
+                <div className="flex justify-center gap-2 mt-6 md:mt-8">
+                  {testimonialVideos.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedTestimonialVideo(index)}
+                      className={`transition-all ${index === selectedTestimonialVideo
+                        ? "w-8 h-3 bg-primary"
+                        : "w-3 h-3 bg-gray-300 hover:bg-primary/50"
+                        } rounded-full`}
+                      aria-label={`Go to testimonial ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 

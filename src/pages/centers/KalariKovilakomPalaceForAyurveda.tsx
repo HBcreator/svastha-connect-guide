@@ -149,7 +149,8 @@ export default function KalariKovilakomPalaceForAyurveda() {
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim()).filter(Boolean);
-        setTestimonialVideos(lines);
+        const swapped = lines.length > 1 ? [lines[1], lines[0], ...lines.slice(2)] : lines;
+        setTestimonialVideos(swapped);
         setSelectedTestimonialVideo(0);
       })
       .catch((err) => console.error("Error loading Kalari testimonial videos:", err));
@@ -1240,7 +1241,9 @@ export default function KalariKovilakomPalaceForAyurveda() {
                       <video
                         key={videos[soukyaStyleVideoIndex]}
                         src={videos[soukyaStyleVideoIndex]}
+                        poster={getVideoPoster(soukyaStyleVideoIndex)}
                         className="w-full h-full object-cover"
+                        preload="metadata"
                         controls
                         playsInline
                       />
