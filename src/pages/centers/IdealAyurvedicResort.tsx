@@ -476,7 +476,7 @@ export default function IdealAyurvedicResort() {
         setCurrentFacilityImage(0);
       })
       .catch((err) => console.error("Error loading Ideal facilities images:", err));
-    // Keep founder/reviews content stable (Agni-style behavior) and avoid runtime fetch fallback HTML.
+    // Keep founder content stable (Agni-style behavior).
     setFounderIntro(idealFounderTeamStatic.intro);
     setFounderName(idealFounderTeamStatic.founderName);
     setFounderRole(idealFounderTeamStatic.founderRole);
@@ -486,8 +486,68 @@ export default function IdealAyurvedicResort() {
     setTeamSubtitle(idealFounderTeamStatic.teamSubtitle);
     setTeamDescription(idealFounderTeamStatic.teamDescription);
     setTeamBullets(idealFounderTeamStatic.teamBullets);
-    setTestimonials(idealTestimonialsStatic);
-    setCurrentReview(0);
+
+    fetch("/content/Top Centers/Ideal Ayurvedic Resort/Patient Stories & Reviews.txt")
+      .then((res) => res.text())
+      .then((text) => {
+        const lines = text.split("\n").map((l) => l.trim());
+        const items: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[] = [];
+        let current: { id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean } | null = null;
+        let idCounter = 1;
+
+        for (const line of lines) {
+          if (!line || line.startsWith("###")) continue;
+
+          const nameMatch = line.match(/^\*\*(.+?)\*\*$/);
+          if (nameMatch && !line.includes("Rating:")) {
+            if (current) items.push(current);
+            const full = nameMatch[1];
+            const parts = full.split(" - ");
+            const name = (parts[0] || "").trim();
+            const location = parts.slice(1).join(" - ").trim();
+            current = {
+              id: idCounter++,
+              name,
+              location,
+              condition: "",
+              title: "",
+              review: "",
+              rating: 5,
+              verified: true,
+            };
+            continue;
+          }
+
+          if (current && line.startsWith('*"') && line.endsWith('"*')) {
+            current.title = line.slice(2, -2).trim();
+            continue;
+          }
+
+          if (current && line.includes("Rating:")) {
+            const ratingMatch = line.match(/\((\d+)\/5\)/);
+            if (ratingMatch) current.rating = parseInt(ratingMatch[1], 10);
+            continue;
+          }
+
+          if (current) {
+            current.review = current.review ? `${current.review} ${line}` : line;
+          }
+        }
+
+        if (current) items.push(current);
+
+        if (items.length > 0) {
+          setTestimonials(items);
+        } else {
+          setTestimonials(idealTestimonialsStatic);
+        }
+        setCurrentReview(0);
+      })
+      .catch((err) => {
+        console.error("Error loading Ideal reviews:", err);
+        setTestimonials(idealTestimonialsStatic);
+        setCurrentReview(0);
+      });
 
     fetch("/content/Top Centers/Ideal Ayurvedic Resort/Insurance & Payment Info.txt")
       .then((res) => res.text())

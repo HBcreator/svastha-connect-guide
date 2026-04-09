@@ -619,6 +619,11 @@ export default function KalariKovilakomPalaceForAyurveda() {
 
   const thumbnailImages = images.slice(0, 6);
 
+  const getVideoPoster = (index: number) => {
+    if (images.length > 0) return images[(index * 2) % images.length];
+    return "/Center Images/Kalari Kovilakom/Thumb.jpg";
+  };
+
   const wellnessIconForTitle = (t: string) => {
     const s = t.toLowerCase();
     if (s.includes("foundational")) return <Calendar className="h-4 w-4 md:h-5 md:w-5 text-green-600" />;
@@ -1067,7 +1072,7 @@ export default function KalariKovilakomPalaceForAyurveda() {
           ) : (
             <>
               <div className="relative rounded-lg overflow-hidden shadow-lg bg-black aspect-video mb-8">
-                <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" className="w-full h-full object-cover">
+                <video key={selectedVideo} controls controlsList="nodownload" preload="metadata" poster={getVideoPoster(selectedVideo)} className="w-full h-full object-cover">
                   <source src={videos[selectedVideo]} type="video/mp4" />
                 </video>
                 <div className="absolute bottom-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm">
@@ -1081,7 +1086,7 @@ export default function KalariKovilakomPalaceForAyurveda() {
                     onClick={() => setSelectedVideo(idx)}
                     className={`relative aspect-video rounded-lg overflow-hidden cursor-pointer transition-all hover:scale-105 hover:shadow-md ${selectedVideo === idx ? "ring-2 ring-primary" : ""}`}
                   >
-                    <video muted className="w-full h-full object-cover">
+                    <video muted preload="none" poster={getVideoPoster(idx)} className="w-full h-full object-cover">
                       <source src={video} type="video/mp4" />
                     </video>
                   </div>
