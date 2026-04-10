@@ -269,6 +269,26 @@ const TopCenters = () => {
       slug: "kerala/niraamaya-retreats-surya-samudra" as string | undefined,
     },
     {
+      name: "Modi Yoga Retreat",
+      city: "Rishikesh",
+      description:
+        "Experience calm riverside living at Modi Yoga Retreat, a mindful wellness sanctuary designed for yoga practice, meditation, and holistic rejuvenation. Surrounded by scenic mountain views and flowing waters, the retreat offers a peaceful space to reset body and mind.",
+      specialties: [
+        "Yoga Retreat",
+        "Meditation & Mindfulness",
+        "Holistic Wellness",
+        "Detox & Rejuvenation",
+        "Stress Relief",
+        "Lifestyle Wellness",
+      ],
+      rating: 4.7,
+      reviews: 600,
+      priceRange: "$$$$",
+      image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+      locationText: "Rishikesh, Uttarakhand, India",
+      slug: "rishikesh/modi-yoga-retreat" as string | undefined,
+    },
+    {
       name: "Amanbagh Heritage Wellness Retreat",
       city: "Alwar",
       description:
