@@ -100,6 +100,8 @@ import Alopecia from "./pages/treatments/Alopecia";
 import HimalayasRishikeshUttarakhandNorthEastCenters from "./pages/HimalayasRishikeshUttarakhandNorthEastCenters";
 import DelhiNorthIndiaRegionCenters from "./pages/DelhiNorthIndiaRegionCenters";
 import MumbaiPuneRajasthanWestIndiaCenters from "./pages/MumbaiPuneRajasthanWestIndiaCenters";
+import PanchakarmaDetox from "./pages/programs/PanchakarmaDetox";
+import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
 
 const queryClient = new QueryClient();
 
@@ -209,6 +211,15 @@ const App = () => (
           <Route path="/treatments/stress" element={<Stress />} />
           <Route path="/treatments/alopecia" element={<Alopecia />} />
           <Route path="/about" element={<About />} />
+          <Route path="/ayurvedic-programs/panchakarma-detox" element={<PanchakarmaDetox />} />
+          <Route
+            path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"
+            element={<PanchakarmaDetox21Day />}
+          />
+          <Route
+            path="/ayurvedic-programs/panchakarma-detox/21-day"
+            element={<Navigate to="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india" replace />}
+          />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

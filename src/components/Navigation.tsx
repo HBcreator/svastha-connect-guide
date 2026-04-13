@@ -13,6 +13,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [centersDropdownOpen, setCentersDropdownOpen] = useState(false);
+  const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -146,6 +147,66 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Mumbai, Pune, Nashik & West India.
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ayurvedic Programs Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setProgramsDropdownOpen(true)}
+                onMouseLeave={() => setProgramsDropdownOpen(false)}
+              >
+                <Link
+                  to="/ayurvedic-programs"
+                  className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
+                    location.pathname.startsWith("/ayurvedic-programs")
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  Ayurvedic Programs
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180' : ''}`} />
+                </Link>
+                
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${programsDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px]">
+                    <Link
+                      to="/ayurvedic-programs/panchakarma-detox"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Panchakarma Detox
+                    </Link>
+                    <Link
+                      to="/ayurvedic-programs/disease-specific"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Disease-Specific
+                    </Link>
+                    <Link
+                      to="/ayurvedic-programs/lifestyle-and-wellness"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Lifestyle & Wellness
+                    </Link>
+                    <Link
+                      to="/ayurvedic-programs/beauty-and-rejuvenation"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Beauty & Rejuvenation
+                    </Link>
+                    <Link
+                      to="/ayurvedic-programs/integrated-retreat"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Integrated Retreat
                     </Link>
                   </div>
                 </div>
@@ -301,6 +362,56 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onClick={closeMenu}
                   >
                     Mumbai, Pune, Nashik & West India.
+                  </Link>
+                </div>
+
+                {/* Mobile Ayurvedic Programs Section */}
+                <div className="space-y-1">
+                  <Link
+                    to="/ayurvedic-programs"
+                    className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                      location.pathname.startsWith("/ayurvedic-programs")
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:bg-gray-100"
+                    }`}
+                    onClick={closeMenu}
+                  >
+                    Ayurvedic Programs
+                  </Link>
+                  <Link
+                    to="/ayurvedic-programs/panchakarma-detox"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Panchakarma Detox
+                  </Link>
+                  <Link
+                    to="/ayurvedic-programs/disease-specific"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Disease-Specific
+                  </Link>
+                  <Link
+                    to="/ayurvedic-programs/lifestyle-and-wellness"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Lifestyle & Wellness
+                  </Link>
+                  <Link
+                    to="/ayurvedic-programs/beauty-and-rejuvenation"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Beauty & Rejuvenation
+                  </Link>
+                  <Link
+                    to="/ayurvedic-programs/integrated-retreat"
+                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
+                    onClick={closeMenu}
+                  >
+                    Integrated Retreat
                   </Link>
                 </div>
 
