@@ -14,6 +14,7 @@ import {
   CalendarCheck2,
   Calendar,
   ClipboardCheck,
+  ClipboardList,
   ChevronLeft,
   ChevronRight,
   CircleCheck,
@@ -27,14 +28,17 @@ import {
   Pill,
   ReceiptIndianRupee,
   Route,
+  Search,
   ShieldCheck,
   Sparkles,
   Star,
   Quote,
   Stethoscope,
+  Phone,
   UserCog,
   UserCheck,
   UtensilsCrossed,
+  X,
   XCircle,
 } from "lucide-react";
 
@@ -56,6 +60,17 @@ const quickSummaryRows = [
   ["Supervised By", "Qualified Ayurvedic Doctors (Vaidyas)"],
   ["Includes", "Accommodation, meals, therapies, consultations, medicines"],
 ];
+
+const quickSummaryMobileIcons = {
+  "Program Name": ClipboardCheck,
+  "Duration": Calendar,
+  "Who It Is For": UserCheck,
+  "Key Benefit": Sparkles,
+  "Top Locations": MapPin,
+  "Average Cost": ReceiptIndianRupee,
+  "Supervised By": Stethoscope,
+  "Includes": BedDouble,
+} as const;
 
 const therapies = [
   {
@@ -344,6 +359,15 @@ const inclusionsRows = [
   { label: "Post-Program Support", details: "Diet guidance and continuity protocol for home", icon: ClipboardCheck },
 ];
 
+const costComparisonRows = [
+  {
+    program: "21-Day Panchakarma Detox",
+    category: "Panchakarma Detox",
+    cost: "$2,500 - $4,500",
+    notes: "Highest demand, long stay, full package",
+  },
+];
+
 const faqItems = [
   {
     question: "Is Panchakarma safe for international visitors with no prior Ayurveda experience?",
@@ -457,9 +481,12 @@ const PanchakarmaDetox21Day = () => {
   const [benefitsImageIndex, setBenefitsImageIndex] = useState(0);
   const [benefitsVisibleCards, setBenefitsVisibleCards] = useState(4);
   const [topCentersSlide, setTopCentersSlide] = useState(0);
+  const [topCentersPerSlide, setTopCentersPerSlide] = useState(3);
+  const [topCentersMobileView, setTopCentersMobileView] = useState(false);
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
   const [currentReview, setCurrentReview] = useState(0);
   const [reviewAutoPlay, setReviewAutoPlay] = useState(true);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -470,7 +497,15 @@ const PanchakarmaDetox21Day = () => {
 
   useEffect(() => {
     const updateBenefitsVisibleCards = () => {
-      setBenefitsVisibleCards(window.innerWidth < 768 ? 2 : 4);
+      if (window.innerWidth < 768) {
+        setBenefitsVisibleCards(1);
+        return;
+      }
+      if (window.innerWidth < 1024) {
+        setBenefitsVisibleCards(2);
+        return;
+      }
+      setBenefitsVisibleCards(4);
     };
     updateBenefitsVisibleCards();
     window.addEventListener("resize", updateBenefitsVisibleCards);
@@ -482,6 +517,26 @@ const PanchakarmaDetox21Day = () => {
       setBenefitsImageIndex((prev) => (prev + 1) % benefitsSectionImages.length);
     }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateTopCentersLayout = () => {
+      if (window.innerWidth < 768) {
+        setTopCentersPerSlide(1);
+        setTopCentersMobileView(true);
+        return;
+      }
+      if (window.innerWidth < 1024) {
+        setTopCentersPerSlide(2);
+        setTopCentersMobileView(false);
+        return;
+      }
+      setTopCentersPerSlide(3);
+      setTopCentersMobileView(false);
+    };
+    updateTopCentersLayout();
+    window.addEventListener("resize", updateTopCentersLayout);
+    return () => window.removeEventListener("resize", updateTopCentersLayout);
   }, []);
 
   useEffect(() => {
@@ -504,12 +559,24 @@ const PanchakarmaDetox21Day = () => {
       key: `${benefitsSectionImages[imageIndex]}-${benefitsImageIndex}-${idx}`,
     };
   });
-  const topCentersPerSlide = 3;
-  const topCentersTotalSlides = Math.ceil(topAyurvedicCenters.length / topCentersPerSlide);
+  const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersPerSlide));
   const visibleTopCenters = topAyurvedicCenters.slice(
     topCentersSlide * topCentersPerSlide,
     topCentersSlide * topCentersPerSlide + topCentersPerSlide
   );
+
+  useEffect(() => {
+    setTopCentersSlide((prev) => prev % topCentersTotalSlides);
+  }, [topCentersTotalSlides]);
+
+  useEffect(() => {
+    if (!topCentersMobileView) return;
+    const timer = setInterval(() => {
+      setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
+    }, 3600);
+    return () => clearInterval(timer);
+  }, [topCentersMobileView, topCentersTotalSlides]);
+
   const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
   const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
   const toggleCenterDescription = (centerName: string) => {
@@ -517,6 +584,36 @@ const PanchakarmaDetox21Day = () => {
   };
   const goReviewPrevious = () => setCurrentReview((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
   const goReviewNext = () => setCurrentReview((prev) => (prev + 1) % patientReviews.length);
+
+  const jumpSections = [
+    { id: "gallery", title: "Gallery" },
+    { id: "quick-summary", title: "Quick Summary" },
+    { id: "program-overview", title: "Program Overview" },
+    { id: "week-breakdown", title: "Week-by-Week Breakdown" },
+    { id: "benefits", title: "Benefits" },
+    { id: "cost", title: "Cost in India" },
+    { id: "why-india", title: "Why Choose India" },
+    { id: "why-us", title: "Why Choose Us" },
+    { id: "inclusions", title: "Package Inclusions" },
+    { id: "consultation", title: "Book Consultation" },
+    { id: "faq", title: "FAQ" },
+    { id: "top-centers", title: "Top Centers" },
+    { id: "reviews", title: "Patient Reviews" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }, 250);
+  };
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
@@ -537,7 +634,7 @@ const PanchakarmaDetox21Day = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 average</span>
+                    <span>4.8/5 Excellent Rating</span>
                   </span>
                 </div>
               </div>
@@ -554,7 +651,7 @@ const PanchakarmaDetox21Day = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 pt-6 pb-12 md:pt-8 md:pb-16 max-w-6xl space-y-20 md:space-y-24">
+      <main className="container mx-auto px-4 pt-6 pb-32 md:pt-8 md:pb-16 max-w-6xl space-y-20 md:space-y-24">
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D]">Ayurvedic Treatment and Program Gallery</h2>
@@ -578,30 +675,50 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
+        <section id="quick-summary" className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
           <Card className="border-[#d8d0ae] bg-white shadow-sm">
             <CardContent className="p-4 md:p-6 space-y-4">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Duration</p>
+                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
                   <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">21 Days / 20 Nights</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Ideal For</p>
+                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
                   <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Detox, Recovery, Reset</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Top Locations</p>
+                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
                   <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Kerala, Rishikesh, Goa</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Avg Cost</p>
+                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
                   <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">$2,500 - $4,500</p>
                 </div>
               </div>
 
-              <div className="overflow-auto rounded-xl border border-[#d8d0ae]">
+              <div className="grid gap-2 md:hidden">
+                {quickSummaryRows.map((row, idx) => (
+                  <div
+                    key={row[0]}
+                    className={`rounded-xl border border-[#d8d0ae] px-3 py-3 ${idx === 0 ? "bg-[#EDE8D0]" : "bg-white"}`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                        {(() => {
+                          const Icon = quickSummaryMobileIcons[row[0] as keyof typeof quickSummaryMobileIcons] || ClipboardCheck;
+                          return <Icon className="h-4 w-4 text-[#2F5B63]" />;
+                        })()}
+                      </span>
+                      <p className="text-[15px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">{row[0]}</p>
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-[#7F543D] break-words font-semibold">{row[1]}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="hidden md:block overflow-auto rounded-xl border border-[#d8d0ae]">
                 <table className="w-full text-sm min-w-[680px]">
                   <tbody>
                     {quickSummaryRows.map((row, idx) => (
@@ -616,7 +733,7 @@ const PanchakarmaDetox21Day = () => {
             </CardContent>
           </Card>
         </section>
-        <section className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
+        <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
@@ -715,7 +832,7 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section className="scroll-mt-24 mt-12 md:mt-16 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
+        <section id="week-breakdown" className="scroll-mt-24 mt-12 md:mt-16 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
             <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D]">The 21-Day Program - Week-by-Week Breakdown</h2>
             <p className="text-[#7F543D] mt-2">Preparation, elimination, and rejuvenation in one coherent physician-led journey.</p>
@@ -753,7 +870,7 @@ const PanchakarmaDetox21Day = () => {
           </Accordion>
         </section>
 
-        <section className="scroll-mt-24 mt-12 md:mt-16">
+        <section id="benefits" className="scroll-mt-24 mt-12 md:mt-16">
           <div className="mb-7 md:mb-8">
             <div className="relative">
               <button
@@ -771,18 +888,40 @@ const PanchakarmaDetox21Day = () => {
                 <ChevronRight className="h-7 w-7" />
               </button>
 
-              <div className="px-10 md:px-14">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-                  {benefitsVisibleImages.map((image) => (
-                    <div key={image.key} className="rounded-xl overflow-hidden border border-[#d6decf] bg-white shadow-sm">
-                      <img
-                        src={image.src}
-                        alt="Panchakarma benefits visual"
-                        className="w-full h-24 md:h-28 object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
+              <div className="overflow-hidden px-10 md:px-14">
+                <div className="md:hidden">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${benefitsImageIndex * 100}%)` }}
+                  >
+                    {benefitsSectionImages.map((image, idx) => (
+                      <div key={`benefit-mobile-${idx}`} className="w-full flex-shrink-0 px-1.5">
+                        <div className="bg-white rounded-xl p-2 shadow-sm border border-[#d6decf]">
+                          <img
+                            src={image}
+                            alt="Panchakarma benefits visual"
+                            className="w-full h-28 object-cover rounded-lg"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="hidden md:block">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                    {benefitsVisibleImages.map((image) => (
+                      <div key={image.key} className="rounded-xl bg-white p-2 shadow-lg border border-primary/10 hover:border-primary/30 transition-all">
+                        <img
+                          src={image.src}
+                          alt="Panchakarma benefits visual"
+                          className="w-full h-24 md:h-28 object-cover rounded-lg"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -843,7 +982,7 @@ const PanchakarmaDetox21Day = () => {
             </Card>
           </div>
         </section>
-        <section className="scroll-mt-24 mt-12 md:mt-16 mb-12 md:mb-16 space-y-6">
+        <section id="cost" className="scroll-mt-24 mt-12 md:mt-16 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#3B5B5D]">Cost of the 21-Day Panchakarma in India</h2>
             <p className="mt-2 text-[#7F543D]">
@@ -882,7 +1021,31 @@ const PanchakarmaDetox21Day = () => {
                     Highest demand package
                   </span>
                 </div>
-                <div className="overflow-auto">
+                <div className="md:hidden p-3 space-y-2 bg-white">
+                  {costComparisonRows.map((row) => (
+                    <div key={row.program} className="rounded-xl border border-[#d8d0ae] p-3 bg-[#FFFEFA]">
+                      <p className="text-[13px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">Program</p>
+                      <p className="mt-1 text-sm text-[#7F543D] font-semibold break-words">{row.program}</p>
+
+                      <div className="mt-3 grid grid-cols-1 gap-2">
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Category</p>
+                          <p className="text-sm text-[#7F543D] font-semibold">{row.category}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Cost</p>
+                          <p className="text-sm text-[#7F543D] font-semibold">{row.cost}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Notes</p>
+                          <p className="text-sm text-[#7F543D] font-semibold break-words">{row.notes}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="hidden md:block overflow-auto">
                   <table className="w-full text-sm min-w-[680px]">
                     <thead className="bg-[#F5F8F6] text-[#3B5B5D]">
                       <tr>
@@ -893,12 +1056,14 @@ const PanchakarmaDetox21Day = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-t bg-white">
-                        <td className="p-3 font-medium text-[#3D4B4C]">21-Day Panchakarma Detox</td>
-                        <td className="p-3 text-[#7F543D]">Panchakarma Detox</td>
-                        <td className="p-3 text-[#7F543D]">$2,500 - $4,500</td>
-                        <td className="p-3 text-[#7F543D]">Highest demand, long stay, full package</td>
-                      </tr>
+                      {costComparisonRows.map((row) => (
+                        <tr key={row.program} className="border-t bg-white">
+                          <td className="p-3 font-medium text-[#3D4B4C]">{row.program}</td>
+                          <td className="p-3 text-[#7F543D]">{row.category}</td>
+                          <td className="p-3 text-[#7F543D]">{row.cost}</td>
+                          <td className="p-3 text-[#7F543D]">{row.notes}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -907,7 +1072,7 @@ const PanchakarmaDetox21Day = () => {
           </Card>
         </section>
 
-        <section className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14">
+        <section id="why-india" className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full">
             <CardContent className="p-6 md:p-8 space-y-6">
               <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] text-center">Why Choose India for Panchakarma?</h2>
@@ -932,6 +1097,7 @@ const PanchakarmaDetox21Day = () => {
         </section>
 
         <section
+          id="why-us"
           className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14 rounded-3xl p-6 md:p-10 border border-[#e0d9b7]"
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
@@ -969,57 +1135,76 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
+        <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold text-[#3B5B5D]">What Is Included in the 21-Day Package?</h2>
             <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Duration</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
               <p className="text-lg font-bold text-[#3B5B5D] mt-1">21 Days</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Stay</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
               <p className="text-lg font-bold text-[#3B5B5D] mt-1">20 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Core Inclusions</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
               <p className="text-lg font-bold text-[#3B5B5D] mt-1">Therapies + Meals</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Care Model</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
               <p className="text-lg font-bold text-[#3B5B5D] mt-1">Doctor-Supervised</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
-            <CardContent className="p-0 overflow-auto">
-              <table className="w-full text-sm min-w-[680px]">
-                <thead className="bg-[#F5F8F6] text-[#3B5B5D]">
-                  <tr>
-                    <th className="text-left p-3 font-semibold">Inclusion</th>
-                    <th className="text-left p-3 font-semibold">Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {inclusionsRows.map((row) => {
-                    const Icon = row.icon;
-                    return (
-                      <tr key={row.label} className="border-t">
-                        <td className="p-3 font-medium text-[#3D4B4C]">
-                          <div className="flex items-center gap-2.5">
-                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                              <Icon className="h-4 w-4 text-[#2F5B63]" />
-                            </span>
-                            <span>{row.label}</span>
-                          </div>
-                        </td>
-                        <td className="p-3 text-[#7F543D]">{row.details}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
+            <CardContent className="p-3 md:p-0">
+              <div className="md:hidden grid gap-2">
+                {inclusionsRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div key={row.label} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
+                      <div className="flex items-center gap-2.5">
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                          <Icon className="h-4 w-4 text-[#2F5B63]" />
+                        </span>
+                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">{row.label}</p>
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{row.details}</p>
+                    </div>
+                  )
+                })}
+              </div>
+
+              <div className="hidden md:block overflow-auto">
+                <table className="w-full text-sm min-w-[680px]">
+                  <thead className="bg-[#F5F8F6] text-[#3B5B5D]">
+                    <tr>
+                      <th className="text-left p-3 font-semibold">Inclusion</th>
+                      <th className="text-left p-3 font-semibold">Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {inclusionsRows.map((row) => {
+                      const Icon = row.icon;
+                      return (
+                        <tr key={row.label} className="border-t">
+                          <td className="p-3 font-medium text-[#3D4B4C]">
+                            <div className="flex items-center gap-2.5">
+                              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                                <Icon className="h-4 w-4 text-[#2F5B63]" />
+                              </span>
+                              <span>{row.label}</span>
+                            </div>
+                          </td>
+                          <td className="p-3 text-[#7F543D]">{row.details}</td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </CardContent>
           </Card>
           <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#2F5B63] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
@@ -1037,69 +1222,105 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14 relative overflow-hidden rounded-3xl bg-[#2F5B63] text-white p-5 md:p-8">
-          <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-white/10" />
-          <div className="absolute -left-6 -bottom-10 w-44 h-44 rounded-full bg-white/10" />
-          <div className="relative max-w-5xl mx-auto grid md:grid-cols-2 gap-6 md:gap-7 items-stretch">
-            <div className="order-2 md:order-1 flex flex-col justify-center">
-              <h2 className="text-3xl md:text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
-              <p className="mt-3 text-white/90 max-w-xl">
-                Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
-              </p>
-              <div className="space-y-3 mt-5 max-w-xl">
-                <a
-                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
-                  aria-label="WhatsApp Us Now"
-                >
-                  <span className="text-sm font-semibold leading-tight">WhatsApp Us Now</span>
-                  <span className="text-base font-bold leading-tight mt-0.5 underline">+91 80 2843 2737</span>
-                </a>
-                <Button className="w-full h-12 bg-white text-[#2F5B63] hover:bg-white/90 font-semibold" onClick={() => setQuoteModalOpen(true)}>
-                  Get Free Consultation Here
-                </Button>
+        <div className="flex flex-col gap-6 md:gap-8">
+          <section id="consultation" className="scroll-mt-24 relative overflow-hidden rounded-3xl bg-[#2F5B63] text-white p-5 pb-8 md:p-8">
+            <div className="absolute inset-0 pointer-events-none">
+              <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-white/10" />
+              <div className="absolute -left-6 -bottom-10 w-44 h-44 rounded-full bg-white/10" />
+            </div>
+            {/* Mobile layout: image on top, content below */}
+            <div className="relative md:hidden flex flex-col gap-5">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl h-[220px]">
+                <img
+                  src="/Program Images/21-day-detox.png"
+                  alt="21-day Panchakarma consultation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1f444b]/50 via-transparent to-transparent" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
+                <p className="mt-3 text-white/90 text-sm leading-relaxed">
+                  Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
+                </p>
+                <div className="space-y-3 mt-5">
+                  <a
+                    href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 h-14 flex flex-col items-center justify-center transition"
+                    aria-label="WhatsApp Us Now"
+                  >
+                    <span className="text-sm font-semibold leading-tight">WhatsApp Us Now</span>
+                    <span className="text-base font-bold leading-tight mt-0.5 underline">+91 80 2843 2737</span>
+                  </a>
+                  <Button className="w-full h-12 bg-white text-[#2F5B63] hover:bg-white/90 font-semibold" onClick={() => setQuoteModalOpen(true)}>
+                    Get Free Consultation Here
+                  </Button>
+                </div>
               </div>
             </div>
-            <div className="order-1 md:order-2 relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl min-h-[220px] md:min-h-[420px]">
-              <img
-                src="/Program Images/21-day-detox.png"
-                alt="21-day Panchakarma consultation"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1f444b]/50 via-transparent to-transparent" />
+            {/* Desktop layout: side by side */}
+            <div className="relative hidden md:grid md:grid-cols-2 gap-7 items-stretch max-w-5xl mx-auto">
+              <div className="flex flex-col justify-center">
+                <h2 className="text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
+                <p className="mt-3 text-white/90 max-w-xl">
+                  Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
+                </p>
+                <div className="space-y-3 mt-5 max-w-xl">
+                  <a
+                    href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 h-16 flex flex-col items-center justify-center transition"
+                    aria-label="WhatsApp Us Now"
+                  >
+                    <span className="text-sm font-semibold leading-tight">WhatsApp Us Now</span>
+                    <span className="text-base font-bold leading-tight mt-0.5 underline">+91 80 2843 2737</span>
+                  </a>
+                  <Button className="w-full h-12 bg-white text-[#2F5B63] hover:bg-white/90 font-semibold" onClick={() => setQuoteModalOpen(true)}>
+                    Get Free Consultation Here
+                  </Button>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl min-h-[420px]">
+                <img
+                  src="/Program Images/21-day-detox.png"
+                  alt="21-day Panchakarma consultation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1f444b]/50 via-transparent to-transparent" />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="scroll-mt-24 mt-4 md:mt-6">
-          <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
-            {faqItems.map((item, idx) => (
-              <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm">
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#3B5B5D] hover:no-underline [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
-                <AccordionContent className="text-[#7F543D] leading-relaxed pb-5">{item.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </section>
+          <section id="faq" className="scroll-mt-24">
+            <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Frequently Asked Questions</h2>
+            <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
+              {faqItems.map((item, idx) => (
+                <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-[#3B5B5D] hover:no-underline [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
+                  <AccordionContent className="text-[#7F543D] leading-relaxed pb-5">{item.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
 
-        <section className="scroll-mt-24 mt-12 md:mt-16 mb-10 md:mb-14">
+        <section id="top-centers" className="scroll-mt-24">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-[#3B5B5D]">Our Top Ayurvedic Center in India</h2>
           </div>
           <div className="relative">
             <button
               onClick={goTopCentersPrevious}
-              className="absolute -left-8 md:-left-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
+              className="absolute left-1 md:-left-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
               aria-label="Previous centers"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={goTopCentersNext}
-              className="absolute -right-8 md:-right-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
+              className="absolute right-1 md:-right-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
               aria-label="Next centers"
             >
               <ChevronRight className="h-6 w-6" />
@@ -1136,8 +1357,8 @@ const PanchakarmaDetox21Day = () => {
 
                       <p
                         className={`text-sm leading-relaxed md:leading-[1.5] text-[#7F543D] mb-2 ${expandedCenterName === center.name
-                            ? ""
-                            : "line-clamp-3 leading-[1.35rem] h-[4.05rem] overflow-hidden"
+                          ? ""
+                          : "line-clamp-3 leading-[1.35rem] h-[4.05rem] overflow-hidden"
                           }`}
                       >
                         {center.description}
@@ -1192,8 +1413,9 @@ const PanchakarmaDetox21Day = () => {
             </Button>
           </div>
         </section>
+        </div>
 
-        <section className="scroll-mt-24 mt-10 md:mt-14 mb-12 md:mb-16">
+        <section id="reviews" className="scroll-mt-24 mt-10 md:mt-14 mb-12 md:mb-16">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
             <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
@@ -1294,6 +1516,109 @@ const PanchakarmaDetox21Day = () => {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Desktop Vertical BROWSE Button - matching SOUKYA design */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      {/* Mobile BROWSE button */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Phone size={18} className="-ml-1" />
+        <span className="hidden md:inline">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
+      </button>
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Program Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this program page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
