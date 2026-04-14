@@ -10,8 +10,10 @@ import {
   Activity,
   AlertTriangle,
   Brain,
+  BedDouble,
   CalendarCheck2,
   Calendar,
+  ClipboardCheck,
   ChevronLeft,
   ChevronRight,
   CircleCheck,
@@ -22,14 +24,17 @@ import {
   HeartPulse,
   Leaf,
   MapPin,
+  Pill,
   ReceiptIndianRupee,
   Route,
   ShieldCheck,
   Sparkles,
   Star,
+  Quote,
   Stethoscope,
   UserCog,
   UserCheck,
+  UtensilsCrossed,
   XCircle,
 } from "lucide-react";
 
@@ -66,7 +71,7 @@ const therapies = [
   {
     title: "Basti (Medicated Enema)",
     text: "Deep colon cleansing with herbal oils and decoctions, often used in Vata-related patterns like joint, nerve, or bowel issues.",
-    icon: HeartPulse,
+    icon: Heart,
   },
   {
     title: "Nasya (Nasal Therapy)",
@@ -148,39 +153,58 @@ const benefits = {
     "Better sleep quality from early stages",
     "Improved clarity, focus, and emotional stability",
     "Nervous system recovery support in burnout",
+    "More emotional resilience during daily work and family pressures",
+    "Better mind-body awareness that supports healthier lifestyle choices",
   ],
   longTerm: [
     "Benefits often continue for months with compliance",
     "Improved health behavior patterns post-program",
     "Reduced dependence on some lifestyle medications under medical supervision",
     "Visible vitality improvements in skin, hair, and energy",
+    "More stable digestion, sleep, and energy rhythms over time",
+    "Lower relapse risk when post-program diet and routine are followed",
   ],
 };
+
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/panchkarma.jpg",
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Ayurveda treatements .jpg",
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Basti (Medicated Enema.jpg",
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Nasya (Nasal Therapy.jpg",
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Raktamokshana (Blood Purification).webp",
+  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Shirodhara (Mind-Body Reset).jpg",
+];
 
 const chooseIndiaPoints = [
   {
     title: "Unmatched Authenticity",
     text: "Ayurveda originates in India, with stronger treatment lineage, physician depth, and botanical access.",
+    icon: Sparkles,
   },
   {
     title: "Medical Expertise",
     text: "Top doctors hold accredited BAMS/MD Ayurveda qualifications with high-volume chronic care experience.",
+    icon: Stethoscope,
   },
   {
     title: "Extraordinary Value",
     text: "Program costs are typically 70-80% lower than many Western destinations for comparable durations.",
+    icon: ReceiptIndianRupee,
   },
   {
     title: "Healing Environments",
     text: "Many centers are designed for recovery in tropical or mountain ecosystems that support rest and routine.",
+    icon: Leaf,
   },
   {
     title: "Integrated Wellness",
     text: "Yoga, meditation, pranayama, and diet are usually embedded into treatment flow.",
+    icon: Activity,
   },
   {
     title: "Better Post-Program Continuity",
     text: "Many centers provide discharge protocols, diet plans, and remote follow-up to maintain results after travel.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -226,7 +250,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    slug: "bangalore/soukya",
+    link: "/centers/bangalore/soukya",
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -236,7 +260,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    slug: "bangalore/ayurvedagram",
+    link: "/centers/bangalore/ayurvedagram",
   },
   {
     name: "Shathayu Ayurveda Yoga Retreat",
@@ -246,18 +270,78 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 380,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    slug: "udupi/shathayu-ayurveda-yoga-retreat",
+    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+  },
+  {
+    name: "Ananda in the Himalayas",
+    city: "Rishikesh, Uttarakhand, India",
+    description:
+      "A renowned destination for integrative wellness with physician-led Ayurveda, yoga, and meditation programs in a serene Himalayan setting.",
+    rating: 4.8,
+    reviews: 420,
+    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+    link: "/centers",
+  },
+  {
+    name: "Carnoustie Ayurveda Wellness Resort",
+    city: "Mararikulam, Kerala, India",
+    description:
+      "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
+    rating: 4.7,
+    reviews: 360,
+    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+    link: "/centers",
+  },
+  {
+    name: "Atmantan Wellness Resort",
+    city: "Mulshi, Maharashtra, India",
+    description:
+      "A modern wellness retreat blending Ayurvedic therapies with lifestyle medicine, fitness, and nutrition in a scenic hill location.",
+    rating: 4.7,
+    reviews: 510,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers",
+  },
+  {
+    name: "AyurSoma Ayurveda Royal Retreat",
+    city: "Thiruvananthapuram, Kerala, India",
+    description:
+      "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
+    rating: 4.8,
+    reviews: 300,
+    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
+    link: "/centers",
+  },
+  {
+    name: "Niraamaya Retreats Surya Samudra",
+    city: "Kovalam, Kerala, India",
+    description:
+      "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
+    rating: 4.6,
+    reviews: 280,
+    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
+    link: "/centers",
+  },
+  {
+    name: "Nalanda Retreat Goa",
+    city: "Goa, India",
+    description:
+      "A focused Ayurvedic recovery center with personalized therapies, detox protocols, and supportive care for international wellness travelers.",
+    rating: 4.7,
+    reviews: 260,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers",
   },
 ];
 
 const inclusionsRows = [
-  ["Accommodation", "Private room or suite for 20 nights (as per package tier)"],
-  ["Meals", "Three daily Ayurvedic meals personalized by constitution and treatment phase"],
-  ["Doctor Consultations", "Initial assessment plus daily or alternate-day physician review"],
-  ["Daily Therapies", "Abhyanga, Shirodhara, Basti, Virechana, Kizhi, and others as prescribed"],
-  ["Ayurvedic Medicines", "Herbal medicines and medicated oils during stay"],
-  ["Yoga and Meditation", "Daily guided sessions integrated into the healing plan"],
-  ["Post-Program Support", "Diet guidance and continuity protocol for home"],
+  { label: "Accommodation", details: "Private room or suite for 20 nights (as per package tier)", icon: BedDouble },
+  { label: "Meals", details: "Three daily Ayurvedic meals personalized by constitution and treatment phase", icon: UtensilsCrossed },
+  { label: "Doctor Consultations", details: "Initial assessment plus daily or alternate-day physician review", icon: Stethoscope },
+  { label: "Daily Therapies", details: "Abhyanga, Shirodhara, Basti, Virechana, Kizhi, and others as prescribed", icon: Activity },
+  { label: "Ayurvedic Medicines", details: "Herbal medicines and medicated oils during stay", icon: Pill },
+  { label: "Yoga and Meditation", details: "Daily guided sessions integrated into the healing plan", icon: Brain },
+  { label: "Post-Program Support", details: "Diet guidance and continuity protocol for home", icon: ClipboardCheck },
 ];
 
 const faqItems = [
@@ -303,10 +387,79 @@ const faqItems = [
   },
 ];
 
+const patientReviews = [
+  {
+    name: "Maximilian Vogt",
+    location: "Stuttgart, Germany",
+    condition: "Chronic fatigue and digestive recovery",
+    title: "21 Days That Undid Years of Damage - Worth Every Dollar.",
+    review:
+      "I enrolled in the 21-Day Panchakarma Detox after years of fatigue and digestive issues. Daily Vaidya consultations adjusted treatment to my response. By week three, I experienced full-body detox, better mental clarity, and visible reduction in inflammation.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Vivienne Lacroix",
+    location: "Paris, France",
+    condition: "Burnout recovery",
+    title: "Three Weeks in Kerala That Reversed Two Years of Burnout.",
+    review:
+      "The physician-supervised Panchakarma protocol addressed root causes of stress. Anti-aging therapies, prescribed detox diet, and consistent monitoring improved skin clarity and mental sharpness. Everything was structured and transparent.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Cormac Hennessy",
+    location: "Galway, Ireland",
+    condition: "Chronic condition wellness reset",
+    title: "The Most Structured and Effective Health Investment I Have Made.",
+    review:
+      "The 21-day format in Rishikesh was highly personalized and medically confident. Vaidya supervision, daily plans, medicines, and meals removed every obstacle and kept my focus entirely on healing and continuity.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Nora Steinberg",
+    location: "Zurich, Switzerland",
+    condition: "Mental clarity and recovery",
+    title: "Mental Clarity Returned by Week Two - I Had Forgotten That Feeling.",
+    review:
+      "I joined for brain fog and chronic recovery support. By day fourteen, clarity improved significantly. The team monitored progress daily and adjusted therapies carefully. The value compared to Europe was exceptional.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Graham Whitfield",
+    location: "Leeds, UK",
+    condition: "Energy and metabolic recovery",
+    title: "At 58, This Programme Gave Me Back Energy I Had Written Off.",
+    review:
+      "The program design matched my needs for long-term condition management. Over three weeks, my energy rose steadily and my routine became sustainable. The all-inclusive setup made logistics stress-free.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Astrid Magnusson",
+    location: "Oslo, Norway",
+    condition: "Complete rejuvenation",
+    title: "Kerala Ayurveda at Its Most Authentic - 21 Days of Renewal.",
+    review:
+      "Pulse diagnosis on day one and personalized sequencing made the process clear and purposeful. Mental clarity returned early, physical lightness followed, and the full package felt practical for international patients.",
+    rating: 5,
+    verified: true,
+  },
+];
+
 const PanchakarmaDetox21Day = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [benefitsImageIndex, setBenefitsImageIndex] = useState(0);
+  const [benefitsVisibleCards, setBenefitsVisibleCards] = useState(4);
+  const [topCentersSlide, setTopCentersSlide] = useState(0);
+  const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [reviewAutoPlay, setReviewAutoPlay] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -315,8 +468,55 @@ const PanchakarmaDetox21Day = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const updateBenefitsVisibleCards = () => {
+      setBenefitsVisibleCards(window.innerWidth < 768 ? 2 : 4);
+    };
+    updateBenefitsVisibleCards();
+    window.addEventListener("resize", updateBenefitsVisibleCards);
+    return () => window.removeEventListener("resize", updateBenefitsVisibleCards);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBenefitsImageIndex((prev) => (prev + 1) % benefitsSectionImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (!reviewAutoPlay) return;
+    const timer = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % patientReviews.length);
+    }, 4800);
+    return () => clearInterval(timer);
+  }, [reviewAutoPlay]);
+
   const goToPrevious = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   const goToNext = () => setSelectedImage((prev) => (prev + 1) % galleryImages.length);
+  const goBenefitsPrevious = () => setBenefitsImageIndex((prev) => (prev - 1 + benefitsSectionImages.length) % benefitsSectionImages.length);
+  const goBenefitsNext = () => setBenefitsImageIndex((prev) => (prev + 1) % benefitsSectionImages.length);
+
+  const benefitsVisibleImages = Array.from({ length: benefitsVisibleCards }, (_, idx) => {
+    const imageIndex = (benefitsImageIndex + idx) % benefitsSectionImages.length;
+    return {
+      src: benefitsSectionImages[imageIndex],
+      key: `${benefitsSectionImages[imageIndex]}-${benefitsImageIndex}-${idx}`,
+    };
+  });
+  const topCentersPerSlide = 3;
+  const topCentersTotalSlides = Math.ceil(topAyurvedicCenters.length / topCentersPerSlide);
+  const visibleTopCenters = topAyurvedicCenters.slice(
+    topCentersSlide * topCentersPerSlide,
+    topCentersSlide * topCentersPerSlide + topCentersPerSlide
+  );
+  const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
+  const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
+  const toggleCenterDescription = (centerName: string) => {
+    setExpandedCenterName((prev) => (prev === centerName ? null : centerName));
+  };
+  const goReviewPrevious = () => setCurrentReview((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
+  const goReviewNext = () => setCurrentReview((prev) => (prev + 1) % patientReviews.length);
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
@@ -354,8 +554,8 @@ const PanchakarmaDetox21Day = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 py-12 md:py-16 max-w-6xl space-y-20 md:space-y-24">
-        <section id="gallery" className="scroll-mt-24 mb-2 md:mb-4">
+      <main className="container mx-auto px-4 pt-6 pb-12 md:pt-8 md:pb-16 max-w-6xl space-y-20 md:space-y-24">
+        <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D]">Ayurvedic Treatment and Program Gallery</h2>
           </div>
@@ -363,39 +563,60 @@ const PanchakarmaDetox21Day = () => {
             <img src={galleryImages[selectedImage]} alt="Panchakarma program" className="w-full h-[260px] md:h-[460px] object-cover" />
             <button
               onClick={goToPrevious}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/85 text-[#2F5B63] opacity-0 group-hover:opacity-100 transition"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#2F5B63] opacity-100 shadow-md transition"
               aria-label="Previous image"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/85 text-[#2F5B63] opacity-0 group-hover:opacity-100 transition"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#2F5B63] opacity-100 shadow-md transition"
               aria-label="Next image"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-6 w-6" />
             </button>
           </div>
         </section>
 
-        <section className="scroll-mt-24 -mt-20 md:-mt-24 pt-1 md:pt-2 pb-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] mb-4">Quick Summary - Everything You Need to Know</h2>
-          <Card>
-            <CardContent className="p-0 overflow-auto">
-              <table className="w-full text-sm min-w-[680px]">
-                <tbody>
-                  {quickSummaryRows.map((row, idx) => (
-                    <tr key={row[0]} className={idx === 0 ? "bg-[#EDE8D0]" : "border-t"}>
-                      <td className="p-3 font-semibold text-[#3D4B4C] w-[240px]">{row[0]}</td>
-                      <td className="p-3 text-[#7F543D]">{row[1]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        <section className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
+          <Card className="border-[#d8d0ae] bg-white shadow-sm">
+            <CardContent className="p-4 md:p-6 space-y-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Duration</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">21 Days / 20 Nights</p>
+                </div>
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Ideal For</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Detox, Recovery, Reset</p>
+                </div>
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Top Locations</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Kerala, Rishikesh, Goa</p>
+                </div>
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
+                  <p className="text-[11px] uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Avg Cost</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">$2,500 - $4,500</p>
+                </div>
+              </div>
+
+              <div className="overflow-auto rounded-xl border border-[#d8d0ae]">
+                <table className="w-full text-sm min-w-[680px]">
+                  <tbody>
+                    {quickSummaryRows.map((row, idx) => (
+                      <tr key={row[0]} className={idx === 0 ? "bg-[#EDE8D0]" : "border-t"}>
+                        <td className="p-3 font-semibold text-[#3D4B4C] w-[240px]">{row[0]}</td>
+                        <td className="p-3 text-[#7F543D]">{row[1]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </CardContent>
           </Card>
         </section>
-        <section className="scroll-mt-24 -mt-28 md:-mt-32 space-y-14 md:space-y-16">
+        <section className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
@@ -403,8 +624,16 @@ const PanchakarmaDetox21Day = () => {
                 <p className="text-[#7F543D] leading-relaxed">
                   This program is a structured, physician-supervised Ayurvedic detox protocol designed for full-system cleansing, recovery, and rejuvenation. It is not a spa format; it is a clinical wellness process personalized by constitution and health condition. Panchakarma means "five actions" and refers to core elimination therapies used to remove deep toxic load (Ama), restore organ function, and improve long-term vitality.
                 </p>
-                <p className="text-[#7F543D] leading-relaxed">
-                  The 21-day format is widely used because it can complete the three classical stages: preparation, core elimination, and restoration.
+                <p className="text-[#5f4636] leading-relaxed font-semibold text-lg">
+                  The 21-day format is widely used because it can complete the three classical stages: preparation, core elimination, and restoration.{" "}
+                  <button
+                    type="button"
+                    onClick={() => setQuoteModalOpen(true)}
+                    className="underline underline-offset-4 decoration-2 font-bold uppercase hover:text-[#7F543D] transition-colors"
+                  >
+                    CONTACT
+                  </button>{" "}
+                  Svastha Global to connect with the best of authentic <span className="italic">Ayurveda</span> in India.
                 </p>
               </CardContent>
             </Card>
@@ -418,13 +647,21 @@ const PanchakarmaDetox21Day = () => {
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {therapies.map((item) => {
+                  const titleMatch = item.title.match(/^([^()]+)\s*\(([^)]+)\)$/);
+                  const mainTitle = titleMatch ? titleMatch[1].trim() : item.title;
+                  const subTitle = titleMatch ? `(${titleMatch[2].trim()})` : "";
                   const Icon = item.icon;
                   return (
                     <div key={item.title} className="rounded-xl border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
-                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#EDE8D0] mb-3">
-                        <Icon className="h-5 w-5 text-[#2F5B63]" />
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDE8D0] ring-1 ring-[#d8d0ae] shrink-0">
+                          <Icon className="h-5 w-5 text-[#2F5B5D]" />
+                        </div>
+                        <h3 className="font-semibold text-[#3B5B5D] leading-snug">
+                          <span className="block">{mainTitle}</span>
+                          {subTitle && <span className="block">{subTitle}</span>}
+                        </h3>
                       </div>
-                      <h3 className="font-semibold text-[#3B5B5D] mb-2">{item.title}</h3>
                       <p className="text-sm text-[#7F543D]">{item.text}</p>
                     </div>
                   );
@@ -491,7 +728,7 @@ const PanchakarmaDetox21Day = () => {
                 value={`week-${idx}`}
                 className="overflow-hidden bg-white rounded-xl px-4 md:px-6 border border-green-100 data-[state=open]:border-green-500"
               >
-                <AccordionTrigger className="py-4 hover:no-underline">
+                <AccordionTrigger className="py-4 hover:no-underline [&>svg]:h-7 [&>svg]:w-7 [&>svg]:text-orange-500 [&>svg]:shrink-0">
                   <div className="text-left">
                     <p className="text-lg font-bold text-[#3B5B5D]">{week.title}</p>
                     <p className="text-sm text-[#8C765E]">{week.duration} - {week.focus}</p>
@@ -517,6 +754,52 @@ const PanchakarmaDetox21Day = () => {
         </section>
 
         <section className="scroll-mt-24 mt-12 md:mt-16">
+          <div className="mb-7 md:mb-8">
+            <div className="relative">
+              <button
+                onClick={goBenefitsPrevious}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2F5B63] shadow-md"
+                aria-label="Previous benefits image"
+              >
+                <ChevronLeft className="h-7 w-7" />
+              </button>
+              <button
+                onClick={goBenefitsNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2F5B63] shadow-md"
+                aria-label="Next benefits image"
+              >
+                <ChevronRight className="h-7 w-7" />
+              </button>
+
+              <div className="px-10 md:px-14">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                  {benefitsVisibleImages.map((image) => (
+                    <div key={image.key} className="rounded-xl overflow-hidden border border-[#d6decf] bg-white shadow-sm">
+                      <img
+                        src={image.src}
+                        alt="Panchakarma benefits visual"
+                        className="w-full h-24 md:h-28 object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-4 flex justify-center gap-2">
+              {benefitsSectionImages.map((_, idx) => (
+                <button
+                  key={`benefits-dot-${idx}`}
+                  onClick={() => setBenefitsImageIndex(idx)}
+                  aria-label={`Go to benefits image ${idx + 1}`}
+                  className={`h-2.5 rounded-full transition-all ${idx === benefitsImageIndex ? "w-8 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"
+                    }`}
+                />
+              ))}
+            </div>
+          </div>
+
           <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Benefits of the 21-Day Panchakarma Detox</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
@@ -586,7 +869,7 @@ const PanchakarmaDetox21Day = () => {
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
                       <ReceiptIndianRupee className="h-5 w-5 text-[#2F5B63]" />
                     </div>
-                    <p className="text-lg font-bold text-[#3B5B5D]">Most Popular</p>
+                    <p className="text-xl md:text-2xl font-bold text-[#3B5B5D]">MOST POPULAR</p>
                   </div>
                   <p className="mt-3 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
                 </div>
@@ -595,7 +878,7 @@ const PanchakarmaDetox21Day = () => {
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
                 <div className="flex flex-wrap items-center justify-between gap-3 bg-[#EFE8CB] px-4 py-3">
                   <p className="font-semibold text-[#3B5B5D]">Most popular - Panchakarma & disease</p>
-                  <span className="inline-flex items-center rounded-full bg-white px-3 py-1 text-sm font-semibold text-[#2F5B63]">
+                  <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
                     Highest demand package
                   </span>
                 </div>
@@ -629,12 +912,20 @@ const PanchakarmaDetox21Day = () => {
             <CardContent className="p-6 md:p-8 space-y-6">
               <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] text-center">Why Choose India for Panchakarma?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
-                {chooseIndiaPoints.map((item) => (
-                  <div key={item.title} className="rounded-lg border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
-                    <p className="font-semibold text-[#3B5B5D]">{item.title}</p>
-                    <p className="text-sm text-[#7F543D] mt-2">{item.text}</p>
-                  </div>
-                ))}
+                {chooseIndiaPoints.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="rounded-lg border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
+                      <div className="flex items-center gap-2.5">
+                        <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                          <Icon className="h-4.5 w-4.5 text-[#2F5B63]" />
+                        </span>
+                        <p className="font-semibold text-[#3B5B5D]">{item.title}</p>
+                      </div>
+                      <p className="text-sm text-[#7F543D] mt-2">{item.text}</p>
+                    </div>
+                  )
+                })}
               </div>
             </CardContent>
           </Card>
@@ -651,36 +942,55 @@ const PanchakarmaDetox21Day = () => {
             </p>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">Doctor-screened centers</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">40+ countries supported</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">End-to-end assistance</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">Doctor-Screened Centers</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">40+ Countries Supported</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">End-to-End Assistance</span>
           </div>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             {whyChooseUsPoints.map((point, idx) => {
               const Icon = point.icon;
               return (
-              <div
-                key={point.title}
-                className="bg-white rounded-2xl px-4 py-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
-                    <Icon className="h-5 w-5 text-[#1E7A4D]" />
-                  </span>
-                  <div>
-                    <p className="text-sm font-semibold text-[#2F5B63]">{idx + 1}. {point.title}</p>
-                    <p className="text-sm leading-relaxed text-[#5C5E52] mt-1">{point.description}</p>
+                <div
+                  key={point.title}
+                  className="bg-white rounded-2xl px-4 py-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
+                      <Icon className="h-5 w-5 text-[#1E7A4D]" />
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-[#2F5B63]">{idx + 1}. {point.title}</p>
+                      <p className="text-sm leading-relaxed text-[#5C5E52] mt-1">{point.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )})}
+              )
+            })}
           </div>
         </section>
 
-        <section className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14 space-y-5">
+        <section className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold text-[#3B5B5D]">What Is Included in the 21-Day Package?</h2>
             <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Duration</p>
+              <p className="text-lg font-bold text-[#3B5B5D] mt-1">21 Days</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Stay</p>
+              <p className="text-lg font-bold text-[#3B5B5D] mt-1">20 Nights</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Core Inclusions</p>
+              <p className="text-lg font-bold text-[#3B5B5D] mt-1">Therapies + Meals</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-xs uppercase tracking-[0.12em] text-[#7F543D] font-semibold">Care Model</p>
+              <p className="text-lg font-bold text-[#3B5B5D] mt-1">Doctor-Supervised</p>
+            </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
             <CardContent className="p-0 overflow-auto">
@@ -692,17 +1002,39 @@ const PanchakarmaDetox21Day = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {inclusionsRows.map((row) => (
-                    <tr key={row[0]} className="border-t">
-                      <td className="p-3 font-medium text-[#3D4B4C]">{row[0]}</td>
-                      <td className="p-3 text-[#7F543D]">{row[1]}</td>
-                    </tr>
-                  ))}
+                  {inclusionsRows.map((row) => {
+                    const Icon = row.icon;
+                    return (
+                      <tr key={row.label} className="border-t">
+                        <td className="p-3 font-medium text-[#3D4B4C]">
+                          <div className="flex items-center gap-2.5">
+                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                              <Icon className="h-4 w-4 text-[#2F5B63]" />
+                            </span>
+                            <span>{row.label}</span>
+                          </div>
+                        </td>
+                        <td className="p-3 text-[#7F543D]">{row.details}</td>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </table>
             </CardContent>
           </Card>
-          <p className="text-sm text-[#8C765E] text-center">Optional add-ons: airport transfers, local sightseeing, extended stay, and couples programs.</p>
+          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#2F5B63] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
+            <div className="flex items-start gap-3">
+              <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/70 border border-[#b8c9cc]">
+                <Globe2 className="h-4.5 w-4.5 text-[#2F5B63]" />
+              </span>
+              <div>
+                <p className="text-lg font-bold text-[#2F5B63] leading-tight">For International Patients</p>
+                <p className="mt-1 text-sm md:text-[15px] text-[#7F543D] leading-relaxed">
+                  Optional add-ons: airport transfers, local sightseeing, extended stay, and couples programs.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14 relative overflow-hidden rounded-3xl bg-[#2F5B63] text-white p-5 md:p-8">
@@ -741,12 +1073,12 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section className="scroll-mt-24 mt-10 md:mt-14">
+        <section className="scroll-mt-24 mt-4 md:mt-6">
           <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Frequently Asked Questions</h2>
           <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
             {faqItems.map((item, idx) => (
               <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm">
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#3B5B5D] hover:no-underline">{item.question}</AccordionTrigger>
+                <AccordionTrigger className="text-left text-lg font-semibold text-[#3B5B5D] hover:no-underline [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
                 <AccordionContent className="text-[#7F543D] leading-relaxed pb-5">{item.answer}</AccordionContent>
               </AccordionItem>
             ))}
@@ -757,69 +1089,204 @@ const PanchakarmaDetox21Day = () => {
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-[#3B5B5D]">Our Top Ayurvedic Center in India</h2>
           </div>
-          <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {topAyurvedicCenters.map((center) => (
-              <div key={center.slug} className="flex items-start">
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
-                  <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
-                    <img
-                      src={center.image}
-                      alt={center.name}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                    />
-                  </div>
+          <div className="relative">
+            <button
+              onClick={goTopCentersPrevious}
+              className="absolute -left-8 md:-left-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
+              aria-label="Previous centers"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={goTopCentersNext}
+              className="absolute -right-8 md:-right-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
+              aria-label="Next centers"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
 
-                  <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight line-clamp-1 min-h-[1.6rem]">
-                      {center.name}
-                    </h3>
-
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-1.5 text-[#7F543D]">
-                        <MapPin className="w-3.5 h-3.5 text-primary" />
-                        <span className="text-xs font-semibold">{center.city}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                        <span className="text-xs font-black text-[#3D4B4C]">{center.rating}</span>
-                        <span className="text-xs font-semibold text-[#7F543D]">({center.reviews})</span>
-                      </div>
+            <div className="grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {visibleTopCenters.map((center, idx) => (
+                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full">
+                    <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
+                      <img
+                        src={center.image}
+                        alt={center.name}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      />
                     </div>
 
-                    <p className="text-sm leading-relaxed md:leading-[1.5] text-[#7F543D] mb-2 line-clamp-6">
-                      {center.description}
-                    </p>
-                    <span className="inline-flex text-xs font-semibold text-primary w-fit mb-2">Read More</span>
+                    <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
+                      <h3 className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight line-clamp-1 min-h-[1.75rem]">
+                        {center.name}
+                      </h3>
 
-                    <div className="mt-auto pt-3 border-t border-border/50">
-                      <div className="grid grid-cols-2 gap-2">
-                        <Button
-                          variant="outline"
-                          className="w-full font-bold py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                          onClick={() => navigate(`/centers/${center.slug}`)}
-                        >
-                          View Details
-                        </Button>
-                        <Button
-                          onClick={() => setQuoteModalOpen(true)}
-                          className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"
-                        >
-                          Get Quote
-                        </Button>
+                      <div className="flex items-center justify-between mb-3 min-h-[1.5rem]">
+                        <div className="flex items-center gap-1.5 text-[#7F543D]">
+                          <MapPin className="w-3.5 h-3.5 text-primary" />
+                          <span className="text-xs font-semibold line-clamp-1">{center.city}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                          <span className="text-xs font-black text-[#3D4B4C]">{center.rating}</span>
+                          <span className="text-xs font-semibold text-[#7F543D]">({center.reviews})</span>
+                        </div>
+                      </div>
+
+                      <p
+                        className={`text-sm leading-relaxed md:leading-[1.5] text-[#7F543D] mb-2 ${expandedCenterName === center.name
+                            ? ""
+                            : "line-clamp-3 leading-[1.35rem] h-[4.05rem] overflow-hidden"
+                          }`}
+                      >
+                        {center.description}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => toggleCenterDescription(center.name)}
+                        className="inline-flex text-xs font-semibold text-primary w-fit mb-2 hover:underline"
+                      >
+                        {expandedCenterName === center.name ? "Read Less" : "Read More"}
+                      </button>
+
+                      <div className="mt-auto pt-3 border-t border-border/50">
+                        <div className="grid grid-cols-2 gap-2">
+                          <Button
+                            variant="outline"
+                            className="w-full font-bold py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                            onClick={() => navigate(center.link)}
+                          >
+                            View Details
+                          </Button>
+                          <Button
+                            onClick={() => setQuoteModalOpen(true)}
+                            className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"
+                          >
+                            Get Quote
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-5 flex justify-center gap-2">
+            {Array.from({ length: topCentersTotalSlides }).map((_, idx) => (
+              <button
+                key={`top-centers-dot-${idx}`}
+                onClick={() => setTopCentersSlide(idx)}
+                aria-label={`Go to center slide ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all ${idx === topCentersSlide ? "w-7 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"}`}
+              />
             ))}
           </div>
           <div className="mt-8 flex justify-center">
             <Button
-              className="bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-semibold px-8 py-6 rounded-xl"
+              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base md:text-lg px-8 py-6 rounded-xl"
               onClick={() => navigate("/centers")}
             >
-              View More
+              VIEW ALL CENTERS -&gt;
             </Button>
+          </div>
+        </section>
+
+        <section className="scroll-mt-24 mt-10 md:mt-14 mb-12 md:mb-16">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
+            <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
+              Hear from our patients about their transformational healing journeys
+            </p>
+          </div>
+
+          <div className="relative">
+            <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
+              <CardContent className="p-4 md:p-12">
+                <div className="max-w-4xl mx-auto">
+                  <div className="text-primary/20 mb-3 md:mb-4">
+                    <Quote className="w-8 h-8 md:w-12 md:h-12" />
+                  </div>
+
+                  <div className="mb-4 md:mb-6">
+                    <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                      {patientReviews[currentReview].title}
+                    </h3>
+                    <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                      "{patientReviews[currentReview].review}"
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                      {patientReviews[currentReview].name.charAt(0)}
+                    </div>
+
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-primary">
+                          {patientReviews[currentReview].name}
+                        </h4>
+                        {patientReviews[currentReview].verified && (
+                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                            &#10003; Verified
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                        {patientReviews[currentReview].location} - {patientReviews[currentReview].condition}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 md:gap-3">
+                    {Array.from({ length: patientReviews[currentReview].rating }).map((_, idx) => (
+                      <Star key={`review-star-${idx}`} className="h-5 w-5 md:h-6 md:w-6 fill-yellow-400 text-yellow-400" />
+                    ))}
+                    <span className="text-xs md:text-sm font-semibold text-primary">{patientReviews[currentReview].rating}.0</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
+              <button
+                onClick={goReviewPrevious}
+                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
+              <button
+                onClick={goReviewNext}
+                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
+                aria-label="Next review"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            {reviewAutoPlay && (
+              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Auto
+              </div>
+            )}
+          </div>
+
+          <div className="mt-5 flex justify-center gap-2">
+            {patientReviews.map((_, idx) => (
+              <button
+                key={`review-dot-${idx}`}
+                onClick={() => setCurrentReview(idx)}
+                aria-label={`Go to review ${idx + 1}`}
+                className={`h-2.5 rounded-full transition-all ${idx === currentReview ? "w-7 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"}`}
+              />
+            ))}
           </div>
         </section>
 
