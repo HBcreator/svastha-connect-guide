@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import {
   Activity,
   AlertTriangle,
+  ArrowRight,
   Brain,
   BedDouble,
   CalendarCheck2,
@@ -619,7 +620,7 @@ const PanchakarmaDetox21Day = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      <section className="bg-[#3B5B5D] text-white py-10 md:py-14">
+      <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
@@ -641,7 +642,7 @@ const PanchakarmaDetox21Day = () => {
             </div>
             <div className="w-full md:w-[430px] lg:w-[520px] md:ml-auto md:justify-self-end md:translate-x-8 lg:translate-x-16">
               <Button
-                className="w-full h-12 rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 font-semibold"
+                className="w-full h-12 rounded-xl bg-white text-[#335765] hover:bg-white/90 font-semibold"
                 onClick={() => setQuoteModalOpen(true)}
               >
                 <Calendar className="mr-2 h-4 w-4" /> Get Free Consultation
@@ -651,23 +652,23 @@ const PanchakarmaDetox21Day = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 pt-6 pb-32 md:pt-8 md:pb-16 max-w-6xl space-y-20 md:space-y-24">
+      <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D]">Ayurvedic Treatment and Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Treatment and Program Gallery</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
             <img src={galleryImages[selectedImage]} alt="Panchakarma program" className="w-full h-[260px] md:h-[460px] object-cover" />
             <button
               onClick={goToPrevious}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#2F5B63] opacity-100 shadow-md transition"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
               aria-label="Previous image"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#2F5B63] opacity-100 shadow-md transition"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
               aria-label="Next image"
             >
               <ChevronRight className="h-6 w-6" />
@@ -676,25 +677,25 @@ const PanchakarmaDetox21Day = () => {
         </section>
 
         <section id="quick-summary" className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
           <Card className="border-[#d8d0ae] bg-white shadow-sm">
             <CardContent className="p-4 md:p-6 space-y-4">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">21 Days / 20 Nights</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21 Days / 20 Nights</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Detox, Recovery, Reset</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Detox, Recovery, Reset</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#3B5B5D]">$2,500 - $4,500</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$2,500 - $4,500</p>
                 </div>
               </div>
 
@@ -708,10 +709,10 @@ const PanchakarmaDetox21Day = () => {
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
                         {(() => {
                           const Icon = quickSummaryMobileIcons[row[0] as keyof typeof quickSummaryMobileIcons] || ClipboardCheck;
-                          return <Icon className="h-4 w-4 text-[#2F5B63]" />;
+                          return <Icon className="h-4 w-4 text-[#335765]" />;
                         })()}
                       </span>
-                      <p className="text-[15px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">{row[0]}</p>
+                      <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row[0]}</p>
                     </div>
                     <p className="mt-1 text-sm leading-relaxed text-[#7F543D] break-words font-semibold">{row[1]}</p>
                   </div>
@@ -733,15 +734,16 @@ const PanchakarmaDetox21Day = () => {
             </CardContent>
           </Card>
         </section>
+
         <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#3B5B5D]">What Is the 21-Day Panchakarma Detox Program?</h2>
-                <p className="text-[#7F543D] leading-relaxed">
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the 21-Day Panchakarma Detox Program?</h2>
+                <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
                   This program is a structured, physician-supervised Ayurvedic detox protocol designed for full-system cleansing, recovery, and rejuvenation. It is not a spa format; it is a clinical wellness process personalized by constitution and health condition. Panchakarma means "five actions" and refers to core elimination therapies used to remove deep toxic load (Ama), restore organ function, and improve long-term vitality.
                 </p>
-                <p className="text-[#5f4636] leading-relaxed font-semibold text-lg">
+                <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
                   The 21-day format is widely used because it can complete the three classical stages: preparation, core elimination, and restoration.{" "}
                   <button
                     type="button"
@@ -756,9 +758,9 @@ const PanchakarmaDetox21Day = () => {
             </Card>
           </div>
 
-          <Card className="h-full shadow-sm mt-10 md:mt-12 border-[#d8d0ae] bg-[#EDE8D0]">
+          <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#3B5B5D] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
+              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                 Not all five therapies are given to every guest. Your doctor prescribes the combination based on diagnosis and tolerance.
               </p>
@@ -774,7 +776,7 @@ const PanchakarmaDetox21Day = () => {
                         <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDE8D0] ring-1 ring-[#d8d0ae] shrink-0">
                           <Icon className="h-5 w-5 text-[#2F5B5D]" />
                         </div>
-                        <h3 className="font-semibold text-[#3B5B5D] leading-snug">
+                        <h3 className="font-semibold text-[#335765] leading-snug">
                           <span className="block">{mainTitle}</span>
                           {subTitle && <span className="block">{subTitle}</span>}
                         </h3>
@@ -787,14 +789,14 @@ const PanchakarmaDetox21Day = () => {
             </CardContent>
           </Card>
 
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch mt-10 md:mt-12">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch !mt-6 md:!mt-10">
             <Card className="h-full border-green-300 bg-white shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-6">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-100 ring-1 ring-green-200">
                     <CircleCheck className="h-5 w-5 text-green-700" />
                   </span>
-                  <h2 className="text-2xl font-bold text-[#2F5B63]">Who Is This Program For?</h2>
+                  <h2 className="text-2xl font-bold text-[#335765]">Who Is This Program For?</h2>
                 </div>
                 <ul className="space-y-3">
                   {candidatePoints.map((point) => (
@@ -813,9 +815,9 @@ const PanchakarmaDetox21Day = () => {
               <CardContent className="p-6 md:p-8 space-y-6">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-100 ring-1 ring-green-200">
-                    <AlertTriangle className="h-5 w-5 text-[#2F5B63]" />
+                    <AlertTriangle className="h-5 w-5 text-[#335765]" />
                   </span>
-                  <h3 className="text-2xl font-bold text-[#2F5B63]">Who Should Avoid This Program</h3>
+                  <h3 className="text-2xl font-bold text-[#335765]">Who Should Avoid This Program</h3>
                 </div>
                 <ul className="space-y-3">
                   {avoidPoints.map((point) => (
@@ -832,9 +834,9 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
-        <section id="week-breakdown" className="scroll-mt-24 mt-12 md:mt-16 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
+        <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D]">The 21-Day Program - Week-by-Week Breakdown</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21-Day Program - Week-by-Week Breakdown</h2>
             <p className="text-[#7F543D] mt-2">Preparation, elimination, and rejuvenation in one coherent physician-led journey.</p>
           </div>
 
@@ -847,14 +849,14 @@ const PanchakarmaDetox21Day = () => {
               >
                 <AccordionTrigger className="py-4 hover:no-underline [&>svg]:h-7 [&>svg]:w-7 [&>svg]:text-orange-500 [&>svg]:shrink-0">
                   <div className="text-left">
-                    <p className="text-lg font-bold text-[#3B5B5D]">{week.title}</p>
+                    <p className="text-lg font-bold text-[#335765]">{week.title}</p>
                     <p className="text-sm text-[#8C765E]">{week.duration} - {week.focus}</p>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="pt-1 pb-6">
                   <div>
                     <p className="text-[#7F543D] mb-4 leading-relaxed">{week.description}</p>
-                    <p className="font-semibold text-[#3B5B5D] mb-2.5">Key Therapies</p>
+                    <p className="font-semibold text-[#335765] mb-2.5">Key Therapies</p>
                     <ul className="space-y-2.5 text-sm text-[#7F543D]">
                       {week.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2.5 leading-relaxed">
@@ -870,19 +872,19 @@ const PanchakarmaDetox21Day = () => {
           </Accordion>
         </section>
 
-        <section id="benefits" className="scroll-mt-24 mt-12 md:mt-16">
+        <section id="benefits" className="scroll-mt-24 !mt-6 md:!mt-10">
           <div className="mb-7 md:mb-8">
             <div className="relative">
               <button
                 onClick={goBenefitsPrevious}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2F5B63] shadow-md"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#335765] shadow-md"
                 aria-label="Previous benefits image"
               >
                 <ChevronLeft className="h-7 w-7" />
               </button>
               <button
                 onClick={goBenefitsNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#2F5B63] shadow-md"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/95 text-[#335765] shadow-md"
                 aria-label="Next benefits image"
               >
                 <ChevronRight className="h-7 w-7" />
@@ -932,14 +934,14 @@ const PanchakarmaDetox21Day = () => {
                   key={`benefits-dot-${idx}`}
                   onClick={() => setBenefitsImageIndex(idx)}
                   aria-label={`Go to benefits image ${idx + 1}`}
-                  className={`h-2.5 rounded-full transition-all ${idx === benefitsImageIndex ? "w-8 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"
+                  className={`h-2.5 rounded-full transition-all ${idx === benefitsImageIndex ? "w-8 bg-[#335765]" : "w-2.5 bg-[#C7D1C9]"
                     }`}
                 />
               ))}
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Benefits of the 21-Day Panchakarma Detox</h2>
+          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of the 21-Day Panchakarma Detox</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
               <CardContent className="p-6">
@@ -947,7 +949,7 @@ const PanchakarmaDetox21Day = () => {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDE8D0] ring-1 ring-[#d8d0ae]">
                     <HeartPulse className="h-5 w-5 text-[#2F5B5D]" />
                   </span>
-                  <h3 className="font-bold text-[#3B5B5D]">Physical Benefits</h3>
+                  <h3 className="font-bold text-[#335765]">Physical Benefits</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-[#7F543D]">
                   {benefits.physical.map((item) => <li key={item}>- {item}</li>)}
@@ -960,7 +962,7 @@ const PanchakarmaDetox21Day = () => {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDE8D0] ring-1 ring-[#d8d0ae]">
                     <Brain className="h-5 w-5 text-[#2F5B5D]" />
                   </span>
-                  <h3 className="font-bold text-[#3B5B5D]">Mental and Emotional Benefits</h3>
+                  <h3 className="font-bold text-[#335765]">Mental and Emotional Benefits</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-[#7F543D]">
                   {benefits.mental.map((item) => <li key={item}>- {item}</li>)}
@@ -973,7 +975,7 @@ const PanchakarmaDetox21Day = () => {
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#EDE8D0] ring-1 ring-[#d8d0ae]">
                     <Sparkles className="h-5 w-5 text-[#2F5B5D]" />
                   </span>
-                  <h3 className="font-bold text-[#3B5B5D]">Long-Term Effects</h3>
+                  <h3 className="font-bold text-[#335765]">Long-Term Effects</h3>
                 </div>
                 <ul className="space-y-2 text-sm text-[#7F543D]">
                   {benefits.longTerm.map((item) => <li key={item}>- {item}</li>)}
@@ -982,9 +984,10 @@ const PanchakarmaDetox21Day = () => {
             </Card>
           </div>
         </section>
-        <section id="cost" className="scroll-mt-24 mt-12 md:mt-16 mb-12 md:mb-16 space-y-6">
+
+        <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#3B5B5D]">Cost of the 21-Day Panchakarma in India</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Cost of the 21-Day Panchakarma in India</h2>
             <p className="mt-2 text-[#7F543D]">
               Most guests choose this duration for a full detox cycle, physician supervision, and a complete stay package in India.
             </p>
@@ -993,30 +996,30 @@ const PanchakarmaDetox21Day = () => {
           <Card className="border-[#d8d0ae] bg-white shadow-sm">
             <CardContent className="p-5 md:p-6 space-y-5">
               <div className="grid md:grid-cols-3 gap-4">
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4">
+                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#3B5B5D]">21 Days</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">21 Days</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and rejuvenation timeline.</p>
                 </div>
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4">
+                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
-                  <p className="mt-2 text-2xl font-bold text-[#3B5B5D]">$2,500 - $4,500</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">$2,500 - $4,500</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">Most popular range for reputable centers and full-stay plans.</p>
                 </div>
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4">
-                  <div className="flex items-center gap-3">
+                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
+                  <div className="flex items-center justify-center gap-3 mb-2">
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
-                      <ReceiptIndianRupee className="h-5 w-5 text-[#2F5B63]" />
+                      <Sparkles className="h-5 w-5 text-[#335765]" />
                     </div>
-                    <p className="text-xl md:text-2xl font-bold text-[#3B5B5D]">MOST POPULAR</p>
+                    <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
                   </div>
-                  <p className="mt-3 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
-                <div className="flex flex-wrap items-center justify-between gap-3 bg-[#EFE8CB] px-4 py-3">
-                  <p className="font-semibold text-[#3B5B5D]">Most popular - Panchakarma & disease</p>
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
+                  <p className="font-semibold text-[#335765]">Most popular - Panchakarma </p>
                   <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
                     Highest demand package
                   </span>
@@ -1024,20 +1027,20 @@ const PanchakarmaDetox21Day = () => {
                 <div className="md:hidden p-3 space-y-2 bg-white">
                   {costComparisonRows.map((row) => (
                     <div key={row.program} className="rounded-xl border border-[#d8d0ae] p-3 bg-[#FFFEFA]">
-                      <p className="text-[13px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">Program</p>
+                      <p className="text-[13px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">Program</p>
                       <p className="mt-1 text-sm text-[#7F543D] font-semibold break-words">{row.program}</p>
 
                       <div className="mt-3 grid grid-cols-1 gap-2">
                         <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Category</p>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Category</p>
                           <p className="text-sm text-[#7F543D] font-semibold">{row.category}</p>
                         </div>
                         <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Cost</p>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Cost</p>
                           <p className="text-sm text-[#7F543D] font-semibold">{row.cost}</p>
                         </div>
                         <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#2F5B63] font-extrabold">Notes</p>
+                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Notes</p>
                           <p className="text-sm text-[#7F543D] font-semibold break-words">{row.notes}</p>
                         </div>
                       </div>
@@ -1047,7 +1050,7 @@ const PanchakarmaDetox21Day = () => {
 
                 <div className="hidden md:block overflow-auto">
                   <table className="w-full text-sm min-w-[680px]">
-                    <thead className="bg-[#F5F8F6] text-[#3B5B5D]">
+                    <thead className="bg-[#F5F8F6] text-[#335765]">
                       <tr>
                         <th className="text-left p-3 font-semibold">Program</th>
                         <th className="text-left p-3 font-semibold">Category</th>
@@ -1072,10 +1075,10 @@ const PanchakarmaDetox21Day = () => {
           </Card>
         </section>
 
-        <section id="why-india" className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14">
+        <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#3B5B5D] text-center">Why Choose India for Panchakarma?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Panchakarma?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 {chooseIndiaPoints.map((item) => {
                   const Icon = item.icon;
@@ -1083,9 +1086,9 @@ const PanchakarmaDetox21Day = () => {
                     <div key={item.title} className="rounded-lg border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
                       <div className="flex items-center gap-2.5">
                         <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                          <Icon className="h-4.5 w-4.5 text-[#2F5B63]" />
+                          <Icon className="h-4.5 w-4.5 text-[#335765]" />
                         </span>
-                        <p className="font-semibold text-[#3B5B5D]">{item.title}</p>
+                        <p className="font-semibold text-[#335765]">{item.title}</p>
                       </div>
                       <p className="text-sm text-[#7F543D] mt-2">{item.text}</p>
                     </div>
@@ -1098,19 +1101,19 @@ const PanchakarmaDetox21Day = () => {
 
         <section
           id="why-us"
-          className="scroll-mt-24 mt-10 md:mt-14 mb-10 md:mb-14 rounded-3xl p-6 md:p-10 border border-[#e0d9b7]"
+          className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14 rounded-3xl p-6 md:p-10 border border-[#e0d9b7]"
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#3B5B5D] mb-3">Why Choose Us for 21 Day Panchakarma</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for 21 Day Panchakarma</h2>
             <p className="text-[#7F543D]">
               Not just booking support - structured guidance from pre-consultation to post-program continuity.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">Doctor-Screened Centers</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">40+ Countries Supported</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#2F5B63] border border-[#d9cfaa]">End-to-End Assistance</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Doctor-Screened Centers</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">40+ Countries Supported</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">End-to-End Assistance</span>
           </div>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             {whyChooseUsPoints.map((point, idx) => {
@@ -1118,17 +1121,15 @@ const PanchakarmaDetox21Day = () => {
               return (
                 <div
                   key={point.title}
-                  className="bg-white rounded-2xl px-4 py-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="bg-white rounded-2xl p-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-center gap-3 mb-3">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
                       <Icon className="h-5 w-5 text-[#1E7A4D]" />
                     </span>
-                    <div>
-                      <p className="text-sm font-semibold text-[#2F5B63]">{idx + 1}. {point.title}</p>
-                      <p className="text-sm leading-relaxed text-[#5C5E52] mt-1">{point.description}</p>
-                    </div>
+                    <p className="text-sm font-bold text-[#335765]">{idx + 1}. {point.title}</p>
                   </div>
+                  <p className="text-sm leading-relaxed text-[#5C5E52]">{point.description}</p>
                 </div>
               )
             })}
@@ -1137,25 +1138,25 @@ const PanchakarmaDetox21Day = () => {
 
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#3B5B5D]">What Is Included in the 21-Day Package?</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the 21-Day Package?</h2>
             <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-              <p className="text-lg font-bold text-[#3B5B5D] mt-1">21 Days</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">21 Days</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#3B5B5D] mt-1">20 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">20 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
-              <p className="text-lg font-bold text-[#3B5B5D] mt-1">Therapies + Meals</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
-              <p className="text-lg font-bold text-[#3B5B5D] mt-1">Doctor-Supervised</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Supervised</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
@@ -1167,9 +1168,9 @@ const PanchakarmaDetox21Day = () => {
                     <div key={row.label} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
                       <div className="flex items-center gap-2.5">
                         <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                          <Icon className="h-4 w-4 text-[#2F5B63]" />
+                          <Icon className="h-4 w-4 text-[#335765]" />
                         </span>
-                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#2F5B63] font-extrabold">{row.label}</p>
+                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row.label}</p>
                       </div>
                       <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{row.details}</p>
                     </div>
@@ -1179,7 +1180,7 @@ const PanchakarmaDetox21Day = () => {
 
               <div className="hidden md:block overflow-auto">
                 <table className="w-full text-sm min-w-[680px]">
-                  <thead className="bg-[#F5F8F6] text-[#3B5B5D]">
+                  <thead className="bg-[#F5F8F6] text-[#335765]">
                     <tr>
                       <th className="text-left p-3 font-semibold">Inclusion</th>
                       <th className="text-left p-3 font-semibold">Details</th>
@@ -1193,7 +1194,7 @@ const PanchakarmaDetox21Day = () => {
                           <td className="p-3 font-medium text-[#3D4B4C]">
                             <div className="flex items-center gap-2.5">
                               <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                                <Icon className="h-4 w-4 text-[#2F5B63]" />
+                                <Icon className="h-4 w-4 text-[#335765]" />
                               </span>
                               <span>{row.label}</span>
                             </div>
@@ -1207,186 +1208,147 @@ const PanchakarmaDetox21Day = () => {
               </div>
             </CardContent>
           </Card>
-          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#2F5B63] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
+          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
             <div className="flex items-start gap-3">
-              <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/70 border border-[#b8c9cc]">
-                <Globe2 className="h-4.5 w-4.5 text-[#2F5B63]" />
-              </span>
+              <div className="mt-1 shrink-0">
+                <CircleCheck className="h-5 w-5 text-[#335765]" />
+              </div>
               <div>
-                <p className="text-lg font-bold text-[#2F5B63] leading-tight">For International Patients</p>
-                <p className="mt-1 text-sm md:text-[15px] text-[#7F543D] leading-relaxed">
-                  Optional add-ons: airport transfers, local sightseeing, extended stay, and couples programs.
+                <p className="text-[#214348] font-bold">Important Notice</p>
+                <p className="text-sm text-[#335765] leading-relaxed mt-1">
+                  All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="flex flex-col gap-6 md:gap-8">
-          <section id="consultation" className="scroll-mt-24 relative overflow-hidden rounded-3xl bg-[#2F5B63] text-white p-5 pb-8 md:p-8">
-            <div className="absolute inset-0 pointer-events-none">
-              <div className="absolute -right-8 -top-8 w-40 h-40 rounded-full bg-white/10" />
-              <div className="absolute -left-6 -bottom-10 w-44 h-44 rounded-full bg-white/10" />
+        <section id="consultation" className="scroll-mt-24 !mt-6 md:!mt-10 overflow-hidden bg-[#335765] rounded-3xl text-white shadow-2xl">
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
+              <img
+                src="/Program Images/21-day-detox.png"
+                alt="21-day Panchakarma consultation"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
-            {/* Mobile layout: image on top, content below */}
-            <div className="relative md:hidden flex flex-col gap-5">
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl h-[220px]">
-                <img
-                  src="/Program Images/21-day-detox.png"
-                  alt="21-day Panchakarma consultation"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1f444b]/50 via-transparent to-transparent" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
-                <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                  Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
-                </p>
-                <div className="space-y-3 mt-5">
-                  <a
-                    href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 h-14 flex flex-col items-center justify-center transition"
-                    aria-label="WhatsApp Us Now"
-                  >
-                    <span className="text-sm font-semibold leading-tight">WhatsApp Us Now</span>
-                    <span className="text-base font-bold leading-tight mt-0.5 underline">+91 80 2843 2737</span>
-                  </a>
-                  <Button className="w-full h-12 bg-white text-[#2F5B63] hover:bg-white/90 font-semibold" onClick={() => setQuoteModalOpen(true)}>
-                    Get Free Consultation Here
-                  </Button>
-                </div>
+            <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
+              <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
+                Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
+              </p>
+              <div className="space-y-3 mt-4 max-w-xl">
+                <a
+                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
+                  aria-label="WhatsApp Us Now"
+                >
+                  <span className="text-xs md:text-sm font-semibold leading-tight">WhatsApp Us Now</span>
+                  <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
+                </a>
+                <Button className="w-full h-11 md:h-12 bg-[#D19A71] hover:bg-[#C18A61] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={() => setQuoteModalOpen(true)}>
+                  Get Free Consultation Here
+                </Button>
               </div>
             </div>
-            {/* Desktop layout: side by side */}
-            <div className="relative hidden md:grid md:grid-cols-2 gap-7 items-stretch max-w-5xl mx-auto">
-              <div className="flex flex-col justify-center">
-                <h2 className="text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
-                <p className="mt-3 text-white/90 max-w-xl">
-                  Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
-                </p>
-                <div className="space-y-3 mt-5 max-w-xl">
-                  <a
-                    href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-full rounded-xl bg-white text-[#2F5B63] hover:bg-white/90 h-16 flex flex-col items-center justify-center transition"
-                    aria-label="WhatsApp Us Now"
-                  >
-                    <span className="text-sm font-semibold leading-tight">WhatsApp Us Now</span>
-                    <span className="text-base font-bold leading-tight mt-0.5 underline">+91 80 2843 2737</span>
-                  </a>
-                  <Button className="w-full h-12 bg-white text-[#2F5B63] hover:bg-white/90 font-semibold" onClick={() => setQuoteModalOpen(true)}>
-                    Get Free Consultation Here
-                  </Button>
-                </div>
-              </div>
-              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl min-h-[420px]">
-                <img
-                  src="/Program Images/21-day-detox.png"
-                  alt="21-day Panchakarma consultation"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1f444b]/50 via-transparent to-transparent" />
-              </div>
-            </div>
-          </section>
-
-          <section id="faq" className="scroll-mt-24">
-            <h2 className="text-3xl font-bold text-[#3B5B5D] mb-6 text-center">Frequently Asked Questions</h2>
-            <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
-              {faqItems.map((item, idx) => (
-                <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm">
-                  <AccordionTrigger className="text-left text-lg font-semibold text-[#3B5B5D] hover:no-underline [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
-                  <AccordionContent className="text-[#7F543D] leading-relaxed pb-5">{item.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </section>
-
-        <section id="top-centers" className="scroll-mt-24">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#3B5B5D]">Our Top Ayurvedic Center in India</h2>
           </div>
-          <div className="relative">
-            <button
-              onClick={goTopCentersPrevious}
-              className="absolute left-1 md:-left-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
-              aria-label="Previous centers"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button
-              onClick={goTopCentersNext}
-              className="absolute right-1 md:-right-12 top-[44%] -translate-y-1/2 z-20 inline-flex h-10 w-10 md:h-11 md:w-11 items-center justify-center rounded-full bg-white text-[#2F5B63] shadow-lg border border-[#d6decf]"
-              aria-label="Next centers"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
+        </section>
 
-            <div className="grid items-stretch md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section id="faq" className="scroll-mt-24 !mt-8 md:!mt-14">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
+          </div>
+          <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
+            {faqItems.map((item, idx) => (
+              <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm overflow-hidden hover:border-primary/40 transition-all">
+                <AccordionTrigger className="text-left text-lg font-semibold text-[#335765] hover:no-underline py-5 [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
+                <AccordionContent className="text-[#7F543D] leading-relaxed pb-5 text-base md:text-[17px]">{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
+
+        <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
+          <div className="text-center space-y-3 px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <p className="text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
+          </div>
+          <div className="relative group flex items-center justify-center">
+            {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
+            <div className="absolute left-2 md:-left-4 z-20 top-[160px] md:top-1/2 -translate-y-1/2">
+              <button
+                onClick={goTopCentersPrevious}
+                className="p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#335765] shadow-lg border border-border/40 transition-all hover:bg-white active:scale-95"
+                aria-label="Previous centers"
+              >
+                <ChevronLeft className="h-5 w-5 md:h-7 md:w-7" />
+              </button>
+            </div>
+            <div className="absolute right-2 md:-right-4 z-20 top-[160px] md:top-1/2 -translate-y-1/2">
+              <button
+                onClick={goTopCentersNext}
+                className="p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#335765] shadow-lg border border-border/40 transition-all hover:bg-white active:scale-95"
+                aria-label="Next centers"
+              >
+                <ChevronRight className="h-5 w-5 md:h-7 md:w-7" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full px-4 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
-                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full">
-                    <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
+                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
+                    <div className="relative aspect-[18/9] md:aspect-[21/9] overflow-hidden shrink-0">
                       <img
                         src={center.image}
                         alt={center.name}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
 
-                    <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow">
-                      <h3 className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight line-clamp-1 min-h-[1.75rem]">
-                        {center.name}
-                      </h3>
-
-                      <div className="flex items-center justify-between mb-3 min-h-[1.5rem]">
-                        <div className="flex items-center gap-1.5 text-[#7F543D]">
-                          <MapPin className="w-3.5 h-3.5 text-primary" />
-                          <span className="text-xs font-semibold line-clamp-1">{center.city}</span>
+                    <div className="p-4 flex flex-col flex-grow">
+                      <h3 className="text-base md:text-lg font-bold text-[#335765] leading-tight min-h-[2.5rem] items-center flex text-left">{center.name}</h3>
+                      
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[#7F543D] mb-2 text-left">
+                        <div className="flex items-center gap-1.5 shrink-0">
+                          <MapPin className="w-3.5 h-3.5 text-orange-500" />
+                          <span className="text-[11px] font-medium">{center.city}</span>
                         </div>
-                        <div className="flex items-center gap-1">
-                          <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                          <span className="text-xs font-black text-[#3D4B4C]">{center.rating}</span>
-                          <span className="text-xs font-semibold text-[#7F543D]">({center.reviews})</span>
+                        <div className="flex items-center gap-1 shrink-0">
+                          <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                          <span className="text-[11px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
                         </div>
                       </div>
 
-                      <p
-                        className={`text-sm leading-relaxed md:leading-[1.5] text-[#7F543D] mb-2 ${expandedCenterName === center.name
-                          ? ""
-                          : "line-clamp-3 leading-[1.35rem] h-[4.05rem] overflow-hidden"
-                          }`}
-                      >
-                        {center.description}
-                      </p>
-                      <button
-                        type="button"
-                        onClick={() => toggleCenterDescription(center.name)}
-                        className="inline-flex text-xs font-semibold text-primary w-fit mb-2 hover:underline"
-                      >
-                        {expandedCenterName === center.name ? "Read Less" : "Read More"}
-                      </button>
+                      <div className="relative mb-3 flex-grow text-left">
+                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
+                          {center.description}
+                        </p>
+                        <button
+                          onClick={() => toggleCenterDescription(center.name)}
+                          className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
+                        >
+                          {expandedCenterName === center.name ? "Read Less" : "Read More"}
+                        </button>
+                      </div>
 
-                      <div className="mt-auto pt-3 border-t border-border/50">
-                        <div className="grid grid-cols-2 gap-2">
-                          <Button
-                            variant="outline"
-                            className="w-full font-bold py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                            onClick={() => navigate(center.link)}
-                          >
-                            View Details
-                          </Button>
-                          <Button
-                            onClick={() => setQuoteModalOpen(true)}
-                            className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"
-                          >
-                            Get Quote
-                          </Button>
-                        </div>
+                      <div className="grid grid-cols-2 gap-3 mt-auto">
+                        <Button
+                          variant="outline"
+                          className="w-full bg-[#f0f3f1] border-none text-[#335765] hover:bg-[#335765] hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs"
+                          onClick={() => navigate(center.link)}
+                        >
+                          View Details
+                        </Button>
+                        <Button
+                          className="w-full bg-[#335765] hover:bg-[#25464c] text-white font-bold h-10 rounded-lg shadow-sm text-xs"
+                          onClick={() => setQuoteModalOpen(true)}
+                        >
+                          Get Quote
+                        </Button>
                       </div>
                     </div>
                   </div>
@@ -1394,45 +1356,76 @@ const PanchakarmaDetox21Day = () => {
               ))}
             </div>
           </div>
-          <div className="mt-5 flex justify-center gap-2">
-            {Array.from({ length: topCentersTotalSlides }).map((_, idx) => (
-              <button
-                key={`top-centers-dot-${idx}`}
-                onClick={() => setTopCentersSlide(idx)}
-                aria-label={`Go to center slide ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all ${idx === topCentersSlide ? "w-7 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"}`}
-              />
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Button
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base md:text-lg px-8 py-6 rounded-xl"
-              onClick={() => navigate("/centers")}
-            >
-              VIEW ALL CENTERS -&gt;
-            </Button>
+
+          <div className="space-y-6">
+            {topCentersTotalSlides > 1 && (
+              <div className="flex justify-center gap-2 mt-4">
+                {Array.from({ length: topCentersTotalSlides }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setTopCentersSlide(i)}
+                    className={`h-1.5 rounded-full transition-all ${i === topCentersSlide ? "w-6 bg-[#335765]" : "w-1.5 bg-[#C7D1C9]"}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            <div className="flex justify-center mt-4">
+              <Button
+                className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
+                onClick={() => navigate('/centers')}
+              >
+                VIEW ALL CENTERS
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
           </div>
         </section>
-        </div>
 
-        <section id="reviews" className="scroll-mt-24 mt-10 md:mt-14 mb-12 md:mb-16">
-          <div className="text-center mb-6 md:mb-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Patient Stories & Reviews</h2>
-            <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-              Hear from our patients about their transformational healing journeys
-            </p>
+
+      </main>
+
+      <section id="reviews" className="scroll-mt-24 pt-8 pb-16 md:pt-10 md:pb-20 bg-transparent w-full">
+        <div className="container mx-auto px-4 max-w-6xl text-left">
+          <div className="text-center mb-6 md:mb-8 space-y-3">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
+            <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
           </div>
 
-          <div className="relative">
-            <Card className="border-2 border-primary/20 shadow-lg overflow-hidden">
-              <CardContent className="p-4 md:p-12">
+          <div className="max-w-4xl mx-auto relative px-4 md:px-0">
+            {/* Navigation Arrows - Exact Agni style */}
+            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6 z-20">
+              <button
+                onClick={goReviewPrevious}
+                className="bg-white/70 hover:bg-[#335765] hover:text-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                aria-label="Previous review"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6 z-20">
+              <button
+                onClick={goReviewNext}
+                className="bg-white/70 hover:bg-[#335765] hover:text-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                aria-label="Next review"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-4 md:p-12 relative">
                 <div className="max-w-4xl mx-auto">
-                  <div className="text-primary/20 mb-3 md:mb-4">
-                    <Quote className="w-8 h-8 md:w-12 md:h-12" />
+                  {/* SVG Quote Icon exactly like Agni */}
+                  <div className="text-[#335765]/20 mb-3 md:mb-4">
+                    <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                    </svg>
                   </div>
 
+                  {/* Review Content */}
                   <div className="mb-4 md:mb-6">
-                    <h3 className="text-lg md:text-2xl font-bold text-primary mb-2 md:mb-4">
+                    <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4">
                       {patientReviews[currentReview].title}
                     </h3>
                     <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
@@ -1440,14 +1433,15 @@ const PanchakarmaDetox21Day = () => {
                     </p>
                   </div>
 
+                  {/* Reviewer Info */}
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-primary text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0">
+                    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
                       {patientReviews[currentReview].name.charAt(0)}
                     </div>
 
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-primary">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
@@ -1457,62 +1451,53 @@ const PanchakarmaDetox21Day = () => {
                         )}
                       </div>
                       <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                        {patientReviews[currentReview].location} - {patientReviews[currentReview].condition}
+                        {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
                       </p>
                     </div>
                   </div>
 
+                  {/* Star Rating Rendering */}
                   <div className="flex items-center gap-2 md:gap-3">
-                    {Array.from({ length: patientReviews[currentReview].rating }).map((_, idx) => (
-                      <Star key={`review-star-${idx}`} className="h-5 w-5 md:h-6 md:w-6 fill-yellow-400 text-yellow-400" />
-                    ))}
-                    <span className="text-xs md:text-sm font-semibold text-primary">{patientReviews[currentReview].rating}.0</span>
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < patientReviews[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+                      ))}
+                    </div>
+                    <span className="text-xs md:text-sm font-semibold text-[#335765]">
+                      {patientReviews[currentReview].rating}.0
+                    </span>
                   </div>
+
+                  {reviewAutoPlay && (
+                    <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                      Auto
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
 
-            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6">
-              <button
-                onClick={goReviewPrevious}
-                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                aria-label="Previous review"
-              >
-                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
+            {/* Dots Navigation Navigation */}
+            <div className="flex justify-center gap-2 mt-8">
+              {patientReviews.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setCurrentReview(idx);
+                    setReviewAutoPlay(false);
+                  }}
+                  className={`transition-all rounded-full ${currentReview === idx
+                      ? "w-8 h-3 bg-[#335765]"
+                      : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                    }`}
+                  aria-label={`Go to review ${idx + 1}`}
+                />
+              ))}
             </div>
-
-            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6">
-              <button
-                onClick={goReviewNext}
-                className="bg-white/70 hover:bg-primary hover:text-white text-primary p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-primary"
-                aria-label="Next review"
-              >
-                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-              </button>
-            </div>
-
-            {reviewAutoPlay && (
-              <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                Auto
-              </div>
-            )}
           </div>
-
-          <div className="mt-5 flex justify-center gap-2">
-            {patientReviews.map((_, idx) => (
-              <button
-                key={`review-dot-${idx}`}
-                onClick={() => setCurrentReview(idx)}
-                aria-label={`Go to review ${idx + 1}`}
-                className={`h-2.5 rounded-full transition-all ${idx === currentReview ? "w-7 bg-[#2F5B63]" : "w-2.5 bg-[#C7D1C9]"}`}
-              />
-            ))}
-          </div>
-        </section>
-
-      </main>
+        </div>
+      </section>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
@@ -1521,7 +1506,7 @@ const PanchakarmaDetox21Day = () => {
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="bg-[#2F5B63] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
         >
           <span className="drop-shadow-sm">B</span>
           <span className="drop-shadow-sm">R</span>
@@ -1535,7 +1520,7 @@ const PanchakarmaDetox21Day = () => {
       {/* Mobile BROWSE button */}
       <button
         onClick={() => setIsJumpModalOpen(true)}
-        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2F5B63] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
       >
         <Search size={18} className="-ml-1" />
         <span>BROWSE</span>
@@ -1562,7 +1547,7 @@ const PanchakarmaDetox21Day = () => {
         >
           <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
 
-          <div className="p-4 pb-4 bg-[#2F5B63] text-white relative overflow-hidden">
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
             <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
 
             <div className="flex justify-between items-start mb-3 relative z-10">
@@ -1597,7 +1582,7 @@ const PanchakarmaDetox21Day = () => {
               <button
                 key={section.id}
                 onClick={() => jumpToSection(section.id)}
-                className="w-full group relative bg-white hover:bg-[#2F5B63] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
               >
                 <div className="flex items-center gap-4 relative z-10">
                   <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
@@ -1624,3 +1609,4 @@ const PanchakarmaDetox21Day = () => {
 };
 
 export default PanchakarmaDetox21Day;
+
