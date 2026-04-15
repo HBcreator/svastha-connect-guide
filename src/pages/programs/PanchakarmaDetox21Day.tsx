@@ -1278,26 +1278,26 @@ const PanchakarmaDetox21Day = () => {
           </div>
           <div className="relative group flex items-center justify-center">
             {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
-            <div className="absolute left-2 md:-left-4 z-20 top-[160px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersPrevious}
-                className="p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#335765] shadow-lg border border-border/40 transition-all hover:bg-white active:scale-95"
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
                 aria-label="Previous centers"
               >
-                <ChevronLeft className="h-5 w-5 md:h-7 md:w-7" />
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-            <div className="absolute right-2 md:-right-4 z-20 top-[160px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute right-2 md:-right-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersNext}
-                className="p-2.5 md:p-3 rounded-full bg-white/90 backdrop-blur-sm text-[#335765] shadow-lg border border-border/40 transition-all hover:bg-white active:scale-95"
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
                 aria-label="Next centers"
               >
-                <ChevronRight className="h-5 w-5 md:h-7 md:w-7" />
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full px-4 md:px-6 lg:px-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
                 <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
@@ -1385,28 +1385,28 @@ const PanchakarmaDetox21Day = () => {
 
       </main>
 
-      <section id="reviews" className="scroll-mt-24 pt-8 pb-16 md:pt-10 md:pb-20 bg-transparent w-full">
+      <section id="reviews" className="scroll-mt-24 pt-8 pb-8 md:pt-10 md:pb-12 bg-transparent w-full">
         <div className="container mx-auto px-4 max-w-6xl text-left">
           <div className="text-center mb-6 md:mb-8 space-y-3">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
             <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
           </div>
 
-          <div className="max-w-4xl mx-auto relative px-4 md:px-0">
+          <div className="max-w-4xl mx-auto relative px-0 md:px-0">
             {/* Navigation Arrows - Exact Agni style */}
-            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-6 z-20">
+            <div className="absolute inset-y-0 left-0 flex items-center translate-x-4 md:-translate-x-6 z-20">
               <button
                 onClick={goReviewPrevious}
-                className="bg-white/70 hover:bg-[#335765] hover:text-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
                 aria-label="Previous review"
               >
                 <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-6 z-20">
+            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-4 md:translate-x-6 z-20">
               <button
                 onClick={goReviewNext}
-                className="bg-white/70 hover:bg-[#335765] hover:text-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
                 aria-label="Next review"
               >
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
