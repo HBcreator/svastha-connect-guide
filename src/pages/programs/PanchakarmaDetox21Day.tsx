@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -259,7 +259,7 @@ const whyChooseUsPoints = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    name: "SOUKYA International Holistic Health Centre",
     city: "Bengaluru, Karnataka, India",
     description:
       "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
@@ -289,14 +289,14 @@ const topAyurvedicCenters = [
     link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
   },
   {
-    name: "Ananda in the Himalayas",
-    city: "Rishikesh, Uttarakhand, India",
+    name: "Kairali - The Ayurvedic Healing Village",
+    city: "Palakkad, Kerala, India",
     description:
-      "A renowned destination for integrative wellness with physician-led Ayurveda, yoga, and meditation programs in a serene Himalayan setting.",
+      "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
     rating: 4.8,
     reviews: 420,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers",
+    link: "/centers/kerala/kairali-ayurvedic-healing-village",
   },
   {
     name: "Carnoustie Ayurveda Wellness Resort",
@@ -306,17 +306,17 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 360,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers",
+    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
   },
   {
-    name: "Atmantan Wellness Resort",
-    city: "Mulshi, Maharashtra, India",
+    name: "Somatheeram Ayurveda Village Resort",
+    city: "Thiruvananthapuram, Kerala, India",
     description:
-      "A modern wellness retreat blending Ayurvedic therapies with lifestyle medicine, fitness, and nutrition in a scenic hill location.",
+      "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
     rating: 4.7,
     reviews: 510,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers",
+    link: "/centers/kerala/somatheeram",
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -326,7 +326,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 300,
     image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers",
+    link: "/centers/kerala/ayursoma",
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -336,17 +336,17 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 280,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers",
+    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
   },
   {
-    name: "Nalanda Retreat Goa",
-    city: "Goa, India",
+    name: "Kalari Kovilakom Palace for Ayurveda",
+    city: "Palakkad, Kerala, India",
     description:
-      "A focused Ayurvedic recovery center with personalized therapies, detox protocols, and supportive care for international wellness travelers.",
-    rating: 4.7,
-    reviews: 260,
-    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers",
+      "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.",
+    rating: 4.8,
+    reviews: 240,
+    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+    link: "/centers/kerala/kalari-kovilakom",
   },
 ];
 
@@ -486,15 +486,18 @@ const PanchakarmaDetox21Day = () => {
   const [topCentersMobileView, setTopCentersMobileView] = useState(false);
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
   const [currentReview, setCurrentReview] = useState(0);
-  const [reviewAutoPlay, setReviewAutoPlay] = useState(true);
+  const [reviewAutoPlay, setReviewAutoPlay] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
 
+  // Auto-rotate for main gallery disabled as per user request
+  /*
   useEffect(() => {
     const timer = setInterval(() => {
       setSelectedImage((prev) => (prev + 1) % galleryImages.length);
     }, 3200);
     return () => clearInterval(timer);
   }, []);
+  */
 
   useEffect(() => {
     const updateBenefitsVisibleCards = () => {
@@ -513,12 +516,15 @@ const PanchakarmaDetox21Day = () => {
     return () => window.removeEventListener("resize", updateBenefitsVisibleCards);
   }, []);
 
+  // Auto-rotate for benefits images disabled as per user request
+  /* 
   useEffect(() => {
     const timer = setInterval(() => {
       setBenefitsImageIndex((prev) => (prev + 1) % benefitsSectionImages.length);
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+  */
 
   useEffect(() => {
     const updateTopCentersLayout = () => {
@@ -540,6 +546,8 @@ const PanchakarmaDetox21Day = () => {
     return () => window.removeEventListener("resize", updateTopCentersLayout);
   }, []);
 
+  // Auto-rotate for reviews disabled as per user request
+  /*
   useEffect(() => {
     if (!reviewAutoPlay) return;
     const timer = setInterval(() => {
@@ -547,6 +555,7 @@ const PanchakarmaDetox21Day = () => {
     }, 4800);
     return () => clearInterval(timer);
   }, [reviewAutoPlay]);
+  */
 
   const goToPrevious = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   const goToNext = () => setSelectedImage((prev) => (prev + 1) % galleryImages.length);
@@ -570,6 +579,8 @@ const PanchakarmaDetox21Day = () => {
     setTopCentersSlide((prev) => prev % topCentersTotalSlides);
   }, [topCentersTotalSlides]);
 
+  // Auto-rotate for top centers in mobile view disabled as per user request
+  /*
   useEffect(() => {
     if (!topCentersMobileView) return;
     const timer = setInterval(() => {
@@ -577,6 +588,7 @@ const PanchakarmaDetox21Day = () => {
     }, 3600);
     return () => clearInterval(timer);
   }, [topCentersMobileView, topCentersTotalSlides]);
+  */
 
   const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
   const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
@@ -1272,9 +1284,9 @@ const PanchakarmaDetox21Day = () => {
         </section>
 
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
-          <div className="text-center space-y-3 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
-            <p className="text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
+          <div className="text-center space-y-2 md:space-y-3 px-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
             {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
@@ -1297,11 +1309,11 @@ const PanchakarmaDetox21Day = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
                 <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
-                    <div className="relative aspect-[18/9] md:aspect-[21/9] overflow-hidden shrink-0">
+                    <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                       <img
                         src={center.image}
                         alt={center.name}
@@ -1309,17 +1321,17 @@ const PanchakarmaDetox21Day = () => {
                       />
                     </div>
 
-                    <div className="p-4 flex flex-col flex-grow">
-                      <h3 className="text-base md:text-lg font-bold text-[#335765] leading-tight min-h-[2.5rem] items-center flex text-left">{center.name}</h3>
+                    <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
+                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
                       
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[#7F543D] mb-2 text-left">
-                        <div className="flex items-center gap-1.5 shrink-0">
-                          <MapPin className="w-3.5 h-3.5 text-orange-500" />
-                          <span className="text-[11px] font-medium">{center.city}</span>
+                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
+                        <div className="flex items-center gap-1.5 shrink min-w-0">
+                          <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
                         </div>
-                        <div className="flex items-center gap-1 shrink-0">
-                          <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                          <span className="text-[11px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
+                        <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
+                          <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
                         </div>
                       </div>
 
@@ -1336,13 +1348,12 @@ const PanchakarmaDetox21Day = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 mt-auto">
-                        <Button
-                          variant="outline"
-                          className="w-full bg-[#f0f3f1] border-none text-[#335765] hover:bg-[#335765] hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs"
-                          onClick={() => navigate(center.link)}
+                        <Link
+                          to={center.link}
+                          className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
-                        </Button>
+                        </Link>
                         <Button
                           className="w-full bg-[#335765] hover:bg-[#25464c] text-white font-bold h-10 rounded-lg shadow-sm text-xs"
                           onClick={() => setQuoteModalOpen(true)}
@@ -1468,12 +1479,13 @@ const PanchakarmaDetox21Day = () => {
                     </span>
                   </div>
 
-                  {reviewAutoPlay && (
+                  {/* Auto-rotate indicator removed as per user request */}
+                  {/* reviewAutoPlay && (
                     <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
                       <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
                       Auto
                     </div>
-                  )}
+                  ) */}
                 </div>
               </CardContent>
             </Card>
