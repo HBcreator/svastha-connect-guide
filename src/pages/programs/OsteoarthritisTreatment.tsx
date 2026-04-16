@@ -120,10 +120,38 @@ const avoidPoints = [
 ];
 
 const weekBreakdown = [
-  { week: 'Week 1', title: 'Purva Karma (Preparation)', focus: 'Loosening toxins, preparing joints for deep treatment', description: 'Your program begins with a thorough consultation. Daily Abhyanga and Swedana begin to soften deep tissue deposits, improve circulation around the joints, and prepare your body to release toxins. A carefully designed anti-inflammatory Ayurvedic diet begins.' },
-  { week: 'Week 2', title: 'Pradhana Karma (Core Treatment)', focus: 'Active detox and targeted joint healing', description: 'The most intensive phase. Janu Basti is performed daily. Kizhi treatments targeting hips and lower back bring significant relief. Basti therapy works on Vata at its root, producing effects felt throughout the musculoskeletal system.' },
-  { week: 'Week 3', title: 'Paschat Karma (Rejuvenation)', focus: 'Tissue rebuilding, strengthening, mobility restoration', description: 'Treatment shifts to rebuilding. Rasayana therapies nourish bone tissue and synovial fluid. Daily therapeutic yoga sessions restore functional mobility and muscle strength around affected joints.' },
-  { week: 'Week 4', title: 'Extended Recovery (Optional)', focus: 'For advanced cases needing deeper systemic treatment', description: 'For patients with advanced osteoarthritis or multiple joint involvement. Additional week allows for extended Basti cycles generating more profound systemic Vata correction and cartilage-supporting benefits.' }
+  { 
+    week: 'Week 1', 
+    title: 'Purva Karma (Preparation)', 
+    duration: 'Day 1–7',
+    focus: 'Loosening toxins, preparing joints for deep treatment', 
+    description: 'Your program begins with a thorough consultation. A carefully designed anti-inflammatory Ayurvedic diet begins.', 
+    bullets: ['Abhyanga', 'Swedana', 'Dietary modifications', 'Oral herbal medicines', 'Initial Janu Basti'] 
+  },
+  { 
+    week: 'Week 2', 
+    title: 'Pradhana Karma (Core Treatment)', 
+    duration: 'Day 8–14',
+    focus: 'Active detox and targeted joint healing', 
+    description: 'The most intensive phase. Basti therapy works on Vata at its root, producing effects felt throughout the musculoskeletal system.', 
+    bullets: ['Janu Basti', 'Kizhi', 'Pizhichil', 'Basti', 'Virechana (if prescribed)', 'Shirodhara'] 
+  },
+  { 
+    week: 'Week 3', 
+    title: 'Paschat Karma (Rejuvenation)', 
+    duration: 'Day 15–21',
+    focus: 'Tissue rebuilding, strengthening, mobility restoration', 
+    description: 'Treatment shifts to rebuilding. Rasayana therapies nourish bone tissue and synovial fluid.', 
+    bullets: ['Rasayana therapies', 'Rejuvenating oils', 'Therapeutic yoga', 'Dietary plan'] 
+  },
+  { 
+    week: 'Week 4', 
+    title: 'Extended Recovery (Optional)', 
+    duration: 'Day 22–28',
+    focus: 'For advanced cases needing deeper systemic treatment', 
+    description: 'For patients with advanced osteoarthritis or multiple joint involvement.', 
+    bullets: ['Extended Basti cycles', 'Additional Kizhi', 'Functional mobility exercises'] 
+  }
 ];
 
 const benefits = {
@@ -352,50 +380,66 @@ const patientReviews = [
   {
     name: 'David Thompson',
     location: 'Manchester, UK',
-    text: 'My surgeon told me a knee replacement was inevitable. As a last resort, I came to India for a 21-day Ayurvedic program. The specialized Janu Basti and herbal poultice massages were incredible. My pain has reduced by 80%, and my surgeon has agreed to postpone the surgery indefinitely.',
-    icon: 'Male',
+    title: 'I Canceled My Knee Replacement Surgery!',
+    review: 'My surgeon told me a knee replacement was inevitable. As a last resort, I came to India for a 21-day Ayurvedic program. The specialized Janu Basti and herbal poultice massages were incredible. My pain has reduced by 80%, and my surgeon has agreed to postpone the surgery indefinitely.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Klaus Richter',
     location: 'Munich, Germany',
-    text: 'For years, the first hour of my day was a painful battle against morning stiffness. The daily Abhyanga and Pizhichil therapy were a revelation. By the second week, I was waking up and walking with freedom.',
-    icon: 'Male',
+    title: 'My Mornings are Mine Again',
+    review: 'For years, the first hour of my day was a painful battle against morning stiffness. The daily Abhyanga and Pizhichil therapy were a revelation. By the second week, I was waking up and walking with freedom.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Sarah Jenkins',
     location: 'New York, USA',
-    text: 'Years of sitting at a desk had left me with chronic lower back pain. The 14-day spine care program with Kati Vasti was the first thing that provided deep, lasting relief. The doctors taught me simple yoga stretches I can do at my desk.',
-    icon: 'Female',
+    title: 'Lasting Relief from Back Pain',
+    review: 'Years of sitting at a desk had left me with chronic lower back pain. The 14-day spine care program with Kati Vasti was the first thing that provided deep, lasting relief. The doctors taught me simple yoga stretches I can do at my desk.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Isabelle Dubois',
     location: 'Paris, France',
-    text: 'My hip osteoarthritis had forced me to give up gardening. After a 21-day program including specialized oil therapies and yoga, I have regained so much mobility. I am back in my garden, and couldn\'t be more grateful.',
-    icon: 'Female',
+    title: 'Back to Gardening Again',
+    review: 'My hip osteoarthritis had forced me to give up gardening. After a 21-day program including specialized oil therapies and yoga, I have regained so much mobility. I am back in my garden, and couldn\'t be more grateful.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'William O\'Connor',
     location: 'Dublin, Ireland',
-    text: 'I was worried that at 80, treatments might be too intense. I couldn\'t have been more wrong. The gentle, highly effective program provided immense comfort, and I am now taking my daily walks with significantly less pain.',
-    icon: 'Male',
+    title: 'Gentle and Effective',
+    review: 'I was worried that at 80, treatments might be too intense. I couldn\'t have been more wrong. The gentle, highly effective program provided immense comfort, and I am now taking my daily walks with significantly less pain.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Marco Rossi',
     location: 'Rome, Italy',
-    text: 'I was tired of the side effects of long-term painkillers. Ayurveda offered a natural solution. The detoxification and nourishing oil therapies managed my pain more effectively than any pill ever did.',
-    icon: 'Male',
+    title: 'Natural Alternative to Painkillers',
+    review: 'I was tired of the side effects of long-term painkillers. Ayurveda offered a natural solution. The detoxification and nourishing oil therapies managed my pain more effectively than any pill ever did.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Kenji Tanaka',
     location: 'Kyoto, Japan',
-    text: 'My cervical spondylosis caused constant neck stiffness. The Greeva Basti treatment was a game-changer, completely relaxing deep-seated tension in my neck and shoulders. I feel a freedom I haven\'t had in years.',
-    icon: 'Male',
+    title: 'Neck and Shoulders Feel Free',
+    review: 'My cervical spondylosis caused constant neck stiffness. The Greeva Basti treatment was a game-changer, completely relaxing deep-seated tension in my neck and shoulders. I feel a freedom I haven\'t had in years.',
+    rating: 5,
+    verified: true,
   },
   {
     name: 'Chloe Nguyen',
     location: 'Sydney, Australia',
-    text: 'The constant cracking and popping sound in my knees was worrying. The focus on deeply lubricating the joints has been incredible. The cracking has vanished, and my knees feel strong and stable.',
-    icon: 'Female',
+    title: 'Cracking and Popping Vanished',
+    review: 'The constant cracking and popping sound in my knees was worrying. The focus on deeply lubricating the joints has been incredible. The cracking has vanished, and my knees feel strong and stable.',
+    rating: 5,
+    verified: true,
   }
 ];
 
