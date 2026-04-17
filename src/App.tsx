@@ -104,6 +104,7 @@ import PanchakarmaDetox from "./pages/programs/PanchakarmaDetox";
 import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
 import DiseaseSpecific from "./pages/programs/DiseaseSpecific";
 import OsteoarthritisTreatment from "./pages/programs/OsteoarthritisTreatment";
+import SciaticaTreatmentProgram from "./pages/programs/SciaticaTreatment";
 
 const queryClient = new QueryClient();
 
@@ -216,6 +217,7 @@ const App = () => (
           <Route path="/ayurvedic-programs/panchakarma-detox" element={<PanchakarmaDetox />} />
           <Route path="/ayurvedic-programs/disease-specific" element={<DiseaseSpecific />} />
           <Route path="/ayurvedic-programs/disease-specific/osteoarthritis" element={<OsteoarthritisTreatment />} />
+          <Route path="/ayurvedic-programs/disease-specific/sciatica" element={<SciaticaTreatmentProgram />} />
           <Route
             path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"
             element={<PanchakarmaDetox21Day />}

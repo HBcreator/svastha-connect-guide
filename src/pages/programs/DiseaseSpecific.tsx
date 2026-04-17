@@ -17,7 +17,16 @@ const DiseaseSpecific = () => {
       keyFocus: "Joint pain & mobility",
       description: "A specialized Ayurvedic protocol designed specifically to manage Osteoarthritis. Focuses on strengthening the joints, reducing inflammation, pain management through authentic therapies like Janu Basti, and restoring mobility.",
       image: "/Program Images/osteoarthritis.png",
-      link: "/ayurvedic-programs/disease-specific/osteoarthritis", // Placeholder link for future specific page
+      link: "/ayurvedic-programs/disease-specific/osteoarthritis",
+    },
+    {
+      name: "Ayurveda Treatment for Sciatica",
+      duration: "21–28 Days",
+      targetAudience: "Pain management patients",
+      keyFocus: "Nerve & back pain relief",
+      description: "A clinically supervised Ayurvedic program for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
+      image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
+      link: "/ayurvedic-programs/disease-specific/sciatica",
     },
   ];
 

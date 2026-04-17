@@ -44,150 +44,150 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Program Images/21-day-detox.png",
-  "/Program Images/detox_preparation.png",
-  "/Program Images/detox_core.png",
-  "/Program Images/14-day-retreat.png",
-  "/Program Images/28-day-healing.png",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/1.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/2.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/3.jpg",
 ];
 
 const quickSummaryRows = [
-  { label: 'Condition Treated', details: 'Osteoarthritis (Sandhivata) — knee, hip, spine, hands' },
-  { label: 'Treatment Duration', details: '21–28 Days (recommended for full therapeutic benefit)' },
-  { label: 'Who It Is For', details: 'Adults with mild to advanced osteoarthritis seeking natural, drug-free relief' },
-  { label: 'Core Approach', details: 'Panchakarma detox + targeted joint therapies + herbal medicines' },
-  { label: 'Key Benefit', details: 'Pain relief, reduced inflammation, improved mobility, cartilage support' },
-  { label: 'Top Locations', details: 'Kerala, Rishikesh, Bangalore' },
-  { label: 'Average Cost', details: '$2,500 – $4,500 USD (all-inclusive)' },
-  { label: 'Supervised By', details: 'Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)' },
+  ["Condition Treated", "Osteoarthritis (Sandhivata) — knee, hip, spine, hands"],
+  ["Treatment Duration", "21–28 Days (recommended for full therapeutic benefit)"],
+  ["Who It Is For", "Adults with mild to advanced osteoarthritis seeking natural, drug-free relief"],
+  ["Core Approach", "Panchakarma detox + targeted joint therapies + herbal medicines"],
+  ["Key Benefit", "Pain relief, reduced inflammation, improved mobility, cartilage support"],
+  ["Top Locations", "Kerala, Rishikesh, Bangalore"],
+  ["Average Cost", "$2,500 - $6,000 USD (all-inclusive)"],
+  ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
 ];
 
 const quickSummaryMobileIcons = {
-  "Program Name": ClipboardCheck,
-  "Duration": Calendar,
+  "Condition Treated": ClipboardCheck,
+  "Treatment Duration": Calendar,
   "Who It Is For": UserCheck,
+  "Core Approach": Activity,
   "Key Benefit": Sparkles,
   "Top Locations": MapPin,
   "Average Cost": ReceiptIndianRupee,
   "Supervised By": Stethoscope,
-  "Includes": BedDouble,
 } as const;
 
 const therapies = [
   {
-    name: 'Janu Basti (Knee Oil Pooling Therapy)',
-    description: 'A specially designed dough ring is placed around the knee joint and filled with warm, medicated herbal oil. It acts deeply to reduce pain, improve lubrication, and slow cartilage degeneration.',
+    title: 'Janu Basti (Knee Oil Pooling Therapy)',
+    text: 'A specially designed dough ring is placed around the knee joint and filled with warm, medicated herbal oil. It acts deeply to reduce pain, improve lubrication, and slow cartilage degeneration.',
+    icon: Droplet,
   },
   {
-    name: 'Abhyanga (Medicated Full-Body Oil Massage)',
-    description: 'Daily full-body massage using warm herbal oils specifically chosen for your Vata constitution to improve circulation and nourish joint tissue.',
+    title: 'Abhyanga (Medicated Full-Body Oil Massage)',
+    text: 'Daily full-body massage using warm herbal oils specifically chosen for your Vata constitution to improve circulation and nourish joint tissue.',
+    icon: Heart,
   },
   {
-    name: 'Kizhi (Herbal Pouch Massage)',
-    description: 'Warm bundles filled with medicinal herbs, rice, or sand applied rhythmically to joints to reduce swelling and relieve deep muscular tension.',
+    title: 'Kizhi (Herbal Pouch Massage)',
+    text: 'Warm bundles filled with medicinal herbs, rice, or sand applied rhythmically to joints to reduce swelling and relieve deep muscular tension.',
+    icon: Leaf,
   },
   {
-    name: 'Pizhichil (Warm Oil Stream Therapy)',
-    description: 'A continuous stream of warm medicated oil is poured over the body while being massaged in, exceptional for restoring mobility and relieving chronic stiffness.',
+    title: 'Pizhichil (Warm Oil Stream Therapy)',
+    text: 'A continuous stream of warm medicated oil is poured over the body while being massaged in, exceptional for restoring mobility and relieving chronic stiffness.',
+    icon: Activity,
   },
   {
-    name: 'Basti (Medicated Enema Therapy)',
-    description: 'The most powerful Vata-balancing treatment. Acts systemically to reduce Vata throughout the body and bring relief to multiple affected joints.',
+    title: 'Basti (Medicated Enema Therapy)',
+    text: 'The most powerful Vata-balancing treatment. Acts systemically to reduce Vata throughout the body and bring relief to multiple affected joints.',
+    icon: Sparkles,
   },
   {
-    name: 'Swedana (Herbal Steam Therapy)',
-    description: 'Targeted or full-body steam using medicinal herbs opens the body\'s channels, loosens deep toxin deposits, and significantly reduces stiffness.',
+    title: 'Swedana (Herbal Steam Therapy)',
+    text: 'Targeted or full-body steam using medicinal herbs opens the body\'s channels, loosens deep toxin deposits, and significantly reduces stiffness.',
+    icon: Stethoscope,
   }
 ];
 
 const candidatePoints = [
-  "Feel chronically tired despite sleeping well",
-  "Struggle with persistent stress, anxiety, or burnout",
-  "Have skin conditions like psoriasis, eczema, or acne not fully responsive to conventional care",
-  "Manage obesity, high cholesterol, or metabolic disorders",
-  "Experience frequent digestive issues such as bloating, acidity, or IBS",
-  "Want to prevent chronic disease and invest in long-term health",
-  "Are in midlife and want a full mind-body reset",
+  "Have been diagnosed with osteoarthritis of the knee, hip, spine, or hands",
+  "Experience persistent joint pain, stiffness, or swelling that limits daily activities",
+  "Are taking painkillers or anti-inflammatory drugs and want to reduce medication dependence",
+  "Have been advised joint replacement surgery and want to explore alternatives first",
+  "Are in your 40s, 50s, or 60s seeking both treatment and long-term prevention",
+  "Want a clinically supervised program that goes beyond relaxation into genuine medical treatment",
+  "Are dealing with related conditions such as obesity or poor circulation that worsen joint health",
   "Have tried modern treatment and want a holistic natural approach",
 ];
 
 const avoidPoints = [
+  "People with active joint infection or septic arthritis",
+  "Individuals with complete ligament tears or unhealed fractures in the joint",
+  "Patients who are extremely frail or debilitated",
   "Pregnant women",
-  "People who had major surgery in the last three months",
-  "People with active cancer or severe acute illness",
-  "Children under 16 without specific medical guidance",
-  "People with unmanaged serious mental health conditions",
+  "Those who have undergone joint replacement surgery (modified programs may be available)",
 ];
 
 const weekBreakdown = [
   { 
-    week: 'Week 1', 
-    title: 'Purva Karma (Preparation)', 
+    title: 'Week 1 - Purva Karma (Preparation)', 
     duration: 'Day 1–7',
     focus: 'Loosening toxins, preparing joints for deep treatment', 
-    description: 'Your program begins with a thorough consultation. A carefully designed anti-inflammatory Ayurvedic diet begins.', 
+    description: 'Your program begins with a thorough one-on-one consultation with your Ayurvedic physician, who will assess your joint condition, overall health, and dosha constitution. Daily Abhyanga and Swedana begin to soften deep tissue deposits, improve circulation around the joints, and prepare your body to release toxins. A carefully designed anti-inflammatory Ayurvedic diet begins on day one.', 
     bullets: ['Abhyanga', 'Swedana', 'Dietary modifications', 'Oral herbal medicines', 'Initial Janu Basti'] 
   },
   { 
-    week: 'Week 2', 
-    title: 'Pradhana Karma (Core Treatment)', 
+    title: 'Week 2 - Pradhana Karma (Core Treatment)', 
     duration: 'Day 8–14',
     focus: 'Active detox and targeted joint healing', 
-    description: 'The most intensive phase. Basti therapy works on Vata at its root, producing effects felt throughout the musculoskeletal system.', 
+    description: 'This is the most therapeutically intensive phase. Janu Basti is typically performed daily for 30 minutes per knee. Kizhi treatments targeting the hips, lower back, and affected areas bring significant relief. Basti therapy begins — the systematic colon cleansing that works on Vata at its root, producing effects felt throughout the musculoskeletal system.', 
     bullets: ['Janu Basti', 'Kizhi', 'Pizhichil', 'Basti', 'Virechana (if prescribed)', 'Shirodhara'] 
   },
   { 
-    week: 'Week 3', 
-    title: 'Paschat Karma (Rejuvenation)', 
+    title: 'Week 3 - Paschat Karma (Rejuvenation)', 
     duration: 'Day 15–21',
     focus: 'Tissue rebuilding, strengthening, mobility restoration', 
-    description: 'Treatment shifts to rebuilding. Rasayana therapies nourish bone tissue and synovial fluid.', 
+    description: 'With the body now cleansed and the acute inflammation addressed, treatment shifts to rebuilding and strengthening. Rasayana therapies nourish the bone tissue and synovial fluid. Daily therapeutic yoga sessions — gentle, joint-specific movements chosen by your doctor — begin to restore functional mobility.', 
     bullets: ['Rasayana therapies', 'Rejuvenating oils', 'Therapeutic yoga', 'Dietary plan'] 
   },
   { 
-    week: 'Week 4', 
-    title: 'Extended Recovery (Optional)', 
+    title: 'Week 4 - Extended Recovery (Optional)', 
     duration: 'Day 22–28',
     focus: 'For advanced cases needing deeper systemic treatment', 
-    description: 'For patients with advanced osteoarthritis or multiple joint involvement.', 
+    description: 'Patients with more advanced osteoarthritis, multiple joint involvement, or those who wish to achieve the deepest possible therapeutic benefit are recommended the full 28-day program. The additional week allows for extended Basti cycles that produce more profound systemic Vata correction.', 
     bullets: ['Extended Basti cycles', 'Additional Kizhi', 'Functional mobility exercises'] 
   }
 ];
 
 const benefits = {
   physical: [
-    "Deep cellular detoxification from tissues and organs",
-    "Improved digestion with lower bloating and acidity",
-    "Reduced inflammation and joint discomfort",
-    "Clearer skin in chronic dermatological patterns",
-    "Metabolic reset supporting healthy weight management",
-    "Stronger immunity and stable energy",
+    "Significant reduction in chronic joint pain — 60–80% pain reduction reported",
+    "Reduced joint inflammation and swelling in knee and hip osteoarthritis",
+    "Improved joint lubrication — Basti and Janu Basti address synovial fluid quality",
+    "Restored mobility and flexibility — regain functional movement",
+    "Slowed cartilage degeneration through strengthened ligaments and tendons",
+    "Many patients avoid or delay elective joint replacement surgery",
   ],
   mental: [
-    "Reduction in chronic stress and anxiety load",
-    "Better sleep quality from early stages",
-    "Improved clarity, focus, and emotional stability",
-    "Nervous system recovery support in burnout",
-    "More emotional resilience during daily work and family pressures",
+    "Relief from the psychological burden of chronic pain",
+    "Dramatically improved sleep quality",
+    "Reduced anxiety and depression linked to long-term pain conditions",
+    "Renewed confidence in daily physical activity",
+    "Deep mental relaxation through Shirodhara and meditation sessions",
     "Better mind-body awareness that supports healthier lifestyle choices",
   ],
   longTerm: [
-    "Benefits often continue for months with compliance",
-    "Improved health behavior patterns post-program",
-    "Reduced dependence on some lifestyle medications under medical supervision",
-    "Visible vitality improvements in skin, hair, and energy",
-    "More stable digestion, sleep, and energy rhythms over time",
+    "Results continue to improve for weeks and months after the program ends",
+    "Reduced dependence on NSAIDs and painkillers under medical supervision",
+    "Sustained improvement in joint mobility with Ayurvedic diet compliance",
+    "Personalised home-care plan including herbal medicines and dietary guidelines",
+    "Yoga routine to ensure benefits extend long after return home",
     "Lower relapse risk when post-program diet and routine are followed",
   ],
 };
 
 const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/panchkarma.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Ayurveda treatements .jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Basti (Medicated Enema.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Nasya (Nasal Therapy.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Raktamokshana (Blood Purification).webp",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Shirodhara (Mind-Body Reset).jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/1.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/2.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/3.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/4.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/5.jpg",
+  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/6.jpg",
 ];
 
 const chooseIndiaPoints = [
@@ -350,21 +350,21 @@ const topAyurvedicCenters = [
 ];
 
 const inclusionsRows = [
-  { label: "Accommodation", details: "Private room or suite for 20 nights (as per package tier)", icon: BedDouble },
-  { label: "Meals", details: "Three daily Ayurvedic meals personalized by constitution and treatment phase", icon: UtensilsCrossed },
-  { label: "Doctor Consultations", details: "Initial assessment plus daily or alternate-day physician review", icon: Stethoscope },
-  { label: "Daily Therapies", details: "Abhyanga, Shirodhara, Basti, Virechana, Kizhi, and others as prescribed", icon: Activity },
-  { label: "Ayurvedic Medicines", details: "Herbal medicines and medicated oils during stay", icon: Pill },
-  { label: "Yoga and Meditation", details: "Daily guided sessions integrated into the healing plan", icon: Brain },
-  { label: "Post-Program Support", details: "Diet guidance and continuity protocol for home", icon: ClipboardCheck },
+  { label: "Accommodation", details: "Private room or suite (as per package) for 20-27 nights", icon: BedDouble },
+  { label: "Ayurvedic Meals", details: "Three daily meals personalised to your constitution and treatment phase", icon: UtensilsCrossed },
+  { label: "Doctor Consultations", details: "Initial assessment plus regular check-ins with your Vaidya throughout the program", icon: Stethoscope },
+  { label: "Daily Therapies", details: "Janu Basti, Kizhi, Abhyanga, Pizhichil, Basti, Swedana - as prescribed", icon: Activity },
+  { label: "Herbal Medicines", details: "All internal and external Ayurvedic medicines and medicated oils", icon: Pill },
+  { label: "Yoga and Meditation", details: "Daily guided sessions tailored to joint health and mobility", icon: Brain },
+  { label: "Post-Program Kit", details: "Personalised diet plan, herbal medicines, and home yoga routine for continued healing", icon: ClipboardCheck },
 ];
 
 const costComparisonRows = [
   {
-    program: "21-Day Panchakarma Detox",
-    category: "Panchakarma Detox",
-    cost: "$2,500 - $4,500",
-    notes: "Highest demand, long stay, full package",
+    program: "Ayurveda Treatment for Osteoarthritis (21-28 Days)",
+    category: "Disease-Specific",
+    cost: "$2,500 - $6,000",
+    notes: "Chronic disease patients, joint pain and mobility",
   },
 ];
 
@@ -378,66 +378,82 @@ const faqItems = [
 
 const patientReviews = [
   {
-    name: 'David Thompson',
-    location: 'Manchester, UK',
-    title: 'I Canceled My Knee Replacement Surgery!',
-    review: 'My surgeon told me a knee replacement was inevitable. As a last resort, I came to India for a 21-day Ayurvedic program. The specialized Janu Basti and herbal poultice massages were incredible. My pain has reduced by 80%, and my surgeon has agreed to postpone the surgery indefinitely.',
+    name: "Margaret Collins",
+    location: "Toronto, Canada",
+    title: "My Doctor Called It a Miracle!",
+    review: "I had suffered from severe osteoarthritis in both hips for over six years. After a 24-day Ayurvedic program, the Kati Basti and Abhyanga sessions genuinely transformed my condition. The physician identified a deep Vata aggravation and designed a personalized herbal diet. I returned home walking without my cane for the first time in years.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Klaus Richter',
-    location: 'Munich, Germany',
-    title: 'My Mornings are Mine Again',
-    review: 'For years, the first hour of my day was a painful battle against morning stiffness. The daily Abhyanga and Pizhichil therapy were a revelation. By the second week, I was waking up and walking with freedom.',
+    name: "Hans Mueller",
+    location: "Berlin, Germany",
+    title: "28 Days That Changed My Life.",
+    review: "Osteoarthritis had forced me into early retirement from my carpentry work, as my hands were constantly swollen and stiff. I chose a 28-day Panchakarma package, and the Pinda Sweda therapy on my hands was unlike anything I had experienced. By week three, the swelling had visibly reduced, and I can now hold my tools again.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Sarah Jenkins',
-    location: 'New York, USA',
-    title: 'Lasting Relief from Back Pain',
-    review: 'Years of sitting at a desk had left me with chronic lower back pain. The 14-day spine care program with Kati Vasti was the first thing that provided deep, lasting relief. The doctors taught me simple yoga stretches I can do at my desk.',
+    name: "Susan Hartley",
+    location: "Sydney, Australia",
+    title: "From a Skeptic to a True Believer.",
+    review: "Thirty years of osteoarthritis and a history of failed medications made me doubtful. But after 21 days of Janu Basti, medicated oil therapies, and a strict herbal diet, my morning stiffness has almost completely disappeared. The doctors explained each treatment clearly every day.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Isabelle Dubois',
-    location: 'Paris, France',
-    title: 'Back to Gardening Again',
-    review: 'My hip osteoarthritis had forced me to give up gardening. After a 21-day program including specialized oil therapies and yoga, I have regained so much mobility. I am back in my garden, and couldn\'t be more grateful.',
+    name: "Robert Flanagan",
+    location: "Dublin, Ireland",
+    title: "I Avoided Knee Replacement Surgery at 58.",
+    review: "My orthopedic specialist had already scheduled my knee replacement surgery. As a final attempt at a natural solution, I booked a 21-day program, and it was the best decision of my life. The Janu Basti with warm medicated ghee and daily Abhyanga massage worked beautifully together.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'William O\'Connor',
-    location: 'Dublin, Ireland',
-    title: 'Gentle and Effective',
-    review: 'I was worried that at 80, treatments might be too intense. I couldn\'t have been more wrong. The gentle, highly effective program provided immense comfort, and I am now taking my daily walks with significantly less pain.',
+    name: "Yuki Tanaka",
+    location: "Osaka, Japan",
+    title: "My Joints Feel 20 Years Younger.",
+    review: "Living with osteoarthritis in my spine and knees made daily life exhausting. I visited India for a 27-day residential program, and the personalized Panchakarma cleanse, followed by Greeva Basti for my spine, was deeply therapeutic. My physiotherapist later noticed significant flexibility improvement.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Marco Rossi',
-    location: 'Rome, Italy',
-    title: 'Natural Alternative to Painkillers',
-    review: 'I was tired of the side effects of long-term painkillers. Ayurveda offered a natural solution. The detoxification and nourishing oil therapies managed my pain more effectively than any pill ever did.',
+    name: "Patricia Moreau",
+    location: "Lyon, France",
+    title: "Finally - Real Relief After Years of Pain.",
+    review: "I had tried everything: physiotherapy, cortisone injections, and anti-inflammatory drugs. During my 25-day Ayurvedic stay, the doctor diagnosed excess Vata and Ama in my joints. The Virechana detox, followed by Janu Basti and Upanaham herbal poultices, was highly targeted and effective.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Kenji Tanaka',
-    location: 'Kyoto, Japan',
-    title: 'Neck and Shoulders Feel Free',
-    review: 'My cervical spondylosis caused constant neck stiffness. The Greeva Basti treatment was a game-changer, completely relaxing deep-seated tension in my neck and shoulders. I feel a freedom I haven\'t had in years.',
+    name: "Michael Okafor",
+    location: "Lagos, Nigeria",
+    title: "A Complete Transformation in Just 3 Weeks.",
+    review: "At 52, severe osteoarthritis was limiting everything in my life. I booked a 21-day program after extensive research, and the combination of Navarakizhi, specialized yoga sessions, and Ayurvedic nutrition was incredibly powerful. By day fifteen, I was sleeping through the night without pain.",
     rating: 5,
     verified: true,
   },
   {
-    name: 'Chloe Nguyen',
-    location: 'Sydney, Australia',
-    title: 'Cracking and Popping Vanished',
-    review: 'The constant cracking and popping sound in my knees was worrying. The focus on deeply lubricating the joints has been incredible. The cracking has vanished, and my knees feel strong and stable.',
+    name: "Elena Petrov",
+    location: "Moscow, Russia",
+    title: "Worth Traveling Halfway Across the World For.",
+    review: "I decided to try a 28-day program in India, and the warm climate itself was therapeutic. The medical team designed a complete Panchakarma protocol with Kizhi massages and internal herbal medicines that dramatically reduced my joint inflammation and improved daily comfort.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "James Whitfield",
+    location: "Houston, USA",
+    title: "My Knees Are Thanking India!",
+    review: "As a former marathon runner, osteoarthritis in both knees was devastating. I spent 26 days in an Ayurvedic center, and the Janu Basti oil pooling treatment combined with Patrapinda Sweda leaf massage was unlike anything Western medicine had offered me. I regained near-full motion.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Amelia van der Berg",
+    location: "Amsterdam, Netherlands",
+    title: "Gentle, Natural, and Genuinely Effective.",
+    review: "I was hesitant about traveling to India alone at age 64, but my 23-day osteoarthritis program was exceptional. Daily Abhyanga, Janu Basti, and medicated steam therapy with guided yoga were gentle and effective. My pain reduced significantly and my posture improved.",
     rating: 5,
     verified: true,
   }
@@ -606,12 +622,12 @@ const OsteoarthritisTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurveda Treatment for Osteoarthritis in India</h1>
-              <p className="text-lg md:text-xl text-white/90">Complete full body detox and rejuvenation with physician-led care.</p>
+              <p className="text-lg md:text-xl text-white/90">Restore joint health naturally with physician-led Ayurvedic care.</p>
               <div className="space-y-2.5">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Goa</span>
+                    <span>Kerala, Rishikesh, Bangalore</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -663,19 +679,19 @@ const OsteoarthritisTreatment = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21 Days / 20 Nights</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21–28 Days</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Detox, Recovery, Reset</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Joint Pain, Mobility, Recovery</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Bangalore</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$2,500 - $4,500</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$2,500 - $6,000</p>
                 </div>
               </div>
 
@@ -719,12 +735,12 @@ const OsteoarthritisTreatment = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the Ayurveda Treatment for Osteoarthritis?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Osteoarthritis?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  This program is a structured, physician-supervised Ayurvedic detox protocol designed for full-system cleansing, recovery, and rejuvenation. It is not a spa format; it is a clinical wellness process personalized by constitution and health condition. Panchakarma means "five actions" and refers to core elimination therapies used to remove deep toxic load (Ama), restore organ function, and improve long-term vitality.
+                  If you have been living with persistent joint pain, morning stiffness, swollen knees, or reduced mobility — and conventional treatments have offered only temporary relief — Ayurvedic treatment for osteoarthritis in India may offer you something that modern medicine often cannot: a genuine path to healing the root cause, not just masking the symptoms. Osteoarthritis — known in Ayurveda as <em>Sandhivata</em> — occurs when the protective cartilage between your joints gradually wears down.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  The 21-day format is widely used because it can complete the three classical stages: preparation, core elimination, and restoration.{" "}
+                  The 21–28 day Ayurvedic treatment program works to reduce inflammation at its source, nourish and rebuild damaged joint tissue, restore lubrication to the affected joints, and rebalance the Vata dosha.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -740,9 +756,9 @@ const OsteoarthritisTreatment = () => {
 
           <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
+              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Osteoarthritis</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
-                Not all five therapies are given to every guest. Your doctor prescribes the combination based on diagnosis and tolerance.
+                Your Vaidya prescribes the right combination based on your joint condition, dosha constitution, and treatment response.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {therapies.map((item) => {
@@ -816,8 +832,8 @@ const OsteoarthritisTreatment = () => {
 
         <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21-Day Program - Week-by-Week Breakdown</h2>
-            <p className="text-[#7F543D] mt-2">Preparation, elimination, and rejuvenation in one coherent physician-led journey.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21–28 Day Treatment Program — Week by Week</h2>
+            <p className="text-[#7F543D] mt-2">A structured three-phase clinical approach — every phase has a specific therapeutic purpose.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -921,7 +937,7 @@ const OsteoarthritisTreatment = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of the 21-Day Panchakarma Detox</h2>
+          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of Ayurvedic Osteoarthritis Treatment</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
               <CardContent className="p-6">
@@ -967,9 +983,9 @@ const OsteoarthritisTreatment = () => {
 
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765]">Cost of the 21-Day Panchakarma in India</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Cost of Ayurvedic Osteoarthritis Treatment in India</h2>
             <p className="mt-2 text-[#7F543D]">
-              Most guests choose this duration for a full detox cycle, physician supervision, and a complete stay package in India.
+              India offers world-class Ayurvedic care for osteoarthritis at a fraction of what equivalent treatment would cost abroad.
             </p>
           </div>
 
@@ -978,12 +994,12 @@ const OsteoarthritisTreatment = () => {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">21 Days</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">21–28 Days</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and rejuvenation timeline.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">$2,500 - $4,500</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">$2,500 - $6,000</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">Most popular range for reputable centers and full-stay plans.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
@@ -991,15 +1007,15 @@ const OsteoarthritisTreatment = () => {
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
                       <Sparkles className="h-5 w-5 text-[#335765]" />
                     </div>
-                    <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
+                    <p className="text-xl md:text-2xl font-bold text-[#335765]">DISEASE-SPECIFIC</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Designed for chronic disease patients with focus on joint pain and mobility.</p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
-                  <p className="font-semibold text-[#335765]">Most popular - Panchakarma </p>
+                  <p className="font-semibold text-[#335765]">Most popular - Disease-Specific Program</p>
                   <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
                     Highest demand package
                   </span>
@@ -1058,7 +1074,7 @@ const OsteoarthritisTreatment = () => {
         <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Panchakarma?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Osteoarthritis Treatment?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 {chooseIndiaPoints.map((item) => {
                   const Icon = item.icon;
@@ -1085,7 +1101,7 @@ const OsteoarthritisTreatment = () => {
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for 21 Day Panchakarma</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Osteoarthritis Treatment</h2>
             <p className="text-[#7F543D]">
               Not just booking support - structured guidance from pre-consultation to post-program continuity.
             </p>
@@ -1118,21 +1134,21 @@ const OsteoarthritisTreatment = () => {
 
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the 21-Day Package?</h2>
-            <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
+            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Treatment Package?</h2>
+            <p className="text-[#7F543D]">Everything essential for a supervised treatment, recovery, and long-term continuity plan.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">21 Days</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">21-28 Days</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">20 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">20-27 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals + Medicines</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
@@ -1214,7 +1230,7 @@ const OsteoarthritisTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Osteoarthritis Treatment Program</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -1589,4 +1605,5 @@ const OsteoarthritisTreatment = () => {
 };
 
 export default OsteoarthritisTreatment;
+
 
