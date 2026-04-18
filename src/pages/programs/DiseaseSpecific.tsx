@@ -39,7 +39,7 @@ const DiseaseSpecific = () => {
         <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
-              Disease Specific Programs
+              Disease Specific Programs in India
             </h1>
             <p className="text-lg text-white/90 max-w-3xl">
               Explore targeted Ayurvedic treatments designed for chronic ailments. Our disease-specific programs combine intensive therapies, specialized diets, and herbal medicine to address root causes and provide long-term relief and healing.
@@ -51,8 +51,8 @@ const DiseaseSpecific = () => {
         <section className="container mx-auto px-4 py-16 pb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col"
               >
                 {/* Image */}
@@ -71,7 +71,7 @@ const DiseaseSpecific = () => {
                       {program.name}
                     </h3>
                   </div>
-                  
+
                   <p className="text-foreground text-sm mb-4 line-clamp-3">
                     {program.description}
                   </p>

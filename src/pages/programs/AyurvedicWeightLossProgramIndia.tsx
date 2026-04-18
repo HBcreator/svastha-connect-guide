@@ -10,7 +10,7 @@ import {
   Activity, AlertTriangle, ArrowRight, BedDouble, Brain, Calendar, CalendarCheck2, ChevronLeft, ChevronRight,
   CircleCheck, ClipboardCheck, Droplet, Globe2, HeartPulse, Headset, Leaf, MapPin, Phone, Pill,
   ReceiptIndianRupee, Route, ShieldCheck, Sparkles, Star, Stethoscope, TrendingUp,
-  UtensilsCrossed, UserCheck, XCircle, Search, X, ClipboardList, CheckCircle2, HelpCircle, Building2
+  UtensilsCrossed, UserCheck, XCircle, Search, X, ClipboardList, CheckCircle2, HelpCircle, Building2, UserCog
 } from "lucide-react";
 
 const imageBase = "/Ayurvedic Programs/Images/Ayurvedic-Weight-Loss-Program-India";
@@ -65,9 +65,27 @@ const avoidPoints = [
 ];
 
 const weeks = [
-  ["Week 1 - Purva Karma (Preparation)", "Day 1-7", "Assessment, Ayurvedic diet, Abhyanga, Swedana, early Udvarthanam, and herbs begin clearing Ama and reducing bloating.", ["Constitution analysis", "Kapha-pacifying diet", "Abhyanga and Swedana", "Initial Udvarthanam"]],
-  ["Week 2 - Pradhana Karma (Core Detox)", "Day 8-14", "Daily Udvarthanam, Virechana, Lekhana Basti, Dhanyamla Dhara, and supporting therapies target metabolic toxins and stubborn fat.", ["Daily Udvarthanam", "Virechana", "Lekhana Basti", "Dhanyamla Dhara"]],
-  ["Week 3 - Paschat Karma (Stabilisation)", "Day 15-21", "Rasayana support, therapeutic yoga, Agni-building diet, and a home protocol help the metabolic reset continue after travel.", ["Rasayana therapies", "Therapeutic yoga", "Post-program diet plan", "Home herbal protocol"]],
+  {
+    title: "Week 1 - Purva Karma (Preparation)",
+    duration: "Day 1-7",
+    focus: "Metabolic preparation and internal cleansing",
+    description: "Assessment, Ayurvedic diet, Abhyanga, Swedana, early Udvarthanam, and herbs begin clearing Ama and reducing bloating.",
+    bullets: ["Constitution analysis", "Kapha-pacifying diet", "Abhyanga and Swedana", "Initial Udvarthanam"]
+  },
+  {
+    title: "Week 2 - Pradhana Karma (Core Detox)",
+    duration: "Day 8-14",
+    focus: "Active fat-reduction and core detox therapies",
+    description: "Daily Udvarthanam, Virechana, Lekhana Basti, Dhanyamla Dhara, and supporting therapies target metabolic toxins and stubborn fat.",
+    bullets: ["Daily Udvarthanam", "Virechana", "Lekhana Basti", "Dhanyamla Dhara"]
+  },
+  {
+    title: "Week 3 - Paschat Karma (Stabilisation)",
+    duration: "Day 15-21",
+    focus: "Stabilisation and dietary discipline integration",
+    description: "Rasayana support, therapeutic yoga, Agni-building diet, and a home protocol help the metabolic reset continue after travel.",
+    bullets: ["Rasayana therapies", "Therapeutic yoga", "Post-program diet plan", "Home herbal protocol"]
+  },
 ] as const;
 
 const benefitGroups = [
@@ -460,24 +478,24 @@ const WeeksSection = () => (
       <p className="text-[#7F543D] mt-2">Preparation, detox, and stabilisation in one physician-led journey.</p>
     </div>
     <Accordion type="single" collapsible className="space-y-4">
-      {weeks.map(([title, days, desc, bullets], i) => (
+      {weeks.map((week, i) => (
         <AccordionItem
-          key={title}
+          key={week.title}
           value={`week-${i}`}
           className="overflow-hidden bg-white rounded-xl px-4 md:px-6 border border-green-100 data-[state=open]:border-green-500"
         >
           <AccordionTrigger className="py-4 hover:no-underline [&>svg]:h-7 [&>svg]:w-7 [&>svg]:text-orange-500 [&>svg]:shrink-0">
             <div className="text-left">
-              <p className="text-lg font-bold text-[#335765]">{title}</p>
-              <p className="text-sm text-[#8C765E]">{days}</p>
+              <p className="text-lg font-bold text-[#335765]">{week.title}</p>
+              <p className="text-sm text-[#8C765E] font-medium">{week.duration} — <span className="text-[#7F543D]">{week.focus}</span></p>
             </div>
           </AccordionTrigger>
           <AccordionContent className="pt-1 pb-6">
             <div>
-              <p className="text-[#7F543D] mb-4 leading-relaxed">{desc}</p>
+              <p className="text-[#7F543D] mb-4 leading-relaxed">{week.description}</p>
               <p className="font-semibold text-[#335765] mb-2.5">Key Therapies</p>
               <ul className="space-y-2.5 text-sm text-[#7F543D]">
-                {bullets.map((b) => (
+                {week.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2.5 leading-relaxed">
                     <CircleCheck className="h-4 w-4 mt-0.5 text-green-600 shrink-0" />
                     <span>{b}</span>
@@ -695,7 +713,7 @@ const whyUsPoints = [
   { icon: CalendarCheck2, title: "Pre-Travel Doctor Consultation", text: "Ayurvedic physician case review before booking helps shortlist the right center, program, and treatment pathway for your condition." },
   { icon: Route, title: "Complete Journey Support", text: "From center selection to arrival coordination, airport transfers, and check-in flow management — all arranged for you." },
   { icon: Headset, title: "During-Stay Assistance", text: "On-ground guidance through your full 21-day weight loss protocol for smooth continuity, comfort, and progress tracking." },
-  { icon: UserCheck, title: "Condition-Based Matching", text: "Personalized center mapping based on your Prakriti, metabolic condition (PCOS, hypothyroidism), budget, and weight loss goals." },
+  { icon: UserCog, title: "Condition-Based Matching", text: "Personalized center mapping based on your Prakriti, metabolic condition (PCOS, hypothyroidism), budget, and weight loss goals." },
 ];
 
 const WhyUsSection = () => (
@@ -713,10 +731,10 @@ const WhyUsSection = () => (
       {whyUsPoints.map((item, idx) => {
         const Icon = item.icon;
         return (
-          <div key={item.title} className="rounded-xl bg-white p-5 shadow-sm hover:shadow-md transition">
+          <div key={item.title} className="rounded-xl bg-white p-5 shadow-sm border border-[#d7dcca] hover:shadow-md transition">
             <div className="flex items-center gap-3 mb-2">
-              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#E7F0F1]">
-                <Icon className="h-4 w-4 text-[#335765]" />
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
+                <Icon className="h-5 w-5 text-[#1E7A4D]" />
               </span>
               <p className="font-semibold text-[#335765]">{idx + 1}. {item.title}</p>
             </div>

@@ -55,10 +55,10 @@ const PanchakarmaDetox = () => {
         <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
-              Panchakarma Detox Programs
+              Panchakarma Detox Programs in India
             </h1>
             <p className="text-lg text-white/90 max-w-3xl">
-              Experience the ancient, deeply restorative science of Panchakarma. 
+              Experience the ancient, deeply restorative science of Panchakarma.
               Discover our carefully curated detoxification and healing programs designed to cleanse the body, balance the mind, and enhance longevity.
             </p>
           </div>
@@ -68,8 +68,8 @@ const PanchakarmaDetox = () => {
         <section className="container mx-auto px-4 py-16 pb-20">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {programs.map((program, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col"
               >
                 {/* Image */}
@@ -88,7 +88,7 @@ const PanchakarmaDetox = () => {
                       {program.name}
                     </h3>
                   </div>
-                  
+
                   <p className="text-foreground text-sm mb-4 line-clamp-3">
                     {program.description}
                   </p>
