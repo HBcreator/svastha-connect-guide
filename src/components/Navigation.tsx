@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ServicesDropdown } from "@/components/ui/dropdown-services";
 
 interface NavigationProps {
   onQuoteClick: () => void;
@@ -14,6 +13,8 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [centersDropdownOpen, setCentersDropdownOpen] = useState(false);
   const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
+  const [mobileCentersOpen, setMobileCentersOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -36,11 +37,21 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
     }, 300);
   };
 
-  const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/services", label: "Services" },
-    { path: "/treatments", label: "Treatments" },
-    { path: "/about", label: "About Us" },
+  const centersLinks = [
+    { to: "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals", label: "Bangalore, Hyderabad, Chennai & South India." },
+    { to: "/kerala-ayurvedic-centers-and-hospitals", label: "Kerala and South West Region" },
+    { to: "/goa-ayurvedic-centers-and-hospitals", label: "Goa and South West Region" },
+    { to: "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals", label: "Himalayas, Rishikesh, Uttarakhand & North East" },
+    { to: "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals", label: "Delhi and North India Region" },
+    { to: "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals", label: "Mumbai, Pune, Nashik & West India." },
+  ];
+
+  const programsLinks = [
+    { to: "/ayurvedic-programs/panchakarma-detox", label: "Panchakarma Detox" },
+    { to: "/ayurvedic-programs/disease-specific", label: "Disease-Specific" },
+    { to: "/ayurvedic-programs/lifestyle-and-wellness", label: "Lifestyle & Wellness" },
+    { to: "/ayurvedic-programs/beauty-and-rejuvenation", label: "Beauty & Rejuvenation" },
+    { to: "/ayurvedic-programs/integrated-retreat", label: "Integrated Retreat" },
   ];
 
   return (
@@ -269,12 +280,12 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
           
           {/* Menu Panel */}
           <div 
-            className={`fixed right-0 top-0 h-full w-80 bg-white shadow-xl transition-transform duration-300 ease-out ${
+            className={`fixed right-0 top-0 h-full w-full max-w-sm bg-white shadow-xl transition-transform duration-300 ease-out ${
               isClosing ? 'translate-x-full' : 'translate-x-0 animate-slide-in-right'
-            }`}
+            } flex flex-col`}
           >
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-8">
+            <div className="p-5 border-b border-border shrink-0">
+              <div className="flex items-center justify-between">
                 <h2 className="text-xl font-bold text-primary font-poppins">Menu</h2>
                 <button
                   className="text-primary"
@@ -283,8 +294,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   <X size={24} />
                 </button>
               </div>
-              
-              <div className="space-y-4">
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-5 space-y-3">
                 <Link
                   to="/"
                   className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
@@ -310,109 +322,76 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 
                 {/* Mobile Centers Section */}
                 <div className="space-y-1">
-                  <Link
-                    to="/centers"
-                    className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                      location.pathname === "/centers"
+                  <button
+                    type="button"
+                    className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                      location.pathname.startsWith("/centers")
                         ? "text-primary bg-primary/10"
                         : "text-foreground hover:bg-gray-100"
                     }`}
-                    onClick={closeMenu}
+                    onClick={() => setMobileCentersOpen((prev) => !prev)}
                   >
-                    Top Centers
-                  </Link>
-                  <Link
-                    to="/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Bangalore, Hyderabad, Chennai & South India.
-                  </Link>
-                  <Link
-                    to="/kerala-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Kerala and South West Region
-                  </Link>
-                  <Link
-                    to="/goa-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Goa and South West Region
-                  </Link>
-                  <Link
-                    to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Himalayas, Rishikesh, Uttarakhand & North East
-                  </Link>
-                  <Link
-                    to="/delhi-and-north-india-region-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Delhi and North India Region
-                  </Link>
-                  <Link
-                    to="/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Mumbai, Pune, Nashik & West India.
-                  </Link>
+                    <span>Top Centers</span>
+                    <ChevronDown size={18} className={`transition-transform ${mobileCentersOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileCentersOpen && (
+                    <div className="space-y-1 pl-2">
+                      <Link
+                        to="/centers"
+                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                        onClick={closeMenu}
+                      >
+                        All Centers
+                      </Link>
+                      {centersLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                          onClick={closeMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Mobile Ayurvedic Programs Section */}
                 <div className="space-y-1">
-                  <Link
-                    to="/ayurvedic-programs"
-                    className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                  <button
+                    type="button"
+                    className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
                       location.pathname.startsWith("/ayurvedic-programs")
                         ? "text-primary bg-primary/10"
                         : "text-foreground hover:bg-gray-100"
                     }`}
-                    onClick={closeMenu}
+                    onClick={() => setMobileProgramsOpen((prev) => !prev)}
                   >
-                    Ayurvedic Programs
-                  </Link>
-                  <Link
-                    to="/ayurvedic-programs/panchakarma-detox"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Panchakarma Detox
-                  </Link>
-                  <Link
-                    to="/ayurvedic-programs/disease-specific"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Disease-Specific
-                  </Link>
-                  <Link
-                    to="/ayurvedic-programs/lifestyle-and-wellness"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Lifestyle & Wellness
-                  </Link>
-                  <Link
-                    to="/ayurvedic-programs/beauty-and-rejuvenation"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Beauty & Rejuvenation
-                  </Link>
-                  <Link
-                    to="/ayurvedic-programs/integrated-retreat"
-                    className="block py-3 px-8 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 ml-2"
-                    onClick={closeMenu}
-                  >
-                    Integrated Retreat
-                  </Link>
+                    <span>Ayurvedic Programs</span>
+                    <ChevronDown size={18} className={`transition-transform ${mobileProgramsOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileProgramsOpen && (
+                    <div className="space-y-1 pl-2">
+                      <Link
+                        to="/ayurvedic-programs"
+                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                        onClick={closeMenu}
+                      >
+                        All Programs
+                      </Link>
+                      {programsLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                          onClick={closeMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <Link
@@ -442,11 +421,10 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     onQuoteClick();
                     closeMenu();
                   }}
-                  className="w-full font-poppins font-semibold mt-6"
+                  className="w-full font-poppins font-semibold mt-4"
                 >
                   Get Free Quote
                 </Button>
-              </div>
             </div>
           </div>
         </div>

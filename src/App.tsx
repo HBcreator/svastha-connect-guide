@@ -105,6 +105,9 @@ import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
 import DiseaseSpecific from "./pages/programs/DiseaseSpecific";
 import OsteoarthritisTreatment from "./pages/programs/OsteoarthritisTreatment";
 import SciaticaTreatmentProgram from "./pages/programs/SciaticaTreatment";
+import AyurvedicWeightLossProgramIndia from "./pages/programs/AyurvedicWeightLossProgramIndia";
+import LifestyleAndWellness from "./pages/programs/LifestyleAndWellness";
+import AntiAgingAyurvedaProgramIndia from "./pages/programs/AntiAgingAyurvedaProgramIndia";
 
 const queryClient = new QueryClient();
 
@@ -216,8 +219,11 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/ayurvedic-programs/panchakarma-detox" element={<PanchakarmaDetox />} />
           <Route path="/ayurvedic-programs/disease-specific" element={<DiseaseSpecific />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness" element={<LifestyleAndWellness />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness/anti-aging-ayurveda-program-in-india" element={<AntiAgingAyurvedaProgramIndia />} />
           <Route path="/ayurvedic-programs/disease-specific/osteoarthritis" element={<OsteoarthritisTreatment />} />
           <Route path="/ayurvedic-programs/disease-specific/sciatica" element={<SciaticaTreatmentProgram />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india" element={<AyurvedicWeightLossProgramIndia />} />
           <Route
             path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"
             element={<PanchakarmaDetox21Day />}
