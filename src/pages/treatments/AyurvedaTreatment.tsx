@@ -715,7 +715,42 @@ const AyurvedaTreatment = () => {
           </Accordion>
         </section>
 
-        </main>
+        {/* Book Consultation CTA */}
+        <section className="scroll-mt-24 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white">
+          <div className="grid md:grid-cols-2 h-full">
+            <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
+              <img
+                src="/Treatments-images/ayurvedic_treatment_hero.png"
+                alt="Ayurveda Treatment consultation"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
+            </div>
+            <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurveda Treatment Program</h2>
+              <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
+                Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
+              </p>
+              <div className="space-y-3 mt-4 max-w-xl">
+                <a
+                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20an%20Ayurveda%20Treatment%20program."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
+                  aria-label="WhatsApp Us Now"
+                >
+                  <span className="text-xs md:text-sm font-semibold leading-tight">WhatsApp Us Now</span>
+                  <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
+                </a>
+                <Button className="w-full h-11 md:h-12 bg-[#D19A71] hover:bg-[#C18A61] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={() => setQuoteModalOpen(true)}>
+                  Get Free Consultation Here
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
