@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
@@ -1173,24 +1173,27 @@ const TopCenters = () => {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      className="flex-1 font-semibold"
-                      onClick={() => {
-                        const ext = (center as { externalLink?: string }).externalLink;
-                        if (ext) {
-                          window.open(ext, "_blank", "noopener,noreferrer");
-                          return;
-                        }
-                        if (center.slug) {
-                          navigate(`/centers/${center.slug}`);
-                          return;
-                        }
-                        navigate("#");
-                      }}
-                    >
-                      View Details
-                    </Button>
+                    {(center as any).externalLink ? (
+                      <a 
+                        href={(center as any).externalLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="flex-1"
+                      >
+                        <Button variant="outline" className="w-full font-semibold">
+                          View Details
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link 
+                        to={center.slug ? `/centers/${center.slug}` : "#"} 
+                        className="flex-1"
+                      >
+                        <Button variant="outline" className="w-full font-semibold">
+                          View Details
+                        </Button>
+                      </Link>
+                    )}
                     <Button
                       onClick={() => setQuoteModalOpen(true)}
                       className="flex-1 font-semibold"

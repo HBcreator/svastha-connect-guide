@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
@@ -277,12 +278,11 @@ const Treatments = () => {
                   </ul>
                 </div>
                 
-                <Button 
-                  onClick={() => window.location.href = `/treatments/${treatment.slug}`}
-                  className="w-full font-semibold mt-auto"
-                >
-                  Read More
-                </Button>
+                <Link to={`/treatments/${treatment.slug}`} className="w-full">
+                  <Button className="w-full font-semibold">
+                    Read More
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
