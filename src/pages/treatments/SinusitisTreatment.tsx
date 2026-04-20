@@ -73,21 +73,21 @@ const packages = [
     duration: "7 Days",
     cost: "$600 - $1,000 USD",
     focus: "A focused, short-term protocol utilizing daily Nasya and herbal steam to provide rapid relief from acute congestion and sinus pressure.",
-    image: "/Treatments-images/sinusitis_pack_1.png",
+    image: "/Treatments-images/sinusitis_pack_1_human.png",
   },
   {
     name: "14-Day Comprehensive Relief",
     duration: "14 Days",
     cost: "$1,200 - $2,000 USD",
     focus: "A deeper healing approach targeting chronic sinusitis. Includes full-body therapies to balance Doshas and strengthen respiratory immunity.",
-    image: "/Treatments-images/sinusitis_pack_2.png",
+    image: "/Treatments-images/sinusitis_pack_2_human.png",
   },
   {
     name: "21-Day Chronic Apeenasa Care",
     duration: "21 Days",
     cost: "$1,800 - $3,200 USD",
     focus: "An intensive program for long-standing, severe sinus issues. Complete systemic detoxification to eradicate root causes and rebuild tissue health.",
-    image: "/Treatments-images/sinusitis_pack_3.png",
+    image: "/Treatments-images/sinusitis-treatment/sinusitis-treatment.jpg",
   }
 ];
 
