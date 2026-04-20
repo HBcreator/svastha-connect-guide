@@ -22,7 +22,7 @@ const quickRows = [
   ["Who It Is For", "Overweight adults seeking sustainable, natural weight loss"],
   ["Core Approach", "Panchakarma detox + targeted fat-reducing therapies + herbal medicines"],
   ["Key Benefit", "Metabolism correction, fat reduction, digestive reset, hormonal balance"],
-  ["Top Locations", "Kerala, Goa, Bangalore"],
+  ["Top Locations", "PAN India"],
   ["Average Cost", "$2,500 - $4,500 USD"],
   ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
 ];
@@ -188,7 +188,7 @@ const AyurvedicWeightLossProgramIndia = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Goa, Bangalore</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -361,7 +361,7 @@ const QuickSummary = () => (
     <Card className="border-[#d8d0ae] bg-white shadow-sm">
       <CardContent className="p-4 md:p-6 space-y-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {[["Duration", "21 Days / 20 Nights"], ["Ideal For", "Weight Loss, Metabolism Reset"], ["Top Locations", "Kerala, Goa, Bangalore"], ["Avg Cost", "$2,500 - $4,500"]].map(([label, value]) => (
+          {[["Duration", "21 Days / 20 Nights"], ["Ideal For", "Weight Loss, Metabolism Reset"], ["Top Locations", "PAN India"], ["Avg Cost", "$2,500 - $4,500"]].map(([label, value]) => (
             <div key={label} className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">{label}</p>
               <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">{value}</p>

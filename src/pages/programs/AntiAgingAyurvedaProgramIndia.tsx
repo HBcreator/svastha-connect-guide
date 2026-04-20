@@ -22,7 +22,7 @@ const quickSummaryRows = [
   ["Duration", "21 Days / 20 Nights"],
   ["Who It Is For", "Adults seeking vitality, graceful aging, and preventive wellness"],
   ["Key Benefit", "Cellular rejuvenation, stress reset, skin vitality, and metabolic balance"],
-  ["Top Locations", "Kerala, Goa, Bangalore"],
+  ["Top Locations", "PAN India"],
   ["Average Cost", "$2,500 - $4,500 USD"],
   ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
   ["Includes", "Accommodation, meals, therapies, consultations, and medicines"],
@@ -559,7 +559,7 @@ const AntiAgingAyurvedaProgramIndia = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Goa, Bangalore</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -620,7 +620,7 @@ const AntiAgingAyurvedaProgramIndia = () => {
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Goa, Bangalore</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">PAN India</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>

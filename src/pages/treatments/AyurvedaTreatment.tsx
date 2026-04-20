@@ -9,7 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import {
   Calendar, MapPin, Star, Leaf, HeartPulse, Droplet, Activity,
   ChevronLeft, ChevronRight, Stethoscope, ReceiptIndianRupee, Sparkles, ShieldCheck, Clock,
-  Wind, Flame, Mountain, CheckCircle2, Pill, UtensilsCrossed, Zap, Moon, Circle, ArrowRight
+  Wind, Flame, Mountain, CheckCircle2, Pill, UtensilsCrossed, Zap, Moon, Circle, ArrowRight,
+  Search, Phone, X, ClipboardList
 } from "lucide-react";
 
 const elements = [
@@ -157,6 +158,7 @@ const topAyurvedicCenters = [
 const AyurvedaTreatment = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
 
   const [topCentersSlide, setTopCentersSlide] = useState(0);
   const [topCentersPerSlide, setTopCentersPerSlide] = useState(3);
@@ -200,6 +202,30 @@ const AyurvedaTreatment = () => {
   const goReviewPrevious = () => setCurrentReview((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
   const goReviewNext = () => setCurrentReview((prev) => (prev + 1) % patientReviews.length);
 
+  const jumpSections = [
+    { id: "intro", title: "Intro & Philosophy" },
+    { id: "principles", title: "Foundational Principles" },
+    { id: "diagnosis", title: "Diagnosis & Medication" },
+    { id: "cost-duration", title: "Packages, Cost & Duration" },
+    { id: "reviews", title: "Patient Stories & Reviews" },
+    { id: "top-centers", title: "Top Ayurvedic Centers" },
+    { id: "faq", title: "Frequently Asked Questions" },
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }, 250);
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
@@ -216,7 +242,7 @@ const AyurvedaTreatment = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Goa, Bangalore</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -491,6 +517,105 @@ const AyurvedaTreatment = () => {
            </div>
         </section>
 
+      {/* Patient Reviews */}
+        <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
+          <div className="container mx-auto px-4 max-w-6xl text-left">
+            <div className="text-center mb-6 md:mb-8 space-y-3">
+              <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
+              <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto relative px-0 md:px-0">
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-4 md:-translate-x-6 z-20">
+                <button
+                  onClick={goReviewPrevious}
+                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                  aria-label="Previous review"
+                >
+                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-4 md:translate-x-6 z-20">
+                <button
+                  onClick={goReviewNext}
+                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                  aria-label="Next review"
+                >
+                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
+                <CardContent className="p-4 md:p-12 relative">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-[#335765]/20 mb-3 md:mb-4">
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
+                    </div>
+
+                    <div className="mb-4 md:mb-6">
+                      <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4">
+                        {patientReviews[currentReview].title}
+                      </h3>
+                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                        "{patientReviews[currentReview].review}"
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
+                        {patientReviews[currentReview].name.charAt(0)}
+                      </div>
+
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                            {patientReviews[currentReview].name}
+                          </h4>
+                          {patientReviews[currentReview].verified && (
+                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                              &#10003; Verified
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                          {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < patientReviews[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+                        ))}
+                      </div>
+                      <span className="text-xs md:text-sm font-semibold text-[#335765]">
+                        {patientReviews[currentReview].rating}.0
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="flex justify-center gap-2 mt-8">
+                {patientReviews.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentReview(idx)}
+                    className={`transition-all rounded-full ${currentReview === idx
+                        ? "w-8 h-3 bg-[#335765]"
+                        : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                      }`}
+                    aria-label={`Go to review ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
@@ -601,105 +726,6 @@ const AyurvedaTreatment = () => {
           </div>
         </section>
 
-      {/* Patient Reviews */}
-        <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
-          <div className="container mx-auto px-4 max-w-6xl text-left">
-            <div className="text-center mb-6 md:mb-8 space-y-3">
-              <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
-              <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
-            </div>
-
-            <div className="max-w-4xl mx-auto relative px-0 md:px-0">
-              <div className="absolute inset-y-0 left-0 flex items-center translate-x-4 md:-translate-x-6 z-20">
-                <button
-                  onClick={goReviewPrevious}
-                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
-                  aria-label="Previous review"
-                >
-                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-4 md:translate-x-6 z-20">
-                <button
-                  onClick={goReviewNext}
-                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
-                  aria-label="Next review"
-                >
-                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
-                </button>
-              </div>
-
-              <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
-                <CardContent className="p-4 md:p-12 relative">
-                  <div className="max-w-4xl mx-auto">
-                    <div className="text-[#335765]/20 mb-3 md:mb-4">
-                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-                      </svg>
-                    </div>
-
-                    <div className="mb-4 md:mb-6">
-                      <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4">
-                        {patientReviews[currentReview].title}
-                      </h3>
-                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
-                        "{patientReviews[currentReview].review}"
-                      </p>
-                    </div>
-
-                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
-                        {patientReviews[currentReview].name.charAt(0)}
-                      </div>
-
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-[#335765]">
-                            {patientReviews[currentReview].name}
-                          </h4>
-                          {patientReviews[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                              &#10003; Verified
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                          {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-2 md:gap-3">
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < patientReviews[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
-                        ))}
-                      </div>
-                      <span className="text-xs md:text-sm font-semibold text-[#335765]">
-                        {patientReviews[currentReview].rating}.0
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <div className="flex justify-center gap-2 mt-8">
-                {patientReviews.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentReview(idx)}
-                    className={`transition-all rounded-full ${currentReview === idx
-                        ? "w-8 h-3 bg-[#335765]"
-                        : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
-                      }`}
-                    aria-label={`Go to review ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FAQs */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-10">
@@ -753,6 +779,111 @@ const AyurvedaTreatment = () => {
       </main>
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Desktop Vertical BROWSE Button */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      {/* Mobile BROWSE button */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
+      {/* Mobile Quote Button to match reference style */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Phone size={18} className="-ml-1" />
+        <span className="hidden md:inline">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
+      </button>
+
+      {/* Jump to Section Modal */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Program Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this program page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

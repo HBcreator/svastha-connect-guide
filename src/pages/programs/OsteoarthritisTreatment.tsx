@@ -55,7 +55,7 @@ const quickSummaryRows = [
   ["Who It Is For", "Adults with mild to advanced osteoarthritis seeking natural, drug-free relief"],
   ["Core Approach", "Panchakarma detox + targeted joint therapies + herbal medicines"],
   ["Key Benefit", "Pain relief, reduced inflammation, improved mobility, cartilage support"],
-  ["Top Locations", "Kerala, Rishikesh, Bangalore"],
+  ["Top Locations", "PAN India"],
   ["Average Cost", "$2,500 - $6,000 USD (all-inclusive)"],
   ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
 ];
@@ -627,7 +627,7 @@ const OsteoarthritisTreatment = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Bangalore</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -687,7 +687,7 @@ const OsteoarthritisTreatment = () => {
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Bangalore</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">PAN India</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
