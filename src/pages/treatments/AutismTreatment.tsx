@@ -162,7 +162,8 @@ const faqItems = [
   { question: "Can Ayurveda cure Autism?", answer: "Ayurveda does not claim to 'cure' autism, as it is a neurodevelopmental condition. Instead, it offers a powerful holistic pathway to manage challenges, pacify aggravated doshas (especially Vata), and significantly improve the child's quality of life and cognitive function." },
   { question: "Is the treatment safe for young children?", answer: "Yes. Ayurvedic treatments for autism are highly personalized and incredibly gentle. Modalities like Abhyanga (massage) and Shirodhara are non-invasive, soothing, and use safe, natural herbal oils." },
   { question: "How important is diet in this treatment?", answer: "Diet (Ahara) is a cornerstone of the treatment. A Satvic diet that avoids Vata-aggravating triggers (like gluten and casein) while emphasizing easy-to-digest, nourishing foods is critical for healing the gut-brain axis." },
-  { question: "How long does a typical program last?", answer: "We recommend a minimum of 14 to 21 days for the initial intensive therapies, but Ayurveda is a continuous lifestyle approach. We will teach you routines to maintain progress at home." }
+  { question: "How long does a typical program last?", answer: "We recommend a minimum of 14 to 21 days for the initial intensive therapies, but Ayurveda is a continuous lifestyle approach. We will teach you routines to maintain progress at home." },
+  { question: "What results can parents realistically expect?", answer: "While outcomes vary, parents commonly report improvements in sleep quality, reduction in hyperactivity and meltdowns, improved eye contact and social engagement, better speech and communication, and easier digestion. Ayurveda addresses the whole child, making multiple areas of life easier." }
 ];
 
 const AutismTreatment = () => {
@@ -437,11 +438,6 @@ const AutismTreatment = () => {
                       <span className="font-bold text-[#335765] text-sm">Duration:</span>
                       <span className="font-semibold text-sm">{pkg.duration}</span>
                     </div>
-                    <div className="flex items-center gap-2.5 text-[#7F543D] bg-[#F8F4E7] px-3 py-2 rounded-lg border border-[#d8d0ae]/50 shrink-0">
-                      <ReceiptIndianRupee className="h-4 w-4 md:h-5 md:w-5 text-[#335765]" />
-                      <span className="font-bold text-[#335765] text-sm">Est. Cost:</span>
-                      <span className="font-semibold text-sm">{pkg.cost}</span>
-                    </div>
                     <div className="text-sm text-[#5f4636] flex-grow leading-relaxed border-l-[3px] border-[#335765] pl-3 py-1 font-medium">
                       {pkg.focus}
                     </div>
@@ -511,17 +507,17 @@ const AutismTreatment = () => {
                         {patientReviews[currentReview].name.charAt(0)}
                       </div>
 
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-semibold text-[#335765]">
-                            {patientReviews[currentReview].name}
-                          </h4>
-                          {patientReviews[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                              &#10003; Verified
-                            </span>
-                          )}
-                        </div>
+                          <div className="flex-1">
+                            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+                              <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
+                                {patientReviews[currentReview].name}
+                              </h4>
+                              {patientReviews[currentReview].verified && (
+                                <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">
+                                  &#10003; Verified
+                                </span>
+                              )}
+                            </div>
                         <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
                           {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
                         </p>
@@ -626,6 +622,8 @@ const AutismTreatment = () => {
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
                           to={center.link}
+                          target="_blank"
+                          rel="noreferrer"
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
@@ -658,13 +656,15 @@ const AutismTreatment = () => {
             )}
 
             <div className="flex justify-center mt-4">
-              <Button
+              <Link
+                to="/centers"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
-                onClick={() => navigate('/centers')}
               >
                 VIEW ALL CENTERS
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Link>
             </div>
           </div>
         </section>

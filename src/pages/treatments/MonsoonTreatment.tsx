@@ -406,11 +406,6 @@ const MonsoonTreatment = () => {
                     <span className="font-bold text-[#335765] text-sm">Duration:</span>
                     <span className="font-semibold text-sm">{pkg.duration}</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-[#7F543D] bg-[#F8F4E7] px-3 py-2 rounded-lg border border-[#d8d0ae]/50">
-                    <ReceiptIndianRupee className="h-4 w-4 md:h-5 md:w-5 text-[#335765]" />
-                    <span className="font-bold text-[#335765] text-sm">Est. Cost:</span>
-                    <span className="font-semibold text-sm">{pkg.cost}</span>
-                  </div>
                   <div className="text-sm text-[#5f4636] flex-grow leading-relaxed border-l-[3px] border-[#335765] pl-3 py-1 font-medium">{pkg.focus}</div>
                   <div className="mt-auto pt-1.5">
                     <Button onClick={() => setQuoteModalOpen(true)} className="w-full h-11 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]">Get a Free Quote</Button>
@@ -448,9 +443,9 @@ const MonsoonTreatment = () => {
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">{patientReviews[currentReview].name.charAt(0)}</div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">{patientReviews[currentReview].name}</h4>
-                        {patientReviews[currentReview].verified && <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">&#10003; Verified</span>}
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">{patientReviews[currentReview].name}</h4>
+                        {patientReviews[currentReview].verified && <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">&#10003; Verified</span>}
                       </div>
                       <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>{patientReviews[currentReview].location}{patientReviews[currentReview].condition && ` - ${patientReviews[currentReview].condition}`}</p>
                     </div>
@@ -499,7 +494,7 @@ const MonsoonTreatment = () => {
                         <button onClick={() => toggleCenter(center.name)} className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block">{expandedCenterName === center.name ? "Read Less" : "Read More"}</button>
                       </div>
                       <div className="grid grid-cols-2 gap-3 mt-auto">
-                        <Link to={center.link} className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg text-xs flex items-center justify-center">View Details</Link>
+                        <Link to={center.link} target="_blank" rel="noreferrer" className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg text-xs flex items-center justify-center">View Details</Link>
                         <Button className="w-full bg-[#335765] hover:bg-[#25464c] text-white font-bold h-10 rounded-lg text-xs" onClick={() => setQuoteModalOpen(true)}>Get Quote</Button>
                       </div>
                     </div>
@@ -515,9 +510,14 @@ const MonsoonTreatment = () => {
               </div>
             )}
             <div className="flex justify-center mt-4">
-              <Button className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg flex items-center gap-2 text-base group" onClick={() => navigate('/centers')}>
+              <Link
+                to="/centers"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg flex items-center gap-2 text-base group"
+              >
                 VIEW ALL CENTERS <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+              </Link>
             </div>
           </div>
         </section>

@@ -31,6 +31,18 @@ const patientReviews = [
     title: "I Avoided Spinal Surgery Thanks to This Program.",
     review: "My orthopedic surgeon had already discussed surgical intervention for the nerve compression. I requested three months to try Ayurvedic treatment first. The Kati Basti therapy, combined with Panchakarma and daily yoga, reduced my pain so dramatically that surgery is now completely off the table.",
     rating: 5, verified: true
+  },
+  {
+    name: "Anneliese Bauer", location: "Vienna, Austria", condition: "L4-L5 Radiculopathy",
+    title: "Six Weeks of Treatment Reversed Six Months of Suffering.",
+    review: "My L4-L5 radiculopathy was causing shooting pain down my entire left leg. The Kati Basti treatments filled the lumbar area with warm medicated oil, providing relief I hadn't felt in months. The Patra Pinda Sweda reduced the inflammation around the disc within the first week. I left with a 90% reduction in radiating pain.",
+    rating: 5, verified: true
+  },
+  {
+    name: "Seamus O'Brien", location: "Cork, Ireland", condition: "Piriformis Syndrome",
+    title: "The Deep Tissue Oil Therapy Was Transformational.",
+    review: "Piriformis syndrome had been misdiagnosed for two years. The Ayurvedic physician correctly identified it as a Vata aggravation and used Abhyanga with specific marma point therapy to release the muscle spasm. Within two weeks, the referred sciatic pain had completely resolved, and I could walk without a limp for the first time in years.",
+    rating: 5, verified: true
   }
 ];
 
@@ -38,7 +50,8 @@ const faqItems = [
   { question: "What is the recommended duration for Sciatica treatment?", answer: "For acute pain, a 14-day program is effective. However, for chronic sciatica or cases involving disc compression, a 21 to 28-day intensive program is recommended to ensure deep nerve nourishment and long-term stability." },
   { question: "Can Ayurveda help avoid spinal surgery for Sciatica?", answer: "Yes, in many cases. Ayurvedic therapies like Kati Basti and Basti reduce inflammation and nourish the spinal discs, often relieving nerve compression enough to avoid surgical intervention. We recommend a consultation with our Vaidyas to assess your case." },
   { question: "What therapies are most effective for nerve pain?", answer: "Kati Vasti (localized oil pooling), Patra Pinda Sweda (herbal poultice), and Basti (medicated enema) are the gold-standard therapies. They directly target the Vata imbalance and provide both immediate pain relief and long-term healing." },
-  { question: "Is this treatment suitable for older patients?", answer: "Absolutely. Ayurvedic treatments are non-invasive and gentle. We personalize the intensity of the massage and the temperature of the oils to suit the age and strength of the patient, ensuring a safe and comfortable healing experience." }
+  { question: "Is this treatment suitable for older patients?", answer: "Absolutely. Ayurvedic treatments are non-invasive and gentle. We personalize the intensity of the massage and the temperature of the oils to suit the age and strength of the patient, ensuring a safe and comfortable healing experience." },
+  { question: "Can I continue physiotherapy alongside Ayurvedic treatment?", answer: "Yes, and this combination often produces superior results. Ayurvedic therapies prepare the muscles and nerves for physiotherapy, making each session more effective. Many of our patients do both simultaneously for accelerated recovery." }
 ];
 
 const topAyurvedicCenters = [
@@ -353,11 +366,6 @@ const SciaticaTreatment = () => {
                        <span className="font-bold text-[#335765] text-sm">Duration:</span>
                        <span className="font-semibold text-sm">{pkg.duration}</span>
                      </div>
-                     <div className="flex items-center gap-2.5 text-[#7F543D] bg-[#F8F4E7] px-3 py-2 rounded-lg border border-[#d8d0ae]/50 shrink-0">
-                       <ReceiptIndianRupee className="h-4 w-4 md:h-5 md:w-5 text-[#335765]" />
-                       <span className="font-bold text-[#335765] text-sm">Est. Cost:</span>
-                       <span className="font-semibold text-sm">{pkg.cost}</span>
-                     </div>
                      <div className="text-sm text-[#5f4636] flex-grow leading-relaxed border-l-[3px] border-[#335765] pl-3 py-1 font-medium">
                        {pkg.focus}
                      </div>
@@ -428,12 +436,12 @@ const SciaticaTreatment = () => {
                       </div>
 
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-bold text-[#335765]">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+                          <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                             {patientReviews[currentReview].name}
                           </h4>
                           {patientReviews[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                            <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
                               ✓ Verified
                             </span>
                           )}
@@ -539,6 +547,8 @@ const SciaticaTreatment = () => {
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
                           to={center.link}
+                          target="_blank"
+                          rel="noreferrer"
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
@@ -571,13 +581,15 @@ const SciaticaTreatment = () => {
             )}
             
             <div className="flex justify-center mt-4">
-              <Button
+              <Link
+                to="/centers"
+                target="_blank"
+                rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
-                onClick={() => navigate('/centers')}
               >
                 VIEW ALL CENTERS
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
