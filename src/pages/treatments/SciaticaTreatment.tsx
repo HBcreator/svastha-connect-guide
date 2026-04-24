@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -16,7 +16,7 @@ import {
 const patientReviews = [
   {
     name: "James Hartley", location: "Manchester, UK", condition: "Chronic Sciatica",
-    title: "Three Years of Sciatica Pain — Gone in 21 Days.",
+    title: "Three Years of Sciatica Pain â€” Gone in 21 Days.",
     review: "My NHS consultant had tried everything, but nothing provided lasting relief for my sciatica. The Gridhrasi Chikitsa protocol in India, which combined Kati Basti with Panchakarma detox, addressed the root Vata imbalance completely. My follow-up showed nerve conduction improvements that were better than expected.",
     rating: 5, verified: true
   },
@@ -224,7 +224,7 @@ const SciaticaTreatment = () => {
                     Sciatica, known as <strong>Gridhrasi</strong> in Ayurveda, is a debilitating condition where sharp, shooting pain radiates from the lower back down to the leg. The name comes from "Gridhra" (vulture), reflecting the characteristic gait of the patient.
                   </p>
                   <p>
-                    While conventional medicine often focuses on managing the symptoms, Ayurveda seeks to address the <strong>root cause</strong>—the deep-seated imbalance of Vata that constricts the nerve pathways.
+                    While conventional medicine often focuses on managing the symptoms, Ayurveda seeks to address the <strong>root cause</strong>â€”the deep-seated imbalance of Vata that constricts the nerve pathways.
                   </p>
                 </div>
               </div>
@@ -319,7 +319,7 @@ const SciaticaTreatment = () => {
         {/* Suggested Packages */}
         <section id="cost-duration" className="scroll-mt-24 space-y-8">
            <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Suggested Packages, Cost & Duration</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Suggested Packages, Cost & Duration For Sciatica Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Select a timeline that matches your recovery goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
            </div>
            
@@ -442,7 +442,7 @@ const SciaticaTreatment = () => {
                           </h4>
                           {patientReviews[currentReview].verified && (
                             <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap">
-                              ✓ Verified
+                              âœ“ Verified
                             </span>
                           )}
                         </div>
@@ -485,7 +485,7 @@ const SciaticaTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Sciatica Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for sciatica and nerve health.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -621,7 +621,7 @@ const SciaticaTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Sciatica Treatment Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Sciatica Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -758,3 +758,4 @@ const SciaticaTreatment = () => {
 };
 
 export default SciaticaTreatment;
+

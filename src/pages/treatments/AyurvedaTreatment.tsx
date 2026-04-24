@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -77,8 +77,8 @@ const packages = [
 
 const patientReviews = [
   {
-    name: "Josephine Braun", location: "Düsseldorf, Germany", condition: "Rheumatoid Arthritis",
-    title: "India Is Where Ayurveda Lives—As a Real Science of Healing.",
+    name: "Josephine Braun", location: "DÃ¼sseldorf, Germany", condition: "Rheumatoid Arthritis",
+    title: "India Is Where Ayurveda Livesâ€”As a Real Science of Healing.",
     review: "I had tried Ayurvedic treatments at European spas for years; they were pleasant but ultimately superficial. Traveling to India for an authentic Panchakarma was an entirely different experience. The physician prescribed a 14-day sequence that addressed my rheumatoid arthritis with a measurable reduction in inflammation.",
     rating: 5, verified: true
   },
@@ -89,7 +89,7 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Renée Fontaine", location: "Bordeaux, France", condition: "Anxiety & Digestive Issues",
+    name: "RenÃ©e Fontaine", location: "Bordeaux, France", condition: "Anxiety & Digestive Issues",
     title: "A System That Healed Everything at Once.",
     review: "After two years of anxiety, disrupted sleep, and digestive issues treated separately by conventional medicine, I traveled to India. The Shirodhara, Abhyangam massage, and herbal formulations worked as a single integrated system, recalibrating my nervous system within ten days.",
     rating: 5, verified: true
@@ -113,7 +113,7 @@ const faqItems = [
   { question: "How long does an Ayurvedic treatment program take?", answer: "Minimum effective programs start at 7 days for wellness, but chronic conditions usually require 14 to 28 days for deep healing and sustained results." },
   { question: "Are the herbal medicines safe and heavy-metal free?", answer: "Absolutely. We ensure that our partner centers use certified, laboratory-tested authentic medicines prepared under strict safety guidelines." },
   { question: "What kind of diet is provided during the treatment?", answer: "A personalized, purely vegetarian (sattvic) diet is provided. It is tailored to your dosha and specific health condition to act as 'food as medicine'." },
-  { question: "Can Ayurveda cure chronic diseases like arthritis or psoriasis?", answer: "Ayurveda aims to manage and often reverse chronic conditions by treating the root cause—balancing doshas and removing toxins (Ama)—rather than just suppressing symptoms." }
+  { question: "Can Ayurveda cure chronic diseases like arthritis or psoriasis?", answer: "Ayurveda aims to manage and often reverse chronic conditions by treating the root causeâ€”balancing doshas and removing toxins (Ama)â€”rather than just suppressing symptoms." }
 ];
 
 const topAyurvedicCenters = [
@@ -469,7 +469,7 @@ const AyurvedaTreatment = () => {
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Ayurvedic Treatment in India</h2>
             <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
           </div>
 
@@ -613,7 +613,7 @@ const AyurvedaTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Ayurvedic Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -745,13 +745,13 @@ const AyurvedaTreatment = () => {
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
                 src="/Treatments-images/ayurvedic_treatment_hero.png"
-                alt="Ayurveda Treatment consultation"
+                alt="Ayurvedic Treatment consultation"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurveda Treatment Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurvedic Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -887,3 +887,4 @@ const AyurvedaTreatment = () => {
 };
 
 export default AyurvedaTreatment;
+

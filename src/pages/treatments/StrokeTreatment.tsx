@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -225,7 +225,7 @@ const StrokeTreatment = () => {
                     A stroke, or <strong>Pakshaghata</strong> in Ayurveda, is a severe disruption of the Vata dosha that blocks the body's channels (srotas).
                   </p>
                   <p>
-                    While modern medicine handles the acute phase, Ayurveda focuses on the <strong>rehabilitation journey</strong>—nourishing damaged nerves and restoring the flow of prana to paralyzed limbs.
+                    While modern medicine handles the acute phase, Ayurveda focuses on the <strong>rehabilitation journey</strong>â€”nourishing damaged nerves and restoring the flow of prana to paralyzed limbs.
                   </p>
                 </div>
               </div>
@@ -340,7 +340,7 @@ const StrokeTreatment = () => {
         {/* Suggested Packages */}
         <section id="cost-duration" className="scroll-mt-24 space-y-8">
            <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Rehabilitation Packages & Cost</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Suggested Packages, Cost & Duration For Stroke Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Choose a recovery timeline based on the severity of the stroke and individual goals. Includes integrated physiotherapy.</p>
            </div>
            
@@ -479,7 +479,7 @@ const StrokeTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Stroke Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for stroke and neurological rehabilitation.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -615,7 +615,7 @@ const StrokeTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Stroke Treatment Program</h2>
+               <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Stroke Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -752,3 +752,4 @@ const StrokeTreatment = () => {
 };
 
 export default StrokeTreatment;
+

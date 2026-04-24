@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -17,7 +17,7 @@ import {
 const patientReviews = [
   {
     name: "Werner Schindler", location: "Stuttgart, Germany", condition: "20-Year Chronic Ulcer",
-    title: "A Twenty-Year Non-Healing Ulcer—Healed in 45 Days.",
+    title: "A Twenty-Year Non-Healing Ulcerâ€”Healed in 45 Days.",
     review: "My varicose ulcer had been unresponsive to treatment for nearly twenty years. The Jalaukavacharana (leech therapy) sessions drained the impure, stagnant blood, reducing pain and inflammation within the first three sessions. Combined with internal detoxification, the ulcer showed complete healing by day forty-two.",
     rating: 5, verified: true
   },
@@ -28,8 +28,8 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Amélie Dubois", location: "Nantes, France", condition: "Circulatory Recovery",
-    title: "They Addressed the Circulation—Not Just the Surface.",
+    name: "AmÃ©lie Dubois", location: "Nantes, France", condition: "Circulatory Recovery",
+    title: "They Addressed the Circulationâ€”Not Just the Surface.",
     review: "In France, my ulcer was treated as a surface problem. The Ayurvedic physician treated it as a systemic circulatory disorder. The combination of Siravyadha (venesection), leech therapy, and Lepam herbal paste addressed the cause, not just the symptom. The ulcer healed completely by week six.",
     rating: 5, verified: true
   },
@@ -40,8 +40,8 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Siobhán Malone", location: "Galway, Ireland", condition: "Recurrent Ulcers",
-    title: "Healed—With No Recurrence in Eighteen Months.",
+    name: "SiobhÃ¡n Malone", location: "Galway, Ireland", condition: "Recurrent Ulcers",
+    title: "Healedâ€”With No Recurrence in Eighteen Months.",
     review: "The most important outcome was not just healing, but the absence of recurrence. My ulcer had re-opened three times in two years under conventional care. The Ayurvedic program addressed the underlying venous obstruction through Raktamokshana. Eighteen months later, there has been no recurrence.",
     rating: 5, verified: true
   }
@@ -228,7 +228,7 @@ const VaricoseUlcer = () => {
                     In Ayurveda, varicose veins are known as <strong>Siraja Granthi</strong>. This condition is not just a cosmetic concern; it is a sign of deep-seated circulatory imbalances.
                   </p>
                   <p>
-                    Our approach in India focuses on the root cause—purifying the blood (Rakta Shodhana), restoring the natural flow of energy, and healing the damaged vascular channels.
+                    Our approach in India focuses on the root causeâ€”purifying the blood (Rakta Shodhana), restoring the natural flow of energy, and healing the damaged vascular channels.
                   </p>
                 </div>
               </div>
@@ -456,7 +456,7 @@ const VaricoseUlcer = () => {
         {/* Suggested Packages */}
         <section id="cost-duration" className="scroll-mt-24 space-y-8">
            <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Healing Packages & Cost</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-3">Suggested Packages, Cost & Duration For Varicose Ulcer Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Choose a treatment timeline based on the size and severity of the ulcer and circulatory health.</p>
            </div>
            
@@ -551,7 +551,7 @@ const VaricoseUlcer = () => {
                           </h4>
                           {patientReviews[currentReview].verified && (
                             <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
-                              ✓ Verified
+                              âœ“ Verified
                             </span>
                           )}
                         </div>
@@ -594,7 +594,7 @@ const VaricoseUlcer = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Centers for Vascular Recovery</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Varicose Ulcer Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized expertise in Leech Therapy and chronic wound healing.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -728,7 +728,7 @@ const VaricoseUlcer = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Vascular Healing Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Varicose Ulcer Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Experience the power of authentic Jalaukavacharana and blood purification. We help you choose the right center and timeline for your recovery.
               </p>
@@ -865,3 +865,4 @@ const VaricoseUlcer = () => {
 };
 
 export default VaricoseUlcer;
+

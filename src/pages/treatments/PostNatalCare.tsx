@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -13,7 +13,7 @@ import {
   Phone, X, ChevronLeft, ChevronRight
 } from "lucide-react";
 
-/* ─── DATA ─────────────────────────────────────────── */
+/* â”€â”€â”€ DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 const patientReviews = [
   {
@@ -23,7 +23,7 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Sinéad Brennan", location: "Cork, Ireland", condition: "Hormonal Balance",
+    name: "SinÃ©ad Brennan", location: "Cork, Ireland", condition: "Hormonal Balance",
     title: "This Restored What Six Months of Rest Could Not.",
     review: "Six months after delivery, I was still experiencing hair fall and persistent fatigue. The Ayurvedic physician identified a deep tissue (Dhatu) depletion. The Navara Kizhi massage nourished my muscles, while the Dashamoola herbs restored my hormonal balance. By the end of the forty-day program, my hair fall had stopped, and my strength had fully returned.",
     rating: 5, verified: true
@@ -31,12 +31,12 @@ const patientReviews = [
   {
     name: "Ingrid Svensson", location: "Stockholm, Sweden", condition: "Emotional Exhaustion",
     title: "They Rebuilt My Body From the Inside Out.",
-    review: "Postnatal care in Sweden focused on checkups, but the deeper depletion I felt—emotional exhaustion and weak digestion—was left unaddressed. The Ayurvedic approach was different. The daily Bala Taila Abhyanga (oil massage) and the medicated herbal gruel (Yavagu) restored my digestive strength. By week five, I felt stronger than I had even before my pregnancy.",
+    review: "Postnatal care in Sweden focused on checkups, but the deeper depletion I feltâ€”emotional exhaustion and weak digestionâ€”was left unaddressed. The Ayurvedic approach was different. The daily Bala Taila Abhyanga (oil massage) and the medicated herbal gruel (Yavagu) restored my digestive strength. By week five, I felt stronger than I had even before my pregnancy.",
     rating: 5, verified: true
   },
   {
     name: "Camille Fontaine", location: "Bordeaux, France", condition: "Postpartum Depression",
-    title: "My Postpartum Depression Lifted—Without a Single Antidepressant.",
+    title: "My Postpartum Depression Liftedâ€”Without a Single Antidepressant.",
     review: "My obstetrician had recommended antidepressants for my postpartum depression. I chose to try Ayurveda first. The physician identified an aggravated Vata in my nervous system as the root cause. The Shirodhara sessions produced a profound sense of calm from the very first sitting. Combined with nervine tonics like Brahmi and Ashwagandha, my mood stabilized completely within three weeks.",
     rating: 5, verified: true
   },
@@ -187,7 +187,7 @@ const PostNatalCare = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      {/* Hero Section — same style as Panchakarma Treatment */}
+      {/* Hero Section â€” same style as Panchakarma Treatment */}
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -222,7 +222,7 @@ const PostNatalCare = () => {
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
         
-        {/* ── INTRO & OVERVIEW ─────────────────────────────── */}
+        {/* â”€â”€ INTRO & OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="intro" className="scroll-mt-24 mb-0">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
@@ -235,7 +235,7 @@ const PostNatalCare = () => {
             <div className="space-y-6 text-center md:text-left">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">A Holistic Path to Mother's Recovery</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                The postpartum period, or the 42 days following delivery, is a critical window for healing. Ayurveda offers <span className="font-bold text-[#335765]">Soothika Paricharya</span> — a specialized regimen practiced with deep reverence in India.
+                The postpartum period, or the 42 days following delivery, is a critical window for healing. Ayurveda offers <span className="font-bold text-[#335765]">Soothika Paricharya</span> â€” a specialized regimen practiced with deep reverence in India.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 Childbirth leaves the mother's body in a delicate state, compared to an "empty vessel." Our holistic approach focuses on nurturing the new mother, restoring her strength, and laying the foundation for her long-term health and well-being.
@@ -249,13 +249,13 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── AYURVEDIC VIEW (Soothika Paricharya) ─────────── */}
+        {/* â”€â”€ AYURVEDIC VIEW (Soothika Paricharya) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">The Ayurvedic View of Post-Natal Care</h2>
             <div className="flex items-center justify-center gap-3 text-[#7F543D]">
               <div className="h-px w-12 bg-[#7F543D]/30" />
-              <p className="text-lg italic font-medium tracking-wide">Soothika Paricharya — Sacred Motherhood Recovery</p>
+              <p className="text-lg italic font-medium tracking-wide">Soothika Paricharya â€” Sacred Motherhood Recovery</p>
               <div className="h-px w-12 bg-[#7F543D]/30" />
             </div>
           </div>
@@ -319,7 +319,7 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── BENEFITS OF TREATMENT ────────────────────────── */}
+        {/* â”€â”€ BENEFITS OF TREATMENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="benefits" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Benefits of Soothika Paricharya</h2>
@@ -385,7 +385,7 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── CORE COMPONENTS ─────────────────────────────── */}
+        {/* â”€â”€ CORE COMPONENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="components" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Core Components of Care</h2>
@@ -440,10 +440,10 @@ const PostNatalCare = () => {
             ))}
           </div>
         </section>
-        {/* ── SUGGESTED PACKAGES ─────────────────────────── */}
+        {/* â”€â”€ SUGGESTED PACKAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost &amp; Duration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration For Post Natal Care Treatment in India</h2>
             <p className="text-[#7F543D] text-lg italic">Personalized postnatal care durations to suit your recovery needs. Each package includes daily physician consultation, prescribed therapies, and specialized nutrition.</p>
           </div>
 
@@ -476,7 +476,7 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── PATIENT REVIEWS ─────────────────────────────── */}
+        {/* â”€â”€ PATIENT REVIEWS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
@@ -561,10 +561,10 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── TOP CENTERS ─────────────────────────────────── */}
+        {/* â”€â”€ TOP CENTERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Post Natal Care treatment in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Post Natal Care Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda postnatal programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -660,7 +660,7 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* ── FAQs ────────────────────────────────────────── */}
+        {/* â”€â”€ FAQs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
@@ -675,7 +675,7 @@ const PostNatalCare = () => {
           </Accordion>
         </section>
 
-        {/* ── BOOK CTA ────────────────────────────────────── */}
+        {/* â”€â”€ BOOK CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="scroll-mt-24 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white">
           <div className="grid md:grid-cols-2 h-full">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
@@ -687,7 +687,7 @@ const PostNatalCare = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1 text-left">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Post Natal Care Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Post Natal Care Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you find the best care tailored to your needs.
               </p>
@@ -821,3 +821,4 @@ const PostNatalCare = () => {
 };
 
 export default PostNatalCare;
+

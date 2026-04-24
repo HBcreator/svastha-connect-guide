@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -100,26 +100,26 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Clémence Renard", location: "Paris, France", condition: "PCOS-related Weight Gain",
+    name: "ClÃ©mence Renard", location: "Paris, France", condition: "PCOS-related Weight Gain",
     title: "Hormonal Weight Gain Finally Addressed at the Root.",
     review: "My PCOS-related weight gain had resisted every approach. The Ayurvedic program combined Panchakarma detox and hormone-balancing herbs into a six-week protocol. I lost eight kilograms, and my menstrual cycle regulated for the first time in five years.",
     rating: 5, verified: true
   },
   {
-    name: "Ciarán Doherty", location: "Dublin, Ireland", condition: "Metabolic Resistance",
+    name: "CiarÃ¡n Doherty", location: "Dublin, Ireland", condition: "Metabolic Resistance",
     title: "This Approach Broke My Body's Resistance to Weight Loss.",
     review: "My GP described my metabolism as clinically resistant. The program approached this through Lekhana Basti and Udwarthanam. By day ten, my hunger patterns normalized. I lost twelve kilograms over thirty-five days and have maintained the result.",
     rating: 5, verified: true
   },
   {
-    name: "Britta Svensson", location: "Malmö, Sweden", condition: "Cravings & Weight Gain",
-    title: "The Ayurvedic Diet Reset My Cravings — No Willpower Required.",
+    name: "Britta Svensson", location: "MalmÃ¶, Sweden", condition: "Cravings & Weight Gain",
+    title: "The Ayurvedic Diet Reset My Cravings â€” No Willpower Required.",
     review: "What surprised me most was that this treatment addressed my food cravings directly. Within ten days of beginning the Kapha-reducing diet and herbal formulations, my desire for processed food diminished effortlessly. I lost nine kilograms in twenty-one days.",
     rating: 5, verified: true
   },
   {
     name: "Ludo Van Pelt", location: "Antwerp, Belgium", condition: "Visceral Fat & High Cholesterol",
-    title: "Visceral Fat, High Cholesterol, and Low Energy — All Three Transformed.",
+    title: "Visceral Fat, High Cholesterol, and Low Energy â€” All Three Transformed.",
     review: "My physician was managing my visceral fat and high cholesterol with separate medications. Ayurveda treated all as a Kapha-Ama imbalance. The detox sequence produced a fourteen-kilogram reduction over eight weeks. My cholesterol levels are the best in five years.",
     rating: 5, verified: true
   }
@@ -363,7 +363,7 @@ const WeightLossTreatment = () => {
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
            <div className="text-center max-w-3xl mx-auto px-4">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Weight Loss Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Select a timeline that matches your weight loss goals. Each package includes daily physician consultation, prescribed therapies, medicines, and diet.</p>
            </div>
            
@@ -507,7 +507,7 @@ const WeightLossTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Weight Loss Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -650,7 +650,7 @@ const WeightLossTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Weight Loss Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Weight Loss Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your transformation.
               </p>
@@ -786,3 +786,4 @@ const WeightLossTreatment = () => {
 };
 
 export default WeightLossTreatment;
+

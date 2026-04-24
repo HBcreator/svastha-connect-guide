@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -94,7 +94,7 @@ const packages = [
 const patientReviews = [
   {
     name: "Konrad Hartstein", location: "Leipzig, Germany", condition: "Chronic Sinusitis",
-    title: "Resolved in 14 Days—After Four Years of Failed Antibiotics.",
+    title: "Resolved in 14 Daysâ€”After Four Years of Failed Antibiotics.",
     review: "I had been managing chronic sinusitis with repeated courses of antibiotics for four years, with only temporary relief. The Ayurvedic sinusitis treatment in India was different; the physician saw a deep Vata-Kapha imbalance, not just an infection. The daily Nasya therapy, with its warm medicated oil, was incredible. It softened and expelled congestion that had been trapped for years. By day twelve, my sinuses were completely clear.",
     rating: 5, verified: true
   },
@@ -105,14 +105,14 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Véronique Aubert", location: "Grenoble, France", condition: "Allergic Rhinosinusitis",
-    title: "They Treated the Root Cause—Not Just the Symptoms.",
-    review: "For six years, my allergic rhinosinusitis was managed with sprays that only controlled symptoms. The Ayurvedic approach in India was the first to identify and treat the root cause—a Kapha and Vata imbalance. The comprehensive program of Nasya therapy, cleansing, and an anti-Kapha diet was so effective that my nasal congestion reduced by eighty percent within just ten days. The Jala Neti technique they taught me has kept my sinuses clear for months.",
+    name: "VÃ©ronique Aubert", location: "Grenoble, France", condition: "Allergic Rhinosinusitis",
+    title: "They Treated the Root Causeâ€”Not Just the Symptoms.",
+    review: "For six years, my allergic rhinosinusitis was managed with sprays that only controlled symptoms. The Ayurvedic approach in India was the first to identify and treat the root causeâ€”a Kapha and Vata imbalance. The comprehensive program of Nasya therapy, cleansing, and an anti-Kapha diet was so effective that my nasal congestion reduced by eighty percent within just ten days. The Jala Neti technique they taught me has kept my sinuses clear for months.",
     rating: 5, verified: true
   },
   {
     name: "Nico Vandenberghe", location: "Bruges, Belgium", condition: "Sinus Headaches",
-    title: "My Brain Fog, Headaches, and Blocked Sinuses—All Gone.",
+    title: "My Brain Fog, Headaches, and Blocked Sinusesâ€”All Gone.",
     review: "I had not understood that my persistent brain fog and tension headaches were a direct result of my chronic sinus blockage. The physician here explained how they were all connected. The Nasya therapy, he explained, works on the nervous system through the nasal passages, addressing all three issues simultaneously. The treatment produced a mental clarity by week two that I hadn't experienced in years.",
     rating: 5, verified: true
   },
@@ -294,7 +294,7 @@ const SinusitisTreatment = () => {
             <div className="space-y-6 text-center md:text-left flex flex-col justify-center">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">Beyond the Symptoms</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                While modern medicine often focuses on managing symptoms, Ayurveda goes deeper to address the root cause of the issue. Known as Pinas, sinusitis is seen as a result of an imbalance in the body’s fundamental energies.
+                While modern medicine often focuses on managing symptoms, Ayurveda goes deeper to address the root cause of the issue. Known as Pinas, sinusitis is seen as a result of an imbalance in the bodyâ€™s fundamental energies.
               </p>
               <div className="space-y-4 text-left flex-grow">
                 {doshas.map((item, idx) => {
@@ -420,7 +420,7 @@ const SinusitisTreatment = () => {
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
            <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Sinusitis Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
            </div>
            
@@ -564,7 +564,7 @@ const SinusitisTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Sinusitis Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -702,7 +702,7 @@ const SinusitisTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Sinusitis Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Sinusitis Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -838,3 +838,4 @@ const SinusitisTreatment = () => {
 };
 
 export default SinusitisTreatment;
+

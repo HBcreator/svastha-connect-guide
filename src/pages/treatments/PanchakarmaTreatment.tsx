@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -35,7 +35,7 @@ const spiritualBenefits = [
   { title: "Deep Inner Cleansing", text: "Removes physical and emotional toxins, helping the soul feel lighter." },
   { title: "Restores Pranic Flow", text: "Clears blockages in energy channels (Nadis) for free flow of Prana." },
   { title: "Improved Meditation", text: "A cleansed and balanced body enhances focus and stillness." },
-  { title: "Spiritual Upliftment", text: "Aligns body, mind, and spirit—bringing a sense of oneness." }
+  { title: "Spiritual Upliftment", text: "Aligns body, mind, and spiritâ€”bringing a sense of oneness." }
 ];
 
 const threeStages = [
@@ -87,17 +87,17 @@ const patientReviews = [
   {
     name: "Albrecht Schumann", location: "Hannover, Germany", condition: "Rheumatoid Arthritis",
     title: "The Five Actions of Panchakarma Did What Years of Medication Could Not.",
-    review: "I travelled to India for Panchakarma after rheumatoid arthritis had progressively limited my mobility for three years. The three-phase protocol—preparation, main therapies, and recovery—was administered with a clinical precision I had not expected. By the twenty-first day, my inflammatory markers had reduced measurably, and my joint mobility had improved to a degree my rheumatologist in Hannover found genuinely remarkable.",
+    review: "I travelled to India for Panchakarma after rheumatoid arthritis had progressively limited my mobility for three years. The three-phase protocolâ€”preparation, main therapies, and recoveryâ€”was administered with a clinical precision I had not expected. By the twenty-first day, my inflammatory markers had reduced measurably, and my joint mobility had improved to a degree my rheumatologist in Hannover found genuinely remarkable.",
     rating: 5, verified: true
   },
   {
-    name: "Sinéad O'Halloran", location: "Limerick, Ireland", condition: "Panchakarma Detox",
-    title: "Authentic Panchakarma in India — Nothing Else Compares.",
-    review: "I had experienced so-called Panchakarma at spas in Europe, which were pleasant but had no clinical effect. Arriving in India for the classical program revealed the difference immediately. The Vaidya's hour-long assessment and the inclusion of the internal medicated ghee (Snehana) phase—often omitted elsewhere—produced results in my digestion, sleep, and skin that I could feel accumulating day by day.",
+    name: "SinÃ©ad O'Halloran", location: "Limerick, Ireland", condition: "Panchakarma Detox",
+    title: "Authentic Panchakarma in India â€” Nothing Else Compares.",
+    review: "I had experienced so-called Panchakarma at spas in Europe, which were pleasant but had no clinical effect. Arriving in India for the classical program revealed the difference immediately. The Vaidya's hour-long assessment and the inclusion of the internal medicated ghee (Snehana) phaseâ€”often omitted elsewhereâ€”produced results in my digestion, sleep, and skin that I could feel accumulating day by day.",
     rating: 5, verified: true
   },
   {
-    name: "Nadège Leconte", location: "Toulouse, France", condition: "Chronic Fatigue",
+    name: "NadÃ¨ge Leconte", location: "Toulouse, France", condition: "Chronic Fatigue",
     title: "It Cleared What Conventional Medicine Could Not Even Name.",
     review: "I arrived in India with chronic fatigue and brain fog that had lingered since a viral illness. The Panchakarma physician identified significant Ama (toxin) accumulation and a Vata imbalance. The Nasya nasal therapy cleared my cognitive fog within a week, and the Basti sequence addressed my gut health systematically. I left with an energy I hadn't experienced in two years.",
     rating: 5, verified: true
@@ -109,7 +109,7 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "Miroslava Horáková", location: "Prague, Czech Republic", condition: "Type 2 Diabetes",
+    name: "Miroslava HorÃ¡kovÃ¡", location: "Prague, Czech Republic", condition: "Type 2 Diabetes",
     title: "This Changed My Understanding of What Healing Actually Means.",
     review: "I came to India managing Type 2 diabetes, obesity, and hypertension with multiple medications. The Ayurvedic physician's integrated approach treated all three as expressions of a single underlying imbalance. The Panchakarma detoxification, combined with a prescriptive diet and daily Yoga, reduced my fasting glucose, blood pressure, and waist measurement across twenty-one days with results I could track daily.",
     rating: 5, verified: true
@@ -304,7 +304,7 @@ const PanchakarmaTreatment = () => {
         <section id="benefits" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">The Holistic Benefits</h2>
-            <p className="text-[#7F543D] text-lg">Panchakarma provides a complete reset for your entire system—physical, mental, and spiritual.</p>
+            <p className="text-[#7F543D] text-lg">Panchakarma provides a complete reset for your entire systemâ€”physical, mental, and spiritual.</p>
           </div>
 
           <div className="space-y-12">
@@ -388,7 +388,7 @@ const PanchakarmaTreatment = () => {
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
            <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration</h2>
+             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Panchakarma Treatment in India</h2>
              <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
            </div>
            
@@ -533,7 +533,7 @@ const PanchakarmaTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Panchakarma Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -671,7 +671,7 @@ const PanchakarmaTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Panchakarma Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Panchakarma Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -807,3 +807,4 @@ const PanchakarmaTreatment = () => {
 };
 
 export default PanchakarmaTreatment;
+

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -13,12 +13,12 @@ import {
   ShieldCheck
 } from "lucide-react";
 
-/* ─── DATA ─────────────────────────────────────────── */
+/* â”€â”€â”€ DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 const patientReviews = [
   {
     name: "Thomas Bergmann", location: "Munich, Germany", condition: "Osteoarthritis",
-    title: "Fifteen Years of Knee Pain—Resolved Without Surgery.",
+    title: "Fifteen Years of Knee Painâ€”Resolved Without Surgery.",
     review: "My orthopedic specialist in Germany had recommended knee replacement surgery after fifteen years of progressive osteoarthritis. I chose to try Ayurveda instead. The 60-day program, which included Janu Basti and internal Rasayana herbs, was incredible. My pain has reduced by nearly ninety percent, and my mobility has fully returned.",
     rating: 5, verified: true
   },
@@ -29,21 +29,21 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "François Lecomte", location: "Lyon, France", condition: "Knee Inflammation",
-    title: "They Treated the Root Cause—Not Just the Inflammation.",
+    name: "FranÃ§ois Lecomte", location: "Lyon, France", condition: "Knee Inflammation",
+    title: "They Treated the Root Causeâ€”Not Just the Inflammation.",
     review: "In France, my knee condition was managed entirely with temporary cortisone injections. The Ayurvedic physician prescribed Virechana (therapeutic purgation) to eliminate systemic toxins, followed by Pinda Sweda. Internal formulations of Ashwagandha and Shallaki reduced the cartilage inflammation over six weeks, and I have not required any further injections.",
     rating: 5, verified: true
   },
   {
     name: "Annika Johansson", location: "Gothenburg, Sweden", condition: "Stage-3 Degeneration",
-    title: "Avoided Knee Replacement Surgery—Results Confirmed by My Specialist.",
-    review: "My rheumatologist had recommended surgery for my stage-three knee degeneration. I underwent a forty-five-day Ayurvedic program instead. The Janu Basti sessions restored lubrication, while Guggulu-based herbs worked to rebuild cartilage. Upon my return, my specialist confirmed a measurable improvement in my joint space—an outcome he described as unexpected.",
+    title: "Avoided Knee Replacement Surgeryâ€”Results Confirmed by My Specialist.",
+    review: "My rheumatologist had recommended surgery for my stage-three knee degeneration. I underwent a forty-five-day Ayurvedic program instead. The Janu Basti sessions restored lubrication, while Guggulu-based herbs worked to rebuild cartilage. Upon my return, my specialist confirmed a measurable improvement in my joint spaceâ€”an outcome he described as unexpected.",
     rating: 5, verified: true
   },
   {
-    name: "Ciarán Walsh", location: "Limerick, Ireland", condition: "Chronic Knee Pain",
+    name: "CiarÃ¡n Walsh", location: "Limerick, Ireland", condition: "Chronic Knee Pain",
     title: "Pain-Free for the First Time in Eight Years.",
-    review: "Eight years of chronic knee pain had forced me to give up running entirely. The Ayurvedic physician diagnosed a Vata-Kapha imbalance and prescribed a program of Dhara, Lepa (herbal paste), and specific dietary corrections. The swelling subsided within thirty days, and by day fifty, I had resumed light jogging—something I had not done in nearly a decade.",
+    review: "Eight years of chronic knee pain had forced me to give up running entirely. The Ayurvedic physician diagnosed a Vata-Kapha imbalance and prescribed a program of Dhara, Lepa (herbal paste), and specific dietary corrections. The swelling subsided within thirty days, and by day fifty, I had resumed light joggingâ€”something I had not done in nearly a decade.",
     rating: 5, verified: true
   },
 ];
@@ -88,8 +88,8 @@ const topAyurvedicCenters = [
 ];
 
 const faqItems = [
-  { question: "Can Ayurveda cure knee pain permanently?", answer: "Ayurveda addresses the root cause of knee pain — aggravated Vata dosha and accumulated Ama — rather than just masking symptoms. With the right program, patients experience long-lasting and often permanent relief, especially from degenerative conditions like osteoarthritis." },
-  { question: "What is Janu Vasti and how does it help?", answer: "Janu Vasti is the cornerstone Ayurvedic therapy for knee pain. A dough ring is placed around the knee and filled with warm medicated oil. This deeply lubricates the joint, nourishes cartilage, relieves pain and stiffness, and strengthens surrounding tissues — all without any invasive procedures." },
+  { question: "Can Ayurveda cure knee pain permanently?", answer: "Ayurveda addresses the root cause of knee pain â€” aggravated Vata dosha and accumulated Ama â€” rather than just masking symptoms. With the right program, patients experience long-lasting and often permanent relief, especially from degenerative conditions like osteoarthritis." },
+  { question: "What is Janu Vasti and how does it help?", answer: "Janu Vasti is the cornerstone Ayurvedic therapy for knee pain. A dough ring is placed around the knee and filled with warm medicated oil. This deeply lubricates the joint, nourishes cartilage, relieves pain and stiffness, and strengthens surrounding tissues â€” all without any invasive procedures." },
   { question: "How long does the treatment program take?", answer: "A 21-day program provides foundational relief. A 45-day program offers deep healing for chronic conditions. Severe degeneration or cases avoiding surgery benefit most from a 60-day intensive program. Your Vaidya will recommend the optimal duration based on your assessment." },
   { question: "Is Ayurvedic knee treatment an alternative to surgery?", answer: "Many patients who were advised knee replacement surgery have avoided it through Ayurvedic treatment. Results confirmed by conventional specialists include measurable improvements in joint space and significant reduction in pain. However, the outcome depends on the stage of degeneration and individual health." },
   { question: "What conditions does Ayurvedic knee treatment address?", answer: "Ayurvedic knee treatment is effective for Osteoarthritis (Janu Sandhigata Vata), Rheumatoid Arthritis (Amavata), post-injury chronic pain, ligament degeneration, cartilage wear, and general joint stiffness and inflammation." },
@@ -112,7 +112,7 @@ const therapies = [
   },
   {
     title: "Patra Pinda Sweda",
-    subtitle: "Elakizhi — Herbal Bolus",
+    subtitle: "Elakizhi â€” Herbal Bolus",
     icon: Leaf,
     benefits: [
       "Reduces inflammation and swelling",
@@ -120,7 +120,7 @@ const therapies = [
       "Improves local circulation",
       "Relaxes tight muscles around the knee",
     ],
-    desc: "Poultices made from fresh anti-inflammatory leaves are fried in medicated oil and applied to the knee — highly effective for pain and swelling.",
+    desc: "Poultices made from fresh anti-inflammatory leaves are fried in medicated oil and applied to the knee â€” highly effective for pain and swelling.",
     bg: "#EDE8D0",
     border: "#d8d0ae",
   },
@@ -158,13 +158,13 @@ const whyIndiaPoints = [
   },
   {
     title: "Holistic Healing Ecosystem",
-    text: "Centers integrate therapies with customized diet, therapeutic yoga, and a peaceful environment — accelerating recovery.",
+    text: "Centers integrate therapies with customized diet, therapeutic yoga, and a peaceful environment â€” accelerating recovery.",
     icon: Sparkles,
   },
 ];
 
 const dietFavour = [
-  "Warm, moist, easy-to-digest foods — soups, stews, well-cooked grains",
+  "Warm, moist, easy-to-digest foods â€” soups, stews, well-cooked grains",
   "Healthy fats like ghee and sesame oil to lubricate the joints",
   "Anti-inflammatory spices: turmeric, ginger, and garlic",
 ];
@@ -178,7 +178,7 @@ const lifestyleTips = [
   { label: "Maintain Healthy Weight", text: "Every extra pound puts four pounds of pressure on the knees." },
   { label: "Gentle Exercise", text: "Swimming, cycling, and specific yoga asanas strengthen without straining the joint." },
   { label: "Correct Posture", text: "Be mindful while sitting and standing to avoid undue stress on the knees." },
-  { label: "Stay Warm", text: "Protect knees from cold drafts — coldness aggravates Vata and increases pain." },
+  { label: "Stay Warm", text: "Protect knees from cold drafts â€” coldness aggravates Vata and increases pain." },
 ];
 
 const kneePainPackages = [
@@ -202,7 +202,7 @@ const kneePainPackages = [
   },
 ];
 
-/* ─── COMPONENT ─────────────────────────────────────── */
+/* â”€â”€â”€ COMPONENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 const KneePain = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -258,7 +258,7 @@ const KneePain = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      {/* ── HERO ────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -293,7 +293,7 @@ const KneePain = () => {
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
 
-        {/* ── INTRO SECTION ───────────────────────────────── */}
+        {/* â”€â”€ INTRO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="intro" className="scroll-mt-24">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
@@ -311,7 +311,7 @@ const KneePain = () => {
                 Knee pain is one of the most common ailments that severely impacts quality of life. While conventional medicine often relies on painkillers and surgery, Ayurveda offers a holistic, safe, and powerful alternative.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                Ayurvedic treatment for knee pain goes beyond temporary relief — it focuses on healing the <strong className="text-[#335765]">root cause</strong>, reducing inflammation, strengthening the joint, and restoring pain-free mobility for the long term.
+                Ayurvedic treatment for knee pain goes beyond temporary relief â€” it focuses on healing the <strong className="text-[#335765]">root cause</strong>, reducing inflammation, strengthening the joint, and restoring pain-free mobility for the long term.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
@@ -322,11 +322,11 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* ── AYURVEDIC VIEW (Janu Sandhigata Vata) ───────── */}
+        {/* â”€â”€ AYURVEDIC VIEW (Janu Sandhigata Vata) â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">The Ayurvedic View of Knee Pain</h2>
-            <p className="text-[#7F543D] text-lg italic">Janu Sandhigata Vata — "Janu" (Knee) + "Sandhi" (Joint) + "Vata" (Dosha)</p>
+            <p className="text-[#7F543D] text-lg italic">Janu Sandhigata Vata â€” "Janu" (Knee) + "Sandhi" (Joint) + "Vata" (Dosha)</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -336,7 +336,7 @@ const KneePain = () => {
                 <Wind className="text-[#7F543D] h-5 w-5" /> The Role of Vata Dosha
               </h3>
               <p className="text-[#7F543D] text-sm leading-relaxed">
-                The primary culprit behind knee pain is an aggravated <strong>Vata dosha</strong>. Vata is naturally dry, light, and cold. When it becomes imbalanced — due to age, diet, or injury — it accumulates in the joints, causing:
+                The primary culprit behind knee pain is an aggravated <strong>Vata dosha</strong>. Vata is naturally dry, light, and cold. When it becomes imbalanced â€” due to age, diet, or injury â€” it accumulates in the joints, causing:
               </p>
               <div className="space-y-3">
                 {[
@@ -360,18 +360,18 @@ const KneePain = () => {
                 <Sparkles className="text-[#7F543D] h-5 w-5" /> The Role of Ama (Toxins)
               </h3>
               <p className="text-[#7F543D] text-sm leading-relaxed">
-                In some cases, the buildup of metabolic toxins (<strong>Ama</strong>) in the joints leads to inflammation — a condition known as <strong>Amavata</strong> (Rheumatoid Arthritis) — which also severely affects the knee joints.
+                In some cases, the buildup of metabolic toxins (<strong>Ama</strong>) in the joints leads to inflammation â€” a condition known as <strong>Amavata</strong> (Rheumatoid Arthritis) â€” which also severely affects the knee joints.
               </p>
               <div className="bg-white rounded-xl p-4 border border-[#d8d0ae] mt-4">
                 <p className="text-[#335765] font-bold text-sm mb-2">Two Distinct Patterns of Knee Disease:</p>
                 <div className="space-y-2 text-sm text-[#7F543D]">
                   <div className="flex gap-2 items-start">
                     <span className="font-bold text-[#335765] shrink-0">1.</span>
-                    <p><strong className="text-[#335765]">Janu Sandhigata Vata</strong> — Degenerative (Osteoarthritis): dry, crepitus, loss of cartilage. Treated primarily with oleation and nourishment.</p>
+                    <p><strong className="text-[#335765]">Janu Sandhigata Vata</strong> â€” Degenerative (Osteoarthritis): dry, crepitus, loss of cartilage. Treated primarily with oleation and nourishment.</p>
                   </div>
                   <div className="flex gap-2 items-start">
                     <span className="font-bold text-[#335765] shrink-0">2.</span>
-                    <p><strong className="text-[#335765]">Amavata</strong> — Inflammatory (Rheumatoid): swollen, hot, painful joints. Treated with detoxification (Panchakarma) first.</p>
+                    <p><strong className="text-[#335765]">Amavata</strong> â€” Inflammatory (Rheumatoid): swollen, hot, painful joints. Treated with detoxification (Panchakarma) first.</p>
                   </div>
                 </div>
               </div>
@@ -380,7 +380,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* ── CORE THERAPIES ──────────────────────────────── */}
+        {/* â”€â”€ CORE THERAPIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="therapies" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Core Ayurvedic Therapies</h2>
@@ -418,7 +418,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* ── WHY INDIA ────────────────────────────────────── */}
+        {/* â”€â”€ WHY INDIA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="why-india" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Why Choose India for Knee Pain Treatment?</h2>
@@ -440,7 +440,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* ── DIET & LIFESTYLE ─────────────────────────────── */}
+        {/* â”€â”€ DIET & LIFESTYLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="diet-lifestyle" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Diet & Lifestyle for Lasting Relief</h2>
@@ -454,7 +454,7 @@ const KneePain = () => {
                 <UtensilsCrossed className="h-5 w-5 text-[#7F543D]" /> Ayurvedic Diet (Ahara)
               </h3>
               <div className="bg-[#F8F4E7] rounded-2xl p-5 border border-[#d8d0ae]">
-                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">✅ Foods to Favour</p>
+                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">âœ… Foods to Favour</p>
                 <div className="space-y-2">
                   {dietFavour.map((f) => (
                     <div key={f} className="flex items-start gap-2 bg-white p-2.5 rounded-lg border border-[#d8d0ae]">
@@ -465,11 +465,11 @@ const KneePain = () => {
                 </div>
               </div>
               <div className="bg-[#EDE8D0] rounded-2xl p-5 border border-[#d8d0ae]">
-                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">❌ Foods to Avoid</p>
+                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">âŒ Foods to Avoid</p>
                 <div className="space-y-2">
                   {dietAvoid.map((f) => (
                     <div key={f} className="flex items-start gap-2 bg-white p-2.5 rounded-lg border border-[#d8d0ae]">
-                      <span className="text-red-400 shrink-0 font-bold text-sm mt-0.5">✗</span>
+                      <span className="text-red-400 shrink-0 font-bold text-sm mt-0.5">âœ—</span>
                       <p className="text-sm text-[#335765] leading-relaxed">{f}</p>
                     </div>
                   ))}
@@ -494,10 +494,10 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* ── PACKAGES SECTION ─────────────────────────────── */}
+        {/* â”€â”€ PACKAGES SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Knee Pain Treatment in India</h2>
             <p className="text-lg text-[#7F543D]">Select a program timeline that matches your condition. Each package includes daily physician consultation, prescribed therapies, herbal medicines, and a customised diet.</p>
           </div>
 
@@ -688,7 +688,7 @@ const KneePain = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Knee Pain Treatment Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Knee Pain Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">Begin with a no-obligation consultation. We help you choose the right center, program duration, and therapies for your condition and budget.</p>
               <div className="space-y-3 mt-4 max-w-xl">
                 <a href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20Knee%20Pain%20Treatment." target="_blank" rel="noreferrer"
@@ -793,3 +793,4 @@ const KneePain = () => {
 };
 
 export default KneePain;
+

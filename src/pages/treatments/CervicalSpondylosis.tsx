@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -270,7 +270,7 @@ const CervicalSpondylosis = () => {
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
         
-        {/* ── INTRO & OVERVIEW ─────────────────────────────── */}
+        {/* â”€â”€ INTRO & OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="intro" className="scroll-mt-24 mb-0">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
@@ -283,7 +283,7 @@ const CervicalSpondylosis = () => {
             <div className="space-y-6">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight text-center md:text-left">Targeted Cervical Pain Relief</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg text-center md:text-left">
-                Cervical spondylosis is a degenerative condition that causes neck pain, stiffness, and radiating discomfort. Ayurveda identifies this as <span className="font-bold text-[#335765]">Greeva Sandhigata Vata</span> — an imbalance that affects the neck joints.
+                Cervical spondylosis is a degenerative condition that causes neck pain, stiffness, and radiating discomfort. Ayurveda identifies this as <span className="font-bold text-[#335765]">Greeva Sandhigata Vata</span> â€” an imbalance that affects the neck joints.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg text-center md:text-left">
                 Our approach focuses on calming aggravated Vata, improving circulation, and nourishing the cervical vertebrae to restore pain-free mobility and long-term stability.
@@ -297,13 +297,13 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── AYURVEDIC VIEW ───────────────────────────────── */}
+        {/* â”€â”€ AYURVEDIC VIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">The Ayurvedic Perspective</h2>
             <div className="flex items-center justify-center gap-3 text-[#7F543D]">
               <div className="h-px w-12 bg-[#7F543D]/30" />
-              <p className="text-lg italic font-medium tracking-wide">Greeva Sandhigata Vata — Root Cause Healing</p>
+              <p className="text-lg italic font-medium tracking-wide">Greeva Sandhigata Vata â€” Root Cause Healing</p>
               <div className="h-px w-12 bg-[#7F543D]/30" />
             </div>
           </div>
@@ -367,7 +367,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── CORE THERAPIES ───────────────────────────────── */}
+        {/* â”€â”€ CORE THERAPIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="therapies" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Core Ayurvedic Therapies</h2>
@@ -423,7 +423,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── DIET & LIFESTYLE ─────────────────────────────── */}
+        {/* â”€â”€ DIET & LIFESTYLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="diet-lifestyle" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Diet & Lifestyle Care</h2>
@@ -487,10 +487,10 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── SUGGESTED PACKAGES ─────────────────────────── */}
+        {/* â”€â”€ SUGGESTED PACKAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration For Cervical Spondylosis Treatment in India</h2>
             <p className="text-[#7F543D] text-lg italic">Personalized cervical care durations to suit your recovery goals. Each package includes daily physician consultation and prescribed therapies.</p>
           </div>
 
@@ -524,7 +524,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── PATIENT REVIEWS ────────────────────────────── */}
+        {/* â”€â”€ PATIENT REVIEWS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
@@ -612,10 +612,10 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── TOP CENTERS ────────────────────────────────── */}
+        {/* â”€â”€ TOP CENTERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Cervical Spondylosis</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Cervical Spondylosis Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto text-center">Handpicked centers with specialized spine care protocols and experienced physician teams.</p>
           </div>
 
@@ -675,7 +675,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* ── FAQs ────────────────────────────────────────── */}
+        {/* â”€â”€ FAQs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
@@ -690,7 +690,7 @@ const CervicalSpondylosis = () => {
           </Accordion>
         </section>
 
-        {/* ── BOOK CTA ────────────────────────────────────── */}
+        {/* â”€â”€ BOOK CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <section className="scroll-mt-24 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white">
           <div className="grid md:grid-cols-2 h-full">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
@@ -833,3 +833,4 @@ const CervicalSpondylosis = () => {
 };
 
 export default CervicalSpondylosis;
+

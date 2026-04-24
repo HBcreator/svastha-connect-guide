@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,9 +9,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Calendar, MapPin, Star, CheckCircle2, Activity, Brain, Sparkles, Droplet, Clock, ReceiptIndianRupee, ArrowRight, Zap, Trash2, Sun, Smile, ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone } from "lucide-react";
 
 const patientReviews = [
-  { name: "Bernhard Schäfer", location: "Cologne, Germany", condition: "Kampavata Program", title: "Ayurveda Gave My Father Back His Independence.", review: "My father's Parkinson's medication was becoming less effective. We traveled to India for the classical Kampavata treatment, and the 28-day Panchakarma program addressed the neurological degeneration at a deep level. His resting tremor reduced measurably by week three, and the herbal formulations improved his motor function in a way that his own neurologist in Cologne acknowledged as clinically significant.", rating: 5, verified: true },
+  { name: "Bernhard SchÃ¤fer", location: "Cologne, Germany", condition: "Kampavata Program", title: "Ayurveda Gave My Father Back His Independence.", review: "My father's Parkinson's medication was becoming less effective. We traveled to India for the classical Kampavata treatment, and the 28-day Panchakarma program addressed the neurological degeneration at a deep level. His resting tremor reduced measurably by week three, and the herbal formulations improved his motor function in a way that his own neurologist in Cologne acknowledged as clinically significant.", rating: 5, verified: true },
   { name: "Eileen Callahan", location: "Dublin, Ireland", condition: "Parkinson's Management", title: "Slowing the Progression and Restoring His Dignity.", review: "My husband's Parkinson's was progressing faster than expected. The 42-day Ayurvedic program in India produced measurable improvements in both his motor and non-motor symptoms. The Sarvanga Pathrapinda Sweda and Shiro Lepa therapies were particularly effective for his rigidity and sleep quality. He returned to Dublin walking more steadily than he had in two years.", rating: 5, verified: true },
-  { name: "Hélène Marchand", location: "Bordeaux, France", condition: "Neurological Care", title: "A Complementary Approach That Made His Medication More Effective.", review: "The Ayurvedic treatment offered a complementary approach, using Panchakarma and classical herbs like Mucuna pruriens. The combination allowed her existing medication to work more effectively at the same dose. Her resting hand tremor, which had been worsening for eighteen months, showed a visible reduction by week four.", rating: 5, verified: true },
+  { name: "HÃ©lÃ¨ne Marchand", location: "Bordeaux, France", condition: "Neurological Care", title: "A Complementary Approach That Made His Medication More Effective.", review: "The Ayurvedic treatment offered a complementary approach, using Panchakarma and classical herbs like Mucuna pruriens. The combination allowed her existing medication to work more effectively at the same dose. Her resting hand tremor, which had been worsening for eighteen months, showed a visible reduction by week four.", rating: 5, verified: true },
   { name: "Jan Vermeer", location: "Utrecht, Netherlands", condition: "Vata Imbalance", title: "My Quality of Life Has Been Completely Restored.", review: "The Shirodhara sessions had a profound neurological calming effect that reduced my tremor and anxiety simultaneously, while the Nasya and Abhyanga improved my muscle rigidity. I returned home with significantly better balance and a restorative sleep cycle.", rating: 5, verified: true },
   { name: "Catriona MacLeod", location: "Edinburgh, UK", condition: "Early-Stage Parkinson's", title: "Ayurveda Gave Us Hope and a Clear Strategy.", review: "My father received an early-stage Parkinson's diagnosis, and his neurologist supported Ayurveda as a complementary approach. The Kampavata program he underwent addressed the Vata degeneration before it could progress further. His motor scores had remained stable in a way that was better than statistically expected.", rating: 5, verified: true }
 ];
@@ -70,21 +70,21 @@ const treatmentPackages = [
   {
     name: "Stability & Balance Program",
     duration: "14 Days",
-    cost: "₹1,25,000 - ₹1,65,000",
+    cost: "â‚¹1,25,000 - â‚¹1,65,000",
     focus: "Symptom management, tremor reduction, and initial Vata balancing.",
     image: "/Treatments-images/parkinsons_pack_1.png"
   },
   {
     name: "Neurological Recovery Program",
     duration: "21 Days",
-    cost: "₹1,85,000 - ₹2,45,000",
+    cost: "â‚¹1,85,000 - â‚¹2,45,000",
     focus: "Deep tissue nourishment, intensive Basti protocols, and improved motor control.",
     image: "/Treatments-images/parkinsons_pack_2.png"
   },
   {
     name: "Intensive Rejuvenation Program",
     duration: "28 Days",
-    cost: "₹2,60,000 - ₹3,50,000",
+    cost: "â‚¹2,60,000 - â‚¹3,50,000",
     focus: "Complete Majja Dhatu reset, long-term stabilization, and maximum mobility gains.",
     image: "/Treatments-images/parkinsons_pack_3.png"
   }
@@ -208,7 +208,7 @@ const ParkinsonsDiseaseTreatment = () => {
         const text = line.replace(/^\*\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -218,7 +218,7 @@ const ParkinsonsDiseaseTreatment = () => {
         const text = line.replace(/^-\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -290,7 +290,7 @@ const ParkinsonsDiseaseTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Kampavata Chikitsa</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Parkinson's Disease Treatment in India</h1>
-              <p className="text-lg md:text-xl text-white/90">A holistic Ayurvedic approach to managing Parkinson's — reducing tremors, improving mobility, and enhancing quality of life through time-tested therapies.</p>
+              <p className="text-lg md:text-xl text-white/90">A holistic Ayurvedic approach to managing Parkinson's â€” reducing tremors, improving mobility, and enhancing quality of life through time-tested therapies.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
@@ -334,7 +334,7 @@ const ParkinsonsDiseaseTreatment = () => {
                 <h2 className="text-3xl md:text-[2.6rem] font-bold text-[#335765] leading-tight">Kampavata: More Than Just a Neurological Condition</h2>
                 <div className="space-y-5 text-[#7F543D] text-lg md:text-[1.1rem] leading-relaxed mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
                   <p>
-                    In Ayurveda, Parkinson's is recognized as <strong>Kampavata</strong> — a condition primarily driven by a severe aggravation of the <strong>Vata dosha</strong>. Vata, the energy governing all movement and nerve impulses, becomes erratic, leading to the characteristic tremors and rigidity.
+                    In Ayurveda, Parkinson's is recognized as <strong>Kampavata</strong> â€” a condition primarily driven by a severe aggravation of the <strong>Vata dosha</strong>. Vata, the energy governing all movement and nerve impulses, becomes erratic, leading to the characteristic tremors and rigidity.
                   </p>
                   <p>
                     Our treatment approach focuses on restoring the <strong>Majja Dhatu</strong> (nervous tissue) and clearing obstructive toxins (Ama). By calming the erratic Vata energy and nourishing the brain, we aim to slow the condition's progression and significantly enhance physical mobility.
@@ -429,7 +429,7 @@ const ParkinsonsDiseaseTreatment = () => {
         {/* Suggested Packages */}
         <section id="cost-duration" className="scroll-mt-24 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration For Parkinson's Disease Treatment in India</h2>
             <p className="text-[#7F543D] text-lg">Comprehensive programs tailored to the severity of symptoms and individual goals.</p>
           </div>
           
@@ -518,7 +518,7 @@ const ParkinsonsDiseaseTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8 mt-14">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Neurological Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Parkinson's Disease Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked centers specializing in Parkinson's care and Vata-pacifying rehabilitation.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -595,7 +595,7 @@ const ParkinsonsDiseaseTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1 text-left">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Parkinson's Treatment in India</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Parkinson's Disease Treatment Program in India</h2>
               <p className="text-sm md:text-base text-white/90 max-w-xl">Begin with a no-obligation consultation. We help you choose the right center, dates, and management plan for your specific condition and budget.</p>
               <div className="space-y-3 max-w-xl">
                 <a href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20Parkinson's%20Treatment." target="_blank" rel="noreferrer" className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition shadow-lg">
@@ -662,3 +662,4 @@ const ParkinsonsDiseaseTreatment = () => {
 };
 
 export default ParkinsonsDiseaseTreatment;
+
