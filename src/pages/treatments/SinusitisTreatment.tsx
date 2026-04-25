@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -292,7 +292,7 @@ const SinusitisTreatment = () => {
               />
             </div>
             <div className="space-y-6 text-center md:text-left flex flex-col justify-center">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">Beyond the Symptoms</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">Beyond the Symptoms</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 While modern medicine often focuses on managing symptoms, Ayurveda goes deeper to address the root cause of the issue. Known as Pinas, sinusitis is seen as a result of an imbalance in the bodyâ€™s fundamental energies.
               </p>

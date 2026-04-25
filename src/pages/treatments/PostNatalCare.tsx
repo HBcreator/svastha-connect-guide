@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -233,9 +233,9 @@ const PostNatalCare = () => {
               />
             </div>
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">A Holistic Path to Mother's Recovery</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">A Holistic Path to Mother's Recovery</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                The postpartum period, or the 42 days following delivery, is a critical window for healing. Ayurveda offers <span className="font-bold text-[#335765]">Soothika Paricharya</span> â€” a specialized regimen practiced with deep reverence in India.
+                The postpartum period, or the 42 days following delivery, is a critical window for healing. Ayurveda offers <span className="font-bold text-[#335765]">Soothika Paricharya</span> — a specialized regimen practiced with deep reverence in India.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 Childbirth leaves the mother's body in a delicate state, compared to an "empty vessel." Our holistic approach focuses on nurturing the new mother, restoring her strength, and laying the foundation for her long-term health and well-being.
@@ -249,13 +249,13 @@ const PostNatalCare = () => {
           </div>
         </section>
 
-        {/* â”€â”€ AYURVEDIC VIEW (Soothika Paricharya) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── AYURVEDIC VIEW (Soothika Paricharya) ─────────── */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">The Ayurvedic View of Post-Natal Care</h2>
             <div className="flex items-center justify-center gap-3 text-[#7F543D]">
               <div className="h-px w-12 bg-[#7F543D]/30" />
-              <p className="text-lg italic font-medium tracking-wide">Soothika Paricharya â€” Sacred Motherhood Recovery</p>
+              <p className="text-lg italic font-medium tracking-wide">Soothika Paricharya — Sacred Motherhood Recovery</p>
               <div className="h-px w-12 bg-[#7F543D]/30" />
             </div>
           </div>

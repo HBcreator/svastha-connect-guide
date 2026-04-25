@@ -317,14 +317,14 @@ const ParkinsonsDiseaseTreatment = () => {
       </section>
 
       <main className="container mx-auto px-4 max-w-6xl pb-12 md:pb-16 pt-12 md:pt-16 space-y-20 md:space-y-28">
-        
+
         {/* Intro Section */}
         <section id="intro" className="scroll-mt-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative group rounded-3xl overflow-hidden shadow-2xl order-1">
-              <img 
-                src="/Treatments-images/parkinsons_hero_image.png" 
-                alt="Ayurvedic Neurological Support" 
+              <img
+                src="/Treatments-images/parkinsons_hero_image.png"
+                alt="Ayurvedic Neurological Support"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/40 to-transparent" />
@@ -341,7 +341,7 @@ const ParkinsonsDiseaseTreatment = () => {
                   </p>
                 </div>
               </div>
-              <Button 
+              <Button
                 onClick={() => setQuoteModalOpen(true)}
                 className="h-14 px-10 bg-[#335765] hover:bg-[#25464c] text-white font-bold text-lg rounded-xl shadow-xl transition-all active:scale-95"
               >
@@ -380,7 +380,7 @@ const ParkinsonsDiseaseTreatment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">The Therapeutic Journey</h2>
             <p className="text-[#7F543D] text-lg">Our structured management plan moves through three critical phases of detoxification and nourishment.</p>
           </div>
-          
+
           <div className="space-y-8 max-w-5xl mx-auto">
             {treatmentStages.map((stage, idx) => (
               <div key={idx} className="group relative">
@@ -411,9 +411,9 @@ const ParkinsonsDiseaseTreatment = () => {
                         </div>
                       </div>
                       <div className="relative h-48 md:h-full min-h-[200px] md:min-h-[220px] overflow-hidden border-b md:border-b-0 md:border-l border-[#d8d0ae]/30 order-1 md:order-2">
-                        <img 
-                          src={stage.image} 
-                          alt={stage.title} 
+                        <img
+                          src={stage.image}
+                          alt={stage.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-[#335765]/20 to-transparent" />
@@ -432,7 +432,7 @@ const ParkinsonsDiseaseTreatment = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration For Parkinson's Disease Treatment in India</h2>
             <p className="text-[#7F543D] text-lg">Comprehensive programs tailored to the severity of symptoms and individual goals.</p>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {treatmentPackages.map((pkg, idx) => (
               <Card key={idx} className="group overflow-hidden border-[#d8d0ae] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col hover:-translate-y-2 h-full">
@@ -454,8 +454,8 @@ const ParkinsonsDiseaseTreatment = () => {
                     "{pkg.focus}"
                   </div>
                   <div className="mt-auto pt-4">
-                    <Button 
-                      onClick={() => setQuoteModalOpen(true)} 
+                    <Button
+                      onClick={() => setQuoteModalOpen(true)}
                       className="w-full h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02] flex items-center justify-center gap-2"
                     >
                       Get a Free Quote <ArrowRight className="h-4 w-4" />
@@ -518,7 +518,7 @@ const ParkinsonsDiseaseTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8 mt-14">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Parkinson's Disease Treatment in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Parkinson's Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked centers specializing in Parkinson's care and Vata-pacifying rehabilitation.</p>
           </div>
           <div className="relative group flex items-center justify-center">

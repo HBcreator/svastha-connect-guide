@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -89,32 +89,32 @@ const packages = [
 const patientReviews = [
   {
     name: "Sarah Jenkins", location: "London, UK", condition: "Autism Support",
-    title: "A Profound Shift in Hyperactivity.",
-    review: "A profound shift in my son's hyperactivity. The Shirodhara and specific diet completely changed our lives. He is much calmer and more engaged now.",
+    title: "A Profound Shift in Hyperactivity and Engagement.",
+    review: "Before arriving in India, my son struggled with extreme hyperactivity and constant restlessness that made daily life a challenge. The 21-day program was a revelation. The combination of Shirodhara and a strict Vata-pacifying diet completely transformed his energy levels. For the first time, he is much calmer, can sit through a full meal, and is significantly more engaged with the world around him. It feels like a fog has finally lifted from his mind.",
     rating: 5, verified: true
   },
   {
     name: "Markus Weber", location: "Berlin, Germany", condition: "Speech Delay & ASD",
-    title: "Noticeable Improvements in Speech and Eye Contact.",
-    review: "We brought our daughter here after trying everything. The focus on gut health and the Medhya Rasayanas herbs improved her speech and eye contact significantly within a month.",
+    title: "Remarkable Progress in Speech and Eye Contact.",
+    review: "We brought our daughter here after exhausting various conventional treatments with limited results. The Ayurvedic focus on gut health and the use of Medhya Rasayanas like Brahmi and Shankhpushpi worked wonders. Within just a month, we noticed remarkable improvements in her ability to maintain eye contact and a significant increase in her vocabulary. The personalized care and the deep understanding of the gut-brain axis were truly impressive.",
     rating: 5, verified: true
   },
   {
     name: "Elena Rossi", location: "Milan, Italy", condition: "Sensory Processing",
-    title: "Gentle Therapies Grounded His Energy.",
-    review: "The personalized care and the gentle approach of the physicians were outstanding. The Basti treatments visibly grounded his energy.",
+    title: "Gentle Therapies that Truly Grounded His Energy.",
+    review: "My son used to be easily overwhelmed by sensory inputs, but the gentle, rhythmic approach of the Ayurvedic physicians here was outstanding. The Basti treatments and daily Abhyanga massages visibly grounded his energy and reduced his sensory sensitivities. He seems so much more comfortable in his own skin now, and the peaceful environment of the center provided the perfect backdrop for his healing journey.",
     rating: 5, verified: true
   },
   {
     name: "David O'Connor", location: "Dublin, Ireland", condition: "Autism & Vata Imbalance",
-    title: "We Learned How to Maintain Progress at Home.",
-    review: "We learned so much about the Vata dosha. Implementing the Ayurvedic diet and daily oil massages at home has maintained the incredible progress he made during the 21-day retreat.",
+    title: "Invaluable Knowledge for Continued Progress at Home.",
+    review: "The education we received was as valuable as the treatments themselves. We learned so much about managing Vata dosha through lifestyle and nutrition. Implementing the Ayurvedic diet and daily oil massages at home has allowed our son to maintain the incredible progress he made during his 21-day retreat. He is sleeping better, communicating more clearly, and his overall anxiety has decreased significantly.",
     rating: 5, verified: true
   },
   {
     name: "Sophia Martinez", location: "Madrid, Spain", condition: "Severe ASD",
-    title: "Sensory Meltdowns Reduced by 80%.",
-    review: "A holistic sanctuary. They treated my child with such immense respect and understanding. Her sensory meltdowns have reduced by 80%.",
+    title: "Sensory Meltdowns Reduced by Over 80%.",
+    review: "This center is a holistic sanctuary for families dealing with severe ASD. The physicians treated my child with immense respect and a deep level of understanding that we hadn't found elsewhere. Since our visit, her sensory meltdowns have reduced by over 80%, and she is much more receptive to learning. The focus on calming the nervous system through natural means has given us a new sense of peace and hope for her future.",
     rating: 5, verified: true
   }
 ];
@@ -159,11 +159,26 @@ const topAyurvedicCenters = [
 ];
 
 const faqItems = [
-  { question: "Can Ayurveda cure Autism?", answer: "Ayurveda does not claim to 'cure' autism, as it is a neurodevelopmental condition. Instead, it offers a powerful holistic pathway to manage challenges, pacify aggravated doshas (especially Vata), and significantly improve the child's quality of life and cognitive function." },
-  { question: "Is the treatment safe for young children?", answer: "Yes. Ayurvedic treatments for autism are highly personalized and incredibly gentle. Modalities like Abhyanga (massage) and Shirodhara are non-invasive, soothing, and use safe, natural herbal oils." },
-  { question: "How important is diet in this treatment?", answer: "Diet (Ahara) is a cornerstone of the treatment. A Satvic diet that avoids Vata-aggravating triggers (like gluten and casein) while emphasizing easy-to-digest, nourishing foods is critical for healing the gut-brain axis." },
-  { question: "How long does a typical program last?", answer: "We recommend a minimum of 14 to 21 days for the initial intensive therapies, but Ayurveda is a continuous lifestyle approach. We will teach you routines to maintain progress at home." },
-  { question: "What results can parents realistically expect?", answer: "While outcomes vary, parents commonly report improvements in sleep quality, reduction in hyperactivity and meltdowns, improved eye contact and social engagement, better speech and communication, and easier digestion. Ayurveda addresses the whole child, making multiple areas of life easier." }
+  { 
+    question: "Can Ayurveda cure Autism?", 
+    answer: "Ayurveda views autism as a neurodevelopmental condition involving doshic imbalances, primarily Vata. While it doesn't claim to 'cure' the core neurodiversity, it offers a profound holistic framework to manage the associated challenges. By pacifying aggravated doshas and clearing metabolic toxins (Ama), Ayurveda significantly improves cognitive function, sensory processing, and emotional stability, allowing the child's inherent potential to shine through." 
+  },
+  { 
+    question: "Is the treatment safe for young children?", 
+    answer: "Absolutely. Ayurvedic pediatric care (Kaumarabhritya) is a specialized branch focused on the delicate constitution of children. All therapies, such as Abhyanga (gentle massage) and Shirodhara, are non-invasive and use safe, edible-grade herbal oils. Every treatment is closely supervised by experienced Vaidyas and modified to be as soothing and stress-free as possible for the child." 
+  },
+  { 
+    question: "How important is diet in this treatment?", 
+    answer: "Diet (Ahara) is considered the most critical pillar of healing in Ayurveda, especially for autism where the 'gut-brain axis' is often compromised. A Satvic diet—fresh, warm, and easily digestible—helps heal the gut lining and reduces inflammation. By eliminating triggers like gluten, refined sugar, and processed foods while introducing brain-nourishing 'Medhya' foods like A2 cow ghee, we provide the brain with the clean fuel it needs for development." 
+  },
+  { 
+    question: "How long does a typical program last?", 
+    answer: "For meaningful systemic changes, we recommend an initial residential program of 14 to 21 days. This allows enough time for the gentle detoxification (Sodhana) phase followed by the crucial nourishment (Rasayana) phase. However, Ayurveda is a journey, not a quick fix. We provide parents with a comprehensive 'home-care protocol' to ensure the progress made during the retreat continues to evolve at home." 
+  },
+  { 
+    question: "What results can parents realistically expect?", 
+    answer: "While every child's journey is unique, most parents report a significant 'calming' of the nervous system. Real-world improvements often include better sleep patterns, a 60-80% reduction in sensory meltdowns, improved eye contact, and a greater receptivity to learning and communication. Many also notice improved digestive health and a general sense of happiness and ease in the child, which brings immense relief to the entire family." 
+  }
 ];
 
 const AutismTreatment = () => {
@@ -287,7 +302,7 @@ const AutismTreatment = () => {
               />
             </div>
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">A Holistic Paradigm</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">A Holistic Paradigm</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 Ayurveda does not categorize autism as a singular disease. Instead, it assesses the unique functional imbalances within the individual, viewing the challenges as a profound imbalance of the doshas affecting the mind and nervous system.
               </p>

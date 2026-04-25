@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -292,7 +292,7 @@ const WeightLossTreatment = () => {
               />
             </div>
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">A Refreshingly Wise & Sustainable Approach</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">A Refreshingly Wise & Sustainable Approach</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 In a world of quick-fix diets and temporary solutions, Ayurveda offers a sustainable approach to weight management. It is not about starvation or extreme exercise.
               </p>

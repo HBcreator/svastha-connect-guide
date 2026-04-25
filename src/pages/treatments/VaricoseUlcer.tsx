@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -545,13 +545,13 @@ const VaricoseUlcer = () => {
                       </div>
 
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className="text-base md:text-xl font-bold text-[#335765]">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                             {patientReviews[currentReview].name}
                           </h4>
                           {patientReviews[currentReview].verified && (
-                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
-                              âœ“ Verified
+                            <span className="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">
+                              &#10003; Verified
                             </span>
                           )}
                         </div>

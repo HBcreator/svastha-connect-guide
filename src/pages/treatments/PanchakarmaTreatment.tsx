@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -196,7 +196,7 @@ const PanchakarmaTreatment = () => {
   }, []);
 
   const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersPerSlide));
-  
+
   useEffect(() => {
     setTopCentersSlide((prev) => prev % topCentersTotalSlides);
   }, [topCentersTotalSlides]);
@@ -272,19 +272,19 @@ const PanchakarmaTreatment = () => {
       </section>
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
-        
+
         {/* Optimized Top Image & Intro */}
         <section id="intro" className="scroll-mt-24 mb-0">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="/Treatments-images/panchakarma_hero.png" 
-                alt="Panchakarma Treatment in India" 
-                className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105" 
+              <img
+                src="/Treatments-images/panchakarma_hero.png"
+                alt="Panchakarma Treatment in India"
+                className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">More Than Just a Detox</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">More Than Just a Detox</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 Panchakarma, the crown jewel of Ayurvedic medicine, is one of India's most profound healing gifts to the world. It offers a vast array of benefits that extend far beyond a simple physical cleanse.
               </p>
@@ -360,7 +360,7 @@ const PanchakarmaTreatment = () => {
         {/* The Three Stages */}
         <section id="stages" className="scroll-mt-24 space-y-12">
           <div className="text-center mb-10 max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765] mb-4">The Three Stages of Panchakarma</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-4">The 3 Stages of Panchakarma</h2>
             <p className="text-[#7F543D] text-lg">A true Panchakarma treatment is a carefully managed process that unfolds in three phases to safely and effectively cleanse the body.</p>
           </div>
 
@@ -387,51 +387,51 @@ const PanchakarmaTreatment = () => {
 
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
-           <div className="text-center max-w-3xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Panchakarma Treatment in India</h2>
-             <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
-           </div>
-           
-           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-             {packages.map((pkg, idx) => {
-               return (
-                 <Card key={idx} className="group overflow-hidden border-[#d8d0ae] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col hover:-translate-y-2 h-full">
-                   <div className="relative h-40 md:h-44 overflow-hidden shrink-0">
-                     <img 
-                       src={pkg.image} 
-                       alt={pkg.name} 
-                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                     />
-                     <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/95 to-transparent flex items-end p-4 md:p-5">
-                        <h3 className="text-xl md:text-[1.35rem] font-bold text-white leading-tight">{pkg.name}</h3>
-                     </div>
-                   </div>
-                   
-                   <CardContent className="p-4 md:p-5 flex-grow flex flex-col space-y-3 bg-white h-full">
-                     <div className="flex items-center gap-2.5 text-[#7F543D] bg-[#F8F4E7] px-3 py-2 rounded-lg border border-[#d8d0ae]/50 shrink-0">
-                       <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#335765]" />
-                       <span className="font-bold text-[#335765] text-sm">Duration:</span>
-                       <span className="font-semibold text-sm">{pkg.duration}</span>
-                     </div>
-                     <div className="text-sm text-[#5f4636] flex-grow leading-relaxed border-l-[3px] border-[#335765] pl-3 py-1 font-medium">
-                       {pkg.focus}
-                     </div>
-                     <div className="mt-auto shrink-0 pt-1.5">
-                       <Button 
-                         onClick={() => setQuoteModalOpen(true)} 
-                         className="w-full h-11 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]"
-                       >
-                         Get a Free Quote
-                       </Button>
-                     </div>
-                   </CardContent>
-                 </Card>
-               );
-             })}
-           </div>
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Panchakarma Treatment in India</h2>
+            <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+            {packages.map((pkg, idx) => {
+              return (
+                <Card key={idx} className="group overflow-hidden border-[#d8d0ae] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col hover:-translate-y-2 h-full">
+                  <div className="relative h-40 md:h-44 overflow-hidden shrink-0">
+                    <img
+                      src={pkg.image}
+                      alt={pkg.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/95 to-transparent flex items-end p-4 md:p-5">
+                      <h3 className="text-xl md:text-[1.35rem] font-bold text-white leading-tight">{pkg.name}</h3>
+                    </div>
+                  </div>
+
+                  <CardContent className="p-4 md:p-5 flex-grow flex flex-col space-y-3 bg-white h-full">
+                    <div className="flex items-center gap-2.5 text-[#7F543D] bg-[#F8F4E7] px-3 py-2 rounded-lg border border-[#d8d0ae]/50 shrink-0">
+                      <Clock className="h-4 w-4 md:h-5 md:w-5 text-[#335765]" />
+                      <span className="font-bold text-[#335765] text-sm">Duration:</span>
+                      <span className="font-semibold text-sm">{pkg.duration}</span>
+                    </div>
+                    <div className="text-sm text-[#5f4636] flex-grow leading-relaxed border-l-[3px] border-[#335765] pl-3 py-1 font-medium">
+                      {pkg.focus}
+                    </div>
+                    <div className="mt-auto shrink-0 pt-1.5">
+                      <Button
+                        onClick={() => setQuoteModalOpen(true)}
+                        className="w-full h-11 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base rounded-xl shadow-md transition-all duration-300 group-hover:scale-[1.02]"
+                      >
+                        Get a Free Quote
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </section>
 
-      {/* Patient Reviews */}
+        {/* Patient Reviews */}
         <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
@@ -519,8 +519,8 @@ const PanchakarmaTreatment = () => {
                     key={idx}
                     onClick={() => setCurrentReview(idx)}
                     className={`transition-all rounded-full ${currentReview === idx
-                        ? "w-8 h-3 bg-[#335765]"
-                        : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                      ? "w-8 h-3 bg-[#335765]"
+                      : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
                       }`}
                     aria-label={`Go to review ${idx + 1}`}
                   />
@@ -533,7 +533,7 @@ const PanchakarmaTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Panchakarma Treatment in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Panchakarma Centers in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -570,7 +570,7 @@ const PanchakarmaTreatment = () => {
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
                       <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
-                      
+
                       <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                         <div className="flex items-center gap-1.5 shrink min-w-0">
                           <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />

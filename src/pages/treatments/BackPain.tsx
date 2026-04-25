@@ -250,7 +250,7 @@ const BackPain = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala & Karnataka, India</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white mt-3 md:mt-0">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />

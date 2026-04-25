@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -276,7 +276,7 @@ const AyurvedaTreatment = () => {
               />
             </div>
             <div className="space-y-6 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight">The Ancient Ayurveda Science</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">The Ancient Ayurveda Science</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
                 Ayurveda is one of India's most treasured gifts to the world. It is not merely a system for treating illness but a profound philosophy for living a long, healthy, and balanced life.
               </p>
@@ -613,7 +613,7 @@ const AyurvedaTreatment = () => {
         {/* Top Centers */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Ayurvedic Treatment in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for Ayurveda programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">

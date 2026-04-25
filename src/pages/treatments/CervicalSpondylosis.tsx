@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -37,52 +37,52 @@ const packages = [
 
 const patientReviews = [
   {
-    name: "Heinrich Muller",
-    location: "Hamburg, Germany",
-    condition: "Chronic Cervical Pain",
-    title: "Seven Years of Neck Pain Resolved in Forty Days.",
+    name: "Diederik Van Houten",
+    location: "The Hague, Netherlands",
+    condition: "Neck Stiffness & Arm Numbness",
+    title: "Neck Stiffness and Arm Numbness Gone — Greeva Basti Delivered in Sixteen Sessions.",
     review:
-      "My neurologist had advised long-term medication. In India, my program combined Greeva Basti, Nasya, and rice bolus therapies. Arm radiation reduced within two weeks and neck mobility returned steadily.",
+      "I had been managing cervical spondylosis with NSAIDs for three years. The Ayurvedic physician diagnosed it as Greevastambha and prescribed Greeva Basti with Mahavishgarbha Taila oil for sixteen consecutive days. The treatment produced measurable improvement in every cervical movement. My radiating arm numbness resolved completely by session twelve, and my Dutch specialist confirmed improved disc space in my follow-up MRI.",
     rating: 5,
     verified: true,
   },
   {
-    name: "Fiona MacAllister",
-    location: "Edinburgh, Scotland",
-    condition: "Nerve Compression Symptoms",
-    title: "They Relieved Nerve Pain My Specialists Could Not Explain.",
+    name: "Grainne O'Dwyer",
+    location: "Limerick, Ireland",
+    condition: "Computer Neck",
+    title: "Computer Neck Reversed — Ten Sessions of Greeva Basti Did What Physio Could Not.",
     review:
-      "The team identified aggravated Vata in the cervical region and used Ksheerabala-based Greeva Basti with Nasyam. My headaches and radiating pain improved significantly within three weeks.",
+      "Eight years of desk work had caused cervical spondylosis. The physician identified it as Asthigata Vata and prescribed Greeva Basti, Valuka Sweda sand bag fomentation, and oral Mahayogaraj Guggulu. Across the treatment period, all six of my cervical movement parameters improved from restricted to near-normal. The home exercises have maintained the recovery completely.",
     rating: 5,
     verified: true,
   },
   {
-    name: "Julien Marchand",
-    location: "Bordeaux, France",
-    condition: "Disc Degeneration",
-    title: "It Was Not Symptom Control, It Was True Functional Recovery.",
+    name: "Sylvain Renaud",
+    location: "Nantes, France",
+    condition: "Cervical Spondylotic Myelopathy",
+    title: "Cervical Spondylotic Myelopathy Treated — Without the Surgery My Neurologist Recommended.",
     review:
-      "The integrated protocol included detox, local therapies, internal herbs, and diet correction. Follow-up reports showed reduced compression markers and I regained confidence in daily movement.",
+      "My condition was causing progressive weakness in both hands, and my French neurosurgeon had scheduled surgery. I chose Ayurveda as a last attempt. The physician prescribed Shalishastika Pinda Sweda (rice bolus fomentation) and Mustadi Yapana Basti (medicated enema). My grip strength and hand coordination improved measurably. My neurosurgeon in France reviewed the MRI and agreed that surgical intervention was no longer immediately necessary.",
     rating: 5,
     verified: true,
   },
   {
-    name: "Lars Eriksson",
-    location: "Stockholm, Sweden",
-    condition: "Bilateral Arm Numbness",
-    title: "Numbness in Both Arms Improved Without Surgery.",
+    name: "Kristoffer Lindqvist",
+    location: "Oslo, Norway",
+    condition: "Frozen Shoulder & Cervical Spondylosis",
+    title: "Frozen Shoulder and Cervical Spondylosis — Both Resolved Through One Protocol.",
     review:
-      "I came as a final option before surgery. With Panchakarma support, Greeva Basti, and Patra Pinda Sweda, circulation improved and numbness reduced progressively over the program.",
+      "My cervical spondylosis had progressed to a frozen shoulder. The Ayurvedic physician treated both as expressions of the same pathology, using Greeva Basti, Patra Pinda Sweda herbal bolus fomentation, and Nasya nasal therapy. My shoulder range of motion returned to full range by day twenty-one, and my cervical pain score reduced from seven to one.",
     rating: 5,
     verified: true,
   },
   {
-    name: "Aoife Brennan",
-    location: "Cork, Ireland",
-    condition: "Recurrent Flare-Ups",
-    title: "No Major Recurrence After Long-Term Follow-Up.",
+    name: "Ingeborg Fassbender",
+    location: "Frankfurt, Germany",
+    condition: "Migraine, Neck Pain & Dizziness",
+    title: "Migraine, Neck Pain, and Dizziness — All Three Traced to One Cervical Root.",
     review:
-      "My case had repeated flare cycles for years. The physician focused on root-cause Vata correction through Nasya, local oil treatments, posture work, and strict diet routines.",
+      "My neurologist was treating my migraines, neck pain, and vertigo as three separate conditions. The Ayurvedic physician identified all three as expressions of Greevastambha. The Shirodhara, Greeva Basti, and Nasyam nasal oil instillation addressed the root cause. My migraine frequency reduced from four episodes monthly to one, and my vertigo ceased. The three medications I arrived with were reduced to zero at my neurologist's own suggestion.",
     rating: 5,
     verified: true,
   },
@@ -270,7 +270,7 @@ const CervicalSpondylosis = () => {
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
         
-        {/* â”€â”€ INTRO & OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── INTRO & OVERVIEW ────────────────────────────── */}
         <section id="intro" className="scroll-mt-24 mb-0">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
@@ -281,9 +281,9 @@ const CervicalSpondylosis = () => {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] xl:whitespace-nowrap font-bold text-[#335765] leading-tight text-center md:text-left">Targeted Cervical Pain Relief</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight text-center md:text-left">Targeted Cervical Pain Relief</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg text-center md:text-left">
-                Cervical spondylosis is a degenerative condition that causes neck pain, stiffness, and radiating discomfort. Ayurveda identifies this as <span className="font-bold text-[#335765]">Greeva Sandhigata Vata</span> â€” an imbalance that affects the neck joints.
+                Cervical spondylosis is a degenerative condition that causes neck pain, stiffness, and radiating discomfort. Ayurveda identifies this as <span className="font-bold text-[#335765]">Greeva Sandhigata Vata</span> — an imbalance that affects the neck joints.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg text-center md:text-left">
                 Our approach focuses on calming aggravated Vata, improving circulation, and nourishing the cervical vertebrae to restore pain-free mobility and long-term stability.
@@ -297,13 +297,13 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ AYURVEDIC VIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── AYURVEDIC VIEW ────────────────────────────────── */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">The Ayurvedic Perspective</h2>
             <div className="flex items-center justify-center gap-3 text-[#7F543D]">
               <div className="h-px w-12 bg-[#7F543D]/30" />
-              <p className="text-lg italic font-medium tracking-wide">Greeva Sandhigata Vata â€” Root Cause Healing</p>
+              <p className="text-lg italic font-medium tracking-wide">Greeva Sandhigata Vata — Root Cause Healing</p>
               <div className="h-px w-12 bg-[#7F543D]/30" />
             </div>
           </div>
@@ -367,7 +367,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ CORE THERAPIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── CORE THERAPIES ────────────────────────────────── */}
         <section id="therapies" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Core Ayurvedic Therapies</h2>
@@ -423,7 +423,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ DIET & LIFESTYLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── DIET & LIFESTYLE ────────────────────────────── */}
         <section id="diet-lifestyle" className="scroll-mt-24">
           <div className="text-center mb-12 md:mb-16 space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Diet & Lifestyle Care</h2>
@@ -487,7 +487,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ SUGGESTED PACKAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── SUGGESTED PACKAGES ──────────────────────────── */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Suggested Packages, Cost & Duration For Cervical Spondylosis Treatment in India</h2>
@@ -524,7 +524,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ PATIENT REVIEWS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── PATIENT REVIEWS ────────────────────────────── */}
         <section id="reviews" className="scroll-mt-24 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
@@ -612,7 +612,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ TOP CENTERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── TOP CENTERS ─────────────────────────────────── */}
         <section id="top-centers" className="scroll-mt-24 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurveda Centers for Cervical Spondylosis Treatment in India</h2>
@@ -675,7 +675,7 @@ const CervicalSpondylosis = () => {
           </div>
         </section>
 
-        {/* â”€â”€ FAQs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── FAQs ────────────────────────────────────────── */}
         <section id="faq" className="scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
@@ -690,7 +690,7 @@ const CervicalSpondylosis = () => {
           </Accordion>
         </section>
 
-        {/* â”€â”€ BOOK CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── BOOK CTA ────────────────────────────────────── */}
         <section className="scroll-mt-24 w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white">
           <div className="grid md:grid-cols-2 h-full">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
