@@ -107,6 +107,7 @@ import DelhiNorthIndiaRegionCenters from "./pages/DelhiNorthIndiaRegionCenters";
 import MumbaiPuneRajasthanWestIndiaCenters from "./pages/MumbaiPuneRajasthanWestIndiaCenters";
 import PanchakarmaDetox from "./pages/programs/PanchakarmaDetox";
 import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
+import PanchakarmaHealing28Day from "./pages/programs/PanchakarmaHealing28Day";
 import DiseaseSpecific from "./pages/programs/DiseaseSpecific";
 import OsteoarthritisTreatment from "./pages/programs/OsteoarthritisTreatment";
 import SciaticaTreatmentProgram from "./pages/programs/SciaticaTreatment";
@@ -243,6 +244,10 @@ const App = () => (
             element={<Navigate to="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india" replace />}
           />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route
+            path="/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india"
+            element={<PanchakarmaHealing28Day />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

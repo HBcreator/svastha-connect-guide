@@ -27,6 +27,7 @@ const PanchakarmaDetox = () => {
       keyFocus: "Deep cleansing & disease recovery",
       description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
       image: "/Program Images/28-day-healing.png",
+      link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
     },
     {
       name: "14-Day Panchakarma Detox Retreat",

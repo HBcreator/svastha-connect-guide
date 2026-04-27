@@ -2,12 +2,89 @@ import { useState } from "react";
 import {
   Calendar, MapPin, Star, Hand, CircleDot, Fingerprint,
   Move, Layers, Wind, Dumbbell, AlignCenter, Brain,
-  ArrowUpDown, Waves, FlaskConical, CheckCircle2, Phone
+  ArrowUpDown, Waves, FlaskConical, CheckCircle2, Phone,
+  Medal, Users, ShieldCheck, HeartPulse, Globe, Sparkles,
+  HelpCircle, ChevronDown
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { Button } from "@/components/ui/button";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const galleryImages = [
+  { src: "/Services-images/touch_bodywork_main.png", alt: "Touch and Bodywork Therapy" },
+  { src: "/Services-images/acupressure.png", alt: "Acupressure Session" },
+  { src: "/Services-images/thai_massage.png", alt: "Thai Massage Stretch" },
+  { src: "/Services-images/reflexology.png", alt: "Reflexology Treatment" },
+  { src: "/Services-images/shiatsu.png", alt: "Shiatsu Pressure Therapy" },
+  { src: "/Services-images/cupping.png", alt: "Cupping Therapy" },
+];
+
+const whyChooseIndia = [
+  {
+    title: "Authentic Lineage",
+    desc: "India is the birthplace of many holistic touch therapies, ensuring you receive treatments in their most authentic form.",
+    icon: Medal,
+  },
+  {
+    title: "Expert Practitioners",
+    desc: "Our therapists are trained in traditional systems and accredited institutions with decades of clinical experience.",
+    icon: Users,
+  },
+  {
+    title: "Cost-Effective Quality",
+    desc: "Receive world-class therapeutic care at a fraction of the cost compared to Western destinations.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Integrated Healing",
+    desc: "Combine touch therapies with Ayurveda, Yoga, and Naturopathy for a comprehensive wellness transformation.",
+    icon: HeartPulse,
+  },
+  {
+    title: "Holistic Environments",
+    desc: "Retreats are located in serene natural settings that enhance the deep healing and relaxation process.",
+    icon: Globe,
+  },
+  {
+    title: "Personalised Care",
+    desc: "Treatments are customised based on your unique body constitution (Prakriti) and specific health goals.",
+    icon: Sparkles,
+  },
+];
+
+const faqs = [
+  {
+    question: "What should I expect during my first touch therapy session?",
+    answer: "Your session begins with a brief consultation to understand your health history and goals. Depending on the therapy, you'll be guided through a series of rhythmic pressures, stretches, or targeted touches in a serene, professional environment."
+  },
+  {
+    question: "Are these therapies safe for chronic pain conditions?",
+    answer: "Absolutely. Our practitioners are experts in adapting techniques for chronic pain. However, we always recommend a prior consultation to ensure the chosen therapy is perfectly suited to your specific condition."
+  },
+  {
+    question: "Do I need to follow any specific diet during my treatment?",
+    answer: "While not always mandatory, following a light, sattvic diet can significantly enhance the detoxification and healing benefits of hands-on therapies. Our advisors can provide specific dietary recommendations."
+  },
+  {
+    question: "How often should I receive these treatments for best results?",
+    answer: "For acute issues, a series of 3-5 sessions might be recommended. For general wellness and stress management, a monthly session is ideal. Your therapist will provide a personalised plan during your first visit."
+  },
+  {
+    question: "What is the difference between Deep Tissue and Myofascial Release?",
+    answer: "Deep Tissue focuses on the deeper layers of muscle to break down tension, while Myofascial Release targets the connective tissue (fascia) to release restrictions and improve overall structural alignment."
+  },
+  {
+    question: "Can these therapies help with mental stress and anxiety?",
+    answer: "Yes, therapies like Shiatsu and Reflexology are specifically designed to calm the nervous system, reduce cortisol levels, and promote profound mental and emotional relaxation."
+  }
+];
 
 const therapies = [
   {
@@ -174,15 +251,42 @@ const TouchBodyworkTherapies = () => {
         </div>
       </section>
 
-      {/* Pictography Section */}
+      {/* Pictography & Gallery Section */}
       <section className="pt-8 md:pt-12 pb-0 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-[#d8d0ae]/50">
-            <img 
-              src="/Services-images/touch_bodywork_main.png" 
-              alt="Touch and Bodywork Therapies in India" 
-              className="w-full h-[300px] md:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="md:col-span-2 lg:col-span-2 h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-[#d8d0ae]/50">
+              <img 
+                src={galleryImages[0].src} 
+                alt={galleryImages[0].alt} 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
+              {galleryImages.slice(1, 3).map((img, i) => (
+                <div key={i} className="h-[142px] md:h-[242px] rounded-3xl overflow-hidden shadow-lg border border-[#d8d0ae]/50">
+                  <img 
+                    src={img.src} 
+                    alt={img.alt} 
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {galleryImages.slice(3).map((img, i) => (
+              <div 
+                key={i} 
+                className={`h-[150px] md:h-[250px] rounded-3xl overflow-hidden shadow-lg border border-[#d8d0ae]/50 ${i === 2 ? "col-span-2 lg:col-span-1" : ""}`}
+              >
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -232,6 +336,57 @@ const TouchBodyworkTherapies = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Why Choose India Section */}
+        <div className="mt-12 md:mt-20">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Why Choose India for Touch & Bodywork Therapies?</h2>
+            <p className="text-lg text-[#7F543D] max-w-2xl mx-auto">
+              India offers a unique blend of ancient wisdom and modern clinical standards, making it the premier destination for holistic healing.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {whyChooseIndia.map((point, index) => {
+              const Icon = point.icon;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-white rounded-2xl p-6 md:p-8 border border-[#d8d0ae]/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center text-center group"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-[#EDE8D0] flex items-center justify-center mb-6 group-hover:bg-[#335765] transition-colors duration-300 shadow-inner">
+                    <Icon className="w-8 h-8 text-[#335765] group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#335765] mb-3">{point.title}</h3>
+                  <p className="text-[#7F543D] leading-relaxed text-sm md:text-base">{point.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 md:mt-20 max-w-4xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Frequently Asked Questions</h2>
+            <div className="w-24 h-1 bg-[#C68D6A] mx-auto mt-4 rounded-full opacity-60"></div>
+          </div>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="border border-[#d8d0ae]/60 rounded-2xl px-6 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden"
+              >
+                <AccordionTrigger className="text-left py-5 text-lg font-bold text-[#335765] hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-[#7F543D] text-base leading-relaxed pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
 
         {/* CTA Section */}
