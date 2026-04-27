@@ -13,8 +13,10 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [centersDropdownOpen, setCentersDropdownOpen] = useState(false);
   const [programsDropdownOpen, setProgramsDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileCentersOpen, setMobileCentersOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -54,6 +56,14 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
     { to: "/ayurvedic-programs/integrated-retreat", label: "Integrated Retreat" },
   ];
 
+  const servicesLinks = [
+    { to: "/services/touch-and-bodywork-therapies-in-india", label: "Touch & Bodywork Therapies" },
+    { to: "/services/energy-and-spiritual-healing-treatments-in-india", label: "Energy & Spiritual Healing" },
+    { to: "/services/mind-body-interventions-therapies-in-india", label: "Mind-Body Interventions" },
+    { to: "/services/biological-and-natural-plant-based-therapies-in-india", label: "Biological & Natural/Plant-Based Therapies" },
+    { to: "/services/specialized-alternative-medical-systems-in-india", label: "Specialized Alternative Medical Systems" },
+  ];
+
   return (
     <>
       <nav className="bg-card border-b border-border sticky top-0 z-50 shadow-sm">
@@ -78,16 +88,40 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 Home
               </Link>
               
-              <Link
-                to="/services"
-                className={`font-poppins font-medium transition-colors ${
-                  location.pathname === "/services"
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary"
-                }`}
+              {/* Services Dropdown */}
+              <div
+                className="relative group"
+                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
               >
-                Services
-              </Link>
+                <Link
+                  to="/services"
+                  className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
+                    location.pathname === "/services" || location.pathname.startsWith("/services/")
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  Services
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </Link>
+
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[320px]">
+                    {servicesLinks.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                        onClick={() => setServicesDropdownOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               {/* Top Centers Dropdown */}
               <div 
@@ -169,9 +203,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 onMouseEnter={() => setProgramsDropdownOpen(true)}
                 onMouseLeave={() => setProgramsDropdownOpen(false)}
               >
-                <Link
-                  to="/ayurvedic-programs"
-                  className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
+                <div
+                  
+                  className={`flex items-center gap-1 font-poppins font-medium cursor-default transition-colors ${
                     location.pathname.startsWith("/ayurvedic-programs")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
@@ -179,7 +213,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 >
                   Ayurvedic Programs
                   <ChevronDown size={16} className={`transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180' : ''}`} />
-                </Link>
+                </div>
                 
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${programsDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
@@ -308,17 +342,42 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 >
                   Home
                 </Link>
-                <Link
-                  to="/services"
-                  className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                    location.pathname === "/services"
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:bg-gray-100"
-                  }`}
-                  onClick={closeMenu}
-                >
-                  Services
-                </Link>
+                {/* Mobile Services Section */}
+                <div className="space-y-1">
+                  <button
+                    type="button"
+                    className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                      location.pathname === "/services" || location.pathname.startsWith("/services/")
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:bg-gray-100"
+                    }`}
+                    onClick={() => setMobileServicesOpen((prev) => !prev)}
+                  >
+                    <span>Services</span>
+                    <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                  </button>
+                  {mobileServicesOpen && (
+                    <div className="space-y-1 pl-2">
+                      <Link
+                        to="/services"
+                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                        onClick={closeMenu}
+                      >
+                        All Services
+                      </Link>
+                      {servicesLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                          onClick={closeMenu}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 
                 {/* Mobile Centers Section */}
                 <div className="space-y-1">
@@ -373,13 +432,6 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   </button>
                   {mobileProgramsOpen && (
                     <div className="space-y-1 pl-2">
-                      <Link
-                        to="/ayurvedic-programs"
-                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
-                        onClick={closeMenu}
-                      >
-                        All Programs
-                      </Link>
                       {programsLinks.map((item) => (
                         <Link
                           key={item.to}

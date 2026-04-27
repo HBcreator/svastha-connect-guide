@@ -220,7 +220,7 @@ const Treatments = () => {
       {/* Header */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Ayurvedic Treatments</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Ayurvedic Treatments in India</h1>
           <p className="text-lg text-white/90">
             Explore traditional healing therapies for mind, body, and spirit
           </p>
@@ -229,16 +229,16 @@ const Treatments = () => {
 
       {/* Category Filter */}
       <section className="container mx-auto px-4 py-8">
-        <div className="flex flex-wrap gap-3 justify-center">
+        <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 md:gap-3 md:justify-center">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full font-medium transition-all ${
+              className={`px-3 md:px-6 py-2 md:py-2.5 rounded-xl md:rounded-full text-xs md:text-sm font-bold transition-all border-2 text-center flex items-center justify-center min-h-[44px] md:min-h-[auto] ${
                 selectedCategory === category
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "bg-card text-foreground hover:bg-secondary"
-              }`}
+                  ? "bg-[#335765] text-white border-[#335765] shadow-md"
+                  : "bg-white text-[#335765] border-[#335765]/10 hover:border-[#335765]/30"
+              } ${category === "All" && "col-span-2 md:col-span-1"}`}
             >
               {category}
             </button>

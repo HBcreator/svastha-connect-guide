@@ -74,6 +74,11 @@ import AyurvedicMassageService from "./pages/services/AyurvedicMassage";
 import AyurvedicDietService from "./pages/services/AyurvedicDiet";
 import PhysiotherapyService from "./pages/services/Physiotherapy";
 import KalariMarmaService from "./pages/services/KalariMarma";
+import TouchBodyworkTherapies from "./pages/services/TouchBodyworkTherapies";
+import EnergyAndSpiritualHealing from "./pages/services/EnergyAndSpiritualHealing";
+import MindBodyInterventions from "./pages/services/MindBodyInterventions";
+import BiologicalNaturalTherapies from "./pages/services/BiologicalNaturalTherapies";
+import SpecializedAlternativeMedicalSystems from "./pages/services/SpecializedAlternativeMedicalSystems";
 import AyurvedaTreatment from "./pages/treatments/AyurvedaTreatment";
 import PanchakarmaTreatment from "./pages/treatments/PanchakarmaTreatment";
 import SinusitisTreatment from "./pages/treatments/SinusitisTreatment";
@@ -192,6 +197,11 @@ const App = () => (
           <Route path="/services/ayurvedic-diet" element={<AyurvedicDietService />} />
           <Route path="/services/physiotherapy" element={<PhysiotherapyService />} />
           <Route path="/services/kalari-marma" element={<KalariMarmaService />} />
+          <Route path="/services/touch-and-bodywork-therapies-in-india" element={<TouchBodyworkTherapies />} />
+          <Route path="/services/energy-and-spiritual-healing-treatments-in-india" element={<EnergyAndSpiritualHealing />} />
+          <Route path="/services/mind-body-interventions-therapies-in-india" element={<MindBodyInterventions />} />
+          <Route path="/services/biological-and-natural-plant-based-therapies-in-india" element={<BiologicalNaturalTherapies />} />
+          <Route path="/services/specialized-alternative-medical-systems-in-india" element={<SpecializedAlternativeMedicalSystems />} />
           <Route path="/treatments" element={<Treatments />} />
           <Route path="/treatments/ayurveda-treatment" element={<AyurvedaTreatment />} />
           <Route path="/treatments/panchakarma-treatment" element={<PanchakarmaTreatment />} />
