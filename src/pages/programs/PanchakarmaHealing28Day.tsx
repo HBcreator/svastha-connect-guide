@@ -51,15 +51,177 @@ const galleryImages = [
   "/Program Images/28-day-healing-pizhichil.png",
 ];
 
-const quickSummaryRows = [
-  ["Program Name", "28-Day Panchakarma Healing and Rejuvenation"],
-  ["Duration", "28 Days / 27 Nights"],
-  ["Who It Is For", "Adults with chronic conditions, autoimmune disorders, or seeking complete physiological restoration"],
-  ["Key Benefit", "Root-cause healing, chronic disease recovery, deep Rasayana nourishment, long-lasting restoration"],
-  ["Top Locations", "Kerala, Rishikesh, Mysore"],
-  ["Average Cost", "$3,500 – $6,000 USD"],
-  ["Supervised By", "Senior Ayurvedic Physicians (Vaidyas) with chronic care specialization"],
-  ["Includes", "Accommodation, three Ayurvedic meals, all therapies, medicines, doctor consultations, Rasayana care"],
+const packages = [
+  {
+    name: "28-Day Panchakarma Healing and Rejuvenation",
+    summary: {
+      duration: "28 Days / 27 Nights",
+      idealFor: "Chronic Healing, Rasayana, Restoration",
+      locations: "Kerala, Rishikesh, Goa",
+      cost: "$3,500 – $6,000",
+    },
+    rows: [
+      ["Program Name", "28-Day Panchakarma Healing and Rejuvenation"],
+      ["Duration", "28 Days / 27 Nights"],
+      ["Who It Is For", "Adults with chronic conditions, autoimmune disorders, or seeking complete physiological restoration"],
+      ["Key Benefit", "Root-cause healing, chronic disease recovery, deep Rasayana nourishment, long-lasting restoration"],
+      ["Top Locations", "Kerala, Rishikesh, Mysore"],
+      ["Average Cost", "$3,500 – $6,000 USD"],
+      ["Supervised By", "Senior Ayurvedic Physicians (Vaidyas) with chronic care specialization"],
+      ["Includes", "Accommodation, three Ayurvedic meals, all therapies, medicines, doctor consultations, Rasayana care"],
+    ],
+    costDetails: {
+      length: "28 Days",
+      budget: "$3,500 - $6,000",
+      description: "Structured detox, recovery, and rejuvenation timeline.",
+      budgetNote: "Most popular range for reputable centers and full-stay plans.",
+      popularTag: "MOST POPULAR",
+      popularDesc: "Panchakarma and disease-focused recovery with accommodation and therapies.",
+      rows: [
+        ["Program", "28-Day Panchakarma Healing", "Deep Detox", "$3,500 - $6,000", "Maximum restoration"],
+      ],
+    },
+    inclusionDetails: {
+      duration: "28 Days",
+      stay: "27 Nights",
+      care: "Doctor-Supervised",
+      rows: [
+        { label: "Accommodation", details: "Choice of room categories in authentic Ayurvedic centers.", icon: BedDouble },
+        { label: "Ayurvedic Meals", details: "Tailored Sattvic diet (three meals/day) as per physician.", icon: UtensilsCrossed },
+        { label: "Clinical Panchakarma", details: "All phases: Purvakarma, Pradhana Karma, and Paschatkarma.", icon: HeartPulse },
+        { label: "Rasayana Phase", details: "Full week of classical rejuvenation and rebuilding therapies.", icon: Sparkles },
+        { label: "Medical Support", details: "Daily doctor consultations and medication during stay.", icon: Stethoscope },
+        { label: "Support Care", details: "Yoga, meditation, and lifestyle correction classes.", icon: Activity },
+      ],
+    },
+    isHighestDemand: true,
+  },
+  {
+    name: "21-Day Panchakarma Detox Program",
+    summary: {
+      duration: "21 Days / 20 Nights",
+      idealFor: "Deep Detox, Weight Loss, Stress Relief",
+      locations: "Kerala, Karnataka, Goa",
+      cost: "$2,800 – $4,500",
+    },
+    rows: [
+      ["Program Name", "21-Day Panchakarma Detox Program"],
+      ["Duration", "21 Days / 20 Nights"],
+      ["Who It Is For", "Individuals seeking deep tissue cleansing, weight management, or intensive stress recovery"],
+      ["Key Benefit", "Intensive toxin elimination, improved metabolic rate, and profound mental relaxation"],
+      ["Top Locations", "Kerala, Karnataka, Pune"],
+      ["Average Cost", "$2,800 – $4,500 USD"],
+      ["Supervised By", "Accredited Ayurvedic Doctors and experienced therapy teams"],
+      ["Includes", "Accommodation, sattvic meals, daily detox therapies, yoga sessions, and consultations"],
+    ],
+    costDetails: {
+      length: "21 Days",
+      budget: "$2,800 - $4,500",
+      description: "Intensive physiological cleansing and metabolic reset.",
+      budgetNote: "Premium clinical centers with specialized detox protocols.",
+      popularTag: "HIGH DEMAND",
+      popularDesc: "Balanced detox and weight management with full medical supervision.",
+      rows: [
+        ["Program", "21-Day Detox Program", "Clinical Cleansing", "$2,800 - $4,500", "Metabolic focus"],
+      ],
+    },
+    inclusionDetails: {
+      duration: "21 Days",
+      stay: "20 Nights",
+      care: "Clinical Focus",
+      rows: [
+        { label: "Stay", details: "Standard or Deluxe clinical rooms in healing retreats.", icon: BedDouble },
+        { label: "Dietary Plan", details: "Clinical detox diet prescribed by the Vaidya.", icon: UtensilsCrossed },
+        { label: "Core Therapies", details: "Full suite of Panchakarma detox procedures.", icon: Droplet },
+        { label: "Daily Vitals", details: "Regular monitoring of progress and physician checks.", icon: Activity },
+        { label: "Wellness", details: "Yoga and Pranayama sessions for metabolic boost.", icon: HeartPulse },
+      ],
+    },
+  },
+  {
+    name: "14-Day Panchakarma Detox Retreat",
+    summary: {
+      duration: "14 Days / 13 Nights",
+      idealFor: "General Detox, Energy Boost, Wellness Reset",
+      locations: "Rishikesh, Kerala, Bangalore",
+      cost: "$1,800 – $3,200",
+    },
+    rows: [
+      ["Program Name", "14-Day Panchakarma Detox Retreat"],
+      ["Duration", "14 Days / 13 Nights"],
+      ["Who It Is For", "Busy professionals or wellness seekers needing a reset and basic physiological cleansing"],
+      ["Key Benefit", "Boosted energy levels, improved digestion, and physical lightness"],
+      ["Top Locations", "Rishikesh, Kerala, Bangalore"],
+      ["Average Cost", "$1,800 – $3,200 USD"],
+      ["Supervised By", "Qualified Ayurvedic Vaidyas"],
+      ["Includes", "Stay, Ayurvedic diet, core Panchakarma therapies, and daily yoga"],
+    ],
+    costDetails: {
+      length: "14 Days",
+      budget: "$1,800 - $3,200",
+      description: "Efficient wellness reset and digestive recalibration.",
+      budgetNote: "Standard resort-style centers and wellness retreats.",
+      popularTag: "QUICK RESET",
+      popularDesc: "Core therapies and yoga for immediate energy and digestive relief.",
+      rows: [
+        ["Program", "14-Day Detox Retreat", "Wellness Reset", "$1,800 - $3,200", "Digestive focus"],
+      ],
+    },
+    inclusionDetails: {
+      duration: "14 Days",
+      stay: "13 Nights",
+      care: "Wellness Focus",
+      rows: [
+        { label: "Retreat Stay", details: "Eco-friendly or wellness-focused resort rooms.", icon: BedDouble },
+        { label: "Sattvic Food", details: "Fresh, vegetarian Ayurvedic meals daily.", icon: UtensilsCrossed },
+        { label: "Detox Plan", details: "Abhyanga, Shirodhara, and mild cleansing.", icon: Sparkles },
+        { label: "Consultation", details: "Initial and final physician assessments.", icon: Stethoscope },
+        { label: "Yoga Basics", details: "Group yoga for physical flexibility and mental rest.", icon: Activity },
+      ],
+    },
+  },
+  {
+    name: "7-Day Ayurvedic Rejuvenation Program",
+    summary: {
+      duration: "7 Days / 6 Nights",
+      idealFor: "Relaxation, Immunity, Quick Refresh",
+      locations: "Pan India",
+      cost: "$900 – $1,600",
+    },
+    rows: [
+      ["Program Name", "7-Day Ayurvedic Rejuvenation Program"],
+      ["Duration", "7 Days / 6 Nights"],
+      ["Who It Is For", "Travelers or individuals seeking a quick immunity boost and relaxation experience"],
+      ["Key Benefit", "Immediate stress relief, skin glow, and enhanced sense of well-being"],
+      ["Top Locations", "Goa, Kerala, Rishikesh, Jaipur"],
+      ["Average Cost", "$900 – $1,600 USD"],
+      ["Supervised By", "Wellness Consultants and Ayurvedic Therapists"],
+      ["Includes", "Accommodation, healthy meals, rejuvenation massages, and steam baths"],
+    ],
+    costDetails: {
+      length: "7 Days",
+      budget: "$900 - $1,600",
+      description: "Short-term immunity boost and deep relaxation stay.",
+      budgetNote: "Budget-friendly wellness centers across India.",
+      popularTag: "ECONOMY",
+      popularDesc: "Introductory Ayurvedic treatments and basic wellness routine.",
+      rows: [
+        ["Program", "7-Day Rejuvenation", "Quick Refresh", "$900 - $1,600", "Immunity focus"],
+      ],
+    },
+    inclusionDetails: {
+      duration: "7 Days",
+      stay: "6 Nights",
+      care: "Refresh Model",
+      rows: [
+        { label: "Comfort Stay", details: "Basic to premium wellness rooms.", icon: BedDouble },
+        { label: "Healthy Meals", details: "Nutrient-rich vegetarian meals.", icon: UtensilsCrossed },
+        { label: "Rejuvenation", details: "Relaxing massages and herbal steam baths.", icon: Sparkles },
+        { label: "Wellness Talk", details: "Guidance on Ayurvedic lifestyle and diet.", icon: Brain },
+        { label: "Morning Yoga", details: "Gentle yoga and breathing exercises.", icon: Activity },
+      ],
+    },
+  },
 ];
 
 const quickSummaryMobileIcons = {
@@ -474,6 +636,9 @@ const PanchakarmaHealing28Day = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [selectedPackageIndex, setSelectedPackageIndex] = useState(0);
+  const [selectedCostIndex, setSelectedCostIndex] = useState(0);
+  const [selectedInclusionIndex, setSelectedInclusionIndex] = useState(0);
   const [benefitsImageIndex, setBenefitsImageIndex] = useState(0);
   const [benefitsVisibleCards, setBenefitsVisibleCards] = useState(4);
   const [topCentersSlide, setTopCentersSlide] = useState(0);
@@ -483,6 +648,19 @@ const PanchakarmaHealing28Day = () => {
   const [currentReview, setCurrentReview] = useState(0);
   const [reviewAutoPlay, setReviewAutoPlay] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  const currentPackage = packages[selectedPackageIndex];
+  const currentCostPackage = packages[selectedCostIndex];
+  const currentInclusionPackage = packages[selectedInclusionIndex];
+
+  const goPackageNext = () => setSelectedPackageIndex((prev) => (prev + 1) % packages.length);
+  const goPackagePrevious = () => setSelectedPackageIndex((prev) => (prev - 1 + packages.length) % packages.length);
+
+  const goCostNext = () => setSelectedCostIndex((prev) => (prev + 1) % packages.length);
+  const goCostPrevious = () => setSelectedCostIndex((prev) => (prev - 1 + packages.length) % packages.length);
+
+  const goInclusionNext = () => setSelectedInclusionIndex((prev) => (prev + 1) % packages.length);
+  const goInclusionPrevious = () => setSelectedInclusionIndex((prev) => (prev - 1 + packages.length) % packages.length);
 
   // Auto-rotate for main gallery disabled as per user request
   /*
@@ -683,56 +861,69 @@ const PanchakarmaHealing28Day = () => {
           </div>
         </section>
 
-        <section id="quick-summary" className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
-          <Card className="border-[#d8d0ae] bg-white shadow-sm">
-            <CardContent className="p-4 md:p-6 space-y-4">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">28 Days / 27 Nights</p>
+        <section id="quick-summary" className="scroll-mt-24 !mt-3 md:!mt-4 pt-0 pb-0">
+          <h2 className="text-lg md:text-xl font-bold text-[#335765] mb-3 text-center">
+            {currentPackage.name} - Quick Overview
+          </h2>
+          
+          <Card className="border-[#d8d0ae] bg-white shadow-lg relative overflow-hidden max-w-5xl mx-auto">
+            {currentPackage.isHighestDemand && (
+              <div className="absolute top-0 right-0 z-10">
+                <div className="bg-[#FF7A00] text-white text-[8px] md:text-[10px] font-bold px-2 py-0.5 md:px-3 md:py-1 rounded-bl-lg shadow-sm">
+                  Highest demand
                 </div>
-                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Chronic Healing, Rasayana, Restoration</p>
+              </div>
+            )}
+            
+            <CardContent className="p-2.5 md:p-4 space-y-3">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
+                <div className="rounded-lg border border-[#d9cfae] bg-[#F8F4E7] p-1.5 md:p-2">
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-wider text-[#7F543D] font-bold">Duration</p>
+                  <p className="text-xs md:text-[13px] font-semibold text-[#335765]">{currentPackage.summary.duration}</p>
                 </div>
-                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                <div className="rounded-lg border border-[#d9cfae] bg-[#F8F4E7] p-1.5 md:p-2">
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-wider text-[#7F543D] font-bold">Ideal For</p>
+                  <p className="text-xs md:text-[13px] font-semibold text-[#335765] leading-tight line-clamp-1">{currentPackage.summary.idealFor}</p>
                 </div>
-                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
-                  <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$3,500 - $6,000</p>
+                <div className="rounded-lg border border-[#d9cfae] bg-[#F8F4E7] p-1.5 md:p-2">
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-wider text-[#7F543D] font-bold">Locations</p>
+                  <p className="text-xs md:text-[13px] font-semibold text-[#335765]">{currentPackage.summary.locations}</p>
+                </div>
+                <div className="rounded-lg border border-[#d9cfae] bg-[#F8F4E7] p-1.5 md:p-2">
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-wider text-[#7F543D] font-bold">Avg Cost</p>
+                  <p className="text-xs md:text-[13px] font-semibold text-[#335765]">{currentPackage.summary.cost}</p>
                 </div>
               </div>
 
-              <div className="grid gap-2 md:hidden">
-                {quickSummaryRows.map((row, idx) => (
+              {/* Mobile Table View */}
+              <div className="grid gap-1.5 md:hidden">
+                {currentPackage.rows.map((row, idx) => (
                   <div
                     key={row[0]}
-                    className={`rounded-xl border border-[#d8d0ae] px-3 py-3 ${idx === 0 ? "bg-[#EDE8D0]" : "bg-white"}`}
+                    className={`rounded-lg border border-[#d8d0ae] px-3 py-1.5 ${idx === 0 ? "bg-[#EDE8D0]" : "bg-white"}`}
                   >
-                    <div className="flex items-center gap-2.5">
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
                         {(() => {
                           const Icon = quickSummaryMobileIcons[row[0] as keyof typeof quickSummaryMobileIcons] || ClipboardCheck;
-                          return <Icon className="h-4 w-4 text-[#335765]" />;
+                          return <Icon className="h-3 w-3 text-[#335765]" />;
                         })()}
                       </span>
-                      <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row[0]}</p>
+                      <p className="text-[10px] uppercase tracking-wider text-[#335765] font-extrabold">{row[0]}</p>
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-[#7F543D] break-words font-semibold">{row[1]}</p>
+                    <p className="mt-0.5 text-xs leading-relaxed text-[#7F543D] font-medium pl-0.5">{row[1]}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="hidden md:block overflow-auto rounded-xl border border-[#d8d0ae]">
-                <table className="w-full text-sm min-w-[680px]">
+              {/* Desktop Table View */}
+              <div className="hidden md:block overflow-hidden rounded-xl border border-[#d8d0ae]">
+                <table className="w-full text-xs lg:text-[13px]">
                   <tbody>
-                    {quickSummaryRows.map((row, idx) => (
-                      <tr key={row[0]} className={idx === 0 ? "bg-[#EDE8D0]" : "border-t"}>
-                        <td className="p-3 font-semibold text-[#3D4B4C] w-[240px]">{row[0]}</td>
-                        <td className="p-3 text-[#7F543D]">{row[1]}</td>
+                    {currentPackage.rows.map((row, idx) => (
+                      <tr key={row[0]} className={`${idx === 0 ? "bg-[#EDE8D0]" : "bg-white border-t border-[#d8d0ae]/30"}`}>
+                        <td className="p-1.5 lg:p-2 font-bold text-[#3D4B4C] w-[180px] border-r border-[#d8d0ae]/20">{row[0]}</td>
+                        <td className="p-1.5 lg:p-2 text-[#7F543D] font-medium leading-relaxed">{row[1]}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -740,6 +931,33 @@ const PanchakarmaHealing28Day = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Slider Buttons */}
+          <div className="mt-5 md:mt-6 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+            <button
+              onClick={goPackagePrevious}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2 md:px-6 md:py-2.5 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-xs min-w-[120px] md:min-w-0"
+            >
+              <ChevronLeft className="h-3 w-3 md:h-3.5 md:w-3.5" /> Previous Packages
+            </button>
+            
+            {/* Dots Indicator */}
+            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+              {packages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${idx === selectedPackageIndex ? "bg-[#335765] w-4" : "bg-[#d8d0ae]"}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={goPackageNext}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2 md:px-6 md:py-2.5 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-xs min-w-[120px] md:min-w-0"
+            >
+              More Packages <ChevronRight className="h-3 w-3 md:h-3.5 md:w-3.5" />
+            </button>
+          </div>
         </section>
 
         <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
@@ -994,84 +1212,90 @@ const PanchakarmaHealing28Day = () => {
 
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765]">Cost of the 28-Day Panchakarma Healing Program in India</h2>
-            <p className="mt-2 text-[#7F543D]">
-              Most guests choose this duration for a full detox cycle, physician supervision, and a complete stay package in India.
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Cost of the {currentCostPackage.costDetails.length} Program in India</h2>
+            <p className="mt-2 text-[#7F543D] text-sm md:text-base">
+              {currentCostPackage.costDetails.description} Most guests choose this for a comprehensive healing experience.
             </p>
           </div>
 
-          <Card className="border-[#d8d0ae] bg-white shadow-sm">
-            <CardContent className="p-5 md:p-6 space-y-5">
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
-                  <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">28 Days</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and rejuvenation timeline.</p>
+          <Card className="border-[#d8d0ae] bg-white shadow-lg max-w-5xl mx-auto overflow-hidden">
+            <CardContent className="p-4 md:p-6 space-y-5">
+              <div className="grid md:grid-cols-3 gap-3 md:gap-4">
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3 text-center">
+                  <p className="text-[10px] md:text-xs uppercase tracking-wider text-[#7F543D] font-bold">Program Length</p>
+                  <p className="mt-1 text-xl md:text-2xl font-bold text-[#335765]">{currentCostPackage.costDetails.length}</p>
+                  <p className="mt-0.5 text-[11px] md:text-xs text-[#6F6B5C] leading-tight">{currentCostPackage.costDetails.description}</p>
                 </div>
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
-                  <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">$3,500 - $6,000</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Most popular range for reputable centers and full-stay plans.</p>
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3 text-center">
+                  <p className="text-[10px] md:text-xs uppercase tracking-wider text-[#7F543D] font-bold">Typical Budget</p>
+                  <p className="mt-1 text-xl md:text-2xl font-bold text-[#335765]">{currentCostPackage.costDetails.budget}</p>
+                  <p className="mt-0.5 text-[11px] md:text-xs text-[#6F6B5C] leading-tight">{currentCostPackage.costDetails.budgetNote}</p>
                 </div>
-                <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
-                      <Sparkles className="h-5 w-5 text-[#335765]" />
+                <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <div className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-white ring-1 ring-[#d9cfae]">
+                      <Sparkles className="h-4 w-4 text-[#335765]" />
                     </div>
-                    <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
+                    <p className="text-lg md:text-xl font-bold text-[#335765] uppercase">{currentCostPackage.costDetails.popularTag}</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
+                  <p className="mt-0.5 text-[11px] md:text-xs text-[#6F6B5C] leading-tight">{currentCostPackage.costDetails.popularDesc}</p>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
-                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
-                  <p className="font-semibold text-[#335765]">Most popular - Panchakarma </p>
-                  <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
-                    Highest demand package
-                  </span>
+              <div className="rounded-xl border border-[#d9cfae] overflow-hidden shadow-sm">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-2 bg-[#EDE8D0] px-4 py-2.5 text-center sm:text-left">
+                  <p className="font-bold text-[#335765] text-sm md:text-base">{currentCostPackage.name}</p>
+                  {currentCostPackage.isHighestDemand && (
+                    <span className="inline-flex items-center rounded-full bg-[#FF7A00] px-2.5 py-0.5 text-[10px] md:text-xs font-bold text-white shadow-sm">
+                      Highest demand package
+                    </span>
+                  )}
                 </div>
+                
+                {/* Mobile View */}
                 <div className="md:hidden p-3 space-y-2 bg-white">
-                  {costComparisonRows.map((row) => (
-                    <div key={row.program} className="rounded-xl border border-[#d8d0ae] p-3 bg-[#FFFEFA]">
-                      <p className="text-[13px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">Program</p>
-                      <p className="mt-1 text-sm text-[#7F543D] font-semibold break-words">{row.program}</p>
-
-                      <div className="mt-3 grid grid-cols-1 gap-2">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Category</p>
-                          <p className="text-sm text-[#7F543D] font-semibold">{row.category}</p>
+                  {currentCostPackage.costDetails.rows.map((row, idx) => (
+                    <div key={idx} className="rounded-lg border border-[#d8d0ae] p-3 bg-[#FFFEFA]">
+                      <div className="grid grid-cols-2 gap-y-2 text-[11px] md:text-xs">
+                        <div className="col-span-2">
+                          <p className="uppercase tracking-wider text-[#335765] font-extrabold mb-0.5">Program</p>
+                          <p className="text-sm text-[#7F543D] font-bold">{row[1]}</p>
                         </div>
                         <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Cost</p>
-                          <p className="text-sm text-[#7F543D] font-semibold">{row.cost}</p>
+                          <p className="uppercase tracking-wider text-[#335765] font-extrabold mb-0.5">Category</p>
+                          <p className="text-sm text-[#7F543D] font-semibold">{row[2]}</p>
                         </div>
                         <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Notes</p>
-                          <p className="text-sm text-[#7F543D] font-semibold break-words">{row.notes}</p>
+                          <p className="uppercase tracking-wider text-[#335765] font-extrabold mb-0.5">Cost</p>
+                          <p className="text-sm text-[#7F543D] font-bold">{row[3]}</p>
+                        </div>
+                        <div className="col-span-2 border-t border-[#d8d0ae]/30 pt-2 mt-1">
+                          <p className="uppercase tracking-wider text-[#335765] font-extrabold mb-0.5">Notes</p>
+                          <p className="text-sm text-[#7F543D] font-medium leading-relaxed">{row[4]}</p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="hidden md:block overflow-auto">
-                  <table className="w-full text-sm min-w-[680px]">
-                    <thead className="bg-[#F5F8F6] text-[#335765]">
+                {/* Desktop View */}
+                <div className="hidden md:block overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead className="bg-[#F8F4E7] text-[#335765] border-b border-[#d9cfae]">
                       <tr>
-                        <th className="text-left p-3 font-semibold">Program</th>
-                        <th className="text-left p-3 font-semibold">Category</th>
-                        <th className="text-left p-3 font-semibold">Cost</th>
-                        <th className="text-left p-3 font-semibold">Notes</th>
+                        <th className="text-left p-3 font-bold uppercase tracking-wider text-[11px]">Program</th>
+                        <th className="text-left p-3 font-bold uppercase tracking-wider text-[11px]">Category</th>
+                        <th className="text-left p-3 font-bold uppercase tracking-wider text-[11px]">Cost</th>
+                        <th className="text-left p-3 font-bold uppercase tracking-wider text-[11px]">Notes</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {costComparisonRows.map((row) => (
-                        <tr key={row.program} className="border-t bg-white">
-                          <td className="p-3 font-medium text-[#3D4B4C]">{row.program}</td>
-                          <td className="p-3 text-[#7F543D]">{row.category}</td>
-                          <td className="p-3 text-[#7F543D]">{row.cost}</td>
-                          <td className="p-3 text-[#7F543D]">{row.notes}</td>
+                    <tbody className="divide-y divide-[#d9cfae]/30 bg-white">
+                      {currentCostPackage.costDetails.rows.map((row, idx) => (
+                        <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                          <td className="p-3 font-bold text-[#3D4B4C]">{row[1]}</td>
+                          <td className="p-3 text-[#7F543D] font-semibold">{row[2]}</td>
+                          <td className="p-3 text-[#7F543D] font-bold">{row[3]}</td>
+                          <td className="p-3 text-[#7F543D] font-medium leading-relaxed">{row[4]}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -1080,6 +1304,32 @@ const PanchakarmaHealing28Day = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Slider Buttons */}
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+            <button
+              onClick={goCostPrevious}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+            >
+              <ChevronLeft className="h-3.5 w-3.5 md:h-4 md:w-4" /> Previous Packages
+            </button>
+            
+            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+              {packages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === selectedCostIndex ? "bg-[#335765] w-5" : "bg-[#d8d0ae]"}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={goCostNext}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+            >
+              More Packages <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
+            </button>
+          </div>
         </section>
 
         <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
@@ -1145,76 +1395,105 @@ const PanchakarmaHealing28Day = () => {
 
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the 28-Day Panchakarma Healing Package?</h2>
-            <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">What Is Included in the {currentInclusionPackage.inclusionDetails.duration} Package?</h2>
+            <p className="text-[#7F543D] text-sm md:text-base">Everything essential for a supervised detox, recovery, and continuity plan.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">28 Days</p>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
+              <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Duration</p>
+              <p className="text-base md:text-lg font-bold text-[#335765] mt-0.5">{currentInclusionPackage.inclusionDetails.duration}</p>
             </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">27 Nights</p>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
+              <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Stay</p>
+              <p className="text-base md:text-lg font-bold text-[#335765] mt-0.5">{currentInclusionPackage.inclusionDetails.stay}</p>
             </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
+              <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Inclusions</p>
+              <p className="text-base md:text-lg font-bold text-[#335765] mt-0.5">Therapies + Meals</p>
             </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Supervised</p>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
+              <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Care Model</p>
+              <p className="text-base md:text-lg font-bold text-[#335765] mt-0.5">{currentInclusionPackage.inclusionDetails.care}</p>
             </div>
           </div>
-          <Card className="shadow-sm border-[#dfe7e2]">
-            <CardContent className="p-3 md:p-0">
-              <div className="md:hidden grid gap-2">
-                {inclusionsRows.map((row) => {
+          <Card className="shadow-lg border-[#dfe7e2] max-w-5xl mx-auto overflow-hidden">
+            <CardContent className="p-0">
+              {/* Mobile View */}
+              <div className="md:hidden grid gap-2 p-3 bg-slate-50/30">
+                {currentInclusionPackage.inclusionDetails.rows.map((row, idx) => {
                   const Icon = row.icon;
                   return (
-                    <div key={row.label} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
-                      <div className="flex items-center gap-2.5">
+                    <div key={idx} className="rounded-xl border border-[#d8d0ae] px-4 py-3 bg-white shadow-sm">
+                      <div className="flex items-center gap-3">
                         <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
                           <Icon className="h-4 w-4 text-[#335765]" />
                         </span>
-                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row.label}</p>
+                        <p className="text-[13px] uppercase tracking-wider text-[#335765] font-extrabold">{row.label}</p>
                       </div>
-                      <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{row.details}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-medium pl-1">{row.details}</p>
                     </div>
-                  )
+                  );
                 })}
               </div>
 
-              <div className="hidden md:block overflow-auto">
-                <table className="w-full text-sm min-w-[680px]">
-                  <thead className="bg-[#F5F8F6] text-[#335765]">
+              {/* Desktop View */}
+              <div className="hidden md:block overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-[#F8F4E7] text-[#335765] border-b border-[#d9cfae]">
                     <tr>
-                      <th className="text-left p-3 font-semibold">Inclusion</th>
-                      <th className="text-left p-3 font-semibold">Details</th>
+                      <th className="text-left p-4 font-bold uppercase tracking-wider text-xs w-[220px]">Inclusion</th>
+                      <th className="text-left p-4 font-bold uppercase tracking-wider text-xs">Details</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {inclusionsRows.map((row) => {
+                  <tbody className="divide-y divide-[#d9cfae]/30 bg-white">
+                    {currentInclusionPackage.inclusionDetails.rows.map((row, idx) => {
                       const Icon = row.icon;
                       return (
-                        <tr key={row.label} className="border-t">
-                          <td className="p-3 font-medium text-[#3D4B4C]">
-                            <div className="flex items-center gap-2.5">
-                              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                        <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                          <td className="p-4 font-bold text-[#3D4B4C] border-r border-[#d9cfae]/20">
+                            <div className="flex items-center gap-3">
+                              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
                                 <Icon className="h-4 w-4 text-[#335765]" />
                               </span>
                               <span>{row.label}</span>
                             </div>
                           </td>
-                          <td className="p-3 text-[#7F543D]">{row.details}</td>
+                          <td className="p-4 text-[#7F543D] font-medium leading-relaxed">{row.details}</td>
                         </tr>
-                      )
+                      );
                     })}
                   </tbody>
                 </table>
               </div>
             </CardContent>
           </Card>
+
+          {/* Slider Buttons */}
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+            <button
+              onClick={goInclusionPrevious}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+            >
+              <ChevronLeft className="h-3.5 w-3.5 md:h-4 md:w-4" /> Previous Packages
+            </button>
+            
+            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+              {packages.map((_, idx) => (
+                <div 
+                  key={idx} 
+                  className={`h-2 w-2 rounded-full transition-all duration-300 ${idx === selectedInclusionIndex ? "bg-[#335765] w-5" : "bg-[#d8d0ae]"}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={goInclusionNext}
+              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+            >
+              More Packages <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
+            </button>
+          </div>
           <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
             <div className="flex items-start gap-3">
               <div className="mt-1 shrink-0">
