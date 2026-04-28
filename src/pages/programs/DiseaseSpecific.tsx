@@ -28,6 +28,15 @@ const DiseaseSpecific = () => {
       image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
       link: "/ayurvedic-programs/disease-specific/sciatica",
     },
+    {
+      name: "Ayurveda Treatment for Rheumatoid Arthritis",
+      duration: "21–28 Days",
+      targetAudience: "Autoimmune & Joint patients",
+      keyFocus: "Inflammation & Joint repair",
+      description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
+      image: "/Program Images/rheumatoid-arthritis.png",
+      link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
+    },
   ];
 
   return (

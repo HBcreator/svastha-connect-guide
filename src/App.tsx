@@ -114,6 +114,7 @@ import SciaticaTreatmentProgram from "./pages/programs/SciaticaTreatment";
 import AyurvedicWeightLossProgramIndia from "./pages/programs/AyurvedicWeightLossProgramIndia";
 import LifestyleAndWellness from "./pages/programs/LifestyleAndWellness";
 import AntiAgingAyurvedaProgramIndia from "./pages/programs/AntiAgingAyurvedaProgramIndia";
+import RheumatoidArthritis from "./pages/programs/RheumatoidArthritis";
 
 const queryClient = new QueryClient();
 
@@ -234,6 +235,7 @@ const App = () => (
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/anti-aging-ayurveda-program-in-india" element={<AntiAgingAyurvedaProgramIndia />} />
           <Route path="/ayurvedic-programs/disease-specific/osteoarthritis" element={<OsteoarthritisTreatment />} />
           <Route path="/ayurvedic-programs/disease-specific/sciatica" element={<SciaticaTreatmentProgram />} />
+          <Route path="/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india" element={<RheumatoidArthritis />} />
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india" element={<AyurvedicWeightLossProgramIndia />} />
           <Route
             path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"

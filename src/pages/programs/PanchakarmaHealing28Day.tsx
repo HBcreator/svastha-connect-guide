@@ -53,7 +53,7 @@ const galleryImages = [
 
 const packages = [
   {
-    name: "28-Day Panchakarma Healing and Rejuvenation",
+    name: "28-Day Panchakarma Healing and Rejuvenation Program",
     summary: {
       duration: "28 Days / 27 Nights",
       idealFor: "Chronic Healing, Rasayana, Restoration",
@@ -61,7 +61,7 @@ const packages = [
       cost: "$3,500 – $6,000",
     },
     rows: [
-      ["Program Name", "28-Day Panchakarma Healing and Rejuvenation"],
+      ["Program Name", "28-Day Panchakarma Healing and Rejuvenation Program"],
       ["Duration", "28 Days / 27 Nights"],
       ["Who It Is For", "Adults with chronic conditions, autoimmune disorders, or seeking complete physiological restoration"],
       ["Key Benefit", "Root-cause healing, chronic disease recovery, deep Rasayana nourishment, long-lasting restoration"],
@@ -97,7 +97,7 @@ const packages = [
     isHighestDemand: true,
   },
   {
-    name: "21-Day Panchakarma Detox Program",
+    name: "21-Day Panchakarma Healing and Rejuvenation Program",
     summary: {
       duration: "21 Days / 20 Nights",
       idealFor: "Deep Detox, Weight Loss, Stress Relief",
@@ -105,7 +105,7 @@ const packages = [
       cost: "$2,800 – $4,500",
     },
     rows: [
-      ["Program Name", "21-Day Panchakarma Detox Program"],
+      ["Program Name", "21-Day Panchakarma Healing and Rejuvenation Program"],
       ["Duration", "21 Days / 20 Nights"],
       ["Who It Is For", "Individuals seeking deep tissue cleansing, weight management, or intensive stress recovery"],
       ["Key Benefit", "Intensive toxin elimination, improved metabolic rate, and profound mental relaxation"],
@@ -139,7 +139,7 @@ const packages = [
     },
   },
   {
-    name: "14-Day Panchakarma Detox Retreat",
+    name: "14-Day Panchakarma Healing and Rejuvenation Program Retreat",
     summary: {
       duration: "14 Days / 13 Nights",
       idealFor: "General Detox, Energy Boost, Wellness Reset",
@@ -147,7 +147,7 @@ const packages = [
       cost: "$1,800 – $3,200",
     },
     rows: [
-      ["Program Name", "14-Day Panchakarma Detox Retreat"],
+      ["Program Name", "14-Day Panchakarma Healing and Rejuvenation Program Retreat"],
       ["Duration", "14 Days / 13 Nights"],
       ["Who It Is For", "Busy professionals or wellness seekers needing a reset and basic physiological cleansing"],
       ["Key Benefit", "Boosted energy levels, improved digestion, and physical lightness"],
@@ -181,7 +181,7 @@ const packages = [
     },
   },
   {
-    name: "7-Day Ayurvedic Rejuvenation Program",
+    name: "7-Day Ayurvedic Healing and Rejuvenation Program",
     summary: {
       duration: "7 Days / 6 Nights",
       idealFor: "Relaxation, Immunity, Quick Refresh",
@@ -189,7 +189,7 @@ const packages = [
       cost: "$900 – $1,600",
     },
     rows: [
-      ["Program Name", "7-Day Ayurvedic Rejuvenation Program"],
+      ["Program Name", "7-Day Ayurvedic Healing and Rejuvenation Program"],
       ["Duration", "7 Days / 6 Nights"],
       ["Who It Is For", "Travelers or individuals seeking a quick immunity boost and relaxation experience"],
       ["Key Benefit", "Immediate stress relief, skin glow, and enhanced sense of well-being"],
@@ -810,7 +810,7 @@ const PanchakarmaHealing28Day = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">28-Day Panchakarma Healing Program in India</h1>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">28-Day Panchakarma Healing and Rejuvenation Program in India</h1>
               <p className="text-lg md:text-xl text-white/90">A four-week physician-led Ayurvedic healing protocol designed for chronic condition recovery, deep cellular restoration, and Rasayana rejuvenation.</p>
               <div className="space-y-2.5">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
@@ -840,7 +840,7 @@ const PanchakarmaHealing28Day = () => {
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">28-Day Panchakarma Healing — Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">28-Day Panchakarma Healing and Rejuvenation — Program Gallery</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
             <img src={galleryImages[selectedImage]} alt="Panchakarma program" className="w-full h-[260px] md:h-[460px] object-cover" />
@@ -865,7 +865,7 @@ const PanchakarmaHealing28Day = () => {
           <h2 className="text-lg md:text-xl font-bold text-[#335765] mb-3 text-center">
             {currentPackage.name} - Quick Overview
           </h2>
-          
+
           <Card className="border-[#d8d0ae] bg-white shadow-lg relative overflow-hidden max-w-5xl mx-auto">
             {currentPackage.isHighestDemand && (
               <div className="absolute top-0 right-0 z-10">
@@ -874,7 +874,7 @@ const PanchakarmaHealing28Day = () => {
                 </div>
               </div>
             )}
-            
+
             <CardContent className="p-2.5 md:p-4 space-y-3">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
                 <div className="rounded-lg border border-[#d9cfae] bg-[#F8F4E7] p-1.5 md:p-2">
@@ -933,16 +933,17 @@ const PanchakarmaHealing28Day = () => {
           </Card>
 
           {/* Slider Buttons */}
-          <div className="mt-5 md:mt-6 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+          <div className="mt-5 md:mt-6 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goPackagePrevious}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2 md:px-6 md:py-2.5 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-xs min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-sm min-w-[145px] md:min-w-[200px]"
             >
-              <ChevronLeft className="h-3 w-3 md:h-3.5 md:w-3.5" /> Previous Packages
+              <ChevronLeft className="absolute left-2 md:left-4 h-4 w-4" />
+              <span>Previous Packages</span>
             </button>
             
             {/* Dots Indicator */}
-            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+            <div className="hidden xs:flex items-center gap-1.5 justify-center">
               {packages.map((_, idx) => (
                 <div 
                   key={idx} 
@@ -953,9 +954,10 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goPackageNext}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2 md:px-6 md:py-2.5 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-xs min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-sm min-w-[145px] md:min-w-[200px]"
             >
-              More Packages <ChevronRight className="h-3 w-3 md:h-3.5 md:w-3.5" />
+              <span>More Packages</span>
+              <ChevronRight className="absolute right-2 md:right-4 h-4 w-4" />
             </button>
           </div>
         </section>
@@ -1251,7 +1253,7 @@ const PanchakarmaHealing28Day = () => {
                     </span>
                   )}
                 </div>
-                
+
                 {/* Mobile View */}
                 <div className="md:hidden p-3 space-y-2 bg-white">
                   {currentCostPackage.costDetails.rows.map((row, idx) => (
@@ -1306,15 +1308,16 @@ const PanchakarmaHealing28Day = () => {
           </Card>
 
           {/* Slider Buttons */}
-          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goCostPrevious}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
             >
-              <ChevronLeft className="h-3.5 w-3.5 md:h-4 md:w-4" /> Previous Packages
+              <ChevronLeft className="absolute left-2 md:left-5 h-4 w-4 md:h-5 md:w-5" />
+              <span>Previous Packages</span>
             </button>
             
-            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+            <div className="hidden xs:flex items-center gap-1.5 justify-center">
               {packages.map((_, idx) => (
                 <div 
                   key={idx} 
@@ -1325,9 +1328,10 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goCostNext}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
             >
-              More Packages <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              <span>More Packages</span>
+              <ChevronRight className="absolute right-2 md:right-5 h-4 w-4 md:h-5 md:w-5" />
             </button>
           </div>
         </section>
@@ -1398,7 +1402,7 @@ const PanchakarmaHealing28Day = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">What Is Included in the {currentInclusionPackage.inclusionDetails.duration} Package?</h2>
             <p className="text-[#7F543D] text-sm md:text-base">Everything essential for a supervised detox, recovery, and continuity plan.</p>
           </div>
-          
+
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
               <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Duration</p>
@@ -1470,15 +1474,16 @@ const PanchakarmaHealing28Day = () => {
           </Card>
 
           {/* Slider Buttons */}
-          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-6 px-2 md:px-4">
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goInclusionPrevious}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
             >
-              <ChevronLeft className="h-3.5 w-3.5 md:h-4 md:w-4" /> Previous Packages
+              <ChevronLeft className="absolute left-2 md:left-5 h-4 w-4 md:h-5 md:w-5" />
+              <span>Previous Packages</span>
             </button>
             
-            <div className="hidden xs:flex items-center gap-1 md:gap-1.5 justify-center">
+            <div className="hidden xs:flex items-center gap-1.5 justify-center">
               {packages.map((_, idx) => (
                 <div 
                   key={idx} 
@@ -1489,9 +1494,10 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goInclusionNext}
-              className="flex-1 md:flex-none flex items-center justify-center gap-1 md:gap-2 px-2 py-2.5 md:px-7 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[10px] md:text-sm min-w-[120px] md:min-w-0"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
             >
-              More Packages <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              <span>More Packages</span>
+              <ChevronRight className="absolute right-2 md:right-5 h-4 w-4 md:h-5 md:w-5" />
             </button>
           </div>
           <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
@@ -1597,7 +1603,7 @@ const PanchakarmaHealing28Day = () => {
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
                       <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
-                      
+
                       <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                         <div className="flex items-center gap-1.5 shrink min-w-0">
                           <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
@@ -1774,8 +1780,8 @@ const PanchakarmaHealing28Day = () => {
                     setReviewAutoPlay(false);
                   }}
                   className={`transition-all rounded-full ${currentReview === idx
-                      ? "w-8 h-3 bg-[#335765]"
-                      : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                    ? "w-8 h-3 bg-[#335765]"
+                    : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
                     }`}
                   aria-label={`Go to review ${idx + 1}`}
                 />
