@@ -47,6 +47,15 @@ const DiseaseSpecific = () => {
       reviews: 290,
       tags: ["21-28 Days", "Skin Repair", "Raktamokshana", "Blood Detox"]
     },
+    {
+      name: "Ayurveda Treatment for Migraine in India",
+      description: "A specialized Ayurvedic protocol for chronic headaches and Migraine. Focuses on balancing the nervous system, reducing vascular inflammation, and detoxifying the sensory organs through therapies like Shirodhara, Nasya, and specialized herbal cooling protocols.",
+      image: "/program-images/ra-shirodhara.png",
+      link: "/ayurvedic-programs/disease-specific/ayurvedic-treatment-for-migraine-in-india",
+      rating: 4.8,
+      reviews: 310,
+      tags: ["14-21 Days", "Stress Relief", "Nasya Therapy", "Vata-Pitta"]
+    },
   ];
 
   return (
