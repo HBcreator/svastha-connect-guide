@@ -384,6 +384,8 @@ const faqItems = [
   { question: 'How much does 21–28 day sciatica treatment cost in India?', answer: 'All-inclusive costs typically range from $2,500 to $5,000 USD for mid-range to premium centers. Luxury retreats may be $6,000–$8,500+. Compared to spinal surgery costs ($15,000–$50,000 abroad), this represents exceptional value.' },
   { question: 'Is Basti (enema therapy) uncomfortable?', answer: 'Basti is very well-tolerated. Patients typically experience warmth and release during treatment. The colon is highly absorbent and the medicated oils produce a profound calming and grounding effect throughout the body.' },
   { question: 'Can I combine treatment with yoga in Rishikesh?', answer: 'Yes — for sciatica, this is particularly powerful. Many patients spend the first two weeks at a Kerala resort for deep clinical treatment, then move to Rishikesh for therapeutic yoga integration. Our team can design multi-location programs.' },
+  { question: 'Can I travel back home immediately after the 21 days?', answer: 'Yes, but we recommend 2-3 days of light activity in India before your long-haul flight. This helps your body stabilize after the intensive detox and ensures a more comfortable journey home.' },
+  { question: 'What is the risk of the sciatic pain returning?', answer: 'If the post-program lifestyle plan (Pathya) and recommended exercises are followed, the risk of recurrence is very low. Most patients who achieve results in the 28-day program maintain them for several years.' }
 ];
 
 const patientReviews = [

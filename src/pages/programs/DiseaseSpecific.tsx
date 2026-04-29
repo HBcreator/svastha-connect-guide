@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
 
 const DiseaseSpecific = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -11,110 +12,122 @@ const DiseaseSpecific = () => {
 
   const programs = [
     {
-      name: "Ayurveda Treatment for Osteoarthritis",
-      duration: "21–28 Days",
-      targetAudience: "Chronic disease patients",
-      keyFocus: "Joint pain & mobility",
-      description: "A specialized Ayurvedic protocol designed specifically to manage Osteoarthritis. Focuses on strengthening the joints, reducing inflammation, pain management through authentic therapies like Janu Basti, and restoring mobility.",
+      name: "Ayurveda Treatment for Osteoarthritis in India",
+      description: "A specialized Ayurvedic protocol designed specifically to manage Osteoarthritis. Focuses on strengthening the joints, reducing inflammation, pain management through authentic therapies like Janu Basti, and restoring mobility through deep tissue nourishment and Vata correction.",
       image: "/Program Images/osteoarthritis.png",
       link: "/ayurvedic-programs/disease-specific/osteoarthritis",
+      rating: 4.8,
+      reviews: 420,
+      tags: ["21-28 Days", "Joint Mobility", "Vata Balance", "Panchakarma"]
     },
     {
-      name: "Ayurveda Treatment for Sciatica",
-      duration: "21–28 Days",
-      targetAudience: "Pain management patients",
-      keyFocus: "Nerve & back pain relief",
+      name: "Ayurveda Treatment for Sciatica in India",
       description: "A clinically supervised Ayurvedic program for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
       image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
       link: "/ayurvedic-programs/disease-specific/sciatica",
+      rating: 4.9,
+      reviews: 380,
+      tags: ["21-28 Days", "Nerve Relief", "Spine Health", "Kati Basti"]
     },
     {
-      name: "Ayurveda Treatment for Rheumatoid Arthritis",
-      duration: "21–28 Days",
-      targetAudience: "Autoimmune & Joint patients",
-      keyFocus: "Inflammation & Joint repair",
+      name: "Ayurveda Treatment for Rheumatoid Arthritis in India",
       description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
       image: "/Program Images/rheumatoid-arthritis.png",
       link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
+      rating: 4.7,
+      reviews: 350,
+      tags: ["21-28 Days", "RA Healing", "Detox (Ama)", "Immune Support"]
+    },
+    {
+      name: "Ayurvedic Psoriasis Treatment Program in India",
+      description: "A specialized skin-healing protocol targeting Psoriasis and chronic eczema. Focuses on blood purification (Raktamokshana), liver detox (Virechana), and specialized external therapies like Takradhara to achieve deep remission and skin clearance.",
+      image: "/Treatments-images/Psoriasis Treatment.jpg",
+      link: "/ayurvedic-programs/disease-specific/psoriasis-treatment-in-india",
+      rating: 4.9,
+      reviews: 290,
+      tags: ["21-28 Days", "Skin Repair", "Raktamokshana", "Blood Detox"]
     },
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 flex flex-col">
+    <div className="min-h-screen font-poppins bg-[#E5E7E2] flex flex-col">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
+        <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
               Disease Specific Programs in India
             </h1>
-            <p className="text-lg text-white/90 max-w-3xl">
-              Explore targeted Ayurvedic treatments designed for chronic ailments. Our disease-specific programs combine intensive therapies, specialized diets, and herbal medicine to address root causes and provide long-term relief and healing.
+            <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Discover India's finest residential Ayurvedic programs for chronic ailments. These targeted protocols combine intensive clinical therapies, specialized diets, and herbal medicine to address root causes for long-term recovery.
             </p>
           </div>
         </section>
 
         {/* Programs Grid */}
-        <section className="container mx-auto px-4 py-16 pb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="container mx-auto px-4 py-12 md:py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
             {programs.map((program, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full"
               >
-                {/* Image */}
-                <div className="w-full aspect-video overflow-hidden relative">
+                {/* Image Section */}
+                <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={program.image}
                     alt={program.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-primary font-poppins line-clamp-2">
-                      {program.name}
-                    </h3>
-                  </div>
+                {/* Content Section */}
+                <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow text-left">
+                  <h3
+                    className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] md:min-h-[1.6rem] flex items-start"
+                  >
+                    {program.name}
+                  </h3>
 
-                  <p className="text-foreground text-sm mb-4 line-clamp-3">
-                    {program.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground">
-                      {program.duration}
-                    </span>
-                    <span className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground">
-                      {program.keyFocus}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between mt-auto mb-4 pb-4 border-b border-border">
-                    <div className="flex items-center gap-1 text-sm font-medium">
-                      <span className="text-muted-foreground mr-1">Ideal For:</span>
-                      <span className="text-foreground font-semibold">{program.targetAudience}</span>
+                  {/* Rating Row Only */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-1">
+                      <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                      <span className="text-xs font-black text-foreground">{program.rating}</span>
+                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      className="flex-1 font-semibold"
-                      onClick={() => navigate((program as any).link || '/centers')}
-                    >
-                      View Details
-                    </Button>
-                    <Button
-                      className="flex-1 font-semibold"
-                      onClick={() => setQuoteModalOpen(true)}
-                    >
-                      Get Quote
-                    </Button>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {program.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="bg-[#E5E7E2]/60 text-[#2C4E5A] text-[10px] font-bold px-2 py-0.5 rounded-full border border-primary/5">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-4">
+                    {program.description}
+                  </p>
+
+                  {/* Buttons Container */}
+                  <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button
+                        className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
+                        onClick={() => navigate(program.link)}
+                      >
+                        View Details
+                      </Button>
+                      <Button
+                        onClick={() => setQuoteModalOpen(true)}
+                        className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm h-auto border-none"
+                      >
+                        Get Quote
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -124,7 +137,7 @@ const DiseaseSpecific = () => {
       </main>
 
       <Footer />
-      <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };

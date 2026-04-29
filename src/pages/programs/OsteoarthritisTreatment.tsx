@@ -44,13 +44,16 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/1.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/2.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/3.jpg",
+  "/program-images/osteoarthritis-consultation.png",
+  "/program-images/osteoarthritis-kizhi.png",
+  "/program-images/osteoarthritis-yoga.png",
+  "/program-images/synchronized-therapy.png",
+  "/program-images/patient-recovery.png",
+  "/program-images/takradhara.png"
 ];
 
 const quickSummaryRows = [
-  ["Condition Treated", "Osteoarthritis (Sandhivata) — knee, hip, spine, hands"],
+  ["Condition Treated", "Osteoarthritis (Sandhivata) � knee, hip, spine, hands"],
   ["Treatment Duration", "21–28 Days (recommended for full therapeutic benefit)"],
   ["Who It Is For", "Adults with mild to advanced osteoarthritis seeking natural, drug-free relief"],
   ["Core Approach", "Panchakarma detox + targeted joint therapies + herbal medicines"],
@@ -182,12 +185,12 @@ const benefits = {
 };
 
 const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/1.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/2.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/3.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/4.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/5.jpg",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-Osteoarthritis-India/6.jpg",
+  "/program-images/osteoarthritis-consultation.png",
+  "/program-images/osteoarthritis-kizhi.png",
+  "/program-images/osteoarthritis-yoga.png",
+  "/program-images/synchronized-therapy.png",
+  "/program-images/patient-recovery.png",
+  "/program-images/psoriasis-main.png",
 ];
 
 const chooseIndiaPoints = [
@@ -373,7 +376,12 @@ const faqItems = [
   { question: 'How long does it take to see results?', answer: 'Many patients notice reduced stiffness and improved sleep within the first 7–10 days. Significant pain relief and improved mobility are typically observed by week two. The most complete transformation develops fully over the 21–28 day program and continues to improve after returning home.' },
   { question: 'Will I be able to walk and move during the treatment program?', answer: 'Yes. The program is not bed-rest based. Light walking, gentle yoga, and moderate daily movement are actively encouraged from day one.' },
   { question: 'Can this program help me avoid knee replacement surgery?', answer: 'For many patients, yes. Surveys from leading Indian Ayurvedic centers report that a significant proportion of patients who undergo full structured programs avoid elective joint replacement surgery for extended periods.' },
-  { question: 'Do I need to stop my current medications before starting?', answer: 'No. You should never stop prescribed medications without guidance from your treating doctor at home. Your Ayurvedic physician will create a plan that works safely alongside them.' }
+  { question: 'Do I need to stop my current medications before starting?', answer: 'No. You should never stop prescribed medications without guidance from your treating doctor at home. Your Ayurvedic physician will create a plan that works safely alongside them.' },
+  { question: 'Is it safe for patients with high blood pressure or diabetes?', answer: 'Yes. These are common co-morbidities. Your Ayurvedic physician will monitor your vitals daily and adjust the oils and diet to ensure the treatment is safe for your cardiac and metabolic profile.' },
+  { question: 'What makes Janu Basti different from conventional physical therapy?', answer: 'While PT focuses on muscle strength, Janu Basti uses medicated oils to nourish the joint at a cellular level, improving synovial fluid quality and reducing bone-on-bone friction naturally.' },
+  { question: 'Will the weather in India affect my joint pain?', answer: 'Warm, dry weather is ideal for osteoarthritis. We recommend visiting centers in regions that avoid extreme cold or dampness during your stay to maximize the Vata-pacifying effects of the treatment.' },
+  { question: 'Can I travel alone with limited mobility?', answer: 'Yes. Most partner centers are fully equipped to assist patients with mobility issues. They provide wheelchair assistance and nursing staff to help you with daily routines during your recovery.' },
+  { question: 'Does international health insurance cover this treatment?', answer: 'Many premium insurers now cover "Alternative Medicine". While you typically pay upfront, the centers provide all necessary medical documentation and NABH accreditation certificates for your reimbursement claim.' }
 ];
 
 const patientReviews = [
@@ -1605,5 +1613,6 @@ const OsteoarthritisTreatment = () => {
 };
 
 export default OsteoarthritisTreatment;
+
 
 

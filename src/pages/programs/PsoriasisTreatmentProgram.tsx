@@ -7,475 +7,46 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
-  Activity,
   AlertTriangle,
-  ArrowRight,
-  Brain,
-  BedDouble,
-  CalendarCheck2,
   Calendar,
-  ClipboardCheck,
-  ClipboardList,
   ChevronLeft,
   ChevronRight,
   CircleCheck,
-  Droplet,
-  Globe2,
-  Headset,
-  Heart,
-  HeartPulse,
-  Leaf,
   MapPin,
-  Pill,
-  ReceiptIndianRupee,
-  Route,
-  Search,
-  ShieldCheck,
-  Sparkles,
   Star,
-  Quote,
-  Stethoscope,
-  Phone,
-  UserCog,
-  UserCheck,
-  UtensilsCrossed,
-  X,
   XCircle,
+  HeartPulse,
+  Brain,
+  Sparkles,
+  Phone,
+  ArrowRight,
+  ClipboardList,
+  X,
+  Search,
+  ClipboardCheck,
 } from "lucide-react";
 
-const galleryImages = [
-  "/Program Images/21-day-detox.png",
-  "/Program Images/detox_preparation.png",
-  "/Program Images/detox_core.png",
-  "/Program Images/14-day-retreat.png",
-  "/Program Images/28-day-healing.png",
-];
+import {
+  galleryImages,
+  quickSummaryRows,
+  quickSummaryMobileIcons,
+  therapies,
+  candidatePoints,
+  avoidPoints,
+  weekBreakdown,
+  benefits,
+  benefitsSectionImages,
+  costComparisonRows,
+  chooseIndiaPoints,
+  whyChooseUsPoints,
+  inclusionsRows,
+  faqItems,
+  topAyurvedicCenters,
+  patientReviews,
+  jumpSections,
+} from "./psoriasisTreatmentData";
 
-const quickSummaryRows = [
-  ["Program Name", "21-Day Panchakarma Detox and Rejuvenation"],
-  ["Duration", "21 Days / 20 Nights"],
-  ["Who It Is For", "Adults (25-65) seeking detox, chronic condition recovery, or wellness reset"],
-  ["Key Benefit", "Full body detox, mental clarity, chronic condition relief, anti-aging"],
-  ["Top Locations", "Kerala, Rishikesh, Goa"],
-  ["Average Cost", "$2,500 - $4,500 USD"],
-  ["Supervised By", "Qualified Ayurvedic Doctors (Vaidyas)"],
-  ["Includes", "Accommodation, meals, therapies, consultations, medicines"],
-];
-
-const quickSummaryMobileIcons = {
-  "Program Name": ClipboardCheck,
-  "Duration": Calendar,
-  "Who It Is For": UserCheck,
-  "Key Benefit": Sparkles,
-  "Top Locations": MapPin,
-  "Average Cost": ReceiptIndianRupee,
-  "Supervised By": Stethoscope,
-  "Includes": BedDouble,
-} as const;
-
-const therapies = [
-  {
-    title: "Vamana (Therapeutic Emesis)",
-    text: "Controlled cleansing of the upper digestive tract, used for chronic congestion, respiratory concerns, and select skin conditions.",
-    icon: Droplet,
-  },
-  {
-    title: "Virechana (Purgation Therapy)",
-    text: "Herbal cleansing of intestines and liver; commonly used for acidity, inflammation, and Pitta-dominant conditions.",
-    icon: Leaf,
-  },
-  {
-    title: "Basti (Medicated Enema)",
-    text: "Deep colon cleansing with herbal oils and decoctions, often used in Vata-related patterns like joint, nerve, or bowel issues.",
-    icon: Heart,
-  },
-  {
-    title: "Nasya (Nasal Therapy)",
-    text: "Medicated oils through the nostrils for sinus support, headache relief, and better upper-channel balance.",
-    icon: Sparkles,
-  },
-  {
-    title: "Raktamokshana (Blood Purification)",
-    text: "A selective therapy used in specific inflammatory and dermatological indications under physician supervision.",
-    icon: Stethoscope,
-  },
-  {
-    title: "Shirodhara (Mind-Body Reset)",
-    text: "A steady stream of warm medicated oil on the forehead to support deep relaxation, sleep quality, and nervous system calm.",
-    icon: Activity,
-  },
-];
-
-const candidatePoints = [
-  "Feel chronically tired despite sleeping well",
-  "Struggle with persistent stress, anxiety, or burnout",
-  "Have skin conditions like psoriasis, eczema, or acne not fully responsive to conventional care",
-  "Manage obesity, high cholesterol, or metabolic disorders",
-  "Experience frequent digestive issues such as bloating, acidity, or IBS",
-  "Want to prevent chronic disease and invest in long-term health",
-  "Are in midlife and want a full mind-body reset",
-  "Have tried modern treatment and want a holistic natural approach",
-];
-
-const avoidPoints = [
-  "Pregnant women",
-  "People who had major surgery in the last three months",
-  "People with active cancer or severe acute illness",
-  "Children under 16 without specific medical guidance",
-  "People with unmanaged serious mental health conditions",
-];
-
-const weekBreakdown = [
-  {
-    title: "Week 1 - Purva Karma (Preparation)",
-    duration: "Day 1-7",
-    focus: "Preparing the body for deep detox",
-    description:
-      "Daily Abhyanga, Swedana, personalized diet, and internal oleation are used to mobilize stored toxins and prepare elimination pathways.",
-    bullets: ["Snehana (oil massage)", "Swedana (herbal steam)", "Dietary adjustments", "Herbal medicines"],
-    image: "/Program Images/detox_preparation.png",
-  },
-  {
-    title: "Week 2 - Pradhana Karma (Core Detox)",
-    duration: "Day 8-14",
-    focus: "Active toxin elimination",
-    description:
-      "This is the core cleansing phase. Based on constitution and diagnosis, physicians prescribe Virechana, Basti, Nasya, and sometimes Vamana, plus supportive therapies.",
-    bullets: ["Virechana", "Basti", "Nasya or Vamana (as prescribed)", "Shirodhara and Abhyanga"],
-    image: "/Program Images/detox_core.png",
-  },
-  {
-    title: "Week 3 - Paschat Karma (Rejuvenation)",
-    duration: "Day 15-21",
-    focus: "Restoration and integration",
-    description:
-      "Rasayana care rebuilds strength and immunity. Yoga, meditation, and home-care planning help sustain benefits after travel.",
-    bullets: ["Rasayana therapies", "Rejuvenating oils", "Light restorative diet", "Yoga and meditation"],
-    image: "/Program Images/14-day-retreat.png",
-  },
-];
-
-const benefits = {
-  physical: [
-    "Deep cellular detoxification from tissues and organs",
-    "Improved digestion with lower bloating and acidity",
-    "Reduced inflammation and joint discomfort",
-    "Clearer skin in chronic dermatological patterns",
-    "Metabolic reset supporting healthy weight management",
-    "Stronger immunity and stable energy",
-  ],
-  mental: [
-    "Reduction in chronic stress and anxiety load",
-    "Better sleep quality from early stages",
-    "Improved clarity, focus, and emotional stability",
-    "Nervous system recovery support in burnout",
-    "More emotional resilience during daily work and family pressures",
-    "Better mind-body awareness that supports healthier lifestyle choices",
-  ],
-  longTerm: [
-    "Benefits often continue for months with compliance",
-    "Improved health behavior patterns post-program",
-    "Reduced dependence on some lifestyle medications under medical supervision",
-    "Visible vitality improvements in skin, hair, and energy",
-    "More stable digestion, sleep, and energy rhythms over time",
-    "Lower relapse risk when post-program diet and routine are followed",
-  ],
-};
-
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/panchkarma.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Ayurveda treatements .jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Basti (Medicated Enema.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Nasya (Nasal Therapy.jpg",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Raktamokshana (Blood Purification).webp",
-  "/Ayurvedic Programs/Images/21-Day-Panchakarma-Detox-Program-India/Icons/Shirodhara (Mind-Body Reset).jpg",
-];
-
-const chooseIndiaPoints = [
-  {
-    title: "Unmatched Authenticity",
-    text: "Ayurveda originates in India, with stronger treatment lineage, physician depth, and botanical access.",
-    icon: Sparkles,
-  },
-  {
-    title: "Medical Expertise",
-    text: "Top doctors hold accredited BAMS/MD Ayurveda qualifications with high-volume chronic care experience.",
-    icon: Stethoscope,
-  },
-  {
-    title: "Extraordinary Value",
-    text: "Program costs are typically 70-80% lower than many Western destinations for comparable durations.",
-    icon: ReceiptIndianRupee,
-  },
-  {
-    title: "Healing Environments",
-    text: "Many centers are designed for recovery in tropical or mountain ecosystems that support rest and routine.",
-    icon: Leaf,
-  },
-  {
-    title: "Integrated Wellness",
-    text: "Yoga, meditation, pranayama, and diet are usually embedded into treatment flow.",
-    icon: Activity,
-  },
-  {
-    title: "Better Post-Program Continuity",
-    text: "Many centers provide discharge protocols, diet plans, and remote follow-up to maintain results after travel.",
-    icon: ShieldCheck,
-  },
-];
-
-const whyChooseUsPoints = [
-  {
-    title: "Verified Medical Standards",
-    description: "Only partner centers with physician-led protocols, safety checks, and treatment quality validation.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "International Patient Expertise",
-    description: "Dedicated handling for travelers from 40+ countries with clear communication and planning support.",
-    icon: Globe2,
-  },
-  {
-    title: "Pre-Travel Doctor Consultation",
-    description: "Case pre-screening before booking helps shortlist the right center and treatment pathway.",
-    icon: CalendarCheck2,
-  },
-  {
-    title: "Complete Journey Support",
-    description: "From center selection to arrival coordination, transfers, and check-in flow management.",
-    icon: Route,
-  },
-  {
-    title: "During-Stay Assistance",
-    description: "On-ground guidance through your full 21-day protocol for smooth continuity and comfort.",
-    icon: Headset,
-  },
-  {
-    title: "Condition-Based Matching",
-    description: "Personalized center mapping based on health goals, budget, travel style, and recovery priorities.",
-    icon: UserCog,
-  },
-];
-
-const topAyurvedicCenters = [
-  {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by yoga, mindful routines, and sattvic nutrition.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
-  },
-  {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description:
-      "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement.",
-    rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
-  },
-  {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
-    rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
-  },
-  {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description:
-      "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
-    rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
-  },
-  {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
-    rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/kerala/somatheeram",
-  },
-  {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
-    rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
-  },
-  {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description:
-      "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
-    reviews: 280,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
-  },
-  {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.",
-    rating: 4.8,
-    reviews: 240,
-    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
-  },
-];
-
-const inclusionsRows = [
-  { label: "Accommodation", details: "Private room or suite for 20 nights (as per package tier)", icon: BedDouble },
-  { label: "Meals", details: "Three daily Ayurvedic meals personalized by constitution and treatment phase", icon: UtensilsCrossed },
-  { label: "Doctor Consultations", details: "Initial assessment plus daily or alternate-day physician review", icon: Stethoscope },
-  { label: "Daily Therapies", details: "Abhyanga, Shirodhara, Basti, Virechana, Kizhi, and others as prescribed", icon: Activity },
-  { label: "Ayurvedic Medicines", details: "Herbal medicines and medicated oils during stay", icon: Pill },
-  { label: "Yoga and Meditation", details: "Daily guided sessions integrated into the healing plan", icon: Brain },
-  { label: "Post-Program Support", details: "Diet guidance and continuity protocol for home", icon: ClipboardCheck },
-];
-
-const costComparisonRows = [
-  {
-    program: "21-Day Panchakarma Detox",
-    category: "Panchakarma Detox",
-    cost: "$2,500 - $4,500",
-    notes: "Highest demand, long stay, full package",
-  },
-];
-
-const faqItems = [
-  {
-    question: "Is Panchakarma safe for international visitors with no prior Ayurveda experience?",
-    answer: "Yes. The 21-day format is commonly used for first-time guests. A Vaidya assesses your case before prescribing therapy.",
-  },
-  {
-    question: "How much does a 21-day Panchakarma cost in India?",
-    answer: "Most reputable mid-range and premium programs are around $2,500 to $4,500 USD, while luxury options can exceed $6,000.",
-  },
-  {
-    question: "Is Panchakarma painful?",
-    answer: "Most therapies are relaxing. Some elimination days can feel physically intense, but this is usually temporary and supervised.",
-  },
-  {
-    question: "What is the best time of year to visit India for Panchakarma?",
-    answer: "October to March is generally preferred for climate comfort and high center availability, though many centers run year-round.",
-  },
-  {
-    question: "Can Panchakarma help with arthritis, psoriasis, or burnout?",
-    answer: "These are common reasons people choose a 21-day protocol. Suitability depends on your medical profile and physician assessment.",
-  },
-  {
-    question: "Do I need Hindi or prior Ayurveda knowledge?",
-    answer: "No. International centers usually provide English-speaking doctors, therapists, and coordinators.",
-  },
-  {
-    question: "How soon will I feel effects?",
-    answer: "Many people notice better sleep and calm in week one, with deeper physical shifts becoming clearer from days 10-14 onward.",
-  },
-  {
-    question: "Can I combine Panchakarma with travel in India?",
-    answer: "Keep travel minimal during treatment. It is better to explore before or after the clinical program.",
-  },
-  {
-    question: "Can I do this program while working remotely?",
-    answer: "We strongly advise against it. The program requires deep rest (Samyak Vishrama). Most days involve 2-3 hours of therapy plus rest, making it difficult to maintain a work schedule.",
-  },
-  {
-    question: "What is the post-program home routine like?",
-    answer: "You will receive a personalized discharge plan including specific herbs, a 30-day diet transition, and simple yoga to maintain the results achieved.",
-  },
-];
-
-const patientReviews = [
-  {
-    name: "Maximilian Vogt",
-    location: "Stuttgart, Germany",
-    condition: "Chronic fatigue and digestive recovery",
-    title: "21 Days That Undid Years of Damage - Worth Every Dollar.",
-    review:
-      "I enrolled in the 21-Day Panchakarma Detox after years of fatigue and digestive issues. Daily Vaidya consultations adjusted treatment to my response. By week three, I experienced full-body detox, better mental clarity, and visible reduction in inflammation.",
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: "Vivienne Lacroix",
-    location: "Paris, France",
-    condition: "Burnout recovery",
-    title: "Three Weeks in Kerala That Reversed Two Years of Burnout.",
-    review:
-      "The physician-supervised Panchakarma protocol addressed root causes of stress. Anti-aging therapies, prescribed detox diet, and consistent monitoring improved skin clarity and mental sharpness. Everything was structured and transparent.",
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: "Cormac Hennessy",
-    location: "Galway, Ireland",
-    condition: "Chronic condition wellness reset",
-    title: "The Most Structured and Effective Health Investment I Have Made.",
-    review:
-      "The 21-day format in Rishikesh was highly personalized and medically confident. Vaidya supervision, daily plans, medicines, and meals removed every obstacle and kept my focus entirely on healing and continuity.",
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: "Nora Steinberg",
-    location: "Zurich, Switzerland",
-    condition: "Mental clarity and recovery",
-    title: "Mental Clarity Returned by Week Two - I Had Forgotten That Feeling.",
-    review:
-      "I joined for brain fog and chronic recovery support. By day fourteen, clarity improved significantly. The team monitored progress daily and adjusted therapies carefully. The value compared to Europe was exceptional.",
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: "Graham Whitfield",
-    location: "Leeds, UK",
-    condition: "Energy and metabolic recovery",
-    title: "At 58, This Programme Gave Me Back Energy I Had Written Off.",
-    review:
-      "The program design matched my needs for long-term condition management. Over three weeks, my energy rose steadily and my routine became sustainable. The all-inclusive setup made logistics stress-free.",
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: "Astrid Magnusson",
-    location: "Oslo, Norway",
-    condition: "Complete rejuvenation",
-    title: "Kerala Ayurveda at Its Most Authentic - 21 Days of Renewal.",
-    review:
-      "Pulse diagnosis on day one and personalized sequencing made the process clear and purposeful. Mental clarity returned early, physical lightness followed, and the full package felt practical for international patients.",
-    rating: 5,
-    verified: true,
-  },
-];
-
-const PanchakarmaDetox21Day = () => {
+const PsoriasisTreatmentProgram = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -483,21 +54,9 @@ const PanchakarmaDetox21Day = () => {
   const [benefitsVisibleCards, setBenefitsVisibleCards] = useState(4);
   const [topCentersSlide, setTopCentersSlide] = useState(0);
   const [topCentersPerSlide, setTopCentersPerSlide] = useState(3);
-  const [topCentersMobileView, setTopCentersMobileView] = useState(false);
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
   const [currentReview, setCurrentReview] = useState(0);
-  const [reviewAutoPlay, setReviewAutoPlay] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
-
-  // Auto-rotate for main gallery disabled as per user request
-  /*
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSelectedImage((prev) => (prev + 1) % galleryImages.length);
-    }, 3200);
-    return () => clearInterval(timer);
-  }, []);
-  */
 
   useEffect(() => {
     const updateBenefitsVisibleCards = () => {
@@ -513,49 +72,26 @@ const PanchakarmaDetox21Day = () => {
     };
     updateBenefitsVisibleCards();
     window.addEventListener("resize", updateBenefitsVisibleCards);
-    return () => window.removeEventListener("resize", updateBenefitsVisibleCards);
-  }, []);
 
-  // Auto-rotate for benefits images disabled as per user request
-  /* 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setBenefitsImageIndex((prev) => (prev + 1) % benefitsSectionImages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
-  */
-
-  useEffect(() => {
     const updateTopCentersLayout = () => {
       if (window.innerWidth < 768) {
         setTopCentersPerSlide(1);
-        setTopCentersMobileView(true);
         return;
       }
       if (window.innerWidth < 1024) {
         setTopCentersPerSlide(2);
-        setTopCentersMobileView(false);
         return;
       }
       setTopCentersPerSlide(3);
-      setTopCentersMobileView(false);
     };
     updateTopCentersLayout();
     window.addEventListener("resize", updateTopCentersLayout);
-    return () => window.removeEventListener("resize", updateTopCentersLayout);
-  }, []);
 
-  // Auto-rotate for reviews disabled as per user request
-  /*
-  useEffect(() => {
-    if (!reviewAutoPlay) return;
-    const timer = setInterval(() => {
-      setCurrentReview((prev) => (prev + 1) % patientReviews.length);
-    }, 4800);
-    return () => clearInterval(timer);
-  }, [reviewAutoPlay]);
-  */
+    return () => {
+      window.removeEventListener("resize", updateBenefitsVisibleCards);
+      window.removeEventListener("resize", updateTopCentersLayout);
+    };
+  }, []);
 
   const goToPrevious = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
   const goToNext = () => setSelectedImage((prev) => (prev + 1) % galleryImages.length);
@@ -569,6 +105,7 @@ const PanchakarmaDetox21Day = () => {
       key: `${benefitsSectionImages[imageIndex]}-${benefitsImageIndex}-${idx}`,
     };
   });
+
   const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersPerSlide));
   const visibleTopCenters = topAyurvedicCenters.slice(
     topCentersSlide * topCentersPerSlide,
@@ -579,40 +116,15 @@ const PanchakarmaDetox21Day = () => {
     setTopCentersSlide((prev) => prev % topCentersTotalSlides);
   }, [topCentersTotalSlides]);
 
-  // Auto-rotate for top centers in mobile view disabled as per user request
-  /*
-  useEffect(() => {
-    if (!topCentersMobileView) return;
-    const timer = setInterval(() => {
-      setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
-    }, 3600);
-    return () => clearInterval(timer);
-  }, [topCentersMobileView, topCentersTotalSlides]);
-  */
-
   const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
   const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
+
   const toggleCenterDescription = (centerName: string) => {
     setExpandedCenterName((prev) => (prev === centerName ? null : centerName));
   };
+
   const goReviewPrevious = () => setCurrentReview((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
   const goReviewNext = () => setCurrentReview((prev) => (prev + 1) % patientReviews.length);
-
-  const jumpSections = [
-    { id: "gallery", title: "Gallery" },
-    { id: "quick-summary", title: "Quick Summary" },
-    { id: "program-overview", title: "Program Overview" },
-    { id: "week-breakdown", title: "Week-by-Week Breakdown" },
-    { id: "benefits", title: "Benefits" },
-    { id: "cost", title: "Cost in India" },
-    { id: "why-india", title: "Why Choose India" },
-    { id: "why-us", title: "Why Choose Us" },
-    { id: "inclusions", title: "Package Inclusions" },
-    { id: "consultation", title: "Book Consultation" },
-    { id: "faq", title: "FAQ" },
-    { id: "top-centers", title: "Top Centers" },
-    { id: "reviews", title: "Patient Reviews" },
-  ];
 
   const jumpToSection = (id: string) => {
     setIsJumpModalOpen(false);
@@ -632,22 +144,27 @@ const PanchakarmaDetox21Day = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Hero Section */}
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">21-Day Panchakarma Detox Program in India</h1>
-              <p className="text-lg md:text-xl text-white/90">Complete full body detox and rejuvenation with physician-led care.</p>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+                Ayurveda Treatment for Psoriasis in India
+              </h1>
+              <p className="text-lg md:text-xl text-white/90">
+                Deep clinical detoxification (Panchakarma) and blood purification to manage chronic psoriasis and restore skin health naturally.
+              </p>
               <div className="space-y-2.5">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Goa</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 Excellent Rating</span>
+                    <span>4.9/5 Excellent Skin Outcome</span>
                   </span>
                 </div>
               </div>
@@ -665,12 +182,13 @@ const PanchakarmaDetox21Day = () => {
       </section>
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
+        {/* 1. Program Gallery */}
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Treatment and Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Psoriasis Treatment in India</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src={galleryImages[selectedImage]} alt="Panchakarma program" className="w-full h-[260px] md:h-[460px] object-cover" />
+            <img src={galleryImages[selectedImage]} alt="Psoriasis treatment program" className="w-full h-[260px] md:h-[460px] object-cover" />
             <button
               onClick={goToPrevious}
               className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
@@ -688,6 +206,7 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
+        {/* 2. Quick Summary */}
         <section id="quick-summary" className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
           <Card className="border-[#d8d0ae] bg-white shadow-sm">
@@ -695,15 +214,15 @@ const PanchakarmaDetox21Day = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21 Days / 20 Nights</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21–28 Days</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Detox, Recovery, Reset</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Chronic Psoriasis</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">PAN India</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
@@ -747,16 +266,17 @@ const PanchakarmaDetox21Day = () => {
           </Card>
         </section>
 
+        {/* 3. Program Overview */}
         <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the 21-Day Panchakarma Detox Program?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Psoriasis?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  This program is a structured, physician-supervised Ayurvedic detox protocol designed for full-system cleansing, recovery, and rejuvenation. It is not a spa format; it is a clinical wellness process personalized by constitution and health condition. Panchakarma means "five actions" and refers to core elimination therapies used to remove deep toxic load (Ama), restore organ function, and improve long-term vitality.
+                  In Ayurveda, Psoriasis is primarily understood through conditions like <em>Kitibha</em> or <em>Mandalakustha</em>. It is classified as a 'Vatarakta' or skin disorder caused by the profound imbalance of Pitta and Vata doshas, leading to the accumulation of toxins (Ama) in the blood (Rakta) and skin (Twacha).
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  The 21-day format is widely used because it can complete the three classical stages: preparation, core elimination, and restoration.{" "}
+                  Our 21–28 day Psoriasis treatment program focuses on deep blood purification (Raktamokshana) and liver detoxification (Virechana). This dual approach clears stagnant toxins from the skin tissues, while specialized cooling therapies like Takradhara address the stress-skin connection, aiming for long-term remission without steroids.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -770,11 +290,12 @@ const PanchakarmaDetox21Day = () => {
             </Card>
           </div>
 
+          {/* 4. Core Ayurvedic Therapies */}
           <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
+              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Psoriasis</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
-                Not all five therapies are given to every guest. Your doctor prescribes the combination based on diagnosis and tolerance.
+                Your Vaidya prescribes the precise combination of these therapies based on your skin type, dosha constitution, and the severity of your psoriasis plaques.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {therapies.map((item) => {
@@ -801,6 +322,7 @@ const PanchakarmaDetox21Day = () => {
             </CardContent>
           </Card>
 
+          {/* 5 & 6. Who Is This For & Avoid */}
           <div className="grid lg:grid-cols-2 gap-8 items-stretch !mt-6 md:!mt-10">
             <Card className="h-full border-green-300 bg-white shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-6">
@@ -846,10 +368,11 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
+        {/* 7. Week Breakdown */}
         <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21-Day Program - Week-by-Week Breakdown</h2>
-            <p className="text-[#7F543D] mt-2">Preparation, elimination, and rejuvenation in one coherent physician-led journey.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21–28 Day Psoriasis Treatment — Week by Week</h2>
+            <p className="text-[#7F543D] mt-2">A highly structured clinical approach for deep skin repair and metabolic blood purification.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -884,6 +407,7 @@ const PanchakarmaDetox21Day = () => {
           </Accordion>
         </section>
 
+        {/* 8. Benefits */}
         <section id="benefits" className="scroll-mt-24 !mt-6 md:!mt-10">
           <div className="mb-7 md:mb-8">
             <div className="relative">
@@ -913,7 +437,7 @@ const PanchakarmaDetox21Day = () => {
                         <div className="bg-white rounded-xl p-2 shadow-sm border border-[#d6decf]">
                           <img
                             src={image}
-                            alt="Panchakarma benefits visual"
+                            alt="Psoriasis benefits visual"
                             className="w-full h-28 object-cover rounded-lg"
                             loading="lazy"
                           />
@@ -929,7 +453,7 @@ const PanchakarmaDetox21Day = () => {
                       <div key={image.key} className="rounded-xl bg-white p-2 shadow-lg border border-primary/10 hover:border-primary/30 transition-all">
                         <img
                           src={image.src}
-                          alt="Panchakarma benefits visual"
+                          alt="Psoriasis benefits visual"
                           className="w-full h-24 md:h-28 object-cover rounded-lg"
                           loading="lazy"
                         />
@@ -945,7 +469,6 @@ const PanchakarmaDetox21Day = () => {
                 <button
                   key={`benefits-dot-${idx}`}
                   onClick={() => setBenefitsImageIndex(idx)}
-                  aria-label={`Go to benefits image ${idx + 1}`}
                   className={`h-2.5 rounded-full transition-all ${idx === benefitsImageIndex ? "w-8 bg-[#335765]" : "w-2.5 bg-[#C7D1C9]"
                     }`}
                 />
@@ -953,7 +476,7 @@ const PanchakarmaDetox21Day = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of the 21-Day Panchakarma Detox</h2>
+          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of Ayurvedic Psoriasis Treatment</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
               <CardContent className="p-6">
@@ -997,11 +520,12 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
+        {/* 9. Cost */}
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765]">Cost of the 21-Day Panchakarma in India</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Cost of Ayurvedic Psoriasis Treatment in India</h2>
             <p className="mt-2 text-[#7F543D]">
-              Most guests choose this duration for a full detox cycle, physician supervision, and a complete stay package in India.
+              India offers world-class clinical skin care at a fraction of what equivalent biological or steroid-based therapies cost abroad.
             </p>
           </div>
 
@@ -1010,30 +534,30 @@ const PanchakarmaDetox21Day = () => {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">21 Days</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and rejuvenation timeline.</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">21–28 Days</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured skin cell turnover and blood detox timeline.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
                   <p className="mt-2 text-2xl font-bold text-[#335765]">$2,500 - $4,500</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Most popular range for reputable centers and full-stay plans.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">All-inclusive range for Reputed NABH-accredited skin clinics.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <div className="flex items-center justify-center gap-3 mb-2">
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
                       <Sparkles className="h-5 w-5 text-[#335765]" />
                     </div>
-                    <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
+                    <p className="text-xl md:text-2xl font-bold text-[#335765]">DISEASE-SPECIFIC</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Panchakarma and disease-focused recovery with accommodation and therapies.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Designed for chronic skin patients with a focus on blood detox.</p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
-                  <p className="font-semibold text-[#335765]">Most popular - Panchakarma </p>
+                  <p className="font-semibold text-[#335765]">Most popular - Disease-Specific Skin Program</p>
                   <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
-                    Highest demand package
+                    Highest success rate package
                   </span>
                 </div>
                 <div className="md:hidden p-3 space-y-2 bg-white">
@@ -1041,12 +565,7 @@ const PanchakarmaDetox21Day = () => {
                     <div key={row.program} className="rounded-xl border border-[#d8d0ae] p-3 bg-[#FFFEFA]">
                       <p className="text-[13px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">Program</p>
                       <p className="mt-1 text-sm text-[#7F543D] font-semibold break-words">{row.program}</p>
-
                       <div className="mt-3 grid grid-cols-1 gap-2">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Category</p>
-                          <p className="text-sm text-[#7F543D] font-semibold">{row.category}</p>
-                        </div>
                         <div>
                           <p className="text-xs uppercase tracking-[0.1em] text-[#335765] font-extrabold">Cost</p>
                           <p className="text-sm text-[#7F543D] font-semibold">{row.cost}</p>
@@ -1087,10 +606,11 @@ const PanchakarmaDetox21Day = () => {
           </Card>
         </section>
 
+        {/* 10. Why India */}
         <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Panchakarma?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Psoriasis Treatment?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 {chooseIndiaPoints.map((item) => {
                   const Icon = item.icon;
@@ -1111,21 +631,22 @@ const PanchakarmaDetox21Day = () => {
           </Card>
         </section>
 
+        {/* 11. Why Choose Us */}
         <section
           id="why-us"
           className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14 rounded-3xl p-6 md:p-10 border border-[#e0d9b7]"
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for 21 Day Panchakarma</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Your Treatment Journey</h2>
             <p className="text-[#7F543D]">
-              Not just booking support - structured guidance from pre-consultation to post-program continuity.
+              Complete clinical support for your skin healing journey, from medical assessment to post-program recovery.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Doctor-Screened Centers</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">40+ Countries Supported</span>
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">End-to-End Assistance</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Skin Specialist Centers</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Global Patient Care</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Doctor-Led shortlisting</span>
           </div>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
             {whyChooseUsPoints.map((point, idx) => {
@@ -1133,7 +654,7 @@ const PanchakarmaDetox21Day = () => {
               return (
                 <div
                   key={point.title}
-                  className="bg-white rounded-2xl p-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+                  className="bg-white rounded-2xl p-4 border border-[#d7dcca] shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
@@ -1148,48 +669,32 @@ const PanchakarmaDetox21Day = () => {
           </div>
         </section>
 
+        {/* 12. Inclusions */}
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the 21-Day Package?</h2>
-            <p className="text-[#7F543D]">Everything essential for a supervised detox, recovery, and continuity plan.</p>
+            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Psoriasis Package?</h2>
+            <p className="text-[#7F543D]">Everything essential for supervised skin healing and long-term remission.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">21 Days</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">20 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">20-27 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Led</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Supervised</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Diet</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Anti-Inflammatory</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Full Herbal Kit</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
             <CardContent className="p-3 md:p-0">
-              <div className="md:hidden grid gap-2">
-                {inclusionsRows.map((row) => {
-                  const Icon = row.icon;
-                  return (
-                    <div key={row.label} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
-                      <div className="flex items-center gap-2.5">
-                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                          <Icon className="h-4 w-4 text-[#335765]" />
-                        </span>
-                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row.label}</p>
-                      </div>
-                      <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{row.details}</p>
-                    </div>
-                  )
-                })}
-              </div>
-
               <div className="hidden md:block overflow-auto">
                 <table className="w-full text-sm min-w-[680px]">
                   <thead className="bg-[#F5F8F6] text-[#335765]">
@@ -1220,72 +725,68 @@ const PanchakarmaDetox21Day = () => {
               </div>
             </CardContent>
           </Card>
-          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
-            <div className="flex items-start gap-3">
-              <div className="mt-1 shrink-0">
-                <CircleCheck className="h-5 w-5 text-[#335765]" />
-              </div>
-              <div>
-                <p className="text-[#214348] font-bold">Important Notice</p>
-                <p className="text-sm text-[#335765] leading-relaxed mt-1">
-                  All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
-                </p>
-              </div>
-            </div>
-          </div>
         </section>
 
+        {/* 13. Consultation CTA */}
         <section id="consultation" className="scroll-mt-24 !mt-6 md:!mt-10 overflow-hidden bg-[#335765] rounded-3xl text-white shadow-2xl">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
-                src="/Program Images/21-day-detox.png"
-                alt="21-day Panchakarma consultation"
+                src="/Treatments-images/Psoriasis Treatment.jpg"
+                alt="Ayurvedic Psoriasis consultation"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your 21-Day Panchakarma Program</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Psoriasis Treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
-                Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
+                Begin with a medical review. We help you select the clinical center best suited for your psoriasis type and severity.
               </p>
               <div className="space-y-3 mt-4 max-w-xl">
                 <a
-                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%2021-day%20Panchakarma%20program."
+                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%20Psoriasis%20treatment%20program."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
-                  aria-label="WhatsApp Us Now"
                 >
-                  <span className="text-xs md:text-sm font-semibold leading-tight">WhatsApp Us Now</span>
+                  <span className="text-xs md:text-sm font-semibold leading-tight text-primary uppercase">WhatsApp Us Now</span>
                   <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
                 </a>
-                <Button className="w-full h-11 md:h-12 bg-[#D19A71] hover:bg-[#C18A61] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={() => setQuoteModalOpen(true)}>
-                  Get Free Consultation Here
+                <Button className="w-full h-11 md:h-12 bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={() => setQuoteModalOpen(true)}>
+                  Get Free Consultation
                 </Button>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="faq" className="scroll-mt-24 !mt-8 md:!mt-14">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
+        {/* 14. FAQ Section */}
+        <section id="faq" className="scroll-mt-24 !mt-6 md:!mt-10">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
+            <p className="text-[#7F543D] mt-2 font-medium">Common queries about Psoriasis Panchakarma in India.</p>
           </div>
-          <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
-            {faqItems.map((item, idx) => (
-              <AccordionItem key={item.question} value={`faq-${idx}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm overflow-hidden hover:border-primary/40 transition-all">
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#335765] hover:no-underline py-5 [&>svg]:text-orange-500">{item.question}</AccordionTrigger>
-                <AccordionContent className="text-[#7F543D] leading-relaxed pb-5 text-base md:text-[17px]">{item.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <div className="max-w-4xl mx-auto space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqItems.map((faq, idx) => (
+                <AccordionItem key={idx} value={`faq-${idx}`} className="border rounded-xl bg-white shadow-sm overflow-hidden">
+                  <AccordionTrigger className="px-6 py-4 text-left font-bold text-[#335765] hover:no-underline hover:bg-[#F8F4E7]/50 transition-all">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 py-4 text-[#7F543D] leading-relaxed border-t bg-[#F9FAF9]">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </section>
 
+        {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Skin Treatment</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -1497,7 +998,7 @@ const PanchakarmaDetox21Day = () => {
                   key={idx}
                   onClick={() => {
                     setCurrentReview(idx);
-                    setReviewAutoPlay(false);
+                    
                   }}
                   className={`transition-all rounded-full ${currentReview === idx
                       ? "w-8 h-3 bg-[#335765]"
@@ -1513,112 +1014,8 @@ const PanchakarmaDetox21Day = () => {
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
-      {/* Desktop Vertical BROWSE Button - matching SOUKYA design */}
-      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
-        <button
-          onClick={() => setIsJumpModalOpen(true)}
-          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
-        >
-          <span className="drop-shadow-sm">B</span>
-          <span className="drop-shadow-sm">R</span>
-          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
-          <span className="drop-shadow-sm">W</span>
-          <span className="drop-shadow-sm">S</span>
-          <span className="drop-shadow-sm">E</span>
-        </button>
-      </div>
-
-      {/* Mobile BROWSE button */}
-      <button
-        onClick={() => setIsJumpModalOpen(true)}
-        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Search size={18} className="-ml-1" />
-        <span>BROWSE</span>
-      </button>
-
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Phone size={18} className="-ml-1" />
-        <span className="hidden md:inline">GET FREE QUOTE</span>
-        <span className="md:hidden">QUOTE</span>
-      </button>
-
-      <div
-        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
-        onClick={() => setIsJumpModalOpen(false)}
-      >
-        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
-
-        <div
-          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-
-          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
-
-            <div className="flex justify-between items-start mb-3 relative z-10">
-              <div className="space-y-0.5">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="h-px w-6 bg-white/30" />
-                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
-                </div>
-                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
-                  Program Sections
-                </h2>
-              </div>
-              <button
-                onClick={() => setIsJumpModalOpen(false)}
-                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
-                title="Close Menu"
-              >
-                <X className="h-6 w-6 transition-transform" />
-              </button>
-            </div>
-
-            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
-              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
-              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
-                "Jump directly to any section in this program page."
-              </p>
-            </div>
-          </div>
-
-          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
-            {jumpSections.map((section, idx) => (
-              <button
-                key={section.id}
-                onClick={() => jumpToSection(section.id)}
-                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
-              >
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
-                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
-                      {(idx + 1).toString().padStart(2, "0")}
-                    </span>
-                  </div>
-                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
-                    {section.title}
-                  </span>
-                </div>
-
-                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
-                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
-                </div>
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
 
-export default PanchakarmaDetox21Day;
-
+export default PsoriasisTreatmentProgram;

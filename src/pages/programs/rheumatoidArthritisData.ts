@@ -6,21 +6,21 @@ import {
 } from "lucide-react";
 
 export const galleryImages = [
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/1.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/2.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/3.png",
-  "/Program Images/rheumatoid-arthritis.png",
-  "/Program Images/28-day-healing-abhyanga.png",
-  "/Program Images/28-day-healing-pizhichil.png",
+  "/program-images/ra-virechana-detox.png",
+  "/program-images/ra-joint-basti.png",
+  "/program-images/ra-shirodhara.png",
+  "/program-images/ra-abhyanga.png",
+  "/program-images/ra-recovery.png",
+  "/program-images/ra-lepa.png",
 ];
 
 export const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/4.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/5.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/6.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/7.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/8.png",
-  "/Ayurvedic Programs/Images/Ayurveda-Treatment-RA-India/9.png",
+  "/program-images/ra-virechana-detox.png",
+  "/program-images/ra-joint-basti.png",
+  "/program-images/ra-shirodhara.png",
+  "/program-images/ra-abhyanga.png",
+  "/program-images/ra-recovery.png",
+  "/program-images/ra-lepa.png",
 ];
 
 export const quickSummaryRows = [
@@ -198,6 +198,11 @@ export const faqItems = [
   { question: "How soon will I see results from the Ayurvedic RA treatment?", answer: "Most patients notice reduced morning stiffness and improved energy within the first 7–10 days. Significant pain relief and visible reduction in joint swelling are typically observed by week two. The most complete transformation — including measurable improvements in blood markers — develops over the full 21–28 day program and continues to improve for weeks after returning home." },
   { question: "Is this program suitable for seronegative rheumatoid arthritis?", answer: "Yes. Ayurvedic treatment does not depend solely on serological markers for diagnosis. The Vaidya uses Nadi Pariksha (pulse diagnosis) and comprehensive clinical assessment to identify the specific Amavata presentation — whether Vata-predominant, Kapha-predominant, or mixed — and designs a targeted protocol accordingly." },
   { question: "Can post-partum rheumatoid arthritis be treated with Ayurveda?", answer: "Yes, and this is one of the strongest applications. Conventional RA medications are often contraindicated during breastfeeding. Ayurvedic protocols offer a complete treatment pathway that is safe for lactating mothers, using herbal medicines and external therapies that do not affect breast milk. Several patients have achieved confirmed remission through this approach." },
+  { question: "Is Ayurvedic RA treatment safe for elderly patients with multiple health issues?", answer: "Yes, it is highly safe as it is non-invasive and holistic. The program is carefully modified based on the patient's 'Bala' (physical strength) and 'Vaya' (age). Elderly patients often receive gentler detox procedures and more nourishing (Brimhana) therapies to strengthen joints without causing exhaustion." },
+  { question: "What kind of diet will I follow during the RA treatment in India?", answer: "You will follow a strictly 'Pathya' (compatible) diet. This includes easily digestible warm foods like old Shali rice, green gram (moong dal), ginger, and specific vegetables. You will be asked to avoid 'Abhishyandi' foods like curd, cold drinks, heavy beans, and fermented items which are known to trigger inflammation in RA." },
+  { question: "Does international insurance cover Ayurvedic treatment in India?", answer: "Many international insurers now cover 'Alternative Medicine' or 'Holistic Health' treatments, especially at NABH-accredited centers. We recommend checking with your provider. While most centers operate on a pay-first basis, they provide all necessary medical documents, discharge summaries, and bills for your reimbursement claim." },
+  { question: "What happens if I experience a flare-up during the treatment?", answer: "Flare-ups are common in the early stages of RA detox as toxins are mobilized. Ayurvedic centers are clinical facilities where doctors are available to immediately apply 'Lepas' (herbal pastes) and local fomentations like 'Valuka Sweda' to quickly bring down the acute inflammation without the need for high-dose steroids." },
+  { question: "Can I continue my yoga and meditation practice after returning home?", answer: "Absolutely. A key part of the program is teaching you specific 'Sukshma Vyayama' (gentle joint movements) and 'Pranayama' (breathing techniques) that you must continue at home. This helps maintain the results achieved during the program and prevents the recurrence of 'Ama' (toxins)." },
 ];
 
 export const topAyurvedicCenters = [

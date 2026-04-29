@@ -544,44 +544,44 @@ const costComparisonRows = [
 const faqItems = [
   {
     question: "Why is 28 days considered the optimal Panchakarma duration for chronic conditions?",
-    answer:
-      "A 28-day program allows all three classical Panchakarma phases—Purvakarma preparation, Pradhana Karma core elimination, and Paschat Karma restoration—plus a dedicated Rasayana week. This fourth phase is what genuinely distinguishes a 28-day protocol from shorter formats.",
+    answer: "A 28-day program allows all three classical Panchakarma phases—Purvakarma preparation, Pradhana Karma core elimination, and Paschat Karma restoration—plus a dedicated Rasayana week. This fourth phase is what genuinely distinguishes a 28-day protocol from shorter formats."
   },
   {
     question: "How much does a 28-day Panchakarma Healing Program cost in India?",
-    answer:
-      "Well-supervised programs in Kerala or Rishikesh range from $3,500 to $6,000 USD for mid-range to premium centers. Luxury heritage retreats may exceed this. The cost typically includes accommodation, all meals, medicines, and physician consultations.",
+    answer: "Well-supervised programs in Kerala or Rishikesh range from $3,500 to $6,000 USD for mid-range to premium centers. Luxury heritage retreats may exceed this. The cost typically includes accommodation, all meals, medicines, and physician consultations."
   },
   {
     question: "What conditions respond particularly well to the 28-day format?",
-    answer:
-      "Autoimmune conditions, fibromyalgia, chronic IBS, metabolic syndrome, psoriasis, long-term burnout, and neurological conditions like neuropathy or chronic pain tend to show more significant outcomes in 28-day programs compared to shorter formats.",
+    answer: "Autoimmune conditions, fibromyalgia, chronic IBS, metabolic syndrome, psoriasis, long-term burnout, and neurological conditions like neuropathy or chronic pain tend to show more significant outcomes in 28-day programs compared to shorter formats."
   },
   {
     question: "Is it safe to undergo a 28-day Panchakarma without prior Ayurveda experience?",
-    answer:
-      "Yes. The program is medically supervised from day one. The physician assesses your baseline health and progressively introduces therapies based on your constitution and tolerance. No prior Ayurveda knowledge is required.",
+    answer: "Yes. The program is medically supervised from day one. The physician assesses your baseline health and progressively introduces therapies based on your constitution and tolerance. No prior Ayurveda knowledge is required."
   },
   {
     question: "What is the Rasayana week and why does it matter?",
-    answer:
-      "Rasayana refers to classical Ayurvedic rejuvenation protocols. Week four is dedicated to rebuilding deeper body tissues (Dhatus) using herbal formulations, nourishing oils, and supportive therapies. This phase significantly increases how long the detox results are sustained after you return home.",
+    answer: "Rasayana refers to classical Ayurvedic rejuvenation protocols. Week four is dedicated to rebuilding deeper body tissues (Dhatus) using herbal formulations, nourishing oils, and supportive therapies. This phase significantly increases how long the detox results are sustained after you return home."
   },
   {
     question: "What is the best time of year for a 28-day Panchakarma in India?",
-    answer:
-      "October through March is preferred for international visitors due to favorable climate and high center availability. However, Kerala centers often recommend the monsoon season (June–August) as traditionally considered the most effective period for Panchakarma.",
+    answer: "October through March is preferred for international visitors due to favorable climate and high center availability. However, Kerala centers often recommend the monsoon season (June–August) as traditionally considered the most effective period for Panchakarma."
   },
   {
     question: "How different is a 28-day program from a 21-day program?",
-    answer:
-      "The primary difference is the addition of a complete Rasayana (rejuvenation) week. In 21-day programs, restoration is partial. The 28-day format allows the body to fully recover from the elimination phase and receive deep tissue nourishment before discharge.",
+    answer: "The primary difference is the addition of a complete Rasayana (rejuvenation) week. In 21-day programs, restoration is partial. The 28-day format allows the body to fully recover from the elimination phase and receive deep tissue nourishment before discharge."
   },
   {
     question: "Can I reduce my dependency on medications through this program?",
-    answer:
-      "Some patients experience reduced medication requirements under physician supervision following a 28-day program, particularly for lifestyle-related conditions. This is always managed in coordination with your treating physician at home.",
+    answer: "Some patients experience reduced medication requirements under physician supervision following a 28-day program, particularly for lifestyle-related conditions. This is always managed in coordination with your treating physician at home."
   },
+  {
+    question: "Can my family members stay with me at the center?",
+    answer: "Yes, most residential centers allow a companion to stay in the same room. They can either follow a wellness program or just stay for the accommodation and healthy meals while you undergo clinical treatment."
+  },
+  {
+    question: "Is the food provided strictly vegetarian?",
+    answer: "Yes. Clinical Ayurvedic treatment requires a 'Sattvic' diet to be effective. This means the food is vegetarian, freshly prepared, and balanced for your constitution. Alcohol, caffeine, and non-vegetarian foods are strictly avoided during the program."
+  }
 ];
 
 const patientReviews = [

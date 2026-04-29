@@ -4,7 +4,7 @@ import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, Activity } from "lucide-react";
+import { Star } from "lucide-react";
 
 const PanchakarmaDetox = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -12,118 +12,122 @@ const PanchakarmaDetox = () => {
 
   const programs = [
     {
-      name: "21-Day Panchakarma Detox Program",
-      duration: "21 Days",
-      targetAudience: "Wellness tourists",
-      keyFocus: "Full body detox & rejuvenation",
+      name: "21-Day Panchakarma Detox Program in India",
       description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
       image: "/Program Images/21-day-detox.png",
       link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+      rating: 4.9,
+      reviews: 480,
+      tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
     },
     {
-      name: "28-Day Panchakarma Healing Program",
-      duration: "28 Days",
-      targetAudience: "Chronic disease patients",
-      keyFocus: "Deep cleansing & disease recovery",
+      name: "28-Day Panchakarma Healing Program in India",
       description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
       image: "/Program Images/28-day-healing.png",
       link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
+      rating: 4.9,
+      reviews: 320,
+      tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
     },
     {
-      name: "14-Day Panchakarma Detox Retreat",
-      duration: "14 Days",
-      targetAudience: "Wellness tourists",
-      keyFocus: "Short detox program",
+      name: "14-Day Panchakarma Detox Retreat in India",
       description: "A profound yet shorter detox experience to eliminate toxins and restore elemental balance. Perfect for wellness seekers looking to integrate brief yet highly effective Ayurvedic care into their vacation.",
       image: "/Program Images/14-day-retreat.png",
+      link: "/centers",
+      rating: 4.7,
+      reviews: 210,
+      tags: ["14 Days", "Wellness Retreat", "Metabolic Detox", "Quick Reset"]
     },
     {
-      name: "7-Day Ayurvedic Rejuvenation Program",
-      duration: "7 Days",
-      targetAudience: "First-time visitors",
-      keyFocus: "Introductory rejuvenation",
+      name: "7-Day Ayurvedic Rejuvenation Program in India",
       description: "An excellent introduction to Ayurveda for beginners. Focuses on gentle therapies, relaxing massages, and basic detox to help you experience the restorative power of natural healing.",
       image: "/Program Images/7-day-rejuvenation.png",
+      link: "/centers",
+      rating: 4.6,
+      reviews: 150,
+      tags: ["7 Days", "Intro to Ayurveda", "Gentle Detox", "Anti-Aging"]
     },
   ];
 
   return (
-    <div className="min-h-screen font-sans bg-gray-50 flex flex-col">
+    <div className="min-h-screen font-poppins bg-[#E5E7E2] flex flex-col">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-poppins">
+        <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
               Panchakarma Detox Programs in India
             </h1>
-            <p className="text-lg text-white/90 max-w-3xl">
-              Experience the ancient, deeply restorative science of Panchakarma.
-              Discover our carefully curated detoxification and healing programs designed to cleanse the body, balance the mind, and enhance longevity.
+            <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
+              Experience the ancient, deeply restorative science of Panchakarma. Discover our carefully curated detoxification and healing programs designed to cleanse the body, balance the mind, and enhance longevity in India's finest wellness centers.
             </p>
           </div>
         </section>
 
         {/* Programs Grid */}
-        <section className="container mx-auto px-4 py-16 pb-20">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="container mx-auto px-4 py-12 md:py-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
             {programs.map((program, index) => (
               <div
                 key={index}
-                className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col"
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full"
               >
-                {/* Image */}
-                <div className="w-full aspect-video overflow-hidden relative">
+                {/* Image Section */}
+                <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={program.image}
                     alt={program.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                 </div>
 
-                {/* Content */}
-                <div className="p-6 flex-grow flex flex-col">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-primary font-poppins line-clamp-2">
-                      {program.name}
-                    </h3>
-                  </div>
+                {/* Content Section */}
+                <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow text-left">
+                  <h3
+                    className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] md:min-h-[1.6rem] flex items-start"
+                  >
+                    {program.name}
+                  </h3>
 
-                  <p className="text-foreground text-sm mb-4 line-clamp-3">
-                    {program.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground">
-                      {program.duration}
-                    </span>
-                    <span className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground">
-                      {program.keyFocus}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center justify-between mt-auto mb-4 pb-4 border-b border-border">
-                    <div className="flex items-center gap-1 text-sm font-medium">
-                      <span className="text-muted-foreground mr-1">Ideal For:</span>
-                      <span className="text-foreground font-semibold">{program.targetAudience}</span>
+                  {/* Rating Row */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-1">
+                      <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                      <span className="text-xs font-black text-foreground">{program.rating}</span>
+                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      className="flex-1 font-semibold"
-                      onClick={() => navigate((program as any).link || '/centers')}
-                    >
-                      View Details
-                    </Button>
-                    <Button
-                      className="flex-1 font-semibold"
-                      onClick={() => setQuoteModalOpen(true)}
-                    >
-                      Get Quote
-                    </Button>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {program.tags.map((tag, tIdx) => (
+                      <span key={tIdx} className="bg-[#E5E7E2]/60 text-[#2C4E5A] text-[10px] font-bold px-2 py-0.5 rounded-full border border-primary/5">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-sm leading-relaxed md:leading-[1.5] text-foreground/80 mb-4">
+                    {program.description}
+                  </p>
+
+                  {/* Buttons Container */}
+                  <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button
+                        className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
+                        onClick={() => navigate(program.link || "/centers")}
+                      >
+                        View Details
+                      </Button>
+                      <Button
+                        onClick={() => setQuoteModalOpen(true)}
+                        className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm h-auto border-none"
+                      >
+                        Get Quote
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -133,7 +137,7 @@ const PanchakarmaDetox = () => {
       </main>
 
       <Footer />
-      <QuoteModal isOpen={quoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };
