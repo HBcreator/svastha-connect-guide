@@ -577,10 +577,10 @@ const MigraineTreatment = () => {
       </section>
 
       {/* Main Content Area */}
-      <main className="container mx-auto px-4 pt-10 md:pt-16 pb-6 md:pb-10 max-w-6xl space-y-16">
+      <main className="container mx-auto px-4 pt-4 md:pt-6 pb-6 md:pb-10 max-w-6xl space-y-8 md:space-y-12">
         
         {/* Quick Summary Section */}
-        <section id="quick-summary" className="scroll-mt-24 !mt-6 md:!mt-8 pt-0 pb-0">
+        <section id="quick-summary" className="scroll-mt-24 !mt-0 pt-0 pb-0">
           <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4 text-center">Quick Summary - Everything You Need to Know</h2>
           <Card className="border-[#d8d0ae] bg-white shadow-sm">
             <CardContent className="p-4 md:p-6 space-y-4">
@@ -1181,7 +1181,7 @@ const MigraineTreatment = () => {
         </section>
 
         {/* Top Ayurvedic Centers - EXACT PANCHAKARMA STYLE */}
-        <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
+        <section id="top-centers" className="scroll-mt-24 !mt-2 md:!mt-4 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Migraine</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for neurological treatments.</p>
@@ -1292,7 +1292,7 @@ const MigraineTreatment = () => {
         </section>
 
         {/* Patient Stories & Reviews - EXACT PANCHAKARMA STYLE */}
-        <section id="reviews" className="scroll-mt-24 pt-16 pb-16 md:pt-24 md:pb-24 bg-transparent w-full">
+        <section id="reviews" className="scroll-mt-24 pt-8 pb-16 md:pt-12 md:pb-24 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
               <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
