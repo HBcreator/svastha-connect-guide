@@ -56,6 +56,15 @@ const DiseaseSpecific = () => {
       reviews: 310,
       tags: ["14-21 Days", "Stress Relief", "Nasya Therapy", "Vata-Pitta"]
     },
+    {
+      name: "Ayurveda Treatment for Cervical Spondylosis in India",
+      description: "A specialized Ayurvedic clinical program for Cervical Spondylosis focusing on Griva Basti, Pizhichil, and therapeutic neck strengthening protocols. Designed to relieve nerve compression, reduce stiffness, and restore natural cervical spine alignment without surgical intervention.",
+      image: "/Program Images/cervical-spondylosis.png",
+      link: "/ayurvedic-programs/disease-specific/cervical-spondylosis-treatment-in-india",
+      rating: 4.8,
+      reviews: 340,
+      tags: ["14-21 Days", "Neck Health", "Griva Basti", "Spine Care"]
+    },
   ];
 
   return (

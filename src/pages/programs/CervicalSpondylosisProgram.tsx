@@ -14,414 +14,27 @@ import {
   Search, X, ClipboardList
 } from "lucide-react";
 
-const galleryImages = [
-  "/program-images/migraine-shirodhara.png",
-  "/program-images/migraine-nasya.png",
-  "/program-images/migraine-doctor.png",
-  "/program-images/migraine-lepa.png",
-  "/program-images/migraine-yoga.png",
-  "/program-images/migraine-diet.png",
-];
+import {
+  galleryImages,
+  quickSummaryRows,
+  quickSummaryMobileIcons,
+  therapies,
+  candidatePoints,
+  avoidPoints,
+  weekBreakdown,
+  benefits,
+  benefitsSectionImages,
+  costComparisonRows,
+  chooseIndiaPoints,
+  whyChooseUsPoints,
+  inclusionsRows,
+  faqItems,
+  topAyurvedicCenters,
+  patientReviews,
+  jumpSections,
+} from "./cervicalSpondylosisData";
 
-const quickSummaryRows = [
-  ["Program Name", "Ayurveda Treatment for Migraine & Chronic Headaches"],
-  ["Duration", "14 to 21 Days"],
-  ["Who It Is For", "Individuals suffering from chronic migraines, tension headaches, and severe aura."],
-  ["Key Benefit", "Reduces frequency and severity of migraines, balances nervous system."],
-  ["Top Locations", "Kerala, Rishikesh, Goa, Bangalore"],
-  ["Average Cost", "$2,500 - $4,500 USD"],
-  ["Supervised By", "Senior Ayurvedic Physicians"],
-  ["Includes", "Accommodation, meals, daily therapies, internal medicines, consultations"],
-];
-
-const quickSummaryMobileIcons = {
-  "Program Name": ClipboardCheck,
-  "Duration": Calendar,
-  "Who It Is For": UserCheck,
-  "Key Benefit": Sparkles,
-  "Top Locations": MapPin,
-  "Average Cost": ReceiptIndianRupee,
-  "Supervised By": Stethoscope,
-  "Includes": BedDouble,
-} as const;
-
-const therapies = [
-  {
-    title: "Virechana (Purgation Therapy)",
-    text: "The gold standard for Migraine. It detoxifies the liver and blood to eliminate aggravated Pitta (heat), the primary driver of vascular inflammation and throbbing pain.",
-    icon: Droplet,
-  },
-  {
-    title: "Shirodhara (Nervous System Reset)",
-    text: "A continuous flow of warm herbal oil on the forehead. It stabilizes the brain's electrical activity, calms the central nervous system, and reduces sensory sensitivity.",
-    icon: Activity,
-  },
-  {
-    title: "Nasya (Nasal Administration)",
-    text: "Medicated drops through the nostrils that reach the cranial area directly. It clears neurological channels, relieves sinus pressure, and strengthens the nervous system.",
-    icon: Sparkles,
-  },
-  {
-    title: "Basti (Medicated Enema)",
-    text: "Therapeutic cleansing that grounds Vata dosha in the gut. This prevents the 'upward' movement of nervous energy that triggers the onset of aura and severe headaches.",
-    icon: Heart,
-  },
-  {
-    title: "Vamana (Therapeutic Emesis)",
-    text: "Controlled elimination of upper-body toxins. Used for patients where migraines are triggered by chronic gastric congestion, acidity, or metabolic imbalances.",
-    icon: Leaf,
-  },
-  {
-    title: "Raktamokshana (Blood Purification)",
-    text: "A specialized therapy used for acute, high-intensity vascular migraines. It instantly reduces blood toxicity and pressure within the cranial vessels.",
-    icon: Stethoscope,
-  },
-];
-
-const packages = [
-  {
-    title: "14-Day Neurological Reset",
-    duration: "14 Days / 13 Nights",
-    description: "Ideal for patients with moderate migraines seeking significant reduction in frequency and intensity. Focuses on Shirodhara and basic detoxification.",
-    cost: "From $1,800 USD",
-    features: ["Daily Consultation", "Shirodhara & Nasya", "Ayurvedic Diet", "Basic Herbs"],
-  },
-  {
-    title: "21-Day Comprehensive Healing",
-    duration: "21 Days / 20 Nights",
-    description: "Recommended for chronic, severe migraines with aura. Includes full systemic detox (Panchakarma) to eliminate deep-seated vascular inflammation.",
-    cost: "From $2,800 USD",
-    features: ["Deep Detox (Virechana)", "Advanced Shirolepa", "Stress Management Yoga", "Long-term Herb Plan", "Post-care support"],
-    isPopular: true,
-  },
-];
-
-const candidatePoints = [
-  "Chronic migraine sufferers (15+ days/month) struggling with daily pain",
-  "Tension headache and cluster headache patients seeking non-synthetic relief",
-  "Individuals experiencing severe visual aura, light sensitivity, or vestibular migraines",
-  "Patients whose migraines are triggered by stress, hormonal cycles, or Pitta (heat) imbalance",
-  "People looking to safely reduce or eliminate dependency on synthetic painkillers",
-  "Individuals seeking a long-term neurological stabilization protocol through Ayurveda",
-];
-
-const avoidPoints = [
-  "Pregnant women (due to the intensive nature of detox therapies)",
-  "People with active brain tumors or intracranial bleeding",
-  "Individuals with severe acute neurological emergencies requiring ICU care",
-  "Children under 12 without specific pediatric Ayurvedic guidance",
-  "People with unmanaged serious mental health conditions",
-];
-
-const weekBreakdown = [
-  {
-    title: "Week 1 - Purva Karma (Preparation & Pitta Cooling)",
-    duration: "Day 1-7",
-    focus: "Calming the nervous system and cooling vascular heat",
-    description:
-      "The first week focuses on preparing the body for deep cleansing. We use cooling herbal applications and gentle oil therapies to reduce the immediate intensity of the migraine and stabilize the nervous system.",
-    bullets: ["Shirodhara with cooling oils", "Shirolepa (cooling herbal head pack)", "Abhyanga with Pitta-calming oils", "Pitta-pacifying diet & internal cooling herbs"],
-    image: "/program-images/migraine-lepa.png",
-  },
-  {
-    title: "Week 2 - Pradhana Karma (Core Detox & Vascular Cleansing)",
-    duration: "Day 8-14",
-    focus: "Removing root metabolic toxins (Ama) and Pitta",
-    description:
-      "This is the core elimination phase. Based on your physician's diagnosis, specialized therapies like Virechana and Nasya are performed to clear the vascular and cranial channels of deep-seated inflammation.",
-    bullets: ["Virechana (therapeutic purgation)", "Intensive Nasya therapy", "Shirovasti (medicated oil pooling on head)", "Daily physician monitoring"],
-    image: "/program-images/migraine-nasya.png",
-  },
-  {
-    title: "Week 3 - Paschat Karma (Neurological Stabilization & Rejuvenation)",
-    duration: "Day 15-21",
-    focus: "Strengthening nerves and preventing recurrence",
-    description:
-      "The final phase focuses on 'Rasayana' or rejuvenation. We stabilize the neurological gains made and provide you with a long-term plan to ensure migraines do not return.",
-    bullets: ["Rasayana (rejuvenating) formulations", "Therapeutic Meditation & Yoga for Migraine", "Customized long-term diet plan", "Post-care lifestyle training"],
-    image: "/program-images/migraine-yoga.png",
-  },
-];
-
-const benefits = {
-  physical: [
-    "Significant reduction in migraine frequency and intensity",
-    "Elimination of deep-seated vascular inflammation",
-    "Improved digestive fire (Agni) to prevent metabolic triggers",
-    "Relief from light and sound sensitivity (Photophobia/Phonophobia)",
-    "Reduced dependency on acute pain medications",
-  ],
-  mental: [
-    "Calming of the central nervous system (Prana Vata)",
-    "Better sleep quality and reduced insomnia",
-    "Enhanced mental clarity and focus after attacks",
-    "Reduction in stress and anxiety-related triggers",
-    "Improved emotional resilience and neurological stability",
-  ],
-  longTerm: [
-    "Stabilized neurological health and nerve strength",
-    "Sustainable lifestyle habits for long-term prevention",
-    "Improved overall vitality and energy levels",
-    "Reduced systemic heat (Pitta) preventing recurrence",
-    "Clearer skin and improved hormonal balance",
-  ],
-};
-
-const benefitsSectionImages = [
-  "/program-images/migraine-shirodhara.png",
-  "/program-images/migraine-nasya.png",
-  "/program-images/migraine-doctor.png",
-  "/program-images/migraine-lepa.png",
-  "/program-images/migraine-yoga.png",
-  "/program-images/migraine-diet.png",
-];
-
-const patientReviews = [
-  {
-    name: "Gudrun Steinhardt",
-    location: "Vienna, Austria",
-    condition: "Chronic migraines with aura",
-    rating: 5,
-    verified: true,
-    title: "My Migraine Frequency Has Reduced by Ninety Percent.",
-    review: "I had been managing chronic migraines with aura for fifteen years, with my Austrian neurologist having exhausted his preventive options. The Ayurvedic physician in India classified my condition as Ardhavabhedhaka and prescribed a program combining Shirodhara, Shirovasti, and Nasya. The Virechana purgation in week two cleared the excess Pitta driving the inflammation. Three months post-treatment, my episode frequency has reduced from five per month to less than one.",
-  },
-  {
-    name: "Caitlín Doherty",
-    location: "Galway, Ireland",
-    condition: "Chronic migraines (MIDAS score 42)",
-    rating: 5,
-    verified: true,
-    title: "My First Migraine-Free Week in Three Years.",
-    review: "Three years of chronic migraines had compressed my life significantly. My MIDAS disability score was 42 (severely disabling) upon arrival. The Shirodhara session on day four produced a neurological stillness I hadn't felt in years. The Nasya and Virechana protocols addressed the underlying Pitta-Vata imbalance, and my MIDAS score at departure was 11—a reduction my neurologist in Galway described as clinically significant.",
-  },
-  {
-    name: "Marguerite Collet",
-    location: "Strasbourg, France",
-    condition: "Hormonal migraines",
-    rating: 5,
-    verified: true,
-    title: "My Hormonal Migraines Were Resolved at the Root.",
-    review: "My menstrual migraines had been resistant to every prophylactic my French neurologist prescribed. The Ayurvedic physician in India identified the root as Pitta aggravation in the blood. The Virechana purgation cleared the blood toxicity directly, while Shatavari and Ashoka balanced my hormones. For the first time in four years, my menstrual cycle arrived without a migraine.",
-  },
-  {
-    name: "Tijs Van Leeuwen",
-    location: "Amsterdam, Netherlands",
-    condition: "Vata-Pitta Migraine",
-    rating: 5,
-    verified: true,
-    title: "The Aura Frequency and Attack Severity Have Both Transformed.",
-    review: "My migraine with visual aura produced weekly episodes. The physician explained how Vata was producing the aura, while Pitta was amplifying the headache. The Shirovasti therapy addressed the visual imbalance, reducing the aura frequency, while the Nasya treatment addressed the vascular component. Both aspects of my migraine have transformed to a severity I can manage without daily medication.",
-  },
-  {
-    name: "Ingebjørg Halvorsen",
-    location: "Trondheim, Norway",
-    condition: "MIDAS score 38",
-    rating: 5,
-    verified: true,
-    title: "My MIDAS Score Dropped From 38 to 6 in Just Twenty-One Days.",
-    review: "My neurologist used the MIDAS scale to track my condition, which confirmed severe disability. The Ayurvedic program of Shirodhara, Shirolepa (cooling herbal paste), and Nasya targeted my Prana Vata and Sadhaka Pitta simultaneously. The oral formulations addressed the gastric component of my migraine. My MIDAS score at departure was 6 (mild disability)—the lowest it has been in seven years.",
-  },
-];
-
-const costComparisonRows = [
-  {
-    program: "21-Day Migraine Treatment Protocol",
-    category: "Neurological/Disease Specific",
-    cost: "$2,500 - $4,500",
-    notes: "Intensive Shirodhara, Virechana & Shirolepa. Full stay included.",
-  },
-];
-
-const chooseIndiaPoints = [
-  {
-    title: "Authentic Clinical Lineage",
-    text: "Access to 5,000-year-old protocols specifically for 'Ardhavabhedhaka' (Migraine).",
-    icon: Stethoscope,
-  },
-  {
-    title: "Global Medical Hub",
-    text: "India is the world capital for authentic Ayurveda with certified clinical hospitals.",
-    icon: Globe2,
-  },
-  {
-    title: "Healing Climates",
-    text: "Therapeutic environments in Kerala and the Himalayas that naturally cool Pitta.",
-    icon: Leaf,
-  },
-  {
-    title: "Specialist Physicians",
-    text: "Senior doctors with decades of experience in chronic neurological cases.",
-    icon: UserCheck,
-  },
-  {
-    title: "Cost-Effective Care",
-    text: "Premium medical hospitality at a fraction of European or US costs.",
-    icon: ReceiptIndianRupee,
-  },
-  {
-    title: "Holistic Ecosystem",
-    text: "Full integration of diet, yoga, and meditation for long-term stabilization.",
-    icon: Sparkles,
-  },
-];
-
-const whyChooseUsPoints = [
-  {
-    title: "Verified Medical Standards",
-    description: "Only partner centers with physician-led protocols, safety checks, and treatment quality validation for neurological cases.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "International Patient Expertise",
-    description: "Dedicated handling for travelers from 40+ countries with clear clinical communication and logistical planning support.",
-    icon: Globe2,
-  },
-  {
-    title: "Pre-Travel Doctor Consultation",
-    description: "Case pre-screening before booking helps shortlist the right center and personalized clinical treatment pathway.",
-    icon: Calendar,
-  },
-  {
-    title: "Complete Journey Support",
-    description: "From center selection to arrival coordination, transfers, and clinical check-in flow management.",
-    icon: MapPin,
-  },
-  {
-    title: "During-Stay Assistance",
-    description: "On-ground guidance through your full protocol for smooth continuity and comfort.",
-    icon: Headset,
-  },
-  {
-    title: "Condition-Based Matching",
-    description: "Personalized center mapping based on your migraine type, budget, travel style, and recovery priorities.",
-    icon: UserCheck,
-  },
-];
-
-const jumpSections = [
-  { id: "overview", title: "Program Overview" },
-  { id: "science", title: "Panchakarma Science" },
-  { id: "who-is-it-for", title: "Who Is This For?" },
-  { id: "week-breakdown", title: "Weekly Breakdown" },
-  { id: "benefits", title: "Program Benefits" },
-  { id: "cost", title: "Pricing & Plans" },
-  { id: "why-india", title: "Why Choose India" },
-  { id: "why-us", title: "Why Choose Us" },
-  { id: "inclusions", title: "What's Included" },
-  { id: "faq", title: "FAQs" },
-  { id: "top-centers", title: "Top Centers" },
-  { id: "reviews", title: "Patient Reviews" },
-];
-
-const inclusionsRows = [
-  { label: "Quiet Accommodation", details: "Low-light optimized private rooms or suites designed to support neurological rest for 20 nights", icon: BedDouble },
-  { label: "Trigger-Free Meals", details: "Anti-inflammatory, Pitta-pacifying Ayurvedic diet designed to eliminate vascular migraine triggers", icon: UtensilsCrossed },
-  { label: "Neurological Reviews", details: "Initial neurological assessment plus regular physician reviews to track trigger reduction", icon: Stethoscope },
-  { label: "Migraine Protocols", details: "Intensive Shirodhara, Nasya, Shirovasti, and cooling Shirolepa (herbal head packs)", icon: Activity },
-  { label: "Vascular Stabilizers", details: "Internal herbal formulations and medicated oils targeted at neurological and vascular stability", icon: Pill },
-  { label: "Sensory Grounding", details: "Guided yoga and pranayama focused on Vagus nerve stimulation and stress-trigger management", icon: Brain },
-  { label: "Post-Care Continuity", details: "Personalized guide for managing environmental and dietary triggers after returning home", icon: ClipboardCheck },
-];
-
-const topCenters = [
-  {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. Exceptional for neurological recovery.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
-  },
-  {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description: "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga and meditation.",
-    rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shathayu",
-  },
-  {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description: "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing.",
-    rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
-  },
-  {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description: "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
-    rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
-  },
-  {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff.",
-    rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/kerala/somatheeram",
-  },
-  {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
-    rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
-  },
-  {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description: "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
-    reviews: 280,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
-  },
-  {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description: "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments.",
-    rating: 4.8,
-    reviews: 240,
-    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
-  },
-];
-
-const faqs = [
-  { question: "Can Ayurveda permanently cure migraines?", answer: "Ayurveda focuses on resolving the root metabolic and neurological imbalances (usually Vata and Pitta doshas) that trigger migraines. While we don't use the word 'cure' lightly, most patients experience a drastic, long-term reduction in the frequency and intensity of their migraines, often eliminating the need for daily pain medication." },
-  { question: "How long is the recommended treatment program?", answer: "For chronic migraines, a minimum of 14 days is recommended to allow the detox and neurological reset therapies (like Shirodhara) to take full effect. A 21-day program provides the most comprehensive, long-lasting results." },
-  { question: "What is Shirodhara and does it hurt?", answer: "Shirodhara involves gently pouring a continuous stream of warm, medicated oil over the forehead (the 'third eye' area). It is completely painless and actually profoundly relaxing. It works directly to soothe the central nervous system and relieve vascular tension." },
-  { question: "Is the diet very restrictive during the treatment?", answer: "The diet is an integral part of the medicine. It is typically a plant-based, easy-to-digest Ayurvedic diet customized to cool excess Pitta and ground Vata. While it restricts inflammatory foods like caffeine, alcohol, and processed sugars, it is highly nourishing and delicious." },
-  { question: "Can I stop my current migraine medications?", answer: "Do not stop your current medications abruptly. Our Ayurvedic physicians will review your medical history and manage an integrative approach. As your condition improves with the natural therapies, they will guide you on how to safely taper off synthetic medications." },
-  { question: "What causes migraines according to Ayurveda?", answer: "Ayurveda classifies migraines primarily as 'Ardhavabhedhaka'. It is typically caused by aggravated Vata dosha pushing Pitta (heat) into the subtle channels of the head and neck, resulting in inflammation, throbbing pain, and sensory sensitivity." },
-  { question: "Will I have treatments every day?", answer: "Yes, you will typically receive 1.5 to 2 hours of active therapy daily. This is often split into a morning session (like Abhyanga massage) and an afternoon session (like Nasya or Shirodhara), followed by rest." },
-  { question: "Is Nasya (nasal therapy) uncomfortable?", answer: "Nasya involves administering specific herbal oils or juices into the nasal passages. While it may feel slightly unfamiliar or tingly at first, it is highly effective for clearing sinus congestion and reducing pressure headaches. Our practitioners are very gentle." },
-  { question: "How much does a 14-day migraine program cost in India?", answer: "Costs vary depending on the luxury level of the center. A 14-day comprehensive program at a premium certified Ayurvedic hospital typically ranges from $1,800 to $2,800 USD, which includes accommodation, customized meals, daily doctor consultations, and all therapies." },
-  { question: "Will I get post-treatment support when I return home?", answer: "Yes. Before you leave, your physician will provide a detailed lifestyle, diet, and herbal medicine plan. Most of our partner centers also offer follow-up online consultations to ensure your healing journey continues seamlessly at home." }
-];
-
-const MigraineTreatment = () => {
+const CervicalSpondylosisProgram = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
@@ -434,7 +47,7 @@ const MigraineTreatment = () => {
   const prevReview = () => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
 
   const [topCentersPerSlide, setTopCentersPerSlide] = useState(3);
-  const topCentersTotalSlides = Math.max(1, Math.ceil(topCenters.length / topCentersPerSlide));
+  const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersPerSlide));
 
   useEffect(() => {
     const updateTopCentersLayout = () => {
@@ -453,7 +66,7 @@ const MigraineTreatment = () => {
     return () => window.removeEventListener("resize", updateTopCentersLayout);
   }, []);
 
-  const visibleTopCenters = topCenters.slice(
+  const visibleTopCenters = topAyurvedicCenters.slice(
     topCentersSlide * topCentersPerSlide,
     topCentersSlide * topCentersPerSlide + topCentersPerSlide
   );
@@ -468,7 +81,12 @@ const MigraineTreatment = () => {
   const jumpToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       setIsJumpModalOpen(false);
     }
   };
@@ -506,10 +124,10 @@ const MigraineTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Disease Specific Program</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Ayurveda Treatment for Migraine in India
+                Ayurveda Treatment for Cervical Spondylosis in India
               </h1>
               <p className="text-lg md:text-xl text-white/90">
-                A specialized clinical protocol designed to address the root neurological and vascular causes of chronic Migraine through authentic Ayurvedic therapies.
+                A specialized clinical protocol designed to address nerve compression, neck stiffness, and disc degeneration through authentic Ayurvedic therapies.
               </p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
@@ -543,7 +161,7 @@ const MigraineTreatment = () => {
             <div className="md:col-span-2 lg:col-span-2 h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-[#d8d0ae]/50">
               <img
                 src={galleryImages[0]}
-                alt="Ayurveda Migraine Treatment India"
+                alt="Ayurveda Cervical Spondylosis Treatment India"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -552,7 +170,7 @@ const MigraineTreatment = () => {
                 <div key={i} className="h-[142px] md:h-[242px] rounded-3xl overflow-hidden shadow-lg border border-[#d8d0ae]/50">
                   <img
                     src={img}
-                    alt={`Migraine Therapy ${i + 1}`}
+                    alt={`Cervical Spondylosis Therapy ${i + 1}`}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
@@ -567,7 +185,7 @@ const MigraineTreatment = () => {
               >
                 <img
                   src={img}
-                  alt={`Migraine Therapy ${i + 3}`}
+                  alt={`Cervical Spondylosis Therapy ${i + 3}`}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
@@ -591,15 +209,15 @@ const MigraineTreatment = () => {
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Migraine, Stress, Aura</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Neck Pain, Vertigo, Spondylosis</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Goa, Rishikesh</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$2,500 - $4,500</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$2,200 - $4,500</p>
                 </div>
               </div>
 
@@ -640,16 +258,16 @@ const MigraineTreatment = () => {
         </section>
 
         {/* Program Overview Section */}
-        <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
+        <section id="overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm border-[#d8d0ae]/60">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the Ayurveda Migraine Treatment Program?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the Cervical Spondylosis Program?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  This program is a clinical, physician-supervised Ayurvedic protocol specifically engineered to resolve the neurological and vascular imbalances that trigger chronic migraines. It is not a temporary relief session; it is a deep-reaching clinical process that addresses the root cause of the pain by cooling the blood (Pitta) and grounding the nervous system (Vata). The treatment integrates internal herbal formulations, intensive detoxification, and specialized external therapies to provide a life-changing reduction in migraine frequency and intensity.
+                  This program is a clinical, physician-supervised Ayurvedic protocol specifically engineered to resolve the structural and neurological imbalances causing Cervical Spondylosis. It is not a temporary relief massage; it is a deep-reaching clinical process that addresses the root cause of the pain by lubricating degenerated joints (Vata pacification) and relieving nerve compression. The treatment integrates internal herbal formulations, targeted joint therapies, and postural correction to provide a life-changing reduction in neck pain and radicular symptoms.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  The 14 to 21-day format is designed to allow the body to pass through the essential stages of preparation, detoxification, and neurological stabilization.{" "}
+                  The 14 to 21-day format is designed to allow the body to pass through the essential stages of preparation, structural decompression, and muscular stabilization.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -665,12 +283,12 @@ const MigraineTreatment = () => {
         </section>
 
         {/* Understanding Panchakarma - The Science Behind It */}
-        <section id="panchakarma-science" className="scroll-mt-24 !mt-6 md:!mt-10">
+        <section id="science" className="scroll-mt-24 !mt-6 md:!mt-10">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] rounded-3xl overflow-hidden">
             <CardContent className="p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science of Migraine Relief</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-3 text-center">The Science of Orthopedic Ayurvedic Relief</h2>
               <p className="text-[#7F543D] leading-relaxed mb-8 text-center max-w-3xl mx-auto font-medium">
-                Not all five therapies are given to every patient. Our senior physicians prescribe a personalized combination of these clinical protocols based on your specific migraine triggers and constitution.
+                Not all therapies are given to every patient. Our senior orthopedic physicians prescribe a personalized combination of these clinical protocols based on the severity of your disc degeneration and constitution.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {therapies.map((item) => {
@@ -702,7 +320,7 @@ const MigraineTreatment = () => {
         <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
             <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21-Day Program - Week-by-Week Breakdown</h2>
-            <p className="text-[#7F543D] mt-2">Preparation, elimination, and rejuvenation in one coherent physician-led journey.</p>
+            <p className="text-[#7F543D] mt-2">Pain relief, structural decompression, and muscular rejuvenation in one coherent physician-led journey.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -712,7 +330,7 @@ const MigraineTreatment = () => {
                 value={`week-${idx}`}
                 className="overflow-hidden bg-white rounded-xl px-4 md:px-6 border border-green-100 data-[state=open]:border-green-500 shadow-sm"
               >
-                <AccordionTrigger className="py-4 hover:no-underline [&>svg]:h-7 [&>svg]:w-7 [&>svg]:text-orange-500 [&>svg]:shrink-0">
+                <AccordionTrigger className="py-4 hover:no-underline [&>svg]:h-7 [&>svg]:w-7 [&>svg]:text-[#335765] [&>svg]:shrink-0">
                   <div className="text-left">
                     <p className="text-lg font-bold text-[#335765]">{week.title}</p>
                     <p className="text-sm text-[#8C765E]">{week.duration} - {week.focus}</p>
@@ -725,7 +343,7 @@ const MigraineTreatment = () => {
                     <ul className="space-y-2.5 text-sm text-[#7F543D]">
                       {week.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-2.5 leading-relaxed font-bold text-[#335765]">
-                          <CircleCheck className="h-4 w-4 mt-0.5 text-green-600 shrink-0" />
+                          <CircleCheck className="h-4 w-4 mt-0.5 text-[#335765] shrink-0" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -737,6 +355,7 @@ const MigraineTreatment = () => {
           </Accordion>
         </section>
 
+        {/* Who Is This For */}
         <section id="who-is-it-for" className="scroll-mt-24">
           <div className="grid lg:grid-cols-2 gap-8 items-stretch !mt-6 md:!mt-10">
             <Card className="h-full border-green-300 bg-white shadow-sm rounded-3xl overflow-hidden">
@@ -783,6 +402,7 @@ const MigraineTreatment = () => {
           </div>
         </section>
 
+        {/* Benefits Section */}
         <section id="benefits" className="scroll-mt-24 !mt-6 md:!mt-10">
           <div className="mb-7 md:mb-8">
             <div className="relative">
@@ -812,7 +432,7 @@ const MigraineTreatment = () => {
                         <div className="bg-white rounded-xl p-2 shadow-sm border border-[#d6decf]">
                           <img
                             src={image}
-                            alt="Migraine benefits visual"
+                            alt="Cervical Spondylosis benefits visual"
                             className="w-full h-28 object-cover rounded-lg"
                             loading="lazy"
                           />
@@ -828,7 +448,7 @@ const MigraineTreatment = () => {
                       <div key={image.key} className="rounded-xl bg-white p-2 shadow-lg border border-primary/10 hover:border-primary/30 transition-all">
                         <img
                           src={image.src}
-                          alt="Migraine benefits visual"
+                          alt="Cervical Spondylosis benefits visual"
                           className="w-full h-24 md:h-28 object-cover rounded-lg"
                           loading="lazy"
                         />
@@ -852,7 +472,7 @@ const MigraineTreatment = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of the Ayurveda Migraine Program</h2>
+          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of the Ayurveda Cervical Spondylosis Program</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
               <CardContent className="p-6">
@@ -896,11 +516,12 @@ const MigraineTreatment = () => {
           </div>
         </section>
 
+        {/* Pricing */}
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765]">Cost of the Ayurveda Migraine Treatment in India</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Cost of the Ayurveda Cervical Spondylosis Treatment in India</h2>
             <p className="mt-2 text-[#7F543D]">
-              A 21-day clinical program remains the gold standard for achieving long-term neurological stabilization and preventing migraine recurrence.
+              A 21-day clinical program remains the gold standard for achieving long-term structural stabilization and preventing recurrence of cervical symptoms.
             </p>
           </div>
 
@@ -910,7 +531,7 @@ const MigraineTreatment = () => {
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
                   <p className="mt-2 text-2xl font-bold text-[#335765]">21 Days</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and neurological reset timeline.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and spinal rejuvenation timeline.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
@@ -924,13 +545,13 @@ const MigraineTreatment = () => {
                     </div>
                     <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Clinical migraine protocols with expert physician supervision.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Clinical spondylosis protocols with expert orthopedic physician supervision.</p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
-                  <p className="font-semibold text-[#335765]">Most popular - Migraine Treatment</p>
+                  <p className="font-semibold text-[#335765]">Most popular - Cervical Spondylosis Treatment</p>
                   <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
                     Highest demand package
                   </span>
@@ -982,14 +603,27 @@ const MigraineTreatment = () => {
                   </table>
                 </div>
               </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 bg-[#F8F9FA] p-4 rounded-xl border border-[#d8d0ae]/30">
+                <div className="h-10 w-10 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                  <Stethoscope className="h-5 w-5 text-[#335765]" />
+                </div>
+                <p className="text-sm text-[#7F543D] font-medium leading-relaxed">
+                  <strong className="text-[#335765]">Important:</strong> Final cost depends on your MRI/X-ray reports, room category chosen, and duration recommended by our orthopedic panel.
+                </p>
+                <Button onClick={() => setQuoteModalOpen(true)} className="sm:ml-auto whitespace-nowrap bg-[#335765] hover:bg-[#335765]/90 text-white rounded-lg shadow-md transition-all">
+                  Get Detailed Quote
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </section>
 
+        {/* Why Choose India */}
         <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full rounded-3xl overflow-hidden">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Migraine Treatment?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Spondylosis Recovery?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 {chooseIndiaPoints.map((item) => {
                   const Icon = item.icon;
@@ -1010,13 +644,14 @@ const MigraineTreatment = () => {
           </Card>
         </section>
 
+        {/* Why Choose Us */}
         <section
           id="why-us"
           className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14 rounded-3xl p-6 md:p-10 border border-[#e0d9b7]"
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Migraine Recovery</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Spondylosis Recovery</h2>
             <p className="text-[#7F543D] font-medium">
               Not just booking support - we provide medical advocacy and structured guidance from your first consultation to post-program care.
             </p>
@@ -1027,30 +662,31 @@ const MigraineTreatment = () => {
             <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-bold text-[#335765] border border-[#d9cfaa]">Medical Concierge Services</span>
           </div>
           <div className="grid md:grid-cols-2 gap-4 mt-6">
-            {whyChooseUsPoints.map((point, idx) => {
-              const Icon = point.icon;
+            {whyChooseUsPoints.map((item, idx) => {
+              const Icon = item.icon;
               return (
                 <div
-                  key={point.title}
+                  key={item.title}
                   className="bg-white rounded-2xl p-4 border border-[#d7dcca] shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E9F6EF] ring-1 ring-green-200">
                       <Icon className="h-5 w-5 text-[#1E7A4D]" />
                     </span>
-                    <p className="text-sm font-bold text-[#335765]">{idx + 1}. {point.title}</p>
+                    <p className="text-sm font-bold text-[#335765]">{idx + 1}. {item.title}</p>
                   </div>
-                  <p className="text-sm leading-relaxed text-[#5C5E52] font-medium">{point.description}</p>
+                  <p className="text-sm leading-relaxed text-[#5C5E52] font-medium">{item.description}</p>
                 </div>
               )
             })}
           </div>
         </section>
 
+        {/* What's Included */}
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Migraine Recovery Package?</h2>
-            <p className="text-[#7F543D] font-medium">Everything essential for a supervised detox, recovery, and continuity plan.</p>
+            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Spondylosis Recovery Package?</h2>
+            <p className="text-[#7F543D] font-medium">Everything essential for a supervised structural repair, detox, and continuity plan.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
@@ -1063,11 +699,11 @@ const MigraineTreatment = () => {
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Spinal Care</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Supervised</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Orthopedic Panel</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2] rounded-3xl overflow-hidden bg-white">
@@ -1133,22 +769,23 @@ const MigraineTreatment = () => {
             </div>
           </div>
         </section>
-        {/* Final CTA moved here */}
+
+        {/* Final CTA */}
         <section className="w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white mt-12 md:mt-16">
           <div className="grid md:grid-cols-2">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
-              <img src="/program-images/migraine-doctor.png" alt="Migraine Ayurveda Consultation" className="w-full h-full object-cover" />
+              <img src="/program-images/consultation.png" alt="Cervical Spondylosis Ayurveda Consultation" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
               <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">
-                Book Your Migraine Ayurveda Treatment Program in India
+                Book Your Spondylosis Recovery Program in India
               </h2>
               <p className="text-sm md:text-base text-white/90 max-w-xl">
-                Start your journey towards a migraine-free life. Speak with our medical advisors to customize your healing protocol at India's top Ayurvedic centers.
+                Start your journey towards a pain-free life and restored mobility. Speak with our medical advisors to customize your healing protocol at India's top Ayurvedic centers.
               </p>
               <div className="space-y-3 max-w-xl">
-                <a href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20Migraine%20Treatment%20in%20India." target="_blank" rel="noreferrer" className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition">
+                <a href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20Cervical%20Spondylosis%20Treatment%20in%20India." target="_blank" rel="noreferrer" className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition">
                   <span className="text-xs md:text-sm font-semibold leading-tight">WhatsApp Us Now</span>
                   <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
                 </a>
@@ -1160,6 +797,10 @@ const MigraineTreatment = () => {
           </div>
         </section>
 
+
+
+
+
         {/* FAQs */}
         <section id="faq" className="scroll-mt-24 !mt-12 md:!mt-16">
           <div className="text-center mb-10">
@@ -1167,8 +808,8 @@ const MigraineTreatment = () => {
             <div className="w-24 h-1 bg-[#C68D6A] mx-auto mt-4 rounded-full opacity-60"></div>
           </div>
           <Accordion type="single" collapsible className="space-y-3 max-w-5xl mx-auto">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm overflow-hidden hover:border-primary/40 transition-all">
+            {faqItems.map((faq, index) => (
+              <AccordionItem key={index} value={`faq-${index}`} className="border border-[#d5dfd8] bg-white rounded-xl px-5 shadow-sm overflow-hidden hover:border-primary/40 transition-all">
                 <AccordionTrigger className="text-left text-lg font-semibold text-[#335765] hover:no-underline py-5 [&>svg]:text-orange-500">
                   {faq.question}
                 </AccordionTrigger>
@@ -1180,14 +821,14 @@ const MigraineTreatment = () => {
           </Accordion>
         </section>
 
-        {/* Top Ayurvedic Centers - EXACT PANCHAKARMA STYLE */}
-        <section id="top-centers" className="scroll-mt-24 !mt-2 md:!mt-4 space-y-8">
+        {/* Top Ayurvedic Centers */}
+        <section id="top-centers" className="scroll-mt-24 !mt-6 md:!mt-10 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Migraine</h2>
-            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for neurological treatments.</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Cervical Spondylosis in India</h2>
+            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for orthopedic and spinal rejuvenation.</p>
           </div>
           <div className="relative group flex items-center justify-center">
-            {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
+            {/* Navigation Arrows */}
             <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersPrevious}
@@ -1209,8 +850,8 @@ const MigraineTreatment = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
-                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
+                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full text-left">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
                     <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                       <img
                         src={center.image}
@@ -1220,9 +861,9 @@ const MigraineTreatment = () => {
                     </div>
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
-                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
+                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex">{center.name}</h3>
                       
-                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
+                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 overflow-hidden">
                         <div className="flex items-center gap-1.5 shrink min-w-0">
                           <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
                           <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
@@ -1233,7 +874,7 @@ const MigraineTreatment = () => {
                         </div>
                       </div>
 
-                      <div className="relative mb-3 flex-grow text-left">
+                      <div className="relative mb-3 flex-grow">
                         <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
                           {center.description}
                         </p>
@@ -1248,6 +889,7 @@ const MigraineTreatment = () => {
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
                           to={center.link}
+                          target="_blank"
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
@@ -1291,7 +933,7 @@ const MigraineTreatment = () => {
           </div>
         </section>
 
-        {/* Patient Stories & Reviews - EXACT PANCHAKARMA STYLE */}
+        {/* Patient Stories & Reviews */}
         <section id="reviews" className="scroll-mt-24 pt-8 pb-4 md:pt-12 md:pb-6 bg-transparent w-full">
           <div className="container mx-auto px-4 max-w-6xl text-left">
             <div className="text-center mb-6 md:mb-8 space-y-3">
@@ -1321,7 +963,7 @@ const MigraineTreatment = () => {
               </div>
 
               <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
-                <CardContent className="px-8 py-6 md:p-12 relative">
+                <CardContent className="px-8 py-6 md:p-12 relative text-left">
                   <div className="max-w-4xl mx-auto">
                     {/* SVG Quote Icon */}
                     <div className="text-[#335765]/20 mb-3 md:mb-4">
@@ -1335,7 +977,7 @@ const MigraineTreatment = () => {
                       <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4 leading-tight">
                         {patientReviews[currentReviewIndex].title}
                       </h3>
-                      <p className="text-[14px] md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                      <p className="text-[14px] md:text-xl leading-relaxed mb-4 md:mb-6 text-left" style={{ color: "#7F543D" }}>
                         "{patientReviews[currentReviewIndex].review}"
                       </p>
                     </div>
@@ -1357,7 +999,7 @@ const MigraineTreatment = () => {
                             </span>
                           )}
                         </div>
-                        <p className="text-[10px] md:text-sm leading-snug" style={{ color: "#7F543D" }}>
+                        <p className="text-[10px] md:text-sm leading-snug text-left" style={{ color: "#7F543D" }}>
                           {patientReviews[currentReviewIndex].location} {patientReviews[currentReviewIndex].condition && `- ${patientReviews[currentReviewIndex].condition}`}
                         </p>
                       </div>
@@ -1395,96 +1037,63 @@ const MigraineTreatment = () => {
             </div>
           </div>
         </section>
-
       </main>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Desktop Vertical BROWSE Button */}
-      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+      {/* Jump Sections Button */}
+      <div className="fixed bottom-6 left-4 md:left-6 z-40">
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+          className="bg-white text-[#335765] rounded-full p-3.5 md:py-3 md:px-5 shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 font-bold border border-[#d8d0ae]/60 group"
+          aria-label="Jump to section"
         >
-          <span className="drop-shadow-sm">B</span>
-          <span className="drop-shadow-sm">R</span>
-          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
-          <span className="drop-shadow-sm">W</span>
-          <span className="drop-shadow-sm">S</span>
-          <span className="drop-shadow-sm">E</span>
+          <ClipboardList className="h-5 w-5 text-[#D19A71]" />
+          <span className="hidden md:inline text-sm tracking-wide group-hover:text-[#D19A71] transition-colors">QUICK MENU</span>
         </button>
       </div>
 
-      {/* Mobile BROWSE button */}
-      <button
-        onClick={() => setIsJumpModalOpen(true)}
-        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Search size={18} className="-ml-1" />
-        <span>BROWSE</span>
-      </button>
-
-      <button
-        onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
-      >
-        <Phone size={18} className="-ml-1" />
-        <span className="hidden md:inline">GET FREE QUOTE</span>
-        <span className="md:hidden">QUOTE</span>
-      </button>
-
-      {/* Navigation Modal */}
-      <div
-        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
-        onClick={() => setIsJumpModalOpen(false)}
-      >
-        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
-        <div
-          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
-          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
-            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
-            <div className="flex justify-between items-start mb-3 relative z-10">
-              <div className="space-y-0.5">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="h-px w-6 bg-white/30" />
-                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
-                </div>
-                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Program Sections</h2>
+      {/* Jump Sections Modal */}
+      {isJumpModalOpen && (
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setIsJumpModalOpen(false)}>
+          <div className="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center justify-between p-5 border-b border-[#d8d0ae]/40 bg-[#F8F4E7]">
+              <h3 className="font-bold text-[#335765] text-lg flex items-center gap-2">
+                <ClipboardList className="h-5 w-5 text-[#D19A71]" /> Quick Navigation
+              </h3>
+              <button onClick={() => setIsJumpModalOpen(false)} className="text-[#7F543D] hover:text-[#335765] transition-colors bg-white rounded-full p-1 border border-[#d8d0ae]/60">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="p-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
+              <div className="grid grid-cols-1 gap-2">
+                {jumpSections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => jumpToSection(section.id)}
+                    className="flex items-center justify-between p-3.5 rounded-xl hover:bg-[#EDE8D0] text-left transition-colors group border border-transparent hover:border-[#d8d0ae]/60"
+                  >
+                    <span className="font-semibold text-[#335765] group-hover:text-[#D19A71] transition-colors">{section.title}</span>
+                    <ArrowRight className="h-4 w-4 text-[#7F543D] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ))}
               </div>
-              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50">
-                <X className="h-6 w-6" />
-              </button>
             </div>
-            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
-              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
-              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Jump directly to any section in this program page."</p>
-            </div>
-          </div>
-          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
-            {jumpSections.map((section, idx) => (
-              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl">
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
-                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span>
-                  </div>
-                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">{section.title}</span>
-                </div>
-                <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
-              </button>
-            ))}
           </div>
         </div>
-      </div>
+      )}
 
-
-
-
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-4 md:right-6 z-50 bg-[#C68D6A] text-white rounded-full p-3.5 md:py-3.5 md:px-6 shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 group"
+      >
+        <Phone className="h-5 w-5" />
+        <span className="hidden md:inline tracking-wide">GET FREE QUOTE</span>
+      </button>
     </div>
   );
 };
 
-export default MigraineTreatment;
+export default CervicalSpondylosisProgram;
