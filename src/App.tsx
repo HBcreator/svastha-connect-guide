@@ -120,6 +120,9 @@ import MigraineTreatment from "./pages/programs/MigraineTreatment";
 import CervicalSpondylosisProgram from "./pages/programs/CervicalSpondylosisProgram";
 import StressManagementAyurvedaRetreat from "./pages/programs/StressManagementAyurvedaRetreat";
 import BurnoutRecoveryProgram from "./pages/programs/BurnoutRecoveryProgram";
+import BeautyAndRejuvenation from "./pages/programs/BeautyAndRejuvenation";
+import SkinRejuvenation from "./pages/programs/SkinRejuvenation";
+import HairLoss from "./pages/programs/HairLoss";
 
 const queryClient = new QueryClient();
 
@@ -260,6 +263,10 @@ const App = () => (
             path="/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india"
             element={<PanchakarmaHealing28Day />}
           />
+          <Route path="/ayurvedic-programs/beauty-and-rejuvenation" element={<BeautyAndRejuvenation />} />
+          <Route path="/ayurvedic-programs/beauty-and-rejuvenation/skin-rejuvenation-treatment-in-india" element={<SkinRejuvenation />} />
+          <Route path="/ayurvedic-programs/beauty-and-rejuvenation/hair-loss-in-india" element={<HairLoss />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

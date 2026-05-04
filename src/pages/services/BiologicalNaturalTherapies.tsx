@@ -348,7 +348,6 @@ const BiologicalNaturalTherapies = () => {
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
-                value={`item-${index}`}
                 className="border border-[#d8d0ae]/60 rounded-2xl px-6 bg-white shadow-sm hover:shadow-md transition-all overflow-hidden"
               >
                 <AccordionTrigger className="text-left py-5 text-lg font-bold text-[#335765] hover:no-underline">
