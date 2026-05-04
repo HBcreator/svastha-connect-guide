@@ -120,9 +120,11 @@ import MigraineTreatment from "./pages/programs/MigraineTreatment";
 import CervicalSpondylosisProgram from "./pages/programs/CervicalSpondylosisProgram";
 import StressManagementAyurvedaRetreat from "./pages/programs/StressManagementAyurvedaRetreat";
 import BurnoutRecoveryProgram from "./pages/programs/BurnoutRecoveryProgram";
+import ImmunityBoostingDetox from "./pages/programs/ImmunityBoostingDetox";
 import BeautyAndRejuvenation from "./pages/programs/BeautyAndRejuvenation";
 import SkinRejuvenation from "./pages/programs/SkinRejuvenation";
 import HairLoss from "./pages/programs/HairLoss";
+import AyurvedicBeautyDetoxIndia from "./pages/programs/AyurvedicBeautyDetoxIndia";
 
 const queryClient = new QueryClient();
 
@@ -250,6 +252,7 @@ const App = () => (
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india" element={<AyurvedicWeightLossProgramIndia />} />
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/stress-management-ayurveda-retreat-in-india" element={<StressManagementAyurvedaRetreat />} />
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/burnout-recovery-program-in-india" element={<BurnoutRecoveryProgram />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness/immunity-boosting-detox-program-in-india" element={<ImmunityBoostingDetox />} />
           <Route
             path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"
             element={<PanchakarmaDetox21Day />}
@@ -266,6 +269,7 @@ const App = () => (
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation" element={<BeautyAndRejuvenation />} />
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation/skin-rejuvenation-treatment-in-india" element={<SkinRejuvenation />} />
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation/hair-loss-in-india" element={<HairLoss />} />
+          <Route path="/ayurvedic-programs/beauty-and-rejuvenation/ayurvedic-beauty-detox-retreat-in-india" element={<AyurvedicBeautyDetoxIndia />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

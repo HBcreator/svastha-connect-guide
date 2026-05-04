@@ -59,11 +59,11 @@ const faqs = [
 ] as const;
 
 const reviews = [
-  ["Marcus Thorne", "London, UK", "From Total Collapse to Strategic Clarity.", "I arrived in a state of chronic sympathetic nervous system dominance. After 21 days of Takradhara and physician-led rest, my sleep architecture completely restored. I returned to my MD role with a level of calm I hadn't felt in a decade."],
-  ["Elena Rossi", "Milan, Italy", "The Biological Reset Every Executive Needs.", "This isn't just about relaxation; it's about repair. The Vaidyas at SOUKYA identified my Pitta burnout markers immediately. The combination of specific oils, herbal decoctions, and forced silence was the most productive 14 days of my year."],
-  ["Jean-Pierre Dubois", "Paris, France", "A Profound Unplugging from the Corporate Matrix.", "The digital detox combined with Pizhichil (oil bath) therapies literally felt like washing away years of stress. The transition protocol I was given has helped me maintain boundaries and mental energy back in Paris."],
-  ["Sarah Jenkins", "New York, USA", "Finally, a Program that Understands Professional Exhaustion.", "The Kairali team's approach to burnout is clinical yet compassionate. They addressed my adrenal fatigue and digestive issues as one interconnected problem. I feel physically lighter and mentally sharper."],
-  ["Anders Nielsen", "Stockholm, Sweden", "A Necessary Intervention for Sustainable Performance.", "Somatheeram provided the perfect backdrop for my recovery. The rhythmic nature of the Ayurvedic day is exactly what a scattered executive mind needs. My blood pressure and cortisol levels improved remarkably."]
+  ["Marcus Thorne", "London, UK", "From Total Collapse to Strategic Clarity.", "I arrived in a state of chronic sympathetic nervous system dominance, unable to focus or disconnect from my role. After 21 days of Takradhara and physician-led clinical rest, my sleep architecture completely restored and my cognitive fog vanished. The program addressed the biological root of my exhaustion, not just the symptoms. I returned to my MD role in London with a level of strategic calm and mental endurance I hadn't felt in over a decade."],
+  ["Elena Rossi", "Milan, Italy", "The Biological Reset Every Executive Needs.", "This isn't just a wellness retreat; it's a necessary biological intervention for high-pressure careers. The Vaidyas identified my Pitta burnout markers immediately and customized a protocol of cooling oils, specialized herbs, and a strict digital sabbatical. The transformation in my nervous system was profound—I felt years of residual corporate stress literally melting away. I left feeling mentally sharp, physically lighter, and equipped with a sustainable toolkit for professional longevity."],
+  ["Jean-Pierre Dubois", "Paris, France", "A Profound Unplugging from the Corporate Matrix.", "The digital detox combined with intensive Pizhichil (oil bath) therapies provided the profound unplugging I desperately needed from the corporate matrix. Beyond the physical relaxation, the Ayurvedic transition protocol helped me rebuild my enteric nervous system and gut health. I now have the mental clarity to maintain firm boundaries and manage high-stakes decisions without the accompanying anxiety. It’s an essential reset for anyone in a leadership position."],
+  ["Sarah Jenkins", "New York, USA", "Finally, a Program that Understands Professional Exhaustion.", "The clinical team's approach to burnout is both scientific and deeply compassionate. They treated my adrenal fatigue and digestive shutdown as one interconnected neurological problem rather than isolated symptoms. After two weeks of personalized treatments and Sattvic nutrition, my energy levels stabilized and my chronic headaches disappeared. I feel more resilient than ever, with a renewed sense of purpose and the mental space to lead effectively."],
+  ["Anders Nielsen", "Stockholm, Sweden", "A Necessary Intervention for Sustainable Performance.", "The rhythmic nature of the Ayurvedic lifestyle was exactly the structure my scattered executive mind required to heal. Somatheeram provided a secluded sanctuary where the HPA-axis regulation could actually take place without external interference. My blood pressure and cortisol levels improved remarkably within just ten days. The doctors’ expertise in burnout-specific Ayurvedic medicine is world-class, making this the best investment I’ve made in my long-term career health."]
 ] as const;
 
 const centers = [
@@ -273,7 +273,7 @@ const CTA = ({ onQuote }: { onQuote: () => void }) => (
             <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
           </a>
           <Button className="w-full h-11 md:h-12 bg-[#D19A71] hover:bg-[#C18A61] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={onQuote}>
-            Request Private Consultation
+            Get Free Consultation
           </Button>
         </div>
       </div>
@@ -320,9 +320,9 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
   const visibleTopCenters = centers.slice(topCentersSlide, topCentersSlide + topCentersVisible);
 
   return (
-    <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
+    <section id="top-centers" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-6">
       <div className="text-center space-y-2 md:space-y-3 px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Recovery Centers for Executives</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Recovery Centers for Burnout Recovery in India</h2>
         <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked resorts with strict privacy and specialized burnout recovery protocols.</p>
       </div>
       
@@ -406,8 +406,7 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
         </div>
       </div>
 
-      <div className="space-y-6">
-        <div className="flex justify-center mt-4">
+      <div className="mt-4 flex justify-center">
           <Button
             className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
             onClick={() => window.open('/centers', "_blank")}
@@ -416,16 +415,15 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
-      </div>
     </section>
   );
 };
 
 const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: number) => void }) => (
-  <section id="reviews" className="scroll-mt-24 pt-8 pb-8 md:pt-10 md:pb-12 bg-transparent w-full">
+  <section id="reviews" className="scroll-mt-24 pt-2 pb-8 md:pt-4 md:pb-12 bg-transparent w-full">
     <div className="container mx-auto px-4 max-w-6xl text-left">
       <div className="text-center mb-6 md:mb-8 space-y-3">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Professional Recovery Stories</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
         <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from leaders who reclaimed their health and clarity</p>
       </div>
 
@@ -477,11 +475,11 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
                     <h4 className="text-base md:text-xl font-semibold text-[#335765]">
                       {reviews[review][0] as string}
                     </h4>
-                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                      &#10003; Verified Professional
+                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">
+                      &#10003; Verified
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-[#7F543D] mb-1">{reviews[review][1] as string}</p>
+                  <p className="text-xs md:text-sm mb-1" style={{ color: "#7F543D" }}>{reviews[review][1] as string}</p>
                   <div className="flex items-center gap-1 mt-1">
                     {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 md:h-4 md:w-4 fill-yellow-400 text-yellow-400" />)}
                     <span className="text-xs md:text-sm font-bold text-[#335765] ml-1">5.0</span>
@@ -929,15 +927,17 @@ const BurnoutRecoveryProgram = () => {
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80 font-semibold">Corporate Wellness Programs</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurvedic Burnout Recovery Program in India</h1>
               <p className="text-lg md:text-xl text-white/90 font-medium">A medical-grade 14 to 21-day neurological reset for high-performance professionals.</p>
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg">
-                <span className="inline-flex items-center gap-2.5 text-white font-medium">
-                  <MapPin className="h-5 w-5 text-sky-300" />
-                  <span>Premium India Retreats</span>
-                </span>
-                <span className="inline-flex items-center gap-2.5 text-white font-medium">
-                  <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span>Top Executive Rating</span>
-                </span>
+              <div className="space-y-2.5">
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
+                  <span className="inline-flex items-center gap-2.5 text-white">
+                    <MapPin className="h-5 w-5 text-sky-300" />
+                    <span>PAN India</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2.5 text-white">
+                    <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <span>4.9/5 Excellent Rating</span>
+                  </span>
+                </div>
               </div>
             </div>
             <div className="w-full md:w-[430px] lg:w-[520px] md:ml-auto md:justify-self-end md:translate-x-8 lg:translate-x-16">
@@ -945,7 +945,7 @@ const BurnoutRecoveryProgram = () => {
                 className="w-full h-12 rounded-xl bg-white text-[#335765] hover:bg-white/90 font-bold shadow-lg"
                 onClick={() => setQuoteModalOpen(true)}
               >
-                <Calendar className="mr-2 h-4 w-4" /> Request Private Consultation
+                <Calendar className="mr-2 h-4 w-4" /> Get Free Consultation
               </Button>
             </div>
           </div>
@@ -1005,34 +1005,108 @@ const BurnoutRecoveryProgram = () => {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Jump Modal */}
-      {isJumpModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl">
-            <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-[#335765] text-white">
-              <h3 className="text-xl font-bold">Browse Program Sections</h3>
-              <button onClick={() => setIsJumpModalOpen(false)} className="p-2 hover:bg-white/10 rounded-full transition-colors"><X className="h-6 w-6" /></button>
+      {/* Desktop Vertical BROWSE Button - matching SOUKYA design */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      {/* Mobile BROWSE button */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Phone size={18} className="-ml-1" />
+        <span className="hidden md:inline">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
+      </button>
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Program Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
             </div>
-            <div className="p-4 grid grid-cols-1 gap-2 max-h-[60vh] overflow-y-auto">
-              {jumpSections.map((s) => {
-                const SectionIcon = s.icon;
-                return (
-                  <button
-                    key={s.id}
-                    onClick={() => jumpToSection(s.id)}
-                    className="flex items-center gap-4 p-4 rounded-2xl hover:bg-[#F8F4E7] transition-all text-left group"
-                  >
-                    <div className="h-10 w-10 rounded-xl bg-[#EDE8D0] flex items-center justify-center text-[#335765] group-hover:bg-[#335765] group-hover:text-white transition-colors">
-                      <SectionIcon className="h-5 w-5" />
-                    </div>
-                    <span className="font-bold text-[#335765]">{s.title}</span>
-                  </button>
-                );
-              })}
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this program page."
+              </p>
             </div>
           </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
         </div>
-      )}
+      </div>
+
     </div>
   );
 };

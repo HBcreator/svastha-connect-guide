@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
@@ -33,7 +33,7 @@ const BeautyAndRejuvenation = () => {
       name: "Ayurvedic Beauty & Detox Retreat in India",
       description: "A comprehensive beauty and rejuvenation program that merges internal detoxification with external pampering. Includes whole-body Udvarthanam (herbal scrub), Pizhichil (oil bath), and specialized beauty rituals to cleanse the blood, tone the body, and refresh the spirit for a radiant transformation.",
       image: "/program-images/beauty-detox.png",
-      link: "/ayurvedic-programs/beauty-and-rejuvenation/beauty-detox",
+      link: "/ayurvedic-programs/beauty-and-rejuvenation/ayurvedic-beauty-detox-retreat-in-india",
       rating: 4.9,
       reviews: 188,
       tags: ["10-14 Days", "Full Body Detox", "Radiant Glow", "Anti-Aging"]
@@ -66,21 +66,23 @@ const BeautyAndRejuvenation = () => {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full"
               >
                 {/* Image Section */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
+                <Link to={program.link} className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden block">
                   <img
                     src={program.image}
                     alt={program.name}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
-                </div>
+                </Link>
 
                 {/* Content Section */}
                 <div className="p-3 sm:p-4 md:p-5 flex flex-col flex-grow text-left">
-                  <h3
-                    className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] md:min-h-[1.6rem] flex items-start"
-                  >
-                    {program.name}
-                  </h3>
+                  <Link to={program.link}>
+                    <h3
+                      className="text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] md:min-h-[1.6rem] flex items-start hover:text-[#FF7A28] transition-colors"
+                    >
+                      {program.name}
+                    </h3>
+                  </Link>
 
                   {/* Rating Row Only */}
                   <div className="flex items-center justify-between mb-3">
@@ -106,12 +108,12 @@ const BeautyAndRejuvenation = () => {
                   {/* Buttons Container */}
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
-                        onClick={() => navigate(program.link)}
+                      <Link 
+                        to={program.link}
+                        className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none flex items-center justify-center"
                       >
                         View Details
-                      </Button>
+                      </Link>
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm h-auto border-none"

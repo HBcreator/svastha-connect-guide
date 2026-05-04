@@ -566,7 +566,7 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
                     <h4 className="text-base md:text-xl font-semibold text-[#335765]">
                       {reviews[review][0] as string}
                     </h4>
-                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">
                       &#10003; Verified
                     </span>
                   </div>

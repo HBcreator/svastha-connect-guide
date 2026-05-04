@@ -44,9 +44,9 @@ import {
   topAyurvedicCenters,
   patientReviews,
   jumpSections,
-} from "./skinRejuvenationData";
+} from "./beautyDetoxData";
 
-const SkinRejuvenation = () => {
+const AyurvedicBeautyDetoxIndia = () => {
   const navigate = useNavigate();
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
@@ -147,16 +147,16 @@ const SkinRejuvenation = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-            {/* Hero Section - EXACT SCIATICA STYLE */}
-      <section className="bg-[#335765] text-white py-10 md:py-14">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
+      {/* Hero Section */}
+      <section className="bg-[#335765] text-white py-10 md:py-14 text-left">
+        <div className="container mx-auto px-4 max-w-6xl text-left">
+          <div className="grid md:grid-cols-2 gap-8 items-center text-left">
+            <div className="space-y-4 text-left">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurvedic Skin Rejuvenation Therapy in India</h1>
-              <p className="text-lg md:text-xl text-white/90">Restore your natural radiance with physician-led Ayurvedic care.</p>
-              <div className="space-y-2.5">
-                <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurvedic Beauty & Detox Retreat in India</h1>
+              <p className="text-lg md:text-xl text-white/90">Experience a total physical and aesthetic reset with clinical detoxification and royal rejuvenation.</p>
+              <div className="space-y-2.5 text-left">
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none text-left">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
                     <span>PAN India</span>
@@ -177,24 +177,24 @@ const SkinRejuvenation = () => {
         </div>
       </section>
 
-      <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
+      <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-12 md:space-y-16">
         {/* 1. Program Gallery */}
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Skin Rejuvenation in India</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Beauty & Detox in India</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src={galleryImages[selectedImage]} alt="Skin Rejuvenation treatment program" className="w-full h-[260px] md:h-[460px] object-cover" />
+            <img src={galleryImages[selectedImage]} alt="Beauty and detox program" className="w-full h-[260px] md:h-[460px] object-cover" />
             <button
               onClick={goToPrevious}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition hover:bg-white"
               aria-label="Previous image"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition hover:bg-white"
               aria-label="Next image"
             >
               <ChevronRight className="h-6 w-6" />
@@ -210,19 +210,19 @@ const SkinRejuvenation = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">7–14 Days</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">10–14 Days</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Skin Glow & Rejuvenation</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Beauty & Body Toning</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Bangalore, Goa</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$1,500 - $3,500</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$1,800 - $3,000</p>
                 </div>
               </div>
 
@@ -267,12 +267,12 @@ const SkinRejuvenation = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Skin Rejuvenation?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is the Ayurvedic Beauty & Detox Retreat?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  In Ayurveda, Skin Rejuvenation is primarily understood through conditions like <em>Kitibha</em> or <em>Mandalakustha</em>. It is classified as a 'Vatarakta' or skin disorder caused by the profound imbalance of Pitta and Vata doshas, leading to the accumulation of toxins (Ama) in the blood (Rakta) and skin (Twacha).
+                  In Ayurveda, true beauty (<em>Shubhanga</em>) is the reflection of pristine internal health. It is not merely skin deep; it is the result of purified blood (Rakta), a balanced liver (Yakrit), and an abundance of 'Ojas'—the vital radiant energy of the body. When Pitta and Vata doshas fall out of balance, toxins (Ama) accumulate, leading to dullness, premature aging, and loss of tone.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  Our 7–14 day Skin Rejuvenation treatment program focuses on deep detoxification and cellular nourishment. This dual approach clears stagnant toxins from the skin tissues, while specialized cooling therapies like Takradhara address the stress-skin connection, aiming for long-term radiance.{" "}
+                  Our 10–14 day Beauty & Detox retreat combines profound biological detoxification with royal external rituals. This dual methodology clears stagnant metabolic waste while specialized therapies like Navara Mukhabhyanga lift and nourish facial muscles, aiming for a luminous and lasting transformation.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -280,18 +280,18 @@ const SkinRejuvenation = () => {
                   >
                     CONTACT
                   </button>{" "}
-                  Svastha Global to connect with the best of authentic <span className="italic">Ayurveda</span> in India.
+                  Svastha Global to connect with the most authentic beauty and rejuvenation sanctuaries in India.
                 </p>
               </CardContent>
             </Card>
           </div>
 
           {/* 4. Core Ayurvedic Therapies */}
-          <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
+          <Card id="therapy-section" className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Skin Rejuvenation</h2>
+              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Beauty & Detox</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
-                Your Vaidya prescribes the precise combination of these therapies based on your skin type, dosha constitution, and the severity of your skin rejuvenation plaques.
+                Your Vaidya prescribes a precise combination of these royal therapies based on your skin type, dosha constitution, and wellness goals.
               </p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {therapies.map((item) => {
@@ -367,8 +367,8 @@ const SkinRejuvenation = () => {
         {/* 7. Week Breakdown */}
         <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Skin Rejuvenation — Step by Step</h2>
-            <p className="text-[#7F543D] mt-2">A highly structured clinical approach for deep skin repair and cellular rejuvenation.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Beauty & Detox — Step by Step</h2>
+            <p className="text-[#7F543D] mt-2">A structured clinical path from deep detox to aesthetic radiance.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -433,7 +433,7 @@ const SkinRejuvenation = () => {
                         <div className="bg-white rounded-xl p-2 shadow-sm border border-[#d6decf]">
                           <img
                             src={image}
-                            alt="Skin Rejuvenation benefits visual"
+                            alt="Beauty and Detox benefits visual"
                             className="w-full h-28 object-cover rounded-lg"
                             loading="lazy"
                           />
@@ -449,7 +449,7 @@ const SkinRejuvenation = () => {
                       <div key={image.key} className="rounded-xl bg-white p-2 shadow-lg border border-primary/10 hover:border-primary/30 transition-all">
                         <img
                           src={image.src}
-                          alt="Skin Rejuvenation benefits visual"
+                          alt="Beauty and Detox benefits visual"
                           className="w-full h-24 md:h-28 object-cover rounded-lg"
                           loading="lazy"
                         />
@@ -472,7 +472,7 @@ const SkinRejuvenation = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of Ayurvedic Skin Rejuvenation</h2>
+          <h2 className="text-3xl font-bold text-[#335765] mb-6 text-center">Benefits of Ayurvedic Beauty & Detox</h2>
           <div className="grid md:grid-cols-3 gap-5">
             <Card className="bg-[#F9FAF9] border-none hover:shadow-lg transition">
               <CardContent className="p-6">
@@ -519,9 +519,9 @@ const SkinRejuvenation = () => {
         {/* 9. Cost */}
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765]">Cost of Ayurvedic Skin Rejuvenation in India</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Cost of Ayurvedic Beauty & Detox in India</h2>
             <p className="mt-2 text-[#7F543D]">
-              India offers world-class clinical skin care at a fraction of what equivalent biological or steroid-based therapies cost abroad.
+              Premium Ayurvedic beauty retreats offer clinical-grade rejuvenation at a fraction of the cost of international medical-spas.
             </p>
           </div>
 
@@ -530,28 +530,28 @@ const SkinRejuvenation = () => {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">7–14 Days</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured skin cell turnover and blood detox timeline.</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">10–14 Days</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Structured internal detox and aesthetic timeline.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">$1,500 - $3,500</p>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">All-inclusive range for Reputed NABH-accredited skin clinics.</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">$1,800 - $3,000</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">All-inclusive range for premium NABH-accredited retreats.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <div className="flex items-center justify-center gap-3 mb-2">
                     <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#d9cfae] shrink-0">
                       <Sparkles className="h-5 w-5 text-[#335765]" />
                     </div>
-                    <p className="text-xl md:text-2xl font-bold text-[#335765]">DISEASE-SPECIFIC</p>
+                    <p className="text-xl md:text-2xl font-bold text-[#335765]">MOST POPULAR</p>
                   </div>
-                  <p className="mt-1 text-sm text-[#6F6B5C]">Designed for chronic skin patients with a focus on blood detox.</p>
+                  <p className="mt-1 text-sm text-[#6F6B5C]">Physician-Led holistic anti-aging care.</p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-[#d9cfae] overflow-hidden">
                 <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 bg-[#EFE8CB] px-4 py-3 text-center sm:text-left">
-                  <p className="font-semibold text-[#335765]">Most popular - Disease-Specific Skin Program</p>
+                  <p className="font-semibold text-[#335765]">Most popular - Intensive Beauty Retreat Program</p>
                   <span className="inline-flex items-center rounded-full bg-orange-500 px-3 py-1 text-sm font-semibold text-white">
                     Highest success rate package
                   </span>
@@ -581,7 +581,7 @@ const SkinRejuvenation = () => {
                       <tr>
                         <th className="text-left p-3 font-semibold">Program</th>
                         <th className="text-left p-3 font-semibold">Category</th>
-                        <th className="text-left p-3 font-semibold">Cost</th>
+                        <th className="text-left p-3 font-semibold">Cost Range</th>
                         <th className="text-left p-3 font-semibold">Notes</th>
                       </tr>
                     </thead>
@@ -606,7 +606,7 @@ const SkinRejuvenation = () => {
         <section id="why-india" className="scroll-mt-24 !mt-6 md:!mt-10 mb-10 md:mb-14">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] w-full">
             <CardContent className="p-6 md:p-8 space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Skin Rejuvenation?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] text-center">Why Choose India for Beauty & Detox?</h2>
               <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
                 {chooseIndiaPoints.map((item) => {
                   const Icon = item.icon;
@@ -636,11 +636,11 @@ const SkinRejuvenation = () => {
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Your Treatment Journey</h2>
             <p className="text-[#7F543D]">
-              Complete clinical support for your skin healing journey, from medical assessment to post-program recovery.
+              Complete clinical support for your beauty healing journey, from medical assessment to post-program maintenance.
             </p>
           </div>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Skin Specialist Centers</span>
+            <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Elite Wellness Centers</span>
             <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Global Patient Care</span>
             <span className="inline-flex items-center rounded-full bg-white/80 px-3 py-1 text-xs font-semibold text-[#335765] border border-[#d9cfaa]">Doctor-Led shortlisting</span>
           </div>
@@ -668,13 +668,13 @@ const SkinRejuvenation = () => {
         {/* 12. Inclusions */}
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Skin Rejuvenation Package?</h2>
-            <p className="text-[#7F543D]">Everything essential for supervised skin healing and long-term remission.</p>
+            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Beauty & Detox Package?</h2>
+            <p className="text-[#7F543D]">Everything essential for a complete inside-out aesthetic transformation.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">7-14 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">10-14 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care</p>
@@ -682,7 +682,7 @@ const SkinRejuvenation = () => {
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Diet</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Anti-Inflammatory</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Detox Nutrition</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
@@ -728,20 +728,20 @@ const SkinRejuvenation = () => {
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
-                src="/program-images/skin-rejuvenation.png"
-                alt="Ayurvedic Skin Rejuvenation consultation"
+                src="/program-images/beauty/1.png"
+                alt="Ayurvedic Beauty & Detox consultation"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Skin Rejuvenation Program in India</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Beauty & Detox Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
-                Begin with a medical review. We help you select the clinical center best suited for your skin rejuvenation type and severity.
+                Begin with a medical review. We help you select the clinical center best suited for your beauty and detox goals.
               </p>
               <div className="space-y-3 mt-4 max-w-xl">
                 <a
-                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%20Skin Rejuvenation%20treatment%20program."
+                  href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%20Beauty%20and%20Detox%20treatment%20program."
                   target="_blank"
                   rel="noreferrer"
                   className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
@@ -761,7 +761,7 @@ const SkinRejuvenation = () => {
         <section id="faq" className="scroll-mt-24 !mt-6 md:!mt-10">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Frequently Asked Questions</h2>
-            <p className="text-[#7F543D] mt-2 font-medium">Common queries about Skin Rejuvenation Panchakarma in India.</p>
+            <p className="text-[#7F543D] mt-2 font-medium">Common queries about Beauty & Detox Panchakarma in India.</p>
           </div>
           <div className="max-w-4xl mx-auto space-y-4">
             <Accordion type="single" collapsible className="w-full space-y-4">
@@ -782,71 +782,71 @@ const SkinRejuvenation = () => {
         {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Skin Treatment in India</h2>
-            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and resorts with specialized care for 7–14 day rejuvenation programs.</p>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Beauty & Detox in India</h2>
+            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and resorts with specialized care for 10–14 day rejuvenation programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
             {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
-            <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute left-0 md:-left-12 z-30 top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersPrevious}
-                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                className="bg-white/90 hover:bg-white text-[#335765] p-2 md:p-3 rounded-full shadow-xl transition-all border-2 border-[#335765] active:scale-95"
                 aria-label="Previous centers"
               >
-                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
               </button>
             </div>
-            <div className="absolute right-2 md:-right-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute right-0 md:-right-12 z-30 top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersNext}
-                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                className="bg-white/90 hover:bg-white text-[#335765] p-2 md:p-3 rounded-full shadow-xl transition-all border-2 border-[#335765] active:scale-95"
                 aria-label="Next centers"
               >
-                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
               </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
-                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
+                <div key={`${center[0]}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
                     <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                       <img
-                        src={center.image}
-                        alt={center.name}
+                        src={center[5]}
+                        alt={center[0]}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
-                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
+                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center[0]}</h3>
                       
                       <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                         <div className="flex items-center gap-1.5 shrink min-w-0">
                           <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
+                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center[1]}>{center[1]}</span>
                         </div>
                         <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center[3]} ({center[4]})</span>
                         </div>
                       </div>
 
                       <div className="relative mb-3 flex-grow text-left">
-                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
-                          {center.description}
+                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center[0] ? "" : "line-clamp-3"}`}>
+                          {center[2]}
                         </p>
                         <button
-                          onClick={() => toggleCenterDescription(center.name)}
+                          onClick={() => toggleCenterDescription(center[0])}
                           className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
                         >
-                          {expandedCenterName === center.name ? "Read Less" : "Read More"}
+                          {expandedCenterName === center[0] ? "Read Less" : "Read More"}
                         </button>
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
-                          to={center.link}
+                          to={center[6]}
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
@@ -890,14 +890,13 @@ const SkinRejuvenation = () => {
           </div>
         </section>
 
-
       </main>
 
       <section id="reviews" className="scroll-mt-24 pt-8 pb-8 md:pt-10 md:pb-12 bg-transparent w-full">
         <div className="container mx-auto px-4 max-w-6xl text-left">
           <div className="text-center mb-6 md:mb-8 space-y-3">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
-            <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
+            <p className="text-base md:text-lg px-4 font-medium" style={{ color: "#7F543D" }}>Real transformational journeys from international guests who experienced our Beauty & Detox retreats.</p>
           </div>
 
           <div className="max-w-4xl mx-auto relative px-0 md:px-0">
@@ -934,32 +933,30 @@ const SkinRejuvenation = () => {
                   {/* Review Content */}
                   <div className="mb-4 md:mb-6">
                     <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4">
-                      {patientReviews[currentReview].title}
+                      {patientReviews[currentReview][2]}
                     </h3>
                     <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
-                      "{patientReviews[currentReview].review}"
+                      "{patientReviews[currentReview][3]}"
                     </p>
                   </div>
 
                   {/* Reviewer Info */}
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
-                      {patientReviews[currentReview].name.charAt(0)}
+                      {patientReviews[currentReview][0].charAt(0)}
                     </div>
 
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="text-base md:text-xl font-semibold text-[#335765]">
-                          {patientReviews[currentReview].name}
+                          {patientReviews[currentReview][0]}
                         </h4>
-                        {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
-                            &#10003; Verified
-                          </span>
-                        )}
+                        <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                          &#10003; Verified
+                        </span>
                       </div>
                       <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
-                        {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
+                        {patientReviews[currentReview][1]} - Beauty & Detox
                       </p>
                     </div>
                   </div>
@@ -968,21 +965,13 @@ const SkinRejuvenation = () => {
                   <div className="flex items-center gap-2 md:gap-3">
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < patientReviews[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+                        <Star key={i} className="h-4 w-4 md:h-5 md:w-5 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
                     <span className="text-xs md:text-sm font-semibold text-[#335765]">
-                      {patientReviews[currentReview].rating}.0
+                      5.0
                     </span>
                   </div>
-
-                  {/* Auto-rotate indicator removed as per user request */}
-                  {/* reviewAutoPlay && (
-                    <div className="absolute top-4 right-4 bg-black/60 text-white px-3 py-1 rounded-full text-sm flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                      Auto
-                    </div>
-                  ) */}
                 </div>
               </CardContent>
             </Card>
@@ -994,7 +983,6 @@ const SkinRejuvenation = () => {
                   key={idx}
                   onClick={() => {
                     setCurrentReview(idx);
-                    
                   }}
                   className={`transition-all rounded-full ${currentReview === idx
                       ? "w-8 h-3 bg-[#335765]"
@@ -1013,34 +1001,86 @@ const SkinRejuvenation = () => {
 
       {/* Desktop Vertical BROWSE Button */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
-        <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
-          <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
         </button>
       </div>
 
       {/* Mobile BROWSE button */}
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
 
-      <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
+      {/* Desktop & Mobile QUOTE button */}
+      <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline uppercase">GET FREE QUOTE</span><span className="md:hidden uppercase">QUOTE</span></button>
 
-      <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
+      {/* Section Jump Modal */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
-        <div className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
           <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
           <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
             <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
             <div className="flex justify-between items-start mb-3 relative z-10">
-              <div className="space-y-0.5"><div className="flex items-center gap-2 mb-1"><div className="h-px w-6 bg-white/30" /><span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span></div><h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Program Sections</h2></div>
-              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50" title="Close Menu"><X className="h-6 w-6 transition-transform" /></button>
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Program Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+              >
+                <X className="h-6 w-6" />
+              </button>
             </div>
-            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm"><ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" /><p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Jump directly to any section in this program page."</p></div>
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic font-medium">
+                "Directly navigate to beauty retreat protocols and pricing."
+              </p>
+            </div>
           </div>
+
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
             {jumpSections.map((section, idx) => (
-              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl">
-                <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
-                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200"><ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" /></div>
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
               </button>
             ))}
           </div>
@@ -1051,4 +1091,4 @@ const SkinRejuvenation = () => {
   );
 };
 
-export default SkinRejuvenation;
+export default AyurvedicBeautyDetoxIndia;

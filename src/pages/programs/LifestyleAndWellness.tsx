@@ -64,6 +64,19 @@ const LifestyleAndWellness = () => {
       reviews: 160,
       tags: ["14-21 Days", "Burnout Recovery", "Executive Health", "Deep Reset"]
     },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Immunity Boosting Detox Program in India",
+      duration: "14 Days",
+      targetAudience: "Health-conscious tourists",
+      keyFocus: "Immune system strengthening",
+      description: "A specialized 14-day Ayurvedic detox program designed to strengthen the immune system, enhance vitality, and restore natural balance. Ideal for health-conscious travelers seeking preventive wellness in India.",
+      image: "/program-images/immunity-detox.png",
+      link: "/ayurvedic-programs/lifestyle-and-wellness/immunity-boosting-detox-program-in-india",
+      rating: 4.9,
+      reviews: 155,
+      tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
+    },
   ];
 
   return (
