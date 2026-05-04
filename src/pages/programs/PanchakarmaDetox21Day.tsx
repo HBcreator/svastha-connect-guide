@@ -667,7 +667,7 @@ const PanchakarmaDetox21Day = () => {
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Treatment and Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for 21-Day Panchakarma Detox in India</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
             <img src={galleryImages[selectedImage]} alt="Panchakarma program" className="w-full h-[260px] md:h-[460px] object-cover" />

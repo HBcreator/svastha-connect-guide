@@ -584,7 +584,7 @@ const AntiAgingAyurvedaProgramIndia = () => {
       <main className="container mx-auto px-4 pt-6 pb-10 md:pt-8 md:pb-14 max-w-6xl space-y-12 md:space-y-14">
         <section id="gallery" className="scroll-mt-24">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Treatment and Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Anti-Aging Ayurveda Program in India</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
             <img src={galleryImages[selectedImage]} alt="Anti-aging Ayurveda program" className="w-full h-[260px] md:h-[460px] object-cover" />

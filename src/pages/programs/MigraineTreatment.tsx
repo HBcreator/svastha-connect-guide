@@ -430,6 +430,10 @@ const MigraineTreatment = () => {
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
   const [benefitsImageIndex, setBenefitsImageIndex] = useState(0);
 
+  const [selectedImage, setSelectedImage] = useState(0);
+  const goToNext = () => setSelectedImage((prev) => (prev + 1) % galleryImages.length);
+  const goToPrevious = () => setSelectedImage((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+
   const nextReview = () => setCurrentReviewIndex((prev) => (prev + 1) % patientReviews.length);
   const prevReview = () => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
 
@@ -537,41 +541,27 @@ const MigraineTreatment = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="pt-8 md:pt-12 pb-0 bg-background" id="gallery">
+      <section id="gallery" className="scroll-mt-24 mb-0 pt-8 md:pt-12 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="md:col-span-2 lg:col-span-2 h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-[#d8d0ae]/50">
-              <img
-                src={galleryImages[0]}
-                alt="Ayurveda Migraine Treatment India"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4">
-              {galleryImages.slice(1, 3).map((img, i) => (
-                <div key={i} className="h-[142px] md:h-[242px] rounded-3xl overflow-hidden shadow-lg border border-[#d8d0ae]/50">
-                  <img
-                    src={img}
-                    alt={`Migraine Therapy ${i + 1}`}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="flex items-center justify-center mb-5 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Migraine Treatment in India</h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            {galleryImages.slice(3).map((img, i) => (
-              <div
-                key={i}
-                className={`h-[150px] md:h-[250px] rounded-3xl overflow-hidden shadow-lg border border-[#d8d0ae]/50 ${i === 2 ? "col-span-2 lg:col-span-1" : ""}`}
-              >
-                <img
-                  src={img}
-                  alt={`Migraine Therapy ${i + 3}`}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-            ))}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img src={galleryImages[selectedImage]} alt="Migraine treatment program" className="w-full h-[260px] md:h-[460px] object-cover transition-all duration-500" />
+            <button
+              onClick={goToPrevious}
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/95 text-[#335765] opacity-100 shadow-md transition"
+              aria-label="Next image"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
           </div>
         </div>
       </section>

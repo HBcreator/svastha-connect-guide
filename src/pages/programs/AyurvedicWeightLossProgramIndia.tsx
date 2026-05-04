@@ -212,7 +212,7 @@ const AyurvedicWeightLossProgramIndia = () => {
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-20 md:space-y-24">
         <section id="gallery" className="scroll-mt-24 mb-0">
           <div className="flex items-center justify-center mb-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Ayurvedic Treatment and Program Gallery</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Program Gallery for Weight Loss Treatment in India</h2>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
             <img src={galleryImages[selectedImage]} alt="Ayurvedic weight loss program" className="w-full h-[260px] md:h-[460px] object-cover" />
@@ -829,7 +829,41 @@ const InclusionsSection = () => (
   </section>
 );
 
-const CTA = ({ onQuote }: { onQuote: () => void }) => <section className="overflow-hidden bg-[#335765] rounded-3xl text-white shadow-2xl"><div className="grid md:grid-cols-2"><div className="relative h-[220px] md:h-auto overflow-hidden md:order-2"><img src={`${imageBase}/1.webp`} alt="Book Ayurvedic weight loss program" className="w-full h-full object-cover" /></div><div className="p-8 md:p-10 space-y-5"><h2 className="text-3xl font-bold">Book Your Ayurvedic Weight Loss Program</h2><p>Begin with a no-obligation consultation. We help you choose the right center, dates, and package.</p><a href="https://wa.me/918028432737" target="_blank" rel="noreferrer" className="block bg-white text-[#335765] text-center rounded-xl py-3 font-bold">WhatsApp Us Now<br /><span className="underline">+91 80 2843 2737</span></a><Button onClick={onQuote} className="w-full bg-[#E6EEE8] text-[#335765] hover:bg-white font-bold">Get Free Consultation Here</Button></div></div></section>;
+const CTA = ({ onQuote }: { onQuote: () => void }) => (
+  <section id="consultation" className="scroll-mt-24 !mt-6 md:!mt-10 overflow-hidden bg-[#335765] rounded-3xl text-white shadow-2xl">
+    <div className="grid md:grid-cols-2 gap-0">
+      <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
+        <img
+          src={`${imageBase}/1.webp`}
+          alt="Ayurvedic weight loss consultation"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
+      </div>
+      <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
+        <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurvedic Weight Loss Program in India</h2>
+        <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
+          Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your metabolic condition and budget.
+        </p>
+        <div className="space-y-3 mt-4 max-w-xl">
+          <a
+            href="https://wa.me/918028432737?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20for%20the%20Ayurvedic%20weight%20loss%20program."
+            target="_blank"
+            rel="noreferrer"
+            className="w-full rounded-xl bg-white text-[#335765] hover:bg-white/90 h-14 md:h-16 flex flex-col items-center justify-center transition"
+            aria-label="WhatsApp Us Now"
+          >
+            <span className="text-xs md:text-sm font-semibold leading-tight uppercase tracking-wider">WhatsApp Us Now</span>
+            <span className="text-sm md:text-base font-bold leading-tight mt-0.5 underline text-primary">+91 80 2843 2737</span>
+          </a>
+          <Button className="w-full h-11 md:h-12 bg-[#D19A71] hover:bg-[#C18A61] text-white font-bold text-base md:text-lg rounded-xl shadow-lg border-2 border-white/20" onClick={onQuote}>
+            Get Free Consultation Here
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 const FAQSection = () => (
   <section id="faq" className="scroll-mt-24 !mt-8 md:!mt-14">
     <div className="text-center mb-10">

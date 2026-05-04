@@ -118,6 +118,8 @@ import RheumatoidArthritis from "./pages/programs/RheumatoidArthritis";
 import PsoriasisTreatmentProgram from "./pages/programs/PsoriasisTreatmentProgram";
 import MigraineTreatment from "./pages/programs/MigraineTreatment";
 import CervicalSpondylosisProgram from "./pages/programs/CervicalSpondylosisProgram";
+import StressManagementAyurvedaRetreat from "./pages/programs/StressManagementAyurvedaRetreat";
+import BurnoutRecoveryProgram from "./pages/programs/BurnoutRecoveryProgram";
 
 const queryClient = new QueryClient();
 
@@ -151,7 +153,7 @@ const App = () => (
           <Route path="/centers/goa/nalanda-retreat-goa" element={<NalandaRetreatGoa />} />
           <Route path="/centers/rishikesh/modi-yoga-retreat" element={<ModiYogaRetreat />} />
           <Route path="/centers/gurugram/itc-grand-bharat" element={<ITCGrandBharat />} />
-<Route path="/centers/kerala/niraamaya-retreats-surya-samudra" element={<NiraamayaRetreatsSuryaSamudra />} />
+          <Route path="/centers/kerala/niraamaya-retreats-surya-samudra" element={<NiraamayaRetreatsSuryaSamudra />} />
           <Route path="/centers/rajasthan/amanbagh-heritage-wellness-retreat" element={<AmanbaghHeritageWellnessRetreat />} />
           <Route path="/centers/dharamshala/himveda" element={<HimVeda />} />
           <Route path="/centers/kerala/kalari-kovilakom" element={<KalariKovilakomPalaceForAyurveda />} />
@@ -243,6 +245,8 @@ const App = () => (
           <Route path="/ayurvedic-programs/disease-specific/ayurvedic-treatment-for-migraine-in-india" element={<MigraineTreatment />} />
           <Route path="/ayurvedic-programs/disease-specific/cervical-spondylosis-treatment-in-india" element={<CervicalSpondylosisProgram />} />
           <Route path="/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india" element={<AyurvedicWeightLossProgramIndia />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness/stress-management-ayurveda-retreat-in-india" element={<StressManagementAyurvedaRetreat />} />
+          <Route path="/ayurvedic-programs/lifestyle-and-wellness/burnout-recovery-program-in-india" element={<BurnoutRecoveryProgram />} />
           <Route
             path="/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india"
             element={<PanchakarmaDetox21Day />}
