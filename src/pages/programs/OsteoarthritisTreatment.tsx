@@ -1277,7 +1277,7 @@ const OsteoarthritisTreatment = () => {
 
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Osteoarthritis in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -1443,12 +1443,12 @@ const OsteoarthritisTreatment = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}

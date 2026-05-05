@@ -1451,12 +1451,12 @@ const PanchakarmaDetox21Day = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}

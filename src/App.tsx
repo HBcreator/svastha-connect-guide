@@ -125,6 +125,9 @@ import BeautyAndRejuvenation from "./pages/programs/BeautyAndRejuvenation";
 import SkinRejuvenation from "./pages/programs/SkinRejuvenation";
 import HairLoss from "./pages/programs/HairLoss";
 import AyurvedicBeautyDetoxIndia from "./pages/programs/AyurvedicBeautyDetoxIndia";
+import IntegratedRetreat from "./pages/programs/IntegratedRetreat";
+import AyurvedaYogaRetreat from "./pages/programs/AyurvedaYogaRetreat";
+import AyurvedaDigitalDetox from "./pages/programs/AyurvedaDigitalDetox";
 
 const queryClient = new QueryClient();
 
@@ -270,6 +273,9 @@ const App = () => (
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation/skin-rejuvenation-treatment-in-india" element={<SkinRejuvenation />} />
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation/hair-loss-in-india" element={<HairLoss />} />
           <Route path="/ayurvedic-programs/beauty-and-rejuvenation/ayurvedic-beauty-detox-retreat-in-india" element={<AyurvedicBeautyDetoxIndia />} />
+          <Route path="/ayurvedic-programs/integrated-retreat" element={<IntegratedRetreat />} />
+          <Route path="/ayurvedic-programs/integrated-retreat/ayurveda-yoga-retreat" element={<AyurvedaYogaRetreat />} />
+          <Route path="/ayurvedic-programs/integrated-retreat/ayurveda-digital-detox" element={<AyurvedaDigitalDetox />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

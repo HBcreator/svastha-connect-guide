@@ -24,6 +24,7 @@ import {
   Brain,
   Sparkles,
   ArrowRight,
+  Globe,
 } from "lucide-react";
 
 import {
@@ -230,7 +231,7 @@ const HairLoss = () => {
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$1,800 - $4,200</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">$1,500 - $4,500</p>
                 </div>
               </div>
 
@@ -543,7 +544,7 @@ const HairLoss = () => {
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Typical Budget</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">$1,800 - $4,200</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">$1,500 - $4,500</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">All-inclusive range for Reputed NABH-accredited clinics.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
@@ -680,20 +681,20 @@ const HairLoss = () => {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">14-21 Days</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">14-21 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">13-20 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
               <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Led</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Diet</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Nutrient-Rich</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Full Herbal Kit</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
@@ -726,8 +727,39 @@ const HairLoss = () => {
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile View for Inclusions */}
+              <div className="md:hidden divide-y divide-border">
+                {inclusionsRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div key={row.label} className="flex items-start gap-3 p-4">
+                      <Icon className="h-5 w-5 text-[#335765] shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-medium text-foreground">
+                          {row.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-0.5">
+                          {row.details}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
+
+          {/* Complete Care Continuity Card */}
+          <div className="bg-[#F1F7F8] border border-[#335765]/10 border-l-4 border-l-[#335765] rounded-xl p-5 flex items-start gap-4 mt-6 shadow-sm">
+            <Globe className="h-6 w-6 text-[#335765] shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold text-[#335765] text-lg md:text-xl">Complete Care Continuity</h3>
+              <p className="text-[#5C5E52] text-sm md:text-base mt-1.5 leading-relaxed">
+                Airport transfers via premium fleet, pre-arrival dietary guidelines, on-ground concierge support, and post-retreat health maintenance plans.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* 13. Consultation CTA */}
@@ -954,12 +986,12 @@ const HairLoss = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold w-fit whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}

@@ -29,7 +29,7 @@ export const quickSummaryRows = [
   ["Core Approach", "Shirodhara + Shiro Abhyanga + Nasya + Blood Purification"],
   ["Key Benefit", "Halt chronic hair fall, stimulate new follicle growth, and deeply nourish the scalp"],
   ["Top Locations", "Kerala, Bangalore, Rishikesh"],
-  ["Average Cost", "$1,800 – $4,200 USD (all-inclusive)"],
+  ["Average Cost", "$1,500 – $4,500 USD (all-inclusive)"],
   ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
 ];
 
@@ -144,13 +144,13 @@ export const costComparisonRows = [
   {
     program: "Comprehensive Hair & Scalp Restoration (14 Days)",
     category: "Disease-Specific",
-    cost: "$1,800 – $2,800",
+    cost: "$1,500 – $2,800",
     notes: "Ideal for moderate hair thinning and scalp issues. Includes daily Shirodhara.",
   },
   {
     program: "Intensive Alopecia & Detox Program (21 Days)",
     category: "Panchakarma Clinical",
-    cost: "$2,800 – $4,200",
+    cost: "$2,800 – $4,500",
     notes: "For severe hair loss or autoimmune conditions. Includes deep blood purification.",
   },
 ];
@@ -208,6 +208,16 @@ export const whyChooseUsPoints = [
     title: "Post-Treatment Care",
     description: "We arrange follow-up online consultations and ensure your prescribed herbal medicines are shipped to your home country.",
     icon: Headset,
+  },
+  {
+    title: "Transparent, All-Inclusive Pricing",
+    description: "No hidden hospital fees or agent commissions. You pay the direct clinical price with zero markup on the retreat packages.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "24/7 On-Ground Concierge",
+    description: "A dedicated Svastha Global assistant is always reachable for non-medical needs, language translation, or travel adjustments.",
+    icon: UserCog,
   },
 ];
 

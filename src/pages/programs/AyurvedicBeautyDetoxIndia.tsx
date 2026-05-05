@@ -24,6 +24,7 @@ import {
   X,
   Search,
   ClipboardCheck,
+  Globe,
 } from "lucide-react";
 
 import {
@@ -685,8 +686,8 @@ const AyurvedicBeautyDetoxIndia = () => {
               <p className="text-lg font-bold text-[#335765] mt-1">Detox Nutrition</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Full Herbal Kit</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
@@ -721,6 +722,17 @@ const AyurvedicBeautyDetoxIndia = () => {
               </div>
             </CardContent>
           </Card>
+          
+          {/* Complete Care Continuity Card */}
+          <div className="bg-[#F1F7F8] border border-[#335765]/10 border-l-4 border-l-[#335765] rounded-xl p-5 flex items-start gap-4 mt-6 shadow-sm">
+            <Globe className="h-6 w-6 text-[#335765] shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold text-[#335765] text-lg md:text-xl text-left">Complete Care Continuity</h3>
+              <p className="text-[#5C5E52] text-sm md:text-base mt-1.5 leading-relaxed text-left">
+                Airport transfers via premium fleet, pre-arrival dietary guidelines, on-ground concierge support, and post-retreat health maintenance plans.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* 13. Consultation CTA */}
@@ -947,11 +959,11 @@ const AyurvedicBeautyDetoxIndia = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                           {patientReviews[currentReview][0]}
                         </h4>
-                        <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
                           &#10003; Verified
                         </span>
                       </div>

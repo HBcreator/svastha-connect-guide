@@ -979,12 +979,12 @@ const CervicalSpondylosisProgram = () => {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1 overflow-visible">
-                          <h4 className="text-sm md:text-xl font-bold text-[#335765] whitespace-nowrap">
+                        <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1 overflow-visible">
+                          <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
                             {patientReviews[currentReviewIndex].name}
                           </h4>
                           {patientReviews[currentReviewIndex].verified && (
-                            <span className="bg-green-100 text-green-700 text-[9px] md:text-xs px-1.5 py-0.5 rounded-full font-bold flex-shrink-0 whitespace-nowrap border border-green-200">
+                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                               &#10003; Verified
                             </span>
                           )}
@@ -1032,56 +1032,84 @@ const CervicalSpondylosisProgram = () => {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
-      {/* Jump Sections Button */}
-      <div className="fixed bottom-6 left-4 md:left-6 z-40">
+      {/* Desktop Vertical BROWSE Button */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button
           onClick={() => setIsJumpModalOpen(true)}
-          className="bg-white text-[#335765] rounded-full p-3.5 md:py-3 md:px-5 shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 font-bold border border-[#d8d0ae]/60 group"
-          aria-label="Jump to section"
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
         >
-          <ClipboardList className="h-5 w-5 text-[#D19A71]" />
-          <span className="hidden md:inline text-sm tracking-wide group-hover:text-[#D19A71] transition-colors">QUICK MENU</span>
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
         </button>
       </div>
 
-      {/* Jump Sections Modal */}
-      {isJumpModalOpen && (
-        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm" onClick={() => setIsJumpModalOpen(false)}>
-          <div className="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-5 border-b border-[#d8d0ae]/40 bg-[#F8F4E7]">
-              <h3 className="font-bold text-[#335765] text-lg flex items-center gap-2">
-                <ClipboardList className="h-5 w-5 text-[#D19A71]" /> Quick Navigation
-              </h3>
-              <button onClick={() => setIsJumpModalOpen(false)} className="text-[#7F543D] hover:text-[#335765] transition-colors bg-white rounded-full p-1 border border-[#d8d0ae]/60">
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-            <div className="p-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
-              <div className="grid grid-cols-1 gap-2">
-                {jumpSections.map((section) => (
-                  <button
-                    key={section.id}
-                    onClick={() => jumpToSection(section.id)}
-                    className="flex items-center justify-between p-3.5 rounded-xl hover:bg-[#EDE8D0] text-left transition-colors group border border-transparent hover:border-[#d8d0ae]/60"
-                  >
-                    <span className="font-semibold text-[#335765] group-hover:text-[#D19A71] transition-colors">{section.title}</span>
-                    <ArrowRight className="h-4 w-4 text-[#7F543D] opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Mobile BROWSE button */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
 
-      {/* Floating Quote Button */}
       <button
         onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-4 md:right-6 z-50 bg-[#C68D6A] text-white rounded-full p-3.5 md:py-3.5 md:px-6 shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 group"
+        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
       >
-        <Phone className="h-5 w-5" />
-        <span className="hidden md:inline tracking-wide">GET FREE QUOTE</span>
+        <Phone size={18} className="-ml-1" />
+        <span className="hidden md:inline">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
       </button>
+
+      {/* Navigation Modal */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Program Sections</h2>
+              </div>
+              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50">
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Jump directly to any section in this program page."</p>
+            </div>
+          </div>
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl">
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">{section.title}</span>
+                </div>
+                <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

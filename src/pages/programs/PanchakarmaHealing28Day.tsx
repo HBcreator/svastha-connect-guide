@@ -101,7 +101,7 @@ const packages = [
     summary: {
       duration: "21 Days / 20 Nights",
       idealFor: "Deep Detox, Weight Loss, Stress Relief",
-      locations: "Kerala, Karnataka, Goa",
+      locations: "Kerala, Rishikesh, Goa",
       cost: "$2,800 – $4,500",
     },
     rows: [
@@ -109,7 +109,7 @@ const packages = [
       ["Duration", "21 Days / 20 Nights"],
       ["Who It Is For", "Individuals seeking deep tissue cleansing, weight management, or intensive stress recovery"],
       ["Key Benefit", "Intensive toxin elimination, improved metabolic rate, and profound mental relaxation"],
-      ["Top Locations", "Kerala, Karnataka, Pune"],
+      ["Top Locations", "Kerala, Rishikesh, Goa"],
       ["Average Cost", "$2,800 – $4,500 USD"],
       ["Supervised By", "Accredited Ayurvedic Doctors and experienced therapy teams"],
       ["Includes", "Accommodation, sattvic meals, daily detox therapies, yoga sessions, and consultations"],
@@ -143,7 +143,7 @@ const packages = [
     summary: {
       duration: "14 Days / 13 Nights",
       idealFor: "General Detox, Energy Boost, Wellness Reset",
-      locations: "Rishikesh, Kerala, Bangalore",
+      locations: "Kerala, Rishikesh, Goa",
       cost: "$1,800 – $3,200",
     },
     rows: [
@@ -151,7 +151,7 @@ const packages = [
       ["Duration", "14 Days / 13 Nights"],
       ["Who It Is For", "Busy professionals or wellness seekers needing a reset and basic physiological cleansing"],
       ["Key Benefit", "Boosted energy levels, improved digestion, and physical lightness"],
-      ["Top Locations", "Rishikesh, Kerala, Bangalore"],
+      ["Top Locations", "Kerala, Rishikesh, Goa"],
       ["Average Cost", "$1,800 – $3,200 USD"],
       ["Supervised By", "Qualified Ayurvedic Vaidyas"],
       ["Includes", "Stay, Ayurvedic diet, core Panchakarma therapies, and daily yoga"],
@@ -185,7 +185,7 @@ const packages = [
     summary: {
       duration: "7 Days / 6 Nights",
       idealFor: "Relaxation, Immunity, Quick Refresh",
-      locations: "Pan India",
+      locations: "Kerala, Rishikesh, Goa",
       cost: "$900 – $1,600",
     },
     rows: [
@@ -193,7 +193,7 @@ const packages = [
       ["Duration", "7 Days / 6 Nights"],
       ["Who It Is For", "Travelers or individuals seeking a quick immunity boost and relaxation experience"],
       ["Key Benefit", "Immediate stress relief, skin glow, and enhanced sense of well-being"],
-      ["Top Locations", "Goa, Kerala, Rishikesh, Jaipur"],
+      ["Top Locations", "Kerala, Rishikesh, Goa"],
       ["Average Cost", "$900 – $1,600 USD"],
       ["Supervised By", "Wellness Consultants and Ayurvedic Therapists"],
       ["Includes", "Accommodation, healthy meals, rejuvenation massages, and steam baths"],
@@ -816,7 +816,7 @@ const PanchakarmaHealing28Day = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Goa</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -1366,7 +1366,7 @@ const PanchakarmaHealing28Day = () => {
           style={{ background: "linear-gradient(180deg, #EFE8CB 0%, #E9E2C4 100%)" }}
         >
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Svastha Global for Your 28-Day Healing Program</h2>
+            <h2 className="text-3xl font-bold text-[#335765] mb-3">Why Choose Us for Your 28-Day Panchakarma Healing Program in India</h2>
             <p className="text-[#7F543D]">
               Not just booking support - structured guidance from pre-consultation to post-program continuity.
             </p>
@@ -1403,7 +1403,7 @@ const PanchakarmaHealing28Day = () => {
             <p className="text-[#7F543D] text-sm md:text-base">Everything essential for a supervised detox, recovery, and continuity plan.</p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 max-w-5xl mx-auto">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-3 py-2 text-center">
               <p className="text-[11px] uppercase tracking-wider text-[#7F543D] font-bold">Duration</p>
               <p className="text-base md:text-lg font-bold text-[#335765] mt-0.5">{currentInclusionPackage.inclusionDetails.duration}</p>
@@ -1565,7 +1565,7 @@ const PanchakarmaHealing28Day = () => {
 
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for 28 Days Panchakarma in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 28-day detox programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">

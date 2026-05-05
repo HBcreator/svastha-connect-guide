@@ -6,29 +6,39 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
-const PanchakarmaDetox = () => {
+const IntegratedRetreat = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const programs = [
     {
-      name: "21-Day Panchakarma Detox Program in India",
-      description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
-      image: "/Program Images/21-day-detox.png",
-      link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+      category: "Integrated Retreat",
+      name: "Ayurveda + Yoga Retreat Program",
+      duration: "14–21 Days",
+      targetAudience: "Mind-body wellness seekers",
+      keyFocus: "Holistic healing & physical balance",
+      description:
+        "A transformative 14-21 day retreat that seamlessly integrates classical Ayurvedic therapies with daily yogic practices. Designed for those seeking deep mental clarity, physical flexibility, and a complete spiritual reset through personalized Shodhana protocols and advanced Hatha Yoga.",
+      image: "/Program Images/ayurveda-yoga-retreat.png",
+      link: "/ayurvedic-programs/integrated-retreat/ayurveda-yoga-retreat",
       rating: 4.9,
-      reviews: 480,
-      tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
+      reviews: 195,
+      tags: ["14–21 Days", "Ayurveda + Yoga", "Spiritual Reset", "Holistic Healing"]
     },
     {
-      name: "28-Day Panchakarma Healing Program in India",
-      description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
-      image: "/Program Images/28-day-healing.png",
-      link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
-      rating: 4.9,
-      reviews: 320,
-      tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
-    },
+      category: "Integrated Retreat",
+      name: "Ayurveda Digital Detox Retreat",
+      duration: "14–21 Days",
+      targetAudience: "Tech-stressed professionals",
+      keyFocus: "Mindfulness, renewal & nervous system calm",
+      description:
+        "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurvedic treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
+      image: "/Program Images/digital-detox-retreat.png",
+      link: "/ayurvedic-programs/integrated-retreat/ayurveda-digital-detox",
+      rating: 4.8,
+      reviews: 142,
+      tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
+    }
   ];
 
   return (
@@ -39,18 +49,18 @@ const PanchakarmaDetox = () => {
         {/* Hero Section */}
         <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              Panchakarma Detox Programs in India
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 font-poppins">
+              Integrated Retreat Programs in India
             </h1>
             <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Experience the ancient, deeply restorative science of Panchakarma. Discover our carefully curated detoxification and healing programs designed to cleanse the body, balance the mind, and enhance longevity in India's finest wellness centers.
+              Experience the synergy of ancient healing sciences. Our integrated retreats combine Ayurveda, Yoga, and Mindfulness to provide a multi-dimensional reset for the modern individual.
             </p>
           </div>
         </section>
 
         {/* Programs Grid */}
         <section className="container mx-auto px-4 py-12 md:py-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 justify-center">
             {programs.map((program, index) => (
               <div
                 key={index}
@@ -99,7 +109,7 @@ const PanchakarmaDetox = () => {
                     <div className="grid grid-cols-2 gap-2">
                       <Button
                         className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
-                        onClick={() => navigate(program.link || "/centers")}
+                        onClick={() => navigate(program.link)}
                       >
                         View Details
                       </Button>
@@ -124,4 +134,4 @@ const PanchakarmaDetox = () => {
   );
 };
 
-export default PanchakarmaDetox;
+export default IntegratedRetreat;

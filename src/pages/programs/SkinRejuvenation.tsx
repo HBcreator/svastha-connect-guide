@@ -24,6 +24,7 @@ import {
   X,
   Search,
   ClipboardCheck,
+  Globe,
 } from "lucide-react";
 
 import {
@@ -673,20 +674,20 @@ const SkinRejuvenation = () => {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">10-14 Days</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">7-14 Nights</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">9-13 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals</p>
+            </div>
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
               <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Led</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Diet</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Anti-Inflammatory</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Full Herbal Kit</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
@@ -719,8 +720,39 @@ const SkinRejuvenation = () => {
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile View for Inclusions */}
+              <div className="md:hidden divide-y divide-border">
+                {inclusionsRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div key={row.label} className="flex items-start gap-3 p-4">
+                      <Icon className="h-5 w-5 text-[#335765] shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-medium text-foreground">
+                          {row.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-0.5">
+                          {row.details}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
+
+          {/* Complete Care Continuity Card */}
+          <div className="bg-[#F1F7F8] border border-[#335765]/10 border-l-4 border-l-[#335765] rounded-xl p-5 flex items-start gap-4 mt-6 shadow-sm">
+            <Globe className="h-6 w-6 text-[#335765] shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold text-[#335765] text-lg md:text-xl">Complete Care Continuity</h3>
+              <p className="text-[#5C5E52] text-sm md:text-base mt-1.5 leading-relaxed">
+                Airport transfers via premium fleet, pre-arrival dietary guidelines, on-ground concierge support, and post-retreat health maintenance plans.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* 13. Consultation CTA */}
@@ -948,12 +980,12 @@ const SkinRejuvenation = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}

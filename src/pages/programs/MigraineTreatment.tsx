@@ -1173,7 +1173,7 @@ const MigraineTreatment = () => {
         {/* Top Ayurvedic Centers - EXACT PANCHAKARMA STYLE */}
         <section id="top-centers" className="scroll-mt-24 !mt-2 md:!mt-4 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Migraine</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Migraine in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for neurological treatments.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -1337,12 +1337,12 @@ const MigraineTreatment = () => {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1 overflow-visible">
-                          <h4 className="text-sm md:text-xl font-bold text-[#335765] whitespace-nowrap">
+                        <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1 overflow-visible">
+                          <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
                             {patientReviews[currentReviewIndex].name}
                           </h4>
                           {patientReviews[currentReviewIndex].verified && (
-                            <span className="bg-green-100 text-green-700 text-[9px] md:text-xs px-1.5 py-0.5 rounded-full font-bold flex-shrink-0 whitespace-nowrap border border-green-200">
+                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                               &#10003; Verified
                             </span>
                           )}

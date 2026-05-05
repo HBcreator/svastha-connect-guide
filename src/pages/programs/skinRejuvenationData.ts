@@ -175,6 +175,8 @@ export const inclusionsRows = [
   { label: "Daily Spa Therapies", details: "Mukhabhyanga, Swedana, Mukha Lepam, Shirodhara as prescribed", icon: Activity },
   { label: "Natural Skincare", details: "All premium oils and herbal pastes used during treatments", icon: Pill },
   { label: "Yoga & Mindfulness", details: "Daily gentle yoga and meditation sessions in beautiful settings", icon: Brain },
+  { label: "Airport Transfers", details: "Round-trip transfers from the nearest international airport", icon: Route },
+  { label: "Post-Program Kit", details: "Personalized diet and skincare routine for home maintenance", icon: ClipboardCheck },
 ];
 
 export const faqItems = [
