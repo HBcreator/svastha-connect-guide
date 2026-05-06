@@ -322,7 +322,7 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
   return (
     <section id="top-centers" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-6">
       <div className="text-center space-y-2 md:space-y-3 px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Recovery Centers for Burnout Recovery in India</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Burnout Recovery Program in India</h2>
         <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked resorts with strict privacy and specialized burnout recovery protocols.</p>
       </div>
       
@@ -470,16 +470,16 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
                   {(reviews[review][0] as string).charAt(0)}
                 </div>
 
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1">
+                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight truncate">
                       {reviews[review][0] as string}
                     </h4>
                     <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                       &#10003; Verified
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm mb-1" style={{ color: "#7F543D" }}>{reviews[review][1] as string}</p>
+                  <p className="text-xs md:text-sm text-[#7F543D] mb-1">{reviews[review][1] as string}</p>
                   <div className="flex items-center gap-1 mt-1">
                     {[...Array(5)].map((_, i) => <Star key={i} className="h-3 w-3 md:h-4 md:w-4 fill-yellow-400 text-yellow-400" />)}
                     <span className="text-xs md:text-sm font-bold text-[#335765] ml-1">5.0</span>

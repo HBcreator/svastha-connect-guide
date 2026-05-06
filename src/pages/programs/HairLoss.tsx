@@ -821,7 +821,7 @@ const HairLoss = () => {
         {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Hair Treatment in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Hair Loss Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for hair restoration programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -985,18 +985,18 @@ const HairLoss = () => {
                       {patientReviews[currentReview].name.charAt(0)}
                     </div>
 
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1">
+                        <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight truncate">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold w-fit whitespace-nowrap border border-green-200">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}
                       </div>
-                      <p className="text-xs md:text-sm" style={{ color: "#7F543D" }}>
+                      <p className="text-xs md:text-sm text-[#7F543D] mb-1">
                         {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
                       </p>
                     </div>

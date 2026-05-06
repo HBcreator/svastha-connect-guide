@@ -850,7 +850,7 @@ const SciaticaTreatment = () => {
         </section>
 
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
-          <div className="text-center space-y-2 md:space-y-3 px-4"><h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Sciatica in India</h2><p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for sciatica treatment programs.</p></div>
+          <div className="text-center space-y-2 md:space-y-3 px-4"><h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Sciatica Treatment in India</h2><p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for sciatica treatment programs.</p></div>
           <div className="relative group flex items-center justify-center">
             <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2"><button onClick={goTopCentersPrevious} className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]" aria-label="Previous centers"><ChevronLeft className="h-4 w-4 md:h-6 md:w-6" /></button></div>
             <div className="absolute right-2 md:-right-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2"><button onClick={goTopCentersNext} className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]" aria-label="Next centers"><ChevronRight className="h-4 w-4 md:h-6 md:w-6" /></button></div>

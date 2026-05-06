@@ -405,7 +405,7 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
   return (
     <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
       <div className="text-center space-y-2 md:space-y-3 px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Stress Management in India</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Stress Management Ayurveda Retreat in India</h2>
         <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for stress management programs.</p>
       </div>
       
@@ -567,9 +567,9 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
                   {(reviews[review][0] as string).charAt(0)}
                 </div>
 
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1">
+                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight truncate">
                       {reviews[review][0] as string}
                     </h4>
                     <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
