@@ -109,15 +109,15 @@ const GridSection = ({ title, items }: { title: string; items: typeof chooseIndi
           {items.map(([a, b, Icon]) => {
             const ItemIcon = Icon as React.ElementType;
             return (
-            <div key={a as string} className="rounded-lg border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
-              <div className="flex items-center gap-2.5">
-                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                  <ItemIcon className="h-4 w-4 text-[#335765]" />
-                </span>
-                <p className="font-semibold text-[#335765]">{a as string}</p>
+              <div key={a as string} className="rounded-lg border border-[#d9cfae] p-4 bg-white hover:shadow-md transition">
+                <div className="flex items-center gap-2.5">
+                  <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                    <ItemIcon className="h-4 w-4 text-[#335765]" />
+                  </span>
+                  <p className="font-semibold text-[#335765]">{a as string}</p>
+                </div>
+                <p className="text-sm text-[#7F543D] mt-2">{b as string}</p>
               </div>
-              <p className="text-sm text-[#7F543D] mt-2">{b as string}</p>
-            </div>
             );
           })}
         </div>
@@ -186,15 +186,15 @@ const InclusionsSection = () => (
           {inclusions.map(([label, details, Icon]) => {
             const IncIcon = Icon as React.ElementType;
             return (
-            <div key={label as string} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
-              <div className="flex items-center gap-2.5">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                  <IncIcon className="h-4 w-4 text-[#335765]" />
-                </span>
-                <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{label as string}</p>
+              <div key={label as string} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
+                <div className="flex items-center gap-2.5">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                    <IncIcon className="h-4 w-4 text-[#335765]" />
+                  </span>
+                  <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{label as string}</p>
+                </div>
+                <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{details as string}</p>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{details as string}</p>
-            </div>
             );
           })}
         </div>
@@ -211,17 +211,17 @@ const InclusionsSection = () => (
               {inclusions.map(([label, details, Icon]) => {
                 const IncIcon = Icon as React.ElementType;
                 return (
-                <tr key={label as string} className="border-t bg-white">
-                  <td className="p-3 font-medium text-[#3D4B4C]">
-                    <div className="flex items-center gap-2.5">
-                      <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
-                        <IncIcon className="h-4 w-4 text-[#335765]" />
-                      </span>
-                      <span>{label as string}</span>
-                    </div>
-                  </td>
-                  <td className="p-3 text-[#7F543D]">{details as string}</td>
-                </tr>
+                  <tr key={label as string} className="border-t bg-white">
+                    <td className="p-3 font-medium text-[#3D4B4C]">
+                      <div className="flex items-center gap-2.5">
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                          <IncIcon className="h-4 w-4 text-[#335765]" />
+                        </span>
+                        <span>{label as string}</span>
+                      </div>
+                    </td>
+                    <td className="p-3 text-[#7F543D]">{details as string}</td>
+                  </tr>
                 );
               })}
             </tbody>
@@ -325,7 +325,7 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
         <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Burnout Recovery Program in India</h2>
         <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked resorts with strict privacy and specialized burnout recovery protocols.</p>
       </div>
-      
+
       <div className="relative group flex items-center justify-center">
         <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
           <button
@@ -360,7 +360,7 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
 
                 <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
                   <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{name as string}</h3>
-                  
+
                   <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                     <div className="flex items-center gap-1.5 shrink min-w-0">
                       <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
@@ -407,14 +407,14 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
       </div>
 
       <div className="mt-4 flex justify-center">
-          <Button
-            className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
-            onClick={() => window.open('/centers', "_blank")}
-          >
-            VIEW ALL CENTERS
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </div>
+        <Button
+          className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
+          onClick={() => window.open('/centers', "_blank")}
+        >
+          VIEW ALL CENTERS
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Button>
+      </div>
     </section>
   );
 };
@@ -497,8 +497,8 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
               key={idx}
               onClick={() => setReview(idx)}
               className={`transition-all rounded-full ${review === idx
-                  ? "w-8 h-3 bg-[#335765]"
-                  : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                ? "w-8 h-3 bg-[#335765]"
+                : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
                 }`}
               aria-label={`Go to review ${idx + 1}`}
             />

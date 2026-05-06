@@ -1214,7 +1214,7 @@ const PanchakarmaHealing28Day = () => {
 
         <section id="cost" className="scroll-mt-24 !mt-6 md:!mt-10 mb-12 md:mb-16 space-y-6">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Cost of the {currentCostPackage.costDetails.length} Program in India</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">Cost of the {currentCostPackage.costDetails.length.replace(' Days', '-Day')} Panchakarma Program in India</h2>
             <p className="mt-2 text-[#7F543D] text-sm md:text-base">
               {currentCostPackage.costDetails.description} Most guests choose this for a comprehensive healing experience.
             </p>

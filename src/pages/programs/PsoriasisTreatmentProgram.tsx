@@ -672,7 +672,7 @@ const PsoriasisTreatmentProgram = () => {
         {/* 12. Inclusions */}
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">Inclusion & Details</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">What Is Included in the Treatment Package?</h2>
             <p className="text-[#7F543D]">Everything essential for supervised skin healing and long-term remission.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -695,6 +695,7 @@ const PsoriasisTreatmentProgram = () => {
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
             <CardContent className="p-3 md:p-0">
+              {/* Desktop Table */}
               <div className="hidden md:block overflow-auto">
                 <table className="w-full text-sm min-w-[680px]">
                   <thead className="bg-[#F5F8F6] text-[#335765]">
@@ -723,8 +724,38 @@ const PsoriasisTreatmentProgram = () => {
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile View */}
+              <div className="md:hidden divide-y divide-border">
+                {inclusionsRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div key={row.label} className="flex items-start gap-3 p-4">
+                      <Icon className="h-5 w-5 text-[#335765] shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-[#335765] text-sm">{row.label}</p>
+                        <p className="text-sm text-[#7F543D] mt-0.5 leading-relaxed">{row.details}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
+
+          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
+            <div className="flex items-start gap-3">
+              <div className="mt-1 shrink-0">
+                <CircleCheck className="h-5 w-5 text-[#335765]" />
+              </div>
+              <div>
+                <p className="text-[#214348] font-bold">Important Notice</p>
+                <p className="text-sm text-[#335765] leading-relaxed mt-1">
+                  All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* 13. Consultation CTA */}

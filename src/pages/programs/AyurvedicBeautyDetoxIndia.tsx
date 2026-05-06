@@ -692,6 +692,7 @@ const AyurvedicBeautyDetoxIndia = () => {
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
             <CardContent className="p-3 md:p-0">
+              {/* Desktop Table */}
               <div className="hidden md:block overflow-auto">
                 <table className="w-full text-sm min-w-[680px]">
                   <thead className="bg-[#F5F8F6] text-[#335765]">
@@ -720,17 +721,36 @@ const AyurvedicBeautyDetoxIndia = () => {
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile View */}
+              <div className="md:hidden divide-y divide-border">
+                {inclusionsRows.map((row) => {
+                  const Icon = row.icon;
+                  return (
+                    <div key={row.label} className="flex items-start gap-3 p-4">
+                      <Icon className="h-5 w-5 text-[#335765] shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-[#335765] text-sm">{row.label}</p>
+                        <p className="text-sm text-[#7F543D] mt-0.5 leading-relaxed">{row.details}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
           
-          {/* Complete Care Continuity Card */}
-          <div className="bg-[#F1F7F8] border border-[#335765]/10 border-l-4 border-l-[#335765] rounded-xl p-5 flex items-start gap-4 mt-6 shadow-sm">
-            <Globe className="h-6 w-6 text-[#335765] shrink-0 mt-1" />
-            <div>
-              <h3 className="font-bold text-[#335765] text-lg md:text-xl text-left">Complete Care Continuity</h3>
-              <p className="text-[#5C5E52] text-sm md:text-base mt-1.5 leading-relaxed text-left">
-                Airport transfers via premium fleet, pre-arrival dietary guidelines, on-ground concierge support, and post-retreat health maintenance plans.
-              </p>
+          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4 mt-6 shadow-sm">
+            <div className="flex items-start gap-3">
+              <div className="mt-1 shrink-0">
+                <CircleCheck className="h-5 w-5 text-[#335765]" />
+              </div>
+              <div>
+                <p className="text-[#214348] font-bold">Important Notice</p>
+                <p className="text-sm text-[#335765] leading-relaxed mt-1">
+                  All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -794,7 +814,7 @@ const AyurvedicBeautyDetoxIndia = () => {
         {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Beauty & Detox in India</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Beauty & Detox Retreat in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and resorts with specialized care for 10–14 day rejuvenation programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
