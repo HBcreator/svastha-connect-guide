@@ -729,20 +729,18 @@ const HairLoss = () => {
               </div>
 
               {/* Mobile View for Inclusions */}
-              <div className="md:hidden divide-y divide-border">
+              <div className="md:hidden grid gap-2">
                 {inclusionsRows.map((row) => {
-                  const Icon = row.icon;
+                  const IncIcon = row.icon;
                   return (
-                    <div key={row.label} className="flex items-start gap-3 p-4">
-                      <Icon className="h-5 w-5 text-[#335765] shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-medium text-foreground">
-                          {row.label}
-                        </p>
-                        <p className="text-sm text-muted-foreground mt-0.5">
-                          {row.details}
-                        </p>
+                    <div key={row.label} className="rounded-xl border border-[#d8d0ae] px-3 py-3 bg-white">
+                      <div className="flex items-center gap-2.5">
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#F8F4E7] border border-[#d9cfae]">
+                          <IncIcon className="h-4 w-4 text-[#335765]" />
+                        </span>
+                        <p className="text-[15px] uppercase tracking-[0.12em] text-[#335765] font-extrabold">{row.label}</p>
                       </div>
+                      <p className="mt-2 text-sm leading-relaxed text-[#7F543D] font-semibold break-words">{row.details}</p>
                     </div>
                   );
                 })}
@@ -750,14 +748,18 @@ const HairLoss = () => {
             </CardContent>
           </Card>
 
-          {/* Complete Care Continuity Card */}
-          <div className="bg-[#F1F7F8] border border-[#335765]/10 border-l-4 border-l-[#335765] rounded-xl p-5 flex items-start gap-4 mt-6 shadow-sm">
-            <Globe className="h-6 w-6 text-[#335765] shrink-0 mt-1" />
-            <div>
-              <h3 className="font-bold text-[#335765] text-lg md:text-xl">Complete Care Continuity</h3>
-              <p className="text-[#5C5E52] text-sm md:text-base mt-1.5 leading-relaxed">
-                Airport transfers via premium fleet, pre-arrival dietary guidelines, on-ground concierge support, and post-retreat health maintenance plans.
-              </p>
+          {/* Important Notice Box */}
+          <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4 mt-6 shadow-sm">
+            <div className="flex items-start gap-3">
+              <div className="mt-1 shrink-0">
+                <CircleCheck className="h-5 w-5 text-[#335765]" />
+              </div>
+              <div>
+                <p className="text-[#214348] font-bold">Important Notice</p>
+                <p className="text-sm text-[#335765] leading-relaxed mt-1">
+                  All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
+                </p>
+              </div>
             </div>
           </div>
         </section>

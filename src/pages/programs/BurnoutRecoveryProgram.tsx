@@ -232,12 +232,12 @@ const InclusionsSection = () => (
     <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">
       <div className="flex items-start gap-3">
         <div className="mt-1 shrink-0">
-          <Globe2 className="h-5 w-5 text-[#335765]" />
+          <CircleCheck className="h-5 w-5 text-[#335765]" />
         </div>
         <div>
-          <p className="text-[#214348] font-bold">Executive Continuity</p>
+          <p className="text-[#214348] font-bold">Important Notice</p>
           <p className="text-sm text-[#335765] leading-relaxed mt-1">
-            Airport transfers via premium fleet, nutritional counseling for business travel, workplace ergonomics guidance, and 3-month digital follow-up with your Vaidya.
+            All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
           </p>
         </div>
       </div>
