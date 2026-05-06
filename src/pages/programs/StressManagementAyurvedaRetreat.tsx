@@ -569,7 +569,7 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
 
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1">
-                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight truncate">
+                    <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
                       {reviews[review][0] as string}
                     </h4>
                     <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">

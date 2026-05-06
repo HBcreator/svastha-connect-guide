@@ -1329,7 +1329,7 @@ const AntiAgingAyurvedaProgramIndia = () => {
 
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1">
-                        <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight truncate">
+                        <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (

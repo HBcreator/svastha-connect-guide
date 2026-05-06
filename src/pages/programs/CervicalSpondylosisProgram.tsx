@@ -933,7 +933,7 @@ const CervicalSpondylosisProgram = () => {
 
             <div className="max-w-4xl mx-auto relative px-0 md:px-0">
               {/* Navigation Arrows */}
-              <div className="absolute inset-y-0 left-0 flex items-center -translate-x-2 md:-translate-x-6 z-20">
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-4 md:-translate-x-6 z-20">
                 <button
                   onClick={prevReview}
                   className="bg-white/80 hover:bg-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765] active:scale-95"
@@ -942,7 +942,7 @@ const CervicalSpondylosisProgram = () => {
                   <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
                 </button>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center translate-x-2 md:translate-x-6 z-20">
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-4 md:translate-x-6 z-20">
                 <button
                   onClick={nextReview}
                   className="bg-white/80 hover:bg-white text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765] active:scale-95"
@@ -953,7 +953,7 @@ const CervicalSpondylosisProgram = () => {
               </div>
 
               <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
-                <CardContent className="px-8 py-6 md:p-12 relative text-left">
+                <CardContent className="p-4 md:p-12 relative text-left">
                   <div className="max-w-4xl mx-auto">
                     {/* SVG Quote Icon */}
                     <div className="text-[#335765]/20 mb-3 md:mb-4">
@@ -973,8 +973,8 @@ const CervicalSpondylosisProgram = () => {
                     </div>
 
                     {/* Reviewer Info */}
-                    <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
-                      <div className="w-10 h-10 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-sm md:text-xl font-bold flex-shrink-0 uppercase">
+                     <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                       <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
                         {patientReviews[currentReviewIndex].name.charAt(0)}
                       </div>
 
