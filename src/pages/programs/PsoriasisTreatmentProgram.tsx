@@ -151,7 +151,7 @@ const PsoriasisTreatmentProgram = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-                Ayurveda Treatment for Psoriasis in India
+                Ayurvedic Treatment for Psoriasis in India
               </h1>
               <p className="text-lg md:text-xl text-white/90">
                 Deep clinical detoxification (Panchakarma) and blood purification to manage chronic psoriasis and restore skin health naturally.
@@ -672,25 +672,25 @@ const PsoriasisTreatmentProgram = () => {
         {/* 12. Inclusions */}
         <section id="inclusions" className="scroll-mt-24 !mt-8 md:!mt-9 mb-10 md:mb-14 space-y-5">
           <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold text-[#335765]">What Is Included in the Psoriasis Package?</h2>
+            <h2 className="text-3xl font-bold text-[#335765]">Inclusion & Details</h2>
             <p className="text-[#7F543D]">Everything essential for supervised skin healing and long-term remission.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">21-28 Days</p>
+            </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Stay</p>
               <p className="text-lg font-bold text-[#335765] mt-1">20-27 Nights</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Led</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Core Inclusions</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Therapies + Meals + Meds</p>
             </div>
             <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Diet</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Anti-Inflammatory</p>
-            </div>
-            <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] px-4 py-3 text-center">
-              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Meds</p>
-              <p className="text-lg font-bold text-[#335765] mt-1">Full Herbal Kit</p>
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Care Model</p>
+              <p className="text-lg font-bold text-[#335765] mt-1">Doctor-Supervised</p>
             </div>
           </div>
           <Card className="shadow-sm border-[#dfe7e2]">
@@ -786,7 +786,7 @@ const PsoriasisTreatmentProgram = () => {
         {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Skin Treatment</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Psoriasis in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for 21-day detox programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">
@@ -1011,6 +1011,107 @@ const PsoriasisTreatmentProgram = () => {
           </div>
         </div>
       </section>
+
+      <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-[60] flex-col gap-0 shadow-2xl">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Phone size={18} className="-ml-1" />
+        <span className="hidden md:inline">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
+      </button>
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Program Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this program page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />

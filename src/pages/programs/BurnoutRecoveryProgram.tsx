@@ -472,10 +472,10 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
 
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h4 className="text-base md:text-xl font-semibold text-[#335765]">
+                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                       {reviews[review][0] as string}
                     </h4>
-                    <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full font-semibold whitespace-nowrap">
+                    <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                       &#10003; Verified
                     </span>
                   </div>
@@ -489,6 +489,21 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
             </div>
           </CardContent>
         </Card>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center gap-2 mt-8">
+          {reviews.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setReview(idx)}
+              className={`transition-all rounded-full ${review === idx
+                  ? "w-8 h-3 bg-[#335765]"
+                  : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                }`}
+              aria-label={`Go to review ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </section>

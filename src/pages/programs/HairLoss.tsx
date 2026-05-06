@@ -821,7 +821,7 @@ const HairLoss = () => {
         {/* 15. Top Centers */}
         <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
           <div className="text-center space-y-2 md:space-y-3 px-4">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Hair Treatment</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers for Hair Treatment in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care for hair restoration programs.</p>
           </div>
           <div className="relative group flex items-center justify-center">

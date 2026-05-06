@@ -979,8 +979,8 @@ const CervicalSpondylosisProgram = () => {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1 overflow-visible">
-                          <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                             {patientReviews[currentReviewIndex].name}
                           </h4>
                           {patientReviews[currentReviewIndex].verified && (
@@ -1033,7 +1033,7 @@ const CervicalSpondylosisProgram = () => {
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Desktop Vertical BROWSE Button */}
-      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+      <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-[60] flex-col gap-0 shadow-2xl">
         <button
           onClick={() => setIsJumpModalOpen(true)}
           className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"

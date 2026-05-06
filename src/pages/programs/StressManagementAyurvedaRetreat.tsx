@@ -568,11 +568,11 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
                 </div>
 
                 <div className="flex-1">
-                  <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
-                    <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
+                  <div className="flex items-center gap-2 mb-1">
+                    <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                       {reviews[review][0] as string}
                     </h4>
-                    <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
+                    <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                       &#10003; Verified
                     </span>
                   </div>
@@ -586,6 +586,21 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
             </div>
           </CardContent>
         </Card>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center gap-2 mt-8">
+          {reviews.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setReview(idx)}
+              className={`transition-all rounded-full ${review === idx
+                  ? "w-8 h-3 bg-[#335765]"
+                  : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                }`}
+              aria-label={`Go to review ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </section>
@@ -1063,7 +1078,7 @@ const StressManagementAyurvedaRetreat = () => {
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
       {/* Desktop Vertical BROWSE Button */}
-      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+      <div className="hidden md:flex fixed right-0 top-1/2 -translate-y-1/2 z-[60] flex-col gap-0 shadow-2xl">
         <button
           onClick={() => setIsJumpModalOpen(true)}
           className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"

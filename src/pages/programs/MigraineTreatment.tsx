@@ -1337,8 +1337,8 @@ const MigraineTreatment = () => {
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1 overflow-visible">
-                          <h4 className="text-sm md:text-xl font-bold text-[#335765] leading-tight">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                             {patientReviews[currentReviewIndex].name}
                           </h4>
                           {patientReviews[currentReviewIndex].verified && (

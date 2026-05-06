@@ -54,7 +54,7 @@ const galleryImages = [
 
 const quickSummaryRows = [
   ["Condition Treated", "Osteoarthritis (Sandhivata) — knee, hip, spine, hands"],
-  ["Treatment Duration", "21â€“28 Days (recommended for full therapeutic benefit)"],
+  ["Treatment Duration", "21-28 Days (recommended for full therapeutic benefit)"],
   ["Who It Is For", "Adults with mild to advanced osteoarthritis seeking natural, drug-free relief"],
   ["Core Approach", "Panchakarma detox + targeted joint therapies + herbal medicines"],
   ["Key Benefit", "Pain relief, reduced inflammation, improved mobility, cartilage support"],
@@ -129,28 +129,28 @@ const avoidPoints = [
 const weekBreakdown = [
   { 
     title: 'Week 1 - Purva Karma (Preparation)', 
-    duration: 'Day 1â€“7',
+    duration: 'Day 1-7',
     focus: 'Loosening toxins, preparing joints for deep treatment', 
     description: 'Your program begins with a thorough one-on-one consultation with your Ayurvedic physician, who will assess your joint condition, overall health, and dosha constitution. Daily Abhyanga and Swedana begin to soften deep tissue deposits, improve circulation around the joints, and prepare your body to release toxins. A carefully designed anti-inflammatory Ayurvedic diet begins on day one.', 
     bullets: ['Abhyanga', 'Swedana', 'Dietary modifications', 'Oral herbal medicines', 'Initial Janu Basti'] 
   },
   { 
     title: 'Week 2 - Pradhana Karma (Core Treatment)', 
-    duration: 'Day 8â€“14',
+    duration: 'Day 8-14',
     focus: 'Active detox and targeted joint healing', 
-    description: 'This is the most therapeutically intensive phase. Janu Basti is typically performed daily for 30 minutes per knee. Kizhi treatments targeting the hips, lower back, and affected areas bring significant relief. Basti therapy begins â€” the systematic colon cleansing that works on Vata at its root, producing effects felt throughout the musculoskeletal system.', 
+    description: 'This is the most therapeutically intensive phase. Janu Basti is typically performed daily for 30 minutes per knee. Kizhi treatments targeting the hips, lower back, and affected areas bring significant relief. Basti therapy begins — the systematic colon cleansing that works on Vata at its root, producing effects felt throughout the musculoskeletal system.', 
     bullets: ['Janu Basti', 'Kizhi', 'Pizhichil', 'Basti', 'Virechana (if prescribed)', 'Shirodhara'] 
   },
   { 
     title: 'Week 3 - Paschat Karma (Rejuvenation)', 
-    duration: 'Day 15â€“21',
+    duration: 'Day 15-21',
     focus: 'Tissue rebuilding, strengthening, mobility restoration', 
-    description: 'With the body now cleansed and the acute inflammation addressed, treatment shifts to rebuilding and strengthening. Rasayana therapies nourish the bone tissue and synovial fluid. Daily therapeutic yoga sessions â€” gentle, joint-specific movements chosen by your doctor â€” begin to restore functional mobility.', 
+    description: 'With the body now cleansed and the acute inflammation addressed, treatment shifts to rebuilding and strengthening. Rasayana therapies nourish the bone tissue and synovial fluid. Daily therapeutic yoga sessions — gentle, joint-specific movements chosen by your doctor — begin to restore functional mobility.', 
     bullets: ['Rasayana therapies', 'Rejuvenating oils', 'Therapeutic yoga', 'Dietary plan'] 
   },
   { 
     title: 'Week 4 - Extended Recovery (Optional)', 
-    duration: 'Day 22â€“28',
+    duration: 'Day 22-28',
     focus: 'For advanced cases needing deeper systemic treatment', 
     description: 'Patients with more advanced osteoarthritis, multiple joint involvement, or those who wish to achieve the deepest possible therapeutic benefit are recommended the full 28-day program. The additional week allows for extended Basti cycles that produce more profound systemic Vata correction.', 
     bullets: ['Extended Basti cycles', 'Additional Kizhi', 'Functional mobility exercises'] 
@@ -159,10 +159,10 @@ const weekBreakdown = [
 
 const benefits = {
   physical: [
-    "Significant reduction in chronic joint pain â€” 60â€“80% pain reduction reported",
+    "Significant reduction in chronic joint pain — 60-80% pain reduction reported",
     "Reduced joint inflammation and swelling in knee and hip osteoarthritis",
-    "Improved joint lubrication â€” Basti and Janu Basti address synovial fluid quality",
-    "Restored mobility and flexibility â€” regain functional movement",
+    "Improved joint lubrication — Basti and Janu Basti address synovial fluid quality",
+    "Restored mobility and flexibility — regain functional movement",
     "Slowed cartilage degeneration through strengthened ligaments and tendons",
     "Many patients avoid or delay elective joint replacement surgery",
   ],
@@ -373,7 +373,7 @@ const costComparisonRows = [
 
 const faqItems = [
   { question: 'Can Ayurveda actually treat osteoarthritis, or is it only for mild pain?', answer: 'Ayurvedic treatment is effective across a wide spectrum of osteoarthritis severity. Clinical studies have documented measurable improvement in pain scores, joint mobility, and body weight following structured Panchakarma programs. It significantly reduces pain and slows further degeneration.' },
-  { question: 'How long does it take to see results?', answer: 'Many patients notice reduced stiffness and improved sleep within the first 7â€“10 days. Significant pain relief and improved mobility are typically observed by week two. The most complete transformation develops fully over the 21â€“28 day program and continues to improve after returning home.' },
+  { question: 'How long does it take to see results?', answer: 'Many patients notice reduced stiffness and improved sleep within the first 7-10 days. Significant pain relief and improved mobility are typically observed by week two. The most complete transformation develops fully over the 21-28 day program and continues to improve after returning home.' },
   { question: 'Will I be able to walk and move during the treatment program?', answer: 'Yes. The program is not bed-rest based. Light walking, gentle yoga, and moderate daily movement are actively encouraged from day one.' },
   { question: 'Can this program help me avoid knee replacement surgery?', answer: 'For many patients, yes. Surveys from leading Indian Ayurvedic centers report that a significant proportion of patients who undergo full structured programs avoid elective joint replacement surgery for extended periods.' },
   { question: 'Do I need to stop my current medications before starting?', answer: 'No. You should never stop prescribed medications without guidance from your treating doctor at home. Your Ayurvedic physician will create a plan that works safely alongside them.' },
@@ -687,7 +687,7 @@ const OsteoarthritisTreatment = () => {
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Duration</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21â€“28 Days</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">21-28 Days</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Ideal For</p>
@@ -745,10 +745,10 @@ const OsteoarthritisTreatment = () => {
               <CardContent className="p-6 md:p-8 space-y-4">
                 <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Osteoarthritis?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  If you have been living with persistent joint pain, morning stiffness, swollen knees, or reduced mobility â€” and conventional treatments have offered only temporary relief â€” Ayurvedic treatment for osteoarthritis in India may offer you something that modern medicine often cannot: a genuine path to healing the root cause, not just masking the symptoms. Osteoarthritis â€” known in Ayurveda as <em>Sandhivata</em> â€” occurs when the protective cartilage between your joints gradually wears down.
+                  If you have been living with persistent joint pain, morning stiffness, swollen knees, or reduced mobility — and conventional treatments have offered only temporary relief — Ayurvedic treatment for osteoarthritis in India may offer you something that modern medicine often cannot: a genuine path to healing the root cause, not just masking the symptoms. Osteoarthritis — known in Ayurveda as <em>Sandhivata</em> — occurs when the protective cartilage between your joints gradually wears down.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  The 21â€“28 day Ayurvedic treatment program works to reduce inflammation at its source, nourish and rebuild damaged joint tissue, restore lubrication to the affected joints, and rebalance the Vata dosha.{" "}
+                  The 21-28 day Ayurvedic treatment program works to reduce inflammation at its source, nourish and rebuild damaged joint tissue, restore lubrication to the affected joints, and rebalance the Vata dosha.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -840,8 +840,8 @@ const OsteoarthritisTreatment = () => {
 
         <section id="week-breakdown" className="scroll-mt-24 !mt-6 md:!mt-10 rounded-3xl p-6 md:p-10 border border-[#e5dfc1]" style={{ backgroundColor: "#EDE8D0" }}>
           <div className="text-center mb-7">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21â€“28 Day Treatment Program â€” Week by Week</h2>
-            <p className="text-[#7F543D] mt-2">A structured three-phase clinical approach â€” every phase has a specific therapeutic purpose.</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#335765]">The 21-28 Day Treatment Program — Week by Week</h2>
+            <p className="text-[#7F543D] mt-2">A structured three-phase clinical approach — every phase has a specific therapeutic purpose.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
@@ -1002,7 +1002,7 @@ const OsteoarthritisTreatment = () => {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
                   <p className="text-xs uppercase tracking-[0.14em] text-[#7F543D] font-semibold">Program Length</p>
-                  <p className="mt-2 text-2xl font-bold text-[#335765]">21â€“28 Days</p>
+                  <p className="mt-2 text-2xl font-bold text-[#335765]">21-28 Days</p>
                   <p className="mt-1 text-sm text-[#6F6B5C]">Structured detox, recovery, and rejuvenation timeline.</p>
                 </div>
                 <div className="rounded-2xl border border-[#d9cfae] bg-[#F8F4E7] p-4 text-center">
@@ -1443,12 +1443,12 @@ const OsteoarthritisTreatment = () => {
                     </div>
 
                     <div className="flex-1">
-                      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
-                        <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h4 className="text-base md:text-xl font-bold text-[#335765] leading-tight">
                           {patientReviews[currentReview].name}
                         </h4>
                         {patientReviews[currentReview].verified && (
-                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-1 rounded-full font-bold whitespace-nowrap border border-green-200">
+                          <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold whitespace-nowrap border border-green-200">
                             &#10003; Verified
                           </span>
                         )}
