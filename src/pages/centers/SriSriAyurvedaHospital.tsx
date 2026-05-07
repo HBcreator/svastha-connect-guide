@@ -303,33 +303,79 @@ export default function SriSriAyurvedaHospital() {
       <section id="about" className="pt-8 md:pt-12 pb-4 md:pb-6 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
-            <div className="text-left space-y-4">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#2C4E5A] leading-[1.2] text-center md:text-left">
-                Authentic Ayurvedic Excellence at Sri Sri Ayurveda Hospital
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
+                Authentic Ayurvedic Excellence <br className="hidden lg:block" />
+                at Sri Sri Ayurveda Hospital
               </h2>
-              
-              <div className="space-y-6 text-lg leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
-                <p>
-                  Welcome to Sri Sri Ayurveda Hospital in Bengaluru, a premier <strong className="font-bold text-[#2C4E5A]">NABH-accredited</strong> institution where the timeless wisdom of classical Ayurveda converges with modern medical science. Administered by the Sri Sri Ravi Shankar Vidya Mandir Trust, our hospital is deeply rooted in the holistic philosophy of the Art of Living. We believe that true health is not merely the absence of disease, but a dynamic state of physical, mental, and spiritual well-being. Nestled in a serene, natural environment away from the city's chaos, our campus provides the ideal setting for deep cellular healing and rejuvenation.
-                </p>
-                
-                <p>
-                  Our unique approach integrates authentic Ayurvedic detoxification therapies, such as <strong className="font-bold text-[#2C4E5A]">Panchakarma</strong>, with advanced diagnostics and lifestyle modifications. At the heart of our diagnostic process is <strong className="font-bold text-[#2C4E5A]">Nadi Pariksha</strong> (Pulse Diagnosis), a highly specialized technique used by our expert physicians to accurately identify the root cause of imbalances within your unique constitution (Prakriti). By combining these profound Ayurvedic treatments with yoga, meditation, and customized sattvic diets, we ensure a comprehensive, evidence-based healing journey tailored exclusively for you.
-                </p>
-                
-                <div className="pt-8 text-center border-t border-[#2C4E5A]/10">
-                  <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                    Your journey to renewed health begins with a single step.{" "}
-                    <span 
-                      className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
-                      onClick={() => setQuoteModalOpen(true)}
-                    >
-                      CONTACT 
-                    </span>{" "}
-                    Svastha Global to connect with the best of authentic <em>Ayurveda</em> in India.
-                  </h3>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <div className="text-left space-y-8">
+                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                  <p>
+                    Welcome to Sri Sri Ayurveda Hospital in Bengaluru, a premier <strong className="font-bold text-[#2C4E5A]">NABH-accredited</strong> institution where the timeless wisdom of classical Ayurveda converges with modern medical science. Administered by the Sri Sri Ravi Shankar Vidya Mandir Trust, our hospital is deeply rooted in the holistic philosophy of the Art of Living. We believe that true health is not merely the absence of disease, but a dynamic state of physical, mental, and spiritual well-being. Nestled in a serene, natural environment away from the city's chaos, our campus provides the ideal setting for deep cellular healing and rejuvenation.
+                  </p>
+
+                  {/* Second Image - Mobile Only (Inserted between paragraphs) */}
+                  <div className="lg:hidden py-4">
+                    <div className="relative group">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                      <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
+                        <img 
+                          src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
+                          alt="Sri Sri Ayurveda Hospital Bengaluru Secondary View"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p>
+                    Our unique approach integrates authentic Ayurvedic detoxification therapies, such as <strong className="font-bold text-[#2C4E5A]">Panchakarma</strong>, with advanced diagnostics and lifestyle modifications. At the heart of our diagnostic process is <strong className="font-bold text-[#2C4E5A]">Nadi Pariksha</strong> (Pulse Diagnosis), a highly specialized technique used by our expert physicians to accurately identify the root cause of imbalances within your unique constitution (Prakriti). By combining these profound Ayurvedic treatments with yoga, meditation, and customized sattvic diets, we ensure a comprehensive, evidence-based healing journey tailored exclusively for you.
+                  </p>
                 </div>
               </div>
+
+              <div className="flex flex-col gap-8 order-first lg:order-last">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
+                    <img 
+                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/Main Image.webp" 
+                      alt="Sri Sri Ayurveda Hospital Bengaluru Main View"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+
+                {/* Second Image - Desktop Only */}
+                <div className="hidden lg:block">
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
+                      <img 
+                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
+                        alt="Sri Sri Ayurveda Hospital Bengaluru Secondary View"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
+              <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
+                Your journey to renewed health begins with a single step.{" "}
+                <span 
+                  className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  CONTACT 
+                </span>{" "}
+                Svastha Global to connect with the best of authentic <em>Ayurveda</em> in India.
+              </h3>
             </div>
           </div>
         </div>
@@ -338,8 +384,8 @@ export default function SriSriAyurvedaHospital() {
       {/* Ayurvedic Programs (6 Cards) */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-4">Top Ayurvedic Programs in Sri Sri Ayurveda Hospital</h2>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurvedic Programs in Sri Sri Ayurveda Hospital</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -368,8 +414,8 @@ export default function SriSriAyurvedaHospital() {
       <section id="why-choose" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
-            <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-4">Why Choose Sri Sri Ayurveda Hospital</h2>
+            <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Sri Sri Ayurveda Hospital</h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Experience authentic healing supported by modern infrastructure and compassionate care.
             </p>
@@ -399,8 +445,8 @@ export default function SriSriAyurvedaHospital() {
       {/* Treatment Process (6 Steps Grid) */}
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-4">Your Healing Journey in Sri Sri Ayurveda</h2>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Sri Sri Ayurveda</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step approach to restore your natural balance.
             </p>
@@ -500,8 +546,8 @@ export default function SriSriAyurvedaHospital() {
       {/* Reviews Section */}
       <section id="reviews" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-3">Patient Stories & Reviews</h2>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
             <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our global guests.</p>
           </div>
           
@@ -589,8 +635,8 @@ export default function SriSriAyurvedaHospital() {
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
             <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Sri Sri Ayurveda.</p>
           </div>
           
@@ -613,8 +659,8 @@ export default function SriSriAyurvedaHospital() {
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 shadow-sm">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#2C4E5A] mb-4">Contact Information</h2>
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Contact Information</h2>
               <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic health.</p>
             </div>
             
