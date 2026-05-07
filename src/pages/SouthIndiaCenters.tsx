@@ -1,4 +1,4 @@
-﻿import Navigation from "@/components/Navigation";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useState } from "react";
@@ -17,6 +17,7 @@ const SouthIndiaCenters = () => {
     "bangalore/ayurvedagram",
     "mysore/indus-valley-ayurvedic-centre",
     "udupi/shathayu-ayurveda-yoga-retreat",
+    "bangalore/sri-sri-ayurveda-hospital-bengaluru",
   ]);
 
   const centers = [
