@@ -58,7 +58,7 @@ const quickSummaryRows = [
   ["Duration", "21 Days / 20 Nights"],
   ["Who It Is For", "Adults (25-65) seeking detox, chronic condition recovery, or wellness reset"],
   ["Key Benefit", "Full body detox, mental clarity, chronic condition relief, anti-aging"],
-  ["Top Locations", "Kerala, Rishikesh, Goa"],
+  ["Top Locations", "PAN India"],
   ["Average Cost", "$2,500 - $4,500 USD"],
   ["Supervised By", "Qualified Ayurvedic Doctors (Vaidyas)"],
   ["Includes", "Accommodation, meals, therapies, consultations, medicines"],
@@ -675,11 +675,11 @@ const PanchakarmaDetox21Day = () => {
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <MapPin className="h-5 w-5 text-sky-300" />
-                    <span>Kerala, Rishikesh, Goa</span>
+                    <span>PAN India</span>
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 Excellent Rating</span>
+                    <span>4.6/5 Excellent Rating</span>
                   </span>
                 </div>
               </div>
@@ -735,7 +735,7 @@ const PanchakarmaDetox21Day = () => {
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Top Locations</p>
-                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">Kerala, Rishikesh, Goa</p>
+                  <p className="mt-1 text-sm md:text-base font-semibold text-[#335765]">PAN India</p>
                 </div>
                 <div className="rounded-xl border border-[#d9cfae] bg-[#F8F4E7] p-3">
                   <p className="text-[13px] uppercase tracking-[0.12em] text-[#7F543D] font-bold">Avg Cost</p>
@@ -1390,7 +1390,7 @@ const PanchakarmaDetox21Day = () => {
                         </div>
                         <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">({center.rating} rating)</span>
                         </div>
                       </div>
 

@@ -25,7 +25,7 @@ const DiseaseSpecific = () => {
       description: "A clinically supervised Ayurvedic program for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
       image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
       link: "/ayurvedic-programs/disease-specific/sciatica",
-      rating: 4.9,
+      rating: 4.7,
       reviews: 380,
       tags: ["21-28 Days", "Nerve Relief", "Spine Health", "Kati Basti"]
     },
@@ -34,7 +34,7 @@ const DiseaseSpecific = () => {
       description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
       image: "/Program Images/rheumatoid-arthritis.png",
       link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
-      rating: 4.7,
+      rating: 4.6,
       reviews: 350,
       tags: ["21-28 Days", "RA Healing", "Detox (Ama)", "Immune Support"]
     },
@@ -43,7 +43,7 @@ const DiseaseSpecific = () => {
       description: "A specialized skin-healing protocol targeting Psoriasis and chronic eczema. Focuses on blood purification (Raktamokshana), liver detox (Virechana), and specialized external therapies like Takradhara to achieve deep remission and skin clearance.",
       image: "/Treatments-images/Psoriasis Treatment.jpg",
       link: "/ayurvedic-programs/disease-specific/psoriasis-treatment-in-india",
-      rating: 4.9,
+      rating: 4.8,
       reviews: 290,
       tags: ["21-28 Days", "Skin Repair", "Raktamokshana", "Blood Detox"]
     },
@@ -52,7 +52,7 @@ const DiseaseSpecific = () => {
       description: "A specialized Ayurvedic protocol for chronic headaches and Migraine. Focuses on balancing the nervous system, reducing vascular inflammation, and detoxifying the sensory organs through therapies like Shirodhara, Nasya, and specialized herbal cooling protocols.",
       image: "/program-images/ra-shirodhara.png",
       link: "/ayurvedic-programs/disease-specific/ayurvedic-treatment-for-migraine-in-india",
-      rating: 4.8,
+      rating: 4.7,
       reviews: 310,
       tags: ["14-21 Days", "Stress Relief", "Nasya Therapy", "Vata-Pitta"]
     },
@@ -113,8 +113,7 @@ const DiseaseSpecific = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-black text-foreground">{program.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
+                      <span className="text-xs font-black text-[#2C4E5A]">({program.rating} rating)</span>
                     </div>
                   </div>
 

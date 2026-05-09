@@ -129,17 +129,116 @@ const reviews = [
   ["Elspeth Dunbar", "Glasgow, UK", "This Approach Succeeded Where 15 Years of Diets Failed.", "The Ayurvedic program broke my cycle of losing and regaining weight by addressing the metabolic root cause. My digestion transformed within ten days."],
 ] as const;
 
-const centers = [
-  ["SOUKYA International Holistic Health Centre", "Bengaluru, Karnataka, India", "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm.", 4.9, 500, "/Center Images/SOUKYA/top center Thumb.jpg", "/centers/bangalore/soukya"],
-  ["AyurvedaGram Heritage Wellness Centre", "Bengaluru, Karnataka, India", "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village with physician-guided therapies and sattvic nutrition.", 4.7, 600, "/Center Images/AyurvedaGram/Thumb.jpg", "/centers/bangalore/ayurvedagram"],
-  ["Shathayu Ayurveda Yoga Retreat", "Bengaluru Rural, Karnataka, India", "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching.", 4.8, 380, "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg", "/centers/udupi/shathayu-ayurveda-yoga-retreat"],
-  ["Kairali - The Ayurvedic Healing Village", "Palakkad, Kerala, India", "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.", 4.8, 420, "/Center Images/Ananda in the Himalayas/Thumb.jpg", "/centers/kerala/kairali-ayurvedic-healing-village"],
-  ["Carnoustie Ayurveda Wellness Resort", "Mararikulam, Kerala, India", "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.", 4.7, 360, "/Center Images/Carnoustie Ayurveda/Thumb.jpg", "/centers/kerala/carnoustie-ayurveda-wellness-resort"],
-  ["Somatheeram Ayurveda Village Resort", "Thiruvananthapuram, Kerala, India", "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.", 4.7, 510, "/Center Images/Atmantan Wellness Resort/Thumb.jpg", "/centers/kerala/somatheeram"],
-  ["AyurSoma Ayurveda Royal Retreat", "Thiruvananthapuram, Kerala, India", "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.", 4.8, 300, "/Center Images/AyurSoma Ayurveda/Thumb.jpg", "/centers/kerala/ayursoma"],
-  ["Niraamaya Retreats Surya Samudra", "Kovalam, Kerala, India", "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.", 4.6, 280, "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg", "/centers/kerala/niraamaya-retreats-surya-samudra"],
-  ["Kalari Kovilakom Palace for Ayurveda", "Palakkad, Kerala, India", "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.", 4.8, 240, "/Center Images/Kalari Kovilakom/Thumb.jpg", "/centers/kerala/kalari-kovilakom"]
-] as const;
+const topAyurvedicCenters = [
+  {
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    description: "Set amidst the Sahyadri hills overlooking Mulshi Lake. Blends traditional Ayurveda with modern wellness therapies for detox, fitness, and weight management.",
+    rating: 4.7,
+    reviews: 0,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort",
+  },
+  {
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    description: "Serene wellness retreat blending time-honored healing traditions with modern therapies for detoxification, relaxation, and sustainable healthy living.",
+    rating: 4.7,
+    reviews: 0,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest",
+  },
+  {
+    name: "Kairali – The Ayurvedic Healing Village",
+    city: "Palakkad",
+    description: "NABH-accredited Ayurvedic healing village offering authentic Panchakarma, personalized treatment plans, and sattvic lifestyle for long-term weight management.",
+    rating: 4.9,
+    reviews: 280,
+    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+  },
+  {
+    name: "Carnoustie Ayurveda & Wellness Resort",
+    city: "Mararikulam",
+    description: "Award-winning beachfront retreat offering deeply immersive Panchakarma, weight management, and rejuvenation therapies guided by expert Vaidyas.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+  },
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    description: "Award-winning Ayurvedic wellness retreat along Kerala's pristine shores. Personalized therapies for weight management and body detoxification.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort",
+  },
+  {
+    name: "Shreyas Yoga Retreat",
+    city: "Bangalore",
+    description: "Authentic yogic lifestyle retreat combining classical Hatha Yoga, Ayurveda therapies, organic cuisine, and mindful living for sustainable weight loss.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+    link: "/centers/bangalore/shreyas-yoga-retreat",
+  },
+  {
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    description: "Luxurious all-suite retreat in the Aravalli hills. Royal architecture with personalized Ayurvedic spa, detox, and lifestyle wellness programs.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/centers/gurugram/itc-grand-bharat",
+  },
+  {
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    description: "Serene wellness retreat near Pune with personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation for holistic weight management.",
+    rating: 4.7,
+    reviews: 0,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels",
+  },
+  {
+    name: "Back to Roots Ayurveda Retreat",
+    city: "Idukki",
+    description: "NABH-accredited lakeside sanctuary guided by 4th generation Ayurvedic physicians. Classical Panchakarma for deep body detoxification and weight reset.",
+    rating: 4.9,
+    reviews: 100,
+    image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+    link: "/centers/kerala/back-to-roots",
+  },
+  {
+    name: "Naad Wellness",
+    city: "Sonepat",
+    description: "Luxury integrative wellness retreat combining Ayurveda, yoga, naturopathy, and mindfulness for sustainable weight management and lifestyle transformation.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Naad Wellness/Thumb.jpg",
+    link: "/centers/sonepat/naad-wellness",
+  },
+  {
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    description: "Tranquil wellness hideaway blending ancient Ayurvedic wisdom with serene nature. Time-honored therapies for metabolism reset and body rejuvenation.",
+    rating: 4.7,
+    reviews: 190,
+    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+    link: "/centers/kerala/agni-ayurvedic-village",
+  },
+  {
+    name: "Namaste Dwaar – Countryside Wellness Retreat",
+    city: "Delhi",
+    description: "Peaceful farmhouse sanctuary near NCR offering authentic Ayurvedic therapies, farm-fresh sattvic food, and compassionate care for weight management.",
+    rating: 4.8,
+    reviews: 180,
+    image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
+    link: "/centers/delhi/namastedwaar",
+  },
+];
 
 const AyurvedicWeightLossProgramIndia = () => {
   const navigate = useNavigate();
@@ -922,11 +1021,11 @@ const CentersSection = ({ navigate, onQuote }: any) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const topCentersTotalSlides = Math.max(1, centers.length - topCentersVisible + 1);
+  const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersVisible));
   const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
   const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
   const toggleCenterDescription = (name: string) => setExpandedCenterName(prev => prev === name ? null : name);
-  const visibleTopCenters = centers.slice(topCentersSlide, topCentersSlide + topCentersVisible);
+  const visibleTopCenters = topAyurvedicCenters.slice(topCentersSlide * topCentersVisible, topCentersSlide * topCentersVisible + topCentersVisible);
 
   return (
     <section id="top-centers" className="scroll-mt-24 !mt-10 md:!mt-16 space-y-8">
@@ -956,47 +1055,47 @@ const CentersSection = ({ navigate, onQuote }: any) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
-          {visibleTopCenters.map(([name, city, description, rating, reviewsCount, image, link]) => (
-            <div key={name as string} className="flex h-full w-full">
+          {visibleTopCenters.map((center) => (
+            <div key={center.name} className="flex h-full w-full">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
                 <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                   <img
-                    src={image as string}
-                    alt={name as string}
+                    src={center.image}
+                    alt={center.name}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
 
                 <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
-                  <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{name as string}</h3>
+                  <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
                   
                   <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                     <div className="flex items-center gap-1.5 shrink min-w-0">
                       <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
-                      <span className="text-[12px] md:text-[13px] font-semibold truncate" title={city as string}>{city as string}</span>
+                      <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
                     </div>
                     <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                      <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{rating as number} ({reviewsCount as number})</span>
+                      <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
                     </div>
                   </div>
 
                   <div className="relative mb-3 flex-grow text-left">
-                    <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === name ? "" : "line-clamp-3"}`}>
-                      {description as string}
+                    <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
+                      {center.description}
                     </p>
                     <button
-                      onClick={() => toggleCenterDescription(name as string)}
+                      onClick={() => toggleCenterDescription(center.name)}
                       className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
                     >
-                      {expandedCenterName === name ? "Read Less" : "Read More"}
+                      {expandedCenterName === center.name ? "Read Less" : "Read More"}
                     </button>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 mt-auto">
                     <Button
                       variant="outline"
-                      onClick={() => navigate(link as string)}
+                      onClick={() => navigate(center.link)}
                       className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                     >
                       View Details
@@ -1112,6 +1211,21 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
             </div>
           </CardContent>
         </Card>
+
+        {/* Dots Navigation */}
+        <div className="flex justify-center gap-2 mt-8">
+          {reviews.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setReview(idx)}
+              className={`transition-all rounded-full ${review === idx
+                ? "w-8 h-3 bg-[#335765]"
+                : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                }`}
+              aria-label={`Go to review ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   </section>

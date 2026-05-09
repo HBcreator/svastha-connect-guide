@@ -889,7 +889,7 @@ const SkinRejuvenation = () => {
                         </div>
                         <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">({center.rating} rating)</span>
                         </div>
                       </div>
 

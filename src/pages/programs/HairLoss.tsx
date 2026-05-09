@@ -171,7 +171,7 @@ const HairLoss = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span className="font-medium">4.8/5 Excellent Hair Regrowth Outcome</span>
+                    <span className="font-medium">4.7/5 Excellent Hair Regrowth Outcome</span>
                   </span>
                 </div>
               </div>

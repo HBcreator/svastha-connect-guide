@@ -16,7 +16,7 @@ const PanchakarmaDetox = () => {
       description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
       image: "/Program Images/21-day-detox.png",
       link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
-      rating: 4.9,
+      rating: 4.6,
       reviews: 480,
       tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
     },
@@ -25,7 +25,7 @@ const PanchakarmaDetox = () => {
       description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
       image: "/Program Images/28-day-healing.png",
       link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
-      rating: 4.9,
+      rating: 4.7,
       reviews: 320,
       tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
     },
@@ -77,8 +77,7 @@ const PanchakarmaDetox = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-black text-foreground">{program.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
+                      <span className="text-xs font-black text-foreground">({program.rating} rating)</span>
                     </div>
                   </div>
 

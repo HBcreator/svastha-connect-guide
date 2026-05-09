@@ -87,8 +87,7 @@ const IntegratedRetreat = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-black text-foreground">{program.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
+                      <span className="text-xs font-black text-foreground">({program.rating} rating)</span>
                     </div>
                   </div>
 

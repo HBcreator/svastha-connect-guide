@@ -602,7 +602,7 @@ const AntiAgingAyurvedaProgramIndia = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 Average Rating</span>
+                    <span>4.9/5 Average Rating</span>
                   </span>
                 </div>
               </div>

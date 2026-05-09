@@ -25,7 +25,7 @@ const BeautyAndRejuvenation = () => {
       description: "A specialized Ayurvedic protocol targeting the underlying causes of hair thinning and loss (Khalitya). Combines Shirodhara, Nasya, and scalp-nourishing therapies like Shirolepa and Takradhara with personalized herbal supplements to stimulate follicle growth and restore scalp health.",
       image: "/program-images/hair-loss.png",
       link: "/ayurvedic-programs/beauty-and-rejuvenation/hair-loss-in-india",
-      rating: 4.8,
+      rating: 4.7,
       reviews: 312,
       tags: ["14-21 Days", "Hair Growth", "Shirodhara", "Scalp Health"]
     },
@@ -88,8 +88,7 @@ const BeautyAndRejuvenation = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-black text-foreground">{program.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
+                      <span className="text-xs font-black text-foreground">({program.rating} rating)</span>
                     </div>
                   </div>
 

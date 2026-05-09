@@ -618,7 +618,7 @@ const SciaticaTreatment = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 Excellent Rating</span>
+                    <span>4.7/5 Excellent Relief Index</span>
                   </span>
                 </div>
               </div>
@@ -920,7 +920,7 @@ const SciaticaTreatment = () => {
                     <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0"><img src={center.image} alt={center.name} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" /></div>
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
                       <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
-                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden"><div className="flex items-center gap-1.5 shrink min-w-0"><MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" /><span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span></div><div className="flex items-center gap-1 shrink-0 whitespace-nowrap"><Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" /><span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span></div></div>
+                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden"><div className="flex items-center gap-1.5 shrink min-w-0"><MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" /><span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span></div><div className="flex items-center gap-1 shrink-0 whitespace-nowrap"><Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" /><span className="text-[12px] md:text-[13px] font-bold text-[#335765]">({center.rating} rating)</span></div></div>
                       <div className="relative mb-3 flex-grow text-left"><p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>{center.description}</p><button onClick={() => toggleCenterDescription(center.name)} className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block">{expandedCenterName === center.name ? "Read Less" : "Read More"}</button></div>
                       <div className="grid grid-cols-2 gap-3 mt-auto"><Link to={center.link} className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap">View Details</Link><Button className="w-full bg-[#335765] hover:bg-[#25464c] text-white font-bold h-10 rounded-lg shadow-sm text-xs" onClick={() => setQuoteModalOpen(true)}>Get Quote</Button></div>
                     </div>

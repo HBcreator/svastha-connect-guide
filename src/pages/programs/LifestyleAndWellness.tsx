@@ -47,7 +47,7 @@ const LifestyleAndWellness = () => {
       description: "A specialized 14-21 day Ayurvedic retreat designed for deep mental relaxation, emotional healing, and stress recovery. Combines Shirodhara, yoga, meditation, and personalized nutrition for international travelers.",
       image: "/program-images/stress-management.png",
       link: "/ayurvedic-programs/lifestyle-and-wellness/stress-management-ayurveda-retreat-in-india",
-      rating: 4.9,
+      rating: 4.8,
       reviews: 180,
       tags: ["14-21 Days", "Stress Relief", "Mental Health", "Shirodhara"]
     },
@@ -60,7 +60,7 @@ const LifestyleAndWellness = () => {
       description: "A comprehensive 14-21 day recovery protocol designed for high-performing professionals facing chronic exhaustion. Integrates Ayurvedic therapies, stress diagnostics, executive health coaching, and restorative routines to rebuild vitality and mental resilience.",
       image: "/program-images/burnout-recovery.png",
       link: "/ayurvedic-programs/lifestyle-and-wellness/burnout-recovery-program-in-india",
-      rating: 4.9,
+      rating: 4.7,
       reviews: 160,
       tags: ["14-21 Days", "Burnout Recovery", "Executive Health", "Deep Reset"]
     },
@@ -73,7 +73,7 @@ const LifestyleAndWellness = () => {
       description: "A specialized 14-day Ayurvedic detox program designed to strengthen the immune system, enhance vitality, and restore natural balance. Ideal for health-conscious travelers seeking preventive wellness in India.",
       image: "/program-images/immunity-detox.png",
       link: "/ayurvedic-programs/lifestyle-and-wellness/immunity-boosting-detox-program-in-india",
-      rating: 4.9,
+      rating: 4.8,
       reviews: 155,
       tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
     },
@@ -126,8 +126,7 @@ const LifestyleAndWellness = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-                      <span className="text-xs font-black text-foreground">{program.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({program.reviews})</span>
+                      <span className="text-xs font-black text-foreground">({program.rating} rating)</span>
                     </div>
                   </div>
 

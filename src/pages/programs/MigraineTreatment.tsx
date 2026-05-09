@@ -324,87 +324,114 @@ const inclusionsRows = [
   { label: "Post-Care Continuity", details: "Personalized guide for managing environmental and dietary triggers after returning home", icon: ClipboardCheck },
 ];
 
-const topCenters = [
+const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. Exceptional for neurological recovery.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
-  },
-  {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description: "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga and meditation.",
+    name: "Ananda In The Himalayas",
+    city: "Uttarakhand",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Personalized Ayurveda, Yoga, and Vedanta programs guided by expert physicians for deep neurological rejuvenation.",
     rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shathayu",
-  },
-  {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description: "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing.",
-    rating: 4.8,
-    reviews: 420,
+    reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    link: "/centers/uttarakhand/ananda-in-the-himalayas",
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description: "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
-    rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
-  },
-  {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff.",
-    rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    name: "Somatheeram Ayurvedic Health Resort",
+    city: "Kerala",
+    description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location. Exceptional for neurological and chronic condition recovery.",
+    rating: 4.9,
+    reviews: 320,
+    image: "/Center Images/somatheeram/Somatheeram 01.jpg",
     link: "/centers/kerala/somatheeram",
   },
   {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    description: "Peaceful Ayurvedic wellness centre in the Himalayan foothills. Authentic Panchakarma and chronic disease management in a calm mountain setting ideal for neurological recovery.",
     rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/centers/dharamshala/himveda",
   },
   {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description: "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
-    reviews: 280,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
-  },
-  {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description: "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments.",
+    name: "Kalari Kovilakom - The Palace For Ayurveda",
+    city: "Palakkad",
+    description: "A globally acclaimed wellness retreat following the classical gurukula system. Extremely strict, traditional Ayurvedic treatments with highly personalized Panchakarma programs.",
     rating: 4.8,
-    reviews: 240,
+    reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
     link: "/centers/kerala/kalari-kovilakom",
+  },
+  {
+    name: "Naad Wellness",
+    city: "Sonepat",
+    description: "Luxury integrative wellness retreat combining Ayurveda, yoga, naturopathy, and mindfulness. Expert-guided personalized programs for sustainable healing and deep neurological calm.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Naad Wellness/Thumb.jpg",
+    link: "/centers/sonepat/naad-wellness",
+  },
+  {
+    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    city: "Kumarakom",
+    description: "NABH-accredited sanctuary with 90+ years of family heritage. Authentic healing blending deep-rooted Ayurvedic wisdom with modern luxury in a tranquil lakeside haven.",
+    rating: 4.9,
+    reviews: 150,
+    image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+    link: "/centers/kerala/dheemahi-kumarakom",
+  },
+  {
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    description: "Pioneering integrative hospital blending ancient Ayurveda with modern medicine. Evidence-based care guided by a multi-disciplinary team for deep neurological healing.",
+    rating: 4.8,
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital",
+  },
+  {
+    name: "Dharana At Shillim",
+    city: "Pune",
+    description: "Tranquil retreat in the Sahyadri mountains blending traditional healing wisdom with modern wellness practices. Personalized programs for mindfulness and neurological balance.",
+    rating: 4.8,
+    reviews: 3900,
+    image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+    link: "/centers/pune/dharana-at-shillim",
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    description: "True essence of Ayurveda along Kerala's serene coastline. Classical Ayurvedic wisdom with modern comfort, personalized therapies tailored for chronic condition management.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat",
+  },
+  {
+    name: "Nagarjuna Ayurveda Centre",
+    city: "Kerala",
+    description: "One of India's most trusted heritage-rich Ayurvedic institutions. Classical treatment approach with strict diagnostic protocols for effective, result-oriented chronic disease therapy.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+    link: "/centers/kerala/nagarjuna-ayurveda-centre",
+  },
+  {
+    name: "Viveda Wellness Village",
+    city: "Nashik",
+    description: "Integrated wellness destination in the Sahyadri ranges. Personalized Ayurveda, naturopathy, yoga, and therapeutic spa treatments promoting detoxification and neurological wellness.",
+    rating: 4.8,
+    reviews: 0,
+    image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
+    link: "/centers/maharashtra/viveda-wellness-village",
+  },
+  {
+    name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+    city: "Rishikesh",
+    description: "One of India's most premium Ayurveda & Yoga wellness retreats combining Himalayan views, world-class therapies, and holistic rejuvenation for complete mind-body balance.",
+    rating: 4.9,
+    reviews: 420,
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5",
   },
 ];
 
@@ -438,7 +465,7 @@ const MigraineTreatment = () => {
   const prevReview = () => setCurrentReviewIndex((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
 
   const [topCentersPerSlide, setTopCentersPerSlide] = useState(3);
-  const topCentersTotalSlides = Math.max(1, Math.ceil(topCenters.length / topCentersPerSlide));
+  const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersPerSlide));
 
   useEffect(() => {
     const updateTopCentersLayout = () => {
@@ -457,7 +484,7 @@ const MigraineTreatment = () => {
     return () => window.removeEventListener("resize", updateTopCentersLayout);
   }, []);
 
-  const visibleTopCenters = topCenters.slice(
+  const visibleTopCenters = topAyurvedicCenters.slice(
     topCentersSlide * topCentersPerSlide,
     topCentersSlide * topCentersPerSlide + topCentersPerSlide
   );
@@ -523,7 +550,7 @@ const MigraineTreatment = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.8/5 Patient Satisfaction</span>
+                    <span>4.7/5 Patient Satisfaction</span>
                   </span>
                 </div>
               </div>
@@ -1246,7 +1273,7 @@ const MigraineTreatment = () => {
                         </div>
                         <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">({center.rating} rating)</span>
                         </div>
                       </div>
 

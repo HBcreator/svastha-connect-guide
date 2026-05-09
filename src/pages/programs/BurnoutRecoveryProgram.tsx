@@ -66,17 +66,116 @@ const reviews = [
   ["Anders Nielsen", "Stockholm, Sweden", "A Necessary Intervention for Sustainable Performance.", "The rhythmic nature of the Ayurvedic lifestyle was exactly the structure my scattered executive mind required to heal. Somatheeram provided a secluded sanctuary where the HPA-axis regulation could actually take place without external interference. My blood pressure and cortisol levels improved remarkably within just ten days. The doctors’ expertise in burnout-specific Ayurvedic medicine is world-class, making this the best investment I’ve made in my long-term career health."]
 ] as const;
 
-const centers = [
-  ["SOUKYA International Holistic Health Centre", "Bengaluru, Karnataka, India", "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm.", 4.9, 500, "/Center Images/SOUKYA/top center Thumb.jpg", "/centers/bangalore/soukya"],
-  ["Ananda in the Himalayas", "Narendra Nagar, Uttarakhand, India", "A world-renowned luxury destination spa located in the Himalayan foothills, focusing on Ayurveda, Yoga and Vedanta for total mental reset.", 4.9, 450, "/Center Images/Ananda in the Himalayas/Thumb.jpg", "/centers/uttarakhand/ananda-in-the-himalayas"],
-  ["AyurvedaGram Heritage Wellness Centre", "Bengaluru, Karnataka, India", "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village with physician-guided therapies.", 4.7, 600, "/Center Images/AyurvedaGram/Thumb.jpg", "/centers/bangalore/ayurvedagram"],
-  ["Kairali - The Ayurvedic Healing Village", "Palakkad, Kerala, India", "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments for deep professional reset.", 4.8, 420, "/Center Images/Ananda in the Himalayas/Thumb.jpg", "/centers/kerala/kairali-ayurvedic-healing-village"],
-  ["Carnoustie Ayurveda Wellness Resort", "Mararikulam, Kerala, India", "A premium beachside center known for authentic executive wellness care, experienced doctors, and personalized recovery plans.", 4.7, 360, "/Center Images/Carnoustie Ayurveda/Thumb.jpg", "/centers/kerala/carnoustie-ayurveda-wellness-resort"],
-  ["Somatheeram Ayurveda Village Resort", "Thiruvananthapuram, Kerala, India", "The world's first Ayurveda resort, providing classical treatments for burnout on a beautiful cliff overlooking the Arabian Sea.", 4.7, 510, "/Center Images/Atmantan Wellness Resort/Thumb.jpg", "/centers/kerala/somatheeram"],
-  ["AyurSoma Ayurveda Royal Retreat", "Thiruvananthapuram, Kerala, India", "Traditional Kerala Ayurveda in a royal retreat format with premium physician supervision and rejuvenation support.", 4.8, 300, "/Center Images/AyurSoma Ayurveda/Thumb.jpg", "/centers/kerala/ayursoma"],
-  ["Atmantan Wellness Resort", "Mulshi, Maharashtra, India", "A luxury wellness destination overlooking the Sahyadri mountains, specializing in integrated medical wellness for corporate stress.", 4.8, 290, "/Center Images/Atmantan Wellness Resort/Thumb.jpg", "/centers/pune/atmantan-wellness-resort"],
-  ["Kalari Kovilakom Palace for Ayurveda", "Palakkad, Kerala, India", "A globally recognized palace-turned-retreat providing strict, traditional, and authentic Ayurvedic treatments for total life reset.", 4.8, 240, "/Center Images/Kalari Kovilakom/Thumb.jpg", "/centers/kerala/kalari-kovilakom"]
-] as const;
+const topAyurvedicCenters = [
+  {
+    name: "Modi Yoga Retreat",
+    city: "Rishikesh",
+    description: "Mindful wellness sanctuary for yoga practice, meditation, and holistic rejuvenation amid scenic mountain views and flowing waters.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+    link: "/centers/rishikesh/modi-yoga-retreat",
+  },
+  {
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    description: "Serene wellness retreat blending time-honored healing with modern therapies for detoxification and sustainable healthy living.",
+    rating: 4.7,
+    reviews: 0,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest",
+  },
+  {
+    name: "Veda5 – Ayurveda, Yoga & Wellness Retreat",
+    city: "Rishikesh",
+    description: "One of India's most premium Ayurveda & Yoga retreats combining Himalayan views, world-class therapies, and holistic rejuvenation.",
+    rating: 4.9,
+    reviews: 420,
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5",
+  },
+  {
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    description: "Luxurious all-suite retreat in the Aravalli hills. Royal architecture with personalized Ayurvedic spa and lifestyle wellness.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/centers/gurugram/itc-grand-bharat",
+  },
+  {
+    name: "Kalari Kovilakom - The Palace For Ayurveda",
+    city: "Palakkad",
+    description: "Globally acclaimed palace retreat following classical gurukula system. Extremely strict, traditional Ayurvedic treatments.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+    link: "/centers/kerala/kalari-kovilakom",
+  },
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    description: "Award-winning wellness retreat along Kerala's pristine shores. Personalized Ayurvedic therapies and rejuvenation programs.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort",
+  },
+  {
+    name: "Ayurmana",
+    city: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/centers/kerala/ayurmana",
+  },
+  {
+    name: "Ayuskama Ayurveda",
+    city: "Dharamshala",
+    description: "Authentic Ayurvedic wellness center integrating traditional Ayurveda with modern lifestyle. Personalized Panchakarma and healing therapies.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
+    link: "/centers/dharamshala/ayuskama-ayurveda",
+  },
+  {
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    description: "Soulful coastal wellness at Mandrem Beach. Guided yoga, meditation, and Ayurvedic therapies for inner harmony.",
+    rating: 4.5,
+    reviews: 0,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa",
+  },
+  {
+    name: "Back to Roots Ayurveda Retreat",
+    city: "Idukki",
+    description: "NABH-accredited lakeside sanctuary guided by 4th generation Ayurvedic physicians. Classical Panchakarma in pristine nature.",
+    rating: 4.9,
+    reviews: 100,
+    image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+    link: "/centers/kerala/back-to-roots",
+  },
+  {
+    name: "Soul Vacation Resort & Wellness Centre",
+    city: "Goa",
+    description: "Boutique wellness resort near South Goa beaches. Traditional Ayurvedic principles with modern wellness for deep rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
+    link: "/centers/goa/soul-vacation",
+  },
+  {
+    name: "Kairali Heritage Resort",
+    city: "Kerala",
+    description: "Tranquil 11-acre riverside haven in Kannur. Authentic Ayurvedic & yoga therapies in river-facing cottages.",
+    rating: 4.8,
+    reviews: 220,
+    image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
+    link: "/centers/kerala/kairali-heritage",
+  },
+];
 
 const quickRows = [
   ["Program Name", "14-21 Day Ayurvedic Burnout Recovery & Neurological Reset"],
@@ -313,11 +412,11 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const topCentersTotalSlides = Math.max(1, centers.length - topCentersVisible + 1);
+  const topCentersTotalSlides = Math.max(1, Math.ceil(topAyurvedicCenters.length / topCentersVisible));
   const goTopCentersNext = () => setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
   const goTopCentersPrevious = () => setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
   const toggleCenterDescription = (name: string) => setExpandedCenterName(prev => prev === name ? null : name);
-  const visibleTopCenters = centers.slice(topCentersSlide, topCentersSlide + topCentersVisible);
+  const visibleTopCenters = topAyurvedicCenters.slice(topCentersSlide * topCentersVisible, topCentersSlide * topCentersVisible + topCentersVisible);
 
   return (
     <section id="top-centers" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-6">
@@ -347,47 +446,47 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
-          {visibleTopCenters.map(([name, city, description, rating, reviewsCount, image, link]) => (
-            <div key={name as string} className="flex h-full w-full">
+          {visibleTopCenters.map((center) => (
+            <div key={center.name} className="flex h-full w-full">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
                 <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                   <img
-                    src={image as string}
-                    alt={name as string}
+                    src={center.image}
+                    alt={center.name}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
                 </div>
 
                 <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
-                  <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{name as string}</h3>
+                  <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
 
                   <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                     <div className="flex items-center gap-1.5 shrink min-w-0">
                       <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
-                      <span className="text-[12px] md:text-[13px] font-semibold truncate" title={city as string}>{city as string}</span>
+                      <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
                     </div>
                     <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                      <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{rating as number} ({reviewsCount as number})</span>
+                      <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
                     </div>
                   </div>
 
                   <div className="relative mb-3 flex-grow text-left">
-                    <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === name ? "" : "line-clamp-3"}`}>
-                      {description as string}
+                    <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
+                      {center.description}
                     </p>
                     <button
-                      onClick={() => toggleCenterDescription(name as string)}
+                      onClick={() => toggleCenterDescription(center.name)}
                       className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
                     >
-                      {expandedCenterName === name ? "Read Less" : "Read More"}
+                      {expandedCenterName === center.name ? "Read Less" : "Read More"}
                     </button>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 mt-auto">
                     <Button
                       variant="outline"
-                      onClick={() => window.open(link as string, "_blank")}
+                      onClick={() => window.open(center.link, "_blank")}
                       className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                     >
                       View Details
@@ -406,14 +505,28 @@ const CentersSection = ({ navigate, onQuote }: { navigate: (path: string) => voi
         </div>
       </div>
 
-      <div className="mt-4 flex justify-center">
-        <Button
-          className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
-          onClick={() => window.open('/centers', "_blank")}
-        >
-          VIEW ALL CENTERS
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Button>
+      <div className="space-y-6">
+        {topCentersTotalSlides > 1 && (
+          <div className="flex justify-center gap-2 mt-4">
+            {Array.from({ length: topCentersTotalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setTopCentersSlide(i)}
+                className={`h-1.5 rounded-full transition-all ${i === topCentersSlide ? "w-6 bg-[#335765]" : "w-1.5 bg-[#C7D1C9]"}`}
+              />
+            ))}
+          </div>
+        )}
+
+        <div className="flex justify-center mt-4">
+          <Button
+            className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
+            onClick={() => window.open('/centers', "_blank")}
+          >
+            VIEW ALL CENTERS
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -977,7 +1090,7 @@ const BurnoutRecoveryProgram = () => {
                   </span>
                   <span className="inline-flex items-center gap-2.5 text-white">
                     <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    <span>4.9/5 Excellent Rating</span>
+                    <span>4.7/5 Excellent Rating</span>
                   </span>
                 </div>
               </div>
