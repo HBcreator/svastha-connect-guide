@@ -279,86 +279,125 @@ export const faqItems = [
 
 export const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    location: "Bengaluru, Karnataka",
-    rating: "4.9",
-    reviews: "500+",
+    name: "Viveda Wellness Village",
+    city: "Nashik",
+    location: "Nashik",
+    description: "Immerse yourself in a transformative wellness retreat at Viveda Wellness Village, an integrated wellness destination nestled in the serene surroundings of Trimbakeshwar near Nashik. Designed to reconnect individuals with nature and holistic living, Viveda blends ancient Indian healing sciences with modern wellness practices for complete mind-body rejuvenation. Surrounded by the tranquil landscapes of the Sahyadri ranges, the retreat offers personalized wellness programs guided by experienced practitioners. Guests experience a combination of Ayurveda, naturopathy, yoga, meditation, and therapeutic spa treatments that promote detoxification, stress relief, and long-term vitality.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
+    link: "/centers/maharashtra/viveda-wellness-village"
+  },
+  {
+    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    city: "Kumarakom",
+    location: "Kumarakom",
+    description: "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+    rating: 4.9,
+    reviews: 150,
+    image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+    link: "/centers/kerala/dheemahi-kumarakom"
+  },
+  {
+    name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Yan Cure Yoga Retreat & Ayurveda Centre mein aap paayenge yoga, Ayurveda aur holistic healing ka perfect sangam. Yeh centre ek shaant aur prakritik environment mein sthit hai, jahan traditional Ayurvedic therapies aur yogic practices ke zariye body, mind aur soul ko balance kiya jaata hai. Experienced Ayurvedic doctors aur certified yoga instructors ke guidance mein, Yan Cure personalized treatment programs offer karta hai jo detoxification, stress relief aur overall rejuvenation par focus karte hain. Yahan ki healing therapies ancient wisdom aur modern wellness approaches ka ek powerful combination hain, jo long-term health aur inner peace ko promote karti hain.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
+    link: "/centers/rishikesh/yan-cure"
+  },
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    location: "Thrissur",
+    description: "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort"
+  },
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
+    rating: 4.9,
+    reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    description: "A luxury organic estate specializing in mental reset and nervous system repair. Offers complete digital fasting in a serene, distraction-free environment.",
     link: "/centers/bangalore/soukya"
   },
   {
-    name: "Ananda in the Himalayas",
-    location: "Rishikesh, Uttarakhand",
-    rating: "4.9",
-    reviews: "850+",
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    description: "World-class luxury retreat in the Himalayan foothills. Their emotional healing and stress management programs are perfect for deep digital detoxification.",
-    link: "/centers/rishikesh/ananda"
+    name: "Sitaram Mountain Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
+    rating: 4.8,
+    reviews: 928,
+    image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
+    link: "/centers/idukki/sitaram-mountain-retreat"
   },
   {
-    name: "Veda5 Ayurveda & Yoga Retreat",
-    location: "Rishikesh, Uttarakhand",
-    rating: "4.9",
-    reviews: "320+",
-    image: "/Center Images/veda5/veda5-1.jpg",
-    description: "Nestled in the Himalayas, Veda5 provides an ideal environment for digital disconnection with its pure air, sattvic food, and strict focus on mindfulness.",
-    link: "/centers/rishikesh/veda5",
+    name: "Niraamaya Retreats Surya Samudra",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Immerse yourself in the serene beauty of coastal Ayurveda at Niraamaya Retreats Surya Samudra, a luxurious wellness destination on Kerala's pristine shores. Known for authentic therapies and tranquil ocean views, it blends traditional healing with modern comfort for deep rejuvenation.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
+    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    location: "Mararikulam, Kerala",
-    rating: "4.8",
-    reviews: "420+",
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    description: "An award-winning luxury retreat offering intensive stress-relief programs right on the pristine beaches of Kerala, far from digital noise.",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+    name: "Ayushi Ayurvedic Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
+    link: "/centers/kerala/ayushi-ayurvedic-retreat"
   },
   {
-    name: "Agni Ayurvedic Village",
-    location: "Navi Mumbai, Maharashtra",
-    rating: "4.8",
-    reviews: "150+",
-    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    description: "An eco-friendly village offering specialized stress management and digital detox protocols. Features deep relaxation therapies like Shirodhara.",
-    link: "/centers/kerala/agni-ayurvedic-village",
+    name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+    city: "Kayamkulam",
+    location: "Kayamkulam",
+    description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+    link: "/centers/kerala/dhathri-ayurveda"
   },
   {
-    name: "Dharana at Shillim",
-    location: "Pune, Maharashtra",
-    rating: "4.9",
-    reviews: "210+",
-    image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    description: "Set in a 320-acre forest, Dharana offers premium 'Mindfulness & Resilience' programs perfect for executives needing a tech-free environment.",
-    link: "/centers/pune/dharana-at-shillim",
+    name: "Nagarjuna Ayurveda Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+    link: "/centers/kerala/nagarjuna-ayurveda-centre"
   },
   {
-    name: "The Ayurvedic Healing Village (Kairali)",
-    location: "Palakkad, Kerala",
-    rating: "4.9",
-    reviews: "215+",
-    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    description: "Set in lush greenery, this village is famous for its traditional approach to Ayurveda and deeply restorative environments for mental peace.",
-    link: "/centers/kerala/kairali"
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    location: "Mumbai",
+    description: "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest"
   },
   {
-    name: "Athreya Ayurvedic Centre",
-    location: "Kottayam, Kerala",
-    rating: "4.9",
-    reviews: "185+",
-    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    description: "Surrounded by paddy fields, Athreya is renowned for its highly personalized Ayurvedic treatments and quiet atmosphere.",
-    link: "/centers/kerala/athreya"
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+    rating: 4.8,
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
   },
-  {
-    name: "Shreyas Yoga Retreat",
-    location: "Bengaluru, Karnataka",
-    rating: "4.9",
-    reviews: "320+",
-    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    description: "One of the world's finest retreats, Shreyas offers a deeply spiritual environment with high-end luxury and expert-led digital fasting programs.",
-    link: "/centers/bangalore/shreyas"
-  }
 ];
 
 export const patientReviews = [

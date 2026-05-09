@@ -50,40 +50,124 @@ const patientReviews = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. Renowned for expert musculoskeletal and joint care programs.",
-    rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/centers/bangalore/soukya",
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "A globally recognized destination for classical Ayurvedic healing. Specialized Janu Vasti and Panchakarma programs for knee degeneration are guided by experienced Vaidyas.",
-    rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/centers/bangalore/ayurvedagram",
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/centers/dharamshala/himveda"
   },
   {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description: "A world-renowned Ayurvedic village offering authentic Panchakarma and specialized joint-care therapies including Janu Basti and Elakizhi in a serene, nature-focused environment.",
-    rating: 4.8, reviews: 420, image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg", link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    location: "Mumbai",
+    description: "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description: "A premium beachside center known for authentic Panchakarma care and specialized musculoskeletal programs. Experienced doctors design personalized knee pain recovery plans.",
-    rating: 4.7, reviews: 360, image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg", link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    name: "SWAN Yoga Retreat & Ayurveda",
+    city: "Goa",
+    location: "Goa",
+    description: "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, a peaceful ashram-style wellness centre set in the lush hills of North Goa. Rooted in classical Yoga and Ayurveda, the retreat offers a calm space for healing, mental clarity, and inner growth.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
+    link: "/centers/goa/swan-yoga-retreat"
   },
   {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "The world's first Ayurveda resort, providing classical treatments for joint disorders including Janu Vasti, Patra Pinda Sweda, and comprehensive Vata-pacifying programs.",
-    rating: 4.7, reviews: 510, image: "/Center Images/somatheeram/Somatheeram 01.jpg", link: "/centers/kerala/somatheeram",
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar",
+    location: "Alwar",
+    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description: "A serene retreat combining classical Ayurvedic knee therapies with guided yoga and lifestyle coaching to support lasting recovery and mobility restoration.",
-    rating: 4.8, reviews: 380, image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg", link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    location: "Gurugram",
+    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape. Each stay is defined by personalized service, spacious suites, and a tranquil environment that encourages slow, mindful living.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/centers/gurugram/itc-grand-bharat"
+  },
+  {
+    name: "Indus Valley Ayurvedic Centre",
+    city: "Mysore",
+    location: "Mysore",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+  },
+  {
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+    rating: 4.8,
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+  },
+  {
+    name: "Kairali – The Ayurvedic Healing Village",
+    city: "Palakkad",
+    location: "Palakkad",
+    description: "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+    rating: 4.9,
+    reviews: 280,
+    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+  },
+  {
+    name: "Chamundi Hill Palace Ayurvedic Resort",
+    city: "Mysore",
+    location: "Mysore",
+    description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+    link: "/centers/mysore/chamundi-hill-palace"
+  },
+  {
+    name: "Ayurmana",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/centers/kerala/ayurmana"
+  },
+  {
+    name: "AyurSoma Ayurveda Royal Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
+    link: "/centers/kerala/ayursoma"
   },
 ];
 

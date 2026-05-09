@@ -90,64 +90,124 @@ const patientReviews = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka",
-    description:
-      "NABH-accredited AYUSH hospital known for personalized cervical rehabilitation protocols, integrated therapies, and physician-led programs.",
-    rating: 4.9,
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+    rating: 4.5,
     reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka",
-    description:
-      "Classical Ayurveda center offering structured Vata management and pain-focused care plans for spinal and neck disorders.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
-  },
-  {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka",
-    description:
-      "Known for combining cervical therapies with therapeutic yoga, posture correction, and lifestyle restoration modules.",
-    rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
-  },
-  {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala",
-    description:
-      "A trusted Kerala destination for authentic Panchakarma and rejuvenation-based spine-care pathways in a healing environment.",
-    rating: 4.8,
+    name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Veda5 is one of India’s most premium Ayurveda & Yoga wellness retreats — combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+    rating: 4.9,
     reviews: 420,
-    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala",
-    description:
-      "Premium beachside center with experienced doctors and personalized chronic pain management plans.",
-    rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    name: "Chamundi Hill Palace Ayurvedic Resort",
+    city: "Mysore",
+    location: "Mysore",
+    description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+    link: "/centers/mysore/chamundi-hill-palace"
   },
   {
-    name: "Somatheeram Ayurveda Village",
-    city: "Thiruvananthapuram, Kerala",
-    description:
-      "Well-established Ayurveda resort for comprehensive healing programs including neck pain and nervous system support therapies.",
-    rating: 4.7,
-    reviews: 510,
+    name: "Ananda In The Himalayas",
+    city: "Uttarakhand",
+    location: "Uttarakhand",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+    rating: 4.8,
+    reviews: 900,
+    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+  },
+  {
+    name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort nestled near the tranquil beaches of South Goa. This destination blends serene coastal living with holistic healing, offering an ideal retreat for those seeking relaxation, stress relief, and natural wellness. Rooted in traditional Ayurvedic principles and enhanced with modern wellness therapies, Soul Vacation provides personalized care designed to restore balance to the body, mind, and spirit — promoting deep rejuvenation through time-honored healing practices.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
+    link: "/centers/goa/soul-vacation"
+  },
+  {
+    name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+    city: "Kayamkulam",
+    location: "Kayamkulam",
+    description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+    link: "/centers/kerala/dhathri-ayurveda"
+  },
+  {
+    name: "Ayuskama Ayurveda",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Ayuskama Ayurveda ek authentic Ayurvedic wellness center hai jo traditional Ayurveda ko modern lifestyle ke saath integrate karta hai. Yeh center Ayurveda, Panchakarma aur holistic healing therapies par focus karta hai, jahan personalized treatment plans experienced Ayurvedic doctors ke guidance mein design kiye jaate hain. Natural therapies, herbal medicines aur sattvic lifestyle ke through Ayuskama long-term health, detoxification aur overall rejuvenation ko promote karta hai. Yeh center chronic health issues, stress management aur preventive healthcare ke liye ek holistic approach provide karta hai.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
+    link: "/centers/dharamshala/ayuskama-ayurveda"
+  },
+  {
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/centers/dharamshala/himveda"
+  },
+  {
+    name: "Somatheeram Ayurvedic Health Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
+    rating: 4.9,
+    reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram",
+    link: "/centers/kerala/somatheeram"
+  },
+  {
+    name: "Carnoustie Ayurveda & Wellness Resort",
+    city: "Mararikulam",
+    location: "Mararikulam",
+    description: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+  },
+  {
+    name: "Kalari Kovilakom - The Palace For Ayurveda",
+    city: "Palakkad",
+    location: "Palakkad",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+    link: "/centers/kerala/kalari-kovilakom"
+  },
+  {
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
   },
 ];
 

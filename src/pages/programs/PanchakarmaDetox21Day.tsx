@@ -41,6 +41,8 @@ import {
   UtensilsCrossed,
   X,
   XCircle,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 
 const galleryImages = [
@@ -259,94 +261,124 @@ const whyChooseUsPoints = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
-    rating: 4.9,
+    name: "The Imperial Spa and Wellness",
+    city: "Delhi",
+    location: "Delhi",
+    description: "Step into a world of refined relaxation at The Imperial Spa and Wellness, a luxury wellness destination designed to restore balance, calm, and vitality. Blending timeless healing traditions with modern wellness therapies, the centre offers a peaceful retreat for guests seeking deep rejuvenation of body and mind. From personalized spa rituals to restorative wellness experiences, every treatment is thoughtfully curated by skilled professionals to deliver comfort, renewal, and holistic well-being in an elegant setting.",
+    rating: 4.8,
     reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
+    image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
+    link: "/centers/delhi/the-imperial-spa-and-wellness"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by yoga, mindful routines, and sattvic nutrition.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
+    name: "SWAN Yoga Retreat & Ayurveda",
+    city: "Goa",
+    location: "Goa",
+    description: "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, a peaceful ashram-style wellness centre set in the lush hills of North Goa. Rooted in classical Yoga and Ayurveda, the retreat offers a calm space for healing, mental clarity, and inner growth.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
+    link: "/centers/goa/swan-yoga-retreat"
   },
   {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description:
-      "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement.",
+    name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+    city: "Kayamkulam",
+    location: "Kayamkulam",
+    description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
     rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+    reviews: 500,
+    image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+    link: "/centers/kerala/dhathri-ayurveda"
   },
   {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
-    rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
-  },
-  {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description:
-      "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
     rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
-  },
-  {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
-    rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/kerala/somatheeram",
-  },
-  {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
-    rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description:
-      "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
-    reviews: 280,
+    city: "Kerala",
+    location: "Kerala",
+    description: "Immerse yourself in the serene beauty of coastal Ayurveda at Niraamaya Retreats Surya Samudra, a luxurious wellness destination on Kerala's pristine shores. Known for authentic therapies and tranquil ocean views, it blends traditional healing with modern comfort for deep rejuvenation.",
+    rating: 4.7,
+    reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
+    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
   },
   {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.",
+    name: "Modi Yoga Retreat",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Experience calm riverside living at Modi Yoga Retreat, a mindful wellness sanctuary designed for yoga practice, meditation, and holistic rejuvenation. Surrounded by scenic mountain views and flowing waters, the retreat offers a peaceful space to reset body and mind.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+    link: "/centers/rishikesh/modi-yoga-retreat"
+  },
+  {
+    name: "Ideal Ayurvedic Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nestled on a tranquil hillside in Chowara village, just a short walk from Kovalam beach, Ideal Ayurvedic Resort is a 'Green Leaf' certified sanctuary surrounded by 15 acres of lush coconut groves. Authentic, physician-led Ayurveda is practiced with heartfelt dedication — from classical Panchakarma to personalized healing programs — in one of Kerala's most genuinely non-commercialized healing environments.",
+    rating: 4.5,
+    reviews: 400,
+    image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
+    link: "/centers/kerala/ideal-ayurvedic-resort"
+  },
+  {
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar",
+    location: "Alwar",
+    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
     rating: 4.8,
-    reviews: 240,
-    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
+    reviews: 500,
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+  },
+  {
+    name: "Krishnendu Ayurveda Hospital",
+    city: "Alappuzha",
+    location: "Alappuzha",
+    description: "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+    rating: 4.9,
+    reviews: 1500,
+    image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
+    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+  },
+  {
+    name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Veda5 is one of India’s most premium Ayurveda & Yoga wellness retreats — combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+    rating: 4.9,
+    reviews: 420,
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5"
+  },
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    location: "Thrissur",
+    description: "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort"
+  },
+  {
+    name: "Athreya Ayurvedic Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+    link: "/centers/kerala/athreya-ayurvedic-centre"
   },
 ];
 
@@ -772,7 +804,34 @@ const PanchakarmaDetox21Day = () => {
 
           <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
+              {/* Metrics Section */}
+              <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">1000+</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patients</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.6/5</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+                    <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">96%</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+                </div>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Understanding Panchakarma - The Science Behind It</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                 Not all five therapies are given to every guest. Your doctor prescribes the combination based on diagnosis and tolerance.
               </p>

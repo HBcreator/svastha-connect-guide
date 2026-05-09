@@ -41,6 +41,8 @@ import {
   UtensilsCrossed,
   X,
   XCircle,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 
 const galleryImages = [
@@ -265,94 +267,124 @@ const whyChooseUsPoints = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
+    name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Veda5 is one of India’s most premium Ayurveda & Yoga wellness retreats — combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+    rating: 4.9,
+    reviews: 420,
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5"
+  },
+  {
+    name: "The Imperial Spa and Wellness",
+    city: "Delhi",
+    location: "Delhi",
+    description: "Step into a world of refined relaxation at The Imperial Spa and Wellness, a luxury wellness destination designed to restore balance, calm, and vitality. Blending timeless healing traditions with modern wellness therapies, the centre offers a peaceful retreat for guests seeking deep rejuvenation of body and mind. From personalized spa rituals to restorative wellness experiences, every treatment is thoughtfully curated by skilled professionals to deliver comfort, renewal, and holistic well-being in an elegant setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
+    link: "/centers/delhi/the-imperial-spa-and-wellness"
+  },
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
+    link: "/centers/bangalore/soukya"
+  },
+  {
+    name: "Kumarakom Lake Resort",
+    city: "Kumarakom",
+    location: "Kumarakom",
+    description: "Experience the tranquil charm of Kerala's backwaters at Kumarakom Lake Resort, an award-winning heritage retreat on serene Vembanad Lake. Designed with traditional Kerala architecture, the resort blends luxury with cultural authenticity, offering Ayurvedic wellness, private villas, and peaceful nature-led rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/kumarakom lake resort/Thumb.jpg",
+    link: "/centers/kerala/kumarakom-lake-resort"
+  },
+  {
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+    rating: 4.5,
+    reviews: 500,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa"
+  },
+  {
+    name: "Dharana At Shillim",
+    city: "Pune",
+    location: "Pune",
+    description: "Immerse yourself in a journey of deep wellness at Dharana At Shillim, a tranquil retreat dedicated to holistic healing and mindful living. Surrounded by the serene Sahyadri mountains, the center blends traditional healing wisdom with modern wellness practices to create a truly transformative experience. Guided by experienced practitioners, every program is thoughtfully designed to restore harmony between body, mind, and spirit. From personalized therapies to mindfulness and rejuvenation programs, Dharana At Shillim offers a peaceful sanctuary for those seeking balance, vitality, and long-term well-being.",
+    rating: 4.8,
+    reviews: 3900,
+    image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+    link: "/centers/pune/dharana-at-shillim"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas.",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
+    link: "/centers/bangalore/ayurvedagram"
   },
   {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description:
-      "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification and sustainable health improvement.",
+    name: "Chamundi Hill Palace Ayurvedic Resort",
+    city: "Mysore",
+    location: "Mysore",
+    description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
     rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+    reviews: 500,
+    image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+    link: "/centers/mysore/chamundi-hill-palace"
   },
   {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
-    rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
-  },
-  {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description:
-      "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
+    name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+    city: "Goa",
+    location: "Goa",
+    description: "Step into a sanctuary of healing at the Ayurveda Wellness Centre at Mercure Goa Devaaya Resort, where ancient Ayurvedic wisdom meets tranquil island living. Nestled along the serene backwaters of Divar Island, this wellness retreat offers an immersive experience rooted in authentic Ayurvedic traditions. Guided by experienced Ayurvedic doctors and therapists, the centre delivers personalized therapies designed to restore the natural balance of body, mind, and spirit.",
     rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    reviews: 500,
+    image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
+    link: "/centers/goa/mercure-goa-devaaya-resort"
   },
   {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
     rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/kerala/somatheeram",
+    reviews: 190,
+    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+    link: "/centers/kerala/agni-ayurvedic-village"
   },
   {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
+    name: "Back to Roots Ayurveda Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+    rating: 4.9,
+    reviews: 100,
+    image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+    link: "/centers/kerala/back-to-roots"
+  },
+  {
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
     rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
-  },
-  {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description:
-      "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
-    reviews: 280,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
-  },
-  {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.",
-    rating: 4.8,
-    reviews: 240,
-    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
   },
 ];
 
@@ -684,7 +716,34 @@ const SciaticaTreatment = () => {
 
           <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Sciatica</h2>
+              {/* Metrics Section */}
+              <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">850+</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patients</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.7/5</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+                    <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">96%</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+                </div>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Core Ayurvedic Therapies for Sciatica</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">Your Vaidya prescribes the right combination based on your nerve condition, dosha constitution, and treatment response.</p>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
                 {therapies.map((item) => {

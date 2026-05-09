@@ -56,41 +56,125 @@ const faqItems = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "India's first NABH-accredited hospital integrating Ayurveda and Yoga. Highly specialized in spinal health and nerve-related recovery.",
-    rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/centers/bangalore/soukya",
+    name: "Shreyas Yoga Retreat (Nelamangala)",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+    link: "/centers/bangalore/shreyas-yoga-retreat"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "Traditional Ayurvedic healing in a tranquil heritage village. Excellent for chronic pain management and Vata-pacifying programs.",
-    rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/centers/bangalore/ayurvedagram",
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar",
+    location: "Alwar",
+    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description: "Premium beachside center specializing in authentic Panchakarma and recovery-focused plans for nerve disorders.",
-    rating: 4.7, reviews: 360, image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg", link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Veda5 is one of India’s most premium Ayurveda & Yoga wellness retreats — combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+    rating: 4.9,
+    reviews: 420,
+    image: "/Center Images/veda5/veda5-1.jpg",
+    link: "/centers/veda5"
   },
   {
-    name: "Agni Ayurvedic Village",
-    city: "Mumbai, Maharashtra, India",
-    description: "A premier destination for authentic Ayurveda. Specializing in chronic back pain and neuromuscular disorders with a high success rate.",
-    rating: 4.8, reviews: 420, image: "/Center Images/Agni - Ayurvedic Village/CTA-bottom.jpg", link: "/centers/mumbai/agni-ayurvedic-village",
+    name: "Nagarjuna Ayurveda Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+    link: "/centers/kerala/nagarjuna-ayurveda-centre"
   },
   {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description: "Award-winning wellness retreat offering specialized Vata-pacifying treatments and spine health programs in a luxury setting.",
-    rating: 4.9, reviews: 280, image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg", link: "/centers/kerala/niraamaya-surya-samudra",
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    location: "Pune",
+    description: "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort"
   },
   {
-    name: "Ananda in the Himalayas",
-    city: "Rishikesh, Uttarakhand, India",
-    description: "World-renowned wellness destination. Their 'Physiotherapy and Ayurveda' integration is world-class for spinal rehabilitation.",
-    rating: 4.9, reviews: 850, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/centers/rishikesh/ananda-in-the-himalayas",
-  }
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
+  },
+  {
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    location: "Gurugram",
+    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape. Each stay is defined by personalized service, spacious suites, and a tranquil environment that encourages slow, mindful living.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/centers/gurugram/itc-grand-bharat"
+  },
+  {
+    name: "Viveda Wellness Village",
+    city: "Nashik",
+    location: "Nashik",
+    description: "Immerse yourself in a transformative wellness retreat at Viveda Wellness Village, an integrated wellness destination nestled in the serene surroundings of Trimbakeshwar near Nashik. Designed to reconnect individuals with nature and holistic living, Viveda blends ancient Indian healing sciences with modern wellness practices for complete mind-body rejuvenation. Surrounded by the tranquil landscapes of the Sahyadri ranges, the retreat offers personalized wellness programs guided by experienced practitioners. Guests experience a combination of Ayurveda, naturopathy, yoga, meditation, and therapeutic spa treatments that promote detoxification, stress relief, and long-term vitality.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
+    link: "/centers/maharashtra/viveda-wellness-village"
+  },
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    location: "Thrissur",
+    description: "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort"
+  },
+  {
+    name: "Modi Yoga Retreat",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Experience calm riverside living at Modi Yoga Retreat, a mindful wellness sanctuary designed for yoga practice, meditation, and holistic rejuvenation. Surrounded by scenic mountain views and flowing waters, the retreat offers a peaceful space to reset body and mind.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+    link: "/centers/rishikesh/modi-yoga-retreat"
+  },
+  {
+    name: "Krishnendu Ayurveda Hospital",
+    city: "Alappuzha",
+    location: "Alappuzha",
+    description: "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+    rating: 4.9,
+    reviews: 1500,
+    image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
+    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+  },
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
+    rating: 4.9,
+    reviews: 500,
+    image: "/Center Images/SOUKYA/top center Thumb.jpg",
+    link: "/centers/bangalore/soukya"
+  },
 ];
 
 const SciaticaTreatment = () => {

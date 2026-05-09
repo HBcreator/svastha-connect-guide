@@ -236,15 +236,126 @@ export const faqItems = [
 ];
 
 export const topAyurvedicCenters = [
-  ["SOUKYA International Holistic Health Centre", "Bengaluru, Karnataka", "India's premier holistic health centre, renowned for its royal treatments and high-profile international clientele.", 4.9, 500, "/Center Images/SOUKYA/top center Thumb.jpg", "/centers/bangalore/soukya"],
-  ["Carnoustie Ayurveda Wellness Resort", "Mararikulam, Kerala", "A luxury beachside retreat specializing in clinical detoxification and high-end beauty rituals for a radiant transformation.", 4.7, 360, "/Center Images/Carnoustie Ayurveda/Thumb.jpg", "/centers/kerala/carnoustie-ayurveda-wellness-resort"],
-  ["Ananda in the Himalayas", "Narendra Nagar, Uttarakhand", "A world-class destination spa combining ancient Ayurveda with modern international wellness for ultimate rejuvenation.", 4.9, 450, "/Center Images/Ananda in the Himalayas/Thumb.jpg", "/centers/uttarakhand/ananda-in-the-himalayas"],
-  ["Somatheeram Ayurveda Village", "Kovalam, Kerala", "The world's first Ayurveda village, offering traditional treatments in a peaceful seaside environment with decades of clinical expertise.", 4.8, 420, "/Center Images/somatheeram/Somatheeram 01.jpg", "/centers/kerala/somatheeram"],
-  ["AyurvedaGram Heritage Wellness Center", "Bengaluru, Karnataka", "Experience healing in a heritage setting with reconstructed antique houses and highly authentic clinical protocols.", 4.7, 280, "/Center Images/AyurvedaGram/Thumb.jpg", "/centers/bangalore/ayurvedagram"],
-  ["Kairali - The Ayurvedic Healing Village", "Palakkad, Kerala", "A unique retreat designed as a traditional village, focusing on holistic health through deep-rooted Ayurvedic traditions.", 4.8, 310, "/Center Images/The Ayurvedic Healing Village/Base image.jpg", "/centers/kerala/kairali"],
-  ["Atmantan Wellness Resort", "Mulshi, Maharashtra", "A contemporary luxury wellness destination offering integrated Ayurvedic programs overlooking the serene Mulshi Lake.", 4.9, 240, "/Center Images/Atmantan Wellness Resort/Thumb.jpg", "/centers/maharashtra/atmantan"],
-  ["Viveda Wellness Village", "Nashik, Maharashtra", "A luxury integrated wellness retreat offering personalized Ayurvedic beauty and rejuvenation programs in a serene environment.", 4.9, 320, "/Center Images/Viveda Wellness Village/Thumb.jpg", "/centers/nashik/viveda"],
-  ["Niraamaya Retreats Surya Samudra", "Kovalam, Kerala", "A Relais & Châteaux property offering breathtaking sea views and world-class Ayurvedic clinical beauty therapies.", 4.8, 220, "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg", "/centers/kerala/niraamaya"],
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
+    rating: 4.9,
+    reviews: 500,
+    image: "/Center Images/SOUKYA/top center Thumb.jpg",
+    link: "/centers/bangalore/soukya"
+  },
+  {
+    name: "Somatheeram Ayurvedic Health Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
+    rating: 4.9,
+    reviews: 320,
+    image: "/Center Images/somatheeram/Somatheeram 01.jpg",
+    link: "/centers/kerala/somatheeram"
+  },
+  {
+    name: "Shreyas Yoga Retreat (Nelamangala)",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+    link: "/centers/bangalore/shreyas-yoga-retreat"
+  },
+  {
+    name: "Kalari Kovilakom - The Palace For Ayurveda",
+    city: "Palakkad",
+    location: "Palakkad",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+    link: "/centers/kerala/kalari-kovilakom"
+  },
+  {
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
+  },
+  {
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+    rating: 4.8,
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+  },
+  {
+    name: "Ideal Ayurvedic Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nestled on a tranquil hillside in Chowara village, just a short walk from Kovalam beach, Ideal Ayurvedic Resort is a 'Green Leaf' certified sanctuary surrounded by 15 acres of lush coconut groves. Authentic, physician-led Ayurveda is practiced with heartfelt dedication — from classical Panchakarma to personalized healing programs — in one of Kerala's most genuinely non-commercialized healing environments.",
+    rating: 4.5,
+    reviews: 400,
+    image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
+    link: "/centers/kerala/ideal-ayurvedic-resort"
+  },
+  {
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+    rating: 4.5,
+    reviews: 500,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa"
+  },
+  {
+    name: "Chamundi Hill Palace Ayurvedic Resort",
+    city: "Mysore",
+    location: "Mysore",
+    description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+    link: "/centers/mysore/chamundi-hill-palace"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "Namaste Dwaar – Countryside Wellness Retreat",
+    city: "Delhi",
+    location: "Delhi",
+    description: "Peaceful farmhouse sanctuary near NCR offering authentic Ayurvedic therapies, farm-fresh sattvic food, and compassionate care.",
+    rating: 4.8,
+    reviews: 180,
+    image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
+    link: "/centers/delhi/namastedwaar"
+  },
+  {
+    name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Yan Cure Yoga Retreat & Ayurveda Centre mein aap paayenge yoga, Ayurveda aur holistic healing ka perfect sangam. Yeh centre ek shaant aur prakritik environment mein sthit hai, jahan traditional Ayurvedic therapies aur yogic practices ke zariye body, mind aur soul ko balance kiya jaata hai. Experienced Ayurvedic doctors aur certified yoga instructors ke guidance mein, Yan Cure personalized treatment programs offer karta hai jo detoxification, stress relief aur overall rejuvenation par focus karte hain. Yahan ki healing therapies ancient wisdom aur modern wellness approaches ka ek powerful combination hain, jo long-term health aur inner peace ko promote karti hain.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
+    link: "/centers/rishikesh/yan-cure"
+  },
 ];
 
 export const patientReviews = [

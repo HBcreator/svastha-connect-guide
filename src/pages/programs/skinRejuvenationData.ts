@@ -193,15 +193,126 @@ export const faqItems = [
 ];
 
 export const topAyurvedicCenters = [
-  { name: "SOUKYA International Holistic Health Centre", city: "Bengaluru, Karnataka", description: "A favorite among international royalty. Offers unparalleled luxury and highly personalized, authentic Ayurvedic skin therapies on a stunning organic estate.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/centers/bangalore/soukya" },
-  { name: "Ananda in the Himalayas", city: "Rishikesh, Uttarakhand", description: "World-renowned luxury destination spa offering bespoke Ayurvedic beauty and wellness programs with breathtaking views of the Himalayas.", rating: 4.9, reviews: 850, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/centers/rishikesh/ananda" },
-  { name: "Carnoustie Ayurveda Wellness Resort", city: "Mararikulam, Kerala", description: "An award-winning luxury retreat offering intensive anti-aging and beauty programs right on the pristine beaches of Kerala.", rating: 4.8, reviews: 420, image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg", link: "/centers/kerala/carnoustie-ayurveda-wellness-resort" },
-  { name: "Nagarjuna Ayurveda Centre", city: "Kalady, Kerala", description: "A heritage Ayurvedic hospital with decades of clinical experience in treating chronic skin conditions and providing deep rejuvenation.", rating: 4.7, reviews: 310, image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg", link: "/centers/kerala/nagarjuna-ayurveda-centre" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bengaluru, Karnataka", description: "A globally recognized destination for traditional Ayurvedic healing, set in a reconstructed 18th-century heritage village.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/centers/bangalore/ayurvedagram" },
-  { name: "Krishnendu Ayurveda Hospital", city: "Chingoli, Kerala", description: "A traditional hospital known for its authentic clinical skin-care protocols and successful anti-aging therapies.", rating: 4.8, reviews: 290, image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg", link: "/centers/kerala/krishnendu-ayurveda-hospital" },
-  { name: "Kairali Heritage", city: "Palakkad, Kerala", description: "A unique retreat offering deep-rooted skin rejuvenation amidst lush greenery and traditional Kerala architecture.", rating: 4.8, reviews: 340, image: "/Center Images/Kairali Heritage/Kairali Heritage-02.jpeg", link: "/centers/kerala/kairali" },
-  { name: "Somatheeram Ayurveda Village", city: "Chowara, Kerala", description: "The world's first Ayurveda resort, providing beachside wellness and expert-led skin glow programs for international travelers.", rating: 4.7, reviews: 480, image: "/Center Images/somatheeram/Somatheeram 01.jpg", link: "/centers/kerala/somatheeram" },
-  { name: "Viveda Wellness Village", city: "Nashik, Maharashtra", description: "A luxury integrated wellness retreat offering personalized Ayurvedic beauty and rejuvenation programs in a serene environment.", rating: 4.9, reviews: 320, image: "/Center Images/Viveda Wellness Village/Thumb.jpg", link: "/centers/nashik/viveda" },
+  {
+    name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+    city: "Goa",
+    location: "Goa",
+    description: "Step into a sanctuary of healing at the Ayurveda Wellness Centre at Mercure Goa Devaaya Resort, where ancient Ayurvedic wisdom meets tranquil island living. Nestled along the serene backwaters of Divar Island, this wellness retreat offers an immersive experience rooted in authentic Ayurvedic traditions. Guided by experienced Ayurvedic doctors and therapists, the centre delivers personalized therapies designed to restore the natural balance of body, mind, and spirit.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
+    link: "/centers/goa/mercure-goa-devaaya-resort"
+  },
+  {
+    name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Yan Cure Yoga Retreat & Ayurveda Centre mein aap paayenge yoga, Ayurveda aur holistic healing ka perfect sangam. Yeh centre ek shaant aur prakritik environment mein sthit hai, jahan traditional Ayurvedic therapies aur yogic practices ke zariye body, mind aur soul ko balance kiya jaata hai. Experienced Ayurvedic doctors aur certified yoga instructors ke guidance mein, Yan Cure personalized treatment programs offer karta hai jo detoxification, stress relief aur overall rejuvenation par focus karte hain. Yahan ki healing therapies ancient wisdom aur modern wellness approaches ka ek powerful combination hain, jo long-term health aur inner peace ko promote karti hain.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
+    link: "/centers/rishikesh/yan-cure"
+  },
+  {
+    name: "Ideal Ayurvedic Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nestled on a tranquil hillside in Chowara village, just a short walk from Kovalam beach, Ideal Ayurvedic Resort is a 'Green Leaf' certified sanctuary surrounded by 15 acres of lush coconut groves. Authentic, physician-led Ayurveda is practiced with heartfelt dedication — from classical Panchakarma to personalized healing programs — in one of Kerala's most genuinely non-commercialized healing environments.",
+    rating: 4.5,
+    reviews: 400,
+    image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
+    link: "/centers/kerala/ideal-ayurvedic-resort"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "Shreyas Yoga Retreat (Nelamangala)",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+    link: "/centers/bangalore/shreyas-yoga-retreat"
+  },
+  {
+    name: "Ayurmana",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/centers/kerala/ayurmana"
+  },
+  {
+    name: "Carnoustie Ayurveda & Wellness Resort",
+    city: "Mararikulam",
+    location: "Mararikulam",
+    description: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+  },
+  {
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar",
+    location: "Alwar",
+    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+  },
+  {
+    name: "Krishnendu Ayurveda Hospital",
+    city: "Alappuzha",
+    location: "Alappuzha",
+    description: "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+    rating: 4.9,
+    reviews: 1500,
+    image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
+    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+  },
+  {
+    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    city: "Kumarakom",
+    location: "Kumarakom",
+    description: "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+    rating: 4.9,
+    reviews: 150,
+    image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+    link: "/centers/kerala/dheemahi-kumarakom"
+  },
+  {
+    name: "Dharana At Shillim",
+    city: "Pune",
+    location: "Pune",
+    description: "Immerse yourself in a journey of deep wellness at Dharana At Shillim, a tranquil retreat dedicated to holistic healing and mindful living. Surrounded by the serene Sahyadri mountains, the center blends traditional healing wisdom with modern wellness practices to create a truly transformative experience. Guided by experienced practitioners, every program is thoughtfully designed to restore harmony between body, mind, and spirit. From personalized therapies to mindfulness and rejuvenation programs, Dharana At Shillim offers a peaceful sanctuary for those seeking balance, vitality, and long-term well-being.",
+    rating: 4.8,
+    reviews: 3900,
+    image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+    link: "/centers/pune/dharana-at-shillim"
+  },
+  {
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    location: "Pune",
+    description: "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort"
+  },
 ];
 
 export const patientReviews = [

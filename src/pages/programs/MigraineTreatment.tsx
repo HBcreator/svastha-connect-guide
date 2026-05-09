@@ -11,7 +11,7 @@ import {
   Droplet, Globe2, Heart, Leaf, MapPin, Pill, ReceiptIndianRupee, Sparkles, Star, Quote,
   Stethoscope, UserCheck, CircleCheck, CheckCircle2, Phone, AlertTriangle, XCircle,
   Brain, HeartPulse, ShieldCheck, Headset, UtensilsCrossed,
-  Search, X, ClipboardList
+  Search, X, ClipboardList, Users, TrendingUp
 } from "lucide-react";
 
 const galleryImages = [
@@ -658,7 +658,34 @@ const MigraineTreatment = () => {
         <section id="panchakarma-science" className="scroll-mt-24 !mt-6 md:!mt-10">
           <Card className="h-full shadow-sm border-[#d8d0ae] bg-[#EDE8D0] rounded-3xl overflow-hidden">
             <CardContent className="p-6 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science of Migraine Relief</h2>
+              {/* Metrics Section */}
+              <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">900+</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patients</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.7/5</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+                    <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">96%</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+                </div>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Understanding Panchakarma - The Science of Migraine Relief</h2>
               <p className="text-[#7F543D] leading-relaxed mb-8 text-center max-w-3xl mx-auto font-medium">
                 Not all five therapies are given to every patient. Our senior physicians prescribe a personalized combination of these clinical protocols based on your specific migraine triggers and constitution.
               </p>

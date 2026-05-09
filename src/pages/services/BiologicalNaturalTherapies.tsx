@@ -3,7 +3,8 @@ import {
   Calendar, MapPin, Star, Leaf, Fingerprint, Activity,
   Sprout, Pill, TestTube, CheckCircle2, Phone,
   Medal, Users, ShieldCheck, HeartPulse, Globe, Sparkles,
-  Apple, Wind, Droplets, Flower, Flower2, Atom, Hexagon
+  Apple, Wind, Droplets, Flower, Flower2, Atom, Hexagon,
+  ChevronLeft, ChevronRight, Search, X, ClipboardList, ChevronDown
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -15,6 +16,72 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Card, CardContent } from "@/components/ui/card";
+
+const patientReviews = [
+  {
+    name: "William Thornton",
+    location: "London, UK",
+    condition: "Rheumatoid Arthritis",
+    title: "Herbalism and Diet Reduced My Inflammation Drastically.",
+    review: "I was reliant on strong immunosuppressants for my arthritis, which came with terrible side effects. The Vaidyas in India created a customized biological protocol using pure, potent herbal extracts and a strict anti-inflammatory diet. Within five weeks, my joint swelling reduced by 80%, and my morning stiffness vanished. My rheumatologist back home was astounded by my latest blood work.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Isabella Silva",
+    location: "Lisbon, Portugal",
+    condition: "Chronic Digestive Issues (IBS)",
+    title: "Naturopathy Healed My Gut When Nothing Else Worked.",
+    review: "I had suffered from debilitating IBS for years, trying every conventional medication with no success. The naturopathic approach here was completely different. They didn't just treat the symptoms; they used clinical nutrition and hydrotherapy to completely reset my gut microbiome. I am now eating a varied, plant-based diet without any pain or bloating. It has given me my life back.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Andreas Müller",
+    location: "Munich, Germany",
+    condition: "Severe Varicose Veins & Poor Circulation",
+    title: "Hirudotherapy Was Incredible for My Circulation.",
+    review: "I was initially hesitant about Leech Therapy, but the pain in my legs from varicose veins was unbearable. The clinical application was highly professional and surprisingly painless. The bioactive compounds from the treatment immediately reduced the swelling and congestion in my legs. The heavy, aching feeling is completely gone, and the visible veins have reduced significantly.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Priya Patel",
+    location: "New Jersey, USA",
+    condition: "Hormonal Imbalance (PCOS)",
+    title: "Targeted Supplementation Balanced My Hormones.",
+    review: "Struggling with PCOS, I felt like my body was working against me. The integrative doctors used Orthomolecular Medicine and targeted dietary supplements to address the specific cellular deficiencies driving my condition. Combined with Ayurvedic herbalism, my cycle has regulated for the first time in ten years, and my energy levels are stable throughout the day. It's a truly personalized approach.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Robert MacKay",
+    location: "Edinburgh, Scotland",
+    condition: "Post-Viral Fatigue",
+    title: "Homeopathy Provided Gentle But Profound Healing.",
+    review: "After a severe viral infection, I was left with lingering fatigue and brain fog that lasted for months. Conventional doctors told me to just 'wait it out'. The homeopathic treatment I received in India was incredibly detailed. The prescribed remedies were gentle but triggered a deep, sustained return of my energy. My cognitive clarity has returned, and I no longer need afternoon naps.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Sophie Laurent",
+    location: "Geneva, Switzerland",
+    condition: "Chronic Anxiety & Stress",
+    title: "Bach Flower Remedies Restored My Emotional Balance.",
+    review: "I was looking for a non-pharmaceutical way to manage my high-stress corporate lifestyle. The Bach Flower Remedies prescribed by my therapist worked on such a subtle, vibrational level, yet the impact was huge. I felt a gradual lifting of the constant worry and 'fight or flight' feeling. Coupled with clinical aromatherapy, my nervous system finally feels resilient and calm.",
+    rating: 5,
+    verified: true,
+  },
+];
+
+const jumpSections = [
+  { id: "specialised-therapies", title: "Specialised Therapies" },
+  { id: "why-india", title: "Why Choose India" },
+  { id: "faq", title: "FAQ" },
+  { id: "reviews", title: "Patient Reviews" },
+  { id: "consultation", title: "Book Consultation" },
+];
 
 const galleryImages = [
   { src: "/program-images/biological-consultation.png", alt: "Biological and Plant-Based Consultation India" },
@@ -180,6 +247,26 @@ const therapies = [
 
 const BiologicalNaturalTherapies = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [reviewAutoPlay, setReviewAutoPlay] = useState(false);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  const goReviewPrevious = () => setCurrentReview((prev) => (prev - 1 + patientReviews.length) % patientReviews.length);
+  const goReviewNext = () => setCurrentReview((prev) => (prev + 1) % patientReviews.length);
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (!element) return;
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }, 250);
+  };
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
@@ -265,7 +352,7 @@ const BiologicalNaturalTherapies = () => {
       <main className="container mx-auto px-4 pt-10 md:pt-16 pb-6 md:pb-10 max-w-6xl">
 
         {/* Section Header */}
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+        <div id="specialised-therapies" className="text-center mb-12 max-w-3xl mx-auto scroll-mt-24">
           <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Our Specialised Therapies</h2>
           <p className="text-lg text-[#7F543D]">
             Explore our comprehensive range of biological and plant-based treatments — each rooted in time-tested Ayurvedic traditions and guided by expert pharmacologists.
@@ -310,7 +397,7 @@ const BiologicalNaturalTherapies = () => {
         </div>
 
         {/* Why Choose India Section */}
-        <div className="mt-12 md:mt-20">
+        <div id="why-india" className="mt-12 md:mt-20 scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">
               Why Choose India for Biological and Natural Plant-Based Therapies?
@@ -339,7 +426,7 @@ const BiologicalNaturalTherapies = () => {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-12 md:mt-20 max-w-4xl mx-auto">
+        <div id="faq" className="mt-12 md:mt-20 max-w-4xl mx-auto scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Frequently Asked Questions</h2>
             <div className="w-24 h-1 bg-[#C68D6A] mx-auto mt-4 rounded-full opacity-60"></div>
@@ -361,8 +448,117 @@ const BiologicalNaturalTherapies = () => {
           </Accordion>
         </div>
 
+        {/* Patient Stories & Reviews Section */}
+        <section id="reviews" className="mt-12 md:mt-20 pt-8 pb-8 md:pt-10 md:pb-12 bg-transparent w-full scroll-mt-24">
+          <div className="container mx-auto px-4 max-w-6xl text-left">
+            <div className="text-center mb-6 md:mb-8 space-y-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765]">Patient Stories & Reviews</h2>
+              <div className="w-24 h-1 bg-[#C68D6A] mx-auto mt-4 rounded-full opacity-60"></div>
+              <p className="text-base md:text-lg px-4 pt-2" style={{ color: "#7F543D" }}>Hear from our patients about their transformational healing journeys</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto relative px-0 md:px-0">
+              {/* Navigation Arrows */}
+              <div className="absolute inset-y-0 left-0 flex items-center translate-x-4 md:-translate-x-6 z-20">
+                <button
+                  onClick={goReviewPrevious}
+                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                  aria-label="Previous review"
+                >
+                  <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+              <div className="absolute inset-y-0 right-0 flex items-center -translate-x-4 md:translate-x-6 z-20">
+                <button
+                  onClick={goReviewNext}
+                  className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                  aria-label="Next review"
+                >
+                  <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+                </button>
+              </div>
+
+              <Card className="border-2 border-[#335765]/20 shadow-lg overflow-hidden bg-white">
+                <CardContent className="p-4 md:p-12 relative">
+                  <div className="max-w-4xl mx-auto">
+                    {/* SVG Quote Icon */}
+                    <div className="text-[#335765]/20 mb-3 md:mb-4">
+                      <svg className="w-8 h-8 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                      </svg>
+                    </div>
+
+                    {/* Review Content */}
+                    <div className="mb-4 md:mb-6">
+                      <h3 className="text-lg md:text-2xl font-bold text-[#335765] mb-2 md:mb-4">
+                        {patientReviews[currentReview].title}
+                      </h3>
+                      <p className="text-sm md:text-xl leading-relaxed mb-4 md:mb-6" style={{ color: "#7F543D" }}>
+                        "{patientReviews[currentReview].review}"
+                      </p>
+                    </div>
+
+                    {/* Reviewer Info */}
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#335765] text-white flex items-center justify-center text-base md:text-xl font-bold flex-shrink-0 uppercase">
+                        {patientReviews[currentReview].name.charAt(0)}
+                      </div>
+
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start gap-2 mb-1">
+                          <h4 className="text-base md:text-xl font-semibold text-[#335765] leading-tight break-words">
+                            {patientReviews[currentReview].name}
+                          </h4>
+                          {patientReviews[currentReview].verified && (
+                            <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-semibold whitespace-nowrap shrink-0 mt-0.5">
+                              &#10003; Verified
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-xs md:text-sm truncate md:whitespace-normal" style={{ color: "#7F543D" }}>
+                          {patientReviews[currentReview].location} {patientReviews[currentReview].condition && `- ${patientReviews[currentReview].condition}`}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Star Rating Rendering */}
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < patientReviews[currentReview].rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+                        ))}
+                      </div>
+                      <span className="text-xs md:text-sm font-semibold text-[#335765]">
+                        {patientReviews[currentReview].rating}.0
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Dots Navigation Navigation */}
+              <div className="flex justify-center gap-2 mt-8">
+                {patientReviews.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      setCurrentReview(idx);
+                      setReviewAutoPlay(false);
+                    }}
+                    className={`transition-all rounded-full ${currentReview === idx
+                      ? "w-8 h-3 bg-[#335765]"
+                      : "w-3 h-3 bg-gray-300 hover:bg-[#335765]/50"
+                      }`}
+                    aria-label={`Go to review ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white mt-12 md:mt-16">
+        <section id="consultation" className="w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl bg-[#335765] text-white mt-12 md:mt-16 scroll-mt-24">
           <div className="grid md:grid-cols-2">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
@@ -405,14 +601,109 @@ const BiologicalNaturalTherapies = () => {
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
+      {/* Desktop Vertical BROWSE Button */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      {/* Mobile BROWSE button */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-4 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
       {/* Floating Quote Button */}
       <button
         onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-4 md:right-6 z-50 bg-[#C68D6A] text-white rounded-full p-3.5 md:py-3.5 md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap group"
+        className="fixed bottom-6 right-4 md:right-6 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:py-3.5 md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap group"
       >
-        <Phone size={20} className="md:size-18" />
+        <Phone size={20} className="md:size-18 -ml-1 md:ml-0" />
         <span className="hidden md:inline tracking-wide">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
       </button>
+
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Page Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

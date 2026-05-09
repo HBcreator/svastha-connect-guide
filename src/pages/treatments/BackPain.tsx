@@ -128,40 +128,124 @@ const faqItems = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
-    rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/centers/bangalore/soukya",
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
+    rating: 4.9,
+    reviews: 500,
+    image: "/Center Images/SOUKYA/top center Thumb.jpg",
+    link: "/centers/bangalore/soukya"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description: "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by yoga, mindful routines, and sattvic nutrition.",
-    rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/centers/bangalore/ayurvedagram",
+    name: "Sitaram Mountain Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
+    rating: 4.8,
+    reviews: 928,
+    image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
+    link: "/centers/idukki/sitaram-mountain-retreat"
   },
   {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description: "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement.",
-    rating: 4.8, reviews: 380, image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg", link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    location: "Pune",
+    description: "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort"
   },
   {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description: "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
-    rating: 4.8, reviews: 420, image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg", link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+    city: "Kayamkulam",
+    location: "Kayamkulam",
+    description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+    link: "/centers/kerala/dhathri-ayurveda"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description: "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
-    rating: 4.7, reviews: 360, image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg", link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+    rating: 4.5,
+    reviews: 500,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa"
   },
   {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description: "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
-    rating: 4.7, reviews: 510, image: "/Center Images/somatheeram/Somatheeram 01.jpg", link: "/centers/kerala/somatheeram",
+    name: "Athreya Ayurvedic Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+    link: "/centers/kerala/athreya-ayurvedic-centre"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "Nagarjuna Ayurveda Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+    rating: 4.8,
+    reviews: 200,
+    image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+    link: "/centers/kerala/nagarjuna-ayurveda-centre"
+  },
+  {
+    name: "AyurSoma Ayurveda Royal Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
+    link: "/centers/kerala/ayursoma"
+  },
+  {
+    name: "Dharana At Shillim",
+    city: "Pune",
+    location: "Pune",
+    description: "Immerse yourself in a journey of deep wellness at Dharana At Shillim, a tranquil retreat dedicated to holistic healing and mindful living. Surrounded by the serene Sahyadri mountains, the center blends traditional healing wisdom with modern wellness practices to create a truly transformative experience. Guided by experienced practitioners, every program is thoughtfully designed to restore harmony between body, mind, and spirit. From personalized therapies to mindfulness and rejuvenation programs, Dharana At Shillim offers a peaceful sanctuary for those seeking balance, vitality, and long-term well-being.",
+    rating: 4.8,
+    reviews: 3900,
+    image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+    link: "/centers/pune/dharana-at-shillim"
+  },
+  {
+    name: "Shreyas Yoga Retreat (Nelamangala)",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+    link: "/centers/bangalore/shreyas-yoga-retreat"
+  },
+  {
+    name: "Ayurmana",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/centers/kerala/ayurmana"
   },
 ];
 

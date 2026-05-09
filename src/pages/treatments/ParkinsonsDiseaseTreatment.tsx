@@ -17,12 +17,126 @@ const patientReviews = [
 ];
 
 const topAyurvedicCenters = [
-  { name: "Kairali - The Ayurvedic Healing Village", city: "Palakkad, Kerala, India", description: "Specialises in neurological rehabilitation and Vata-pacifying treatments. Renowned for authentic Parkinson's management programs in a serene, nature-focused environment.", rating: 4.8, reviews: 420, image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg", link: "/centers/kerala/kairali-ayurvedic-healing-village" },
-  { name: "SOUKYA International Holistic Health Centre", city: "Bengaluru, Karnataka, India", description: "A premier destination for neurological care, integrating Ayurveda with modern holistic approaches. SOUKYA's Parkinson's protocols are world-renowned for their efficacy.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/centers/bangalore/soukya" },
-  { name: "Somatheeram Ayurveda Village Resort", city: "Thiruvananthapuram, Kerala, India", description: "Expertise in Shirodhara and Basti therapies essential for Parkinson's care. Provides a peaceful coastal setting ideal for calming the nervous system.", rating: 4.7, reviews: 510, image: "/Center Images/somatheeram/Somatheeram 01.jpg", link: "/centers/kerala/somatheeram" },
-  { name: "Carnoustie Ayurveda Wellness Resort", city: "Mararikulam, Kerala, India", description: "Offers intensive Panchakarma for Parkinson's with a focus on deep tissue nourishment and motor control restoration.", rating: 4.7, reviews: 360, image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg", link: "/centers/kerala/carnoustie-ayurveda-wellness-resort" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bengaluru, Karnataka, India", description: "Known for its classical approach to Kampavata management. Their Vaidyas excel in the use of traditional herbs like Kapikachhu and Ashwagandha.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/centers/bangalore/ayurvedagram" },
-  { name: "Shathayu Ayurveda Yoga Retreat", city: "Bengaluru Rural, Karnataka, India", description: "Combines therapeutic yoga with neurological Ayurvedic treatments to improve balance, flexibility, and overall motor coordination.", rating: 4.8, reviews: 380, image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg", link: "/centers/udupi/shathayu-ayurveda-yoga-retreat" }
+  {
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+    rating: 4.7,
+    reviews: 190,
+    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+    link: "/centers/kerala/agni-ayurvedic-village"
+  },
+  {
+    name: "Akanta Ayurveda and Yoga Resort",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. As the only yoga retreat center at Cherai Beach licensed as an Ayurvedic hospital, Akanta integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols.",
+    rating: 4.5,
+    reviews: 479,
+    image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
+    link: "/centers/kochi/akanta-ayurveda-and-yoga-resort"
+  },
+  {
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    location: "Pune",
+    description: "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "Niraamaya Retreats Surya Samudra",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Immerse yourself in the serene beauty of coastal Ayurveda at Niraamaya Retreats Surya Samudra, a luxurious wellness destination on Kerala's pristine shores. Known for authentic therapies and tranquil ocean views, it blends traditional healing with modern comfort for deep rejuvenation.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
+    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+  },
+  {
+    name: "Ananda In The Himalayas",
+    city: "Uttarakhand",
+    location: "Uttarakhand",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+    rating: 4.8,
+    reviews: 900,
+    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+  },
+  {
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    location: "Mumbai",
+    description: "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest"
+  },
+  {
+    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    city: "Kumarakom",
+    location: "Kumarakom",
+    description: "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+    rating: 4.9,
+    reviews: 150,
+    image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+    link: "/centers/kerala/dheemahi-kumarakom"
+  },
+  {
+    name: "Shathayu Ayurveda Yoga Retreat",
+    city: "Udupi",
+    location: "Udupi",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
+    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat"
+  },
+  {
+    name: "Kalari Kovilakom - The Palace For Ayurveda",
+    city: "Palakkad",
+    location: "Palakkad",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
+    link: "/centers/kerala/kalari-kovilakom"
+  },
+  {
+    name: "Athreya Ayurvedic Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+    link: "/centers/kerala/athreya-ayurvedic-centre"
+  },
+  {
+    name: "Back to Roots Ayurveda Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+    rating: 4.9,
+    reviews: 100,
+    image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+    link: "/centers/kerala/back-to-roots"
+  },
 ];
 
 const faqItems = [

@@ -41,6 +41,8 @@ import {
   UtensilsCrossed,
   X,
   XCircle,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 
 const galleryImages = [
@@ -431,94 +433,124 @@ const whyChooseUsPoints = [
 
 const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "India's first NABH-accredited AYUSH hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene environment.",
+    name: "Carnoustie Ayurveda & Wellness Resort",
+    city: "Mararikulam",
+    location: "Mararikulam",
+    description: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
+    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+  },
+  {
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
+  },
+  {
+    name: "Somatheeram Ayurvedic Health Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
+    rating: 4.9,
+    reviews: 320,
+    image: "/Center Images/somatheeram/Somatheeram 01.jpg",
+    link: "/centers/kerala/somatheeram"
+  },
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya",
+    link: "/centers/bangalore/soukya"
   },
   {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bengaluru, Karnataka, India",
-    description:
-      "A globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by yoga, mindful routines, and sattvic nutrition.",
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
     rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram",
+    reviews: 190,
+    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+    link: "/centers/kerala/agni-ayurvedic-village"
   },
   {
-    name: "Shathayu Ayurveda Yoga Retreat",
-    city: "Bengaluru Rural, Karnataka, India",
-    description:
-      "A serene retreat focused on authentic Ayurveda and yogic living. The center combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement.",
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
-    reviews: 380,
-    image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat",
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/centers/dharamshala/himveda"
   },
   {
-    name: "Kairali - The Ayurvedic Healing Village",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A world-renowned Ayurvedic village set in a lush landscape, offering authentic Panchakarma treatments and traditional healing in a serene, nature-focused environment.",
+    name: "Ayurmana",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
     rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/centers/kerala/ayurmana"
   },
   {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    city: "Mararikulam, Kerala, India",
-    description:
-      "A premium beachside center known for authentic Panchakarma care, experienced doctors, and personalized recovery-focused plans.",
-    rating: 4.7,
-    reviews: 360,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
-  },
-  {
-    name: "Somatheeram Ayurveda Village Resort",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Widely regarded as the world's first Ayurveda resort, providing classical treatments, yoga, and meditation on a beautiful cliff overlooking the Arabian Sea.",
-    rating: 4.7,
-    reviews: 510,
-    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/kerala/somatheeram",
-  },
-  {
-    name: "AyurSoma Ayurveda Royal Retreat",
-    city: "Thiruvananthapuram, Kerala, India",
-    description:
-      "Traditional Kerala Ayurveda in a calm retreat format with physician supervision, therapeutic routines, and rejuvenation support.",
-    rating: 4.8,
-    reviews: 300,
-    image: "/Center Images/AyurSoma Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/ayursoma",
-  },
-  {
-    name: "Niraamaya Retreats Surya Samudra",
-    city: "Kovalam, Kerala, India",
-    description:
-      "Cliffside wellness destination offering curated Ayurvedic therapies, restorative routines, and immersive coastal healing experiences.",
-    rating: 4.6,
+    name: "Kairali – The Ayurvedic Healing Village",
+    city: "Palakkad",
+    location: "Palakkad",
+    description: "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+    rating: 4.9,
     reviews: 280,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra",
+    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+    link: "/centers/kerala/kairali-ayurvedic-healing-village"
   },
   {
-    name: "Kalari Kovilakom Palace for Ayurveda",
-    city: "Palakkad, Kerala, India",
-    description:
-      "A globally recognized palace-turned-retreat providing extremely strict, traditional, and authentic Ayurvedic treatments in a deeply spiritual setting.",
+    name: "Sitaram Mountain Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
     rating: 4.8,
-    reviews: 240,
-    image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
+    reviews: 928,
+    image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
+    link: "/centers/idukki/sitaram-mountain-retreat"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "Indus Valley Ayurvedic Centre",
+    city: "Mysore",
+    location: "Mysore",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+  },
+  {
+    name: "Back to Roots Ayurveda Retreat",
+    city: "Idukki",
+    location: "Idukki",
+    description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+    rating: 4.9,
+    reviews: 100,
+    image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+    link: "/centers/kerala/back-to-roots"
   },
 ];
 
@@ -936,10 +968,13 @@ const PanchakarmaHealing28Day = () => {
           <div className="mt-5 md:mt-6 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goPackagePrevious}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-sm min-w-[145px] md:min-w-[200px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-base min-w-[145px] md:min-w-[200px]"
             >
-              <ChevronLeft className="absolute left-2 md:left-4 h-4 w-4" />
-              <span>Previous Packages</span>
+              <ChevronLeft className="absolute left-2 md:left-4 h-5 w-5 text-[#FF7A28]" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>Previous</span>
+                <span>Packages</span>
+              </span>
             </button>
             
             {/* Dots Indicator */}
@@ -954,10 +989,13 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goPackageNext}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-sm min-w-[145px] md:min-w-[200px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-2.5 md:px-10 md:py-3 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-base min-w-[145px] md:min-w-[200px]"
             >
-              <span>More Packages</span>
-              <ChevronRight className="absolute right-2 md:right-4 h-4 w-4" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>More</span>
+                <span>Packages</span>
+              </span>
+              <ChevronRight className="absolute right-2 md:right-4 h-5 w-5 text-[#FF7A28]" />
             </button>
           </div>
         </section>
@@ -987,7 +1025,34 @@ const PanchakarmaHealing28Day = () => {
 
           <Card className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Understanding Panchakarma - The Science Behind It</h2>
+              {/* Metrics Section */}
+              <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">750+</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient visits</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.7/5</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+                    <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">97%</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+                </div>
+              </div>
+
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Understanding Panchakarma - The Science Behind It</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                 In a 28-day format, the physician has sufficient time to sequence therapies across all four phases with precision. The extended duration enables deeper Basti series, more complete elimination, and a full Rasayana restoration—each procedure building on the last.
               </p>
@@ -1311,10 +1376,13 @@ const PanchakarmaHealing28Day = () => {
           <div className="mt-6 md:mt-8 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goCostPrevious}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-lg min-w-[145px] md:min-w-[220px]"
             >
-              <ChevronLeft className="absolute left-2 md:left-5 h-4 w-4 md:h-5 md:w-5" />
-              <span>Previous Packages</span>
+              <ChevronLeft className="absolute left-2 md:left-5 h-5 w-5 md:h-6 md:w-6 text-[#FF7A28]" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>Previous</span>
+                <span>Packages</span>
+              </span>
             </button>
             
             <div className="hidden xs:flex items-center gap-1.5 justify-center">
@@ -1328,10 +1396,13 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goCostNext}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-lg min-w-[145px] md:min-w-[220px]"
             >
-              <span>More Packages</span>
-              <ChevronRight className="absolute right-2 md:right-5 h-4 w-4 md:h-5 md:w-5" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>More</span>
+                <span>Packages</span>
+              </span>
+              <ChevronRight className="absolute right-2 md:right-5 h-5 w-5 md:h-6 md:w-6 text-[#FF7A28]" />
             </button>
           </div>
         </section>
@@ -1477,10 +1548,13 @@ const PanchakarmaHealing28Day = () => {
           <div className="mt-6 md:mt-8 flex items-center justify-center gap-3 md:gap-6 px-2 md:px-4">
             <button
               onClick={goInclusionPrevious}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-lg min-w-[145px] md:min-w-[220px]"
             >
-              <ChevronLeft className="absolute left-2 md:left-5 h-4 w-4 md:h-5 md:w-5" />
-              <span>Previous Packages</span>
+              <ChevronLeft className="absolute left-2 md:left-5 h-5 w-5 md:h-6 md:w-6 text-[#FF7A28]" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>Previous</span>
+                <span>Packages</span>
+              </span>
             </button>
             
             <div className="hidden xs:flex items-center gap-1.5 justify-center">
@@ -1494,10 +1568,13 @@ const PanchakarmaHealing28Day = () => {
 
             <button
               onClick={goInclusionNext}
-              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[11px] md:text-base min-w-[145px] md:min-w-[220px]"
+              className="flex-1 md:flex-none relative flex items-center justify-center px-6 py-3 md:px-12 md:py-4 bg-white text-[#335765] border border-[#d8d0ae] rounded-full font-bold shadow-md hover:shadow-lg hover:bg-slate-50 transition-all active:scale-95 text-[13px] md:text-lg min-w-[145px] md:min-w-[220px]"
             >
-              <span>More Packages</span>
-              <ChevronRight className="absolute right-2 md:right-5 h-4 w-4 md:h-5 md:w-5" />
+              <span className="flex flex-col items-center leading-tight">
+                <span>More</span>
+                <span>Packages</span>
+              </span>
+              <ChevronRight className="absolute right-2 md:right-5 h-5 w-5 md:h-6 md:w-6 text-[#FF7A28]" />
             </button>
           </div>
           <div className="rounded-xl border border-[#88a7ad] border-l-4 border-l-[#335765] bg-[#E7F0F1] px-4 py-4 md:px-5 md:py-4">

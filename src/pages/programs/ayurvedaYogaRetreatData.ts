@@ -285,86 +285,125 @@ export const faqItems = [
 
 export const topAyurvedicCenters = [
   {
-    name: "SOUKYA International Holistic Health Centre",
-    location: "Bengaluru, Karnataka",
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    location: "Gurugram",
+    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape. Each stay is defined by personalized service, spacious suites, and a tranquil environment that encourages slow, mindful living.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/centers/gurugram/itc-grand-bharat"
+  },
+  {
+    name: "Sitaram Beach Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+    link: "/centers/kerala/sitaram-beach-retreat"
+  },
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    description: "A favorite among international royalty. Offers unparalleled luxury and highly personalized, authentic Ayurvedic yoga retreats on a stunning organic estate.",
     link: "/centers/bangalore/soukya"
   },
   {
-    name: "Ananda in the Himalayas",
-    location: "Rishikesh, Uttarakhand",
-    rating: 4.9,
-    reviews: 850,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    description: "World-renowned luxury destination spa offering bespoke Ayurvedic beauty and wellness programs with breathtaking views of the Himalayas.",
-    link: "/centers/rishikesh/ananda"
-  },
-  {
-    name: "Carnoustie Ayurveda Wellness Resort",
-    location: "Mararikulam, Kerala",
+    name: "Dhathri Ayurveda Hospital & Panchakarma Center",
+    city: "Kayamkulam",
+    location: "Kayamkulam",
+    description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
     rating: 4.8,
-    reviews: 420,
-    image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    description: "An award-winning luxury retreat offering intensive anti-aging and beauty programs right on the pristine beaches of Kerala.",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+    reviews: 500,
+    image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+    link: "/centers/kerala/dhathri-ayurveda"
   },
   {
-    name: "The Ayurvedic Healing Village (Kairali)",
-    location: "Palakkad, Kerala",
-    rating: 4.9,
-    reviews: 215,
-    image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    description: "Set in lush greenery, this NABH-accredited village is famous for its traditional approach to Ayurveda and deeply restorative yoga.",
-    link: "/centers/kerala/kairali"
-  },
-  {
-    name: "Agni Ayurvedic Village",
-    location: "Mumbai, Maharashtra",
+    name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort nestled near the tranquil beaches of South Goa. This destination blends serene coastal living with holistic healing, offering an ideal retreat for those seeking relaxation, stress relief, and natural wellness. Rooted in traditional Ayurvedic principles and enhanced with modern wellness therapies, Soul Vacation provides personalized care designed to restore balance to the body, mind, and spirit — promoting deep rejuvenation through time-honored healing practices.",
     rating: 4.8,
-    reviews: 132,
+    reviews: 500,
+    image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
+    link: "/centers/goa/soul-vacation"
+  },
+  {
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+    rating: 4.7,
+    reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    description: "A premium wellness village near Mumbai offering highly authentic Panchakarma and serene yoga spaces.",
-    link: "/centers/mumbai/agni-ayurvedic-village"
+    link: "/centers/kerala/agni-ayurvedic-village"
   },
   {
-    name: "Athreya Ayurvedic Centre",
-    location: "Kottayam, Kerala",
-    rating: 4.9,
-    reviews: 185,
-    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    description: "Surrounded by paddy fields, Athreya is renowned for its highly personalized Ayurvedic treatments and intimate yoga sessions.",
-    link: "/centers/kerala/athreya"
+    name: "Sandhya Hot Spring Health Care",
+    city: "Manikaran",
+    location: "Manikaran",
+    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters. Surrounded by tranquil landscapes, the center blends traditional healing practices with the restorative benefits of geothermal therapy. Rooted in holistic wellness principles, Sandhya offers personalized treatments designed to detoxify the body, relieve stress, and rejuvenate the mind.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
+    link: "/centers/himachal/sandhya-hot-spring-health-care"
   },
   {
-    name: "Niraamaya Retreats Surya Samudra",
-    location: "Kovalam, Kerala",
+    name: "Sanjeevanam Ayurveda Hospital",
+    city: "Kochi",
+    location: "Kochi",
+    description: "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
     rating: 4.8,
-    reviews: 198,
-    image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    description: "A luxury cliffside retreat offering world-class spa facilities, highly experienced yoga masters, and breathtaking views.",
-    link: "/centers/kerala/niraamaya-surya-samudra"
+    reviews: 1700,
+    image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
-    name: "Shreyas Yoga Retreat",
-    location: "Bengaluru, Karnataka",
-    rating: 4.9,
-    reviews: 320,
-    image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    description: "One of the world's finest yoga retreats, Shreyas offers a deeply spiritual environment with high-end luxury and expert-led programs.",
-    link: "/centers/bangalore/shreyas"
+    name: "Nalanda Retreat Goa",
+    city: "Goa",
+    location: "Goa",
+    description: "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+    rating: 4.5,
+    reviews: 500,
+    image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
+    link: "/centers/goa/nalanda-retreat-goa"
   },
   {
-    name: "Viveda Wellness Village",
-    location: "Nashik, Maharashtra",
-    rating: 4.9,
-    reviews: 140,
-    image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    description: "A modern luxury wellness village combining traditional Indian healing with state-of-the-art facilities and serene surroundings.",
-    link: "/centers/nashik/viveda"
-  }
+    name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
+    rating: 4.8,
+    reviews: 220,
+    image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
+    link: "/centers/kerala/kairali-heritage"
+  },
+  {
+    name: "Atmantan Wellness Resort",
+    city: "Pune",
+    location: "Pune",
+    description: "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+    link: "/centers/pune/atmantan-wellness-resort"
+  },
+  {
+    name: "AyurvedaGram Heritage Wellness Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/AyurvedaGram/Thumb.jpg",
+    link: "/centers/bangalore/ayurvedagram"
+  },
 ];
 
 export const patientReviews = [

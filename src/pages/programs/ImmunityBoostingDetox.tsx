@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, ClipboardCheck, ClipboardList, Activity, Brain, Leaf, Wind, CircleCheck, AlertTriangle, XCircle, Sparkles, HeartPulse, TrendingUp, Stethoscope, ReceiptIndianRupee, BedDouble, UtensilsCrossed, Pill, CheckCircle2, ShieldCheck, Globe2, CalendarCheck2, Route, Headset, UserCog, UserCheck, Droplet, ArrowRight, Building2, HelpCircle, Search, Phone, X } from "lucide-react";
+import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, ClipboardCheck, ClipboardList, Activity, Brain, Leaf, Wind, CircleCheck, AlertTriangle, XCircle, Sparkles, HeartPulse, TrendingUp, Stethoscope, ReceiptIndianRupee, BedDouble, UtensilsCrossed, Pill, CheckCircle2, ShieldCheck, Globe2, CalendarCheck2, Route, Headset, UserCog, UserCheck, Droplet, ArrowRight, Building2, HelpCircle, Search, Phone, X, Users } from "lucide-react";
 
 const galleryImages = [
   "/program-images/immunity/1.png",
@@ -353,7 +353,34 @@ const PointCard = ({ title, points, positive = false }: { title: string; points:
 const TherapySection = () => (
   <Card id="therapy-section" className="scroll-mt-24 h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
     <CardContent className="p-6 md:p-8">
-      <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center uppercase tracking-wide">The Science of Immunity & Detoxification</h2>
+      {/* Metrics Section */}
+      <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+        <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+            <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+          </div>
+          <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">1400+</div>
+          <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patients</div>
+        </div>
+
+        <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+            <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+          </div>
+          <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.8/5</div>
+          <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+        </div>
+
+        <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+            <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+          </div>
+          <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">95%</div>
+          <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+        </div>
+      </div>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center uppercase tracking-wide">The Science of Immunity & Detoxification</h2>
       <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto font-medium">
         Our clinical protocol utilizes powerful Panchakarma techniques to expel deep-seated Ama (toxins) followed by potent Rasayana (rejuvenation) therapies to build lasting immunity.
       </p>

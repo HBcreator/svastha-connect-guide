@@ -25,6 +25,8 @@ import {
   Search,
   ClipboardCheck,
   Globe,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 
 import {
@@ -290,7 +292,32 @@ const AyurvedicBeautyDetoxIndia = () => {
           {/* 4. Core Ayurvedic Therapies */}
           <Card id="therapy-section" className="h-full shadow-sm !mt-6 md:!mt-10 border-[#d8d0ae] bg-[#EDE8D0]">
             <CardContent className="p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-[#335765] mb-3 text-center">Core Ayurvedic Therapies for Beauty & Detox</h2>
+              <div className="grid grid-cols-3 gap-2 md:gap-6 mb-8 md:mb-10">
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Users className="w-4 h-4 md:w-5 md:h-5 text-green-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">2100+</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patients</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-yellow-50 flex items-center justify-center mb-2 md:mb-3">
+                    <Star className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 fill-yellow-500" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">4.9/5</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Patient Satisfaction Metrics</div>
+                </div>
+
+                <div className="bg-white rounded-xl md:rounded-2xl p-2.5 md:p-6 shadow-sm border border-[#d8d0ae]/30 flex flex-col items-center justify-center text-center">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-50 flex items-center justify-center mb-2 md:mb-3">
+                    <TrendingUp className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
+                  </div>
+                  <div className="text-[16px] md:text-3xl font-black text-[#335765] mb-0.5 md:mb-1">97%</div>
+                  <div className="text-[9px] md:text-sm font-medium text-[#7F543D] leading-[1.1] md:leading-tight">Clinical Result / Outcome Index</div>
+                </div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Core Ayurvedic Therapies for Beauty & Detox</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                 Your Vaidya prescribes a precise combination of these royal therapies based on your skin type, dosha constitution, and wellness goals.
               </p>
@@ -840,45 +867,45 @@ const AyurvedicBeautyDetoxIndia = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
               {visibleTopCenters.map((center, idx) => (
-                <div key={`${center[0]}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
+                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
                     <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
                       <img
-                        src={center[5]}
-                        alt={center[0]}
+                        src={center.image}
+                        alt={center.name}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
-                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center[0]}</h3>
+                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
                       
                       <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
                         <div className="flex items-center gap-1.5 shrink min-w-0">
                           <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center[1]}>{center[1]}</span>
+                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.city}>{center.city}</span>
                         </div>
                         <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
                           <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center[3]} ({center[4]})</span>
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">{center.rating} ({center.reviews})</span>
                         </div>
                       </div>
 
                       <div className="relative mb-3 flex-grow text-left">
-                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center[0] ? "" : "line-clamp-3"}`}>
-                          {center[2]}
+                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
+                          {center.description}
                         </p>
                         <button
-                          onClick={() => toggleCenterDescription(center[0])}
+                          onClick={() => toggleCenterDescription(center.name)}
                           className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
                         >
-                          {expandedCenterName === center[0] ? "Read Less" : "Read More"}
+                          {expandedCenterName === center.name ? "Read Less" : "Read More"}
                         </button>
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
-                          to={center[6]}
+                          to={center.link}
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
