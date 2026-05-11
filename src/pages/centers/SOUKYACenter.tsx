@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -1125,7 +1125,7 @@ export default function SOUKYACenter() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(5000+ reviews)</span>
+                  <span className="opacity-90">(600+ reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -1334,7 +1334,7 @@ export default function SOUKYACenter() {
                 <div className="inline-flex items-center justify-center w-9 h-9 md:w-12 md:h-12 rounded-full bg-green-100 mb-2 md:mb-3">
                   <Users className="h-4 w-4 md:h-6 md:w-6 text-green-600" />
                 </div>
-                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">5000+</div>
+                <div className="text-base md:text-3xl font-bold text-primary mb-1 whitespace-nowrap">600+</div>
                 <div className="text-xs md:text-sm" style={{ color: "#7F543D" }}>Happy Patients</div>
               </div>
               <div className="text-center p-2.5 md:p-4 bg-white/60 rounded-xl">

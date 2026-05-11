@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -791,7 +791,7 @@ export default function AgniAyurvedicVillage() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\//);
             if (ratingMatch) {

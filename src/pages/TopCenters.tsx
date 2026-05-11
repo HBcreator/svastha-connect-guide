@@ -5,7 +5,10 @@ import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Phone, Star } from "lucide-react";
+import { MapPin, Phone, Star, ChevronDown, ChevronUp, Check, ChevronsUpDown } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { cn } from "@/lib/utils";
 import centerKerala from "@/assets/center-kerala.jpg";
 import centerGoa from "@/assets/center-goa.jpg";
 import centerBangalore from "@/assets/center-bangalore.jpg";
@@ -18,18 +21,19 @@ const TopCenters = () => {
   const [selectedCountry, setSelectedCountry] = useState("India");
   const [selectedCity, setSelectedCity] = useState("All");
   const [selectedTreatment, setSelectedTreatment] = useState("All");
+  const [sortBy, setSortBy] = useState("rating");
+  const [cityOpen, setCityOpen] = useState(false);
+  const [treatmentOpen, setTreatmentOpen] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
 
-  const cities = ["All", "Kerala", "Goa", "Bangalore", "Kochi", "Mumbai", "Pune", "Nashik", "Delhi", "Gurugram", "Alwar", "Rishikesh", "Chennai", "Kumarakom", "Palakkad", "Idukki", "Kayamkulam", "Mysore", "Uttarakhand", "Dharamshala", "Udupi", "Sonepat", "Thrissur"];
-
-  const treatments = [
-    "All",
-    "Panchakarma",
-    "Abhyanga",
-    "Shirodhara",
-    "Kati Basti",
-    "Stress & Wellness",
-    "Weight Management",
-  ];
+  const toggleExpand = (index: number) => {
+    setExpandedCards(prev => {
+      const next = new Set(prev);
+      if (next.has(index)) next.delete(index);
+      else next.add(index);
+      return next;
+    });
+  };
 
   const navigate = useNavigate();
 
@@ -37,10 +41,18 @@ const TopCenters = () => {
     {
       name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
       city: "Bangalore",
-      description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
-      specialties: ["Panchakarma", "Yoga", "Naturopathy"],
+      description:
+        "SOUKYA is a premier integrative health sanctuary in Bangalore, blending ancient Ayurveda, Homeopathy, and Naturopathy with modern medical standards. As India's first NABH-accredited AYUSH hospital, it offers highly personalized clinical protocols on a lush 30-acre organic farm. Guided by Dr. Isaac Mathai, the center specializes in treating chronic conditions and promoting deep metabolic rejuvenation through authentic healing traditions. Guests experience a tranquil environment where sustainable living meets medical excellence for a truly transformative wellness journey. This world-class retreat is dedicated to restoring the harmony of body, mind, and spirit through integrated natural medicine.",
+      specialties: [
+        "Panchakarma",
+        "Holistic Health",
+        "Yoga & Meditation",
+        "Homeopathy",
+        "Naturopathy",
+        "Detox & Rejuvenation",
+      ],
       rating: 4.9,
-      reviews: 500,
+      reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/SOUKYA/top center Thumb.jpg",
       slug: "bangalore/soukya" as string | undefined,
@@ -49,14 +61,14 @@ const TopCenters = () => {
       name: "AyurvedaGram Heritage Wellness Centre",
       city: "Bangalore",
       description:
-        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination in Bangalore that offers an authentic immersion into the ancient world of Ayurvedic healing. Set within a meticulously restored heritage village, the center provides a sanctuary where classical Vedic principles are practiced with deep reverence and precision. Guests receive personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic sattvic nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through evidence-informed care and time-tested protocols. This tranquil retreat is the perfect choice for those seeking profound detoxification, rejuvenation, and long-term sustainable wellness.",
       specialties: [
-        "Panchakarma",
         "Authentic Ayurveda",
-        "Chronic Disease Management",
+        "Panchakarma",
+        "Heritage Wellness",
         "Detox & Rejuvenation",
         "Stress Management",
-        "Lifestyle Disorder Treatment",
+        "Vedic Healing",
       ],
       rating: 4.7,
       reviews: 600,
@@ -69,14 +81,14 @@ const TopCenters = () => {
       name: "Shreyas Yoga Retreat (Nelamangala)",
       city: "Bangalore",
       description:
-        "Experience a serene blend of traditional yoga philosophy and luxury wellness at Shreyas Yoga Retreat in Nelamangala, near Bangalore. Set within lush gardens and peaceful countryside, Shreyas offers an authentic yogic lifestyle rooted in ancient Indian traditions. The retreat focuses on holistic wellbeing through classical Hatha Yoga, meditation, Ayurveda therapies, and mindful living practices guided by experienced teachers. Each wellness journey is thoughtfully designed to nurture physical vitality, mental clarity, and emotional balance. With personalized programs, organic cuisine, and a tranquil environment, Shreyas provides a rejuvenating sanctuary for guests seeking deep relaxation, inner growth, and sustainable wellness.",
+        "Shreyas Yoga Retreat is a world-class sanctuary near Bangalore that seamlessly blends traditional hatha yoga philosophy with luxury wellness standards. Set amidst lush, peaceful gardens, the retreat offers an authentic yogic lifestyle designed to nurture physical vitality, mental clarity, and spiritual growth. Guests can enjoy a comprehensive range of personalized programs including Ayurveda therapies, guided meditation, and mindful living practices led by expert teachers. The tranquil environment and organic cuisine provide a rejuvenating space for deep relaxation, inner reflection, and sustainable health transformation. Shreyas is dedicated to helping individuals rediscover their inner balance through the timeless wisdom of classical Indian traditions.",
       specialties: [
         "Yoga Retreat",
         "Meditation & Mindfulness",
         "Ayurveda Therapies",
         "Detox & Rejuvenation",
         "Stress Relief",
-        "Holistic Wellness Programs",
+        "Holistic Wellness",
       ],
       rating: 4.8,
       reviews: 500,
@@ -89,7 +101,7 @@ const TopCenters = () => {
       name: "Viveda Wellness Village",
       city: "Nashik",
       description:
-        "Immerse yourself in a transformative wellness retreat at Viveda Wellness Village, an integrated wellness destination nestled in the serene surroundings of Trimbakeshwar near Nashik. Designed to reconnect individuals with nature and holistic living, Viveda blends ancient Indian healing sciences with modern wellness practices for complete mind-body rejuvenation. Surrounded by the tranquil landscapes of the Sahyadri ranges, the retreat offers personalized wellness programs guided by experienced practitioners. Guests experience a combination of Ayurveda, naturopathy, yoga, meditation, and therapeutic spa treatments that promote detoxification, stress relief, and long-term vitality.",
+        "Viveda Wellness Village is a transformative retreat near Nashik that integrates ancient Indian healing sciences with modern wellness practices for complete rejuvenation. Nestled in the tranquil Sahyadri ranges, the retreat offers personalized programs guided by expert practitioners to reconnect individuals with nature and holistic living. Guests can experience a unique combination of authentic Ayurveda, Naturopathy, yoga, and meditation designed to promote deep detoxification and long-term vitality. The peaceful landscape and therapeutic spa treatments create a perfect sanctuary for managing stress, burnout, and lifestyle-related health concerns. Viveda provides a holistic environment where mindful nutrition and expert guidance lead to sustainable physical and emotional well-being.",
       specialties: [
         "Ayurveda & Holistic Therapies",
         "Naturopathy Treatments",
@@ -97,11 +109,9 @@ const TopCenters = () => {
         "Stress & Burnout Management",
         "Yoga & Meditation",
         "Nutrition & Lifestyle Programs",
-        "Fitness & Wellness Retreats",
-        "Spa & Therapeutic Massages",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 1100,
       priceRange: "$$$$",
       image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
       locationText: "Nashik, Maharashtra, India",
@@ -111,7 +121,7 @@ const TopCenters = () => {
       name: "Naad Wellness",
       city: "Sonepat",
       description:
-        "Reconnect with your inner balance at Naad Wellness, a luxury integrative wellness retreat dedicated to holistic healing and mindful living. Inspired by ancient Ayurvedic wisdom and modern therapeutic practices, Naad Wellness offers personalized programs designed to restore harmony between body, mind, and spirit. Set within a tranquil natural environment, the retreat combines expert guidance, therapeutic treatments, and mindful experiences to support long-term health, rejuvenation, and inner transformation. Each wellness journey is carefully curated by experienced practitioners, integrating Ayurveda, yoga, naturopathy, and mindfulness to create sustainable lifestyle changes and deep healing.",
+        "Naad Wellness is a luxury integrative retreat near Delhi dedicated to holistic healing and the restoration of inner balance through ancient wisdom. Inspired by Ayurvedic principles and modern therapeutic science, the center offers curated wellness journeys that harmonize the body, mind, and spirit. Experienced practitioners guide guests through personalized programs including yoga, naturopathy, and mindfulness to support long-term health and inner transformation. Set within a tranquil natural environment, Naad provides a peaceful sanctuary for deep rejuvenation, stress management, and preventive healthcare. Every experience is thoughtfully designed to foster sustainable lifestyle changes and create a foundation for lasting physical and mental vitality.",
       specialties: [
         "Ayurveda Therapies",
         "Detox & Rejuvenation",
@@ -131,7 +141,7 @@ const TopCenters = () => {
       name: "Fazlani Nature's Nest Wellness Centre",
       city: "Mumbai",
       description:
-        "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+        "Fazlani Nature's Nest is a premier wellness retreat near Lonavala that blends time-honored natural healing traditions with modern therapeutic excellence. Nestled within lush green landscapes, the center offers a serene environment dedicated to restoring balance through authentic Ayurveda, Naturopathy, and mindful living. Guests can experience personalized programs guided by expert professionals, focusing on deep detoxification, stress relief, and sustainable healthy lifestyles. Every healing journey is complemented by nourishing organic cuisine and rejuvenating experiences designed to enhance physical vitality and mental clarity. This nature-inspired sanctuary provides a peaceful space for guests to unwind, heal, and rediscover their inner strength through holistic and expert care.",
       specialties: [
         "Naturopathy Therapies",
         "Detox & Rejuvenation",
@@ -141,17 +151,17 @@ const TopCenters = () => {
         "Nutrition & Wellness Guidance",
       ],
       rating: 4.7,
-      reviews: 0,
+      reviews: 1800,
       priceRange: "$$$$",
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-      locationText: "Near Lonavala, District Pune, Maharashtra, India",
+      locationText: "Pune, Maharashtra, India",
       slug: "maharashtra/fazlani-natures-nest" as string | undefined,
     },
     {
       name: "Atmantan Wellness Resort",
       city: "Pune",
       description:
-        "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health. Guided by experienced wellness experts, guests can enjoy personalized programs focused on detox, stress relief, fitness, and lifestyle improvement. With serene surroundings, nourishing wellness cuisine, and integrated therapies, Atmantan provides a rejuvenating space for relaxation, healing, and long-term wellbeing.",
+        "Atmantan Wellness Resort is a world-class luxury retreat overlooking the pristine Mulshi Lake, dedicated to holistic health and metabolic rejuvenation. The resort seamlessly blends traditional Indian healing systems like Ayurveda and Yoga with advanced modern wellness therapies to support lasting physical and mental vitality. Guided by expert physicians, guests experience highly personalized programs focused on deep detoxification, stress management, and sustainable lifestyle transformation. The serene surroundings and nourishing wellness cuisine provide a perfect sanctuary for relaxation, profound healing, and long-term health empowerment. Every detail at Atmantan is thoughtfully designed to help individuals rediscover their inner balance and achieve their unique wellness goals.",
       specialties: [
         "Ayurveda Wellness Programs",
         "Detox & Rejuvenation",
@@ -159,10 +169,9 @@ const TopCenters = () => {
         "Stress Relief Programs",
         "Fitness & Weight Management",
         "Holistic Healing Therapies",
-        "Nutrition & Wellness Guidance",
       ],
       rating: 4.7,
-      reviews: 0,
+      reviews: 3000,
       priceRange: "$$$$",
       image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
       locationText: "Mulshi, Near Pune, Maharashtra, India",
@@ -172,16 +181,17 @@ const TopCenters = () => {
       name: "Toyam By Orchid Hotels",
       city: "Pune",
       description:
-        "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive personalized care guided by experienced wellness experts, complemented by therapeutic yoga, mindful meditation, and wholesome sattvic nutrition. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This luxurious retreat is the perfect escape for those seeking profound detoxification, inner peace, and a foundation for lasting physical vitality.",
       specialties: [
         "Panchakarma",
         "Ayurvedic Wellness",
         "Detox & Rejuvenation",
         "Stress Management",
         "Yoga & Meditation",
+        "Holistic Healing",
       ],
       rating: 4.7,
-      reviews: 0,
+      reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
       locationText: "Pune (Bhor), Maharashtra, India",
@@ -191,7 +201,7 @@ const TopCenters = () => {
       name: "Dharana At Shillim",
       city: "Pune",
       description:
-        "Immerse yourself in a journey of deep wellness at Dharana At Shillim, a tranquil retreat dedicated to holistic healing and mindful living. Surrounded by the serene Sahyadri mountains, the center blends traditional healing wisdom with modern wellness practices to create a truly transformative experience. Guided by experienced practitioners, every program is thoughtfully designed to restore harmony between body, mind, and spirit. From personalized therapies to mindfulness and rejuvenation programs, Dharana At Shillim offers a peaceful sanctuary for those seeking balance, vitality, and long-term well-being.",
+        "Dharana At Shillim is a world-renowned wellness retreat nestled in the serene Sahyadri mountains, dedicated to holistic healing and profound inner transformation. The center masterfully blends traditional ancient wisdom with modern therapeutic science to create a unique and deeply restorative wellness experience. Guided by a multidisciplinary team of experts, every guest receives a highly personalized program designed to restore metabolic balance, manage stress, and promote long-term vitality. The tranquil natural environment and mindful architecture provide a perfect sanctuary for deep detoxification, spiritual growth, and sustainable lifestyle changes. Dharana is committed to fostering a foundation for lasting physical and mental health through professional, evidence-informed care.",
       specialties: [
         "Holistic Wellness",
         "Mindfulness & Meditation",
@@ -211,7 +221,7 @@ const TopCenters = () => {
       name: "The Imperial Spa and Wellness",
       city: "Delhi",
       description:
-        "Step into a world of refined relaxation at The Imperial Spa and Wellness, a luxury wellness destination designed to restore balance, calm, and vitality. Blending timeless healing traditions with modern wellness therapies, the centre offers a peaceful retreat for guests seeking deep rejuvenation of body and mind. From personalized spa rituals to restorative wellness experiences, every treatment is thoughtfully curated by skilled professionals to deliver comfort, renewal, and holistic well-being in an elegant setting.",
+        "The Imperial Spa and Wellness is a premier luxury sanctuary in New Delhi, blending timeless Eastern healing traditions with sophisticated modern wellness therapies. Nestled within the iconic Imperial Hotel, the center offers a peaceful retreat where classical Ayurvedic principles and professional spa rituals are practiced with exceptional care. Guests can enjoy highly personalized programs designed to restore metabolic balance, alleviate deep-seated stress, and promote profound rejuvenation. Every experience is thoughtfully curated by expert therapists to ensure a transformative journey that harmonizes the body, mind, and spirit in an elegant setting. This world-class facility is dedicated to delivering medical-grade relaxation and long-term vitality for the discerning wellness seeker.",
       specialties: [
         "Luxury Spa",
         "Holistic Wellness",
@@ -221,7 +231,7 @@ const TopCenters = () => {
         "Relaxation Therapy",
       ],
       rating: 4.8,
-      reviews: 0,
+      reviews: 8000,
       priceRange: "$$$$",
       image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
       locationText: "New Delhi, India",
@@ -231,7 +241,7 @@ const TopCenters = () => {
       name: "ITC Grand Bharat",
       city: "Gurugram",
       description:
-        "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape. Each stay is defined by personalized service, spacious suites, and a tranquil environment that encourages slow, mindful living.",
+        "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic healing and modern wellness innovation. Guests can undergo personalized rejuvenation programs guided by expert physicians, supported by therapeutic yoga, mindful routines, and curated sattvic nutrition. The tranquil environment and sprawling grounds provide a unique atmosphere for detoxification, stress relief, and sustainable lifestyle transformation. ITC Grand Bharat remains a global benchmark for holistic luxury, dedicated to restoring the balance of body and mind through indigenous healing traditions.",
       specialties: [
         "Luxury Wellness",
         "Ayurvedic Spa",
@@ -252,7 +262,7 @@ const TopCenters = () => {
       name: "Niraamaya Retreats Surya Samudra",
       city: "Kerala",
       description:
-        "Immerse yourself in the serene beauty of coastal Ayurveda at Niraamaya Retreats Surya Samudra, a luxurious wellness destination on Kerala's pristine shores. Known for authentic therapies and tranquil ocean views, it blends traditional healing with modern comfort for deep rejuvenation.",
+        "Niraamaya Retreats Surya Samudra is a globally recognized luxury destination in Kerala that offers an authentic immersion into the ancient world of coastal Ayurvedic healing. Perched on a cliff overlooking the Arabian Sea, the retreat provides a peaceful sanctuary where classical Vedic principles and modern clinical standards are practiced with reverence. Guests undergo personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic coastal nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed care. The tranquil beachfront setting and heritage architecture create a unique atmosphere for detoxification, rejuvenation, and sustainable wellness.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -262,7 +272,7 @@ const TopCenters = () => {
         "Holistic Healing",
       ],
       rating: 4.7,
-      reviews: 600,
+      reviews: 5000,
       priceRange: "$$$$",
       image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
       locationText: "Kerala, India",
@@ -272,7 +282,7 @@ const TopCenters = () => {
       name: "Modi Yoga Retreat",
       city: "Rishikesh",
       description:
-        "Experience calm riverside living at Modi Yoga Retreat, a mindful wellness sanctuary designed for yoga practice, meditation, and holistic rejuvenation. Surrounded by scenic mountain views and flowing waters, the retreat offers a peaceful space to reset body and mind.",
+        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic healing standards. Located on the banks of the holy Ganges, the retreat offers an authentic yogic lifestyle designed to nurture physical vitality, mental clarity, and spiritual growth. Guests can enjoy a comprehensive range of personalized programs including Ayurveda therapies, guided meditation, and mindful living practices led by expert teachers. The tranquil mountain environment and organic cuisine provide a rejuvenating space for deep relaxation, inner reflection, and sustainable health transformation. Modi Yoga Retreat is dedicated to helping individuals rediscover their inner balance through the timeless wisdom of classical Indian traditions.",
       specialties: [
         "Yoga Retreat",
         "Meditation & Mindfulness",
@@ -292,7 +302,7 @@ const TopCenters = () => {
       name: "Amanbagh Heritage Wellness Retreat",
       city: "Alwar",
       description:
-        "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
+        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care. Guests experience a unique combination of authentic Ayurveda, yoga, and meditation designed to promote deep detoxification and long-term physical vitality. The tranquil landscape and therapeutic spa treatments create a perfect sanctuary for managing stress, burnout, and lifestyle-related health concerns. Amanbagh provides a holistic environment where mindful nutrition and expert guidance lead to sustainable physical and emotional well-being.",
       specialties: [
         "Holistic Wellness Therapies",
         "Yoga & Meditation Sessions",
@@ -302,7 +312,7 @@ const TopCenters = () => {
         "Lifestyle Wellness Plans",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/Amanbagh/thumb.jpg",
       locationText: "Alwar, Rajasthan, India",
@@ -312,7 +322,7 @@ const TopCenters = () => {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala",
       description:
-        "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing. Rooted in traditional Vedic principles, the center offers personalized treatments guided by highly experienced Ayurvedic doctors and skilled therapists who focus on the root causes of disease. Guests experience an immersive journey featuring professional Panchakarma, chronic disease management, and nature-centric living designed for holistic well-being. The calm mountain environment and specialized sattvic nutrition create a unique atmosphere for detoxification, rejuvenation, and sustainable health restoration. HimVeda remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a peaceful and medically sound setting.",
       specialties: [
         "Panchakarma",
         "Authentic Himalayan Ayurveda",
@@ -320,7 +330,6 @@ const TopCenters = () => {
         "Detox & Rejuvenation",
         "Stress & Anxiety Management",
         "Lifestyle Disorder Treatment",
-        "Yoga & Meditation Therapy",
       ],
       rating: 4.8,
       reviews: 500,
@@ -333,7 +342,7 @@ const TopCenters = () => {
       name: "Sandhya Hot Spring Health Care",
       city: "Manikaran",
       description:
-        "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters. Surrounded by tranquil landscapes, the center blends traditional healing practices with the restorative benefits of geothermal therapy. Rooted in holistic wellness principles, Sandhya offers personalized treatments designed to detoxify the body, relieve stress, and rejuvenate the mind.",
+        "Sandhya Hot Spring Health Care is a premier wellness retreat in Manikaran that harnesses the profound healing power of natural geothermal mineral springs. Surrounded by the majestic Himalayan landscapes, the center blends traditional Ayurvedic practices with the unique restorative benefits of therapeutic hot spring therapy. Guests can enjoy personalized wellness programs designed to detoxify the body, alleviate chronic stress, and promote deep physical and mental rejuvenation. The serene environment and professional care create an ideal sanctuary for those seeking natural relief from lifestyle-related conditions and fatigue. Every healing journey is thoughtfully curated to restore inner balance and vitality through the restorative energy of nature and expert medical guidance.",
       specialties: [
         "Hot Spring Therapy",
         "Detox & Rejuvenation",
@@ -353,7 +362,7 @@ const TopCenters = () => {
       name: "Ayuskama Ayurveda",
       city: "Dharamshala",
       description:
-        "Ayuskama Ayurveda ek authentic Ayurvedic wellness center hai jo traditional Ayurveda ko modern lifestyle ke saath integrate karta hai. Yeh center Ayurveda, Panchakarma aur holistic healing therapies par focus karta hai, jahan personalized treatment plans experienced Ayurvedic doctors ke guidance mein design kiye jaate hain. Natural therapies, herbal medicines aur sattvic lifestyle ke through Ayuskama long-term health, detoxification aur overall rejuvenation ko promote karta hai. Yeh center chronic health issues, stress management aur preventive healthcare ke liye ek holistic approach provide karta hai.",
+        "Ayuskama Ayurveda is a distinguished wellness center in Dharamshala that seamlessly integrates authentic traditional Ayurveda with modern holistic health standards. The center specializes in professional Panchakarma, detoxification, and personalized healing therapies guided by highly experienced Ayurvedic doctors and dedicated therapists. Guests undergo a transformative journey supported by natural herbal medicines, mindful yoga practices, and a balanced sattvic lifestyle designed for long-term health. Set against the peaceful backdrop of the Himalayas, Ayuskama provides a comprehensive approach to managing chronic health issues and promoting preventive wellness. It is an ideal destination for those seeking profound rejuvenation and a sustainable foundation for physical and mental vitality.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -361,22 +370,27 @@ const TopCenters = () => {
         "Stress Management",
         "Chronic Disease Management",
         "Weight Management",
-        "Yoga & Meditation",
-        "Holistic Healing",
-        "Wellness Retreat",
       ],
       rating: 4.8,
       reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-      locationText: "33 Ayurveda Street, After Tipa, Dharamkot Rd, Dharamkot, Dharamshala, Himachal Pradesh 176216",
+      locationText: "Dharamkot, Dharamshala, Himachal Pradesh",
       slug: "dharamshala/ayuskama-ayurveda" as string | undefined,
     },
     {
       name: "Somatheeram Ayurvedic Health Resort",
       city: "Kerala",
-      description: "World's first Ayurveda retreat offering authentic treatments with German precision and serene beachside location.",
-      specialties: ["Panchakarma", "Rejuvenation", "Stress Relief"],
+      description:
+        "Somatheeram Ayurvedic Health Resort is the world's first Ayurveda retreat, offering an authentic immersion into ancient healing traditions with clinical precision. Located on a serene beachside in Kerala, the resort provides a peaceful sanctuary where classical Vedic principles are practiced under the guidance of expert physicians. Guests experience personalized treatments complemented by therapeutic yoga, mindful meditation, and nourishing organic cuisine designed for deep metabolic rejuvenation. The tranquil tropical environment and traditional architecture create a unique atmosphere for detoxification, stress relief, and sustainable wellness. Somatheeram remains a global pioneer in delivering professional, evidence-informed Ayurvedic care to restore the harmony of body, mind, and spirit.",
+      specialties: [
+        "Panchakarma",
+        "Rejuvenation",
+        "Stress Relief",
+        "Holistic Health",
+        "Yoga & Meditation",
+        "Beachfront Wellness",
+      ],
       rating: 4.9,
       reviews: 320,
       priceRange: "$$$",
@@ -387,10 +401,17 @@ const TopCenters = () => {
       name: "AyurSoma Ayurveda Royal Retreat",
       city: "Kerala",
       description:
-        "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
-      specialties: ["Panchakarma", "Royal Retreat", "Beachfront Wellness", "Rejuvenation"],
+        "AyurSoma Ayurveda Royal Retreat is a world-class sanctuary in Kovalam that masterfully blends the grandeur of royal heritage with the profound precision of traditional Ayurvedic healing. Perched on a stunning beachfront, the retreat offers an authentic and immersive experience where classical Panchakarma and rejuvenation therapies are practiced with uncompromising medical standards. Guests receive highly personalized care guided by seasoned Vaidyas, complemented by therapeutic yoga, mindful meditation, and nourishing organic cuisine. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This premium royal retreat provides a serene and opulent environment for deep detoxification and the restoration of long-term physical vitality.",
+      specialties: [
+        "Panchakarma",
+        "Royal Retreat",
+        "Beachfront Wellness",
+        "Rejuvenation",
+        "Detox & Rejuvenation",
+        "Holistic Health",
+      ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 1000,
       priceRange: "$$$$$",
       image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
       slug: "kerala/ayursoma" as string | undefined,
@@ -418,7 +439,7 @@ const TopCenters = () => {
       name: "Carnoustie Ayurveda & Wellness Resort",
       city: "Mararikulam",
       description:
-        "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+        "Carnoustie Ayurveda & Wellness Resort is an award-winning beachfront sanctuary in Mararikulam that harmonizes luxury with the profound wisdom of traditional Indian healing. Nestled along the serene shores of Marari Beach, the resort offers an immersive wellness experience rooted in authentic Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being through professional clinical protocols. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices designed to detoxify and strengthen immunity. The tranquil coastal environment and lush greenery provide a restorative atmosphere for profound physical rejuvenation and mental clarity in a professional setting.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -428,7 +449,7 @@ const TopCenters = () => {
         "Pain & Injury Care",
       ],
       rating: 4.7,
-      reviews: 500,
+      reviews: 3000,
       priceRange: "",
       image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
       locationText: "Mararikulam, Kerala, India",
@@ -438,7 +459,7 @@ const TopCenters = () => {
       name: "The Nattika Beach Resort",
       city: "Thrissur",
       description:
-        "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+        "The Nattika Beach Resort is a premier award-winning wellness retreat along the pristine shores of Kerala, dedicated to the authentic essence of traditional Ayurvedic healing. Rooted in classical Vedic principles and guided by highly experienced physicians, the resort offers a harmonious blend of medical precision, relaxation, and deep rejuvenation. Surrounded by lush tropical greenery and the calming Arabian Sea, Nattika provides personalized therapies designed to restore the balance of body, mind, and spirit. Guests experience a transformative journey supported by therapeutic yoga, mindful routines, and professional clinical care in a serene beachfront environment. The resort is committed to delivering a deeply immersive wellness experience that fosters long-term health empowerment and metabolic vitality.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -448,7 +469,7 @@ const TopCenters = () => {
         "Lifestyle Disorder Treatment",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 3500,
       priceRange: "$$$$",
       image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
       locationText: "Thrissur, Kerala, India",
@@ -458,7 +479,7 @@ const TopCenters = () => {
       name: "Sitaram Beach Retreat",
       city: "Kerala",
       description:
-        "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit. Guided by highly experienced Ayurvedic doctors, each therapy is carefully tailored based on individual health conditions and wellness goals.",
+        "Sitaram Beach Retreat is a premier coastal sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled along the serene shores of the Arabian Sea, the retreat provides a peaceful environment where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, complemented by therapeutic yoga, mindful meditation, and wholesome organic cuisine. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. The tranquil beachfront setting and professional clinical care create an ideal atmosphere for detoxification, stress relief, and profound physical rejuvenation.",
       specialties: [
         "Panchakarma Therapy",
         "Detox & Rejuvenation Programs",
@@ -478,7 +499,7 @@ const TopCenters = () => {
       name: "Kairali – The Ayurvedic Healing Village",
       city: "Palakkad",
       description:
-        "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+        "Kairali – The Ayurvedic Healing Village is a world-renowned NABH-accredited sanctuary in Palakkad that masterfully blends traditional Vedic wisdom with modern clinical standards. Set within lush tropical greenery, this heritage retreat offers a highly personalized approach to Panchakarma, chronic disease management, and metabolic rejuvenation. Guests experience an immersive healing journey guided by expert Vaidyas, supported by therapeutic yoga, mindful routines, and a strictly balanced sattvic lifestyle. The serene environment and nature-centric architecture provide a perfect sanctuary for deep detoxification, stress management, and the restoration of long-term vitality. Kairali remains a global benchmark for authentic Kerala Ayurveda, dedicated to delivering transformative health results in a professional and nurturing setting.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -486,13 +507,9 @@ const TopCenters = () => {
         "Stress Management",
         "Chronic Disease Management",
         "Weight Management",
-        "Yoga & Meditation",
-        "Holistic Healing",
-        "Wellness Retreat",
-        "Kerala Ayurveda",
       ],
       rating: 4.9,
-      reviews: 280,
+      reviews: 2000,
       priceRange: "$$$$",
       image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
       locationText: "Palakkad, Kerala, India",
@@ -502,7 +519,7 @@ const TopCenters = () => {
       name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
       city: "Rishikesh",
       description:
-        "Veda5 is one of India’s most premium Ayurveda & Yoga wellness retreats — combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards. Nestled in the Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality. Veda5 is committed to helping individuals achieve sustainable well-being through a powerful combination of ancient wisdom and modern luxury.",
       specialties: [
         "Panchakarma",
         "Rejuvenation",
@@ -510,10 +527,9 @@ const TopCenters = () => {
         "Weight Management",
         "Yoga",
         "Meditation",
-        "Naturopathy",
       ],
       rating: 4.9,
-      reviews: 420,
+      reviews: 1000,
       priceRange: "$$$$",
       image: "/Center Images/veda5/veda5-1.jpg",
       slug: "veda5",
@@ -524,7 +540,7 @@ const TopCenters = () => {
       name: "Yan Cure Yoga Retreat & Ayurveda Centre",
       city: "Rishikesh",
       description:
-        "Yan Cure Yoga Retreat & Ayurveda Centre mein aap paayenge yoga, Ayurveda aur holistic healing ka perfect sangam. Yeh centre ek shaant aur prakritik environment mein sthit hai, jahan traditional Ayurvedic therapies aur yogic practices ke zariye body, mind aur soul ko balance kiya jaata hai. Experienced Ayurvedic doctors aur certified yoga instructors ke guidance mein, Yan Cure personalized treatment programs offer karta hai jo detoxification, stress relief aur overall rejuvenation par focus karte hain. Yahan ki healing therapies ancient wisdom aur modern wellness approaches ka ek powerful combination hain, jo long-term health aur inner peace ko promote karti hain.",
+        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic healing. Located in a tranquil natural environment, the center provides a peaceful space where professional clinical care and mindful living practices are practiced with clinical precision. Guests receive personalized treatment programs guided by experienced Ayurvedic doctors and certified yoga instructors, focusing on deep detoxification and stress management. Every healing journey is designed to restore the harmony of body, mind, and soul through time-tested and evidence-informed therapies. Yan Cure is dedicated to fostering inner peace and long-term vitality through a comprehensive approach to preventive health and professional rejuvenation.",
       specialties: [
         "Panchakarma Therapy",
         "Authentic Ayurveda Treatments",
@@ -532,7 +548,6 @@ const TopCenters = () => {
         "Detox & Rejuvenation",
         "Stress & Anxiety Management",
         "Lifestyle Disorder Treatment",
-        "Wellness Retreat Programs",
       ],
       rating: 4.8,
       reviews: 500,
@@ -554,7 +569,7 @@ const TopCenters = () => {
         "Personalized Wellness Planning",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 850,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       locationText: "South Goa, India",
@@ -564,13 +579,14 @@ const TopCenters = () => {
       name: "SWAN Yoga Retreat & Ayurveda",
       city: "Goa",
       description:
-        "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, a peaceful ashram-style wellness centre set in the lush hills of North Goa. Rooted in classical Yoga and Ayurveda, the retreat offers a calm space for healing, mental clarity, and inner growth.",
+        "SWAN Yoga Retreat is a premier ashram-style sanctuary in North Goa that offers an authentic and immersive journey into the classical science of Yogic living. Nestled in the lush tropical hills, the retreat provides a peaceful space where traditional Yoga, meditation, and Ayurvedic healing are practiced with uncompromising devotion. Guests can experience personalized programs including authentic Panchakarma, therapeutic breathwork, and mindful routines designed for profound mental clarity. Every element of the stay is thoughtfully curated to restore the harmony of body, mind, and soul through time-tested ashram traditions. This sanctuary is dedicated to helping individuals achieve lasting inner peace and physical vitality in a professional yet soulful environment.",
       specialties: [
         "Yoga Retreats & Teacher Training",
         "Authentic Ayurveda Therapies",
         "Panchakarma & Detox Programs",
         "Meditation & Pranayama",
         "Stress Relief & Lifestyle Balance",
+        "Ashram-Style Living",
       ],
       rating: 4.6,
       reviews: 500,
@@ -583,17 +599,17 @@ const TopCenters = () => {
       name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
       city: "Goa",
       description:
-        "Step into a sanctuary of healing at the Ayurveda Wellness Centre at Mercure Goa Devaaya Resort, where ancient Ayurvedic wisdom meets tranquil island living. Nestled along the serene backwaters of Divar Island, this wellness retreat offers an immersive experience rooted in authentic Ayurvedic traditions. Guided by experienced Ayurvedic doctors and therapists, the centre delivers personalized therapies designed to restore the natural balance of body, mind, and spirit.",
+        "The Ayurveda Wellness Centre at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through professional clinical protocols and mindful integration of yoga. This world-class retreat provides a serene and opulent environment for those seeking profound rejuvenation and long-term health empowerment.",
       specialties: [
         "Panchakarma Therapies",
         "Authentic Ayurveda Treatments",
         "Detox & Rejuvenation Programs",
-        "Stress & Lifestyle Disorder Management",
-        "Chronic Disease Support Therapies",
+        "Stress & Lifestyle Management",
+        "Chronic Disease Support",
         "Yoga & Meditation Integration",
       ],
       rating: 4.7,
-      reviews: 0,
+      reviews: 1900,
       priceRange: "$$$$",
       image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
       locationText: "Divar Island, Goa, India",
@@ -603,7 +619,7 @@ const TopCenters = () => {
       name: "Ashiyana Yoga Retreat",
       city: "Goa",
       description:
-        "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, a globally renowned destination for transformation and self-discovery. Set amidst lush tropical gardens along the serene Mandrem Beach, Ashiyana offers a unique blend of traditional yoga, meditation, and healing therapies. Rooted in authentic yogic philosophy and mindful living, the retreat provides holistic programs guided by experienced teachers and therapists. Each experience is thoughtfully curated to restore harmony in body, mind, and spirit, promoting deep relaxation, inner balance, and long-lasting wellbeing through natural and time-tested practices.",
+        "Ashiyana Yoga Retreat is a globally renowned sanctuary in North Goa, dedicated to profound personal transformation and the art of mindful coastal living. Set within lush tropical gardens along the serene Mandrem Beach, the retreat offers a unique blend of traditional yoga, meditation, and authentic Ayurvedic healing. Guests can experience holistic programs guided by experienced teachers and therapists, designed to restore metabolic balance and promote deep inner peace. Every element of the stay is thoughtfully curated to provide a restorative atmosphere for detoxification, stress relief, and the cultivation of long-lasting wellbeing. Ashiyana is committed to helping individuals rediscover their inner strength through a powerful combination of natural beauty and time-tested wellness practices.",
       specialties: [
         "Yoga Retreats",
         "Meditation & Mindfulness",
@@ -623,7 +639,7 @@ const TopCenters = () => {
       name: "Nalanda Retreat Goa",
       city: "Goa",
       description:
-        "Immerse yourself in a soulful coastal wellness experience at Nalanda Retreat Goa, a serene beachside sanctuary blending yoga, Ayurveda, and holistic healing. Nestled along the tranquil shores of Mandrem Beach, Nalanda offers a transformative escape where ocean rhythms meet ancient wellness traditions. Rooted in mindful living and personalized care, the retreat features guided yoga sessions, meditation practices, and Ayurvedic therapies designed to restore balance and inner harmony.",
+        "Nalanda Retreat Goa is a soulful beachside sanctuary on Mandrem Beach that seamlessly blends traditional yoga philosophy with authentic Ayurvedic healing standards. The retreat offers a transformative escape where the rhythms of the Arabian Sea meet ancient wellness traditions to create a deeply restorative atmosphere. Guests receive personalized care featuring guided yoga sessions, mindfulness practices, and professional Ayurvedic therapies designed to restore metabolic harmony and inner peace. Every healing journey is thoughtfully curated to support deep detoxification, stress management, and the restoration of physical vitality in a professional coastal setting. Nalanda provides a peaceful and nurturing environment for those seeking profound rejuvenation and a foundation for sustainable health.",
       specialties: [
         "Yoga Retreats",
         "Ayurveda Healing",
@@ -633,7 +649,7 @@ const TopCenters = () => {
         "Holistic Wellness",
       ],
       rating: 4.5,
-      reviews: 0,
+      reviews: 1300,
       priceRange: "$$$$",
       image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
       locationText: "Mandrem, North Goa, India",
@@ -643,13 +659,14 @@ const TopCenters = () => {
       name: "Ananda In The Himalayas",
       city: "Uttarakhand",
       description:
-        "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+        "Ananda In The Himalayas is a world-renowned ultra-luxury wellness retreat in the serene Himalayan foothills, dedicated to the profound integration of ancient wisdom and modern clinical excellence. Surrounded by pristine forests and overlooking the Ganges valley, Ananda offers highly personalized programs rooted in Ayurveda, Yoga, and Vedanta. Guests experience a transformative journey guided by expert physicians and therapists, designed to rejuvenate the body, calm the mind, and elevate the spirit through professional protocols. Every element of the stay is thoughtfully curated to provide a restorative atmosphere for detoxification, stress management, and sustainable metabolic health. Ananda remains a global benchmark for holistic luxury, delivering lasting life-transformation in an environment of unparalleled clinical and aesthetic perfection.",
       specialties: [
         "Ayurveda Therapies",
         "Yoga & Meditation",
         "Detox & Weight Management",
         "Stress Management",
         "Holistic Healing Programs",
+        "Vedanta Philosophy",
       ],
       rating: 4.8,
       reviews: 900,
@@ -662,16 +679,17 @@ const TopCenters = () => {
       name: "Namaste Dwaar – Countryside Wellness Retreat",
       city: "Delhi",
       description:
-        "Peaceful farmhouse sanctuary near NCR offering authentic Ayurvedic therapies, farm-fresh sattvic food, and compassionate care.",
+        "Namaste Dwaar is a peaceful countryside sanctuary near Delhi NCR that offers an authentic immersion into the traditional science of Ayurvedic healing. Nestled within a serene farmhouse setting, the retreat provides a nurturing environment where classical Panchakarma and natural therapies are practiced with medical precision. Guests receive compassionate care guided by experienced physicians, complemented by farm-fresh sattvic food and mindful wellness practices. Every program is thoughtfully designed to restore metabolic balance, improve sleep quality, and promote long-term physical and mental vitality. This rustic yet professional retreat is the perfect escape for those seeking deep detoxification and a sustainable foundation for holistic health.",
       specialties: [
         "Panchakarma",
         "Stress & Sleep",
         "Weight Management",
         "Immunity",
         "Skin & Beauty",
+        "Countryside Wellness",
       ],
-      rating: 4.8,
-      reviews: 180,
+      rating: 4.9,
+      reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
       slug: "delhi/namastedwaar" as string | undefined,
@@ -681,44 +699,58 @@ const TopCenters = () => {
     {
       name: "Ayurmana",
       city: "Kerala",
-      description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
-      specialties: ["Ayurveda", "Panchakarma", "Wellness"],
+      description:
+        "Ayurmana is a distinguished Ayurvedic wellness sanctuary in Kerala that masterfully blends ancient Vedic wisdom with professional clinical excellence. Set within a tranquil and immersive healing environment, the center offers a highly personalized approach to Panchakarma, chronic disease management, and deep rejuvenation. Guests experience an authentic healing journey guided by expert Vaidyas, supported by therapeutic routines and mindful living practices designed for metabolic harmony. The serene tropical surroundings and professional clinical care provide a perfect sanctuary for deep detoxification and the restoration of long-term vitality. Ayurmana remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a professional and nurturing setting.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Wellness",
+        "Detox & Rejuvenation",
+        "Holistic Health",
+        "Clinical Ayurveda",
+      ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 5000,
       priceRange: "$$$$",
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
       slug: "kerala/ayurmana" as string | undefined,
-        locationText: "Panvel, Mumbai, India",
+      locationText: "Panvel, Mumbai, India",
     },
     {
       name: "Chamundi Hill Palace Ayurvedic Resort",
       city: "Mysore",
-      description: "A heritage-inspired Ayurvedic resort offering authentic therapies and a serene healing experience.",
-      specialties: ["Ayurveda", "Panchakarma", "Rejuvenation"],
+      description:
+        "Chamundi Hill Palace Ayurvedic Resort is a heritage-inspired sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled in a serene and peaceful environment, the resort provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil heritage retreat provides an ideal space for those seeking profound rejuvenation and sustainable wellness.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Rejuvenation",
+        "Detox Therapies",
+        "Holistic Wellness",
+        "Heritage Stay",
+      ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 1000,
       priceRange: "$$$$",
       image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-      locationText: "Edakkunnam, Keralak",
+      locationText: "Edakkunnam, Kerala",
       slug: "mysore/chamundi-hill-palace" as string | undefined,
     },
     {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
       city: "Kerala",
       description:
-        "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
+        "Kairali Heritage Resort is a tranquil riverside sanctuary in Kannur that blends authentic Ayurvedic healing with the serene beauty of Kerala’s backwaters. Nestled on the banks of the Kattampally River, the resort offers an immersive wellness experience where classical Panchakarma and Naturopathy are practiced with professional medical standards. Guests receive highly personalized care guided by experienced physicians, complemented by therapeutic yoga and mindful island living. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through evidence-informed protocols and nature-centric rejuvenation. This riverside haven provides a peaceful and opulent environment for those seeking profound detoxification and long-term health empowerment.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
         "Detox",
         "Yoga & Meditation",
         "Stress & Wellness",
-        "Wellness & Rejuvenation",
         "Naturopathy",
-        "River-view Stay",
       ],
-      rating: 4.8,
-      reviews: 220,
+      rating: 4.9,
+      reviews: 2000,
       priceRange: "$$$",
       image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
       locationText: "Kannur, Kerala, India",
@@ -728,25 +760,27 @@ const TopCenters = () => {
       name: "Agni Ayurvedic Village Resort",
       city: "Kerala",
       description:
-        "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+        "Agni Ayurvedic Village Resort is a tranquil wellness sanctuary in the heart of Mumbai’s outskirts, blending ancient Ayurvedic wisdom with the profound serenity of nature. Surrounded by lush tropical greenery and peaceful water features, the resort provides a nurturing environment where guests can slow down and reset through professional clinical care. Guests experience an authentic healing journey featuring classical Panchakarma, therapeutic yoga, and mindful routines designed for deep rejuvenation. Every program is thoughtfully designed to restore metabolic balance and promote long-term physical and mental vitality under the guidance of expert physicians. This sanctuary offers a professional and soulful atmosphere that fosters deep detoxification and the restoration of inner harmony.",
       specialties: [
         "Panchakarma",
         "Rejuvenation",
         "Stress Relief",
         "Yoga & Meditation",
+        "Holistic Healing",
+        "Nature Retreat",
       ],
       rating: 4.7,
-      reviews: 190,
+      reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-        locationText: "Panvel, Mumbai, Maharashtra, India",
+      locationText: "Panvel, Mumbai, Maharashtra, India",
       slug: "kerala/agni-ayurvedic-village" as string | undefined,
     },
     {
       name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
       city: "Kumarakom",
       description:
-        "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+        "Dheemahi Kumarakom is a premium lakeside sanctuary on the banks of Lake Vembanad, dedicated to authentic Ayurvedic healing with over 90 years of family heritage. This NABH-accredited retreat masterfully blends traditional Vedic wisdom with modern luxury, offering a tranquil haven for profound physical and mental rejuvenation. Guests experience highly personalized care guided by expert Vaidyas, focusing on chronic pain management, stress relief, and deep metabolic detoxification. The serene lakeside environment and heritage-inspired architecture provide an ideal atmosphere for restoring balance through evidence-informed clinical protocols. Dheemahi remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a professional and opulent setting.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -756,7 +790,7 @@ const TopCenters = () => {
         "Lakeside Retreat",
       ],
       rating: 4.9,
-      reviews: 150,
+      reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
       locationText: "Kumarakom, Kerala, India",
@@ -766,16 +800,17 @@ const TopCenters = () => {
       name: "Kumarakom Lake Resort",
       city: "Kumarakom",
       description:
-        "Experience the tranquil charm of Kerala's backwaters at Kumarakom Lake Resort, an award-winning heritage retreat on serene Vembanad Lake. Designed with traditional Kerala architecture, the resort blends luxury with cultural authenticity, offering Ayurvedic wellness, private villas, and peaceful nature-led rejuvenation.",
+        "Kumarakom Lake Resort is a world-class heritage retreat on the serene shores of Vembanad Lake, dedicated to authentic Ayurvedic wellness and cultural preservation. Designed with traditional Kerala architecture, the resort offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced physicians, complemented by therapeutic yoga and peaceful nature-led rejuvenation in a luxurious environment. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through professional clinical standards and mindful island living. This award-winning retreat provides a serene and opulent sanctuary for those seeking profound detoxification and long-term health.",
       specialties: [
         "Ayurvedic Wellness & Rejuvenation",
         "Luxury Heritage Villas",
         "Backwater Cruises",
         "Traditional Kerala Cuisine",
         "Yoga & Holistic Wellness",
+        "Panchakarma",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 8000,
       priceRange: "$$$$",
       image: "/Center Images/kumarakom lake resort/Thumb.jpg",
       locationText: "Kumarakom, Kerala, India",
@@ -785,7 +820,7 @@ const TopCenters = () => {
       name: "Nagarjuna Ayurveda Centre",
       city: "Kerala",
       description:
-        "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+        "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich clinical institutions, renowned for its authentic and result-oriented approach to traditional care. Backed by decades of pharmaceutical and clinical expertise, the centre follows strict diagnostic protocols combined with classical Ayurvedic principles to deliver effective treatments. Guests undergo a transformative journey featuring intensive Panchakarma, chronic disease management, and metabolic rejuvenation guided by a team of expert Vaidyas. The professional clinical environment and dedicated therapeutic care ensure that every element of the stay is focused on restoring long-term health and vitality. Nagarjuna remains a global benchmark for authentic Ayurvedic healthcare, dedicated to delivering transformative results in a professional setting.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -795,7 +830,7 @@ const TopCenters = () => {
         "Wellness & Rejuvenation",
       ],
       rating: 4.8,
-      reviews: 200,
+      reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
       locationText: "Kerala, India",
@@ -805,13 +840,14 @@ const TopCenters = () => {
       name: "Sanjeevanam Ayurveda Hospital",
       city: "Kochi",
       description:
-        "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+        "Sanjeevanam Ayurveda Hospital is a pioneering integrative healthcare institution in Kochi that masterfully blends ancient Vedic wisdom with the precision of modern medicine. The hospital offers a powerful ecosystem for deep healing, featuring evidence-based clinical protocols and professional multidisciplinary care in a state-of-the-art facility. Guests receive highly personalized treatment plans including classical Panchakarma, pain management, and diabetic care designed for long-term health empowerment. The modern and professional environment ensures a seamless healing journey supported by therapeutic yoga, naturopathy, and expert medical guidance. Sanjeevanam is dedicated to delivering results-driven healthcare that restores metabolic balance and promotes sustainable vitality through an integrative approach.",
       specialties: [
         "Integrative Medicine",
         "Panchakarma",
         "Pain Management",
         "Diabetes Care",
         "Yoga & Naturopathy",
+        "Modern Ayurveda",
       ],
       rating: 4.8,
       reviews: 1700,
@@ -823,16 +859,17 @@ const TopCenters = () => {
     {
       name: "Back to Roots Ayurveda Retreat",
       city: "Idukki",
-      description: "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+      description: "Back to Roots Ayurveda Retreat is a serene lakeside sanctuary in Idukki, guided by the profound wisdom of 4th generation Ayurvedic physicians and classical healing traditions. This NABH-accredited retreat offers an authentic and immersive experience where pure, undiluted Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care in a pristine natural setting, focusing on chronic pain management, deep detoxification, and natural stress relief. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed clinical protocols. The tranquil environment and professional care create an ideal sanctuary for those seeking serious, results-driven Ayurvedic healing.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
         "Pain Management",
         "Stress Relief",
         "Lakeside Retreat",
+        "Clinical Ayurveda",
       ],
       rating: 4.9,
-      reviews: 100,
+      reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
       locationText: "Idukki, Kerala, India",
@@ -841,16 +878,17 @@ const TopCenters = () => {
     {
       name: "Dhathri Ayurveda Hospital & Panchakarma Center",
       city: "Kayamkulam",
-      description: "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+      description: "Dhathri Ayurveda Hospital & Panchakarma Center is a distinguished sanctuary on the serene backwaters of Kerala, guided by a profound 300-year-old family legacy of clinical excellence. This NABH-accredited hospital offers an authentic immersion into the ancient science of traditional healing, combining classical therapies with modern medical standards. Guests experience a deeply restorative journey featuring professional Panchakarma, chronic pain management, and metabolic rejuvenation in a tranquil natural environment. Every treatment is carefully tailored by experienced physicians based on individual health conditions to ensure effective and long-lasting wellness results. Dhathri remains a global benchmark for heritage-rich Ayurvedic care, dedicated to restoring inner harmony and physical vitality through professional expertise.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
         "Backwater Retreat",
         "Pain Management",
         "Stress Relief",
+        "Heritage Wellness",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
       locationText: "Kayamkulam, Kerala, India",
@@ -859,15 +897,14 @@ const TopCenters = () => {
     {
       name: "Krishnendu Ayurveda Hospital",
       city: "Alappuzha",
-      description: "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+      description: "Krishnendu Ayurveda Hospital is a premier NABH-accredited institution in Alappuzha, guided by over a century of healing wisdom and four generations of clinical excellence. Nestled in the serene backwaters, the hospital masterfully blends its rich heritage with modern professional standards to deliver authentic and result-oriented Ayurvedic care. Guests undergo a transformative journey featuring intensive Panchakarma, arthritis care, and specialized rejuvenation therapies designed for long-term health restoration. Every healing program is highly personalized and guided by expert physicians to ensure profound detoxification and the restoration of metabolic balance. The professional and tranquil environment provides a perfect sanctuary for those seeking serious, evidence-informed Ayurvedic healing.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
         "Pain Management",
         "Backwater Retreat",
         "Arthritis Care",
-        "PCOD/PCOS Treatment",
-        "Anti-Aging Therapy",
+        "Holistic Healing",
       ],
       rating: 4.9,
       reviews: 1500,
@@ -879,10 +916,17 @@ const TopCenters = () => {
     {
       name: "Athreya Ayurvedic Centre",
       city: "Kerala",
-      description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
-      specialties: ["Ayurveda", "Panchakarma", "Wellness"],
+      description: "Athreya Ayurvedic Centre is a distinguished sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled in a serene and peaceful environment, the center provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with clinical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil retreat provides an ideal space for those seeking profound rejuvenation and a sustainable foundation for holistic wellness.",
+      specialties: [
+        "Ayurveda",
+        "Panchakarma",
+        "Wellness",
+        "Rejuvenation",
+        "Holistic Health",
+        "Detox & Cleansing",
+      ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 1000,
       priceRange: "$$$$",
       image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
       locationText: "Kerala, India",
@@ -925,7 +969,7 @@ const TopCenters = () => {
       reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-      locationText: "N Cliff Rd, near Helipad, Varkala, Kerala 695141",
+      locationText: "Cliff Rd, Varkala, Kerala",
       slug: "kerala/ayushi-ayurvedic-retreat" as string | undefined,
     },
     {
@@ -984,7 +1028,7 @@ const TopCenters = () => {
         "Beauty & Anti-Aging Therapies",
       ],
       rating: 4.8,
-      reviews: 500,
+      reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
       locationText: "Mysuru (Mysore), Karnataka, India",
@@ -1016,7 +1060,7 @@ const TopCenters = () => {
       name: "Ideal Ayurvedic Resort",
       city: "Kerala",
       description:
-        "Nestled on a tranquil hillside in Chowara village, just a short walk from Kovalam beach, Ideal Ayurvedic Resort is a 'Green Leaf' certified sanctuary surrounded by 15 acres of lush coconut groves. Authentic, physician-led Ayurveda is practiced with heartfelt dedication — from classical Panchakarma to personalized healing programs — in one of Kerala's most genuinely non-commercialized healing environments.",
+        "Ideal Ayurvedic Resort is a distinguished 'Green Leaf' certified sanctuary in Kerala, dedicated to the authentic essence of traditional Ayurvedic healing. Nestled within 15 acres of lush tropical coconut groves near Kovalam Beach, the resort offers a peaceful and non-commercialized environment for profound clinical care. Guests experience an authentic healing journey featuring classical Panchakarma, chronic disease management, and nature-centric rejuvenation guided by highly experienced physicians. Every treatment is carefully tailored based on individual health conditions to ensure effective and long-lasting wellness results in a professional and nurturing setting. Ideal Ayurvedic Resort remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a tranquil tropical sanctuary.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -1026,7 +1070,7 @@ const TopCenters = () => {
         "Green Leaf Certified",
       ],
       rating: 4.5,
-      reviews: 400,
+      reviews: 2100,
       priceRange: "$$$",
       image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
       locationText: "Kovalam (Chowara), Kerala, India",
@@ -1034,16 +1078,34 @@ const TopCenters = () => {
     },
   ];
 
+  const staticTreatments = [
+    "Ayurveda Treatment", "Panchakarma Treatment", "Sinusitis Treatment", "Autism Treatment", 
+    "Weight Loss Treatment", "Monsoon Treatment", "Parkinson's Disease Treatment", "Sciatica Treatment", 
+    "Stroke Treatment", "Varicose Ulcer", "Knee Pain", "Post Natal Care", "Cervical Spondylosis", 
+    "Psoriasis", "Lumbar Spondylosis", "Gastroesophageal Reflux Disease", "Arthritis Treatment", 
+    "Dysmenorrhea Treatment", "Ulcerative Colitis Treatment", "Disc Bulge Protrusion", "Back Pain", 
+    "Stress Management", "Alopecia", "Yoga & Meditation", "Detox & Rejuvenation"
+  ];
+  
+  const cities = ["All", ...Array.from(new Set(centers.map(c => c.city).filter(Boolean))).sort()];
+  const dynamicTreatments = centers.flatMap(c => c.specialties).filter(Boolean);
+  const treatments = ["All", ...Array.from(new Set([...staticTreatments, ...dynamicTreatments])).sort()];
+
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-poppins bg-[#E5E7E2] flex flex-col overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      <main className="flex-grow">
+
       {/* Header */}
-      <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Top Ayurvedic Centers</h1>
-          <p className="text-lg text-white/90">
-            Discover India's finest Ayurvedic centers and wellness retreats
+      <section className="bg-[#2F5B63] text-white pt-12 pb-10 md:pt-20 md:pb-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 tracking-tight">
+            Top Ayurvedic Centers <span className="text-[#EDE8D0]">in India</span>
+          </h1>
+          <p className="text-sm md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed italic">
+            Explore India's most prestigious Ayurvedic sanctuaries, clinical hospitals, and heritage wellness retreats, curated for your healing journey.
           </p>
         </div>
       </section>
@@ -1066,46 +1128,106 @@ const TopCenters = () => {
 
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">City / Region</label>
-              <Select value={selectedCity} onValueChange={setSelectedCity}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent className="bg-card z-50">
-                  {cities.map((city) => (
-                    <SelectItem key={city} value={city}>
-                      {city}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Popover open={cityOpen} onOpenChange={setCityOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    role="combobox"
+                    aria-expanded={cityOpen}
+                    className="w-full justify-between bg-card hover:bg-accent hover:text-accent-foreground border-input text-foreground font-normal"
+                  >
+                    {selectedCity === "All" ? "All Cities" : selectedCity}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-full p-0 z-50">
+                  <Command>
+                    <CommandInput placeholder="Search city..." />
+                    <CommandList>
+                      <CommandEmpty>No city found.</CommandEmpty>
+                      <CommandGroup>
+                        {cities.map((city) => (
+                          <CommandItem
+                            key={city}
+                            value={city}
+                            onSelect={(currentValue) => {
+                              // CommandItem converts value to lowercase internally, 
+                              // so we match against the original city string.
+                              const selected = cities.find(c => c.toLowerCase() === currentValue) || city;
+                              setSelectedCity(selected === "all" ? "All" : selected);
+                              setCityOpen(false);
+                            }}
+                          >
+                            <Check
+                              className={cn(
+                                "mr-2 h-4 w-4",
+                                selectedCity === city ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                            {city}
+                          </CommandItem>
+                        ))}
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </PopoverContent>
+              </Popover>
             </div>
 
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Treatment</label>
-              <Select value={selectedTreatment} onValueChange={setSelectedTreatment}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent className="bg-card z-50">
-                  {treatments.map((treatment) => (
-                    <SelectItem key={treatment} value={treatment}>
-                      {treatment}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Popover open={treatmentOpen} onOpenChange={setTreatmentOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    role="combobox"
+                    aria-expanded={treatmentOpen}
+                    className="w-full justify-between bg-card hover:bg-accent hover:text-accent-foreground border-input text-foreground font-normal"
+                  >
+                    <span className="truncate pr-2 text-left">{selectedTreatment === "All" ? "All Treatments" : selectedTreatment}</span>
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 flex-none" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0 z-50">
+                  <Command>
+                    <CommandInput placeholder="Search treatment..." />
+                    <CommandList>
+                      <CommandEmpty>No treatment found.</CommandEmpty>
+                      <CommandGroup>
+                        {treatments.map((treatment) => (
+                          <CommandItem
+                            key={treatment}
+                            value={treatment}
+                            onSelect={(currentValue) => {
+                              const selected = treatments.find(t => t.toLowerCase() === currentValue) || treatment;
+                              setSelectedTreatment(selected === "all" ? "All" : selected);
+                              setTreatmentOpen(false);
+                            }}
+                          >
+                            <Check
+                              className={cn(
+                                "mr-2 h-4 w-4 shrink-0",
+                                selectedTreatment === treatment ? "opacity-100" : "opacity-0"
+                              )}
+                            />
+                            {treatment}
+                          </CommandItem>
+                        ))}
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </PopoverContent>
+              </Popover>
             </div>
 
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Sort By</label>
-              <Select defaultValue="rating">
+              <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-card z-50">
                   <SelectItem value="rating">Highest Rated</SelectItem>
-                  <SelectItem value="price-low">Price: Low to High</SelectItem>
-                  <SelectItem value="price-high">Price: High to Low</SelectItem>
                   <SelectItem value="distance">Distance</SelectItem>
                 </SelectContent>
               </Select>
@@ -1116,96 +1238,120 @@ const TopCenters = () => {
 
       {/* Centers Grid */}
       <section className="container mx-auto px-4 pb-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {centers
             .filter((center) => {
               const cityMatch = selectedCity === "All" || center.city === selectedCity;
-              const treatmentMatch = selectedTreatment === "All" || center.specialties.includes(selectedTreatment);
-              return cityMatch && treatmentMatch;
+              return cityMatch;
+            })
+            .sort((a, b) => {
+              if (selectedTreatment !== "All") {
+                const aHas = a.specialties.includes(selectedTreatment);
+                const bHas = b.specialties.includes(selectedTreatment);
+                if (aHas && !bHas) return -1;
+                if (!aHas && bHas) return 1;
+              }
+              if (sortBy === "rating") {
+                return b.rating - a.rating;
+              } else if (sortBy === "distance") {
+                return a.city.localeCompare(b.city);
+              }
+              return 0;
             })
             .map((center, index) => (
-              <div key={index} className="bg-card rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
-                <div className="w-full aspect-video overflow-hidden">
-                  <img
-                    src={center.image}
-                    alt={center.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    onError={(e) => { e.currentTarget.src = centerKerala; }}
-                  />
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-primary">{center.name}</h3>
+              <div 
+                key={index} 
+                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full"
+              >
+                  {/* Image Section */}
+                  <div className="relative aspect-[16/7] md:aspect-[16/8.2] overflow-hidden">
+                    <img
+                      src={center.image}
+                      alt={center.name}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      onError={(e) => { e.currentTarget.src = centerKerala; }}
+                    />
                   </div>
 
-                  <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1 min-w-0">
-                    <MapPin size={14} className="shrink-0 text-primary" />
-                    <span
-                      className="truncate"
-                      title={(center as { locationText?: string }).locationText || `${center.city}, India`}
+                  {/* Content Section */}
+                  <div className="p-3 md:p-5 flex flex-col flex-grow">
+                    <h3
+                      title={center.name}
+                      className="text-base md:text-lg font-bold text-[#2C4E5A] mb-1.5 md:mb-2 leading-tight line-clamp-2 min-h-0 md:min-h-[2.5rem]"
                     >
-                      {(center as { locationText?: string }).locationText || `${center.city}, India`}
-                    </span>
-                  </p>
+                      {center.name}
+                    </h3>
 
-                  <p className="text-foreground text-sm mb-4">{center.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {center.specialties.map((specialty, i) => (
-                      <span
-                        key={i}
-                        className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground"
-                        style={(center as { badgeColor?: string }).badgeColor ? { backgroundColor: (center as { badgeColor?: string }).badgeColor } : undefined}
-                      >
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between mb-4 pb-4 border-b border-border">
-                    <div className="flex items-center gap-1">
-                      <Star className="text-yellow-500 fill-yellow-500" size={16} />
-                      <span className="font-semibold">{center.rating}</span>
-                      <span className="text-xs text-muted-foreground">({center.reviews}{center.reviews >= 500 ? "+" : ""} reviews)</span>
+                    {/* Location and Rating Row */}
+                    <div className="flex items-center justify-between mb-2 md:mb-3 gap-2">
+                      <div className="flex items-center gap-1.5 text-foreground/80 min-w-0 flex-1">
+                        <MapPin size={14} className="text-primary shrink-0" />
+                        <span className="text-xs font-semibold truncate">
+                          {(center as { locationText?: string }).locationText || `${center.city}, India`}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                        <span className="text-xs font-black text-foreground">{center.rating}</span>
+                        <span className="text-xs font-semibold text-foreground/80">({center.reviews}{center.reviews > 0 ? "+" : ""})</span>
+                      </div>
                     </div>
-                    <span className="text-muted-foreground font-medium">{center.priceRange}</span>
-                  </div>
 
-                  <div className="flex gap-2">
-                    {(center as any).externalLink ? (
-                      <a 
-                        href={(center as any).externalLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="flex-1"
-                      >
-                        <Button variant="outline" className="w-full font-semibold">
-                          View Details
-                        </Button>
-                      </a>
-                    ) : (
-                      <Link 
-                        to={center.slug ? `/centers/${center.slug}` : "#"} 
-                        className="flex-1"
-                      >
-                        <Button variant="outline" className="w-full font-semibold">
-                          View Details
-                        </Button>
-                      </Link>
-                    )}
-                    <Button
-                      onClick={() => setQuoteModalOpen(true)}
-                      className="flex-1 font-semibold"
+                    <p className={`text-xs md:text-sm leading-relaxed text-foreground/80 mb-1 transition-all duration-300 ${expandedCards.has(index) ? "" : "line-clamp-3 md:line-clamp-5 min-h-0 md:min-h-[6.25rem]"}`}>
+                      {center.description}
+                    </p>
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="flex items-center gap-1 text-[10px] font-bold text-[#2C4E5A] hover:text-[#1e363e] mb-3 transition-colors duration-200"
                     >
-                      Get Quote
-                    </Button>
+                      {expandedCards.has(index) ? (
+                        <><ChevronUp size={12} /> Read Less</>
+                      ) : (
+                        <><ChevronDown size={12} /> Read More</>
+                      )}
+                    </button>
+
+                    {/* Tags Section */}
+                    <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-5">
+                      {center.specialties.slice(0, 3).map((specialty, i) => (
+                        <span
+                          key={i}
+                          className="bg-[#F0F7F4] text-[#1E7A4D] text-[9px] md:text-[10px] font-bold px-2 py-1 rounded-md border border-[#E0EBE6] text-center truncate max-w-full"
+                          title={specialty}
+                        >
+                          {specialty}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons Container */}
+                    <div className="mt-auto pt-4 border-t border-border/50">
+                      <div className="grid grid-cols-2 gap-2">
+                        <Link 
+                          to={center.slug ? `/centers/${center.slug}` : "#"} 
+                          className="w-full"
+                        >
+                          <Button 
+                            variant="outline" 
+                            className="w-full font-bold py-3 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-xs uppercase tracking-tight"
+                          >
+                            View Details
+                          </Button>
+                        </Link>
+                        <Button
+                          onClick={() => setQuoteModalOpen(true)}
+                          className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-3 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 text-xs uppercase tracking-tight"
+                        >
+                          Get Quote
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
             ))}
         </div>
       </section>
+      </main>
 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
