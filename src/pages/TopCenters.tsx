@@ -1117,7 +1117,7 @@ const TopCenters = () => {
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Country</label>
               <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                <SelectTrigger>
+                <SelectTrigger className="h-12 bg-[#E5E7E2] border-none shadow-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-card z-50">
@@ -1134,7 +1134,7 @@ const TopCenters = () => {
                     variant="outline"
                     role="combobox"
                     aria-expanded={cityOpen}
-                    className="w-full justify-between bg-card hover:bg-accent hover:text-accent-foreground border-input text-foreground font-normal"
+                    className="w-full h-12 justify-between bg-[#E5E7E2] hover:bg-[#D8DED3] border-none text-foreground font-normal shadow-sm"
                   >
                     {selectedCity === "All" ? "All Cities" : selectedCity}
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
@@ -1182,7 +1182,7 @@ const TopCenters = () => {
                     variant="outline"
                     role="combobox"
                     aria-expanded={treatmentOpen}
-                    className="w-full justify-between bg-card hover:bg-accent hover:text-accent-foreground border-input text-foreground font-normal"
+                    className="w-full h-12 justify-between bg-[#E5E7E2] hover:bg-[#D8DED3] border-none text-foreground font-normal shadow-sm"
                   >
                     <span className="truncate pr-2 text-left">{selectedTreatment === "All" ? "All Treatments" : selectedTreatment}</span>
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50 flex-none" />
@@ -1223,7 +1223,7 @@ const TopCenters = () => {
             <div>
               <label className="text-sm font-medium text-foreground mb-2 block">Sort By</label>
               <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger>
+                <SelectTrigger className="h-12 bg-[#E5E7E2] border-none shadow-sm">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent className="bg-card z-50">
