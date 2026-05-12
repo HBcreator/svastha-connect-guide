@@ -1,258 +1,409 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
-import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
+import QuoteModal from "@/components/QuoteModal";
+import HeroSection from "@/components/home/HeroSection";
+import MedicalFinder from "@/components/home/MedicalFinder";
+import HomeProgramsSection from "@/components/home/HomeProgramsSection";
+import HomeTreatmentsGuide from "@/components/home/HomeTreatmentsGuide";
+import HomeProcessRoadmap from "@/components/home/HomeProcessRoadmap";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
+import HomeFAQ from "@/components/home/HomeFAQ";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search, MapPin, Phone, CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/hero-ayurveda.jpg";
+import { MapPin, Phone, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
+
 import centerKerala from "@/assets/center-kerala.jpg";
-import centerGoa from "@/assets/center-goa.jpg";
-import centerBangalore from "@/assets/center-bangalore.jpg";
 
-const Index = () => {
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+export default function Index() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const navigate = useNavigate();
 
+  // Top Centers Carousel State
+  const [topCentersSlide, setTopCentersSlide] = useState(0);
+  const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
+
+  // Flagship elite centers for static demonstration
   const featuredCenters = [
     {
-      name: "Kerala Ayurveda Wellness Center",
-      city: "Kochi, Kerala",
-      description: "Traditional Panchakarma and rejuvenation therapies in serene backwaters",
-      specialties: ["Panchakarma", "Shirodhara", "Stress Relief"],
-      rating: 4.9,
-      priceRange: "$$$",
-      image: centerKerala,
-    },
-    {
-      name: "Goa Holistic Healing Retreat",
-      city: "Goa",
-      description: "Beachside Ayurvedic spa with yoga and meditation programs",
-      specialties: ["Weight Management", "Detox", "Yoga Therapy"],
-      rating: 4.8,
-      priceRange: "$$",
-      image: centerGoa,
-    },
-    {
-      name: "Bangalore Wellness Institute",
-      city: "Bangalore, Karnataka",
-      description: "Modern Ayurvedic center combining traditional wisdom with contemporary care",
-      specialties: ["Chronic Disease", "Joint Care", "Skin Treatments"],
+      name: "Carnoustie Ayurveda & Wellness Resort",
+      location: "Mararikulam, Kerala",
+      desc: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning luxury destination.",
+      specialties: ["Panchakarma", "Rejuvenation", "Anti-Aging"],
       rating: 4.7,
-      priceRange: "$$$",
-      image: centerBangalore,
+      price: "$$$$",
+      path: "/centers/kerala/carnoustie",
+      image: "/Center Images/Carnoustie Ayurveda/CTA mid.jpg",
+      usp: "NABH Accredited & Award-Winning Luxury",
     },
+    {
+      name: "Toyam By Orchid Hotels",
+      location: "Pune, Maharashtra",
+      desc: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and restoration.",
+      specialties: ["Detox", "Yoga", "Holistic Healing"],
+      rating: 4.7,
+      price: "$$$",
+      path: "/centers/maharashtra/toyam",
+      image: "/Center Images/Toyam By Orchid Hotels/CTA mid.webp",
+      usp: "Eco-Friendly Wellness Sanctuary",
+    },
+    {
+      name: "Somatheeram Ayurveda Village",
+      location: "Chowara Beach, Kerala",
+      desc: "The world's first traditional Ayurvedic beach resort with continuous multi-year national tourism excellence awards.",
+      specialties: ["Psoriasis Protocols", "Weight Care", "Immunity Reset"],
+      rating: 4.8,
+      price: "$$$",
+      path: "/centers/kerala/somatheeram",
+      image: "/Center Images/somatheeram/Somatheeram 01.jpg",
+      usp: "Multi-Time National Tourism Award Winner",
+    },
+    {
+      name: "SOUKYA International Holistic Health Centre",
+      location: "Whitefield, Bangalore",
+      desc: "World-renowned integrative health center preferred by international royalty. 30-acre certified organic farm environment.",
+      specialties: ["Panchakarma", "Integrative Medicine", "Chronic Detox"],
+      rating: 4.9,
+      price: "$$$$",
+      path: "/centers/bangalore/soukya",
+      image: "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/1%20Soukya.jpg",
+      usp: "NABH Accredited & Global Royal Favorite",
+    },
+    {
+      name: "Ananda in the Himalayas",
+      location: "Rishikesh, Uttarakhand",
+      desc: "Multi-award winning luxury palace retreat nestled in Himalayan foothills offering deep spiritual and physical restoration.",
+      specialties: ["Stress Rebalance", "Yoga Therapy", "Detox Protocols"],
+      rating: 4.9,
+      price: "$$$$",
+      path: "/centers/uttarakhand/ananda-in-the-himalayas",
+      image: "/Center Images/Ananda in the Himalayas/CTA bottom.jpg",
+      usp: "World's Leading Luxury Wellness Retreat",
+    },
+    {
+      name: "Indus Valley Ayurvedic Centre",
+      location: "Mysore, Karnataka",
+      desc: "Designed according to Vastu Shastra, offering authentic treatments in a royal setting at the foothills of Chamundi Hill.",
+      specialties: ["Rejuvenation", "Beauty Detox", "Wellness"],
+      rating: 4.7,
+      price: "$$$",
+      path: "/centers/mysore/indus-valley-ayurvedic-centre",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg",
+      usp: "Vastu-Compliant Royal Architecture",
+    },
+    {
+      name: "Kairali - The Ayurvedic Healing Village",
+      location: "Palakkad, Kerala",
+      desc: "Set amidst 50 acres of lush greenery, this NABH accredited village combines traditional Ayurveda with modern amenities.",
+      specialties: ["Weight Loss", "Panchakarma", "Stress"],
+      rating: 4.8,
+      price: "$$$",
+      path: "/centers/kerala/kairali-ayurvedic-healing-village",
+      image: "/Center Images/The Ayurvedic Healing Village/CTA image (2).jpg",
+      usp: "50-Acre Lush Green Sanctuary",
+    },
+    {
+      name: "Agni Ayurvedic Village",
+      location: "Mumbai, Maharashtra",
+      desc: "A premium eco-friendly healing sanctuary near Mumbai focusing on authentic Kerala Ayurvedic therapies and holistic wellness.",
+      specialties: ["Detox", "Pain Management", "Relaxation"],
+      rating: 4.6,
+      price: "$$",
+      path: "/centers/kerala/agni-ayurvedic-village",
+      image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+      usp: "Premium Eco-Friendly Sanctuary",
+    },
+    {
+      name: "Veda5 Ayurveda & Yoga Retreat",
+      location: "Rishikesh, Uttarakhand",
+      desc: "Experience luxury wellness at Veda5, overlooking the Himalayas, offering world-class Ayurveda, Yoga, and Meditation programs.",
+      specialties: ["Immunity", "Detox", "Spiritual Healing"],
+      rating: 4.8,
+      price: "$$$",
+      path: "/centers/uttarakhand/veda5",
+      image: "/Center Images/veda5/Facilities & Amenities/veda5-01.jpg",
+      usp: "Himalayan Wellness & Yoga Retreat",
+    }
   ];
 
+  const itemsPerSlide = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+  const topCentersTotalSlides = Math.ceil(featuredCenters.length / itemsPerSlide);
+  const visibleTopCenters = featuredCenters.slice(
+    topCentersSlide * itemsPerSlide,
+    (topCentersSlide + 1) * itemsPerSlide
+  );
+
+  const goTopCentersNext = () => {
+    setTopCentersSlide((prev) => (prev + 1) % topCentersTotalSlides);
+    setExpandedCenterName(null);
+  };
+
+  const goTopCentersPrevious = () => {
+    setTopCentersSlide((prev) => (prev - 1 + topCentersTotalSlides) % topCentersTotalSlides);
+    setExpandedCenterName(null);
+  };
+
+  const toggleCenterDescription = (name: string) => {
+    setExpandedCenterName(prev => prev === name ? null : name);
+  };
+
   return (
-    <div className="min-h-screen font-poppins">
+    <div className="min-h-screen font-poppins flex flex-col justify-between">
+      {/* Top Header Navigation */}
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
-      
-      {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
+
+      {/* MODULE 1: Premium Dynamic Hero Section */}
+      <HeroSection onQuoteClick={() => setQuoteModalOpen(true)} />
+
+      {/* MODULE 2: Smart Interactive Medical Finder Widget */}
+      <MedicalFinder />
+
+      {/* QUICK NAVIGATION: 4 Main Site Sections */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary/80 bg-primary/5 px-3 py-1 rounded-full">
+            Explore Savastha Global
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">
+            Everything You Need, All in One Place
+          </h2>
+          <p className="text-sm sm:text-base text-[#7F543D] leading-relaxed">
+            From curated healing programs and elite certified centers to targeted treatments — navigate every aspect of your Ayurvedic journey with ease.
+          </p>
         </div>
-        
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-3xl text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Authentic Ayurvedic Centers & Healing Retreats
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-white/90">
-              20 years of medical tourism experience — now guiding you to India's best Ayurvedic centers for personalized care
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+          {/* Card 1: Services */}
+          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
+            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
+              <Stethoscope className="h-6 w-6" />
+            </div>
+            <h3 className="font-bold text-lg text-primary mb-2">Services of Savastha Global</h3>
+            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
+              Explore our full range of traditional healing modalities — from authentic Panchakarma and Ayurveda to Yoga, Touch Therapies, Mind-Body interventions, and Biological plant-based treatments.
             </p>
-            <Button 
-              onClick={() => setQuoteModalOpen(true)}
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8"
-            >
-              Get Free Quote
-            </Button>
+            <Link to="/services" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+              View All Services →
+            </Link>
           </div>
+
+          {/* Card 2: Top Centers */}
+          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
+            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
+              <Hospital className="h-6 w-6" />
+            </div>
+            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of Savastha Global</h3>
+            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
+              Discover India's most prestigious NABH-accredited Ayurvedic hospitals and retreat sanctuaries — handpicked across Kerala, the Himalayas, Goa, Bangalore, and beyond.
+            </p>
+            <Link to="/centers" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+              Browse All Centers →
+            </Link>
+          </div>
+
+          {/* Card 3: Ayurvedic Programs */}
+          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
+            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
+              <CalendarCheck className="h-6 w-6" />
+            </div>
+            <h3 className="font-bold text-lg text-primary mb-2">Ayurvedic Programs</h3>
+            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
+              Browse structured inpatient wellness packages — from 21-Day Panchakarma Detox and Burnout Recovery to Anti-Aging, Weight Loss, and disease-specific healing retreats.
+            </p>
+            <Link to="/ayurvedic-programs" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+              Explore All Programs →
+            </Link>
+          </div>
+
+          {/* Card 4: Treatments */}
+          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
+            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
+              <HeartPulse className="h-6 w-6" />
+            </div>
+            <h3 className="font-bold text-lg text-primary mb-2">Treatments by Condition</h3>
+            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
+              Find Ayurvedic solutions tailored to your specific health condition — from Arthritis, Sciatica, and Psoriasis to Parkinson's, Stroke Rehab, Weight Management, and 23+ more.
+            </p>
+            <Link to="/treatments" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+              View All Treatments →
+            </Link>
+          </div>
+
         </div>
       </section>
 
-      {/* Quick Search */}
-      <section className="container mx-auto px-4 -mt-8 relative z-10">
-        <div className="bg-card rounded-lg shadow-lg p-6 max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-              <Input 
-                placeholder="Search by treatment or condition..."
-                className="pl-10"
-              />
-            </div>
-            <div className="flex-1 relative">
-              <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-              <Input 
-                placeholder="City or region in India..."
-                className="pl-10"
-              />
-            </div>
-            <Button className="font-semibold">Search Centers</Button>
-          </div>
-        </div>
-      </section>
 
-      {/* How It Works */}
-      <section className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
-          How It Works
-        </h2>
-        
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-primary">1</span>
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">Describe Your Condition</h3>
-            <p className="text-muted-foreground">
-              Tell us about your health concerns, goals, and preferences through our simple form
-            </p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-primary">2</span>
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">We Match Centers</h3>
-            <p className="text-muted-foreground">
-              Our experts connect you with the most suitable Ayurvedic centers for your needs
-            </p>
-          </div>
-          
-          <div className="text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-primary">3</span>
-            </div>
-            <h3 className="text-xl font-semibold text-foreground mb-3">Book & Travel</h3>
-            <p className="text-muted-foreground">
-              We handle all arrangements for a seamless healing journey to India
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Centers */}
-      <section className="bg-muted py-20">
+      {/* MODULE 3 PREVIEW: Handpicked Elite Centers */}
+      <section className="bg-primary/5 py-20 border-t border-b border-primary/10">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
-            Featured Top Centers
-          </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {featuredCenters.map((center, index) => (
-              <div key={index} className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <div className="h-48 bg-cover bg-center" style={{ backgroundImage: `url(${center.image})` }}></div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-2">{center.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-3 flex items-center gap-1">
-                    <MapPin size={14} /> {center.city}
-                  </p>
-                  <p className="text-foreground mb-4">{center.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {center.specialties.map((specialty, i) => (
-                      <span key={i} className="bg-secondary/30 text-xs px-2 py-1 rounded-full text-secondary-foreground">
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      <span className="text-yellow-500">★</span>
-                      <span className="font-semibold">{center.rating}</span>
+          <div className="text-center space-y-2 md:space-y-3 px-4 mb-12">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
+            <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care and authentic healing programs.</p>
+          </div>
+          
+          <div className="relative group flex items-center justify-center">
+            {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
+            <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+              <button
+                onClick={goTopCentersPrevious}
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                aria-label="Previous centers"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+            <div className="absolute right-2 md:-right-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+              <button
+                onClick={goTopCentersNext}
+                className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
+                aria-label="Next centers"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
+              {visibleTopCenters.map((center, idx) => (
+                <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-primary/10 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
+                    <div className="relative aspect-[16/9] md:aspect-[18/9] overflow-hidden shrink-0">
+                      <img
+                        src={center.image}
+                        alt={center.name}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-xs">
+                        {center.usp}
+                      </div>
                     </div>
-                    <span className="text-muted-foreground">{center.priceRange}</span>
+
+                    <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
+                      <h3 className="text-lg md:text-lg font-bold text-[#335765] leading-tight min-h-[2.6rem] md:min-h-[3.5rem] items-start flex text-left">{center.name}</h3>
+
+                      <div className="flex flex-nowrap items-center justify-between w-full gap-x-2 mt-1.5 mb-3.5 md:mt-1 md:mb-4 text-left overflow-hidden">
+                        <div className="flex items-center gap-1.5 shrink min-w-0">
+                          <MapPin className="w-3.5 h-3.5 text-orange-500 shrink-0" />
+                          <span className="text-[12px] md:text-[13px] font-semibold truncate" title={center.location}>{center.location}</span>
+                        </div>
+                        <div className="flex items-center gap-1 shrink-0 whitespace-nowrap">
+                          <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
+                          <span className="text-[12px] md:text-[13px] font-bold text-[#335765]">({center.rating} rating)</span>
+                        </div>
+                      </div>
+
+                      <div className="relative mb-3 flex-grow text-left">
+                        <p className={`text-xs md:text-sm text-[#7F543D] leading-relaxed transition-all duration-300 ${expandedCenterName === center.name ? "" : "line-clamp-3"}`}>
+                          {center.desc}
+                        </p>
+                        <button
+                          onClick={() => toggleCenterDescription(center.name)}
+                          className="mt-1 text-[10px] font-bold text-[#335765] hover:underline block"
+                        >
+                          {expandedCenterName === center.name ? "Read Less" : "Read More"}
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-3 mt-auto">
+                        <Link
+                          to={center.path}
+                          className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
+                        >
+                          View Details
+                        </Link>
+                        <Button
+                          className="w-full bg-[#335765] hover:bg-[#25464c] text-white font-bold h-10 rounded-lg shadow-sm text-xs"
+                          onClick={() => setQuoteModalOpen(true)}
+                        >
+                          Get Quote
+                        </Button>
+                      </div>
+                    </div>
                   </div>
-                  <Button className="w-full mt-4 font-semibold" variant="outline">
-                    View Details
-                  </Button>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Why Choose Us */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">
-            Why Choose Savastha Global?
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            <div className="flex gap-4">
-              <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">20 Years Experience</h3>
-                <p className="text-muted-foreground">Decades of expertise in international medical tourism</p>
+          <div className="space-y-6">
+            {topCentersTotalSlides > 1 && (
+              <div className="flex justify-center gap-2 mt-4">
+                {Array.from({ length: topCentersTotalSlides }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setTopCentersSlide(i)}
+                    className={`h-1.5 rounded-full transition-all ${i === topCentersSlide ? "w-6 bg-[#335765]" : "w-1.5 bg-[#C7D1C9]"}`}
+                  />
+                ))}
               </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Verified Centers</h3>
-                <p className="text-muted-foreground">Only trusted, authenticated Ayurvedic centers</p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Personalized Care</h3>
-                <p className="text-muted-foreground">Tailored recommendations for your unique needs</p>
-              </div>
-            </div>
-            
-            <div className="flex gap-4">
-              <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">End-to-End Support</h3>
-                <p className="text-muted-foreground">From consultation to post-treatment follow-up</p>
-              </div>
+            )}
+
+            <div className="flex justify-center mt-4">
+              <Button
+                className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
+                onClick={() => navigate('/centers')}
+              >
+                VIEW ALL CENTERS
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-primary text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Begin Your Healing Journey?
+      {/* MODULE 4: Curated Program Packages Hub */}
+      <HomeProgramsSection />
+
+      {/* MODULE 5: Complete A-Z Targeted Treatments Directory */}
+      <HomeTreatmentsGuide />
+
+      {/* MODULE 6: Patient Process Roadmap */}
+      <HomeProcessRoadmap />
+
+      {/* MODULE 7: Global Patient Testimonials */}
+      <HomeTestimonials />
+
+      {/* MODULE 8: Western Travel & Medical FAQ */}
+      <HomeFAQ />
+
+      {/* FINAL HIGH-IMPACT CTA */}
+      <section className="bg-gradient-to-r from-primary via-primary/95 to-primary/90 text-white py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(#EDE8D0_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
+        
+        <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+            Ready to Begin Your Healing Journey to India?
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-            Let our experts guide you to the perfect Ayurvedic center for your wellness goals
+          <p className="text-sm sm:text-base text-white/90 mb-8 font-light leading-relaxed">
+            Connect with our senior health specialists today. Receive customized protocol recommendations, therapy durations, and hospital pricing options tailored precisely to your condition.
           </p>
           <Button 
             onClick={() => setQuoteModalOpen(true)}
             size="lg"
-            className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8"
+            className="bg-[#EDE8D0] text-primary hover:bg-white tracking-wide font-bold text-base py-7 px-10 rounded-xl shadow-2xl transition-all hover:scale-105"
           >
-            Get Free Consultation
+            Request Free Medical Plan & Pricing
           </Button>
         </div>
       </section>
 
+      {/* Global Bottom Footer */}
       <Footer />
+
+      {/* Global Quote Request Modal */}
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       
-      {/* Floating Quote Button */}
+      {/* Persistent Floating Trigger Button */}
       <button
         onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+        className="fixed bottom-6 right-6 bg-[#7F543D] text-white hover:bg-primary rounded-full p-4 shadow-2xl hover:scale-110 transition-all z-40 flex items-center gap-2 font-bold text-sm border-2 border-white/20"
       >
-        <Phone size={20} />
-        <span className="hidden md:inline">Get Free Quote</span>
+        <Phone size={18} className="animate-bounce" />
+        <span className="hidden sm:inline tracking-wide">Request Quote</span>
       </button>
     </div>
   );
-};
-
-export default Index;
+}
