@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, HeartPulse, Sparkles, Filter } from "lucide-react";
+import { Search, ArrowRight, HeartPulse, Sparkles, Filter, CircleCheck } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 // Comprehensive catalog ensuring optimal internal link density for search engine bots
@@ -46,38 +46,32 @@ export default function HomeTreatmentsGuide() {
   });
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="pt-4 pb-4 relative">
       <div className="container mx-auto px-4 max-w-6xl">
         
-        {/* Header Block */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-primary/10">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary mb-2">
-              <HeartPulse className="h-4 w-4 text-[#7F543D]" />
-              <span>Evidence-Based Directory</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
-              Targeted A-Z Clinical Treatments Guide
-            </h2>
-            <p className="text-xs sm:text-sm text-[#7F543D] mt-2 leading-relaxed">
-              Explore custom inpatient therapeutic applications designed for refractory chronic issues. Filter live below to discover specialized protocols.
-            </p>
-          </div>
+        {/* Header Block - Centered Layout */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
+            Top Ayurvedic Treatments by MyVaidyam in India
+          </h2>
+          <p className="text-sm md:text-base text-[#7F543D] leading-relaxed mb-8">
+            Explore custom inpatient therapeutic applications designed for refractory chronic issues. Filter live below to discover specialized protocols.
+          </p>
 
-          {/* Search box for interactive UX */}
-          <div className="relative w-full md:w-72 flex-shrink-0">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-primary/40" />
+          {/* Centered Search box */}
+          <div className="relative w-full max-w-md mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/40" />
             <Input
               type="text"
-              placeholder="Filter condition or term..."
+              placeholder="Search treatment or medical condition..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-9 pr-4 py-2.5 rounded-xl border-primary/20 text-xs sm:text-sm focus-visible:ring-primary"
+              className="pl-11 pr-4 py-6 rounded-2xl border-primary/20 bg-white text-sm focus-visible:ring-[#FF7A28]/40 shadow-md"
             />
             {searchQuery && (
               <button 
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-primary/40 hover:text-primary"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-primary/40 hover:text-primary"
               >
                 Clear
               </button>
@@ -86,31 +80,48 @@ export default function HomeTreatmentsGuide() {
         </div>
 
         {/* Dynamic Category Pill Filters */}
-        <div className="flex flex-wrap items-center gap-1.5 mb-8">
-          <span className="text-xs font-bold text-primary/60 flex items-center gap-1 mr-2">
-            <Filter className="h-3 w-3" /> Filter Track:
-          </span>
-          {categories.map((cat) => {
-            const isSelected = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
-                  isSelected
-                    ? "bg-primary text-white border-primary shadow-xs"
-                    : "bg-primary/5 text-primary hover:bg-primary/10 border-transparent"
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
+        <div className="mb-10 w-full overflow-hidden">
+          {/* Centered Filter Label at top */}
+          <div className="flex justify-center mb-3">
+            <span className="text-[11px] sm:text-xs font-bold text-primary/60 flex items-center gap-1.5 uppercase tracking-wider">
+              <Filter className="h-3.5 w-3.5" /> Filter Treatments:
+            </span>
+          </div>
+
+          {/* Two-Row Horizontal Scroll Container */}
+          <div className="grid grid-rows-2 grid-flow-col gap-2 overflow-x-auto pb-4 px-4 no-scrollbar scroll-smooth">
+            {categories.map((cat) => {
+              const isSelected = selectedCategory === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all border whitespace-nowrap shrink-0 h-full flex items-center justify-center ${
+                    isSelected
+                      ? "bg-primary text-white border-primary shadow-md"
+                      : "bg-white text-primary/70 hover:bg-primary/5 border-primary/10 hover:border-primary/20 shadow-sm"
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
         </div>
+
+        <style>{`
+          .no-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+          .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
 
         {/* Dynamic Interactive Grid mapping */}
         {filteredConditions.length === 0 ? (
-          <div className="p-12 text-center bg-primary/5 rounded-2xl border border-primary/10">
+          <div className="p-12 text-center bg-white rounded-2xl border border-primary/10 shadow-sm">
             <p className="text-sm font-bold text-primary">No exact treatment condition matching your live query.</p>
             <button
               onClick={() => { setSearchQuery(""); setSelectedCategory("All"); }}
@@ -125,47 +136,38 @@ export default function HomeTreatmentsGuide() {
               <Link
                 key={cond.name}
                 to={cond.path}
-                className="p-4 rounded-xl border border-primary/10 bg-white hover:bg-primary/5 hover:border-primary/30 transition-all flex items-center justify-between gap-3 group shadow-xs hover:shadow-md"
+                className="p-4 rounded-xl border border-primary/15 bg-white hover:bg-primary hover:border-primary transition-all duration-300 flex items-center justify-between gap-3 group shadow-xs hover:shadow-xl hover:-translate-y-0.5"
               >
                 <div className="min-w-0 flex-1">
-                  <span className="text-[10px] font-bold text-[#7F543D] uppercase block tracking-wider mb-0.5">
+                  <span className="text-[10px] font-bold text-[#7F543D] uppercase block tracking-wider mb-0.5 group-hover:text-white/70 transition-colors">
                     {cond.category}
                   </span>
-                  <h4 className="font-bold text-xs sm:text-sm text-primary group-hover:text-primary transition-colors truncate block">
+                  <h4 className="font-bold text-xs sm:text-sm text-primary group-hover:text-white transition-colors truncate block">
                     {cond.name}
                   </h4>
                 </div>
 
-                <div className="h-7 w-7 rounded-lg bg-primary/5 group-hover:bg-primary group-hover:text-white text-primary flex items-center justify-center transition-all flex-shrink-0 border border-primary/10">
-                  <ArrowRight className="h-3.5 w-3.5" />
+                <div className="h-8 w-8 rounded-lg bg-primary/5 group-hover:bg-white/20 group-hover:text-white text-primary flex items-center justify-center transition-all flex-shrink-0 border border-primary/10 group-hover:border-white/30">
+                  <ArrowRight className="h-4 w-4" />
                 </div>
               </Link>
             ))}
           </div>
         )}
 
-        {/* Bottom Crawlability Anchor Statement */}
-        <div className="mt-12 p-5 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent border border-primary/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-white rounded-lg border border-primary/10 text-primary flex-shrink-0">
-              <Sparkles className="h-5 w-5 text-amber-500" />
+        {/* Important Notice Section - Synced with Sciatica Page Style */}
+        <div className="mt-12 rounded-xl border border-[#88a7ad] border-l-4 border-l-primary bg-[#E7F0F1] px-5 py-4 shadow-sm">
+          <div className="flex items-start gap-4">
+            <div className="mt-1 shrink-0">
+              <CircleCheck className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h5 className="font-bold text-xs sm:text-sm text-primary">
-                Uncompromising Traditional Preparation
-              </h5>
-              <p className="text-[11px] sm:text-xs text-[#7F543D]">
-                All prescribed herbal oils and internal decoctions are customized fresh to match individual diagnostic parameters.
+              <p className="text-[#214348] font-bold text-sm">Important Notice</p>
+              <p className="text-sm text-primary leading-relaxed mt-1">
+                All treatments and dietary plans are strictly supervised by qualified Ayurvedic doctors. Specific therapies may vary based on your individual medical profile and response to the program.
               </p>
             </div>
           </div>
-
-          <Link
-            to="/treatments"
-            className="text-xs font-bold text-primary hover:underline whitespace-nowrap self-end sm:self-auto"
-          >
-            Review Clinical Inclusions List →
-          </Link>
         </div>
 
       </div>

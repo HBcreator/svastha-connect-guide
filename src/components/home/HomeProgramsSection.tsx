@@ -6,33 +6,6 @@ import QuoteModal from "@/components/QuoteModal";
 
 // Structured program inventory mapped directly to existing application routes
 const programCategories = {
-  detox: {
-    title: "Panchakarma & Deep Detox",
-    tabLabel: "Panchakarma",
-    desc: "Intensive multi-week bio-purification protocols systematically eliminating deep cellular dosha imbalances.",
-    icon: Droplet,
-    programs: [
-      {
-        name: "21-Day Panchakarma Detox Program in India",
-        description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
-        image: "/Program Images/21-day-detox.png",
-        link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
-        rating: 4.6,
-        reviews: 480,
-        tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
-      },
-      {
-        name: "28-Day Panchakarma Healing Program in India",
-        description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
-        image: "/Program Images/28-day-healing.png",
-        link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
-        rating: 4.7,
-        reviews: 320,
-        tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
-      },
-    ],
-    landingPath: "/ayurvedic-programs/panchakarma-detox",
-  },
   diseaseSpecific: {
     title: "Disease-Specific Treatment Plans",
     tabLabel: "Disease Specific",
@@ -60,7 +33,7 @@ const programCategories = {
       {
         name: "Ayurveda Treatment for Rheumatoid Arthritis in India",
         description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
-        image: "/Program Images/rheumatoid-arthritis.png",
+        image: "/Program Images/rheumatoid-arthritis-clinical.png",
         link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
         rating: 4.6,
         reviews: 350,
@@ -95,6 +68,33 @@ const programCategories = {
       },
     ],
     landingPath: "/ayurvedic-programs/disease-specific",
+  },
+  detox: {
+    title: "Panchakarma & Deep Detox",
+    tabLabel: "Panchakarma",
+    desc: "Intensive multi-week bio-purification protocols systematically eliminating deep cellular dosha imbalances.",
+    icon: Droplet,
+    programs: [
+      {
+        name: "21-Day Panchakarma Detox Program in India",
+        description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
+        image: "/Program Images/21-day-detox.png",
+        link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+        rating: 4.6,
+        reviews: 480,
+        tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
+      },
+      {
+        name: "28-Day Panchakarma Healing Program in India",
+        description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
+        image: "/Program Images/28-day-healing.png",
+        link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
+        rating: 4.7,
+        reviews: 320,
+        tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
+      },
+    ],
+    landingPath: "/ayurvedic-programs/panchakarma-detox",
   },
   lifestyle: {
     title: "Lifestyle & Wellness Programs",
@@ -216,7 +216,7 @@ const programCategories = {
 };
 
 export default function HomeProgramsSection() {
-  const [selectedCategory, setSelectedCategory] = useState<keyof typeof programCategories>("detox");
+  const [selectedCategory, setSelectedCategory] = useState<keyof typeof programCategories>("diseaseSpecific");
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
   const handleCategoryChange = (key: keyof typeof programCategories) => {
@@ -224,11 +224,10 @@ export default function HomeProgramsSection() {
   };
 
   const currentCategoryData = programCategories[selectedCategory];
-  const CurrentIcon = currentCategoryData.icon;
   const programs = currentCategoryData.programs;
 
   return (
-    <section className="bg-[#EDE8D0]/30 py-20 border-t border-b border-primary/10">
+    <section className="pt-4 pb-4 relative">
       <div className="container mx-auto px-4">
         
         {/* Section Header */}
@@ -246,7 +245,7 @@ export default function HomeProgramsSection() {
         </div>
 
         {/* Dynamic Category Switcher Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-6xl mx-auto mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3 max-w-6xl mx-auto mb-10">
           {(Object.keys(programCategories) as Array<keyof typeof programCategories>).map((key) => {
             const cat = programCategories[key];
             const Icon = cat.icon;
@@ -256,41 +255,17 @@ export default function HomeProgramsSection() {
               <button
                 key={key}
                 onClick={() => handleCategoryChange(key)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all border ${
+                className={`flex items-center justify-center gap-2 px-3 sm:px-5 py-3.5 rounded-xl font-bold text-[11px] sm:text-sm transition-all border last:col-span-2 lg:last:col-span-1 h-full ${
                   isSelected
-                    ? "bg-primary text-white border-primary shadow-md scale-105"
+                    ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
                     : "bg-white text-primary/80 border-primary/10 hover:bg-white/80 hover:text-primary hover:border-primary/20"
                 }`}
               >
-                <Icon className={`h-4 w-4 ${isSelected ? "text-[#F0E68C]" : "text-primary/60"}`} />
-                <span>{cat.tabLabel || cat.title}</span>
+                <Icon className={`h-4 w-4 shrink-0 ${isSelected ? "text-[#F0E68C]" : "text-primary/60"}`} />
+                <span className="leading-tight">{cat.tabLabel || cat.title}</span>
               </button>
             );
           })}
-        </div>
-
-        {/* Selected Category Header Context Row */}
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl p-6 border border-primary/10 shadow-sm mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-primary/10 text-primary flex-shrink-0 mt-1 md:mt-0">
-              <CurrentIcon className="h-6 w-6" />
-            </div>
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold text-primary">
-                {currentCategoryData.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-[#7F543D] mt-1 leading-relaxed max-w-3xl">
-                {currentCategoryData.desc}
-              </p>
-            </div>
-          </div>
-
-          <Link
-            to={currentCategoryData.landingPath}
-            className="inline-flex items-center gap-1 text-xs font-bold bg-primary/5 hover:bg-primary hover:text-white text-primary px-4 py-2.5 rounded-xl transition-all border border-primary/10 flex-shrink-0 self-end md:self-auto whitespace-nowrap"
-          >
-            <span>Overview & Preparation →</span>
-          </Link>
         </div>
 
         {/* Full Grid Framework */}

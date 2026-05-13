@@ -71,7 +71,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="flex items-center space-x-2">
               <h1 className="text-xl md:text-2xl font-bold text-primary font-poppins">
-                Savastha Global
+                MyVaidyam
               </h1>
             </Link>
 

@@ -138,20 +138,17 @@ export default function MedicalFinder() {
   const hasRegionMatch = regionSearch.trim() ? scoreItem(sortedRegions[0],     regionSearch) > 0 : true;
 
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="bg-white rounded-2xl shadow-xl border border-primary/10 w-full overflow-hidden">
+    <section className="w-full px-4 pt-16 pb-0">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl border border-primary/10 w-full overflow-hidden">
 
         {/* ── Header Row ── */}
-        <div className="bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="bg-gradient-to-r from-primary to-primary/90 text-white px-6 py-5 flex items-center justify-center gap-3">
           <div className="flex items-center gap-2.5">
             <Search className="h-5 w-5 text-[#F0E68C]" />
             <h3 className="font-bold text-base sm:text-xl tracking-wide">
-              Smart Clinical & Retreat Navigator
+              Your Treatment and Therapy Navigator
             </h3>
           </div>
-          <span className="text-xs text-white/80 tracking-wider uppercase font-semibold bg-white/15 px-3 py-1 rounded-full border border-white/10">
-            Direct Instant Routing
-          </span>
         </div>
 
         {/* ── Tab Switcher ── */}
@@ -165,10 +162,10 @@ export default function MedicalFinder() {
                 key={tab}
                 onClick={() => setActiveTab(tab)}
                 className={`py-3 sm:py-4 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200
-                            flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 ${
+                            flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2 border-2 ${
                   isActive
-                    ? "bg-primary text-white shadow-md"
-                    : "text-primary/70 hover:text-primary hover:bg-white"
+                    ? "bg-primary text-white border-primary shadow-md"
+                    : "text-primary/70 bg-white border-primary/10 hover:text-primary hover:border-primary/30"
                 }`}
               >
                 <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${isActive ? "text-[#F0E68C]" : "text-primary/60"}`} />
@@ -209,9 +206,9 @@ export default function MedicalFinder() {
                     <button
                       key={item.name}
                       onClick={() => navigate(item.path)}
-                      className={`group relative p-4 rounded-xl border transition-all duration-200 text-left
+                      className={`group relative p-4 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
-                                  flex flex-col gap-2.5
+                                  flex flex-col items-center gap-2.5
                                   ${isHighlighted
                                     ? "border-primary bg-primary/5 ring-1 ring-primary/20"
                                     : "border-primary/15 bg-white hover:bg-primary hover:border-primary"
@@ -225,7 +222,7 @@ export default function MedicalFinder() {
                       )}
 
                       {/* Tag */}
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full inline-block self-start transition-colors
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full inline-block transition-colors
                                         ${isHighlighted
                                           ? "bg-primary text-white"
                                           : "bg-primary/10 text-primary group-hover:bg-white/20 group-hover:text-white"
@@ -245,12 +242,13 @@ export default function MedicalFinder() {
                         {item.desc}
                       </p>
 
-                      {/* Arrow */}
-                      <div className="flex justify-end mt-1">
-                        <span className={`h-6 w-6 rounded-full flex items-center justify-center transition-all
-                                          ${isHighlighted ? "bg-primary/15" : "bg-primary/10 group-hover:bg-white/20"}`}>
-                          <ChevronRight className={`h-3.5 w-3.5 transition-colors
-                                                     ${isHighlighted ? "text-primary" : "text-primary group-hover:text-white"}`} />
+                      {/* Visit Page Label */}
+                      <div className="flex justify-center mt-2">
+                        <span className={`text-[10px] font-black uppercase tracking-widest py-1.5 px-3 rounded-lg border transition-all
+                                          ${isHighlighted 
+                                            ? "bg-primary/10 border-primary text-primary" 
+                                            : "bg-primary/5 border-primary/10 text-primary group-hover:bg-white/20 group-hover:border-white/40 group-hover:text-white"}`}>
+                          Visit Page
                         </span>
                       </div>
                     </button>
@@ -293,9 +291,9 @@ export default function MedicalFinder() {
                     <button
                       key={item.name}
                       onClick={() => navigate(item.path)}
-                      className={`group relative p-5 rounded-xl border transition-all duration-200 text-left
+                      className={`group relative p-5 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
-                                  flex flex-col justify-between gap-3
+                                  flex flex-col items-center justify-between gap-3
                                   ${isHighlighted
                                     ? "border-primary bg-primary/5 ring-1 ring-primary/20"
                                     : "border-primary/15 bg-white hover:bg-primary hover:border-primary"
@@ -316,11 +314,13 @@ export default function MedicalFinder() {
                           {item.desc}
                         </p>
                       </div>
-                      <div className="flex justify-end">
-                        <span className={`h-7 w-7 rounded-full flex items-center justify-center transition-all
-                                          ${isHighlighted ? "bg-primary/15" : "bg-primary/10 group-hover:bg-white/20"}`}>
-                          <ChevronRight className={`h-4 w-4 transition-colors
-                                                     ${isHighlighted ? "text-primary" : "text-primary group-hover:text-white"}`} />
+                      {/* Visit Page Label */}
+                      <div className="flex justify-center mt-2">
+                        <span className={`text-[10px] font-black uppercase tracking-widest py-1.5 px-3 rounded-lg border transition-all
+                                          ${isHighlighted 
+                                            ? "bg-primary/10 border-primary text-primary" 
+                                            : "bg-primary/5 border-primary/10 text-primary group-hover:bg-white/20 group-hover:border-white/40 group-hover:text-white"}`}>
+                          Visit Page
                         </span>
                       </div>
                     </button>
@@ -363,9 +363,9 @@ export default function MedicalFinder() {
                     <button
                       key={item.name}
                       onClick={() => navigate(item.path)}
-                      className={`group relative p-5 rounded-xl border transition-all duration-200 text-left
+                      className={`group relative p-5 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
-                                  flex flex-col justify-between gap-3
+                                  flex flex-col items-center justify-between gap-3
                                   ${isHighlighted
                                     ? "border-primary bg-primary/5 ring-1 ring-primary/20"
                                     : "border-primary/15 bg-white hover:bg-primary hover:border-primary"
@@ -376,11 +376,11 @@ export default function MedicalFinder() {
                           Best Match
                         </span>
                       )}
-                      <div>
-                        <h4 className={`font-bold text-lg mb-2 flex items-center gap-1.5 transition-colors
+                      <div className="flex flex-col items-center w-full">
+                        <MapPin className={`h-5 w-5 mb-2 transition-colors
+                                            ${isHighlighted ? "text-[#7F543D]" : "text-[#7F543D] group-hover:text-white/70"}`} />
+                        <h4 className={`font-bold text-base sm:text-lg mb-2 text-center transition-colors
                                         ${isHighlighted ? "text-primary" : "text-primary group-hover:text-white"}` }>
-                          <MapPin className={`h-3.5 w-3.5 flex-shrink-0 transition-colors
-                                              ${isHighlighted ? "text-[#7F543D]" : "text-[#7F543D] group-hover:text-white/70"}`} />
                           {item.name}
                         </h4>
                         <p className={`text-sm line-clamp-2 leading-relaxed transition-colors
@@ -388,11 +388,14 @@ export default function MedicalFinder() {
                           {item.desc}
                         </p>
                       </div>
-                      <div className="flex justify-end">
-                        <span className={`h-7 w-7 rounded-full flex items-center justify-center transition-all
-                                          ${isHighlighted ? "bg-primary/15" : "bg-primary/10 group-hover:bg-white/20"}`}>
-                          <ChevronRight className={`h-4 w-4 transition-colors
-                                                     ${isHighlighted ? "text-primary" : "text-primary group-hover:text-white"}`} />
+                      
+                      {/* Visit Page Label */}
+                      <div className="flex justify-center mt-2">
+                        <span className={`text-[10px] font-black uppercase tracking-widest py-1.5 px-3 rounded-lg border transition-all
+                                          ${isHighlighted 
+                                            ? "bg-primary/10 border-primary text-primary" 
+                                            : "bg-primary/5 border-primary/10 text-primary group-hover:bg-white/20 group-hover:border-white/40 group-hover:text-white"}`}>
+                          Visit Page
                         </span>
                       </div>
                     </button>

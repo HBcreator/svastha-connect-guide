@@ -11,11 +11,7 @@ import HomeProcessRoadmap from "@/components/home/HomeProcessRoadmap";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
-
-import centerKerala from "@/assets/center-kerala.jpg";
-
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone, MapPin, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
 
 export default function Index() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -24,6 +20,34 @@ export default function Index() {
   // Top Centers Carousel State
   const [topCentersSlide, setTopCentersSlide] = useState(0);
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+
+  const jumpSections = [
+    { id: "hero", title: "Clinical Excellence" },
+    { id: "navigator", title: "Treatment Navigator" },
+    { id: "quick-nav", title: "Quick Explorer" },
+    { id: "top-centers", title: "Top India Centers" },
+    { id: "programs", title: "Ayurvedic Programs" },
+    { id: "treatments", title: "Treatments Guide" },
+    { id: "process", title: "Our Healing Process" },
+    { id: "testimonials", title: "Patient Reviews" },
+    { id: "faq", title: "Common Questions" }
+  ];
+
+  const jumpToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const navHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    setIsJumpModalOpen(false);
+  };
 
   // Flagship elite centers for static demonstration
   const featuredCenters = [
@@ -150,21 +174,25 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen font-poppins flex flex-col justify-between">
+    <div className="min-h-screen font-poppins flex flex-col justify-between overflow-x-hidden">
       {/* Top Header Navigation */}
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
       {/* MODULE 1: Premium Dynamic Hero Section */}
-      <HeroSection onQuoteClick={() => setQuoteModalOpen(true)} />
+      <div id="hero">
+        <HeroSection onQuoteClick={() => setQuoteModalOpen(true)} />
+      </div>
 
       {/* MODULE 2: Smart Interactive Medical Finder Widget */}
-      <MedicalFinder />
+      <div id="navigator">
+        <MedicalFinder />
+      </div>
 
       {/* QUICK NAVIGATION: 4 Main Site Sections */}
-      <section className="container mx-auto px-4 py-16">
+      <section id="quick-nav" className="max-w-6xl mx-auto px-4 pt-12 pb-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-primary/80 bg-primary/5 px-3 py-1 rounded-full">
-            Explore Savastha Global
+            Explore MyVaidyam
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">
             Everything You Need, All in One Place
@@ -181,7 +209,7 @@ export default function Index() {
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
               <Stethoscope className="h-6 w-6" />
             </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Services of Savastha Global</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">Services of MyVaidyam</h3>
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Explore our full range of traditional healing modalities — from authentic Panchakarma and Ayurveda to Yoga, Touch Therapies, Mind-Body interventions, and Biological plant-based treatments.
             </p>
@@ -195,7 +223,7 @@ export default function Index() {
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
               <Hospital className="h-6 w-6" />
             </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of Savastha Global</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of MyVaidyam</h3>
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Discover India's most prestigious NABH-accredited Ayurvedic hospitals and retreat sanctuaries — handpicked across Kerala, the Himalayas, Goa, Bangalore, and beyond.
             </p>
@@ -237,17 +265,17 @@ export default function Index() {
 
 
       {/* MODULE 3 PREVIEW: Handpicked Elite Centers */}
-      <section className="bg-primary/5 py-20 border-t border-b border-primary/10">
-        <div className="container mx-auto px-4">
+      <section id="top-centers" className="pt-12 pb-2">
+        <div className="container mx-auto px-4 md:px-8">
           
           <div className="text-center space-y-2 md:space-y-3 px-4 mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care and authentic healing programs.</p>
           </div>
           
-          <div className="relative group flex items-center justify-center">
+          <div className="relative group flex items-center justify-center max-w-6xl mx-auto px-2">
             {/* Navigation Arrows - centered on image for mobile, centered on card for desktop */}
-            <div className="absolute left-2 md:-left-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute left-5 md:-left-12 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersPrevious}
                 className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
@@ -256,7 +284,7 @@ export default function Index() {
                 <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-            <div className="absolute right-2 md:-right-8 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
+            <div className="absolute right-5 md:-right-12 z-20 top-[130px] md:top-1/2 -translate-y-1/2">
               <button
                 onClick={goTopCentersNext}
                 className="bg-white/70 hover:bg-white/90 text-[#335765] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#335765]"
@@ -266,7 +294,7 @@ export default function Index() {
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6 w-full px-0 md:px-6 lg:px-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full items-stretch">
               {visibleTopCenters.map((center, idx) => (
                 <div key={`${center.name}-${topCentersSlide}-${idx}`} className="flex h-full w-full">
                   <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-primary/10 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
@@ -276,9 +304,6 @@ export default function Index() {
                         alt={center.name}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                       />
-                      <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-xs">
-                        {center.usp}
-                      </div>
                     </div>
 
                     <div className="pt-2 px-3 pb-3 md:pt-3 md:px-4 md:pb-4 flex flex-col flex-grow">
@@ -355,38 +380,70 @@ export default function Index() {
       </section>
 
       {/* MODULE 4: Curated Program Packages Hub */}
-      <HomeProgramsSection />
+      <div id="programs">
+        <HomeProgramsSection />
+      </div>
 
       {/* MODULE 5: Complete A-Z Targeted Treatments Directory */}
-      <HomeTreatmentsGuide />
+      <div id="treatments">
+        <HomeTreatmentsGuide />
+      </div>
 
       {/* MODULE 6: Patient Process Roadmap */}
-      <HomeProcessRoadmap />
+      <div id="process">
+        <HomeProcessRoadmap />
+      </div>
 
       {/* MODULE 7: Global Patient Testimonials */}
-      <HomeTestimonials />
+      <div id="testimonials">
+        <HomeTestimonials />
+      </div>
 
       {/* MODULE 8: Western Travel & Medical FAQ */}
-      <HomeFAQ />
+      <div id="faq">
+        <HomeFAQ />
+      </div>
 
-      {/* FINAL HIGH-IMPACT CTA */}
-      <section className="bg-gradient-to-r from-primary via-primary/95 to-primary/90 text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#EDE8D0_1px,transparent_1px)] [background-size:16px_16px] opacity-10" />
+      {/* FINAL HIGH-IMPACT CTA WITH BACKGROUND IMAGE */}
+      <section className="relative py-12 md:py-14 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/healing-journey-bg.png" 
+            alt="Ayurvedic Healing Journey"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
         
-        <div className="container mx-auto px-4 text-center relative z-10 max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            Ready to Begin Your Healing Journey to India?
+        <div className="container mx-auto px-4 text-center relative z-10 max-w-4xl">
+          <h2 className="text-3xl md:text-6xl font-bold text-white mb-4 leading-tight">
+            Ready to Begin Your <br className="hidden md:block" />
+            Healing Journey?
           </h2>
-          <p className="text-sm sm:text-base text-white/90 mb-8 font-light leading-relaxed">
-            Connect with our senior health specialists today. Receive customized protocol recommendations, therapy durations, and hospital pricing options tailored precisely to your condition.
+          
+          <p className="text-base md:text-xl text-white/90 mb-10 font-medium leading-relaxed max-w-2xl mx-auto">
+            Contact us today for a free consultation. Our doctors will guide you towards the perfect treatment program.
           </p>
-          <Button 
-            onClick={() => setQuoteModalOpen(true)}
-            size="lg"
-            className="bg-[#EDE8D0] text-primary hover:bg-white tracking-wide font-bold text-base py-7 px-10 rounded-xl shadow-2xl transition-all hover:scale-105"
-          >
-            Request Free Medical Plan & Pricing
-          </Button>
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Button 
+              onClick={() => setQuoteModalOpen(true)}
+              size="lg"
+              className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-extrabold text-lg py-7 px-10 rounded-xl shadow-xl transition-all w-full sm:w-auto"
+            >
+              Get a Free Quote
+            </Button>
+            
+            <Button 
+              variant="secondary"
+              size="lg"
+              className="bg-white hover:bg-white/90 text-primary font-bold text-lg py-7 px-10 rounded-xl shadow-xl transition-all w-full sm:w-auto"
+              onClick={() => window.open('https://wa.me/yournumber', '_blank')}
+            >
+              WhatsApp Us
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -396,14 +453,110 @@ export default function Index() {
       {/* Global Quote Request Modal */}
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       
-      {/* Persistent Floating Trigger Button */}
+      {/* Desktop Vertical BROWSE Button (Right Side) */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button
+          onClick={() => setIsJumpModalOpen(true)}
+          className="bg-[#335765] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter"
+        >
+          <span className="drop-shadow-sm">B</span>
+          <span className="drop-shadow-sm">R</span>
+          <Search size={16} strokeWidth={3.5} className="drop-shadow-sm" />
+          <span className="drop-shadow-sm">W</span>
+          <span className="drop-shadow-sm">S</span>
+          <span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      {/* Floating BROWSE Button (Mobile Only - Left Side) */}
+      <button
+        onClick={() => setIsJumpModalOpen(true)}
+        className="md:hidden fixed bottom-6 left-5 z-50 bg-[#335765] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"
+      >
+        <Search size={18} className="-ml-1" />
+        <span>BROWSE</span>
+      </button>
+
+      {/* Floating Quote Button (All Devices - Right Side) */}
       <button
         onClick={() => setQuoteModalOpen(true)}
-        className="fixed bottom-6 right-6 bg-[#7F543D] text-white hover:bg-primary rounded-full p-4 shadow-2xl hover:scale-110 transition-all z-40 flex items-center gap-2 font-bold text-sm border-2 border-white/20"
+        className="fixed bottom-6 right-5 md:right-6 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:py-3.5 md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap group"
       >
-        <Phone size={18} className="animate-bounce" />
-        <span className="hidden sm:inline tracking-wide">Request Quote</span>
+        <Phone size={20} className="md:size-18 -ml-1 md:ml-0" />
+        <span className="hidden md:inline tracking-wide">GET FREE QUOTE</span>
+        <span className="md:hidden">QUOTE</span>
       </button>
+
+      {/* Navigation Jump Modal */}
+      <div
+        className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsJumpModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-sm h-full bg-[#FCFBF7] shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="h-1.5 w-full bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+
+          <div className="p-4 pb-4 bg-[#335765] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-px w-6 bg-white/30" />
+                  <span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span>
+                </div>
+                <h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">
+                  Page Sections
+                </h2>
+              </div>
+              <button
+                onClick={() => setIsJumpModalOpen(false)}
+                className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"
+                title="Close Menu"
+              >
+                <X className="h-6 w-6 transition-transform" />
+              </button>
+            </div>
+
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm">
+              <ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" />
+              <p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">
+                "Jump directly to any section in this page."
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={section.id}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full group relative bg-white hover:bg-[#335765] transition-all duration-300 p-3 rounded-xl border-2 border-primary/20 hover:border-primary flex items-center justify-between shadow-md hover:shadow-xl"
+              >
+                <div className="flex items-center gap-4 relative z-10">
+                  <div className="w-9 h-9 rounded-lg bg-primary/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200">
+                    <span className="text-xs font-black text-primary group-hover:text-white transition-all duration-200">
+                      {(idx + 1).toString().padStart(2, "0")}
+                    </span>
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-primary group-hover:text-white transition-all duration-200 text-left">
+                    {section.title}
+                  </span>
+                </div>
+
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200">
+                  <ChevronRight className="h-3.5 w-3.5 text-primary group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" />
+                </div>
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

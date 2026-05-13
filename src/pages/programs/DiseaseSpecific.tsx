@@ -32,7 +32,7 @@ const DiseaseSpecific = () => {
     {
       name: "Ayurveda Treatment for Rheumatoid Arthritis in India",
       description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
-      image: "/Program Images/rheumatoid-arthritis.png",
+      image: "/Program Images/rheumatoid-arthritis-clinical.png",
       link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
       rating: 4.6,
       reviews: 350,

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold text-primary font-poppins mb-4">
-              Savastha Global
+              MyVaidyam
             </h3>
             <p className="text-sm text-muted-foreground">
               20 years of medical tourism experience guiding you to India's best Ayurvedic centers.
@@ -37,14 +37,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground font-poppins mb-4">Contact</h4>
             <p className="text-sm text-muted-foreground">
-              Email: info@savasthaglobal.com<br />
+              Email: info@myvaidyam.com<br />
               Phone: +91 XXX XXX XXXX
             </p>
           </div>
         </div>
         
         <div className="border-t border-border mt-8 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Savastha Global. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} MyVaidyam. All rights reserved.</p>
         </div>
       </div>
     </footer>

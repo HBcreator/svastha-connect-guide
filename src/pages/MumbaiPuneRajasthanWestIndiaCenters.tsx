@@ -130,10 +130,73 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     name: "Agni Ayurvedic Village Resort",
     city: "Panvel, Mumbai, Maharashtra, India",
     description:
-      "A tranquil wellness hideaway blending ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+      "A tranquil wellness hideaway blending ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies.",
     rating: 4.7,
     reviews: "190",
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+  };
+
+  const staticPremiumCenters: MumbaiCenter[] = [
+    {
+      series: -1,
+      name: "Fazlani Nature's Nest Wellness Centre",
+      city: "Pune, Maharashtra, India",
+      description:
+        "Fazlani Nature's Nest is a premier wellness retreat near Lonavala that blends time-honored natural healing traditions with modern therapeutic excellence. Nestled within lush green landscapes, the center offers a serene environment dedicated to restoring balance through authentic Ayurveda, Naturopathy, and mindful living.",
+      rating: 4.7,
+      reviews: "1800",
+      image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+      slug: "maharashtra/fazlani-natures-nest",
+    },
+    {
+      series: -2,
+      name: "Viveda Wellness Village",
+      city: "Nashik, Maharashtra, India",
+      description:
+        "Viveda Wellness Village is a transformative retreat near Nashik that integrates ancient Indian healing sciences with modern wellness practices for complete rejuvenation. Nestled in the tranquil Sahyadri ranges, the retreat offers personalized programs guided by expert practitioners to reconnect individuals with nature and holistic living.",
+      rating: 4.8,
+      reviews: "1100",
+      image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
+      slug: "maharashtra/viveda-wellness-village",
+    },
+    {
+      series: -3,
+      name: "Dharana At Shillim",
+      city: "Shillim, Pune, Maharashtra, India",
+      description:
+        "Dharana At Shillim is a world-renowned wellness retreat nestled in the serene Sahyadri mountains, dedicated to holistic healing and profound inner transformation. The center masterfully blends traditional ancient wisdom with modern therapeutic science to create a unique and deeply restorative wellness experience.",
+      rating: 4.8,
+      reviews: "3900",
+      image: "/Center Images/Dharana At Shillim/Thumb.jpg",
+      slug: "pune/dharana-at-shillim",
+    },
+    {
+      series: -4,
+      name: "Toyam By Orchid Hotels",
+      city: "Pune (Bhor), Maharashtra, India",
+      description:
+        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision.",
+      rating: 4.7,
+      reviews: "1200",
+      image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+      slug: "pune/toyam-by-orchid-hotels",
+    },
+    {
+      series: -5,
+      name: "Amanbagh Heritage Wellness Retreat",
+      city: "Alwar, Rajasthan, India",
+      description:
+        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
+      rating: 4.8,
+      reviews: "600",
+      image: "/Center Images/Amanbagh/thumb.jpg",
+      slug: "rajasthan/amanbagh-heritage-wellness-retreat",
+    },
+  ];
+
+  const SLUG_BY_SERIES: Record<number, string> = {
+    0: "kerala/agni-ayurvedic-village",
+    10: "pune/atmantan-wellness-resort",
   };
 
   useEffect(() => {
@@ -160,10 +223,21 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     const prioritySeries = [10, 19, 25]; // Atmantan, Bharati, Sukhayu
     const baseSeries = [1, 3, 6, 7, 11, 12, 14, 24];
     const pageOneSeries = [...prioritySeries, ...baseSeries];
+    
+    const agniWithSlug = { ...agniFeaturedCenter, slug: SLUG_BY_SERIES[0] };
+    
     const pageOne = [
-      agniFeaturedCenter,
-      ...pageOneSeries.map((series) => centerBySeries.get(series)).filter(Boolean),
+      agniWithSlug,
+      ...staticPremiumCenters,
+      ...pageOneSeries.map((series) => {
+        const center = centerBySeries.get(series);
+        if (center && SLUG_BY_SERIES[series]) {
+          return { ...center, slug: SLUG_BY_SERIES[series] };
+        }
+        return center;
+      }).filter(Boolean),
     ] as MumbaiCenter[];
+    
     const pageTwo = centers.filter((center) => !pageOneSeries.includes(center.series));
     return { pageOneCenters: pageOne, pageTwoCenters: pageTwo };
   }, [centers, agniFeaturedCenter]);
