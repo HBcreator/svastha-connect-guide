@@ -305,8 +305,8 @@ const GoaCenters = () => {
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
       <section className="bg-[#2C4E5A] text-white pt-10 pb-7 md:pt-20 md:pb-8">
-        <div className="container mx-auto px-4 max-[380px]:px-2">
-          <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 max-[380px]:px-4">
+          <div className="text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
               <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Goa and South West Region.</span>
@@ -321,8 +321,8 @@ const GoaCenters = () => {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 pt-4 pb-6 md:pt-8 md:pb-16">
-        <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
+      <section className="max-w-7xl mx-auto px-5 md:px-10 pt-4 pb-6 md:pt-8 md:pb-16">
+        <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-12">
           {paginatedCenters.map((center, index) => {
             const cardKey = center.slug ?? center.name;
             return (
