@@ -146,7 +146,7 @@ export default function HomeTestimonials() {
                       <ChevronLeft className="h-6 w-6" />
                     </button>
 
-                    <Link to={featuredTestimonial.path} className="flex-1 md:flex-none">
+                    <Link to={featuredTestimonial.path} target="_blank" rel="noopener noreferrer" className="flex-1 md:flex-none">
                       <Button variant="secondary" size="sm" className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white shadow-md border-none transition-all font-bold px-4 py-3 h-auto text-[11px] sm:text-xs">
                         View Center
                         <ArrowRight className="ml-2 h-3.5 w-3.5" />

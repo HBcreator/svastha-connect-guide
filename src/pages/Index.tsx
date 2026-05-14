@@ -11,7 +11,7 @@ import HomeProcessRoadmap from "@/components/home/HomeProcessRoadmap";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone, MapPin, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
+import { Activity, ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone, MapPin, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
 
 export default function Index() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -21,6 +21,7 @@ export default function Index() {
   const [topCentersSlide, setTopCentersSlide] = useState(0);
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+  const [isProgramsModalOpen, setIsProgramsModalOpen] = useState(false);
 
   const jumpSections = [
     { id: "hero", title: "Clinical Excellence" },
@@ -58,7 +59,7 @@ export default function Index() {
       specialties: ["Panchakarma", "Rejuvenation", "Anti-Aging"],
       rating: 4.7,
       price: "$$$$",
-      path: "/centers/kerala/carnoustie",
+      path: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
       image: "/Center Images/Carnoustie Ayurveda/CTA mid.jpg",
       usp: "NABH Accredited & Award-Winning Luxury",
     },
@@ -69,7 +70,7 @@ export default function Index() {
       specialties: ["Detox", "Yoga", "Holistic Healing"],
       rating: 4.7,
       price: "$$$",
-      path: "/centers/maharashtra/toyam",
+      path: "/centers/pune/toyam-by-orchid-hotels",
       image: "/Center Images/Toyam By Orchid Hotels/CTA mid.webp",
       usp: "Eco-Friendly Wellness Sanctuary",
     },
@@ -146,7 +147,7 @@ export default function Index() {
       specialties: ["Immunity", "Detox", "Spiritual Healing"],
       rating: 4.8,
       price: "$$$",
-      path: "/centers/uttarakhand/veda5",
+      path: "/centers/veda5",
       image: "/Center Images/veda5/Facilities & Amenities/veda5-01.jpg",
       usp: "Himalayan Wellness & Yoga Retreat",
     }
@@ -241,9 +242,12 @@ export default function Index() {
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Browse structured inpatient wellness packages — from 21-Day Panchakarma Detox and Burnout Recovery to Anti-Aging, Weight Loss, and disease-specific healing retreats.
             </p>
-            <Link to="/ayurvedic-programs" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+            <button 
+              onClick={() => setIsProgramsModalOpen(true)} 
+              className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto"
+            >
               Explore All Programs →
-            </Link>
+            </button>
           </div>
 
           {/* Card 4: Treatments */}
@@ -335,6 +339,8 @@ export default function Index() {
                       <div className="grid grid-cols-2 gap-3 mt-auto">
                         <Link
                           to={center.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="w-full bg-white border-2 border-[#335765]/20 text-[#335765] active:bg-[#335765] active:text-white md:hover:bg-[#335765] md:hover:text-white font-bold h-10 rounded-lg transition-all duration-300 text-xs flex items-center justify-center whitespace-nowrap"
                         >
                           View Details
@@ -367,13 +373,15 @@ export default function Index() {
             )}
 
             <div className="flex justify-center mt-4">
-              <Button
+              <Link
+                to="/centers"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"
-                onClick={() => navigate('/centers')}
               >
                 VIEW ALL CENTERS
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -554,6 +562,82 @@ export default function Index() {
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-3/5 bg-white rounded-r-full transition-all duration-200" />
               </button>
             ))}
+          </div>
+        </div>
+      </div>
+      {/* Ayurvedic Programs Categories Modal */}
+      <div
+        className={`fixed inset-0 z-[75] transition-all duration-500 flex items-center justify-center ${isProgramsModalOpen ? "visible" : "invisible"}`}
+        onClick={() => setIsProgramsModalOpen(false)}
+      >
+        <div className={`absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity duration-500 ${isProgramsModalOpen ? "opacity-100" : "opacity-0"}`} />
+
+        <div
+          className={`relative w-full max-w-2xl mx-4 bg-[#FCFBF7] rounded-3xl shadow-2xl overflow-hidden transition-all duration-500 transform ${isProgramsModalOpen ? "scale-100 opacity-100 translate-y-0" : "scale-95 opacity-0 translate-y-10"}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header */}
+          <div className="bg-[#335765] p-6 text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
+            <div className="relative z-10 flex justify-between items-center">
+              <div>
+                <h3 className="text-2xl font-bold tracking-tight">Ayurvedic Healing Programs</h3>
+                <p className="text-white/70 text-sm mt-1">Select a category to explore specialized wellness retreats</p>
+              </div>
+              <button
+                onClick={() => setIsProgramsModalOpen(false)}
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+
+          {/* Program Grid */}
+          <div className="p-6 sm:p-8">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { title: "Panchakarma Detox", path: "/ayurvedic-programs/panchakarma-detox", icon: Sparkles, color: "text-orange-500", desc: "Full-body bio-purification and cellular elimination protocols." },
+                { title: "Disease-Specific", path: "/ayurvedic-programs/disease-specific", icon: Stethoscope, color: "text-blue-500", desc: "Targeted clinical treatments for chronic medical conditions." },
+                { title: "Lifestyle & Wellness", path: "/ayurvedic-programs/lifestyle-and-wellness", icon: Activity, color: "text-green-500", desc: "Holistic maintenance and preventative health programs." },
+                { title: "Beauty & Rejuvenation", path: "/ayurvedic-programs/beauty-and-rejuvenation", icon: HeartPulse, color: "text-pink-500", desc: "Traditional anti-aging and skin vitality treatments." },
+                { title: "Integrated Retreat", path: "/ayurvedic-programs/integrated-retreat", icon: CalendarCheck, color: "text-purple-500", desc: "Combined Yoga, Ayurveda, and meditation immersions." }
+              ].map((prog) => (
+                <Link
+                  key={prog.title}
+                  to={prog.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col p-5 rounded-2xl border-2 border-primary/10 hover:border-primary hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md"
+                  onClick={() => setIsProgramsModalOpen(false)}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`p-2 rounded-xl bg-white shadow-sm border border-primary/5 group-hover:scale-110 transition-transform ${prog.color}`}>
+                      <prog.icon className="h-5 w-5" />
+                    </div>
+                    <span className="font-bold text-primary group-hover:text-primary transition-colors">{prog.title}</span>
+                  </div>
+                  <p className="text-xs text-[#7F543D]/80 leading-relaxed group-hover:text-[#7F543D] transition-colors">{prog.desc}</p>
+                  <div className="mt-4 flex items-center gap-1 text-[10px] font-black uppercase tracking-widest text-primary/40 group-hover:text-primary transition-colors">
+                    Explore Program <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              ))}
+
+              {/* View All Card */}
+              <Link
+                to="/ayurvedic-programs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center p-5 rounded-2xl border-2 border-dashed border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+                onClick={() => setIsProgramsModalOpen(false)}
+              >
+                <div className="text-center">
+                  <span className="block font-bold text-primary mb-1">View All Programs</span>
+                  <span className="text-[10px] text-primary/60 font-medium">Browse our complete directory</span>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

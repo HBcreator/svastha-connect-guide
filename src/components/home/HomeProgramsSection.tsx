@@ -278,7 +278,12 @@ export default function HomeProgramsSection() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left"
               >
                 {/* Image Section */}
-                <Link to={prog.link} className="relative aspect-[16/10] overflow-hidden block shrink-0">
+                <Link 
+                  to={prog.link} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative aspect-[16/10] overflow-hidden block shrink-0"
+                >
                   <img
                     src={prog.image}
                     alt={prog.name}
@@ -288,7 +293,7 @@ export default function HomeProgramsSection() {
 
                 {/* Content Section */}
                 <div className="p-4 sm:p-5 flex flex-col flex-grow text-left">
-                  <Link to={prog.link}>
+                  <Link to={prog.link} target="_blank" rel="noopener noreferrer">
                     <h3 className="text-base sm:text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] flex items-start hover:text-[#FF7A28] transition-colors">
                       {prog.name}
                     </h3>
@@ -321,6 +326,8 @@ export default function HomeProgramsSection() {
                     <div className="grid grid-cols-2 gap-2">
                       <Link
                         to={prog.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-3 sm:py-3.5 rounded-xl transition-all duration-300 text-xs flex items-center justify-center text-center"
                       >
                         View Details

@@ -205,7 +205,7 @@ export default function MedicalFinder() {
                   return (
                     <button
                       key={item.name}
-                      onClick={() => navigate(item.path)}
+                      onClick={() => window.open(item.path, '_blank')}
                       className={`group relative p-4 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
                                   flex flex-col items-center gap-2.5
@@ -258,7 +258,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Don't see your specific medical condition listed?</span>
-                <Button onClick={() => navigate("/treatments")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/treatments", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View All 23+ Clinical Conditions Guide →
                 </Button>
               </div>
@@ -290,7 +290,7 @@ export default function MedicalFinder() {
                   return (
                     <button
                       key={item.name}
-                      onClick={() => navigate(item.path)}
+                      onClick={() => window.open(item.path, '_blank')}
                       className={`group relative p-5 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
                                   flex flex-col items-center justify-between gap-3
@@ -330,7 +330,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Looking for specific treatment applications?</span>
-                <Button onClick={() => navigate("/services")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/services", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View Complete Range of Ayurvedic Modalities →
                 </Button>
               </div>
@@ -362,7 +362,7 @@ export default function MedicalFinder() {
                   return (
                     <button
                       key={item.name}
-                      onClick={() => navigate(item.path)}
+                      onClick={() => window.open(item.path, '_blank')}
                       className={`group relative p-5 rounded-xl border transition-all duration-200 text-center
                                   shadow-sm hover:shadow-lg hover:-translate-y-0.5
                                   flex flex-col items-center justify-between gap-3
@@ -405,7 +405,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Want to view all authenticated centers simultaneously?</span>
-                <Button onClick={() => navigate("/centers")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/centers", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   Browse All India Top Centers Directory →
                 </Button>
               </div>

@@ -136,6 +136,8 @@ export default function HomeTreatmentsGuide() {
               <Link
                 key={cond.name}
                 to={cond.path}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-4 rounded-xl border border-primary/15 bg-white hover:bg-primary hover:border-primary transition-all duration-300 flex items-center justify-between gap-3 group shadow-xs hover:shadow-xl hover:-translate-y-0.5"
               >
                 <div className="min-w-0 flex-1">

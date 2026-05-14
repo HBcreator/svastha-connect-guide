@@ -1,19 +1,25 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const navType = useNavigationType();
 
   useEffect(() => {
+    // Explicitly set scroll restoration to auto to allow the browser 
+    // to handle the scroll position when using back/forward buttons.
     if ("scrollRestoration" in window.history) {
-      window.history.scrollRestoration = "manual";
+      window.history.scrollRestoration = "auto";
     }
-    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Only scroll to top on 'PUSH' (forward) or 'REPLACE' navigation.
+    // On 'POP' (Back/Forward buttons), we let the browser restore the position.
+    if (navType === "PUSH" || navType === "REPLACE") {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, navType]);
 
   return null;
 };
