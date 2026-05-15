@@ -45,18 +45,7 @@ const SouthIndiaCenters = () => {
       image: "/Center Images/AyurvedaGram/Thumb.jpg",
       slug: "ayurvedagram-heritage-wellness-centre-bangalore-india",
     },
-    {
-      name: "Sri Sri Ayurveda Hospital Bengaluru",
-      city: "Bengaluru, Karnataka, India",
-      description:
-        "A NABH-accredited, ISO-certified multispecialty Ayurvedic hospital administered by Sri Sri Ravi Shankar Vidya Mandir Trust. Spanning over 1 lakh sq. ft. with 268 beds, the hospital blends classical Ayurveda, Naturopathy, Yoga, and modern diagnostics. Specialties include Panchakarma, Cancer Care, Pulse Diagnosis, Gynaecology, and Pediatrics. Offers free Nadi Pariksha consultations, 24/7 emergency services, and online consultations worldwide.",
-      rating: 4.4,
-      reviews: 1200,
-      priceRange: "$$$",
-      image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
-      slug: "sri-sri-ayurveda-hospital-bangalore-india",
-    },
+
     {
       name: "Shathayu Ayurveda Yoga Retreat",
       city: "Bengaluru Rural, Karnataka, India",
@@ -89,6 +78,18 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       slug: "bangalore/shreyas-yoga-retreat",
+    },
+    {
+      name: "Sri Sri Ayurveda Hospital Bengaluru",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A NABH-accredited, ISO-certified multispecialty Ayurvedic hospital administered by Sri Sri Ravi Shankar Vidya Mandir Trust. Spanning over 1 lakh sq. ft. with 268 beds, the hospital blends classical Ayurveda, Naturopathy, Yoga, and modern diagnostics. Specialties include Panchakarma, Cancer Care, Pulse Diagnosis, Gynaecology, and Pediatrics. Offers free Nadi Pariksha consultations, 24/7 emergency services, and online consultations worldwide.",
+      rating: 4.4,
+      reviews: 1200,
+      priceRange: "$$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
+      slug: "sri-sri-ayurveda-hospital-bangalore-india",
     },
     {
       name: "Adyant Ayurveda – Jayanagar",

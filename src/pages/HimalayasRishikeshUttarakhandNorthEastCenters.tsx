@@ -138,6 +138,86 @@ const parseCentersFromMarkdown = (markdown: string): HimalayanCenter[] => {
 };
 
 const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
+  const staticPremiumCenters: HimalayanCenter[] = [
+    {
+      series: 3,
+      name: "Ananda In The Himalayas",
+      city: "Rishikesh, Uttarakhand, India",
+      description:
+        "Ananda In The Himalayas is a world-renowned ultra-luxury wellness retreat in the serene Himalayan foothills, dedicated to the profound integration of ancient wisdom and modern clinical excellence.",
+      rating: 4.8,
+      reviews: "900",
+      image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+      slug: "uttarakhand/ananda-in-the-himalayas",
+    },
+    {
+      series: 4,
+      name: "Ayuskama Ayurveda Clinic & Panchakarma Centre",
+      city: "Dharamshala, Himachal Pradesh, India",
+      description:
+        "Ayuskama Ayurveda is a distinguished wellness center in Dharamshala that seamlessly integrates authentic traditional Ayurveda with modern holistic health standards.",
+      rating: 4.8,
+      reviews: "500",
+      image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
+      slug: "dharamshala/ayuskama-ayurveda",
+    },
+    {
+      series: -1,
+      name: "HimVeda Heritage Wellness Centre",
+      city: "Dharamshala, Himachal Pradesh, India",
+      description:
+        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing.",
+      rating: 4.8,
+      reviews: "500",
+      image: "/Center Images/HimVeda/Thumb.jpeg",
+      slug: "dharamshala/himveda",
+    },
+    {
+      series: 10,
+      name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+      city: "Rishikesh, Uttarakhand, India",
+      description:
+        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic healing.",
+      rating: 4.8,
+      reviews: "500",
+      image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
+      slug: "rishikesh/yan-cure",
+    },
+    {
+      series: -2,
+      name: "Sandhya Hot Spring Health Care",
+      city: "Manikaran, Himachal Pradesh, India",
+      description:
+        "Sandhya Hot Spring Health Care is a premier wellness retreat in Manikaran that harnesses the profound healing power of natural geothermal mineral springs.",
+      rating: 4.6,
+      reviews: "500",
+      image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
+      slug: "himachal/sandhya-hot-spring-health-care",
+    },
+    {
+      series: -3,
+      name: "Modi Yoga Retreat",
+      city: "Rishikesh, Uttarakhand, India",
+      description:
+        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic healing standards.",
+      rating: 4.7,
+      reviews: "600",
+      image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+      slug: "rishikesh/modi-yoga-retreat",
+    },
+    {
+      series: 6,
+      name: "Veda5 Ayurveda & Yoga Retreat",
+      city: "Rishikesh, Uttarakhand, India",
+      description:
+        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards.",
+      rating: 4.9,
+      reviews: "1000",
+      image: "/Center Images/veda5/veda5-1.jpg",
+      slug: "veda5-ayurveda-and-yoga-retreat-rishikesh-india",
+    },
+  ];
+
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [expandedCardSeries, setExpandedCardSeries] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -163,11 +243,25 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     };
   }, []);
 
-  const { orderedCenters, totalPages, paginatedCenters } = useMemo(() => {
-    const ordered = prioritizeTopCenters(centers);
-    const pages = ordered.length > 12 ? 2 : 1;
-    const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
-    return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
+  const { paginatedCenters, totalPages } = useMemo(() => {
+    const centerBySeries = new Map(centers.map((center) => [center.series, center]));
+    
+    // Explicitly exclude these from the dynamic list as they are handled in staticPremiumCenters
+    const excludedSeries = [3, 4, 6, 10]; 
+    
+    const baseSeries = [1, 2, 5, 7, 8, 9, 11, 12];
+    
+    const pageOneList = [
+      ...staticPremiumCenters,
+      ...baseSeries.map((series) => centerBySeries.get(series)).filter(Boolean),
+    ] as HimalayanCenter[];
+    
+    const pageOneSeriesIds = new Set(pageOneList.map(c => c.series));
+    const pageTwoList = centers.filter((center) => !pageOneSeriesIds.has(center.series) && !excludedSeries.includes(center.series));
+    
+    const paginated = currentPage === 1 ? pageOneList : pageTwoList;
+    
+    return { paginatedCenters: paginated, totalPages: 2 };
   }, [centers, currentPage]);
 
   useEffect(() => {

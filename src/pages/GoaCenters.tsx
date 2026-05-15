@@ -15,12 +15,45 @@ const GoaCenters = () => {
 
   const centers = [
     {
+      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+      city: "Divar Island, Goa, India",
+      description:
+        "The Ayurveda Wellness Centre at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management.",
+      rating: 4.9,
+      reviews: 1450,
+      priceRange: "$$$$",
+      image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
+      slug: "goa/mercure-goa-devaaya-resort",
+    },
+    {
+      name: "Ashiyana Yoga Retreat & Ayurveda",
+      city: "Ashvem, North Goa, India",
+      description:
+        "One of Goa's most established eco-wellness Ayurveda retreats, Ashiyana offers residential detox plans, daily yoga, meditation, sattvic food, and long-stay healing experiences in a lush beach garden setting. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.8,
+      reviews: 850,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/10.jpg",
+      slug: "goa/ashiyana-yoga-retreat",
+    },
+    {
+      name: "Nalanda Retreat Goa",
+      city: "Mandrem, North Goa, India",
+      description:
+        "A renowned beachfront yoga and wellness retreat with Ayurveda consultations, Panchakarma therapies, longevity spa experiences, and transformational programs designed for rejuvenation and mindful living. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.7,
+      reviews: 920,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/9.jpg",
+      slug: "goa/nalanda-retreat-goa",
+    },
+    {
       name: "Soul Vacation Resort & Wellness Centre",
-      city: "Colva Beach,South Goa, India",
+      city: "Colva Beach, South Goa, India",
       description:
         "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort near South Goa beaches. It blends serene coastal living with authentic Ayurveda, stress-relief therapies, and personalized wellness plans for deep rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.8,
-      reviews: 1000,
+      reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       slug: "goa/soul-vacation",
@@ -30,11 +63,23 @@ const GoaCenters = () => {
       city: "Assagao, North Goa, India",
       description:
         "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, an ashram-style healing space in North Goa focused on classical Yoga, Ayurveda therapies, detox, meditation, and long-term lifestyle balance. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.6,
-      reviews: 500,
+      rating: 4.7,
+      reviews: 650,
       priceRange: "$$$",
       image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
       slug: "goa/swan-yoga-retreat",
+    },
+    {
+      name: "Veda5 Wellness Retreat - Arambol",
+      city: "Arambol, North Goa, India",
+      description:
+        "A luxury Ayurveda and Yoga retreat spread across lush coconut groves near Arambol Beach, offering Vaidya consultations, Panchakarma detox plans, daily yoga, meditation, and sattvic nutrition. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.8,
+      reviews: 1200,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/7.jpg",
+      slug: "veda5",
+      detailsDisabled: true,
     },
     {
       name: "Health and Ayurveda (ANHC Goa)",
@@ -70,18 +115,6 @@ const GoaCenters = () => {
       slug: undefined,
     },
     {
-      name: "KARE Ayurveda at Soul Vacation Resort",
-      city: "Majorda-Colva, South Goa, India",
-      description:
-        "A premium wellness center at Soul Vacation Resort offering dosha-based consultations, Panchakarma cleanses, Abhyanga, Shirodhara, and holistic programs with sattvic meals and a coastal retreat atmosphere. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.6,
-      reviews: 700,
-      priceRange: "$$$$",
-      image: "/Anchor pages/Goa centers/images/4.jpg",
-      slug: "goa/soul-vacation",
-      detailsDisabled: true,
-    },
-    {
       name: "SreeShanti Wellness",
       city: "Nerul, North Goa, India",
       description:
@@ -104,16 +137,15 @@ const GoaCenters = () => {
       slug: undefined,
     },
     {
-      name: "Veda5 Wellness Retreat - Arambol",
-      city: "Arambol, North Goa, India",
+      name: "KARE Health - Goa",
+      city: "Colva Beach, South Goa, India",
       description:
-        "A luxury Ayurveda and Yoga retreat spread across lush coconut groves near Arambol Beach, offering Vaidya consultations, Panchakarma detox plans, daily yoga, meditation, and sattvic nutrition. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.8,
-      reviews: 1200,
+        "A holistic Ayurveda and Yoga retreat in South Goa offering Panchakarma cleanses, dosha consultations, stress-reset programs, Iyengar yoga, and resort-style comfort near Colva Beach. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.5,
+      reviews: 650,
       priceRange: "$$$$",
-      image: "/Anchor pages/Goa centers/images/7.jpg",
-      slug: "veda5",
-      detailsDisabled: true,
+      image: "/Anchor pages/Goa centers/images/14.jpg",
+      slug: undefined,
     },
     {
       name: "Tattvam on the Beach",
@@ -124,28 +156,6 @@ const GoaCenters = () => {
       reviews: 450,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/8.jpg",
-      slug: undefined,
-    },
-    {
-      name: "Nalanda Retreat",
-      city: "Mandrem, North Goa, India",
-      description:
-        "A renowned beachfront yoga and wellness retreat with Ayurveda consultations, Panchakarma therapies, longevity spa experiences, and transformational programs designed for rejuvenation and mindful living. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.2,
-      reviews: 800,
-      priceRange: "$$$$",
-      image: "/Anchor pages/Goa centers/images/9.jpg",
-      slug: undefined,
-    },
-    {
-      name: "Ashiyana Goa",
-      city: "Ashvem, North Goa, India",
-      description:
-        "One of Goa's most established eco-wellness Ayurveda retreats, Ashiyana offers residential detox plans, daily yoga, meditation, sattvic food, and long-stay healing experiences in a lush beach garden setting. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.5,
-      reviews: 700,
-      priceRange: "$$$$",
-      image: "/Anchor pages/Goa centers/images/10.jpg",
       slug: undefined,
     },
     {
@@ -179,17 +189,6 @@ const GoaCenters = () => {
       reviews: 290,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/13.jpg",
-      slug: undefined,
-    },
-    {
-      name: "KARE Health - Goa",
-      city: "Colva Beach, South Goa, India",
-      description:
-        "A holistic Ayurveda and Yoga retreat in South Goa offering Panchakarma cleanses, dosha consultations, stress-reset programs, Iyengar yoga, and resort-style comfort near Colva Beach. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.5,
-      reviews: 650,
-      priceRange: "$$$$",
-      image: "/Anchor pages/Goa centers/images/14.jpg",
       slug: undefined,
     },
     {

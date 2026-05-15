@@ -125,18 +125,18 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [centers, setCenters] = useState<MumbaiCenter[]>([]);
   const navigate = useNavigate();
-  const agniFeaturedCenter: MumbaiCenter = {
-    series: 0,
-    name: "Agni Ayurvedic Village Resort",
-    city: "Panvel, Mumbai, Maharashtra, India",
-    description:
-      "A tranquil wellness hideaway blending ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies.",
-    rating: 4.7,
-    reviews: "190",
-    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-  };
-
   const staticPremiumCenters: MumbaiCenter[] = [
+    {
+      series: 0,
+      name: "Agni Ayurvedic Village Resort",
+      city: "Panvel, Mumbai, Maharashtra, India",
+      description:
+        "A tranquil wellness hideaway blending ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies.",
+      rating: 4.8,
+      reviews: "1250",
+      image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+      slug: "agni-ayurvedic-village-resort-panvel-mumbai-india",
+    },
     {
       series: -1,
       name: "Fazlani Nature's Nest Wellness Centre",
@@ -147,6 +147,17 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       reviews: "1800",
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
       slug: "fazlani-natures-nest-wellness-centre-mumbai-india",
+    },
+    {
+      series: -6,
+      name: "Atmantan Wellness Resort",
+      city: "Mulshi, Pune, Maharashtra, India",
+      description:
+        "Set amidst the peaceful Sahyadri hills overlooking Mulshi Lake, Atmantan Wellness Resort is a luxury wellness retreat designed to restore balance and vitality. The resort blends traditional healing systems such as Ayurveda and yoga with modern wellness therapies to support holistic health.",
+      rating: 4.8,
+      reviews: "3200",
+      image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
+      slug: "atmantan-wellness-resort-pune-india",
     },
     {
       series: -2,
@@ -194,11 +205,6 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     },
   ];
 
-  const SLUG_BY_SERIES: Record<number, string> = {
-    0: "agni-ayurvedic-village-resort-panvel-mumbai-india",
-    10: "atmantan-wellness-resort-pune-india",
-  };
-
   useEffect(() => {
     let isMounted = true;
 
@@ -220,27 +226,22 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 
   const { pageOneCenters, pageTwoCenters } = useMemo(() => {
     const centerBySeries = new Map(centers.map((center) => [center.series, center]));
-    const prioritySeries = [10, 19, 25]; // Atmantan, Bharati, Sukhayu
-    const baseSeries = [1, 3, 6, 7, 11, 12, 14, 24];
-    const pageOneSeries = [...prioritySeries, ...baseSeries];
     
-    const agniWithSlug = { ...agniFeaturedCenter, slug: SLUG_BY_SERIES[0] };
+    // Explicitly exclude these from the dynamic list as they are now in staticPremiumCenters
+    const excludedSeries = [0, 10]; // Agni and Atmantan series from markdown if any
+    
+    const baseSeries = [19, 25, 1, 3, 6, 7, 11, 12, 14, 24];
     
     const pageOne = [
-      agniWithSlug,
       ...staticPremiumCenters,
-      ...pageOneSeries.map((series) => {
-        const center = centerBySeries.get(series);
-        if (center && SLUG_BY_SERIES[series]) {
-          return { ...center, slug: SLUG_BY_SERIES[series] };
-        }
-        return center;
-      }).filter(Boolean),
+      ...baseSeries.map((series) => centerBySeries.get(series)).filter(Boolean),
     ] as MumbaiCenter[];
     
-    const pageTwo = centers.filter((center) => !pageOneSeries.includes(center.series));
+    const pageOneSeriesIds = new Set(pageOne.map(c => c.series));
+    const pageTwo = centers.filter((center) => !pageOneSeriesIds.has(center.series) && !excludedSeries.includes(center.series));
+    
     return { pageOneCenters: pageOne, pageTwoCenters: pageTwo };
-  }, [centers, agniFeaturedCenter]);
+  }, [centers]);
 
   const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
   const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
