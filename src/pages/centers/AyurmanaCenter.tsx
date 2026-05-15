@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -1236,6 +1236,29 @@ export default function AyurmanaCenter() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2">
+              <Link to="/top-12-ayurvedic-centers-hospitals-kerala-india" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Top 10 Ayurvedic Centers in Kerala
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              Ayurmana Ayurveda Center
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <div className="bg-primary text-primary-foreground py-10">

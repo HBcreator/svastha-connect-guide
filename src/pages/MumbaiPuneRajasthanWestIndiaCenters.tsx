@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -146,7 +146,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.7,
       reviews: "1800",
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-      slug: "maharashtra/fazlani-natures-nest",
+      slug: "fazlani-natures-nest-wellness-centre-mumbai-india",
     },
     {
       series: -2,
@@ -157,7 +157,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "1100",
       image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-      slug: "maharashtra/viveda-wellness-village",
+      slug: "viveda-wellness-village-mumbai-india",
     },
     {
       series: -3,
@@ -168,7 +168,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "3900",
       image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-      slug: "pune/dharana-at-shillim",
+      slug: "dharana-at-shillim-wellness-retreat-pune-india",
     },
     {
       series: -4,
@@ -179,7 +179,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.7,
       reviews: "1200",
       image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-      slug: "pune/toyam-by-orchid-hotels",
+      slug: "toyam-by-orchid-hotels-wellness-resort-pune-india",
     },
     {
       series: -5,
@@ -190,13 +190,13 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "600",
       image: "/Center Images/Amanbagh/thumb.jpg",
-      slug: "rajasthan/amanbagh-heritage-wellness-retreat",
+      slug: "amanbagh-heritage-wellness-retreat-rajasthan-india",
     },
   ];
 
   const SLUG_BY_SERIES: Record<number, string> = {
-    0: "kerala/agni-ayurvedic-village",
-    10: "pune/atmantan-wellness-resort",
+    0: "agni-ayurvedic-village-resort-panvel-mumbai-india",
+    10: "atmantan-wellness-resort-pune-india",
   };
 
   useEffect(() => {
@@ -329,23 +329,37 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => {
-                          if (center.slug) {
-                            navigate(`/centers/${center.slug}`);
-                            return;
-                          }
-                          if (center.website) {
-                            window.open(center.website, "_blank", "noopener,noreferrer");
-                            return;
-                          }
-                          navigate("#");
-                        }}
-                      >
-                        View Details
-                      </Button>
+                      {center.slug ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : center.website ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <a href={center.website} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          onClick={() => {
+                            // Fallback
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

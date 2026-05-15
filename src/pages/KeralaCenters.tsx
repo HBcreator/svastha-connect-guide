@@ -1,9 +1,9 @@
-﻿import Navigation from "@/components/Navigation";
+import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
+import { Star, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { prioritizeTopCenters } from "@/lib/top-centers";
 
@@ -14,6 +14,215 @@ const KeralaCenters = () => {
   const navigate = useNavigate();
 
   const centers = [
+    {
+      name: "Somatheeram Ayurvedic Health Resort",
+      city: "Kovalam, Kerala, India",
+      description:
+        "Set by the Arabian Sea in Kovalam, Somatheeram is known for destination-style Ayurveda with medically supervised Panchakarma, daily yoga, and individualized wellness planning. The retreat combines Kerala healing traditions with a calm coastal atmosphere, making it a strong option for detox, stress reset, and long-stay rejuvenation.",
+      rating: 4.9,
+      reviews: 320,
+      priceRange: "$$$",
+      image: "/Center Images/somatheeram/Somatheeram 01.jpg",
+      slug: "somatheeram-ayurvedic-health-resort-kerala-india",
+    },
+    {
+      name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
+      city: "Kaipamangalam, Kerala, India",
+      description:
+        "Veda5 is one of India's most premium Ayurveda & Yoga wellness retreats - combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
+      rating: 4.9,
+      reviews: 420,
+      priceRange: "$$$$",
+      image: "/Center Images/veda5/veda5-1.jpg",
+      slug: "veda5-ayurveda-and-yoga-retreat-kerala-india",
+    },
+    {
+      name: "Sitaram Beach Retreat",
+      city: "Kerala, India",
+      description:
+        "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit.",
+      rating: 4.6,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
+      slug: "sitaram-beach-retreat-kerala-india",
+    },
+    {
+      name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
+      city: "Palakkad, Kerala, India",
+      description:
+        "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
+      rating: 4.8,
+      reviews: 220,
+      priceRange: "$$$",
+      image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
+      slug: "kairali-heritage-resort-kerala-india",
+    },
+    {
+      name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+      city: "Kumarakom, Kerala, India",
+      description:
+        "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
+      rating: 4.9,
+      reviews: 150,
+      priceRange: "$$$",
+      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+      slug: "dheemahi-ayurveda-village-kumarakom-kerala-india",
+    },
+    {
+      name: "Kairali - The Ayurvedic Healing Village",
+      city: "Palakkad, Kerala, India",
+      description:
+        "Kairali - The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+      rating: 4.9,
+      reviews: 280,
+      priceRange: "$$$$",
+      image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+      slug: "kairali-the-ayurvedic-healing-village-kerala-india",
+    },
+    {
+      name: "Nagarjuna Ayurveda",
+      city: "Kalady, Kerala, India",
+      description:
+        "Nagarjuna Ayurveda Centre is one of India's most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
+      rating: 4.8,
+      reviews: 200,
+      priceRange: "$$$",
+      image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+      slug: "nagarjuna-ayurvedic-centre-kerala-india",
+    },
+    {
+      name: "Sanjeevanam Ayurveda Hospital",
+      city: "Alappuzha, Kerala, India",
+      description:
+        "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
+      rating: 4.8,
+      reviews: 1700,
+      priceRange: "$$$",
+      image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
+      slug: "sanjeevanam-ayurveda-hospital-kerala-india",
+    },
+    {
+      name: "Back to Roots Ayurveda Retreat",
+      city: "Cherai, Kerala, India",
+      description:
+        "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
+      rating: 4.9,
+      reviews: 100,
+      priceRange: "$$$",
+      image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
+      slug: "back-to-roots-ayurveda-retreat-kerala-india",
+    },
+    {
+      name: "Dhathri Ayurveda Resort",
+      city: "Thrissur, Kerala, India",
+      description:
+        "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+      slug: "dhathri-ayurveda-hospital-and-retreat-kerala-india",
+    },
+    {
+      name: "Krishnendu Ayurveda Hospital",
+      city: "Alappuzha, Kerala, India",
+      description:
+        "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
+      rating: 4.9,
+      reviews: 1500,
+      priceRange: "$$$",
+      image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
+      slug: "krishnendu-ayurveda-hospital-kerala-india",
+    },
+    {
+      name: "Ayurmana Ayurveda Center",
+      city: "Kannur, Kerala, India",
+      description:
+        "Ayurmana Ayurveda Center is a Kerala wellness retreat focused on authentic therapies, physician-led treatment planning, and restorative lifestyle routines. The center blends classical Panchakarma with calm, nature-driven recovery programs designed to support detoxification, stress balance, and sustainable long-term well-being.",
+      rating: 4.8,
+      reviews: 234,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayurmana center/top center thumb.jpg",
+      slug: "ayurmana-dharma-ayurvedic-centre-kerala-india",
+    },
+    {
+      name: "Chamundi Hill Palace Ayurvedic Resort",
+      city: "Mysuru, Karnataka, India",
+      description:
+        "Chamundi Hill Palace presents a heritage-inspired wellness stay in Mysuru with a focus on classical Ayurvedic therapies, restorative bodywork, and slow-living routines. Guests typically choose it for a quieter retreat format that blends traditional healing practices with personalized care in a nature-facing setting.",
+      rating: 4.8,
+      reviews: 100,
+      priceRange: "$$$$",
+      image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
+      slug: "chamundi-hill-palace-ayurvedic-resort-mysore-india",
+    },
+    {
+      name: "Athreya Ayurvedic Centre",
+      city: "Kottayam, Kerala, India",
+      description:
+        "Athreya Ayurvedic Centre offers consultation-led Ayurveda with customized treatment protocols based on individual body constitution and current health concerns. Its approach emphasizes authentic Kerala therapies, disciplined daily routines, and doctor-guided recovery plans aimed at sustainable long-term wellness rather than short-term relief.",
+      rating: 4.8,
+      reviews: 188,
+      priceRange: "$$$$",
+      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+      slug: "athreya-ayurvedic-centre-kerala-india",
+    },
+    {
+      name: "Ayur Bethaniya Ayurveda Hospital",
+      city: "Thiruvananthapuram, Kerala, India",
+      description:
+        "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Ayur Bethaniya/CTA.jpg",
+      slug: "ayur-bethaniya-ayurveda-hospital-kerala-india",
+    },
+    {
+      name: "AyurSoma Ayurveda Royal Retreat",
+      city: "Kovalam, Kerala, India",
+      description:
+        "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+      rating: 4.8,
+      reviews: 159,
+      priceRange: "$$$$$",
+      image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
+      slug: "ayursoma-ayurveda-royal-retreat-kerala-india",
+    },
+    {
+      name: "Ayushi Ayurvedic Retreat",
+      city: "Rishikesh, Uttarakhand, India",
+      description:
+        "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit.",
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
+      slug: "ayushi-ayurvedic-retreat-kerala-india",
+    },
+    {
+      name: "Sitaram Mountain Retreat",
+      city: "Thrissur, Kerala, India",
+      description:
+        "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
+      rating: 4.8,
+      reviews: 928,
+      priceRange: "$$$$",
+      image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
+      slug: "sitaram-mountain-retreat-idukki-india",
+    },
+    {
+      name: "Akanta Ayurveda and Yoga Resort",
+      city: "Cherai, Kerala, India",
+      description:
+        "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. As the only yoga retreat center at Cherai Beach licensed as an Ayurvedic hospital, Akanta integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols.",
+      rating: 4.5,
+      reviews: 479,
+      priceRange: "$$$$",
+      image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
+      slug: "akanta-ayurveda-and-yoga-resort-kochi-india",
+    },
     {
       name: "Parathuvayalil Ayurveda Hospital",
       city: "Perumbavoor, Kochi, Kerala, India",
@@ -91,215 +300,6 @@ const KeralaCenters = () => {
       image: "/Anchor pages/Kerala centers/images/Madukkakuzhy Ayurveda.webp",
       slug: undefined,
     },
-    {
-      name: "Somatheeram Ayurvedic Health Resort",
-      city: "Kovalam, Kerala, India",
-      description:
-        "Set by the Arabian Sea in Kovalam, Somatheeram is known for destination-style Ayurveda with medically supervised Panchakarma, daily yoga, and individualized wellness planning. The retreat combines Kerala healing traditions with a calm coastal atmosphere, making it a strong option for detox, stress reset, and long-stay rejuvenation.",
-      rating: 4.9,
-      reviews: 320,
-      priceRange: "$$$",
-      image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-      slug: "kerala/somatheeram",
-    },
-    {
-      name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
-      city: "Kaipamangalam, Kerala, India",
-      description:
-        "Veda5 is one of India's most premium Ayurveda & Yoga wellness retreats - combining luxury, nature, and authentic healing. From Himalayan views in Rishikesh to a serene beachfront retreat in Kerala & Goa, Veda5 offers world-class Ayurveda, detox therapies, and holistic rejuvenation.",
-      rating: 4.9,
-      reviews: 420,
-      priceRange: "$$$$",
-      image: "/Center Images/veda5/veda5-1.jpg",
-      slug: "veda5",
-    },
-    {
-      name: "Sitaram Beach Retreat",
-      city: "Kerala, India",
-      description:
-        "Experience the true essence of Ayurveda at Sitaram Beach Retreat, a tranquil wellness sanctuary nestled along the serene coastline of Kerala. Surrounded by lush greenery and the calming presence of the Arabian Sea, this retreat offers an immersive healing environment rooted in authentic Ayurvedic traditions. Sitaram Beach Retreat combines classical Ayurvedic wisdom with modern comfort, delivering personalized treatments designed to restore harmony between body, mind, and spirit.",
-      rating: 4.6,
-      reviews: 500,
-      priceRange: "$$$",
-      image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-      slug: "kerala/sitaram-beach-retreat",
-    },
-    {
-      name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
-      city: "Palakkad, Kerala, India",
-      description:
-        "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
-      rating: 4.8,
-      reviews: 220,
-      priceRange: "$$$",
-      image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-      slug: "kerala/kairali-heritage",
-    },
-    {
-      name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
-      city: "Kumarakom, Kerala, India",
-      description:
-        "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
-      rating: 4.9,
-      reviews: 150,
-      priceRange: "$$$",
-      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-      slug: "kerala/dheemahi-kumarakom",
-    },
-    {
-      name: "Kairali - The Ayurvedic Healing Village",
-      city: "Palakkad, Kerala, India",
-      description:
-        "Kairali - The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
-      rating: 4.9,
-      reviews: 280,
-      priceRange: "$$$$",
-      image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-      slug: "kerala/kairali-ayurvedic-healing-village",
-    },
-    {
-      name: "Nagarjuna Ayurveda",
-      city: "Kalady, Kerala, India",
-      description:
-        "Nagarjuna Ayurveda Centre is one of India's most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols to deliver effective, result-oriented therapies.",
-      rating: 4.8,
-      reviews: 200,
-      priceRange: "$$$",
-      image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-      slug: "kerala/nagarjuna-ayurveda-centre",
-    },
-    {
-      name: "Sanjeevanam Ayurveda Hospital",
-      city: "Alappuzha, Kerala, India",
-      description:
-        "Experience the future of holistic healthcare at Sanjeevanam, a pioneering integrative hospital in the heart of Kochi. It masterfully blends the ancient wisdom of Ayurveda with the precision of modern medicine, creating a unique and powerful ecosystem for deep healing. Expect evidence-based care in a modern, professional setting, where your journey to wellness is guided by a multi-disciplinary team of experts.",
-      rating: 4.8,
-      reviews: 1700,
-      priceRange: "$$$",
-      image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-      slug: "kerala/sanjeevanam-ayurveda-hospital",
-    },
-    {
-      name: "Back to Roots Ayurveda Retreat",
-      city: "Cherai, Kerala, India",
-      description:
-        "Rediscover the roots of true healing at this serene lakeside sanctuary in Idukki. Guided by the wisdom of 4th generation Ayurvedic physicians, this NABH-accredited retreat offers authentic, classical Panchakarma in a pristine natural setting. Expect a deeply personal journey where the focus is on pure, undiluted Ayurveda.",
-      rating: 4.9,
-      reviews: 100,
-      priceRange: "$$$",
-      image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-      slug: "kerala/back-to-roots",
-    },
-    {
-      name: "Dhathri Ayurveda Resort",
-      city: "Thrissur, Kerala, India",
-      description:
-        "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma. Expect a deeply healing journey where ancient heritage meets clinical excellence in a tranquil, natural environment.",
-      rating: 4.8,
-      reviews: 500,
-      priceRange: "$$$",
-      image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-      slug: "kerala/dhathri-ayurveda",
-    },
-    {
-      name: "Krishnendu Ayurveda Hospital",
-      city: "Alappuzha, Kerala, India",
-      description:
-        "Immerse yourself in over 100 years of healing wisdom at Krishnendu, a NABH-accredited hospital in the serene backwaters of Alleppey. Guided by the fourth generation of a renowned physician family, this sanctuary masterfully blends a rich heritage with modern clinical excellence. Expect an authentic and personalized healing journey in a professional and tranquil environment.",
-      rating: 4.9,
-      reviews: 1500,
-      priceRange: "$$$",
-      image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
-      slug: "kerala/krishnendu-ayurveda-hospital",
-    },
-    {
-      name: "Ayurmana Ayurveda Center",
-      city: "Kannur, Kerala, India",
-      description:
-        "Ayurmana Ayurveda Center is a Kerala wellness retreat focused on authentic therapies, physician-led treatment planning, and restorative lifestyle routines. The center blends classical Panchakarma with calm, nature-driven recovery programs designed to support detoxification, stress balance, and sustainable long-term well-being.",
-      rating: 4.8,
-      reviews: 234,
-      priceRange: "$$$$",
-      image: "/Center Images/Ayurmana center/top center thumb.jpg",
-      slug: "kerala/ayurmana",
-    },
-    {
-      name: "Chamundi Hill Palace Ayurvedic Resort",
-      city: "Mysuru, Karnataka, India",
-      description:
-        "Chamundi Hill Palace presents a heritage-inspired wellness stay in Mysuru with a focus on classical Ayurvedic therapies, restorative bodywork, and slow-living routines. Guests typically choose it for a quieter retreat format that blends traditional healing practices with personalized care in a nature-facing setting.",
-      rating: 4.8,
-      reviews: 100,
-      priceRange: "$$$$",
-      image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-      slug: "mysore/chamundi-hill-palace",
-    },
-    {
-      name: "Athreya Ayurvedic Centre",
-      city: "Kottayam, Kerala, India",
-      description:
-        "Athreya Ayurvedic Centre offers consultation-led Ayurveda with customized treatment protocols based on individual body constitution and current health concerns. Its approach emphasizes authentic Kerala therapies, disciplined daily routines, and doctor-guided recovery plans aimed at sustainable long-term wellness rather than short-term relief.",
-      rating: 4.8,
-      reviews: 188,
-      priceRange: "$$$$",
-      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-      slug: "kerala/athreya-ayurvedic-centre",
-    },
-    {
-      name: "Ayur Bethaniya Ayurveda Hospital",
-      city: "Thiruvananthapuram, Kerala, India",
-      description:
-        "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
-      rating: 4.8,
-      reviews: 500,
-      priceRange: "$$$",
-      image: "/Center Images/Ayur Bethaniya/CTA.jpg",
-      slug: "kerala/ayur-bethaniya-ayurveda-hospital",
-    },
-    {
-      name: "AyurSoma Ayurveda Royal Retreat",
-      city: "Kovalam, Kerala, India",
-      description:
-        "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
-      rating: 4.8,
-      reviews: 159,
-      priceRange: "$$$$$",
-      image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-      slug: "kerala/ayursoma",
-    },
-    {
-      name: "Ayushi Ayurvedic Retreat",
-      city: "Rishikesh, Uttarakhand, India",
-      description:
-        "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit.",
-      rating: 4.8,
-      reviews: 500,
-      priceRange: "$$$$",
-      image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-      slug: "kerala/ayushi-ayurvedic-retreat",
-    },
-    {
-      name: "Sitaram Mountain Retreat",
-      city: "Thrissur, Kerala, India",
-      description:
-        "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature.",
-      rating: 4.8,
-      reviews: 928,
-      priceRange: "$$$$",
-      image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-      slug: "idukki/sitaram-mountain-retreat",
-    },
-    {
-      name: "Akanta Ayurveda and Yoga Resort",
-      city: "Cherai, Kerala, India",
-      description:
-        "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. As the only yoga retreat center at Cherai Beach licensed as an Ayurvedic hospital, Akanta integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols.",
-      rating: 4.5,
-      reviews: 479,
-      priceRange: "$$$$",
-      image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
-      slug: "kochi/akanta-ayurveda-and-yoga-resort",
-    },
   ];
   const orderedCenters = prioritizeTopCenters(centers);
   const totalPages = orderedCenters.length > 12 ? 2 : 1;
@@ -312,6 +312,23 @@ const KeralaCenters = () => {
   return (
     <div className="min-h-screen bg-background font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              Top 10 Ayurvedic Centers in Kerala
+            </li>
+          </ol>
+        </div>
+      </nav>
 
       <section className="bg-[#2C4E5A] text-white pt-10 pb-7 md:pt-20 md:pb-8">
         <div className="container mx-auto px-4 max-[380px]:px-2">
@@ -482,19 +499,27 @@ const KeralaCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => {
-                          if (center.slug) {
-                            navigate(`/centers/${center.slug}`);
-                            return;
-                          }
-                          navigate("#");
-                        }}
-                      >
-                        View Details
-                      </Button>
+                      {center.slug ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          onClick={() => {
+                            // Keep fallback if needed
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

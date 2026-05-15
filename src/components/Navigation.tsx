@@ -40,10 +40,10 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   };
 
   const centersLinks = [
-    { to: "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals", label: "Bangalore, Hyderabad, Chennai & South India." },
-    { to: "/kerala-ayurvedic-centers-and-hospitals", label: "Kerala and South West Region" },
-    { to: "/goa-ayurvedic-centers-and-hospitals", label: "Goa and South West Region" },
-    { to: "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals", label: "Himalayas, Rishikesh, Uttarakhand & North East" },
+    { to: "/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india", label: "Top 10 Centers Bangalore, Hyderabad, Chennai & South India" },
+    { to: "/top-12-ayurvedic-centers-hospitals-kerala-india", label: "Top 12 Centers Kerala & India" },
+    { to: "/top-15-ayurvedic-centers-hospitals-goa-india", label: "Top 15 Centers Goa & India" },
+    { to: "/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india", label: "Top 10 Centers Himalayas & North East India" },
     { to: "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals", label: "Delhi and North India Region" },
     { to: "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals", label: "Mumbai, Pune, Nashik & West India." },
   ];
@@ -133,13 +133,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   to="/centers"
                   className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
                     location.pathname.startsWith("/centers") ||
-                    location.pathname === "/kerala-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/goa-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals" ||
+                    location.pathname === "/top-12-ayurvedic-centers-hospitals-kerala-india" ||
+                    location.pathname === "/top-15-ayurvedic-centers-hospitals-goa-india" ||
+                    location.pathname === "/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india" ||
                     location.pathname === "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/mumbai-pune-rajasthan-west-india-ayurvedic-centers-and-hospitals" ||
                     location.pathname === "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals" ||
-                    location.pathname === "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
+                    location.pathname === "/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india"
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -152,28 +152,28 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${centersDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
                   <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[280px]">
                     <Link
-                      to="/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals"
+                      to="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Bangalore, Hyderabad, Chennai & South India.
                     </Link>
                     <Link
-                      to="/kerala-ayurvedic-centers-and-hospitals"
+                      to="/top-12-ayurvedic-centers-hospitals-kerala-india"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Kerala and South West Region
                     </Link>
                     <Link
-                      to="/goa-ayurvedic-centers-and-hospitals"
+                      to="/top-15-ayurvedic-centers-hospitals-goa-india"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
                       Goa and South West Region
                     </Link>
                     <Link
-                      to="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals"
+                      to="/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india"
                       className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
                       onClick={() => setCentersDropdownOpen(false)}
                     >
@@ -211,7 +211,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       : "text-foreground hover:text-primary"
                   }`}
                 >
-                  Ayurvedic Programs
+                  Ayurvedic Packages
                   <ChevronDown size={16} className={`transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180' : ''}`} />
                 </div>
                 
@@ -258,14 +258,14 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               </div>
 
               <Link
-                to="/treatments"
+                to="/ayurvedic-treatments"
                 className={`font-poppins font-medium transition-colors ${
-                  location.pathname === "/treatments"
+                  location.pathname === "/ayurvedic-treatments"
                     ? "text-primary"
                     : "text-foreground hover:text-primary"
                 }`}
               >
-                Treatments
+                Ayurvedic Treatments
               </Link>
 
               <Link
@@ -427,7 +427,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                     }`}
                     onClick={() => setMobileProgramsOpen((prev) => !prev)}
                   >
-                    <span>Ayurvedic Programs</span>
+                    <span>Ayurvedic Packages</span>
                     <ChevronDown size={18} className={`transition-transform ${mobileProgramsOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobileProgramsOpen && (
@@ -447,15 +447,15 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 </div>
 
                 <Link
-                  to="/treatments"
+                  to="/ayurvedic-treatments"
                   className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                    location.pathname === "/treatments"
+                    location.pathname === "/ayurvedic-treatments"
                       ? "text-primary bg-primary/10"
                       : "text-foreground hover:bg-gray-100"
                   }`}
                   onClick={closeMenu}
                 >
-                  Treatments
+                  Ayurvedic Treatments
                 </Link>
                 <Link
                   to="/about"

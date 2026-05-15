@@ -13,28 +13,28 @@ const IntegratedRetreat = () => {
   const programs = [
     {
       category: "Integrated Retreat",
-      name: "Ayurveda + Yoga Retreat Program",
+      name: "Ayurveda + Yoga Retreat Program in India",
       duration: "14–21 Days",
       targetAudience: "Mind-body wellness seekers",
       keyFocus: "Holistic healing & physical balance",
       description:
         "A transformative 14-21 day retreat that seamlessly integrates classical Ayurvedic therapies with daily yogic practices. Designed for those seeking deep mental clarity, physical flexibility, and a complete spiritual reset through personalized Shodhana protocols and advanced Hatha Yoga.",
       image: "/Program Images/ayurveda-yoga-retreat.png",
-      link: "/ayurvedic-programs/integrated-retreat/ayurveda-yoga-retreat",
+      link: "/integrated-retreat/ayurvedic-yoga-retreat-program-in-india",
       rating: 4.9,
       reviews: 195,
       tags: ["14–21 Days", "Ayurveda + Yoga", "Spiritual Reset", "Holistic Healing"]
     },
     {
       category: "Integrated Retreat",
-      name: "Ayurveda Digital Detox Retreat",
+      name: "Ayurveda Digital Detox Retreat in India",
       duration: "14–21 Days",
       targetAudience: "Tech-stressed professionals",
       keyFocus: "Mindfulness, renewal & nervous system calm",
       description:
         "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurvedic treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
       image: "/Program Images/digital-detox-retreat.png",
-      link: "/ayurvedic-programs/integrated-retreat/ayurveda-digital-detox",
+      link: "/integrated-retreat/ayurvedic-digital-detox-retreat-in-india",
       rating: 4.8,
       reviews: 142,
       tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
@@ -50,7 +50,7 @@ const IntegratedRetreat = () => {
         <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 font-poppins">
-              Integrated Retreat Programs in India
+              Integrated Retreat Packages in India
             </h1>
             <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               Experience the synergy of ancient healing sciences. Our integrated retreats combine Ayurveda, Yoga, and Mindfulness to provide a multi-dimensional reset for the modern individual.

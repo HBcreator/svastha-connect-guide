@@ -2,8 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
+import { Star, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { prioritizeTopCenters } from "@/lib/top-centers";
 
@@ -12,12 +12,14 @@ const SouthIndiaCenters = () => {
   const [expandedCardSlug, setExpandedCardSlug] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
+
   const enabledDetailSlugs = new Set([
-    "bangalore/soukya",
-    "bangalore/ayurvedagram",
-    "mysore/indus-valley-ayurvedic-centre",
-    "udupi/shathayu-ayurveda-yoga-retreat",
-    "bangalore/sri-sri-ayurveda-hospital-bengaluru",
+    "soukya-international-holistic-health-centre-bangalore-india",
+    "ayurvedagram-heritage-wellness-centre-bangalore-india",
+    "indus-valley-ayurvedic-centre-mysore-banglore-india",
+    "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
+    "sri-sri-ayurveda-hospital-bangalore-india",
+    "bangalore/shreyas-yoga-retreat",
   ]);
 
   const centers = [
@@ -30,7 +32,7 @@ const SouthIndiaCenters = () => {
       reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/SOUKYA/top center Thumb.jpg",
-      slug: "bangalore/soukya",
+      slug: "soukya-international-holistic-health-centre-bangalore-india",
     },
     {
       name: "AyurvedaGram Heritage Wellness Centre",
@@ -41,7 +43,7 @@ const SouthIndiaCenters = () => {
       reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/AyurvedaGram/Thumb.jpg",
-      slug: "bangalore/ayurvedagram",
+      slug: "ayurvedagram-heritage-wellness-centre-bangalore-india",
     },
     {
       name: "Sri Sri Ayurveda Hospital Bengaluru",
@@ -53,19 +55,40 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
-      slug: "bangalore/sri-sri-ayurveda-hospital-bengaluru",
+      slug: "sri-sri-ayurveda-hospital-bangalore-india",
     },
     {
-      name: "Vedam Ayurveda Multispeciality Hospital",
-      city: "Bengaluru, Karnataka, India",
+      name: "Shathayu Ayurveda Yoga Retreat",
+      city: "Bengaluru Rural, Karnataka, India",
       description:
-        "A trusted Ayurvedic multispeciality hospital in Bangalore with over a decade of healing excellence. Led by Dr. Raviraj M, Vedam specializes in treating Psoriasis, Eczema, Arthritis, PCOD/PCOS, Weight Loss, and Piles through authentic Panchakarma therapies. Built in a peaceful, herb-rich environment, the hospital combines classical Ayurvedic science with modern care principles to offer patients natural, long-lasting relief.",
-      rating: 4.5,
-      reviews: 850,
+        "Shathayu Ayurveda Yoga Retreat is a serene coastal sanctuary focused on authentic Ayurveda and yogic living. The retreat combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement. Led by experienced doctors and wellness practitioners, each treatment plan is personalized for restorative outcomes in a peaceful natural environment.",
+      rating: 4.8,
+      reviews: 380,
       priceRange: "$$$",
-      image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/2.jpg",
-      slug: "bangalore/vedam-ayurveda-multispeciality-hospital",
+      image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
+      slug: "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
+    },
+    {
+      name: "Indus Valley Ayurvedic Centre",
+      city: "Mysuru, Karnataka, India",
+      description:
+        "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
+      rating: 4.8,
+      reviews: 450,
+      priceRange: "$$$$",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+      slug: "indus-valley-ayurvedic-centre-mysore-banglore-india",
+    },
+    {
+      name: "Shreyas Yoga Retreat (Nelamangala)",
+      city: "Nelamangala, Bangalore, India",
+      description:
+        "Shreyas Yoga Retreat is a world-class sanctuary near Bangalore that seamlessly blends traditional hatha yoga philosophy with luxury wellness standards. Set amidst lush, peaceful gardens, the retreat offers an authentic yogic lifestyle designed to nurture physical vitality, mental clarity, and spiritual growth. The tranquil environment and organic cuisine provide a rejuvenating space for deep relaxation, inner reflection, and sustainable health transformation.",
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$$",
+      image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
+      slug: "bangalore/shreyas-yoga-retreat",
     },
     {
       name: "Adyant Ayurveda – Jayanagar",
@@ -104,17 +127,6 @@ const SouthIndiaCenters = () => {
       slug: "bangalore/keva-ayurveda-btm-layout",
     },
     {
-      name: "Shathayu Ayurveda Yoga Retreat",
-      city: "Bengaluru Rural, Karnataka, India",
-      description:
-        "Shathayu Ayurveda Yoga Retreat is a serene coastal sanctuary focused on authentic Ayurveda and yogic living. The retreat combines classical therapies with guided yoga, meditation, and lifestyle coaching to support detoxification, resilience, and sustainable health improvement. Led by experienced doctors and wellness practitioners, each treatment plan is personalized for restorative outcomes in a peaceful natural environment.",
-      rating: 4.8,
-      reviews: 380,
-      priceRange: "$$$",
-      image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-      slug: "udupi/shathayu-ayurveda-yoga-retreat",
-    },
-    {
       name: "Jayadev Memorial – Rashtrotthana Hospital Ayurveda Dept.",
       city: "Bengaluru, Karnataka, India",
       description:
@@ -137,17 +149,6 @@ const SouthIndiaCenters = () => {
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/8.jpg",
       slug: "bangalore/healing-earth-ayurveda-hospital",
-    },
-    {
-      name: "Indus Valley Ayurvedic Centre",
-      city: "Mysuru, Karnataka, India",
-      description:
-        "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
-      rating: 4.8,
-      reviews: 450,
-      priceRange: "$$$$",
-      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-      slug: "mysore/indus-valley-ayurvedic-centre",
     },
     {
       name: "Adivaidyam Ayurveda Hospital",
@@ -330,6 +331,23 @@ const SouthIndiaCenters = () => {
     <div className="min-h-screen bg-background font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              Top 10 Ayurvedic Centers in Bangalore, Hyderabad & Chennai
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="bg-[#2C4E5A] text-white pt-10 pb-7 md:pt-20 md:pb-8">
         <div className="container mx-auto px-4 max-[380px]:px-2">
@@ -410,17 +428,27 @@ const SouthIndiaCenters = () => {
                   {/* Buttons Container */}
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => {
-                          if (enabledDetailSlugs.has(center.slug)) {
-                            navigate(`/centers/${center.slug}`);
-                          }
-                        }}
-                      >
-                        View Details
-                      </Button>
+                      {enabledDetailSlugs.has(center.slug) ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          onClick={() => {
+                            // If needed, can keep the fallback behavior
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

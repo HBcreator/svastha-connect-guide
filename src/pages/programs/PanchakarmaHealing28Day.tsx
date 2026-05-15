@@ -837,11 +837,40 @@ const PanchakarmaHealing28Day = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2">
+              <Link to="/ayurvedic-programs" className="text-primary/50 hover:text-primary transition-colors">
+                Ayurvedic Packages
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2">
+              <Link to="/ayurvedic-programs/panchakarma-detox" className="text-primary/50 hover:text-primary transition-colors">
+                Panchakarma Detox Packages
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              28-Day Program
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">28-Day Panchakarma Healing and Rejuvenation Program in India</h1>
               <p className="text-lg md:text-xl text-white/90">A four-week physician-led Ayurvedic healing protocol designed for chronic condition recovery, deep cellular restoration, and Rasayana rejuvenation.</p>
               <div className="space-y-2.5">

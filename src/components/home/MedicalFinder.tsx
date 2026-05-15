@@ -31,10 +31,10 @@ const therapiesList = [
 ];
 
 const regionsList = [
-  { name: "Kerala Ayurvedic Sanctuaries",    path: "/kerala-ayurvedic-centers-and-hospitals",                                                       desc: "Birthplace of Ayurveda with tranquil backwaters and lush healing climate.",               keywords: "kerala backwaters beach south classical traditional" },
-  { name: "Himalayas & Rishikesh Retreats",  path: "/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals",                    desc: "High-altitude pure spiritual mountain air and premium wellness havens.",                  keywords: "himalayas rishikesh mountain uttarakhand spiritual altitude yoga" },
-  { name: "Goa Seaside Wellness Resorts",    path: "/goa-ayurvedic-centers-and-hospitals",                                                           desc: "Beachside luxurious recovery combining traditional treatments and ocean breeze.",         keywords: "goa beach seaside ocean resort luxury coastal" },
-  { name: "Bangalore & South India Hubs",    path: "/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals",               desc: "State-of-the-art accredited clinical institutions and organic farm retreats.",           keywords: "bangalore hyderabad chennai south clinical hospital farm organic" },
+  { name: "Kerala Ayurvedic Sanctuaries",    path: "/top-12-ayurvedic-centers-hospitals-kerala-india",                                                       desc: "Birthplace of Ayurveda with tranquil backwaters and lush healing climate.",               keywords: "kerala backwaters beach south classical traditional" },
+  { name: "Himalayas & Rishikesh Retreats",  path: "/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india",                    desc: "High-altitude pure spiritual mountain air and premium wellness havens.",                  keywords: "himalayas rishikesh mountain uttarakhand spiritual altitude yoga" },
+  { name: "Goa Seaside Wellness Resorts",    path: "/top-15-ayurvedic-centers-hospitals-goa-india",                                                           desc: "Beachside luxurious recovery combining traditional treatments and ocean breeze.",         keywords: "goa beach seaside ocean resort luxury coastal" },
+  { name: "Bangalore & South India Hubs",    path: "/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india",               desc: "State-of-the-art accredited clinical institutions and organic farm retreats.",           keywords: "bangalore hyderabad chennai south clinical hospital farm organic" },
   { name: "Mumbai, Pune & West India",       path: "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals",                                 desc: "Easily accessible premium holistic hospitals and eco-villages.",                         keywords: "mumbai pune nashik west india accessible city eco village" },
 ];
 

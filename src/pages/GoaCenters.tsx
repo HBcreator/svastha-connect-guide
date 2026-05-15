@@ -2,8 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Star, MapPin } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
+import { Star, MapPin, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { prioritizeTopCenters } from "@/lib/top-centers";
 
@@ -304,6 +304,23 @@ const GoaCenters = () => {
     <div className="min-h-screen bg-background font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              Top 10 Ayurvedic Centers in Goa
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       <section className="bg-[#2C4E5A] text-white pt-10 pb-7 md:pt-20 md:pb-8">
         <div className="max-w-7xl mx-auto px-5 md:px-10 max-[380px]:px-4">
           <div className="text-center">
@@ -380,21 +397,28 @@ const GoaCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        disabled={(center as { detailsDisabled?: boolean }).detailsDisabled}
-                        onClick={() => {
-                          if ((center as { detailsDisabled?: boolean }).detailsDisabled) return;
-                          if (center.slug) {
-                            navigate(`/centers/${center.slug}`);
-                            return;
-                          }
-                          navigate("#");
-                        }}
-                      >
-                        {(center as { detailsDisabled?: boolean }).detailsDisabled ? "Coming Soon" : "View Details"}
-                      </Button>
+                      {!((center as { detailsDisabled?: boolean }).detailsDisabled) && center.slug ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          disabled={(center as { detailsDisabled?: boolean }).detailsDisabled}
+                          onClick={() => {
+                            // Fallback
+                          }}
+                        >
+                          {(center as { detailsDisabled?: boolean }).detailsDisabled ? "Coming Soon" : "View Details"}
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

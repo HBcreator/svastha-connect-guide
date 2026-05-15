@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { prioritizeTopCenters } from "@/lib/top-centers";
@@ -136,7 +136,55 @@ const DelhiNorthIndiaRegionCenters = () => {
     rating: 4.7,
     reviews: "300",
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    slug: "delhi/namastedwaar",
+    slug: "namaste-dwaar-countryside-wellness-retreat-delhi-india",
+  };
+
+  const naadWellnessCenter: DelhiCenter = {
+    series: -1,
+    name: "Naad Wellness",
+    city: "Sonepat, Haryana, Near Delhi NCR, India",
+    description:
+      "Naad Wellness is a luxury integrative retreat near Delhi dedicated to holistic healing and the restoration of inner balance through ancient wisdom. Inspired by Ayurvedic principles and modern therapeutic science, the center offers curated wellness journeys that harmonize the body, mind, and spirit. Set within a tranquil natural environment, Naad provides a peaceful sanctuary for deep rejuvenation and preventive healthcare.",
+    rating: 4.8,
+    reviews: "200",
+    image: "/Center Images/Naad Wellness/Thumb.jpg",
+    slug: "naad-wellness-centre-sonepat-delhi-india",
+  };
+
+  const imperialSpaCenter: DelhiCenter = {
+    series: -2,
+    name: "The Imperial Spa and Wellness",
+    city: "New Delhi, India",
+    description:
+      "The Imperial Spa and Wellness is a premier luxury sanctuary in New Delhi, blending timeless Eastern healing traditions with sophisticated modern wellness therapies. Nestled within the iconic Imperial Hotel, the center offers a peaceful retreat where classical Ayurvedic principles and professional spa rituals are practiced with exceptional care.",
+    rating: 4.8,
+    reviews: "8000",
+    image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
+    slug: "the-imperial-spa-and-wellness-delhi-india",
+  };
+
+  const itcGrandBharatCenter: DelhiCenter = {
+    series: -3,
+    name: "ITC Grand Bharat",
+    city: "Gurugram (near New Delhi), India",
+    description:
+      "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic healing and modern wellness innovation.",
+    rating: 4.8,
+    reviews: "17000",
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    slug: "itc-grand-bharat-wellness-retreat-gurugram-delhi-india",
+  };
+
+  const amanbaghCenter: DelhiCenter = {
+    series: -4,
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar, Rajasthan, India",
+    description:
+      "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
+    rating: 4.8,
+    reviews: "600",
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    slug: "amanbagh-heritage-wellness-retreat-rajasthan-delhi-india",
   };
 
   useEffect(() => {
@@ -159,10 +207,17 @@ const DelhiNorthIndiaRegionCenters = () => {
   }, []);
 
   const { orderedCenters, totalPages, paginatedCenters } = useMemo(() => {
-    const baseCenters = [namasteDwaarCenter, ...centers];
+    const baseCenters = [
+      namasteDwaarCenter,
+      naadWellnessCenter,
+      imperialSpaCenter,
+      itcGrandBharatCenter,
+      amanbaghCenter,
+      ...centers
+    ];
     const ordered = prioritizeTopCenters(baseCenters);
-    const pages = ordered.length > 12 ? 2 : 1;
     const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
+    const pages = Math.ceil(ordered.length / 12);
     return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
   }, [centers, currentPage, namasteDwaarCenter]);
 
@@ -256,19 +311,27 @@ const DelhiNorthIndiaRegionCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => {
-                          if (center.slug) {
-                            navigate(`/centers/${center.slug}`);
-                            return;
-                          }
-                          navigate("#");
-                        }}
-                      >
-                        View Details
-                      </Button>
+                      {center.slug ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          onClick={() => {
+                            // Fallback
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

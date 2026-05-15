@@ -15,7 +15,7 @@ const PanchakarmaDetox = () => {
       name: "21-Day Panchakarma Detox Program in India",
       description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
       image: "/Program Images/21-day-detox.png",
-      link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+      link: "/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
       rating: 4.6,
       reviews: 480,
       tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
@@ -24,7 +24,7 @@ const PanchakarmaDetox = () => {
       name: "28-Day Panchakarma Healing Program in India",
       description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
       image: "/Program Images/28-day-healing.png",
-      link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
+      link: "/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
       rating: 4.7,
       reviews: 320,
       tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
@@ -40,7 +40,7 @@ const PanchakarmaDetox = () => {
         <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6">
-              Panchakarma Detox Programs in India
+              Panchakarma Detox Packages in India
             </h1>
             <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               Experience the ancient, deeply restorative science of Panchakarma. Discover our carefully curated detoxification and healing programs designed to cleanse the body, balance the mind, and enhance longevity in India's finest wellness centers.

@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Star, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { prioritizeTopCenters } from "@/lib/top-centers";
@@ -50,10 +50,10 @@ const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
 };
 
 const SLUG_BY_SERIES: Partial<Record<number, string>> = {
-  3: "uttarakhand/ananda-in-the-himalayas",
-  4: "dharamshala/ayuskama-ayurveda",
-  6: "veda5",
-  10: "rishikesh/yan-cure",
+  3: "ananda-in-the-himalayas-uttarakhand-india",
+  4: "ayuskama-ayurveda-and-panchakarma-center-dharamshala-india",
+  6: "veda5-ayurveda-and-yoga-retreat-rishikesh-india",
+  10: "yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india",
 };
 
 const cleanMarkdownText = (value: string) =>
@@ -260,19 +260,27 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Button
-                        variant="outline"
-                        className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
-                        onClick={() => {
-                          if (center.slug) {
-                            navigate(`/centers/${center.slug}`);
-                            return;
-                          }
-                          navigate("#");
-                        }}
-                      >
-                        View Details
-                      </Button>
+                      {center.slug ? (
+                        <Button
+                          asChild
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                        >
+                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                            View Details
+                          </Link>
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
+                          onClick={() => {
+                            // Fallback
+                          }}
+                        >
+                          View Details
+                        </Button>
+                      )}
                       <Button
                         onClick={() => setQuoteModalOpen(true)}
                         className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-4 md:py-5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-sm"

@@ -13,14 +13,14 @@ const LifestyleAndWellness = () => {
   const programs = [
     {
       category: "Lifestyle & Wellness",
-      name: "Anti-Aging Ayurveda Program",
+      name: "Anti-Aging Ayurveda Program in India",
       duration: "21 Days",
       targetAudience: "Luxury wellness travellers",
       keyFocus: "Cellular rejuvenation",
       description:
         "A physician-guided 21-day anti-aging Ayurveda program focused on deep detox, cellular rejuvenation, skin vitality, metabolic balance, stress recovery, and graceful long-term wellness.",
       image: "/Ayurvedic Programs/Images/Anti-Aging-Ayurveda-Program-India/1.jpg",
-      link: "/ayurvedic-programs/lifestyle-and-wellness/anti-aging-ayurveda-program-in-india",
+      link: "/lifestyle-wellness/anti-aging-ayurveda-program-in-india",
       rating: 4.9,
       reviews: 240,
       tags: ["21 Days", "Anti-Aging", "Cellular Health", "Rasayana"]
@@ -33,33 +33,33 @@ const LifestyleAndWellness = () => {
       keyFocus: "Metabolism & fat reduction",
       description: "A 21-day physician-supervised Ayurvedic weight loss program combining Panchakarma detox, Udvarthanam, Lekhana Basti, herbal medicines, and dosha-specific meals for sustainable metabolism reset.",
       image: "/Ayurvedic Programs/Images/Ayurvedic-Weight-Loss-Program-India/1.webp",
-      link: "/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india",
+      link: "/lifestyle-wellness/ayurvedic-weight-loss-program-in-india",
       rating: 4.8,
       reviews: 310,
       tags: ["21 Days", "Weight Loss", "Metabolism", "Udvarthanam"]
     },
     {
       category: "Lifestyle & Wellness",
-      name: "Stress Management Ayurveda Retreat",
+      name: "Stress Management Ayurveda Retreat in India",
       duration: "14–21 Days",
       targetAudience: "European wellness tourists",
       keyFocus: "Stress relief & relaxation",
       description: "A specialized 14-21 day Ayurvedic retreat designed for deep mental relaxation, emotional healing, and stress recovery. Combines Shirodhara, yoga, meditation, and personalized nutrition for international travelers.",
       image: "/program-images/stress-management.png",
-      link: "/ayurvedic-programs/lifestyle-and-wellness/stress-management-ayurveda-retreat-in-india",
+      link: "/lifestyle-wellness/stress-management-ayurveda-retreat-in-india",
       rating: 4.8,
       reviews: 180,
       tags: ["14-21 Days", "Stress Relief", "Mental Health", "Shirodhara"]
     },
     {
       category: "Lifestyle & Wellness",
-      name: "Burnout Recovery Program in India",
+      name: "Ayurvedic Burnout Recovery Program in India",
       duration: "14–21 Days",
       targetAudience: "Corporate professionals",
       keyFocus: "Mental & physical recovery",
       description: "A comprehensive 14-21 day recovery protocol designed for high-performing professionals facing chronic exhaustion. Integrates Ayurvedic therapies, stress diagnostics, executive health coaching, and restorative routines to rebuild vitality and mental resilience.",
       image: "/program-images/burnout-recovery.png",
-      link: "/ayurvedic-programs/lifestyle-and-wellness/burnout-recovery-program-in-india",
+      link: "/lifestyle-wellness/ayurvedic-burnout-recovery-program-in-india",
       rating: 4.7,
       reviews: 160,
       tags: ["14-21 Days", "Burnout Recovery", "Executive Health", "Deep Reset"]
@@ -72,7 +72,7 @@ const LifestyleAndWellness = () => {
       keyFocus: "Immune system strengthening",
       description: "A specialized 14-day Ayurvedic detox program designed to strengthen the immune system, enhance vitality, and restore natural balance. Ideal for health-conscious travelers seeking preventive wellness in India.",
       image: "/program-images/immunity-detox.png",
-      link: "/ayurvedic-programs/lifestyle-and-wellness/immunity-boosting-detox-program-in-india",
+      link: "/lifestyle-wellness/immunity-boosting-detox-program-in-india",
       rating: 4.8,
       reviews: 155,
       tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
@@ -88,7 +88,7 @@ const LifestyleAndWellness = () => {
         <section className="bg-[#2C4E5A] text-white pt-12 pb-10 md:pt-20 md:pb-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-4 font-poppins">
-              Lifestyle & Wellness Programs in India
+              Lifestyle & Wellness Packages in India
             </h1>
             <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               Curated Ayurvedic programs for preventive health, healthy aging,
