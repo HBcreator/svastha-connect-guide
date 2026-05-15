@@ -7,25 +7,25 @@ import QuoteModal from "@/components/QuoteModal";
 // Structured program inventory mapped directly to existing application routes
 const programCategories = {
   diseaseSpecific: {
-    title: "Disease-Specific Treatment Plans",
+    title: "Disease-Specific Packages",
     tabLabel: "Disease Specific",
-    desc: "Targeted clinical therapeutic interventions targeting precise musculoskeletal, dermatological, and neurological pathoflows.",
+    desc: "Targeted Ayurveda packages targeting precise musculoskeletal, dermatological, and neurological pathoflows.",
     icon: Activity,
     programs: [
       {
         name: "Ayurveda Treatment for Osteoarthritis in India",
         description: "A specialized Ayurvedic protocol designed specifically to manage Osteoarthritis. Focuses on strengthening the joints, reducing inflammation, pain management through authentic therapies like Janu Basti, and restoring mobility through deep tissue nourishment and Vata correction.",
         image: "/Program Images/osteoarthritis.png",
-        link: "/ayurvedic-programs/disease-specific/osteoarthritis",
+        link: "/ayurveda-packages/ayurveda-treatment-for-osteoarthritis-in-india",
         rating: 4.8,
         reviews: 420,
         tags: ["21-28 Days", "Joint Mobility", "Vata Balance", "Panchakarma"]
       },
       {
         name: "Ayurveda Treatment for Sciatica in India",
-        description: "A clinically supervised Ayurvedic program for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
+        description: "A clinically supervised Ayurveda Package for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
         image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
-        link: "/ayurvedic-programs/disease-specific/sciatica",
+        link: "/ayurveda-packages/ayurveda-treatment-for-sciatica-in-india",
         rating: 4.7,
         reviews: 380,
         tags: ["21-28 Days", "Nerve Relief", "Spine Health", "Kati Basti"]
@@ -34,7 +34,7 @@ const programCategories = {
         name: "Ayurveda Treatment for Rheumatoid Arthritis in India",
         description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
         image: "/Program Images/rheumatoid-arthritis-clinical.png",
-        link: "/ayurvedic-programs/disease-specific/rheumatoid-arthritis-treatment-in-india",
+        link: "/ayurveda-packages/ayurveda-treatment-for-rheumatoid-arthritis-in-india",
         rating: 4.6,
         reviews: 350,
         tags: ["21-28 Days", "RA Healing", "Detox (Ama)", "Immune Support"]
@@ -43,7 +43,7 @@ const programCategories = {
         name: "Ayurvedic Psoriasis Treatment Program in India",
         description: "A specialized skin-healing protocol targeting Psoriasis and chronic eczema. Focuses on blood purification (Raktamokshana), liver detox (Virechana), and specialized external therapies like Takradhara to achieve deep remission and skin clearance.",
         image: "/Treatments-images/Psoriasis Treatment.jpg",
-        link: "/ayurvedic-programs/disease-specific/psoriasis-treatment-in-india",
+        link: "/ayurveda-packages/ayurvedic-psoriasis-treatment-program-in-india",
         rating: 4.8,
         reviews: 290,
         tags: ["21-28 Days", "Skin Repair", "Raktamokshana", "Blood Detox"]
@@ -52,7 +52,7 @@ const programCategories = {
         name: "Ayurveda Treatment for Migraine in India",
         description: "A specialized Ayurvedic protocol for chronic headaches and Migraine. Focuses on balancing the nervous system, reducing vascular inflammation, and detoxifying the sensory organs through therapies like Shirodhara, Nasya, and specialized herbal cooling protocols.",
         image: "/program-images/ra-shirodhara.png",
-        link: "/ayurvedic-programs/disease-specific/ayurvedic-treatment-for-migraine-in-india",
+        link: "/ayurveda-packages/ayurvedic-treatment-for-migraine-in-india",
         rating: 4.7,
         reviews: 310,
         tags: ["14-21 Days", "Stress Relief", "Nasya Therapy", "Vata-Pitta"]
@@ -61,16 +61,16 @@ const programCategories = {
         name: "Ayurveda Treatment for Cervical Spondylosis in India",
         description: "A specialized Ayurvedic clinical program for Cervical Spondylosis focusing on Griva Basti, Pizhichil, and therapeutic neck strengthening protocols. Designed to relieve nerve compression, reduce stiffness, and restore natural cervical spine alignment without surgical intervention.",
         image: "/Program Images/cervical-spondylosis.png",
-        link: "/ayurvedic-programs/disease-specific/cervical-spondylosis-treatment-in-india",
+        link: "/ayurveda-packages/ayurveda-treatment-for-cervical-spondylosis-in-india",
         rating: 4.8,
         reviews: 340,
         tags: ["14-21 Days", "Neck Health", "Griva Basti", "Spine Care"]
       },
     ],
-    landingPath: "/ayurvedic-programs/disease-specific",
+    landingPath: "/ayurveda-packages/disease-specific",
   },
   detox: {
-    title: "Panchakarma & Deep Detox",
+    title: "Panchakarma & Deep Detox Packages",
     tabLabel: "Panchakarma",
     desc: "Intensive multi-week bio-purification protocols systematically eliminating deep cellular dosha imbalances.",
     icon: Droplet,
@@ -79,7 +79,7 @@ const programCategories = {
         name: "21-Day Panchakarma Detox Program in India",
         description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
         image: "/Program Images/21-day-detox.png",
-        link: "/ayurvedic-programs/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+        link: "/ayurveda-packages/21-day-panchakarma-detox-program-in-india",
         rating: 4.6,
         reviews: 480,
         tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
@@ -88,25 +88,25 @@ const programCategories = {
         name: "28-Day Panchakarma Healing Program in India",
         description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
         image: "/Program Images/28-day-healing.png",
-        link: "/ayurvedic-programs/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
+        link: "/ayurveda-packages/28-day-panchakarma-healing-program-in-india",
         rating: 4.7,
         reviews: 320,
         tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
       },
     ],
-    landingPath: "/ayurvedic-programs/panchakarma-detox",
+    landingPath: "/ayurveda-packages/panchakarma-detox",
   },
   lifestyle: {
-    title: "Lifestyle & Wellness Programs",
+    title: "Lifestyle & Wellness Packages",
     tabLabel: "Lifestyle & Wellness",
-    desc: "Curated Ayurvedic programs for preventive health, healthy aging, metabolism support, emotional balance, and long-term vitality.",
+    desc: "Curated Ayurveda packages for preventive health, healthy aging, metabolism support, emotional balance, and long-term vitality.",
     icon: ShieldPlus,
     programs: [
       {
         name: "Anti-Aging Ayurveda Program",
         description: "A physician-guided 21-day anti-aging Ayurveda program focused on deep detox, cellular rejuvenation, skin vitality, metabolic balance, stress recovery, and graceful long-term wellness.",
         image: "/Ayurvedic Programs/Images/Anti-Aging-Ayurveda-Program-India/1.jpg",
-        link: "/ayurvedic-programs/lifestyle-and-wellness/anti-aging-ayurveda-program-in-india",
+        link: "/ayurveda-packages/anti-aging-ayurveda-program-in-india",
         rating: 4.9,
         reviews: 240,
         tags: ["21 Days", "Anti-Aging", "Cellular Health", "Rasayana"]
@@ -115,7 +115,7 @@ const programCategories = {
         name: "Ayurvedic Weight Loss Program in India",
         description: "A 21-day physician-supervised Ayurvedic weight loss program combining Panchakarma detox, Udvarthanam, Lekhana Basti, herbal medicines, and dosha-specific meals for sustainable metabolism reset.",
         image: "/Ayurvedic Programs/Images/Ayurvedic-Weight-Loss-Program-India/1.webp",
-        link: "/ayurvedic-programs/lifestyle-and-wellness/ayurvedic-weight-loss-program-in-india",
+        link: "/ayurveda-packages/ayurvedic-weight-loss-program-in-india",
         rating: 4.8,
         reviews: 310,
         tags: ["21 Days", "Weight Loss", "Metabolism", "Udvarthanam"]
@@ -124,7 +124,7 @@ const programCategories = {
         name: "Stress Management Ayurveda Retreat",
         description: "A specialized 14-21 day Ayurvedic retreat designed for deep mental relaxation, emotional healing, and stress recovery. Combines Shirodhara, yoga, meditation, and personalized nutrition for international travelers.",
         image: "/program-images/stress-management.png",
-        link: "/ayurvedic-programs/lifestyle-and-wellness/stress-management-ayurveda-retreat-in-india",
+        link: "/ayurveda-packages/stress-management-ayurveda-retreat-in-india",
         rating: 4.8,
         reviews: 180,
         tags: ["14-21 Days", "Stress Relief", "Mental Health", "Shirodhara"]
@@ -133,7 +133,7 @@ const programCategories = {
         name: "Burnout Recovery Program in India",
         description: "A comprehensive 14-21 day recovery protocol designed for high-performing professionals facing chronic exhaustion. Integrates Ayurvedic therapies, stress diagnostics, executive health coaching, and restorative routines to rebuild vitality and mental resilience.",
         image: "/program-images/burnout-recovery.png",
-        link: "/ayurvedic-programs/lifestyle-and-wellness/burnout-recovery-program-in-india",
+        link: "/ayurveda-packages/ayurvedic-burnout-recovery-program-in-india",
         rating: 4.7,
         reviews: 160,
         tags: ["14-21 Days", "Burnout Recovery", "Executive Health", "Deep Reset"]
@@ -142,16 +142,16 @@ const programCategories = {
         name: "Immunity Boosting Detox Program in India",
         description: "A specialized 14-day Ayurvedic detox program designed to strengthen the immune system, enhance vitality, and restore natural balance. Ideal for health-conscious travelers seeking preventive wellness in India.",
         image: "/program-images/immunity-detox.png",
-        link: "/ayurvedic-programs/lifestyle-and-wellness/immunity-boosting-detox-program-in-india",
+        link: "/ayurveda-packages/immunity-boosting-detox-program-in-india",
         rating: 4.8,
         reviews: 155,
         tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
       },
     ],
-    landingPath: "/ayurvedic-programs/lifestyle-and-wellness",
+    landingPath: "/ayurveda-packages/lifestyle-wellness",
   },
   beauty: {
-    title: "Beauty & Rejuvenation Programs",
+    title: "Beauty & Rejuvenation Packages",
     tabLabel: "Beauty & Rejuvenation",
     desc: "Experience the ancient secrets of Ayurvedic beauty combining clinical detoxification with specialized therapies to restore natural radiance.",
     icon: Smile,
@@ -160,7 +160,7 @@ const programCategories = {
         name: "Ayurvedic Skin Rejuvenation Therapy in India",
         description: "A holistic clinical program focusing on deep tissue purification and facial rejuvenation through traditional Ayurvedic therapies like Mukha Lepam, Navara Mukhabhyanga, and specialized herbal steam. Designed to restore natural skin glow, improve elasticity, and address chronic skin conditions at the root.",
         image: "/program-images/skin-rejuvenation.png",
-        link: "/ayurvedic-programs/beauty-and-rejuvenation/skin-rejuvenation-treatment-in-india",
+        link: "/ayurveda-packages/ayurvedic-skin-rejuvenation-therapy-in-india",
         rating: 4.9,
         reviews: 245,
         tags: ["7-14 Days", "Skin Glow", "Mukha Lepam", "Detox"]
@@ -169,7 +169,7 @@ const programCategories = {
         name: "Hair Loss Treatment Program in India",
         description: "A specialized Ayurvedic protocol targeting the underlying causes of hair thinning and loss (Khalitya). Combines Shirodhara, Nasya, and scalp-nourishing therapies like Shirolepa and Takradhara with personalized herbal supplements to stimulate follicle growth and restore scalp health.",
         image: "/program-images/hair-loss.png",
-        link: "/ayurvedic-programs/beauty-and-rejuvenation/hair-loss-in-india",
+        link: "/ayurveda-packages/ayurvedic-hair-loss-treatment-program-in-india",
         rating: 4.7,
         reviews: 312,
         tags: ["14-21 Days", "Hair Growth", "Shirodhara", "Scalp Health"]
@@ -178,16 +178,16 @@ const programCategories = {
         name: "Ayurvedic Beauty & Detox Retreat in India",
         description: "A comprehensive beauty and rejuvenation program that merges internal detoxification with external pampering. Includes whole-body Udvarthanam (herbal scrub), Pizhichil (oil bath), and specialized beauty rituals to cleanse the blood, tone the body, and refresh the spirit for a radiant transformation.",
         image: "/program-images/beauty-detox.png",
-        link: "/ayurvedic-programs/beauty-and-rejuvenation/ayurvedic-beauty-detox-retreat-in-india",
+        link: "/ayurveda-packages/ayurvedic-beauty-detox-retreat-in-india",
         rating: 4.9,
         reviews: 188,
         tags: ["10-14 Days", "Full Body Detox", "Radiant Glow", "Anti-Aging"]
       },
     ],
-    landingPath: "/ayurvedic-programs/beauty-and-rejuvenation",
+    landingPath: "/ayurveda-packages/beauty-rejuvenation",
   },
   integratedRetreat: {
-    title: "Integrated Retreat Programs",
+    title: "Integrated Retreat Packages",
     tabLabel: "Integrated Retreat",
     desc: "Experience the absolute synergy of passive classical healing via Ayurveda combined with active somatic disciplines like Yoga and mindfulness.",
     icon: Compass,
@@ -196,22 +196,22 @@ const programCategories = {
         name: "Ayurveda + Yoga Retreat Program",
         description: "A transformative 14-21 day retreat that seamlessly integrates classical Ayurvedic therapies with daily yogic practices. Designed for those seeking deep mental clarity, physical flexibility, and a complete spiritual reset through personalized Shodhana protocols and advanced Hatha Yoga.",
         image: "/Program Images/ayurveda-yoga-retreat.png",
-        link: "/ayurvedic-programs/integrated-retreat/ayurveda-yoga-retreat",
+        link: "/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india",
         rating: 4.9,
         reviews: 195,
         tags: ["14–21 Days", "Ayurveda + Yoga", "Spiritual Reset", "Holistic Healing"]
       },
       {
         name: "Ayurveda Digital Detox Retreat",
-        description: "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurvedic treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
+        description: "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurveda treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
         image: "/Program Images/digital-detox-retreat.png",
-        link: "/ayurvedic-programs/integrated-retreat/ayurveda-digital-detox",
+        link: "/ayurveda-packages/ayurvedic-digital-detox-retreat-in-india",
         rating: 4.8,
         reviews: 142,
         tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
       },
     ],
-    landingPath: "/ayurvedic-programs/integrated-retreat",
+    landingPath: "/ayurveda-packages/integrated-retreat",
   },
 };
 
@@ -353,3 +353,4 @@ export default function HomeProgramsSection() {
     </section>
   );
 }
+

@@ -107,7 +107,7 @@ export default function SitaramMountainRetreat() {
   const awards = [
     {
       title: "NABH Accreditation",
-      description: "Recognized for hospital-grade safety standards and trusted clinical governance that strengthen authentic Ayurvedic healing.",
+      description: "Recognized for hospital-grade safety standards and trusted clinical governance that strengthen authentic Ayurvedic Healing.",
       image: "/Center Images/Sitaram Mountain Retreat/Awards/Award 1 (NABH-accredited hospital, ).png",
     },
     {
@@ -2657,6 +2657,7 @@ export default function SitaramMountainRetreat() {
     </div>
   );
 }
+
 
 
 

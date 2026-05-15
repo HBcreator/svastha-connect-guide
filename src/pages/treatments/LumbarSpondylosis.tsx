@@ -112,7 +112,7 @@ const patientReviews = [
   {
     name: "Caoimhe O'Sullivan", location: "Cork, Ireland", condition: "Lumbar Disc Degeneration",
     title: "Ayurveda Addressed the Degeneration—Not Just the Pain.",
-    review: "My orthopedic surgeon in Cork had offered two options: long-term pain management or surgery. I chose India for Ayurvedic treatment instead. The physician explained how aggravated Vata dosha causes progressive disc degeneration—a root cause explanation I had never received before. The Snehana, Kati Basti, and Navarakizhi therapies nourished my spinal tissues over twenty-eight days, making surgery completely unnecessary.",
+    review: "My orthopedic surgeon in Cork had offered two options: long-term pain management or surgery. I chose India for Ayurveda treatment instead. The physician explained how aggravated Vata dosha causes progressive disc degeneration—a root cause explanation I had never received before. The Snehana, Kati Basti, and Navarakizhi therapies nourished my spinal tissues over twenty-eight days, making surgery completely unnecessary.",
     rating: 5, verified: true
   },
   {
@@ -218,7 +218,7 @@ const topAyurvedicCenters = [
     name: "AyurSoma Ayurveda Royal Retreat",
     city: "Kerala",
     location: "Kerala",
-    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    description: "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
@@ -258,7 +258,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -911,3 +911,4 @@ const LumbarSpondylosis = () => {
 };
 
 export default LumbarSpondylosis;
+

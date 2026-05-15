@@ -9,7 +9,7 @@ const testimonials = [
     location: "Bangalore, India",
     videoUrl: "https://www.youtube.com/embed/cfZxiAr13fQ",
     path: "/centers/bangalore/soukya",
-    description: "Experience the profound impact of integrative Ayurvedic healing. This featured testimonial showcases a patient's journey to recovery at the world-renowned SOUKYA center.",
+    description: "Experience the profound impact of integrative Ayurvedic Healing. This featured testimonial showcases a patient's journey to recovery at the world-renowned SOUKYA center.",
   },
   {
     center: "Somatheeram Ayurvedic Health Resort",
@@ -23,7 +23,7 @@ const testimonials = [
     location: "Kerala, India",
     videoUrl: "https://www.youtube.com/embed/4x01PtWfNnk",
     path: "/centers/kerala/kairali-ayurvedic-healing-village",
-    description: "Discover the legacy of authentic Ayurvedic healing at Kairali. This testimonial highlights the traditional therapies and serene village atmosphere that facilitate deep recovery.",
+    description: "Discover the legacy of authentic Ayurvedic Healing at Kairali. This testimonial highlights the traditional therapies and serene village atmosphere that facilitate deep recovery.",
   },
   {
     center: "Veda5 – Ayurveda, Yoga & Wellness Retreat",
@@ -186,3 +186,4 @@ export default function HomeTestimonials() {
     </section>
   );
 }
+

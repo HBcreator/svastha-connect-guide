@@ -654,7 +654,7 @@ const topAyurvedicCenters = [
   {
     name: "Kairali – The Ayurvedic Healing Village",
     city: "Palakkad",
-    description: "NABH-accredited Ayurvedic healing village with authentic Panchakarma, personalized treatment plans, and sattvic lifestyle.",
+    description: "NABH-accredited Ayurvedic Healing village with authentic Panchakarma, personalized treatment plans, and sattvic lifestyle.",
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
@@ -1257,3 +1257,4 @@ const ImmunityBoostingDetox = () => {
 };
 
 export default ImmunityBoostingDetox;
+

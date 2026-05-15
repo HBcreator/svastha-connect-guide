@@ -2627,3 +2627,4 @@ const MercureGoaDevaayaResort = () => {
 };
 
 export default MercureGoaDevaayaResort;
+

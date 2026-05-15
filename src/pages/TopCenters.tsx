@@ -61,7 +61,7 @@ const TopCenters = () => {
       name: "AyurvedaGram Heritage Wellness Centre",
       city: "Bangalore",
       description:
-        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination in Bangalore that offers an authentic immersion into the ancient world of Ayurvedic healing. Set within a meticulously restored heritage village, the center provides a sanctuary where classical Vedic principles are practiced with deep reverence and precision. Guests receive personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic sattvic nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through evidence-informed care and time-tested protocols. This tranquil retreat is the perfect choice for those seeking profound detoxification, rejuvenation, and long-term sustainable wellness.",
+        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination in Bangalore that offers an authentic immersion into the ancient world of Ayurvedic Healing. Set within a meticulously restored heritage village, the center provides a sanctuary where classical Vedic principles are practiced with deep reverence and precision. Guests receive personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic sattvic nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through evidence-informed care and time-tested protocols. This tranquil retreat is the perfect choice for those seeking profound detoxification, rejuvenation, and long-term sustainable wellness.",
       specialties: [
         "Authentic Ayurveda",
         "Panchakarma",
@@ -181,7 +181,7 @@ const TopCenters = () => {
       name: "Toyam By Orchid Hotels",
       city: "Pune",
       description:
-        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive personalized care guided by experienced wellness experts, complemented by therapeutic yoga, mindful meditation, and wholesome sattvic nutrition. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This luxurious retreat is the perfect escape for those seeking profound detoxification, inner peace, and a foundation for lasting physical vitality.",
+        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic Healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive personalized care guided by experienced wellness experts, complemented by therapeutic yoga, mindful meditation, and wholesome sattvic nutrition. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This luxurious retreat is the perfect escape for those seeking profound detoxification, inner peace, and a foundation for lasting physical vitality.",
       specialties: [
         "Panchakarma",
         "Ayurvedic Wellness",
@@ -241,7 +241,7 @@ const TopCenters = () => {
       name: "ITC Grand Bharat",
       city: "Gurugram",
       description:
-        "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic healing and modern wellness innovation. Guests can undergo personalized rejuvenation programs guided by expert physicians, supported by therapeutic yoga, mindful routines, and curated sattvic nutrition. The tranquil environment and sprawling grounds provide a unique atmosphere for detoxification, stress relief, and sustainable lifestyle transformation. ITC Grand Bharat remains a global benchmark for holistic luxury, dedicated to restoring the balance of body and mind through indigenous healing traditions.",
+        "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic Healing and modern wellness innovation. Guests can undergo personalized rejuvenation programs guided by expert physicians, supported by therapeutic yoga, mindful routines, and curated sattvic nutrition. The tranquil environment and sprawling grounds provide a unique atmosphere for detoxification, stress relief, and sustainable lifestyle transformation. ITC Grand Bharat remains a global benchmark for holistic luxury, dedicated to restoring the balance of body and mind through indigenous healing traditions.",
       specialties: [
         "Luxury Wellness",
         "Ayurvedic Spa",
@@ -262,7 +262,7 @@ const TopCenters = () => {
       name: "Niraamaya Retreats Surya Samudra",
       city: "Kerala",
       description:
-        "Niraamaya Retreats Surya Samudra is a globally recognized luxury destination in Kerala that offers an authentic immersion into the ancient world of coastal Ayurvedic healing. Perched on a cliff overlooking the Arabian Sea, the retreat provides a peaceful sanctuary where classical Vedic principles and modern clinical standards are practiced with reverence. Guests undergo personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic coastal nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed care. The tranquil beachfront setting and heritage architecture create a unique atmosphere for detoxification, rejuvenation, and sustainable wellness.",
+        "Niraamaya Retreats Surya Samudra is a globally recognized luxury destination in Kerala that offers an authentic immersion into the ancient world of coastal Ayurvedic Healing. Perched on a cliff overlooking the Arabian Sea, the retreat provides a peaceful sanctuary where classical Vedic principles and modern clinical standards are practiced with reverence. Guests undergo personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic coastal nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed care. The tranquil beachfront setting and heritage architecture create a unique atmosphere for detoxification, rejuvenation, and sustainable wellness.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -282,7 +282,7 @@ const TopCenters = () => {
       name: "Modi Yoga Retreat",
       city: "Rishikesh",
       description:
-        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic healing standards. Located on the banks of the holy Ganges, the retreat offers an authentic yogic lifestyle designed to nurture physical vitality, mental clarity, and spiritual growth. Guests can enjoy a comprehensive range of personalized programs including Ayurveda therapies, guided meditation, and mindful living practices led by expert teachers. The tranquil mountain environment and organic cuisine provide a rejuvenating space for deep relaxation, inner reflection, and sustainable health transformation. Modi Yoga Retreat is dedicated to helping individuals rediscover their inner balance through the timeless wisdom of classical Indian traditions.",
+        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic Healing standards. Located on the banks of the holy Ganges, the retreat offers an authentic yogic lifestyle designed to nurture physical vitality, mental clarity, and spiritual growth. Guests can enjoy a comprehensive range of personalized programs including Ayurveda therapies, guided meditation, and mindful living practices led by expert teachers. The tranquil mountain environment and organic cuisine provide a rejuvenating space for deep relaxation, inner reflection, and sustainable health transformation. Modi Yoga Retreat is dedicated to helping individuals rediscover their inner balance through the timeless wisdom of classical Indian traditions.",
       specialties: [
         "Yoga Retreat",
         "Meditation & Mindfulness",
@@ -302,7 +302,7 @@ const TopCenters = () => {
       name: "Amanbagh Heritage Wellness Retreat",
       city: "Alwar",
       description:
-        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care. Guests experience a unique combination of authentic Ayurveda, yoga, and meditation designed to promote deep detoxification and long-term physical vitality. The tranquil landscape and therapeutic spa treatments create a perfect sanctuary for managing stress, burnout, and lifestyle-related health concerns. Amanbagh provides a holistic environment where mindful nutrition and expert guidance lead to sustainable physical and emotional well-being.",
+        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic Healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care. Guests experience a unique combination of authentic Ayurveda, yoga, and meditation designed to promote deep detoxification and long-term physical vitality. The tranquil landscape and therapeutic spa treatments create a perfect sanctuary for managing stress, burnout, and lifestyle-related health concerns. Amanbagh provides a holistic environment where mindful nutrition and expert guidance lead to sustainable physical and emotional well-being.",
       specialties: [
         "Holistic Wellness Therapies",
         "Yoga & Meditation Sessions",
@@ -401,7 +401,7 @@ const TopCenters = () => {
       name: "AyurSoma Ayurveda Royal Retreat",
       city: "Kerala",
       description:
-        "AyurSoma Ayurveda Royal Retreat is a world-class sanctuary in Kovalam that masterfully blends the grandeur of royal heritage with the profound precision of traditional Ayurvedic healing. Perched on a stunning beachfront, the retreat offers an authentic and immersive experience where classical Panchakarma and rejuvenation therapies are practiced with uncompromising medical standards. Guests receive highly personalized care guided by seasoned Vaidyas, complemented by therapeutic yoga, mindful meditation, and nourishing organic cuisine. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This premium royal retreat provides a serene and opulent environment for deep detoxification and the restoration of long-term physical vitality.",
+        "AyurSoma Ayurveda Royal Retreat is a world-class sanctuary in Kovalam that masterfully blends the grandeur of royal heritage with the profound precision of traditional Ayurvedic Healing. Perched on a stunning beachfront, the retreat offers an authentic and immersive experience where classical Panchakarma and rejuvenation therapies are practiced with uncompromising medical standards. Guests receive highly personalized care guided by seasoned Vaidyas, complemented by therapeutic yoga, mindful meditation, and nourishing organic cuisine. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. This premium royal retreat provides a serene and opulent environment for deep detoxification and the restoration of long-term physical vitality.",
       specialties: [
         "Panchakarma",
         "Royal Retreat",
@@ -420,7 +420,7 @@ const TopCenters = () => {
       name: "Kalari Kovilakom - The Palace For Ayurveda",
       city: "Palakkad",
       description:
-        "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+        "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -459,7 +459,7 @@ const TopCenters = () => {
       name: "The Nattika Beach Resort",
       city: "Thrissur",
       description:
-        "The Nattika Beach Resort is a premier award-winning wellness retreat along the pristine shores of Kerala, dedicated to the authentic essence of traditional Ayurvedic healing. Rooted in classical Vedic principles and guided by highly experienced physicians, the resort offers a harmonious blend of medical precision, relaxation, and deep rejuvenation. Surrounded by lush tropical greenery and the calming Arabian Sea, Nattika provides personalized therapies designed to restore the balance of body, mind, and spirit. Guests experience a transformative journey supported by therapeutic yoga, mindful routines, and professional clinical care in a serene beachfront environment. The resort is committed to delivering a deeply immersive wellness experience that fosters long-term health empowerment and metabolic vitality.",
+        "The Nattika Beach Resort is a premier award-winning wellness retreat along the pristine shores of Kerala, dedicated to the authentic essence of traditional Ayurvedic Healing. Rooted in classical Vedic principles and guided by highly experienced physicians, the resort offers a harmonious blend of medical precision, relaxation, and deep rejuvenation. Surrounded by lush tropical greenery and the calming Arabian Sea, Nattika provides personalized therapies designed to restore the balance of body, mind, and spirit. Guests experience a transformative journey supported by therapeutic yoga, mindful routines, and professional clinical care in a serene beachfront environment. The resort is committed to delivering a deeply immersive wellness experience that fosters long-term health empowerment and metabolic vitality.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -479,7 +479,7 @@ const TopCenters = () => {
       name: "Sitaram Beach Retreat",
       city: "Kerala",
       description:
-        "Sitaram Beach Retreat is a premier coastal sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled along the serene shores of the Arabian Sea, the retreat provides a peaceful environment where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, complemented by therapeutic yoga, mindful meditation, and wholesome organic cuisine. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. The tranquil beachfront setting and professional clinical care create an ideal atmosphere for detoxification, stress relief, and profound physical rejuvenation.",
+        "Sitaram Beach Retreat is a premier coastal sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic Healing. Nestled along the serene shores of the Arabian Sea, the retreat provides a peaceful environment where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, complemented by therapeutic yoga, mindful meditation, and wholesome organic cuisine. Every program is thoughtfully designed to restore the delicate balance of body, mind, and spirit while fostering sustainable healthy living habits. The tranquil beachfront setting and professional clinical care create an ideal atmosphere for detoxification, stress relief, and profound physical rejuvenation.",
       specialties: [
         "Panchakarma Therapy",
         "Detox & Rejuvenation Programs",
@@ -519,7 +519,7 @@ const TopCenters = () => {
       name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
       city: "Rishikesh",
       description:
-        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards. Nestled in the Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality. Veda5 is committed to helping individuals achieve sustainable well-being through a powerful combination of ancient wisdom and modern luxury.",
+        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic Healing with world-class hospitality and professional medical standards. Nestled in the Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality. Veda5 is committed to helping individuals achieve sustainable well-being through a powerful combination of ancient wisdom and modern luxury.",
       specialties: [
         "Panchakarma",
         "Rejuvenation",
@@ -540,7 +540,7 @@ const TopCenters = () => {
       name: "Yan Cure Yoga Retreat & Ayurveda Centre",
       city: "Rishikesh",
       description:
-        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic healing. Located in a tranquil natural environment, the center provides a peaceful space where professional clinical care and mindful living practices are practiced with clinical precision. Guests receive personalized treatment programs guided by experienced Ayurvedic doctors and certified yoga instructors, focusing on deep detoxification and stress management. Every healing journey is designed to restore the harmony of body, mind, and soul through time-tested and evidence-informed therapies. Yan Cure is dedicated to fostering inner peace and long-term vitality through a comprehensive approach to preventive health and professional rejuvenation.",
+        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing. Located in a tranquil natural environment, the center provides a peaceful space where professional clinical care and mindful living practices are practiced with clinical precision. Guests receive personalized treatment programs guided by experienced Ayurvedic doctors and certified yoga instructors, focusing on deep detoxification and stress management. Every healing journey is designed to restore the harmony of body, mind, and soul through time-tested and evidence-informed therapies. Yan Cure is dedicated to fostering inner peace and long-term vitality through a comprehensive approach to preventive health and professional rejuvenation.",
       specialties: [
         "Panchakarma Therapy",
         "Authentic Ayurveda Treatments",
@@ -579,7 +579,7 @@ const TopCenters = () => {
       name: "SWAN Yoga Retreat & Ayurveda",
       city: "Goa",
       description:
-        "SWAN Yoga Retreat is a premier ashram-style sanctuary in North Goa that offers an authentic and immersive journey into the classical science of Yogic living. Nestled in the lush tropical hills, the retreat provides a peaceful space where traditional Yoga, meditation, and Ayurvedic healing are practiced with uncompromising devotion. Guests can experience personalized programs including authentic Panchakarma, therapeutic breathwork, and mindful routines designed for profound mental clarity. Every element of the stay is thoughtfully curated to restore the harmony of body, mind, and soul through time-tested ashram traditions. This sanctuary is dedicated to helping individuals achieve lasting inner peace and physical vitality in a professional yet soulful environment.",
+        "SWAN Yoga Retreat is a premier ashram-style sanctuary in North Goa that offers an authentic and immersive journey into the classical science of Yogic living. Nestled in the lush tropical hills, the retreat provides a peaceful space where traditional Yoga, meditation, and Ayurvedic Healing are practiced with uncompromising devotion. Guests can experience personalized programs including authentic Panchakarma, therapeutic breathwork, and mindful routines designed for profound mental clarity. Every element of the stay is thoughtfully curated to restore the harmony of body, mind, and soul through time-tested ashram traditions. This sanctuary is dedicated to helping individuals achieve lasting inner peace and physical vitality in a professional yet soulful environment.",
       specialties: [
         "Yoga Retreats & Teacher Training",
         "Authentic Ayurveda Therapies",
@@ -619,7 +619,7 @@ const TopCenters = () => {
       name: "Ashiyana Yoga Retreat",
       city: "Goa",
       description:
-        "Ashiyana Yoga Retreat is a globally renowned sanctuary in North Goa, dedicated to profound personal transformation and the art of mindful coastal living. Set within lush tropical gardens along the serene Mandrem Beach, the retreat offers a unique blend of traditional yoga, meditation, and authentic Ayurvedic healing. Guests can experience holistic programs guided by experienced teachers and therapists, designed to restore metabolic balance and promote deep inner peace. Every element of the stay is thoughtfully curated to provide a restorative atmosphere for detoxification, stress relief, and the cultivation of long-lasting wellbeing. Ashiyana is committed to helping individuals rediscover their inner strength through a powerful combination of natural beauty and time-tested wellness practices.",
+        "Ashiyana Yoga Retreat is a globally renowned sanctuary in North Goa, dedicated to profound personal transformation and the art of mindful coastal living. Set within lush tropical gardens along the serene Mandrem Beach, the retreat offers a unique blend of traditional yoga, meditation, and authentic Ayurvedic Healing. Guests can experience holistic programs guided by experienced teachers and therapists, designed to restore metabolic balance and promote deep inner peace. Every element of the stay is thoughtfully curated to provide a restorative atmosphere for detoxification, stress relief, and the cultivation of long-lasting wellbeing. Ashiyana is committed to helping individuals rediscover their inner strength through a powerful combination of natural beauty and time-tested wellness practices.",
       specialties: [
         "Yoga Retreats",
         "Meditation & Mindfulness",
@@ -639,7 +639,7 @@ const TopCenters = () => {
       name: "Nalanda Retreat Goa",
       city: "Goa",
       description:
-        "Nalanda Retreat Goa is a soulful beachside sanctuary on Mandrem Beach that seamlessly blends traditional yoga philosophy with authentic Ayurvedic healing standards. The retreat offers a transformative escape where the rhythms of the Arabian Sea meet ancient wellness traditions to create a deeply restorative atmosphere. Guests receive personalized care featuring guided yoga sessions, mindfulness practices, and professional Ayurvedic therapies designed to restore metabolic harmony and inner peace. Every healing journey is thoughtfully curated to support deep detoxification, stress management, and the restoration of physical vitality in a professional coastal setting. Nalanda provides a peaceful and nurturing environment for those seeking profound rejuvenation and a foundation for sustainable health.",
+        "Nalanda Retreat Goa is a soulful beachside sanctuary on Mandrem Beach that seamlessly blends traditional yoga philosophy with authentic Ayurvedic Healing standards. The retreat offers a transformative escape where the rhythms of the Arabian Sea meet ancient wellness traditions to create a deeply restorative atmosphere. Guests receive personalized care featuring guided yoga sessions, mindfulness practices, and professional Ayurvedic therapies designed to restore metabolic harmony and inner peace. Every healing journey is thoughtfully curated to support deep detoxification, stress management, and the restoration of physical vitality in a professional coastal setting. Nalanda provides a peaceful and nurturing environment for those seeking profound rejuvenation and a foundation for sustainable health.",
       specialties: [
         "Yoga Retreats",
         "Ayurveda Healing",
@@ -679,7 +679,7 @@ const TopCenters = () => {
       name: "Namaste Dwaar – Countryside Wellness Retreat",
       city: "Delhi",
       description:
-        "Namaste Dwaar is a peaceful countryside sanctuary near Delhi NCR that offers an authentic immersion into the traditional science of Ayurvedic healing. Nestled within a serene farmhouse setting, the retreat provides a nurturing environment where classical Panchakarma and natural therapies are practiced with medical precision. Guests receive compassionate care guided by experienced physicians, complemented by farm-fresh sattvic food and mindful wellness practices. Every program is thoughtfully designed to restore metabolic balance, improve sleep quality, and promote long-term physical and mental vitality. This rustic yet professional retreat is the perfect escape for those seeking deep detoxification and a sustainable foundation for holistic health.",
+        "Namaste Dwaar is a peaceful countryside sanctuary near Delhi NCR that offers an authentic immersion into the traditional science of Ayurvedic Healing. Nestled within a serene farmhouse setting, the retreat provides a nurturing environment where classical Panchakarma and natural therapies are practiced with medical precision. Guests receive compassionate care guided by experienced physicians, complemented by farm-fresh sattvic food and mindful wellness practices. Every program is thoughtfully designed to restore metabolic balance, improve sleep quality, and promote long-term physical and mental vitality. This rustic yet professional retreat is the perfect escape for those seeking deep detoxification and a sustainable foundation for holistic health.",
       specialties: [
         "Panchakarma",
         "Stress & Sleep",
@@ -720,7 +720,7 @@ const TopCenters = () => {
       name: "Chamundi Hill Palace Ayurvedic Resort",
       city: "Mysore",
       description:
-        "Chamundi Hill Palace Ayurvedic Resort is a heritage-inspired sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled in a serene and peaceful environment, the resort provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil heritage retreat provides an ideal space for those seeking profound rejuvenation and sustainable wellness.",
+        "Chamundi Hill Palace Ayurvedic Resort is a heritage-inspired sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic Healing. Nestled in a serene and peaceful environment, the resort provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil heritage retreat provides an ideal space for those seeking profound rejuvenation and sustainable wellness.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -740,7 +740,7 @@ const TopCenters = () => {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
       city: "Kerala",
       description:
-        "Kairali Heritage Resort is a tranquil riverside sanctuary in Kannur that blends authentic Ayurvedic healing with the serene beauty of Kerala’s backwaters. Nestled on the banks of the Kattampally River, the resort offers an immersive wellness experience where classical Panchakarma and Naturopathy are practiced with professional medical standards. Guests receive highly personalized care guided by experienced physicians, complemented by therapeutic yoga and mindful island living. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through evidence-informed protocols and nature-centric rejuvenation. This riverside haven provides a peaceful and opulent environment for those seeking profound detoxification and long-term health empowerment.",
+        "Kairali Heritage Resort is a tranquil riverside sanctuary in Kannur that blends authentic Ayurvedic Healing with the serene beauty of Kerala’s backwaters. Nestled on the banks of the Kattampally River, the resort offers an immersive wellness experience where classical Panchakarma and Naturopathy are practiced with professional medical standards. Guests receive highly personalized care guided by experienced physicians, complemented by therapeutic yoga and mindful island living. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through evidence-informed protocols and nature-centric rejuvenation. This riverside haven provides a peaceful and opulent environment for those seeking profound detoxification and long-term health empowerment.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -780,7 +780,7 @@ const TopCenters = () => {
       name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
       city: "Kumarakom",
       description:
-        "Dheemahi Kumarakom is a premium lakeside sanctuary on the banks of Lake Vembanad, dedicated to authentic Ayurvedic healing with over 90 years of family heritage. This NABH-accredited retreat masterfully blends traditional Vedic wisdom with modern luxury, offering a tranquil haven for profound physical and mental rejuvenation. Guests experience highly personalized care guided by expert Vaidyas, focusing on chronic pain management, stress relief, and deep metabolic detoxification. The serene lakeside environment and heritage-inspired architecture provide an ideal atmosphere for restoring balance through evidence-informed clinical protocols. Dheemahi remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a professional and opulent setting.",
+        "Dheemahi Kumarakom is a premium lakeside sanctuary on the banks of Lake Vembanad, dedicated to authentic Ayurvedic Healing with over 90 years of family heritage. This NABH-accredited retreat masterfully blends traditional Vedic wisdom with modern luxury, offering a tranquil haven for profound physical and mental rejuvenation. Guests experience highly personalized care guided by expert Vaidyas, focusing on chronic pain management, stress relief, and deep metabolic detoxification. The serene lakeside environment and heritage-inspired architecture provide an ideal atmosphere for restoring balance through evidence-informed clinical protocols. Dheemahi remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a professional and opulent setting.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -859,7 +859,7 @@ const TopCenters = () => {
     {
       name: "Back to Roots Ayurveda Retreat",
       city: "Idukki",
-      description: "Back to Roots Ayurveda Retreat is a serene lakeside sanctuary in Idukki, guided by the profound wisdom of 4th generation Ayurvedic physicians and classical healing traditions. This NABH-accredited retreat offers an authentic and immersive experience where pure, undiluted Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care in a pristine natural setting, focusing on chronic pain management, deep detoxification, and natural stress relief. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed clinical protocols. The tranquil environment and professional care create an ideal sanctuary for those seeking serious, results-driven Ayurvedic healing.",
+      description: "Back to Roots Ayurveda Retreat is a serene lakeside sanctuary in Idukki, guided by the profound wisdom of 4th generation Ayurvedic physicians and classical healing traditions. This NABH-accredited retreat offers an authentic and immersive experience where pure, undiluted Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care in a pristine natural setting, focusing on chronic pain management, deep detoxification, and natural stress relief. Every healing journey is thoughtfully designed to restore the delicate balance of body, mind, and spirit through time-tested and evidence-informed clinical protocols. The tranquil environment and professional care create an ideal sanctuary for those seeking serious, results-driven Ayurvedic Healing.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -897,7 +897,7 @@ const TopCenters = () => {
     {
       name: "Krishnendu Ayurveda Hospital",
       city: "Alappuzha",
-      description: "Krishnendu Ayurveda Hospital is a premier NABH-accredited institution in Alappuzha, guided by over a century of healing wisdom and four generations of clinical excellence. Nestled in the serene backwaters, the hospital masterfully blends its rich heritage with modern professional standards to deliver authentic and result-oriented Ayurvedic care. Guests undergo a transformative journey featuring intensive Panchakarma, arthritis care, and specialized rejuvenation therapies designed for long-term health restoration. Every healing program is highly personalized and guided by expert physicians to ensure profound detoxification and the restoration of metabolic balance. The professional and tranquil environment provides a perfect sanctuary for those seeking serious, evidence-informed Ayurvedic healing.",
+      description: "Krishnendu Ayurveda Hospital is a premier NABH-accredited institution in Alappuzha, guided by over a century of healing wisdom and four generations of clinical excellence. Nestled in the serene backwaters, the hospital masterfully blends its rich heritage with modern professional standards to deliver authentic and result-oriented Ayurvedic care. Guests undergo a transformative journey featuring intensive Panchakarma, arthritis care, and specialized rejuvenation therapies designed for long-term health restoration. Every healing program is highly personalized and guided by expert physicians to ensure profound detoxification and the restoration of metabolic balance. The professional and tranquil environment provides a perfect sanctuary for those seeking serious, evidence-informed Ayurvedic Healing.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -916,7 +916,7 @@ const TopCenters = () => {
     {
       name: "Athreya Ayurvedic Centre",
       city: "Kerala",
-      description: "Athreya Ayurvedic Centre is a distinguished sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic healing. Nestled in a serene and peaceful environment, the center provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with clinical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil retreat provides an ideal space for those seeking profound rejuvenation and a sustainable foundation for holistic wellness.",
+      description: "Athreya Ayurvedic Centre is a distinguished sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic Healing. Nestled in a serene and peaceful environment, the center provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with clinical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil retreat provides an ideal space for those seeking profound rejuvenation and a sustainable foundation for holistic wellness.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -936,7 +936,7 @@ const TopCenters = () => {
       name: "Ayur Bethaniya Ayurveda Hospital",
       city: "Kerala",
       description:
-        "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+        "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -1016,7 +1016,7 @@ const TopCenters = () => {
       name: "Indus Valley Ayurvedic Centre",
       city: "Mysore",
       description:
-        "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+        "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
       specialties: [
         "Panchakarma",
         "Detox & Rejuvenation",
@@ -1038,7 +1038,7 @@ const TopCenters = () => {
       name: "Shathayu Ayurveda Yoga Retreat",
       city: "Udupi",
       description:
-        "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+        "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -1060,7 +1060,7 @@ const TopCenters = () => {
       name: "Ideal Ayurvedic Resort",
       city: "Kerala",
       description:
-        "Ideal Ayurvedic Resort is a distinguished 'Green Leaf' certified sanctuary in Kerala, dedicated to the authentic essence of traditional Ayurvedic healing. Nestled within 15 acres of lush tropical coconut groves near Kovalam Beach, the resort offers a peaceful and non-commercialized environment for profound clinical care. Guests experience an authentic healing journey featuring classical Panchakarma, chronic disease management, and nature-centric rejuvenation guided by highly experienced physicians. Every treatment is carefully tailored based on individual health conditions to ensure effective and long-lasting wellness results in a professional and nurturing setting. Ideal Ayurvedic Resort remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a tranquil tropical sanctuary.",
+        "Ideal Ayurvedic Resort is a distinguished 'Green Leaf' certified sanctuary in Kerala, dedicated to the authentic essence of traditional Ayurvedic Healing. Nestled within 15 acres of lush tropical coconut groves near Kovalam Beach, the resort offers a peaceful and non-commercialized environment for profound clinical care. Guests experience an authentic healing journey featuring classical Panchakarma, chronic disease management, and nature-centric rejuvenation guided by highly experienced physicians. Every treatment is carefully tailored based on individual health conditions to ensure effective and long-lasting wellness results in a professional and nurturing setting. Ideal Ayurvedic Resort remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a tranquil tropical sanctuary.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -1369,6 +1369,7 @@ const TopCenters = () => {
 };
 
 export default TopCenters;
+
 
 
 

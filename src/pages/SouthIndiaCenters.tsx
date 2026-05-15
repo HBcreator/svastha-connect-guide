@@ -38,7 +38,7 @@ const SouthIndiaCenters = () => {
       name: "AyurvedaGram Heritage Wellness Centre",
       city: "Bengaluru, Karnataka, India",
       description:
-        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination for traditional Ayurvedic healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by therapeutic yoga, mindful routines, and sattvic nutrition. Each program is tailored to restore balance of body and mind through time-tested, evidence-informed care.",
+        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination for traditional Ayurvedic Healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by therapeutic yoga, mindful routines, and sattvic nutrition. Each program is tailored to restore balance of body and mind through time-tested, evidence-informed care.",
       rating: 4.7,
       reviews: 600,
       priceRange: "$$$$",
@@ -107,7 +107,7 @@ const SouthIndiaCenters = () => {
       name: "Vydehi Ayurveda Hospital (VAYU)",
       city: "Bengaluru (Whitefield), Karnataka, India",
       description:
-        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Centre in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurvedic treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
+        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Centre in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurveda treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
       rating: 4.3,
       reviews: 600,
       priceRange: "$$$",
@@ -119,7 +119,7 @@ const SouthIndiaCenters = () => {
       name: "Keva Ayurveda – BTM Layout",
       city: "Bengaluru, Karnataka, India",
       description:
-        "A well-rounded Ayurvedic clinic offering a wide spectrum of treatments from Weight Management and Panchakarma to Infertility, Paralysis, and Women's Care. Keva Ayurveda also accepts medical insurance and features specialized programs like corporate wellness, traveler's detox, and geriatric care packages. Integrates Yoga and Naturopathy alongside classical Ayurvedic treatments, providing end-to-end personalized wellness solutions under one roof.",
+        "A well-rounded Ayurvedic clinic offering a wide spectrum of treatments from Weight Management and Panchakarma to Infertility, Paralysis, and Women's Care. Keva Ayurveda also accepts medical insurance and features specialized programs like corporate wellness, traveler's detox, and geriatric care packages. Integrates Yoga and Naturopathy alongside classical Ayurveda treatments, providing end-to-end personalized wellness solutions under one roof.",
       rating: 4.5,
       reviews: 1100,
       priceRange: "$$$",
@@ -179,7 +179,7 @@ const SouthIndiaCenters = () => {
       name: "HLC Ayurveda and Nature Cure Hospital",
       city: "Bengaluru (Electronic City), Karnataka, India",
       description:
-        "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic healing combined with naturopathic support.",
+        "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic Healing combined with naturopathic support.",
       rating: 4.4,
       reviews: 550,
       priceRange: "$$$",
@@ -203,7 +203,7 @@ const SouthIndiaCenters = () => {
       name: "Ramaiah Indic Specialty Ayurveda Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
-        "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic healing with the standards of a full-fledged medical institution.",
+        "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic Healing with the standards of a full-fledged medical institution.",
       rating: 4.4,
       reviews: 650,
       priceRange: "$$$",
@@ -227,7 +227,7 @@ const SouthIndiaCenters = () => {
       name: "Tatkshana Ayurveda Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
-        "Tatkshana Ayurveda Hospital is a dedicated Ayurvedic treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
+        "Tatkshana Ayurveda Hospital is a dedicated Ayurveda treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
       rating: 4.3,
       reviews: 350,
       priceRange: "$$$",
@@ -263,7 +263,7 @@ const SouthIndiaCenters = () => {
       name: "Ayushman Ayurveda",
       city: "Bengaluru, Karnataka, India",
       description:
-        "A specialized Ayurvedic treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
+        "A specialized Ayurveda treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
       rating: 4.5,
       reviews: 750,
       priceRange: "$$$",
@@ -499,5 +499,6 @@ const SouthIndiaCenters = () => {
 };
 
 export default SouthIndiaCenters;
+
 
 

@@ -132,7 +132,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     name: "Namaste Dwaar – Countryside Wellness Retreat",
     city: "Mansurpur, Delhi, India",
     description:
-      "Namaste Dwaar is an award-winning countryside wellness retreat near Delhi NCR that blends authentic Ayurvedic healing with a peaceful rural environment. The center offers physician-led Panchakarma, detox, stress-relief, and rejuvenation programs tailored to each guest's health goals. Guests benefit from classical therapies, yoga, mindful routines, and farm-fresh sattvic meals designed to support long-term recovery and balance. Its calm natural setting, spacious campus, and personalized hospitality make it ideal for lifestyle reset, preventive wellness, and deeper therapeutic stays. With a focus on holistic care, Namaste Dwaar combines comfort, tradition, and structured healing for sustainable results.",
+      "Namaste Dwaar is an award-winning countryside wellness retreat near Delhi NCR that blends authentic Ayurvedic Healing with a peaceful rural environment. The center offers physician-led Panchakarma, detox, stress-relief, and rejuvenation programs tailored to each guest's health goals. Guests benefit from classical therapies, yoga, mindful routines, and farm-fresh sattvic meals designed to support long-term recovery and balance. Its calm natural setting, spacious campus, and personalized hospitality make it ideal for lifestyle reset, preventive wellness, and deeper therapeutic stays. With a focus on holistic care, Namaste Dwaar combines comfort, tradition, and structured healing for sustainable results.",
     rating: 4.7,
     reviews: "300",
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
@@ -168,7 +168,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     name: "ITC Grand Bharat",
     city: "Gurugram (near New Delhi), India",
     description:
-      "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic healing and modern wellness innovation.",
+      "ITC Grand Bharat is an ultra-luxury all-suite wellness retreat in Gurugram, inspired by India's rich architectural heritage and the timeless wisdom of the Aravallis. The retreat offers a deeply immersive experience where royal grandeur meets authentic Ayurvedic Healing and modern wellness innovation.",
     rating: 4.8,
     reviews: "17000",
     image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
@@ -180,7 +180,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     name: "Amanbagh Heritage Wellness Retreat",
     city: "Alwar, Rajasthan, India",
     description:
-      "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
+      "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic Healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
     rating: 4.8,
     reviews: "600",
     image: "/Center Images/Amanbagh/thumb.jpg",
@@ -240,7 +240,7 @@ const DelhiNorthIndiaRegionCenters = () => {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
-              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Delhi and North India Region.</span>
+              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Delhi, NCR Region.</span>
             </h2>
             <p
               className="text-[13px] md:text-lg text-white/80 mt-4 md:mt-8 animate-fade-in max-w-4xl mx-auto md:whitespace-nowrap"
@@ -381,3 +381,4 @@ const DelhiNorthIndiaRegionCenters = () => {
 };
 
 export default DelhiNorthIndiaRegionCenters;
+

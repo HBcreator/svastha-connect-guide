@@ -178,3 +178,4 @@ const AyurvedicDiet = () => {
 };
 
 export default AyurvedicDiet;
+

@@ -242,7 +242,7 @@ export default function SriSriAyurvedaHospital() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Hospital" },
-    { id: "programs", title: "Top Ayurvedic Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories & Reviews" },
@@ -332,7 +332,7 @@ export default function SriSriAyurvedaHospital() {
                   </div>
                   
                   <p>
-                    Our unique approach integrates authentic Ayurvedic detoxification therapies, such as <strong className="font-bold text-[#2C4E5A]">Panchakarma</strong>, with advanced diagnostics and lifestyle modifications. At the heart of our diagnostic process is <strong className="font-bold text-[#2C4E5A]">Nadi Pariksha</strong> (Pulse Diagnosis), a highly specialized technique used by our expert physicians to accurately identify the root cause of imbalances within your unique constitution (Prakriti). By combining these profound Ayurvedic treatments with yoga, meditation, and customized sattvic diets, we ensure a comprehensive, evidence-based healing journey tailored exclusively for you.
+                    Our unique approach integrates authentic Ayurvedic detoxification therapies, such as <strong className="font-bold text-[#2C4E5A]">Panchakarma</strong>, with advanced diagnostics and lifestyle modifications. At the heart of our diagnostic process is <strong className="font-bold text-[#2C4E5A]">Nadi Pariksha</strong> (Pulse Diagnosis), a highly specialized technique used by our expert physicians to accurately identify the root cause of imbalances within your unique constitution (Prakriti). By combining these profound Ayurveda treatments with yoga, meditation, and customized sattvic diets, we ensure a comprehensive, evidence-based healing journey tailored exclusively for you.
                   </p>
                 </div>
               </div>
@@ -381,11 +381,11 @@ export default function SriSriAyurvedaHospital() {
         </div>
       </section>
 
-      {/* Ayurvedic Programs (6 Cards) */}
+      {/* Ayurveda Packages (6 Cards) */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurvedic Programs in Sri Sri Ayurveda Hospital</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Sri Sri Ayurveda Hospital</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -788,3 +788,4 @@ export default function SriSriAyurvedaHospital() {
     </div>
   );
 }
+

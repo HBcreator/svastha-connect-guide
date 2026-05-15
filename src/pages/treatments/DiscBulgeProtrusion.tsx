@@ -89,7 +89,7 @@ const patientReviews = [
   {
     name: "Stephan Kirchner", location: "Munich, Germany", condition: "L4-L5 Disc Bulge",
     title: "I Avoided Spinal Surgery Thanks to This Treatment.",
-    review: "My neurosurgeon in Munich had recommended surgery for my L4-L5 disc bulge with nerve root compression. I chose Ayurvedic treatment in India first. The physician identified a severe Vata dehydration of the disc as the root cause. The Kati Basti and Niruha Basti therapies reduced my nerve compression symptoms measurably. The radiating pain down my right leg was 80% gone by day eighteen.",
+    review: "My neurosurgeon in Munich had recommended surgery for my L4-L5 disc bulge with nerve root compression. I chose Ayurveda treatment in India first. The physician identified a severe Vata dehydration of the disc as the root cause. The Kati Basti and Niruha Basti therapies reduced my nerve compression symptoms measurably. The radiating pain down my right leg was 80% gone by day eighteen.",
     rating: 5, verified: true
   },
   {
@@ -151,7 +151,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -161,7 +161,7 @@ const topAyurvedicCenters = [
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -221,7 +221,7 @@ const topAyurvedicCenters = [
     name: "AyurvedaGram Heritage Wellness Centre",
     city: "Bangalore",
     location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
@@ -361,7 +361,7 @@ const DiscBulgeProtrusion = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
                 src="/Treatments-images/Back pain Treatment.jpg" 
-                alt="Disc Bulge Ayurvedic Treatment" 
+                alt="Disc Bulge Ayurveda treatment" 
                 className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105" 
               />
             </div>
@@ -414,7 +414,7 @@ const DiscBulgeProtrusion = () => {
         <section id="why-ayurveda" className="scroll-mt-24 space-y-8 bg-[#F8F4E7] rounded-3xl p-8 md:p-12 border border-[#d8d0ae]/50">
           <div className="text-center mb-8 max-w-3xl mx-auto">
              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4">A Non-Invasive Alternative to Surgery</h2>
-             <p className="text-[#7F543D] text-lg">Why thousands of patients choose Ayurvedic treatment in India over conventional spinal procedures.</p>
+             <p className="text-[#7F543D] text-lg">Why thousands of patients choose Ayurveda treatment in India over conventional spinal procedures.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
              <div className="bg-white p-6 rounded-2xl shadow-sm space-y-3">
@@ -919,3 +919,4 @@ const DiscBulgeProtrusion = () => {
 };
 
 export default DiscBulgeProtrusion;
+

@@ -177,3 +177,4 @@ const Panchakarma = () => {
 };
 
 export default Panchakarma;
+

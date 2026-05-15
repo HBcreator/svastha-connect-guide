@@ -52,7 +52,7 @@ export default function HomeTreatmentsGuide() {
         {/* Header Block - Centered Layout */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
-            Top Ayurvedic Treatments by MyVaidyam in India
+            Top Ayurveda treatments by MyVaidyam in India
           </h2>
           <p className="text-sm md:text-base text-[#7F543D] leading-relaxed mb-8">
             Explore custom inpatient therapeutic applications designed for refractory chronic issues. Filter live below to discover specialized protocols.
@@ -176,3 +176,4 @@ export default function HomeTreatmentsGuide() {
     </section>
   );
 }
+

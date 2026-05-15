@@ -169,7 +169,7 @@ const AyurvedaYogaRetreat = () => {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-4">
-                <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+                <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurveda + Yoga Retreat Program in India</h1>
                 <p className="text-lg md:text-xl text-white/90">Find harmony and balance through the perfect union of ancient healing sciences.</p>
                 <div className="space-y-2.5">
@@ -1113,3 +1113,4 @@ const AyurvedaYogaRetreat = () => {
 };
 
 export default AyurvedaYogaRetreat;
+

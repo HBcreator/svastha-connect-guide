@@ -186,7 +186,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       name: "Toyam By Orchid Hotels",
       city: "Pune (Bhor), Maharashtra, India",
       description:
-        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision.",
+        "Toyam by Orchid Hotels is a premier wellness destination near Pune that offers an authentic and immersive journey into the world of traditional Ayurvedic Healing. Surrounded by tranquil landscapes, the retreat provides a peaceful sanctuary where classical Panchakarma and rejuvenation therapies are practiced with medical precision.",
       rating: 4.7,
       reviews: "1200",
       image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
@@ -197,7 +197,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       name: "Amanbagh Heritage Wellness Retreat",
       city: "Alwar, Rajasthan, India",
       description:
-        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
+        "Amanbagh Heritage Wellness Retreat is a world-class sanctuary in Rajasthan, blending Mughal-inspired architectural elegance with profound Ayurvedic Healing traditions. Nestled in the rugged Aravalli hills, the retreat offers a peaceful sanctuary where classical Vedic principles and personalized wellness protocols are practiced with meticulous care.",
       rating: 4.8,
       reviews: "600",
       image: "/Center Images/Amanbagh/thumb.jpg",
@@ -410,3 +410,4 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 };
 
 export default MumbaiPuneRajasthanWestIndiaCenters;
+

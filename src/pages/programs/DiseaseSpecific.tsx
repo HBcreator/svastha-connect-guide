@@ -15,16 +15,16 @@ const DiseaseSpecific = () => {
       name: "Ayurveda Treatment for Osteoarthritis in India",
       description: "A specialized Ayurvedic protocol designed specifically to manage Osteoarthritis. Focuses on strengthening the joints, reducing inflammation, pain management through authentic therapies like Janu Basti, and restoring mobility through deep tissue nourishment and Vata correction.",
       image: "/Program Images/osteoarthritis.png",
-      link: "/disease-specific/ayurveda-treatment-for-osteoarthritis-in-india",
+      link: "/ayurveda-packages/ayurveda-treatment-for-osteoarthritis-in-india",
       rating: 4.8,
       reviews: 420,
       tags: ["21-28 Days", "Joint Mobility", "Vata Balance", "Panchakarma"]
     },
     {
       name: "Ayurveda Treatment for Sciatica in India",
-      description: "A clinically supervised Ayurvedic program for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
+      description: "A clinically supervised Ayurveda Package for sciatica (Gridhrasi) combining Kati Basti, Basti therapy, herbal medicines, and therapeutic yoga to relieve nerve compression, reduce shooting pain, and restore mobility — helping many patients avoid spinal surgery.",
       image: "/Ayurvedic Programs/Images/Ayurveda-Treatment-Sciatica-India/1.webp",
-      link: "/disease-specific/ayurveda-treatment-for-sciatica-in-india",
+      link: "/ayurveda-packages/ayurveda-treatment-for-sciatica-in-india",
       rating: 4.7,
       reviews: 380,
       tags: ["21-28 Days", "Nerve Relief", "Spine Health", "Kati Basti"]
@@ -33,7 +33,7 @@ const DiseaseSpecific = () => {
       name: "Ayurveda Treatment for Rheumatoid Arthritis in India",
       description: "A comprehensive Ayurvedic protocol for Rheumatoid Arthritis (Amavata) focusing on deep detoxification to remove 'Ama' (toxins), reducing systemic inflammation, and restoring joint function through specialized therapies like Valuka Sweda, Basti, and clinical diet.",
       image: "/Program Images/rheumatoid-arthritis-clinical.png",
-      link: "/disease-specific/ayurveda-treatment-for-rheumatoid-arthritis-in-india",
+      link: "/ayurveda-packages/ayurveda-treatment-for-rheumatoid-arthritis-in-india",
       rating: 4.6,
       reviews: 350,
       tags: ["21-28 Days", "RA Healing", "Detox (Ama)", "Immune Support"]
@@ -42,7 +42,7 @@ const DiseaseSpecific = () => {
       name: "Ayurvedic Psoriasis Treatment Program in India",
       description: "A specialized skin-healing protocol targeting Psoriasis and chronic eczema. Focuses on blood purification (Raktamokshana), liver detox (Virechana), and specialized external therapies like Takradhara to achieve deep remission and skin clearance.",
       image: "/Treatments-images/Psoriasis Treatment.jpg",
-      link: "/disease-specific/ayurvedic-psoriasis-treatment-program-in-india",
+      link: "/ayurveda-packages/ayurvedic-psoriasis-treatment-program-in-india",
       rating: 4.8,
       reviews: 290,
       tags: ["21-28 Days", "Skin Repair", "Raktamokshana", "Blood Detox"]
@@ -51,7 +51,7 @@ const DiseaseSpecific = () => {
       name: "Ayurveda Treatment for Migraine in India",
       description: "A specialized Ayurvedic protocol for chronic headaches and Migraine. Focuses on balancing the nervous system, reducing vascular inflammation, and detoxifying the sensory organs through therapies like Shirodhara, Nasya, and specialized herbal cooling protocols.",
       image: "/program-images/ra-shirodhara.png",
-      link: "/disease-specific/ayurvedic-treatment-for-migraine-in-india",
+      link: "/ayurveda-packages/ayurvedic-treatment-for-migraine-in-india",
       rating: 4.7,
       reviews: 310,
       tags: ["14-21 Days", "Stress Relief", "Nasya Therapy", "Vata-Pitta"]
@@ -60,7 +60,7 @@ const DiseaseSpecific = () => {
       name: "Ayurveda Treatment for Cervical Spondylosis in India",
       description: "A specialized Ayurvedic clinical program for Cervical Spondylosis focusing on Griva Basti, Pizhichil, and therapeutic neck strengthening protocols. Designed to relieve nerve compression, reduce stiffness, and restore natural cervical spine alignment without surgical intervention.",
       image: "/Program Images/cervical-spondylosis.png",
-      link: "/disease-specific/ayurveda-treatment-for-cervical-spondylosis-in-india",
+      link: "/ayurveda-packages/ayurveda-treatment-for-cervical-spondylosis-in-india",
       rating: 4.8,
       reviews: 340,
       tags: ["14-21 Days", "Neck Health", "Griva Basti", "Spine Care"]
@@ -79,7 +79,7 @@ const DiseaseSpecific = () => {
               Disease Specific Packages in India
             </h1>
             <p className="text-sm md:text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Discover India's finest residential Ayurvedic programs for chronic ailments. These targeted protocols combine intensive clinical therapies, specialized diets, and herbal medicine to address root causes for long-term recovery.
+              Discover India's finest residential Ayurveda packages for chronic ailments. These targeted protocols combine intensive clinical therapies, specialized diets, and herbal medicine to address root causes for long-term recovery.
             </p>
           </div>
         </section>
@@ -160,3 +160,4 @@ const DiseaseSpecific = () => {
 };
 
 export default DiseaseSpecific;
+

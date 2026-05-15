@@ -675,13 +675,13 @@ const PanchakarmaDetox21Day = () => {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2">
-              <Link to="/ayurvedic-programs" className="text-primary/50 hover:text-primary transition-colors">
-                Ayurvedic Packages
+              <Link to="/ayurveda-packages" className="text-primary/50 hover:text-primary transition-colors">
+                Ayurveda Packages
               </Link>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2">
-              <Link to="/ayurvedic-programs/panchakarma-detox" className="text-primary/50 hover:text-primary transition-colors">
+              <Link to="/ayurveda-packages/panchakarma-detox" className="text-primary/50 hover:text-primary transition-colors">
                 Panchakarma Detox Packages
               </Link>
               <ChevronRight className="h-3 w-3 text-primary/20" />
@@ -697,7 +697,7 @@ const PanchakarmaDetox21Day = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">21-Day Panchakarma Detox Program in India</h1>
               <p className="text-lg md:text-xl text-white/90">Complete full body detox and rejuvenation with physician-led care.</p>
               <div className="space-y-2.5">
@@ -1709,4 +1709,5 @@ const PanchakarmaDetox21Day = () => {
 };
 
 export default PanchakarmaDetox21Day;
+
 

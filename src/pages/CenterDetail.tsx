@@ -34,7 +34,7 @@ const CenterDetail = () => {
       rating: 4.8,
       reviews: [
         {
-          text: "Quiet, clean and well kept resort. Staff was very genuine, helpful and accommodating. We enjoyed the delicious vegetarian food and the ayurvedic treatments.",
+          text: "Quiet, clean and well kept resort. Staff was very genuine, helpful and accommodating. We enjoyed the delicious vegetarian food and the Ayurveda treatments.",
           source: "vedafive.com"
         },
         {
@@ -57,7 +57,7 @@ const CenterDetail = () => {
       city: "Bangalore",
       region: "India",
       description:
-        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",
@@ -87,7 +87,7 @@ const CenterDetail = () => {
       name: "Ayurclinic Goa",
       city: "Goa",
       region: "North Goa",
-      description: "Professional Ayurvedic treatment tailored to each individual, with locations in Arpora and Mandrem Beach. Services include doctor diagnosis and panchakarma programs.",
+      description: "Professional Ayurveda treatment tailored to each individual, with locations in Arpora and Mandrem Beach. Services include doctor diagnosis and panchakarma programs.",
       specialties: ["Panchakarma", "Therapeutic Packages", "Personalized Treatment"],
       rating: 4.7,
       reviews: [
@@ -162,7 +162,7 @@ const CenterDetail = () => {
         },
       ],
       highlights: [
-        "104-year family legacy in traditional Ayurvedic healing",
+        "104-year family legacy in traditional Ayurvedic Healing",
         "NABH-accredited retreat in the hills of Munnar",
         "Personalized Panchakarma guided by experienced Vaidyas",
         "Nature-immersed setting within spice plantations and tea gardens",

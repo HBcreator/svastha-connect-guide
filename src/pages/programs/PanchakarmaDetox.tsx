@@ -15,7 +15,7 @@ const PanchakarmaDetox = () => {
       name: "21-Day Panchakarma Detox Program in India",
       description: "A comprehensive 21-day immersive Panchakarma plan designed for wellness tourists seeking a true reset. Experience authentic therapies aimed at deep internal cleansing, stress removal, and overall physical and mental rejuvenation.",
       image: "/Program Images/21-day-detox.png",
-      link: "/panchakarma-detox-programs/21-day-panchakarma-detox-program-in-india",
+      link: "/ayurveda-packages/21-day-panchakarma-detox-program-in-india",
       rating: 4.6,
       reviews: 480,
       tags: ["21 Days", "Full Body Detox", "Vamana/Virechana", "Stress Reset"]
@@ -24,7 +24,7 @@ const PanchakarmaDetox = () => {
       name: "28-Day Panchakarma Healing Program in India",
       description: "An intensive healing program focused on deep therapeutic cleansing and recovery from chronic ailments. Carefully monitored by expert Vaidyas, this program uses classic Ayurvedic protocols to address root causes of diseases.",
       image: "/Program Images/28-day-healing.png",
-      link: "/panchakarma-healing-programs/28-day-panchakarma-healing-program-in-india",
+      link: "/ayurveda-packages/28-day-panchakarma-healing-program-in-india",
       rating: 4.7,
       reviews: 320,
       tags: ["28 Days", "Chronic Recovery", "Deep Cleansing", "Clinical Care"]
@@ -124,3 +124,4 @@ const PanchakarmaDetox = () => {
 };
 
 export default PanchakarmaDetox;
+

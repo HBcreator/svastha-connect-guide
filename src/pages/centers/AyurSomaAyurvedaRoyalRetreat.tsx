@@ -140,7 +140,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
     },
     {
       title: "Trusted Wellness Partner",
-      description: "Recognized as a trusted destination for authentic Ayurvedic healing by international wellness communities and travel platforms.",
+      description: "Recognized as a trusted destination for authentic Ayurvedic Healing by international wellness communities and travel platforms.",
       image: "/Center Images/AyurSoma Ayurveda/Award/Award 3 (Trust).jpg"
     },
     {
@@ -2008,7 +2008,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of our excellence in authentic Ayurvedic healing and world-class patient care
+                Recognition of our excellence in authentic Ayurvedic Healing and world-class patient care
               </p>
             </div>
 
@@ -2635,6 +2635,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
 };
 
 export default AyurSomaAyurvedaRoyalRetreat;
+
 
 
 

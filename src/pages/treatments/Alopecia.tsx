@@ -121,7 +121,7 @@ const patientReviews = [
 const faqItems = [
   { question: "Why does Ayurveda associate hair loss with bone health?", answer: "In Ayurveda, hair (Kesha) is considered a secondary product (mala) of bone tissue (Asthi Dhatu). Therefore, if your bone tissue is depleted of nutrients like calcium and minerals, your hair will directly suffer and thin out. We treat the roots internally." },
   { question: "What is the most common cause of hair loss in Ayurveda?", answer: "An aggravation of the Pitta dosha (the fire element) is the leading cause. Excessive body heat, often driven by stress or a spicy/sour diet, literally 'burns out' the hair follicles, leading to premature thinning and greying." },
-  { question: "Can Ayurvedic treatment regrow hair in bald patches?", answer: "Yes, conditions like Alopecia Areata (Indralupta) respond exceptionally well to Ayurvedic treatment. By clearing blood toxicity and balancing the doshas through deep Panchakarma detoxification, the dormant hair follicles can be reactivated." },
+  { question: "Can Ayurveda treatment regrow hair in bald patches?", answer: "Yes, conditions like Alopecia Areata (Indralupta) respond exceptionally well to Ayurveda treatment. By clearing blood toxicity and balancing the doshas through deep Panchakarma detoxification, the dormant hair follicles can be reactivated." },
   { question: "Are topical oils enough to stop hair fall?", answer: "No. While specialized oils like Bhringraj oil are excellent for nourishing the scalp, severe hair loss requires internal medication to balance the hormones and purify the blood. Ayurveda always combines internal medicine with external therapies." },
   { question: "How does stress cause hair loss?", answer: "Stress severely aggravates the nervous system and increases Pitta (heat) and Vata (dryness) in the head region. This disrupts blood flow to the scalp and starves the follicles of nutrition. Therapies like Shirodhara are specifically designed to reverse this." }
 ];
@@ -231,7 +231,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -899,3 +899,4 @@ const Alopecia = () => {
 };
 
 export default Alopecia;
+

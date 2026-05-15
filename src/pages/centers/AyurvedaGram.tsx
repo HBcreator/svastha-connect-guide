@@ -1885,7 +1885,7 @@ const AyurvedaGram = () => {
                   <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
                     Every facility at AyurvedaGram is designed and maintained according to NABH accreditation standards,
                     ensuring the highest levels of safety, hygiene, and quality care. Our commitment to excellence
-                    means you receive authentic Ayurvedic treatment in a serene, naturally therapeutic environment.
+                    means you receive authentic Ayurveda treatment in a serene, naturally therapeutic environment.
                   </p>
                 </div>
               </div>
@@ -2123,7 +2123,7 @@ const AyurvedaGram = () => {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of our excellence in authentic Ayurvedic healing and patient care
+                Recognition of our excellence in authentic Ayurvedic Healing and patient care
               </p>
             </div>
 
@@ -2758,6 +2758,7 @@ const AyurvedaGram = () => {
 };
 
 export default AyurvedaGram;
+
 
 
 

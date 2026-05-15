@@ -2369,3 +2369,4 @@ const NalandaRetreatGoa = () => {
 };
 
 export default NalandaRetreatGoa;
+

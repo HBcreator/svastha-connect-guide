@@ -111,7 +111,7 @@ const Ayurveda = () => {
             Ayurveda: Ancient Wisdom for Modern Wellness
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Experience authentic Ayurvedic healing combining traditional wisdom with modern diagnostics for holistic health
+            Experience authentic Ayurvedic Healing combining traditional wisdom with modern diagnostics for holistic health
           </p>
         </div>
 
@@ -140,7 +140,7 @@ const Ayurveda = () => {
               Begin Your Ayurvedic Journey
             </h2>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-              Experience authentic Ayurvedic treatments supervised by expert physicians. Let us guide you towards optimal health and balance.
+              Experience authentic Ayurveda treatments supervised by expert physicians. Let us guide you towards optimal health and balance.
             </p>
             <button className="bg-primary text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-semibold hover:bg-primary/90 transition-colors">
               Book Your Ayurveda Session

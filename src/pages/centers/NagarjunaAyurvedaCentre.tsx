@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -2414,6 +2414,7 @@ export default function NagarjunaAyurvedaCentre() {
     </div>
   );
 }
+
 
 
 

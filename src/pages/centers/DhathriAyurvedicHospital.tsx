@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -123,7 +123,7 @@ export default function DhathriAyurvedicHospital() {
     {
       image: "/Center Images/Dhathri Ayurveda Resort/Awards/Award 3 ( A 300-Year Legacy of Trust).png",
       title: "300-Year Legacy of Trust",
-      description: "Celebrating four generations of profound expertise and unwavering commitment to authentic Ayurvedic healing."
+      description: "Celebrating four generations of profound expertise and unwavering commitment to authentic Ayurvedic Healing."
     }
   ];
 
@@ -665,7 +665,7 @@ export default function DhathriAyurvedicHospital() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\/5\)/);
             if (ratingMatch) {
@@ -1858,7 +1858,7 @@ export default function DhathriAyurvedicHospital() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Recognition</h2>
               <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
-                Recognition of Dhathri's 300-year legacy of excellence in authentic Ayurvedic healing
+                Recognition of Dhathri's 300-year legacy of excellence in authentic Ayurvedic Healing
               </p>
             </div>
 
@@ -2342,6 +2342,7 @@ export default function DhathriAyurvedicHospital() {
     </div>
   );
 }
+
 
 
 

@@ -178,3 +178,4 @@ const KalariMarma = () => {
 };
 
 export default KalariMarma;
+

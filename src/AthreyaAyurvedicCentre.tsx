@@ -1744,3 +1744,4 @@ export default function AthreyaAyurvedicCentre() {
     </div>
   );
 }
+

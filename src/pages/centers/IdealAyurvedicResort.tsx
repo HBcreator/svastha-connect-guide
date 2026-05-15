@@ -2357,3 +2357,4 @@ export default function IdealAyurvedicResort() {
   );
 }
 
+

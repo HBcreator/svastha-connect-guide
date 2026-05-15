@@ -121,7 +121,7 @@ export default function BackToRoots() {
     },
     {
       title: "Trust & Legacy of Ayurveda",
-      description: "Honored for preserving the pure legacy and age-old traditions of Ayurvedic healing for future generations.",
+      description: "Honored for preserving the pure legacy and age-old traditions of Ayurvedic Healing for future generations.",
       image: "/Center Images/Back to Roots Ayurveda Retreat/Awards/Awards 3 (Trust and legacy of auyuveda).jpg"
     }
   ];
@@ -1764,7 +1764,7 @@ export default function BackToRoots() {
                 <Award className="h-8 w-8" />
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
-              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
+              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic Healing and patient care</p>
             </div>
 
             <div className="relative group max-w-5xl mx-auto">
@@ -2264,6 +2264,7 @@ export default function BackToRoots() {
     </div>
   );
 }
+
 
 
 

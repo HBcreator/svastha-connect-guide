@@ -106,7 +106,7 @@ const topAyurvedicCenters = [
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
-    description: "Globally acclaimed palace retreat following classical gurukula system. Extremely strict, traditional Ayurvedic treatments.",
+    description: "Globally acclaimed palace retreat following classical gurukula system. Extremely strict, traditional Ayurveda treatments.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -1267,3 +1267,4 @@ const BurnoutRecoveryProgram = () => {
 };
 
 export default BurnoutRecoveryProgram;
+

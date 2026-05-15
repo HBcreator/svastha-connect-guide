@@ -2450,3 +2450,4 @@ export default function NaadWellness() {
     </div>
   );
 }
+

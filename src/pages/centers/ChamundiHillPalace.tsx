@@ -2008,7 +2008,7 @@ export default function ChamundiHillPalace() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of our excellence in authentic Ayurvedic healing and guest care
+                Recognition of our excellence in authentic Ayurvedic Healing and guest care
               </p>
             </div>
 
@@ -2633,6 +2633,7 @@ export default function ChamundiHillPalace() {
     </div>
   );
 }
+
 
 
 

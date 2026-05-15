@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
 import Footer from "@/components/Footer";
@@ -2261,3 +2261,4 @@ export default function CarnoustieAyurvedaWellnessResort() {
     </div>
   );
 }
+

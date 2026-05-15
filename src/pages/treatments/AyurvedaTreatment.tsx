@@ -79,13 +79,13 @@ const patientReviews = [
   {
     name: "Josephine Braun", location: "DÃ¼sseldorf, Germany", condition: "Rheumatoid Arthritis",
     title: "India Is Where Ayurveda Livesâ€”As a Real Science of Healing.",
-    review: "I had tried Ayurvedic treatments at European spas for years; they were pleasant but ultimately superficial. Traveling to India for an authentic Panchakarma was an entirely different experience. The physician prescribed a 14-day sequence that addressed my rheumatoid arthritis with a measurable reduction in inflammation.",
+    review: "I had tried Ayurveda treatments at European spas for years; they were pleasant but ultimately superficial. Traveling to India for an authentic Panchakarma was an entirely different experience. The physician prescribed a 14-day sequence that addressed my rheumatoid arthritis with a measurable reduction in inflammation.",
     rating: 5, verified: true
   },
   {
     name: "Colm Fitzpatrick", location: "Waterford, Ireland", condition: "Chronic Psoriasis",
     title: "Lasting Relief That My Dermatologist Couldn't Provide.",
-    review: "I arrived in Kerala managing chronic psoriasis with immunosuppressant medication. The Ayurvedic program, combining Takradhara, Lepam herbal pastes, and a strict diet, addressed my skin with clarity. Six months after returning home, my psoriasis remains at its lowest severity in twelve years.",
+    review: "I arrived in Kerala managing chronic psoriasis with immunosuppressant medication. The Ayurveda Package, combining Takradhara, Lepam herbal pastes, and a strict diet, addressed my skin with clarity. Six months after returning home, my psoriasis remains at its lowest severity in twelve years.",
     rating: 5, verified: true
   },
   {
@@ -109,8 +109,8 @@ const patientReviews = [
 ];
 
 const faqItems = [
-  { question: "Is Ayurvedic treatment in India safe for international patients?", answer: "Yes. Svastha Global partners only with reputable, NABH-accredited centers that employ highly qualified BAMS/MD doctors and follow strict hygiene protocols." },
-  { question: "How long does an Ayurvedic treatment program take?", answer: "Minimum effective programs start at 7 days for wellness, but chronic conditions usually require 14 to 28 days for deep healing and sustained results." },
+  { question: "Is Ayurveda treatment in India safe for international patients?", answer: "Yes. Svastha Global partners only with reputable, NABH-accredited centers that employ highly qualified BAMS/MD doctors and follow strict hygiene protocols." },
+  { question: "How long does an Ayurveda treatment program take?", answer: "Minimum effective programs start at 7 days for wellness, but chronic conditions usually require 14 to 28 days for deep healing and sustained results." },
   { question: "Are the herbal medicines safe and heavy-metal free?", answer: "Absolutely. We ensure that our partner centers use certified, laboratory-tested authentic medicines prepared under strict safety guidelines." },
   { question: "What kind of diet is provided during the treatment?", answer: "A personalized, purely vegetarian (sattvic) diet is provided. It is tailored to your dosha and specific health condition to act as 'food as medicine'." },
   { question: "Can Ayurveda cure chronic diseases like arthritis or psoriasis?", answer: "Ayurveda aims to manage and often reverse chronic conditions by treating the root causeâ€”balancing doshas and removing toxins (Ama)â€”rather than just suppressing symptoms." }
@@ -151,7 +151,7 @@ const topAyurvedicCenters = [
     name: "Indus Valley Ayurvedic Centre",
     city: "Mysore",
     location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
@@ -171,7 +171,7 @@ const topAyurvedicCenters = [
     name: "Shathayu Ayurveda Yoga Retreat",
     city: "Udupi",
     location: "Udupi",
-    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
@@ -320,7 +320,7 @@ const AyurvedaTreatment = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Holistic Wellness</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Ayurvedic Treatment in India</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Ayurveda treatment in India</h1>
               <p className="text-lg md:text-xl text-white/90">A Holistic Path to Wellness. Experience the ancient 'Science of Life' through deeply personalized, authentic healing protocols.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
@@ -355,7 +355,7 @@ const AyurvedaTreatment = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img
                 src="/Treatments-images/ayurvedic_treatment_hero.png"
-                alt="Ayurvedic Treatment in India"
+                alt="Ayurveda treatment in India"
                 className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -365,7 +365,7 @@ const AyurvedaTreatment = () => {
                 Ayurveda is one of India's most treasured gifts to the world. It is not merely a system for treating illness but a profound philosophy for living a long, healthy, and balanced life.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                Rooted in the belief that true health is a state of harmony between the body, mind, and spirit, Ayurvedic treatment offers a deeply personalized path to wellness. At Svastha Global, we connect you with the heart of this timeless wisdom.
+                Rooted in the belief that true health is a state of harmony between the body, mind, and spirit, Ayurveda treatment offers a deeply personalized path to wellness. At Svastha Global, we connect you with the heart of this timeless wisdom.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
@@ -553,7 +553,7 @@ const AyurvedaTreatment = () => {
         {/* Suggested Treatment Packages & Cost */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Ayurvedic Treatment in India</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Ayurveda treatment in India</h2>
             <p className="text-lg text-[#7F543D]">Select a timeline that matches your wellness goals. Each package includes daily physician consultation, prescribed therapies, medicines, and sattvic diet.</p>
           </div>
 
@@ -829,13 +829,13 @@ const AyurvedaTreatment = () => {
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
                 src="/Treatments-images/ayurvedic_treatment_hero.png"
-                alt="Ayurvedic Treatment consultation"
+                alt="Ayurveda treatment consultation"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurvedic Treatment Program in India</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Ayurveda treatment Program in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl">
                 Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your condition and budget.
               </p>
@@ -971,4 +971,5 @@ const AyurvedaTreatment = () => {
 };
 
 export default AyurvedaTreatment;
+
 

@@ -151,7 +151,7 @@ const RheumatoidArthritis = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                 Ayurveda Treatment for Rheumatoid Arthritis in India
               </h1>
@@ -268,17 +268,17 @@ const RheumatoidArthritis = () => {
           </Card>
         </section>
 
-        {/* 3. What Is Ayurvedic Treatment for Rheumatoid Arthritis? */}
+        {/* 3. What Is Ayurveda treatment for Rheumatoid Arthritis? */}
         <section id="program-overview" className="scroll-mt-24 !mt-6 md:!mt-8 space-y-14 md:space-y-16">
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Rheumatoid Arthritis?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurveda treatment for Rheumatoid Arthritis?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
                   In Ayurveda, Rheumatoid Arthritis is deeply understood as <em>Amavata</em>. It is not merely a joint disease, but a complex systemic condition caused by severe impairment of digestive fire (Agni). This leads to the formation of 'Ama' (toxic metabolic waste), which is carried by aggravated Vata dosha and deposited in the joints, triggering a cascade of inflammation, swelling, and severe pain.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  Our 21–28 day Ayurvedic treatment program does not simply suppress the immune system. Instead, it focuses on intense detoxification (Shodhana) to eliminate Ama from the root, followed by targeted therapies to reduce joint inflammation, and concluding with profound immune modulation.{" "}
+                  Our 21–28 day Ayurveda treatment program does not simply suppress the immune system. Instead, it focuses on intense detoxification (Shodhana) to eliminate Ama from the root, followed by targeted therapies to reduce joint inflammation, and concluding with profound immune modulation.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -1162,3 +1162,4 @@ const RheumatoidArthritis = () => {
 };
 
 export default RheumatoidArthritis;
+

@@ -2670,3 +2670,4 @@ const ToyamByOrchidHotels = () => {
 };
 
 export default ToyamByOrchidHotels;
+

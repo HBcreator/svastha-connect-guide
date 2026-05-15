@@ -89,7 +89,7 @@ const patientReviews = [
   {
     name: "Hansjoerg Müller", location: "Zurich, Switzerland", condition: "Plaque Psoriasis",
     title: "Fourteen Years of Psoriasis — Cleared in Twenty-Eight Days.",
-    review: "I had managed my plaque psoriasis with biologics for fourteen years in Switzerland, never achieving lasting remission. The Ayurvedic treatment in India prescribed a comprehensive Panchakarma program including Virechana and Takradhara. The silvery scaling began reducing from day ten, and by day twenty-eight, ninety percent of my plaque coverage had cleared. My Swiss dermatologist reviewed the photographs and requested the full treatment protocol from the Vaidya.",
+    review: "I had managed my plaque psoriasis with biologics for fourteen years in Switzerland, never achieving lasting remission. The Ayurveda treatment in India prescribed a comprehensive Panchakarma program including Virechana and Takradhara. The silvery scaling began reducing from day ten, and by day twenty-eight, ninety percent of my plaque coverage had cleared. My Swiss dermatologist reviewed the photographs and requested the full treatment protocol from the Vaidya.",
     rating: 5, verified: true
   },
   {
@@ -101,7 +101,7 @@ const patientReviews = [
   {
     name: "Sylvain Aubert", location: "Lyon, France", condition: "Psoriatic Arthritis",
     title: "My Psoriatic Arthritis and Skin Psoriasis — Both Addressed Together.",
-    review: "My psoriasis had progressed to psoriatic arthritis, and my French rheumatologist was struggling to control both. The Ayurvedic program treated both as expressions of the same Vata-Rakta systemic imbalance. The Basti enemas addressed my joint inflammation, while the Virechana purgation and Neem purifiers worked on the dermatological component simultaneously. This integrated approach achieved what two separate specialists in France had not managed.",
+    review: "My psoriasis had progressed to psoriatic arthritis, and my French rheumatologist was struggling to control both. The Ayurveda Package treated both as expressions of the same Vata-Rakta systemic imbalance. The Basti enemas addressed my joint inflammation, while the Virechana purgation and Neem purifiers worked on the dermatological component simultaneously. This integrated approach achieved what two separate specialists in France had not managed.",
     rating: 5, verified: true
   },
   {
@@ -113,7 +113,7 @@ const patientReviews = [
   {
     name: "Anja Van der Berg", location: "Antwerp, Belgium", condition: "Palmoplantar Psoriasis",
     title: "My Dermatologist Could Not Explain the Resolution.",
-    review: "Palmoplantar psoriasis on both my hands and feet had made daily life genuinely painful for three years, resisting every treatment my Belgian dermatologist prescribed. The Ayurvedic treatment classified it as Vipadika and prescribed a Panchakarma detox. The cracking and bleeding resolved by day fourteen, with complete healing by day thirty. My dermatologist described the resolution as something she had not seen achieved by any conventional treatment.",
+    review: "Palmoplantar psoriasis on both my hands and feet had made daily life genuinely painful for three years, resisting every treatment my Belgian dermatologist prescribed. The Ayurveda treatment classified it as Vipadika and prescribed a Panchakarma detox. The cracking and bleeding resolved by day fourteen, with complete healing by day thirty. My dermatologist described the resolution as something she had not seen achieved by any conventional treatment.",
     rating: 5, verified: true
   }
 ];
@@ -326,7 +326,7 @@ const Psoriasis = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Skin Healing & Detox</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Ayurvedic Treatment for Psoriasis in India</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Ayurveda treatment for Psoriasis in India</h1>
               <p className="text-lg md:text-xl text-white/90">Natural Skin Healing for Lasting Relief. Addressing the root cause through deep Panchakarma and blood purification.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
@@ -894,3 +894,4 @@ const Psoriasis = () => {
 };
 
 export default Psoriasis;
+

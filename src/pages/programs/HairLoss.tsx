@@ -156,7 +156,7 @@ const HairLoss = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80 font-medium">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80 font-medium">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
                 Ayurveda Treatment for Hair Loss in India
               </h1>
@@ -278,7 +278,7 @@ const HairLoss = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Hair Loss?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurveda treatment for Hair Loss?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
                   In Ayurveda, severe hair loss is often referred to as <em>Khalitya</em> or <em>Indralupta</em>. It is primarily driven by an excess of Pitta dosha (the fire element) in the body, which literally 'burns out' the hair follicles. This is frequently exacerbated by Vata dosha imbalance, leading to scalp dryness and poor circulation.
                 </p>
@@ -1116,3 +1116,4 @@ const HairLoss = () => {
 };
 
 export default HairLoss;
+

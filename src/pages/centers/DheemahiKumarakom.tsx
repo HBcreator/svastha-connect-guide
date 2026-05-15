@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -321,7 +321,7 @@ export default function DheemahiKumarakom() {
             continue;
           }
 
-          // Match Rating: **Rating: ⭐⭐⭐⭐⭐ (5/5)**
+          // Match Rating: **Rating: ????? (5/5)**
           if (current && line.includes("Rating:")) {
             const ratingMatch = line.match(/\((\d+)\/5\)/);
             if (ratingMatch) {
@@ -1009,7 +1009,7 @@ export default function DheemahiKumarakom() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                 </div>
 
-                {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                {/* Small Images - Right Side - Fixed 2�2 Grid */}
                 <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                   {images.slice(1, 5).map((img, idx) => {
                     const actualIndex = idx + 1; // map to original images index
@@ -1926,7 +1926,7 @@ export default function DheemahiKumarakom() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
               <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
-                Recognition of Dheemahi's global excellence in authentic Ayurvedic healing and clinical patient care
+                Recognition of Dheemahi's global excellence in authentic Ayurvedic Healing and clinical patient care
               </p>
             </div>
 
@@ -2547,6 +2547,7 @@ export default function DheemahiKumarakom() {
     </div >
   );
 }
+
 
 
 

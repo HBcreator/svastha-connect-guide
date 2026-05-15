@@ -155,7 +155,7 @@ const SkinRejuvenation = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurvedic Skin Rejuvenation Therapy in India</h1>
               <p className="text-lg md:text-xl text-white/90">Restore your natural radiance with physician-led Ayurvedic care.</p>
               <div className="space-y-2.5">
@@ -270,7 +270,7 @@ const SkinRejuvenation = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Skin Rejuvenation?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurveda treatment for Skin Rejuvenation?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
                   In Ayurveda, Skin Rejuvenation is primarily understood through conditions like <em>Kitibha</em> or <em>Mandalakustha</em>. It is classified as a 'Vatarakta' or skin disorder caused by the profound imbalance of Pitta and Vata doshas, leading to the accumulation of toxins (Ama) in the blood (Rakta) and skin (Twacha).
                 </p>
@@ -1113,3 +1113,4 @@ const SkinRejuvenation = () => {
 };
 
 export default SkinRejuvenation;
+

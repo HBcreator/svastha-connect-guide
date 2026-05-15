@@ -84,7 +84,7 @@ const therapies = [
   },
   {
     title: "Basti (Medicated Enema Therapy)",
-    text: "The single most effective Ayurvedic treatment for sciatica. Medicated herbal oils and decoctions through the colon pacify Vata at its root, producing systemic nerve-calming effects.",
+    text: "The single most effective Ayurveda treatment for sciatica. Medicated herbal oils and decoctions through the colon pacify Vata at its root, producing systemic nerve-calming effects.",
     icon: Heart,
   },
   {
@@ -212,12 +212,12 @@ const chooseIndiaPoints = [
   },
   {
     title: "Surgery Avoidance Is Realistic",
-    text: "Many international patients postpone or permanently avoid surgery after completing a full Ayurvedic program.",
+    text: "Many international patients postpone or permanently avoid surgery after completing a full Ayurveda Package.",
     icon: ShieldCheck,
   },
   {
     title: "Unbeatable Value",
-    text: "Spinal surgery costs $15,000–$50,000 abroad. A 21-day Ayurvedic program costs $2,500–$5,000 all-inclusive.",
+    text: "Spinal surgery costs $15,000–$50,000 abroad. A 21-day Ayurveda Package costs $2,500–$5,000 all-inclusive.",
     icon: ReceiptIndianRupee,
   },
   {
@@ -330,7 +330,7 @@ const topAyurvedicCenters = [
     name: "AyurvedaGram Heritage Wellness Centre",
     city: "Bangalore",
     location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
@@ -408,7 +408,7 @@ const costComparisonRows = [
 ];
 
 const faqItems = [
-  { question: 'Can Ayurveda permanently cure sciatica?', answer: 'For many patients, yes — particularly when sciatica is caused by a herniated disc, piriformis syndrome, or functional spinal imbalances. Ayurvedic treatment corrects the Vata imbalance and tissue environment that allowed nerve compression to develop. Many patients remain pain-free for years after completing the program.' },
+  { question: 'Can Ayurveda permanently cure sciatica?', answer: 'For many patients, yes — particularly when sciatica is caused by a herniated disc, piriformis syndrome, or functional spinal imbalances. Ayurveda treatment corrects the Vata imbalance and tissue environment that allowed nerve compression to develop. Many patients remain pain-free for years after completing the program.' },
   { question: 'How quickly will I notice results?', answer: 'Many patients experience reduced pain and improved sleep within the first 7–10 days. The Basti program, which intensifies in week two, produces noticeable systemic nerve calming by days 12–15. By week three, the majority report substantially improved mobility and reduced leg symptoms.' },
   { question: 'I have an MRI showing disc herniation. Can I still do this program?', answer: 'Yes. The majority of international patients have imaging evidence of disc herniation. Your Ayurvedic physician will review your MRI before designing your treatment plan. The goal is to reduce inflammation and nerve compression to the point where natural healing restores function.' },
   { question: 'Is this program safe if I am currently on nerve pain medications?', answer: 'Yes. You should never stop your medications abruptly. Your Ayurvedic physician will review your current medication list and design a treatment plan that works safely alongside them. Many patients find their medication requirements reduce naturally as pain levels decrease.' },
@@ -426,7 +426,7 @@ const patientReviews = [
     location: 'Zurich, Switzerland',
     condition: 'Chronic sciatic nerve pain',
     title: 'The Electric Shock Pain Is Finally Gone!',
-    review: 'For three years, I lived with shooting, electric shock pain, unable to sit through a meal or sleep more than two hours. After a 23-day Ayurvedic program, the Kati Basti and Abhyanga Swedana sessions were deeply targeted. By day eighteen, the electric shock sensation had completely stopped.',
+    review: 'For three years, I lived with shooting, electric shock pain, unable to sit through a meal or sleep more than two hours. After a 23-day Ayurveda Package, the Kati Basti and Abhyanga Swedana sessions were deeply targeted. By day eighteen, the electric shock sensation had completely stopped.',
     rating: 5,
     verified: true,
   },
@@ -444,7 +444,7 @@ const patientReviews = [
     location: 'Dubai, UAE',
     condition: 'L4-L5 disc herniation',
     title: 'Avoided Spinal Surgery — Twice Recommended!',
-    review: 'Two neurosurgeons recommended spinal surgery for my L4-L5 disc. After a 26-day Ayurvedic program, the Kala Basti combined with Patrapotali Swedana gave me relief I hadn\'t felt in four years. My follow-up MRI showed measurable reduction in disc inflammation. Surgery is now completely off the table.',
+    review: 'Two neurosurgeons recommended spinal surgery for my L4-L5 disc. After a 26-day Ayurveda Package, the Kala Basti combined with Patrapotali Swedana gave me relief I hadn\'t felt in four years. My follow-up MRI showed measurable reduction in disc inflammation. Surgery is now completely off the table.',
     rating: 5,
     verified: true,
   },
@@ -607,7 +607,7 @@ const SciaticaTreatment = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurveda Treatment for Sciatica in India</h1>
               <p className="text-lg md:text-xl text-white/90">Permanent nerve & back pain relief with physician-led Ayurvedic care.</p>
               <div className="space-y-2.5">
@@ -701,7 +701,7 @@ const SciaticaTreatment = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Sciatica?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurveda treatment for Sciatica?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
                   Sciatica is one of the most debilitating pain conditions a person can experience. That sharp, burning sensation that starts deep in your lower back and shoots through your buttock, down the back of your thigh, and sometimes all the way to your foot. In Ayurveda, sciatica is known as <em>Gridhrasi</em> — a disorder rooted in the aggravation of Vata dosha, the body's governing energy for movement, nerve signals, and lower-body function.
                 </p>
@@ -1003,3 +1003,4 @@ const SciaticaTreatment = () => {
 };
 
 export default SciaticaTreatment;
+

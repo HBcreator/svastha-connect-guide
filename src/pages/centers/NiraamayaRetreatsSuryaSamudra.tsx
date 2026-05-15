@@ -61,7 +61,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
   const awards = [
     {
       title: "India's Best Wellness Retreat",
-      description: "Recognised for excellence in authentic Ayurvedic treatments and holistic wellness.",
+      description: "Recognised for excellence in authentic Ayurveda treatments and holistic wellness.",
       image: "/Center Images/Niraamaya Retreats Surya Samudra/Awards/Award 1 (India's Best Wellness Retreat).jfif"
     },
     {
@@ -81,7 +81,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
     },
     {
       title: "Best Wellness Retreat in India",
-      description: "Honored for our commitment to traditional Ayurvedic healing and guest well-being.",
+      description: "Honored for our commitment to traditional Ayurvedic Healing and guest well-being.",
       image: "/Center Images/Niraamaya Retreats Surya Samudra/Awards/Award 5 (Best Wellness Retreat in India).jpg"
     }
   ];
@@ -2368,6 +2368,7 @@ export default function NiraamayaRetreatsSuryaSamudra() {
     </div>
   );
 }
+
 
 
 

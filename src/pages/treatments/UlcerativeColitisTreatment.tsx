@@ -95,7 +95,7 @@ const patientReviews = [
   {
     name: "Deirdre Callahan", location: "Cork, Ireland", condition: "Severe Active UC",
     title: "Bloody Diarrhea and Weight Loss Reversed Without Surgery.",
-    review: "My ulcerative colitis had become severe, with bloody diarrhea up to fifteen times daily and debilitating cramps. The Ayurvedic treatment addressed it as Raktaja Pravahika. The program of Anuvasan Basti and Piccha Basti enemas, combined with oral herbal formulations, was incredibly effective. After one month, my bowel frequency had reduced by eighty percent, and the blood had virtually ceased.",
+    review: "My ulcerative colitis had become severe, with bloody diarrhea up to fifteen times daily and debilitating cramps. The Ayurveda treatment addressed it as Raktaja Pravahika. The program of Anuvasan Basti and Piccha Basti enemas, combined with oral herbal formulations, was incredibly effective. After one month, my bowel frequency had reduced by eighty percent, and the blood had virtually ceased.",
     rating: 5, verified: true
   },
   {
@@ -107,13 +107,13 @@ const patientReviews = [
   {
     name: "Joost Van der Hoeven", location: "Utrecht, Netherlands", condition: "Relapsing UC",
     title: "The Basti Program Broke the Cycle of Relapse.",
-    review: "Six years of ulcerative colitis had produced a frustrating pattern of remission followed by inevitable relapse. The Ayurvedic program broke that cycle. The Udumbara Kwatha Basti—a medicated enema using cluster fig decoction—administered over four weeks, reduced my symptoms with a consistency I hadn't experienced in years. The Pitta-pacifying diet has maintained my remission.",
+    review: "Six years of ulcerative colitis had produced a frustrating pattern of remission followed by inevitable relapse. The Ayurveda Package broke that cycle. The Udumbara Kwatha Basti—a medicated enema using cluster fig decoction—administered over four weeks, reduced my symptoms with a consistency I hadn't experienced in years. The Pitta-pacifying diet has maintained my remission.",
     rating: 5, verified: true
   },
   {
     name: "Sigrid Halvorsen", location: "Stavanger, Norway", condition: "Pancolitis",
     title: "My Endoscopy Confirmed No Ulcers Remaining.",
-    review: "For two years, I had been losing weight and suffering from constant bloody stools. I committed to a sustained Ayurvedic program, which began with one month of in-patient Panchakarma followed by an at-home protocol. By month six, my symptoms had ceased entirely. The endoscopic review at twelve months confirmed complete mucosal healing—no ulcers were visible.",
+    review: "For two years, I had been losing weight and suffering from constant bloody stools. I committed to a sustained Ayurveda Package, which began with one month of in-patient Panchakarma followed by an at-home protocol. By month six, my symptoms had ceased entirely. The endoscopic review at twelve months confirmed complete mucosal healing—no ulcers were visible.",
     rating: 5, verified: true
   }
 ];
@@ -123,7 +123,7 @@ const faqItems = [
   { question: "Are raw salads good for Ulcerative Colitis?", answer: "No. While modern diets often push raw foods for health, Ayurveda strongly advises against them during a UC flare. Raw vegetables are rough and difficult to break down, which acts like sandpaper on an already ulcerated and inflamed colon." },
   { question: "Is Basti (enema therapy) painful for an inflamed colon?", answer: "Not at all. The 'Piccha Basti' used for UC is specifically designed to be soothing. It uses cool, thick, and highly healing substances like Yashtimadhu (licorice) oil or cluster fig decoctions that coat the ulcers and provide immediate relief from pain and urgency." },
   { question: "Can stress really trigger a UC flare-up?", answer: "Yes. The gut and brain are intimately connected. Stress severely aggravates both Vata and Pitta doshas. This is why our treatments include Takradhara (buttermilk poured on the forehead) to calm the nervous system alongside treating the gut." },
-  { question: "Can Ayurvedic treatment stop the bleeding entirely?", answer: "Yes. By cooling the Pitta, pacifying the Rakta (blood tissue), and directly applying healing herbs to the ulcers via Basti, the bleeding and mucous discharge usually subside significantly within the first few weeks of a dedicated protocol." }
+  { question: "Can Ayurveda treatment stop the bleeding entirely?", answer: "Yes. By cooling the Pitta, pacifying the Rakta (blood tissue), and directly applying healing herbs to the ulcers via Basti, the bleeding and mucous discharge usually subside significantly within the first few weeks of a dedicated protocol." }
 ];
 
 const topAyurvedicCenters = [
@@ -181,7 +181,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -231,7 +231,7 @@ const topAyurvedicCenters = [
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -327,7 +327,7 @@ const UlcerativeColitisTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">A Holistic Path to Healing the Gut</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Ulcerative Colitis Treatment in India</h1>
-              <p className="text-lg md:text-xl text-white/90">Ayurvedic treatment for Ulcerative Colitis is a profound, gentle path that focuses on healing the inflamed gut lining, stopping the bleeding, and achieving long-term remission.</p>
+              <p className="text-lg md:text-xl text-white/90">Ayurveda treatment for Ulcerative Colitis is a profound, gentle path that focuses on healing the inflamed gut lining, stopping the bleeding, and achieving long-term remission.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
@@ -361,7 +361,7 @@ const UlcerativeColitisTreatment = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img 
                 src="/Treatments-images/Ulcerative Colitis Treatment.jpg" 
-                alt="Ulcerative Colitis Ayurvedic Treatment" 
+                alt="Ulcerative Colitis Ayurveda treatment" 
                 className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105" 
               />
             </div>
@@ -894,3 +894,4 @@ const UlcerativeColitisTreatment = () => {
 };
 
 export default UlcerativeColitisTreatment;
+

@@ -7,45 +7,45 @@ import Layout from "@/components/Layout"
 const serviceCards = [
   {
     title: "Ayurveda",
-    description: "Discover the ancient wisdom of holistic healing through authentic Ayurvedic treatments.",
+    description: "Discover the ancient wisdom of holistic healing through authentic Ayurveda treatments.",
     image: "/Services-images/Ayurveda.png",
-    href: "/ayurvedic-healing/ayurveda-healing-program-in-india",
+    href: "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india",
   },
   {
     title: "Panchakarma",
     description: "Experience deep cleansing and rejuvenation with traditional five-fold purification therapy.",
     image: "/Services-images/Panchakarma.png",
-    href: "/ayurvedic-healing/panchakarma-healing-program-in-india",
+    href: "/holistic-healing/panchakarma-healing-program-in-india",
   },
   {
     title: "Yoga and Meditation",
     description: "Transform your mind and body through ancient practices of yoga and meditation.",
     image: "/Services-images/Yoga and Meditation.png",
-    href: "/ayurvedic-healing/yoga-and-meditation-healing-program-in-india",
+    href: "/holistic-healing/yoga-and-meditation-healing-program-in-india",
   },
   {
     title: "Ayurvedic Massage",
     description: "Relax and heal with therapeutic Ayurvedic massage techniques.",
     image: "/Services-images/Ayurvedic Massage.jpg",
-    href: "/ayurvedic-healing/ayurvedic-massage-healing-program-in-india",
+    href: "/holistic-healing/ayurvedic-massage-healing-program-in-india",
   },
   {
     title: "Ayurvedic Diet",
     description: "Learn about personalized nutrition based on your unique constitution.",
     image: "/Services-images/Ayurvedic Diet.jpeg",
-    href: "/ayurvedic-healing/ayurvedic-diet-healing-program-in-india",
+    href: "/holistic-healing/ayurvedic-diet-healing-program-in-india",
   },
   {
     title: "Physiotherapy",
     description: "Recover and strengthen with modern physiotherapy treatments.",
     image: "/Services-images/Physiotherapy.png",
-    href: "/ayurvedic-healing/physiotherapy-healing-program-in-india",
+    href: "/holistic-healing/physiotherapy-healing-program-in-india",
   },
   {
     title: "Kalari & Marma",
     description: "Experience the healing power of Kerala's martial arts and vital point therapy.",
     image: "/Services-images/Kalari & Marma.png",
-    href: "/ayurvedic-healing/kalari-and-marma-healing-program-in-india",
+    href: "/holistic-healing/kalari-and-marma-healing-program-in-india",
   },
 ]
 
@@ -54,7 +54,7 @@ export default function Services() {
     <Layout>
       <div className="container mx-auto py-16 px-4">
         <h1 className="text-4xl font-bold text-primary mb-8 font-poppins text-center">
-          Ayurvedic Healing Programs in India
+          Ayurveda Healing Programs in India
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {serviceCards.map((service) => (

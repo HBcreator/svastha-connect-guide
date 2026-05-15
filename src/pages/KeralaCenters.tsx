@@ -161,7 +161,7 @@ const KeralaCenters = () => {
       name: "Ayur Bethaniya Ayurveda Hospital",
       city: "Thiruvananthapuram, Kerala, India",
       description:
-        "Trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul.",
+        "Trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul.",
       rating: 4.8,
       reviews: 500,
       priceRange: "$$$",
@@ -172,7 +172,7 @@ const KeralaCenters = () => {
       name: "AyurSoma Ayurveda Royal Retreat",
       city: "Kovalam, Kerala, India",
       description:
-        "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma and rejuvenation therapies guided by seasoned Vaidyas.",
+        "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma and rejuvenation therapies guided by seasoned Vaidyas.",
       rating: 4.8,
       reviews: 159,
       priceRange: "$$$$$",
@@ -245,7 +245,7 @@ const KeralaCenters = () => {
     {
       name: "Niraamaya Retreats Surya Samudra",
       city: "Kovalam, Kerala, India",
-      description: "Niraamaya Retreats Surya Samudra is a luxury destination in Kerala perched on a cliff overlooking the Arabian Sea. It offers authentic Ayurvedic healing and personalized wellness programs in a stunning coastal setting.",
+      description: "Niraamaya Retreats Surya Samudra is a luxury destination in Kerala perched on a cliff overlooking the Arabian Sea. It offers authentic Ayurvedic Healing and personalized wellness programs in a stunning coastal setting.",
       rating: 4.7,
       reviews: 5000,
       priceRange: "$$$$$",
@@ -266,7 +266,7 @@ const KeralaCenters = () => {
     {
       name: "Ideal Ayurvedic Resort",
       city: "Kovalam, Kerala, India",
-      description: "Ideal Ayurvedic Resort in Kovalam offers authentic Ayurvedic treatments and Panchakarma in a peaceful and welcoming environment. It is a perfect choice for those seeking serious healing at an affordable price.",
+      description: "Ideal Ayurvedic Resort in Kovalam offers authentic Ayurveda treatments and Panchakarma in a peaceful and welcoming environment. It is a perfect choice for those seeking serious healing at an affordable price.",
       rating: 4.5,
       reviews: 400,
       priceRange: "$$",
@@ -634,4 +634,5 @@ const KeralaCenters = () => {
 };
 
 export default KeralaCenters;
+
 

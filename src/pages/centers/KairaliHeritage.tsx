@@ -1276,7 +1276,7 @@ export default function KairaliHeritage() {
                 Video Gallery of Kairali Heritage
               </h2>
               <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
-                Experience the serene riverside atmosphere and authentic Ayurvedic healing journey at Kairali Heritage through our video gallery.
+                Experience the serene riverside atmosphere and authentic Ayurvedic Healing journey at Kairali Heritage through our video gallery.
               </p>
             </div>
 
@@ -1359,7 +1359,7 @@ export default function KairaliHeritage() {
             <div className="text-center mb-10">
               <h2 className="text-xl md:text-4xl font-bold text-primary mb-3">Why Choose Kairali Heritage for Your Holistic Health Journey</h2>
               <p className="text-base md:text-lg mx-auto px-4" style={{ color: '#7F543D' }}>
-                {whyIntro || "Discover what makes Kairali Heritage a unique destination for authentic Ayurvedic healing in North Kerala"}
+                {whyIntro || "Discover what makes Kairali Heritage a unique destination for authentic Ayurvedic Healing in North Kerala"}
               </p>
             </div>
 
@@ -1935,7 +1935,7 @@ export default function KairaliHeritage() {
               <Award className="h-8 w-8" />
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3 text-center">Awards & Media</h2>
-            <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care</p>
+            <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic Healing and patient care</p>
           </div>
 
           <div className="relative group max-w-5xl mx-auto">
@@ -2445,6 +2445,7 @@ export default function KairaliHeritage() {
     </div>
   );
 }
+
 
 
 

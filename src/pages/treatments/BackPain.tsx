@@ -95,7 +95,7 @@ const patientReviews = [
   {
     name: "Siobhán Thornton", location: "Waterford, Ireland", condition: "Postural Back Pain",
     title: "A Decade of 'Desk Job' Back Pain—Resolved in Two Weeks.",
-    review: "Ten years of office work had produced a chronic postural back pain that my Irish physiotherapist said was unlikely to resolve. The Ayurvedic program approached my condition with a combination of Kati Basti for my lower back and Greeva Basti for my upper back. The medicated oils penetrated the deep spinal muscles, and my pain scores dropped from a 7/10 to a 1/10 by the final day.",
+    review: "Ten years of office work had produced a chronic postural back pain that my Irish physiotherapist said was unlikely to resolve. The Ayurveda Package approached my condition with a combination of Kati Basti for my lower back and Greeva Basti for my upper back. The medicated oils penetrated the deep spinal muscles, and my pain scores dropped from a 7/10 to a 1/10 by the final day.",
     rating: 5, verified: true
   },
   {
@@ -107,7 +107,7 @@ const patientReviews = [
   {
     name: "Sander De Vries", location: "The Hague, Netherlands", condition: "Ankylosing Spondylitis",
     title: "My Ankylosing Spondylitis Pain Was Managed Without Increasing My Medication.",
-    review: "My ankylosing spondylitis was producing progressive lower back stiffness. The Ayurvedic treatment was recommended as a complementary approach. The program of Kati Basti, Virechana purgation, and Basti enemas addressed the underlying Vata and inflammatory Pitta imbalance. The morning stiffness that had made the first hour of every day an ordeal reduced measurably within ten days.",
+    review: "My ankylosing spondylitis was producing progressive lower back stiffness. The Ayurveda treatment was recommended as a complementary approach. The program of Kati Basti, Virechana purgation, and Basti enemas addressed the underlying Vata and inflammatory Pitta imbalance. The morning stiffness that had made the first hour of every day an ordeal reduced measurably within ten days.",
     rating: 5, verified: true
   },
   {
@@ -122,7 +122,7 @@ const faqItems = [
   { question: "Why does Ayurveda consider lower back pain a Vata disorder?", answer: "Vata dosha governs movement and is seated in the colon and lower back region. When aggravated by poor posture, stress, or dry foods, Vata 'dries out' the lubricating fluids in the spinal joints and causes the muscles to go into painful, rigid spasms." },
   { question: "What makes Kati Vasti different from a regular massage?", answer: "While a massage provides temporary surface relief, Kati Vasti involves retaining warm, medicated oil in a localized pool directly over the spine for an extended period (usually 30-45 minutes). This allows the herbs and heat to deeply penetrate and heal the spinal tissues." },
   { question: "Is Basti (enema therapy) really necessary for back pain?", answer: "Yes. Because the colon is the primary headquarters of Vata dosha, administering medicated oils rectally via Basti is the most direct and profound way to pacify systemic Vata. It calms the entire nervous system and nourishes the lower back from the inside out." },
-  { question: "How long does the relief last after an Ayurvedic program?", answer: "Unlike painkillers which wear off in hours, Ayurveda aims to structurally heal the tissues. By completing a full Panchakarma protocol and following the prescribed dietary and postural lifestyle changes, patients often experience years of pain-free mobility." },
+  { question: "How long does the relief last after an Ayurveda Package?", answer: "Unlike painkillers which wear off in hours, Ayurveda aims to structurally heal the tissues. By completing a full Panchakarma protocol and following the prescribed dietary and postural lifestyle changes, patients often experience years of pain-free mobility." },
   { question: "Can stress really cause physical back pain?", answer: "Absolutely. Mental stress directly aggravates Vata dosha, leading to involuntary muscular tension, especially in the neck and lower back. This is why our holistic programs often incorporate Shirodhara and meditation alongside physical therapies." }
 ];
 
@@ -211,7 +211,7 @@ const topAyurvedicCenters = [
     name: "AyurSoma Ayurveda Royal Retreat",
     city: "Kerala",
     location: "Kerala",
-    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    description: "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
@@ -417,7 +417,7 @@ const BackPain = () => {
         <section id="why-india" className="scroll-mt-24 space-y-8 bg-[#F8F4E7] rounded-3xl p-8 md:p-12 border border-[#d8d0ae]/50">
           <div className="text-center mb-8 max-w-3xl mx-auto">
              <h2 className="text-2xl md:text-3xl font-bold text-[#335765] mb-4">Why Choose India for Spinal Care?</h2>
-             <p className="text-[#7F543D] text-lg">Experience the most authentic and potent form of musculoskeletal Ayurvedic healing available globally.</p>
+             <p className="text-[#7F543D] text-lg">Experience the most authentic and potent form of musculoskeletal Ayurvedic Healing available globally.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
              <div className="bg-white p-6 rounded-2xl shadow-sm space-y-3">
@@ -922,3 +922,4 @@ const BackPain = () => {
 };
 
 export default BackPain;
+

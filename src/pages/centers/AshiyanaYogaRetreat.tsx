@@ -2369,3 +2369,4 @@ const AshiyanaYogaRetreat = () => {
 };
 
 export default AshiyanaYogaRetreat;
+

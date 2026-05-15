@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,9 +9,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Calendar, MapPin, Star, CheckCircle2, Activity, Brain, Sparkles, Droplet, Clock, ReceiptIndianRupee, ArrowRight, Zap, Trash2, Sun, Smile, ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone } from "lucide-react";
 
 const patientReviews = [
-  { name: "Bernhard SchÃ¤fer", location: "Cologne, Germany", condition: "Kampavata Program", title: "Ayurveda Gave My Father Back His Independence.", review: "My father's Parkinson's medication was becoming less effective. We traveled to India for the classical Kampavata treatment, and the 28-day Panchakarma program addressed the neurological degeneration at a deep level. His resting tremor reduced measurably by week three, and the herbal formulations improved his motor function in a way that his own neurologist in Cologne acknowledged as clinically significant.", rating: 5, verified: true },
-  { name: "Eileen Callahan", location: "Dublin, Ireland", condition: "Parkinson's Management", title: "Slowing the Progression and Restoring His Dignity.", review: "My husband's Parkinson's was progressing faster than expected. The 42-day Ayurvedic program in India produced measurable improvements in both his motor and non-motor symptoms. The Sarvanga Pathrapinda Sweda and Shiro Lepa therapies were particularly effective for his rigidity and sleep quality. He returned to Dublin walking more steadily than he had in two years.", rating: 5, verified: true },
-  { name: "HÃ©lÃ¨ne Marchand", location: "Bordeaux, France", condition: "Neurological Care", title: "A Complementary Approach That Made His Medication More Effective.", review: "The Ayurvedic treatment offered a complementary approach, using Panchakarma and classical herbs like Mucuna pruriens. The combination allowed her existing medication to work more effectively at the same dose. Her resting hand tremor, which had been worsening for eighteen months, showed a visible reduction by week four.", rating: 5, verified: true },
+  { name: "Bernhard Schäfer", location: "Cologne, Germany", condition: "Kampavata Program", title: "Ayurveda Gave My Father Back His Independence.", review: "My father's Parkinson's medication was becoming less effective. We traveled to India for the classical Kampavata treatment, and the 28-day Panchakarma program addressed the neurological degeneration at a deep level. His resting tremor reduced measurably by week three, and the herbal formulations improved his motor function in a way that his own neurologist in Cologne acknowledged as clinically significant.", rating: 5, verified: true },
+  { name: "Eileen Callahan", location: "Dublin, Ireland", condition: "Parkinson's Management", title: "Slowing the Progression and Restoring His Dignity.", review: "My husband's Parkinson's was progressing faster than expected. The 42-day Ayurveda Package in India produced measurable improvements in both his motor and non-motor symptoms. The Sarvanga Pathrapinda Sweda and Shiro Lepa therapies were particularly effective for his rigidity and sleep quality. He returned to Dublin walking more steadily than he had in two years.", rating: 5, verified: true },
+  { name: "Hélène Marchand", location: "Bordeaux, France", condition: "Neurological Care", title: "A Complementary Approach That Made His Medication More Effective.", review: "The Ayurveda treatment offered a complementary approach, using Panchakarma and classical herbs like Mucuna pruriens. The combination allowed her existing medication to work more effectively at the same dose. Her resting hand tremor, which had been worsening for eighteen months, showed a visible reduction by week four.", rating: 5, verified: true },
   { name: "Jan Vermeer", location: "Utrecht, Netherlands", condition: "Vata Imbalance", title: "My Quality of Life Has Been Completely Restored.", review: "The Shirodhara sessions had a profound neurological calming effect that reduced my tremor and anxiety simultaneously, while the Nasya and Abhyanga improved my muscle rigidity. I returned home with significantly better balance and a restorative sleep cycle.", rating: 5, verified: true },
   { name: "Catriona MacLeod", location: "Edinburgh, UK", condition: "Early-Stage Parkinson's", title: "Ayurveda Gave Us Hope and a Clear Strategy.", review: "My father received an early-stage Parkinson's diagnosis, and his neurologist supported Ayurveda as a complementary approach. The Kampavata program he underwent addressed the Vata degeneration before it could progress further. His motor scores had remained stable in a way that was better than statistically expected.", rating: 5, verified: true }
 ];
@@ -21,7 +21,7 @@ const topAyurvedicCenters = [
     name: "Agni Ayurvedic Village Resort",
     city: "Kerala",
     location: "Kerala",
-    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it�s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
@@ -71,7 +71,7 @@ const topAyurvedicCenters = [
     name: "Ananda In The Himalayas",
     city: "Uttarakhand",
     location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit�creating lasting transformation through mindful living and natural healing practices.",
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
@@ -88,7 +88,7 @@ const topAyurvedicCenters = [
     link: "/centers/maharashtra/fazlani-natures-nest"
   },
   {
-    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    name: "Dheemahi Kumarakom � Premium Lakeside Retreat",
     city: "Kumarakom",
     location: "Kumarakom",
     description: "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
@@ -101,7 +101,7 @@ const topAyurvedicCenters = [
     name: "Shathayu Ayurveda Yoga Retreat",
     city: "Udupi",
     location: "Udupi",
-    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment�ideal for deep restoration of body and mind.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
@@ -111,7 +111,7 @@ const topAyurvedicCenters = [
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom ? The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -143,7 +143,7 @@ const faqItems = [
   { question: "How does Ayurveda manage Parkinson's tremors?", answer: "Ayurveda views tremors as an aggravation of Vata dosha. Management involves Vata-pacifying oils like Dhanwantharam, therapies like Shirodhara to calm the nervous system, and herbs like Kapikachhu (a natural L-Dopa source) to support dopamine levels." },
   { question: "Can Ayurveda be taken alongside conventional medication?", answer: "Yes, Ayurveda is often used as a complementary therapy. It can help make existing medications more effective and manage side effects. Always consult with your neurologist and an Ayurvedic physician for a coordinated care plan." },
   { question: "What is the recommended duration for Parkinson's treatment?", answer: "A minimum of 21 days is typically required for meaningful results. For more advanced stages or long-term stabilization, a 28 to 42-day program is often recommended to complete all stages of detox and rejuvenation." },
-  { question: "Are the results of Ayurvedic treatment permanent?", answer: "Parkinson's is a progressive condition. While Ayurveda can significantly slow the progression and improve symptoms, maintenance is key. Regular follow-ups, a Vata-balancing diet, and lifestyle adjustments are essential to sustain the gains." },
+  { question: "Are the results of Ayurveda treatment permanent?", answer: "Parkinson's is a progressive condition. While Ayurveda can significantly slow the progression and improve symptoms, maintenance is key. Regular follow-ups, a Vata-balancing diet, and lifestyle adjustments are essential to sustain the gains." },
   { question: "What are the specific therapies used for muscle rigidity?", answer: "Abhyanga (warm oil massage), Pizhichil (pouring of oil), and specialized Basti (medicated enemas) are highly effective in reducing muscle stiffness and improving joint mobility." }
 ];
 
@@ -184,21 +184,21 @@ const treatmentPackages = [
   {
     name: "Stability & Balance Program",
     duration: "14 Days",
-    cost: "â‚¹1,25,000 - â‚¹1,65,000",
+    cost: "₹1,25,000 - ₹1,65,000",
     focus: "Symptom management, tremor reduction, and initial Vata balancing.",
     image: "/Treatments-images/parkinsons_pack_1.png"
   },
   {
     name: "Neurological Recovery Program",
     duration: "21 Days",
-    cost: "â‚¹1,85,000 - â‚¹2,45,000",
+    cost: "₹1,85,000 - ₹2,45,000",
     focus: "Deep tissue nourishment, intensive Basti protocols, and improved motor control.",
     image: "/Treatments-images/parkinsons_pack_2.png"
   },
   {
     name: "Intensive Rejuvenation Program",
     duration: "28 Days",
-    cost: "â‚¹2,60,000 - â‚¹3,50,000",
+    cost: "₹2,60,000 - ₹3,50,000",
     focus: "Complete Majja Dhatu reset, long-term stabilization, and maximum mobility gains.",
     image: "/Treatments-images/parkinsons_pack_3.png"
   }
@@ -322,7 +322,7 @@ const ParkinsonsDiseaseTreatment = () => {
         const text = line.replace(/^\*\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -332,7 +332,7 @@ const ParkinsonsDiseaseTreatment = () => {
         const text = line.replace(/^-\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -404,7 +404,7 @@ const ParkinsonsDiseaseTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Kampavata Chikitsa</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Parkinson's Disease Treatment in India</h1>
-              <p className="text-lg md:text-xl text-white/90">A holistic Ayurvedic approach to managing Parkinson's â€” reducing tremors, improving mobility, and enhancing quality of life through time-tested therapies.</p>
+              <p className="text-lg md:text-xl text-white/90">A holistic Ayurvedic approach to managing Parkinson's — reducing tremors, improving mobility, and enhancing quality of life through time-tested therapies.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
@@ -448,7 +448,7 @@ const ParkinsonsDiseaseTreatment = () => {
                 <h2 className="text-3xl md:text-[2.6rem] font-bold text-[#335765] leading-tight">Kampavata: More Than Just a Neurological Condition</h2>
                 <div className="space-y-5 text-[#7F543D] text-lg md:text-[1.1rem] leading-relaxed mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
                   <p>
-                    In Ayurveda, Parkinson's is recognized as <strong>Kampavata</strong> â€” a condition primarily driven by a severe aggravation of the <strong>Vata dosha</strong>. Vata, the energy governing all movement and nerve impulses, becomes erratic, leading to the characteristic tremors and rigidity.
+                    In Ayurveda, Parkinson's is recognized as <strong>Kampavata</strong> — a condition primarily driven by a severe aggravation of the <strong>Vata dosha</strong>. Vata, the energy governing all movement and nerve impulses, becomes erratic, leading to the characteristic tremors and rigidity.
                   </p>
                   <p>
                     Our treatment approach focuses on restoring the <strong>Majja Dhatu</strong> (nervous tissue) and clearing obstructive toxins (Ama). By calming the erratic Vata energy and nourishing the brain, we aim to slow the condition's progression and significantly enhance physical mobility.
@@ -776,4 +776,5 @@ const ParkinsonsDiseaseTreatment = () => {
 };
 
 export default ParkinsonsDiseaseTreatment;
+
 

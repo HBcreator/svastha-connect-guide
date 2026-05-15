@@ -263,7 +263,7 @@ export default function Somatheeram() {
   const awards = [
     {
       title: "Best Ayurvedic Centre Award",
-      description: "Recognized multiple times by the Government of Kerala for excellence in authentic Ayurvedic treatments and patient care.",
+      description: "Recognized multiple times by the Government of Kerala for excellence in authentic Ayurveda treatments and patient care.",
       image: "/Center Images/somatheeram/Awards/Lay_BestAyurvedic.png"
     },
     {
@@ -2027,7 +2027,7 @@ export default function Somatheeram() {
           </div>
           <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
           <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
-            Recognition of our excellence in authentic Ayurvedic healing and patient care
+            Recognition of our excellence in authentic Ayurvedic Healing and patient care
           </p>
         </div>
 
@@ -2137,7 +2137,7 @@ export default function Somatheeram() {
                   <h3 className="text-xl font-bold text-primary">Insurance Coverage</h3>
                 </div>
                 <ul className="space-y-3">
-                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>International policies may cover Ayurvedic treatments</span></li>
+                  <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>International policies may cover Ayurveda treatments</span></li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Documentation provided for claim procedures</span></li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Support with major insurance providers</span></li>
                   <li className="flex items-start gap-2 text-sm" style={{ color: "#7F543D" }}><span className="text-primary mt-1">&#10003;</span><span>Check eligibility with your insurer</span></li>
@@ -2197,7 +2197,7 @@ export default function Somatheeram() {
                 <span className="text-lg font-semibold text-primary text-left">What is the minimum duration of treatment at Somatheeram?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>The minimum recommended stay is 7 days for wellness and rejuvenation programs, 14 days for body purification Panchakarma, and 21-28 days for medical treatment of chronic conditions. Ayurvedic healing requires adequate time for treatments to work at deep tissue levels and achieve lasting therapeutic benefits.</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>The minimum recommended stay is 7 days for wellness and rejuvenation programs, 14 days for body purification Panchakarma, and 21-28 days for medical treatment of chronic conditions. Ayurvedic Healing requires adequate time for treatments to work at deep tissue levels and achieve lasting therapeutic benefits.</p>
               </AccordionContent>
             </AccordionItem>
 
@@ -2224,7 +2224,7 @@ export default function Somatheeram() {
                 <span className="text-lg font-semibold text-primary text-left">Can I continue my regular medications during treatment?</span>
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
-                <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>Yes, initially you continue necessary medications. Ayurvedic physicians review your prescriptions during consultation and gradually reduce dosages as Ayurvedic treatments begin showing positive effects. Never stop medications abruptly without proper physician guidance and monitoring.</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>Yes, initially you continue necessary medications. Ayurvedic physicians review your prescriptions during consultation and gradually reduce dosages as Ayurveda treatments begin showing positive effects. Never stop medications abruptly without proper physician guidance and monitoring.</p>
               </AccordionContent>
             </AccordionItem>
 
@@ -2553,6 +2553,7 @@ export default function Somatheeram() {
     </div>
   );
 }
+
 
 
 

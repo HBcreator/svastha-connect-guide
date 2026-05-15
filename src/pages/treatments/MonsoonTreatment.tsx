@@ -51,7 +51,7 @@ const topAyurvedicCenters = [
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -61,7 +61,7 @@ const topAyurvedicCenters = [
     name: "AyurvedaGram Heritage Wellness Centre",
     city: "Bangalore",
     location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
@@ -140,11 +140,11 @@ const topAyurvedicCenters = [
 ];
 
 const faqItems = [
-  { question: "When is the best time for Karkidaka Chikitsa?", answer: "The ideal time is during Karkidakam, the Malayalam month corresponding to mid-July to mid-August. This is when the body's pores are most open, humidity is high, and Ayurvedic treatments penetrate deepest into the tissues. However, monsoon treatments in Kerala are available from June through August." },
+  { question: "When is the best time for Karkidaka Chikitsa?", answer: "The ideal time is during Karkidakam, the Malayalam month corresponding to mid-July to mid-August. This is when the body's pores are most open, humidity is high, and Ayurveda treatments penetrate deepest into the tissues. However, monsoon treatments in Kerala are available from June through August." },
   { question: "How long should a monsoon treatment program be?", answer: "A minimum of 14 days is recommended to experience meaningful benefits. The classical protocol is 21 days, which allows for all three phasesâ€”preparation, main therapies, and rejuvenationâ€”to be completed. For chronic conditions, a 28-day program is ideal." },
   { question: "What is Karkidaka Kanji and why is it important?", answer: "Karkidaka Kanji is a special medicinal rice gruel prepared with Njavara rice and a combination of potent herbs. It is consumed daily during the program and is specifically designed to be easy to digest, kindle the digestive fire (Agni), boost immunity, and provide deep cellular nourishment during the cleanse." },
-  { question: "Who should avoid monsoon Ayurvedic treatment?", answer: "Pregnant women, individuals with acute fever or infections, and those who are extremely weak or debilitated should consult a physician before undergoing treatment. A thorough Ayurvedic consultation is always the first step to determine your suitability for specific therapies." },
-  { question: "Why is monsoon the most effective time for Ayurvedic treatment?", answer: "Ayurveda explains that during the monsoon, the body's channels (srotas) are naturally soft and open, the skin's pores are dilated, and Vata dosha is in a state of imbalance making it highly responsive to treatment. Herbal oils penetrate deeper into the tissues, and the cool, humid climate makes intensive oil therapies far more comfortable and effective than in other seasons." }
+  { question: "Who should avoid monsoon Ayurveda treatment?", answer: "Pregnant women, individuals with acute fever or infections, and those who are extremely weak or debilitated should consult a physician before undergoing treatment. A thorough Ayurvedic consultation is always the first step to determine your suitability for specific therapies." },
+  { question: "Why is monsoon the most effective time for Ayurveda treatment?", answer: "Ayurveda explains that during the monsoon, the body's channels (srotas) are naturally soft and open, the skin's pores are dilated, and Vata dosha is in a state of imbalance making it highly responsive to treatment. Herbal oils penetrate deeper into the tissues, and the cool, humid climate makes intensive oil therapies far more comfortable and effective than in other seasons." }
 ];
 
 const physicalBenefits = [
@@ -396,7 +396,7 @@ const MonsoonTreatment = () => {
             <div className="space-y-4">
               <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Karkidaka Chikitsa</p>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">Monsoon Treatment in India</h1>
-              <p className="text-lg md:text-xl text-white/90">The most potent time for Ayurvedic healing. Detoxify, rejuvenate, and build immunity during Kerala's sacred monsoon season.</p>
+              <p className="text-lg md:text-xl text-white/90">The most potent time for Ayurvedic Healing. Detoxify, rejuvenate, and build immunity during Kerala's sacred monsoon season.</p>
               <div className="space-y-2.5 pt-2">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
@@ -428,7 +428,7 @@ const MonsoonTreatment = () => {
         <section id="intro" className="scroll-mt-24">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-              <img src="/Treatments-images/monsoon_hero.png" alt="Monsoon Ayurvedic Treatment in Kerala" className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105" />
+              <img src="/Treatments-images/monsoon_hero.png" alt="Monsoon Ayurveda treatment in Kerala" className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105" />
             </div>
             <div className="space-y-6 text-center md:text-left">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-[#335765] leading-tight">The Sacred Season for Healing</h2>
@@ -719,4 +719,5 @@ const MonsoonTreatment = () => {
 };
 
 export default MonsoonTreatment;
+
 

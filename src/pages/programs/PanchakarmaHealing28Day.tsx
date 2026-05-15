@@ -206,7 +206,7 @@ const packages = [
       description: "Short-term immunity boost and deep relaxation stay.",
       budgetNote: "Budget-friendly wellness centers across India.",
       popularTag: "ECONOMY",
-      popularDesc: "Introductory Ayurvedic treatments and basic wellness routine.",
+      popularDesc: "Introductory Ayurveda treatments and basic wellness routine.",
       rows: [
         ["Program", "7-Day Rejuvenation", "Quick Refresh", "$900 - $1,600", "Immunity focus"],
       ],
@@ -436,7 +436,7 @@ const topAyurvedicCenters = [
     name: "Carnoustie Ayurveda & Wellness Resort",
     city: "Mararikulam",
     location: "Mararikulam",
-    description: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    description: "Step into a sanctuary of authentic Ayurvedic Healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
@@ -486,7 +486,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -536,7 +536,7 @@ const topAyurvedicCenters = [
     name: "Indus Valley Ayurvedic Centre",
     city: "Mysore",
     location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
@@ -612,7 +612,7 @@ const faqItems = [
   },
   {
     question: "Is the food provided strictly vegetarian?",
-    answer: "Yes. Clinical Ayurvedic treatment requires a 'Sattvic' diet to be effective. This means the food is vegetarian, freshly prepared, and balanced for your constitution. Alcohol, caffeine, and non-vegetarian foods are strictly avoided during the program."
+    answer: "Yes. Clinical Ayurveda treatment requires a 'Sattvic' diet to be effective. This means the food is vegetarian, freshly prepared, and balanced for your constitution. Alcohol, caffeine, and non-vegetarian foods are strictly avoided during the program."
   }
 ];
 
@@ -848,13 +848,13 @@ const PanchakarmaHealing28Day = () => {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2">
-              <Link to="/ayurvedic-programs" className="text-primary/50 hover:text-primary transition-colors">
-                Ayurvedic Packages
+              <Link to="/ayurveda-packages" className="text-primary/50 hover:text-primary transition-colors">
+                Ayurveda Packages
               </Link>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2">
-              <Link to="/ayurvedic-programs/panchakarma-detox" className="text-primary/50 hover:text-primary transition-colors">
+              <Link to="/ayurveda-packages/panchakarma-detox" className="text-primary/50 hover:text-primary transition-colors">
                 Panchakarma Detox Packages
               </Link>
               <ChevronRight className="h-3 w-3 text-primary/20" />
@@ -870,9 +870,9 @@ const PanchakarmaHealing28Day = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Packages</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">28-Day Panchakarma Healing and Rejuvenation Program in India</h1>
-              <p className="text-lg md:text-xl text-white/90">A four-week physician-led Ayurvedic healing protocol designed for chronic condition recovery, deep cellular restoration, and Rasayana rejuvenation.</p>
+              <p className="text-lg md:text-xl text-white/90">A four-week physician-led Ayurvedic Healing protocol designed for chronic condition recovery, deep cellular restoration, and Rasayana rejuvenation.</p>
               <div className="space-y-2.5">
                 <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-base md:text-lg leading-none">
                   <span className="inline-flex items-center gap-2.5 text-white">
@@ -2007,4 +2007,5 @@ const PanchakarmaHealing28Day = () => {
 };
 
 export default PanchakarmaHealing28Day;
+
 

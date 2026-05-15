@@ -301,7 +301,7 @@ export default function AyushiAyurvedicRetreat() {
       image: "/Center Images/Ayushi Ayurvedic Retreat/Awards/Award 3 (Tripadvisor).png",
       title: "Tripadvisor Recognition",
       description:
-        "Celebrated on Tripadvisor for authentic Ayurvedic healing experiences, hospitality, and guest-reviewed outcomes.",
+        "Celebrated on Tripadvisor for authentic Ayurvedic Healing experiences, hospitality, and guest-reviewed outcomes.",
     },
   ];
 
@@ -2145,7 +2145,7 @@ export default function AyushiAyurvedicRetreat() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of our excellence in authentic Ayurvedic healing and patient care
+                Recognition of our excellence in authentic Ayurvedic Healing and patient care
               </p>
             </div>
 
@@ -2870,6 +2870,7 @@ export default function AyushiAyurvedicRetreat() {
     </div>
   );
 }
+
 
 
 

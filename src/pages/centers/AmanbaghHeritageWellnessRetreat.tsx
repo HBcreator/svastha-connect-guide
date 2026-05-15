@@ -2581,3 +2581,4 @@ export default function AmanbaghHeritageWellnessRetreat() {
     </div>
   );
 }
+

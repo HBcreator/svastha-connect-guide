@@ -173,7 +173,7 @@ const GoaCenters = () => {
       name: "Goa Sian Spa",
       city: "Arambol, Goa, India",
       description:
-        "A premium spa that blends traditional Ayurvedic healing with curated Asian wellness therapies, offering customized sessions including Abhyanga, Shirodhara, Panchakarma, and holistic rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+        "A premium spa that blends traditional Ayurvedic Healing with curated Asian wellness therapies, offering customized sessions including Abhyanga, Shirodhara, Panchakarma, and holistic rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.3,
       reviews: 320,
       priceRange: "$$$",
@@ -272,7 +272,7 @@ const GoaCenters = () => {
       name: "Abhaya Ayurved",
       city: "Ponda, Goa, India",
       description:
-        "A classical Ayurvedic treatment center focused on authentic formulations and time-tested protocols for chronic joint, skin, respiratory, neurological, and lifestyle health concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+        "A classical Ayurveda treatment center focused on authentic formulations and time-tested protocols for chronic joint, skin, respiratory, neurological, and lifestyle health concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.4,
       reviews: 300,
       priceRange: "$$$",
@@ -467,4 +467,5 @@ const GoaCenters = () => {
 };
 
 export default GoaCenters;
+
 

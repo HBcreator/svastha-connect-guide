@@ -134,7 +134,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -194,7 +194,7 @@ const topAyurvedicCenters = [
     name: "Shathayu Ayurveda Yoga Retreat",
     city: "Udupi",
     location: "Udupi",
-    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
@@ -381,7 +381,7 @@ const AutismTreatment = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
               <img
                 src="/Treatments-images/autism-treatment/autism_hero.jpg"
-                alt="Ayurvedic Treatment for Autism"
+                alt="Ayurveda treatment for Autism"
                 className="w-full h-[300px] md:h-[450px] object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
@@ -391,7 +391,7 @@ const AutismTreatment = () => {
                 Ayurveda does not categorize autism as a singular disease. Instead, it assesses the unique functional imbalances within the individual, viewing the challenges as a profound imbalance of the doshas affecting the mind and nervous system.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                By understanding the root cause of these imbalances, Ayurvedic treatment focuses on nurturing the child's inherent potential, calming the nervous system, and restoring inner balance without altering their essential nature.
+                By understanding the root cause of these imbalances, Ayurveda treatment focuses on nurturing the child's inherent potential, calming the nervous system, and restoring inner balance without altering their essential nature.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
@@ -931,4 +931,5 @@ const AutismTreatment = () => {
 };
 
 export default AutismTreatment;
+
 

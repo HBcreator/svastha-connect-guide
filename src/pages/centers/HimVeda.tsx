@@ -2172,7 +2172,7 @@ const HimVeda = () => {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of HimVeda's excellence in authentic Ayurvedic healing and patient care
+                Recognition of HimVeda's excellence in authentic Ayurvedic Healing and patient care
               </p>
             </div>
 
@@ -2821,6 +2821,7 @@ const HimVeda = () => {
 };
 
 export default HimVeda;
+
 
 
 

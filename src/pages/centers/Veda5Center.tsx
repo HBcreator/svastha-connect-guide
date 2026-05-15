@@ -452,7 +452,7 @@ const Veda5Center = () => {
       items: [
         "Qualified naturopathic doctors with specialized training in natural healing",
         "Experts in dietary planning, hydrotherapy, mud therapy, and detox protocols",
-        "Design individualized lifestyle modifications complementing Ayurvedic treatments",
+        "Design individualized lifestyle modifications complementing Ayurveda treatments",
         "Create comprehensive wellness strategies for sustainable long-term health",
       ],
     },
@@ -1988,7 +1988,7 @@ const Veda5Center = () => {
             </div>
             <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
             <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: '#7F543D' }}>
-              Recognition of our excellence in authentic Ayurvedic healing and patient care
+              Recognition of our excellence in authentic Ayurvedic Healing and patient care
             </p>
           </div>
 
@@ -2152,7 +2152,7 @@ const Veda5Center = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-primary mb-2">For International Patients</h4>
                   <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Please confirm coverage with your insurer for Ayurvedic treatments. Our team provides necessary documentation and medical reports to support insurance claims and reimbursements.
+                    Please confirm coverage with your insurer for Ayurveda treatments. Our team provides necessary documentation and medical reports to support insurance claims and reimbursements.
                   </p>
                 </div>
               </div>
@@ -2211,7 +2211,7 @@ const Veda5Center = () => {
               </AccordionTrigger>
               <AccordionContent className="pt-4 pb-6 bg-white">
                 <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                  Yes, initially you continue necessary medications. Ayurvedic physicians review your prescriptions during consultation and may gradually reduce dosages as Ayurvedic treatments show positive effects. Never stop medications abruptly without proper physician guidance and monitoring.
+                  Yes, initially you continue necessary medications. Ayurvedic physicians review your prescriptions during consultation and may gradually reduce dosages as Ayurveda treatments show positive effects. Never stop medications abruptly without proper physician guidance and monitoring.
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -2570,6 +2570,7 @@ const Veda5Center = () => {
 };
 
 export default Veda5Center;
+
 
 
 

@@ -29,7 +29,7 @@ const patientReviews = [
   {
     name: "Robert Fleming", location: "Toronto, Canada", condition: "Disc Compression",
     title: "I Avoided Spinal Surgery Thanks to This Program.",
-    review: "My orthopedic surgeon had already discussed surgical intervention for the nerve compression. I requested three months to try Ayurvedic treatment first. The Kati Basti therapy, combined with Panchakarma and daily yoga, reduced my pain so dramatically that surgery is now completely off the table.",
+    review: "My orthopedic surgeon had already discussed surgical intervention for the nerve compression. I requested three months to try Ayurveda treatment first. The Kati Basti therapy, combined with Panchakarma and daily yoga, reduced my pain so dramatically that surgery is now completely off the table.",
     rating: 5, verified: true
   },
   {
@@ -50,8 +50,8 @@ const faqItems = [
   { question: "What is the recommended duration for Sciatica treatment?", answer: "For acute pain, a 14-day program is effective. However, for chronic sciatica or cases involving disc compression, a 21 to 28-day intensive program is recommended to ensure deep nerve nourishment and long-term stability." },
   { question: "Can Ayurveda help avoid spinal surgery for Sciatica?", answer: "Yes, in many cases. Ayurvedic therapies like Kati Basti and Basti reduce inflammation and nourish the spinal discs, often relieving nerve compression enough to avoid surgical intervention. We recommend a consultation with our Vaidyas to assess your case." },
   { question: "What therapies are most effective for nerve pain?", answer: "Kati Vasti (localized oil pooling), Patra Pinda Sweda (herbal poultice), and Basti (medicated enema) are the gold-standard therapies. They directly target the Vata imbalance and provide both immediate pain relief and long-term healing." },
-  { question: "Is this treatment suitable for older patients?", answer: "Absolutely. Ayurvedic treatments are non-invasive and gentle. We personalize the intensity of the massage and the temperature of the oils to suit the age and strength of the patient, ensuring a safe and comfortable healing experience." },
-  { question: "Can I continue physiotherapy alongside Ayurvedic treatment?", answer: "Yes, and this combination often produces superior results. Ayurvedic therapies prepare the muscles and nerves for physiotherapy, making each session more effective. Many of our patients do both simultaneously for accelerated recovery." }
+  { question: "Is this treatment suitable for older patients?", answer: "Absolutely. Ayurveda treatments are non-invasive and gentle. We personalize the intensity of the massage and the temperature of the oils to suit the age and strength of the patient, ensuring a safe and comfortable healing experience." },
+  { question: "Can I continue physiotherapy alongside Ayurveda treatment?", answer: "Yes, and this combination often produces superior results. Ayurvedic therapies prepare the muscles and nerves for physiotherapy, making each session more effective. Many of our patients do both simultaneously for accelerated recovery." }
 ];
 
 const topAyurvedicCenters = [
@@ -842,4 +842,5 @@ const SciaticaTreatment = () => {
 };
 
 export default SciaticaTreatment;
+
 

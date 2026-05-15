@@ -1,4 +1,4 @@
-﻿import Navigation from "@/components/Navigation"
+import Navigation from "@/components/Navigation"
 import Footer from "@/components/Footer"
 import QuoteModal from "@/components/QuoteModal"
 import { Button } from "@/components/ui/button"
@@ -127,7 +127,7 @@ export default function KairaliHealingVillage() {
     },
     {
       title: "Quality Certification",
-      description: "Certified for maintaining the highest quality standards in Ayurvedic treatments.",
+      description: "Certified for maintaining the highest quality standards in Ayurveda treatments.",
       image: "/Center Images/The Ayurvedic Healing Village/Awards/Awards/Award 4.jfif"
     }
   ]
@@ -181,7 +181,7 @@ export default function KairaliHealingVillage() {
     },
     {
       title: "Best Luxury Ayurveda Spa",
-      description: "Recognized as the pinnacle of luxury and authentic Ayurvedic healing.",
+      description: "Recognized as the pinnacle of luxury and authentic Ayurvedic Healing.",
       image: "/Center Images/The Ayurvedic Healing Village/Awards/Media/15 (Kairali Ayurvedic Healing Village is declared the Winner of Best Luxury Ayurveda Spa for 2020).jpg"
     }
   ]
@@ -2390,6 +2390,7 @@ export default function KairaliHealingVillage() {
     </div >
   )
 }
+
 
 
 

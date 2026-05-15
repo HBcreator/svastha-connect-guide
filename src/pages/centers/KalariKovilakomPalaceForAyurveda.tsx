@@ -1487,7 +1487,7 @@ export default function KalariKovilakomPalaceForAyurveda() {
                   />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: "#7F543D" }}>
-                    Take the first step toward authentic Ayurvedic healing. Our expert team guides you with a personalized program designed for your needs.
+                    Take the first step toward authentic Ayurvedic Healing. Our expert team guides you with a personalized program designed for your needs.
                   </p>
                   <div className="space-y-3">
                     <Button
@@ -1519,7 +1519,7 @@ export default function KalariKovilakomPalaceForAyurveda() {
                 <div>
                   <h3 className="text-2xl md:text-4xl font-bold text-primary mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-base md:text-lg mb-6" style={{ color: "#7F543D" }}>
-                    Take the first step toward authentic Ayurvedic healing. Our team will guide you with a personalized plan tailored to your needs.
+                    Take the first step toward authentic Ayurvedic Healing. Our team will guide you with a personalized plan tailored to your needs.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <Button size="lg" className="rounded-full px-6" onClick={() => setQuoteModalOpen(true)}>
@@ -1872,7 +1872,7 @@ export default function KalariKovilakomPalaceForAyurveda() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognition of excellence in authentic Ayurvedic healing and responsible hospitality.
+                Recognition of excellence in authentic Ayurvedic Healing and responsible hospitality.
               </p>
             </div>
 
@@ -2319,3 +2319,4 @@ export default function KalariKovilakomPalaceForAyurveda() {
     </div>
   );
 }
+

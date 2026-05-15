@@ -120,7 +120,7 @@ const patientReviews = [
 
 const faqItems = [
   { question: "How does Ayurveda differentiate between types of arthritis?", answer: "Ayurveda recognizes two main types: Osteoarthritis (Sandhigata Vata), caused by wear-and-tear and Vata aggravation, and Rheumatoid Arthritis (Amavata), an autoimmune/inflammatory condition caused by toxic buildup (Ama) in the joints." },
-  { question: "Can Ayurvedic treatment prevent the need for joint replacement?", answer: "In many cases of mild to moderate osteoarthritis, therapies like Janu Vasti can significantly rebuild joint lubrication and relieve pain, often allowing patients to safely postpone or avoid surgery." },
+  { question: "Can Ayurveda treatment prevent the need for joint replacement?", answer: "In many cases of mild to moderate osteoarthritis, therapies like Janu Vasti can significantly rebuild joint lubrication and relieve pain, often allowing patients to safely postpone or avoid surgery." },
   { question: "Why is digestion so important in treating Rheumatoid Arthritis?", answer: "In Ayurveda, Rheumatoid Arthritis (Amavata) starts in the gut. A weak digestive fire creates 'Ama' (toxins) which circulate and settle in the joints. Healing the gut and digesting this Ama is the only way to stop the inflammation at its source." },
   { question: "Are Ayurvedic massages safe when my joints are highly inflamed?", answer: "Standard oil massages can actually worsen Rheumatoid (inflammatory) arthritis. Instead, our Vaidyas use specific dry therapies like Patra Pinda Sweda (herbal poultices) or Dhanyamla Dhara to safely reduce active swelling." },
   { question: "How soon will I experience pain relief?", answer: "Most patients report a noticeable reduction in stiffness and pain within the first 7 to 10 days of targeted therapies like Kati Vasti or Pizhichil, though full structural healing takes longer." }
@@ -191,7 +191,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -241,7 +241,7 @@ const topAyurvedicCenters = [
     name: "AyurSoma Ayurveda Royal Retreat",
     city: "Kerala",
     location: "Kerala",
-    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    description: "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
@@ -894,3 +894,4 @@ const ArthritisTreatment = () => {
 };
 
 export default ArthritisTreatment;
+

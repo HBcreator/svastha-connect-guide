@@ -2295,3 +2295,4 @@ export default function SitaramBeachRetreat() {
     </div>
   );
 }
+

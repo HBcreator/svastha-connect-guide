@@ -36,13 +36,13 @@ const patientReviews = [
   {
     name: "Pieter Jansen", location: "The Hague, Netherlands", condition: "Post-Surgery Alternative",
     title: "Results My Vascular Surgeon Considered Remarkable.",
-    review: "My vascular surgeon had recommended surgery as the only option. I chose to try Ayurvedic treatment first. Just six sessions of Jalaukavacharana over forty-five days, combined with herbal poultices and massage, produced complete wound closure. My surgeon described the result as remarkable.",
+    review: "My vascular surgeon had recommended surgery as the only option. I chose to try Ayurveda treatment first. Just six sessions of Jalaukavacharana over forty-five days, combined with herbal poultices and massage, produced complete wound closure. My surgeon described the result as remarkable.",
     rating: 5, verified: true
   },
   {
     name: "SiobhÃ¡n Malone", location: "Galway, Ireland", condition: "Recurrent Ulcers",
     title: "Healedâ€”With No Recurrence in Eighteen Months.",
-    review: "The most important outcome was not just healing, but the absence of recurrence. My ulcer had re-opened three times in two years under conventional care. The Ayurvedic program addressed the underlying venous obstruction through Raktamokshana. Eighteen months later, there has been no recurrence.",
+    review: "The most important outcome was not just healing, but the absence of recurrence. My ulcer had re-opened three times in two years under conventional care. The Ayurveda Package addressed the underlying venous obstruction through Raktamokshana. Eighteen months later, there has been no recurrence.",
     rating: 5, verified: true
   }
 ];
@@ -52,7 +52,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -122,7 +122,7 @@ const topAyurvedicCenters = [
     name: "Shathayu Ayurveda Yoga Retreat",
     city: "Udupi",
     location: "Udupi",
-    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
@@ -142,7 +142,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -152,7 +152,7 @@ const topAyurvedicCenters = [
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic healing, the center delivers an environment of discipline, authenticity, and transformative care.",
+    description: "Immerse yourself in the authentic discipline of Ayurveda at Kalari Kovilakom � The Palace For Ayurveda, a globally acclaimed wellness retreat rooted in ancient healing traditions. Set within a restored heritage palace, this unique center follows the classical gurukula system, offering a structured and immersive approach to Ayurvedic care. Guided by experienced Vaidyas, every program is tailored to restore balance, detoxify the body, and promote long-term well-being through time-tested therapies and holistic practices. With a strong focus on Panchakarma and intensive healing programs, Kalari Kovilakom provides a highly personalized wellness journey. From therapeutic treatments and sattvic nutrition to yoga and meditation, every element is carefully designed to support deep rejuvenation of body and mind. Ideal for those seeking serious, results-driven Ayurvedic Healing, the center delivers an environment of discipline, authenticity, and transformative care.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -172,8 +172,8 @@ const topAyurvedicCenters = [
 
 const faqItems = [
   { question: "How does Leech Therapy (Jalaukavacharana) help heal an ulcer?", answer: "Leeches remove stagnant, deoxygenated blood and toxins from the affected area. Their saliva contains natural anticoagulants and anti-inflammatory substances that improve micro-circulation, allowing fresh, oxygenated blood to reach the wound and promote tissue regeneration." },
-  { question: "Is Ayurvedic treatment painful for varicose ulcers?", answer: "Therapies like Lepam and Virechana are very soothing. Leech therapy is surprisingly painless; most patients only feel a tiny prick. The overall focus is on reducing pain and inflammation immediately." },
-  { question: "Will the ulcer return after Ayurvedic treatment?", answer: "Ayurveda addresses the root cause (blood impurity and venous obstruction). By combining blood purification with lifestyle and dietary changes, the risk of recurrence is significantly lower compared to surface treatments." },
+  { question: "Is Ayurveda treatment painful for varicose ulcers?", answer: "Therapies like Lepam and Virechana are very soothing. Leech therapy is surprisingly painless; most patients only feel a tiny prick. The overall focus is on reducing pain and inflammation immediately." },
+  { question: "Will the ulcer return after Ayurveda treatment?", answer: "Ayurveda addresses the root cause (blood impurity and venous obstruction). By combining blood purification with lifestyle and dietary changes, the risk of recurrence is significantly lower compared to surface treatments." },
   { question: "How long does it typically take for a chronic ulcer to close?", answer: "Depending on the size and duration of the ulcer, most patients see significant healing within 14 to 21 days. Complete closure of even long-standing ulcers is usually achieved within a 28 to 42-day comprehensive program." },
   { question: "Are there any dietary restrictions during the treatment?", answer: "Yes. To prevent blood impurities (Rakta Dushti), you must avoid excessively salty, sour, and spicy foods. A high-fiber diet is essential to prevent constipation, which otherwise increases pressure on the leg veins." }
 ];
@@ -949,4 +949,5 @@ const VaricoseUlcer = () => {
 };
 
 export default VaricoseUlcer;
+
 

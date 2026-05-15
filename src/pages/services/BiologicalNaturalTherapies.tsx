@@ -709,3 +709,4 @@ const BiologicalNaturalTherapies = () => {
 };
 
 export default BiologicalNaturalTherapies;
+

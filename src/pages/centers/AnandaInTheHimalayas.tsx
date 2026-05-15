@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -2472,6 +2472,7 @@ const AnandaInTheHimalayas = () => {
 };
 
 export default AnandaInTheHimalayas;
+
 
 
 

@@ -2303,3 +2303,4 @@ export default function TheNattikaBeachResort() {
     </div>
   );
 }
+

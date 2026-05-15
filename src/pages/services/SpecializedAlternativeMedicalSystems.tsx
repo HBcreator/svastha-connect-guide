@@ -768,3 +768,4 @@ const SpecializedAlternativeMedicalSystems = () => {
 };
 
 export default SpecializedAlternativeMedicalSystems;
+

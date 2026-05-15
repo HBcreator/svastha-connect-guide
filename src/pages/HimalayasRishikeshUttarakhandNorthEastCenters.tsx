@@ -177,7 +177,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "Yan Cure Yoga Retreat & Ayurveda Centre",
       city: "Rishikesh, Uttarakhand, India",
       description:
-        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic healing.",
+        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing.",
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
@@ -199,7 +199,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "Modi Yoga Retreat",
       city: "Rishikesh, Uttarakhand, India",
       description:
-        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic healing standards.",
+        "Modi Yoga Retreat is a premier riverside sanctuary in Rishikesh that seamlessly integrates traditional Hatha Yoga philosophy with authentic Ayurvedic Healing standards.",
       rating: 4.7,
       reviews: "600",
       image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
@@ -210,7 +210,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "Veda5 Ayurveda & Yoga Retreat",
       city: "Rishikesh, Uttarakhand, India",
       description:
-        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards. Nestled in the serene Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality.",
+        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic Healing with world-class hospitality and professional medical standards. Nestled in the serene Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality.",
       rating: 4.9,
       reviews: "1000",
       image: "/Center Images/veda5/veda5-1.jpg",
@@ -424,3 +424,4 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
 };
 
 export default HimalayasRishikeshUttarakhandNorthEastCenters;
+

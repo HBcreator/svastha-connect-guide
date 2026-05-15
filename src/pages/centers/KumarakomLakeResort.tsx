@@ -2349,3 +2349,4 @@ export default function KumarakomLakeResort() {
     </div>
   );
 }
+

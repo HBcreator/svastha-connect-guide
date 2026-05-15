@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -822,8 +822,8 @@ export default function KrishnenduAyurvedaHospital() {
             const match = line.match(/\((\d+)\/\d+\)/);
             if (match) {
               current.rating = parseInt(match[1], 10);
-            } else if (line.includes("⭐")) {
-              const stars = (line.match(/⭐/g) || []).length;
+            } else if (line.includes("?")) {
+              const stars = (line.match(/?/g) || []).length;
               if (stars > 0) current.rating = stars;
             }
             continue;
@@ -1452,7 +1452,7 @@ export default function KrishnenduAyurvedaHospital() {
                 Video Gallery of Krishnendu Ayurveda Hospital
               </h2>
               <p className="text-base md:text-lg mx-auto px-4 max-w-4xl" style={{ color: "#7F543D" }}>
-                Take a virtual tour of our facilities and witness the authentic Ayurvedic treatments that have made us a trusted name for over a century.
+                Take a virtual tour of our facilities and witness the authentic Ayurveda treatments that have made us a trusted name for over a century.
               </p>
             </div>
 
@@ -1884,7 +1884,7 @@ export default function KrishnenduAyurvedaHospital() {
                     Heritage & Excellence in Ayurvedic Facilities
                   </h4>
                   <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
-                    Every facility at Krishnendu is designed to maintain the highest standards of authentic Ayurvedic healing while ensuring modern comfort and hygiene. Our 4th generation legacy ensures that every aspect of your stay is curated for optimal recovery and serene relaxation in a traditional village atmosphere.
+                    Every facility at Krishnendu is designed to maintain the highest standards of authentic Ayurvedic Healing while ensuring modern comfort and hygiene. Our 4th generation legacy ensures that every aspect of your stay is curated for optimal recovery and serene relaxation in a traditional village atmosphere.
                   </p>
                 </div>
               </div>
@@ -2134,7 +2134,7 @@ export default function KrishnenduAyurvedaHospital() {
                 <Award className="h-8 w-8" />
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
-              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic healing and patient care over 116 years</p>
+              <p className="text-base md:text-lg px-4" style={{ color: '#7F543D' }}>Recognition of our excellence in authentic Ayurvedic Healing and patient care over 116 years</p>
             </div>
 
             <div className="relative group max-w-5xl mx-auto">
@@ -2584,6 +2584,7 @@ export default function KrishnenduAyurvedaHospital() {
     </div>
   );
 }
+
 
 
 

@@ -15,7 +15,7 @@ const BeautyAndRejuvenation = () => {
       name: "Ayurvedic Skin Rejuvenation Therapy in India",
       description: "A holistic clinical program focusing on deep tissue purification and facial rejuvenation through traditional Ayurvedic therapies like Mukha Lepam, Navara Mukhabhyanga, and specialized herbal steam. Designed to restore natural skin glow, improve elasticity, and address chronic skin conditions at the root.",
       image: "/program-images/skin-rejuvenation.png",
-      link: "/beauty-rejuvenation/ayurvedic-skin-rejuvenation-therapy-in-india",
+      link: "/ayurveda-packages/ayurvedic-skin-rejuvenation-therapy-in-india",
       rating: 4.9,
       reviews: 245,
       tags: ["7-14 Days", "Skin Glow", "Mukha Lepam", "Detox"]
@@ -24,7 +24,7 @@ const BeautyAndRejuvenation = () => {
       name: "Ayurvedic Hair Loss Treatment Program in India",
       description: "A specialized Ayurvedic protocol targeting the underlying causes of hair thinning and loss (Khalitya). Combines Shirodhara, Nasya, and scalp-nourishing therapies like Shirolepa and Takradhara with personalized herbal supplements to stimulate follicle growth and restore scalp health.",
       image: "/program-images/hair-loss.png",
-      link: "/beauty-rejuvenation/ayurvedic-hair-loss-treatment-program-in-india",
+      link: "/ayurveda-packages/ayurvedic-hair-loss-treatment-program-in-india",
       rating: 4.7,
       reviews: 312,
       tags: ["14-21 Days", "Hair Growth", "Shirodhara", "Scalp Health"]
@@ -33,7 +33,7 @@ const BeautyAndRejuvenation = () => {
       name: "Ayurvedic Beauty & Detox Retreat in India",
       description: "A comprehensive beauty and rejuvenation program that merges internal detoxification with external pampering. Includes whole-body Udvarthanam (herbal scrub), Pizhichil (oil bath), and specialized beauty rituals to cleanse the blood, tone the body, and refresh the spirit for a radiant transformation.",
       image: "/program-images/beauty-detox.png",
-      link: "/beauty-rejuvenation/ayurvedic-beauty-detox-retreat-in-india",
+      link: "/ayurveda-packages/ayurvedic-beauty-detox-retreat-in-india",
       rating: 4.9,
       reviews: 188,
       tags: ["10-14 Days", "Full Body Detox", "Radiant Glow", "Anti-Aging"]
@@ -135,3 +135,4 @@ const BeautyAndRejuvenation = () => {
 };
 
 export default BeautyAndRejuvenation;
+

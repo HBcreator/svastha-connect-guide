@@ -61,7 +61,7 @@ const About = () => {
             </h2>
             
             <p className="text-lg text-foreground text-center mb-12">
-              Our mission is simple — to make authentic Ayurvedic healing accessible and personalized. 
+              Our mission is simple — to make authentic Ayurvedic Healing accessible and personalized. 
               We have collaborated with top Ayurvedic centers, wellness resorts, and spa retreats across India — 
               from the serene backwaters of Kerala to the peaceful beaches of Goa, and the rejuvenating wellness 
               hubs of Bangalore and Rishikesh.
@@ -195,3 +195,4 @@ const About = () => {
 };
 
 export default About;
+

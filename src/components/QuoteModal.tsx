@@ -283,3 +283,4 @@ const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
 };
 
 export default QuoteModal;
+

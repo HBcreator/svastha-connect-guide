@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -1967,7 +1967,7 @@ export default function ShathayuAyurvedaYogaRetreat() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards and Media</h2>
               <p className="text-base md:text-lg px-4" style={{ color: "#7F543D" }}>
-                Recognitions that reflect Shathayu's commitment to safety, quality, and authentic Ayurvedic healing
+                Recognitions that reflect Shathayu's commitment to safety, quality, and authentic Ayurvedic Healing
               </p>
             </div>
 
@@ -2594,6 +2594,7 @@ export default function ShathayuAyurvedaYogaRetreat() {
     </div>
   );
 }
+
 
 
 

@@ -1,4 +1,4 @@
-Ôªøimport { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -61,7 +61,7 @@ const topAyurvedicCenters = [
     name: "Carnoustie Ayurveda & Wellness Resort",
     city: "Mararikulam",
     location: "Mararikulam",
-    description: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body‚Äôs doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment‚Äîsurrounded by lush greenery and the calming Arabian Sea‚Äîenhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    description: "Step into a sanctuary of authentic Ayurvedic Healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the bodyís doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environmentósurrounded by lush greenery and the calming Arabian Seaóenhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
@@ -128,7 +128,7 @@ const topAyurvedicCenters = [
     link: "/centers/kerala/somatheeram"
   },
   {
-    name: "Namaste Dwaar ‚Äì Countryside Wellness Retreat",
+    name: "Namaste Dwaar ñ Countryside Wellness Retreat",
     city: "Delhi",
     location: "Delhi",
     description: "Peaceful farmhouse sanctuary near NCR offering authentic Ayurvedic therapies, farm-fresh sattvic food, and compassionate care.",
@@ -141,14 +141,14 @@ const topAyurvedicCenters = [
     name: "Ananda In The Himalayas",
     city: "Uttarakhand",
     location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit‚Äîcreating lasting transformation through mindful living and natural healing practices.",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spiritócreating lasting transformation through mindful living and natural healing practices.",
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
     link: "/centers/uttarakhand/ananda-in-the-himalayas"
   },
   {
-    name: "Kairali Heritage Resort ‚Äì Riverside Ayurveda & Wellness Retreat",
+    name: "Kairali Heritage Resort ñ Riverside Ayurveda & Wellness Retreat",
     city: "Kerala",
     location: "Kerala",
     description: "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
@@ -174,7 +174,7 @@ const faqItems = [
   { question: "Can Ayurveda help with speech problems (aphasia) caused by stroke?", answer: "Yes. Therapies like Nasya and Shirodhara, combined with specific speech-focused Ayurvedic herbs, can help restore cognitive functions and improve speech clarity by nourishing the brain centers." },
   { question: "Is this treatment safe for patients with high blood pressure?", answer: "Absolutely. In fact, many Ayurvedic stroke programs include blood pressure management. Our physicians monitor your vitals daily and adjust the oils and therapies to ensure they are safe and beneficial." },
   { question: "How long is the recommended stay for full rehabilitation?", answer: "For significant neurological recovery, we recommend a minimum of 21 to 28 days. For more severe cases of paralysis, a 42-day comprehensive program is ideal to ensure sustainable strength and independence." },
-  { question: "Can Ayurvedic therapies be combined with conventional physiotherapy?", answer: "Yes, and this is actually highly recommended. Ayurvedic treatments like Abhyanga and Kizhi prepare the muscles and nerves, making them more receptive to physiotherapy. Many patients do both simultaneously for accelerated recovery." }
+  { question: "Can Ayurvedic therapies be combined with conventional physiotherapy?", answer: "Yes, and this is actually highly recommended. Ayurveda treatments like Abhyanga and Kizhi prepare the muscles and nerves, making them more receptive to physiotherapy. Many patients do both simultaneously for accelerated recovery." }
 ];
 
 const StrokeTreatment = () => {
@@ -309,7 +309,7 @@ const StrokeTreatment = () => {
                     A stroke, or <strong>Pakshaghata</strong> in Ayurveda, is a severe disruption of the Vata dosha that blocks the body's channels (srotas).
                   </p>
                   <p>
-                    While modern medicine handles the acute phase, Ayurveda focuses on the <strong>rehabilitation journey</strong>√¢‚Ç¨‚Äùnourishing damaged nerves and restoring the flow of prana to paralyzed limbs.
+                    While modern medicine handles the acute phase, Ayurveda focuses on the <strong>rehabilitation journey</strong>‚Äînourishing damaged nerves and restoring the flow of prana to paralyzed limbs.
                   </p>
                 </div>
               </div>
@@ -836,4 +836,5 @@ const StrokeTreatment = () => {
 };
 
 export default StrokeTreatment;
+
 

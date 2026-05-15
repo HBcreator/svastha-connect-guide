@@ -119,7 +119,7 @@ const patientReviews = [
 ];
 
 const faqItems = [
-  { question: "Is Ayurvedic treatment a permanent cure for GERD?", answer: "Ayurveda offers long-lasting remission by treating the root cause (Pitta imbalance and weak Agni) rather than just suppressing acid. If you follow the prescribed diet and lifestyle post-treatment, flare-ups can be completely prevented." },
+  { question: "Is Ayurveda treatment a permanent cure for GERD?", answer: "Ayurveda offers long-lasting remission by treating the root cause (Pitta imbalance and weak Agni) rather than just suppressing acid. If you follow the prescribed diet and lifestyle post-treatment, flare-ups can be completely prevented." },
   { question: "How long does it take to get off my PPI medications?", answer: "Many patients are able to safely taper off their PPI medications within the 21 to 28-day intensive Panchakarma program, under the close supervision of our Vaidyas." },
   { question: "What is Virechana and why is it needed for GERD?", answer: "Virechana is a therapeutic, medicated purgation. It is the most effective way to eliminate deeply seated, hot, acidic Pitta toxins from the liver and gallbladder, directly addressing the source of the acid reflux." },
   { question: "Can stress really cause GERD?", answer: "Absolutely. In Ayurveda, stress aggravates Vata and Pitta doshas, disrupting digestion and weakening the esophageal sphincter. Therapies like Takradhara profoundly calm the nervous system to break this cycle." },
@@ -894,3 +894,4 @@ const GastroesophagealRefluxDisease = () => {
 };
 
 export default GastroesophagealRefluxDisease;
+

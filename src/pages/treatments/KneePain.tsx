@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -13,12 +13,12 @@ import {
   ShieldCheck
 } from "lucide-react";
 
-/* â”€â”€â”€ DATA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── DATA ─────────────────────────────────────────── */
 
 const patientReviews = [
   {
     name: "Thomas Bergmann", location: "Munich, Germany", condition: "Osteoarthritis",
-    title: "Fifteen Years of Knee Painâ€”Resolved Without Surgery.",
+    title: "Fifteen Years of Knee Pain—Resolved Without Surgery.",
     review: "My orthopedic specialist in Germany had recommended knee replacement surgery after fifteen years of progressive osteoarthritis. I chose to try Ayurveda instead. The 60-day program, which included Janu Basti and internal Rasayana herbs, was incredible. My pain has reduced by nearly ninety percent, and my mobility has fully returned.",
     rating: 5, verified: true
   },
@@ -29,21 +29,21 @@ const patientReviews = [
     rating: 5, verified: true
   },
   {
-    name: "FranÃ§ois Lecomte", location: "Lyon, France", condition: "Knee Inflammation",
-    title: "They Treated the Root Causeâ€”Not Just the Inflammation.",
+    name: "François Lecomte", location: "Lyon, France", condition: "Knee Inflammation",
+    title: "They Treated the Root Cause—Not Just the Inflammation.",
     review: "In France, my knee condition was managed entirely with temporary cortisone injections. The Ayurvedic physician prescribed Virechana (therapeutic purgation) to eliminate systemic toxins, followed by Pinda Sweda. Internal formulations of Ashwagandha and Shallaki reduced the cartilage inflammation over six weeks, and I have not required any further injections.",
     rating: 5, verified: true
   },
   {
     name: "Annika Johansson", location: "Gothenburg, Sweden", condition: "Stage-3 Degeneration",
-    title: "Avoided Knee Replacement Surgeryâ€”Results Confirmed by My Specialist.",
-    review: "My rheumatologist had recommended surgery for my stage-three knee degeneration. I underwent a forty-five-day Ayurvedic program instead. The Janu Basti sessions restored lubrication, while Guggulu-based herbs worked to rebuild cartilage. Upon my return, my specialist confirmed a measurable improvement in my joint spaceâ€”an outcome he described as unexpected.",
+    title: "Avoided Knee Replacement Surgery—Results Confirmed by My Specialist.",
+    review: "My rheumatologist had recommended surgery for my stage-three knee degeneration. I underwent a forty-five-day Ayurveda Package instead. The Janu Basti sessions restored lubrication, while Guggulu-based herbs worked to rebuild cartilage. Upon my return, my specialist confirmed a measurable improvement in my joint space—an outcome he described as unexpected.",
     rating: 5, verified: true
   },
   {
-    name: "CiarÃ¡n Walsh", location: "Limerick, Ireland", condition: "Chronic Knee Pain",
+    name: "Ciarán Walsh", location: "Limerick, Ireland", condition: "Chronic Knee Pain",
     title: "Pain-Free for the First Time in Eight Years.",
-    review: "Eight years of chronic knee pain had forced me to give up running entirely. The Ayurvedic physician diagnosed a Vata-Kapha imbalance and prescribed a program of Dhara, Lepa (herbal paste), and specific dietary corrections. The swelling subsided within thirty days, and by day fifty, I had resumed light joggingâ€”something I had not done in nearly a decade.",
+    review: "Eight years of chronic knee pain had forced me to give up running entirely. The Ayurvedic physician diagnosed a Vata-Kapha imbalance and prescribed a program of Dhara, Lepa (herbal paste), and specific dietary corrections. The swelling subsided within thirty days, and by day fifty, I had resumed light jogging—something I had not done in nearly a decade.",
     rating: 5, verified: true
   },
 ];
@@ -63,7 +63,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -113,7 +113,7 @@ const topAyurvedicCenters = [
     name: "Indus Valley Ayurvedic Centre",
     city: "Mysore",
     location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
@@ -130,10 +130,10 @@ const topAyurvedicCenters = [
     link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
-    name: "Kairali – The Ayurvedic Healing Village",
+    name: "Kairali � The Ayurvedic Healing Village",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+    description: "Kairali � The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
@@ -163,7 +163,7 @@ const topAyurvedicCenters = [
     name: "AyurSoma Ayurveda Royal Retreat",
     city: "Kerala",
     location: "Kerala",
-    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    description: "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
@@ -172,10 +172,10 @@ const topAyurvedicCenters = [
 ];
 
 const faqItems = [
-  { question: "Can Ayurveda cure knee pain permanently?", answer: "Ayurveda addresses the root cause of knee pain â€” aggravated Vata dosha and accumulated Ama â€” rather than just masking symptoms. With the right program, patients experience long-lasting and often permanent relief, especially from degenerative conditions like osteoarthritis." },
-  { question: "What is Janu Vasti and how does it help?", answer: "Janu Vasti is the cornerstone Ayurvedic therapy for knee pain. A dough ring is placed around the knee and filled with warm medicated oil. This deeply lubricates the joint, nourishes cartilage, relieves pain and stiffness, and strengthens surrounding tissues â€” all without any invasive procedures." },
+  { question: "Can Ayurveda cure knee pain permanently?", answer: "Ayurveda addresses the root cause of knee pain — aggravated Vata dosha and accumulated Ama — rather than just masking symptoms. With the right program, patients experience long-lasting and often permanent relief, especially from degenerative conditions like osteoarthritis." },
+  { question: "What is Janu Vasti and how does it help?", answer: "Janu Vasti is the cornerstone Ayurvedic therapy for knee pain. A dough ring is placed around the knee and filled with warm medicated oil. This deeply lubricates the joint, nourishes cartilage, relieves pain and stiffness, and strengthens surrounding tissues — all without any invasive procedures." },
   { question: "How long does the treatment program take?", answer: "A 21-day program provides foundational relief. A 45-day program offers deep healing for chronic conditions. Severe degeneration or cases avoiding surgery benefit most from a 60-day intensive program. Your Vaidya will recommend the optimal duration based on your assessment." },
-  { question: "Is Ayurvedic knee treatment an alternative to surgery?", answer: "Many patients who were advised knee replacement surgery have avoided it through Ayurvedic treatment. Results confirmed by conventional specialists include measurable improvements in joint space and significant reduction in pain. However, the outcome depends on the stage of degeneration and individual health." },
+  { question: "Is Ayurvedic knee treatment an alternative to surgery?", answer: "Many patients who were advised knee replacement surgery have avoided it through Ayurveda treatment. Results confirmed by conventional specialists include measurable improvements in joint space and significant reduction in pain. However, the outcome depends on the stage of degeneration and individual health." },
   { question: "What conditions does Ayurvedic knee treatment address?", answer: "Ayurvedic knee treatment is effective for Osteoarthritis (Janu Sandhigata Vata), Rheumatoid Arthritis (Amavata), post-injury chronic pain, ligament degeneration, cartilage wear, and general joint stiffness and inflammation." },
 ];
 
@@ -196,7 +196,7 @@ const therapies = [
   },
   {
     title: "Patra Pinda Sweda",
-    subtitle: "Elakizhi â€” Herbal Bolus",
+    subtitle: "Elakizhi — Herbal Bolus",
     icon: Leaf,
     benefits: [
       "Reduces inflammation and swelling",
@@ -204,7 +204,7 @@ const therapies = [
       "Improves local circulation",
       "Relaxes tight muscles around the knee",
     ],
-    desc: "Poultices made from fresh anti-inflammatory leaves are fried in medicated oil and applied to the knee â€” highly effective for pain and swelling.",
+    desc: "Poultices made from fresh anti-inflammatory leaves are fried in medicated oil and applied to the knee — highly effective for pain and swelling.",
     bg: "#EDE8D0",
     border: "#d8d0ae",
   },
@@ -242,13 +242,13 @@ const whyIndiaPoints = [
   },
   {
     title: "Holistic Healing Ecosystem",
-    text: "Centers integrate therapies with customized diet, therapeutic yoga, and a peaceful environment â€” accelerating recovery.",
+    text: "Centers integrate therapies with customized diet, therapeutic yoga, and a peaceful environment — accelerating recovery.",
     icon: Sparkles,
   },
 ];
 
 const dietFavour = [
-  "Warm, moist, easy-to-digest foods â€” soups, stews, well-cooked grains",
+  "Warm, moist, easy-to-digest foods — soups, stews, well-cooked grains",
   "Healthy fats like ghee and sesame oil to lubricate the joints",
   "Anti-inflammatory spices: turmeric, ginger, and garlic",
 ];
@@ -262,7 +262,7 @@ const lifestyleTips = [
   { label: "Maintain Healthy Weight", text: "Every extra pound puts four pounds of pressure on the knees." },
   { label: "Gentle Exercise", text: "Swimming, cycling, and specific yoga asanas strengthen without straining the joint." },
   { label: "Correct Posture", text: "Be mindful while sitting and standing to avoid undue stress on the knees." },
-  { label: "Stay Warm", text: "Protect knees from cold drafts â€” coldness aggravates Vata and increases pain." },
+  { label: "Stay Warm", text: "Protect knees from cold drafts — coldness aggravates Vata and increases pain." },
 ];
 
 const kneePainPackages = [
@@ -286,7 +286,7 @@ const kneePainPackages = [
   },
 ];
 
-/* â”€â”€â”€ COMPONENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ─── COMPONENT ─────────────────────────────────────── */
 
 const KneePain = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -342,7 +342,7 @@ const KneePain = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── HERO ────────────────────────────────────────── */}
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -377,7 +377,7 @@ const KneePain = () => {
 
       <main className="container mx-auto px-4 pt-6 pb-2 md:pt-8 md:pb-4 max-w-6xl space-y-14 md:space-y-16">
 
-        {/* â”€â”€ INTRO SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── INTRO SECTION ───────────────────────────────── */}
         <section id="intro" className="scroll-mt-24">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden shadow-lg group">
@@ -395,7 +395,7 @@ const KneePain = () => {
                 Knee pain is one of the most common ailments that severely impacts quality of life. While conventional medicine often relies on painkillers and surgery, Ayurveda offers a holistic, safe, and powerful alternative.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                Ayurvedic treatment for knee pain goes beyond temporary relief â€” it focuses on healing the <strong className="text-[#335765]">root cause</strong>, reducing inflammation, strengthening the joint, and restoring pain-free mobility for the long term.
+                Ayurveda treatment for knee pain goes beyond temporary relief — it focuses on healing the <strong className="text-[#335765]">root cause</strong>, reducing inflammation, strengthening the joint, and restoring pain-free mobility for the long term.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
@@ -406,11 +406,11 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* â”€â”€ AYURVEDIC VIEW (Janu Sandhigata Vata) â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── AYURVEDIC VIEW (Janu Sandhigata Vata) ───────── */}
         <section id="ayurvedic-view" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">The Ayurvedic View of Knee Pain</h2>
-            <p className="text-[#7F543D] text-lg italic">Janu Sandhigata Vata â€” "Janu" (Knee) + "Sandhi" (Joint) + "Vata" (Dosha)</p>
+            <p className="text-[#7F543D] text-lg italic">Janu Sandhigata Vata — "Janu" (Knee) + "Sandhi" (Joint) + "Vata" (Dosha)</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -420,7 +420,7 @@ const KneePain = () => {
                 <Wind className="text-[#7F543D] h-5 w-5" /> The Role of Vata Dosha
               </h3>
               <p className="text-[#7F543D] text-sm leading-relaxed">
-                The primary culprit behind knee pain is an aggravated <strong>Vata dosha</strong>. Vata is naturally dry, light, and cold. When it becomes imbalanced â€” due to age, diet, or injury â€” it accumulates in the joints, causing:
+                The primary culprit behind knee pain is an aggravated <strong>Vata dosha</strong>. Vata is naturally dry, light, and cold. When it becomes imbalanced — due to age, diet, or injury — it accumulates in the joints, causing:
               </p>
               <div className="space-y-3">
                 {[
@@ -444,18 +444,18 @@ const KneePain = () => {
                 <Sparkles className="text-[#7F543D] h-5 w-5" /> The Role of Ama (Toxins)
               </h3>
               <p className="text-[#7F543D] text-sm leading-relaxed">
-                In some cases, the buildup of metabolic toxins (<strong>Ama</strong>) in the joints leads to inflammation â€” a condition known as <strong>Amavata</strong> (Rheumatoid Arthritis) â€” which also severely affects the knee joints.
+                In some cases, the buildup of metabolic toxins (<strong>Ama</strong>) in the joints leads to inflammation — a condition known as <strong>Amavata</strong> (Rheumatoid Arthritis) — which also severely affects the knee joints.
               </p>
               <div className="bg-white rounded-xl p-4 border border-[#d8d0ae] mt-4">
                 <p className="text-[#335765] font-bold text-sm mb-2">Two Distinct Patterns of Knee Disease:</p>
                 <div className="space-y-2 text-sm text-[#7F543D]">
                   <div className="flex gap-2 items-start">
                     <span className="font-bold text-[#335765] shrink-0">1.</span>
-                    <p><strong className="text-[#335765]">Janu Sandhigata Vata</strong> â€” Degenerative (Osteoarthritis): dry, crepitus, loss of cartilage. Treated primarily with oleation and nourishment.</p>
+                    <p><strong className="text-[#335765]">Janu Sandhigata Vata</strong> — Degenerative (Osteoarthritis): dry, crepitus, loss of cartilage. Treated primarily with oleation and nourishment.</p>
                   </div>
                   <div className="flex gap-2 items-start">
                     <span className="font-bold text-[#335765] shrink-0">2.</span>
-                    <p><strong className="text-[#335765]">Amavata</strong> â€” Inflammatory (Rheumatoid): swollen, hot, painful joints. Treated with detoxification (Panchakarma) first.</p>
+                    <p><strong className="text-[#335765]">Amavata</strong> — Inflammatory (Rheumatoid): swollen, hot, painful joints. Treated with detoxification (Panchakarma) first.</p>
                   </div>
                 </div>
               </div>
@@ -464,7 +464,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* â”€â”€ CORE THERAPIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── CORE THERAPIES ──────────────────────────────── */}
         <section id="therapies" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Core Ayurvedic Therapies</h2>
@@ -502,7 +502,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* â”€â”€ WHY INDIA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── WHY INDIA ────────────────────────────────────── */}
         <section id="why-india" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Why Choose India for Knee Pain Treatment?</h2>
@@ -524,7 +524,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* â”€â”€ DIET & LIFESTYLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── DIET & LIFESTYLE ─────────────────────────────── */}
         <section id="diet-lifestyle" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Diet & Lifestyle for Lasting Relief</h2>
@@ -538,7 +538,7 @@ const KneePain = () => {
                 <UtensilsCrossed className="h-5 w-5 text-[#7F543D]" /> Ayurvedic Diet (Ahara)
               </h3>
               <div className="bg-[#F8F4E7] rounded-2xl p-5 border border-[#d8d0ae]">
-                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">âœ… Foods to Favour</p>
+                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">✅ Foods to Favour</p>
                 <div className="space-y-2">
                   {dietFavour.map((f) => (
                     <div key={f} className="flex items-start gap-2 bg-white p-2.5 rounded-lg border border-[#d8d0ae]">
@@ -549,11 +549,11 @@ const KneePain = () => {
                 </div>
               </div>
               <div className="bg-[#EDE8D0] rounded-2xl p-5 border border-[#d8d0ae]">
-                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">âŒ Foods to Avoid</p>
+                <p className="text-sm font-bold text-[#335765] mb-3 uppercase tracking-wider">❌ Foods to Avoid</p>
                 <div className="space-y-2">
                   {dietAvoid.map((f) => (
                     <div key={f} className="flex items-start gap-2 bg-white p-2.5 rounded-lg border border-[#d8d0ae]">
-                      <span className="text-red-400 shrink-0 font-bold text-sm mt-0.5">âœ—</span>
+                      <span className="text-red-400 shrink-0 font-bold text-sm mt-0.5">✗</span>
                       <p className="text-sm text-[#335765] leading-relaxed">{f}</p>
                     </div>
                   ))}
@@ -578,7 +578,7 @@ const KneePain = () => {
           </div>
         </section>
 
-        {/* â”€â”€ PACKAGES SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* ── PACKAGES SECTION ─────────────────────────────── */}
         <section id="cost-duration" className="scroll-mt-24 space-y-10">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4">Suggested Packages, Cost & Duration For Knee Pain Treatment in India</h2>
@@ -877,4 +877,5 @@ const KneePain = () => {
 };
 
 export default KneePain;
+
 

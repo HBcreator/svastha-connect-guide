@@ -25,7 +25,7 @@ const Treatments = () => {
   const treatments = [
     {
       name: "Ayurveda Treatment",
-      slug: "ayurvedic-therapy-in-india",
+      slug: "ayurveda-treatment-in-india",
       category: "Detox & Wellness",
       description: "Experience the ancient science of holistic healing that balances mind, body, and spirit through natural therapies and personalized wellness programs.",
       benefits: ["Complete body rejuvenation", "Natural healing", "Dosha balance", "Improved immunity"],
@@ -33,7 +33,7 @@ const Treatments = () => {
     },
     {
       name: "Panchakarma Treatment",
-      slug: "panchakarma-therapy-in-india",
+      slug: "panchakarma-treatment-in-india",
       category: "Detox & Wellness",
       description: "Deep cleansing detoxification therapy that eliminates toxins through five powerful purification methods for complete body renewal.",
       benefits: ["Deep detoxification", "Enhanced vitality", "Improved digestion", "Mental clarity"],
@@ -41,7 +41,7 @@ const Treatments = () => {
     },
     {
       name: "Sinusitis Treatment",
-      slug: "sinusitis-therapy-in-india",
+      slug: "sinusitis-treatment-in-india",
       category: "Respiratory Care",
       description: "Natural relief from chronic sinus inflammation using herbal therapies and specialized nasal treatments for lasting results.",
       benefits: ["Clears nasal passages", "Reduces inflammation", "Prevents recurrence", "Improves breathing"],
@@ -49,7 +49,7 @@ const Treatments = () => {
     },
     {
       name: "Autism Treatment",
-      slug: "autism-therapy-in-india",
+      slug: "autism-treatment-in-india",
       category: "Neurological Disorders",
       description: "Holistic approach combining Ayurvedic therapies, dietary modifications, and behavioral support for children with autism spectrum disorders.",
       benefits: ["Improved focus", "Better communication", "Reduced anxiety", "Enhanced social skills"],
@@ -57,7 +57,7 @@ const Treatments = () => {
     },
     {
       name: "Weight Loss Treatment",
-      slug: "weight-loss-therapy-in-india",
+      slug: "weight-loss-treatment-in-india",
       category: "Detox & Wellness",
       description: "Sustainable weight management program with personalized diet plans, herbal supplements, and metabolic therapies.",
       benefits: ["Natural weight loss", "Improved metabolism", "Better energy levels", "Long-term results"],
@@ -65,7 +65,7 @@ const Treatments = () => {
     },
     {
       name: "Monsoon Treatment",
-      slug: "monsoon-therapy-in-india",
+      slug: "monsoon-treatment-in-india",
       category: "Detox & Wellness",
       description: "Seasonal rejuvenation program designed to strengthen immunity and prevent monsoon-related ailments through specialized therapies.",
       benefits: ["Boosts immunity", "Prevents infections", "Balances doshas", "Seasonal wellness"],
@@ -73,7 +73,7 @@ const Treatments = () => {
     },
     {
       name: "Parkinson's Disease Treatment",
-      slug: "parkinsons-disease-therapy-in-india",
+      slug: "parkinsons-disease-treatment-in-india",
       category: "Neurological Disorders",
       description: "Comprehensive Ayurvedic care to manage Parkinson's symptoms and improve quality of life through herbal medicines and therapies.",
       benefits: ["Reduces tremors", "Improves mobility", "Better muscle control", "Enhanced quality of life"],
@@ -81,7 +81,7 @@ const Treatments = () => {
     },
     {
       name: "Sciatica Treatment",
-      slug: "sciatica-therapy-in-india",
+      slug: "sciatica-treatment-in-india",
       category: "Pain Management",
       description: "Effective nerve pain relief through specialized herbal oils, therapeutic massages, and internal medicines targeting sciatic nerve inflammation.",
       benefits: ["Pain relief", "Improved mobility", "Reduced inflammation", "Prevents recurrence"],
@@ -89,7 +89,7 @@ const Treatments = () => {
     },
     {
       name: "Stroke Treatment",
-      slug: "stroke-therapy-in-india",
+      slug: "stroke-treatment-in-india",
       category: "Neurological Disorders",
       description: "Post-stroke rehabilitation combining Ayurvedic therapies, physiotherapy, and herbal medications for optimal recovery and prevention.",
       benefits: ["Faster recovery", "Improves motor functions", "Speech improvement", "Prevents recurrence"],
@@ -97,7 +97,7 @@ const Treatments = () => {
     },
     {
       name: "Varicose Ulcer",
-      slug: "varicose-ulcer-therapy-in-india",
+      slug: "varicose-ulcer-treatment-in-india",
       category: "Pain Management",
       description: "Natural healing for varicose ulcers using specialized herbal dressings, internal medicines, and vascular strengthening therapies.",
       benefits: ["Wound healing", "Reduces swelling", "Improves circulation", "Prevents complications"],
@@ -105,7 +105,7 @@ const Treatments = () => {
     },
     {
       name: "Knee Pain",
-      slug: "knee-pain-therapy-in-india",
+      slug: "knee-pain-treatment-in-india",
       category: "Pain Management",
       description: "Effective joint care through medicated oil treatments, herbal formulations, and strengthening exercises for lasting knee health.",
       benefits: ["Pain relief", "Improved flexibility", "Cartilage protection", "Enhanced mobility"],
@@ -113,7 +113,7 @@ const Treatments = () => {
     },
     {
       name: "Post Natal Care",
-      slug: "post-natal-therapy-in-india",
+      slug: "post-natal-treatment-in-india",
       category: "Women's Health",
       description: "Complete postnatal recovery program with specialized massages, nutritional support, and rejuvenation therapies for new mothers.",
       benefits: ["Faster recovery", "Lactation support", "Hormone balance", "Stress relief"],
@@ -121,7 +121,7 @@ const Treatments = () => {
     },
     {
       name: "Cervical Spondylosis",
-      slug: "cervical-spondylosis-therapy-in-india",
+      slug: "cervical-spondylosis-treatment-in-india",
       category: "Pain Management",
       description: "Comprehensive neck and spine care using therapeutic oils, herbal medicines, and specialized treatments for cervical health.",
       benefits: ["Neck pain relief", "Improved flexibility", "Reduces stiffness", "Prevents degeneration"],
@@ -129,7 +129,7 @@ const Treatments = () => {
     },
     {
       name: "Psoriasis",
-      slug: "psoriasis-therapy-in-india",
+      slug: "psoriasis-treatment-in-india",
       category: "Skin & Hair",
       description: "Natural skin healing through Panchakarma detoxification, herbal applications, and dietary modifications for lasting psoriasis relief.",
       benefits: ["Reduces patches", "Relieves itching", "Prevents flare-ups", "Improves skin texture"],
@@ -137,7 +137,7 @@ const Treatments = () => {
     },
     {
       name: "Lumbar Spondylosis",
-      slug: "lumbar-spondylosis-therapy-in-india",
+      slug: "lumbar-spondylosis-treatment-in-india",
       category: "Pain Management",
       description: "Lower back strengthening program with medicated therapies, herbal oils, and lifestyle modifications for spinal health.",
       benefits: ["Back pain relief", "Improved posture", "Increased mobility", "Prevents progression"],
@@ -145,7 +145,7 @@ const Treatments = () => {
     },
     {
       name: "Gastroesophageal Reflux Disease",
-      slug: "gastroesophageal-reflux-disease-therapy-in-india",
+      slug: "gastroesophageal-reflux-disease-treatment-in-india",
       category: "Digestive Health",
       description: "Natural relief from acid reflux and GERD through Ayurvedic medicines, dietary changes, and digestive fire enhancement.",
       benefits: ["Reduces acidity", "Improves digestion", "Prevents reflux", "Heals esophagus"],
@@ -153,7 +153,7 @@ const Treatments = () => {
     },
     {
       name: "Arthritis Treatment",
-      slug: "arthritis-therapy-in-india",
+      slug: "arthritis-treatment-in-india",
       category: "Pain Management",
       description: "Joint inflammation management with specialized oil treatments, herbal formulations, and pain-relieving therapies.",
       benefits: ["Reduces inflammation", "Pain relief", "Improved joint function", "Better mobility"],
@@ -161,7 +161,7 @@ const Treatments = () => {
     },
     {
       name: "Dysmenorrhea Treatment",
-      slug: "dysmenorrhea-therapy-in-india",
+      slug: "dysmenorrhea-treatment-in-india",
       category: "Women's Health",
       description: "Natural relief from painful menstruation through herbal medicines, abdominal therapies, and hormonal balance treatments.",
       benefits: ["Pain relief", "Regular cycles", "Hormonal balance", "Reduced cramping"],
@@ -169,7 +169,7 @@ const Treatments = () => {
     },
     {
       name: "Ulcerative Colitis Treatment",
-      slug: "ulcerative-colitis-therapy-in-india",
+      slug: "ulcerative-colitis-treatment-in-india",
       category: "Digestive Health",
       description: "Intestinal healing program with herbal medications, dietary protocols, and detoxification therapies for lasting digestive health.",
       benefits: ["Reduces inflammation", "Heals intestinal lining", "Prevents flare-ups", "Improves digestion"],
@@ -177,7 +177,7 @@ const Treatments = () => {
     },
     {
       name: "Disc Bulge Protrusion",
-      slug: "disc-bulge-protrusion-therapy-in-india",
+      slug: "disc-bulge-protrusion-treatment-in-india",
       category: "Pain Management",
       description: "Non-surgical spinal care with specialized therapies, herbal oils, and strengthening exercises for disc health and pain relief.",
       benefits: ["Pain reduction", "Improved mobility", "Prevents surgery", "Strengthens spine"],
@@ -185,7 +185,7 @@ const Treatments = () => {
     },
     {
       name: "Back Pain",
-      slug: "back-pain-therapy-in-india",
+      slug: "back-pain-treatment-in-india",
       category: "Pain Management",
       description: "Comprehensive back care program addressing all types of back pain through therapeutic massages, oils, and herbal medicines.",
       benefits: ["Quick pain relief", "Improved flexibility", "Muscle relaxation", "Long-term solution"],
@@ -193,7 +193,7 @@ const Treatments = () => {
     },
     {
       name: "Stress",
-      slug: "stress-therapy-in-india",
+      slug: "stress-treatment-in-india",
       category: "Mental Health",
       description: "Holistic stress management combining Ayurvedic therapies, meditation, yoga, and herbal adaptogens for mental peace.",
       benefits: ["Reduces anxiety", "Improves sleep", "Mental clarity", "Emotional balance"],
@@ -220,7 +220,7 @@ const Treatments = () => {
       {/* Header */}
       <section className="bg-gradient-to-r from-primary to-primary/80 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Ayurvedic Treatments in India</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Ayurveda treatments in India</h1>
           <p className="text-lg text-white/90">
             Explore traditional healing therapies for mind, body, and spirit
           </p>
@@ -278,7 +278,7 @@ const Treatments = () => {
                   </ul>
                 </div>
                 
-                <Link to={`/ayurvedic-treatments/${treatment.slug}`} className="w-full">
+                <Link to={`/ayurveda-treatments/${treatment.slug}`} className="w-full">
                   <Button className="w-full font-semibold">
                     Read More
                   </Button>
@@ -324,3 +324,4 @@ const Treatments = () => {
 };
 
 export default Treatments;
+

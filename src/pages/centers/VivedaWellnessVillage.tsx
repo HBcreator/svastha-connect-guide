@@ -2669,3 +2669,4 @@ export default function VivedaWellnessVillage() {
     </div>
   );
 }
+

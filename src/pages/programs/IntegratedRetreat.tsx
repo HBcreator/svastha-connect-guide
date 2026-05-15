@@ -20,7 +20,7 @@ const IntegratedRetreat = () => {
       description:
         "A transformative 14-21 day retreat that seamlessly integrates classical Ayurvedic therapies with daily yogic practices. Designed for those seeking deep mental clarity, physical flexibility, and a complete spiritual reset through personalized Shodhana protocols and advanced Hatha Yoga.",
       image: "/Program Images/ayurveda-yoga-retreat.png",
-      link: "/integrated-retreat/ayurvedic-yoga-retreat-program-in-india",
+      link: "/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india",
       rating: 4.9,
       reviews: 195,
       tags: ["14–21 Days", "Ayurveda + Yoga", "Spiritual Reset", "Holistic Healing"]
@@ -32,9 +32,9 @@ const IntegratedRetreat = () => {
       targetAudience: "Tech-stressed professionals",
       keyFocus: "Mindfulness, renewal & nervous system calm",
       description:
-        "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurvedic treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
+        "Specifically designed for corporate leaders and professionals, this 14-21 day program enforces a structured digital sabbatical. Focused on dampening the sympathetic nervous system through cooling Ayurveda treatments like Shirodhara, Takradhara, and guided forest bathing (Shinrin-yoku) in a serene nature-rich setting.",
       image: "/Program Images/digital-detox-retreat.png",
-      link: "/integrated-retreat/ayurvedic-digital-detox-retreat-in-india",
+      link: "/ayurveda-packages/ayurvedic-digital-detox-retreat-in-india",
       rating: 4.8,
       reviews: 142,
       tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
@@ -134,3 +134,4 @@ const IntegratedRetreat = () => {
 };
 
 export default IntegratedRetreat;
+

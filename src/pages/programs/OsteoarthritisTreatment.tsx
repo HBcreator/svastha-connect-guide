@@ -316,7 +316,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -346,7 +346,7 @@ const topAyurvedicCenters = [
     name: "AyurSoma Ayurveda Royal Retreat",
     city: "Kerala",
     location: "Kerala",
-    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    description: "Experience world-class Ayurvedic Healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
@@ -356,7 +356,7 @@ const topAyurvedicCenters = [
     name: "HimVeda Heritage Wellness Centre",
     city: "Dharamshala",
     location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -404,7 +404,7 @@ const costComparisonRows = [
 ];
 
 const faqItems = [
-  { question: 'Can Ayurveda actually treat osteoarthritis, or is it only for mild pain?', answer: 'Ayurvedic treatment is effective across a wide spectrum of osteoarthritis severity. Clinical studies have documented measurable improvement in pain scores, joint mobility, and body weight following structured Panchakarma programs. It significantly reduces pain and slows further degeneration.' },
+  { question: 'Can Ayurveda actually treat osteoarthritis, or is it only for mild pain?', answer: 'Ayurveda treatment is effective across a wide spectrum of osteoarthritis severity. Clinical studies have documented measurable improvement in pain scores, joint mobility, and body weight following structured Panchakarma programs. It significantly reduces pain and slows further degeneration.' },
   { question: 'How long does it take to see results?', answer: 'Many patients notice reduced stiffness and improved sleep within the first 7-10 days. Significant pain relief and improved mobility are typically observed by week two. The most complete transformation develops fully over the 21-28 day program and continues to improve after returning home.' },
   { question: 'Will I be able to walk and move during the treatment program?', answer: 'Yes. The program is not bed-rest based. Light walking, gentle yoga, and moderate daily movement are actively encouraged from day one.' },
   { question: 'Can this program help me avoid knee replacement surgery?', answer: 'For many patients, yes. Surveys from leading Indian Ayurvedic centers report that a significant proportion of patients who undergo full structured programs avoid elective joint replacement surgery for extended periods.' },
@@ -421,7 +421,7 @@ const patientReviews = [
     name: "Margaret Collins",
     location: "Toronto, Canada",
     title: "My Doctor Called It a Miracle!",
-    review: "I had suffered from severe osteoarthritis in both hips for over six years. After a 24-day Ayurvedic program, the Kati Basti and Abhyanga sessions genuinely transformed my condition. The physician identified a deep Vata aggravation and designed a personalized herbal diet. I returned home walking without my cane for the first time in years.",
+    review: "I had suffered from severe osteoarthritis in both hips for over six years. After a 24-day Ayurveda Package, the Kati Basti and Abhyanga sessions genuinely transformed my condition. The physician identified a deep Vata aggravation and designed a personalized herbal diet. I returned home walking without my cane for the first time in years.",
     rating: 5,
     verified: true,
   },
@@ -660,7 +660,7 @@ const OsteoarthritisTreatment = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurveda Treatment for Osteoarthritis in India</h1>
               <p className="text-lg md:text-xl text-white/90">Restore joint health naturally with physician-led Ayurvedic care.</p>
               <div className="space-y-2.5">
@@ -775,12 +775,12 @@ const OsteoarthritisTreatment = () => {
           <div className="grid gap-10 md:gap-12">
             <Card className="h-full shadow-sm">
               <CardContent className="p-6 md:p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurvedic Treatment for Osteoarthritis?</h2>
+                <h2 className="text-2xl font-bold text-[#335765] text-center md:text-left leading-tight">What Is Ayurveda treatment for Osteoarthritis?</h2>
                 <p className="text-[#7F543D] leading-relaxed text-justify md:text-left">
-                  If you have been living with persistent joint pain, morning stiffness, swollen knees, or reduced mobility — and conventional treatments have offered only temporary relief — Ayurvedic treatment for osteoarthritis in India may offer you something that modern medicine often cannot: a genuine path to healing the root cause, not just masking the symptoms. Osteoarthritis — known in Ayurveda as <em>Sandhivata</em> — occurs when the protective cartilage between your joints gradually wears down.
+                  If you have been living with persistent joint pain, morning stiffness, swollen knees, or reduced mobility — and conventional treatments have offered only temporary relief — Ayurveda treatment for osteoarthritis in India may offer you something that modern medicine often cannot: a genuine path to healing the root cause, not just masking the symptoms. Osteoarthritis — known in Ayurveda as <em>Sandhivata</em> — occurs when the protective cartilage between your joints gradually wears down.
                 </p>
                 <p className="text-[#5f4636] leading-relaxed font-semibold text-lg text-justify md:text-left">
-                  The 21-28 day Ayurvedic treatment program works to reduce inflammation at its source, nourish and rebuild damaged joint tissue, restore lubrication to the affected joints, and rebalance the Vata dosha.{" "}
+                  The 21-28 day Ayurveda treatment program works to reduce inflammation at its source, nourish and rebuild damaged joint tissue, restore lubrication to the affected joints, and rebalance the Vata dosha.{" "}
                   <button
                     type="button"
                     onClick={() => setQuoteModalOpen(true)}
@@ -1672,6 +1672,7 @@ const OsteoarthritisTreatment = () => {
 };
 
 export default OsteoarthritisTreatment;
+
 
 
 

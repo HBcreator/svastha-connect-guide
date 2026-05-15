@@ -2375,7 +2375,7 @@ export default function AyurmanaCenter() {
               </div>
               <h2 className="text-2xl md:text-4xl font-bold text-primary mb-3">Awards & Media</h2>
               <p className="text-base md:text-lg px-4 mx-auto max-w-2xl" style={{ color: "#7F543D" }}>
-                Recognition of Ayurmana's excellence in authentic Ayurvedic healing and patient care
+                Recognition of Ayurmana's excellence in authentic Ayurvedic Healing and patient care
               </p>
             </div>
 
@@ -3038,6 +3038,7 @@ export default function AyurmanaCenter() {
     </div>
   );
 }
+
 
 
 

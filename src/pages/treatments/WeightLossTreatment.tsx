@@ -102,7 +102,7 @@ const patientReviews = [
   {
     name: "ClÃ©mence Renard", location: "Paris, France", condition: "PCOS-related Weight Gain",
     title: "Hormonal Weight Gain Finally Addressed at the Root.",
-    review: "My PCOS-related weight gain had resisted every approach. The Ayurvedic program combined Panchakarma detox and hormone-balancing herbs into a six-week protocol. I lost eight kilograms, and my menstrual cycle regulated for the first time in five years.",
+    review: "My PCOS-related weight gain had resisted every approach. The Ayurveda Package combined Panchakarma detox and hormone-balancing herbs into a six-week protocol. I lost eight kilograms, and my menstrual cycle regulated for the first time in five years.",
     rating: 5, verified: true
   },
   {
@@ -230,7 +230,7 @@ const topAyurvedicCenters = [
     name: "Ayur Bethaniya Ayurveda Hospital",
     city: "Kerala",
     location: "Kerala",
-    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurvedic treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
+    description: "Immerse yourself in holistic healing at Ayur Bethaniya Ayurveda Hospital, a trusted destination for authentic Ayurveda treatments in the heart of Kerala. Rooted in traditional wisdom and guided by experienced Ayurvedic physicians, the hospital offers personalized therapies designed to restore balance of body, mind, and soul. Set in a calm and healing environment, Ayur Bethaniya combines classical Ayurveda with compassionate care for long-lasting wellness.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
@@ -387,7 +387,7 @@ const WeightLossTreatment = () => {
                 In a world of quick-fix diets and temporary solutions, Ayurveda offers a sustainable approach to weight management. It is not about starvation or extreme exercise.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                Ayurvedic treatment for weight loss is a holistic science of rebalancing the body from within. It focuses on correcting your metabolism, eliminating deep-seated toxins, and creating a natural, healthy weight.
+                Ayurveda treatment for weight loss is a holistic science of rebalancing the body from within. It focuses on correcting your metabolism, eliminating deep-seated toxins, and creating a natural, healthy weight.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
@@ -876,4 +876,5 @@ const WeightLossTreatment = () => {
 };
 
 export default WeightLossTreatment;
+
 

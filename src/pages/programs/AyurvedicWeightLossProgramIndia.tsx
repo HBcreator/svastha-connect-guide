@@ -126,7 +126,7 @@ const reviews = [
   ["Oskar Breitmann", "Cologne, Germany", "The Metabolic Education Was the Real Gift.", "The Udwarthanam herbal massage and Virechana addressed my sluggish metabolism at the root. I lost eight kilograms and have maintained the result with the home protocol."],
   ["Simone Leconte", "Montpellier, France", "PCOS-Related Weight Gain Finally Addressed at the Root.", "The program combined Panchakarma, hormonal balancing herbs, and a customized diet into a coherent protocol. My cycle regulated and my energy transformed."],
   ["Niall Sheridan", "Dublin, Ireland", "Belly Fat, High Cholesterol, and Low Energy - All Addressed Together.", "Lekhana Basti, Swedana, and a Pitta-balancing diet plan worked in genuine synergy. My waist reduced, cholesterol improved, and my energy returned."],
-  ["Elspeth Dunbar", "Glasgow, UK", "This Approach Succeeded Where 15 Years of Diets Failed.", "The Ayurvedic program broke my cycle of losing and regaining weight by addressing the metabolic root cause. My digestion transformed within ten days."],
+  ["Elspeth Dunbar", "Glasgow, UK", "This Approach Succeeded Where 15 Years of Diets Failed.", "The Ayurveda Package broke my cycle of losing and regaining weight by addressing the metabolic root cause. My digestion transformed within ten days."],
 ] as const;
 
 const topAyurvedicCenters = [
@@ -151,7 +151,7 @@ const topAyurvedicCenters = [
   {
     name: "Kairali – The Ayurvedic Healing Village",
     city: "Palakkad",
-    description: "NABH-accredited Ayurvedic healing village offering authentic Panchakarma, personalized treatment plans, and sattvic lifestyle for long-term weight management.",
+    description: "NABH-accredited Ayurvedic Healing village offering authentic Panchakarma, personalized treatment plans, and sattvic lifestyle for long-term weight management.",
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
@@ -280,7 +280,7 @@ const AyurvedicWeightLossProgramIndia = () => {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
-              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurvedic Programs</p>
+              <p className="text-sm md:text-base uppercase tracking-[0.2em] text-white/80">Ayurveda Packages</p>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">Ayurvedic Weight Loss Program in India</h1>
               <p className="text-lg md:text-xl text-white/90">21-day metabolism reset and full body detox with physician-led Ayurveda.</p>
               <div className="space-y-2.5">
@@ -1232,3 +1232,4 @@ const ReviewsSection = ({ review, setReview }: { review: number; setReview: (n: 
 );
 
 export default AyurvedicWeightLossProgramIndia;
+

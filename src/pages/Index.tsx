@@ -28,7 +28,7 @@ export default function Index() {
     { id: "navigator", title: "Treatment Navigator" },
     { id: "quick-nav", title: "Quick Explorer" },
     { id: "top-centers", title: "Top India Centers" },
-    { id: "programs", title: "Ayurvedic Programs" },
+    { id: "programs", title: "Ayurveda Packages" },
     { id: "treatments", title: "Treatments Guide" },
     { id: "process", title: "Our Healing Process" },
     { id: "testimonials", title: "Patient Reviews" },
@@ -55,7 +55,7 @@ export default function Index() {
     {
       name: "Carnoustie Ayurveda & Wellness Resort",
       location: "Mararikulam, Kerala",
-      desc: "Step into a sanctuary of authentic Ayurvedic healing at Carnoustie Ayurveda & Wellness Resort, an award-winning luxury destination.",
+      desc: "Step into a sanctuary of authentic Ayurvedic Healing at Carnoustie Ayurveda & Wellness Resort, an award-winning luxury destination.",
       specialties: ["Panchakarma", "Rejuvenation", "Anti-Aging"],
       rating: 4.7,
       price: "$$$$",
@@ -233,12 +233,12 @@ export default function Index() {
             </Link>
           </div>
 
-          {/* Card 3: Ayurvedic Programs */}
+          {/* Card 3: Ayurveda Packages */}
           <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
               <CalendarCheck className="h-6 w-6" />
             </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Ayurvedic Programs</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">Ayurveda Packages</h3>
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Browse structured inpatient wellness packages — from 21-Day Panchakarma Detox and Burnout Recovery to Anti-Aging, Weight Loss, and disease-specific healing retreats.
             </p>
@@ -259,7 +259,7 @@ export default function Index() {
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Find Ayurvedic solutions tailored to your specific health condition — from Arthritis, Sciatica, and Psoriasis to Parkinson's, Stroke Rehab, Weight Management, and 23+ more.
             </p>
-            <Link to="/treatments" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+            <Link to="/ayurveda-treatments" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
               View All Treatments →
             </Link>
           </div>
@@ -418,7 +418,7 @@ export default function Index() {
         <div className="absolute inset-0 z-0">
           <img 
             src="/healing-journey-bg.png" 
-            alt="Ayurvedic Healing Journey"
+            alt="Holistic Healing Journey"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
@@ -565,7 +565,7 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Ayurvedic Programs Categories Modal */}
+      {/* Ayurveda Packages Categories Modal */}
       <div
         className={`fixed inset-0 z-[75] transition-all duration-500 flex items-center justify-center ${isProgramsModalOpen ? "visible" : "invisible"}`}
         onClick={() => setIsProgramsModalOpen(false)}
@@ -581,7 +581,7 @@ export default function Index() {
             <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-3xl" />
             <div className="relative z-10 flex justify-between items-center">
               <div>
-                <h3 className="text-2xl font-bold tracking-tight">Ayurvedic Healing Programs</h3>
+                <h3 className="text-2xl font-bold tracking-tight">Ayurveda Packages</h3>
                 <p className="text-white/70 text-sm mt-1">Select a category to explore specialized wellness retreats</p>
               </div>
               <button
@@ -597,11 +597,11 @@ export default function Index() {
           <div className="p-6 sm:p-8">
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { title: "Panchakarma Detox", path: "/ayurvedic-programs/panchakarma-detox", icon: Sparkles, color: "text-orange-500", desc: "Full-body bio-purification and cellular elimination protocols." },
-                { title: "Disease-Specific", path: "/ayurvedic-programs/disease-specific", icon: Stethoscope, color: "text-blue-500", desc: "Targeted clinical treatments for chronic medical conditions." },
-                { title: "Lifestyle & Wellness", path: "/ayurvedic-programs/lifestyle-and-wellness", icon: Activity, color: "text-green-500", desc: "Holistic maintenance and preventative health programs." },
-                { title: "Beauty & Rejuvenation", path: "/ayurvedic-programs/beauty-and-rejuvenation", icon: HeartPulse, color: "text-pink-500", desc: "Traditional anti-aging and skin vitality treatments." },
-                { title: "Integrated Retreat", path: "/ayurvedic-programs/integrated-retreat", icon: CalendarCheck, color: "text-purple-500", desc: "Combined Yoga, Ayurveda, and meditation immersions." }
+                { title: "Panchakarma Detox", path: "/ayurveda-packages/panchakarma-detox", icon: Sparkles, color: "text-orange-500", desc: "Full-body bio-purification and cellular elimination protocols." },
+                { title: "Disease-Specific", path: "/ayurveda-packages/disease-specific", icon: Stethoscope, color: "text-blue-500", desc: "Targeted clinical treatments for chronic medical conditions." },
+                { title: "Lifestyle & Wellness", path: "/ayurveda-packages/lifestyle-and-wellness", icon: Activity, color: "text-green-500", desc: "Holistic maintenance and preventative health programs." },
+                { title: "Beauty & Rejuvenation", path: "/ayurveda-packages/beauty-and-rejuvenation", icon: HeartPulse, color: "text-pink-500", desc: "Traditional anti-aging and skin vitality treatments." },
+                { title: "Integrated Retreat", path: "/ayurveda-packages/integrated-retreat", icon: CalendarCheck, color: "text-purple-500", desc: "Combined Yoga, Ayurveda, and meditation immersions." }
               ].map((prog) => (
                 <Link
                   key={prog.title}
@@ -626,7 +626,7 @@ export default function Index() {
 
               {/* View All Card */}
               <Link
-                to="/ayurvedic-programs"
+                to="/ayurveda-packages"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-center p-5 rounded-2xl border-2 border-dashed border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
@@ -644,3 +644,4 @@ export default function Index() {
     </div>
   );
 }
+

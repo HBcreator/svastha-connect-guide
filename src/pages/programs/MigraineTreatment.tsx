@@ -220,7 +220,7 @@ const patientReviews = [
     rating: 5,
     verified: true,
     title: "My MIDAS Score Dropped From 38 to 6 in Just Twenty-One Days.",
-    review: "My neurologist used the MIDAS scale to track my condition, which confirmed severe disability. The Ayurvedic program of Shirodhara, Shirolepa (cooling herbal paste), and Nasya targeted my Prana Vata and Sadhaka Pitta simultaneously. The oral formulations addressed the gastric component of my migraine. My MIDAS score at departure was 6 (mild disability)—the lowest it has been in seven years.",
+    review: "My neurologist used the MIDAS scale to track my condition, which confirmed severe disability. The Ayurveda Package of Shirodhara, Shirolepa (cooling herbal paste), and Nasya targeted my Prana Vata and Sadhaka Pitta simultaneously. The oral formulations addressed the gastric component of my migraine. My MIDAS score at departure was 6 (mild disability)—the lowest it has been in seven years.",
   },
 ];
 
@@ -355,7 +355,7 @@ const topAyurvedicCenters = [
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
     city: "Palakkad",
-    description: "A globally acclaimed wellness retreat following the classical gurukula system. Extremely strict, traditional Ayurvedic treatments with highly personalized Panchakarma programs.",
+    description: "A globally acclaimed wellness retreat following the classical gurukula system. Extremely strict, traditional Ayurveda treatments with highly personalized Panchakarma programs.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
@@ -1532,3 +1532,4 @@ const MigraineTreatment = () => {
 };
 
 export default MigraineTreatment;
+
