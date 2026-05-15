@@ -413,12 +413,12 @@ const KeralaCenters = () => {
       </section>
 
       <section className="container mx-auto px-4 pt-4 pb-6 md:pt-8 md:pb-16">
-        <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
           {paginatedCenters.map((center, index) => {
             const cardKey = center.slug ?? center.name;
             return (
-            <div key={index} className="flex items-start">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
+            <div key={index} className="flex h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full">
                 <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={center.image}

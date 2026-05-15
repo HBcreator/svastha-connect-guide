@@ -22,12 +22,12 @@ const conditionsList = [
 ];
 
 const therapiesList = [
-  { name: "Authentic Panchakarma",            path: "/services/panchakarma",                                                  desc: "Full-body bio-purification and cellular elimination protocols.",              keywords: "panchakarma detox purification five karma cleanse" },
-  { name: "Traditional Ayurveda",             path: "/services/ayurveda",                                                     desc: "Root cause diagnosis driven by personalized body dosha alignment.",         keywords: "ayurveda dosha vata pitta kapha herbs traditional" },
-  { name: "Yoga & Meditation Interventions",  path: "/services/yoga-meditation",                                              desc: "Therapeutic breathing and mindfulness integration for stress.",             keywords: "yoga meditation pranayama mindfulness breathing stress" },
-  { name: "Touch & Bodywork Therapies",       path: "/services/touch-and-bodywork-therapies-in-india",                        desc: "Abhyanga, Shirodhara, and specialized external herbal massage protocols.",  keywords: "abhyanga shirodhara massage bodywork touch oil therapy" },
-  { name: "Biological & Plant Therapies",     path: "/services/biological-and-natural-plant-based-therapies-in-india",        desc: "Fresh organic internal formulations and pharmacy preparations.",           keywords: "herbs plants botanical formulation organic pharmacy natural" },
-  { name: "Mind-Body & Energy Interventions", path: "/services/mind-body-interventions-therapies-in-india",                   desc: "Deep relaxation and emotional release frameworks.",                        keywords: "mind body energy chakra relaxation emotional pranic" },
+  { name: "Authentic Panchakarma",            path: "/ayurvedic-healing/panchakarma",                                                  desc: "Full-body bio-purification and cellular elimination protocols.",              keywords: "panchakarma detox purification five karma cleanse" },
+  { name: "Traditional Ayurveda",             path: "/ayurvedic-healing/ayurveda",                                                     desc: "Root cause diagnosis driven by personalized body dosha alignment.",         keywords: "ayurveda dosha vata pitta kapha herbs traditional" },
+  { name: "Yoga & Meditation Interventions",  path: "/ayurvedic-healing/yoga-meditation",                                              desc: "Therapeutic breathing and mindfulness integration for stress.",             keywords: "yoga meditation pranayama mindfulness breathing stress" },
+  { name: "Touch & Bodywork Therapies",       path: "/ayurvedic-healing/touch-and-bodywork-therapies-in-india",                        desc: "Abhyanga, Shirodhara, and specialized external herbal massage protocols.",  keywords: "abhyanga shirodhara massage bodywork touch oil therapy" },
+  { name: "Biological & Plant Therapies",     path: "/ayurvedic-healing/biological-and-natural-plant-based-therapies-in-india",        desc: "Fresh organic internal formulations and pharmacy preparations.",           keywords: "herbs plants botanical formulation organic pharmacy natural" },
+  { name: "Mind-Body & Energy Interventions", path: "/ayurvedic-healing/mind-body-interventions-therapies-in-india",                   desc: "Deep relaxation and emotional release frameworks.",                        keywords: "mind body energy chakra relaxation emotional pranic" },
 ];
 
 const regionsList = [
@@ -258,7 +258,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Don't see your specific medical condition listed?</span>
-                <Button onClick={() => window.open("/treatments", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/ayurvedic-treatments", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View All 23+ Clinical Conditions Guide →
                 </Button>
               </div>
@@ -330,7 +330,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Looking for specific treatment applications?</span>
-                <Button onClick={() => window.open("/services", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/ayurvedic-healing", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View Complete Range of Ayurvedic Modalities →
                 </Button>
               </div>

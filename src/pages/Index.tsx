@@ -210,12 +210,12 @@ export default function Index() {
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
               <Stethoscope className="h-6 w-6" />
             </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Services of MyVaidyam</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">Ayurvedic Healing</h3>
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Explore our full range of traditional healing modalities — from authentic Panchakarma and Ayurveda to Yoga, Touch Therapies, Mind-Body interventions, and Biological plant-based treatments.
             </p>
-            <Link to="/services" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
-              View All Services →
+            <Link to="/ayurvedic-healing" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+              View All Healing Services →
             </Link>
           </div>
 

@@ -23,7 +23,7 @@ const GoaCenters = () => {
       reviews: 1450,
       priceRange: "$$$$",
       image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-      slug: "goa/mercure-goa-devaaya-resort",
+      slug: "mercure-goa-devaaya-retreat-goa-india",
     },
     {
       name: "Ashiyana Yoga Retreat & Ayurveda",
@@ -34,7 +34,7 @@ const GoaCenters = () => {
       reviews: 850,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/10.jpg",
-      slug: "goa/ashiyana-yoga-retreat",
+      slug: "ashiyana-yoga-retreat-village-goa-india",
     },
     {
       name: "Nalanda Retreat Goa",
@@ -45,7 +45,7 @@ const GoaCenters = () => {
       reviews: 920,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/9.jpg",
-      slug: "goa/nalanda-retreat-goa",
+      slug: "nalanda-retreat-goa-india",
     },
     {
       name: "Soul Vacation Resort & Wellness Centre",
@@ -56,7 +56,7 @@ const GoaCenters = () => {
       reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-      slug: "goa/soul-vacation",
+      slug: "soul-vacation-resort-spa-goa-india",
     },
     {
       name: "SWAN Yoga Retreat & Ayurveda",
@@ -67,7 +67,7 @@ const GoaCenters = () => {
       reviews: 650,
       priceRange: "$$$",
       image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-      slug: "goa/swan-yoga-retreat",
+      slug: "swan-yoga-retreat-goa-india",
     },
     {
       name: "Veda5 Wellness Retreat - Arambol",
@@ -338,12 +338,12 @@ const GoaCenters = () => {
       </section>
 
       <section className="max-w-7xl mx-auto px-5 md:px-10 pt-4 pb-6 md:pt-8 md:pb-16">
-        <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-12">
           {paginatedCenters.map((center, index) => {
             const cardKey = center.slug ?? center.name;
             return (
-            <div key={index} className="flex items-start">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
+            <div key={index} className="flex h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full">
                 <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={center.image}

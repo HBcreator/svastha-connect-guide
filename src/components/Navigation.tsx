@@ -57,11 +57,11 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
   ];
 
   const servicesLinks = [
-    { to: "/services/touch-and-bodywork-therapies-in-india", label: "Touch & Bodywork Therapies" },
-    { to: "/services/energy-and-spiritual-healing-treatments-in-india", label: "Energy & Spiritual Healing" },
-    { to: "/services/mind-body-interventions-therapies-in-india", label: "Mind-Body Interventions" },
-    { to: "/services/biological-and-natural-plant-based-therapies-in-india", label: "Biological & Natural/Plant-Based Therapies" },
-    { to: "/services/specialized-alternative-medical-systems-in-india", label: "Specialized Alternative Medical Systems" },
+    { to: "/ayurvedic-healing/touch-and-bodywork-therapies-in-india", label: "Touch & Bodywork Therapies" },
+    { to: "/ayurvedic-healing/energy-and-spiritual-healing-treatments-in-india", label: "Energy & Spiritual Healing" },
+    { to: "/ayurvedic-healing/mind-body-interventions-therapies-in-india", label: "Mind-Body Interventions" },
+    { to: "/ayurvedic-healing/biological-and-natural-plant-based-therapies-in-india", label: "Biological & Natural/Plant-Based Therapies" },
+    { to: "/ayurvedic-healing/specialized-alternative-medical-systems-in-india", label: "Specialized Alternative Medical Systems" },
   ];
 
   return (
@@ -95,14 +95,14 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
                 <Link
-                  to="/services"
+                  to="/ayurvedic-healing"
                   className={`flex items-center gap-1 font-poppins font-medium transition-colors ${
-                    location.pathname === "/services" || location.pathname.startsWith("/services/")
+                    location.pathname === "/ayurvedic-healing" || location.pathname.startsWith("/ayurvedic-healing/")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
                 >
-                  Services
+                  Ayurvedic Healing
                   <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                 </Link>
 
@@ -347,23 +347,23 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   <button
                     type="button"
                     className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                      location.pathname === "/services" || location.pathname.startsWith("/services/")
+                      location.pathname === "/ayurvedic-healing" || location.pathname.startsWith("/ayurvedic-healing/")
                         ? "text-primary bg-primary/10"
                         : "text-foreground hover:bg-gray-100"
                     }`}
                     onClick={() => setMobileServicesOpen((prev) => !prev)}
                   >
-                    <span>Services</span>
+                    <span>Ayurvedic Healing</span>
                     <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
                   </button>
                   {mobileServicesOpen && (
                     <div className="space-y-1 pl-2">
                       <Link
-                        to="/services"
+                        to="/ayurvedic-healing"
                         className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
                         onClick={closeMenu}
                       >
-                        All Services
+                        All Healing Services
                       </Link>
                       {servicesLinks.map((item) => (
                         <Link

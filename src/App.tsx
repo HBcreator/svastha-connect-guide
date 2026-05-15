@@ -171,11 +171,20 @@ const App = () => (
           <Route path="/centers/uttarakhand/ananda-in-the-himalayas" element={<Navigate to="/centers/ananda-in-the-himalayas-uttarakhand-india" replace />} />
           <Route path="/centers/yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india" element={<YanCureYogaRetreat />} />
           <Route path="/centers/rishikesh/yan-cure" element={<Navigate to="/centers/yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india" replace />} />
-          <Route path="/centers/goa/soul-vacation" element={<SoulVacationResort />} />
-          <Route path="/centers/goa/swan-yoga-retreat" element={<SWANYogaRetreat />} />
-          <Route path="/centers/goa/mercure-goa-devaaya-resort" element={<MercureGoaDevaayaResort />} />
-          <Route path="/centers/goa/ashiyana-yoga-retreat" element={<AshiyanaYogaRetreat />} />
-          <Route path="/centers/goa/nalanda-retreat-goa" element={<NalandaRetreatGoa />} />
+          <Route path="/centers/soul-vacation-resort-spa-goa-india" element={<SoulVacationResort />} />
+          <Route path="/centers/goa/soul-vacation" element={<Navigate to="/centers/soul-vacation-resort-spa-goa-india" replace />} />
+          
+          <Route path="/centers/swan-yoga-retreat-goa-india" element={<SWANYogaRetreat />} />
+          <Route path="/centers/goa/swan-yoga-retreat" element={<Navigate to="/centers/swan-yoga-retreat-goa-india" replace />} />
+          
+          <Route path="/centers/mercure-goa-devaaya-retreat-goa-india" element={<MercureGoaDevaayaResort />} />
+          <Route path="/centers/goa/mercure-goa-devaaya-resort" element={<Navigate to="/centers/mercure-goa-devaaya-retreat-goa-india" replace />} />
+          
+          <Route path="/centers/ashiyana-yoga-retreat-village-goa-india" element={<AshiyanaYogaRetreat />} />
+          <Route path="/centers/goa/ashiyana-yoga-retreat" element={<Navigate to="/centers/ashiyana-yoga-retreat-village-goa-india" replace />} />
+          
+          <Route path="/centers/nalanda-retreat-goa-india" element={<NalandaRetreatGoa />} />
+          <Route path="/centers/goa/nalanda-retreat-goa" element={<Navigate to="/centers/nalanda-retreat-goa-india" replace />} />
           <Route path="/centers/rishikesh/modi-yoga-retreat" element={<ModiYogaRetreat />} />
           <Route path="/centers/sri-sri-ayurveda-hospital-bangalore-india" element={<SriSriAyurvedaHospital />} />
           <Route path="/centers/bangalore/sri-sri-ayurveda-hospital-bengaluru" element={<Navigate to="/centers/sri-sri-ayurveda-hospital-bangalore-india" replace />} />
@@ -252,7 +261,8 @@ const App = () => (
           
           <Route path="/centers/ayur-bethaniya-ayurveda-hospital-kerala-india" element={<AyurBethaniyaAyurvedaHospital />} />
           <Route path="/centers/kerala/ayur-bethaniya-ayurveda-hospital" element={<Navigate to="/centers/ayur-bethaniya-ayurveda-hospital-kerala-india" replace />} />
-          <Route path="/centers/bangalore/shreyas-yoga-retreat" element={<ShreyasYogaRetreat />} />
+          <Route path="/centers/shreyas-yoga-retreat-bangalore-india" element={<ShreyasYogaRetreat />} />
+          <Route path="/centers/bangalore/shreyas-yoga-retreat" element={<Navigate to="/centers/shreyas-yoga-retreat-bangalore-india" replace />} />
           <Route path="/centers/naad-wellness-centre-sonepat-delhi-india" element={<NaadWellness />} />
           <Route path="/centers/naad-wellness-centre-sonepat-india" element={<Navigate to="/centers/naad-wellness-centre-sonepat-delhi-india" replace />} />
           <Route path="/centers/sonepat/naad-wellness" element={<Navigate to="/centers/naad-wellness-centre-sonepat-delhi-india" replace />} />
@@ -277,19 +287,50 @@ const App = () => (
           <Route path="/centers/delhi/namastedwaar" element={<Navigate to="/centers/namaste-dwaar-countryside-wellness-retreat-delhi-india" replace />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/ayurveda" element={<AyurvedaService />} />
-          <Route path="/services/panchakarma" element={<PanchakarmaService />} />
-          <Route path="/services/yoga-meditation" element={<YogaMeditationService />} />
-          <Route path="/services/ayurvedic-massage" element={<AyurvedicMassageService />} />
-          <Route path="/services/ayurvedic-diet" element={<AyurvedicDietService />} />
-          <Route path="/services/physiotherapy" element={<PhysiotherapyService />} />
-          <Route path="/services/kalari-marma" element={<KalariMarmaService />} />
-          <Route path="/services/touch-and-bodywork-therapies-in-india" element={<TouchBodyworkTherapies />} />
-          <Route path="/services/energy-and-spiritual-healing-treatments-in-india" element={<EnergyAndSpiritualHealing />} />
-          <Route path="/services/mind-body-interventions-therapies-in-india" element={<MindBodyInterventions />} />
-          <Route path="/services/biological-and-natural-plant-based-therapies-in-india" element={<BiologicalNaturalTherapies />} />
-          <Route path="/services/specialized-alternative-medical-systems-in-india" element={<SpecializedAlternativeMedicalSystems />} />
+          <Route path="/ayurvedic-healing" element={<Services />} />
+          <Route path="/services" element={<Navigate to="/ayurvedic-healing" replace />} />
+          <Route path="/ayurvedic-healing/ayurveda-healing-program-in-india" element={<AyurvedaService />} />
+          <Route path="/ayurvedic-healing/ayurveda" element={<Navigate to="/ayurvedic-healing/ayurveda-healing-program-in-india" replace />} />
+          <Route path="/services/ayurveda" element={<Navigate to="/ayurvedic-healing/ayurveda-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/panchakarma-healing-program-in-india" element={<PanchakarmaService />} />
+          <Route path="/ayurvedic-healing/panchakarma" element={<Navigate to="/ayurvedic-healing/panchakarma-healing-program-in-india" replace />} />
+          <Route path="/services/panchakarma" element={<Navigate to="/ayurvedic-healing/panchakarma-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/yoga-and-meditation-healing-program-in-india" element={<YogaMeditationService />} />
+          <Route path="/ayurvedic-healing/yoga-meditation" element={<Navigate to="/ayurvedic-healing/yoga-and-meditation-healing-program-in-india" replace />} />
+          <Route path="/services/yoga-meditation" element={<Navigate to="/ayurvedic-healing/yoga-and-meditation-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/ayurvedic-massage-healing-program-in-india" element={<AyurvedicMassageService />} />
+          <Route path="/ayurvedic-healing/ayurvedic-massage" element={<Navigate to="/ayurvedic-healing/ayurvedic-massage-healing-program-in-india" replace />} />
+          <Route path="/services/ayurvedic-massage" element={<Navigate to="/ayurvedic-healing/ayurvedic-massage-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/ayurvedic-diet-healing-program-in-india" element={<AyurvedicDietService />} />
+          <Route path="/ayurvedic-healing/ayurvedic-diet" element={<Navigate to="/ayurvedic-healing/ayurvedic-diet-healing-program-in-india" replace />} />
+          <Route path="/services/ayurvedic-diet" element={<Navigate to="/ayurvedic-healing/ayurvedic-diet-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/physiotherapy-healing-program-in-india" element={<PhysiotherapyService />} />
+          <Route path="/ayurvedic-healing/physiotherapy" element={<Navigate to="/ayurvedic-healing/physiotherapy-healing-program-in-india" replace />} />
+          <Route path="/services/physiotherapy" element={<Navigate to="/ayurvedic-healing/physiotherapy-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/kalari-and-marma-healing-program-in-india" element={<KalariMarmaService />} />
+          <Route path="/ayurvedic-healing/kalari-marma" element={<Navigate to="/ayurvedic-healing/kalari-and-marma-healing-program-in-india" replace />} />
+          <Route path="/services/kalari-marma" element={<Navigate to="/ayurvedic-healing/kalari-and-marma-healing-program-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/touch-and-bodywork-therapies-in-india" element={<TouchBodyworkTherapies />} />
+          <Route path="/services/touch-and-bodywork-therapies-in-india" element={<Navigate to="/ayurvedic-healing/touch-and-bodywork-therapies-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/energy-and-spiritual-healing-treatments-in-india" element={<EnergyAndSpiritualHealing />} />
+          <Route path="/services/energy-and-spiritual-healing-treatments-in-india" element={<Navigate to="/ayurvedic-healing/energy-and-spiritual-healing-treatments-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/mind-body-interventions-therapies-in-india" element={<MindBodyInterventions />} />
+          <Route path="/services/mind-body-interventions-therapies-in-india" element={<Navigate to="/ayurvedic-healing/mind-body-interventions-therapies-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/biological-and-natural-plant-based-therapies-in-india" element={<BiologicalNaturalTherapies />} />
+          <Route path="/services/biological-and-natural-plant-based-therapies-in-india" element={<Navigate to="/ayurvedic-healing/biological-and-natural-plant-based-therapies-in-india" replace />} />
+          
+          <Route path="/ayurvedic-healing/specialized-alternative-medical-systems-in-india" element={<SpecializedAlternativeMedicalSystems />} />
+          <Route path="/services/specialized-alternative-medical-systems-in-india" element={<Navigate to="/ayurvedic-healing/specialized-alternative-medical-systems-in-india" replace />} />
           <Route path="/ayurvedic-treatments" element={<Treatments />} />
           <Route path="/treatments" element={<Navigate to="/ayurvedic-treatments" replace />} />
           <Route path="/ayurvedic-treatments/ayurvedic-therapy-in-india" element={<AyurvedaTreatment />} />

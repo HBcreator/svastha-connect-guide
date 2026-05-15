@@ -9,43 +9,43 @@ const serviceCards = [
     title: "Ayurveda",
     description: "Discover the ancient wisdom of holistic healing through authentic Ayurvedic treatments.",
     image: "/Services-images/Ayurveda.png",
-    href: "/services/ayurveda",
+    href: "/ayurvedic-healing/ayurveda-healing-program-in-india",
   },
   {
     title: "Panchakarma",
     description: "Experience deep cleansing and rejuvenation with traditional five-fold purification therapy.",
     image: "/Services-images/Panchakarma.png",
-    href: "/services/panchakarma",
+    href: "/ayurvedic-healing/panchakarma-healing-program-in-india",
   },
   {
     title: "Yoga and Meditation",
     description: "Transform your mind and body through ancient practices of yoga and meditation.",
     image: "/Services-images/Yoga and Meditation.png",
-    href: "/services/yoga-meditation",
+    href: "/ayurvedic-healing/yoga-and-meditation-healing-program-in-india",
   },
   {
     title: "Ayurvedic Massage",
     description: "Relax and heal with therapeutic Ayurvedic massage techniques.",
     image: "/Services-images/Ayurvedic Massage.jpg",
-    href: "/services/ayurvedic-massage",
+    href: "/ayurvedic-healing/ayurvedic-massage-healing-program-in-india",
   },
   {
     title: "Ayurvedic Diet",
     description: "Learn about personalized nutrition based on your unique constitution.",
     image: "/Services-images/Ayurvedic Diet.jpeg",
-    href: "/services/ayurvedic-diet",
+    href: "/ayurvedic-healing/ayurvedic-diet-healing-program-in-india",
   },
   {
     title: "Physiotherapy",
     description: "Recover and strengthen with modern physiotherapy treatments.",
     image: "/Services-images/Physiotherapy.png",
-    href: "/services/physiotherapy",
+    href: "/ayurvedic-healing/physiotherapy-healing-program-in-india",
   },
   {
     title: "Kalari & Marma",
     description: "Experience the healing power of Kerala's martial arts and vital point therapy.",
     image: "/Services-images/Kalari & Marma.png",
-    href: "/services/kalari-marma",
+    href: "/ayurvedic-healing/kalari-and-marma-healing-program-in-india",
   },
 ]
 
@@ -54,7 +54,7 @@ export default function Services() {
     <Layout>
       <div className="container mx-auto py-16 px-4">
         <h1 className="text-4xl font-bold text-primary mb-8 font-poppins text-center">
-          Our Services
+          Ayurvedic Healing Programs in India
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {serviceCards.map((service) => (

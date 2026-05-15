@@ -95,7 +95,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       locationText: "Nelamangala, Bangalore, India",
-      slug: "bangalore/shreyas-yoga-retreat" as string | undefined,
+      slug: "shreyas-yoga-retreat-bangalore-india" as string | undefined,
     },
     {
       name: "Viveda Wellness Village",
@@ -573,7 +573,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       locationText: "South Goa, India",
-      slug: "goa/soul-vacation" as string | undefined,
+      slug: "soul-vacation-resort-spa-goa-india" as string | undefined,
     },
     {
       name: "SWAN Yoga Retreat & Ayurveda",
@@ -593,7 +593,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
       locationText: "Assagao, North Goa, India",
-      slug: "goa/swan-yoga-retreat" as string | undefined,
+      slug: "swan-yoga-retreat-goa-india" as string | undefined,
     },
     {
       name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
@@ -613,7 +613,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
       locationText: "Divar Island, Goa, India",
-      slug: "goa/mercure-goa-devaaya-resort" as string | undefined,
+      slug: "mercure-goa-devaaya-retreat-goa-india" as string | undefined,
     },
     {
       name: "Ashiyana Yoga Retreat",
@@ -633,7 +633,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
       locationText: "Mandrem Beach, Goa, India",
-      slug: "goa/ashiyana-yoga-retreat" as string | undefined,
+      slug: "ashiyana-yoga-retreat-village-goa-india" as string | undefined,
     },
     {
       name: "Nalanda Retreat Goa",
@@ -653,7 +653,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
       locationText: "Mandrem, North Goa, India",
-      slug: "goa/nalanda-retreat-goa" as string | undefined,
+      slug: "nalanda-retreat-goa-india" as string | undefined,
     },
     {
       name: "Ananda In The Himalayas",

@@ -166,7 +166,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "HimVeda Heritage Wellness Centre",
       city: "Dharamshala, Himachal Pradesh, India",
       description:
-        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing.",
+        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing and professional clinical care. The center specializes in traditional Panchakarma and herbal medicine, providing highly personalized treatments for chronic lifestyle disorders and metabolic rejuvenation. Guests experience a peaceful healing environment guided by experienced Vaidyas, where ancient Vedic wisdom is combined with modern diagnostic precision to ensure sustainable health outcomes.",
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -188,7 +188,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "Sandhya Hot Spring Health Care",
       city: "Manikaran, Himachal Pradesh, India",
       description:
-        "Sandhya Hot Spring Health Care is a premier wellness retreat in Manikaran that harnesses the profound healing power of natural geothermal mineral springs.",
+        "Sandhya Hot Spring Health Care is a premier wellness retreat in Manikaran that harnesses the profound healing power of natural geothermal mineral springs for therapeutic rejuvenation. Located along the banks of the Parvati River, the center offers a unique combination of hydrotherapy, classical Ayurveda, and specialized detoxification programs. Guests benefit from the high sulfur content of the hot springs, which is scientifically recognized for its efficacy in treating skin conditions, joint pains, and stress-related ailments in a peaceful Himalayan setting.",
       rating: 4.6,
       reviews: "500",
       image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
@@ -210,7 +210,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       name: "Veda5 Ayurveda & Yoga Retreat",
       city: "Rishikesh, Uttarakhand, India",
       description:
-        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards.",
+        "Veda5 is a distinguished luxury wellness retreat in Rishikesh that seamlessly integrates authentic Ayurvedic healing with world-class hospitality and professional medical standards. Nestled in the serene Himalayan foothills with stunning mountain views, the center offers a peaceful sanctuary where classical Panchakarma and holistic therapies are practiced with meticulous care. Guests undergo a transformative journey guided by expert physicians, featuring therapeutic yoga, mindful meditation, and personalized wellness protocols designed for deep rejuvenation. Every element of the stay is thoughtfully curated to restore metabolic balance, strengthen immunity, and promote long-term physical and mental vitality.",
       rating: 4.9,
       reviews: "1000",
       image: "/Center Images/veda5/veda5-1.jpg",
@@ -296,10 +296,10 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       </section>
 
       <section className="container mx-auto px-4 pt-4 pb-6 md:pt-8 md:pb-16">
-        <div className="grid items-start md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-8">
           {paginatedCenters.map((center) => (
-            <div key={center.series} className="flex items-start">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full">
+            <div key={center.series} className="flex h-full">
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full">
                 <div className="relative aspect-[4/3] sm:aspect-[16/8.4] md:aspect-[16/8.2] overflow-hidden">
                   <img
                     src={center.image}
