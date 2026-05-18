@@ -1,0 +1,329 @@
+import { useParams } from "react-router-dom";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { MapPin, Phone, Star } from "lucide-react";
+import QuoteModal from "@/components/QuoteModal";
+import { useState } from "react";
+
+const CenterDetail = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const { city, centerId } = useParams();
+
+  // details for all centers (lookup by centerId param)
+  const centersData: Record<string, {
+    id: string;
+    name: string;
+    city: string;
+    region: string;
+    description: string;
+    specialties: string[];
+    rating: number;
+    reviews: { text: string; source: string }[];
+    highlights: string[];
+    website: string;
+    images: string[];
+  }> = {
+    veda5: {
+      id: "veda5",
+      name: "Veda5 Ayurveda & Yoga Retreat",
+      city: "Goa",
+      region: "North Goa",
+      description: "They specialise in authentic classical Ayurvedic therapies & Retreats including Panchakarma, yoga & naturopathy integration.",
+      specialties: ["Panchakarma", "Yoga", "Naturopathy", "Rejuvenation"],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "Quiet, clean and well kept resort. Staff was very genuine, helpful and accommodating. We enjoyed the delicious vegetarian food and the Ayurveda treatments.",
+          source: "vedafive.com"
+        },
+        {
+          text: "The rooms and vegetarian food was amazing! Good quality yoga classes and ayurvedic spa. Happy, relaxed stay.",
+          source: "Booking.com"
+        }
+      ],
+      highlights: [
+        "Strong retreat-feel with full wellness integration",
+        "Diet, yoga, and accommodation integration",
+        "Credible reviews and international standards",
+        "Good for international/long-stay segment"
+      ],
+      website: "https://vedafive.com",
+      images: ["/images/Goa/Ved5/1-Veda5.jpg", "/images/Goa/Ved5/2-Veda5.jpg", "/images/Goa/Ved5/3-veda5.jpg"]
+    },
+    ayurvedagram: {
+      id: "ayurvedagram",
+      name: "AyurvedaGram Heritage Wellness Centre",
+      city: "Bangalore",
+      region: "India",
+      description:
+        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.7,
+      reviews: [
+        {
+          text: "600+ reviews",
+          source: "Listing"
+        }
+      ],
+      highlights: [
+        "Classical Ayurveda in a serene heritage village setting",
+        "Personalized therapies guided by experienced Vaidyas",
+        "Holistic approach for body, mind, and spirit",
+        "Detox, rejuvenation, and chronic disease management"
+      ],
+      website: "",
+      images: ["/Center Images/AyurvedaGram/Thumb.jpg"]
+    },
+    ayurclinic: {
+      id: "ayurclinic",
+      name: "Ayurclinic Goa",
+      city: "Goa",
+      region: "North Goa",
+      description: "Professional Ayurveda treatment tailored to each individual, with locations in Arpora and Mandrem Beach. Services include doctor diagnosis and panchakarma programs.",
+      specialties: ["Panchakarma", "Therapeutic Packages", "Personalized Treatment"],
+      rating: 4.7,
+      reviews: [
+        {
+          text: "The two weeks I spent in Goa under the care of Ayurclinic Goa were the most relaxing weeks I have ever spent.",
+          source: "Tripadvisor"
+        },
+        {
+          text: "Dr. Rohit's clinic is one of the best value places in town for medicine-based relaxing and rejuvenating Ayurveda.",
+          source: "Tripadvisor"
+        }
+      ],
+      highlights: [
+        "Genuine Ayurvedic therapy with doctor consultation",
+        "Multiple locations in North Goa",
+        "Specialized 7-day therapeutic packages"
+      ],
+      website: "https://ayurclinicgoa.com",
+      images: ["/images/Goa/Ayurclinic Goa/1.jpg", "/images/Goa/Ayurclinic Goa/2.jpg", "/images/Goa/Ayurclinic Goa/3.jpg"]
+    },
+    "ayushi-ayurvedic-retreat": {
+      id: "ayushi-ayurvedic-retreat",
+      name: "Ayushi Ayurvedic Retreat",
+      city: "Kerala",
+      region: "Varkala",
+      description:
+        "Experience the essence of authentic Ayurveda at Ayushi Ayurvedic Retreat, a peaceful destination dedicated to holistic healing and natural wellness. Rooted in classical Ayurvedic principles, the retreat offers personalized therapies designed to restore balance of body, mind, and spirit. Led by experienced Ayurvedic doctors, each plan is tailored to your needs—from detoxification to rejuvenation—supporting sustainable healing in a serene and nurturing environment.",
+      specialties: [
+        "Panchakarma",
+        "Authentic Ayurveda",
+        "Chronic Disease Management",
+        "Detox & Rejuvenation",
+        "Stress Management",
+        "Lifestyle Disorder Treatment",
+      ],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "500+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "Peaceful Varkala cliffside setting near Helipad",
+        "Personalized Ayurvedic therapies guided by experienced doctors",
+        "Classical Panchakarma, detox and rejuvenation programs",
+        "Strong focus on chronic and lifestyle disorders",
+      ],
+      website: "",
+      images: ["/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg"],
+    },
+    "sitaram-mountain-retreat": {
+      id: "sitaram-mountain-retreat",
+      name: "Sitaram Mountain Retreat",
+      city: "Kerala",
+      region: "Munnar",
+      description:
+        "Discover profound healing amidst the breathtaking hills of Munnar at Sitaram Mountain Retreat, a globally acclaimed sanctuary for authentic Ayurvedic wellness. Carrying forward a remarkable 104-year family legacy in traditional healing, this NABH-accredited retreat seamlessly blends classical Ayurvedic principles with the therapeutic power of pristine mountain nature. Set within lush spice plantations and tea gardens at high altitude, the retreat offers personalized Panchakarma therapies guided by experienced Vaidyas, each treatment customized based on pulse diagnosis, Tridosha assessment, and individual Prakriti.",
+      specialties: [
+        "Authentic Panchakarma",
+        "Chronic Disease Management",
+        "Neurological & Lifestyle Disorders",
+        "Stress & Mental Health Support",
+        "Hormonal Balance & Weight Management",
+        "Post-Treatment Rasayana Therapies",
+      ],
+      rating: 4.8,
+      reviews: [
+        {
+          text: "928+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "104-year family legacy in traditional Ayurvedic Healing",
+        "NABH-accredited retreat in the hills of Munnar",
+        "Personalized Panchakarma guided by experienced Vaidyas",
+        "Nature-immersed setting within spice plantations and tea gardens",
+      ],
+      website: "",
+      images: ["/Center Images/Sitaram Mountain Retreat/thumb.jpg"],
+    },
+    "akanta-ayurveda-and-yoga-resort": {
+      id: "akanta-ayurveda-and-yoga-resort",
+      name: "Akanta Ayurveda and Yoga Resort",
+      city: "Kerala",
+      region: "Cherai Beach, Kochi",
+      description:
+        "Embrace holistic transformation at Akanta Ayurveda & Yoga Cherai, Kerala's exclusive fully-licensed Ayurveda resort harmoniously positioned between the pristine Arabian Sea and tranquil backwaters. Established in 2018 and rebranded in 2025, this wellness destination integrates government-verified Oushadi Clinic medicines with personalized therapeutic protocols, ensuring authenticity and safety at every step.",
+      specialties: [
+        "Licensed Ayurvedic Hospital Treatments",
+        "Detox & Rejuvenation Programs",
+        "Stress Relief & Emotional Wellness",
+        "Panchakarma & Traditional Therapies",
+        "Yoga & Meditation Retreats",
+        "Lifestyle Disorder Management",
+      ],
+      rating: 4.5,
+      reviews: [
+        {
+          text: "479+ reviews",
+          source: "Listing",
+        },
+      ],
+      highlights: [
+        "Fully-licensed Ayurveda resort between sea and backwaters",
+        "Only Cherai Beach yoga retreat licensed as an Ayurvedic hospital",
+        "Government-verified medicines with personalized therapeutic protocols",
+        "Traditional Kerala Ayurveda therapies plus Prakriti-based yoga and meditation",
+      ],
+      website: "",
+      images: ["/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg"],
+    },
+  };
+
+  const centerKey = (centerId || "").toLowerCase();
+  const centerDetails = centersData[centerKey] || centersData["veda5"];
+
+  return (
+    <div className="min-h-screen font-poppins">
+      <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+      
+      {/* Header */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold text-primary">{centerDetails.name}</h1>
+            <p className="text-lg flex items-center gap-2">
+              <MapPin className="text-primary" />
+              {centerDetails.city}, {centerDetails.region}
+            </p>
+            <div className="flex items-center gap-2">
+              <Star className="text-yellow-500 fill-yellow-500" />
+              <span className="font-semibold">{centerDetails.rating}</span>
+            </div>
+          </div>
+          <div className="flex justify-end items-start">
+            <Button 
+              size="lg" 
+              onClick={() => setQuoteModalOpen(true)}
+              className="font-semibold"
+            >
+              Book Consultation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Images */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-3 gap-4">
+          {centerDetails.images.map((image, index) => (
+            <div key={index} className="aspect-video rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all">
+              <img 
+                src={image} 
+                alt={`${centerDetails.name} - ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Details */}
+      <section className="container mx-auto px-4 py-8">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-2 space-y-6">
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">About</h2>
+              <p className="text-muted-foreground">{centerDetails.description}</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Specialties</h2>
+              <div className="flex flex-wrap gap-2">
+                {centerDetails.specialties.map((specialty, index) => (
+                  <span 
+                    key={index}
+                    className="bg-primary/10 text-primary px-3 py-1 rounded-full"
+                  >
+                    {specialty}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
+              <div className="space-y-4">
+                {centerDetails.reviews.map((review, index) => (
+                  <div key={index} className="bg-card p-4 rounded-lg">
+                    <p className="italic mb-2">{review.text}</p>
+                    <p className="text-sm text-muted-foreground">Source: {review.source}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="bg-card p-6 rounded-lg sticky top-4">
+              <h3 className="text-xl font-semibold mb-4">Highlights</h3>
+              <ul className="space-y-3">
+                {centerDetails.highlights.map((highlight, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6">
+                <Button 
+                  className="w-full font-semibold"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  Get Free Quote
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      
+      {/* Floating Quote Button */}
+      <button
+        onClick={() => setQuoteModalOpen(true)}
+        className="fixed bottom-6 right-6 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full p-4 shadow-lg hover:shadow-xl transition-all z-40 flex items-center gap-2 font-semibold"
+      >
+        <Phone size={20} />
+        <span className="hidden md:inline">Get Free Quote</span>
+      </button>
+    </div>
+  );
+};
+
+export default CenterDetail;

@@ -1,0 +1,353 @@
+import {
+  Activity, Droplet, Heart, Leaf, Sparkles, Stethoscope,
+  ClipboardCheck, Calendar, UserCheck, MapPin, ReceiptIndianRupee,
+  BedDouble, UtensilsCrossed, Pill, Brain, ShieldCheck, Globe2,
+  CalendarCheck2, Route, Headset, UserCog,
+} from "lucide-react";
+
+export const galleryImages = [
+  "/program-images/ra-virechana-detox.png",
+  "/program-images/ra-joint-basti.png",
+  "/program-images/ra-shirodhara.png",
+  "/program-images/ra-abhyanga.png",
+  "/program-images/ra-recovery.png",
+  "/program-images/ra-lepa.png",
+];
+
+export const benefitsSectionImages = [
+  "/program-images/ra-virechana-detox.png",
+  "/program-images/ra-joint-basti.png",
+  "/program-images/ra-shirodhara.png",
+  "/program-images/ra-abhyanga.png",
+  "/program-images/ra-recovery.png",
+  "/program-images/ra-lepa.png",
+];
+
+export const quickSummaryRows = [
+  ["Condition Treated", "Rheumatoid Arthritis (Amavata) — hands, wrists, knees, ankles, feet"],
+  ["Treatment Duration", "21–28 Days (recommended for full autoimmune protocol)"],
+  ["Who It Is For", "Adults with early to advanced RA seeking natural, root-cause treatment"],
+  ["Core Approach", "Ama detox + Panchakarma + targeted anti-inflammatory therapies + herbal medicines"],
+  ["Key Benefit", "Reduced inflammation, pain relief, lowered RA markers, restored joint function"],
+  ["Top Locations", "PAN India"],
+  ["Average Cost", "$2,500 – $4,500 USD (all-inclusive)"],
+  ["Supervised By", "Qualified Ayurvedic Doctors (BAMS / MD Ayurveda)"],
+];
+
+export const quickSummaryMobileIcons = {
+  "Condition Treated": ClipboardCheck,
+  "Treatment Duration": Calendar,
+  "Who It Is For": UserCheck,
+  "Core Approach": Activity,
+  "Key Benefit": Sparkles,
+  "Top Locations": MapPin,
+  "Average Cost": ReceiptIndianRupee,
+  "Supervised By": Stethoscope,
+} as const;
+
+export const therapies = [
+  {
+    title: "Virechana (Therapeutic Purgation)",
+    text: "A powerful Panchakarma detox that eliminates deeply accumulated Ama (metabolic toxins) from the gut and blood, directly addressing the autoimmune inflammatory cascade at its root.",
+    icon: Sparkles,
+  },
+  {
+    title: "Basti (Medicated Enema Therapy)",
+    text: "The most important Vata-balancing treatment in Ayurveda. Kala Basti sequences systematically correct the immune dysregulation driving rheumatoid inflammation throughout the body.",
+    icon: Droplet,
+  },
+  {
+    title: "Valuka Sweda (Hot Sand Fomentation)",
+    text: "Warm medicated sand bundles applied to inflamed joints to reduce swelling, relieve stiffness, and improve local circulation — highly effective for RA-affected hands and knees.",
+    icon: Activity,
+  },
+  {
+    title: "Abhyanga (Medicated Oil Massage)",
+    text: "Daily full-body massage with anti-inflammatory herbal oils chosen for your constitution to reduce systemic Vata aggravation, improve lymphatic drainage, and nourish depleted joint tissue.",
+    icon: Heart,
+  },
+  {
+    title: "Patra Pinda Sweda (Leaf Bundle Therapy)",
+    text: "Warm poultices filled with medicinal leaves and herbs applied rhythmically to affected joints, providing deep anti-inflammatory action and significant pain relief.",
+    icon: Leaf,
+  },
+  {
+    title: "Upanaham (Herbal Poultice Application)",
+    text: "Thick anti-inflammatory herbal pastes applied and bandaged onto swollen joints overnight, drawing out inflammation and reducing morning stiffness — a classical RA-specific therapy.",
+    icon: Stethoscope,
+  },
+];
+
+export const candidatePoints = [
+  "Have been diagnosed with rheumatoid arthritis (seropositive or seronegative)",
+  "Experience persistent joint pain, swelling, or morning stiffness lasting more than 30 minutes",
+  "Are on DMARDs, biologics, or corticosteroids and want to explore reducing medication dependence",
+  "Have elevated inflammatory markers (CRP, ESR, RF) despite conventional treatment",
+  "Are experiencing medication side effects and seeking a gentler, natural therapeutic approach",
+  "Want a clinically supervised program that addresses the autoimmune root cause, not just symptoms",
+  "Have post-partum RA or early-stage RA and want early intervention before joint damage progresses",
+  "Have tried modern treatment without satisfactory results and want an integrative approach",
+];
+
+export const avoidPoints = [
+  "Patients with active joint infection or septic arthritis",
+  "Individuals with severe organ involvement (advanced RA vasculitis, severe lung fibrosis)",
+  "Patients who are extremely debilitated or malnourished",
+  "Pregnant women (modified programs may be available post-delivery)",
+  "Those with active tuberculosis or uncontrolled diabetes",
+];
+
+export const weekBreakdown = [
+  {
+    title: "Week 1 — Purva Karma (Preparation & Ama Assessment)",
+    duration: "Day 1–7",
+    focus: "Digestive correction, toxin loosening, baseline assessment",
+    description: "Your program begins with a comprehensive pulse diagnosis (Nadi Pariksha) and detailed constitution assessment by your Ayurvedic physician. The first week focuses on Deepana-Pachana — correcting digestive fire (Agni) to stop further Ama production. Internal herbal medicines begin immediately. Daily Abhyanga and Swedana prepare the body for deeper detoxification by loosening deeply embedded toxins from joint tissue.",
+    bullets: ["Nadi Pariksha & Prakriti assessment", "Deepana-Pachana (digestive correction)", "Abhyanga with anti-inflammatory oils", "Swedana (herbal steam)", "Oral herbal formulations (Guggulu, Rasna, Ashwagandha)"],
+  },
+  {
+    title: "Week 2 — Pradhana Karma (Core Detoxification)",
+    duration: "Day 8–14",
+    focus: "Active Ama elimination, systemic detox, inflammation reduction",
+    description: "This is the most therapeutically intensive phase. Virechana (therapeutic purgation) is administered to eliminate accumulated Ama from the blood and gut. Basti therapy begins with a structured Kala Basti sequence — the cornerstone of RA treatment in Ayurveda. Valuka Sweda and Patra Pinda Sweda target the most affected joints daily, producing measurable reduction in swelling and pain.",
+    bullets: ["Virechana (therapeutic purgation)", "Kala Basti sequence", "Valuka Sweda", "Patra Pinda Sweda", "Upanaham (overnight herbal poultice)", "Anti-inflammatory diet protocol"],
+  },
+  {
+    title: "Week 3 — Paschat Karma (Immune Modulation & Rejuvenation)",
+    duration: "Day 15–21",
+    focus: "Immune rebalancing, tissue repair, mobility restoration",
+    description: "With the body now significantly detoxified and inflammation reduced, treatment shifts to Rasayana (rejuvenation) and immune modulation. Specialised herbal formulations rebuild depleted joint tissue and recalibrate the dysregulated immune response. Gentle therapeutic yoga sessions — specifically designed for RA patients — begin restoring functional mobility and joint confidence.",
+    bullets: ["Rasayana (rejuvenation therapy)", "Immune-modulating herbal medicines", "Therapeutic yoga for joint mobility", "Continued Basti cycles", "Dietary optimisation"],
+  },
+  {
+    title: "Week 4 — Extended Protocol (For Advanced Cases)",
+    duration: "Day 22–28",
+    focus: "Deeper immune correction for long-standing or severe RA",
+    description: "Patients with long-standing RA, multiple joint involvement, or high inflammatory markers are strongly recommended the full 28-day program. The additional week allows completion of extended Basti cycles that produce more profound systemic Vata-Ama correction, and consolidation of Rasayana therapies for sustained remission.",
+    bullets: ["Extended Basti cycles", "Advanced Rasayana protocols", "Functional mobility training", "Discharge planning and home-care kit preparation"],
+  },
+];
+
+export const benefits = {
+  physical: [
+    "Significant reduction in joint pain, swelling, and morning stiffness",
+    "Measurable decrease in inflammatory markers (CRP, ESR, Rheumatoid Factor)",
+    "Restored joint mobility and grip strength in hands and wrists",
+    "Reduced dependence on NSAIDs, corticosteroids, and DMARDs under medical guidance",
+    "Slowed disease progression and prevention of further joint deformity",
+    "Improved overall energy levels and resolution of RA-related fatigue",
+  ],
+  mental: [
+    "Relief from the chronic psychological burden of autoimmune disease",
+    "Dramatically improved sleep quality — reduced night pain",
+    "Reduced anxiety and depression commonly associated with long-term RA",
+    "Renewed confidence in daily physical activities and self-care",
+    "Deep mental relaxation through Shirodhara and guided meditation",
+    "Improved emotional resilience and positive health outlook",
+  ],
+  longTerm: [
+    "Results continue to improve for weeks and months after the program",
+    "Sustained remission possible when post-program diet and routine are followed",
+    "Personalised home-care kit with herbal medicines and dietary guidelines",
+    "Yoga and Pranayama routine for ongoing immune regulation",
+    "Many patients achieve significant medication reduction under rheumatologist supervision",
+    "Lower relapse risk with Ayurvedic diet and lifestyle compliance",
+  ],
+};
+
+export const costComparisonRows = [
+  {
+    program: "Ayurveda Treatment for Rheumatoid Arthritis (21–28 Days)",
+    category: "Disease-Specific",
+    cost: "$2,500 – $4,500",
+    notes: "Autoimmune & joint patients, inflammation & joint repair",
+  },
+];
+
+export const chooseIndiaPoints = [
+  { title: "Birthplace of Amavata Science", text: "Rheumatoid arthritis has been classified and treated as 'Amavata' in Ayurveda for over 2,000 years — India offers unmatched clinical depth.", icon: Sparkles },
+  { title: "Expert Vaidyas", text: "Top physicians hold accredited BAMS/MD qualifications with extensive experience treating autoimmune joint conditions.", icon: Stethoscope },
+  { title: "Extraordinary Value", text: "Complete 21–28 day residential programs cost 70–80% less than comparable Western integrative medicine destinations.", icon: ReceiptIndianRupee },
+  { title: "Healing Environments", text: "Centers are situated in therapeutic climates — Kerala, Rishikesh, Karnataka — that support immune recovery and deep rest.", icon: Leaf },
+  { title: "Integrated Approach", text: "Yoga, meditation, pranayama, and anti-inflammatory diet are embedded into the treatment protocol from day one.", icon: Activity },
+  { title: "Post-Program Continuity", text: "Discharge protocols include herbal medicines, diet plans, and remote follow-up to sustain remission after returning home.", icon: ShieldCheck },
+];
+
+export const whyChooseUsPoints = [
+  { title: "Verified Medical Standards", description: "Only partner centers with physician-led protocols, safety checks, and treatment quality validation.", icon: ShieldCheck },
+  { title: "International Patient Expertise", description: "Dedicated handling for travelers from 40+ countries with clear communication and planning support.", icon: Globe2 },
+  { title: "Pre-Travel Doctor Consultation", description: "Case pre-screening with your medical reports helps shortlist the right center and treatment pathway.", icon: CalendarCheck2 },
+  { title: "Complete Journey Support", description: "From center selection to arrival coordination, transfers, and check-in flow management.", icon: Route },
+  { title: "During-Stay Assistance", description: "On-ground guidance through your full treatment protocol for smooth continuity and comfort.", icon: Headset },
+  { title: "Condition-Based Matching", description: "Personalised center mapping based on RA severity, budget, travel preferences, and recovery goals.", icon: UserCog },
+];
+
+export const inclusionsRows = [
+  { label: "Accommodation", details: "Private room or suite (as per package) for 20–27 nights", icon: BedDouble },
+  { label: "Ayurvedic Meals", details: "Three daily anti-inflammatory meals personalised to your constitution and RA condition", icon: UtensilsCrossed },
+  { label: "Doctor Consultations", details: "Initial Nadi Pariksha assessment plus regular check-ins with your Vaidya throughout", icon: Stethoscope },
+  { label: "Daily Therapies", details: "Virechana, Basti, Valuka Sweda, Abhyanga, Patra Pinda Sweda, Upanaham — as prescribed", icon: Activity },
+  { label: "Herbal Medicines", details: "All internal and external Ayurvedic medicines including Guggulu, Rasna, and medicated oils", icon: Pill },
+  { label: "Yoga & Meditation", details: "Daily guided sessions specifically designed for autoimmune joint conditions", icon: Brain },
+  { label: "Post-Program Kit", details: "Personalised diet plan, herbal medicines, yoga routine, and remote follow-up support", icon: ClipboardCheck },
+];
+
+export const faqItems = [
+  { question: "Can Ayurveda actually treat rheumatoid arthritis, or does it only manage symptoms?", answer: "Ayurvedic treatment for RA goes beyond symptom management. The classical Amavata protocol — combining Virechana detox, Basti therapy, and immune-modulating Rasayana herbs — addresses the autoimmune root cause by eliminating Ama (metabolic toxins) and rebalancing the immune system. Clinical studies have documented measurable reductions in CRP, ESR, and Rheumatoid Factor following structured Panchakarma programs." },
+  { question: "Will I need to stop my current RA medications before starting?", answer: "No. You should never stop prescribed medications without guidance from your treating rheumatologist. Your Ayurvedic physician will design a protocol that works safely alongside your current medications. Many patients subsequently achieve medically supervised dose reductions after completing the program." },
+  { question: "How soon will I see results from the Ayurvedic RA treatment?", answer: "Most patients notice reduced morning stiffness and improved energy within the first 7–10 days. Significant pain relief and visible reduction in joint swelling are typically observed by week two. The most complete transformation — including measurable improvements in blood markers — develops over the full 21–28 day program and continues to improve for weeks after returning home." },
+  { question: "Is this program suitable for seronegative rheumatoid arthritis?", answer: "Yes. Ayurvedic treatment does not depend solely on serological markers for diagnosis. The Vaidya uses Nadi Pariksha (pulse diagnosis) and comprehensive clinical assessment to identify the specific Amavata presentation — whether Vata-predominant, Kapha-predominant, or mixed — and designs a targeted protocol accordingly." },
+  { question: "Can post-partum rheumatoid arthritis be treated with Ayurveda?", answer: "Yes, and this is one of the strongest applications. Conventional RA medications are often contraindicated during breastfeeding. Ayurvedic protocols offer a complete treatment pathway that is safe for lactating mothers, using herbal medicines and external therapies that do not affect breast milk. Several patients have achieved confirmed remission through this approach." },
+  { question: "Is Ayurvedic RA treatment safe for elderly patients with multiple health issues?", answer: "Yes, it is highly safe as it is non-invasive and holistic. The program is carefully modified based on the patient's 'Bala' (physical strength) and 'Vaya' (age). Elderly patients often receive gentler detox procedures and more nourishing (Brimhana) therapies to strengthen joints without causing exhaustion." },
+  { question: "What kind of diet will I follow during the RA treatment in India?", answer: "You will follow a strictly 'Pathya' (compatible) diet. This includes easily digestible warm foods like old Shali rice, green gram (moong dal), ginger, and specific vegetables. You will be asked to avoid 'Abhishyandi' foods like curd, cold drinks, heavy beans, and fermented items which are known to trigger inflammation in RA." },
+  { question: "Does international insurance cover Ayurvedic treatment in India?", answer: "Many international insurers now cover 'Alternative Medicine' or 'Holistic Health' treatments, especially at NABH-accredited centers. We recommend checking with your provider. While most centers operate on a pay-first basis, they provide all necessary medical documents, discharge summaries, and bills for your reimbursement claim." },
+  { question: "What happens if I experience a flare-up during the treatment?", answer: "Flare-ups are common in the early stages of RA detox as toxins are mobilized. Ayurvedic centers are clinical facilities where doctors are available to immediately apply 'Lepas' (herbal pastes) and local fomentations like 'Valuka Sweda' to quickly bring down the acute inflammation without the need for high-dose steroids." },
+  { question: "Can I continue my yoga and meditation practice after returning home?", answer: "Absolutely. A key part of the program is teaching you specific 'Sukshma Vyayama' (gentle joint movements) and 'Pranayama' (breathing techniques) that you must continue at home. This helps maintain the results achieved during the program and prevents the recurrence of 'Ama' (toxins)." },
+];
+
+export const topAyurvedicCenters = [
+  {
+    name: "The Nattika Beach Resort",
+    city: "Thrissur",
+    location: "Thrissur",
+    description: "Immerse yourself in the tranquil essence of Ayurveda at The Nattika Beach Resort, an award-winning wellness retreat set along the pristine shores of Kerala. Rooted in authentic Ayurvedic traditions and guided by highly experienced physicians, Nattika offers a harmonious blend of healing, relaxation, and rejuvenation. Surrounded by lush greenery and the calming Arabian Sea, the resort provides personalized therapies designed to restore balance in body, mind, and spirit—ensuring a deeply transformative and lasting wellness experience.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
+    link: "/centers/kerala/the-nattika-beach-resort"
+  },
+  {
+    name: "Sandhya Hot Spring Health Care",
+    city: "Manikaran",
+    location: "Manikaran",
+    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters. Surrounded by tranquil landscapes, the center blends traditional healing practices with the restorative benefits of geothermal therapy. Rooted in holistic wellness principles, Sandhya offers personalized treatments designed to detoxify the body, relieve stress, and rejuvenate the mind.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
+    link: "/centers/himachal/sandhya-hot-spring-health-care"
+  },
+  {
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic healing, combining classical therapies with nature-centric living for holistic well-being. Rooted in traditional Ayurvedic principles, HimVeda offers personalized treatments guided by experienced Ayurvedic doctors and skilled therapists. Each wellness program is carefully designed to restore balance to the body, mind, and spirit, supporting long-term health through natural, time-tested healing practices in a calm mountain setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/centers/dharamshala/himveda"
+  },
+  {
+    name: "Modi Yoga Retreat",
+    city: "Rishikesh",
+    location: "Rishikesh",
+    description: "Experience calm riverside living at Modi Yoga Retreat, a mindful wellness sanctuary designed for yoga practice, meditation, and holistic rejuvenation. Surrounded by scenic mountain views and flowing waters, the retreat offers a peaceful space to reset body and mind.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+    link: "/centers/rishikesh/modi-yoga-retreat"
+  },
+  {
+    name: "AyurSoma Ayurveda Royal Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Experience world-class Ayurvedic healing at AyurSoma, a premium royal retreat in Kovalam. Combining traditional wisdom with royal luxury, our sanctuary offers authentic Panchakarma, rejuvenation therapies, and personalized wellness programs guided by seasoned Vaidyas in a stunning beachfront setting.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
+    link: "/centers/kerala/ayursoma"
+  },
+  {
+    name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
+    rating: 4.8,
+    reviews: 220,
+    image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
+    link: "/centers/kerala/kairali-heritage"
+  },
+  {
+    name: "AyurvedaGram Heritage Wellness Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/AyurvedaGram/Thumb.jpg",
+    link: "/centers/bangalore/ayurvedagram"
+  },
+  {
+    name: "Toyam By Orchid Hotels",
+    city: "Pune",
+    location: "Pune",
+    description: "Escape into nature at Toyam by Orchid Hotels, a serene wellness retreat near Pune designed for holistic healing and relaxation. The center offers personalized Ayurvedic therapies, Panchakarma detox programs, yoga, and meditation guided by experienced wellness experts. Surrounded by tranquil landscapes and luxury accommodations, Toyam provides the perfect environment to restore balance, rejuvenate the body, and experience authentic wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
+    link: "/centers/pune/toyam-by-orchid-hotels"
+  },
+  {
+    name: "Fazlani Nature's Nest Wellness Centre",
+    city: "Mumbai",
+    location: "Mumbai",
+    description: "Reconnect with nature and restore your well-being at Fazlani Nature's Nest, a serene wellness retreat set amidst lush greenery and tranquil landscapes. This holistic wellness centre blends time-honored natural healing traditions with modern therapeutic practices to help guests achieve balance in body, mind, and spirit. Guided by experienced wellness professionals, the centre offers personalized programs designed to promote detoxification, relaxation, and sustainable healthy living. From therapeutic treatments and mindful wellness therapies to nourishing cuisine and rejuvenating experiences, Fazlani Nature's Nest provides a peaceful environment where guests can unwind, heal, and rediscover vitality through nature-inspired wellness.",
+    rating: 4.7,
+    reviews: 500,
+    image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
+    link: "/centers/maharashtra/fazlani-natures-nest"
+  },
+  {
+    name: "Indus Valley Ayurvedic Centre",
+    city: "Mysore",
+    location: "Mysore",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+  },
+  {
+    name: "Agni Ayurvedic Village Resort",
+    city: "Kerala",
+    location: "Kerala",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+    rating: 4.7,
+    reviews: 190,
+    image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
+    link: "/centers/kerala/agni-ayurvedic-village"
+  },
+  {
+    name: "SWAN Yoga Retreat & Ayurveda",
+    city: "Goa",
+    location: "Goa",
+    description: "Experience authentic yogic living at SWAN Yoga Retreat & Ayurveda, a peaceful ashram-style wellness centre set in the lush hills of North Goa. Rooted in classical Yoga and Ayurveda, the retreat offers a calm space for healing, mental clarity, and inner growth.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
+    link: "/centers/goa/swan-yoga-retreat"
+  },
+];
+
+export const patientReviews = [
+  { name: "Eberhard Hoffmann", location: "Stuttgart, Germany", title: "Amavata Treatment in India — My Rheumatologist's Results Were Undeniable.", review: "I was managing my rheumatoid arthritis with Methotrexate, but with significant side effects. The Ayurvedic physician classified my condition as Amavata and prescribed digestive correction, followed by Virechana purgation and a Kala Basti medicated enema sequence. My rheumatoid factor reduced from 78 IU/ml to 16 IU/ml in six weeks — a result my German rheumatologist described as clinically remarkable.", rating: 5, verified: true },
+  { name: "Muireann O'Callaghan", location: "Dublin, Ireland", title: "Morning Stiffness Gone — Biologics Reduced — Ayurveda Delivered What Medicine Could Not.", review: "My most debilitating symptom was two hours of morning joint stiffness. The Ayurvedic programme addressed it as Sandhistabdhata through dietary therapy, herbal steam, and specific oral formulations. By week four, my morning stiffness had resolved entirely. My rheumatologist in Ireland then made the first reduction in my biological therapy dosage in three years.", rating: 5, verified: true },
+  { name: "Pascale Girard", location: "Lyon, France", title: "CRP and ESR Normalised in Six Weeks — Ayurveda Did What Two Years of Medication Had Not.", review: "My inflammatory markers (CRP and ESR) had been elevated for two years despite conventional therapy. The Ayurvedic treatment used the classical Shodhana purification protocol. At my six-week departure bloodwork, my CRP had reduced significantly and my ESR had normalised for the first time in two years. My rheumatologist requested the full protocol from the Vaidya.", rating: 5, verified: true },
+  { name: "Pieter Meijer", location: "Amsterdam, Netherlands", title: "Seronegative RA Addressed Through Ayurveda When Conventional Medicine Had No Answer.", review: "My seronegative RA left my Dutch rheumatologist with an uncertain treatment path. The Ayurvedic physician used Nadi Pariksha (pulse diagnosis) to identify a Vata-Kapha Amavata presentation. The prescribed Panchakarma programme addressed my pain, swelling, and fatigue simultaneously. By week six, my pain scores across all affected joints had reduced by seventy-five percent.", rating: 5, verified: true },
+  { name: "Fionnuala MacSweeney", location: "Cork, Ireland", title: "Post-Partum Rheumatoid Arthritis — Resolved Through Ayurveda Without Affecting Breastfeeding.", review: "I developed severe RA after delivery, but conventional medications were contraindicated during breastfeeding. The Ayurvedic programme in India offered a complete protocol safe for lactating mothers. My RA test titre reduced from 160 IU/ml to normal range by month four. Complete remission was confirmed, all without a single analgesic and without interrupting breastfeeding.", rating: 5, verified: true },
+];
+
+export const jumpSections = [
+  { id: "gallery", title: "Gallery" },
+  { id: "quick-summary", title: "Quick Summary" },
+  { id: "program-overview", title: "Program Overview" },
+  { id: "week-breakdown", title: "Week-by-Week Breakdown" },
+  { id: "benefits", title: "Benefits" },
+  { id: "cost", title: "Cost in India" },
+  { id: "why-india", title: "Why Choose India" },
+  { id: "why-us", title: "Why Choose Us" },
+  { id: "inclusions", title: "Package Inclusions" },
+  { id: "consultation", title: "Book Consultation" },
+  { id: "faq", title: "FAQ" },
+  { id: "top-centers", title: "Top Centers" },
+  { id: "reviews", title: "Patient Reviews" },
+];
