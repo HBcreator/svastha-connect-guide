@@ -95,18 +95,16 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 onMouseEnter={() => setServicesDropdownOpen(true)}
                 onMouseLeave={() => setServicesDropdownOpen(false)}
               >
-                <Link
-                  to="/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india"
-                  className={`flex items-center gap-1 font-poppins font-medium cursor-default transition-colors ${
+                <div
+                  className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
                     location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
-                  onClick={(e) => e.preventDefault()}
                 >
                   Holistic Healing
                   <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
-                </Link>
+                </div>
 
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
@@ -133,7 +131,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               >
                 <Link
                   to="/centers"
-                  className={`flex items-center gap-1 font-poppins font-medium cursor-default transition-colors ${
+                  className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
                     location.pathname.startsWith("/centers") ||
                     location.pathname === "/top-12-ayurvedic-centers-hospitals-kerala-india" ||
                     location.pathname === "/top-15-ayurvedic-centers-hospitals-goa-india" ||
@@ -145,7 +143,6 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
-                  onClick={(e) => e.preventDefault()}
                 >
                   Top Centers
                   <ChevronDown size={16} className={`transition-transform duration-200 ${centersDropdownOpen ? 'rotate-180' : ''}`} />
@@ -208,12 +205,11 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               >
                 <Link
                   to="/ayurveda-packages/panchakarma-detox"
-                  className={`flex items-center gap-1 font-poppins font-medium cursor-default transition-colors ${
+                  className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
                     location.pathname.startsWith("/ayurveda-packages")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
-                  onClick={(e) => e.preventDefault()}
                 >
                   Ayurveda Packages
                   <ChevronDown size={16} className={`transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180' : ''}`} />
@@ -349,9 +345,8 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               
               {/* Mobile Services Section */}
               <div className="space-y-1">
-                <Link
-                  to="/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india"
-                  className={`flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                <button
+                  className={`flex items-center justify-between w-full text-left py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
                     location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
                       ? "text-primary bg-primary/10"
                       : "text-foreground hover:bg-gray-100"
@@ -363,7 +358,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 >
                   <span>Holistic Healing</span>
                   <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                </Link>
+                </button>
                 {mobileServicesOpen && (
                   <div className="space-y-1 pl-2">
                     {servicesLinks.map((item) => (

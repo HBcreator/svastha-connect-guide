@@ -47,6 +47,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import MarkdownContent from "@/components/MarkdownContent";
+import { Link } from "react-router-dom";
 
 interface CardData {
   title: string;

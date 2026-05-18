@@ -330,7 +330,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      {center.slug ? (
+                      {center.slug && !center.name.includes("Sukhayu") ? (
                         <Button
                           asChild
                           variant="outline"
@@ -340,7 +340,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
                             View Details
                           </Link>
                         </Button>
-                      ) : center.website ? (
+                      ) : (center.website && !center.name.includes("Sukhayu")) ? (
                         <Button
                           asChild
                           variant="outline"

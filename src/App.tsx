@@ -160,9 +160,53 @@ const App = () => (
           <Route path="/top-15-ayurvedic-centers-hospitals-goa-india" element={<GoaCenters />} />
           <Route path="/top-10-ayurvedic-centers-hospitals-goa" element={<Navigate to="/top-15-ayurvedic-centers-hospitals-goa-india" replace />} />
           <Route path="/goa-ayurvedic-centers-and-hospitals" element={<Navigate to="/top-15-ayurvedic-centers-hospitals-goa-india" replace />} />
+          <Route path="/centers/kerala/agni-ayurvedic-village" element={<AgniAyurvedicVillage />} />
+          <Route path="/centers/agni-ayurvedic-village-resort-panvel-mumbai-india" element={<Navigate to="/centers/kerala/agni-ayurvedic-village" replace />} />
+          <Route path="/centers/fazlani-natures-nest-wellness-centre-mumbai-india" element={<FazlaniNaturesNest />} />
+          <Route path="/centers/atmantan-wellness-resort-pune-india" element={<AtmantanWellnessResort />} />
+          <Route path="/centers/viveda-wellness-village-mumbai-india" element={<VivedaWellnessVillage />} />
+          <Route path="/centers/dharana-at-shillim-wellness-retreat-pune-india" element={<DharanaAtShillim />} />
+          <Route path="/centers/toyam-by-orchid-hotels-wellness-resort-pune-india" element={<ToyamByOrchidHotels />} />
+          <Route path="/centers/shathayu-ayurveda-yoga-retreat-udupi-banglore-india" element={<ShathayuAyurvedaYogaRetreat />} />
+          <Route path="/centers/shreyas-yoga-retreat-bangalore-india" element={<ShreyasYogaRetreat />} />
+          <Route path="/centers/indus-valley-ayurvedic-centre-mysore-banglore-india" element={<IndusValleyAyurvedicCentre />} />
+          <Route path="/centers/sri-sri-ayurveda-hospital-bangalore-india" element={<SriSriAyurvedaHospital />} />
+
+          {/* Kerala flat URL redirects for SEO and button compatibility */}
+          <Route path="/centers/somatheeram-ayurvedic-health-resort-kerala-india" element={<Navigate to="/centers/kerala/somatheeram" replace />} />
+          <Route path="/centers/veda5-ayurveda-and-yoga-retreat-kerala-india" element={<Navigate to="/centers/veda5" replace />} />
+          <Route path="/centers/kairali-heritage-resort-kerala-india" element={<Navigate to="/centers/kerala/kairali-heritage" replace />} />
+          <Route path="/centers/dheemahi-ayurveda-village-kumarakom-kerala-india" element={<Navigate to="/centers/kerala/dheemahi-kumarakom" replace />} />
+          <Route path="/centers/kairali-the-ayurvedic-healing-village-kerala-india" element={<Navigate to="/centers/kerala/kairali-ayurvedic-healing-village" replace />} />
+          <Route path="/centers/nagarjuna-ayurvedic-centre-kerala-india" element={<Navigate to="/centers/kerala/nagarjuna-ayurveda-centre" replace />} />
+          <Route path="/centers/sanjeevanam-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/sanjeevanam-ayurveda-hospital" replace />} />
+          <Route path="/centers/back-to-roots-ayurveda-retreat-kerala-india" element={<Navigate to="/centers/kerala/back-to-roots" replace />} />
+          <Route path="/centers/dhathri-ayurveda-hospital-and-retreat-kerala-india" element={<Navigate to="/centers/kerala/dhathri-ayurveda" replace />} />
+          <Route path="/centers/krishnendu-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/krishnendu-ayurveda-hospital" replace />} />
+          <Route path="/centers/ayurmana-dharma-ayurvedic-centre-kerala-india" element={<Navigate to="/centers/kerala/ayurmana" replace />} />
+          <Route path="/centers/chamundi-hill-palace-ayurvedic-resort-mysore-india" element={<Navigate to="/centers/mysore/chamundi-hill-palace" replace />} />
+          <Route path="/centers/athreya-ayurvedic-centre-kerala-india" element={<Navigate to="/centers/kerala/athreya-ayurvedic-centre" replace />} />
+          <Route path="/centers/ayur-bethaniya-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/ayur-bethaniya-ayurveda-hospital" replace />} />
+          <Route path="/centers/ayursoma-ayurveda-royal-retreat-kerala-india" element={<Navigate to="/centers/kerala/ayursoma" replace />} />
+          <Route path="/centers/ayushi-ayurvedic-retreat-kerala-india" element={<Navigate to="/centers/kerala/ayushi-ayurvedic-retreat" replace />} />
+          <Route path="/centers/sitaram-mountain-retreat-idukki-india" element={<Navigate to="/centers/idukki/sitaram-mountain-retreat" replace />} />
+          <Route path="/centers/akanta-ayurveda-and-yoga-resort-kochi-india" element={<Navigate to="/centers/kochi/akanta-ayurveda-and-yoga-resort" replace />} />
+          <Route path="/centers/sitaram-beach-retreat-kerala-india" element={<Navigate to="/centers/kerala/sitaram-beach-retreat" replace />} />
+
+          {/* Himalayas / Rishikesh / Uttarakhand / North East flat URL redirects for SEO */}
+          <Route path="/centers/veda5-ayurveda-and-yoga-retreat-rishikesh-india" element={<Navigate to="/centers/veda5" replace />} />
+          <Route path="/centers/ayuskama-ayurveda-and-panchakarma-center-dharamshala-india" element={<Navigate to="/centers/dharamshala/ayuskama-ayurveda" replace />} />
+
+          {/* Delhi NCR / North India flat URL redirects for SEO */}
+          <Route path="/centers/namaste-dwaar-countryside-wellness-retreat-delhi-india" element={<Navigate to="/centers/delhi/namastedwaar" replace />} />
+          <Route path="/centers/naad-wellness-centre-sonepat-delhi-india" element={<Navigate to="/centers/sonepat/naad-wellness" replace />} />
+          <Route path="/centers/the-imperial-spa-and-wellness-delhi-india" element={<Navigate to="/centers/delhi/the-imperial-spa-and-wellness" replace />} />
+          <Route path="/centers/amanbagh-heritage-wellness-retreat-rajasthan-delhi-india" element={<Navigate to="/centers/rajasthan/amanbagh-heritage-wellness-retreat" replace />} />
+
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
-          <Route path="/centers/ayurvedagram-heritage-wellness-centre-bangalore-india" element={<AyurvedaGram />} />
+          <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
+          <Route path="/centers/ayurvedagram-heritage-wellness-centre-bangalore-india" element={<Navigate to="/centers/bangalore/ayurvedagram" replace />} />
           <Route path="/centers/ananda-in-the-himalayas-uttarakhand-india" element={<AnandaInTheHimalayas />} />
           <Route path="/centers/yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india" element={<YanCureYogaRetreat />} />
           <Route path="/centers/soul-vacation-resort-spa-goa-india" element={<SoulVacationResort />} />
@@ -181,6 +225,41 @@ const App = () => (
           <Route path="/centers/kerala/the-nattika-beach-resort" element={<TheNattikaBeachResort />} />
           <Route path="/centers/kerala/sitaram-beach-retreat" element={<SitaramBeachRetreat />} />
           <Route path="/centers/kerala/ideal-ayurvedic-resort" element={<IdealAyurvedicResort />} />
+          <Route path="/centers/kerala/somatheeram" element={<Somatheeram />} />
+          <Route path="/centers/kerala/kairali-ayurvedic-healing-village" element={<KairaliHealingVillage />} />
+          <Route path="/centers/veda5" element={<Veda5Center />} />
+          <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
+          <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />
+          <Route path="/centers/kerala/dheemahi-kumarakom" element={<DheemahiKumarakom />} />
+          <Route path="/centers/kerala/back-to-roots" element={<BackToRoots />} />
+          <Route path="/centers/kerala/krishnendu-ayurveda-hospital" element={<KrishnenduAyurvedaHospital />} />
+          <Route path="/centers/maharashtra/viveda-wellness-village" element={<VivedaWellnessVillage />} />
+          <Route path="/centers/sonepat/naad-wellness" element={<NaadWellness />} />
+          <Route path="/centers/pune/dharana-at-shillim" element={<DharanaAtShillim />} />
+          <Route path="/centers/delhi/the-imperial-spa-and-wellness" element={<TheImperialSpaAndWellness />} />
+          <Route path="/centers/gurugram/itc-grand-bharat" element={<ITCGrandBharat />} />
+          <Route path="/centers/rajasthan/amanbagh-heritage-wellness-retreat" element={<AmanbaghHeritageWellnessRetreat />} />
+          <Route path="/centers/dharamshala/ayuskama-ayurveda" element={<AyuskamaAyurveda />} />
+          <Route path="/centers/kerala/ayursoma" element={<AyurSomaAyurvedaRoyalRetreat />} />
+          <Route path="/centers/himachal/sandhya-hot-spring-health-care" element={<SandhyaHotSpringHealthCare />} />
+          <Route path="/centers/kerala/ayurmana" element={<AyurmanaCenter />} />
+          <Route path="/centers/mysore/chamundi-hill-palace" element={<ChamundiHillPalace />} />
+          <Route path="/centers/kerala/kumarakom-lake-resort" element={<KumarakomLakeResort />} />
+          <Route path="/centers/kerala/athreya-ayurvedic-centre" element={<AthreyaAyurvedicCentre />} />
+          <Route path="/centers/kerala/ayur-bethaniya-ayurveda-hospital" element={<AyurBethaniyaAyurvedaHospital />} />
+          <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
+          <Route path="/centers/idukki/sitaram-mountain-retreat" element={<SitaramMountainRetreat />} />
+          <Route path="/centers/kochi/akanta-ayurveda-and-yoga-resort" element={<AkantaAyurvedaYogaResort />} />
+          <Route path="/centers/mysore/indus-valley-ayurvedic-centre" element={<IndusValleyAyurvedicCentre />} />
+          <Route path="/centers/udupi/shathayu-ayurveda-yoga-retreat" element={<ShathayuAyurvedaYogaRetreat />} />
+          <Route path="/centers/kerala/nagarjuna-ayurveda-centre" element={<NagarjunaAyurvedaCentre />} />
+          <Route path="/centers/kerala/sanjeevanam-ayurveda-hospital" element={<SanjeevanamAyurvedaHospital />} />
+          <Route path="/centers/kerala/dhathri-ayurveda" element={<DhathriAyurvedicHospital />} />
+          <Route path="/centers/maharashtra/fazlani-natures-nest" element={<FazlaniNaturesNest />} />
+          <Route path="/centers/pune/atmantan-wellness-resort" element={<AtmantanWellnessResort />} />
+          <Route path="/centers/pune/toyam-by-orchid-hotels" element={<ToyamByOrchidHotels />} />
+          <Route path="/centers/uttarakhand/ananda-in-the-himalayas" element={<AnandaInTheHimalayas />} />
+          <Route path="/centers/rishikesh/yan-cure" element={<YanCureYogaRetreat />} />
           <Route path="/centers/bangalore/soukya" element={<Navigate to="/centers/soukya-international-holistic-health-centre-bangalore-india" replace />} />
           <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
           <Route path="/ayurveda-treatments" element={<Treatments />} />

@@ -823,7 +823,7 @@ export default function KrishnenduAyurvedaHospital() {
             if (match) {
               current.rating = parseInt(match[1], 10);
             } else if (line.includes("?")) {
-              const stars = (line.match(/?/g) || []).length;
+              const stars = (line.match(/\?/g) || []).length;
               if (stars > 0) current.rating = stars;
             }
             continue;
