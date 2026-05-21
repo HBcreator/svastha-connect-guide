@@ -217,7 +217,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     ];
     const ordered = prioritizeTopCenters(baseCenters);
     const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
-    const pages = Math.ceil(ordered.length / 12);
+    const pages = Math.min(Math.ceil(ordered.length / 12), 2);
     return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
   }, [centers, currentPage, namasteDwaarCenter]);
 
