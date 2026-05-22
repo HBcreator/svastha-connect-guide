@@ -109,7 +109,7 @@ const patientReviews = [
 ];
 
 const faqItems = [
-  { question: "Is Ayurveda treatment in India safe for international patients?", answer: "Yes. Svastha Global partners only with reputable, NABH-accredited centers that employ highly qualified BAMS/MD doctors and follow strict hygiene protocols." },
+  { question: "Is Ayurveda treatment in India safe for international patients?", answer: "Yes. My Vaidyam partners only with reputable, NABH-accredited centers that employ highly qualified BAMS/MD doctors and follow strict hygiene protocols." },
   { question: "How long does an Ayurveda treatment program take?", answer: "Minimum effective programs start at 7 days for wellness, but chronic conditions usually require 14 to 28 days for deep healing and sustained results." },
   { question: "Are the herbal medicines safe and heavy-metal free?", answer: "Absolutely. We ensure that our partner centers use certified, laboratory-tested authentic medicines prepared under strict safety guidelines." },
   { question: "What kind of diet is provided during the treatment?", answer: "A personalized, purely vegetarian (sattvic) diet is provided. It is tailored to your dosha and specific health condition to act as 'food as medicine'." },
@@ -365,7 +365,7 @@ const AyurvedaTreatment = () => {
                 Ayurveda is one of India's most treasured gifts to the world. It is not merely a system for treating illness but a profound philosophy for living a long, healthy, and balanced life.
               </p>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                Rooted in the belief that true health is a state of harmony between the body, mind, and spirit, Ayurveda treatment offers a deeply personalized path to wellness. At Svastha Global, we connect you with the heart of this timeless wisdom.
+                Rooted in the belief that true health is a state of harmony between the body, mind, and spirit, Ayurveda treatment offers a deeply personalized path to wellness. At My Vaidyam, we connect you with the heart of this timeless wisdom.
               </p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">

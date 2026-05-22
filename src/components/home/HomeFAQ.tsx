@@ -4,7 +4,7 @@ import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
 const faqList = [
   {
     q: "Is language a barrier during clinical consultations or daily therapy sessions?",
-    a: "Absolutely not. All flagship centers accredited by MyVaidyam feature senior doctors (Vaidyas) and administrative staff who are fully proficient in fluent English. Additionally, personalized interpreter assistance can be pre-arranged for guests speaking German, French, or Russian.",
+    a: "Absolutely not. All flagship centers accredited by My Vaidyam feature senior doctors (Vaidyas) and administrative staff who are fully proficient in fluent English. Additionally, personalized interpreter assistance can be pre-arranged for guests speaking German, French, or Russian.",
   },
   {
     q: "How is the pure Ayurvedic diet customized for Western digestive adaptations?",
