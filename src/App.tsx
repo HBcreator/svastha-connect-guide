@@ -388,7 +388,8 @@ const App = () => (
           <Route path="/ayurveda-healing/specialized-alternative-medical-systems-in-india" element={<Navigate to="/holistic-healing/specialized-alternative-medical-systems-in-india" replace />} />
           <Route path="/ayurvedic-healing/specialized-alternative-medical-systems-in-india" element={<Navigate to="/holistic-healing/specialized-alternative-medical-systems-in-india" replace />} />
           
-          <Route path="/about" element={<About />} />
+          <Route path="/about-myvaidyam" element={<About />} />
+          <Route path="/about" element={<Navigate to="/about-myvaidyam" replace />} />
           <Route path="/ayurveda-packages/panchakarma-detox" element={<PanchakarmaDetox />} />
           <Route path="/ayurvedic-programs/panchakarma-detox" element={<Navigate to="/ayurveda-packages/panchakarma-detox" replace />} />
           <Route path="/ayurveda-packages/disease-specific" element={<DiseaseSpecific />} />

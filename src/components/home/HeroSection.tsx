@@ -70,7 +70,7 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
 
             {/* Sub-headline Targeting UK, USA, Europe Clients */}
             <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed mb-8 font-medium">
-              At MyVaidyam, we offer the full spectrum of traditional Ayurveda treatments — tailored to your unique constitution, your health goals, and your life. Whether you are travelling from the UK, the United States, or anywhere across Europe, our team ensures your entire experience is guided, safe, and deeply restorative — from the moment you reach out to the moment you return home, renewed.
+              At My Vaidyam, we offer the full spectrum of traditional Ayurveda treatments — tailored to your unique constitution, your health goals, and your life. Whether you are travelling from the UK, the United States, or anywhere across Europe, our team ensures your entire experience is guided, safe, and deeply restorative — from the moment you reach out to the moment you return home, renewed.
             </p>
 
             {/* CTA Container with Glassmorphism background */}

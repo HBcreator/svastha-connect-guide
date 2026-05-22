@@ -1,0 +1,32 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.tour2india4health.com/#dr-anjali-dixit/",
+  "name": "Dr. Anjali Dixit",
+  "gender": "Female",
+  "jobTitle": "Medical Consultant",
+  "worksFor": 
+{
+    "@type": "MedicalOrganization",
+    "name": "Tour2India4Health Consultants"
+  },
+  "description": "Dr. Anjali Dixit is a Medical Consultant specialising in research-based medical content, elective surgery guidance, and medical tour planning in India. She has been associated with Tour2India4Health Consultants for over a decade and focuses on surgery planning, hospital information, surgeon reviews, and logistics support for international patients travelling to India.",
+  "url": "https://www.tour2india4health.com/#dr-anjali-dixit/",
+  "knowsAbout": 
+[
+    "Medical Tourism",
+    "Elective Surgery",
+    "Healthcare Content",
+    "Hospital Research",
+    "Patient Coordination",
+    "International Patient Services",
+    "Surgery Planning"
+  ],
+  
+  "knowsLanguage": [
+    "English",
+    "Hindi"
+  ]
+}
+</script>

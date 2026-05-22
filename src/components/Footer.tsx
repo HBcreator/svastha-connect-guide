@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold text-primary font-poppins mb-4">
-              MyVaidyam
+              My Vaidyam
             </h3>
             <p className="text-sm text-muted-foreground">
               20 years of medical tourism experience guiding you to India's best Ayurvedic centers.
@@ -20,7 +20,7 @@ const Footer = () => {
               <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
               <li><Link to="/centers" className="text-muted-foreground hover:text-primary transition-colors">Top Centers</Link></li>
               <li><Link to="/ayurveda-treatments" className="text-muted-foreground hover:text-primary transition-colors">Treatments</Link></li>
-              <li><Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/about-myvaidyam" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
             </ul>
           </div>
           
@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} MyVaidyam. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} My Vaidyam. All rights reserved.</p>
         </div>
       </div>
     </footer>

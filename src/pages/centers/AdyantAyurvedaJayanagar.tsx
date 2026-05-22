@@ -181,12 +181,82 @@ export default function AdyantAyurvedaJayanagar() {
   ];
 
   useEffect(() => {
+    // Basic SEO Meta Tags Updates
+    document.title = "Adyant Ayurveda Jayanagar | Top Ayurvedic Hospital in Bangalore";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Adyant Ayurveda Jayanagar, a premium Ayurvedic hospital in Bangalore offering Panchakarma, detox, and personalized wellness treatments.");
+
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentReview((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [isReviewAutoPlaying, testimonials.length]);
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalOrganization",
+        "@id": "https://myvaidyam.com/#organization",
+        "name": "My Vaidyam",
+        "url": "https://myvaidyam.com",
+        "logo": "https://myvaidyam.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@myvaidyam.com",
+          "contactType": "customer support"
+        }
+      },
+      {
+        "@type": ["MedicalClinic", "Hospital"],
+        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#clinic",
+        "name": "Adyant Ayurveda Jayanagar",
+        "url": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore",
+        "image": "https://Savastha.b-cdn.net/Centers/Adyant%20Ayurveda%20Jayanagar/Images/1%20Adyant%20Ayurveda%20jayanagar.jpg",
+        "parentOrganization": { "@id": "https://myvaidyam.com/#organization" },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "38th Cross Rd, 8th Block",
+          "addressLocality": "Jayanagar, Bengaluru",
+          "addressRegion": "Karnataka",
+          "postalCode": "560070",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#webpage",
+        "url": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore",
+        "name": "Adyant Ayurveda Jayanagar | Authentic Ayurvedic Hospital in Bangalore",
+        "description": "Book a consultation at Adyant Ayurveda Jayanagar, a premium Ayurvedic hospital in Bangalore offering Panchakarma, detox, and personalized wellness treatments.",
+        "about": { "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#clinic" },
+        "isPartOf": { "@id": "https://myvaidyam.com/#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://myvaidyam.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Top Centers", "item": "https://myvaidyam.com/centers" },
+          { "@type": "ListItem", "position": 3, "name": "Bangalore Centers", "item": "https://myvaidyam.com/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" },
+          { "@type": "ListItem", "position": 4, "name": "Adyant Ayurveda Jayanagar", "item": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#faq",
+        "mainEntity": faqItems.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
+  };
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -214,8 +284,31 @@ export default function AdyantAyurvedaJayanagar() {
     <div className="min-h-screen bg-background font-poppins selection:bg-[#2C4E5A]/20">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
+            <li className="flex items-center gap-2">
+              <a href="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2">
+              <a href="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" className="text-primary/50 hover:text-primary transition-colors">
+                Top 10 Ayurvedic Centers in Bangalore, Hyderabad &amp; Chennai
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black truncate">
+              Adyant Ayurveda Jayanagar
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* Hero Section */}
-      <div id="overview" className="bg-[#2C4E5A] text-white py-10 pt-10 md:pt-14">
+      <div id="overview" className="bg-[#2C4E5A] text-white py-10 md:py-14">
         <div className="container mx-auto px-3 md:px-4 max-w-full">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -745,6 +838,8 @@ export default function AdyantAyurvedaJayanagar() {
           </div>
         </div>
       </div>
+      {/* SEO Schema Injection */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
     </div>
   );
 }

@@ -44,7 +44,7 @@ export default function HomeProcessRoadmap() {
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-4">
-              Why Choose MyVaidyam for Your Treatment Journey in India
+              Why Choose My Vaidyam for Your Treatment Journey in India
             </h2>
             <p className="text-sm md:text-base text-[#7F543D] leading-relaxed max-w-2xl mx-auto">
               We streamline every phase of your international recovery journey, providing transparent medical planning, physical safety, and dedicated clinical advocacy.
