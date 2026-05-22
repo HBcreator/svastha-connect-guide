@@ -97,8 +97,8 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "One of Bangalore's most established Ayurvedic clinic chains with multiple branches across the city including Jayanagar, Indiranagar, RR Nagar, Kalyan Nagar, and Bannerghatta Road. Adyant Ayurveda specializes in Panchakarma detox, spine and joint care, skin disorders, infertility, insomnia, and PCOD. Also offers Swarna Bindu Prashana for children's immunity and comprehensive Ayurvedic beauty and rejuvenation therapies. Open daily 8 AM to 8 PM.",
-      rating: 4.6,
-      reviews: 2000,
+      rating: 4.8,
+      reviews: 230,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg",
@@ -406,7 +406,7 @@ const SouthIndiaCenters = () => {
                     <div className="flex items-center gap-1">
                       <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                       <span className="text-xs font-black text-foreground">{center.rating}</span>
-                      <span className="text-xs font-semibold text-foreground/80">({center.reviews})</span>
+                      <span className="text-xs font-semibold text-foreground/80">({center.reviews}+ reviews)</span>
                     </div>
                   </div>
 
