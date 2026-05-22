@@ -193,7 +193,7 @@ export default function Index() {
       <section id="quick-nav" className="max-w-6xl mx-auto px-4 pt-12 pb-10">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-primary/80 bg-primary/5 px-3 py-1 rounded-full">
-            Explore MyVaidyam
+            Explore My Vaidyam
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">
             Everything You Need, All in One Place
@@ -224,7 +224,7 @@ export default function Index() {
             <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
               <Hospital className="h-6 w-6" />
             </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of MyVaidyam</h3>
+            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of My Vaidyam</h3>
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Discover India's most prestigious NABH-accredited Ayurvedic hospitals and retreat sanctuaries — handpicked across Kerala, the Himalayas, Goa, Bangalore, and beyond.
             </p>

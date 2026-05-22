@@ -72,7 +72,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link to="/" className="flex items-center space-x-2">
               <h1 className="text-xl md:text-2xl font-bold text-primary font-poppins">
-                MyVaidyam
+                My Vaidyam
               </h1>
             </Link>
 
@@ -203,8 +203,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 onMouseEnter={() => setProgramsDropdownOpen(true)}
                 onMouseLeave={() => setProgramsDropdownOpen(false)}
               >
-                <Link
-                  to="/ayurveda-packages/panchakarma-detox"
+                <div
                   className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
                     location.pathname.startsWith("/ayurveda-packages")
                       ? "text-primary"
@@ -213,7 +212,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 >
                   Ayurveda Packages
                   <ChevronDown size={16} className={`transition-transform duration-200 ${programsDropdownOpen ? 'rotate-180' : ''}`} />
-                </Link>
+                </div>
                 
                 {/* Dropdown Menu */}
                 <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${programsDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
@@ -269,9 +268,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               </Link>
 
               <Link
-                to="/about"
+                to="/about-myvaidyam"
                 className={`font-poppins font-medium transition-colors ${
-                  location.pathname === "/about"
+                  location.pathname === "/about-myvaidyam"
                     ? "text-primary"
                     : "text-foreground hover:text-primary"
                 }`}
@@ -417,9 +416,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
 
               {/* Mobile Ayurveda Packages Section */}
               <div className="space-y-1">
-                <Link
-                  to="/ayurveda-packages/panchakarma-detox"
-                  className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                <button
+                  type="button"
+                  className={`w-full text-left flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
                     location.pathname.startsWith("/ayurveda-packages")
                       ? "text-primary bg-primary/10"
                       : "text-foreground hover:bg-gray-100"
@@ -431,7 +430,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 >
                   <span>Ayurveda Packages</span>
                   <ChevronDown size={18} className={`transition-transform ${mobileProgramsOpen ? "rotate-180" : ""}`} />
-                </Link>
+                </button>
                 {mobileProgramsOpen && (
                   <div className="space-y-1 pl-2">
                     {programsLinks.map((item) => (
@@ -460,9 +459,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 Ayurveda treatments
               </Link>
               <Link
-                to="/about"
+                to="/about-myvaidyam"
                 className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                  location.pathname === "/about"
+                  location.pathname === "/about-myvaidyam"
                     ? "text-primary bg-primary/10"
                     : "text-foreground hover:bg-gray-100"
                 }`}

@@ -1,0 +1,26 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.tour2india4health.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Surgery India",
+      "item": "https://www.tour2india4health.com/surgery-india.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Low Cost Knee Replacement Surgery in India",
+      "item": "https://www.tour2india4health.com/knee-replacement-surgery-India-low-cost-benefits.html"
+    }
+  ]
+}
+</script>

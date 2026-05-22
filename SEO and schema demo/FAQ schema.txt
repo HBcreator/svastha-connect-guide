@@ -1,0 +1,42 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the secret of the low cost of Knee Replacement Surgery in India?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The cost of living in India and the currency rate as compared to the West, are low. India also leads in offering treatment for all medical conditions, making them low cost and reliable."
+    }
+  },{
+    "@type": "Question",
+    "name": "How much bend can I get in the knees post-operatively?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Post surgery, a physician will train you to regain full leg & knee movement. Regaining full bend after a knee replacement surgery depends on the extent of treatment and patient’s commitment to follow exercises."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I place a pillow under my knee to keep it bent and make it more comfortable?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Keeping a pillow under your knee can be of great help as it helps adjust the bone structure and also adds to comfort post a knee surgery."
+    }
+  },{
+    "@type": "Question",
+    "name": "What activities can I participate in after recovery?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "You can drive a car in 2-4 weeks. Many people gradually increase their activities and play golf, doubles tennis, shuffleboard, or bowl in 12 weeks."
+    }
+  },{
+    "@type": "Question",
+    "name": "How long does the replaced knee last?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The longevity of your new knee depends upon the treatment and precautions you take before going for any stressful activity like jogging, lifting heavy articles etc."
+    }
+  }]
+}
+</script>
