@@ -20,6 +20,7 @@ const SouthIndiaCenters = () => {
     "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
     "sri-sri-ayurveda-hospital-bangalore-india",
     "shreyas-yoga-retreat-bangalore-india",
+    "bangalore/adyant-ayurveda-hospital-in-banglore",
   ]);
 
   const centers = [
@@ -101,7 +102,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg",
-      slug: "bangalore/adyant-ayurveda-jayanagar",
+      slug: "bangalore/adyant-ayurveda-hospital-in-banglore",
     },
     {
       name: "Vydehi Ayurveda Hospital (VAYU)",
