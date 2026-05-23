@@ -18,10 +18,10 @@ const SouthIndiaCenters = () => {
     "ayurvedagram-heritage-wellness-centre-bangalore-india",
     "indus-valley-ayurvedic-centre-mysore-banglore-india",
     "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
-    "sri-sri-ayurveda-hospital-bangalore-india",
+    "sri-sri-ayurveda-hospital-bengaluru-india",
     "shreyas-yoga-retreat-bangalore-india",
-    "bangalore/adyant-ayurveda-hospital-in-banglore",
-    "bangalore/vydehi-ayurveda-hospital-in-banglore",
+    "adyant-ayurveda-hospital-bengaluru-india",
+    "vydehi-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -87,11 +87,11 @@ const SouthIndiaCenters = () => {
       description:
         "A NABH-accredited, ISO-certified multispecialty Ayurvedic hospital administered by Sri Sri Ravi Shankar Vidya Mandir Trust. Spanning over 1 lakh sq. ft. with 268 beds, the hospital blends classical Ayurveda, Naturopathy, Yoga, and modern diagnostics. Specialties include Panchakarma, Cancer Care, Pulse Diagnosis, Gynaecology, and Pediatrics. Offers free Nadi Pariksha consultations, 24/7 emergency services, and online consultations worldwide.",
       rating: 4.4,
-      reviews: 1200,
+      reviews: 950,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
-      slug: "sri-sri-ayurveda-hospital-bangalore-india",
+      slug: "sri-sri-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Adyant Ayurveda – Jayanagar",
@@ -103,7 +103,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg",
-      slug: "bangalore/adyant-ayurveda-hospital-in-banglore",
+      slug: "adyant-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Vydehi Ayurveda Hospital (VAYU)",
@@ -115,7 +115,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/4.jpg",
-      slug: "bangalore/vydehi-ayurveda-hospital-in-banglore",
+      slug: "vydehi-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Keva Ayurveda – BTM Layout",

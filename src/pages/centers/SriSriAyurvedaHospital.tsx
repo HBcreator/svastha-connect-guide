@@ -46,6 +46,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export default function SriSriAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+  const breadcrumbRef = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
+    if (breadcrumbRef.current) {
+      breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
+    }
+  }, []);
 
   // Hardcoded content based on Sri Sri Ayurveda Hospital, Bengaluru
   const programs = [
@@ -265,6 +273,29 @@ export default function SriSriAyurvedaHospital() {
     <div className="min-h-screen bg-background font-poppins selection:bg-[#2C4E5A]/20">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol ref={breadcrumbRef} className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <a href="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <a href="/centers" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              Sri Sri Ayurveda Hospital Bengaluru
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <div id="overview" className="bg-[#2C4E5A] text-white py-10 pt-10 md:pt-14">
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -280,7 +311,7 @@ export default function SriSriAyurvedaHospital() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.4</span>
-                  <span className="opacity-90">(1,200 reviews)</span>
+                  <span className="opacity-90">(950 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">

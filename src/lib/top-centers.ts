@@ -1,7 +1,7 @@
 export const TOP_CENTER_SLUGS = new Set<string>([
   "soukya-international-holistic-health-centre-bangalore-india",
   "ayurvedagram-heritage-wellness-centre-bangalore-india",
-  "sri-sri-ayurveda-hospital-bangalore-india",
+  "sri-sri-ayurveda-hospital-bengaluru-india",
   "dharamshala/himveda",
   "dharamshala/ayuskama-ayurveda",
   "somatheeram-ayurvedic-health-resort-kerala-india",

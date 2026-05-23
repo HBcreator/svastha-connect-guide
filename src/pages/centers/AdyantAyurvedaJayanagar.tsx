@@ -219,9 +219,9 @@ export default function AdyantAyurvedaJayanagar() {
       },
       {
         "@type": ["MedicalClinic", "Hospital"],
-        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#clinic",
+        "@id": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india#clinic",
         "name": "Adyant Ayurveda Jayanagar",
-        "url": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore",
+        "url": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india",
         "image": "https://Savastha.b-cdn.net/Centers/Adyant%20Ayurveda%20Jayanagar/Images/1%20Adyant%20Ayurveda%20jayanagar.jpg",
         "parentOrganization": { "@id": "https://myvaidyam.com/#organization" },
         "address": {
@@ -235,26 +235,26 @@ export default function AdyantAyurvedaJayanagar() {
       },
       {
         "@type": "MedicalWebPage",
-        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#webpage",
-        "url": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore",
+        "@id": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india#webpage",
+        "url": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india",
         "name": "Adyant Ayurveda Jayanagar | Authentic Ayurvedic Hospital in Bangalore",
         "description": "Book a consultation at Adyant Ayurveda Jayanagar, a premium Ayurvedic hospital in Bangalore offering Panchakarma, detox, and personalized wellness treatments.",
-        "about": { "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#clinic" },
+        "about": { "@id": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india#clinic" },
         "isPartOf": { "@id": "https://myvaidyam.com/#website" }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#breadcrumb",
+        "@id": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india#breadcrumb",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://myvaidyam.com/" },
           { "@type": "ListItem", "position": 2, "name": "Top Centers", "item": "https://myvaidyam.com/centers" },
           { "@type": "ListItem", "position": 3, "name": "Bangalore Centers", "item": "https://myvaidyam.com/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" },
-          { "@type": "ListItem", "position": 4, "name": "Adyant Ayurveda Jayanagar", "item": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore" }
+          { "@type": "ListItem", "position": 4, "name": "Adyant Ayurveda Jayanagar", "item": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://myvaidyam.com/centers/bangalore/adyant-ayurveda-hospital-in-banglore#faq",
+        "@id": "https://myvaidyam.com/centers/adyant-ayurveda-hospital-bengaluru-india#faq",
         "mainEntity": faqItems.map(faq => ({
           "@type": "Question",
           "name": faq.question,
@@ -304,8 +304,8 @@ export default function AdyantAyurvedaJayanagar() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2 shrink-0">
-              <a href="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" className="text-primary/50 hover:text-primary transition-colors">
-                Top 10 Ayurvedic Centers in Bangalore, Hyderabad &amp; Chennai
+              <a href="/centers" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
               </a>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
