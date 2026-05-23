@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Star, Phone, MessageCircle, Search, X, ClipboardList, ChevronRight, Droplet, Activity, Heart, Sparkles, ShieldCheck, Award, Leaf, Users, Building2, FileSearch, TreePine, MessageCircleHeart, ChevronLeft, Quote, Clock, Mail, Globe } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -180,6 +180,15 @@ export default function AdyantAyurvedaJayanagar() {
     }
   ];
 
+  const breadcrumbRef = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
+    if (breadcrumbRef.current) {
+      breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
+    }
+  }, []);
+
   useEffect(() => {
     // Basic SEO Meta Tags Updates
     document.title = "Adyant Ayurveda Jayanagar | Top Ayurvedic Hospital in Bangalore";
@@ -287,20 +296,20 @@ export default function AdyantAyurvedaJayanagar() {
       {/* Breadcrumb Navigation */}
       <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
         <div className="container mx-auto px-4 max-w-6xl">
-          <ol className="flex items-center flex-wrap gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em]">
-            <li className="flex items-center gap-2">
+          <ol ref={breadcrumbRef} className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
               <a href="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
                 Home
               </a>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center gap-2 shrink-0">
               <a href="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" className="text-primary/50 hover:text-primary transition-colors">
                 Top 10 Ayurvedic Centers in Bangalore, Hyderabad &amp; Chennai
               </a>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
-            <li className="text-primary/90 font-black truncate">
+            <li className="text-primary/90 font-black shrink-0">
               Adyant Ayurveda Jayanagar
             </li>
           </ol>
@@ -417,7 +426,7 @@ export default function AdyantAyurvedaJayanagar() {
                 >
                   CONTACT 
                 </span>{" "}
-                Svastha Global to connect with the best of authentic <em>Ayurveda</em> in India.
+                My Vaidyam to connect with the best of authentic <em>Ayurveda</em> in India.
               </h3>
             </div>
           </div>
