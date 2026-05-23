@@ -63,6 +63,7 @@ import TheNattikaBeachResort from "./pages/centers/TheNattikaBeachResort";
 import SitaramBeachRetreat from "./pages/centers/SitaramBeachRetreat";
 import IdealAyurvedicResort from "./pages/centers/IdealAyurvedicResort";
 import ModiYogaRetreat from "./pages/centers/ModiYogaRetreat";
+import VydehiAyurvedaHospital from "./pages/centers/VydehiAyurvedaHospital";
 import SriSriAyurvedaHospital from "./pages/centers/SriSriAyurvedaHospital";
 import AdyantAyurvedaJayanagar from "./pages/centers/AdyantAyurvedaJayanagar";
 import SouthIndiaCenters from "./pages/SouthIndiaCenters";
@@ -206,6 +207,8 @@ const App = () => (
 
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
+
+          <Route path="/centers/bangalore/vydehi-ayurveda-hospital-in-banglore" element={<VydehiAyurvedaHospital />} />
           <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
           <Route path="/centers/ayurvedagram-heritage-wellness-centre-bangalore-india" element={<Navigate to="/centers/bangalore/ayurvedagram" replace />} />
           <Route path="/centers/ananda-in-the-himalayas-uttarakhand-india" element={<AnandaInTheHimalayas />} />

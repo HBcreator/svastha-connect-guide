@@ -21,6 +21,7 @@ const SouthIndiaCenters = () => {
     "sri-sri-ayurveda-hospital-bangalore-india",
     "shreyas-yoga-retreat-bangalore-india",
     "bangalore/adyant-ayurveda-hospital-in-banglore",
+    "bangalore/vydehi-ayurveda-hospital-in-banglore",
   ]);
 
   const centers = [
@@ -114,7 +115,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/4.jpg",
-      slug: "bangalore/vydehi-ayurveda-hospital-vayu",
+      slug: "bangalore/vydehi-ayurveda-hospital-in-banglore",
     },
     {
       name: "Keva Ayurveda – BTM Layout",
