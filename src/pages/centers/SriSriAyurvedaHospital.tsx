@@ -374,7 +374,7 @@ export default function SriSriAyurvedaHospital() {
                 >
                   CONTACT 
                 </span>{" "}
-                Svastha Global to connect with the best of authentic <em>Ayurveda</em> in India.
+                My Vaidyam to connect with the best of authentic <em>Ayurveda</em> in India.
               </h3>
             </div>
           </div>
