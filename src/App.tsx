@@ -172,7 +172,7 @@ const App = () => (
           <Route path="/centers/shathayu-ayurveda-yoga-retreat-udupi-banglore-india" element={<ShathayuAyurvedaYogaRetreat />} />
           <Route path="/centers/shreyas-yoga-retreat-bangalore-india" element={<ShreyasYogaRetreat />} />
           <Route path="/centers/indus-valley-ayurvedic-centre-mysore-banglore-india" element={<IndusValleyAyurvedicCentre />} />
-          <Route path="/centers/sri-sri-ayurveda-hospital-bangalore-india" element={<SriSriAyurvedaHospital />} />
+          <Route path="/centers/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
 
           {/* Kerala flat URL redirects for SEO and button compatibility */}
           <Route path="/centers/somatheeram-ayurvedic-health-resort-kerala-india" element={<Navigate to="/centers/kerala/somatheeram" replace />} />
@@ -208,7 +208,7 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
-          <Route path="/centers/bangalore/vydehi-ayurveda-hospital-in-banglore" element={<VydehiAyurvedaHospital />} />
+          <Route path="/centers/vydehi-ayurveda-hospital-bengaluru-india" element={<VydehiAyurvedaHospital />} />
           <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
           <Route path="/centers/ayurvedagram-heritage-wellness-centre-bangalore-india" element={<Navigate to="/centers/bangalore/ayurvedagram" replace />} />
           <Route path="/centers/ananda-in-the-himalayas-uttarakhand-india" element={<AnandaInTheHimalayas />} />
@@ -219,8 +219,8 @@ const App = () => (
           <Route path="/centers/ashiyana-yoga-retreat-village-goa-india" element={<AshiyanaYogaRetreat />} />
           <Route path="/centers/nalanda-retreat-goa-india" element={<NalandaRetreatGoa />} />
           <Route path="/centers/rishikesh/modi-yoga-retreat" element={<ModiYogaRetreat />} />
-          <Route path="/centers/sri-sri-ayurveda-hospital-bangalore-india" element={<SriSriAyurvedaHospital />} />
-          <Route path="/centers/bangalore/adyant-ayurveda-hospital-in-banglore" element={<AdyantAyurvedaJayanagar />} />
+          <Route path="/centers/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
+          <Route path="/centers/adyant-ayurveda-hospital-bengaluru-india" element={<AdyantAyurvedaJayanagar />} />
           <Route path="/centers/itc-grand-bharat-wellness-retreat-gurugram-delhi-india" element={<ITCGrandBharat />} />
           <Route path="/centers/kerala/niraamaya-retreats-surya-samudra" element={<NiraamayaRetreatsSuryaSamudra />} />
           <Route path="/centers/amanbagh-heritage-wellness-retreat-rajasthan-india" element={<AmanbaghHeritageWellnessRetreat />} />
