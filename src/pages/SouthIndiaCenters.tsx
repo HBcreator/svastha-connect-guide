@@ -123,7 +123,7 @@ const SouthIndiaCenters = () => {
       description:
         "A well-rounded Ayurvedic clinic offering a wide spectrum of treatments from Weight Management and Panchakarma to Infertility, Paralysis, and Women's Care. Keva Ayurveda also accepts medical insurance and features specialized programs like corporate wellness, traveler's detox, and geriatric care packages. Integrates Yoga and Naturopathy alongside classical Ayurveda treatments, providing end-to-end personalized wellness solutions under one roof.",
       rating: 4.5,
-      reviews: 1100,
+      reviews: 250,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp",
