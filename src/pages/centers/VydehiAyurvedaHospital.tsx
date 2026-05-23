@@ -246,8 +246,8 @@ export default function VydehiAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2 shrink-0">
-              <a href="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" className="text-primary/50 hover:text-primary transition-colors">
-                Top 10 Ayurvedic Centers in Bangalore, Hyderabad &amp; Chennai
+              <a href="/centers" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
               </a>
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
