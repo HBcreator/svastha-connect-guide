@@ -162,8 +162,8 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "Adivaidyam is a unique Ayurvedic clinic in Banashankari, Bangalore, that combines classical Ayurveda and Yoga under one roof. Led by Dr. Savitha Sagar, the center focuses on reviving traditional healing practices for chronic disorders. Offerings include Panchakarma detox, Kerala treatments, beauty therapies, skin & hair care, and Swarnaprashana for children's immunity. Open daily from 6 AM to 9 PM with a patient-centered, compassionate approach.",
-      rating: 4.9,
-      reviews: 380,
+      rating: 4.7,
+      reviews: 372,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/10.JPG",
