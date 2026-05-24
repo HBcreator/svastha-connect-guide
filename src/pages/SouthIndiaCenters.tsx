@@ -22,6 +22,10 @@ const SouthIndiaCenters = () => {
     "shreyas-yoga-retreat-bangalore-india",
     "adyant-ayurveda-hospital-bengaluru-india",
     "vydehi-ayurveda-hospital-bengaluru-india",
+    "keva-ayurveda-hospital-bengaluru-india",
+    "jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india",
+    "healing-earth-ayurveda-hospital-bengaluru-india",
+    "adivaidyam-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -127,43 +131,43 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp",
-      slug: "bangalore/keva-ayurveda-btm-layout",
+      slug:"keva-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Jayadev Memorial – Rashtrotthana Hospital Ayurveda Dept.",
       city: "Bengaluru, Karnataka, India",
       description:
         "The Ayurveda Department at Rashtrotthana Hospital offers integrative Ayurvedic care within a trusted multispeciality hospital setting in RR Nagar, Bangalore. Combining the wisdom of classical Ayurveda with modern diagnostic support, the department provides comprehensive treatment for lifestyle disorders, musculoskeletal conditions, and chronic ailments. Patients benefit from a full hospital ecosystem including diagnostics, specialist consultations, and inpatient facilities.",
-      rating: 4.2,
-      reviews: 400,
+      rating: 4.7,
+      reviews: 1490,
       priceRange: "$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/7.jpg",
-      slug: "bangalore/jayadev-memorial-rashtrotthana-ayurveda",
+      slug: "jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Healing Earth Ayurveda Hospital Bangalore",
       city: "Bengaluru, Karnataka, India",
       description:
         "Healing Earth is a dedicated Ayurvedic wellness center in Bangalore focused on holistic healing through evidence-based Ayurvedic therapies. The center offers personalized Panchakarma programs, rejuvenation treatments, and chronic disease management using authentic herbal medicines and classical treatment protocols. With a serene, therapeutic environment, Healing Earth is designed to restore balance of body, mind, and spirit for patients seeking genuine Ayurvedic care.",
-      rating: 4.4,
-      reviews: 500,
+      rating: 4.6,
+      reviews: 930,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/8.jpg",
-      slug: "bangalore/healing-earth-ayurveda-hospital",
+      slug: "healing-earth-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Adivaidyam Ayurveda Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
         "Adivaidyam is a unique Ayurvedic clinic in Banashankari, Bangalore, that combines classical Ayurveda and Yoga under one roof. Led by Dr. Savitha Sagar, the center focuses on reviving traditional healing practices for chronic disorders. Offerings include Panchakarma detox, Kerala treatments, beauty therapies, skin & hair care, and Swarnaprashana for children's immunity. Open daily from 6 AM to 9 PM with a patient-centered, compassionate approach.",
-      rating: 4.7,
-      reviews: 900,
+      rating: 4.9,
+      reviews: 380,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/10.JPG",
-      slug: "bangalore/adivaidyam-ayurveda-hospital",
+      slug: "adivaidyam-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "IAIM Healthcare Center",
