@@ -709,6 +709,42 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
         </div>
       </section>
 
+      {/* Footer CTA */}
+      <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Jayadev Memorial - Rashtrotthana Hospital Ayurveda Dept/main.webp"
+            alt="Ayurvedic Therapy at Adyant Ayurveda"
+            className="w-full h-full object-cover opacity-40"
+            onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
+          />
+          <div className="absolute inset-0 bg-[#2C4E5A]/80 mix-blend-multiply" />
+        </div>
+        
+        <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Contact us today for a free consultation. Our doctors will guide you towards the perfect treatment program at Rashtrotthana Hospital Ayurveda.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              onClick={() => setQuoteModalOpen(true)}
+              className="bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg"
+            >
+              Get a Free Quote
+            </Button>
+            <a
+              href="https://wa.me/918904404724?text=Hi%2C%20I%20want%20to%20book%20a%20free%20consultation%20with%20Rashtrotthana%20Hospital."
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </section>
+
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
 
