@@ -27,7 +27,8 @@ const SouthIndiaCenters = () => {
     "healing-earth-ayurveda-hospital-bengaluru-india",
     "adivaidyam-ayurveda-hospital-bengaluru-india",
     "iaim-healthcare-center-hospital-bengaluru-india",
-    "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india"
+    "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
+    "praana-vaidya-ayurvedic-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -200,12 +201,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "A premier Ayurvedic healthcare network in Bangalore with 50+ doctors and a track record of 5,000+ surgeries, 13,000+ therapies, and 45,000+ patients treated. PraanaVaidya specializes in a vast range of conditions including Piles, Fistula, Diabetes Reversal, Stroke Rehabilitation, Autoimmune Diseases, Infertility, Varicose Veins, and Keloid Scars. The center combines Ayurvedic medicine with surgical expertise, offering a truly integrative approach to healing.",
-      rating: 4.6,
-      reviews: 2800,
+      rating: 4.8,
+      reviews: 170,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/13.jpg",
-      slug: "bangalore/praanavaidya-ayurvedic-hospital",
+      slug: "praana-vaidya-ayurvedic-hospital-bengaluru-india",
     },
     {
       name: "Ramaiah Indic Specialty Ayurveda Hospital",
