@@ -544,7 +544,7 @@ export default function TatkshanaAyurvedaHospital() {
               <CardContent className="p-6 md:p-12 relative">
                 <div className="text-[#2C4E5A]/20 mb-4 md:mb-6">
                   <svg className="w-10 h-10 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H5v6h3z" />
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
                   </svg>
                 </div>
                 
