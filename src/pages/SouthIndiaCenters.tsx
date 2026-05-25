@@ -27,6 +27,7 @@ const SouthIndiaCenters = () => {
     "healing-earth-ayurveda-hospital-bengaluru-india",
     "adivaidyam-ayurveda-hospital-bengaluru-india",
     "iaim-healthcare-center-hospital-bengaluru-india",
+    "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india"
   ]);
 
   const centers = [
@@ -188,11 +189,11 @@ const SouthIndiaCenters = () => {
       description:
         "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic Healing combined with naturopathic support.",
       rating: 4.4,
-      reviews: 550,
+      reviews: 180,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/12.JPG",
-      slug: "bangalore/hlc-ayurveda-and-nature-cure-hospital",
+      slug: "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
     },
     {
       name: "PraanaVaidya Ayurvedic Hospital",
