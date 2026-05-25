@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function VarapradaAyurvedicCentre() {
+export default function SDAyurvedaManeHolisticWellnessCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function VarapradaAyurvedicCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Naadi Pariksha & Comprehensive Profiling",
-      description: "A highly meticulous baseline assessment via traditional Ayurvedic pulse diagnosis (Naadi Pariksha) alongside modern physical and case reviews.",
+      title: "Naadi Pariksha & Clinical Diagnosis",
+      description: "A meticulous baseline assessment via traditional Ayurvedic pulse diagnosis (Naadi Pariksha) and comprehensive medical case history review.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Integrated Prescription Blueprint",
-      description: "Developing a highly tailored therapeutic roadmap combining specialized botanical formulations, precise dietary modifications, and target therapies.",
+      title: "Individualized Remedial Blueprint",
+      description: "Formulating a tailored therapeutic roadmap encompassing specialized botanical formulations, exact dietary schedules, and target treatments.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
       title: "Preparatory Warm Mobilization (Purvakarma)",
-      description: "Applying targeted warm herbal oils (Snehana) and synchronized steam therapies (Swedana) to systematically loosen and dissolve deep somatic wastes.",
+      description: "Administering targeted external warm oil therapies (Snehana) and synchronized herbal steam baths (Swedana) to loosen systemic toxins.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Classical Panchakarma Detoxification",
-      description: "Executing precise, clinically supervised physiological purification treatments tailored specifically to flush out deep-seated metabolic toxins.",
+      title: "Classical Bio-Cleansing (Panchakarma)",
+      description: "Executing precise, clinically supervised physiological purification treatments tailored specifically to eliminate metabolic wastes.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Integrated Soft Tissue Manipulation",
-      description: "Combining classical bodywork with specialized physical manipulation, acupuncture, and Yoga to correct spine, nerve, and structural alignments.",
+      title: "Specialized Postnatal Rejuvenation",
+      description: "Tailoring custom restorative therapies, pelvic strengthening, lactational support, and infant bath training under direct physician supervision.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Continuing Wellness Continuum",
-      description: "Ensuring long-term recovery and vitality through structured home diet charts, tailored restorative exercises, and virtual follow-ups.",
+      title: "Sustained Continuing Care",
+      description: "Ensuring long-term health and stability through practical home diet charts, tailored post-natal exercises, and virtual follow-up sessions.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Migraine and Severe Sinusitis Cured completely!",
-      review: "I suffered from chronic, excruciating migraines and painful nasal congestion for over four years. I tried several modern nasal sprays with no real relief. The detailed pulse diagnosis at Varaprada was eye-opening. Under Dr. Vinay's guidance, a course of customized sinus therapies, specific breathing exercises, and acupuncture completely cleared my blockages. I haven't had a single migraine in months! The relief is absolute.",
-      name: "Alexander Wright",
+      title: "Phenomenal Postnatal Recovery support!",
+      review: "After giving birth to my first daughter, I felt completely drained and suffered from intense lower back pain. Opting for the residential postnatal stay at SD Ayurveda Mane was the best decision. The customized Abhyangam massages, traditional herbal baths (Vedu Kuli), and highly nutritious meals restored my strength completely. My back pain is gone and my energy is fully back!",
+      name: "Svetlana Sokolov",
       verified: true,
-      location: "London, United Kingdom",
-      condition: "Chronic Sinusitis & Migraine",
+      location: "St. Petersburg, Russia",
+      condition: "Postpartum Recovery & Backache",
       rating: 5
     },
     {
-      title: "Severe Spine shooting Pain Resolved!",
-      review: "A herniated disc in my neck caused shooting nerve pain down my left arm. It was incredibly painful, and my mobility was severely limited. Dr. Vinay combined classical warm oil treatments (Kati Basti) with specialized soft tissue manipulation therapies. The therapeutic approach was so gentle yet deeply effective. My neck movement is fully restored, and the painful nerve compression has completely vanished.",
-      name: "Katarina Novak",
+      title: "Proficient Family Stress relief!",
+      review: "As a new father, I was feeling highly exhausted and stressed. The clinic's program extends to fathers as well, which is remarkable. The deeply relaxing therapeutic bodywork, Ayurvedic detox treatments, and peaceful garden environment helped me reset completely. The staff treated us like family. Highly recommend their residential packages!",
+      name: "Zachary Miller",
       verified: true,
-      location: "Prague, Czech Republic",
-      condition: "Cervical Spondylosis",
+      location: "Sydney, Australia",
+      condition: "Parental Exhaustion & Stress",
       rating: 5
     },
     {
-      title: "Chronic Acidity and Gastritis Healed!",
-      review: "I struggled with persistent, burning stomach pain, severe bloating, and gastritis for a long time. I was constantly dependent on antacids. Dr. Vinay helped me undergo a mild Ayurvedic gut purification program and completely restructured my daily diet. The customized classical formulations worked wonders. My digestion is perfectly normal now and I feel incredibly active.",
-      name: "Diego Alvarez",
+      title: "pelvic Instability Healed naturally!",
+      review: "I suffered from severe pelvic pain and muscle weakness after my delivery. The integrated approach of Dr. Asha was outstanding. The specialized binding therapies, herbal steam sessions, and pelvic strengthening oils worked wonders. I can now walk and carry my baby completely pain-free. A truly professional hospital.",
+      name: "Kirsten Berg",
       verified: true,
-      location: "Madrid, Spain",
-      condition: "Chronic Gastritis & Bloating",
+      location: "Copenhagen, Denmark",
+      condition: "Postpartum Pelvic Instability",
       rating: 5
     },
     {
-      title: "Knee Joint Pain Relieved Naturally!",
-      review: "Due to severe rheumatoid arthritis, walking even short distances caused immense pain and stiffness in my knees. The soothing herbal steam therapies and customized local joint treatments at Varaprada have been life-changing. My knee inflammation has drastically reduced, and I can now walk comfortably without support. The clinical care here is highly compassionate.",
-      name: "Ingrid Larson",
+      title: "Amazing Infant care and bath Training!",
+      review: "We stayed here for two weeks with our newborn. The therapists trained us in traditional baby massage and bathing techniques, which has been incredibly helpful back home. Our baby's digestion and sleep improved significantly. The doctors kept a daily check on both mother and baby. Truly exceptional clinical care!",
+      name: "Dominic Becker",
       verified: true,
-      location: "Oslo, Norway",
-      condition: "Rheumatoid Knee Arthritis",
+      location: "Frankfurt, Germany",
+      condition: "Newborn Baby Care & Training",
       rating: 5
     },
     {
-      title: "Amazing Support for Bronchial Asthma!",
-      review: "I had severe seasonal asthma, constantly suffering from chest tightness and chronic dry coughing fits. The deep physiological purification therapies and custom immune-boosting botanical formulations restored my breathing capacity beautifully. Dr. Vinay's integrated approach using Yoga postures and deep-cleansing therapy has worked incredibly well. Outstanding clinic!",
-      name: "Yasmine Dupont",
+      title: "Superb Lactation Support and hormone Balance!",
+      review: "I was struggling with severe fatigue, low breast milk supply, and postpartum baby blues. The warm, compassionate care of Dr. Asha and Dr. Georly changed everything. Their custom herbal tonics, targeted lactation support, and gentle counseling balanced my hormones and boosted my milk supply. It made my breastfeeding journey so beautiful.",
+      name: "Theresa Fontaine",
       verified: true,
-      location: "Paris, France",
-      condition: "Seasonal Asthma & Allergies",
+      location: "Lyon, France",
+      condition: "Lactation Issues & Fatigue",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes Varaprada Ayurvedic Centre unique?",
-      answer: "Varaprada Ayurvedic Centre is a highly respected clinical recovery facility located in N. R. Colony, Basavanagudi, Bangalore. Directed by eminent integrated physician Dr. Vinay S. Singarajapura, we synthesize traditional Ayurvedic therapeutics, classical Panchakarma, Acupuncture, and specialized soft tissue manipulation to deliver multi-dimensional, root-cause healing."
+      question: "What makes SD Ayurveda Mane unique?",
+      answer: "SD Ayurveda Mane is a premier clinical Ayurvedic hospital in Electronic City, Bangalore, highly celebrated for its complete family postnatal (post-pregnancy) health care programs. We combine traditional Kerala Ayurveda, authentic Panchakarma purification, therapeutic infant care, and Naturopathy within a fully residential stay framework."
     },
     {
-      question: "Who designs and directs the clinical therapies?",
-      answer: "All clinical treatments and patient management pathways are personally designed, evaluated, and directed by our chief physician, Dr. Vinay S. Singarajapura (BAMS, MD), who possesses extensive transdisciplinary expertise in Ayurveda, Yoga, Acupuncture, and Sports Therapy."
+      question: "Who oversees the postnatal and clinical protocols?",
+      answer: "All clinical treatments are directed by a highly qualified panel of senior Ayurvedic physicians, including Dr. Asha (19 years experience) and Dr. Georly George (20 years experience), alongside specialists in Naturopathy, Yoga, and pediatric care."
     },
     {
-      question: "What chronic conditions are successfully managed here?",
-      answer: "Varaprada has a stellar clinical track record in successfully managing complex, chronic complaints including herniated discs (slipped disc), cervical spondylosis, sciatica, rheumatoid/knee arthritis, chronic gastritis, IBS, migraine, sinusitis, bronchial asthma, and stress disorders."
+      question: "What is included in the residential postnatal packages?",
+      answer: "Packages include 24/7 clinical supervision, specialized mother care (daily Abhyangam, Vedu Kuli herbal baths, belly binding, lactational tonics), infant care (herbal baby massages and bath training), doctor-prescribed Ayurvedic postnatal meals, and stress-relief therapies for fathers."
     },
     {
-      question: "Do you offer classical Panchakarma therapies?",
-      answer: "Yes, we house a fully equipped, highly hygienic Panchakarma therapy wing. All classical bio-purification procedures (Vamana, Virechana, Basti, Nasya) are executed by highly trained, registered therapists under strict physician monitoring."
+      question: "Do you treat general chronic ailments as well?",
+      answer: "Yes, beyond postnatal care, our hospital provides highly successful Panchakarma and integrated treatments for slipped disc, spondylosis, sciatica, joint arthritis, chronic stress, insomnia, and digestive disorders."
     },
     {
-      question: "Is AYUSH health insurance reimbursement supported?",
-      answer: "Yes. Varaprada complies with quality clinical guidelines and standard protocols. We provide all necessary diagnostic summaries, detailed prescription maps, itemized medical bills, and case sheets required to facilitate smooth cashless or reimbursement AYUSH insurance claims."
+      question: "Is the hospital insurance-friendly for AYUSH claims?",
+      answer: "Yes. SD Ayurveda Mane is a licensed clinical facility. We provide standard diagnostic summaries, detailed treatment charts, and itemized medical bills to enable patients to smoothly claim cashless or reimbursement AYUSH insurance."
     }
   ];
 
   const programs = [
     {
-      title: "Spine & Joint Restoration",
-      description: "Advanced Ayurvedic orthopedics and structural manipulation to resolve slipped disc, cervical spondylosis, sciatica, and chronic arthritic knee pain.",
+      title: "Complete Postnatal Mother Care",
+      description: "Medically supervised postpartum recovery featuring daily Abhyangam, Vedu Kuli herbal baths, Pizhichil, Kizhi, and belly binding to restore pelvic, uterine, and hormonal health.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Panchakarma Detoxification",
-      description: "Authentic, clinically monitored 5-fold bio-purification therapies to systematically extract deep cellular toxins and reset physiological balance.",
+      title: "Panchakarma Purification",
+      description: "Authentic, clinically monitored 5-fold physiological purification therapies designed to systematically extract deep cellular toxins and restore dosha balance.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Gastrointestinal & Metabolic Care",
-      description: "Tailored clinical formulations and therapeutic diets to resolve chronic gastritis, acid reflux, sluggish metabolism, and irritable bowel syndrome (IBS).",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Therapeutic Infant Baby Care",
+      description: "Gentle traditional massages to support infant bone development, healthy digestion, natural immunity, and professional training for parents in baby bathing.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Respiratory & Allergy Recovery",
-      description: "Deep internal blood purification, lung-strengthening formulations, and custom therapies to permanently clear sinusitis, migraine, and bronchial asthma.",
+      title: "Spine & Joint Restoration",
+      description: "Advanced orthopedics and clinical therapies designed to successfully treat slipped disc, sciatica, cervical spondylosis, and severe joint arthritis pain.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Stress & Neurological Rejuvenation",
-      description: "Integrating traditional bodywork, targeted acupuncture, and specialized Yoga postures to soothe the nervous system and manage stress disorders.",
+      title: "Lifestyle Stress & Fatigue Management",
+      description: "Integrated treatments combining classical Kerala bodywork, specific Naturopathy, and targeted Yoga to counter chronic exhaustion, anxiety, and insomnia.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Skin & Lifestyle Wellness",
-      description: "Targeted internal detoxification and specialized local herbal applications to treat chronic acne, eczema, and optimize healthy weight management.",
+      title: "Family Rejuvenation & Father Care",
+      description: "Stress-relief and restorative wellness therapies custom-tailored for fathers and family members to foster collective household health and vitality.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Eminent Integrated Doctor",
-      description: "Led by highly respected chief physician Dr. Vinay S. Singarajapura, combining deep Ayurvedic knowledge with credentials in Yoga, Acupuncture, and Sports Therapy.",
+      title: "Specialized Postnatal Focus",
+      description: "Widely regarded as Bengaluru's leading clinical hospital for comprehensive, family-centered postnatal recovery and infant training packages.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Naadi Pariksha Diagnostics",
-      description: "Emphasizes meticulous, traditional pulse reading (Naadi Pariksha) as the absolute diagnostic foundation for every individual treatment path.",
+      title: "Eminent Doctor Leadership",
+      description: "Guided by senior specialists Dr. Asha and Dr. Georly George, who bring up to 20 years of dedicated clinical experience in Kerala Ayurveda.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Transdisciplinary Care System",
-      description: "Synthesizes classical Panchakarma, modern diagnostic needs, acupuncture, and specialized physical manipulation for rapid, holistic recovery.",
+      title: "Authentic Kerala Ayurveda",
+      description: "Delivering traditional, meticulously administered bio-purification and rejuvenative therapies in a deeply hygienic and peaceful environment.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Root-Cause Chronic Relief",
-      description: "Ditches generic wellness spa structures to focus entirely on therapeutic, clinically directed outcomes for long-term chronic disorders.",
+      title: "Comfortable Residential Stay",
+      description: "Fully serviced, clean residential accommodations under 24/7 medical supervision with specialized, doctor-recommended Ayurvedic meals.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Prime Basavanagudi Location",
-      description: "Conveniently situated in the historic N. R. Colony area of Basavanagudi near BMS College of Engineering, with direct transit links.",
+      title: "Transdisciplinary Wellness",
+      description: "Blends classical Ayurveda, clinical Naturopathy, baby massage training, and therapeutic Yoga for complete multi-dimensional recovery.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "AYUSH Insurance Integration",
-      description: "Provides highly structured clinical summaries, detailed itemized sheets, and case records to ensure seamless insurance claim processing.",
+      title: "AYUSH Insurance Support",
+      description: "Provides highly detailed diagnostic summaries and case charts to facilitate smooth cashless or reimbursement insurance claims.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function VarapradaAyurvedicCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Varaprada Ayurvedic Centre | Best Panchakarma & Spine Care in Basavanagudi";
+    document.title = "SD Ayurveda Mane | Best Postnatal Care & Kerala Ayurveda in Bangalore";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Varaprada Ayurvedic Centre in Basavanagudi, Bangalore. Directed by Dr. Vinay S. Singarajapura, experience expert spine care, Panchakarma, and integrated wellness.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at SD Ayurveda Mane – Holistic Wellness Centre in Electronic City, Bangalore. Experience expert postnatal care, Kerala Ayurveda, and authentic Panchakarma in a fully residential setting.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function VarapradaAyurvedicCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Varaprada Ayurvedic Centre
+              SD Ayurveda Mane – Holistic Wellness Centre
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function VarapradaAyurvedicCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Varaprada Ayurvedic Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Integrated Spine Care, Panchakarma & Traditional Healing</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>SD Ayurveda Mane – Holistic Wellness Centre</h1>
+                <p className="text-xl mb-4 opacity-90">Specialized Postnatal Care, Kerala Ayurveda & Residential Wellness</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Basavanagudi, Bengaluru, Karnataka</span>
+                  <span className="text-lg">Electronic City Phase 1, Bengaluru, Karnataka</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(330 Reviews)</span>
+                  <span className="text-lg font-semibold">5.0</span>
+                  <span className="opacity-90">(10 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function VarapradaAyurvedicCentre() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Integrated Healing<br className="hidden lg:block" />
-                at Varaprada Ayurvedic Centre
+                Kerala Ayurveda Care <br className="hidden lg:block" />
+                at SD Ayurveda Mane
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function VarapradaAyurvedicCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Centre</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">SD Ayurveda Mane – Holistic Wellness Centre</strong>, Bengaluru’s premier hospital dedicated to authentic Kerala Ayurveda, complete family postnatal recovery, and advanced residential rejuvenation. Conveniently located on Vinayaka Layout opposite the Saniswara Swami Temple in Doddathoguru, Electronic City Phase 1, our centre rejects commercial spa formatting to focus exclusively on physician-directed healing. Under standard medical guidelines, SD Ayurveda Mane has earned a distinguished clinical reputation for supporting new families and patient recovery from chronic, multi-system ailments.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,17 +315,17 @@ export default function VarapradaAyurvedicCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
-                          alt="Varaprada Ayurvedic Centre Exterior"
+                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg" 
+                          alt="SD Ayurveda Mane Exterior"
                           className="w-full h-full object-cover"
-                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
                         />
                       </div>
                     </div>
                   </div>
 
                   <p>
-                    Chiefly directed by eminent integrated practitioner <strong className="font-bold text-[#2C4E5A]">Dr. Vinay S. Singarajapura (BAMS, MD)</strong>, Varaprada integrates classical Ayurvedic therapies with targeted Acupuncture, Sports Therapy, and physical soft tissue manipulation. Every patient's recovery pathway begins with an in-depth baseline evaluation using traditional pulse analysis (<strong className="font-bold">Naadi Pariksha</strong>). The clinic features comfortable, hygienic therapy chambers and a fully equipped wing dedicated to authentic Panchakarma bio-purification.
+                    Directed by a senior panel of Ayurvedic physicians featuring **Dr. Asha** and **Dr. Georly George** (possessing up to 20 years of clinical experience), SD Ayurveda Mane offers highly customized wellness paths. Every therapy roadmap begins with traditional pulse diagnosis (<strong className="font-bold">Naadi Pariksha</strong>). The center features clean, comfortable residential rooms with 24/7 medical supervision and doctor-prescribed Ayurvedic meals. We specialize in comprehensive mother care (Abhyangam, Vedu Kuli baths, belly binding, lactation support), baby massage training, classical Panchakarma detox, and orthopedic spine restoration.
                   </p>
                 </div>
               </div>
@@ -335,10 +335,10 @@ export default function VarapradaAyurvedicCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
-                      alt="Varaprada Ayurvedic Centre Basavanagudi"
+                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Centre/main.jpeg" 
+                      alt="SD Ayurveda Mane Electronic City"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
                     />
                   </div>
                 </div>
@@ -348,8 +348,8 @@ export default function VarapradaAyurvedicCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg" 
-                        alt="Integrated Therapy chamber at Varaprada"
+                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Centre/secondary.webp" 
+                        alt="Integrated Therapy chamber at SD Ayurveda Mane"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg"; }}
                       />
@@ -368,7 +368,7 @@ export default function VarapradaAyurvedicCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Varaprada Ayurvedic Centre today.
+                My Vaidyam to connect with SD Ayurveda Mane today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function VarapradaAyurvedicCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Varaprada Ayurvedic Centre</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at SD Ayurveda Mane</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +409,9 @@ export default function VarapradaAyurvedicCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Varaprada Ayurvedic Centre</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose SD Ayurveda Mane</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Discover a dedicated clinical setting that integrates authentic classical Ayurveda, Acupuncture, and specialized physical therapies for genuine relief.
+                Discover a dedicated clinical setting that integrates authentic Kerala Ayurveda, complete postnatal care, and comfortable residential stayed recovery.
               </p>
             </div>
             
@@ -440,9 +440,9 @@ export default function VarapradaAyurvedicCentre() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey at Varaprada</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey at SD Ayurveda Mane</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured, integrated recovery pathway directed entirely by chief physicians from pulse diagnostics to complete structural rehabilitation.
+              A highly structured, integrated recovery pathway directed entirely by senior physicians from pulse diagnostics to complete family wellness.
             </p>
           </div>
           
@@ -476,12 +476,12 @@ export default function VarapradaAyurvedicCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
-                  alt="Varaprada Ayurvedic Centre"
+                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"
+                  alt="SD Ayurveda Mane"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at SD Ayurveda Mane?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function VarapradaAyurvedicCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at SD Ayurveda Mane?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,10 +520,10 @@ export default function VarapradaAyurvedicCentre() {
               </div>
               <div>
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
-                  alt="Varaprada Ayurvedic Centre"
+                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Centre/main.jpeg"
+                  alt="SD Ayurveda Mane"
                   className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
                 />
               </div>
             </div>
@@ -631,7 +631,7 @@ export default function VarapradaAyurvedicCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Varaprada Ayurvedic Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at SD Ayurveda Mane.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -665,9 +665,9 @@ export default function VarapradaAyurvedicCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Varaprada Ayurvedic Centre<br />
-                      53, 5th Main Road, Bull Temple Road<br />
-                      NR Colony, Basavanagudi, Bengaluru<br />
+                      SD Ayurveda Mane (Holistic Wellness Centre)<br />
+                      No. 25, Vinayaka Layout, opposite Saniswara Swami Temple<br />
+                      Doddathoguru, Electronic City Phase 1, Bengaluru<br />
                       Karnataka
                     </p>
                   </div>
@@ -678,7 +678,7 @@ export default function VarapradaAyurvedicCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 95352 15898
+                      +91 80480 37866 / +91 80480 70359
                     </p>
                   </div>
                 </div>
@@ -688,8 +688,8 @@ export default function VarapradaAyurvedicCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
                     <ul className="text-foreground/70 leading-relaxed space-y-1" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 39 km from Kempegowda International Airport</li>
-                      <li>• Approx. 5 km from KSR Bengaluru City Railway Station</li>
+                      <li>• Approx. 52 km from Kempegowda International Airport</li>
+                      <li>• Approx. 22 km from KSR Bengaluru City Railway Station</li>
                     </ul>
                   </div>
                 </div>
@@ -697,14 +697,14 @@ export default function VarapradaAyurvedicCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.514941567418!2d77.56409137507589!3d12.938867187373503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158bec8cc297%3A0xd6e365b21358ea53!2sVaraprada%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1779750665366!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31117.446646411354!2d77.61447276107899!3d12.863879546248144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6bf20ce6a35b%3A0x7a1cd3232423896!2sSD%20Ayurveda%20Mane-%20Holistic%20Wellness%20Centre!5e0!3m2!1sen!2sin!4v1779751284845!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Varaprada Ayurvedic Centre Location"
+                  title="SD Ayurveda Mane Location"
                 ></iframe>
               </div>
             </div>
@@ -716,8 +716,8 @@ export default function VarapradaAyurvedicCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"
-            alt="Ayurvedic Therapy at Varaprada"
+            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Centre/main.jpeg"
+            alt="Ayurvedic Therapy at SD Ayurveda Mane"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -727,7 +727,7 @@ export default function VarapradaAyurvedicCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a free consultation. Our integrated specialists will guide you towards the perfect treatment program at Varaprada.
+            Contact us today for a free consultation. Our residential specialists will guide you towards the perfect treatment program at SD Ayurveda Mane.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -737,7 +737,7 @@ export default function VarapradaAyurvedicCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919535215898?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Varaprada%20Ayurvedic%20Centre."
+              href="https://wa.me/918048037866?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SD%20Ayurveda%20Mane."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

@@ -33,6 +33,7 @@ const SouthIndiaCenters = () => {
     "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
     "tatkshana-ayurveda-hospital-bengaluru-india",
     "varaprada-ayurvedic-centre-hospital-bengaluru-india",
+    "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -262,15 +263,15 @@ const SouthIndiaCenters = () => {
     },
     {
       name: "SD Ayurveda Mane – Holistic Wellness Centre",
-      city: "Bengaluru (RT Nagar), Karnataka, India",
+      city: "Bengaluru (Electronic City), Karnataka, India",
       description:
-        "Operating under Lotus Ayur Care, SD Ayurveda Mane is a holistic Ayurvedic wellness center in RT Nagar, Bangalore. The center specializes in Panchakarma, skin & hair care, piles & fissure treatment, stress management, women's health, and Ayurvedic beauty therapies. Also retails a curated range of Ayurvedic personal care products. Features Swarna Bindhu Prashana events for children and a warm, community-focused healing environment.",
-      rating: 4.4,
-      reviews: 420,
+        "SD Ayurveda Mane – Holistic Wellness Centre is a leading Ayurvedic hospital in Electronic City, Bangalore. Directed by expert physicians, the centre is highly renowned for its specialized postnatal (post-pregnancy) care programs, traditional Kerala Ayurveda, authentic Panchakarma, and customized stress and musculoskeletal rehabilitation in a fully residential setting.",
+      rating: 5,
+      reviews: 10,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg",
-      slug: "bangalore/sd-ayurveda-mane-holistic-wellness-centre",
+      slug: "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
     },
     {
       name: "Ayushman Ayurveda",
