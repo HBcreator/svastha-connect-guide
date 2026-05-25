@@ -26,6 +26,7 @@ const SouthIndiaCenters = () => {
     "jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india",
     "healing-earth-ayurveda-hospital-bengaluru-india",
     "adivaidyam-ayurveda-hospital-bengaluru-india",
+    "iaim-healthcare-center-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -174,12 +175,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "The Institute of Ayurveda and Integrative Medicine (I-AIM) Healthcare Center is a NABH-accredited Ayurvedic hospital in North Bangalore backed by the Foundation for Revitalization of Local Health Traditions (FRLHT). I-AIM integrates evidence-based Ayurvedic medicine with contemporary healthcare, offering specialized Panchakarma therapies including Shirodhara, Basti, Nasyam, Vamana, and Raktamokshana. The center is committed to research, education, and patient-centered integrative care.",
-      rating: 4.5,
-      reviews: 700,
+      rating: 4.7,
+      reviews: 1140,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg",
-      slug: "bangalore/iaim-healthcare-center",
+      slug: "iaim-healthcare-center-hospital-bengaluru-india",
     },
     {
       name: "HLC Ayurveda and Nature Cure Hospital",
