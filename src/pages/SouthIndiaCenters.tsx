@@ -26,6 +26,12 @@ const SouthIndiaCenters = () => {
     "jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india",
     "healing-earth-ayurveda-hospital-bengaluru-india",
     "adivaidyam-ayurveda-hospital-bengaluru-india",
+    "iaim-healthcare-center-hospital-bengaluru-india",
+    "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
+    "praana-vaidya-ayurvedic-hospital-bengaluru-india",
+    "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
+    "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
+    "tatkshana-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -174,12 +180,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "The Institute of Ayurveda and Integrative Medicine (I-AIM) Healthcare Center is a NABH-accredited Ayurvedic hospital in North Bangalore backed by the Foundation for Revitalization of Local Health Traditions (FRLHT). I-AIM integrates evidence-based Ayurvedic medicine with contemporary healthcare, offering specialized Panchakarma therapies including Shirodhara, Basti, Nasyam, Vamana, and Raktamokshana. The center is committed to research, education, and patient-centered integrative care.",
-      rating: 4.5,
-      reviews: 700,
+      rating: 4.7,
+      reviews: 1140,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg",
-      slug: "bangalore/iaim-healthcare-center",
+      slug: "iaim-healthcare-center-hospital-bengaluru-india",
     },
     {
       name: "HLC Ayurveda and Nature Cure Hospital",
@@ -187,59 +193,59 @@ const SouthIndiaCenters = () => {
       description:
         "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic Healing combined with naturopathic support.",
       rating: 4.4,
-      reviews: 550,
+      reviews: 180,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/12.JPG",
-      slug: "bangalore/hlc-ayurveda-and-nature-cure-hospital",
+      slug: "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
     },
     {
       name: "PraanaVaidya Ayurvedic Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
         "A premier Ayurvedic healthcare network in Bangalore with 50+ doctors and a track record of 5,000+ surgeries, 13,000+ therapies, and 45,000+ patients treated. PraanaVaidya specializes in a vast range of conditions including Piles, Fistula, Diabetes Reversal, Stroke Rehabilitation, Autoimmune Diseases, Infertility, Varicose Veins, and Keloid Scars. The center combines Ayurvedic medicine with surgical expertise, offering a truly integrative approach to healing.",
-      rating: 4.6,
-      reviews: 2800,
+      rating: 4.8,
+      reviews: 170,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/13.jpg",
-      slug: "bangalore/praanavaidya-ayurvedic-hospital",
+      slug: "praana-vaidya-ayurvedic-hospital-bengaluru-india",
     },
     {
       name: "Ramaiah Indic Specialty Ayurveda Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
         "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic Healing with the standards of a full-fledged medical institution.",
-      rating: 4.4,
-      reviews: 650,
+      rating: 4.8,
+      reviews: 450,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg",
-      slug: "bangalore/ramaiah-indic-specialty-ayurveda-hospital",
+      slug: "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "AyurKutira – Panchakarma Centre",
       city: "Bengaluru, Karnataka, India",
       description:
         "AyurKutira is a sanctuary for holistic healing in Mahalakshmipuram, Bengaluru, guided by experienced Ayurvedic practitioners with deep expertise in classical treatments. Specialties include personalized Ayurvedic consultations, Panchakarma detox, Rasayana Chikitsa for vitality, post-chemo or post-surgery rejuvenation, and fertility treatments. The center has a particularly strong track record in treating infertility cases, with multiple patient success stories. Open daily 7 AM to 9 PM.",
-      rating: 4.6,
-      reviews: 480,
+      rating: 4.9,
+      reviews: 140,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG",
-      slug: "bangalore/ayurkutira-panchakarma-centre",
+      slug: "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
     },
     {
       name: "Tatkshana Ayurveda Hospital",
       city: "Bengaluru, Karnataka, India",
       description:
         "Tatkshana Ayurveda Hospital is a dedicated Ayurveda treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
-      rating: 4.3,
-      reviews: 350,
+      rating: 4.8,
+      reviews: 300,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/16.png",
-      slug: "bangalore/tatkshana-ayurveda-hospital",
+      slug: "tatkshana-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Varaprada Ayurvedic Centre",
