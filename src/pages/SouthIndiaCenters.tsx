@@ -34,6 +34,7 @@ const SouthIndiaCenters = () => {
     "tatkshana-ayurveda-hospital-bengaluru-india",
     "varaprada-ayurvedic-centre-hospital-bengaluru-india",
     "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
+    "ayushman-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -278,12 +279,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "A specialized Ayurveda treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
-      rating: 4.5,
-      reviews: 750,
+      rating: 4.8,
+      reviews: 1390,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
-      slug: "bangalore/ayushman-ayurveda",
+      slug: "ayushman-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Travancore Ayurveda – Jayanagar",
