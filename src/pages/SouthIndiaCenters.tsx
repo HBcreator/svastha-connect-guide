@@ -30,6 +30,7 @@ const SouthIndiaCenters = () => {
     "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
     "praana-vaidya-ayurvedic-hospital-bengaluru-india",
     "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
+    "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -226,12 +227,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "AyurKutira is a sanctuary for holistic healing in Mahalakshmipuram, Bengaluru, guided by experienced Ayurvedic practitioners with deep expertise in classical treatments. Specialties include personalized Ayurvedic consultations, Panchakarma detox, Rasayana Chikitsa for vitality, post-chemo or post-surgery rejuvenation, and fertility treatments. The center has a particularly strong track record in treating infertility cases, with multiple patient success stories. Open daily 7 AM to 9 PM.",
-      rating: 4.6,
-      reviews: 480,
+      rating: 4.9,
+      reviews: 140,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG",
-      slug: "bangalore/ayurkutira-panchakarma-centre",
+      slug: "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
     },
     {
       name: "Tatkshana Ayurveda Hospital",
