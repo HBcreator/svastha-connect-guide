@@ -29,6 +29,7 @@ const SouthIndiaCenters = () => {
     "iaim-healthcare-center-hospital-bengaluru-india",
     "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
     "praana-vaidya-ayurvedic-hospital-bengaluru-india",
+    "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -213,12 +214,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic Healing with the standards of a full-fledged medical institution.",
-      rating: 4.4,
-      reviews: 650,
+      rating: 4.8,
+      reviews: 450,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg",
-      slug: "bangalore/ramaiah-indic-specialty-ayurveda-hospital",
+      slug: "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "AyurKutira – Panchakarma Centre",
