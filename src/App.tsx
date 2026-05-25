@@ -140,6 +140,7 @@ import HLCAyurvedaAndNatureCureHospital from "./pages/centers/HLCAyurvedaAndNatu
 import PraanaVaidyaAyurvedicHospital from "./pages/centers/PraanaVaidyaAyurvedicHospital";
 import RamaiahIndicSpecialtyAyurvedaHospital from "./pages/centers/RamaiahIndicSpecialtyAyurvedaHospital";
 import AyurKutiraPanchakarmaCentre from "./pages/centers/AyurKutiraPanchakarmaCentre";
+import TatkshanaAyurvedaHospital from "./pages/centers/TatkshanaAyurvedaHospital";
 
 const queryClient = new QueryClient();
 
@@ -217,6 +218,7 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
+          <Route path="/centers/tatkshana-ayurveda-hospital-bengaluru-india" element={<TatkshanaAyurvedaHospital />}/>
           <Route path="/centers/ayurkutira-panchakarma-centre-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCentre />}/>
           <Route path="/centers/ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india" element={<RamaiahIndicSpecialtyAyurvedaHospital />}/>
           <Route path="/centers/praana-vaidya-ayurvedic-hospital-bengaluru-india" element={<PraanaVaidyaAyurvedicHospital />}/>

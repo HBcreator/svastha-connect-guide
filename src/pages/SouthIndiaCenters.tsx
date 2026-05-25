@@ -31,6 +31,7 @@ const SouthIndiaCenters = () => {
     "praana-vaidya-ayurvedic-hospital-bengaluru-india",
     "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
+    "tatkshana-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -239,12 +240,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "Tatkshana Ayurveda Hospital is a dedicated Ayurveda treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
-      rating: 4.3,
-      reviews: 350,
+      rating: 4.8,
+      reviews: 300,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/16.png",
-      slug: "bangalore/tatkshana-ayurveda-hospital",
+      slug: "tatkshana-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Varaprada Ayurvedic Centre",
