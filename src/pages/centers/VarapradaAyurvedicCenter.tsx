@@ -1,0 +1,798 @@
+import { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, Star, ChevronRight, Building2, Leaf, Users, Award, ShieldCheck, TreePine, Phone, MessageCircle, Droplet, Activity, Heart, Sparkles, FileSearch, ClipboardList, MessageCircleHeart, ChevronLeft, Globe, Search, X } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import QuoteModal from "@/components/QuoteModal";
+
+export default function VarapradaAyurvedicCentre() {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+
+  const jumpSections = [
+    { id: "overview", title: "Center Overview" },
+    { id: "about", title: "About Center" },
+    { id: "programs", title: "Top Ayurveda Packages" },
+    { id: "why-choose", title: "Why Choose Us" },
+    { id: "process", title: "Your Healing Journey" },
+    { id: "reviews", title: "Patient Stories" },
+    { id: "faq", title: "FAQs" },
+    { id: "contact", title: "Contact Us" }
+  ];
+
+  const jumpToSection = (id: string) => {
+    setIsJumpModalOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 300);
+  };
+
+  const treatmentProcess = [
+    {
+      number: 1,
+      title: "Naadi Pariksha & Comprehensive Profiling",
+      description: "A highly meticulous baseline assessment via traditional Ayurvedic pulse diagnosis (Naadi Pariksha) alongside modern physical and case reviews.",
+      icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 2,
+      title: "Integrated Prescription Blueprint",
+      description: "Developing a highly tailored therapeutic roadmap combining specialized botanical formulations, precise dietary modifications, and target therapies.",
+      icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 3,
+      title: "Preparatory Warm Mobilization (Purvakarma)",
+      description: "Applying targeted warm herbal oils (Snehana) and synchronized steam therapies (Swedana) to systematically loosen and dissolve deep somatic wastes.",
+      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 4,
+      title: "Classical Panchakarma Detoxification",
+      description: "Executing precise, clinically supervised physiological purification treatments tailored specifically to flush out deep-seated metabolic toxins.",
+      icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 5,
+      title: "Integrated Soft Tissue Manipulation",
+      description: "Combining classical bodywork with specialized physical manipulation, acupuncture, and Yoga to correct spine, nerve, and structural alignments.",
+      icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 6,
+      title: "Continuing Wellness Continuum",
+      description: "Ensuring long-term recovery and vitality through structured home diet charts, tailored restorative exercises, and virtual follow-ups.",
+      icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
+    }
+  ];
+
+  const testimonials = [
+    {
+      title: "Migraine and Severe Sinusitis Cured completely!",
+      review: "I suffered from chronic, excruciating migraines and painful nasal congestion for over four years. I tried several modern nasal sprays with no real relief. The detailed pulse diagnosis at Varaprada was eye-opening. Under Dr. Vinay's guidance, a course of customized sinus therapies, specific breathing exercises, and acupuncture completely cleared my blockages. I haven't had a single migraine in months! The relief is absolute.",
+      name: "Alexander Wright",
+      verified: true,
+      location: "London, United Kingdom",
+      condition: "Chronic Sinusitis & Migraine",
+      rating: 5
+    },
+    {
+      title: "Severe Spine shooting Pain Resolved!",
+      review: "A herniated disc in my neck caused shooting nerve pain down my left arm. It was incredibly painful, and my mobility was severely limited. Dr. Vinay combined classical warm oil treatments (Kati Basti) with specialized soft tissue manipulation therapies. The therapeutic approach was so gentle yet deeply effective. My neck movement is fully restored, and the painful nerve compression has completely vanished.",
+      name: "Katarina Novak",
+      verified: true,
+      location: "Prague, Czech Republic",
+      condition: "Cervical Spondylosis",
+      rating: 5
+    },
+    {
+      title: "Chronic Acidity and Gastritis Healed!",
+      review: "I struggled with persistent, burning stomach pain, severe bloating, and gastritis for a long time. I was constantly dependent on antacids. Dr. Vinay helped me undergo a mild Ayurvedic gut purification program and completely restructured my daily diet. The customized classical formulations worked wonders. My digestion is perfectly normal now and I feel incredibly active.",
+      name: "Diego Alvarez",
+      verified: true,
+      location: "Madrid, Spain",
+      condition: "Chronic Gastritis & Bloating",
+      rating: 5
+    },
+    {
+      title: "Knee Joint Pain Relieved Naturally!",
+      review: "Due to severe rheumatoid arthritis, walking even short distances caused immense pain and stiffness in my knees. The soothing herbal steam therapies and customized local joint treatments at Varaprada have been life-changing. My knee inflammation has drastically reduced, and I can now walk comfortably without support. The clinical care here is highly compassionate.",
+      name: "Ingrid Larson",
+      verified: true,
+      location: "Oslo, Norway",
+      condition: "Rheumatoid Knee Arthritis",
+      rating: 5
+    },
+    {
+      title: "Amazing Support for Bronchial Asthma!",
+      review: "I had severe seasonal asthma, constantly suffering from chest tightness and chronic dry coughing fits. The deep physiological purification therapies and custom immune-boosting botanical formulations restored my breathing capacity beautifully. Dr. Vinay's integrated approach using Yoga postures and deep-cleansing therapy has worked incredibly well. Outstanding clinic!",
+      name: "Yasmine Dupont",
+      verified: true,
+      location: "Paris, France",
+      condition: "Seasonal Asthma & Allergies",
+      rating: 5
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "What makes Varaprada Ayurvedic Centre unique?",
+      answer: "Varaprada Ayurvedic Centre is a highly respected clinical recovery facility located in N. R. Colony, Basavanagudi, Bangalore. Directed by eminent integrated physician Dr. Vinay S. Singarajapura, we synthesize traditional Ayurvedic therapeutics, classical Panchakarma, Acupuncture, and specialized soft tissue manipulation to deliver multi-dimensional, root-cause healing."
+    },
+    {
+      question: "Who designs and directs the clinical therapies?",
+      answer: "All clinical treatments and patient management pathways are personally designed, evaluated, and directed by our chief physician, Dr. Vinay S. Singarajapura (BAMS, MD), who possesses extensive transdisciplinary expertise in Ayurveda, Yoga, Acupuncture, and Sports Therapy."
+    },
+    {
+      question: "What chronic conditions are successfully managed here?",
+      answer: "Varaprada has a stellar clinical track record in successfully managing complex, chronic complaints including herniated discs (slipped disc), cervical spondylosis, sciatica, rheumatoid/knee arthritis, chronic gastritis, IBS, migraine, sinusitis, bronchial asthma, and stress disorders."
+    },
+    {
+      question: "Do you offer classical Panchakarma therapies?",
+      answer: "Yes, we house a fully equipped, highly hygienic Panchakarma therapy wing. All classical bio-purification procedures (Vamana, Virechana, Basti, Nasya) are executed by highly trained, registered therapists under strict physician monitoring."
+    },
+    {
+      question: "Is AYUSH health insurance reimbursement supported?",
+      answer: "Yes. Varaprada complies with quality clinical guidelines and standard protocols. We provide all necessary diagnostic summaries, detailed prescription maps, itemized medical bills, and case sheets required to facilitate smooth cashless or reimbursement AYUSH insurance claims."
+    }
+  ];
+
+  const programs = [
+    {
+      title: "Spine & Joint Restoration",
+      description: "Advanced Ayurvedic orthopedics and structural manipulation to resolve slipped disc, cervical spondylosis, sciatica, and chronic arthritic knee pain.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Panchakarma Detoxification",
+      description: "Authentic, clinically monitored 5-fold bio-purification therapies to systematically extract deep cellular toxins and reset physiological balance.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Gastrointestinal & Metabolic Care",
+      description: "Tailored clinical formulations and therapeutic diets to resolve chronic gastritis, acid reflux, sluggish metabolism, and irritable bowel syndrome (IBS).",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Respiratory & Allergy Recovery",
+      description: "Deep internal blood purification, lung-strengthening formulations, and custom therapies to permanently clear sinusitis, migraine, and bronchial asthma.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Stress & Neurological Rejuvenation",
+      description: "Integrating traditional bodywork, targeted acupuncture, and specialized Yoga postures to soothe the nervous system and manage stress disorders.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Skin & Lifestyle Wellness",
+      description: "Targeted internal detoxification and specialized local herbal applications to treat chronic acne, eczema, and optimize healthy weight management.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      title: "Eminent Integrated Doctor",
+      description: "Led by highly respected chief physician Dr. Vinay S. Singarajapura, combining deep Ayurvedic knowledge with credentials in Yoga, Acupuncture, and Sports Therapy.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Naadi Pariksha Diagnostics",
+      description: "Emphasizes meticulous, traditional pulse reading (Naadi Pariksha) as the absolute diagnostic foundation for every individual treatment path.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Transdisciplinary Care System",
+      description: "Synthesizes classical Panchakarma, modern diagnostic needs, acupuncture, and specialized physical manipulation for rapid, holistic recovery.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Root-Cause Chronic Relief",
+      description: "Ditches generic wellness spa structures to focus entirely on therapeutic, clinically directed outcomes for long-term chronic disorders.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Prime Basavanagudi Location",
+      description: "Conveniently situated in the historic N. R. Colony area of Basavanagudi near BMS College of Engineering, with direct transit links.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "AYUSH Insurance Integration",
+      description: "Provides highly structured clinical summaries, detailed itemized sheets, and case records to ensure seamless insurance claim processing.",
+      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
+    }
+  ];
+
+  const breadcrumbRef = useRef<HTMLOListElement>(null);
+
+  useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
+    if (breadcrumbRef.current) {
+      breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
+    }
+  }, []);
+
+  useEffect(() => {
+    document.title = "Varaprada Ayurvedic Centre | Best Panchakarma & Spine Care in Basavanagudi";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Varaprada Ayurvedic Centre in Basavanagudi, Bangalore. Directed by Dr. Vinay S. Singarajapura, experience expert spine care, Panchakarma, and integrated wellness.");
+
+    if (!isReviewAutoPlaying) return;
+    const interval = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isReviewAutoPlaying, testimonials.length]);
+
+  return (
+    <div className="min-h-screen bg-background font-poppins selection:bg-[#2C4E5A]/20">
+      <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol ref={breadcrumbRef} className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <a href="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <a href="/centers" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </a>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              Varaprada Ayurvedic Centre
+            </li>
+          </ol>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <div id="overview" className="bg-[#2C4E5A] text-white py-10 md:py-14">
+        <div className="container mx-auto px-3 md:px-4 max-w-full">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Varaprada Ayurvedic Centre</h1>
+                <p className="text-xl mb-4 opacity-90">Integrated Spine Care, Panchakarma & Traditional Healing</p>
+                <div className="flex items-center gap-2 mb-4">
+                  <MapPin className="h-5 w-5" />
+                  <span className="text-lg">Basavanagudi, Bengaluru, Karnataka</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  <span className="text-lg font-semibold">4.9</span>
+                  <span className="opacity-90">(330 Reviews)</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-4">
+                <Button
+                  size="lg"
+                  variant="secondary"
+                  className="bg-white text-[#2C4E5A] hover:bg-white/90 font-semibold"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Book Consultation
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* About Section */}
+      <section id="about" className="pt-8 md:pt-12 pb-4 md:pb-6 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
+                Integrated Healing<br className="hidden lg:block" />
+                at Varaprada Ayurvedic Centre
+              </h2>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              <div className="text-left space-y-8">
+                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                  <p>
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Centre</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
+                  </p>
+                  
+                  <div className="lg:hidden py-4">
+                    <div className="relative group">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                      <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
+                        <img 
+                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
+                          alt="Varaprada Ayurvedic Centre Exterior"
+                          className="w-full h-full object-cover"
+                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <p>
+                    Chiefly directed by eminent integrated practitioner <strong className="font-bold text-[#2C4E5A]">Dr. Vinay S. Singarajapura (BAMS, MD)</strong>, Varaprada integrates classical Ayurvedic therapies with targeted Acupuncture, Sports Therapy, and physical soft tissue manipulation. Every patient's recovery pathway begins with an in-depth baseline evaluation using traditional pulse analysis (<strong className="font-bold">Naadi Pariksha</strong>). The clinic features comfortable, hygienic therapy chambers and a fully equipped wing dedicated to authentic Panchakarma bio-purification.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-8 order-first lg:order-last">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
+                    <img 
+                      src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
+                      alt="Varaprada Ayurvedic Centre Basavanagudi"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                    />
+                  </div>
+                </div>
+
+                <div className="hidden lg:block">
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
+                      <img 
+                        src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg" 
+                        alt="Integrated Therapy chamber at Varaprada"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg"; }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
+              <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
+                Your journey to renewed health begins with a single step.{" "}
+                <span 
+                  className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
+                  onClick={() => setQuoteModalOpen(true)}
+                >
+                  CONTACT 
+                </span>{" "}
+                My Vaidyam to connect with Varaprada Ayurvedic Centre today.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ayurveda Packages Section */}
+      <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Varaprada Ayurvedic Centre</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programs.map((program, idx) => (
+              <Card key={idx} className="bg-white border-none shadow-sm hover:shadow-md transition-shadow">
+                <CardContent className="p-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="shrink-0 p-2 bg-[#E7F0F1] rounded-lg">
+                        {program.icon}
+                      </div>
+                      <h3 className="text-lg md:text-xl font-bold text-[#2C4E5A] leading-tight">{program.title}</h3>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      {program.description}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section id="why-choose" className="py-4 md:py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Varaprada Ayurvedic Centre</h2>
+              <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+                Discover a dedicated clinical setting that integrates authentic classical Ayurveda, Acupuncture, and specialized physical therapies for genuine relief.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whyChooseUs.map((feature, idx) => (
+                <div key={idx} className="p-6 rounded-2xl bg-white border border-border/50 hover:border-[#2C4E5A]/30 transition-colors">
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="shrink-0 p-2 bg-background rounded-lg shadow-sm border border-border/20">
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-lg font-bold text-[#2C4E5A] leading-tight">{feature.title}</h3>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: "#7F543D" }}>
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatment Process Section */}
+      <section id="process" className="py-8 md:py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey at Varaprada</h2>
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+              A highly structured, integrated recovery pathway directed entirely by chief physicians from pulse diagnostics to complete structural rehabilitation.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {treatmentProcess.map((step, idx) => (
+              <div key={idx} className="relative p-6 md:p-8 rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all group h-full flex flex-col border border-[#2C4E5A]/5">
+                <div className="absolute top-4 right-6 md:top-6 md:right-8 text-4xl md:text-5xl font-black text-[#2C4E5A] transition-colors select-none">
+                  {step.number}
+                </div>
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="shrink-0 p-3 bg-background rounded-2xl shadow-sm group-hover:scale-110 transition-transform">
+                    {step.icon}
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold text-[#2C4E5A] leading-tight pr-10">{step.title}</h3>
+                </div>
+                
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: "#7F543D" }}>
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner Section */}
+      <section className="py-4 md:py-6 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: "#2C4E5A" }}>
+            <div className="md:hidden">
+              <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
+                <img
+                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
+                  alt="Varaprada Ayurvedic Centre"
+                  className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                />
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <div className="space-y-3">
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full bg-white text-[#2C4E5A] hover:bg-white/90 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full rounded-full border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500 text-sm sm:text-base"
+                    onClick={() => setQuoteModalOpen(true)}
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
+                    <Phone className="mr-2 h-5 w-5" />
+                    Book Consultation Now
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full px-6 border-2 border-white/60 bg-transparent text-white hover:bg-orange-500 hover:border-orange-500 active:bg-orange-500 active:border-orange-500" onClick={() => setQuoteModalOpen(true)}>
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Chat With Us
+                  </Button>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
+                  alt="Varaprada Ayurvedic Centre"
+                  className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="py-8 md:py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto relative">
+            <Card className="border-2 border-[#2C4E5A]/20 shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-6 md:p-12 relative">
+                <div className="text-[#2C4E5A]/20 mb-4 md:mb-6">
+                  <svg className="w-10 h-10 md:w-12 md:h-12" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7H5v6h3z" />
+                  </svg>
+                </div>
+                
+                <div className="mb-6 md:mb-8">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
+                    {testimonials[currentReview]?.title}
+                  </h3>
+                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                    "{testimonials[currentReview]?.review}"
+                  </p>
+                </div>
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#2C4E5A] text-white flex items-center justify-center text-xl font-bold flex-shrink-0 shadow-md">
+                    {testimonials[currentReview]?.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A]">{testimonials[currentReview]?.name}</h4>
+                      {testimonials[currentReview]?.verified && (
+                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                           Verified
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                      {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className={`h-4 w-4 md:h-5 md:w-5 ${i < (testimonials[currentReview]?.rating || 5) ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`} />
+                    ))}
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-[#2C4E5A]">{testimonials[currentReview]?.rating}.0</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
+              <button
+                onClick={() => {
+                  setCurrentReview((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+                  setIsReviewAutoPlaying(false);
+                }}
+                className="bg-white/90 hover:bg-[#2C4E5A] hover:text-white text-[#2C4E5A] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#2C4E5A] active:scale-95"
+              >
+                <ChevronLeft className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center -translate-x-2 md:translate-x-8 z-20">
+              <button
+                onClick={() => {
+                  setCurrentReview((prev) => (prev + 1) % testimonials.length);
+                  setIsReviewAutoPlaying(false);
+                }}
+                className="bg-white/90 hover:bg-[#2C4E5A] hover:text-white text-[#2C4E5A] p-2 md:p-3 rounded-full shadow-lg transition-all border-2 border-[#2C4E5A] active:scale-95"
+              >
+                <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
+              </button>
+            </div>
+
+            <div className="flex justify-center gap-2 mt-8">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setCurrentReview(idx);
+                    setIsReviewAutoPlaying(false);
+                  }}
+                  className={`transition-all rounded-full ${currentReview === idx ? "w-8 h-3 bg-[#2C4E5A]" : "w-3 h-3 bg-[#2C4E5A]/20 hover:bg-[#2C4E5A]/40"}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Varaprada Ayurvedic Centre.</p>
+          </div>
+          
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqItems.map((faq, idx) => (
+              <AccordionItem key={idx} value={`faq-${idx}`} className="border rounded-xl bg-white shadow-sm overflow-hidden px-2">
+                <AccordionTrigger className="px-4 py-5 text-left font-bold text-[#2C4E5A] hover:no-underline hover:bg-[#2C4E5A]/5 transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-4 pb-5 pt-2 leading-relaxed" style={{ color: "#7F543D" }}>
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-4 md:py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Contact Information</h2>
+              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic health.</p>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
+                      Varaprada Ayurvedic Centre<br />
+                      53, 5th Main Road, Bull Temple Road<br />
+                      NR Colony, Basavanagudi, Bengaluru<br />
+                      Karnataka
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
+                      +91 95352 15898
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
+                    <ul className="text-foreground/70 leading-relaxed space-y-1" style={{ color: "#7F543D" }}>
+                      <li>• Approx. 39 km from Kempegowda International Airport</li>
+                      <li>• Approx. 5 km from KSR Bengaluru City Railway Station</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.514941567418!2d77.56409137507589!3d12.938867187373503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158bec8cc297%3A0xd6e365b21358ea53!2sVaraprada%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1779750665366!5m2!1sen!2sin"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Varaprada Ayurvedic Centre Location"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"
+            alt="Ayurvedic Therapy at Varaprada"
+            className="w-full h-full object-cover opacity-40"
+            onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
+          />
+          <div className="absolute inset-0 bg-[#2C4E5A]/80 mix-blend-multiply" />
+        </div>
+        
+        <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+            Contact us today for a free consultation. Our integrated specialists will guide you towards the perfect treatment program at Varaprada.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              onClick={() => setQuoteModalOpen(true)}
+              className="bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg"
+            >
+              Get a Free Quote
+            </Button>
+            <a
+              href="https://wa.me/919535215898?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Varaprada%20Ayurvedic%20Centre."
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+
+      {/* Floating Action Buttons */}
+      <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
+        <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
+          <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
+        </button>
+      </div>
+
+      <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
+
+      <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
+
+      <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
+        <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#2C4E5A]/20 via-[#2C4E5A] to-[#2C4E5A]/20" />
+          <div className="p-4 pb-4 bg-[#2C4E5A] text-white relative overflow-hidden">
+            <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
+            <div className="flex justify-between items-start mb-3 relative z-10">
+              <div className="space-y-0.5"><div className="flex items-center gap-2 mb-1"><div className="h-px w-6 bg-white/30" /><span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span></div><h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Section Info</h2></div>
+              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all active:scale-95"><X size={20} /></button>
+            </div>
+            <p className="text-white/70 text-xs leading-relaxed max-w-[280px] relative z-10">Click any of the sections below to navigate directly to it.</p>
+          </div>
+          <div className="flex-1 overflow-y-auto p-4 bg-[#FCFBF7] space-y-3">
+            {jumpSections.map((section, idx) => (
+              <button
+                key={idx}
+                onClick={() => jumpToSection(section.id)}
+                className="w-full text-left p-3.5 rounded-xl border border-[#EDE8D0] hover:border-[#2C4E5A]/30 hover:bg-white transition-all duration-300 flex items-center justify-between group"
+              >
+                <span className="text-sm font-bold text-foreground/80 group-hover:text-[#2C4E5A] transition-colors">{section.title}</span>
+                <ChevronRight size={16} className="text-primary/30 group-hover:text-[#2C4E5A] transition-colors" />
+              </button>
+            ))}
+          </div>
+          <div className="p-4 bg-white border-t border-[#EDE8D0] flex flex-col gap-2.5">
+            <Button size="lg" className="w-full bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold rounded-xl shadow-md py-5 text-sm uppercase tracking-wider" onClick={() => { setIsJumpModalOpen(false); setQuoteModalOpen(true); }}>
+              Book Appointment
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

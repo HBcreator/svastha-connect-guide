@@ -32,6 +32,7 @@ const SouthIndiaCenters = () => {
     "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
     "tatkshana-ayurveda-hospital-bengaluru-india",
+    "varaprada-ayurvedic-centre-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -252,12 +253,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "Varaprada Ayurvedic Centre is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
-      rating: 4.2,
-      reviews: 300,
+      rating: 4.9,
+      reviews: 330,
       priceRange: "$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG",
-      slug: "bangalore/varaprada-ayurvedic-centre",
+      slug: "varaprada-ayurvedic-centre-hospital-bengaluru-india",
     },
     {
       name: "SD Ayurveda Mane – Holistic Wellness Centre",
