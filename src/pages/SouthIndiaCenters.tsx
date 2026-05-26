@@ -36,6 +36,7 @@ const SouthIndiaCenters = () => {
     "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
     "ayushman-ayurveda-hospital-bengaluru-india",
     "travancore-ayurveda-hospital-bengaluru-india",
+    "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -301,15 +302,15 @@ const SouthIndiaCenters = () => {
     },
     {
       name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
-      city: "Bengaluru (Mahalingapuram), Karnataka, India",
+      city: "Chennai (Mahalingapuram), Tamil Nadu, India",
       description:
         "The Mahalingapuram branch of Arya Vaidya Sala (AVS), one of India's most iconic Ayurvedic institutions founded in 1902 by Vaidyaratnam P.S. Varier. With over a century of healing heritage, AVS offers classical Ayurvedic medicines, authentic Panchakarma therapies, and doctor consultations rooted in Kerala tradition. This branch provides Vaidya consultations, Oushadhi sales, and Panchakarma services including Shirodhara, Nasyam, Elakizhi, and Navarakizhi using genuine AVS-manufactured herbal oils and formulations.",
-      rating: 4.6,
-      reviews: 1800,
+      rating: 4.7,
+      reviews: 500,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/19.jpg",
-      slug: "bangalore/kottakkal-arya-vaidya-sala-mahalingapuram",
+      slug: "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
     },
     {
       name: "Ayurillam - Home of Ayurvedic Therapy Centre",
