@@ -38,6 +38,7 @@ const SouthIndiaCenters = () => {
     "travancore-ayurveda-hospital-bengaluru-india",
     "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
     "ayurillam-hospital-bengaluru-india",
+    "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -330,12 +331,12 @@ const SouthIndiaCenters = () => {
       city: "Chennai (West Tambaram), Tamil Nadu, India",
       description:
         "Established in 2001 by Dr. Vanitha Muralikumar, Dhanwanthralaya is a 30-bed Ayurvedic speciality hospital treating both medical and surgical conditions using natural procedures rooted in classical Ayurvedic Samhithas. Specialities include Kayachikitsa, Gynaecology, Paediatrics, ENT, Surgery, and Psychiatry. Known for effective Panchakarma for back pain, disc bulge, arthritis, fistula, and chronic ailments. Branches in Chennai (West Tambaram, Nandanam) and Delhi, with an international presence through Smrithi Ayur Care in Malaysia.",
-      rating: 4.5,
-      reviews: 1100,
+      rating: 4.6,
+      reviews: 250,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/21.jpg",
-      slug: "chennai/dhanwanthralaya-ayurveda-speciality-hospital",
+      slug: "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
     },
   ];
   const orderedCenters = prioritizeTopCenters(centers);
