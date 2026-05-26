@@ -156,7 +156,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Shalya Tantra)",
+      title: "Shalya Tantra",
       description: "Non-surgical and minimal procedures for complex anal fistula, hemorrhoids (piles), and fissure using traditional medicated Kshara Sutra threads.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
     },
