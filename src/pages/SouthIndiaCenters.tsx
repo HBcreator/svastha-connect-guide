@@ -37,6 +37,7 @@ const SouthIndiaCenters = () => {
     "ayushman-ayurveda-hospital-bengaluru-india",
     "travancore-ayurveda-hospital-bengaluru-india",
     "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
+    "ayurillam-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -318,11 +319,11 @@ const SouthIndiaCenters = () => {
       description:
         "Ayurillam is a premium Kerala-rooted Ayurvedic therapy centre offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The centre addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
       rating: 4.7,
-      reviews: 950,
+      reviews: 890,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/20.jpg",
-      slug: "chennai/ayurillam-home-of-ayurvedic-therapy-centre",
+      slug: "ayurillam-hospital-bengaluru-india",
     },
     {
       name: "Dhanwanthralaya Ayurveda Speciality Hospital",
