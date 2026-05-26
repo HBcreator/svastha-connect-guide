@@ -325,7 +325,7 @@ export default function VarapradaAyurvedicCentre() {
                   </div>
 
                   <p>
-                    Chiefly directed by eminent integrated practitioner <strong className="font-bold text-[#2C4E5A]">Dr. Vinay S. Singarajapura (BAMS, MD)</strong>, Varaprada integrates classical Ayurvedic therapies with targeted Acupuncture, Sports Therapy, and physical soft tissue manipulation. Every patient's recovery pathway begins with an in-depth baseline evaluation using traditional pulse analysis (<strong className="font-bold">Naadi Pariksha</strong>). The clinic features comfortable, hygienic therapy chambers and a fully equipped wing dedicated to authentic Panchakarma bio-purification.
+                    Chiefly directed by eminent integrated practitioner <strong className="font-bold text-[#2C4E5A]">Dr. Vinay S. Singarajapura (BAMS, MD)</strong>, Varaprada integrates classical Ayurvedic therapies with targeted Acupuncture, Sports Therapy, and physical soft tissue manipulation. Every patient's recovery pathway begins with an in-depth baseline evaluation using traditional pulse analysis <strong className="font-bold text-[#2C4E5A]">(Naadi Pariksha)</strong>. The clinic features comfortable, hygienic therapy chambers and a fully equipped wing dedicated to authentic Panchakarma bio-purification.
                   </p>
                 </div>
               </div>
@@ -335,7 +335,7 @@ export default function VarapradaAyurvedicCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
+                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg" 
                       alt="Varaprada Ayurvedic Centre Basavanagudi"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
@@ -348,7 +348,7 @@ export default function VarapradaAyurvedicCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg" 
+                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/secondary.jpeg" 
                         alt="Integrated Therapy chamber at Varaprada"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg"; }}
@@ -520,7 +520,7 @@ export default function VarapradaAyurvedicCentre() {
               </div>
               <div>
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
+                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg"
                   alt="Varaprada Ayurvedic Centre"
                   className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
@@ -716,7 +716,7 @@ export default function VarapradaAyurvedicCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"
+            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg"
             alt="Ayurvedic Therapy at Varaprada"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
@@ -770,26 +770,17 @@ export default function VarapradaAyurvedicCentre() {
             <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
             <div className="flex justify-between items-start mb-3 relative z-10">
               <div className="space-y-0.5"><div className="flex items-center gap-2 mb-1"><div className="h-px w-6 bg-white/30" /><span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span></div><h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Section Info</h2></div>
-              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all active:scale-95"><X size={20} /></button>
+              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"><X className="h-6 w-6 transition-transform" /></button>
             </div>
-            <p className="text-white/70 text-xs leading-relaxed max-w-[280px] relative z-10">Click any of the sections below to navigate directly to it.</p>
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm"><ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" /><p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Jump directly to any section."</p></div>
           </div>
-          <div className="flex-1 overflow-y-auto p-4 bg-[#FCFBF7] space-y-3">
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
             {jumpSections.map((section, idx) => (
-              <button
-                key={idx}
-                onClick={() => jumpToSection(section.id)}
-                className="w-full text-left p-3.5 rounded-xl border border-[#EDE8D0] hover:border-[#2C4E5A]/30 hover:bg-white transition-all duration-300 flex items-center justify-between group"
-              >
-                <span className="text-sm font-bold text-foreground/80 group-hover:text-[#2C4E5A] transition-colors">{section.title}</span>
-                <ChevronRight size={16} className="text-primary/30 group-hover:text-[#2C4E5A] transition-colors" />
+              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
+                <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200"><ChevronRight className="h-3.5 w-3.5 text-[#2C4E5A] group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" /></div>
               </button>
             ))}
-          </div>
-          <div className="p-4 bg-white border-t border-[#EDE8D0] flex flex-col gap-2.5">
-            <Button size="lg" className="w-full bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold rounded-xl shadow-md py-5 text-sm uppercase tracking-wider" onClick={() => { setIsJumpModalOpen(false); setQuoteModalOpen(true); }}>
-              Book Appointment
-            </Button>
           </div>
         </div>
       </div>
