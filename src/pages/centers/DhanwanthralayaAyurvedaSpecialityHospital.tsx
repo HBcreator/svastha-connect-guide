@@ -306,7 +306,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Dhanwanthralaya Ayurveda Speciality Hospital</strong>, Chennai’s premier 30-bed healthcare destination for physician-led, classical Kerala Ayurveda, non-surgical spine/joint care, and classical Panchakarma detoxification. Strategically located behind the Tambaram RTO Office in West Tambaram, our hospital has set the gold standard in Ayurvedic medicine since 2001. Founded by the eminent <strong className="font-bold">Dr. Vanitha R. Muralikumar</strong> (first female President of the Central Council of Indian Medicine - CCIM), we reject generic clinical models to provide customized, root-cause healing pathways under strict medical supervision.
+                  Welcome to <strong className="font-bold text-[#2C4E5A]">Dhanwanthralaya Ayurveda Speciality Hospital</strong>, Chennai’s premier 30-bed healthcare destination for physician-led, classical Kerala Ayurveda, non-surgical spine/joint care, and classical Panchakarma detoxification. Strategically located behind the Tambaram RTO Office in West Tambaram, our hospital has set the gold standard in Ayurvedic medicine since 2001. Founded by the eminent <strong className="font-bold text-[#2c4e5a]">Dr. Vanitha R. Muralikumar</strong> (first female President of the Central Council of Indian Medicine - CCIM), we reject generic clinical models to provide customized, root-cause healing pathways under strict medical supervision.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -324,7 +324,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
                   </div>
 
                   <p>
-                    Our distinguished senior panel of specialists includes <strong className="font-bold">Dr. R. Ashok Kumar</strong> (MS Shalya Tantra - surgery), <strong className="font-bold">Dr. K. Siva Balaji</strong> (MS Shalakya Tantra - Ophthalmology/ENT), <strong className="font-bold">Dr. S. Sriman Narayanan</strong> (MD Manasa Roga - Psychiatry), and <strong className="font-bold">Dr. Krithika Narayanan</strong> (Obstetrics & Gynecology). Together with senior residents, they design customized clinical prescriptions. The facility features a dedicated Shalya operating theater, private inpatient suites, an in-house fresh decoction 'Wet Pharmacy', diagnostics partnering with Apollo Diagnostics, and comprehensive documentation to facilitate AYUSH health insurance claims.
+                    Our distinguished senior panel of specialists includes <strong className="font-bold text-[#2c4e5a]">Dr. R. Ashok Kumar</strong> (MS Shalya Tantra - surgery), <strong className="font-bold text-[#2c4e5a]">Dr. K. Siva Balaji</strong> (MS Shalakya Tantra - Ophthalmology/ENT), <strong className="font-bold text-[#2c4e5a]">Dr. S. Sriman Narayanan</strong> (MD Manasa Roga - Psychiatry), and <strong className="font-bold text-[#2c4e5a]">Dr. Krithika Narayanan</strong> (Obstetrics & Gynecology). Together with senior residents, they design customized clinical prescriptions. The facility features a dedicated Shalya operating theater, private inpatient suites, an in-house fresh decoction 'Wet Pharmacy', diagnostics partnering with Apollo Diagnostics, and comprehensive documentation to facilitate AYUSH health insurance claims.
                   </p>
 
                 </div>
@@ -769,26 +769,17 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
             <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/5 rounded-full blur-3xl" />
             <div className="flex justify-between items-start mb-3 relative z-10">
               <div className="space-y-0.5"><div className="flex items-center gap-2 mb-1"><div className="h-px w-6 bg-white/30" /><span className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/50">Navigation</span></div><h2 className="text-[25px] font-extrabold leading-tight tracking-tight whitespace-nowrap text-white">Section Info</h2></div>
-              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all active:scale-95"><X size={20} /></button>
+              <button onClick={() => setIsJumpModalOpen(false)} className="group p-2 bg-white/10 hover:bg-white/30 text-white rounded-full transition-all duration-300 shadow-lg border border-white/10 hover:border-white/50"><X className="h-6 w-6 transition-transform" /></button>
             </div>
-            <p className="text-white/70 text-xs leading-relaxed max-w-[280px] relative z-10">Click any of the sections below to navigate directly to it.</p>
+            <div className="flex items-center gap-2.5 p-2.5 bg-white/5 rounded-xl border border-white/10 relative z-10 backdrop-blur-sm"><ClipboardList className="h-4 w-4 text-white/50 flex-shrink-0" /><p className="text-[11px] md:text-xs text-white/70 leading-relaxed italic">"Jump directly to any section."</p></div>
           </div>
-          <div className="flex-1 overflow-y-auto p-4 bg-[#FCFBF7] space-y-3">
+          <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
             {jumpSections.map((section, idx) => (
-              <button
-                key={idx}
-                onClick={() => jumpToSection(section.id)}
-                className="w-full text-left p-3.5 rounded-xl border border-[#EDE8D0] hover:border-[#2C4E5A]/30 hover:bg-white transition-all duration-300 flex items-center justify-between group"
-              >
-                <span className="text-sm font-bold text-foreground/80 group-hover:text-[#2C4E5A] transition-colors">{section.title}</span>
-                <ChevronRight size={16} className="text-primary/30 group-hover:text-[#2C4E5A] transition-colors" />
+              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
+                <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200"><ChevronRight className="h-3.5 w-3.5 text-[#2C4E5A] group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" /></div>
               </button>
             ))}
-          </div>
-          <div className="p-4 bg-white border-t border-[#EDE8D0] flex flex-col gap-2.5">
-            <Button size="lg" className="w-full bg-[#FF7A28] hover:bg-[#E6691F] text-white font-bold rounded-xl shadow-md py-5 text-sm uppercase tracking-wider" onClick={() => { setIsJumpModalOpen(false); setQuoteModalOpen(true); }}>
-              Book Appointment
-            </Button>
           </div>
         </div>
       </div>
