@@ -35,6 +35,7 @@ const SouthIndiaCenters = () => {
     "varaprada-ayurvedic-centre-hospital-bengaluru-india",
     "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
     "ayushman-ayurveda-hospital-bengaluru-india",
+    "travancore-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -291,12 +292,12 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
-      rating: 4.6,
-      reviews: 3500,
+      rating: 4.8,
+      reviews: 800,
       priceRange: "$$$",
       image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/6.jpg",
-      slug: "bangalore/travancore-ayurveda-jayanagar",
+        "/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Travancore Ayurveda – Jayanagar/main.webp",
+      slug: "travancore-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
