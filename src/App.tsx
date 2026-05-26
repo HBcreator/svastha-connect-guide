@@ -141,6 +141,13 @@ import PraanaVaidyaAyurvedicHospital from "./pages/centers/PraanaVaidyaAyurvedic
 import RamaiahIndicSpecialtyAyurvedaHospital from "./pages/centers/RamaiahIndicSpecialtyAyurvedaHospital";
 import AyurKutiraPanchakarmaCentre from "./pages/centers/AyurKutiraPanchakarmaCentre";
 import TatkshanaAyurvedaHospital from "./pages/centers/TatkshanaAyurvedaHospital";
+import VarapradaAyurvedicCentre from "./pages/centers/VarapradaAyurvedicCenter";
+import SDAyurvedaManeHolisticWellnessCentre from "./pages/centers/SDAyurvedaManeHolisticWellnessCentre";
+import AyushmanAyurveda from "./pages/centers/AyushmanAyurveda";
+import TravancoreAyurvedaJayanagar from "./pages/centers/TravancoreAyurvedaJayanagar";
+import KottakkalAryaVaidyaSala from "./pages/centers/KottakkalAryaVaidyaSala";
+import Ayurillam from "./pages/centers/Ayurillam";
+import DhanwanthralayaAyurvedaSpecialityHospital from "./pages/centers/DhanwanthralayaAyurvedaSpecialityHospital";
 
 const queryClient = new QueryClient();
 
@@ -218,6 +225,13 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
+          <Route path="/centers/dhanwanthralaya-ayurveda-hospital-bengaluru-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
+          <Route path="/centers/ayurillam-hospital-bengaluru-india" element={<Ayurillam />}/>
+          <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-bengaluru-india" element={<KottakkalAryaVaidyaSala />}/>
+          <Route path="/centers/travancore-ayurveda-hospital-bengaluru-india" element={<TravancoreAyurvedaJayanagar />}/>
+          <Route path="/centers/ayushman-ayurveda-hospital-bengaluru-india" element={<AyushmanAyurveda />}/>
+          <Route path="/centers/sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCentre />}/>
+          <Route path="/centers/varaprada-ayurvedic-centre-hospital-bengaluru-india" element={<VarapradaAyurvedicCentre />}/>
           <Route path="/centers/tatkshana-ayurveda-hospital-bengaluru-india" element={<TatkshanaAyurvedaHospital />}/>
           <Route path="/centers/ayurkutira-panchakarma-centre-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCentre />}/>
           <Route path="/centers/ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india" element={<RamaiahIndicSpecialtyAyurvedaHospital />}/>
