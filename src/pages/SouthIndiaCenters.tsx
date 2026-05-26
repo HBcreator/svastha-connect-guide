@@ -32,6 +32,13 @@ const SouthIndiaCenters = () => {
     "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
     "tatkshana-ayurveda-hospital-bengaluru-india",
+    "varaprada-ayurvedic-centre-hospital-bengaluru-india",
+    "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
+    "ayushman-ayurveda-hospital-bengaluru-india",
+    "travancore-ayurveda-hospital-bengaluru-india",
+    "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
+    "ayurillam-hospital-bengaluru-india",
+    "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
   ]);
 
   const centers = [
@@ -252,60 +259,60 @@ const SouthIndiaCenters = () => {
       city: "Bengaluru, Karnataka, India",
       description:
         "Varaprada Ayurvedic Centre is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
-      rating: 4.2,
-      reviews: 300,
+      rating: 4.9,
+      reviews: 330,
       priceRange: "$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG",
-      slug: "bangalore/varaprada-ayurvedic-centre",
+      slug: "varaprada-ayurvedic-centre-hospital-bengaluru-india",
     },
     {
       name: "SD Ayurveda Mane – Holistic Wellness Centre",
-      city: "Bengaluru (RT Nagar), Karnataka, India",
+      city: "Bengaluru (Electronic City), Karnataka, India",
       description:
-        "Operating under Lotus Ayur Care, SD Ayurveda Mane is a holistic Ayurvedic wellness center in RT Nagar, Bangalore. The center specializes in Panchakarma, skin & hair care, piles & fissure treatment, stress management, women's health, and Ayurvedic beauty therapies. Also retails a curated range of Ayurvedic personal care products. Features Swarna Bindhu Prashana events for children and a warm, community-focused healing environment.",
-      rating: 4.4,
-      reviews: 420,
+        "SD Ayurveda Mane – Holistic Wellness Centre is a leading Ayurvedic hospital in Electronic City, Bangalore. Directed by expert physicians, the centre is highly renowned for its specialized postnatal (post-pregnancy) care programs, traditional Kerala Ayurveda, authentic Panchakarma, and customized stress and musculoskeletal rehabilitation in a fully residential setting.",
+      rating: 5,
+      reviews: 10,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg",
-      slug: "bangalore/sd-ayurveda-mane-holistic-wellness-centre",
+      slug: "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
     },
     {
       name: "Ayushman Ayurveda",
       city: "Bengaluru, Karnataka, India",
       description:
         "A specialized Ayurveda treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
-      rating: 4.5,
-      reviews: 750,
+      rating: 4.8,
+      reviews: 1390,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
-      slug: "bangalore/ayushman-ayurveda",
+      slug: "ayushman-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Travancore Ayurveda – Jayanagar",
       city: "Bengaluru, Karnataka, India",
       description:
         "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
-      rating: 4.6,
-      reviews: 3500,
+      rating: 4.8,
+      reviews: 800,
       priceRange: "$$$",
       image:
-        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/6.jpg",
-      slug: "bangalore/travancore-ayurveda-jayanagar",
+        "/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Travancore Ayurveda – Jayanagar/main.webp",
+      slug: "travancore-ayurveda-hospital-bengaluru-india",
     },
     {
       name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
-      city: "Bengaluru (Mahalingapuram), Karnataka, India",
+      city: "Chennai (Mahalingapuram), Tamil Nadu, India",
       description:
         "The Mahalingapuram branch of Arya Vaidya Sala (AVS), one of India's most iconic Ayurvedic institutions founded in 1902 by Vaidyaratnam P.S. Varier. With over a century of healing heritage, AVS offers classical Ayurvedic medicines, authentic Panchakarma therapies, and doctor consultations rooted in Kerala tradition. This branch provides Vaidya consultations, Oushadhi sales, and Panchakarma services including Shirodhara, Nasyam, Elakizhi, and Navarakizhi using genuine AVS-manufactured herbal oils and formulations.",
-      rating: 4.6,
-      reviews: 1800,
+      rating: 4.7,
+      reviews: 500,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/19.jpg",
-      slug: "bangalore/kottakkal-arya-vaidya-sala-mahalingapuram",
+      slug: "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
     },
     {
       name: "Ayurillam - Home of Ayurvedic Therapy Centre",
@@ -313,23 +320,23 @@ const SouthIndiaCenters = () => {
       description:
         "Ayurillam is a premium Kerala-rooted Ayurvedic therapy centre offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The centre addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
       rating: 4.7,
-      reviews: 950,
+      reviews: 890,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/20.jpg",
-      slug: "chennai/ayurillam-home-of-ayurvedic-therapy-centre",
+      slug: "ayurillam-hospital-bengaluru-india",
     },
     {
       name: "Dhanwanthralaya Ayurveda Speciality Hospital",
       city: "Chennai (West Tambaram), Tamil Nadu, India",
       description:
         "Established in 2001 by Dr. Vanitha Muralikumar, Dhanwanthralaya is a 30-bed Ayurvedic speciality hospital treating both medical and surgical conditions using natural procedures rooted in classical Ayurvedic Samhithas. Specialities include Kayachikitsa, Gynaecology, Paediatrics, ENT, Surgery, and Psychiatry. Known for effective Panchakarma for back pain, disc bulge, arthritis, fistula, and chronic ailments. Branches in Chennai (West Tambaram, Nandanam) and Delhi, with an international presence through Smrithi Ayur Care in Malaysia.",
-      rating: 4.5,
-      reviews: 1100,
+      rating: 4.6,
+      reviews: 250,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/21.jpg",
-      slug: "chennai/dhanwanthralaya-ayurveda-speciality-hospital",
+      slug: "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
     },
   ];
   const orderedCenters = prioritizeTopCenters(centers);
