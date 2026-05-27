@@ -344,10 +344,10 @@ const KeralaCenters = () => {
       description:
         "Deepanjali Ayur Retreat is a nature-focused healing campus built around intensive Ayurveda and yoga routines in a low-noise village setting. Its physician-supervised plans are tailored for detox, skin and metabolic concerns, pain conditions, and stress disorders, with daily therapeutic schedules and diet discipline aimed at long-term results.",
       rating: 4.9,
-      reviews: 800,
+      reviews: 70,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/6.jpg",
-      slug: undefined,
+      slug: "deepanjali-ayur-retreat-hospital-kerela-india",
     },
     {
       name: "Madukkakuzhy Ayurveda",

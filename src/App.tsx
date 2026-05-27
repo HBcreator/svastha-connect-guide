@@ -153,6 +153,7 @@ import AryaVaidyaSala from "./pages/centers/AryaVaidyaSala.tsx";
 import RasayanaAyurvedaCentre from "./pages/centers/RasayanaAyurvedaCentre.tsx";
 import YantraAyurvedicResort from "./pages/centers/YantraAyurvedicResort.tsx";
 import ChakraAyurvedicResort from "./pages/centers/ChakraAyurvedicResort.tsx";
+import DeepanjaliAyurRetreat from "./pages/centers/DeepanjaliAyurRetreat.tsx";
 
 const queryClient = new QueryClient();
 
@@ -230,12 +231,13 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
+          <Route path="/centers/deepanjali-ayur-retreat-hospital-kerela-india" element={<DeepanjaliAyurRetreat />}/>
           <Route path="/centers/chakra-ayurvedic-resort-hospital-kerala-india" element={<ChakraAyurvedicResort />}/>
           <Route path="/centers/yantra-ayurvedic-resort-hospital-kerala-india" element={<YantraAyurvedicResort />}/>
           <Route path="/centers/rasayana-ayurveda-centre-hospital-kerala-india" element={<RasayanaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
-          
+
           <Route path="/centers/dhanwanthralaya-ayurveda-hospital-bengaluru-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
           <Route path="/centers/ayurillam-hospital-bengaluru-india" element={<Ayurillam />}/>
           <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-bengaluru-india" element={<KottakkalAryaVaidyaSala />}/>
