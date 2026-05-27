@@ -351,14 +351,14 @@ const KeralaCenters = () => {
     },
     {
       name: "Madukkakuzhy Ayurveda",
-      city: "Idukki, Kerala, India",
+      city: "Kanjirappally, Kottayam, Kerala, India",
       description:
         "A family-owned Ayurveda institution with 9 generations of unbroken healing tradition since 1938 - Green Leaf Certified by Kerala Tourism (the highest government recognition for authentic Ayurvedic care) and Diamond Certified Homestay by the Kerala Tourism Department. Founded by Vaidyakalanidhi M.C. Mathew, now stewarded by the 9th generation of the Madukkakuzhy family in the lush mountain landscapes of Idukki. All medicines are prepared in-house from organically grown herbs, customized to each patient's Prakriti. Specialties include arthritis, fibromyalgia, digestive disorders, skin conditions, post-natal care, and pre-conception care with 3-week Panchakarma programs. Global reach spanning 42+ countries with a European center in Bad Bocklet, Germany. Endorsed by Kerala celebrities and international wellness seekers who return year after year.",
-      rating: 4.7,
-      reviews: 1800,
+      rating: 4.9,
+      reviews: 390,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/Madukkakuzhy Ayurveda.webp",
-      slug: undefined,
+      slug: "madukkakuzhy-ayurveda-retreat-hospital-kerela-india",
     },
   ];
 
