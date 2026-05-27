@@ -97,11 +97,11 @@ const GoaCenters = () => {
       city: "Candolim, North Goa, India",
       description:
         "A popular and affordable Kerala Ayurveda clinic on Candolim Beach Road, Ayur Touch is recognized for authentic Abhyanga massage, Shirodhara, and Panchakarma therapies focused on stress relief and full-body wellness. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.5,
-      reviews: 900,
+      rating: 4.6,
+      reviews: 330,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/2.jpg",
-      slug: undefined,
+      slug: "ayur-touch-ayurvedic-healthcare-hospital-goa-india",
     },
     {
       name: "Yashraj Ayurveda Clinic",
