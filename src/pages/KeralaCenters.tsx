@@ -347,7 +347,7 @@ const KeralaCenters = () => {
       reviews: 70,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/6.jpg",
-      slug: "deepanjali-ayur-retreat-hospital-kerela-india",
+      slug: "deepanjali-ayur-retreat-hospital-kerala-india",
     },
     {
       name: "Madukkakuzhy Ayurveda",
@@ -358,7 +358,7 @@ const KeralaCenters = () => {
       reviews: 390,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/Madukkakuzhy Ayurveda.webp",
-      slug: "madukkakuzhy-ayurveda-retreat-hospital-kerela-india",
+      slug: "madukkakuzhy-ayurveda-retreat-hospital-kerala-india",
     },
   ];
 

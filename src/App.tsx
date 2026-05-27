@@ -232,8 +232,8 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
-          <Route path="/centers/madukkakuzhy-ayurveda-retreat-hospital-kerela-india" element={<MadukkakuzhyAyurveda />}/>
-          <Route path="/centers/deepanjali-ayur-retreat-hospital-kerela-india" element={<DeepanjaliAyurRetreat />}/>
+          <Route path="/centers/madukkakuzhy-ayurveda-retreat-hospital-kerala-india" element={<MadukkakuzhyAyurveda />}/>
+          <Route path="/centers/deepanjali-ayur-retreat-hospital-kerala-india" element={<DeepanjaliAyurRetreat />}/>
           <Route path="/centers/chakra-ayurvedic-resort-hospital-kerala-india" element={<ChakraAyurvedicResort />}/>
           <Route path="/centers/yantra-ayurvedic-resort-hospital-kerala-india" element={<YantraAyurvedicResort />}/>
           <Route path="/centers/rasayana-ayurveda-centre-hospital-kerala-india" element={<RasayanaAyurvedaCentre />}/>
