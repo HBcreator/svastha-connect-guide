@@ -161,6 +161,7 @@ import YashrajAyurvedaClinic from "./pages/centers/YashrajAyurvedaClinic.tsx";
 import AyurvedicNaturalHealthCentre from "./pages/centers/AyurvedicNaturalHealthCentre.tsx";
 import SreeShantiWellness from "./pages/centers/SreeShantiWellness.tsx";
 import NaturalTouchAyurveda from "./pages/centers/NaturalTouchAyurveda.tsx";
+import KAREHealth from "./pages/centers/KAREHealth.tsx";
 
 const queryClient = new QueryClient();
 
@@ -238,6 +239,7 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
+          <Route path="/centers/kare-health-hospital-goa-india" element={<KAREHealth />}/>
           <Route path="/centers/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
           <Route path="/centers/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
           <Route path="/centers/ayurvedic-natural-health-centre-hospital-goa-india" element={<AyurvedicNaturalHealthCentre />}/>

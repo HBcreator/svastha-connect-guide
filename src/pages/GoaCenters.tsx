@@ -141,11 +141,11 @@ const GoaCenters = () => {
       city: "Colva Beach, South Goa, India",
       description:
         "A holistic Ayurveda and Yoga retreat in South Goa offering Panchakarma cleanses, dosha consultations, stress-reset programs, Iyengar yoga, and resort-style comfort near Colva Beach. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.5,
-      reviews: 650,
+      rating: 4.9,
+      reviews: 680,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/14.jpg",
-      slug: undefined,
+      slug: "kare-health-hospital-goa-india",
     },
     {
       name: "Tattvam on the Beach",
