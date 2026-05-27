@@ -150,6 +150,7 @@ import Ayurillam from "./pages/centers/Ayurillam";
 import DhanwanthralayaAyurvedaSpecialityHospital from "./pages/centers/DhanwanthralayaAyurvedaSpecialityHospital";
 import ParathuvayalilAyurvedaHospital from "./pages/centers/ParathuvayalilAyurvedaHospital";
 import AryaVaidyaSala from "./pages/centers/AryaVaidyaSala.tsx";
+import RasayanaAyurvedaCentre from "./pages/centers/RasayanaAyurvedaCentre.tsx";
 
 const queryClient = new QueryClient();
 
@@ -227,6 +228,7 @@ const App = () => (
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
 
+          <Route path="/centers/rasayana-ayurveda-centre-hospital-kerela-india" element={<RasayanaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-hospital-kerela-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerela-india" element={<ParathuvayalilAyurvedaHospital />}/>
           <Route path="/centers/dhanwanthralaya-ayurveda-hospital-bengaluru-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
