@@ -321,11 +321,11 @@ const KeralaCenters = () => {
       city: "Nattika Beach, Thrissur, Kerala, India",
       description:
         "Yantra Ayurvedic Resort is a coastal wellness destination designed for travelers who want Panchakarma and restorative therapies in a beachside setting. The center blends traditional doctor-guided treatment plans with yoga, meditation, and customizable rejuvenation programs, making it suitable for detox, stress reset, and preventive care.",
-      rating: 4.0,
+      rating: 4.1,
       reviews: 520,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/4.jpeg",
-      slug: undefined,
+      slug: "yantra-ayurvedic-resort-hospital-kerela-india",
     },
     {
       name: "Chakra Ayurvedic Resort",
