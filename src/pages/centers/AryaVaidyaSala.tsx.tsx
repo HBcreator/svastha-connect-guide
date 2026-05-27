@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function ParathuvayalilAyurvedaHospital() {
+export default function AryaVaidyaSala() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function ParathuvayalilAyurvedaHospital() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Integrated Diagnostic Profiling",
-      description: "A detailed clinical baseline evaluation combining traditional pulse analysis (Naadi) with modern radiological imaging and laboratory check-ups.",
+      title: "Meticulous Vaidya Evaluation",
+      description: "A comprehensive baseline diagnostic check-up and pulse analysis (Naadi Pariksha) by experienced physician panels to determine specific dosha profiling.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Tailored Therapeutic Roadmap",
-      description: "Designing a personalized treatment protocol mapping out specific internal therapies, organic formulations, and lifestyle schedules.",
+      title: "Classical Prescription Drafting",
+      description: "Compiling an individualized therapeutic blueprint utilizing authentic, standard-potency classical Arya Vaidya Sala formulations.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
       title: "Preparatory Purva Karma",
-      description: "Administering gentle warm oil massages (Abhyangam) and specialized steam therapies (Swedana) to mobilize deep systemic impurities.",
+      description: "Administering warm synchronized massage (Abhyangam) and customized steam baths (Swedana) to loosen deep metabolic wastes.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Authentic Panchakarma Cleansing",
-      description: "Executing precise physiological detox treatments (Virechana, Vasti, or Vamana) under strict resident medical officer supervision to clear deep waste.",
+      title: "Supervised Panchakarma Purification",
+      description: "Executing precise, highly controlled biological detoxification procedures (Virechana, Vasti, or Vamana) tailored to deep impurities.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Musculoskeletal Alignment",
-      description: "Applying targeted Marma therapies, specialized oil pooling, and physical rehabilitation exercises to restore spinal and joint mobility.",
+      title: "Traditional Restorative Retention",
+      description: "Applying targeted warm Keralite therapies like Kati Vasti, Janu Vasti, or Greeva Vasti to soothe nerve compression and joint stiffness.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Continuing Health Maintenance",
-      description: "Empowering patient recovery through customized home diet charts, therapeutic exercises, and periodic clinical follow-up evaluations.",
+      title: "Continuing Path to Vitality",
+      description: "Long-term health preservation through customized home diet charts, wellness guidelines, single-herb extracts, and structured follow-up checks.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Sports Joint Range and Strength Restored!",
-      review: "As a competitive athlete, a severe knee injury and joint stiffness had threatened my career. I came to Parathuvayalil on a recommendation for their Marma Chikitsa. The integrated approach combining Dr. Sunil's orthopedic expertise and Dr. Pathrose's traditional joint therapies was extraordinary. The specialized Choorna Swedam and customized muscle manipulation completely restored my knee's range of motion. I am training again and feel incredibly grateful!",
-      name: "Lars Lindqvist",
+      title: "Supportive Cancer Care restored my hope and strength!",
+      review: "Following a grueling series of chemotherapy sessions, my body was entirely depleted of energy and plagued by intense chronic fatigue. Coming to Kottakkal's flagship hospital was a turning point. The integrated oncology protocols and tailored Rasayana therapies supervised by senior Vaidyas were extraordinary. Within three weeks, my natural appetite returned, my cellular vitality was completely restored, and I regained my physical strength. The dedication to healing here is unmatched.",
+      name: "Helena Markova",
       verified: true,
-      location: "Stockholm, Sweden",
-      condition: "Sports Injury & Joint Stiffness",
+      location: "Prague, Czech Republic",
+      condition: "Supportive Cancer Care",
       rating: 5
     },
     {
-      title: "Debilitating Spine Pain Relieved Completely",
-      review: "Years of sitting in office meetings had left me with a debilitating lower back ache and severe lumbar compression. The spine care protocols at this hospital worked absolute wonders. Over two weeks, the combination of Kati Vasti, rhythmic warm oil pours, and gentle physical rehabilitation completely relieved my sciatic nerve compression. I walked out of the Keezhillam campus absolutely pain-free.",
-      name: "Amara Sterling",
+      title: "Incredible Osteoarthritis relief with Pizhichil",
+      review: "Severe knee osteoarthritis and deep joint stiffness had made walking incredibly painful for over five years. I tried several treatments in Europe with no success. The warm medicated oil stream treatments (Pizhichil) and synchronized massages here worked absolute wonders. The joint inflammation subsided entirely, and I can walk pain-free again. Arya Vaidya Sala represents the absolute gold standard in classical Keralite orthopedic care.",
+      name: "Jean-Pierre Moreau",
       verified: true,
-      location: "London, UK",
-      condition: "Lower Back Ache & Disc Compression",
+      location: "Brussels, Belgium",
+      condition: "Severe Osteoarthritis",
       rating: 5
     },
     {
-      title: "Outstanding Kshara Sutra Treatment",
-      review: "I had been suffering from complex piles and chronic fissures for years, always fearing invasive surgery. The ano-rectal department here directed by Dr. Mathew Sunny was exceptional. The classical Kshara Sutra treatment healed my condition entirely with virtually no pain and zero side effects. The clinical hygiene standards in this NABH-accredited hospital are world-class.",
-      name: "Diego Alvarez",
+      title: "Chronic Eczema healed from the root",
+      review: "I had suffered from chronic skin flare-ups and agonizing eczema for nearly a decade. The dermatological team at AVS developed a specialized protocol combining a strict Ayurvedic detox (Virechana) and daily botanical wraps. The results were nothing short of miraculous. My skin has cleared up completely and feels healthy for the first time in years. They truly heal chronic diseases from the root.",
+      name: "Ingrid Bergman",
       verified: true,
-      location: "Madrid, Spain",
-      condition: "Anal Fissure & Complex Piles",
+      location: "Oslo, Norway",
+      condition: "Chronic Eczema & Psoriasis",
       rating: 5
     },
     {
-      title: "Complete Freedom from Migraines & Burnout",
-      review: "Severe chronic migraines and corporate burnout had left me physically exhausted. Parathuvayalil's serene, nature-rich hospital setting provided immediate calm. The soothing rhythmic flow of Shirodhara and targeted nasal therapies completely cleared my chronic sinus pressure and quieted my nervous system. I haven't had a single migraine flare-up in months and my sleep is completely restored.",
-      name: "Natsuki Sato",
+      title: "Outstanding Panchakarma Detoxification",
+      review: "Intense corporate burnout and stress had given me chronic digestive issues and insomnia. Undergoing the classical three-week Panchakarma program in Kottakkal was a deeply transformative experience. The clinical precision, pristine environment, and profound knowledge of the Vaidyas helped me completely reset my system. My digestion is perfect, my sleep is restored, and I feel reborn. An incredible sanctuary!",
+      name: "Devon Miller",
       verified: true,
-      location: "Osaka, Japan",
-      condition: "Severe Chronic Migraines",
+      location: "Auckland, New Zealand",
+      condition: "Chronic Burnout & Detox",
       rating: 5
     },
     {
-      title: "PCOS Recovery and Uterine Strengthening",
-      review: "Struggling with severe hormonal imbalances and PCOS had been incredibly stressful. Under the care of Dr. Nina Sunil, I underwent a personalized Ayurvedic detox and a strictly managed botanical regimen. She was exceptionally patient and highly knowledgeable. My menstrual cycles have completely regularized, and my energy levels are higher than ever before. This integrated care is truly remarkable.",
-      name: "Chloé Rousseau",
+      title: "Profound Sleep and Nervous System Recovery",
+      review: "Severe insomnia and persistent anxiety had completely ruined my daily routine. AVS's serene, legacy-rich healing environment immediately put me at ease. The rhythmic warm oil stream of Shirodhara and classical head poolings quieted my overactive nervous system. I am finally sleeping deeply for eight hours every night and feel completely recharged. Excellent authentic Keralite hospital care!",
+      name: "Serena Moretti",
       verified: true,
-      location: "Paris, France",
-      condition: "PCOS & Hormonal Imbalance",
+      location: "Florence, Italy",
+      condition: "Chronic Insomnia & Anxiety",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What accreditations does Parathuvayalil Ayurveda Hospital hold?",
-      answer: "Parathuvayalil Ayurveda Hospital is a premier, fully NABH-accredited and CGHS-empanelled healthcare institution located in Keezhillam, Kochi. We adhere to the highest standard of safety, clinical hygiene, and integrative medical care in Ernakulam."
+      question: "What is the historic legacy of Arya Vaidya Sala (AVS), Kottakkal?",
+      answer: "Arya Vaidya Sala is a premier, legendary charitable institution founded on October 12, 1902, by the visionary physician and philanthropist Vaidyaratnam P.S. Varier. Over the last century, it has pioneered the preservation, standardization, and scientific propagation of authentic classical Ayurveda worldwide."
     },
     {
-      question: "Who are the chief consulting doctors at the hospital?",
-      answer: "Our hospital is led by founder and Chief Physician Dr. P. P. Pathrose (MD in Ayurveda - Marma and Kayachikitsa) and Chief Senior Consultant Dr. Sunil Pathrose Parathuvayalil (MBBS, MS in Orthopaedics), representing a rare blend of classical bone care and modern orthopedic spine surgery."
+      question: "What hospital facilities does AVS operate in Kottakkal?",
+      answer: "AVS operates its flagship Ayurvedic Hospital & Research Centre in Kottakkal, Ernakulam, and Delhi for paid therapies, alongside a highly revered Charitable Hospital in Kottakkal that provides free consultations, classical therapies, medicines, accommodation, and food to economically challenged patients."
     },
     {
-      question: "What conditions are specialized at this multispeciality center?",
-      answer: "We specialize in treating chronic musculoskeletal disorders, bone/joint conditions (via Marma Chikitsa), spine disorders, sports injuries, complex anal fistula and piles (via Kshara Sutra), women's health, and chronic skin diseases."
+      question: "How are the medicines at Arya Vaidya Sala prepared?",
+      answer: "AVS operates state-of-the-art, standard-accredited drug manufacturing factories that produce over 500 classical Ayurvedic formulations. All medicines are prepared strictly according to classical texts using herbs sourced organically and analyzed in our Centre for Medicinal Plants Research."
     },
     {
-      question: "Do you integrate modern medicine with Ayurvedic treatments?",
-      answer: "Yes, the hospital has an integrated setup featuring modern clinical diagnostic laboratories, radiology/X-ray departments, and check-ups with MBBS and MS doctors to complement classical Ayurvedic treatment planning."
+      question: "What conditions and specialties does the hospital focus on?",
+      answer: "We offer specialized clinical care for orthopedic spine/joint disorders, supportive cancer care, chronic skin diseases, autoimmune conditions, toxicological treatments (Visha Chikitsa), women's health, and classical Panchakarma detoxification."
     },
     {
-      question: "Do you provide insurance cashless facilities for patients?",
-      answer: "Yes, being a fully empanelled and accredited hospital, we accept and support various government and private health insurance plans, providing all necessary clinical case sheets, medical certificates, and diagnostic logs to facilitate claims."
+      question: "Does Arya Vaidya Sala accept AYUSH health insurance claims?",
+      answer: "Yes, our flagship Ayurvedic hospitals are fully accredited, and our administrative teams provide all necessary clinical case sheets, medical certificates, and diagnostic logs to facilitate corporate or government health insurance reimbursement."
     }
   ];
 
   const programs = [
     {
-      title: "Marma Chikitsa & Joint Care",
-      description: "Specialized treatments utilizing traditional bone-setting, Choorna Swedam, and targeted orthopedic massages to address severe arthritis, joint pain, and sports injuries.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
       title: "Classical Panchakarma Detox",
-      description: "Deep physiological purification treatments overseen by senior Vaidyas in a highly sterile, clinical environment to purge metabolic waste.",
+      description: "Deep physiological cleansing treatments overseen by senior Vaidyas (Vamana, Virechana, Vasti) to purge metabolic wastes and clear dosha channels.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Shalya Tantra (Ano-Rectal Care)",
-      description: "Minimal/non-surgical therapies for complex anal fistula, hemorrhoids (piles), and anal fissure using medicated Kshara Sutra threads.",
+      title: "Ayurvedic Spine & Joint Care",
+      description: "Specialized non-surgical care using Kati Vasti, Janu Vasti, Abhyangam, Swedana, and Pizhichil for joint arthritis, lumbar spondylosis, and sciatica.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Supportive Cancer Care",
+      description: "Specialized clinical research and supportive therapies focusing on vital energy restoration, post-chemo recovery, and immune-system strengthening.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Prasuti Tantra (Women's Health)",
-      description: "Comprehensive prenatal and postnatal maternity care, customized Ayurvedic diets, and botanical remedies to balance hormones and treat PCOS.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
       title: "Rasayana Rejuvenation",
-      description: "Immune-boosting and cellular repair therapies like Abhyangam and Shirodhara to combat corporate stress and restore organic vitality.",
+      description: "Highly customized programs focusing on cellular repair, biological vitality, immunity building, nervous system recovery, and longevity.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Kaya Chikitsa (General Medicine)",
-      description: "Integrated clinical protocols addressing chronic digestive sluggishness, metabolic issues, sinusitis, and chronic dermatological conditions like psoriasis.",
+      title: "Kaya Chikitsa",
+      description: "Comprehensive management of chronic digestive sluggishness, metabolic issues, asthma, migraines, and dermatological conditions (eczema, psoriasis).",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Charitable & Surgical Care",
+      description: "Traditional poison treatments (Visha Chikitsa), free general medicine clinics, and traditional classical minor surgical procedures (Shalya Tantra).",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "NABH Accredited & Empanelled",
-      description: "Recognized for maintaining the highest standards of safety, clinical hygiene, and integrated care, with CGHS empanelment.",
+      title: "Legendary 1902 Ayurvedic Legacy",
+      description: "Founded by Vaidyaratnam P.S. Varier, carrying forward over 120 years of unbroken commitment to authentic classical Ayurveda.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Modern Diagnostics Integration",
-      description: "Uniquely integrating traditional Ayurveda with in-house modern diagnostics, radiology, and clinical pathology.",
+      title: "Uncompromising Drug Standardization",
+      description: "State-of-the-art factories manufacturing over 500 classical formulations using organically analyzed herbs for maximum efficacy.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Eminent Medical Specialists",
-      description: "Supervised by chief Vaidyas alongside modern orthopedic surgeons for comprehensive spine and bone care.",
+      title: "Eminent Senior Physician Panel",
+      description: "Supervised by highly experienced, third-generation Ayurvedic scholars and senior Vaidyas delivering protocol-based care.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Specialized Marma Protocols",
-      description: "World-renowned expertise in non-surgical orthopedic care, traditional bone-setting, and sports injury rehab.",
+      title: "Dedicated Charitable Mission",
+      description: "Operating a major Charitable Hospital that provides free treatment, food, and accommodation to thousands of patients annually.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Complete AYUSH Insurance",
-      description: "Providing detailed diagnostic papers, clinical case sheets, and support to facilitate smooth insurance claims.",
+      title: "AYUSH Insurance Support",
+      description: "Flagship hospitals are fully accredited, providing detailed clinical case sheets to facilitate cashless or reimbursement claims.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Serene Keezhillam Campus",
-      description: "Situated in a tranquil, nature-rich hospital campus in Ernakulam, Kochi, operating 24/7 for complete care.",
+      title: "Advanced Clinical Research",
+      description: "Pioneering clinical research divisions collaborating on cancer care and running the Centre for Medicinal Plants Research.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function ParathuvayalilAyurvedaHospital() {
   }, []);
 
   useEffect(() => {
-    document.title = "Parathuvayalil Ayurveda Hospital | Best Ayurvedic Hospital in Kochi, Kerala";
+    document.title = "Arya Vaidya Sala (Kottakkal) | Best Ayurvedic Hospital in Kerala";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Parathuvayalil Ayurveda Hospital in Keezhillam, Kochi. A premier NABH-accredited multispeciality center combining Marma Chikitsa and orthopaedic care with modern diagnostics.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Arya Vaidya Sala (AVS) in Kottakkal, Kerala. Historic 1902 NABH-accredited flagship hospital offering Panchakarma, spine care, and cancer recovery.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function ParathuvayalilAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Parathuvayalil Ayurveda Hospital
+              Arya Vaidya Sala (Kottakkal)
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function ParathuvayalilAyurvedaHospital() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Parathuvayalil Ayurveda Hospital</h1>
-                <p className="text-xl mb-4 opacity-90">NABH-Accredited Multispecialty Centre & Integrative Orthopaedic Rehabilitation Hospital</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arya Vaidya Sala (Kottakkal)</h1>
+                <p className="text-xl mb-4 opacity-90">Vaidyaratnam P.S. Varier's Historic Flagship Ayurvedic Hospital & Research Centre</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Perumbavoor, Kochi, Kerala, India</span>
+                  <span className="text-lg">Kottakkal, Malappuram, Kerala, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.1</span>
-                  <span className="opacity-90">(150 Reviews)</span>
+                  <span className="text-lg font-semibold">4.5</span>
+                  <span className="opacity-90">(380 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +299,7 @@ export default function ParathuvayalilAyurvedaHospital() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Parathuvayalil Hospital
+                at Arya Vaidya Sala
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function ParathuvayalilAyurvedaHospital() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Parathuvayalil Ayurveda Hospital</strong>, Kochi's renowned multispeciality healthcare facility located in Keezhillam, Perumbavoor, where classical Kerala Ayurvedic wisdom seamlessly integrates with contemporary modern clinical diagnostics. Our hospital has earned wide acclaim for its specialized focus on Marma Chikitsa (bone, joint, and musculoskeletal care), pain management, and orthopedic rehabilitation. Founded and led by Chief Physician <strong className="font-bold text-[#2C4E5A]">Dr. P. P. Pathrose</strong> (MD Ayurveda - Marma Chikitsa & Kayachikitsa) and Chief Senior Consultant <strong className="font-bold text-[#2C4E5A]">Dr. Sunil Pathrose Parathuvayalil</strong> (MBBS, MS - Ortho), the center represents a rare, powerful synthesis of traditional bone-setting, classical Ayurvedic therapies, and modern orthopedic spine care.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Vaidyaratnam P.S. Varier's Arya Vaidya Sala (AVS)</strong>, the historic flagship Ayurvedic institution located in Kottakkal, Malappuram District, Kerala. Established on October 12, 1902, AVS stands as a legendary charitable institution that pioneered the modern revival, drug standardization, and scientific propagation of classical Ayurveda worldwide. The institution operates premier multispecialty hospitals combining classical Keralite therapies (such as Pizhichil, Navarakizhi, Kati Vasti, and Swedana) with high diagnostic standards, clinical research divisions, and extensive medicinal plants gardens.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp" 
-                          alt="Parathuvayalil Ayurveda Hospital"
+                          alt="Arya Vaidya Sala Kottakkal"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                   </div>
 
                   <p>
-                    Our distinguished senior panel of specialists includes <strong className="font-bold text-[#2c4e5a]">Dr. Prasanna Pathrose Parathuvayalil</strong> (MBBS in Modern Medicine), <strong className="font-bold text-[#2c4e5a]">Dr. Nina Sunil Parathuvayalil</strong> (BAMS, specialised in women's health), and <strong className="font-bold text-[#2c4e5a]">Dr. Mathew Sunny</strong> (MS Ayurveda, specialised in Shalya Tantra/Ano-rectal diseases), ensuring comprehensive care across all departments. The pristine, NABH-accredited and CGHS-empanelled campus features specialized Panchakarma suites, comprehensive radiology/imaging sciences, a clinical laboratory, and robust assistance for corporate or government AYUSH health insurance claims.
+                    Known for its uncompromising commitment to quality, AVS operates standard-accredited factories producing over 500 classical Ayurvedic formulations. Under the guidance of highly distinguished senior Vaidyas, AVS operates both the flagship Ayurvedic Hospital & Research Centre and a massive Charitable Hospital providing completely free clinical consultation, classical therapies, medicines, accommodation, and food to the underprivileged. The campus features advanced research labs, comfortable inpatient suites, Kathakali academies, and comprehensive documentation to facilitate AYUSH health insurance claims.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function ParathuvayalilAyurvedaHospital() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/kerela/Parathuvayalil Ayurveda Hospital/main.webp" 
-                      alt="Parathuvayalil Ayurveda Hospital Exterior"
+                      src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg" 
+                      alt="Arya Vaidya Sala Kottakkal Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function ParathuvayalilAyurvedaHospital() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/kerela/Parathuvayalil Ayurveda Hospital/secondary.webp" 
-                        alt="Therapy Chamber at Parathuvayalil Ayurveda Hospital"
+                        src="/TOP cneters/kerela/Arya Vaidya Sala/secondary.jpg" 
+                        alt="Therapy Chamber at Arya Vaidya Sala Kottakkal"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Parathuvayalil Ayurveda Hospital today.
+                My Vaidyam to connect with Arya Vaidya Sala (Kottakkal) today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function ParathuvayalilAyurvedaHospital() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Parathuvayalil</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Kottakkal</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +409,9 @@ export default function ParathuvayalilAyurvedaHospital() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Parathuvayalil</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Arya Vaidya Sala</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic healing with certified professionals, complete diagnostics integration, and insurance support.
+                Experience legendary healing with century-old standardized formulations, empanelment, and research divisions.
               </p>
             </div>
             
@@ -442,7 +442,7 @@ export default function ParathuvayalilAyurvedaHospital() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A structured, holistic approach integrating Ayurveda, clinical orthopedics, and modern diagnostics to restore your natural balance.
+              A highly standardized clinical approach integrating legacy Keralite Vaidya care, fresh oils, and strict patient-centered procedures.
             </p>
           </div>
           
@@ -477,11 +477,11 @@ export default function ParathuvayalilAyurvedaHospital() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"
-                  alt="Parathuvayalil Ayurveda Hospital"
+                  alt="Arya Vaidya Sala Kottakkal"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Parathuvayalil Hospital?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Arya Vaidya Sala?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function ParathuvayalilAyurvedaHospital() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Parathuvayalil Hospital?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Arya Vaidya Sala?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function ParathuvayalilAyurvedaHospital() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/kerela/Parathuvayalil Ayurveda Hospital/main.webp"
-                  alt="Parathuvayalil Ayurveda Hospital"
+                  src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg"
+                  alt="Arya Vaidya Sala Kottakkal"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -631,7 +631,7 @@ export default function ParathuvayalilAyurvedaHospital() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Parathuvayalil Hospital.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Arya Vaidya Sala.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -663,11 +663,11 @@ export default function ParathuvayalilAyurvedaHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Headquarters Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Parathuvayalil Hospital<br />
-                      Keezhillam P.O., Perumbavoor, Ernakulam District<br />
-                      Kochi, Kerala, India
+                      Vaidyaratnam P. S. Varier's Arya Vaidya Sala<br />
+                      Kottakkal (P.O), Malappuram District<br />
+                      Kerala, India
                     </p>
                   </div>
                 </div>
@@ -677,7 +677,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
                     <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 97474 10292
+                      +91 483 2808000 / +91 483 2742216
                     </p>
                   </div>
                 </div>
@@ -687,8 +687,8 @@ export default function ParathuvayalilAyurvedaHospital() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
                     <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 22 km from Cochin International Airport</li>
-                      <li>• Approx. 24 km from Aluva Railway Station</li>
+                      <li>• Approx. 28 km from Calicut International Airport</li>
+                      <li>• Approx. 15 km from Tirur Railway Station</li>
                     </ul>
                   </div>
                 </div>
@@ -696,14 +696,14 @@ export default function ParathuvayalilAyurvedaHospital() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251456.83283766184!2d76.24683109946794!3d10.015783301572725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e140e4dc417f%3A0xa33e7096b73064da!2sParathuvayalil%20Hospital%20-%20Best%20Ayurvedic%20Hospital%20in%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1779860404759!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.255360446274!2d76.0032034!3d10.9962574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b4bc6dc16ef5%3A0xe146555c13a4b498!2sArya%20Vaidya%20Sala%2C%20Kottakkal!5e0!3m2!1sen!2sin!4v1779861558591!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Parathuvayalil Ayurveda Hospital Location"
+                  title="Arya Vaidya Sala Kottakkal Location"
                 ></iframe>
               </div>
             </div>
@@ -715,8 +715,8 @@ export default function ParathuvayalilAyurvedaHospital() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/kerela/Parathuvayalil Ayurveda Hospital/main.webp"
-            alt="Parathuvayalil Ayurveda Hospital"
+            src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg"
+            alt="Arya Vaidya Sala Kottakkal"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -726,7 +726,7 @@ export default function ParathuvayalilAyurvedaHospital() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Parathuvayalil Hospital.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Arya Vaidya Sala.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -736,7 +736,7 @@ export default function ParathuvayalilAyurvedaHospital() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919747410292?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Parathuvayalil%20Ayurveda%20Hospital."
+              href="https://wa.me/914832808000?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Arya%20Vaidya%20Sala%20Kottakkal."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -781,7 +781,6 @@ export default function ParathuvayalilAyurvedaHospital() {
               </button>
             ))}
           </div>
-          
         </div>
       </div>
     </div>

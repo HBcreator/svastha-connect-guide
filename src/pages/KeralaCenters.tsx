@@ -299,11 +299,11 @@ const KeralaCenters = () => {
       city: "Kottakkal, Malappuram, Kerala, India",
       description:
         "Arya Vaidya Sala (Kottakkal) is one of the most respected Ayurvedic institutions in India, recognized for preserving classical treatment traditions at large scale. Patients choose AVS for authentic Panchakarma, time-tested formulations, and experienced Vaidyas delivering disciplined, protocol-based care rooted in Kerala Ayurveda heritage.",
-      rating: 4.8,
-      reviews: 5000,
+      rating: 4.5,
+      reviews: 380,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/2.jpg",
-      slug: undefined,
+      slug: "arya-vaidya-sala-hospital-kerela-india",
     },
     {
       name: "Rasayana Ayurveda Centre",
