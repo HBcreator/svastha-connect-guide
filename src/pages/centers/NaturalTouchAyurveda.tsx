@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AyurvedicNaturalHealthCentre() {
+export default function NaturalTouchAyurveda() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function AyurvedicNaturalHealthCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Dosha & Prakriti Assessment",
-      description: "Meticulous evaluation of your biological constitution (Prakruti) and current doshic imbalance (Vikruti) by our panel of resident doctors upon arrival.",
+      title: "Lineage Pulse & Prakriti Check",
+      description: "Thorough clinical analysis focusing on Dosha constitution, energy flow, and specific Marma (vital energy) point sensitivity under expert supervision.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Tailored Therapy Formulation",
-      description: "Compiling a personalized treatment program outlining specific bio-purification schedules, custom diet regimens, and organic home-care remedies.",
+      title: "Tailored Botanical Compounding",
+      description: "Compiling a personalized prescription using customized therapeutic oils and high-potency organic herbal formulas blended in-house.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Preparatives",
-      description: "Synchronized warm oil massage (Abhyanga) and custom herbal steam baths (Swedana) to loosen deep physical toxins and dilate body channels.",
+      title: "Warm Oil Swedana preparatory",
+      description: "Deep thermal preparatory therapies (Abhyangam and herbal Kizhi leaf bags) to release muscle tension and mobilize cellular wastes.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Pradhana Karma Cleansing",
-      description: "Carefully administering primary classical Panchakarma cleansing protocols under the close supervision of our experienced resident medical team.",
+      title: "Authentic Keralite Panchakarma",
+      description: "Biological purification therapies administered with Keralite standard precision by skilled therapists to completely flush systemic impurities.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Samsarjana Diet Restoration",
-      description: "Slowly rekindling your digestive fire (Agni) through a precise post-treatment diet, nourishing therapies, and restorative lifestyle adjustments.",
+      title: "Musculoskeletal Rehabilitation",
+      description: "Specialized Marma point stimulations and targeted physical therapies to relieve chronic pain, frozen shoulder, and joint stiffness.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Integration Plan",
-      description: "Receiving a comprehensive daily self-care guide, custom organic herbal formulas, and dietary blueprints to sustain your wellness at home.",
+      title: "Vedic Diet & Pathya Blueprint",
+      description: "Providing customized daily wellness routines, dietary guidelines, and supportive botanical supplements to sustain long-term vitality.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Phenomenal Rejuvenation and Vitality Reset",
-      review: "The Rasayana package at ANHC exceeded all my expectations. The diagnostic depth of the resident doctors, combined with authentic, Keralite-standard oil therapies, restored my physical energy and clear state of mind. The peaceful garden retreat in Calangute is a perfect oasis for authentic healing.",
-      name: "Arthur Penn",
-      verified: true,
-      location: "Bristol, UK",
-      condition: "Rasayana (Rejuvenation & Longevity)",
-      rating: 5
-    },
-    {
-      title: "Exceptional Panchakarma & Full-Body Detox",
-      review: "I completed a two-week Panchakarma program at ANHC to relieve chronic fatigue and sluggish metabolism. The biological purification process was exceptionally professional, led by highly experienced therapists. I feel completely revitalized, lighter, and my gut health has never been better.",
-      name: "Sophie Roy",
-      verified: true,
-      location: "Paris, France",
-      condition: "Panchakarma (Detox & Purification)",
-      rating: 5
-    },
-    {
-      title: "Profound Illness Relief & Chronic Pain Management",
-      review: "Years of sitting in office chairs left me with terrible spinal stiffness and sciatic discomfort. The Rogaprashamana program combined targeted oil-retention baths and custom herbal recipes. The therapeutic precision completely relieved my back tension, allowing me to return to normal active life.",
-      name: "Oliver Cole",
-      verified: true,
-      location: "Frankfurt, Germany",
-      condition: "Rogaprashamana (Illness Relief)",
-      rating: 5
-    },
-    {
-      title: "Beautiful Mind-Body Reset and Yoga Integration",
-      review: "ANHC is a beautiful sanctuary of peace in Calangute. The Divya package integrated daily yoga, breathing exercises, and meditation alongside deeply soothing Shirodhara therapies. My stress and mental fatigue melted away, and I left with useful self-care guidelines for my home routine.",
-      name: "Elena Ross",
-      verified: true,
-      location: "St. Petersburg, Russia",
-      condition: "Divya (Spiritual & Mind-Body)",
-      rating: 5
-    },
-    {
-      title: "Highly Professional Wellness and Wholeness Care",
-      review: "We chose the Arogyam wellness plan for general health maintenance. The facility offers superb clean rooms, serene gardens, and outstanding organic food. The resident doctors supervise all activities closely, and the administrative support provided detailed receipt records for my private insurance refund claim.",
-      name: "Chloe Bell",
+      title: "Profound Relief from Back Tension",
+      review: "For months, a chronic back spasm made sitting impossible. The traditional Kalari Marma treatments completely restored my alignment. Their in-house organic oils are highly potent. Shajini Pillai and Kumar have profound wisdom.",
+      name: "Liam Vance",
       verified: true,
       location: "Sydney, Australia",
-      condition: "Arogyam (Wellness & Wholeness)",
+      condition: "Kalari Marma Chikitsa",
+      rating: 5
+    },
+    {
+      title: "Amazing Psoriasis & Skin Care",
+      review: "I traveled to Patnem to find relief from severe skin inflammation. The biological cleansing and specialized herbal steam baths fully cleared my psoriasis. A beautiful sanctuary near the beach.",
+      name: "Ruby Cruz",
+      verified: true,
+      location: "California, USA",
+      condition: "Psoriasis & Skin Care",
+      rating: 5
+    },
+    {
+      title: "Outstanding Shoulder Recovery",
+      review: "Severe shoulder stiffness prevented me from raising my arm. The local warm oil compress therapies and deep mobilization completely freed my shoulder joint. Exceptional Kerala-trained therapists!",
+      name: "Ian Croft",
+      verified: true,
+      location: "London, UK",
+      condition: "Frozen Shoulder Relief",
+      rating: 5
+    },
+    {
+      title: "Deep Rejuvenating Panchakarma Detox",
+      review: "An incredibly deep 14-day Panchakarma detox that restored my metabolic vitality. The peaceful environment of Patnem Beach was the perfect setting for traditional Keralite healing. Highly recommended!",
+      name: "Mia Stern",
+      verified: true,
+      location: "Munich, Germany",
+      condition: "Kerala Panchakarma Detox",
+      rating: 5
+    },
+    {
+      title: "Wonderful Arthritis & Joint Care",
+      review: "Decades of knee arthritis pain vanished after receiving custom Kizhi oil therapies. Their lineage-backed approach and custom botanical oils show deep clinical mastery. My mobility is fully back.",
+      name: "Noah Haas",
+      verified: true,
+      location: "Vienna, Austria",
+      condition: "Arthritis & Joint Care",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is Ayurvedic Natural Health Centre (ANHC) known for?",
-      answer: "Founded in 2001, ANHC is one of Goa's most established authentic Ayurvedic institutions. It is highly recognized for Kerala-standard Panchakarma, biological purification (Shodhana), longevity therapies (Rasayana), chronic illness relief, and holistic residential wellness retreats."
+      question: "Who leads Natural Touch Ayurveda and what is their lineage?",
+      answer: "Natural Touch Ayurveda traces its roots to traditional Keralite Kalari science established in 1960. Founded by Ashta Vaidya Kuttan Pillai and Vaidya Sivan Pillai, it is currently led by Sivan Pillai's daughter Shajini Pillai and senior Marma expert P. R. S. Kumar."
     },
     {
-      question: "Who leads the clinical team at ANHC?",
-      answer: "ANHC is directed under the managing leadership of Bruno Fernandes and Jennifer Fernandes. The resident medical team is led by CEO and Chief Doctor Dr. Sunipa Kasar and practicing resident doctor Dr. Jouhar Kanhirala, coordinating closely with highly certified traditional therapists primarily hailing from Kerala."
+      question: "What main clinical programs do you offer?",
+      answer: "We offer six primary packages: traditional Kalari Marma Chikitsa, classical Kerala Panchakarma, Arthritis Joint Care, Psoriasis Skin Care, Frozen Shoulder Care, and Rejuvenation & Longevity programs."
     },
     {
-      question: "Where in Calangute is the center situated?",
-      answer: "The center is centrally located in a serene, quiet garden retreat at 4/31, Porba Vaddo, Khobra Waddo, Calangute, Goa. It is highly accessible while providing a quiet and tranquil space far removed from the busy coastal streets."
+      question: "Where is Natural Touch Ayurveda situated in Goa?",
+      answer: "We are located in a highly tranquil environment on Patnem Beach Road, Canacona, South Goa. It is a beautiful sanctuary close to the beach, offering a highly peaceful and therapeutic setup."
     },
     {
-      question: "What main packages does the center offer?",
-      answer: "We offer six primary packages: Panchakarma (Cleansing), Shodhana (Purification), Rasayana (Longevity), Rogaprashamana (Illness Relief for chronic diseases), Divya (Yoga & Spiritual Wellness), and Arogyam (General Health Maintenance)."
+      question: "Do you prepare your own therapeutic oils?",
+      answer: "Yes, absolutely. We prepare our own high-potency organic herbal medicines and customized therapeutic oils at our in-house facility following strict traditional recipes."
     },
     {
-      question: "Does the center provide health insurance support documentation?",
-      answer: "Yes, our administrative staff compiles comprehensive clinical records, physician case sheets, diagnostic summaries, and detailed invoices to support international guests in claiming private health insurance reimbursements."
+      question: "Can guests undergo treatments while staying at external hotels?",
+      answer: "Yes. While we welcome guests for structured residential retreat packages, we also support visitors who stay at external beach cottages or hotels and visit our center daily for consultations and therapies."
     }
   ];
 
   const programs = [
     {
-      title: "Detox & Purification",
-      description: "Classic biological purification therapies to eliminate cellular wastes (Ama) and balance systemic doshas.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Biological Detox",
-      description: "Meticulous physiological cleansing protocols customized strictly to the individual's baseline constitution.",
+      title: "Kalari Marma Chikitsa",
+      description: "Lineage-backed energy point stimulation and musculoskeletal manipulation inherited from Kerala's martial healing science.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Rejuvenation & Rebuilding",
-      description: "Nourishing, longevity-focused therapies, custom herbs, and daily routines to enhance immunity and systemic vitality.",
+      title: "Kerala Panchakarma",
+      description: "Traditional 5-action biological cleansing to completely flush deep metabolic waste and restore internal dosha harmony.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Arthritis & Joint Care",
+      description: "Targeted warm oil poolings and customized herbal compress scrubs designed to relieve severe joint stiffness and inflammation.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Illness Relief",
-      description: "Targeted therapeutic plans combining custom herbal medicines, diet, and Panchakarma to manage chronic lifestyle diseases.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Spiritual & Mind-Body",
-      description: "Divine holistic wellness integrating customized daily Yoga, Pranayama, breathing exercises, and meditation to achieve mental peace.",
+      title: "Psoriasis & Skin Care",
+      description: "Deep physiological detoxification combined with high-potency organic leaf packs to soothe and heal skin tissues.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Wholeness & Wellness",
-      description: "General health maintenance programs featuring nourishing massages, steam baths, and physician-guided organic meals.",
+      title: "Frozen Shoulder Care",
+      description: "Highly focused mobilization techniques and synchronized warm oil massage to restore full range of motion.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Rejuvenation & Longevity",
+      description: "Immune-boosting Rasayana therapies, custom herbal compounds, and medicated steam baths to restore bodily vitality.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Established Keralite Tradition",
-      description: "Providing authentic Kerala-standard treatments supervised by experienced, skilled therapists from Kerala.",
+      title: "1960 Kalari Lineage",
+      description: "Deep lineage-backed expertise stemming from Ashta Vaidya Kuttan Pillai and Vaidya Sivan Pillai.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Panel of Resident Doctors",
-      description: "All treatments are closely overseen and directed by resident medical experts, led by CEO Dr. Sunipa Kasar.",
+      title: "Authentic Marma Experts",
+      description: "Musculoskeletal manipulation and energy point treatments led by Shajini Pillai and P. R. S. Kumar.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Holistic Residential Amenities",
-      description: "Equipped with air-conditioned accommodations, beautiful garden spaces, and a full organic kitchen.",
+      title: "Patnem Beach Sanctuary",
+      description: "Set in a highly peaceful environment on Patnem Beach Road, Canacona, South Goa.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Prakriti & Vikruti Diagnosis",
-      description: "Strictly individualistic care derived from careful pulse reading, detailed history taking, and body constitution checks.",
+      title: "In-House Organic Pharmacy",
+      description: "All therapeutic formulations, leaf powders, and botanical oils are prepared in our facility.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Pure Botanical Remedies",
-      description: "Utilizing highly authentic, high-grade Ayurvedic formulations and organic botanical oils during therapies.",
+      title: "Flexible Stay & Visit",
+      description: "Choose inpatient residential retreat care or visit daily from nearby beach cottages.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Certified Insurance Invoices",
-      description: "Detailed medical receipts, doctor consultation sheets, and treatment breakdown logs for private claim sheets.",
+      title: "25+ Years of Trust",
+      description: "Established in Goa in 2001, providing traditional Keralite standards of healing to international visitors.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function AyurvedicNaturalHealthCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Ayurvedic Natural Health Centre (ANHC) | Authentic Kerala Panchakarma & Rejuvenation in Calangute, Goa";
+    document.title = "Natural Touch Ayurveda | Kalari Marma & Kerala Panchakarma in Patnem Beach, South Goa";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Keralite traditional healing at Ayurvedic Natural Health Centre (ANHC) in Calangute, Goa. Led by resident doctors, offering Panchakarma, Shodhana, and Rasayana programs.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience traditional Keralite healing and authentic Kalari Marma Chikitsa at Natural Touch Ayurveda in Patnem Beach, Canacona, South Goa. Established in 2001, carrying a rich lineage since 1960.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayurvedic Natural Health Centre
+              Natural Touch Ayurveda
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function AyurvedicNaturalHealthCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayurvedic Natural Health Centre (ANHC)</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Rejuvenation Retreat since 2001</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Natural Touch Ayurveda</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Kalari Marma Chikitsa Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Calangute, North Goa, India</span>
+                  <span className="text-lg">Canacona, South Goa, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(180 Reviews)</span>
+                  <span className="opacity-90">(130 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function AyurvedicNaturalHealthCentre() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Rejuvenation <br className="hidden lg:block" />
-                at Ayurvedic Natural Health Centre
+                Traditional Keralite Healing & Kalari Marma <br className="hidden lg:block" />
+                at Natural Touch Ayurveda
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Ayurvedic Natural Health Centre (ANHC)</strong>, an established and highly trusted clinical sanctuary situated in a serene garden retreat at 4/31, Porba Vaddo, Khobra Waddo, Calangute, Goa, India. Established in 2001, ANHC is managed under the distinguished leadership of Managing Director <strong className="font-bold text-[#2C4E5A]">Shri. Bruno Fernandes</strong> and Jennifer Fernandes. The resident medical team is directed by CEO and Chief practicing doctor <strong className="font-bold text-[#2C4E5A]">Dr. Sunipa Kasar</strong> along with practicing resident doctor <strong className="font-bold text-[#2C4E5A]">Dr. Jouhar Kanhirala</strong>, supported by highly trained and certified therapists primarily hailing from Kerala.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Natural Touch Ayurveda</strong>, an authentic Ayurvedic treatment center and classical Panchakarma sanctuary situated near the tranquil shores of Patnem Beach in Canacona, South Goa, India. Established in Goa in 2001, the center traces its rich lineage back to 1960 in the traditional martial art healing setups (Ayurveda Kalari) of Kerala. Initially established by Ashta Vaidya Kuttan Pillai, this profound lineage of healing points and musculoskeletal treatment was passed down to Vaidya Sivan Pillai, and is proudly directed today by his daughter <strong className="font-bold text-[#2C4E5A]">Shajini Pillai</strong> and senior Kalari Marma practitioner <strong className="font-bold text-[#2C4E5A]">P. R. S. Kumar</strong>.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function AyurvedicNaturalHealthCentre() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp" 
-                          alt="Ayurvedic Natural Health Centre diagnostic setups"
+                          alt="Natural Touch Ayurveda diagnostic setups"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function AyurvedicNaturalHealthCentre() {
                   </div>
 
                   <p>
-                    ANHC is widely recognized in Goa for providing highly individualized treatment plans based on a meticulous diagnostic history, pulse reading, and body constitution evaluation (Prakruti and Vikruti). Guests can choose between inpatient residential treatment packages featuring air-conditioned rooms, serene garden spaces, organic meals, daily Yoga/Meditation sessions, or comprehensive out-patient consultation care. The facility operates an in-house pharmacy with certified botanical remedies, ensuring high-potency medical standards.
+                    Natural Touch Ayurveda is widely recognized for combining traditional diagnostics with precise lineage-based manual healing. Under the guidance of Shajini Pillai and senior practitioner Kumar, the center specializes in Kalari Marma Chikitsa, classical Kerala Panchakarma detoxification, specialized arthritis relief, psoriasis care, and frozen shoulder mobilization. All organic herbal formulations, leaf bag scrubs, and customized therapeutic oils are prepared in-house following authentic Keralite Kalari methods. Guests can opt for outpatient daily treatments or undergo structured residential programs while staying at the center or nearby beach cottages.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function AyurvedicNaturalHealthCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp" 
-                      alt="Ayurvedic Natural Health Centre Calangute Exterior"
+                      src="/TOP cneters/goa/Natural Touch Ayurveda/main.jpg" 
+                      alt="Natural Touch Ayurveda Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function AyurvedicNaturalHealthCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
-                        alt="Clinical Therapy Room at Ayurvedic Natural Health Centre"
+                        src="/TOP cneters/goa/Natural Touch Ayurveda/secondary.jpg" 
+                        alt="Clinical Therapy Room at Natural Touch Ayurveda"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function AyurvedicNaturalHealthCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Ayurvedic Natural Health Centre (ANHC) today.
+                My Vaidyam to connect with Natural Touch Ayurveda today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function AyurvedicNaturalHealthCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at ANHC</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Natural Touch Ayurveda</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +409,9 @@ export default function AyurvedicNaturalHealthCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose ANHC Goa</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Natural Touch Ayurveda</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience expert clinical direction, Keralite-standard therapy precision, and highly customized traditional programs.
+                Experience Kalari lineage wisdom, authentic Marma point precision, and customized Keralite traditional therapies.
               </p>
             </div>
             
@@ -442,7 +442,7 @@ export default function AyurvedicNaturalHealthCentre() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured scientific healing system combining classical Keralite Panchakarma therapies with modern naturopathic wellness standards.
+              A highly structured lineage-backed healing system combining traditional Kalari Marma Chikitsa with classical Kerala Panchakarma.
             </p>
           </div>
           
@@ -477,11 +477,11 @@ export default function AyurvedicNaturalHealthCentre() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"
-                  alt="Ayurvedic Natural Health Centre"
+                  alt="Natural Touch Ayurveda"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at ANHC Goa?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Natural Touch Ayurveda?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function AyurvedicNaturalHealthCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at ANHC Goa?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Natural Touch Ayurveda?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function AyurvedicNaturalHealthCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
-                  alt="Ayurvedic Natural Health Centre"
+                  src="/TOP cneters/goa/Natural Touch Ayurveda/main.jpg"
+                  alt="Natural Touch Ayurveda"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -631,7 +631,7 @@ export default function AyurvedicNaturalHealthCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at ANHC.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Natural Touch Ayurveda.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -665,9 +665,9 @@ export default function AyurvedicNaturalHealthCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Ayurvedic Natural Health Centre (ANHC)<br />
-                      4/31, Porba Vaddo, Khobra Waddo, Calangute<br />
-                      North Goa District, Goa, India
+                      Natural Touch Ayurveda<br />
+                      Patnem Beach Road, Canacona<br />
+                      South Goa, Goa
                     </p>
                   </div>
                 </div>
@@ -678,7 +678,7 @@ export default function AyurvedicNaturalHealthCentre() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <div className="flex flex-col space-y-1">
-                        +91 93251 08501 / +91 93251 08510
+                        <span>+91 97644 37140 / +91 62826 31331</span>
                       </div>
                     </div>
                   </div>
@@ -691,12 +691,14 @@ export default function AyurvedicNaturalHealthCentre() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 30 km from Manohar International Airport</span>
+                        <span>Approx. 100 km from Manohar International Airport</span>
                       </li>
+                      
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 20 km from Thivim Railway Station</span>
+                        <span>Approx. 3 km from Canacona Railway Station</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -704,14 +706,14 @@ export default function AyurvedicNaturalHealthCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.7918241524826!2d73.76223408552455!3d15.54928671463476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfeb051f90c893%3A0x5098534d3dbfbd54!2sANHC%20-%20Ayurvedic%20Natural%20Health%20Centre%2C%20Calangute%2C%20Goa!5e0!3m2!1sen!2sin!4v1779909735887!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3853.910661977006!2d74.03248527511387!3d14.997663685537095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbe455b9b724ac1%3A0x8ad5f927c488e2eb!2sNatural%20Touch%20Ayurveda!5e0!3m2!1sen!2sin!4v1779911084598!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ayurvedic Natural Health Centre Location"
+                  title="Natural Touch Ayurveda Location"
                 ></iframe>
               </div>
             </div>
@@ -723,8 +725,8 @@ export default function AyurvedicNaturalHealthCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
-            alt="Ayurvedic Natural Health Centre Coconut Palms"
+            src="/TOP cneters/goa/Natural Touch Ayurveda/main.jpg"
+            alt="Natural Touch Ayurveda Patnem Sanctuary"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -734,7 +736,7 @@ export default function AyurvedicNaturalHealthCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayurvedic Natural Health Centre (ANHC).
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Natural Touch Ayurveda.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -744,7 +746,7 @@ export default function AyurvedicNaturalHealthCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919325108501?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20ANHC%20Goa."
+              href="https://wa.me/919764437140?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Natural%20Touch%20Ayurveda."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

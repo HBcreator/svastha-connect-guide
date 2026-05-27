@@ -119,22 +119,22 @@ const GoaCenters = () => {
       city: "Nerul, North Goa, India",
       description:
         "An authentic Panchakarma clinic led by Dr. Jijith C. Ravindran, SreeShanti blends classical Kerala therapies with focused care for skin, weight, PCOD, arthritis, digestive, and chronic lifestyle disorders. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.8,
-      reviews: 350,
+      rating: 4.9,
+      reviews: 150,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/5.PNG",
-      slug: undefined,
+      slug: "shree-shanti-wellness-hospital-goa-india",
     },
     {
       name: "Natural Touch Ayurveda",
       city: "Canacona, South Goa, India",
       description:
         "Rooted in Kerala traditional Ayurveda since 1960, Natural Touch offers beachside Abhyanga, Shirodhara, herbal steam therapies, and Panchakarma in a calm natural setting ideal for long-stay wellness seekers. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.5,
-      reviews: 600,
+      rating: 4.9,
+      reviews: 130,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/6.jpg",
-      slug: undefined,
+      slug: "natural-touch-ayurveda-hospital-goa-india",
     },
     {
       name: "KARE Health - Goa",
