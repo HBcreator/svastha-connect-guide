@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function Veda5WellnessRetreat() {
+export default function YashrajAyurvedaClinic() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -38,174 +38,174 @@ export default function Veda5WellnessRetreat() {
     {
       number: 1,
       title: "Dosha & Prakriti Assessment",
-      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
+      description: "An initial in-depth check-up and constitutional review by Dr. Raju Bhusnar to identify baseline dosha balance and vital metabolic health.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Custom Healing Schedule",
-      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
+      title: "Tailored Therapy Formulation",
+      description: "Compiling a customized therapy schedule detailing specific herbal extracts, home-use remedies, and targeted bio-purifying procedures.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Warmups",
-      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
+      title: "Purva Karma Preparations",
+      description: "Synchronized warm oil massage (Abhyangam) and custom herbal steam Swedana to open physical channels and loosen cellular metabolic wastes.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Pradhana Karma Cleansing",
-      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
+      title: "Supervised Panchakarma Cleansing",
+      description: "Carefully administering classical biological purification therapies (such as Virechana, Vasti, or Nasyam) to detoxify deep tissues.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Mindfulness & Restorative Yoga",
-      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
+      title: "Samsarjana & Restorative Rebuilding",
+      description: "Slowly rebuilding digestive fire through strict post-treatment dietary steps, targeted Marma stimulation, and restorative herbs.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Home Care",
-      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
+      title: "Dinacharya Home Integration",
+      description: "Providing personalized daily dietary plans, wellness lifestyle blueprints, and home botanical guidelines to sustain the benefits of your recovery.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Profound Sciatica Relief in Sunny Arambol",
-      review: "Six months of persistent lower back tightness and radiating leg pain had made my life stressful. I traveled from Canada to Goa for Veda5's specialized joint program. The diagnostic consult was incredibly detailed, and the therapists administered warm, synchronized massages and medicated oil retention therapies (Kati Vasti) daily. The tension slowly dissolved, and I walked out pain-free. Healing under the swaying palms of Arambol was a blessing.",
-      name: "Julian Mercer",
-      verified: true,
-      location: "Vancouver, Canada",
-      condition: "Joint & Spine Wellness",
-      rating: 5
-    },
-    {
-      title: "Life-Transforming Burnout Recovery",
-      review: "As a corporate consultant, I was running on empty, struggling with severe burnout and irregular sleep. Veda5 Goa provided a serene escape. The daily head oil-pouring treatments (Shirodhara), breathing sessions, and sunset yoga at the open-air shala facing the hills completely reset my nervous system. I haven't slept this soundly in years. The entire team operates with genuine compassion.",
-      name: "Amelie Fischer",
-      verified: true,
-      location: "Vienna, Austria",
-      condition: "Stress Management & Deep Rejuvenation",
-      rating: 5
-    },
-    {
-      title: "Superb Panchakarma Reset & Sattvic Dining",
-      review: "I stayed for 14 nights to undergo a traditional Panchakarma detox. The senior doctor designed a tailored cleansing schedule that combined internal cleansing with personalized organic Sattvic meals. The food was delicious, light, and perfectly matched to my body's needs. The systemic reset boosted my metabolic energy, cleared my skin, and left me feeling incredibly light and vital.",
-      name: "Logan Sterling",
+      title: "Profound Relief from Back Tension & Sciatica",
+      review: "Severe neck stiffness and chronic lower back strain had made my daily routine painful. Under Dr. Raju Bhusnar's guidance, I underwent a comprehensive joint therapy program involving targeted herbal oil poolings and intensive massage. The personalized care and traditional protocols completely relieved the deep tissue tension. I can move freely now and sleep without discomfort. Highly professional.",
+      name: "Thomas Kent",
       verified: true,
       location: "Melbourne, Australia",
-      condition: "Panchakarma Detox & Metabolic Harmony",
+      condition: "Joint & Spine Care",
       rating: 5
     },
     {
-      title: "Excellent Skin Clearance & Calming Environment",
-      review: "Persistent skin dryness and stress-induced eczema had troubled me for years. At Veda5, I underwent a natural skin-cleansing treatment using purifying botanical wraps, daily herb-infused oil massages, and strict Ayurvedic diet guidelines. Within ten days, the inflammation completely cleared up, leaving my skin feeling soft and healthy. The natural, tranquil beach environment is highly therapeutic.",
-      name: "Chiara Bonetti",
+      title: "Beautiful Rest & Sleep Normalization",
+      review: "Corporate stress had left me mentally drained and dealing with persistent insomnia. Yashraj Clinic provided a perfect sanctuary in Calangute. The calming head oil therapies (Shirodhara), specialized breathing exercises, and physician consultations completely restored my nervous system. I returned home with a profound sense of peace and a fully normalized sleep cycle.",
+      name: "Kira Vance",
       verified: true,
-      location: "Bologna, Italy",
-      condition: "Skin Care & Beauty Recovery",
+      location: "Amsterdam, Netherlands",
+      condition: "Stress & Burnout Recovery",
       rating: 5
     },
     {
-      title: "Top-Tier Sleep Restoration & Medical Yoga",
-      review: "Looking for a quiet retreat to reset my sleep cycles, I spent a week here. The combination of early morning medical yoga, soothing massage, and evening pranayama breathing exercises worked wonders. The calm hillside breezes and ocean vibes of Arambol created a beautiful environment for reflection and recovery. A truly world-class wellness experience in Goa.",
-      name: "Jesper Dahl",
+      title: "Exceptional Panchakarma Rejuvenation",
+      review: "I spent two weeks undergoing a complete Panchakarma detox under the close supervision of Dr. Raju Bhusnar. The customized clinical schedule combined warm synchronized oil massages and targeted biological purification. The attention to detail and authentic medical standards were exceptional. I feel completely rejuvenated, light, and full of physical energy.",
+      name: "Liam Ross",
       verified: true,
-      location: "Copenhagen, Denmark",
-      condition: "Stress Reset & Sleep Care",
+      location: "London, UK",
+      condition: "Traditional Panchakarma Detox",
+      rating: 5
+    },
+    {
+      title: "Incredible Digestive & Metabolic Toning",
+      review: "Persistent bloating, sluggish metabolism, and fatigue had troubled me for a year. The clinic customized a highly rigorous gut-cleansing program and a personalized Ayurvedic nutritional diet plan. Not only did my digestion completely normalize, but my energy levels also skyrocketed. Dr. Raju's deep medical diagnostic knowledge and patient-first approach are absolute.",
+      name: "Eva Mercier",
+      verified: true,
+      location: "Montreal, Canada",
+      condition: "Digestive & Metabolic Care",
+      rating: 5
+    },
+    {
+      title: "Professional Discretion & Male Fertility Care",
+      review: "I traveled to Goa specifically to seek treatment for male reproductive health from Dr. Raju Bhusnar, who is highly recommended in this field. His clinical diagnosis was extremely thorough, and the custom herbs and therapeutic programs completely revitalized my systemic vitality. The discretion, professionalism, and medical excellence of the entire clinic are highly commendable.",
+      name: "Jonas Berg",
+      verified: true,
+      location: "Gothenburg, Sweden",
+      condition: "Male Fertility & Wellness",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes Veda5 Wellness Retreat in Arambol unique?",
-      answer: "Veda5 Wellness Retreat in Arambol, Goa, is a highly acclaimed luxury destination consistently awarded Tripadvisor's Travelers' Choice 'Best of the Best' honor, placing it in the top 1% of retreats globally. Located close to the pristine Arambol Beach, the resort features sea and lake views, lush organic landscapes, open-air yoga shalas, and a dedicated team of Ayurvedic doctors, naturopaths, and yoga masters."
+      question: "Who leads Yashraj Ayurveda Clinic, and what is their specialization?",
+      answer: "Yashraj Ayurveda Clinic is founded and led by the highly distinguished Ayurvedic physician Dr. Raju Bhusnar. He is highly recognized in Goa for specializing in reproductive health, male and female fertility diagnostics, customized Panchakarma detoxes, Marma therapy, and condition-specific plans for migraines, back pain, and chronic insomnia."
     },
     {
-      question: "What are the primary clinical packages available?",
-      answer: "We specialize in authentic Classical Panchakarma (body purification and deep tissue detoxification), Stress Management & Rejuvenation, Joint & Spine Wellness (for sciatica, arthritis, and back pain), Weight & Metabolic Reset, Skin & Beauty Recovery (for eczema, psoriasis, and deep rejuvenation), and Immune Toning & Longevity."
+      question: "What primary clinical programs do you offer?",
+      answer: "We specialize in Fertility & Reproductive Health, traditional Panchakarma Detoxification, Spine & Joint Care (for arthritis, spondylosis, and sciatica), Stress & Burnout Recovery, Digestive & Metabolic Reset, and specialized Marma & Pain Management."
     },
     {
-      question: "Are the treatments and medications personalized for guests?",
-      answer: "Yes, absolutely. Every guest begins their healing journey with an intensive, one-on-one personal consultation with our senior Ayurvedic doctors. They evaluate your dosha balance and physical constitution (Prakriti) to design custom daily therapies, freshly prepared organic herbal remedies, and dosha-specific vegetarian Sattvic meals."
+      question: "Where is the clinic located in Calangute?",
+      answer: "Our primary clinic is centrally situated at Shop No. CS4, Ground Floor, Benson Complex, Opp. SBI Bank, Naikwaddo, Calangute, North Goa, Goa – 403516. It is highly convenient and within easy walking distance from the popular Calangute Beach and key commercial centers."
     },
     {
-      question: "Can guests continue their Veda5 wellness routines after returning home?",
-      answer: "Yes. Veda5 supports a global community of healing with major centers in Rishikesh, Kerala, and Goa. Upon departure, our physicians provide a comprehensive lifestyle guideline (Dinacharya) and home-care plan. You can also consult our doctors online or coordinate follow-up care through our multi-location network."
+      question: "Are treatments customized, and how do consultations work?",
+      answer: "Yes, every treatment program is fully bespoke. Guests undergo an intensive diagnostic check-up and pulse review with Dr. Raju Bhusnar upon arrival. He evaluates your baseline dosha constitution (Prakriti) and prescribes custom therapies and organic herbal formulas tailored strictly to your physiological needs."
     },
     {
-      question: "Does Veda5 assist with private health insurance claims?",
-      answer: "Yes, our wellness administration office compiles detailed medical diagnostic sheets, clinical case records, physician signatures, and certified pharmacy logs. We provide full documentation to help guests submit their claims for private international or corporate health insurance reimbursements."
+      question: "Does the clinic assist with health insurance claim documents?",
+      answer: "Yes. Our administrative team compiles comprehensive case files, physician consultation logs, diagnostic descriptions, case histories, and detailed treatment receipts to support guests in private international or corporate health insurance reimbursement claims."
     }
   ];
 
   const programs = [
     {
-      title: "Classical Panchakarma Detox",
+      title: "Fertility & Reproductive Health",
+      description: "Specialized clinical consultations, diagnostic guidance, and custom herbs to address male and female fertility and reproductive wellness.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Traditional Panchakarma Detox",
       description: "Methodical physiological purification programs utilizing synchronized therapies to purge cellular impurities and balance doshas.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Stress Management & Rejuvenation",
-      description: "Focused on cellular repair and neural calming using Shirodhara, customized herbal steam baths, and mindfulness.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Joint & Spine Regeneration",
-      description: "Specialized warm oil poolings (Kati/Janu Vasti) and traditional leaf bag massages (Kizhi) to treat sciatica and arthritis.",
+      title: "Spine & Joint Wellness",
+      description: "Targeted oil retention therapies (Kati/Janu Vasti) and synchronized leaf bag massages (Kizhi) to relieve sciatica, spondylosis, and chronic stiffness.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Weight & Metabolic Harmony",
-      description: "Herbal powder scrub massages (Udwarthanam) combined with custom Sattvic diet plans and doctor-guided yoga routines.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Skin & Beauty Recovery",
-      description: "Therapeutic organic botanical wraps and deep skin-cleansing routines to alleviate psoriasis and promote natural radiance.",
+      title: "Stress & Burnout Recovery",
+      description: "Calming head oil pourings (Shirodhara), specialized breathing exercises, and physician-guided yoga to reset the nervous system.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Immune Toning & Longevity",
-      description: "Naturopathic therapies and restorative Rasayana herbs to enhance cellular defense and facilitate graceful aging.",
+      title: "Digestive & Metabolic Reset",
+      description: "Customized gut-cleansing protocols combined with physician-guided organic diet charts to manage metabolic and gastrointestinal concerns.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Marma & Pain Management",
+      description: "Traditional Marma point stimulation and therapeutic oil applications to alleviate acute neurological pain, migraines, and physical strain.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Award-Winning Destination",
-      description: "Tripadvisor Travelers' Choice Best of the Best winner, placing it among the top 1% of retreats globally.",
+      title: "Expert Physician Leadership",
+      description: "All treatments are personally overseen, evaluated, and directed by Dr. Raju Bhusnar.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Pristine Arambol Location",
-      description: "Set against the rolling hills of North Goa, offering panoramic sea views and fresh ocean breezes close to Arambol Beach.",
+      title: "Reproductive & Fertility Focus",
+      description: "Recognized as a leading destination in North Goa for male and female reproductive wellness care.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Experienced Doctor Panel",
-      description: "Consultations and custom recovery schedules supervised by highly qualified Vaidyas and Naturopathic experts.",
+      title: "Convenient Calangute Location",
+      description: "Situated centrally at Benson Complex in Naikwaddo, Calangute, offering easy access for travelers.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Sattvic Organic Dining",
-      description: "Nutrient-dense, fresh, and chef-curated vegetarian meals prepared strictly to support your dosha-balancing goals.",
+      title: "Bespoke Tailored Therapies",
+      description: "No generic programs; every treatment plan is strictly matched to your biological body constitution.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Scenic Yoga & Meditation",
-      description: "Overlooking stunning landscapes, the open-air yoga shala hosts daily medical yoga and mindful breathing sessions.",
+      title: "Pure Botanical Pharmacy",
+      description: "Equipped with high-potency Ayurvedic herbal remedies and customized therapeutic massage oils.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Comprehensive Case Records",
-      description: "Providing detailed diagnostic logs, doctor-signed papers, and support for international health insurance claims.",
+      title: "Full Insurance Support Docs",
+      description: "Providing certified consultation papers, case histories, and receipts for hassle-free reimbursement claims.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function Veda5WellnessRetreat() {
   }, []);
 
   useEffect(() => {
-    document.title = "Veda5 Wellness Retreat | Luxury Ayurveda, Panchakarma & Yoga in Arambol, Goa";
+    document.title = "Yashraj Ayurveda Clinic | Dr. Raju Bhusnar's Panchakarma & Fertility Center in Calangute, Goa";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience world-class wellness at Veda5 Wellness Retreat in Arambol, Goa. Award-winning luxury Ayurveda therapies, classical Panchakarma detox, doctor consultations, and ocean-facing medical yoga.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience world-class traditional healing at Yashraj Ayurveda Clinic in Calangute, Goa. Led by Dr. Raju Bhusnar, specializing in fertility, Panchakarma detox, and Marma therapy.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function Veda5WellnessRetreat() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Veda5 Wellness Retreat
+              Yashraj Ayurveda Clinic
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function Veda5WellnessRetreat() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Veda5 Wellness Retreat</h1>
-                <p className="text-xl mb-4 opacity-90">Tripadvisor Travelers' Choice "Best of the Best" Luxury Ayurveda & Yoga Center</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Yashraj Ayurveda Clinic</h1>
+                <p className="text-xl mb-4 opacity-90">Dr. Raju Bhusnar's Specialized Panchakarma & Fertility Center in North Goa</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Arambol, North Goa, India</span>
+                  <span className="text-lg">Calangute, North Goa, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(130 Reviews)</span>
+                  <span className="text-lg font-semibold">4.7</span>
+                  <span className="opacity-90">(230 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function Veda5WellnessRetreat() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Award-Winning Luxury & Authentic <br className="hidden lg:block" />
-                Ayurveda at Veda5 Goa
+                Specialized Ayurvedic Care & Consultations <br className="hidden lg:block" />
+                at Yashraj Clinic Goa
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function Veda5WellnessRetreat() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Veda5 Wellness Retreat</strong>, a premier award-winning luxury wellness sanctuary situated on Dando Road, Arambol, North Goa, India. Consistently recognized with Tripadvisor's prestigious <strong className="font-bold text-[#2C4E5A]">Travelers' Choice "Best of the Best"</strong> award (ranking it in the top 1% of hotels globally), Veda5 Goa is a peaceful tropical haven nestled amidst lush coconut groves and green hills close to the pristine Arambol Beach. The center offers custom, physician-led clinical programs that combine classical Ayurveda, deep detoxification, naturopathy, and therapeutic yoga to restore full physical vitality and mental peace.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Yashraj Ayurveda Clinic</strong>, a highly distinguished clinical sanctuary situated centrally at Shop No. CS4, Ground Floor, Benson Complex, Opp. SBI Bank, Naikwaddo, Calangute, North Goa, India. Led by the highly distinguished Ayurvedic physician <strong className="font-bold text-[#2C4E5A]">Dr. Raju Bhusnar</strong>, the clinic is widely recognized as North Goa's premier destination for reproductive health, sexual wellness, and male/female fertility treatments. Yashraj Clinic blends profound diagnostic wisdom with authentic classical therapies to offer doctor-directed, bespoke healing protocols in a highly professional and welcoming clinic environment.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function Veda5WellnessRetreat() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp" 
-                          alt="Veda5 Wellness Retreat gardens and lake view"
+                          alt="Yashraj Ayurveda Clinic diagnostic setups"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,11 +325,7 @@ export default function Veda5WellnessRetreat() {
                   </div>
 
                   <p>
-                    Guided by an expert medical panel of experienced Ayurvedic doctors (Vaidyas), Naturopathic experts, and certified yoga masters, Veda5 specializes in chronic back pain, joint stiffness, stress burnout, insomnia, metabolic disorders, and systemic detoxification. Each program begins with an intensive individual consultation to formulate targeted therapies, herbal extracts, and custom dosha-specific Sattvic organic meals.
-                  </p>
-
-                  <p>
-                    With other premium retreats in Rishikesh and Kerala, Veda5 combines high-end hospitality, open-air yoga shalas, and professional clinical standards to create a highly therapeutic sanctuary for global wellness seekers.
+                    Dr. Raju Bhusnar specializes in reproductive diagnostic evaluations, customized classical Panchakarma detoxification, Marma point therapy, joint and spine care, metabolic resets, and chronic pain management. Every recovery plan begins with a meticulous clinical examination to detect specific dosha imbalances and map baseline body constitution (Prakriti). Equipped with certified therapists, an in-house botanical pharmacy, and exhaustive insurance documentation support, the clinic represents absolute integrity in clinical care.
                   </p>
                 </div>
               </div>
@@ -339,8 +335,8 @@ export default function Veda5WellnessRetreat() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/goa/Veda5 Wellness Retreat - Arambol/main.jpg" 
-                      alt="Veda5 Wellness Retreat Goa Exterior"
+                      src="/TOP cneters/goa/Yashraj Ayurveda Clinic/main.jpg" 
+                      alt="Yashraj Ayurveda Clinic Calangute Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -352,8 +348,8 @@ export default function Veda5WellnessRetreat() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/goa/Veda5 Wellness Retreat - Arambol/secondary.jpg" 
-                        alt="Ayurveda Therapy Room at Veda5 Goa"
+                        src="/TOP cneters/goa/Yashraj Ayurveda Clinic/secondary.jpg" 
+                        alt="Clinical Therapy Room at Yashraj Clinic"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -372,7 +368,7 @@ export default function Veda5WellnessRetreat() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Veda5 Wellness Retreat today.
+                My Vaidyam to connect with Yashraj Ayurveda Clinic today.
               </h3>
             </div>
           </div>
@@ -383,7 +379,7 @@ export default function Veda5WellnessRetreat() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Veda5 Goa</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Yashraj Clinic</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -413,9 +409,9 @@ export default function Veda5WellnessRetreat() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Veda5</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Yashraj Clinic</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience high-end organic luxury combined with experienced clinical physicians, scenic open yoga pavilions, and personalized care.
+                Experience expert clinical direction, reproductive wellness specializations, and highly customized traditional programs.
               </p>
             </div>
             
@@ -481,11 +477,11 @@ export default function Veda5WellnessRetreat() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"
-                  alt="Veda5 Wellness Retreat"
+                  alt="Yashraj Ayurveda Clinic"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Veda5 Wellness Retreat?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Yashraj Clinic?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -510,7 +506,7 @@ export default function Veda5WellnessRetreat() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Veda5 Wellness Retreat?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Yashraj Clinic?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -524,8 +520,8 @@ export default function Veda5WellnessRetreat() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/goa/Veda5 Wellness Retreat - Arambol/main.jpg"
-                  alt="Veda5 Wellness Retreat"
+                  src="/TOP cneters/goa/Yashraj Ayurveda Clinic/main.jpg"
+                  alt="Yashraj Ayurveda Clinic"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -566,10 +562,10 @@ export default function Veda5WellnessRetreat() {
                     {testimonials[currentReview]?.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A]">{testimonials[currentReview]?.name}</h4>
+                    <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                      <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A] leading-none">{testimonials[currentReview]?.name}</h4>
                       {testimonials[currentReview]?.verified && (
-                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold inline-flex items-center gap-1 shrink-0">
                           <span className="text-xs">✓</span> Verified
                         </span>
                       )}
@@ -635,7 +631,7 @@ export default function Veda5WellnessRetreat() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Veda5 Wellness Retreat.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Yashraj Ayurveda Clinic.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -669,8 +665,8 @@ export default function Veda5WellnessRetreat() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Veda5 Wellness Retreat<br />
-                      Dando Road, Arambol<br />
+                      Yashraj Ayurveda Clinic<br />
+                      Shop No. CS4, Ground Floor, Benson Complex, Naikwaddo, Calangute<br />
                       North Goa District, Goa, India
                     </p>
                   </div>
@@ -682,7 +678,7 @@ export default function Veda5WellnessRetreat() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <p className="flex flex-col">
-                        +91 97606 05111 / +91 93544 83728
+                        <a href="tel:+919011932151" className="hover:underline transition-all">+91 90119 32151 / +91 96377 11394</a>
                       </p>
                     </div>
                   </div>
@@ -695,11 +691,11 @@ export default function Veda5WellnessRetreat() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 28 km from Manohar International Airport</span>
+                        <span>Approx. 30 km from Manohar International Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 18 km from Pernem Railway Station</span>
+                        <span>Approx. 20 km from Thivim Railway Station</span>
                       </li>
                     </ul>
                   </div>
@@ -708,14 +704,14 @@ export default function Veda5WellnessRetreat() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.3954122817377!2d73.70565997512777!3d15.677151084946953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfef14b7771dc7%3A0xdf775064f019fce3!2sVeda5%20Wellness%20Retreat%20%26%20Spa%2C%20Goa!5e0!3m2!1sen!2sin!4v1779905150249!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.8113618629945!2d73.761808975125!3d15.548240035058328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc1e27583c261%3A0xe24f2217845a9e8d!2sYashraj%20Clinic!5e0!3m2!1sen!2sin!4v1779906795284!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Veda5 Wellness Retreat Location"
+                  title="Yashraj Ayurveda Clinic Location"
                 ></iframe>
               </div>
             </div>
@@ -727,8 +723,8 @@ export default function Veda5WellnessRetreat() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/goa/Veda5 Wellness Retreat - Arambol/main.jpg"
-            alt="Veda5 Wellness Retreat Coconut Groves"
+            src="/TOP cneters/goa/Yashraj Ayurveda Clinic/main.jpg"
+            alt="Yashraj Ayurveda Clinic Coconut Palms"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -738,7 +734,7 @@ export default function Veda5WellnessRetreat() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Veda5 Wellness Retreat.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Yashraj Ayurveda Clinic.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -748,7 +744,7 @@ export default function Veda5WellnessRetreat() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919760605111?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Veda5%20Wellness%20Retreat."
+              href="https://wa.me/919011932151?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Yashraj%20Ayurveda%20Clinic."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

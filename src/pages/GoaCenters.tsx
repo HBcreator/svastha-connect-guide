@@ -108,11 +108,11 @@ const GoaCenters = () => {
       city: "Calangute, North Goa, India",
       description:
         "A trusted Panchakarma clinic led by Dr. Raju Bhusnar, Yashraj provides consultation-led Ayurveda with detox, Marma, Shirodhara, and condition-specific healing plans for digestive, hormonal, and lifestyle concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.8,
-      reviews: 400,
+      rating: 4.7,
+      reviews: 230,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/3.jpg",
-      slug: undefined,
+      slug: "yashraj-ayurveda-clinic-hospital-goa-india",
     },
     {
       name: "SreeShanti Wellness",

@@ -675,10 +675,10 @@ export default function AyurTouchAyurvedicHealthcare() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <p className="flex flex-col">
-                        <a href="tel:+919447717075" className="hover:underline transition-all">+91 94477 17075 / +91 83908 67075</a>
+                        +91 94477 17075 / +91 83908 67075
                       </p>
                     </div>
                   </div>
