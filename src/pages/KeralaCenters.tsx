@@ -288,11 +288,11 @@ const KeralaCenters = () => {
       city: "Perumbavoor, Kochi, Kerala, India",
       description:
         "Parathuvayalil Ayurveda Hospital is a long-standing multispecialty center known for classical Kerala healing with a strong focus on bone, joint, and musculoskeletal care. The hospital combines traditional Marma and Kaya Chikitsa protocols with structured diagnostics, rehabilitation support, and physician-led treatment planning for both acute and chronic conditions.",
-      rating: 4.7,
-      reviews: 2200,
+      rating: 4.1,
+      reviews: 150,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/1.webp",
-      slug: undefined,
+      slug: "parathuvayalil-ayurveda-hospital-hospital-kerela-india",
     },
     {
       name: "Arya Vaidya Sala (Kottakkal)",
