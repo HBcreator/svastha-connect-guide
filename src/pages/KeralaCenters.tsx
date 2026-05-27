@@ -292,7 +292,7 @@ const KeralaCenters = () => {
       reviews: 150,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/1.webp",
-      slug: "parathuvayalil-ayurveda-hospital-hospital-kerela-india",
+      slug: "parathuvayalil-ayurveda-hospital-hospital-kerala-india",
     },
     {
       name: "Arya Vaidya Sala (Kottakkal)",
@@ -303,7 +303,7 @@ const KeralaCenters = () => {
       reviews: 380,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/2.jpg",
-      slug: "arya-vaidya-sala-hospital-kerela-india",
+      slug: "arya-vaidya-sala-hospital-kerala-india",
     },
     {
       name: "Rasayana Ayurveda Centre",
@@ -314,7 +314,7 @@ const KeralaCenters = () => {
       reviews: 210,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/3.webp",
-      slug: "rasayana-ayurveda-centre-hospital-kerela-india",
+      slug: "rasayana-ayurveda-centre-hospital-kerala-india",
     },
     {
       name: "Yantra Ayurvedic Resort",
@@ -325,18 +325,18 @@ const KeralaCenters = () => {
       reviews: 520,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/4.jpeg",
-      slug: "yantra-ayurvedic-resort-hospital-kerela-india",
+      slug: "yantra-ayurvedic-resort-hospital-kerala-india",
     },
     {
       name: "Chakra Ayurvedic Resort",
       city: "Kovalam, Thiruvananthapuram, Kerala, India",
       description:
         "Chakra Ayurvedic Resort combines beachside comfort with structured Ayurveda programs for purification, rejuvenation, weight management, and musculoskeletal wellness. With in-house therapies, yoga support, and a calm resort environment, it is often chosen by wellness travelers seeking practical healing outcomes with a relaxed stay format.",
-      rating: 4.2,
-      reviews: 900,
+      rating: 4.4,
+      reviews: 110,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/5.jpg",
-      slug: undefined,
+      slug: "chakra-ayurvedic-resort-hospital-kerala-india",
     },
     {
       name: "Deepanjali Ayur Retreat",
