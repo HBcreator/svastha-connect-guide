@@ -86,11 +86,11 @@ const GoaCenters = () => {
       city: "Calangute, North Goa, India",
       description:
         "Established in 2001, ANHC is one of Goa's most trusted authentic Ayurveda institutions, known for Kerala-standard Panchakarma, yoga, detox, rejuvenation, and therapeutic healing programs in a serene retreat setting. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
-      rating: 4.6,
-      reviews: 1600,
+      rating: 4.9,
+      reviews: 180,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/1.png",
-      slug: undefined,
+      slug: "ayurvedic-natural-health-centre-hospital-goa-india",
     },
     {
       name: "Ayur Touch Ayurvedic Healthcare",
