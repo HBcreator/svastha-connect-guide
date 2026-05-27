@@ -75,11 +75,11 @@ const GoaCenters = () => {
       description:
         "A luxury Ayurveda and Yoga retreat spread across lush coconut groves near Arambol Beach, offering Vaidya consultations, Panchakarma detox plans, daily yoga, meditation, and sattvic nutrition. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
       rating: 4.8,
-      reviews: 1200,
+      reviews: 130,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/7.jpg",
-      slug: "veda5",
-      detailsDisabled: true,
+      slug: "veda5-wellness-retreat-hospital-goa-india",
+      // detailsDisabled: "veda5-wellness-retreat-hospital-goa-india",
     },
     {
       name: "Health and Ayurveda (ANHC Goa)",
