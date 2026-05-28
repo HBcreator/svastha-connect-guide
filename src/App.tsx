@@ -155,6 +155,13 @@ import YantraAyurvedicResort from "./pages/centers/YantraAyurvedicResort.tsx";
 import ChakraAyurvedicResort from "./pages/centers/ChakraAyurvedicResort.tsx";
 import DeepanjaliAyurRetreat from "./pages/centers/DeepanjaliAyurRetreat.tsx";
 import MadukkakuzhyAyurveda from "./pages/centers/MadukkakuzhyAyurveda.tsx";
+import Veda5WellnessRetreat from "./pages/centers/Veda5WellnessRetreat.tsx";
+import AyurTouchAyurvedicHealthcare from "./pages/centers/AyurTouchAyurvedicHealthcare.tsx";
+import YashrajAyurvedaClinic from "./pages/centers/YashrajAyurvedaClinic.tsx";
+import AyurvedicNaturalHealthCentre from "./pages/centers/AyurvedicNaturalHealthCentre.tsx";
+import SreeShantiWellness from "./pages/centers/SreeShantiWellness.tsx";
+import NaturalTouchAyurveda from "./pages/centers/NaturalTouchAyurveda.tsx";
+import KAREHealth from "./pages/centers/KAREHealth.tsx";
 
 const queryClient = new QueryClient();
 
@@ -231,6 +238,14 @@ const App = () => (
 
           <Route path="/centers/:location" element={<LocationCenters />} />
           <Route path="/centers/soukya-international-holistic-health-centre-bangalore-india" element={<SOUKYACenter />} />
+
+          <Route path="/centers/kare-health-hospital-goa-india" element={<KAREHealth />}/>
+          <Route path="/centers/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
+          <Route path="/centers/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
+          <Route path="/centers/ayurvedic-natural-health-centre-hospital-goa-india" element={<AyurvedicNaturalHealthCentre />}/>
+          <Route path="/centers/yashraj-ayurveda-clinic-hospital-goa-india" element={<YashrajAyurvedaClinic />}/>
+          <Route path="/centers/ayur-touch-ayurvedic-healthcare-hospital-goa-india" element={<AyurTouchAyurvedicHealthcare />}/>
+          <Route path="/centers/veda5-wellness-retreat-hospital-goa-india" element={<Veda5WellnessRetreat />}/>
 
           <Route path="/centers/madukkakuzhy-ayurveda-retreat-hospital-kerala-india" element={<MadukkakuzhyAyurveda />}/>
           <Route path="/centers/deepanjali-ayur-retreat-hospital-kerala-india" element={<DeepanjaliAyurRetreat />}/>
