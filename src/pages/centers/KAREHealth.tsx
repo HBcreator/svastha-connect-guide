@@ -315,7 +315,7 @@ export default function KAREHealth() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp" 
+                          src="/TOP cneters/goa/KARE Health - Goa/secondary.jpg" 
                           alt="KARE Ayurveda Retreat diagnostic setups"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -325,7 +325,7 @@ export default function KAREHealth() {
                   </div>
 
                   <p>
-                    KARE Ayurveda at Soul Vacation is widely recognized for combining precise clinical diagnostics with authentic traditional treatments. Developed in direct partnership with Dr. Srinivasan Nair and the renowned <strong className="font-bold text-[#2C4E5A]">CNS Chikitsalayam</strong> in Kerala, our Goa branch delivers highly scientific Panchakarma detoxification, physical rejuvenation, and customized health recovery. Under expert supervision, our resident doctors formulate tailored wellness programs incorporating in-house prepared classical oils, customized steam baths, sound healing, and specialized saatvic nutritional guidance designed to restore metabolic harmony. Guests stay in boutique resort rooms surrounded by lush tropical gardens, enjoying a deeply peaceful, holistic environment that maximizes cellular recovery and mental peace.
+                    KARE Ayurveda at Soul Vacation is widely recognized for combining precise clinical diagnostics with authentic traditional treatments. Developed in direct partnership with Dr. Srinivasan Nair and the renowned <strong className="font-bold text-[#2C4E5A]">CNS Chikitsalayam</strong> in Kerala, our Goa branch delivers highly scientific Panchakarma detoxification, physical rejuvenation, and customized health recovery.
                   </p>
                 </div>
               </div>
@@ -476,7 +476,7 @@ export default function KAREHealth() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"
+                  src="/TOP cneters/goa/KARE Health - Goa/main.jpg"
                   alt="KARE Ayurveda & Yoga Retreat"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
