@@ -265,7 +265,7 @@ export default function KAREHealth() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>KARE Ayurveda & Yoga Retreat</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Iyengar Yoga Medical Center</p>
+                <p className="text-xl mb-4 opacity-90">Authentic Natural Herbal Panchakarma & Iyengar Yoga Medical Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Colva Beach, South Goa, India</span>

@@ -264,7 +264,7 @@ export default function TravancoreAyurvedaJayanagar() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Travancore Ayurveda – Jayanagar</h1>
-                <p className="text-xl mb-4 opacity-90">Pioneering Integrative Medicine & Award-Winning Kerala Panchakarma</p>
+                <p className="text-xl mb-4 opacity-90">Pioneering Integrative Medicine & Natural Herbal Panchakarma Care</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Jayanagar, Bengaluru, Karnataka</span>
@@ -272,7 +272,7 @@ export default function TravancoreAyurvedaJayanagar() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(800 Reviews)</span>
+                  <span className="opacity-90">(800 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">

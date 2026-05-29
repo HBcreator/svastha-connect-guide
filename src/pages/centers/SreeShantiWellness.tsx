@@ -265,7 +265,7 @@ export default function SreeShantiWellness() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>SreeShanti Wellness</h1>
-                <p className="text-xl mb-4 opacity-90">Dr. Jijith C. Ravindran's Kerala Panchakarma & Element Healing Center</p>
+                <p className="text-xl mb-4 opacity-90">Dr. Jijith C. Ravindran's Natural Herbal Panchakarma & Element Healing Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Nerul, North Goa, India</span>

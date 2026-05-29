@@ -265,7 +265,7 @@ export default function AyurTouchAyurvedicHealthcare() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayur Touch Ayurvedic Healthcare</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Kerala-Standard Panchakarma & Clinical Sanctuary in North Goa</p>
+                <p className="text-xl mb-4 opacity-90">Natural Herbal Panchakarma & Clinical Wellness Sanctuary in North Goa</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Candolim, North Goa, India</span>

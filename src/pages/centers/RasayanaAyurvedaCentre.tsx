@@ -123,8 +123,8 @@ export default function RasayanaAyurvedaCentre() {
 
   const faqItems = [
     {
-      question: "What makes Rasayana Ayurveda Centre in Ezhakkaranad unique?",
-      answer: "Rasayana Ayurveda Centre is a specialized Ayurvedic hospital situated on a serene plantation estate in Ezhakkaranad, Kochi. We focus on authentic classical Ayurveda in a nature-rich environment, offering comfortable private villas, an organic dining facility, and integrated clinical care."
+      question: "What makes Rasayana Ayurveda Center in Ezhakkaranad unique?",
+      answer: "Rasayana Ayurveda Center is a specialized Ayurvedic hospital situated on a serene plantation estate in Ezhakkaranad, Kochi. We focus on authentic classical Ayurveda in a nature-rich environment, offering comfortable private villas, an organic dining facility, and integrated clinical care."
     },
     {
       question: "Who leads the medical and consulting panel at the centre?",
@@ -220,9 +220,9 @@ export default function RasayanaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Rasayana Ayurveda Centre | Best Ayurvedic Hospital in Ernakulam, Kochi";
+    document.title = "Rasayana Ayurveda Center | Best Ayurvedic Hospital in Ernakulam, Kochi";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Rasayana Ayurveda Centre in Ezhakkaranad, Kochi. Specialized plantation-based hospital offering geriatric care, cardiology, and cancer recovery.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Rasayana Ayurveda Center in Ezhakkaranad, Kochi. Specialized plantation-based hospital offering geriatric care, cardiology, and cancer recovery.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function RasayanaAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rasayana Ayurveda Centre
+              Rasayana Ayurveda Center
             </li>
           </ol>
         </div>
@@ -264,7 +264,7 @@ export default function RasayanaAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Rasayana Ayurveda Centre</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Rasayana Ayurveda Center</h1>
                 <p className="text-xl mb-4 opacity-90">Plantation-Based Speciality Hospital & Integrative Cardiology Rehab Centre</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -299,7 +299,7 @@ export default function RasayanaAyurvedaCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Rasayana Ayurveda Centre
+                at Rasayana Ayurveda Center
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function RasayanaAyurvedaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Rasayana Ayurveda Centre</strong>, a premier specialized Ayurvedic hospital set within the tranquil plantation landscapes of Ezhakkaranad, near Kochi, Kerala. The centre rejects standardized clinical profiles to deliver customized, physician-led clinical care. Spanning a quiet plantation estate (Pullamkottu Cheri Estate), the centre is world-renowned for its specialized focus on Geriatric Care (Rasayana), Preventive Cardiology (integrating traditional Ayurveda with modern cardiac parameters), Post-Cancer Rehabilitation, Stroke/Neurological Rehabilitation, and classical Panchakarma detoxification.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Rasayana Ayurveda Center</strong>, a premier specialized Ayurvedic hospital set within the tranquil plantation landscapes of Ezhakkaranad, near Kochi, Kerala. The centre rejects standardized clinical profiles to deliver customized, physician-led clinical care. Spanning a quiet plantation estate (Pullamkottu Cheri Estate), the centre is world-renowned for its specialized focus on Geriatric Care (Rasayana), Preventive Cardiology (integrating traditional Ayurveda with modern cardiac parameters), Post-Cancer Rehabilitation, Stroke/Neurological Rehabilitation, and classical Panchakarma detoxification.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function RasayanaAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/kerela/Rasayana Ayurveda Centre/secondary.webp" 
-                          alt="Rasayana Ayurveda Centre"
+                          src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
+                          alt="Rasayana Ayurveda Center"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function RasayanaAyurvedaCentre() {
                   </div>
 
                   <p>
-                    The medical panel is directed by Chief Medical Officer <strong className="font-bold text-[#2c4e5a]">Dr. V. Madhavachandran</strong>, an eminent senior physician with over 30 years of clinical experience, a internationally published researcher, and expert in drug development. Rasayana Ayurveda Centre features a serene eco-friendly infrastructure including 12 private villas, 16 suites, in-house organic food prepared with locally sourced farm ingredients, a yoga center, and comprehensive documentation to facilitate private and corporate AYUSH health insurance claims.
+                    The medical panel is directed by Chief Medical Officer <strong className="font-bold text-[#2c4e5a]">Dr. V. Madhavachandran</strong>, an eminent senior physician with over 30 years of clinical experience, a internationally published researcher, and expert in drug development. Rasayana Ayurveda Center features a serene eco-friendly infrastructure including 12 private villas, 16 suites, in-house organic food prepared with locally sourced farm ingredients, a yoga center, and comprehensive documentation to facilitate private and corporate AYUSH health insurance claims.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function RasayanaAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/kerela/Rasayana Ayurveda Centre/main.jpg" 
-                      alt="Rasayana Ayurveda Centre Exterior"
+                      src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg" 
+                      alt="Rasayana Ayurveda Center Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function RasayanaAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/kerela/Rasayana Ayurveda Centre/secondary.webp" 
-                        alt="Therapy Chamber at Rasayana Ayurveda Centre"
+                        src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
+                        alt="Therapy Chamber at Rasayana Ayurveda Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function RasayanaAyurvedaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Rasayana Ayurveda Centre today.
+                My Vaidyam to connect with Rasayana Ayurveda Center today.
               </h3>
             </div>
           </div>
@@ -476,12 +476,12 @@ export default function RasayanaAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/kerela/Rasayana Ayurveda Centre/main.jpg"
-                  alt="Rasayana Ayurveda Centre"
+                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+                  alt="Rasayana Ayurveda Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rasayana Ayurveda Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function RasayanaAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rasayana Ayurveda Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function RasayanaAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/kerela/Rasayana Ayurveda Centre/main.jpg"
-                  alt="Rasayana Ayurveda Centre"
+                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+                  alt="Rasayana Ayurveda Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -665,7 +665,7 @@ export default function RasayanaAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Rasayana Ayurveda Centre<br />
+                      Rasayana Ayurveda Center<br />
                       Pullamkottu Cheri Estate, Srappilly - Blaippadi Road<br />
                       P.O. Ezhakkaranad (N), Ernakulam District, Kerala
                     </p>
@@ -703,7 +703,7 @@ export default function RasayanaAyurvedaCentre() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Rasayana Ayurveda Centre Location"
+                  title="Rasayana Ayurveda Center Location"
                 ></iframe>
               </div>
             </div>
@@ -715,8 +715,8 @@ export default function RasayanaAyurvedaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/kerela/Rasayana Ayurveda Centre/main.jpg"
-            alt="Rasayana Ayurveda Centre"
+            src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+            alt="Rasayana Ayurveda Center"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -726,7 +726,7 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Rasayana Ayurveda Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Rasayana Ayurveda Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

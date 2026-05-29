@@ -306,15 +306,15 @@ const KeralaCenters = () => {
       slug: "arya-vaidya-sala-hospital-kerala-india",
     },
     {
-      name: "Rasayana Ayurveda Centre",
+      name: "Rasayana Ayurveda Center",
       city: "Ezhakkaranadu, Ernakulam, Kerala, India",
       description:
-        "Rasayana Ayurveda Centre offers a retreat-style clinical environment focused on detoxification, rejuvenation, and metabolic balance through authentic Ayurvedic therapies. Its programs are commonly selected for digestive disorders, lifestyle diseases, stress management, and long-stay recovery supported by yoga, mindful routines, and sattvic nutrition.",
+        "Rasayana Ayurveda Center offers a retreat-style clinical environment focused on detoxification, rejuvenation, and metabolic balance through authentic Ayurvedic therapies. Its programs are commonly selected for digestive disorders, lifestyle diseases, stress management, and long-stay recovery supported by yoga, mindful routines, and sattvic nutrition.",
       rating: 4.8,
       reviews: 210,
       priceRange: "$$$",
       image: "/Anchor pages/Kerala centers/images/3.webp",
-      slug: "rasayana-ayurveda-centre-hospital-kerala-india",
+      slug: "rasayana-ayurveda-center-hospital-kerala-india",
     },
     {
       name: "Yantra Ayurvedic Resort",
