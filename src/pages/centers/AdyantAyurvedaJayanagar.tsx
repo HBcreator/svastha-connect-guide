@@ -331,7 +331,7 @@ export default function AdyantAyurvedaJayanagar() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(230)</span>
+                  <span className="opacity-90">(230 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">

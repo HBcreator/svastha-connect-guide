@@ -90,7 +90,7 @@ const GoaCenters = () => {
       reviews: 180,
       priceRange: "$$$",
       image: "/Anchor pages/Goa centers/images/1.png",
-      slug: "ayurvedic-natural-health-centre-hospital-goa-india",
+      slug: "ayurvedic-natural-health-center-hospital-goa-india",
     },
     {
       name: "Ayur Touch Ayurvedic Healthcare",

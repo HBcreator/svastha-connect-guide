@@ -273,7 +273,7 @@ export default function AdivaidyamAyurvedaHospital() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(380)</span>
+                  <span className="opacity-90">(380 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">

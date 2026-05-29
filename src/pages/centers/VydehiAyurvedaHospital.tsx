@@ -265,7 +265,7 @@ export default function VydehiAyurvedaHospital() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vydehi Ayurveda Hospital (VAYU)</h1>
-                <p className="text-xl mb-4 opacity-90">Premier Kerala Ayurveda Treatment Facility</p>
+                <p className="text-xl mb-4 opacity-90">Premier Natural Herbal Ayurveda Treatment Facility</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Whitefield, Bengaluru, Karnataka</span>
@@ -273,7 +273,7 @@ export default function VydehiAyurvedaHospital() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(150)</span>
+                  <span className="opacity-90">(150 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">

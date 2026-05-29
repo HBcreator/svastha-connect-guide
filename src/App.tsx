@@ -242,7 +242,7 @@ const App = () => (
           <Route path="/centers/kare-health-hospital-goa-india" element={<KAREHealth />}/>
           <Route path="/centers/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
           <Route path="/centers/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
-          <Route path="/centers/ayurvedic-natural-health-centre-hospital-goa-india" element={<AyurvedicNaturalHealthCentre />}/>
+          <Route path="/centers/ayurvedic-natural-health-center-hospital-goa-india" element={<AyurvedicNaturalHealthCentre />}/>
           <Route path="/centers/yashraj-ayurveda-clinic-hospital-goa-india" element={<YashrajAyurvedaClinic />}/>
           <Route path="/centers/ayur-touch-ayurvedic-healthcare-hospital-goa-india" element={<AyurTouchAyurvedicHealthcare />}/>
           <Route path="/centers/veda5-wellness-retreat-hospital-goa-india" element={<Veda5WellnessRetreat />}/>
@@ -251,7 +251,7 @@ const App = () => (
           <Route path="/centers/deepanjali-ayur-retreat-hospital-kerala-india" element={<DeepanjaliAyurRetreat />}/>
           <Route path="/centers/chakra-ayurvedic-resort-hospital-kerala-india" element={<ChakraAyurvedicResort />}/>
           <Route path="/centers/yantra-ayurvedic-resort-hospital-kerala-india" element={<YantraAyurvedicResort />}/>
-          <Route path="/centers/rasayana-ayurveda-centre-hospital-kerala-india" element={<RasayanaAyurvedaCentre />}/>
+          <Route path="/centers/rasayana-ayurveda-center-hospital-kerala-india" element={<RasayanaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
@@ -260,10 +260,10 @@ const App = () => (
           <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-bengaluru-india" element={<KottakkalAryaVaidyaSala />}/>
           <Route path="/centers/travancore-ayurveda-hospital-bengaluru-india" element={<TravancoreAyurvedaJayanagar />}/>
           <Route path="/centers/ayushman-ayurveda-hospital-bengaluru-india" element={<AyushmanAyurveda />}/>
-          <Route path="/centers/sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCentre />}/>
-          <Route path="/centers/varaprada-ayurvedic-centre-hospital-bengaluru-india" element={<VarapradaAyurvedicCentre />}/>
+          <Route path="/centers/sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCentre />}/>
+          <Route path="/centers/varaprada-ayurvedic-center-hospital-bengaluru-india" element={<VarapradaAyurvedicCentre />}/>
           <Route path="/centers/tatkshana-ayurveda-hospital-bengaluru-india" element={<TatkshanaAyurvedaHospital />}/>
-          <Route path="/centers/ayurkutira-panchakarma-centre-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCentre />}/>
+          <Route path="/centers/ayurkutira-panchakarma-center-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCentre />}/>
           <Route path="/centers/ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india" element={<RamaiahIndicSpecialtyAyurvedaHospital />}/>
           <Route path="/centers/praana-vaidya-ayurvedic-hospital-bengaluru-india" element={<PraanaVaidyaAyurvedicHospital />}/>
           <Route path="/centers/hlc-ayurveda-and-nature-cure-hospital-bengaluru-india" element={<HLCAyurvedaAndNatureCureHospital />}/>
