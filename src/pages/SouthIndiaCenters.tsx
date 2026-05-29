@@ -30,10 +30,10 @@ const SouthIndiaCenters = () => {
     "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
     "praana-vaidya-ayurvedic-hospital-bengaluru-india",
     "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
-    "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
+    "ayurkutira-panchakarma-center-hospital-bengaluru-india",
     "tatkshana-ayurveda-hospital-bengaluru-india",
-    "varaprada-ayurvedic-centre-hospital-bengaluru-india",
-    "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
+    "varaprada-ayurvedic-center-hospital-bengaluru-india",
+    "sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india",
     "ayushman-ayurveda-hospital-bengaluru-india",
     "travancore-ayurveda-hospital-bengaluru-india",
     "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
@@ -231,7 +231,7 @@ const SouthIndiaCenters = () => {
       slug: "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
     },
     {
-      name: "AyurKutira – Panchakarma Centre",
+      name: "AyurKutira – Panchakarma Center",
       city: "Bengaluru, Karnataka, India",
       description:
         "AyurKutira is a sanctuary for holistic healing in Mahalakshmipuram, Bengaluru, guided by experienced Ayurvedic practitioners with deep expertise in classical treatments. Specialties include personalized Ayurvedic consultations, Panchakarma detox, Rasayana Chikitsa for vitality, post-chemo or post-surgery rejuvenation, and fertility treatments. The center has a particularly strong track record in treating infertility cases, with multiple patient success stories. Open daily 7 AM to 9 PM.",
@@ -240,7 +240,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG",
-      slug: "ayurkutira-panchakarma-centre-hospital-bengaluru-india",
+      slug: "ayurkutira-panchakarma-center-hospital-bengaluru-india",
     },
     {
       name: "Tatkshana Ayurveda Hospital",
@@ -255,28 +255,28 @@ const SouthIndiaCenters = () => {
       slug: "tatkshana-ayurveda-hospital-bengaluru-india",
     },
     {
-      name: "Varaprada Ayurvedic Centre",
+      name: "Varaprada Ayurvedic Center",
       city: "Bengaluru, Karnataka, India",
       description:
-        "Varaprada Ayurvedic Centre is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
+        "Varaprada Ayurvedic Center is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
       rating: 4.9,
       reviews: 330,
       priceRange: "$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG",
-      slug: "varaprada-ayurvedic-centre-hospital-bengaluru-india",
+      slug: "varaprada-ayurvedic-center-hospital-bengaluru-india",
     },
     {
-      name: "SD Ayurveda Mane – Holistic Wellness Centre",
+      name: "SD Ayurveda Mane – Holistic Wellness Center",
       city: "Bengaluru (Electronic City), Karnataka, India",
       description:
-        "SD Ayurveda Mane – Holistic Wellness Centre is a leading Ayurvedic hospital in Electronic City, Bangalore. Directed by expert physicians, the centre is highly renowned for its specialized postnatal (post-pregnancy) care programs, traditional Kerala Ayurveda, authentic Panchakarma, and customized stress and musculoskeletal rehabilitation in a fully residential setting.",
+        "SD Ayurveda Mane – Holistic Wellness Center is a leading Ayurvedic hospital in Electronic City, Bangalore. Directed by expert physicians, the center is highly renowned for its specialized postnatal (post-pregnancy) care programs, traditional Kerala Ayurveda, authentic Panchakarma, and customized stress and musculoskeletal rehabilitation in a fully residential setting.",
       rating: 5,
       reviews: 10,
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg",
-      slug: "sd-ayurveda-mane-holistic-wellness-centre-hospital-bengaluru-india",
+      slug: "sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india",
     },
     {
       name: "Ayushman Ayurveda",
@@ -315,7 +315,7 @@ const SouthIndiaCenters = () => {
       slug: "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
     },
     {
-      name: "Ayurillam - Home of Ayurvedic Therapy Centre",
+      name: "Ayurillam - Home of Ayurvedic Therapy Center",
       city: "Chennai, Tamil Nadu, India",
       description:
         "Ayurillam is a premium Kerala-rooted Ayurvedic therapy centre offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The centre addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",

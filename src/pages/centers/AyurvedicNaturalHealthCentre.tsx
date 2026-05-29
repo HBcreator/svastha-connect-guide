@@ -123,7 +123,7 @@ export default function AyurvedicNaturalHealthCentre() {
 
   const faqItems = [
     {
-      question: "What is Ayurvedic Natural Health Centre (ANHC) known for?",
+      question: "What is Ayurvedic Natural Health Center (ANHC) known for?",
       answer: "Founded in 2001, ANHC is one of Goa's most established authentic Ayurvedic institutions. It is highly recognized for Kerala-standard Panchakarma, biological purification (Shodhana), longevity therapies (Rasayana), chronic illness relief, and holistic residential wellness retreats."
     },
     {
@@ -220,9 +220,9 @@ export default function AyurvedicNaturalHealthCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Ayurvedic Natural Health Centre (ANHC) | Authentic Kerala Panchakarma & Rejuvenation in Calangute, Goa";
+    document.title = "Ayurvedic Natural Health Center (ANHC) | Authentic Kerala Panchakarma & Rejuvenation in Calangute, Goa";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Keralite traditional healing at Ayurvedic Natural Health Centre (ANHC) in Calangute, Goa. Led by resident doctors, offering Panchakarma, Shodhana, and Rasayana programs.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Keralite traditional healing at Ayurvedic Natural Health Center (ANHC) in Calangute, Goa. Led by resident doctors, offering Panchakarma, Shodhana, and Rasayana programs.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayurvedic Natural Health Centre
+              Ayurvedic Natural Health Center
             </li>
           </ol>
         </div>
@@ -264,8 +264,8 @@ export default function AyurvedicNaturalHealthCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayurvedic Natural Health Centre (ANHC)</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Rejuvenation Retreat since 2001</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayurvedic Natural Health Center (ANHC)</h1>
+                <p className="text-xl mb-4 opacity-90">Natural Herbal Ayurveda Healing & Rejuvenation Retreat in Goa since 2001</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Calangute, North Goa, India</span>
@@ -299,7 +299,7 @@ export default function AyurvedicNaturalHealthCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                 Rejuvenation <br className="hidden lg:block" />
-                at Ayurvedic Natural Health Centre
+                at Ayurvedic Natural Health Center
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Ayurvedic Natural Health Centre (ANHC)</strong>, an established and highly trusted clinical sanctuary situated in a serene garden retreat at 4/31, Porba Vaddo, Khobra Waddo, Calangute, Goa, India. Established in 2001, ANHC is managed under the distinguished leadership of Managing Director <strong className="font-bold text-[#2C4E5A]">Shri. Bruno Fernandes</strong> and Jennifer Fernandes. The resident medical team is directed by CEO and Chief practicing doctor <strong className="font-bold text-[#2C4E5A]">Dr. Sunipa Kasar</strong> along with practicing resident doctor <strong className="font-bold text-[#2C4E5A]">Dr. Jouhar Kanhirala</strong>, supported by highly trained and certified therapists primarily hailing from Kerala.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Ayurvedic Natural Health Center (ANHC)</strong>, an established and highly trusted clinical sanctuary situated in a serene garden retreat at 4/31, Porba Vaddo, Khobra Waddo, Calangute, Goa, India. Established in 2001, ANHC is managed under the distinguished leadership of Managing Director <strong className="font-bold text-[#2C4E5A]">Shri. Bruno Fernandes</strong> and Jennifer Fernandes. The resident medical team is directed by CEO and Chief practicing doctor <strong className="font-bold text-[#2C4E5A]">Dr. Sunipa Kasar</strong> along with practicing resident doctor <strong className="font-bold text-[#2C4E5A]">Dr. Jouhar Kanhirala</strong>, supported by highly trained and certified therapists primarily hailing from Kerala.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function AyurvedicNaturalHealthCentre() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
-                          alt="Ayurvedic Natural Health Centre diagnostic setups"
+                          alt="Ayurvedic Natural Health Center diagnostic setups"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -336,7 +336,7 @@ export default function AyurvedicNaturalHealthCentre() {
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
                       src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp" 
-                      alt="Ayurvedic Natural Health Centre Calangute Exterior"
+                      alt="Ayurvedic Natural Health Center Calangute Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -349,7 +349,7 @@ export default function AyurvedicNaturalHealthCentre() {
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
                         src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
-                        alt="Clinical Therapy Room at Ayurvedic Natural Health Centre"
+                        alt="Clinical Therapy Room at Ayurvedic Natural Health Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function AyurvedicNaturalHealthCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Ayurvedic Natural Health Centre (ANHC) today.
+                My Vaidyam to connect with Ayurvedic Natural Health Center (ANHC) today.
               </h3>
             </div>
           </div>
@@ -477,7 +477,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
-                  alt="Ayurvedic Natural Health Centre"
+                  alt="Ayurvedic Natural Health Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -521,7 +521,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <div>
                 <img
                   src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
-                  alt="Ayurvedic Natural Health Centre"
+                  alt="Ayurvedic Natural Health Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -665,7 +665,7 @@ export default function AyurvedicNaturalHealthCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Ayurvedic Natural Health Centre (ANHC)<br />
+                      Ayurvedic Natural Health Center (ANHC)<br />
                       4/31, Porba Vaddo, Khobra Waddo, Calangute<br />
                       North Goa District, Goa, India
                     </p>
@@ -711,7 +711,7 @@ export default function AyurvedicNaturalHealthCentre() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ayurvedic Natural Health Centre Location"
+                  title="Ayurvedic Natural Health Center Location"
                 ></iframe>
               </div>
             </div>
@@ -724,7 +724,7 @@ export default function AyurvedicNaturalHealthCentre() {
         <div className="absolute inset-0 z-0">
           <img
             src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
-            alt="Ayurvedic Natural Health Centre Coconut Palms"
+            alt="Ayurvedic Natural Health Center Coconut Palms"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -734,7 +734,7 @@ export default function AyurvedicNaturalHealthCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayurvedic Natural Health Centre (ANHC).
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayurvedic Natural Health Center (ANHC).
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

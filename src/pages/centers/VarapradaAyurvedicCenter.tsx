@@ -123,8 +123,8 @@ export default function VarapradaAyurvedicCentre() {
 
   const faqItems = [
     {
-      question: "What makes Varaprada Ayurvedic Centre unique?",
-      answer: "Varaprada Ayurvedic Centre is a highly respected clinical recovery facility located in N. R. Colony, Basavanagudi, Bangalore. Directed by eminent integrated physician Dr. Vinay S. Singarajapura, we synthesize traditional Ayurvedic therapeutics, classical Panchakarma, Acupuncture, and specialized soft tissue manipulation to deliver multi-dimensional, root-cause healing."
+      question: "What makes Varaprada Ayurvedic Center unique?",
+      answer: "Varaprada Ayurvedic Center is a highly respected clinical recovery facility located in N. R. Colony, Basavanagudi, Bangalore. Directed by eminent integrated physician Dr. Vinay S. Singarajapura, we synthesize traditional Ayurvedic therapeutics, classical Panchakarma, Acupuncture, and specialized soft tissue manipulation to deliver multi-dimensional, root-cause healing."
     },
     {
       question: "Who designs and directs the clinical therapies?",
@@ -220,9 +220,9 @@ export default function VarapradaAyurvedicCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Varaprada Ayurvedic Centre | Best Panchakarma & Spine Care in Basavanagudi";
+    document.title = "Varaprada Ayurvedic Center | Best Panchakarma & Spine Care in Basavanagudi";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Varaprada Ayurvedic Centre in Basavanagudi, Bangalore. Directed by Dr. Vinay S. Singarajapura, experience expert spine care, Panchakarma, and integrated wellness.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Varaprada Ayurvedic Center in Basavanagudi, Bangalore. Directed by Dr. Vinay S. Singarajapura, experience expert spine care, Panchakarma, and integrated wellness.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function VarapradaAyurvedicCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Varaprada Ayurvedic Centre
+              Varaprada Ayurvedic Center
             </li>
           </ol>
         </div>
@@ -264,7 +264,7 @@ export default function VarapradaAyurvedicCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Varaprada Ayurvedic Centre</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Varaprada Ayurvedic Center</h1>
                 <p className="text-xl mb-4 opacity-90">Integrated Spine Care, Panchakarma & Traditional Healing</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -273,7 +273,7 @@ export default function VarapradaAyurvedicCentre() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(330 Reviews)</span>
+                  <span className="opacity-90">(330 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +299,7 @@ export default function VarapradaAyurvedicCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                 Integrated Healing<br className="hidden lg:block" />
-                at Varaprada Ayurvedic Centre
+                at Varaprada Ayurvedic Center
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function VarapradaAyurvedicCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Centre</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Center</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function VarapradaAyurvedicCentre() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG" 
-                          alt="Varaprada Ayurvedic Centre Exterior"
+                          alt="Varaprada Ayurvedic Center Exterior"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
                         />
@@ -335,8 +335,8 @@ export default function VarapradaAyurvedicCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg" 
-                      alt="Varaprada Ayurvedic Centre Basavanagudi"
+                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Center/main.jpeg" 
+                      alt="Varaprada Ayurvedic Center Basavanagudi"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
                     />
@@ -348,7 +348,7 @@ export default function VarapradaAyurvedicCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/secondary.jpeg" 
+                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Center/secondary.jpeg" 
                         alt="Integrated Therapy chamber at Varaprada"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg"; }}
@@ -368,7 +368,7 @@ export default function VarapradaAyurvedicCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Varaprada Ayurvedic Centre today.
+                My Vaidyam to connect with Varaprada Ayurvedic Center today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function VarapradaAyurvedicCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Varaprada Ayurvedic Centre</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Varaprada Ayurvedic Center</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,7 +409,7 @@ export default function VarapradaAyurvedicCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Varaprada Ayurvedic Centre</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Varaprada Ayurvedic Center</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Discover a dedicated clinical setting that integrates authentic classical Ayurveda, Acupuncture, and specialized physical therapies for genuine relief.
               </p>
@@ -477,11 +477,11 @@ export default function VarapradaAyurvedicCentre() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"
-                  alt="Varaprada Ayurvedic Centre"
+                  alt="Varaprada Ayurvedic Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function VarapradaAyurvedicCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Varaprada Ayurvedic Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function VarapradaAyurvedicCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg"
-                  alt="Varaprada Ayurvedic Centre"
+                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Center/main.jpeg"
+                  alt="Varaprada Ayurvedic Center"
                   className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG"; }}
                 />
@@ -631,7 +631,7 @@ export default function VarapradaAyurvedicCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Varaprada Ayurvedic Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Varaprada Ayurvedic Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -665,7 +665,7 @@ export default function VarapradaAyurvedicCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Varaprada Ayurvedic Centre<br />
+                      Varaprada Ayurvedic Center<br />
                       53, 5th Main Road, Bull Temple Road<br />
                       NR Colony, Basavanagudi, Bengaluru<br />
                       Karnataka
@@ -704,7 +704,7 @@ export default function VarapradaAyurvedicCentre() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Varaprada Ayurvedic Centre Location"
+                  title="Varaprada Ayurvedic Center Location"
                 ></iframe>
               </div>
             </div>
@@ -716,7 +716,7 @@ export default function VarapradaAyurvedicCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Centre/main.jpeg"
+            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Varaprada Ayurvedic Center/main.jpeg"
             alt="Ayurvedic Therapy at Varaprada"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

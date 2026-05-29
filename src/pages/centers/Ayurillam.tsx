@@ -220,9 +220,9 @@ export default function Ayurillam() {
   }, []);
 
   useEffect(() => {
-    document.title = "Ayurillam - Home of Ayurvedic Therapy Centre | Best Clinic in Chennai";
+    document.title = "Ayurillam - Home of Ayurvedic Therapy Center | Best Clinic in Chennai";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Ayurillam - Home of Ayurvedic Therapy Centre in Velachery, Chennai. Experience expert Kerala Ayurveda, classical Panchakarma, and genuine joint care.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Ayurillam - Home of Ayurvedic Therapy Center in Velachery, Chennai. Experience expert Kerala Ayurveda, classical Panchakarma, and genuine joint care.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -251,7 +251,7 @@ export default function Ayurillam() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayurillam – Home of Ayurvedic Therapy Centre
+              Ayurillam – Home of Ayurvedic Therapy Center
             </li>
           </ol>
         </div>
@@ -263,8 +263,8 @@ export default function Ayurillam() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayurillam – Home of Ayurvedic Therapy Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Kerala Ayurvedic Wellness & Pure Panchakarma Cleansing</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayurillam – Home of Ayurvedic Therapy Center</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Natural Herbal Ayurvedic Wellness & Pure Panchakarma Cleansing</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Velachery, Chennai, Tamil Nadu</span>
@@ -272,7 +272,7 @@ export default function Ayurillam() {
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.7</span>
-                  <span className="opacity-90">(950 Reviews)</span>
+                  <span className="opacity-90">(950 reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,7 +298,7 @@ export default function Ayurillam() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                Ayurveda <br className="hidden lg:block" />
-                at Ayurillam Therapy Centre
+                at Ayurillam Therapy Center
               </h2>
             </div>
 
@@ -306,7 +306,7 @@ export default function Ayurillam() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Ayurillam - Home of Ayurvedic Therapy Centre</strong>, Chennai’s premier destination for authentic, physician-directed Kerala Ayurveda, specialized joint care, and classical Panchakarma detoxification. Conveniently located on Karikalan Street, Velachery, our center stands as a premium provider of authentic Keralite wellness pathways. Founded in 2014 by Mr. Vikas V. R. with deep inspiration from Kerala's traditional medicine systems, we reject commercialized formats to deliver medically supervised, root-cause healing pathways.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Ayurillam - Home of Ayurvedic Therapy Center</strong>, Chennai’s premier destination for authentic, physician-directed Kerala Ayurveda, specialized joint care, and classical Panchakarma detoxification. Conveniently located on Karikalan Street, Velachery, our center stands as a premium provider of authentic Keralite wellness pathways. Founded in 2014 by Mr. Vikas V. R. with deep inspiration from Kerala's traditional medicine systems, we reject commercialized formats to deliver medically supervised, root-cause healing pathways.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -369,7 +369,7 @@ export default function Ayurillam() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Ayurillam - Home of Ayurvedic Therapy Centre today.
+                My Vaidyam to connect with Ayurillam - Home of Ayurvedic Therapy Center today.
               </h3>
             </div>
           </div>
@@ -666,7 +666,7 @@ export default function Ayurillam() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Ayurillam - Home of Ayurvedic Therapy Centre<br />
+                      Ayurillam - Home of Ayurvedic Therapy Center<br />
                       No. 105, Karikalan Street, Annai Indra Nagar<br />
                       Velachery, Chennai, Tamil Nadu
                     </p>
