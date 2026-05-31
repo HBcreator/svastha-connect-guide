@@ -11,7 +11,7 @@ export default function MadukkakuzhyAyurveda() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function MadukkakuzhyAyurveda() {
   const testimonials = [
     {
       title: "Profound Relief from Chronic Knee Pain",
-      review: "Years of battling stiff knees and chronic joint inflammation had left me dependent on heavy painkillers. A friend suggested I try the traditional joint program at Madukkakuzhy, and it was the best decision I ever made. Over three weeks, the doctors monitored me daily as they applied synchronized hot herbal bag massages (Elakizhi) and custom oils. The pain has reduced significantly, and my mobility is back to normal. The place feels like a genuine home.",
+      review: "Battling chronic joint inflammation left me dependent on painkillers. The traditional joint program at Madukkakuzhy was my best decision. Thanks to three weeks of synchronized Elakizhi massages and custom oils, my pain significantly reduced and mobility beautifully normalized.",
       name: "Liam Henderson",
       verified: true,
       location: "Edinburgh, Scotland",
@@ -85,7 +85,7 @@ export default function MadukkakuzhyAyurveda() {
     },
     {
       title: "Life-Changing Panchakarma Recovery",
-      review: "My experience with the 21-day Panchakarma detox was nothing short of life-changing. Severe fibromyalgia had left me completely exhausted. Under the gentle guidance of the physicians here, my body underwent a methodical purification. The custom organic meals prepared with fresh garden herbs combined with soothing, traditional massages worked miracles. I returned home to Switzerland with a level of vitality and peace I haven't felt in a decade.",
+      review: "My 21-day Panchakarma detox was absolutely life-changing. Severe fibromyalgia had left me completely exhausted, but the methodical purification, custom organic meals, and soothing traditional massages worked miracles. I returned home with incredible vitality and profound peace.",
       name: "Emma Laurent",
       verified: true,
       location: "Geneva, Switzerland",
@@ -94,7 +94,7 @@ export default function MadukkakuzhyAyurveda() {
     },
     {
       title: "Unmatched Expertise & Digestive Care",
-      review: "As a regular visitor from Germany, I can confidently say this sanctuary is unmatched. I struggled with severe digestive issues and irregular metabolism for years. The medical team customized a rigorous gut-cleansing protocol and daily dosha-balancing organic diet. Not only did my gastrointestinal health completely normalize, but I also lost several kilos of metabolic weight. The integrity and deep Ayurvedic knowledge of the family is absolute.",
+      review: "Struggling with severe digestive issues for years, the medical team customized a rigorous gut-cleansing protocol and daily dosha-balancing organic diet. My gastrointestinal health completely normalized, and I safely lost several kilos. Their deep Ayurvedic knowledge is absolutely unmatched.",
       name: "Oliver Schneider",
       verified: true,
       location: "Frankfurt, Germany",
@@ -103,7 +103,7 @@ export default function MadukkakuzhyAyurveda() {
     },
     {
       title: "Superb Core Strength & Post-Natal Rest",
-      review: "Following my second pregnancy, I felt physically depleted and was suffering from persistent lower back strain. I booked a customized rejuvenation and recovery program at Madukkakuzhy. The warmth and personal attention of the doctors and female therapists made me feel secure. The herbal baths, traditional muscle-nourishing therapies, and targeted massages completely restored my physical core. I am incredibly grateful for this authentic healing.",
+      review: "Following my second pregnancy, I suffered from persistent lower back strain. A customized recovery program at Madukkakuzhy completely restored my physical core. The incredibly warm doctors, soothing herbal baths, and targeted massages provided authentic, deeply effective healing.",
       name: "Camila Silva",
       verified: true,
       location: "São Paulo, Brazil",
@@ -112,7 +112,7 @@ export default function MadukkakuzhyAyurveda() {
     },
     {
       title: "Tranquil Oasis for Burnout Recovery",
-      review: "High-stress corporate work had led to severe insomnia and physical burnout. The tranquil environment of this green Kottayam homestay was exactly what I needed. The daily head oil-pouring therapies (Shirodhara), specialized breathing exercises, and physician-guided yoga sessions resolved my sleep troubles within the first week. The hospitality is warm, genuine, and deeply grounding.",
+      review: "High-stress corporate work led to severe insomnia and burnout. The tranquil environment, daily Shirodhara therapies, specialized breathing exercises, and guided yoga sessions resolved my sleep troubles within the very first week. Their warm hospitality is deeply grounding.",
       name: "Nils Bergstrom",
       verified: true,
       location: "Stockholm, Sweden",
@@ -252,7 +252,7 @@ export default function MadukkakuzhyAyurveda() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Madukkakuzhy Ayurveda
+              Madukkakuzhy Ayurveda Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function MadukkakuzhyAyurveda() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Madukkakuzhy Ayurveda</strong>, a premier Green Leaf Certified clinical homestay and treatment sanctuary nestled in the serene environs of Parathodu, Kanjirappally, Kottayam, Kerala. Established formally in 1938 by the legendary <strong className="font-bold text-[#2C4E5A]">Vaidyakalanidhi M.C. Mathew</strong>, the hospital represents a remarkable legacy of eight generations of uninterrupted family physicians dedicated to clinical excellence. Under the expert medical guidance of Director <strong className="font-bold text-[#2C4E5A]">Dr. Robin Jacob</strong> (specialist in Medical Yoga Therapy) and Medical Director <strong className="font-bold text-[#2C4E5A]">Dr. Jobin J. Madukkakuzhy</strong>, the center integrates profound clinical knowledge with a warm, personal homestay ambience to support deep systemic healing.
                   </p>
@@ -554,7 +554,7 @@ export default function MadukkakuzhyAyurveda() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -678,11 +678,7 @@ export default function MadukkakuzhyAyurveda() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <p className="flex flex-col">
-                        +91 97452 09900
-                      </p>
-                    </div>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</div>
                   </div>
                 </div>
 

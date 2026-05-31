@@ -11,7 +11,7 @@ export default function AyurKutiraPanchakarmaCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function AyurKutiraPanchakarmaCentre() {
   const testimonials = [
     {
       title: "An Absolute Miracle for Infertility & PCOS!",
-      review: "After struggling with severe PCOS, hormonal imbalances, and trying to conceive for nearly four years with no success through conventional treatments, I visited AyurKutira. Dr. Latha Dileep was incredibly patient, explaining the root metabolic issues. She designed a targeted Panchakarma detox and custom fertility herbs for me. I am emotional and overjoyed to say that we naturally conceived just four months after finishing the treatment! They are absolute miracle workers.",
+      review: "After struggling with severe PCOS for four years, Dr. Latha designed a targeted Panchakarma detox and custom fertility herbs. We naturally conceived just four months after finishing the treatment! Absolute miracle workers.",
       name: "Olivia Bennett",
       verified: true,
       location: "Sydney, Australia",
@@ -85,7 +85,7 @@ export default function AyurKutiraPanchakarmaCentre() {
     },
     {
       title: "Complete Sciatica and Spondylosis Relief!",
-      review: "Severe, shooting sciatica pain down my left leg and lower back spondylosis made standing for even five minutes unbearable. The targeted warm oil Kati Basti treatments and synchronized massage therapies at AyurKutira did wonders. The physical relief is extraordinary—I am fully active and walking miles completely pain-free now. Extremely competent and caring practitioners.",
+      review: "Shooting sciatica pain down my leg made standing unbearable. The targeted warm oil Kati Basti treatments and synchronized massage therapies at AyurKutira did absolute wonders. The physical relief is extraordinary—I am fully active and walking miles completely pain-free now.",
       name: "William Davies",
       verified: true,
       location: "Cardiff, Wales",
@@ -94,7 +94,7 @@ export default function AyurKutiraPanchakarmaCentre() {
     },
     {
       title: "Incredible Post-Chemo Recovery and Energy Boost",
-      review: "I completed my chemotherapy in Sweden but was left with profound, debilitating fatigue and a weakened immune system. The restorative care and specialized rejuvenation formulations at AyurKutira safely rebuilt my strength, ended my chronic nausea, and restored my appetite. The doctors treat you with profound compassion.",
+      review: "After chemotherapy left me with debilitating fatigue, the restorative care at AyurKutira safely rebuilt my strength. It quickly ended my chronic nausea and completely restored my appetite. The highly skilled doctors treat every patient with profound compassion.",
       name: "Astrid Lindgren",
       verified: true,
       location: "Stockholm, Sweden",
@@ -103,7 +103,7 @@ export default function AyurKutiraPanchakarmaCentre() {
     },
     {
       title: "Remarkable Male Infertility Improvement",
-      review: "We were dealing with male-factor infertility due to oligospermia and low sperm motility. The non-invasive, doctor-guided Ayurvedic treatments, purification therapies, and specific botanical supplements at this center made a massive difference. Our follow-up tests showed a major, healthy increase in count and motility. We are deeply grateful for their expertise.",
+      review: "Dealing with male-factor infertility, the doctor-guided Ayurvedic purification therapies and specific botanical supplements at AyurKutira made a massive difference. Our follow-up tests showed a major, healthy increase in sperm count and motility. We are deeply grateful for their incredible expertise.",
       name: "Nathaniel Cross",
       verified: true,
       location: "New York, USA",
@@ -112,7 +112,7 @@ export default function AyurKutiraPanchakarmaCentre() {
     },
     {
       title: "Dramatically Cleared Asthma & Sinus Allergies!",
-      review: "Severe seasonal asthma and constant nasal allergies made cold weather a nightmare. The specialized respiratory detox therapies and customized lung-strengthening oils at AyurKutira cleared my chest congestion entirely. I have been able to get off my daily inhalers and breathe fully and deeply. Highly recommend their authentic Panchakarma!",
+      review: "Severe seasonal asthma and nasal allergies made cold weather a nightmare. The specialized respiratory detox therapies at AyurKutira cleared my chest congestion entirely. I am happily off my daily inhalers and highly recommend their authentic treatments!",
       name: "Sophie Lebrun",
       verified: true,
       location: "Montreal, Canada",
@@ -252,7 +252,7 @@ export default function AyurKutiraPanchakarmaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              AyurKutira – Panchakarma Center
+              AyurKutira – Panchakarma Center Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function AyurKutiraPanchakarmaCentre() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">AyurKutira – Panchakarma Center</strong>, Bengaluru’s highly trusted multispecialty sanctuary for classical Ayurvedic medicine and advanced reproductive wellness. Nestled in the quiet, residential layout of Mahalakshmipuram, opposite the Jain Temple in Ganesha Block, our premier clinic rejects generic wellness treatments and focuses entirely on physician-led therapeutic care. AyurKutira has earned an outstanding reputation for combining precise traditional diagnostics with customized healing plans to resolve persistent and deep-seated health disorders.
                   </p>
@@ -552,7 +552,7 @@ export default function AyurKutiraPanchakarmaCentre() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function AyurKutiraPanchakarmaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 95915 95916
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

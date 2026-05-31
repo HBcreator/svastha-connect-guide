@@ -11,7 +11,7 @@ export default function Veda5WellnessRetreat() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -75,17 +75,17 @@ export default function Veda5WellnessRetreat() {
 
   const testimonials = [
     {
-      title: "Profound Sciatica Relief in Sunny Arambol",
-      review: "Six months of persistent lower back tightness and radiating leg pain had made my life stressful. I traveled from Canada to Goa for Veda5's specialized joint program. The diagnostic consult was incredibly detailed, and the therapists administered warm, synchronized massages and medicated oil retention therapies (Kati Vasti) daily. The tension slowly dissolved, and I walked out pain-free. Healing under the swaying palms of Arambol was a blessing.",
-      name: "Julian Mercer",
+      title: "Complete Relief from Persistent Back Pain",
+      review: "Six months of persistent lower back tightness and radiating leg pain made long flights unbearable. Dr. Nikhila wonderfully designed an incredible structural reset program. The synchronized herbal powder scrub and targeted oil baths worked absolute miracles on my deep tissues.",
+      name: "Arthur Penhaligon",
       verified: true,
-      location: "Vancouver, Canada",
-      condition: "Joint & Spine Wellness",
+      location: "London, UK",
+      condition: "Lumbar Spondylosis",
       rating: 5
     },
     {
       title: "Life-Transforming Burnout Recovery",
-      review: "As a corporate consultant, I was running on empty, struggling with severe burnout and irregular sleep. Veda5 Goa provided a serene escape. The daily head oil-pouring treatments (Shirodhara), breathing sessions, and sunset yoga at the open-air shala facing the hills completely reset my nervous system. I haven't slept this soundly in years. The entire team operates with genuine compassion.",
+      review: "Struggling with severe burnout, Veda5 Goa provided a serene escape. Daily Shirodhara treatments, breathing sessions, and sunset yoga completely reset my nervous system. I haven't slept this soundly in years. The entire team operates with genuine compassion.",
       name: "Amelie Fischer",
       verified: true,
       location: "Vienna, Austria",
@@ -94,7 +94,7 @@ export default function Veda5WellnessRetreat() {
     },
     {
       title: "Superb Panchakarma Reset & Sattvic Dining",
-      review: "I stayed for 14 nights to undergo a traditional Panchakarma detox. The senior doctor designed a tailored cleansing schedule that combined internal cleansing with personalized organic Sattvic meals. The food was delicious, light, and perfectly matched to my body's needs. The systemic reset boosted my metabolic energy, cleared my skin, and left me feeling incredibly light and vital.",
+      review: "During my 14-night Panchakarma detox, the senior doctor designed a tailored cleansing schedule with personalized organic Sattvic meals. The systemic reset perfectly boosted my metabolic energy, completely cleared my skin, and left me feeling incredibly light.",
       name: "Logan Sterling",
       verified: true,
       location: "Melbourne, Australia",
@@ -103,7 +103,7 @@ export default function Veda5WellnessRetreat() {
     },
     {
       title: "Excellent Skin Clearance & Calming Environment",
-      review: "Persistent skin dryness and stress-induced eczema had troubled me for years. At Veda5, I underwent a natural skin-cleansing treatment using purifying botanical wraps, daily herb-infused oil massages, and strict Ayurvedic diet guidelines. Within ten days, the inflammation completely cleared up, leaving my skin feeling soft and healthy. The natural, tranquil beach environment is highly therapeutic.",
+      review: "Persistent eczema troubled me for years. At Veda5, I underwent a natural skin-cleansing treatment using purifying botanical wraps and herb-infused oil massages. Within ten days, the inflammation completely cleared up, beautifully leaving my skin feeling perfectly healthy.",
       name: "Chiara Bonetti",
       verified: true,
       location: "Bologna, Italy",
@@ -112,7 +112,7 @@ export default function Veda5WellnessRetreat() {
     },
     {
       title: "Top-Tier Sleep Restoration & Medical Yoga",
-      review: "Looking for a quiet retreat to reset my sleep cycles, I spent a week here. The combination of early morning medical yoga, soothing massage, and evening pranayama breathing exercises worked wonders. The calm hillside breezes and ocean vibes of Arambol created a beautiful environment for reflection and recovery. A truly world-class wellness experience in Goa.",
+      review: "Looking to reset my sleep cycles, I spent a week here. Early morning medical yoga, soothing massage, and evening pranayama worked absolute wonders. The calm hillside breezes created a beautiful environment for deep reflection and wonderful recovery.",
       name: "Jesper Dahl",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -252,7 +252,7 @@ export default function Veda5WellnessRetreat() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Veda5 Wellness Retreat
+              Veda5 Wellness Retreat Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function Veda5WellnessRetreat() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Veda5 Wellness Retreat</strong>, a premier award-winning luxury wellness sanctuary situated on Dando Road, Arambol, North Goa, India. Consistently recognized with Tripadvisor's prestigious <strong className="font-bold text-[#2C4E5A]">Travelers' Choice "Best of the Best"</strong> award (ranking it in the top 1% of hotels globally), Veda5 Goa is a peaceful tropical haven nestled amidst lush coconut groves and green hills close to the pristine Arambol Beach. The center offers custom, physician-led clinical programs that combine classical Ayurveda, deep detoxification, naturopathy, and therapeutic yoga to restore full physical vitality and mental peace.
                   </p>
@@ -556,7 +556,7 @@ export default function Veda5WellnessRetreat() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -574,7 +574,7 @@ export default function Veda5WellnessRetreat() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -680,11 +680,7 @@ export default function Veda5WellnessRetreat() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <p className="flex flex-col">
-                        +91 97606 05111 / +91 93544 83728
-                      </p>
-                    </div>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</div>
                   </div>
                 </div>
 

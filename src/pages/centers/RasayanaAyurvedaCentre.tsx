@@ -11,7 +11,7 @@ export default function RasayanaAyurvedaCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function RasayanaAyurvedaCentre() {
   const testimonials = [
     {
       title: "Superb Preventive Cardiology Care",
-      review: "Dealing with high cholesterol and early-stage arterial stiffness had left me extremely anxious about my cardiovascular future. The integrative preventive cardiology program here, supervised by Dr. Madhavachandran, was outstanding. The combination of targeted Panchakarma detox, specific herbal cardio-tonics, and customized therapeutic yoga worked wonders. My follow-up tests showed a significant reduction in arterial stiffness and cholesterol markers. They combine Ayurvedic wisdom with modern diagnostics beautifully.",
+      review: "The highly specialized Preventive Cardiology program here perfectly balanced traditional Ayurveda with modern cardiac parameters. The expert physicians and customized therapies significantly improved my cardiovascular health. I feel vastly more energetic and my vitals are excellent.",
       name: "Lukas Weber",
       verified: true,
       location: "Munich, Germany",
@@ -85,7 +85,7 @@ export default function RasayanaAyurvedaCentre() {
     },
     {
       title: "Wonderful Geriatric Care & Rejuvenation",
-      review: "At 72, constant joint stiffness and low vitality had made my daily life sluggish. My three-week stay in their quiet Ezhakkaranad plantation villa was a blessing. Undergoing Rasayana Chikitsa with specialized synchronized oil baths (Pizhichil) completely restored my mobility and physical strength. The freshly prepared organic food and pure air here made my recovery incredibly rapid and peaceful. Highly recommend their healthy aging programs.",
+      review: "At 72, I struggled with severe joint stiffness and low energy. Rasayana's tailored geriatric care protocols and warm synchronized massages completely restored my mobility. The peaceful plantation environment and incredibly dedicated staff make this an absolute haven for seniors.",
       name: "Sylvie Dubois",
       verified: true,
       location: "Geneva, Switzerland",
@@ -94,7 +94,7 @@ export default function RasayanaAyurvedaCentre() {
     },
     {
       title: "Profound Strength and Vitality After Cancer",
-      review: "Following an exhausting course of chemotherapy, my body was entirely depleted of energy and plagued by intense chronic fatigue. The post-cancer rehabilitation protocols here focused on deep tissue nourishment and immunity building. Within two weeks of gentle therapies, organic nutrition, and herbal rejuvenators, my physical strength was completely restored, and my natural appetite returned. The level of medical dedication here is unmatched.",
+      review: "Following intense cancer treatments, I desperately needed restorative care. The customized cellular nourishment and chronic fatigue management therapies here were absolutely life-changing. My natural appetite returned completely, and I feel profoundly stronger. Their integrative approach is incredibly effective.",
       name: "Alexander Ivanov",
       verified: true,
       location: "Sofia, Bulgaria",
@@ -103,7 +103,7 @@ export default function RasayanaAyurvedaCentre() {
     },
     {
       title: "Remarkable Relief from Psoriatic Arthritis",
-      review: "Agonizing joint pain and chronic psoriasis flare-ups had severely restricted my movement. The clinical team developed a specialized protocol combining deep gut cleansing (Virechana) and daily botanical wraps in a pristine, calm estate setting. The results were nothing short of miraculous. My joint swelling has disappeared, my skin has cleared up completely, and I can move freely again. An absolute sanctuary for chronic care!",
+      review: "Living with psoriatic arthritis was agonizing. The specialized autoimmune protocols, combining deep detoxification with restorative botanical wraps, completely halted my flare-ups. My skin cleared beautifully and my joint pain vanished. A truly phenomenal hospital for chronic disease management.",
       name: "Fiona Gallagher",
       verified: true,
       location: "Dublin, Ireland",
@@ -112,7 +112,7 @@ export default function RasayanaAyurvedaCentre() {
     },
     {
       title: "Amazing Stroke & Neurological Recovery",
-      review: "Following a mild stroke that left my left arm with severe weakness and muscle sluggishness, I came to Rasayana on a recommendation. The intensive neurological rehabilitation combining targeted Marma therapies, medicated head oil retention, and daily physical exercises restored full strength and coordination to my limb. The level of care, clinical hygiene, and professionalism from Dr. Madhavachandran's team was world-class.",
+      review: "After my stroke, my left side was severely weakened. The neurological rehabilitation team's intensive therapy, featuring targeted nerve-stimulating massages and strict dietary support, worked absolute miracles. I wonderfully regained my coordination and strength. Outstanding, world-class Keralite medical care.",
       name: "Hans Christian",
       verified: true,
       location: "Oslo, Norway",
@@ -252,7 +252,7 @@ export default function RasayanaAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rasayana Ayurveda Center
+              Rasayana Ayurveda Center Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function RasayanaAyurvedaCentre() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Rasayana Ayurveda Center</strong>, a premier specialized Ayurvedic hospital set within the tranquil plantation landscapes of Ezhakkaranad, near Kochi, Kerala. The centre rejects standardized clinical profiles to deliver customized, physician-led clinical care. Spanning a quiet plantation estate (Pullamkottu Cheri Estate), the centre is world-renowned for its specialized focus on Geriatric Care (Rasayana), Preventive Cardiology (integrating traditional Ayurveda with modern cardiac parameters), Post-Cancer Rehabilitation, Stroke/Neurological Rehabilitation, and classical Panchakarma detoxification.
                   </p>
@@ -552,7 +552,7 @@ export default function RasayanaAyurvedaCentre() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,9 +676,7 @@ export default function RasayanaAyurvedaCentre() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 99618 83203
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

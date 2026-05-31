@@ -202,7 +202,7 @@ const App = () => (
           <Route path="/centers/toyam-by-orchid-hotels-wellness-resort-pune-india" element={<ToyamByOrchidHotels />} />
           <Route path="/centers/shathayu-ayurveda-yoga-retreat-udupi-banglore-india" element={<ShathayuAyurvedaYogaRetreat />} />
           <Route path="/centers/shreyas-yoga-retreat-bangalore-india" element={<ShreyasYogaRetreat />} />
-          <Route path="/centers/indus-valley-ayurvedic-centre-mysore-banglore-india" element={<IndusValleyAyurvedicCentre />} />
+          <Route path="/centers/indus-valley-ayurvedic-hospital-mysore-india" element={<IndusValleyAyurvedicCentre />} />
           <Route path="/centers/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
 
           {/* Kerala flat URL redirects for SEO and button compatibility */}
@@ -255,9 +255,9 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
-          <Route path="/centers/dhanwanthralaya-ayurveda-hospital-bengaluru-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
-          <Route path="/centers/ayurillam-hospital-bengaluru-india" element={<Ayurillam />}/>
-          <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-bengaluru-india" element={<KottakkalAryaVaidyaSala />}/>
+          <Route path="/centers/dhanwanthralaya-ayurveda-speciality-hospital-chennai-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
+          <Route path="/centers/ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india" element={<Ayurillam />}/>
+          <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-chennai-india" element={<KottakkalAryaVaidyaSala />}/>
           <Route path="/centers/travancore-ayurveda-hospital-bengaluru-india" element={<TravancoreAyurvedaJayanagar />}/>
           <Route path="/centers/ayushman-ayurveda-hospital-bengaluru-india" element={<AyushmanAyurveda />}/>
           <Route path="/centers/sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCentre />}/>

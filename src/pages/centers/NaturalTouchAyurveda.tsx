@@ -11,7 +11,7 @@ export default function NaturalTouchAyurveda() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -252,7 +252,7 @@ export default function NaturalTouchAyurveda() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Natural Touch Ayurveda
+              Natural Touch Ayurveda Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function NaturalTouchAyurveda() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Natural Touch Ayurveda</strong>, an authentic Ayurvedic treatment center and classical Panchakarma sanctuary situated near the tranquil shores of Patnem Beach in Canacona, South Goa, India. Established in Goa in 2001, the center traces its rich lineage back to 1960 in the traditional martial art healing setups (Ayurveda Kalari) of Kerala. Initially established by Ashta Vaidya Kuttan Pillai, this profound lineage of healing points and musculoskeletal treatment was passed down to Vaidya Sivan Pillai, and is proudly directed today by his daughter <strong className="font-bold text-[#2C4E5A]">Shajini Pillai</strong> and senior Kalari Marma practitioner <strong className="font-bold text-[#2C4E5A]">P. R. S. Kumar</strong>.
                   </p>
@@ -552,7 +552,7 @@ export default function NaturalTouchAyurveda() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,7 +570,7 @@ export default function NaturalTouchAyurveda() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -678,8 +678,7 @@ export default function NaturalTouchAyurveda() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <div className="flex flex-col space-y-1">
-                        <span>+91 97644 37140 / +91 62826 31331</span>
-                      </div>
+                        +91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>

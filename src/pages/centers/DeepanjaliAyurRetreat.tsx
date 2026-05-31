@@ -11,7 +11,7 @@ export default function DeepanjaliAyurRetreat() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function DeepanjaliAyurRetreat() {
   const testimonials = [
     {
       title: "Profound Village Panchakarma Healing",
-      review: "The low-noise village environment of Chazhur was perfect for my three-week Panchakarma program. The clinical expertise of the doctors and the gentle touch of the therapists completely restored my physical and mental vitality. The daily synchronized massages and traditional gut-cleansing routines worked wonders. I returned home feeling completely toxin-free, light, and mentally refreshed.",
+      review: "The peaceful village environment of Chazhur was perfect for my Panchakarma program. The clinical expertise and daily synchronized massages completely restored my vitality. I happily returned home feeling completely toxin-free, remarkably light, and mentally refreshed.",
       name: "Arthur Pendelton",
       verified: true,
       location: "Bath, UK",
@@ -85,7 +85,7 @@ export default function DeepanjaliAyurRetreat() {
     },
     {
       title: "Miraculous Relief from Severe Sciatica",
-      review: "Agonizing lower back stiffness and sciatica pain had limited my daily movements. The medical panel designed an intensive therapy plan combining targeted warm herbal oil retention (Kati Vasti) and synchronized leaf bag massages (Kizhi). Within two weeks, my spine swelling disappeared completely, and I regained full mobility. The level of care and hygiene in this traditional sanctuary is outstanding.",
+      review: "Agonizing sciatica pain and lower back stiffness severely limited my movements. The intensive therapy plan combining targeted Kati Vasti and Kizhi massages was incredible. Within two weeks, my spinal swelling disappeared completely, wonderfully restoring my full mobility.",
       name: "Karin Johansson",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +94,7 @@ export default function DeepanjaliAyurRetreat() {
     },
     {
       title: "Profound Stress Relief & Quiet Meditation",
-      review: "Suffering from chronic insomnia and burnout had left me physically depleted. The anti-stress program at Deepanjali, utilizing continuous head oil pouring (Shirodhara) and guided meditation in their scenic hall, completely restored my sleep patterns. Living among their organic herbal gardens and lotus ponds was deeply therapeutic. An absolute oasis of peace!",
+      review: "Suffering from chronic insomnia and burnout, the anti-stress program at Deepanjali completely restored my sleep patterns. The soothing Shirodhara treatments and guided meditation among their beautiful organic herbal gardens were deeply therapeutic. An absolute oasis of peace!",
       name: "Lucas Martinez",
       verified: true,
       location: "Madrid, Spain",
@@ -103,7 +103,7 @@ export default function DeepanjaliAyurRetreat() {
     },
     {
       title: "Excellent Skin Clearance & Slimming Care",
-      review: "Looking to address persistent skin dryness and sluggish metabolism, I underwent a customized weight and skin care program. The dry-powder massages (Udwarthanam) combined with fresh botanical body wraps completely cleared my skin and boosted my metabolism. The freshly prepared Ayurvedic vegetarian food customized to my doshas made a massive difference.",
+      review: "Addressing persistent skin dryness and sluggish metabolism, I underwent a customized weight and skincare program. The Udwarthanam massages combined with fresh botanical body wraps completely cleared my skin and boosted my metabolism. A truly excellent wellness experience.",
       name: "Isabella Rossi",
       verified: true,
       location: "Florence, Italy",
@@ -112,7 +112,7 @@ export default function DeepanjaliAyurRetreat() {
     },
     {
       title: "Superb Geriatric Care & Rejuvenation",
-      review: "At 74, severe joint stiffness and low physical stamina made my daily life difficult. The geriatric care protocols, including Pizhichil and custom rejuvenation herbs, restored my physical strength and joint flexibility. The medical panel's dedication and the quiet village atmosphere accelerated my recovery. I highly recommend their healthy aging programs.",
+      review: "At 74, severe joint stiffness made daily life difficult. The geriatric care protocols, including Pizhichil and custom rejuvenation herbs, beautifully restored my physical strength and joint flexibility. The medical panel's amazing dedication significantly accelerated my recovery.",
       name: "Dmitry Volkov",
       verified: true,
       location: "Moscow, Russia",
@@ -252,7 +252,7 @@ export default function DeepanjaliAyurRetreat() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Deepanjali Ayur Retreat
+              Deepanjali Ayur Retreat Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function DeepanjaliAyurRetreat() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Deepanjali Ayur Retreat</strong>, a premier nature-focused healing campus situated at Velu amman padi Junction in the quiet rural village setting of Chazhur, Thrissur, Kerala. Rejecting standardized, generic wellness packages, the retreat focuses on delivering personalized, doctor-guided healing plans in a peaceful, low-noise environment. Set within traditional Kerala architecture featuring a library, herbal garden, lotus pond, and meditation hall, Deepanjali offers a complete wellness experience seamlessly integrated with clinical Ayurvedic care.
                   </p>
@@ -556,7 +556,7 @@ export default function DeepanjaliAyurRetreat() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -680,9 +680,7 @@ export default function DeepanjaliAyurRetreat() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 83040 77444
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

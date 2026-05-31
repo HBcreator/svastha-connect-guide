@@ -16,7 +16,7 @@ const SouthIndiaCenters = () => {
   const enabledDetailSlugs = new Set([
     "soukya-international-holistic-health-centre-bangalore-india",
     "ayurvedagram-heritage-wellness-centre-bangalore-india",
-    "indus-valley-ayurvedic-centre-mysore-banglore-india",
+    "indus-valley-ayurvedic-hospital-mysore-india",
     "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
     "sri-sri-ayurveda-hospital-bengaluru-india",
     "shreyas-yoga-retreat-bangalore-india",
@@ -36,9 +36,9 @@ const SouthIndiaCenters = () => {
     "sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india",
     "ayushman-ayurveda-hospital-bengaluru-india",
     "travancore-ayurveda-hospital-bengaluru-india",
-    "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
-    "ayurillam-hospital-bengaluru-india",
-    "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
+    "kottakkal-arya-vaidya-sala-hospital-chennai-india",
+    "ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india",
+    "dhanwanthralaya-ayurveda-speciality-hospital-chennai-india",
   ]);
 
   const centers = [
@@ -85,7 +85,7 @@ const SouthIndiaCenters = () => {
       reviews: 450,
       priceRange: "$$$$",
       image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-      slug: "indus-valley-ayurvedic-centre-mysore-banglore-india",
+      slug: "indus-valley-ayurvedic-hospital-mysore-india",
     },
     {
       name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -312,7 +312,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/19.jpg",
-      slug: "kottakkal-arya-vaidya-sala-hospital-bengaluru-india",
+      slug: "kottakkal-arya-vaidya-sala-hospital-chennai-india",
     },
     {
       name: "Ayurillam - Home of Ayurvedic Therapy Center",
@@ -324,7 +324,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/20.jpg",
-      slug: "ayurillam-hospital-bengaluru-india",
+      slug: "ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india",
     },
     {
       name: "Dhanwanthralaya Ayurveda Speciality Hospital",
@@ -336,7 +336,7 @@ const SouthIndiaCenters = () => {
       priceRange: "$$$",
       image:
         "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/21.jpg",
-      slug: "dhanwanthralaya-ayurveda-hospital-bengaluru-india",
+      slug: "dhanwanthralaya-ayurveda-speciality-hospital-chennai-india",
     },
   ];
   const orderedCenters = prioritizeTopCenters(centers);

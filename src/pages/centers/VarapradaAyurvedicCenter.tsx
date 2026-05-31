@@ -11,7 +11,7 @@ export default function VarapradaAyurvedicCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function VarapradaAyurvedicCentre() {
   const testimonials = [
     {
       title: "Migraine and Severe Sinusitis Cured completely!",
-      review: "I suffered from chronic, excruciating migraines and painful nasal congestion for over four years. I tried several modern nasal sprays with no real relief. The detailed pulse diagnosis at Varaprada was eye-opening. Under Dr. Vinay's guidance, a course of customized sinus therapies, specific breathing exercises, and acupuncture completely cleared my blockages. I haven't had a single migraine in months! The relief is absolute.",
+      review: "Suffering from chronic migraines and nasal congestion for years, Dr. Vinay's detailed pulse diagnosis was eye-opening. Customized sinus therapies and acupuncture completely cleared my blockages. I haven't had a single migraine in months! The relief is absolute.",
       name: "Alexander Wright",
       verified: true,
       location: "London, United Kingdom",
@@ -85,7 +85,7 @@ export default function VarapradaAyurvedicCentre() {
     },
     {
       title: "Severe Spine shooting Pain Resolved!",
-      review: "A herniated disc in my neck caused shooting nerve pain down my left arm. It was incredibly painful, and my mobility was severely limited. Dr. Vinay combined classical warm oil treatments (Kati Basti) with specialized soft tissue manipulation therapies. The therapeutic approach was so gentle yet deeply effective. My neck movement is fully restored, and the painful nerve compression has completely vanished.",
+      review: "A herniated disc caused shooting nerve pain down my arm. Dr. Vinay combined classical warm oil treatments with specialized manipulation. The approach was gentle yet deeply effective. My neck movement is fully restored and nerve compression vanished.",
       name: "Katarina Novak",
       verified: true,
       location: "Prague, Czech Republic",
@@ -94,7 +94,7 @@ export default function VarapradaAyurvedicCentre() {
     },
     {
       title: "Chronic Acidity and Gastritis Healed!",
-      review: "I struggled with persistent, burning stomach pain, severe bloating, and gastritis for a long time. I was constantly dependent on antacids. Dr. Vinay helped me undergo a mild Ayurvedic gut purification program and completely restructured my daily diet. The customized classical formulations worked wonders. My digestion is perfectly normal now and I feel incredibly active.",
+      review: "I struggled with severe bloating and gastritis, heavily relying on antacids. Dr. Vinay's mild Ayurvedic gut purification program and customized diet completely changed everything. My digestion is now perfectly normal, and I feel incredibly active.",
       name: "Diego Alvarez",
       verified: true,
       location: "Madrid, Spain",
@@ -103,7 +103,7 @@ export default function VarapradaAyurvedicCentre() {
     },
     {
       title: "Knee Joint Pain Relieved Naturally!",
-      review: "Due to severe rheumatoid arthritis, walking even short distances caused immense pain and stiffness in my knees. The soothing herbal steam therapies and customized local joint treatments at Varaprada have been life-changing. My knee inflammation has drastically reduced, and I can now walk comfortably without support. The clinical care here is highly compassionate.",
+      review: "Walking even short distances caused immense knee pain due to severe rheumatoid arthritis. The soothing herbal steam therapies and customized joint treatments at Varaprada drastically reduced my inflammation, allowing me to finally walk comfortably without support.",
       name: "Ingrid Larson",
       verified: true,
       location: "Oslo, Norway",
@@ -112,7 +112,7 @@ export default function VarapradaAyurvedicCentre() {
     },
     {
       title: "Amazing Support for Bronchial Asthma!",
-      review: "I had severe seasonal asthma, constantly suffering from chest tightness and chronic dry coughing fits. The deep physiological purification therapies and custom immune-boosting botanical formulations restored my breathing capacity beautifully. Dr. Vinay's integrated approach using Yoga postures and deep-cleansing therapy has worked incredibly well. Outstanding clinic!",
+      review: "I suffered from severe seasonal asthma with chronic chest tightness. The deep physiological purification therapies and custom botanical formulations at this outstanding clinic beautifully restored my breathing capacity. Dr. Vinay's integrated deep-cleansing approach worked incredibly well.",
       name: "Yasmine Dupont",
       verified: true,
       location: "Paris, France",
@@ -252,7 +252,7 @@ export default function VarapradaAyurvedicCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Varaprada Ayurvedic Center
+              Varaprada Ayurvedic Center Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function VarapradaAyurvedicCentre() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Center</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
                   </p>
@@ -552,7 +552,7 @@ export default function VarapradaAyurvedicCentre() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function VarapradaAyurvedicCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 95352 15898
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

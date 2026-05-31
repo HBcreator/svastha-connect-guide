@@ -11,7 +11,7 @@ export default function KevaAyurvedaBMTLayout() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -252,7 +252,7 @@ export default function KevaAyurvedaBMTLayout() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Keva Ayurveda - BTM Layout
+              Keva Ayurveda - BTM Layout Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function KevaAyurvedaBMTLayout() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Keva Ayurveda</strong>, experience holistic wellness at Keva Ayurveda, BTM Layout, Bengaluru, where classical Ayurveda is integrated with contemporary healing practices. The clinic focuses on personalized care by understanding individual health needs and offering natural therapies designed to support overall well-being. Along with classical Ayurvedic treatments, the team also incorporates supportive wellness practices to create a more balanced healing experience for patients.
                   </p>
@@ -552,7 +552,7 @@ export default function KevaAyurvedaBMTLayout() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,7 +676,7 @@ export default function KevaAyurvedaBMTLayout() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 80 4151 0441 / +91 80 4207 5584</p>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

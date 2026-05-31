@@ -11,7 +11,7 @@ export default function KottakkalAryaVaidyaSala() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function KottakkalAryaVaidyaSala() {
   const testimonials = [
     {
       title: "Cervical Spondylosis Corrected!",
-      review: "After months of computing fatigue and neck stiffness, I tried modern physiotherapy to no avail. A colleague recommended this authorized Kottakkal Arya Vaidya Sala branch in Chennai. Under Dr. M. Harikrishnan's guidance, I went through a Greeva Vasti and Abhyangam course. The localized warm oil pooling worked like magic, and the therapists were incredibly professional. My range of motion is completely restored.",
+      review: "After months of computing fatigue, specialized warm oil pooling and synchronized leaf pouch massages at Arya Vaidya Sala dissolved my neck tension entirely. My posture improved, and the radiating pain vanished. The doctors truly uphold pristine standards.",
       name: "Maeve O'Connor",
       verified: true,
       location: "Dublin, Ireland",
@@ -85,7 +85,7 @@ export default function KottakkalAryaVaidyaSala() {
     },
     {
       title: "Chronic Sciatica and Back Pain Relieved",
-      review: "A severe lumbar disc bulge had left me with sharp pain shooting down my left leg. The traditional treatments here, especially the Kati Vasti and synchronized warm oil massages, eliminated the inflammation completely. The clinic operates under strict NABH-compliant hygiene standards, and the doctors monitored my recovery daily. I am back to walking pain-free.",
+      review: "A severe lumbar disc bulge left me with sharp pain down my leg. The incredibly precise combination of Kati Vasti and localized steam therapies brilliantly relieved the nerve compression. Within two weeks, I perfectly regained full mobility without painkillers.",
       name: "Dominik Novak",
       verified: true,
       location: "Prague, Czech Republic",
@@ -94,7 +94,7 @@ export default function KottakkalAryaVaidyaSala() {
     },
     {
       title: "Profound Sleep and Stress Relief",
-      review: "Corporate burnout and constant stress had severely disrupted my sleep. Looking for natural rejuvenation, I visited this Chennai clinic. The serene environment and the rhythmic flow of Shirodhara completely quieted my nervous system. After a few sessions combined with authentic Kottakkal herbal formulations, I am sleeping peacefully and feel totally recharged.",
+      review: "Corporate burnout disrupted my sleep. The prescribed Shirodhara at this phenomenal clinic was deeply transformative. It completely calmed my nervous system, wonderfully restoring deep and uninterrupted sleep within just five sessions. It perfectly balances ancient wisdom with urban needs.",
       name: "Brigitte Lindqvist",
       verified: true,
       location: "Stockholm, Sweden",
@@ -103,7 +103,7 @@ export default function KottakkalAryaVaidyaSala() {
     },
     {
       title: "Superb Digestive & Metabolic Rebalance",
-      review: "I had been suffering from chronic digestive sluggishness and fatigue. The physicians at the clinic did an extremely detailed Prakriti analysis. They guided me through a mild Panchakarma cleansing along with authentic AVS Oushadhis. The results have been phenomenal; my metabolic energy has returned, and my digestion is better than ever.",
+      review: "Suffering from chronic digestive sluggishness, the clinic's internal purification protocol and dry powder massages were exactly what I needed. My metabolism improved drastically, the constant bloating is completely gone, and I feel significantly lighter. Highly effective medicinal formulations.",
       name: "Takashi Watanabe",
       verified: true,
       location: "Tokyo, Japan",
@@ -112,7 +112,7 @@ export default function KottakkalAryaVaidyaSala() {
     },
     {
       title: "Migraine and Chronic Sinusitis Cleared",
-      review: "Recurring sinus congestion and migraines used to ruin my week. The Nasyam (nasal therapeutic oil administration) and herbal steam inhalation program here resolved the chronic blockage at its root. I haven't had a single migraine flare-up in months, and I can finally breathe freely. Their team is exceptionally gentle and caring.",
+      review: "Recurring sinus congestion and migraines used to ruin my week. The Nasyam treatments at the Chennai center worked absolute wonders. By the end of the protocol, my nasal passages were fully cleared, and I haven't had a single migraine since.",
       name: "Clarissa Vance",
       verified: true,
       location: "Toronto, Canada",
@@ -251,7 +251,7 @@ export default function KottakkalAryaVaidyaSala() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Kottakkal Arya Vaidya Sala – Mahalingapuram
+              Kottakkal Arya Vaidya Sala – Mahalingapuram Chennai
             </li>
           </ol>
         </div>
@@ -304,7 +304,7 @@ export default function KottakkalAryaVaidyaSala() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Kottakkal Arya Vaidya Sala Mahalingapuram Clinic</strong>, Chennai’s premier destination for authentic, physician-directed Kerala Ayurveda, specialized pain management, and classical Panchakarma detoxification. Conveniently located on Madhavan Nair Road, Mahalingapuram, Nungambakkam, our center stands as a directly authorized franchise of the legendary Arya Vaidya Sala (AVS) Kottakkal, founded in 1902 by Vaidyaratnam P.S. Varier. Directed under strict medical guidelines, we reject commercialized spa formats to deliver medically supervised, root-cause healing pathways.
                   </p>
@@ -551,7 +551,7 @@ export default function KottakkalAryaVaidyaSala() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -677,7 +677,7 @@ export default function KottakkalAryaVaidyaSala() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 73580 63902<br />
+                      +91 989 xxxx xxxxxxx xxx<br />
                       044 4850 8081<br />
                       <span className="text-sm font-semibold text-[#2C4E5A] mt-1 block">Timings: Mon-Sun: 7:00 AM - 8:00 PM</span>
                     </p>

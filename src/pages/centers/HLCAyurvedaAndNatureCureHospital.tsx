@@ -11,7 +11,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -140,7 +140,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
     },
     {
       question: "How can I book a stay or consultation at HLC?",
-      answer: "You can easily schedule a consultation or book a wellness package at HLC by calling our desk at +91 8431388326, or via WhatsApp at +91 8008897700, or by filling out the quote request form on this site."
+      answer: "You can easily schedule a consultation or book a wellness package at HLC by calling our desk at +91 989 xxxx xxx, or via WhatsApp at +91 989 xxxx xxx, or by filling out the quote request form on this site."
     }
   ];
 
@@ -252,7 +252,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              HLC Ayurveda & Nature Cure Hospital
+              HLC Ayurveda & Nature Cure Hospital Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">HLC Ayurveda & Nature Cure Hospital</strong>, a leading multi-specialty wellness sanctuary located in Bingipura, Electronic City Phase 1, South Bengaluru. Established in 2017, our premier facility seamlessly integrates the timeless healing sciences of classical Ayurveda and Naturopathy to activate the body's natural regenerative powers. Spanning a luxurious, serene campus set amidst 2 acres of lush greenery, HLC offers a perfect sanctuary for comprehensive rejuvenation, preventive wellness, and curative care.
                   </p>
@@ -552,7 +552,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,9 +676,7 @@ export default function HLCAyurvedaAndNatureCureHospital() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 8431388326
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 
