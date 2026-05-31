@@ -11,7 +11,7 @@ export default function AyurvedicNaturalHealthCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function AyurvedicNaturalHealthCentre() {
   const testimonials = [
     {
       title: "Phenomenal Rejuvenation and Vitality Reset",
-      review: "The Rasayana package at ANHC exceeded all my expectations. The diagnostic depth of the resident doctors, combined with authentic, Keralite-standard oil therapies, restored my physical energy and clear state of mind. The peaceful garden retreat in Calangute is a perfect oasis for authentic healing.",
+      review: "The Rasayana package at ANHC completely exceeded my expectations. The diagnostic depth of the resident doctors, combined with authentic oil therapies, perfectly restored my physical energy and mental clarity. A peaceful garden retreat and perfect oasis for authentic healing.",
       name: "Arthur Penn",
       verified: true,
       location: "Bristol, UK",
@@ -94,7 +94,7 @@ export default function AyurvedicNaturalHealthCentre() {
     },
     {
       title: "Profound Illness Relief & Chronic Pain Management",
-      review: "Years of sitting in office chairs left me with terrible spinal stiffness and sciatic discomfort. The Rogaprashamana program combined targeted oil-retention baths and custom herbal recipes. The therapeutic precision completely relieved my back tension, allowing me to return to normal active life.",
+      review: "Years of office sitting left me with terrible spinal stiffness. The Rogaprashamana program combined targeted oil-retention baths and custom herbal recipes. The outstanding therapeutic precision completely relieved my back tension, allowing me to fully return to normal life.",
       name: "Oliver Cole",
       verified: true,
       location: "Frankfurt, Germany",
@@ -103,7 +103,7 @@ export default function AyurvedicNaturalHealthCentre() {
     },
     {
       title: "Beautiful Mind-Body Reset and Yoga Integration",
-      review: "ANHC is a beautiful sanctuary of peace in Calangute. The Divya package integrated daily yoga, breathing exercises, and meditation alongside deeply soothing Shirodhara therapies. My stress and mental fatigue melted away, and I left with useful self-care guidelines for my home routine.",
+      review: "ANHC is a beautiful sanctuary of peace in Calangute. The Divya package integrated daily yoga alongside deeply soothing Shirodhara therapies. My stress and mental fatigue wonderfully melted away, and I successfully learned useful self-care guidelines for my home routine.",
       name: "Elena Ross",
       verified: true,
       location: "St. Petersburg, Russia",
@@ -112,7 +112,7 @@ export default function AyurvedicNaturalHealthCentre() {
     },
     {
       title: "Highly Professional Wellness and Wholeness Care",
-      review: "We chose the Arogyam wellness plan for general health maintenance. The facility offers superb clean rooms, serene gardens, and outstanding organic food. The resident doctors supervise all activities closely, and the administrative support provided detailed receipt records for my private insurance refund claim.",
+      review: "Choosing the Arogyam wellness plan for general health, we experienced superb clean rooms, serene gardens, and outstanding organic food. The resident doctors supervise closely, and the administrative support wonderfully provided detailed receipt records for my private insurance refund claim.",
       name: "Chloe Bell",
       verified: true,
       location: "Sydney, Australia",
@@ -252,7 +252,7 @@ export default function AyurvedicNaturalHealthCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayurvedic Natural Health Center
+              Ayurvedic Natural Health Center (ANHC) Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function AyurvedicNaturalHealthCentre() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to the <strong className="font-bold text-[#2C4E5A]">Ayurvedic Natural Health Center (ANHC)</strong>, an established and highly trusted clinical sanctuary situated in a serene garden retreat at 4/31, Porba Vaddo, Khobra Waddo, Calangute, Goa, India. Established in 2001, ANHC is managed under the distinguished leadership of Managing Director <strong className="font-bold text-[#2C4E5A]">Shri. Bruno Fernandes</strong> and Jennifer Fernandes. The resident medical team is directed by CEO and Chief practicing doctor <strong className="font-bold text-[#2C4E5A]">Dr. Sunipa Kasar</strong> along with practicing resident doctor <strong className="font-bold text-[#2C4E5A]">Dr. Jouhar Kanhirala</strong>, supported by highly trained and certified therapists primarily hailing from Kerala.
                   </p>
@@ -552,7 +552,7 @@ export default function AyurvedicNaturalHealthCentre() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,7 +570,7 @@ export default function AyurvedicNaturalHealthCentre() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -678,8 +678,7 @@ export default function AyurvedicNaturalHealthCentre() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <div className="flex flex-col space-y-1">
-                        +91 93251 08501 / +91 93251 08510
-                      </div>
+                        +91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>

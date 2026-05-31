@@ -11,7 +11,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
   const testimonials = [
     {
       title: "Neck & Back Nerve Pain Relieved Without Surgery!",
-      review: "Years of battling a severe lumbar disc bulge and shooting sciatica had made my life miserable, with surgery looking like the only option left. I decided to try Dhanwanthralaya on a friend's advice. Dr. Vanitha Muralikumar's diagnosis was extremely profound. Undergoing a two-week course of Kati Vasti and intensive Abhyangam completely relieved the sciatic nerve compression. I walked out pain-free without any surgery. The level of care here is absolutely unparalleled.",
+      review: "Years of severe lumbar disc bulge and shooting sciatica made surgery seem inevitable. Dr. Vanitha Muralikumar's diagnosis was extremely profound. Two weeks of Kati Vasti and intensive Abhyangam completely relieved the sciatic nerve compression. I walked out pain-free without surgery.",
       name: "Darryl Cooper",
       verified: true,
       location: "Toronto, Canada",
@@ -85,7 +85,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
     },
     {
       title: "Miraculous Skin Recovery from Chronic Psoriasis",
-      review: "My chronic psoriasis had flared up terribly due to cold weather and stress. The clinical team at Dhanwanthralaya developed a specialized protocol of mild Panchakarma cleansing combined with daily herbal body wraps and custom botanical oils. The results have been nothing short of miraculous. My skin has cleared up completely and feels healthy for the first time in years. Highly recommend their dermatology wing.",
+      review: "My chronic psoriasis had flared up terribly. Dhanwanthralaya developed a specialized Panchakarma protocol combined with daily herbal wraps and custom botanical oils. The results were miraculous. My skin cleared up completely and feels healthy. Highly recommend their dermatology wing.",
       name: "Freja Nørgaard",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -94,7 +94,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
     },
     {
       title: "Excellent Kshara Sutra Fistula Cure",
-      review: "After two unsuccessful surgical attempts back home, I was highly skeptical about treating my complex anal fistula. The surgical department here led by Dr. Ashok Kumar used the classical Kshara Sutra thread therapy. The precision, clinical hygiene, and daily monitoring in the 30-bed hospital made me feel extremely safe. The treatment healed my fistula from the root with zero side effects. They are true masters of Shalya Tantra.",
+      review: "After two unsuccessful surgical attempts, I was skeptical about treating my fistula. Dr. Ashok Kumar used classical Kshara Sutra therapy with exceptional precision. The treatment healed my fistula from the root with zero side effects. True masters of Shalya Tantra.",
       name: "Mikhail Sokolov",
       verified: true,
       location: "St. Petersburg, Russia",
@@ -103,7 +103,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
     },
     {
       title: "Natural Conception After Years of PCOS Struggles",
-      review: "Dealing with severe PCOS and fertility struggles for over four years had taken a heavy toll on us. The doctors at Dhanwanthralaya provided an integrated protocol combining deep uterine detox (Uttara Vasti) and a strictly managed Ayurvedic diet. The gynecologist Dr. Krithika Narayanan was incredibly compassionate. Within six months of returning home and continuing the therapies, I conceived naturally! I cannot thank the entire team enough.",
+      review: "Dealing with severe PCOS and fertility struggles, Dhanwanthralaya provided an integrated protocol combining deep Uttara Vasti and strictly managed Ayurvedic diet. Dr. Krithika Narayanan was incredibly compassionate. Within six months of continuing therapies, I conceived naturally!",
       name: "Anouk Visser",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -112,7 +112,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
     },
     {
       title: "Profound Mental Peace and Burnout Recovery",
-      review: "High-stress corporate work left me with severe insomnia, intense anxiety, and physical exhaustion. The neuropsychiatry wing at this hospital offered pure peace. A structured series of Shirodhara and medicated head oil poolings, along with therapeutic yoga, completely quieted my overactive nervous system. I am sleeping deeply for eight hours now and feel completely revitalized. Outstanding authentic hospital care!",
+      review: "High-stress corporate work left me with severe insomnia and anxiety. The neuropsychiatry wing offered pure peace. Structured Shirodhara and medicated head oil poolings completely quieted my nervous system. I am sleeping deeply now and feel completely revitalized.",
       name: "Alistair Sinclair",
       verified: true,
       location: "Sydney, Australia",
@@ -251,7 +251,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Dhanwanthralaya Ayurveda Speciality Hospital
+              Dhanwanthralaya Ayurveda Speciality Hospital Chennai
             </li>
           </ol>
         </div>
@@ -304,7 +304,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                   Welcome to <strong className="font-bold text-[#2C4E5A]">Dhanwanthralaya Ayurveda Speciality Hospital</strong>, Chennai’s premier 30-bed healthcare destination for physician-led, classical Kerala Ayurveda, non-surgical spine/joint care, and classical Panchakarma detoxification. Strategically located behind the Tambaram RTO Office in West Tambaram, our hospital has set the gold standard in Ayurvedic medicine since 2001. Founded by the eminent <strong className="font-bold text-[#2c4e5a]">Dr. Vanitha R. Muralikumar</strong> (first female President of the Central Council of Indian Medicine - CCIM), we reject generic clinical models to provide customized, root-cause healing pathways under strict medical supervision.
                   </p>
@@ -552,7 +552,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,9 +676,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 91766 77751
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

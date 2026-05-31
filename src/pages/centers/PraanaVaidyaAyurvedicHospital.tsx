@@ -11,7 +11,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
   const testimonials = [
     {
       title: "Varicose Veins Fully Resolved Without Surgery!",
-      review: "After struggling with painful, heavy legs and swelling from varicose veins for almost four years, I was desperately looking for a natural alternative to invasive surgery. The doctors at PraanaVaidya were exceptionally detailed. Through systematic blood purification, specialized herbal applications, and custom therapies, my legs feel incredibly light again, and the swelling has vanished completely. The physician-led care here is world-class.",
+      review: "Struggling with painful swelling from varicose veins, I sought a natural alternative to surgery. Through systematic blood purification and custom therapies at PraanaVaidya, my legs feel incredibly light again, and the swelling completely vanished. The physician-led care is world-class.",
       name: "Thomas Lindqvist",
       verified: true,
       location: "Stockholm, Sweden",
@@ -85,7 +85,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
     },
     {
       title: "Psoriasis and Dry Skin Patches Completely Cleared!",
-      review: "I had dry, itchy, red psoriasis patches all over my elbows and back that wouldn't respond to anything. Dr. Swasthika Upadhyaya put me on a deep body cleansing regimen alongside a strict nutritional plan and organic herbal applications. Within just two weeks, the scaling decreased dramatically, and now my skin is entirely smooth and clear. They treat you with so much patience and clinical expertise.",
+      review: "I had severe psoriasis patches that wouldn't respond to anything. Dr. Swasthika prescribed a deep body cleansing regimen and organic herbal applications. Within two weeks, the scaling decreased dramatically, leaving my skin entirely smooth and clear. Brilliant clinical expertise!",
       name: "Freja Nielsen",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -94,7 +94,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
     },
     {
       title: "Life-Saving Fistula Recovery via Kshara Sutra",
-      review: "Dealing with a painful anal fistula was the most stressful period of my life. I read about Dr. Chethan Upadhyaya's specialized expertise in Shalya Tantra and traveled to Rajajinagar. The specialized Kshara Sutra treatment was incredibly precise and caused minimal discomfort. I was able to resume light activity almost immediately, and the fistula healed completely without any recurrence. Highly recommend this incredible medical team!",
+      review: "Dealing with a painful anal fistula was incredibly stressful until I found Dr. Chethan's specialized Kshara Sutra treatment. It was precise, caused minimal discomfort, and healed the fistula completely without any recurrence. I highly recommend this incredible medical team!",
       name: "Johnathan Vance",
       verified: true,
       location: "Austin, USA",
@@ -103,7 +103,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
     },
     {
       title: "Natural Thyroid and PCOS Hormone Correction",
-      review: "I was struggling with chronic thyroid fatigue, weight gain, and severe PCOS issues for years. Dr. Swasthika Upadhyaya's holistic hormonal balance program was a turning point. Her doctor-supervised diet, specific herbs, and lifestyle corrections got to the root of my metabolic issues. My energy levels have soared, and my blood panels are completely normal now. She is a compassionate and brilliantly knowledgeable healer.",
+      review: "Struggling with chronic thyroid fatigue and severe PCOS, Dr. Swasthika's holistic hormonal balance program was a turning point. Her supervised diet and specific herbs addressed my metabolic issues perfectly. My energy soared, and my blood panels are now completely normal.",
       name: "Isabelle Moreau",
       verified: true,
       location: "Paris, France",
@@ -112,7 +112,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
     },
     {
       title: "Amazing Spine and Sciatica Relief",
-      review: "Severe lower back pain and shooting sciatica down my right leg made walking a daily struggle. PraanaVaidya's structured spine rehabilitation program combined therapeutic deep-tissue treatments with specific yoga postures and joint-nourishing oils. The improvement has been remarkable—I can walk miles now without a single pinch of pain. The level of diagnostic precision here is unmatched.",
+      review: "Severe lower back pain and shooting sciatica made walking a struggle. PraanaVaidya's structured spine rehabilitation successfully combined deep-tissue treatments with specific yoga and joint-nourishing oils. The remarkable improvement allows me to walk miles completely pain-free. Their diagnostic precision is unmatched.",
       name: "Carlos Mendez",
       verified: true,
       location: "Bogota, Colombia",
@@ -252,7 +252,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              PraanaVaidya Ayurvedic Hospital
+              PraanaVaidya Ayurvedic Hospital Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">PraanaVaidya Ayurvedic Hospital</strong>, Bengaluru’s premier destination for scientific, registered physician-led Ayurvedic medical care. Strategically situated at Perikal Metro Hub near Rajajinagar Metro Station, our NABH-accredited hospital rejects generic spa-style wellness and is dedicated entirely to therapeutic, root-cause diagnostics and clinical treatments. Emphasizing a modern understanding of clinical pathology alongside the deep traditional wisdom of classical Shalya Tantra and Kayachikitsa, PraanaVaidya serves as a trusted medical anchor for patients suffering from persistent chronic conditions.
                   </p>
@@ -552,7 +552,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function PraanaVaidyaAyurvedicHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 80 6590 3133
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

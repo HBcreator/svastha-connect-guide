@@ -11,7 +11,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
   const testimonials = [
     {
       title: "Swelling and Joint Pain Free After 12 Days!",
-      review: "After struggling with severe, constant pain and swelling from rheumatoid arthritis for almost five years, the integrative care model here changed my life. Within just twelve days of personalized Panchakarma cleansing therapies and targeted joint-nourishing oils, my knee swelling vanished, and I regained complete mobility. Having modern diagnostic facilities and ICU backup next door gave me immense peace of mind.",
+      review: "Struggling with severe rheumatoid arthritis pain, the integrative care model here completely changed my life. Within twelve days of personalized Panchakarma and targeted joint-nourishing oils, my knee swelling vanished. I happily regained complete mobility.",
       name: "Chloe Henderson",
       verified: true,
       location: "Melbourne, Australia",
@@ -85,7 +85,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
     },
     {
       title: "Incredible Post-Chemo Physical Rejuvenation",
-      review: "I completed my primary cancer treatment in Sweden but was left extremely weak, fatigued, and lacking vitality. The supportive palliative care and rejuvenation program at Ramaiah restored my core physical strength and balanced my appetite. The medical panel is exceptionally scholarly, combining ancient wisdom with clinical safety.",
+      review: "After primary cancer treatment left me extremely weak, the supportive palliative care and rejuvenation program at Ramaiah safely restored my core physical strength and balanced my appetite. The scholarly medical panel perfectly combines ancient Ayurvedic wisdom with modern clinical safety.",
       name: "Lars Lindstrom",
       verified: true,
       location: "Gothenburg, Sweden",
@@ -94,7 +94,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
     },
     {
       title: "Dry Eye and Sinus Congestion Solved Naturally",
-      review: "Suffering from severe dry eye syndrome and chronic sinus congestion, I was constantly using artificial eye drops without permanent relief. The specialized Shalakya Tantra treatments and systematic sinus clearance procedures completely cleared my vision and nasal airways. Truly professional, evidence-backed medical standards!",
+      review: "Suffering from severe dry eye syndrome and chronic sinus congestion, I constantly relied on artificial drops. The specialized Shalakya Tantra treatments and systematic sinus clearance procedures completely cleared my vision and permanently opened my airways. Truly professional, evidence-backed medical standards!",
       name: "Hannah Cooper",
       verified: true,
       location: "Manchester, UK",
@@ -103,7 +103,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
     },
     {
       title: "Scientific Diabetes and Weight Management",
-      review: "The academic, research-backed environment of this hospital is highly impressive. Under the doctor's guidance, I did a 15-day metabolic reversal program. Combining customized Ayurvedic diets, daily yoga, and standardized natural remedies completely stabilized my blood sugar levels and helped me lose weight safely. Excellent integration!",
+      review: "Under expert guidance in this impressive research-backed hospital, I completed a 15-day metabolic reversal program. By successfully combining customized Ayurvedic diets, daily yoga, and natural remedies, I completely stabilized my blood sugar levels and safely lost weight. An excellent integration!",
       name: "Fabian Keller",
       verified: true,
       location: "Zurich, Switzerland",
@@ -112,7 +112,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
     },
     {
       title: "Phenomenal Postnatal Care and Recovery",
-      review: "For my postpartum recovery, I chose Ramaiah's specialized women's health wing. The medicated oil massages, soothing herbal baths, and tailored nutritional supplements completely balanced my hormones and restored my core energy levels. The high standard of hygiene and hospital safety is outstanding.",
+      review: "For my postpartum recovery, I chose Ramaiah's specialized women's health wing. Their expertly medicated oil massages, soothing herbal baths, and tailored nutritional supplements completely balanced my hormones and beautifully restored my core energy. The high hospital safety standards are outstanding.",
       name: "Natalia Romanova",
       verified: true,
       location: "Prague, Czech Republic",
@@ -252,7 +252,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ramaiah Indic Specialty Ayurveda Hospital
+              Ramaiah Indic Specialty Ayurveda Hospital Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Ramaiah Indic Specialty Ayurveda (RISA) Hospital</strong>, a pioneering institution of integrative academic medical care located in the heart of Gnanagangothri Campus, Mathikere, North Bengaluru. Associated with the prestigious Ramaiah Group, our NABH-accredited center bridges the deep clinical wisdom of traditional Ayurveda with the rigorous analytical validation of modern health sciences. RISA is widely celebrated as one of the few places in India that actively integrates specialized Ayurvedic Panchakarma, Shalakya Tantra, and Stree Roga protocols with standard tertiary care diagnostics.
                   </p>
@@ -552,7 +552,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function RamaiahIndicSpecialtyAyurvedaHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91-6364131347
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

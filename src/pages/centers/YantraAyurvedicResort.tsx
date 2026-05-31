@@ -11,7 +11,7 @@ export default function YantraAyurvedicResort() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function YantraAyurvedicResort() {
   const testimonials = [
     {
       title: "Remarkable Beachside Detoxification",
-      review: "After months of high stress and severe fatigue, spending two weeks undergoing Panchakarma at Yantra was exactly what I needed. The clinical assessments with the doctors were thorough, and the therapists were incredibly precise and caring. The daily Abhyangam and herbal steam baths, combined with the gentle marine breeze and beach meditation, completely reset my nervous system. I returned home with a profound sense of physical lightness and renewed mental clarity.",
+      review: "After months of high stress, undergoing Panchakarma at Yantra was exactly what I needed. Daily Abhyangam and herbal steam baths completely reset my nervous system. I happily returned home with profound physical lightness and renewed mental clarity.",
       name: "Liam O'Connor",
       verified: true,
       location: "Cork, Ireland",
@@ -85,7 +85,7 @@ export default function YantraAyurvedicResort() {
     },
     {
       title: "Profound Rejuvenation & Sleep Restoration",
-      review: "I had been suffering from chronic insomnia and exhaustion for nearly a year. The customized rejuvenation package here was a absolute blessing. Through specialized head treatments (Shirodhara), specific botanical oil massages, and structured yoga routines on Nattika Beach, my sleep patterns were fully restored. The peaceful environment of the traditional cottages and the nutritious Ayurvedic vegetarian food served made my recovery exceptionally smooth.",
+      review: "Suffering from chronic insomnia and exhaustion, the customized rejuvenation package was an absolute blessing. Through specialized Shirodhara and structured yoga routines on Nattika Beach, my sleep patterns were beautifully restored. A highly peaceful and exceptionally smooth recovery.",
       name: "Sofia Lind",
       verified: true,
       location: "Gothenburg, Sweden",
@@ -94,7 +94,7 @@ export default function YantraAyurvedicResort() {
     },
     {
       title: "Exceptional Relief from Chronic Back Pain",
-      review: "Severe lower back stiffness and sciatica had limited my daily movements for years. The medical team formulated a targeted physical therapy regimen combining specialized oil retention therapy (Kati Vasti) and localized synchronized massages. Within ten days, the agony in my spine had subsided significantly, and I could move with full comfort. Healing in this ocean-facing resort made the entire treatment experience incredibly pleasant and peaceful.",
+      review: "Severe lower back stiffness and sciatica limited my daily movements. The targeted therapy regimen combining Kati Vasti and localized synchronized massages worked wonders. The agony in my spine beautifully subsided, and I can move with full comfort.",
       name: "Mateo Rossi",
       verified: true,
       location: "Milan, Italy",
@@ -103,7 +103,7 @@ export default function YantraAyurvedicResort() {
     },
     {
       title: "Excellent Weight & Metabolic Reset",
-      review: "Struggling with sluggish digestion and metabolic weight gain led me to seek traditional Ayurvedic care. The specialized dry-powder massages (Udwarthanam) and the customized diet program developed by the resort's physicians worked wonders. The meals were fresh, tasty, and prepared strictly to balance my dosha profile. I lost weight naturally, my digestion has improved immensely, and I have so much more energy now.",
+      review: "Struggling with sluggish digestion, the specialized dry-powder massages and customized diet program developed by the physicians worked incredibly well. I successfully lost weight naturally, my digestion improved immensely, and I have wonderfully gained much more energy.",
       name: "Elena Petrova",
       verified: true,
       location: "St. Petersburg, Russia",
@@ -112,7 +112,7 @@ export default function YantraAyurvedicResort() {
     },
     {
       title: "Miraculous Relief for Eczema & Skin Care",
-      review: "Persistent skin eczema flare-ups had left my skin dry, irritated, and painful. The clinical team prescribed a comprehensive blood-purifying detox schedule combined with natural botanical body wraps. The results were truly spectacular. My skin has cleared up completely, the itching has vanished, and its natural texture has been fully restored. Healing on the golden beach was a deeply soothing experience for my soul.",
+      review: "Persistent eczema flare-ups left my skin dry and incredibly painful. The clinical team prescribed a comprehensive blood-purifying detox combined with natural botanical body wraps. My skin perfectly cleared up, the severe itching completely vanished, and its texture restored.",
       name: "Anya Jenkins",
       verified: true,
       location: "Sydney, Australia",
@@ -252,7 +252,7 @@ export default function YantraAyurvedicResort() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Yantra Ayurvedic Resort
+              Yantra Ayurvedic Resort Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function YantraAyurvedicResort() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Yantra Ayurvedic Resort</strong>, a unique coastal wellness destination situated directly on the golden sands of Nattika Beach, Thrissur, Kerala. Rejecting standardized, generic wellness packages, the resort focuses on delivering personalized, doctor-guided healing plans in a peaceful beachside environment. Set within a quiet garden estate with traditional Kerala-style cottages, Yantra offers a premium beach holiday experience seamlessly integrated with clinical Ayurvedic care.
                   </p>
@@ -556,7 +556,7 @@ export default function YantraAyurvedicResort() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -680,9 +680,7 @@ export default function YantraAyurvedicResort() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 99951 25000
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

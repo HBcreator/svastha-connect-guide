@@ -11,7 +11,7 @@ export default function ChakraAyurvedicResort() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function ChakraAyurvedicResort() {
   const testimonials = [
     {
       title: "Remarkable Beachside Detoxification",
-      review: "After months of feeling entirely depleted of energy and plagued by intense chronic fatigue, undergoing Panchakarma at Chakra was exactly what I needed. The clinical assessments with the resident doctors were highly thorough, and the therapists were incredibly precise and caring. The daily Abhyangam and specialized herbal treatments, combined with the relaxing sounds of Kovalam Beach, completely reset my nervous system. I returned home with a profound sense of physical lightness and renewed mental clarity.",
+      review: "Feeling entirely energy-depleted and plagued by chronic fatigue, Panchakarma here was exactly what I needed. The highly thorough clinical assessments, daily Abhyangam, and specialized herbal treatments completely reset my nervous system, providing profound physical lightness.",
       name: "Astrid Nilsen",
       verified: true,
       location: "Oslo, Norway",
@@ -85,7 +85,7 @@ export default function ChakraAyurvedicResort() {
     },
     {
       title: "Exceptional Rheumatic Relief & Joint Mobility",
-      review: "Severe joint stiffness and chronic neck pain had limited my daily movements for years. The medical team formulated a targeted physical therapy regimen combining specialized oil massages and localized therapies (Kizhi). Within ten days, the swelling and pain in my spine had subsided significantly, and I could move with full comfort. Healing in this peaceful sea-facing resort made the entire treatment experience exceptionally smooth and pleasant.",
+      review: "Severe joint stiffness and chronic neck pain limited my movements for years. The targeted physical therapy combining specialized oil massages and Kizhi worked wonders. Within ten days, my spinal swelling subsided significantly, allowing me to move comfortably.",
       name: "Jean-Francois Dupont",
       verified: true,
       location: "Lyon, France",
@@ -94,7 +94,7 @@ export default function ChakraAyurvedicResort() {
     },
     {
       title: "Profound Anti-Stress & Sleep Restoration",
-      review: "I had been suffering from chronic insomnia and severe anxiety for nearly a year. The anti-stress program here was a absolute blessing. Through specialized warm oil retention therapies (Shirodhara), daily breathing techniques, and guided yoga sessions overlooking Kovalam Beach, my sleep patterns were fully restored. The peaceful environment, cozy cottages, and the nutritious Ayurvedic vegetarian food made my recovery exceptionally smooth.",
+      review: "Suffering from chronic insomnia and severe anxiety, the anti-stress program was an absolute blessing. Through specialized Shirodhara, daily breathing techniques, and guided yoga sessions overlooking Kovalam Beach, my sleep patterns were fully and wonderfully restored.",
       name: "Emily Watson",
       verified: true,
       location: "London, UK",
@@ -103,7 +103,7 @@ export default function ChakraAyurvedicResort() {
     },
     {
       title: "Wonderful Body Immunization & Stamina",
-      review: "As someone looking to promote healthy aging and build natural stamina, the Body Immunization and Rejuvenation program here exceeded my expectations. The combination of medicated synchronized massages, restorative herbal steam therapies, and personal doctor checks worked wonders. My follow-up checks showed a remarkable increase in vitality, and I feel significantly stronger. Truly a world-class sanctuary for traditional care.",
+      review: "Looking to build natural stamina, the Rejuvenation program here exceeded my expectations. The combination of medicated synchronized massages, restorative herbal steam therapies, and personal doctor checks worked wonders. I feel significantly stronger and remarkably revitalized.",
       name: "Hiroshi Tanaka",
       verified: true,
       location: "Kyoto, Japan",
@@ -112,7 +112,7 @@ export default function ChakraAyurvedicResort() {
     },
     {
       title: "Excellent Weight Reset & Slimming Care",
-      review: "Struggling with sluggish digestion and metabolic weight gain led me to seek traditional Ayurvedic care at Kovalam. The specialized dry-herb powder massages (Udwarthanam) and the customized diet program developed by the resort's physicians worked wonders. The meals were fresh, tasty, and prepared strictly to balance my dosha profile. I lost weight naturally, my digestion has improved immensely, and I have so much more energy now.",
+      review: "Struggling with sluggish digestion and weight gain, I sought traditional care at Kovalam. The specialized dry-herb powder massages and customized dosha-balancing diet worked wonders. I successfully lost weight, my digestion improved immensely, and I feel energized.",
       name: "Hannah Fischer",
       verified: true,
       location: "Vienna, Austria",
@@ -252,7 +252,7 @@ export default function ChakraAyurvedicResort() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Chakra Ayurvedic Resort
+              Chakra Ayurvedic Resort Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function ChakraAyurvedicResort() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Chakra Ayurvedic Resort</strong>, a premier coastal wellness destination situated along Palace Road, Kovalam Beach, Trivandrum, Kerala. Rejecting standardized, generic wellness packages, the resort focuses on delivering personalized, doctor-guided healing plans in a peaceful beachside environment. Set within a quiet garden estate near Hawa Beach and Lighthouse Beach, Chakra offers a premium beach holiday experience seamlessly integrated with clinical Ayurvedic care.
                   </p>
@@ -556,7 +556,7 @@ export default function ChakraAyurvedicResort() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -680,9 +680,7 @@ export default function ChakraAyurvedicResort() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 99951 25000
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

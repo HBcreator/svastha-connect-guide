@@ -11,7 +11,7 @@ export default function Ayurillam() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -251,7 +251,7 @@ export default function Ayurillam() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayurillam – Home of Ayurvedic Therapy Center
+              Ayurillam – Home of Ayurvedic Therapy Center Chennai
             </li>
           </ol>
         </div>
@@ -304,7 +304,7 @@ export default function Ayurillam() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Ayurillam - Home of Ayurvedic Therapy Center</strong>, Chennai’s premier destination for authentic, physician-directed Kerala Ayurveda, specialized joint care, and classical Panchakarma detoxification. Conveniently located on Karikalan Street, Velachery, our center stands as a premium provider of authentic Keralite wellness pathways. Founded in 2014 by Mr. Vikas V. R. with deep inspiration from Kerala's traditional medicine systems, we reject commercialized formats to deliver medically supervised, root-cause healing pathways.
                   </p>
@@ -677,9 +677,7 @@ export default function Ayurillam() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 76676 03603<br />
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

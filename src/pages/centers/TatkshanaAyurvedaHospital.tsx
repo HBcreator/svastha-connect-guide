@@ -11,7 +11,7 @@ export default function TatkshanaAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function TatkshanaAyurvedaHospital() {
   const testimonials = [
     {
       title: "Gastric Issues and IBS Cured Completely!",
-      review: "After struggling with painful hyperacidity, bloating, and constant IBS distress for nearly three years, I was exhausted from modern medicines. The diagnostic consultation at Tatkshana was exceptionally thorough. Through a custom Panchakarma cleansing program and freshly prepared herbal teas from their in-house pharmacy, my gut has healed completely. My digestion is excellent and I feel so light!",
+      review: "Struggling with painful hyperacidity and IBS, a thorough diagnostic consultation at Tatkshana led to custom Panchakarma cleansing and fresh herbal teas that completely healed my gut. My digestion is excellent, and I finally feel incredibly light!",
       name: "Audrey Laurent",
       verified: true,
       location: "Geneva, Switzerland",
@@ -85,7 +85,7 @@ export default function TatkshanaAyurvedaHospital() {
     },
     {
       title: "Walk Pain-Free Without Spinal Surgery!",
-      review: "A herniated lumbar disc and severe sciatica pain made walking or sitting an absolute nightmare. The specialized spine restoration therapies, targeted oils, and restorative massages here worked wonders. The pain has completely vanished, and my flexibility is fully restored. The inpatient private rooms were extremely comfortable and clean.",
+      review: "A herniated disc and severe sciatica made walking a nightmare. The specialized spine restoration therapies and targeted oils at Tatkshana worked absolute wonders. The pain has completely vanished and my flexibility is fully restored. Extremely clean rooms.",
       name: "Jonas Fischer",
       verified: true,
       location: "Hamburg, Germany",
@@ -94,7 +94,7 @@ export default function TatkshanaAyurvedaHospital() {
     },
     {
       title: "Inflamed Hives and Allergies Cleared!",
-      review: "I suffered from chronic skin allergies and persistent red hives that would flare up constantly. The doctors put me on an intensive blood purification program and customized external herbal packs. Within a week, the itching stopped and the redness cleared. My skin looks completely normal and healthy now. Brilliant care!",
+      review: "Suffering from chronic skin allergies and persistent red hives, the doctors put me on intensive blood purification and customized herbal packs. Within a week, the intense itching stopped and redness cleared, leaving my skin completely healthy.",
       name: "Emma Van Dyke",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -103,7 +103,7 @@ export default function TatkshanaAyurvedaHospital() {
     },
     {
       title: "Kidney Stones Cleared Naturally and Quickly",
-      review: "Suffering from recurrent kidney stones was extremely painful. The non-invasive, specialized specialized diuretic herbs freshly prepared at the Tatkshana pharmacy dissolved and cleared my stones within just ten days. The doctors were exceptionally supportive and highly skilled. Highly recommend this wonderful hospital!",
+      review: "Suffering from recurrent kidney stones, the non-invasive diuretic herbs freshly prepared at the Tatkshana pharmacy safely dissolved my stones within just ten days. The doctors were exceptionally supportive and highly skilled. I highly recommend this hospital!",
       name: "Liam Fitzpatrick",
       verified: true,
       location: "Dublin, Ireland",
@@ -112,7 +112,7 @@ export default function TatkshanaAyurvedaHospital() {
     },
     {
       title: "Empathetic and Successful PCOS Support!",
-      review: "Dr. Manasa's hormone balancing program is outstanding. Her compassionate guidance, custom dietary adjustments, and herbal remedies successfully regulated my cycles and eliminated my chronic PCOS fatigue. The hospital is very professional and conveniently located right next to the metro station.",
+      review: "Dr. Manasa's hormone balancing program is completely outstanding. Her compassionate guidance, custom dietary adjustments, and herbal remedies successfully regulated my cycles and permanently eliminated my PCOS fatigue. The hospital is highly professional and hygienic.",
       name: "Anya Kovalenko",
       verified: true,
       location: "Kyiv, Ukraine",
@@ -252,7 +252,7 @@ export default function TatkshanaAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Tatkshana Ayurveda Hospital
+              Tatkshana Ayurveda Hospital Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function TatkshanaAyurvedaHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Tatkshana Ayurveda Hospital</strong>, Yeshwanthpur’s premier destination for authentic Ayurvedic medical care and holistic structural recovery. Conveniently located on the main road in the Industrial Suburb, steps away from the Sandal Soap Factory Metro Station, our hospital strictly rejects generic wellness spa programs and focuses entirely on physician-led therapeutic diagnostics. Under the strict guidelines of NABH safety standards, Tatkshana has earned an outstanding reputation as a trusted center for patient recovery from chronic, acute, and multi-system conditions.
                   </p>
@@ -552,7 +552,7 @@ export default function TatkshanaAyurvedaHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -675,11 +675,7 @@ export default function TatkshanaAyurvedaHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 87220 34900
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

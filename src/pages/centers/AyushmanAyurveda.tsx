@@ -11,7 +11,7 @@ export default function AyushmanAyurveda() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function AyushmanAyurveda() {
   const testimonials = [
     {
       title: "Incredible Relief from Sciatica Pain!",
-      review: "I had been struggling with severe sciatica that made traveling and working almost impossible. A friend suggested Ayushman during my visit to Bangalore. The combination of Elakizhi and Kati Vasti was amazing. Within two weeks, the radiating pain down my leg was gone. The doctors and therapists are extremely knowledgeable and professional. Highly recommended!",
+      review: "Struggling with severe sciatica made traveling and working almost impossible. During my visit to Bangalore, the amazing combination of Elakizhi and Kati Vasti here completely cured the radiating pain down my leg within just two weeks. Highly recommended!",
       name: "Frederik Poulsen",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -85,7 +85,7 @@ export default function AyushmanAyurveda() {
     },
     {
       title: "Genuine Ayurvedic Pain Management",
-      review: "My experience at Ayushman was truly transformative. I was suffering from constant inflammation and stiffness in my joints due to rheumatoid arthritis. Under the doctor's supervision, I underwent a personalized Panchakarma and Pizhichil therapy. The warmth and care of the therapists made me feel at ease, and I left with vastly improved mobility and almost no pain. Grazie!",
+      review: "Suffering from constant joint inflammation due to rheumatoid arthritis, I underwent personalized Panchakarma and Pizhichil therapy under expert supervision. The therapists' warmth made me feel completely at ease, and I left with vastly improved mobility and almost no pain.",
       name: "Isabella Vianchi",
       verified: true,
       location: "Rome, Italy",
@@ -94,7 +94,7 @@ export default function AyushmanAyurveda() {
     },
     {
       title: "A Perfect Reset for Mind and Body",
-      review: "As someone working in a high-stress corporate environment, I was dealing with severe insomnia and exhaustion. The Shirodhara and Abhyangam treatments here were incredibly soothing. The clinic has a very peaceful, clean vibe, and the staff really knows how to customize treatments. My sleep patterns have completely reset, and I feel deeply revitalized.",
+      review: "A high-stress corporate environment left me dealing with severe insomnia and exhaustion. The customized Shirodhara and Abhyangam treatments here were incredibly soothing. Thanks to their peaceful clinic and expert care, my sleep patterns have completely reset, leaving me fully revitalized.",
       name: "Julian Thorn",
       verified: true,
       location: "Boston, USA",
@@ -103,7 +103,7 @@ export default function AyushmanAyurveda() {
     },
     {
       title: "Migraines and Sinusitis Healed!",
-      review: "For years, I relied on temporary painkillers for my chronic migraines and sinus congestion. The physicians at Ayushman prescribed Nasyam and specialized herbal steam therapies. The treatments were intense but incredibly effective. I haven't had a single migraine since completing the protocol. It is truly life-changing natural medicine!",
+      review: "After relying on painkillers for chronic migraines and sinus congestion, the physicians prescribed Nasyam and specialized herbal steam therapies. They were incredibly effective; I haven't had a single migraine since. This targeted treatment is truly life-changing natural medicine.",
       name: "Genevieve Gauthier",
       verified: true,
       location: "Lyon, France",
@@ -112,7 +112,7 @@ export default function AyushmanAyurveda() {
     },
     {
       title: "Outstanding Panchakarma Experience",
-      review: "The complete detox program at Ayushman was superb. The doctor took the time to explain every phase of the Panchakarma, and the custom diet was delicious and nourishing. The therapy rooms are hygienic, and the massage techniques are highly professional. My digestive issues have cleared up completely, and my overall energy levels are higher than ever.",
+      review: "The superb Panchakarma detox program thoroughly explained every phase and provided a highly nourishing custom diet. Thanks to their incredibly professional massage techniques, my chronic digestive issues have completely cleared up, significantly boosting my overall energy levels.",
       name: "Mateo Cabral",
       verified: true,
       location: "Madrid, Spain",
@@ -252,7 +252,7 @@ export default function AyushmanAyurveda() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayushman Ayurveda
+              Ayushman Ayurveda Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function AyushmanAyurveda() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Ayushman Ayurveda Clinic</strong>, North Bengaluru’s premier center dedicated to authentic Kerala Ayurveda, physician-directed Panchakarma, and specialized non-surgical pain management. Conveniently located on F Block, Sahakar Nagar in Byatarayanapura, our center rejects commercial spa formatting to focus exclusively on physician-directed healing. Under standard medical guidelines, Ayushman Ayurveda has earned a distinguished clinical reputation for supporting patient recovery from chronic, multi-system ailments.
                   </p>
@@ -552,7 +552,7 @@ export default function AyushmanAyurveda() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function AyushmanAyurveda() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 80409 51212
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">
