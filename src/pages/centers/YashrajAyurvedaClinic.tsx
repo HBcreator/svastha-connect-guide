@@ -11,7 +11,7 @@ export default function YashrajAyurvedaClinic() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function YashrajAyurvedaClinic() {
   const testimonials = [
     {
       title: "Profound Relief from Back Tension & Sciatica",
-      review: "Severe neck stiffness and chronic lower back strain had made my daily routine painful. Under Dr. Raju Bhusnar's guidance, I underwent a comprehensive joint therapy program involving targeted herbal oil poolings and intensive massage. The personalized care and traditional protocols completely relieved the deep tissue tension. I can move freely now and sleep without discomfort. Highly professional.",
+      review: "Severe neck stiffness made my routine incredibly painful. Under Dr. Bhusnar's guidance, I successfully underwent a comprehensive joint therapy program involving targeted herbal poolings. The traditional protocols completely relieved my tissue tension. I beautifully move freely and sleep perfectly.",
       name: "Thomas Kent",
       verified: true,
       location: "Melbourne, Australia",
@@ -85,7 +85,7 @@ export default function YashrajAyurvedaClinic() {
     },
     {
       title: "Beautiful Rest & Sleep Normalization",
-      review: "Corporate stress had left me mentally drained and dealing with persistent insomnia. Yashraj Clinic provided a perfect sanctuary in Calangute. The calming head oil therapies (Shirodhara), specialized breathing exercises, and physician consultations completely restored my nervous system. I returned home with a profound sense of peace and a fully normalized sleep cycle.",
+      review: "Corporate stress left me mentally drained with persistent insomnia. Yashraj Clinic provided a perfect sanctuary. The calming Shirodhara, specialized breathing exercises, and physician consultations completely restored my nervous system. I joyfully returned home with a profound sense of total peace.",
       name: "Kira Vance",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -94,7 +94,7 @@ export default function YashrajAyurvedaClinic() {
     },
     {
       title: "Exceptional Panchakarma Rejuvenation",
-      review: "I spent two weeks undergoing a complete Panchakarma detox under the close supervision of Dr. Raju Bhusnar. The customized clinical schedule combined warm synchronized oil massages and targeted biological purification. The attention to detail and authentic medical standards were exceptional. I feel completely rejuvenated, light, and full of physical energy.",
+      review: "I successfully spent two weeks undergoing a complete Panchakarma detox under Dr. Bhusnar's close supervision. The customized clinical schedule perfectly combined warm synchronized oil massages and biological purification. The attention to detail was absolutely exceptional. I perfectly feel completely rejuvenated.",
       name: "Liam Ross",
       verified: true,
       location: "London, UK",
@@ -103,7 +103,7 @@ export default function YashrajAyurvedaClinic() {
     },
     {
       title: "Incredible Digestive & Metabolic Toning",
-      review: "Persistent bloating, sluggish metabolism, and fatigue had troubled me for a year. The clinic customized a highly rigorous gut-cleansing program and a personalized Ayurvedic nutritional diet plan. Not only did my digestion completely normalize, but my energy levels also skyrocketed. Dr. Raju's deep medical diagnostic knowledge and patient-first approach are absolute.",
+      review: "Persistent bloating and fatigue greatly troubled me. The clinic successfully customized a highly rigorous gut-cleansing program and personalized diet plan. My digestion completely normalized and my energy perfectly skyrocketed. Dr. Raju's deep diagnostic knowledge and patient-first approach are absolutely outstanding.",
       name: "Eva Mercier",
       verified: true,
       location: "Montreal, Canada",
@@ -112,7 +112,7 @@ export default function YashrajAyurvedaClinic() {
     },
     {
       title: "Professional Discretion & Male Fertility Care",
-      review: "I traveled to Goa specifically to seek treatment for male reproductive health from Dr. Raju Bhusnar, who is highly recommended in this field. His clinical diagnosis was extremely thorough, and the custom herbs and therapeutic programs completely revitalized my systemic vitality. The discretion, professionalism, and medical excellence of the entire clinic are highly commendable.",
+      review: "I traveled specifically to successfully seek male reproductive health treatment from Dr. Bhusnar. His thorough clinical diagnosis, custom herbs, and highly therapeutic programs completely revitalized my systemic vitality. The absolute discretion, professionalism, and medical excellence of the clinic are commendable.",
       name: "Jonas Berg",
       verified: true,
       location: "Gothenburg, Sweden",
@@ -252,7 +252,7 @@ export default function YashrajAyurvedaClinic() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Yashraj Ayurveda Clinic
+              Yashraj Ayurveda Clinic Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function YashrajAyurvedaClinic() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Yashraj Ayurveda Clinic</strong>, a highly distinguished clinical sanctuary situated centrally at Shop No. CS4, Ground Floor, Benson Complex, Opp. SBI Bank, Naikwaddo, Calangute, North Goa, India. Led by the highly distinguished Ayurvedic physician <strong className="font-bold text-[#2C4E5A]">Dr. Raju Bhusnar</strong>, the clinic is widely recognized as North Goa's premier destination for reproductive health, sexual wellness, and male/female fertility treatments. Yashraj Clinic blends profound diagnostic wisdom with authentic classical therapies to offer doctor-directed, bespoke healing protocols in a highly professional and welcoming clinic environment.
                   </p>
@@ -552,7 +552,7 @@ export default function YashrajAyurvedaClinic() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,7 +570,7 @@ export default function YashrajAyurvedaClinic() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -678,7 +678,7 @@ export default function YashrajAyurvedaClinic() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <p className="flex flex-col">
-                        <a href="tel:+919011932151" className="hover:underline transition-all">+91 90119 32151 / +91 96377 11394</a>
+                        <a href="tel:+91 989 xxxx xxx" className="hover:underline transition-all">+91 989 xxxx xxx+91 989 xxxx xxx</a>
                       </p>
                     </div>
                   </div>

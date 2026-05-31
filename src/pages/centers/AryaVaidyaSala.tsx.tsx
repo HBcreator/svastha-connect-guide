@@ -11,7 +11,7 @@ export default function AryaVaidyaSala() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function AryaVaidyaSala() {
   const testimonials = [
     {
       title: "Supportive Cancer Care restored my hope and strength!",
-      review: "Following a grueling series of chemotherapy sessions, my body was entirely depleted of energy and plagued by intense chronic fatigue. Coming to Kottakkal's flagship hospital was a turning point. The integrated oncology protocols and tailored Rasayana therapies supervised by senior Vaidyas were extraordinary. Within three weeks, my natural appetite returned, my cellular vitality was completely restored, and I regained my physical strength. The dedication to healing here is unmatched.",
+      review: "Following grueling chemotherapy sessions, coming to Kottakkal's flagship hospital was a massive turning point. The integrated oncology protocols and tailored Rasayana therapies supervised by senior Vaidyas completely restored my cellular vitality, natural appetite, and physical strength.",
       name: "Helena Markova",
       verified: true,
       location: "Prague, Czech Republic",
@@ -85,7 +85,7 @@ export default function AryaVaidyaSala() {
     },
     {
       title: "Incredible Osteoarthritis relief with Pizhichil",
-      review: "Severe knee osteoarthritis and deep joint stiffness had made walking incredibly painful for over five years. I tried several treatments in Europe with no success. The warm medicated oil stream treatments (Pizhichil) and synchronized massages here worked absolute wonders. The joint inflammation subsided entirely, and I can walk pain-free again. Arya Vaidya Sala represents the absolute gold standard in classical Keralite orthopedic care.",
+      review: "Severe knee osteoarthritis made walking incredibly painful for five years. The warm medicated oil stream treatments and synchronized massages here worked absolute wonders. The joint inflammation subsided entirely, and I can happily walk pain-free again. Absolute gold standard care.",
       name: "Jean-Pierre Moreau",
       verified: true,
       location: "Brussels, Belgium",
@@ -94,7 +94,7 @@ export default function AryaVaidyaSala() {
     },
     {
       title: "Chronic Eczema healed from the root",
-      review: "I had suffered from chronic skin flare-ups and agonizing eczema for nearly a decade. The dermatological team at AVS developed a specialized protocol combining a strict Ayurvedic detox (Virechana) and daily botanical wraps. The results were nothing short of miraculous. My skin has cleared up completely and feels healthy for the first time in years. They truly heal chronic diseases from the root.",
+      review: "Suffering from agonizing eczema for a decade, the dermatological team developed a specialized protocol combining Ayurvedic detox and botanical wraps. The results were absolutely miraculous. My skin has cleared up completely and feels healthy for the first time.",
       name: "Ingrid Bergman",
       verified: true,
       location: "Oslo, Norway",
@@ -103,7 +103,7 @@ export default function AryaVaidyaSala() {
     },
     {
       title: "Outstanding Panchakarma Detoxification",
-      review: "Intense corporate burnout and stress had given me chronic digestive issues and insomnia. Undergoing the classical three-week Panchakarma program in Kottakkal was a deeply transformative experience. The clinical precision, pristine environment, and profound knowledge of the Vaidyas helped me completely reset my system. My digestion is perfect, my sleep is restored, and I feel reborn. An incredible sanctuary!",
+      review: "Corporate burnout gave me chronic digestive issues and insomnia. The classical three-week Panchakarma program in Kottakkal was a deeply transformative experience. The clinical precision and profound knowledge of the Vaidyas perfectly restored my digestion and sleep. An incredible sanctuary!",
       name: "Devon Miller",
       verified: true,
       location: "Auckland, New Zealand",
@@ -112,7 +112,7 @@ export default function AryaVaidyaSala() {
     },
     {
       title: "Profound Sleep and Nervous System Recovery",
-      review: "Severe insomnia and persistent anxiety had completely ruined my daily routine. AVS's serene, legacy-rich healing environment immediately put me at ease. The rhythmic warm oil stream of Shirodhara and classical head poolings quieted my overactive nervous system. I am finally sleeping deeply for eight hours every night and feel completely recharged. Excellent authentic Keralite hospital care!",
+      review: "Severe insomnia and persistent anxiety completely ruined my daily routine. The serene healing environment and rhythmic warm oil stream of Shirodhara quieted my nervous system. I am finally sleeping deeply every night and feel completely recharged. Excellent authentic care!",
       name: "Serena Moretti",
       verified: true,
       location: "Florence, Italy",
@@ -252,7 +252,7 @@ export default function AryaVaidyaSala() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Arya Vaidya Sala (Kottakkal)
+              Arya Vaidya Sala (Kottakkal) Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function AryaVaidyaSala() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Vaidyaratnam P.S. Varier's Arya Vaidya Sala (AVS)</strong>, the historic flagship Ayurvedic institution located in Kottakkal, Malappuram District, Kerala. Established on October 12, 1902, AVS stands as a legendary charitable institution that pioneered the modern revival, drug standardization, and scientific propagation of classical Ayurveda worldwide. The institution operates premier multispecialty hospitals combining classical Keralite therapies (such as Pizhichil, Navarakizhi, Kati Vasti, and Swedana) with high diagnostic standards, clinical research divisions, and extensive medicinal plants gardens.
                   </p>
@@ -552,7 +552,7 @@ export default function AryaVaidyaSala() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-lg md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,9 +676,7 @@ export default function AryaVaidyaSala() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 483 2808000 / +91 483 2742216
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 48328 08000</p>
                   </div>
                 </div>
 

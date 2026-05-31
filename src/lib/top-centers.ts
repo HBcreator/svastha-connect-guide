@@ -32,7 +32,7 @@ export const TOP_CENTER_SLUGS = new Set<string>([
   "sitaram-mountain-retreat-idukki-india",
   "akanta-ayurveda-and-yoga-resort-kochi-india",
   "sitaram-beach-retreat-kerala-india",
-  "indus-valley-ayurvedic-centre-mysore-banglore-india",
+  "indus-valley-ayurvedic-hospital-mysore-india",
   "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
   "shreyas-yoga-retreat-bangalore-india",
   "ananda-in-the-himalayas-uttarakhand-india",

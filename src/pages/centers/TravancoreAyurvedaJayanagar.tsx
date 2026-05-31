@@ -11,7 +11,7 @@ export default function TravancoreAyurvedaJayanagar() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function TravancoreAyurvedaJayanagar() {
   const testimonials = [
     {
       title: "Complete Relief from Migraines & Sinusitis!",
-      review: "I had suffered from relentless migraines and sinus blockages for years, relying constantly on painkillers. During a long stay in Bangalore, a colleague recommended Travancore Ayurveda. Under Dr. Reeshma's care, I underwent Nasyam (nasal purification) and targeted herbal steam therapies. The treatments were intense but the relief was immediate. I haven't had a single migraine episode since, and I can breathe freely again. The staff here is wonderfully kind and professional!",
+      review: "Suffering from relentless migraines and sinus blockages, I constantly relied on painkillers. Under Dr. Reeshma's care, Nasyam and targeted herbal steam therapies provided immediate, permanent relief. I haven't had a single migraine since, and I can finally breathe freely.",
       name: "Beatrix Varga",
       verified: true,
       location: "Budapest, Hungary",
@@ -85,7 +85,7 @@ export default function TravancoreAyurvedaJayanagar() {
     },
     {
       title: "Exceptional Panchakarma Knee Joint Therapy",
-      review: "My knee joints were so stiff and inflamed from rheumatoid arthritis that walking even short distances was a challenge. The customized course of Pizhichil and warm herbal Kizhi massages at the Jayanagar clinic was incredibly therapeutic. The doctors monitored my progress daily, and the therapists were exceptionally skilled. Within two weeks, the swelling subsided completely and my mobility was restored. A truly top-tier clinic!",
+      review: "Stiff, inflamed knee joints from arthritis made walking a huge challenge. The therapeutic course of Pizhichil and warm Kizhi massages drastically changed everything. Within just two weeks of daily monitoring, the swelling subsided completely, beautifully restoring my full mobility.",
       name: "Arthur Pendelton",
       verified: true,
       location: "London, UK",
@@ -94,7 +94,7 @@ export default function TravancoreAyurvedaJayanagar() {
     },
     {
       title: "Incredible Lower Back & Sciatica Relief",
-      review: "Severe sciatic pain was radiating down my left leg, making it impossible to sit or work comfortably. The combination of Kati Vasti (warm oil pooling) and deep tissue Abhyangam massage here worked absolute wonders. The clinic is incredibly clean, peaceful, and adheres to strict NABH standards. By the end of my treatment cycle, the nerve compression was gone and my spine felt fully aligned. I cannot thank the doctors and therapists enough!",
+      review: "Severe sciatic pain down my leg made sitting and working impossible. The combination of Kati Vasti and deep tissue Abhyangam massage worked absolute wonders. The nerve compression was completely gone, and my spine felt fully aligned. I am incredibly thankful!",
       name: "Elena Rostova",
       verified: true,
       location: "Prague, Czech Republic",
@@ -103,7 +103,7 @@ export default function TravancoreAyurvedaJayanagar() {
     },
     {
       title: "Perfect Body Reset & Digestive Balance",
-      review: "I wanted a complete body reset to address chronic digestive sluggishness and fatigue. The 5-fold classical Panchakarma detox program under the guidance of Dr. Smita Katti Gotur was exceptionally thorough. Every phase, from the preparatory steam baths to the dietary restrictions, was explained with immense patience. My digestion has completely normalized, my skin has cleared, and my energy levels are higher than they've been in years.",
+      review: "Seeking a complete body reset for chronic digestive sluggishness and fatigue, I tried the classical Panchakarma detox program. Dr. Smita thoroughly explained every phase, completely normalizing my digestion. My skin has cleared, and my energy levels are wonderfully restored.",
       name: "Sebastian Vance",
       verified: true,
       location: "Vancouver, Canada",
@@ -112,7 +112,7 @@ export default function TravancoreAyurvedaJayanagar() {
     },
     {
       title: "Deep Mental Peace & Sleep Restoration",
-      review: "High stress and corporate burnout had left me with severe insomnia and constant anxiety. Seeking a natural solution, I booked Shirodhara and Talapodichil (herbal head pack) sessions at Travancore Jayanagar. The soothing, calm environment of the clinic immediately put me at ease. The warm oil stream of Shirodhara completely quieted my mind. I am now sleeping deeply every night and feel a profound sense of inner peace.",
+      review: "Corporate burnout left me with severe insomnia and constant anxiety. Seeking a natural solution, I booked Shirodhara and Talapodichil sessions here. The soothing environment and warm oil streams completely quieted my mind. I now sleep deeply and feel profound peace.",
       name: "Camille Dubois",
       verified: true,
       location: "Paris, France",
@@ -251,7 +251,7 @@ export default function TravancoreAyurvedaJayanagar() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Travancore Ayurveda – Jayanagar
+              Travancore Ayurveda – Jayanagar Bengaluru
             </li>
           </ol>
         </div>
@@ -304,7 +304,7 @@ export default function TravancoreAyurvedaJayanagar() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Travancore Ayurveda Jayanagar Clinic</strong>, South Bengaluru’s premier destination for authentic, physician-directed Kerala Ayurveda, specialized pain management, and classical Panchakarma detoxification. Conveniently located on 36th Cross Road, Jayanagar 4th Block, our center stands as a multi-award-winning clinic, honored as the Top Most Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. Directed under strict medical guidelines, we reject commercialized spa formats to deliver medically supervised, root-cause healing pathways.
                   </p>
@@ -551,7 +551,7 @@ export default function TravancoreAyurvedaJayanagar() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -675,11 +675,7 @@ export default function TravancoreAyurvedaJayanagar() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 97035 77727
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

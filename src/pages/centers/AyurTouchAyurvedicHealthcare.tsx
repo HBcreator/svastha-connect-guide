@@ -11,7 +11,7 @@ export default function AyurTouchAyurvedicHealthcare() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function AyurTouchAyurvedicHealthcare() {
   const testimonials = [
     {
       title: "Exceptional Stress Relief & Abhyanga",
-      review: "I booked the Ayur Touch Holiday Package during my Goan vacation, hoping to find a brief getaway to unwind. It was an incredibly soothing experience. The therapists are highly professional and the synchronized oil massages (Abhyangam) completely dissolved my travel fatigue. The environment on Candolim Beach Road is very convenient yet peaceful. I walked out feeling refreshed, lighter, and deeply balanced.",
+      review: "Booking the Ayur Touch Holiday Package during my vacation was incredibly soothing. The highly professional therapists and synchronized oil massages completely dissolved my travel fatigue. The environment is extremely convenient yet peaceful. I felt thoroughly refreshed, lighter, and deeply balanced.",
       name: "Zoe Brooks",
       verified: true,
       location: "Chicago, USA",
@@ -85,7 +85,7 @@ export default function AyurTouchAyurvedicHealthcare() {
     },
     {
       title: "Miraculous Relief from Chronic Stiffness",
-      review: "After years of dealing with persistent shoulder stiffness and lower back pain, I consulted the Ayurvedic doctors here. They recommended a customized joint program combining synchronized herbal bundle massages (Kizhi) and warm oil retention therapies. Within a week, the deep tissue swelling and stiffness had significantly decreased. The clinic's hygiene standards and authentic Kerala-style treatments are absolutely top-tier.",
+      review: "Dealing with persistent shoulder stiffness, doctors recommended a customized joint program combining herbal bundle massages and warm oil retention therapies. Within a week, deep tissue swelling significantly decreased. The clinic's hygiene standards and authentic treatments are absolutely top-tier.",
       name: "Lukas Keller",
       verified: true,
       location: "Zurich, Switzerland",
@@ -94,7 +94,7 @@ export default function AyurTouchAyurvedicHealthcare() {
     },
     {
       title: "Superb Stress & Insomnia Recovery",
-      review: "Suffering from severe insomnia and stress burnout, I opted for their Stress and Strain Management program. The combination of targeted head oil pourings (Shirodhara), mindful eating, and gentle lifestyle modifications worked wonders. The doctors are highly compassionate, took their time to understand my background, and helped me reset my sleep cycle. A wonderful sanctuary of recovery in Candolim!",
+      review: "Suffering from severe insomnia and burnout, the Stress Management program's combination of targeted Shirodhara, mindful eating, and gentle lifestyle modifications worked absolute wonders. The highly compassionate doctors successfully helped me totally reset my sleep cycle. A wonderful sanctuary of recovery!",
       name: "Freya Morrison",
       verified: true,
       location: "Auckland, New Zealand",
@@ -103,7 +103,7 @@ export default function AyurTouchAyurvedicHealthcare() {
     },
     {
       title: "Professional & Precise Panchakarma",
-      review: "I underwent a complete 14-day Panchakarma Chikitsa at Ayur Touch. The resident doctors supervised my biological cleansing protocol with utmost medical precision. Each treatment was tailored, and the therapeutic decocations and organic herbals were highly effective. I feel completely detoxified, my metabolic fire is fully restored, and my physical energy is back to its peak. A highly recommended, professional facility.",
+      review: "Undergoing a complete 14-day Panchakarma Chikitsa, the resident doctors supervised my biological cleansing with utmost precision. The tailored treatments and organic herbals were highly effective. I feel completely detoxified, my metabolic fire is fully restored, and my energy is back.",
       name: "Alain Moreau",
       verified: true,
       location: "Lyon, France",
@@ -112,7 +112,7 @@ export default function AyurTouchAyurvedicHealthcare() {
     },
     {
       title: "Wonderful Slimming & Metabolic Toning",
-      review: "To address my sluggish metabolism and weight concerns, the medical panel designed a weight reduction program integrating dry herbal powder scrubs (Udwarthanam) and synchronized muscle-stimulating massages. The therapies were vigorous and extremely effective in boosting my lymphatic circulation. The team is dedicated, and they provided excellent home diet guidelines to sustain the results.",
+      review: "Addressing my sluggish metabolism, the medical panel perfectly designed a weight reduction program integrating dry herbal powder scrubs and synchronized muscle-stimulating massages. The vigorous therapies were extremely effective. The dedicated team provided excellent home diet guidelines to successfully sustain results.",
       name: "Ingrid Larsson",
       verified: true,
       location: "Oslo, Norway",
@@ -252,7 +252,7 @@ export default function AyurTouchAyurvedicHealthcare() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayur Touch Ayurvedic Healthcare
+              Ayur Touch Ayurvedic Healthcare Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function AyurTouchAyurvedicHealthcare() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Ayur Touch Ayurvedic Healthcare</strong>, a highly trusted clinical wellness sanctuary situated on Candolim Beach Road, Candolim, North Goa. Known for delivering Kerala-standard therapeutic precision in the heart of Goa, the clinic blends authentic Keralite traditional healing wisdom with a modern and accessible healthcare environment. Under the expert medical guidance of our resident doctors and certified therapists, the center offers highly personalized, doctor-monitored recovery schedules designed to facilitate cellular rejuvenation and lasting systemic balance.
                   </p>
@@ -552,7 +552,7 @@ export default function AyurTouchAyurvedicHealthcare() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,7 +570,7 @@ export default function AyurTouchAyurvedicHealthcare() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -676,11 +676,7 @@ export default function AyurTouchAyurvedicHealthcare() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <p className="flex flex-col">
-                        +91 94477 17075 / +91 83908 67075
-                      </p>
-                    </div>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</div>
                   </div>
                 </div>
 

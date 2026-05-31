@@ -11,7 +11,7 @@ export default function ParathuvayalilAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function ParathuvayalilAyurvedaHospital() {
   const testimonials = [
     {
       title: "Sports Joint Range and Strength Restored!",
-      review: "As a competitive athlete, a severe knee injury and joint stiffness had threatened my career. I came to Parathuvayalil on a recommendation for their Marma Chikitsa. The integrated approach combining Dr. Sunil's orthopedic expertise and Dr. Pathrose's traditional joint therapies was extraordinary. The specialized Choorna Swedam and customized muscle manipulation completely restored my knee's range of motion. I am training again and feel incredibly grateful!",
+      review: "A severe knee injury threatened my athletic career. The integrated approach combining Dr. Sunil's orthopedic expertise and Dr. Pathrose's traditional joint therapies was absolutely extraordinary. Specialized muscle manipulation completely restored my knee's range of motion.",
       name: "Lars Lindqvist",
       verified: true,
       location: "Stockholm, Sweden",
@@ -85,7 +85,7 @@ export default function ParathuvayalilAyurvedaHospital() {
     },
     {
       title: "Debilitating Spine Pain Relieved Completely",
-      review: "Years of sitting in office meetings had left me with a debilitating lower back ache and severe lumbar compression. The spine care protocols at this hospital worked absolute wonders. Over two weeks, the combination of Kati Vasti, rhythmic warm oil pours, and gentle physical rehabilitation completely relieved my sciatic nerve compression. I walked out of the Keezhillam campus absolutely pain-free.",
+      review: "Years of office meetings left me with debilitating lower back ache and severe lumbar compression. The spine care protocols at this hospital worked absolute wonders. The combination of Kati Vasti and gentle rehabilitation completely relieved my sciatic nerve compression.",
       name: "Amara Sterling",
       verified: true,
       location: "London, UK",
@@ -94,7 +94,7 @@ export default function ParathuvayalilAyurvedaHospital() {
     },
     {
       title: "Outstanding Kshara Sutra Treatment",
-      review: "I had been suffering from complex piles and chronic fissures for years, always fearing invasive surgery. The ano-rectal department here directed by Dr. Mathew Sunny was exceptional. The classical Kshara Sutra treatment healed my condition entirely with virtually no pain and zero side effects. The clinical hygiene standards in this NABH-accredited hospital are world-class.",
+      review: "Suffering from complex piles and chronic fissures, I feared invasive surgery. The ano-rectal department directed by Dr. Sunny was truly exceptional. The classical Kshara Sutra treatment healed my condition entirely with absolutely no pain and zero side effects.",
       name: "Diego Alvarez",
       verified: true,
       location: "Madrid, Spain",
@@ -103,7 +103,7 @@ export default function ParathuvayalilAyurvedaHospital() {
     },
     {
       title: "Complete Freedom from Migraines & Burnout",
-      review: "Severe chronic migraines and corporate burnout had left me physically exhausted. Parathuvayalil's serene, nature-rich hospital setting provided immediate calm. The soothing rhythmic flow of Shirodhara and targeted nasal therapies completely cleared my chronic sinus pressure and quieted my nervous system. I haven't had a single migraine flare-up in months and my sleep is completely restored.",
+      review: "Severe chronic migraines and corporate burnout left me physically exhausted. Parathuvayalil's serene setting provided immediate calm. The soothing rhythmic flow of Shirodhara completely cleared my chronic sinus pressure and beautifully quieted my nervous system.",
       name: "Natsuki Sato",
       verified: true,
       location: "Osaka, Japan",
@@ -112,7 +112,7 @@ export default function ParathuvayalilAyurvedaHospital() {
     },
     {
       title: "PCOS Recovery and Uterine Strengthening",
-      review: "Struggling with severe hormonal imbalances and PCOS had been incredibly stressful. Under the care of Dr. Nina Sunil, I underwent a personalized Ayurvedic detox and a strictly managed botanical regimen. She was exceptionally patient and highly knowledgeable. My menstrual cycles have completely regularized, and my energy levels are higher than ever before. This integrated care is truly remarkable.",
+      review: "Struggling with severe hormonal imbalances and PCOS was incredibly stressful. Under Dr. Nina Sunil's exceptionally patient care, I underwent a personalized Ayurvedic detox. My menstrual cycles have wonderfully regularized, and my energy levels are significantly higher.",
       name: "Chloé Rousseau",
       verified: true,
       location: "Paris, France",
@@ -252,7 +252,7 @@ export default function ParathuvayalilAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Parathuvayalil Ayurveda Hospital
+              Parathuvayalil Ayurveda Hospital Kerala
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function ParathuvayalilAyurvedaHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Parathuvayalil Ayurveda Hospital</strong>, Kochi's renowned multispeciality healthcare facility located in Keezhillam, Perumbavoor, where classical Kerala Ayurvedic wisdom seamlessly integrates with contemporary modern clinical diagnostics. Our hospital has earned wide acclaim for its specialized focus on Marma Chikitsa (bone, joint, and musculoskeletal care), pain management, and orthopedic rehabilitation. Founded and led by Chief Physician <strong className="font-bold text-[#2C4E5A]">Dr. P. P. Pathrose</strong> (MD Ayurveda - Marma Chikitsa & Kayachikitsa) and Chief Senior Consultant <strong className="font-bold text-[#2C4E5A]">Dr. Sunil Pathrose Parathuvayalil</strong> (MBBS, MS - Ortho), the center represents a rare, powerful synthesis of traditional bone-setting, classical Ayurvedic therapies, and modern orthopedic spine care.
                   </p>
@@ -552,7 +552,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,9 +676,7 @@ export default function ParathuvayalilAyurvedaHospital() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      +91 97474 10292
-                    </p>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

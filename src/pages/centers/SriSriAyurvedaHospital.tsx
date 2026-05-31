@@ -201,7 +201,7 @@ export default function SriSriAyurvedaHospital() {
   ];
 
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   useEffect(() => {
     if (!isReviewAutoPlaying || testimonials.length === 0) return;
@@ -335,7 +335,7 @@ export default function SriSriAyurvedaHospital() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto md:px-2">
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
                 at Sri Sri Ayurveda Hospital
               </h2>
@@ -343,7 +343,7 @@ export default function SriSriAyurvedaHospital() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to Sri Sri Ayurveda Hospital in Bengaluru, a premier <strong className="font-bold text-[#2C4E5A]">NABH-accredited</strong> institution where the timeless wisdom of classical Ayurveda converges with modern medical science. Administered by the Sri Sri Ravi Shankar Vidya Mandir Trust, our hospital is deeply rooted in the holistic philosophy of the Art of Living. We believe that true health is not merely the absence of disease, but a dynamic state of physical, mental, and spiritual well-being. Nestled in a serene, natural environment away from the city's chaos, our campus provides the ideal setting for deep cellular healing and rejuvenation.
                   </p>
@@ -539,7 +539,7 @@ export default function SriSriAyurvedaHospital() {
                 </div>
                 <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
                   <Phone className="h-4 w-4 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  <a href="tel:+91 989 xxxx xxx" className="underline hover:text-white">Call us: +91 989 xxxx xxx</a>
                 </div>
               </div>
             </div>
@@ -559,7 +559,7 @@ export default function SriSriAyurvedaHospital() {
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <Phone className="h-5 w-5 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  <a href="tel:+91 989 xxxx xxx" className="underline hover:text-white">Call us: +91 989 xxxx xxx</a>
                 </div>
               </div>
               <div>
@@ -595,7 +595,7 @@ export default function SriSriAyurvedaHospital() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview].title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview].review}"
                   </p>
                 </div>
@@ -712,9 +712,7 @@ export default function SriSriAyurvedaHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 80 2843 2737</p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

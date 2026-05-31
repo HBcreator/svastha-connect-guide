@@ -11,7 +11,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
   const testimonials = [
     {
       title: "Phenomenal Postnatal Recovery support!",
-      review: "After giving birth to my first daughter, I felt completely drained and suffered from intense lower back pain. Opting for the residential postnatal stay at SD Ayurveda Mane was the best decision. The customized Abhyangam massages, traditional herbal baths (Vedu Kuli), and highly nutritious meals restored my strength completely. My back pain is gone and my energy is fully back!",
+      review: "After giving birth, I felt completely drained with intense lower back pain. The residential postnatal stay at SD Ayurveda Mane was the best decision. Customized massages and herbal baths fully restored my strength and cured my pain.",
       name: "Svetlana Sokolov",
       verified: true,
       location: "St. Petersburg, Russia",
@@ -85,7 +85,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
     },
     {
       title: "Proficient Family Stress relief!",
-      review: "As a new father, I was feeling highly exhausted and stressed. The clinic's program extends to fathers as well, which is remarkable. The deeply relaxing therapeutic bodywork, Ayurvedic detox treatments, and peaceful garden environment helped me reset completely. The staff treated us like family. Highly recommend their residential packages!",
+      review: "As an exhausted new father, the clinic's residential wellness program was remarkable. The deeply relaxing therapeutic bodywork, Ayurvedic detox treatments, and peaceful environment helped me completely reset. The staff treated us like family; I highly recommend their packages.",
       name: "Zachary Miller",
       verified: true,
       location: "Sydney, Australia",
@@ -94,7 +94,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
     },
     {
       title: "pelvic Instability Healed naturally!",
-      review: "I suffered from severe pelvic pain and muscle weakness after my delivery. The integrated approach of Dr. Asha was outstanding. The specialized binding therapies, herbal steam sessions, and pelvic strengthening oils worked wonders. I can now walk and carry my baby completely pain-free. A truly professional hospital.",
+      review: "I suffered from severe pelvic pain and muscle weakness after my delivery. Dr. Asha's specialized binding therapies, herbal steam sessions, and pelvic strengthening oils worked absolute wonders. I can now comfortably walk and carry my baby completely pain-free.",
       name: "Kirsten Berg",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -103,7 +103,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
     },
     {
       title: "Amazing Infant care and bath Training!",
-      review: "We stayed here for two weeks with our newborn. The therapists trained us in traditional baby massage and bathing techniques, which has been incredibly helpful back home. Our baby's digestion and sleep improved significantly. The doctors kept a daily check on both mother and baby. Truly exceptional clinical care!",
+      review: "During our two-week stay, the expert therapists trained us in traditional baby massage and bathing techniques. Thanks to their guidance, our newborn's digestion and sleep improved significantly. The doctors provided truly exceptional, compassionate, and daily clinical care.",
       name: "Dominic Becker",
       verified: true,
       location: "Frankfurt, Germany",
@@ -112,7 +112,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
     },
     {
       title: "Superb Lactation Support and hormone Balance!",
-      review: "I was struggling with severe fatigue, low breast milk supply, and postpartum baby blues. The warm, compassionate care of Dr. Asha and Dr. Georly changed everything. Their custom herbal tonics, targeted lactation support, and gentle counseling balanced my hormones and boosted my milk supply. It made my breastfeeding journey so beautiful.",
+      review: "Struggling with severe fatigue and low breast milk supply, the compassionate care of Dr. Asha and Dr. Georly changed everything. Their custom herbal tonics and lactation support beautifully balanced my hormones and significantly boosted my milk supply.",
       name: "Theresa Fontaine",
       verified: true,
       location: "Lyon, France",
@@ -252,7 +252,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              SD Ayurveda Mane – Holistic Wellness Center
+              SD Ayurveda Mane – Holistic Wellness Center Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">SD Ayurveda Mane – Holistic Wellness Center</strong>, Bengaluru’s premier hospital dedicated to authentic Kerala Ayurveda, complete family postnatal recovery, and advanced residential rejuvenation. Conveniently located on Vinayaka Layout opposite the Saniswara Swami Temple in Doddathoguru, Electronic City Phase 1, our center rejects commercial spa formatting to focus exclusively on physician-directed healing. Under standard medical guidelines, SD Ayurveda Mane has earned a distinguished clinical reputation for supporting new families and patient recovery from chronic, multi-system ailments.
                   </p>
@@ -552,7 +552,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,11 +676,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      +91 80480 37866 / +91 80480 70359
-                    </p>
-                  </div>
+                    +91 989 xxxx xxx</div>
                 </div>
 
                 <div className="flex items-start gap-4">

@@ -11,7 +11,7 @@ export default function AdyantAyurvedaJayanagar() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const programs = [
     {
@@ -310,7 +310,7 @@ export default function AdyantAyurvedaJayanagar() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Adyant Ayurveda Jayanagar
+              Adyant Ayurveda – Jayanagar Bengaluru
             </li>
           </ol>
         </div>
@@ -363,7 +363,7 @@ export default function AdyantAyurvedaJayanagar() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">Adyant Ayurveda</strong>, one of Jayanagar’s most trusted and established Ayurvedic clinics. With a strong commitment to holistic health, our center combines the ancient wisdom of Ayurveda with modern clinical standards to deliver personalized, root-cause healing. As an award-winning healthcare provider, recognized for excellence in Panchakarma treatments, we prioritize individualized care guided by experienced doctors. Our serene facility is designed to offer a peaceful sanctuary for your recovery, ensuring every patient receives authentic therapies in a comfortable, patient-centric environment.
                   </p>
@@ -561,7 +561,7 @@ export default function AdyantAyurvedaJayanagar() {
                 </div>
                 <div className="mt-4 flex items-center justify-center gap-2 text-white/90 text-sm">
                   <Phone className="h-4 w-4 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  <a href="tel:+91 989 xxxx xxx" className="underline hover:text-white">Call us: +91 989 xxxx xxx</a>
                 </div>
               </div>
             </div>
@@ -581,7 +581,7 @@ export default function AdyantAyurvedaJayanagar() {
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <Phone className="h-5 w-5 text-red-400" />
-                  <a href="tel:+918028432737" className="underline hover:text-white">Call us: +91 80 2843 2737</a>
+                  <a href="tel:+91 989 xxxx xxx" className="underline hover:text-white">Call us: +91 989 xxxx xxx</a>
                 </div>
               </div>
               <div>
@@ -618,7 +618,7 @@ export default function AdyantAyurvedaJayanagar() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview].title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview].review}"
                   </p>
                 </div>
@@ -742,7 +742,7 @@ export default function AdyantAyurvedaJayanagar() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 80 2843 2737</p>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 

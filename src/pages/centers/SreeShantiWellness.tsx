@@ -11,7 +11,7 @@ export default function SreeShantiWellness() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -76,7 +76,7 @@ export default function SreeShantiWellness() {
   const testimonials = [
     {
       title: "Absolute Relief from Chronic Joint Stiffness",
-      review: "Decades of severe knee tension and lumbar stiffness made daily tasks difficult. The joint wellness therapies at SreeShanti Wellness completely relieved the deep physical strain. Dr. Jijith's clinical precision and the skilled Kerala-trained therapists are outstanding. I can walk freely again without sciatic discomfort.",
+      review: "Decades of severe knee tension made daily tasks extremely difficult. The excellent joint wellness therapies at SreeShanti completely relieved the deep physical strain. Dr. Jijith's clinical precision and skilled therapists are absolutely outstanding. I wonderfully walk freely without sciatic discomfort.",
       name: "Henry Gale",
       verified: true,
       location: "Vancouver, Canada",
@@ -85,7 +85,7 @@ export default function SreeShantiWellness() {
     },
     {
       title: "Soothing Skin & Beauty Therapy Sanctuary",
-      review: "I visited SreeShanti to address persistent eczema and severe skin dryness. The personalized beauty program, combined with daily organic herbal steam baths and custom face masks, worked wonders. My skin looks completely rejuvenated, smooth, and nourished. A truly peaceful clinic by Reis Margos Road.",
+      review: "I visited SreeShanti to successfully address persistent eczema and severe skin dryness. The personalized program, beautifully combined with daily herbal steam baths and custom face masks, worked absolute wonders. My skin looks completely rejuvenated, perfectly smooth, and beautifully nourished.",
       name: "Stella Moon",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +94,7 @@ export default function SreeShantiWellness() {
     },
     {
       title: "Exceptional Panchakarma Rejuvenation in Goa",
-      review: "I completed a full 14-day Panchakarma detox program at SreeShanti Wellness under the close supervision of Dr. Jijith. The biological purification was exceptionally deep, restoring my metabolic rate and energy levels. The serene backwater setting of Nerul is the perfect backdrop for traditional Keralite healing.",
+      review: "I successfully completed a full 14-day Panchakarma detox program under Dr. Jijith's exceptional supervision. The biological purification was incredibly deep, perfectly restoring my metabolic rate and energy levels. The wonderfully serene backwater setting is the perfect backdrop for traditional healing.",
       name: "Lucas Ward",
       verified: true,
       location: "Manchester, UK",
@@ -103,7 +103,7 @@ export default function SreeShantiWellness() {
     },
     {
       title: "Professional Obesity & Metabolic Correction",
-      review: "Corporate stress and sluggish digestion had caused substantial weight gain. SreeShanti provided a highly customized diet program, active physical scrubs (Udvarthanam), and tailored metabolic herbs. Not only did my digestion completely normalize, but I also lost weight naturally and feel incredibly light.",
+      review: "Corporate stress and sluggish digestion caused weight gain. SreeShanti wonderfully provided a highly customized diet program, active physical scrubs, and tailored metabolic herbs. My digestion completely normalized, I perfectly lost weight naturally, and I genuinely feel incredibly healthy and light.",
       name: "Nora Finch",
       verified: true,
       location: "Dublin, Ireland",
@@ -252,7 +252,7 @@ export default function SreeShantiWellness() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              SreeShanti Wellness
+              SreeShanti Wellness Goa
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function SreeShantiWellness() {
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to <strong className="font-bold text-[#2C4E5A]">SreeShanti Wellness</strong>, an authentic Ayurvedic clinic and classical Panchakarma center situated in the tranquil backwater village of Nerul, North Goa, India. Led by the highly accomplished chief physician <strong className="font-bold text-[#2C4E5A]">Dr. Jijith C. Ravindran</strong> (BAMS, DSM, YIC), the center provides custom, doctor-directed treatments in a peaceful and welcoming environment on Nerul - Reis Margos Road. Dr. Jijith is a distinguished graduate of Gomantak Ayurveda Mahavidyalaya and Research Centre, possessing over 12 years of clinical experience in Kerala Panchakarma and element-based traditional medicine.
                   </p>
@@ -552,7 +552,7 @@ export default function SreeShantiWellness() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,7 +570,7 @@ export default function SreeShantiWellness() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -677,7 +677,7 @@ export default function SreeShantiWellness() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                    <span>+91 96996 79983 / +91 72930 04005</span>
+                    <span>+91 989 xxxx xxx</span>
                     </div>
                   </div>
                 </div>

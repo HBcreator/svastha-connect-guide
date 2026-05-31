@@ -11,7 +11,7 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
-  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
+  const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(false);
 
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
@@ -252,7 +252,7 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Jayadev Memorial Rashtrotthana Hospital
+              Jayadev Memorial Rashtrotthana Hospital Bengaluru
             </li>
           </ol>
         </div>
@@ -305,7 +305,7 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
-                <div className="space-y-6 text-lg md:text-xl leading-relaxed text-foreground/80 text-justify md:text-left" style={{ color: "#7F543D" }}>
+                <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
                     Welcome to the <strong className="font-bold text-[#2C4E5A]">Ayurveda Department at Jayadev Memorial Rashtrotthana Hospital</strong>, located in Rajarajeshwari Nagar (RR Nagar), Bengaluru. We uniquely integrate the ancient wisdom of classical Ayurveda with the advanced infrastructure of a modern 162-bed multi-specialty hospital. Our dedicated experts focus on personalized care, ensuring every patient receives holistic therapies tailored to restore balance and address the root causes of their health concerns.
                   </p>
@@ -552,7 +552,7 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-xl md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -676,7 +676,7 @@ export default function JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment()
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>080 6923 9999</p>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 
