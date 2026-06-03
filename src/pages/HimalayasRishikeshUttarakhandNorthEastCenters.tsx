@@ -55,8 +55,9 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   3: "ananda-in-the-himalayas-uttarakhand-india",
   4: "ayuskama-ayurveda-and-panchakarma-center-dharamshala-india",
   5: "bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india",
-  7: "mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
   6: "veda5-ayurveda-and-yoga-retreat-rishikesh-india",
+  7: "mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
+  8: "haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india",
   10: "yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india",
 };
 
