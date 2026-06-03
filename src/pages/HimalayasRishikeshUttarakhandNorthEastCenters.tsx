@@ -50,10 +50,20 @@ const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
 };
 
 const SLUG_BY_SERIES: Partial<Record<number, string>> = {
+  1: "swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india",
+  2: "ayuskama-ayurveda-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
   3: "ananda-in-the-himalayas-uttarakhand-india",
   4: "ayuskama-ayurveda-and-panchakarma-center-dharamshala-india",
+  5: "bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india",
   6: "veda5-ayurveda-and-yoga-retreat-rishikesh-india",
+  7: "mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
+  8: "haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india",
+  9: "kayakalp-himalayan-research-institute-of-yoga-and-naturopath-hospital-himachal-india",
   10: "yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india",
+  11: "vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india",
+  12: "vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india",
+  13: "dr-siby-ayurveda-center-himachal-india",
+  14: "arogyam-panchkarma-centre-haridwar-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>

@@ -162,6 +162,16 @@ import AyurvedicNaturalHealthCentre from "./pages/centers/AyurvedicNaturalHealth
 import SreeShantiWellness from "./pages/centers/SreeShantiWellness.tsx";
 import NaturalTouchAyurveda from "./pages/centers/NaturalTouchAyurveda.tsx";
 import KAREHealth from "./pages/centers/KAREHealth.tsx";
+import SRHUAyurvedaCentre from "./pages/centers/SRHUAyurvedaCentre.tsx";
+import AyuskamaAyurvedaClinicPanchakarmaCentre from "./pages/centers/AyuskamaAyurvedaClinicPanchakarmaCentre.tsx";
+import BholeBabaAyurvedicHospitalResearchCentre from "./pages/centers/BholeBabaAyurvedicHospitalResearchCentre.tsx";
+import MamgainAyurvedaClinicPanchakarmaCentre from "./pages/centers/MamgainAyurvedaClinicPanchakarmaCentre.tsx";
+import HarithaAyurvedaAcademyPanchakarmaCenter from "./pages/centers/HarithaAyurvedaAcademyPanchakarmaCenter.tsx";
+import KAYAKALPHimalayanResearchInstituteofYogaNaturopathy from "./pages/centers/KAYAKALPHimalayanResearchInstituteofYogaNaturopathy.tsx";
+import VedicYogaAyurvedaRetreatCentre from "./pages/centers/VedicYogaAyurvedaRetreatCentre.tsx";
+import VedanjanaYogaAyurvedaPanchakarmaCentre from "./pages/centers/VedanjanaYogaAyurvedaPanchakarmaCentre.tsx";
+import DrSIBYAyurvedaCenter from "./pages/centers/DrSIBYAyurvedaCenter.tsx";
+import ArogyamPanchkarmaCentreAyurvedicHospital from "./pages/centers/ArogyamPanchkarmaCentreAyurvedicHospital.tsx";
 
 const queryClient = new QueryClient();
 
@@ -254,6 +264,17 @@ const App = () => (
           <Route path="/centers/rasayana-ayurveda-center-hospital-kerala-india" element={<RasayanaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
+
+          <Route path="/centers/arogyam-panchkarma-centre-haridwar-uttarakhand-india" element={<ArogyamPanchkarmaCentreAyurvedicHospital />}/>
+          <Route path="/centers/dr-siby-ayurveda-center-himachal-india" element={<DrSIBYAyurvedaCenter />}/>
+          <Route path="/centers/vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india" element={<VedanjanaYogaAyurvedaPanchakarmaCentre />}/>
+          <Route path="/centers/vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india" element={<VedicYogaAyurvedaRetreatCentre />}/>
+          <Route path="/centers/kayakalp-himalayan-research-institute-of-yoga-and-naturopath-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
+          <Route path="/centers/haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india" element={<HarithaAyurvedaAcademyPanchakarmaCenter />}/>
+          <Route path="/centers/mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india" element={<MamgainAyurvedaClinicPanchakarmaCentre />}/>
+          <Route path="/centers/bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCentre />}/>
+          <Route path="/centers/ayuskama-ayurveda-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india" element={<AyuskamaAyurvedaClinicPanchakarmaCentre />}/>
+          <Route path="/centers/swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india" element={<SRHUAyurvedaCentre />}/>
 
           <Route path="/centers/dhanwanthralaya-ayurveda-speciality-hospital-chennai-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
           <Route path="/centers/ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india" element={<Ayurillam />}/>
