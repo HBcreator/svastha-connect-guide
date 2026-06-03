@@ -60,6 +60,7 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   8: "haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india",
   9: "kayakalp-himalayan-research-institute-of-yoga-and-naturopath-hospital-himachal-india",
   10: "yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india",
+  11: "vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>
