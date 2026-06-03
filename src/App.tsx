@@ -167,6 +167,7 @@ import AyuskamaAyurvedaClinicPanchakarmaCentre from "./pages/centers/AyuskamaAyu
 import BholeBabaAyurvedicHospitalResearchCentre from "./pages/centers/BholeBabaAyurvedicHospitalResearchCentre.tsx";
 import MamgainAyurvedaClinicPanchakarmaCentre from "./pages/centers/MamgainAyurvedaClinicPanchakarmaCentre.tsx";
 import HarithaAyurvedaAcademyPanchakarmaCenter from "./pages/centers/HarithaAyurvedaAcademyPanchakarmaCenter.tsx";
+import KAYAKALPHimalayanResearchInstituteofYogaNaturopathy from "./pages/centers/KAYAKALPHimalayanResearchInstituteofYogaNaturopathy.tsx";
 
 const queryClient = new QueryClient();
 
@@ -260,6 +261,7 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
+          <Route path="/centers/kayakalp-himalayan-research-institute-of-yoga-and-naturopath-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
           <Route path="/centers/haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india" element={<HarithaAyurvedaAcademyPanchakarmaCenter />}/>
           <Route path="/centers/mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india" element={<MamgainAyurvedaClinicPanchakarmaCentre />}/>
           <Route path="/centers/bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCentre />}/>
