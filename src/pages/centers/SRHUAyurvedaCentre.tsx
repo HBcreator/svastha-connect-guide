@@ -76,7 +76,7 @@ export default function SRHUAyurvedaCentre() {
   const testimonials = [
     {
       title: "Highly Professional Panchakarma Treatment",
-      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the SRHU Ayurvedic Center. The medical integration is superb here. Under the watchful eyes of their skilled physicians and caring therapists, I received personalized herbal decoctions and daily oil treatments that completely revitalized my digestion.",
+      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the SRHU Ayurvedic Center. The medical integration is superb here.",
       name: "Sophia Bennett",
       verified: true,
       location: "London, UK",
@@ -85,7 +85,7 @@ export default function SRHUAyurvedaCentre() {
     },
     {
       title: "Remarkable Recovery from Chronic Sciatica",
-      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan. The deep herbal poultice massage sessions and localized warm oil pools worked wonders. I am now back to hiking without any constant pain.",
+      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan.",
       name: "Ethan Hunt",
       verified: true,
       location: "Boston, USA",
@@ -94,7 +94,7 @@ export default function SRHUAyurvedaCentre() {
     },
     {
       title: "Exceptional Burnout Reset in a Serene Setting",
-      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus completely restored my mental clarity. The integration with modern health standards gives absolute peace of mind.",
+      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus.",
       name: "Astrid Lindqvist",
       verified: true,
       location: "Stockholm, Sweden",
@@ -103,7 +103,7 @@ export default function SRHUAyurvedaCentre() {
     },
     {
       title: "Excellent Post-Surgical Detoxification",
-      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs. The results were immediate. I feel lighter, my appetite has fully returned, and my energy levels have bounced back.",
+      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs.",
       name: "Oliver Laurent",
       verified: true,
       location: "Paris, France",
@@ -112,7 +112,7 @@ export default function SRHUAyurvedaCentre() {
     },
     {
       title: "A Truly Holistic Clinical Haven",
-      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments. The organic, fresh vegetarian meals are delicious, and the staff is extremely professional. My skin and joints feel young and completely healed.",
+      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments.",
       name: "Elena Rostova",
       verified: true,
       location: "Munich, Germany",
@@ -677,7 +677,7 @@ export default function SRHUAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      +91 135 2471249 / +91 135 2471200
+                        +91 989 xxxx xxx
                     </div>
                   </div>
                 </div>
