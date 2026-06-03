@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function SRHUAyurvedaCentre() {
+export default function BholeBabaAyurvedicHospitalResearchCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -75,138 +75,138 @@ export default function SRHUAyurvedaCentre() {
 
   const testimonials = [
     {
-      title: "Highly Professional Panchakarma Treatment",
-      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the SRHU Ayurvedic Center. The medical integration is superb here.",
-      name: "Sophia Bennett",
+      title: "Proficient Sciatica Care in Ranikhet",
+      review: "I stayed at Bhole Baba Hospital in Chilianaula for 3 weeks to treat my painful sciatica and spinal stiffness. Dr. Vijay and his therapists did a marvelous job.",
+      name: "Charlie Dubois",
       verified: true,
-      location: "London, UK",
-      condition: "Panchakarma Detox & Digestion Restoration",
+      location: "Lyon, France",
+      condition: "Joint Pain & Spine Care",
       rating: 5
     },
     {
-      title: "Remarkable Recovery from Chronic Sciatica",
-      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan.",
-      name: "Ethan Hunt",
+      title: "Exceptional Panchakarma Detox & Peace",
+      review: "My 14-day residential Panchakarma detox at the Bhole Baba center was deeply transformative.",
+      name: "Alex Wright",
       verified: true,
-      location: "Boston, USA",
-      condition: "Joint & Spine Care",
+      location: "Toronto, Canada",
+      condition: "Classical Panchakarma Detox",
       rating: 5
     },
     {
-      title: "Exceptional Burnout Reset in a Serene Setting",
-      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus.",
-      name: "Astrid Lind",
+      title: "Perfect Burnout Recovery & Rejuvenation",
+      review: "I completed a 10-day Kayakalpa rejuvenation package at the hospital to recover from mental exhaustion.",
+      name: "Ingel Nielsen",
       verified: true,
-      location: "Stockholm, Sweden",
-      condition: "Stress Reset & Rejuvenation",
+      location: "Copenhagen, Denmark",
+      condition: "Stress Relief & Rejuvenation",
       rating: 5
     },
     {
-      title: "Excellent Post-Surgical Detoxification",
-      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs.",
-      name: "Oliver Laurent",
+      title: "Incredible Respiratory & Asthma Relief",
+      review: "As a long-term asthma sufferer, the pure mountain air of Chilianaula and the specialized respiratory therapies designed by Dr. Priyanka Ramola worked wonders.I haven't breathed this easily in years.",
+      name: "James Sterling",
       verified: true,
-      location: "Paris, France",
-      condition: "Post-Clinical Recovery & Detox",
+      location: "Chicago, USA",
+      condition: "Respiratory & Chronic Asthma Care",
       rating: 5
     },
     {
-      title: "A Truly Holistic Clinical Haven",
-      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments.",
-      name: "Elena Rostova",
+      title: "Scientific Clinical Care with Heart",
+      review: "What makes Bhole Baba Hospital stand out is the combination of scientific medical supervision and Babaji's charitable spirit. I received excellent treatment for metabolic issues and digestion.",
+      name: "Talia Kovako",
       verified: true,
-      location: "Munich, Germany",
-      condition: "Metabolic & Skin Recovery",
+      location: "Kyiv, Ukraine",
+      condition: "Digestive Reset & Metabolic Balance",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes the SRHU Ayurvedic Center in Dehradun unique?",
-      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University (SRHU) in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
+      question: "What is the history and lineage of the Bhole Baba Ayurvedic Hospital?",
+      answer: "The hospital was established in 1984 under the guidance of H.H. Sri Babaji (Haidakhan Babaji) to bring authentic Ayurvedic healing and research to the Kumaon region. It is situated adjacent to the Baba Haidakhan Temple and Ashram in Chilianaula, Ranikhet, Almora, operating under a charitable trust."
     },
     {
-      question: "What primary clinical packages and therapies are offered?",
-      answer: "We offer comprehensive residential packages focusing on Classical Panchakarma (body purification), Joint & Spine Care (for sciatica, arthritis, and back pain), Stress & Anxiety Reset, Rejuvenation & Detox, Chronic Illness Support, and Post-Clinical Recovery (detoxification after surgery or chemotherapy)."
+      question: "Who leads the medical and clinical team at the hospital?",
+      answer: "Our expert clinical team is led by Dr. Vijay (M.D. in Ayurveda, Gold Medalist, and experienced clinical researcher) and Dr. S.S. Misra (In-charge with over 24 years of Ayurvedic clinical experience), alongside resident physician Dr. Priyanka Ramola."
     },
     {
-      question: "Are the herbal formulations and meals prepared on campus?",
-      answer: "Yes. All traditional oils and herbal extracts used in our therapies are carefully managed to ensure purity. Guests are provided with fresh, balanced, vegetarian meals prepared in our dining hall according to dietary guidelines that support the healing process."
+      question: "What primary treatment packages and durations are available?",
+      answer: "We offer classical Panchakarma detoxification, Kayakalpa & Rejuvenation, Stress & Mental Wellness, and specialized care for chronic joint disorders, asthma, and digestive issues. Treatment durations range from 3, 5, 7, 14, 21, to 45 days based on physician consultations."
     },
     {
-      question: "Can guests coordinate consultations or follow-up care online?",
-      answer: "Yes, we support our clients even after they leave the university campus. Our doctors provide a comprehensive daily routine guidelines (Dinacharya) and home-care plan upon discharge, and follow-up consultations can be coordinated online."
+      question: "Are the Ayurvedic medicines prepared in-house?",
+      answer: "Yes. All herbal preparations, oils, and decoctions used in our therapies are carefully processed and manufactured in our in-house certified pharmacy to ensure maximum purity, potency, and traditional authenticity."
     },
     {
-      question: "How close is the center to major transport hubs?",
-      answer: "Our center is exceptionally accessible. It is situated just 2 km (approx. 5 minutes) from the Jolly Grant Airport (Dehradun Airport). Doiwala Railway Station is about 6 km away, and Dehradun Railway Station is approximately 25 km from the campus."
+      question: "How do I reach Chilianaula, Ranikhet from the nearest hubs?",
+      answer: "The nearest airport is Pantnagar Airport (PGH), approximately 110 km away. The nearest railway stations are Kathgodam and Haldwani, located about 90 km from the hospital. Private taxis are easily available from the airport and railway stations to reach Ranikhet (approx. 2.5 to 4 hours drive)."
     }
   ];
 
   const programs = [
     {
-      title: "Residential Panchakarma",
-      description: "Complete biological cleansing program overseen by experienced Vaidyas to purge cellular impurities and restore physiological equilibrium.",
+      title: "Classical Panchakarma",
+      description: "A complete five-fold biological detoxification program including Vamana, Virechana, and Basti supervised by Dr. Vijay and Dr. S.S. Misra.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Joint & Spine Wellness",
-      description: "Specialized traditional therapies including warm oil poolings (Basti) and herbal poultice massage (Kizhi) for sciatica, arthritis, and joint pain.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Stress & Anxiety Reset",
-      description: "Deep neural calming treatments utilizing warm Shirodhara oil flows, soothing massages, and guided pranayama at our university campus.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Rejuvenation & Detox",
-      description: "Nourishing oil poolings, organic steam baths, and cellular tonics designed to slow down physiological aging and revitalize body tissue.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Chronic Illness Support",
-      description: "Targeted clinical protocols designed to support management of conditions such as hypertension, IBS, and neurological disorders.",
+      title: "Kayakalpa & Rejuvenation",
+      description: "Premium cellular revitalization and Rasayana therapies designed to slow physiological aging, build immunity, and increase vital energy.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Post-Clinical Recovery",
-      description: "Gentle detox and therapeutic support for patients recovering from surgery, chemotherapy, or radiotherapy to rebuild immunity.",
+      title: "Stress & Mental Wellness",
+      description: "Neural soothing therapies utilizing warm Shirodhara oil flows, guided meditation, and yoga sessions at the tranquil Haidakhan temple campus.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Chronic Ailments Recovery",
+      description: "Targeted clinical protocols for rheumatoid arthritis, sciatica, back pain, and joint stiffness using specialized herbal poultices and oil pools.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Respiratory & Asthma Care",
+      description: "Unique therapies utilizing pure Himalayan air, herbal steam inhalations, and chest massages to relieve chronic asthma, bronchitis, and allergies.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Digestive & Metabolic Reset",
+      description: "Custom herbal preparations, therapeutic mild purgations, and individually designed Saatvic vegetarian diets to balance metabolic functions.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Swami Rama's Vision",
-      description: "Founded under H.H. Dr. Swami Rama's vision of integrated healthcare where traditional wisdom complements modern scientific standards.",
+      title: "Haidakhan Babaji's Vision",
+      description: "Established in 1984 under H.H. Sri Babaji's guidance to serve and heal through authentic Himalayan Ayurvedic principles.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "University Integration",
-      description: "Located within Swami Rama Himalayan University campus, backed by professional academic research and certified wellness guidelines.",
+      title: "Gold Medalist Doctor Panel",
+      description: "Led by Dr. Vijay (M.D., Gold Medalist) and Dr. S.S. Misra (24+ yrs clinical experience), ensuring the highest medical standard.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Hospital Collaboration",
-      description: "Works alongside the adjacent multispecialty Himalayan Hospital, providing clinical safety and collaborative medical monitoring.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Adjoining Ashram Synergy",
+      description: "Located next to the sacred Baba Haidakhan Temple and Ashram in Chilianaula, providing a peaceful spiritual energy.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: " Foothill Peace",
-      description: "Set in Swami Ram Nagar at the foot of the Shivalik hills, providing a tranquil, clean, and highly therapeutic environment.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Scenic Yoga & Breathwork",
-      description: "Guided daily yoga and mindfulness practices integrated directly with your health routine at our dedicated university facilities.",
+      title: "Pure Mountain Altitude",
+      description: "Set in Ranikhet at a high altitude overlooking the snow-capped Himalayas, providing crisp, clean, pollution-free air.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "In-House Organic Meals",
-      description: "Chef-prepared, nutrient-dense vegetarian diet served in our dining hall to balance doshas and boost metabolic strength.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Certified In-House Pharmacy",
+      description: "Uses fresh, authentic herbal preparations manufactured in our own certified medicine unit to guarantee purity and potency.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Charitable Samaj Value",
+      description: "Supported by Sri Baba Haidakhan Trust, offering accessible, research-backed Ayurvedic treatments with compassionate care.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function SRHUAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "SRHU Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
+    document.title = "Bhole Baba Ayurvedic Hospital & Research Centre | Ranikhet";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University (SRHU) Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Kumaon Himalayan Panchakarma, anti-aging Kayakalpa, and clinical research therapies under Dr. Vijay and Dr. S.S. Misra at Bhole Baba Ayurvedic Hospital next to Haidakhan Temple in Chilianaula, Ranikhet.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SRHUAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Swami Rama Himalayan University Ayurvedic Center Dehradun Uttarakhand
+              Bhole Baba Ayurvedic Hospital & Research Centre Ranikhet Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function SRHUAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Swami Rama Himalayan University Ayurvedic Center</h1>
-                <p className="text-xl mb-4 opacity-90">Swami Rama Himalayan University Integrated Holistic Health Center</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Bhole Baba Ayurvedic Hospital & Research Centre</h1>
+                <p className="text-xl mb-4 opacity-90">Haidakhan Babaji's Healing & Research Sanctuary</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Dehradun, Uttarakhand, India</span>
+                  <span className="text-lg">Ranikhet, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(50 Reviews)</span>
+                  <span className="text-lg font-semibold">5</span>
+                  <span className="opacity-90">(20 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function SRHUAyurvedaCentre() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Integrated Wellness & Authentic <br className="hidden lg:block" />
-                Ayurveda at SRHU Dehradun
+                Traditional Kumaon Healing & <br className="hidden lg:block" />
+                Authentic Ayurveda in Ranikhet
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SRHUAyurvedaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">SRHU Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University (SRHU) in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Bhole Baba Ayurvedic Hospital & Research Centre</strong>, a highly regarded hospital and research facility located in the serene surroundings of Chilianaula, Ranikhet, overlooking the majestic snow-capped peaks of the Kumaon Himalayas. Established in <strong className="font-bold text-[#2C4E5A]">1984</strong> under the guidance of <strong className="font-bold text-[#2C4E5A]">H.H. Sri Babaji</strong> (Haidakhan Babaji), the hospital was founded to deliver authentic, research-backed Ayurvedic treatments. Our clinical panel is led by <strong className="font-bold text-[#2C4E5A]">Dr. Vijay</strong>, an M.D. in Ayurveda and a distinguished gold medalist, and <strong className="font-bold text-[#2C4E5A]">Dr. S.S. Misra</strong>, who holds over 24 years of clinical experience. We integrate traditional healing sciences to support physical detoxification and long-term wellness.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function SRHUAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                          alt="SRHU Ayurvedic Center gardens and view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/secondary.webp" 
+                          alt="Bhole Baba Ayurvedic Hospital gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function SRHUAyurvedaCentre() {
                   </div>
 
                   <p>
-                    Supervised by a panel of highly qualified Ayurvedic physicians (Vaidyas), naturopathic experts, and trained therapists, the center offers personalized residential Panchakarma treatments. We specialize in addressing chronic conditions such as osteoarthritis, rheumatoid arthritis, back pain, joint stiffness, and stress-related ailments. By collaborating directly with the adjacent multispecialty Himalayan Hospital, our guests receive the highest standard of medical safety, diagnostic monitoring, and professional care.
+                    Our facility specializes in residential Panchakarma therapies, anti-aging Kayakalpa rejuvenation, and chronic disease recovery. Under the supervision of our experienced Vaidyas and caring therapists, patients receive individual treatment plans targeting rheumatoid arthritis, joint pain, sciatica, chronic respiratory issues, asthma, and digestive disorders. We combine traditional Keralite oil therapies (Abhyanga), warm Shirodhara flows, and customized steam baths with in-house prepared herbal extracts.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function SRHUAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp" 
-                      alt="SRHU Ayurvedic Center Dehradun Campus"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp" 
+                      alt="Bhole Baba Ayurvedic Hospital Ranikhet"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function SRHUAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                        alt="Therapy Room at SRHU Ayurvedic Center"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/secondary.webp" 
+                        alt="Therapy Room at Bhole Baba Hospital"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function SRHUAyurvedaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with SRHU Ayurvedic Center today.
+                My Vaidyam to connect with Bhole Baba Ayurvedic Hospital today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function SRHUAyurvedaCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at SRHU Ayurvedic Center</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Bhole Baba Hospital</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +409,9 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose SRHU Ayurvedic Center</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Bhole Baba Ayurvedic Hospital</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience clinical research standards, medical team safety integration, and H.H. Swami Rama's healing legacy.
+                Experience Mahavatar Babaji's vision, gold medalist doctors, and the healing synergy of the adjacent Chilianaula Ashram.
               </p>
             </div>
             
@@ -476,12 +476,12 @@ export default function SRHUAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+                  alt="Bhole Baba Ayurvedic Hospital"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Bhole Baba Ayurvedic Hospital?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function SRHUAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Bhole Baba Ayurvedic Hospital?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function SRHUAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+                  alt="Bhole Baba Ayurvedic Hospital"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -631,7 +631,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at SRHU Ayurvedic Center.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Bhole Baba Hospital.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -665,9 +665,9 @@ export default function SRHUAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      SRHU Ayurvedic Center<br />
-                      Swami Rama Himalayan University Campus, Swami Ram Nagar<br />
-                      Jolly Grant, Dehradun, Uttarakhand
+                      Bhole Baba Ayurvedic Hospital & Research Centre<br />
+                      Baba Haidakhan Temple & Ashram Campus, Chilianaula<br />
+                      Ranikhet, Almora District, Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -677,7 +677,7 @@ export default function SRHUAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                        +91 989 xxxx xxx
+                      <div>+91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>
@@ -689,11 +689,11 @@ export default function SRHUAyurvedaCentre() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 2 km from Jolly Grant Airport</span>
+                        <span>Approx. 110 km from Pantnagar Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 6 km from Doiwala Railway Station</span>
+                        <span>Approx. 90 km from Kathgodam / Haldwani Railway Station</span>
                       </li>
                     </ul>
                   </div>
@@ -702,14 +702,14 @@ export default function SRHUAyurvedaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110305.9646300226!2d78.03885810667268!3d30.235325671534614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390924c4a8865ddf%3A0xb914eca09be3ef0!2sAYURVEDA%20CENTRE%20SRHU%20%2F%20RESIDENTIAL%20PANCHAKARMA%20THERAPY%20CENTRE!5e0!3m2!1sen!2sin!4v1780480187208!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.0060476691892!2d79.40828007553911!3d29.661598875118553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0aa39023f2fed%3A0xac0fff02134d348a!2sBhole%20Baba%20Ayurvedic%20Hospital%20%26%20Research%20Centre!5e0!3m2!1sen!2sin!4v1780485632042!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="SRHU Ayurvedic Center Location"
+                  title="Bhole Baba Ayurvedic Hospital Location"
                 ></iframe>
               </div>
             </div>
@@ -721,8 +721,8 @@ export default function SRHUAyurvedaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-            alt="SRHU Ayurvedic Center foothills view"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+            alt="Bhole Baba Ayurvedic Hospital foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -732,7 +732,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at SRHU Ayurvedic Center.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Bhole Baba Ayurvedic Hospital.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -742,7 +742,7 @@ export default function SRHUAyurvedaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/911352471249?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SRHU%20Ayurvedic%20Center."
+              href="https://wa.me/917579200499?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Bhole%20Baba%20Ayurvedic%20Hospital."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

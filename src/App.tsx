@@ -164,6 +164,7 @@ import NaturalTouchAyurveda from "./pages/centers/NaturalTouchAyurveda.tsx";
 import KAREHealth from "./pages/centers/KAREHealth.tsx";
 import SRHUAyurvedaCentre from "./pages/centers/SRHUAyurvedaCentre.tsx";
 import AyuskamaAyurvedaClinicPanchakarmaCentre from "./pages/centers/AyuskamaAyurvedaClinicPanchakarmaCentre.tsx";
+import BholeBabaAyurvedicHospitalResearchCentre from "./pages/centers/BholeBabaAyurvedicHospitalResearchCentre.tsx";
 
 const queryClient = new QueryClient();
 
@@ -257,6 +258,7 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
+          <Route path="/centers/bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCentre />}/>
           <Route path="/centers/ayuskama-ayurveda-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india" element={<AyuskamaAyurvedaClinicPanchakarmaCentre />}/>
           <Route path="/centers/swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india" element={<SRHUAyurvedaCentre />}/>
 
