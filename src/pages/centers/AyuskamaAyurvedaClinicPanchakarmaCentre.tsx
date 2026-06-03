@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function SRHUAyurvedaCentre() {
+export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -75,138 +75,138 @@ export default function SRHUAyurvedaCentre() {
 
   const testimonials = [
     {
-      title: "Highly Professional Panchakarma Treatment",
-      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the SRHU Ayurvedic Center. The medical integration is superb here.",
-      name: "Sophia Bennett",
+      title: "Life-changing Panchakarma & Sciatica Relief",
+      review: "I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain. Dr. Vinod Kumar designed a comprehensive 14-day treatment.",
+      name: "Liam Harrison",
       verified: true,
-      location: "London, UK",
-      condition: "Panchakarma Detox & Digestion Restoration",
+      location: "Melbourne, Australia",
+      condition: "Chronic Sciatica & Spine Care",
       rating: 5
     },
     {
-      title: "Remarkable Recovery from Chronic Sciatica",
-      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan.",
-      name: "Ethan Hunt",
+      title: "Deeply Transformative Detox & Digestion Restoration",
+      review: "My Panchakarma detox at Ayuskama was fantastic. The Ayurvedic consultation was extremely thorough. Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.",
+      name: "Emma Watson",
       verified: true,
-      location: "Boston, USA",
-      condition: "Joint & Spine Care",
+      location: "Oxford, UK",
+      condition: "Panchakarma Detox & Digestion",
       rating: 5
     },
     {
-      title: "Exceptional Burnout Reset in a Serene Setting",
-      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus.",
-      name: "Astrid Lindqvist",
+      title: "Excellent Ayurveda Course & Certification",
+      review: "I joined the Ayurveda Nutrition and Marma Therapy certification course here. The theoretical teachings are backed by deep practical clinical sessions.",
+      name: "Lucas Novak",
       verified: true,
-      location: "Stockholm, Sweden",
-      condition: "Stress Reset & Rejuvenation",
+      location: "Prague, Czech Republic",
+      condition: "Ayurveda Nutrition & Marma Course",
       rating: 5
     },
     {
-      title: "Excellent Post-Surgical Detoxification",
-      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs.",
-      name: "Oliver Laurent",
+      title: "Wonderful Stress Relief & Rejuvenation Retreat",
+      review: "I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout. The Shirodhara treatment was incredibly relaxing, and the daily morning yoga sessions in Upper Tapovan helped calm my mind.",
+      name: "Chloe Mercier",
       verified: true,
-      location: "Paris, France",
-      condition: "Post-Clinical Recovery & Detox",
+      location: "Geneva, Switzerland",
+      condition: "Stress & Rejuvenation Retreat",
       rating: 5
     },
     {
-      title: "A Truly Holistic Clinical Haven",
-      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments.",
-      name: "Elena Rostova",
+      title: "Incredible Support for Women's Health",
+      review: "I went to Ayuskama to address long-standing hormonal imbalances. Dr. Neetu Singh was extremely empathetic and knowledgeable. She recommended a customized diet and specific herbs.",
+      name: "Mia Rossi",
       verified: true,
-      location: "Munich, Germany",
-      condition: "Metabolic & Skin Recovery",
+      location: "Milan, Italy",
+      condition: "Women's Hormonal Health & Vitality",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes the SRHU Ayurvedic Center in Dehradun unique?",
-      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University (SRHU) in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
+      question: "What makes Ayuskama Ayurveda Clinic & Panchakarma Centre unique?",
+      answer: "Ayuskama Ayurveda is located in Upper Tapovan, Rishikesh. The center is led by Dr. Vinod Kumar (an expert in Panchakarma with over 25 years of experience) and Dr. Neetu Singh (specializing in women's health and yoga therapy with over 20 years of experience). We combine authentic Keralite Panchakarma treatments, clinical research-oriented practices, and globally certified educational courses in a quiet, serene environment."
     },
     {
-      question: "What primary clinical packages and therapies are offered?",
-      answer: "We offer comprehensive residential packages focusing on Classical Panchakarma (body purification), Joint & Spine Care (for sciatica, arthritis, and back pain), Stress & Anxiety Reset, Rejuvenation & Detox, Chronic Illness Support, and Post-Clinical Recovery (detoxification after surgery or chemotherapy)."
+      question: "What certification courses do you offer?",
+      answer: "We offer professional, globally recognized certification courses including Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition. We provide both short-term training and intensive 4-week certification programs designed for beginners to advanced practitioners."
     },
     {
-      question: "Are the herbal formulations and meals prepared on campus?",
-      answer: "Yes. All traditional oils and herbal extracts used in our therapies are carefully managed to ensure purity. Guests are provided with fresh, balanced, vegetarian meals prepared in our dining hall according to dietary guidelines that support the healing process."
+      question: "Are meals and accommodations included in the packages?",
+      answer: "Yes. Our residential Panchakarma and rejuvenation retreats include private accommodation and fresh, balanced Saatvic vegetarian meals prepared daily according to Ayurvedic principles to support your purification process."
     },
     {
-      question: "Can guests coordinate consultations or follow-up care online?",
-      answer: "Yes, we support our clients even after they leave the university campus. Our doctors provide a comprehensive daily routine guidelines (Dinacharya) and home-care plan upon discharge, and follow-up consultations can be coordinated online."
+      question: "How do I book a treatment program at Ayuskama?",
+      answer: "You can book by contacting us through My Vaidyam. We require an initial deposit to confirm your booking, and the remaining balance can be settled upon arrival at the center. Consultations can be scheduled both offline and online."
     },
     {
-      question: "How close is the center to major transport hubs?",
-      answer: "Our center is exceptionally accessible. It is situated just 2 km (approx. 5 minutes) from the Jolly Grant Airport (Dehradun Airport). Doiwala Railway Station is about 6 km away, and Dehradun Railway Station is approximately 25 km from the campus."
+      question: "How far is the center from the nearest airport and railway stations?",
+      answer: "Our center is located in Upper Tapovan, Rishikesh. It is approximately 21 km (about 40 minutes) from Jolly Grant Airport (Dehradun Airport - DED). The Yog Nagari Rishikesh and Rishikesh Railway Stations are about 5–6 km away, while the Haridwar Railway Station is approximately 30 km away."
     }
   ];
 
   const programs = [
     {
-      title: "Residential Panchakarma",
-      description: "Complete biological cleansing program overseen by experienced Vaidyas to purge cellular impurities and restore physiological equilibrium.",
+      title: "Classical Panchakarma",
+      description: "A complete five-fold biological detoxification program including Abhyanga (massage), Virechana, and Basti under close supervision of senior physicians.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Joint & Spine Wellness",
-      description: "Specialized traditional therapies including warm oil poolings (Basti) and herbal poultice massage (Kizhi) for sciatica, arthritis, and joint pain.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Ayurveda Training & Certification",
+      description: "Globally accredited professional courses in Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition taught by experienced doctors.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Stress & Anxiety Reset",
-      description: "Deep neural calming treatments utilizing warm Shirodhara oil flows, soothing massages, and guided pranayama at our university campus.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Rejuvenation & Detox",
-      description: "Nourishing oil poolings, organic steam baths, and cellular tonics designed to slow down physiological aging and revitalize body tissue.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Chronic Illness Support",
-      description: "Targeted clinical protocols designed to support management of conditions such as hypertension, IBS, and neurological disorders.",
+      title: "Rejuvenation & Yoga Retreat",
+      description: "Scenic 7, 14, and 21-day wellness programs integrating daily yoga, customized therapies, and organic Saatvic dining in Tapovan.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Post-Clinical Recovery",
-      description: "Gentle detox and therapeutic support for patients recovering from surgery, chemotherapy, or radiotherapy to rebuild immunity.",
+      title: "Spine & Joint Wellness",
+      description: "Targeted clinical treatments for sciatica, back pain, arthritis, and joint stiffness using specialized herbal poultices and oil pools.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Women's Health & Gynecology",
+      description: "Specialized clinical consultations and therapeutic regimens focusing on hormonal balance, prenatal/postnatal care, and wellness led by Dr. Neetu Singh.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Stress & Anxiety Reset",
+      description: "Deep calming therapies featuring warm Shirodhara oil flows, guided meditation, and therapeutic breathwork to heal corporate burnout.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Swami Rama's Vision",
-      description: "Founded under H.H. Dr. Swami Rama's vision of integrated healthcare where traditional wisdom complements modern scientific standards.",
+      title: "Veteran Doctor Panel",
+      description: "Led by Dr. Vinod Kumar (25+ yrs experience) and Dr. Neetu Singh (20+ yrs experience) who supervise all clinical therapies.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "University Integration",
-      description: "Located within Swami Rama Himalayan University campus, backed by professional academic research and certified wellness guidelines.",
+      title: "Accredited Training",
+      description: "Offers globally recognized certifications in Ayurvedic Massage, Marma, and Nutrition, ensuring high academic standards.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Hospital Collaboration",
-      description: "Works alongside the adjacent multispecialty Himalayan Hospital, providing clinical safety and collaborative medical monitoring.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Tapovan Foothills Peace",
+      description: "Located near the secret waterfall road in Upper Tapovan, providing a quiet, pollution-free, and inspiring natural sanctuary.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: " Foothill Peace",
-      description: "Set in Swami Ram Nagar at the foot of the Shivalik hills, providing a tranquil, clean, and highly therapeutic environment.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Scenic Yoga & Breathwork",
-      description: "Guided daily yoga and mindfulness practices integrated directly with your health routine at our dedicated university facilities.",
+      title: "Integrated Yoga Therapy",
+      description: "Therapies are coupled with morning yoga, pranayama, and meditation designed to align the body's energy channels.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "In-House Organic Meals",
-      description: "Chef-prepared, nutrient-dense vegetarian diet served in our dining hall to balance doshas and boost metabolic strength.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Saatvic Healing Meals",
+      description: "Nutritious organic vegetarian food prepared in accordance with Ayurvedic principles to balance individual Doshas.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Personalized Care",
+      description: "Maintaining small residential batches to guarantee that every guest receives individual attention from our Vaidyas and therapists.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function SRHUAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "SRHU Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
+    document.title = "Ayuskama Ayurveda Clinic & Panchakarma Centre | Rishikesh";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University (SRHU) Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Panchakarma detoxification, globally certified Ayurvedic training courses, and holistic yoga retreats at Ayuskama Ayurveda Clinic in Upper Tapovan, Rishikesh under veteran Ayurvedic doctors.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SRHUAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Swami Rama Himalayan University Ayurvedic Center Dehradun Uttarakhand
+              Ayuskama Ayurveda Clinic & Panchakarma Centre Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function SRHUAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Swami Rama Himalayan University Ayurvedic Center</h1>
-                <p className="text-xl mb-4 opacity-90">Swami Rama Himalayan University Integrated Holistic Health Center</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayuskama Ayurveda Clinic & Panchakarma Centre</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Healing & Panchakarma Detoxification</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Dehradun, Uttarakhand, India</span>
+                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(50 Reviews)</span>
+                  <span className="opacity-90">(340 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function SRHUAyurvedaCentre() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Integrated Wellness & Authentic <br className="hidden lg:block" />
-                Ayurveda at SRHU Dehradun
+                Authentic Ayurveda Healing & <br className="hidden lg:block" />
+                Holistic Education in Rishikesh
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SRHUAyurvedaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">SRHU Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University (SRHU) in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Ayuskama Ayurveda Clinic & Panchakarma Centre</strong>, a premier healing sanctuary and educational institution located in the serene surroundings of Upper Tapovan, Rishikesh. Established to revive the ancient, time-tested wisdom of Ayurveda, Ayuskama is led by the highly regarded <strong className="font-bold text-[#2C4E5A]">Dr. Vinod Kumar</strong>, a veteran Ayurvedic physician and Panchakarma expert with over 25 years of experience, and <strong className="font-bold text-[#2C4E5A]">Dr. Neetu Singh</strong>, a specialist in therapeutic yoga and women's health with over 20 years of experience. We provide a peaceful retreat for profound body purification, mental clarity, and professional Ayurvedic training courses.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function SRHUAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                          alt="SRHU Ayurvedic Center gardens and view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/secondary.jpg" 
+                          alt="Ayuskama Ayurveda Clinic gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function SRHUAyurvedaCentre() {
                   </div>
 
                   <p>
-                    Supervised by a panel of highly qualified Ayurvedic physicians (Vaidyas), naturopathic experts, and trained therapists, the center offers personalized residential Panchakarma treatments. We specialize in addressing chronic conditions such as osteoarthritis, rheumatoid arthritis, back pain, joint stiffness, and stress-related ailments. By collaborating directly with the adjacent multispecialty Himalayan Hospital, our guests receive the highest standard of medical safety, diagnostic monitoring, and professional care.
+                    Our center specializes in custom Panchakarma detoxification, Ayurvedic nutrition, and chronic disease management. Under the direct supervision of our experienced Vaidyas and skilled therapists, we offer personalized treatment programs targeting spinal conditions, joint stiffness, sciatic pain, digestive issues, and stress-related ailments. We integrate therapeutic yoga and pranayama with authentic oil massages (Abhyanga), warm Shirodhara flows, and organic herbal formulations to restore constitutional balance.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function SRHUAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp" 
-                      alt="SRHU Ayurvedic Center Dehradun Campus"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif" 
+                      alt="Ayuskama Ayurveda Clinic Tapovan Rishikesh"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function SRHUAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                        alt="Therapy Room at SRHU Ayurvedic Center"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/secondary.jpg" 
+                        alt="Therapy Room at Ayuskama Ayurveda Clinic"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function SRHUAyurvedaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with SRHU Ayurvedic Center today.
+                My Vaidyam to connect with Ayuskama Ayurveda Clinic today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function SRHUAyurvedaCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at SRHU Ayurvedic Center</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Ayuskama Rishikesh</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +409,9 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose SRHU Ayurvedic Center</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Ayuskama Ayurveda Clinic</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience clinical research standards, medical team safety integration, and H.H. Swami Rama's healing legacy.
+                Experience veteran doctor supervision, accredited certification courses, and Upper Tapovan's tranquil healing environment.
               </p>
             </div>
             
@@ -476,12 +476,12 @@ export default function SRHUAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
+                  alt="Ayuskama Ayurveda Clinic"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function SRHUAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +520,8 @@ export default function SRHUAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
+                  alt="Ayuskama Ayurveda Clinic"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -631,7 +631,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at SRHU Ayurvedic Center.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Ayuskama Rishikesh.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -663,11 +663,11 @@ export default function SRHUAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Clinic Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      SRHU Ayurvedic Center<br />
-                      Swami Rama Himalayan University Campus, Swami Ram Nagar<br />
-                      Jolly Grant, Dehradun, Uttarakhand
+                      Ayuskama Ayurveda Clinic & Panchakarma Centre<br />
+                      60s Caffe, Next street to Hotel Green Hill, Secret Waterfall Road<br />
+                      Upper Tapovan, Rishikesh, Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -677,7 +677,7 @@ export default function SRHUAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                        +91 989 xxxx xxx
+                      <div>+91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>
@@ -689,11 +689,11 @@ export default function SRHUAyurvedaCentre() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 2 km from Jolly Grant Airport</span>
+                        <span>Approx. 21 km from Jolly Grant Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 6 km from Doiwala Railway Station</span>
+                        <span>Approx. 6 km from Yog Nagari Rishikesh / Rishikesh Railway Station</span>
                       </li>
                     </ul>
                   </div>
@@ -702,14 +702,14 @@ export default function SRHUAyurvedaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110305.9646300226!2d78.03885810667268!3d30.235325671534614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390924c4a8865ddf%3A0xb914eca09be3ef0!2sAYURVEDA%20CENTRE%20SRHU%20%2F%20RESIDENTIAL%20PANCHAKARMA%20THERAPY%20CENTRE!5e0!3m2!1sen!2sin!4v1780480187208!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.589483503737!2d78.31577877555722!3d30.134558274878227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909118e036b0fed%3A0x62811558f33c6cc8!2sAyuskama%20Ayurveda%20Clinic%20%26%20Panchakarma%20Centre.!5e0!3m2!1sen!2sin!4v1780484142716!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="SRHU Ayurvedic Center Location"
+                  title="Ayuskama Ayurveda Clinic Location"
                 ></iframe>
               </div>
             </div>
@@ -721,8 +721,8 @@ export default function SRHUAyurvedaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-            alt="SRHU Ayurvedic Center foothills view"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
+            alt="Ayuskama Ayurveda Clinic foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -732,7 +732,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at SRHU Ayurvedic Center.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayuskama Ayurveda Clinic.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -742,7 +742,7 @@ export default function SRHUAyurvedaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/911352471249?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SRHU%20Ayurvedic%20Center."
+              href="https://wa.me/919917317388?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Ayuskama%20Ayurveda%20Clinic."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
