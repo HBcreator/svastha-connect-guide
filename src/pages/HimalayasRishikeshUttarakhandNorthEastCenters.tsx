@@ -72,6 +72,7 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   20: "prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india",
   21: "moksha-himalaya-spa-resort-himachal-india",
   22: "ayurveda-house-himalayan-ayurveda-hospital-himachal-india",
+  23: "ayurvaid-kalmatia-centre-almora-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>
