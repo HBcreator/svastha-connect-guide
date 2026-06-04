@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function RishikeshAyurvedaCenter() {
+export default function NaturovilleWellnessResort() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function RishikeshAyurvedaCenter() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Traditional Nadi & Prakriti Diagnosis",
-      description: "Undergoing an in-depth clinical consultation and traditional pulse diagnosis (Nadi Pariksha) with Dr. Sachin Dua to identify bodily constitution (Prakriti) and deep-rooted toxins.",
+      title: "Initial Medical Consultation",
+      description: "Undergoing an in-depth clinical evaluation and constitution assessment (Prakruti analysis) with our senior doctors to map your unique health requirements.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Medicated Herbal Preparations",
-      description: "Formulating customized organic, chemical-free herbal mixtures and prescribing specific Ayurvedic diet guidelines tailored to restore balance.",
+      title: "Personalized Formulation",
+      description: "Designing a targeted treatment schedule combining traditional Ayurveda, Naturopathy, and customized Saatvic diets tailored to your needs.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Snehana & Swedana",
-      description: "Administering internal and external lubrication with herbal medicated oils, followed by steam therapy to loosen toxins from tissues.",
+      title: "Preparatory Body Therapies",
+      description: "Mobilizing metabolic wastes through classical oil massages (Abhyanga) and herbal steam applications to prepare the body for purification.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Targeted Detoxification",
-      description: "Conducting personalized purification therapies (Panchakarma) like Shirodhara, Abhyanga, and custom Basti based on the clinical diagnosis.",
+      title: "Targeted Panchakarma & Cleansing",
+      description: "Administering biological detox therapies like Basti, Virechana, or Shirodhara under the direct supervision of resident BAMS practitioners.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Tailored Nutritional Guideline",
-      description: "Prescribing a pure Saatvic diet plan designed to reset digestion, strengthen the digestive fire (Agni), and sustain therapeutic benefits.",
+      title: "Naturopathic Hydrotherapies",
+      description: "Integrating alternative drugless treatments such as therapeutic mud wraps, underwater hydro-massages, and oxygen-rich ozone baths.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Rejuvenating Lifestyle Routine",
-      description: "Integrating personal guidelines for Yoga, meditation, and daily wellness schedules to preserve lasting health and prevent recurrence.",
+      title: "Rasayana Rejuvenation",
+      description: "Transitioning back with restorative yoga, mindfulness routines, and custom herbal supplements to preserve biological balance and immunity.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "A profoundly calming and restorative experience",
-      review: "I arrived in Rishikesh completely exhausted from years of corporate stress and constant insomnia. Dr. Sachin Dua spent a lot of time analyzing my lifestyle and pulse.",
-      name: "Saskia de Jong",
+      title: "Excellent relief from spinal stiffness and chronic back pain",
+      review: "For years I lived with lower back stiffness that limited my activity. The specialized Kati Basti treatments and natural oil pool therapies at Naturoville did wonders.",
+      name: "Marge Benson",
       verified: true,
-      location: "Amsterdam, Netherlands",
-      condition: "Anxiety & Chronic Burnout",
+      location: "Gothenburg, Sweden",
+      condition: "Spine & Neck Care",
       rating: 5
     },
     {
-      title: "The ultimate Ayurvedic detox in Tapovan",
-      review: "Doing the 14-day Panchakarma at Amritash was one of the best decisions I've made. The treatments were customized day-by-day based on how my body responded.",
-      name: "Aveline Dupont",
+      title: "Comprehensive and scientific Panchakarma purification",
+      review: "The 21-day detox program at Naturoville was a deeply transformative experience. The combinations of traditional Ayurvedic Panchakarma with naturopathic hydrotherapy and steam baths were scientifically structured.",
+      name: "Pierre Martin",
       verified: true,
-      location: "Geneva, Switzerland",
-      condition: "14 Days Panchakarma Detox",
+      location: "Nice, France",
+      condition: "Panchakarma Detoxification",
       rating: 5
     },
     {
-      title: "Significant relief from long-term back stiffness",
-      review: "As an active cyclist, chronic lower back stiffness was holding me back. The warm oil massages and Potali pouch therapy targeted exactly where my muscles were tightest.",
-      name: "Niels Mort",
+      title: "Deep recovery from work burnout and sleeplessness",
+      review: "I came here suffering from severe work stress and chronic insomnia. The daily Shirodhara, customized yoga lessons, and calm environment in Lal Tappar quieted my mind completely.",
+      name: "Fiona Galagher",
       verified: true,
-      location: "Copenhagen, Denmark",
-      condition: "Lower Back & Joint Stiffness",
+      location: "Galway, Ireland",
+      condition: "Stress & Insomnia Management",
       rating: 5
     },
     {
-      title: "Gentle and effective gut reset",
-      review: "I suffered from constant bloating and erratic digestion for several years. Dr. Dua explained that my body's fire (Agni) was weak and put me on a custom diet plan and mild herbal cleanses.",
-      name: "Marc-Antoine",
+      title: "Highly successful and natural weight management",
+      review: "The custom diet corrections, herbal dry massages (Udvarthanam), and active yoga schedules designed by the doctors helped me lose weight healthily and naturally.",
+      name: "Ester Campbell",
       verified: true,
-      location: "Montreal, Canada",
-      condition: "Chronic Indigestion & IBS",
+      location: "Edinburgh, UK",
+      condition: "Ayurvedic Weight Loss",
       rating: 5
     },
     {
-      title: "Natural healing for hair and skin issues",
-      review: "I visited Dr. Neha Batra for hair thinning and dry skin issues. She combined classical Ayurvedic herbs with a very gentle scalp routine.",
-      name: "Gene Dubois",
+      title: "Outstanding hormonal balance and wellness recovery",
+      review: "I struggled with severe metabolic issues and PCOS for a long time. The personalized herbal therapies and detoxification treatments at Naturoville regulated my systems and reset my health.",
+      name: "Willemijn Jong",
       verified: true,
-      location: "Paris, France",
-      condition: "Skin Radiance & Hair Health",
+      location: "Utrecht, Netherlands",
+      condition: "PCOS & Hormonal Rebalance",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What clinical specializations does Rishikesh Ayurveda focus on?",
-      answer: "We specialize in personalized Ayurvedic remedies for chronic stress, anxiety, joint and spine problems, digestive issues, women's reproductive health (including hormonal imbalances and PCOD), and skin and hair care."
+      question: "What therapeutic systems are integrated at Naturoville Wellness Resort?",
+      answer: "We offer a unique integration of traditional Ayurvedic Panchakarma, drugless Naturopathy, yoga and meditation, and advanced hydrotherapy, enabling comprehensive, individualized biological healing."
     },
     {
-      question: "Who leads the diagnostics and therapies at the center?",
-      answer: "All treatments are directed by our founder Dr. Sachin Dua (BAMS), an expert in traditional Alternate Healing and Panchakarma, alongside Dr. Neha Batra (BAMS), who integrates clinical Ayurveda with aesthetic skin and hair care."
+      question: "Where is the resort located and what is the environment like?",
+      answer: "Our resort is situated in Lal Tappar, along the Dehradun-Haridwar Highway. Tucked away in a quiet, green valley, it provides an eco-rich environment with fresh air, ideal for natural healing and stress recovery."
     },
     {
-      question: "Are the treatments and oils chemical-free?",
-      answer: "Yes, 100%. All herbal formulations, medicated oils, and decoctions used in our treatments are natural, organic, and completely free of chemicals, steroids, or synthetic additives."
+      question: "Who directs the diagnostic assessments and therapy programs?",
+      answer: "All programs are directed by our expert resident medical team, including Dr. Archana (Ayurveda Consultant, BAMS) and Dr. Harsh (Naturopathy and Yoga Consultant, BNYS)."
     },
     {
-      question: "Where is the center located and how is its environment?",
-      answer: "Rishikesh Ayurveda is located near Deecon Valley, Tapovan, Rishikesh. The center is surrounded by peaceful Himalayan foothills, providing a quiet and spiritually healing environment close to the holy Ganges."
+      question: "What types of hydrotherapy and drugless treatments are offered?",
+      answer: "We feature advanced naturopathic facilities for Deluxe underwater massages, mud wraps, mineral baths, and deep colon cleansing to complement Ayurvedic Panchakarma."
     },
     {
-      question: "What is the closest airport and railway station to the center?",
-      answer: "The nearest airport is Jolly Grant Airport (Dehradun), located approximately 20–25 km away. The nearest rail terminal is Rishikesh Railway Station (or Yog Nagari Rishikesh), located about 4–5 km from the center."
+      question: "How do I reach the resort in Lal Tappar, Dehradun?",
+      answer: "The resort is highly accessible, located approximately 12-16 km from Jolly Grant Airport (Dehradun Airport - DED) and roughly 22-25 km from Haridwar Railway Station."
     }
   ];
 
   const programs = [
     {
       title: "Panchakarma Detoxification",
-      description: "Five-fold biological cleansing to eliminate accumulated toxins, restore dosha balance, and reset cellular metabolism.",
+      description: "Classical biological purification therapies to eliminate metabolic toxins and restore constitutional Prakruti.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Pain & Joint Management",
-      description: "Targeted Ayurvedic treatments using Abhyanga, warm herbal poultices (Potali), and oil pooling for arthritis, sciatica, and back pain.",
+      title: "Ayurvedic Weight Loss",
+      description: "Holistic weight management combining custom diets, dry massages, and biological detoxification.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Stress & Mental Wellness",
-      description: "Deep relaxation therapies including Shirodhara, head massage, and meditation to alleviate anxiety, stress, and insomnia.",
+      title: "Spine & Neck Care",
+      description: "Specialized therapies like Kati Basti and Greeva Basti to relieve chronic spinal pain and stiffness.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Skin & Hair Care",
-      description: "Classical and aesthetic herbal remedies led by Dr. Neha Batra to address eczema, dry skin, and hair thinning from within.",
+      title: "Naturopathy & Hydrotherapy",
+      description: "Drugless alternative healing, mud wraps, massage, and water-based detoxification to restore vitality.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Women's Health & Fertility",
-      description: "Holistic care addressing hormonal imbalance, PCOD, menstrual regulation, and natural reproductive wellness.",
+      title: "Yoga & Meditation Retreat",
+      description: "Daily therapeutic yoga, pranayama, and mindfulness lessons in the peaceful Himalayan foothills.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Ayurveda & Yoga Courses",
-      description: "Traditional education programs to help you understand Ayurvedic cooking, lifestyle rules, and classical Yoga practices.",
+      title: "PCOS & Hormonal Rebalance",
+      description: "Ayurvedic cleansing and dietary adjustments to regulate female hormones naturally.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Founder's Clinical Lineage",
-      description: "Led by Dr. Sachin Dua (BAMS, Alternate Healing, Panchakarma), drawing on traditional family wisdom and over 20 years of practice.",
+      title: "Multi-Disciplinary Experts",
+      description: "Guided by Dr. Archana (BAMS) and Dr. Harsh (BNYS), integrating professional Ayurveda and Naturopathy.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Aesthetic Skin & Hair Care",
-      description: "Featuring Dr. Neha Batra (BAMS), specialized in combining authentic clinical Ayurveda with aesthetic wellness procedures.",
+      title: "Comprehensive Hydrotherapy",
+      description: "Features specialized setups for mud therapy, underwater massage, and mineral baths.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Ancient Kerala Protocols",
-      description: "Specializes in traditional Kerala therapies like Pizhichil, Elakizhi, and Shirodhara administered by trained therapists.",
+      title: "Quiet Forest Environment",
+      description: "Located in Lal Tappar on Dehradun-Haridwar Highway, surrounded by eco-rich greenery and pure air.",
       icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Serene Tapovan Location",
-      description: "Located near Deecon Valley in Tapovan, Rishikesh, offering a peaceful sanctuary ideal for mental and physical recovery.",
+      title: "Scientific Panchakarma",
+      description: "Classical five-fold biological detoxification administered under strict clinical medical supervision.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Global Patient Footprint",
-      description: "Operating wellness courses and consultations for international clients, with specialized online consultation support.",
+      title: "Custom Saatvic Nutrition",
+      description: "Mindful plant-based menus tailored to individual body types (Prakruti) to support physical recovery.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "100% Pure Organic Herbs",
-      description: "Strictly implements chemical-free, hormone-free, and steroid-free formulations prepared in accordance with ancient texts.",
+      title: "24/7 Medical Support",
+      description: "Equipped with a dedicated doctor consultation wing and round-the-clock professional medical assistance.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function RishikeshAyurvedaCenter() {
   }, []);
 
   useEffect(() => {
-    document.title = "Rishikesh Ayurveda Rishikesh | Dr. Sachin Dua | Authentic Panchakarma";
+    document.title = "Naturoville Wellness Resort | Rishikesh-Haridwar | Panchakarma & Naturopathy";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic therapies, Panchakarma detoxification, and traditional Yoga at Rishikesh Ayurveda in Tapovan, Rishikesh, led by Dr. Sachin Dua.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, Naturopathy, and wellness programs at Naturoville Wellness Resort in Lal Tappar, Dehradun, led by Dr. Archana and Dr. Harsh.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function RishikeshAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rishikesh Ayurveda Clinic Uttarakhand
+              Naturoville Wellness Resort Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function RishikeshAyurvedaCenter() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Rishikesh Ayurveda</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Panchakarma, Yoga & Wellness in Rishikesh Since 2006</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Naturoville Wellness Resort</h1>
+                <p className="text-xl mb-4 opacity-90">Surrounded by Nature, Rooted in Wellness | Rishikesh-Haridwar Highway</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(70 Reviews)</span>
+                  <span className="text-lg font-semibold">4.5</span>
+                  <span className="opacity-90">(710 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function RishikeshAyurvedaCenter() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Authentic Ayurvedic Panchakarma & <br className="hidden lg:block" />
-                Yoga Wellness in Rishikesh
+                Traditional Ayurvedic Panchakarma & <br className="hidden lg:block" />
+                Naturopathy Care at Lal Tappar
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function RishikeshAyurvedaCenter() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Rishikesh Ayurveda</strong>, a distinguished center for holistic healing located near Deecon Valley in Tapovan, Rishikesh. Founded by Dr. Sachin Dua, our center is dedicated to sharing the wisdom of classical Ayurveda, individualized Panchakarma detox, and traditional Yoga to facilitate recovery and balanced health.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Naturoville Wellness Resort</strong> (also known as Naturoville Vedic Retreat), a registered Ayurveda and Naturopathy hospital and retreat center in Lal Tappar, Dehradun. Surrounded by lush, eco-rich forests between Dehradun and Haridwar, our resort integrates traditional South Indian Panchakarma, drugless Naturopathy, therapeutic yoga, and holistic hydrotherapy to restore system wellness and vitality.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function RishikeshAyurvedaCenter() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/secondary.jpg" 
-                          alt="Rishikesh Ayurveda wellness retreat center view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/secondary.jpg" 
+                          alt="Naturoville wellness retreat center view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,16 +325,13 @@ export default function RishikeshAyurvedaCenter() {
                   </div>
 
                   <p>
-                    Nestled in the peaceful foothills of Tapovan—renowned as the yoga capital of the world—Amritash provides customized consultations and therapies. We offer targeted solutions for joint stiffness, anxiety and stress disorders, chronic digestive issues, reproductive health, and natural skin and hair care.
+                    Ideally located off the main Haridwar-Dehradun Road, Naturoville offers premium medical programs within a quiet, 80,000-square-foot facility. We focus on treating chronic spinal issues, managing weight, balancing hormones, relieving severe stress, and purifying deep body tissues.
                   </p>
 
                   <p>
-                    Under the direct supervision of Dr. Sachin Dua and Dr. Neha Batra, every wellness program is tailored to your unique dosha profile. By combining deep-cleansing therapies like Abhyanga and Shirodhara with organic herbal remedies and nourishing Saatvic meals, we guide your body back to its natural state of harmony.
+                    Under the expert direction of Dr. Archana (Ayurveda Consultant) and Dr. Harsh (Naturopathy Consultant), each guest receives a custom-built recovery blueprint following detailed clinical consultations and constitutional profiling. By blending scientific Panchakarma with advanced hydro-massages, mud therapy, custom-designed organic menus, and yoga, we support natural self-healing and complete cellular renewal.
                   </p>
 
-                  <p>
-                    Anyone who visits Amritash Ayurveda by Dr. Sachin Dua can stay assured of complete recovery and overall cleansing, which eventually boosts the overall health naturally.
-                  </p>
                 </div>
               </div>
 
@@ -343,8 +340,8 @@ export default function RishikeshAyurvedaCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/main.avif" 
-                      alt="Rishikesh Ayurveda center lobby"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/main.jpg" 
+                      alt="Naturoville center lobby"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -356,8 +353,8 @@ export default function RishikeshAyurvedaCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/secondary.jpg" 
-                        alt="Rishikesh Ayurveda treatment space"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/secondary.jpg" 
+                        alt="Naturoville treatment space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -376,7 +373,7 @@ export default function RishikeshAyurvedaCenter() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Rishikesh Ayurveda today.
+                My Vaidyam to connect with Naturoville Wellness Resort today.
               </h3>
             </div>
           </div>
@@ -387,7 +384,7 @@ export default function RishikeshAyurvedaCenter() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Amritash</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Naturoville Wellness Resort</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -417,9 +414,9 @@ export default function RishikeshAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Rishikesh Ayurveda</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Naturoville Wellness Resort</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic Ayurvedic treatments, personalized Panchakarma detox, and traditional Yoga under the expert direction of Dr. Sachin Dua.
+                Experience traditional Ayurvedic Panchakarma, specialized Naturopathy therapies, and alternative healing packages under the expert direction of our resident doctors.
               </p>
             </div>
             
@@ -484,12 +481,12 @@ export default function RishikeshAyurvedaCenter() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/main.avif"
-                  alt="Rishikesh Ayurveda wellness center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/main.jpg"
+                  alt="Naturoville wellness center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Naturoville Wellness Resort?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +511,7 @@ export default function RishikeshAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Naturoville Wellness Resort?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -528,8 +525,8 @@ export default function RishikeshAyurvedaCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/main.avif"
-                  alt="Rishikesh Ayurveda wellness center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/main.jpg"
+                  alt="Naturoville wellness center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -639,7 +636,7 @@ export default function RishikeshAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments and clinical services at Rishikesh Ayurveda.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments and clinical services at Naturoville Wellness Resort.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -670,17 +667,17 @@ export default function RishikeshAyurvedaCenter() {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                      <p>Near Deecon Valley, Tapovan, Rishikesh, Uttarakhand, India</p>
+                      <p>Lal Tappar, Village Resham Majri, Haridwar-Dehradun Road, Tehsil Doiwala, District Dehradun, Uttarakhand</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
                       <div>+91 989 xxxx xxx</div>
@@ -691,17 +688,18 @@ export default function RishikeshAyurvedaCenter() {
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
                     <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 4-5 km from Rishikesh Railway Station</span>
+                        <span>Approx. 12-16 km from Jolly Grant Airport (DED)</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 20-25 km from Jolly Grant Airport</span>
+                        <span>Approx. 22-25 km from Haridwar Railway Station</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -709,14 +707,14 @@ export default function RishikeshAyurvedaCenter() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.6715535950525!2d78.3226802!3d30.1322106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390917a769c68ca7%3A0x25e0a6122335b8a5!2sDr.SACHIN%20DUA%20-AYURVEDA%20DOCTOR%20%26%20PHYSICIAN%20-%20AMRITASH%20AYURVEDA!5e0!3m2!1sen!2sin!4v1780555798206!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.249672099282!2d78.1665597!3d30.115668399999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093bf76b9eb5b3%3A0x553f170729e3fc0d!2sNaturoville%20Wellness%20Resort!5e0!3m2!1sen!2sin!4v1780559786734!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Rishikesh Ayurveda Rishikesh Location"
+                  title="Naturoville Wellness Resort Location"
                 ></iframe>
               </div>
             </div>
@@ -728,8 +726,8 @@ export default function RishikeshAyurvedaCenter() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/main.avif"
-            alt="Rishikesh Ayurveda wellness center background"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/main.jpg"
+            alt="Naturoville wellness center background"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -739,7 +737,7 @@ export default function RishikeshAyurvedaCenter() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or wellness program at Rishikesh Ayurveda.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or wellness program at Naturoville Wellness Resort.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -749,7 +747,7 @@ export default function RishikeshAyurvedaCenter() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919315577366?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Amritash%20Ayurveda."
+              href="https://wa.me/919149361935?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Naturoville%20Wellness%20Resort."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
