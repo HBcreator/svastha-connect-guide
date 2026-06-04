@@ -68,6 +68,7 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   16: "rudramya-ayurveda-at-the-himalayas-hospital-himachal-india",
   17: "himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india",
   18: "naturoville-wellness-resort-rishikesh-uttarakhand-india",
+  19: "vihana-retreat-hospital-rishikesh-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>
