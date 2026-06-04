@@ -315,7 +315,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="\TOP cneters\himalayas-rishikesh-uttarakhand-north-east\KAYAKALP – Himalayan Research Institute of Yoga & Naturopathy/secondary.jpg" 
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/secondary.jpg" 
                           alt="Vedic Yoga Centre gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
