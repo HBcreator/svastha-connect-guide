@@ -172,6 +172,16 @@ import VedicYogaAyurvedaRetreatCentre from "./pages/centers/VedicYogaAyurvedaRet
 import VedanjanaYogaAyurvedaPanchakarmaCentre from "./pages/centers/VedanjanaYogaAyurvedaPanchakarmaCentre.tsx";
 import DrSIBYAyurvedaCenter from "./pages/centers/DrSIBYAyurvedaCenter.tsx";
 import ArogyamPanchkarmaCentreAyurvedicHospital from "./pages/centers/ArogyamPanchkarmaCentreAyurvedicHospital.tsx";
+import RishikeshAyurvedaCenter from "./pages/centers/RishikeshAyurvedaCenter.tsx";
+import RUDRAMYAAyurvedaattheHimalayas from "./pages/centers/RUDRAMYAAyurvedaattheHimalayas.tsx";
+import HimalayaSanjeevniAyurveda from "./pages/centers/HimalayaSanjeevniAyurveda.tsx";
+import NaturovilleWellnessResort from "./pages/centers/NaturovilleWellnessResort.tsx";
+import VihanaRetreat from "./pages/centers/VihanaRetreat.tsx";
+import PranaSpaAyurveda from "./pages/centers/PranaSpaAyurveda.tsx";
+import MokshaHimalayaSpaResort from "./pages/centers/MokshaHimalayaSpaResort.tsx";
+import AyurvedaHouseHimalayanAyurveda from "./pages/centers/AyurvedaHouseHimalayanAyurveda.tsx";
+import AyurVAIDKalmatia from "./pages/centers/AyurVAIDKalmatia.tsx";
+import ModiYogaRetreatRishikesh from "./pages/centers/ModiYogaRetreatRishikesh.tsx";
 
 const queryClient = new QueryClient();
 
@@ -265,6 +275,16 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
+          <Route path="/centers/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
+          <Route path="/centers/ayurvaid-kalmatia-centre-almora-uttarakhand-india" element={<AyurVAIDKalmatia />}/>
+          <Route path="/centers/ayurveda-house-himalayan-ayurveda-hospital-himachal-india" element={<AyurvedaHouseHimalayanAyurveda />}/>
+          <Route path="/centers/moksha-himalaya-spa-resort-himachal-india" element={<MokshaHimalayaSpaResort />}/>
+          <Route path="/centers/prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india" element={<PranaSpaAyurveda />}/>
+          <Route path="/centers/vihana-retreat-hospital-rishikesh-uttarakhand-india" element={<VihanaRetreat />}/>
+          <Route path="/centers/naturoville-wellness-resort-rishikesh-uttarakhand-india" element={<NaturovilleWellnessResort />}/>
+          <Route path="/centers/himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india" element={<HimalayaSanjeevniAyurveda />}/>
+          <Route path="/centers/rudramya-ayurveda-at-the-himalayas-hospital-himachal-india" element={<RUDRAMYAAyurvedaattheHimalayas />}/>
+          <Route path="/centers/rishikesh-ayurveda-center-uttarakhand-india" element={<RishikeshAyurvedaCenter />}/>
           <Route path="/centers/arogyam-panchkarma-centre-haridwar-uttarakhand-india" element={<ArogyamPanchkarmaCentreAyurvedicHospital />}/>
           <Route path="/centers/dr-siby-ayurveda-center-himachal-india" element={<DrSIBYAyurvedaCenter />}/>
           <Route path="/centers/vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india" element={<VedanjanaYogaAyurvedaPanchakarmaCentre />}/>
