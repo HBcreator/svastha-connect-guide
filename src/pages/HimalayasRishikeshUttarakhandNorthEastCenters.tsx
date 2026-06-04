@@ -64,6 +64,7 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   12: "vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india",
   13: "dr-siby-ayurveda-center-himachal-india",
   14: "arogyam-panchkarma-centre-haridwar-uttarakhand-india",
+  15: "rishikesh-ayurveda-center-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>
