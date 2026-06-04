@@ -179,6 +179,7 @@ import NaturovilleWellnessResort from "./pages/centers/NaturovilleWellnessResort
 import VihanaRetreat from "./pages/centers/VihanaRetreat.tsx";
 import PranaSpaAyurveda from "./pages/centers/PranaSpaAyurveda.tsx";
 import MokshaHimalayaSpaResort from "./pages/centers/MokshaHimalayaSpaResort.tsx";
+import AyurvedaHouseHimalayanAyurveda from "./pages/centers/AyurvedaHouseHimalayanAyurveda.tsx";
 
 const queryClient = new QueryClient();
 
@@ -272,6 +273,7 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
+          <Route path="/centers/ayurveda-house-himalayan-ayurveda-hospital-himachal-india" element={<AyurvedaHouseHimalayanAyurveda />}/>
           <Route path="/centers/moksha-himalaya-spa-resort-himachal-india" element={<MokshaHimalayaSpaResort />}/>
           <Route path="/centers/prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india" element={<PranaSpaAyurveda />}/>
           <Route path="/centers/vihana-retreat-hospital-rishikesh-uttarakhand-india" element={<VihanaRetreat />}/>
