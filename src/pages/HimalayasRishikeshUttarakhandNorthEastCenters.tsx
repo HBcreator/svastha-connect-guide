@@ -64,6 +64,16 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   12: "vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india",
   13: "dr-siby-ayurveda-center-himachal-india",
   14: "arogyam-panchkarma-centre-haridwar-uttarakhand-india",
+  15: "rishikesh-ayurveda-center-uttarakhand-india",
+  16: "rudramya-ayurveda-at-the-himalayas-hospital-himachal-india",
+  17: "himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india",
+  18: "naturoville-wellness-resort-rishikesh-uttarakhand-india",
+  19: "vihana-retreat-hospital-rishikesh-uttarakhand-india",
+  20: "prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india",
+  21: "moksha-himalaya-spa-resort-himachal-india",
+  22: "ayurveda-house-himalayan-ayurveda-hospital-himachal-india",
+  23: "ayurvaid-kalmatia-centre-almora-uttarakhand-india",
+  24: "modi-yoga-retreat-hospital-rishikesh-uttarakhand-india",
 };
 
 const cleanMarkdownText = (value: string) =>

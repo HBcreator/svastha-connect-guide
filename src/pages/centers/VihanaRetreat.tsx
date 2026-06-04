@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function VedicYogaAyurvedaRetreatCentre() {
+export default function VihanaRetreat() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function VedicYogaAyurvedaRetreatCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Pulse & Prakriti Assessment",
-      description: "An initial thorough evaluation by Master Shailendra and our resident therapists to analyze your constitutional type (Dosha and Prakriti balance) and yogic energy.",
+      title: "Warm Welcome & Intake",
+      description: "Beginning with a personalized clinical intake and goal evaluation under Sandeep and the Vihana wellness team.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Daily Schedule",
-      description: "Structuring a personalized daily routine merging Hatha/Kundalini yoga, meditation, Ayurvedic steam, and custom dietary rules to match your healing goals.",
+      title: "Ayurvedic Constitution Assessment",
+      description: "Identifying your personal Prakruti/Vikruti profile to tailor wellness therapy, custom diets, and schedules.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Cleansing",
-      description: "Initial preparation phases including full-body Abhyangam oil massage and Swedanam steam baths to mobilize toxins and calm the nervous system.",
+      title: "Custom Detox Treatments",
+      description: "Experiencing traditional daily massages (Abhyanga) and localized oil therapies to mobilize metabolic wastes.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Core Panchakarma Detox",
-      description: "Administering core cleansing therapies such as Shirodhara oil flows, customized herbal Basti, or target Ayurvedic treatments based on your needs.",
+      title: "Active Yoga & Breathwork",
+      description: "Participating in daily yoga and pranayama sessions taught by certified international instructors for mental calm.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Kriya & Meditation sessions",
-      description: "Daily guided Kundalini Kriya and Himalayan meditation in our peaceful riverfront space to dissolve prana blockages and settle the busy mind.",
+      title: "Pure Organic Nourishment",
+      description: "Nourishing your body with fresh, appetizing, plant-based Saatvic meals prepared at our wellness cafe.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Integration",
-      description: "Receiving a personalized conscious lifestyle blueprint with Ayurvedic nutrition guidance and home yoga practices to maintain inner harmony.",
+      title: "Sustainable Habit Integration",
+      description: "Equipping you with post-retreat lifestyle guidelines and mindfulness tools to carry back to your daily life.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Profound Peace on the Ganges Banks",
-      review: "My 7-day yoga retreat at the Vedic Yoga Centre was a profound experience. Practicing daily on the Ganga banks, opposite Laxman Jhula, gave me a deep sense of stillness. Master Shailendra's wisdom is genuine and his teachings are accessible yet incredibly deep.",
-      name: "Clara Dupont",
+      title: "Deeply relaxing and transformative detox retreat",
+      review: "I had a wonderful stay at Vihana for their detox retreat. The program was exactly what I needed to reset after a hectic year. Sandeep and his team are exceptionally welcoming and make you feel right at home.",
+      name: "Ann Sorensen",
       verified: true,
-      location: "Brussels, Belgium",
-      condition: "Yoga & Meditation Retreat",
+      location: "Aarhus, Denmark",
+      condition: "Detox & Yoga Program",
       rating: 5
     },
     {
-      title: "Transformative Kundalini Guidance",
-      review: "The Kundalini Kriya and meditation program here opened a new level of self-awareness for me. The small group setting meant personalized guidance from Shailendra, which is rare these days. Truly a sacred environment for spiritual growth.",
-      name: "Julian Vance",
+      title: "Exceptional weight management and personal care",
+      review: "My mother joined the weight management retreat here, and it was a genuinely life-changing trip for her. The staff and instructors are down-to-earth and incredibly caring.",
+      name: "Heidi Klein",
       verified: true,
-      location: "London, UK",
-      condition: "Kundalini Kriya Yoga Course",
+      location: "Munich, Germany",
+      condition: "Weight Loss & Knee Pain Relief",
       rating: 5
     },
     {
-      title: "Authentic Panchakarma & Warm Care",
-      review: "I came for the 14-day Panchakarma detox. The Kerala-certified Ayurvedic massages by Rajendra were transformative, and the clean vegetarian meals made with fresh herbs helped my digestion recover completely. I felt so cared for by the family.",
-      name: "Amara Thorne",
+      title: "Wonderful organic food and heartwarming host",
+      review: "An outstanding experience at Vihana. Sandeep is an incredibly warm host who treats everyone like family. The organic meals served at the wellness cafe are fresh, healthy, and absolutely delicious.",
+      name: "Pierre Laurent",
       verified: true,
-      location: "Cape Town, South Africa",
-      condition: "Ayurveda Detox & Panchakarma",
+      location: "Marseille, France",
+      condition: "Ayurvedic Nutrition & Rejuvenation",
       rating: 5
     },
     {
-      title: "Life-Changing Teacher Training",
-      review: "Completing my 200-hour YTTC here was life-changing. It's not just a course; it's a living tradition. We dived deep into asana alignment, pranayama, and Vedic philosophy. The accommodation is clean, quiet, and right by the river.",
-      name: "Finn O'Shea",
+      title: "Highly supportive team and beautiful stress relief",
+      review: "Our stay at the retreat was beautiful and heart-warming. Sandeep and the entire team looked after us with so much genuine love and hospitality. It truly felt like a home away from home.",
+      name: "Isabel Linden",
       verified: true,
-      location: "Dublin, Ireland",
-      condition: "200-Hour Yoga Teacher Training (YTTC)",
+      location: "Rotterdam, Netherlands",
+      condition: "Stress Relief & Meditation",
       rating: 5
     },
     {
-      title: "Sanctuary for the Soul",
-      review: "A peaceful sanctuary in the middle of busy Rishikesh. The Himalayan Art of Mindfulness retreat helped me learn to live consciously and without fear. The purity of the teachings and the warmth of the Negi family make this place a home.",
-      name: "Elsa Lind",
+      title: "Perfect sensory vacation and excellent hospitality",
+      review: "Probably the most relaxing vacation I've ever had. Vihana is a tranquil sanctuary in Tapovan with excellent wellness programs, delicious organic cuisine, and wonderful hospitality from Sandeep.",
+      name: "Alastair Intosh",
       verified: true,
-      location: "Oslo, Norway",
-      condition: "Himalayan Art of Mindfulness",
+      location: "Inverness, Scotland",
+      condition: "7 Days Rejuvenation Retreat",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is the background of the Vedic Yoga Centre and its lineage?",
-      answer: "The Vedic Yoga Centre is a unit of the Vedic Yoga Trust, a non-profit NGO founded in 2007 by Trustee Shailendra Singh Negi. Our teachings focus on pure, traditional Vedic and Tantric yoga lineage, including Kundalini Kriyas, Hatha yoga, and Himalayan meditation techniques, taught without dilution."
+      question: "What types of wellness retreats does Vihana Retreat offer?",
+      answer: "We offer specialized retreats focusing on Detox, Weight Loss, Stress/Depression Relief, Rejuvenation, Diabetic Management, and Thyroid Wellness, integrating traditional Ayurveda and Yoga."
     },
     {
-      question: "Where is the centre located and what is the environment like?",
-      answer: "We are situated in Laxman Jhula, Rishikesh, right on the banks of the holy river Ganges, in the foothills of the Himalayas. The centre serves as a peaceful, green oasis, offering river-facing rooms and a dedicated, quiet atmosphere for study and wellness."
+      question: "Is smoking or drinking alcohol permitted at Vihana Retreat?",
+      answer: "No. To maintain a pure, therapeutic, and clean healing environment for all our guests, smoking and alcohol consumption are strictly prohibited on the retreat premises."
     },
     {
-      question: "What kind of meals are provided during the programs?",
-      answer: "We serve authentic Ayurvedic vegetarian meals freshly prepared in-house. The diet is designed to support physical purification, balance energy channels, and is enriched with local healing herbs tailored to your detox or study requirements."
+      question: "Where is Vihana Retreat located in Rishikesh?",
+      answer: "Vihana Retreat is situated in Upper Tapovan, behind Gayatri Book Store. It is in a vibrant and peaceful neighborhood surrounded by yoga schools and local cafes."
     },
     {
-      question: "Are your yoga courses certified?",
-      answer: "Yes, our Vedic Yoga Centre is a registered Yoga Alliance school (RYS). We offer certified 200-hour, 300-hour, and 500-hour Yoga Teacher Training Courses (YTTC), as well as continuing education programs for certified teachers."
+      question: "How far is the Ganges River and nature from the retreat?",
+      answer: "While we are not located directly on the riverbank, the Ganges River and a scenic natural waterfall are both within a comfortable 20-minute walk through local trails."
     },
     {
-      question: "How can I travel to the Vedic Yoga Centre in Rishikesh?",
-      answer: "The nearest airport is Jolly Grant Airport (Dehradun Airport - DED), which is approximately 21 km away (about a 45-minute drive). Yog Nagari Rishikesh Railway Station is about 5 km from the centre, while Haridwar Railway Station is around 25 km away."
+      question: "How can I reach Vihana Retreat and what are the travel distances?",
+      answer: "Vihana Retreat is highly accessible, located approximately 22 km from Jolly Grant Airport (DED) in Dehradun and roughly 5 km from Yog Nagri Rishikesh Railway Station."
     }
   ];
 
   const programs = [
     {
-      title: "Yoga Teacher Training (YTTC)",
-      description: "Yoga Alliance certified 200, 300, and 500-hour programs teaching Hatha, pranayama, philosophy, and alignment under Himalayan Master Shailendra.",
+      title: "Detox Retreat",
+      description: "Designed to help guests unwind, release deep-seated systemic toxins, and clear the mind from daily stresses.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Ayurvedic Panchakarma Detox",
-      description: "Traditional detoxification therapies including Abhyangam massage, calmative Shirodhara oil flows, and herbal steam baths to cleanse body tissues.",
+      title: "Weight Loss Retreat",
+      description: "A holistic program combining active yoga, custom nutrition, and lifestyle modifications for healthy weight management.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Kundalini Kriya & Meditation",
-      description: "Guided daily practices in our river-facing shala to awaken inner energy channels using traditional Tantric Kriyas and Himalayan concentration methods.",
+      title: "Depression & Stress Relief",
+      description: "A scientifically-formulated, educational retreat program focused on stress release, mental clarity, and emotional balance.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Massage & Therapy Course",
-      description: "Sincere hands-on courses led by Rajendra Negi to study the science of Ayurvedic bodywork, Marma points, and traditional healing oils.",
+      title: "Rejuvenation Retreat",
+      description: "Drawing inspiration from traditional Ayurvedic therapies and massages to remove exhaustion and restore physical vitality.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "7-Day Yoga Retreat",
-      description: "Rejuvenating weekly wellness escapes blending riverfront yoga, meditation, organic meals, and cultural integration in sacred Rishikesh.",
+      title: "Diabetic Management",
+      description: "Specialized guidance on dietary adjustments, action plans, and natural therapeutic routines to regulate blood sugar levels.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Himalayan Sacred Walks",
-      description: "Guided pilgrimage walks to the high-vibration peaks and shrines of the Himalayas (such as Gangotri) to experience silence and natural grace.",
+      title: "Thyroid Wellness",
+      description: "A calmative retreat program designed to support endocrine wellness through custom-designed yoga and specialized diets.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Himalayan Tradition Lineage",
-      description: "Pure teachings based on ancient Vedic and Tantric wisdom, helping seekers connect back to their true nature without dilution.",
+      title: "Experienced Wellness Hosts",
+      description: "Under the warm, dedicated hospitality of Sandeep and Sonu, offering personalized attention and care.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "22+ Years Mastery",
-      description: "Guided directly by Founder and Master Shailendra Singh Negi, ensuring authentic wisdom and decades of dedicated guidance.",
+      title: "Diverse Wellness Programs",
+      description: "Flexible, multi-dynamic retreats covering detoxification, weight loss, stress management, and metabolic health.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Ganges Riverfront Setting",
-      description: "Located right on the banks of the sacred Ganges river opposite Laxman Jhula, providing an unmatched serene environment.",
+      title: "Organic Wellness Cuisine",
+      description: "Fresh, Appetizing, and health-boosting Saatvic meals prepared by skilled local chefs to nourish your body.",
       icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "NGO Trust Governance",
-      description: "Managed by the Vedic Yoga Trust (est. 2007), where all revenues support the propagation of traditional wellness and local charities.",
+      title: "Traditional Body Rejuvenation",
+      description: "Therapeutic Ayurvedic massages and specialized oil applications to restore vitality and refresh the senses.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Small Group Intimacy",
-      description: "We intentionally work with small groups to provide individualized guidance, personal attention, and a supportive atmosphere.",
+      title: "Heart of Upper Tapovan",
+      description: "Conveniently situated near local trails, yoga schools, and charming cafes in a lively spiritual setting.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Organic Sattvic Dining",
-      description: "Enjoy clean, delicious vegetarian meals prepared fresh by the family, customized with healing herbs for complete purification.",
+      title: "Alcohol & Smoke-Free",
+      description: "Strictly pure and clean environment to support your biological detoxification, focus, and inner peace.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function VedicYogaAyurvedaRetreatCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Vedic Yoga & Ayurveda Retreat Centre | Yoga & Detox in Rishikesh";
+    document.title = "Vihana Retreat Rishikesh | Luxury Wellness & Yoga Retreats";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience traditional Hatha, Kundalini Kriya & meditation courses, alongside authentic Kerala Ayurveda & Panchakarma retreats at Vedic Yoga Centre on the banks of Ganga, Laxman Jhula, Rishikesh.");
+    if (metaDesc) metaDesc.setAttribute("content", "We offer the best luxury wellness yoga retreat in Rishikesh, India. Vihana Retreat integrates traditional Ayurveda, Yoga, and Vedanta with healthy organic cuisine.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Vedic Yoga & Ayurveda Retreat Centre Rishikesh Uttarakhand
+              Vihana Retreat Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function VedicYogaAyurvedaRetreatCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vedic Yoga & Ayurveda Retreat Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Yoga, Meditation, and Ayurveda on the Banks of the Holy Ganges</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vihana Retreat</h1>
+                <p className="text-xl mb-4 opacity-90">Luxury Wellness & Yoga Retreats | Upper Tapovan, Rishikesh</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(180 Reviews)</span>
+                  <span className="text-lg font-semibold">5</span>
+                  <span className="opacity-90">(390 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Traditional Himalayan Yoga & <br className="hidden lg:block" />
-                Ayurvedic Healing in Rishikesh
+                Luxury Wellness & Yoga <br className="hidden lg:block" />
+                Retreats in Rishikesh
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Vedic Yoga & Ayurveda Retreat Centre</strong>, a peaceful sanctuary for raising human consciousness located in Laxman Jhula, Rishikesh. Under the direction of Himalayan Yoga Master Shailendra Singh Negi and governed by the non-profit Vedic Yoga Trust (founded in 2007), our centre offers traditional teachings in their pure, undiluted form. We aim to guide seekers back to their true nature, helping them integrate the layers of body, breath, mind, and spirit.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Vihana Retreat</strong>, a premier luxury wellness and yoga retreat center situated in Upper Tapovan, Rishikesh. Integrating traditional Ayurveda, therapeutic Yoga, and classical Vedanta with healthy organic cuisine, Vihana provides a calming sanctuary designed to slow down, restore balance, and harmonize your energy.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/secondary.jpg" 
-                          alt="Vedic Yoga Centre gardens and view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/secondary.jpg" 
+                          alt="Vihana wellness retreat center view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,12 +325,13 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                   </div>
 
                   <p>
-                    Nestled directly on the quiet banks of the holy river Ganges, the Centre provides a genuine environment for self-discipline, inner peace, and spiritual growth. We offer Yoga Alliance-certified teacher training (YTTC 200/300/500 hours), Kundalini Kriya practices, and traditional Kerala Ayurveda Panchakarma treatments.
+                    Our multi-dynamic programs offer dedicated space for both spiritual growth and physical well-being. Tucked away in a lively spiritual hub, Vihana Retreat is surrounded by yoga schools and local cafes. Please note that while we are not located directly on the Ganges banks, both the Ganges River and a scenic natural waterfall are within a comfortable 20-minute walk through local paths.
                   </p>
 
                   <p>
-                    Guests can rest their minds in our river-facing shala, participate in guided meditation, and enjoy nutritious, organic vegetarian meals freshly prepared by the family.
+                    Under the warm, dedicated hospitality of Sandeep and the Sonu guidance team, each guest receives personalized attention. By combining traditional Ayurvedic bodywork and customized detox programs with fresh plant-based meals and daily yoga, we ensure a rejuvenating experience that feels like a true home away from home.
                   </p>
+
                 </div>
               </div>
 
@@ -339,8 +340,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg" 
-                      alt="Vedic Yoga & Ayurveda Retreat Centre"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/main.jpg" 
+                      alt="Vihana center lobby"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -352,8 +353,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/secondary.jpg" 
-                        alt="Vedic Yoga Centre Therapy Space"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/secondary.jpg" 
+                        alt="Vihana treatment space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -365,14 +366,14 @@ export default function VedicYogaAyurvedaRetreatCentre() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to self-awareness and balance begins with a single step.{" "}
+                Your journey to authentic healing and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Vedic Yoga Centre today.
+                My Vaidyam to connect with Vihana Retreat today.
               </h3>
             </div>
           </div>
@@ -383,7 +384,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Vedic Yoga Centre</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Vihana Retreat</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -413,9 +414,9 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Vedic Yoga Centre</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Vihana Retreat</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic Himalayan wisdom and traditional healing techniques in a dedicated, supportive riverfront setting.
+                Experience luxury yoga retreats, traditional Ayurvedic bodywork, and customized wellness plans under the dedicated hosting of Sandeep and Sonu.
               </p>
             </div>
             
@@ -446,7 +447,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
+              A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>
           </div>
           
@@ -480,12 +481,12 @@ export default function VedicYogaAyurvedaRetreatCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-                  alt="Vedic Yoga Centre"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/main.jpg"
+                  alt="Vihana wellness center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Vedic Yoga Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Vihana Retreat?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -510,7 +511,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Vedic Yoga Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Vihana Retreat?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -524,8 +525,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-                  alt="Vedic Yoga Centre"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/main.jpg"
+                  alt="Vihana wellness center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -635,7 +636,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about courses, retreats, and therapies at Vedic Yoga Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments and wellness programs at Vihana Retreat.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -666,39 +667,39 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Vedic Yoga & Ayurveda Retreat Centre<br />
-                      36 Neelkanth Road, Laxman Jhula, Rishikesh<br />
-                      Uttarakhand, India
-                    </p>
+                    <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
+                      <p>Behind Gayatri Book Store, Upper Tapovan, Balaknath Rd, Laxman Jhula, Rishikesh, Uttarakhand</p>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0 font-sans">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                    <div className="text-foreground/70 leading-relaxed space-y-1.5 text-sm md:text-base" style={{ color: "#7F543D" }}>
                       <div>+91 989 xxxx xxx</div>
+                      
                     </div>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 21 km from Jolly Grant Airport (Dehradun)</span>
+                        <span>Approx. 22 km from Jolly Grant Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 5 km from Yog Nagari Rishikesh Railway Station</span>
+                        <span>Approx. 5 km from Yog Nagri Rishikesh Railway Station</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -706,14 +707,14 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15226528.095350351!2d65.74568639586064!3d21.29464825586949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909165bf5c942cd%3A0x79dfb2d461f87cb9!2sVedic%20Yoga%20%26%20Ayurveda%20Retreat%20Centre!5e0!3m2!1sen!2sin!4v1780493642074!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.669980538114!2d78.32084809999999!3d30.1322556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091714b343b1b3%3A0xf7c30a44c69db192!2sVihana%20Retreat!5e0!3m2!1sen!2sin!4v1780560876317!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Vedic Yoga Centre Location"
+                  title="Vihana Retreat Location"
                 ></iframe>
               </div>
             </div>
@@ -725,8 +726,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-            alt="Vedic Yoga Centre"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/main.jpg"
+            alt="Vihana wellness center background"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -736,7 +737,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Vedic Yoga Centre.
+            Contact us today for a consultation. Our dedicated wellness hosts will guide you towards the perfect treatment or wellness program at Vihana Retreat.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -746,7 +747,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919760932106?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Vedic%20Yoga%20Centre."
+              href="https://wa.me/918958545405?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Vihana%20Retreat."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
