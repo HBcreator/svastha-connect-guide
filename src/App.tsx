@@ -182,6 +182,16 @@ import MokshaHimalayaSpaResort from "./pages/centers/MokshaHimalayaSpaResort.tsx
 import AyurvedaHouseHimalayanAyurveda from "./pages/centers/AyurvedaHouseHimalayanAyurveda.tsx";
 import AyurVAIDKalmatia from "./pages/centers/AyurVAIDKalmatia.tsx";
 import ModiYogaRetreatRishikesh from "./pages/centers/ModiYogaRetreatRishikesh.tsx";
+import ArogyadhamRetreatLuxuryAyurvedaHotel from "./pages/centers/ArogyadhamRetreatLuxuryAyurvedaHotel.tsx";
+import MaharishiAyurvedaHospital from "./pages/centers/MaharishiAyurvedaHospital.tsx";
+import AashaAyurvedaCentre from "./pages/centers/AashaAyurvedaCentre.tsx";
+import TarunVedaAyurvedaHospital from "./pages/centers/TarunVedaAyurvedaHospital.tsx";
+import SKKAyurvedaPanchakarma from "./pages/centers/SKKAyurvedaPanchakarma.tsx";
+import AprasuAyurvedicHospital from "./pages/centers/AprasuAyurvedicHospital.tsx";
+import SanjeevaniAyurveda from "./pages/centers/SanjeevaniAyurveda.tsx";
+import SriSriAyurvedaPanchakarmaAyurvedaCenter from "./pages/centers/SriSriAyurvedaPanchakarmaAyurvedaCenter.tsx";
+import KeralaAyurvedaLifeAyurvedaPanchakarmaClinic from "./pages/centers/KeralaAyurvedaLifeAyurvedaPanchakarmaClinic.tsx";
+import ApolloAyurVAIDHospitalsNehruEnclave from "./pages/centers/ApolloAyurVAIDHospitalsNehruEnclave.tsx";
 
 const queryClient = new QueryClient();
 
@@ -275,6 +285,18 @@ const App = () => (
           <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
           <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
+          <Route path="/centers/apollo-ayurvaid-life-hospital-nehru-enclave-new-delhi-india" element={<ApolloAyurVAIDHospitalsNehruEnclave />}/>
+          <Route path="/centers/kerala-ayurveda-life-ayurveda-panchakarma-clinic-hospital-green-park-new-delhi-india" element={<KeralaAyurvedaLifeAyurvedaPanchakarmaClinic />}/>
+          <Route path="/centers/sri-sri-ayurveda-panchakarma-ayurveda-center-hospital-jhilmil-new-delhi-india" element={<SriSriAyurvedaPanchakarmaAyurvedaCenter />}/>
+          <Route path="/centers/sanjeevani-ayurveda-hospital-dwarka-new-delhi-india" element={<SanjeevaniAyurveda />}/>
+          <Route path="/centers/aprasu-ayurvedic-hospital-rohini-north-delhi-india" element={<AprasuAyurvedicHospital />}/>
+          <Route path="/centers/skk-ayurveda-and-panchakarma-hospital-janak-puri-new-delhi-india" element={<SKKAyurvedaPanchakarma />}/>
+          <Route path="/centers/tarunveda-ayurveda-hospital-dwarka-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
+          <Route path="/centers/aasha-ayruveda-centre-rajouri-garden-west-delhi-india" element={<AashaAyurvedaCentre />}/>
+          <Route path="/centers/arya-vaidya-sala-research-centre-and-ayurvedia-hospital-karkardooma-east-delhi-india" element={<AryaVaidyaSala/>}/>
+          <Route path="/centers/maharishi-ayurveda-hospital-shalimar-bagh-north-delhi-india" element={<MaharishiAyurvedaHospital />}/>
+
+          <Route path="/centers/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
           <Route path="/centers/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
           <Route path="/centers/ayurvaid-kalmatia-centre-almora-uttarakhand-india" element={<AyurVAIDKalmatia />}/>
           <Route path="/centers/ayurveda-house-himalayan-ayurveda-hospital-himachal-india" element={<AyurvedaHouseHimalayanAyurveda />}/>

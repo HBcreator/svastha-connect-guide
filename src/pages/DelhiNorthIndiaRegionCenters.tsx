@@ -187,6 +187,126 @@ const DelhiNorthIndiaRegionCenters = () => {
     slug: "amanbagh-heritage-wellness-retreat-rajasthan-delhi-india",
   };
 
+  const maharishiAyurvedaHospitalCenter: DelhiCenter = {
+  series: -5,
+  name: "Maharishi Ayurveda Hospital",
+  city: "Shalimar Bagh, North Delhi, India",
+  description:
+    "North India's first NABH-accredited Ayurvedic hospital, established in 1988 on the inspired vision of His Holiness Maharishi Mahesh Yogi. Located in Shalimar Bagh, North Delhi, the hospital has served patients from over 100 countries across 35+ years. It offers a unique multi-modal healing approach integrating Panchakarma, Pulse Diagnosis (Nadi Pariksha), Transcendental Meditation, Yoga, Maharishi Vastu Consultation, Maharishi Jyotish, Leech Therapy, and in-house manufactured herbal products. Recognized by the International Society for Quality in Healthcare and CGHS empanelled with cashless insurance. Free OPD services provided for EWS patients.",
+  rating: 4.5,
+  reviews: "860",
+  image: "/Anchor pages/Delhi/images/1.webp",
+  slug: "maharishi-ayurveda-hospital-shalimar-bagh-north-delhi-india",
+};
+
+const AryaVaidyaSala: DelhiCenter = {
+  series: -6,
+  name: "Arya Vaidya Sala – Research Centre & Ayurvedic Hospital (Delhi)",
+  city: "Karkardooma, East Delhi, India",
+  description:
+    "One of Delhi's leading Ayurvedic Panchakarma clinics, Aasha Ayurveda is renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic is a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe. Employs the Uttara Basti technique and Kerala Panchakarma for reproductive conditions with a reported 90% positive outcomes. Now has 5 convenient locations across Delhi.",
+  rating: 4.5,
+  reviews: "40",
+  image: "/Anchor pages/Delhi/images/2.jpg",
+  slug: "arya-vaidya-sala-research-centre-and-ayurvedia-hospital-karkardooma-east-delhi-india",
+};
+
+const AashaAyurvedaCentre: DelhiCenter = {
+  series: -7,
+  name: "Aasha Ayurveda Centre",
+  city: "Rajouri Garden, West Delhi, India",
+  description:
+    "One of Delhi's leading Ayurvedic Panchakarma clinics, Aasha Ayurveda is renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic is a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe. Employs the Uttara Basti technique and Kerala Panchakarma for reproductive conditions with a reported 90% positive outcomes. Now has 5 convenient locations across Delhi.",
+  rating: 4.8,
+  reviews: "1300",
+  image: "/Anchor pages/Delhi/images/3.jpg",
+  slug: "aasha-ayruveda-centre-rajouri-garden-west-delhi-india",
+};
+
+const TarunVedaAyurvedaHospital: DelhiCenter = {
+  series: -8,
+  name: "TarunVeda Ayurveda Hospital",
+  city: "Dwarka, New Delhi, India",
+  description:
+    "A dedicated, doctor-led Ayurvedic Panchakarma hospital in Dwarka, New Delhi, offering authentic Kerala and classical Ayurvedic treatments in a clinical, safe environment. TarunVeda specializes in full Panchakarma programs including Vamana, Virechana, Basti, Nasyam, and Raktamokshan, alongside Abhyanga, Shirodhara, Thalapothichil, and Pinda Sweda. Specialties include mental health, skin diseases, paralysis, arthritis, chronic digestive conditions, and neurological recovery. Known as one of the best Panchakarma treatment centers in Delhi, with online consultations and personalized post-treatment diet plans.",
+  rating: 4.8,
+  reviews: "210",
+  image: "/Anchor pages/Delhi/images/4.webp",
+  slug: "tarunveda-ayurveda-hospital-dwarka-new-delhi-india",
+};
+
+const SKKAyurvedaPanchakarma: DelhiCenter = {
+  series: -9,
+  name: "SKK Ayurveda & Panchakarma",
+  city: "Janak Puri, New Delhi, India",
+  description:
+    "The first and only NABH-accredited Panchakarma centre in West Delhi, founded by Dr. Tarun Gupta (BAMS, Delhi University), and CGHS, NHAI, DDA, and NDMC empanelled. SKK Ayurveda pioneered a data-driven, protocol-based approach to Ayurvedic diagnosis and treatment — enabling highly personalized and measurable outcomes. Specializes in Panchakarma detox, endometriosis, PCOD, arthritis, digestive disorders, back pain, and Rasayana therapies. Known for its scientific rigour, compassionate care, and systematic lifestyle modification approach alongside classical Ayurvedic treatment.",
+  rating: 4.9,
+  reviews: "810",
+  image: "/Anchor pages/Delhi/images/5.webp",
+  slug: "skk-ayurveda-and-panchakarma-hospital-janak-puri-new-delhi-india",
+};
+
+const AprasuAyurvedicHospital: DelhiCenter = {
+  series: -10,
+  name: "Aprasu Ayurvedic Hospital",
+  city: "Rohini, North Delhi, India",
+  description:
+    "A NABH-accredited Ayurvedic Panchakarma hospital and training institute serving humanity through Ayurveda since 1970 — a unit of the historic Humraz Clinic. Located in Rohini, North Delhi, Aprasu is CGHS and ECHS empanelled with full cashless and mediclaim facilities. Led by Dr. Sameer Arora and Dr. Reema Arora, it is celebrated for avoiding over 5,400 surgeries for slip disc and 4,500 for spine compression through Panchakarma alone. Facilities include AC rooms with park views, a rooftop yoga terrace with greenery, lift access, in-house Ayurvedic cuisine, and a dedicated Panchakarma therapist training institute.",
+  rating: 4.8,
+  reviews: "340",
+  image: "/Anchor pages/Delhi/images/6.webp",
+  slug: "aprasu-ayurvedic-hospital-rohini-north-delhi-india",
+};
+
+const SanjeevaniAyurveda: DelhiCenter = {
+  series: -11,
+  name: "Sanjeevani Ayurveda",
+  city: "Dwarka, New Delhi, India",
+  description:
+    "A multi-specialty Kerala Ayurveda and Panchakarma Day Care Centre located in Dwarka Sector 13 — and one of the most trusted names in Delhi-NCR for Panchakarma since 2013. Winner of 'Best Centre of the Year 2019' in Delhi NCR and 'Excellence in Ayurveda 2021'. CGHS, ECHS, NDMC, DDA, and CWC empanelled. Led by an MD Panchakarma Specialist with 15+ years of experience, it excels in treating bone, joint, and spine diseases through Kerala Ayurveda techniques including Pizhichil, Kizhi, Shirodhara, Kati Vasti, and Abhyangam. Rated among the highest in Delhi at 4.8 on JustDial.",
+  rating: 4.9,
+  reviews: "1070",
+  image: "/Anchor pages/Delhi/images/7.webp",
+  slug: "sanjeevani-ayurveda-hospital-dwarka-new-delhi-india",
+};
+
+const SriSriAyurvedaPanchakarmaAyurvedaCenter: DelhiCenter = {
+  series: -12,
+  name: "Sri Sri Ayurveda Panchakarma Ayurveda Center",
+  city: "Jhilmil, Delhi, India",
+  description:
+    "An Ayurvedic Panchakarma clinic in Delhi affiliated with the Sri Sri Tattva brand, delivering authentic Ayurvedic therapies in a spiritually aligned, peaceful environment. The center offers personalized Panchakarma detox programs, Abhyanga, Shirodhara, Udwarthanam, herbal steam, and rejuvenation therapies under qualified Ayurvedic doctors. Known for integrating yoga and meditation with clinical Ayurveda, this center appeals to patients from across India and international visitors seeking genuine, protocol-driven Ayurvedic healing in the capital city.",
+  rating: 4.1,
+  reviews: "60",
+  image: "/Anchor pages/Delhi/images/8.webp",
+  slug: "sri-sri-ayurveda-panchakarma-ayurveda-center-hospital-jhilmil-new-delhi-india",
+};
+
+const KeralaAyurvedaLifeAyurvedaPanchakarmaClinic: DelhiCenter = {
+  series: -13,
+  name: "Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)",
+  city: "Green Park, New Delhi, India",
+  description:
+    "A specialized Kerala-style Ayurvedic Panchakarma clinic in Delhi, delivering authentic classical therapies by Kerala-trained physicians and therapists. Offering modernized Ayurvedic care while retaining the ancient herbal science in its original form, the center specializes in Panchakarma detox, Rasayana (rejuvenation), chronic disease management, and beauty enhancement. The clinic uses a proficient Kerala-based herbal pharmacy with genuine Ayurvedic oils and medicines. Effective for back pain, diabetes, knee joint pain, infertility, obesity, paralysis, and skin conditions.",
+  rating: 4.9,
+  reviews: "750",
+  image: "/Anchor pages/Delhi/images/9.jpg",
+  slug: "kerala-ayurveda-life-ayurveda-panchakarma-clinic-hospital-green-park-new-delhi-india",
+};
+
+const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
+  series: -14,
+  name: "Apollo AyurVAID Hospitals (Nehru Enclave)",
+  city: "Nehru Enclave, New Delhi, India",
+  description:
+    "India's National Quality Award winner in Ayurveda and a NABH-accredited 40-bed Precision Ayurveda hospital in Nehru Place, New Delhi — backed by Apollo Hospitals. With over 18 years of clinical experience and an extraordinary Net Promoter Score of 88% and 98% patient satisfaction, AyurVAID offers protocol-driven Integrative Ayurvedic care for chronic diseases including stroke rehabilitation, Parkinson's, PCOS, arthritis, nephrotic syndrome, autoimmune disorders, integrative oncology, and neurological conditions. Cashless insurance accepted. A dedicated international patients team and custom sattvic kitchen make it Delhi's most clinically rigorous Ayurveda hospital.",
+  rating: 4.3,
+  reviews: "170",
+  image: "/Anchor pages/Delhi/images/10.webp",
+  slug: "apollo-ayurvaid-life-hospital-nehru-enclave-new-delhi-india",
+};
+
   useEffect(() => {
     let isMounted = true;
 
@@ -213,6 +333,16 @@ const DelhiNorthIndiaRegionCenters = () => {
       imperialSpaCenter,
       itcGrandBharatCenter,
       amanbaghCenter,
+      maharishiAyurvedaHospitalCenter,
+      AryaVaidyaSala,
+      // AashaAyurvedaCentre,
+      TarunVedaAyurvedaHospital,
+      SKKAyurvedaPanchakarma,
+      AprasuAyurvedicHospital,
+      SanjeevaniAyurveda,
+      SriSriAyurvedaPanchakarmaAyurvedaCenter,
+      KeralaAyurvedaLifeAyurvedaPanchakarmaClinic,
+      ApolloAyurVAIDHospitalsNehruEnclave,
       ...centers
     ];
     const ordered = prioritizeTopCenters(baseCenters);
