@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AryaVaidyaSala() {
+export default function TarunVedaAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -16,7 +16,7 @@ export default function AryaVaidyaSala() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Ayurveda Packages" },
+    { id: "programs", title: "Top Programs" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -37,176 +37,176 @@ export default function AryaVaidyaSala() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Meticulous Vaidya Evaluation",
-      description: "A comprehensive baseline diagnostic check-up and pulse analysis (Naadi Pariksha) by experienced physician panels to determine specific dosha profiling.",
+      title: "Nadi Pariksha Assessment",
+      description: "Conducting a precise pulse diagnosis to assess Dosha status and metabolic constitution under senior physicians.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Classical Prescription Drafting",
-      description: "Compiling an individualized therapeutic blueprint utilizing authentic, standard-potency classical Arya Vaidya Sala formulations.",
+      title: "Customized Therapy Design",
+      description: "Mapping out your therapeutic Panchakarma plan, herbal prescriptions, and personalized dietary chart.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Purva Karma",
-      description: "Administering warm synchronized massage (Abhyangam) and customized steam baths (Swedana) to loosen deep metabolic wastes.",
+      title: "Preparatory Detoxification",
+      description: "Loosening deep-seated toxins in the tissues via traditional herbal oleation and sweat-inducing steam therapies.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Supervised Panchakarma Purification",
-      description: "Executing precise, highly controlled biological detoxification procedures (Virechana, Vasti, or Vamana) tailored to deep impurities.",
+      title: "Purification Procedures",
+      description: "Administering core Panchakarma therapies (Vamana, Virechana, or Basti) under strict medical supervision.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Traditional Restorative Retention",
-      description: "Applying targeted warm Keralite therapies like Kati Vasti, Janu Vasti, or Greeva Vasti to soothe nerve compression and joint stiffness.",
+      title: "Integrated Recovery",
+      description: "Supporting your healing journey with therapeutic yoga sessions, personalized Saatvic meals, and rest.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Continuing Path to Vitality",
-      description: "Long-term health preservation through customized home diet charts, wellness guidelines, single-herb extracts, and structured follow-up checks.",
+      title: "Preventive Lifestyle Plan",
+      description: "Providing a detailed nutrition and daily routine blueprint to maintain your health long after discharge.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Supportive Cancer Care restored my hope and strength!",
-      review: "Following grueling chemotherapy sessions, coming to Kottakkal's flagship hospital was a massive turning point. The integrated oncology protocols and tailored Rasayana therapies supervised by senior Vaidyas completely restored my cellular vitality, natural appetite, and physical strength.",
-      name: "Helena Markova",
+      title: "Chronic Sciatica & Lower Back Pain",
+      review: "I had been suffering from constant sciatica pain for years, and physical therapy in Germany only gave temporary relief. After checking in at Tarunveda in Dwarka for a 14-day Panchakarma treatment, the pain has completely vanished.",
+      name: "Lucas Fischer",
       verified: true,
-      location: "Prague, Czech Republic",
-      condition: "Supportive Cancer Care",
+      location: "Frankfurt, Germany",
+      condition: "Chronic Sciatica & Lower Back Pain",
       rating: 5
     },
     {
-      title: "Incredible Osteoarthritis relief with Pizhichil",
-      review: "Severe knee osteoarthritis made walking incredibly painful for five years. The warm medicated oil stream treatments and synchronized massages here worked absolute wonders. The joint inflammation subsided entirely, and I can happily walk pain-free again. Absolute gold standard care.",
-      name: "Jean-Pierre Moreau",
+      title: "Chronic Digestive Issues & IBS",
+      review: "Severe bloating and acid reflux made my daily life miserable. The doctors at Tarunveda diagnosed a major Pitta imbalance through Nadi Pariksha and designed a customized detox plan involving Virechana (cleansing) and a specific Saatvic diet.",
+      name: "Elena Petrov",
       verified: true,
-      location: "Brussels, Belgium",
-      condition: "Severe Osteoarthritis",
+      location: "Sofia, Bulgaria",
+      condition: "Chronic Digestive Issues & IBS",
       rating: 5
     },
     {
-      title: "Chronic Eczema healed from the root",
-      review: "Suffering from agonizing eczema for a decade, the dermatological team developed a specialized protocol combining Ayurvedic detox and botanical wraps. The results were absolutely miraculous. My skin has cleared up completely and feels healthy for the first time.",
-      name: "Ingrid Bergman",
+      title: "Rheumatoid Arthritis & Joint Stiffness",
+      review: "Joint pain was making it hard for me to move my fingers and knees. The herbal poultice massage (Potli Sweda) and specialized Basti therapies at Tarunveda worked wonders. The stiffness in my joints has reduced significantly in just ten days.",
+      name: "Arthur Berg",
       verified: true,
-      location: "Oslo, Norway",
-      condition: "Chronic Eczema & Psoriasis",
+      location: "Rotterdam, Netherlands",
+      condition: "Rheumatoid Arthritis & Joint Stiffness",
       rating: 5
     },
     {
-      title: "Outstanding Panchakarma Detoxification",
-      review: "Corporate burnout gave me chronic digestive issues and insomnia. The classical three-week Panchakarma program in Kottakkal was a deeply transformative experience. The clinical precision and profound knowledge of the Vaidyas perfectly restored my digestion and sleep. An incredible sanctuary!",
-      name: "Devon Miller",
+      title: "Insomnia & Chronic Stress",
+      review: "Managing a stressful career left me with severe burnout and sleepless nights. The Shirodhara (warm oil pouring on the forehead) treatments at this center were deeply therapeutic.",
+      name: "Sofia Bianchi",
       verified: true,
-      location: "Auckland, New Zealand",
-      condition: "Chronic Burnout & Detox",
+      location: "Milan, Italy",
+      condition: "Insomnia & Chronic Stress",
       rating: 5
     },
     {
-      title: "Profound Sleep and Nervous System Recovery",
-      review: "Severe insomnia and persistent anxiety completely ruined my daily routine. The serene healing environment and rhythmic warm oil stream of Shirodhara quieted my nervous system. I am finally sleeping deeply every night and feel completely recharged. Excellent authentic care!",
-      name: "Serena Moretti",
+      title: "Psoriasis & Skin Detoxification",
+      review: "I've had stubborn skin issues for a long time. The clinical detoxification and customized herbal medications prescribed by the BAMS doctors here cleared up my skin patches significantly.",
+      name: "Liam O'Brien",
       verified: true,
-      location: "Florence, Italy",
-      condition: "Chronic Insomnia & Anxiety",
+      location: "Dublin, Ireland",
+      condition: "Psoriasis & Skin Detoxification",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is the historic legacy of Arya Vaidya Sala (AVS), Kottakkal?",
-      answer: "Arya Vaidya Sala is a premier, legendary charitable institution founded on October 12, 1902, by the visionary physician and philanthropist Vaidyaratnam P.S. Varier. Over the last century, it has pioneered the preservation, standardization, and scientific propagation of authentic classical Ayurveda worldwide."
+      question: "What makes Tarunveda Ayurveda Hospital's approach clinical?",
+      answer: "We focus on medical-grade Ayurvedic treatments led by senior BAMS/MD physicians. Every recovery journey begins with detailed diagnostics, including Nadi Pariksha (pulse analysis), to pinpoint constitutional imbalances, which are then addressed through authentic Panchakarma protocols and customized herbal courses."
     },
     {
-      question: "What hospital facilities does AVS operate in Kottakkal?",
-      answer: "AVS operates its flagship Ayurvedic Hospital & Research Centre in Kottakkal, Ernakulam, and Delhi for paid therapies, alongside a highly revered Charitable Hospital in Kottakkal that provides free consultations, classical therapies, medicines, accommodation, and food to economically challenged patients."
+      question: "What is Nadi Pariksha and is it mandatory?",
+      answer: "Nadi Pariksha is the ancient science of Ayurvedic pulse diagnosis. It is a crucial part of our initial consultation as it allows our physicians to detect deep-seated imbalances in the Vata, Pitta, and Kapha doshas before they manifest as chronic diseases, ensuring a highly tailored treatment plan."
     },
     {
-      question: "How are the medicines at Arya Vaidya Sala prepared?",
-      answer: "AVS operates state-of-the-art, standard-accredited drug manufacturing factories that produce over 500 classical Ayurvedic formulations. All medicines are prepared strictly according to classical texts using herbs sourced organically and analyzed in our Centre for Medicinal Plants Research."
+      question: "Which chronic conditions can be treated at Tarunveda?",
+      answer: "Our hospital specializes in treating chronic joint and spine pain, sciatica, osteoarthritis, digestive disorders (like IBS, colitis, and chronic acidity), metabolic syndromes (diabetes, thyroid issues), autoimmune/skin disorders (psoriasis, eczema), and stress-related ailments."
     },
     {
-      question: "What conditions and specialties does the hospital focus on?",
-      answer: "We offer specialized clinical care for orthopedic spine/joint disorders, supportive cancer care, chronic skin diseases, autoimmune conditions, toxicological treatments (Visha Chikitsa), women's health, and classical Panchakarma detoxification."
+      question: "Do you offer outpatient (OPD) and inpatient (IPD) services?",
+      answer: "Yes, Tarunveda Ayurveda Hospital features comfortable OPD consultation setups as well as dedicated IPD rooms for patients undergoing intensive, multi-day Panchakarma treatments, complete with medical monitoring and specialized dietary plans."
     },
     {
-      question: "Does Arya Vaidya Sala accept AYUSH health insurance claims?",
-      answer: "Yes, our flagship Ayurvedic hospitals are fully accredited, and our administrative teams provide all necessary clinical case sheets, medical certificates, and diagnostic logs to facilitate corporate or government health insurance reimbursement."
+      question: "How accessible is the hospital for outstation and international patients?",
+      answer: "Our Corporate Park facility in Dwarka is highly accessible. It is situated just 7.5 km from Indira Gandhi International (IGI) Airport, 12 km from Delhi Cantonment Railway Station, and 23 km from New Delhi Railway Station (NDLS). Additionally, we are located only 400 meters away from the Sector-21 Dwarka Metro Station."
     }
   ];
 
   const programs = [
     {
-      title: "Classical Panchakarma Detox",
-      description: "Deep physiological cleansing treatments overseen by senior Vaidyas (Vamana, Virechana, Vasti) to purge metabolic wastes and clear dosha channels.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Ayurvedic Spine & Joint Care",
-      description: "Specialized non-surgical care using Kati Vasti, Janu Vasti, Abhyangam, Swedana, and Pizhichil for joint arthritis, lumbar spondylosis, and sciatica.",
+      title: "Chronic Pain Management",
+      description: "Targeted relief for osteoarthritis, cervical spondylosis, slip disc, and sciatica pain using specialized basti therapies.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Supportive Cancer Care",
-      description: "Specialized clinical research and supportive therapies focusing on vital energy restoration, post-chemo recovery, and immune-system strengthening.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Metabolic Health Reset",
+      description: "Comprehensive clinical protocols to regulate diabetes, thyroid imbalances, and weight naturally under expert guidance.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Rasayana Rejuvenation",
-      description: "Highly customized programs focusing on cellular repair, biological vitality, immunity building, nervous system recovery, and longevity.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Kaya Chikitsa",
-      description: "Comprehensive management of chronic digestive sluggishness, metabolic issues, asthma, migraines, and dermatological conditions (eczema, psoriasis).",
+      title: "Gut & Digestive Wellness",
+      description: "Resolving chronic acidity, bloating, constipation, and IBS through custom cleansing and internal herbal regimens.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Charitable & Surgical Care",
-      description: "Traditional poison treatments (Visha Chikitsa), free general medicine clinics, and traditional classical minor surgical procedures (Shalya Tantra).",
+      title: "Clinical Panchakarma",
+      description: "Systematic biological detoxification including Vamana, Virechana, Nasya, and Raktamokshan (leech therapy).",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Skin & Dermatology Care",
+      description: "Natural, non-steroidal treatments for psoriasis, eczema, acne, and stubborn allergies using pure formulations.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Stress & Anxiety Recovery",
+      description: "Deeply calming Shirodhara, head bodywork, and guided meditation to soothe the nervous system and cure insomnia.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Legendary 1902 Ayurvedic Legacy",
-      description: "Founded by Vaidyaratnam P.S. Varier, carrying forward over 120 years of unbroken commitment to authentic classical Ayurveda.",
+      title: "Nadi Pariksha Diagnosis",
+      description: "Accurate pulse reading to detect deep-seated systemic imbalances before designing therapy plans.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Uncompromising Drug Standardization",
-      description: "State-of-the-art factories manufacturing over 500 classical formulations using organically analyzed herbs for maximum efficacy.",
+      title: "Senior BAMS/MD Physicians",
+      description: "Highly qualified clinical doctors overseeing all therapies, diet plans, and recovery charts.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Eminent Senior Physician Panel",
-      description: "Supervised by highly experienced, third-generation Ayurvedic scholars and senior Vaidyas delivering protocol-based care.",
+      title: "Dwarka Corporate Location",
+      description: "A modern, hygienic clinical environment situated in Dwarka's premium business center.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Dedicated Charitable Mission",
-      description: "Operating a major Charitable Hospital that provides free treatment, food, and accommodation to thousands of patients annually.",
+      title: "Integrated Yoga & Gym",
+      description: "Combining traditional movement therapy and modern exercise to support structural alignment and physical healing.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Outpatient & Inpatient Care",
+      description: "Offering comfortable OPD consultations and intensive IPD setups for specialized detox programs.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Scientific Traditionalism",
+      description: "Blending authentic Ayurvedic healing principles with modern hygiene, safety, and clinical standards.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "AYUSH Insurance Support",
-      description: "Flagship hospitals are fully accredited, providing detailed clinical case sheets to facilitate cashless or reimbursement claims.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Advanced Clinical Research",
-      description: "Pioneering clinical research divisions collaborating on cancer care and running the Centre for Medicinal Plants Research.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function AryaVaidyaSala() {
   }, []);
 
   useEffect(() => {
-    document.title = "Arya Vaidya Sala (Kottakkal) | Best Ayurvedic Hospital in Kerala";
+    document.title = "Tarunveda Ayurveda Hospital Delhi | Panchakarma & Chronic Pain Care";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Arya Vaidya Sala (AVS) in Kottakkal, Kerala. Historic 1902 NABH-accredited flagship hospital offering Panchakarma, spine care, and cancer recovery.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic clinical Ayurvedic Panchakarma, Nadi Pariksha diagnosis, and personalized treatments for chronic pain, metabolic issues, skin conditions, and digestive health at Tarunveda Ayurveda Hospital in Sector-21, Dwarka, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function AryaVaidyaSala() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Arya Vaidya Sala (Kottakkal) Kerala
+              Tarunveda Ayurveda Hospital Dwarka New Delhi
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function AryaVaidyaSala() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arya Vaidya Sala (Kottakkal)</h1>
-                <p className="text-xl mb-4 opacity-90">Vaidyaratnam P.S. Varier's Historic Flagship Ayurvedic Hospital & Research Centre</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Tarunveda Ayurveda Hospital</h1>
+                <p className="text-xl mb-4 opacity-90">Panchakarma & Chronic Disease Clinical Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Kottakkal, Malappuram, Kerala, India</span>
+                  <span className="text-lg">Dwarka, New Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.5</span>
-                  <span className="opacity-90">(380 Reviews)</span>
+                  <span className="text-lg font-semibold">4.8</span>
+                  <span className="opacity-90">(210 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,8 +298,8 @@ export default function AryaVaidyaSala() {
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Arya Vaidya Sala
+                Clinical Ayurvedic Healing & <br className="hidden lg:block" />
+                Panchakarma in Dwarka
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function AryaVaidyaSala() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Vaidyaratnam P.S. Varier's Arya Vaidya Sala (AVS)</strong>, the historic flagship Ayurvedic institution located in Kottakkal, Malappuram District, Kerala. Established on October 12, 1902, AVS stands as a legendary charitable institution that pioneered the modern revival, drug standardization, and scientific propagation of classical Ayurveda worldwide. The institution operates premier multispecialty hospitals combining classical Keralite therapies (such as Pizhichil, Navarakizhi, Kati Vasti, and Swedana) with high diagnostic standards, clinical research divisions, and extensive medicinal plants gardens.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Tarunveda Ayurveda Hospital</strong>, Dwarka's premier clinical wellness destination for authentic Ayurvedic healing and chronic pain management. Located on the 3rd Floor of Corporate Park in Sector-21, New Delhi, our hospital features modern clinical infrastructure combined with traditional therapeutic wisdom. Guided by highly qualified BAMS/MD Ayurveda physicians, we specialize in Nadi Pariksha (pulse diagnosis) to pinpoint metabolic imbalances and design highly personalized recovery plans.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function AryaVaidyaSala() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/kerela/Arya Vaidya Sala/secondary.jpg" 
-                          alt="Arya Vaidya Sala Kottakkal"
+                          src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/secondary.webp" 
+                          alt="Tarunveda Ayurveda Hospital accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,8 +325,10 @@ export default function AryaVaidyaSala() {
                   </div>
 
                   <p>
-                    Known for its uncompromising commitment to quality, AVS operates standard-accredited factories producing over 500 classical Ayurvedic formulations. Under the guidance of highly distinguished senior Vaidyas, AVS operates both the flagship Ayurvedic Hospital & Research Centre and a massive Charitable Hospital providing completely free clinical consultation, classical therapies, medicines, accommodation, and food to the underprivileged. The campus features advanced research labs, comfortable inpatient suites, Kathakali academies, and comprehensive documentation to facilitate AYUSH health insurance claims.
+                    Our comprehensive setup offers both outpatient (OPD) and inpatient (IPD) services, providing a clinical healing environment for those undergoing intensive Panchakarma treatments. We are renowned for our success in treating chronic joint pain, sciatica, arthritis, metabolic disorders, digestive issues (IBS), dermatological conditions, and mental stress. Every treatment at Tarunveda is supported by an integrated approach that includes customized herbal formulations, therapeutic yoga sessions in our dedicated hall, and personalized lifestyle counseling to ensure long-term wellness.
                   </p>
+
+                  
                 </div>
               </div>
 
@@ -335,8 +337,8 @@ export default function AryaVaidyaSala() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg" 
-                      alt="Arya Vaidya Sala Kottakkal Exterior"
+                      src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/main.webp" 
+                      alt="Tarunveda Ayurveda Hospital main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +350,8 @@ export default function AryaVaidyaSala() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/kerela/Arya Vaidya Sala/secondary.jpg" 
-                        alt="Therapy Chamber at Arya Vaidya Sala Kottakkal"
+                        src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/secondary.webp" 
+                        alt="Tarunveda Ayurveda Hospital therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -361,25 +363,25 @@ export default function AryaVaidyaSala() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to renewed health begins with a single step.{" "}
+                Your journey to self-awareness and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Arya Vaidya Sala (Kottakkal) today.
+                My Vaidyam to connect with Tarunveda Ayurveda Hospital today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ayurveda Packages Section */}
+      {/* Programs Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Kottakkal</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Tarunveda Ayurveda Hospital</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,9 +411,9 @@ export default function AryaVaidyaSala() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Arya Vaidya Sala</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Tarunveda Ayurveda Hospital</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience legendary healing with century-old standardized formulations, empanelment, and research divisions.
+                Experience clinical pulse diagnostics, therapeutic yoga, and specialized Panchakarma detox programs in a modern Corporate Park setting.
               </p>
             </div>
             
@@ -442,7 +444,7 @@ export default function AryaVaidyaSala() {
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly standardized clinical approach integrating legacy Keralite Vaidya care, fresh oils, and strict patient-centered procedures.
+              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>
           </div>
           
@@ -476,12 +478,12 @@ export default function AryaVaidyaSala() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg"
-                  alt="Arya Vaidya Sala Kottakkal"
+                  src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/main.webp"
+                  alt="Tarunveda Ayurveda Hospital view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Arya Vaidya Sala?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Tarunveda Ayurveda Hospital?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +508,7 @@ export default function AryaVaidyaSala() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Arya Vaidya Sala?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Tarunveda Ayurveda Hospital?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -520,8 +522,8 @@ export default function AryaVaidyaSala() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg"
-                  alt="Arya Vaidya Sala Kottakkal"
+                  src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/main.webp"
+                  alt="Tarunveda Ayurveda Hospital view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -536,7 +538,7 @@ export default function AryaVaidyaSala() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -552,7 +554,7 @@ export default function AryaVaidyaSala() {
                   <h3 className="text-xl md:text-2xl font-bold text-[#2C4E5A] mb-3 md:mb-4">
                     {testimonials[currentReview]?.title}
                   </h3>
-                  <p className="text-lg md:text-2xl leading-relaxed" style={{ color: "#7F543D" }}>
+                  <p className="text-base md:text-xl leading-relaxed" style={{ color: "#7F543D" }}>
                     "{testimonials[currentReview]?.review}"
                   </p>
                 </div>
@@ -570,12 +572,12 @@ export default function AryaVaidyaSala() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -586,7 +588,7 @@ export default function AryaVaidyaSala() {
                 </div>
               </CardContent>
             </Card>
-
+ 
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -609,7 +611,7 @@ export default function AryaVaidyaSala() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-
+ 
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -625,13 +627,13 @@ export default function AryaVaidyaSala() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Arya Vaidya Sala.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Tarunveda Ayurveda Hospital.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -648,7 +650,7 @@ export default function AryaVaidyaSala() {
           </Accordion>
         </div>
       </section>
-
+ 
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -663,11 +665,11 @@ export default function AryaVaidyaSala() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Headquarters Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Vaidyaratnam P. S. Varier's Arya Vaidya Sala<br />
-                      Kottakkal (P.O), Malappuram District<br />
-                      Kerala, India
+                      Tarunveda Ayurveda Hospital<br />
+                      318-319, 3rd Floor, D-21, Corporate Park, Sector-21, Dwarka<br />
+                      New Delhi, Delhi, India
                     </p>
                   </div>
                 </div>
@@ -675,18 +677,26 @@ export default function AryaVaidyaSala() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 48328 08000</p>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <div>+91 989 xxxx xxx</div>
+                    </div>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 28 km from Calicut International Airport</li>
-                      <li>• Approx. 15 km from Tirur Railway Station</li>
+                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 7.5 km from Indira Gandhi International (IGI) Airport (Terminal 3)</span>
+                      </li>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 12 km from Delhi Cantonment Railway Station (DEC)</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -694,27 +704,27 @@ export default function AryaVaidyaSala() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.255360446274!2d76.0032034!3d10.9962574!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b4bc6dc16ef5%3A0xe146555c13a4b498!2sArya%20Vaidya%20Sala%2C%20Kottakkal!5e0!3m2!1sen!2sin!4v1779861558591!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.2645352071218!2d77.0670596!3d28.561818100000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ba812ffffff%3A0xd2d86e855d96025e!2sTarunveda%20Ayurveda%20Hospital!5e0!3m2!1sen!2sin!4v1780635253491!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Arya Vaidya Sala Kottakkal Location"
+                  title="Tarunveda Ayurveda Hospital Location"
                 ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+ 
       {/* Footer CTA */}
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/kerela/Arya Vaidya Sala/main.jpg"
-            alt="Arya Vaidya Sala Kottakkal"
+            src="/TOP cneters/delhi/TarunVeda Ayurveda Hospital/main.webp"
+            alt="Tarunveda Ayurveda Hospital"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -724,7 +734,7 @@ export default function AryaVaidyaSala() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Arya Vaidya Sala.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Tarunveda Ayurveda Hospital.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -734,7 +744,7 @@ export default function AryaVaidyaSala() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/914832808000?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Arya%20Vaidya%20Sala%20Kottakkal."
+              href="https://wa.me/919319797144?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Tarunveda%20Ayurveda%20Hospital."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -744,21 +754,21 @@ export default function AryaVaidyaSala() {
           </div>
         </div>
       </section>
-
+ 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
+ 
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
-
+ 
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
-
+ 
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
-
+ 
       <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
@@ -784,3 +794,4 @@ export default function AryaVaidyaSala() {
     </div>
   );
 }
+
