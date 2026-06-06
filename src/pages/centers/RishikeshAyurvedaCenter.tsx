@@ -85,7 +85,7 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "The ultimate Ayurvedic detox in Tapovan",
-      review: "Doing the 14-day Panchakarma at Amritash was one of the best decisions I've made. The treatments were customized day-by-day based on how my body responded.",
+      review: "Doing the 14-day Panchakarma was one of the best decisions I've made. The treatments were customized day-by-day based on how my body responded.",
       name: "Aveline Dupont",
       verified: true,
       location: "Geneva, Switzerland",
@@ -325,7 +325,7 @@ export default function RishikeshAyurvedaCenter() {
                   </div>
 
                   <p>
-                    Nestled in the peaceful foothills of Tapovan—renowned as the yoga capital of the world—Amritash provides customized consultations and therapies. We offer targeted solutions for joint stiffness, anxiety and stress disorders, chronic digestive issues, reproductive health, and natural skin and hair care.
+                    Nestled in the peaceful foothills of Tapovan—renowned as the yoga capital of the world—<strong className="font-bold text-[#2C4E5A]">Rishikesh Ayurveda</strong> provides customized consultations and therapies. We offer targeted solutions for joint stiffness, anxiety and stress disorders, chronic digestive issues, reproductive health, and natural skin and hair care.
                   </p>
 
                   <p>
@@ -333,7 +333,7 @@ export default function RishikeshAyurvedaCenter() {
                   </p>
 
                   <p>
-                    Anyone who visits Amritash Ayurveda by Dr. Sachin Dua can stay assured of complete recovery and overall cleansing, which eventually boosts the overall health naturally.
+                    Anyone who visits <strong className="font-bold text-[#2C4E5A]">Rishikesh Ayurveda</strong> by Dr. Sachin Dua can stay assured of complete recovery and overall cleansing, which eventually boosts the overall health naturally.
                   </p>
                 </div>
               </div>
@@ -387,7 +387,7 @@ export default function RishikeshAyurvedaCenter() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Amritash</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Rishikesh Ayurveda</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -489,7 +489,7 @@ export default function RishikeshAyurvedaCenter() {
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rishikesh Ayurveda?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +514,7 @@ export default function RishikeshAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rishikesh Ayurveda?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
