@@ -76,7 +76,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
   const testimonials = [
     {
       title: "Life-changing Panchakarma & Sciatica Relief",
-      review: "I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain. Dr. Vinod Kumar designed a comprehensive 14-day treatment.",
+      review: `I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain.
+Dr. Vinod Kumar designed a comprehensive 14-day treatment that targetted my spine.
+The therapy successfully eliminated my pain and restored my mobility completely.`,
       name: "Liam Harrison",
       verified: true,
       location: "Melbourne, Australia",
@@ -85,7 +87,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Deeply Transformative Detox & Digestion Restoration",
-      review: "My Panchakarma detox at Ayuskama was fantastic. The Ayurvedic consultation was extremely thorough. Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.",
+      review: `My Panchakarma detox at Ayuskama was fantastic and the consultation was extremely thorough.
+Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.
+I feel completely rejuvenated, and my digestion is better than it has been in years.`,
       name: "Emma Watson",
       verified: true,
       location: "Oxford, UK",
@@ -94,7 +98,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Excellent Ayurveda Course & Certification",
-      review: "I joined the Ayurveda Nutrition and Marma Therapy certification course here. The theoretical teachings are backed by deep practical clinical sessions.",
+      review: `I joined the Ayurveda Nutrition and Marma Therapy certification course here.
+The theoretical teachings are backed by deep practical clinical sessions in the clinic.
+It was a great experience that gave me the confidence to practice Ayurveda professionally.`,
       name: "Lucas Novak",
       verified: true,
       location: "Prague, Czech Republic",
@@ -103,7 +109,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Wonderful Stress Relief & Rejuvenation Retreat",
-      review: "I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout. The Shirodhara treatment was incredibly relaxing, and the daily morning yoga sessions in Upper Tapovan helped calm my mind.",
+      review: `I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout.
+The Shirodhara treatment was relaxing, and morning yoga sessions helped calm my mind.
+This sanctuary in Upper Tapovan is exactly what I needed to heal and recharge.`,
       name: "Chloe Mercier",
       verified: true,
       location: "Geneva, Switzerland",
@@ -112,7 +120,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Incredible Support for Women's Health",
-      review: "I went to Ayuskama to address long-standing hormonal imbalances. Dr. Neetu Singh was extremely empathetic and knowledgeable. She recommended a customized diet and specific herbs.",
+      review: `I went to Ayuskama to address long-standing hormonal imbalances and low energy.
+Dr. Neetu Singh was extremely empathetic, knowledgeable, and designed a custom plan.
+The herbs and dietary changes have brought back my vitality and balance.`,
       name: "Mia Rossi",
       verified: true,
       location: "Milan, Italy",

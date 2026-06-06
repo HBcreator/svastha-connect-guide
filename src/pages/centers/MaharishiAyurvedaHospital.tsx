@@ -76,7 +76,9 @@ export default function MaharishiAyurvedaHospital() {
   const testimonials = [
     {
       title: "Joint Pain & Back Care",
-      review: "I had been suffering from chronic lower back pain and joint stiffness for years. The pulse diagnosis by Dr. Amit Arora at Maharishi Ayurveda Hospital was incredibly precise. After 14 days of customized Panchakarma detox, oil pooling (Kati Basti), and yoga exercises, I felt a complete release.",
+      review: `I had been suffering from chronic lower back pain and joint stiffness for years.
+The pulse diagnosis by Dr. Amit Arora at Maharishi Ayurveda Hospital was incredibly precise.
+After 14 days of customized Panchakarma detox, oil pooling (Kati Basti), and yoga exercises, I felt a complete release.`,
       name: "David Vance",
       verified: true,
       location: "London, UK",
@@ -85,7 +87,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Diabetes & Metabolic Reset",
-      review: "My struggle with type II diabetes and high blood pressure led me to seek alternative care. The physicians at Maharishi Ayurveda Hospital designed a meticulous routine of detoxification, specialized herbs, and a strict Saatvic diet.",
+      review: `My struggle with type II diabetes and high blood pressure led me to seek alternative care.
+The physicians at Maharishi Ayurveda Hospital designed a meticulous routine of detoxification,
+specialized herbs, and a strict Saatvic diet.`,
       name: "Sophie Moreau",
       verified: true,
       location: "Lyon, France",
@@ -94,7 +98,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Insomnia & Stress Management",
-      review: "I checked in for severe stress, insomnia, and burnout. The blend of Transcendental Meditation, daily Shirodhara oil stream treatments, and gentle pranayama breathing was exactly what I needed.",
+      review: `I checked in for severe stress, insomnia, and burnout.
+The blend of Transcendental Meditation, daily Shirodhara oil stream treatments,
+and gentle pranayama breathing was exactly what I needed.`,
       name: "Thomas Keller",
       verified: true,
       location: "Frankfurt, Germany",
@@ -103,7 +109,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Rejuvenation & Anti-Aging",
-      review: "The rejuvenation and detox package at Maharishi Ayurveda is outstanding. The eco-conscious room built with bamboo felt like a sanctuary.",
+      review: `The rejuvenation and detox package at Maharishi Ayurveda is outstanding.
+The eco-conscious room built with bamboo felt like a sanctuary.
+I left feeling completely refreshed, energized, and clear-headed.`,
       name: "Fleur Meer",
       verified: true,
       location: "Utrecht, Netherlands",
@@ -112,7 +120,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "IBS & Digestive Wellness",
-      review: "I came with chronic IBS and digestive issues that conventional medicine could not resolve. Under the doctors' daily monitoring, my treatments and colon cleanses (Basti) were completely customized.",
+      review: `I came with chronic IBS and digestive issues that conventional medicine could not resolve.
+Under the doctors' daily monitoring, my treatments and colon cleanses (Basti)
+were completely customized.`,
       name: "Alistair Bell",
       verified: true,
       location: "Edinburgh, Scotland",

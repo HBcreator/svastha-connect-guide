@@ -76,7 +76,9 @@ export default function SKKAyurvedaPanchakarma() {
   const testimonials = [
     {
       title: "Chronic Digestive Issues & IBS",
-      review: "Severe bloating and acid reflux made my daily life miserable. The doctors at SKK diagnosed a major Pitta imbalance through Nadi Pariksha and designed a customized detox plan involving Virechana (cleansing) and a specific Saatvic diet.",
+      review: `Severe bloating and acid reflux made my daily life miserable.
+The doctors at SKK diagnosed a major Pitta imbalance through Nadi Pariksha and
+designed a customized detox plan involving Virechana (cleansing) and a specific Saatvic diet.`,
       name: "Noah Jenkins",
       verified: true,
       location: "Toronto, Canada",
@@ -85,7 +87,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "PCOD & Gynecological Care",
-      review: "I consulted Dr. Rani Gupta for my chronic PCOD and irregular cycles. She is extremely knowledgeable and warm. The personalized Panchakarma cleansing therapies combined with specific gynecological herbs completely regulated my cycles within three months.",
+      review: `I consulted Dr. Rani Gupta for my chronic PCOD and irregular cycles. She is extremely knowledgeable and warm.
+The personalized Panchakarma cleansing therapies combined with specific gynecological herbs
+completely regulated my cycles within three months.`,
       name: "Katarina Lind",
       verified: true,
       location: "Oslo, Norway",
@@ -94,7 +98,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Rheumatoid Arthritis & Joint Stiffness",
-      review: "Joint pain was making it hard for me to move my fingers and knees. The herbal poultice massage (Potli Sweda) and specialized Basti therapies at SKK worked wonders.",
+      review: `Joint pain was making it hard for me to move my fingers and knees.
+The herbal poultice massage (Potli Sweda) and specialized Basti therapies
+at SKK worked wonders and restored my mobility.`,
       name: "William Carter",
       verified: true,
       location: "Manchester, UK",
@@ -103,7 +109,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Psoriasis & Eczema Recovery",
-      review: "I had stubborn skin patches and psoriasis flare-ups that weren't responding to typical treatments. The custom detoxification therapies (Snehan & Swedan) and pure herbal remedies prescribed by Dr.",
+      review: `I had stubborn skin patches and psoriasis flare-ups that weren't responding to typical treatments.
+The custom detoxification therapies (Snehan & Swedan) and pure herbal remedies
+prescribed by the doctors completely cleared my skin.`,
       name: "Zoe Lefevre",
       verified: true,
       location: "Geneva, Switzerland",
@@ -112,7 +120,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Sciatica & Lower Back Pain",
-      review: "My back stiffness and severe sciatica made even sitting for an hour painful. Under Dr. Tarun Gupta's guidance, I went through a 14-day Basti (medicated enema) protocol.",
+      review: `My back stiffness and severe sciatica made even sitting for an hour painful.
+Under Dr. Tarun Gupta's guidance, I went through a 14-day Basti (medicated enema) protocol
+which completely relieved my pain and tension.`,
       name: "Daan Visser",
       verified: true,
       location: "Amsterdam, Netherlands",

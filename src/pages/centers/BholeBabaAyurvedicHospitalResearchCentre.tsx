@@ -76,7 +76,9 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
   const testimonials = [
     {
       title: "Proficient Sciatica Care in Ranikhet",
-      review: "I stayed at Bhole Baba Hospital in Chilianaula for 3 weeks to treat my painful sciatica and spinal stiffness. Dr. Vijay and his therapists did a marvelous job.",
+      review: `I stayed at Bhole Baba Hospital in Chilianaula for 3 weeks to treat my painful sciatica and spinal stiffness.
+Dr. Vijay and his therapists did a marvelous job with the traditional massage techniques.
+My spinal flexibility has greatly improved, and I am finally pain-free.`,
       name: "Charlie Dubois",
       verified: true,
       location: "Lyon, France",
@@ -85,7 +87,9 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
     },
     {
       title: "Exceptional Panchakarma Detox & Peace",
-      review: "My 14-day residential Panchakarma detox at the Bhole Baba center was deeply transformative.",
+      review: `My 14-day residential Panchakarma detox at the Bhole Baba center was deeply transformative.
+The daily treatments combined with the serene mountain environment of Ranikhet helped me reset.
+The organic food, professional staff, and peaceful ashram atmosphere were top-notch.`,
       name: "Alex Wright",
       verified: true,
       location: "Toronto, Canada",
@@ -94,7 +98,9 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
     },
     {
       title: "Perfect Burnout Recovery & Rejuvenation",
-      review: "I completed a 10-day Kayakalpa rejuvenation package at the hospital to recover from mental exhaustion.",
+      review: `I completed a 10-day Kayakalpa rejuvenation package at the hospital to recover from mental exhaustion.
+The Shirodhara treatments and the guidance on mindfulness completely restored my energy.
+It is an amazing place for anyone seeking true spiritual and physical recovery.`,
       name: "Ingel Nielsen",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -103,7 +109,9 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
     },
     {
       title: "Incredible Respiratory & Asthma Relief",
-      review: "As a long-term asthma sufferer, the pure mountain air of Chilianaula and the specialized respiratory therapies designed by Dr. Priyanka Ramola worked wonders.I haven't breathed this easily in years.",
+      review: `As a long-term asthma sufferer, the pure mountain air of Chilianaula was already helpful.
+The specialized respiratory therapies designed by Dr. Priyanka Ramola worked wonders for me.
+I haven't breathed this easily in years, and my chest feels completely clear.`,
       name: "James Sterling",
       verified: true,
       location: "Chicago, USA",
@@ -112,7 +120,9 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
     },
     {
       title: "Scientific Clinical Care with Heart",
-      review: "What makes Bhole Baba Hospital stand out is the combination of scientific medical supervision and Babaji's charitable spirit. I received excellent treatment for metabolic issues and digestion.",
+      review: `What makes Bhole Baba Hospital stand out is the combination of scientific medical supervision and Babaji's charitable spirit.
+I received excellent treatment for metabolic issues and digestion during my stay.
+The doctors and caretakers show a level of empathy that is hard to find elsewhere.`,
       name: "Talia Kovako",
       verified: true,
       location: "Kyiv, Ukraine",

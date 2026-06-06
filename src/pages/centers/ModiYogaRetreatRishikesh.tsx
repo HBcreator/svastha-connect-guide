@@ -76,7 +76,9 @@ export default function ModiYogaRetreatRishikesh() {
   const testimonials = [
     {
       title: "Breathtaking Ganges views and normalized sleep cycles",
-      review: "The views of the Ganges from my balcony at Modi Yoga Retreat were absolutely breathtaking. I had been struggling with chronic insomnia and burnout for months. The doctors created a personalized schedule of soothing Shirodhara, yogic breathing, and specialized sleep care.",
+      review: `The views of the Ganges from my balcony at Modi Yoga Retreat were absolutely breathtaking.
+I had been struggling with chronic insomnia and burnout for months before my stay.
+The personalized schedule of soothing Shirodhara and sleep care restored my sleep cycle.`,
       name: "Gene Lefebvre",
       verified: true,
       location: "Geneva, Switzerland",
@@ -85,7 +87,9 @@ export default function ModiYogaRetreatRishikesh() {
     },
     {
       title: "Outstanding metabolic care and stable energy levels",
-      review: "The integrated approach here is truly outstanding. Combining traditional Ayurvedic treatments like Abhyanga with proactive metabolic diagnostics and a carefully planned low-glycemic Saatvic diet was highly effective.",
+      review: `The integrated approach here is outstanding and highly effective for metabolic health.
+Abhyanga treatment combined with proactive diagnostics and Saatvic dining worked wonders.
+I feel much lighter, healthier, and my daily energy levels have stabilized completely.`,
       name: "Kasper Nielsen",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -94,7 +98,9 @@ export default function ModiYogaRetreatRishikesh() {
     },
     {
       title: "Luxurious Panchakarma detox in a riverfront sanctuary",
-      review: "I chose the Panchakarma package at Modi Yoga Retreat to detoxify my body and reset my digestion. The 12,000 sq ft spa facilities are luxurious and clean, and the therapists are exceptionally professional.",
+      review: `I chose the Panchakarma package at Modi Yoga Retreat to detoxify and reset my digestion.
+The 12,000 sq ft spa facilities are luxurious, clean, and offer a peaceful environment.
+The therapists are exceptionally professional and guided me through every treatment step.`,
       name: "Belle Boucher",
       verified: true,
       location: "Paris, France",
@@ -103,7 +109,9 @@ export default function ModiYogaRetreatRishikesh() {
     },
     {
       title: "Significant back pain relief and successful weight management",
-      review: "I was dealing with chronic back pain and weight issues. The doctors customized a program of specific pain-relief oil massages, physical therapy, and daily yoga in the serene garden.",
+      review: `I was dealing with chronic back pain and weight issues when I booked my retreat.
+The doctors customized a program of specific pain-relief oil massages and physical therapy.
+The daily yoga in the garden has significantly reduced my back pain and improved strength.`,
       name: "Alistair Vance",
       verified: true,
       location: "Edinburgh, UK",
@@ -112,7 +120,9 @@ export default function ModiYogaRetreatRishikesh() {
     },
     {
       title: "Transformative gut healing and deep mindfulness",
-      review: "Staying at Modi Yoga Retreat was a transformative experience. The quiet riverside location and the Vastu-designed rooms immediately put my mind at ease.",
+      review: `Staying at Modi Yoga Retreat was a highly transformative and soothing experience.
+The quiet riverside location and the Vastu-designed rooms immediately put my mind at ease.
+I left the center feeling mentally clear, physically energized, and fully refreshed.`,
       name: "Charlotte Berg",
       verified: true,
       location: "Amsterdam, Netherlands",

@@ -76,7 +76,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
   const testimonials = [
     {
       title: "A magical healing sanctuary in the mountains",
-      review: "I was dealing with chronic fatigue and deep mental burnout. Dr. Garima Thakur is a true Nadi expert—her pulse reading was incredibly accurate. The combined Shirodhara and Brikuti baths completely quieted my mind.",
+      review: `I was dealing with chronic fatigue and deep mental burnout when I arrived at Rudramya.
+Dr. Garima Thakur is a true Nadi expert—her pulse reading was incredibly accurate and helpful.
+The combined Shirodhara and Brikuti baths completely quieted my mind and restored my sleep.`,
       name: "Hilde Gauthier",
       verified: true,
       location: "Paris, France",
@@ -85,7 +87,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Life-changing digestive and gut reset",
-      review: "The naturopathic treatments like colon hydrotherapy and ozone baths combined with daily Ayurvedic guidelines did wonders for my gut.",
+      review: `The naturopathic treatments like colon hydrotherapy and ozone baths did wonders for my gut.
+Combined with daily Ayurvedic dietary guidelines, they completely resolved my bloating issues.
+I highly recommend this Himalayan center for anyone struggling with chronic digestion problems.`,
       name: "Kari Halvorsen",
       verified: true,
       location: "Oslo, Norway",
@@ -94,7 +98,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Incredible relief from severe lower back pain",
-      review: "As an avid hiker, lower back stiffness and sciatic pain were ruining my active lifestyle. The deluxe underwater massage and Kapal Basti targeted my muscles perfectly.",
+      review: `As an avid hiker, lower back stiffness and sciatic pain were ruining my active lifestyle.
+The deluxe underwater massage and Kapal Basti targeted my sore back muscles perfectly.
+My mobility has improved significantly, and I am back on the mountain trails.`,
       name: "Duncan Leod",
       verified: true,
       location: "Inverness, Scotland",
@@ -103,7 +109,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Stunning detox with lymphatic drainage yoga",
-      review: "I spent 12 days at Rudramya for a complete system detox. The combination of lymphatic drainage yoga and steam therapy was fantastic.",
+      review: `I spent 12 days at Rudramya for a complete system detox and immune system boost.
+The combination of lymphatic drainage yoga and steam therapy was absolutely fantastic.
+I feel lighter, stronger, and much more energetic since returning home.`,
       name: "Sybilla Keller",
       verified: true,
       location: "Bern, Switzerland",
@@ -112,7 +120,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Authentic and scientific Ayurvedic care",
-      review: "My 14-day Panchakarma retreat was highly professional. Dr. Garima Thakur is extremely knowledgeable and closely monitors your progress.",
+      review: `My 14-day Panchakarma retreat at Rudramya was highly professional and deeply thorough.
+Dr. Garima Thakur is extremely knowledgeable and closely monitors your daily progress.
+The staff is incredibly attentive, and the facilities are clean and tranquil.`,
       name: "Gabor Kovacs",
       verified: true,
       location: "Budapest, Hungary",

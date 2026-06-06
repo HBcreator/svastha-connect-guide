@@ -76,7 +76,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
   const testimonials = [
     {
       title: "A Rejuvenating Reset in the Dhauladhar Range",
-      review: "I spent 10 days at Kayakalp for chronic digestive issues and high stress. The blend of Naturopathy, mud packs, and colon hydrotherapy combined with a strict custom diet from Annapoorna dining hall did wonders.",
+      review: `I spent 10 days at Kayakalp for chronic digestive issues and high stress.
+The blend of Naturopathy, mud packs, and colon hydrotherapy did wonders.
+The strict custom diet from Annapoorna dining hall helped restore my system.`,
       name: "Mat Lefevre",
       verified: true,
       location: "Geneva, Switzerland",
@@ -85,7 +87,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Authentic Panchakarma in a Serene Himalayan Setting",
-      review: "Kayakalp Palampur exceeded all my expectations for an authentic Ayurvedic detox. The doctors are highly knowledgeable and took their time to assess my body type before laying out a customized schedule.",
+      review: `Kayakalp Palampur exceeded all my expectations for an authentic Ayurvedic detox.
+The doctors are highly knowledgeable and took their time to assess my body type.
+They laid out a customized treatment schedule that left me feeling fully revitalized.`,
       name: "Freya Laufey",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +98,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Excellent Rehabilitation for My Chronic Knee Pain",
-      review: "After a knee injury, I went to Kayakalp for intensive physiotherapy and rehabilitation. Their physiotherapy unit is incredibly advanced, with state-of-the-art equipment.",
+      review: `After a knee injury, I went to Kayakalp for intensive physiotherapy and rehabilitation.
+Their physiotherapy unit is incredibly advanced, with state-of-the-art equipment and staff.
+My recovery was swift and I have regained full range of motion.`,
       name: "Arthur Delton",
       verified: true,
       location: "Bristol, UK",
@@ -103,7 +109,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Pure Solace for Mind and Soul",
-      review: "Palampur is the perfect peaceful alternative to busier yoga destinations in India. Kayakalp’s dedicated meditation hall and guided yoga sessions helped me reconnect with my inner self.",
+      review: `Palampur is the perfect peaceful alternative to busier yoga destinations in India.
+Kayakalp’s dedicated meditation hall and guided yoga sessions helped me reconnect with myself.
+The tranquil environment allowed for deep reflection and mental clarity.`,
       name: "Isabella Rossi",
       verified: true,
       location: "Florence, Italy",
@@ -112,7 +120,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Professional Care and Outstanding Drugless Healing",
-      review: "I've tried many wellness centers globally, but the diagnostic rigor and care at Kayakalp are outstanding. The combination of acupressure, steam baths, and botanical compresses targeted my lower back stiffness perfectly.",
+      review: `I've tried many wellness centers, but the diagnostic rigor at Kayakalp is outstanding.
+The acupressure, steam baths, and botanical compresses targeted my back stiffness.
+The care here is truly professional and focused on complete wellness.`,
       name: "Gijs de Jong",
       verified: true,
       location: "Amsterdam, Netherlands",

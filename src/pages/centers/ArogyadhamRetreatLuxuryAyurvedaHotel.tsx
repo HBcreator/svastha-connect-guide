@@ -76,7 +76,9 @@ export default function ArogyadhamRetreatLuxuryAyurvedaHotel() {
   const testimonials = [
     {
       title: "Panchakarma & Digestive Reset",
-      review: "I had been suffering from constant stress and digestive issues. The Ayurvedic doctor's consultation at Arogyadham Retreat Luxury Ayurveda Hotel was incredibly detailed.",
+      review: `I had been suffering from constant stress and digestive issues before visiting Rishikesh.
+The Ayurvedic doctor's consultation at Arogyadham Retreat was incredibly detailed and helpful.
+The customized therapies and Saatvic menu successfully reset my entire digestive system.`,
       name: "Nathan Dubois",
       verified: true,
       location: "Lyon, France",
@@ -85,7 +87,9 @@ export default function ArogyadhamRetreatLuxuryAyurvedaHotel() {
     },
     {
       title: "Pain Management & Ortho Care",
-      review: "As an avid runner, chronic knee pain was limiting my mobility. The targeted pain management package at Arogyadham combined traditional Ayurvedic heat treatments, specialized herbs, and gentle yoga exercises.",
+      review: `As an avid runner, chronic knee pain was limiting my mobility and performance.
+The targeted pain management package combined Ayurvedic heat treatments and specialized herbs.
+My knees feel completely comfortable now, and I have resumed running daily.`,
       name: "Lars Sorensen",
       verified: true,
       location: "Aarhus, Denmark",
@@ -94,7 +98,9 @@ export default function ArogyadhamRetreatLuxuryAyurvedaHotel() {
     },
     {
       title: "Yoga & Stress Management",
-      review: "My stay at Arogyadham Retreat Luxury Ayurveda Hotel was a wonderful journey. I joined their yoga and meditation retreat to escape city stress. The daily morning sessions, pranayama breathing, and peaceful rooftop pool sessions helped me quieten my mind.",
+      review: `My stay at Arogyadham Retreat Luxury Ayurveda Hotel was a wonderful healing journey.
+I joined their yoga and meditation retreat to escape city stress and clear my mind.
+Daily morning sessions, pranayama, and rooftop pool time helped me find deep peace.`,
       name: "Claire Jenkins",
       verified: true,
       location: "Manchester, UK",
@@ -103,7 +109,9 @@ export default function ArogyadhamRetreatLuxuryAyurvedaHotel() {
     },
     {
       title: "Rejuvenation & Anti-Aging",
-      review: "I highly recommend the anti-aging and rejuvenation package at Arogyadham. The organic therapies, nourishing milk wraps, and face treatments left my skin glowing and my body feeling light.",
+      review: `I highly recommend the anti-aging and rejuvenation package at Arogyadham to everyone.
+The organic therapies, nourishing milk wraps, and face treatments were deeply relaxing.
+My skin is glowing, and my body feels lighter and full of new energy.`,
       name: "Beatrix Meer",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -112,7 +120,9 @@ export default function ArogyadhamRetreatLuxuryAyurvedaHotel() {
     },
     {
       title: "Holistic Detoxification",
-      review: "The detoxification program at Arogyadham was extremely thorough and clinical. After a full consultation, the doctors customized every meal, herbal decoction, and therapy to my body type.",
+      review: `The detoxification program at Arogyadham was extremely thorough, clean, and clinical.
+After a full consultation, the doctors customized every single meal and therapy.
+I feel fully purified, mentally alert, and my general health has improved.`,
       name: "Milian Weber",
       verified: true,
       location: "Munich, Germany",

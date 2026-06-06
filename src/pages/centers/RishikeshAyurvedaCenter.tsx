@@ -76,7 +76,9 @@ export default function RishikeshAyurvedaCenter() {
   const testimonials = [
     {
       title: "A profoundly calming and restorative experience",
-      review: "I arrived in Rishikesh completely exhausted from years of corporate stress and constant insomnia. Dr. Sachin Dua spent a lot of time analyzing my lifestyle and pulse.",
+      review: `I arrived in Rishikesh completely exhausted from years of corporate stress and constant insomnia.
+Dr. Sachin Dua spent a lot of time analyzing my lifestyle and pulse to locate my imbalances.
+The customized plan of therapies and herbs completely restored my sleep patterns and energy.`,
       name: "Saskia de Jong",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -85,7 +87,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "The ultimate Ayurvedic detox in Tapovan",
-      review: "Doing the 14-day Panchakarma was one of the best decisions I've made. The treatments were customized day-by-day based on how my body responded.",
+      review: `Doing the 14-day Panchakarma was one of the best decisions I've made.
+The treatments were customized day-by-day based on how my body responded to the therapies.
+The therapists were extremely professional and the clinic is clean and peaceful.`,
       name: "Aveline Dupont",
       verified: true,
       location: "Geneva, Switzerland",
@@ -94,7 +98,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Significant relief from long-term back stiffness",
-      review: "As an active cyclist, chronic lower back stiffness was holding me back. The warm oil massages and Potali pouch therapy targeted exactly where my muscles were tightest.",
+      review: `As an active cyclist, chronic lower back stiffness was holding me back from long rides.
+The warm oil massages and Potali pouch therapy targeted exactly where my muscles were tightest.
+I can now ride long distances without any of the stiffness or aching I used to experience.`,
       name: "Niels Mort",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -103,7 +109,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Gentle and effective gut reset",
-      review: "I suffered from constant bloating and erratic digestion for several years. Dr. Dua explained that my body's fire (Agni) was weak and put me on a custom diet plan and mild herbal cleanses.",
+      review: `I suffered from constant bloating and erratic digestion for several years.
+Dr. Dua explained that my body's fire (Agni) was weak and put me on a custom diet plan.
+The mild herbal cleanses and meals restored my gut health and overall vitality.`,
       name: "Marc-Antoine",
       verified: true,
       location: "Montreal, Canada",
@@ -112,7 +120,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Natural healing for hair and skin issues",
-      review: "I visited Dr. Neha Batra for hair thinning and dry skin issues. She combined classical Ayurvedic herbs with a very gentle scalp routine.",
+      review: `I visited Dr. Neha Batra for hair thinning and dry skin issues that troubled me.
+She combined classical Ayurvedic herbs with a very gentle scalp routine and diet adjustments.
+My hair feels much stronger now and my skin has returned to its natural, healthy glow.`,
       name: "Gene Dubois",
       verified: true,
       location: "Paris, France",

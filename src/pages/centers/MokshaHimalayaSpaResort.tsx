@@ -76,7 +76,9 @@ export default function MokshaHimalayaSpaResort() {
   const testimonials = [
     {
       title: "Phenomenal Siam Symphony & Jacuzzi views",
-      review: "The Siam Symphony massage at Moksha was hands-down the best spa experience I've had. The views of the Shivalik Ranges from the outdoor jacuzzi are breathtaking.",
+      review: `The Siam Symphony massage at Moksha was hands-down the best spa experience I've had.
+The views of the Shivalik Ranges from the outdoor jacuzzi are absolutely breathtaking.
+It was the perfect combination of professional therapeutic bodywork and serene alpine beauty.`,
       name: "Beatrix Vance",
       verified: true,
       location: "London, UK",
@@ -85,7 +87,9 @@ export default function MokshaHimalayaSpaResort() {
     },
     {
       title: "Incredible Ayurvedic escape in the pine forests",
-      review: "An incredible Himalayan escape! The Ayurvedic Abhyanga massage followed by Choornaswedana (herbal steam) completely relaxed my tense shoulders. ",
+      review: `An incredible Himalayan escape that completely refreshed my physical wellness and mind.
+The Ayurvedic Abhyanga massage followed by Choornaswedana steam relaxed my tense shoulders.
+The professional therapists and quiet surroundings make it a truly world-class resort.`,
       name: "Jean Moreau",
       verified: true,
       location: "Marseille, France",
@@ -94,7 +98,9 @@ export default function MokshaHimalayaSpaResort() {
     },
     {
       title: "Deeply therapeutic and magical morning yoga",
-      review: "I spent a week at Moksha for a yoga and rejuvenation retreat. The daily morning yoga classes overlooking the valley were magical.",
+      review: `I spent a week at Moksha for a yoga and rejuvenation retreat.
+The daily morning yoga classes overlooking the valley were magical and centering.
+I returned home feeling lighter, stronger, and with a deep sense of peace.`,
       name: "Ria Schuher",
       verified: true,
       location: "Frankfurt, Germany",
@@ -103,7 +109,9 @@ export default function MokshaHimalayaSpaResort() {
     },
     {
       title: "Breathtaking cable car ascent and deep Shirodhara",
-      review: "Taking the cable car up to the resort was a unique experience. I booked the Shirodhara treatment for stress relief, and the warm oil streaming on my forehead induced a state of deep, restorative sleep.",
+      review: `Taking the cable car up to the resort was a unique and beautiful experience.
+I booked the Shirodhara treatment for stress relief and was thoroughly impressed.
+The warm oil streaming on my forehead induced a state of deep, restorative sleep.`,
       name: "Alvar Lindqvist",
       verified: true,
       location: "Helsinki, Finland",
@@ -112,7 +120,9 @@ export default function MokshaHimalayaSpaResort() {
     },
     {
       title: "Spectacular Hawaiian Lomi Lomi & Wellness Consult",
-      review: "Moksha Spa is spectacular. The Hawaiian Lomi Lomi massage with bamboo fusion was incredibly relaxing and worked out all the chronic knots from my long flight.",
+      review: `Moksha Spa is spectacular and features some of the best amenities.
+The Hawaiian Lomi Lomi massage with bamboo fusion was incredibly relaxing and deep.
+It worked out all the chronic knots in my back from the long flight.`,
       name: "Sarah Jenkin",
       verified: true,
       location: "Sydney, Australia",

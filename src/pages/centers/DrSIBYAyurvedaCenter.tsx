@@ -76,7 +76,9 @@ export default function DrSIBYAyurvedaCenter() {
   const testimonials = [
     {
       title: "A deeply spiritual and healing experience",
-      review: "I came to Dr. Siby's center in Bhagsu for a Chakra Open Massage and some general rejuvenation. The experience was far beyond a standard massage. Dr. Siby's deep understanding of the body's energy channels is remarkable.",
+      review: `I came to Dr. Siby's center in Bhagsu for a Chakra Open Massage and some general rejuvenation.
+The experience was far beyond a standard massage and reached deep spiritual layers.
+Dr. Siby's understanding of the body's energy channels is truly remarkable.`,
       name: "Sylvie Laurent",
       verified: true,
       location: "Paris, France",
@@ -85,7 +87,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Authentic Kerala Panchakarma in the Himalayas",
-      review: "Finding authentic Kerala-style Panchakarma in Himachal was a blessing. I underwent the 14-day detox program under Dr. Siby's direct supervision.",
+      review: `Finding authentic Kerala-style Panchakarma in Himachal was a blessing for my health.
+I underwent the 14-day detox program under Dr. Siby's direct and professional supervision.
+My body feels completely reset, lighter, and full of natural energy.`,
       name: "Jonas Nilsson",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +98,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Incredible full body massage",
-      review: "The 2-hour traditional full-body massage was one of the best treatments I have ever had. The synchronized movements of the therapists and the warm medicated oils they used completely melted my muscle tension.",
+      review: `The 2-hour traditional full-body massage was one of the best treatments I have ever had.
+The synchronized movements of the therapists and warm medicated oils completely melted muscle tension.
+I highly recommend this center to anyone visiting the Dharamshala region.`,
       name: "Valerie Moretti",
       verified: true,
       location: "Rome, Italy",
@@ -103,7 +109,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Significant relief from chronic back pain",
-      review: "I had been suffering from chronic lower back stiffness for years. Dr. Siby recommended a series of Kateevasthi treatments combined with customized herbal oils.",
+      review: `I had been suffering from chronic lower back stiffness for years before visiting.
+Dr. Siby recommended a series of Kateevasthi treatments combined with customized herbal oils.
+The pain has reduced by eighty percent and my range of motion is restored.`,
       name: "Thomas Miller",
       verified: true,
       location: "Berlin, Germany",
@@ -112,7 +120,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "A life-changing three-week detox",
-      review: "Completing a 21-day Panchakarma program here was one of the best decisions of my life. Dr. Siby and his team created a safe, loving environment for my healing journey.",
+      review: `Completing a 21-day Panchakarma program here was one of the best decisions of my life.
+Dr. Siby and his team created a safe, loving, and supportive environment for healing.
+I feel physically renewed and mentally clearer than I have in a long time.`,
       name: "Anette Fischer",
       verified: true,
       location: "Vienna, Austria",

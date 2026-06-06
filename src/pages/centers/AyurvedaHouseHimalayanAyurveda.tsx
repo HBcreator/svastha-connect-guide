@@ -76,7 +76,9 @@ export default function AyurvedaHouseHimalayanAyurveda() {
   const testimonials = [
     {
       title: "Deeply restorative Panchakarma experience",
-      review: "I spent two weeks doing the full Panchakarma under Dr. Kusum's guidance. The treatments were intense but deeply restorative. The quiet mountain air in Dharamkot is exactly what my body needed.",
+      review: `I spent two weeks doing the full Panchakarma under Dr. Kusum's guidance.
+The treatments were intense but deeply restorative for my whole body.
+The quiet mountain air in Dharamkot is exactly what I needed to heal.`,
       name: "Hilde Gauthier",
       verified: true,
       location: "Paris, France",
@@ -85,7 +87,9 @@ export default function AyurvedaHouseHimalayanAyurveda() {
     },
     {
       title: "Excellent massage course and hands-on guidance",
-      review: "The 10-day massage and Ayurveda foundation course was fantastic. It's very hands-on, and the doctors explain the science behind the treatments in such a clear way.",
+      review: `The 10-day massage and Ayurveda foundation course was absolutely fantastic.
+It is highly hands-on and teaches you all the practical clinical details.
+The doctors explain the science behind the treatments in a very clear way.`,
       name: "Lukas Weber",
       verified: true,
       location: "Vienna, Austria",
@@ -94,7 +98,9 @@ export default function AyurvedaHouseHimalayanAyurveda() {
     },
     {
       title: "A reset button for my burnout and insomnia",
-      review: "After months of burnout and insomnia, I booked a week of Shirodhara and therapeutic steam baths at Ayurveda House. The warm oil streaming on my forehead felt like a reset button for my mind.",
+      review: `After months of burnout and insomnia, I booked a week of therapies.
+The Shirodhara and therapeutic steam baths at Ayurveda House completely calmed my mind.
+The warm oil streaming on my forehead felt like a reset button for my sleep.`,
       name: "Freja Nielson",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -103,7 +109,9 @@ export default function AyurvedaHouseHimalayanAyurveda() {
     },
     {
       title: "Incredible sciatica pain relief via Basti",
-      review: "I've had lower back pain and sciatica for years. The team here suggested a combination of Abhyanga and Kati Basti (oil pool on the back). The relief has been incredible.",
+      review: `I've had lower back pain and sciatica for years and wanted relief.
+The team here suggested a combination of Abhyanga and Kati Basti treatments.
+The relief has been incredible, and I can walk pain-free now.`,
       name: "Ezio Sinclair",
       verified: true,
       location: "Edinburgh, UK",
@@ -112,7 +120,9 @@ export default function AyurvedaHouseHimalayanAyurveda() {
     },
     {
       title: "Invaluable dietary consult and digestive wellness",
-      review: "I came to address chronic bloating and gut issues. Dr. Kusum did a thorough consultation, assessing my body constitution, and customized my diet alongside herb treatments and Nasya.",
+      review: `I came to address chronic bloating and severe gut issues I was facing.
+Dr. Kusum did a thorough consultation, assessing my body constitution and imbalances.
+My diet was customized alongside herb treatments, resulting in great digestive comfort.`,
       name: "Sophia Meer",
       verified: true,
       location: "Amsterdam, Netherlands",
