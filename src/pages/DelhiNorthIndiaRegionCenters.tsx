@@ -190,13 +190,13 @@ const DelhiNorthIndiaRegionCenters = () => {
   const maharishiAyurvedaHospitalCenter: DelhiCenter = {
   series: -5,
   name: "Maharishi Ayurveda Hospital",
-  city: "Shalimar Bagh, North Delhi, India",
+  city: "Shalimar Bagh, New Delhi, India",
   description:
     "North India's first NABH-accredited Ayurvedic hospital, established in 1988 on the inspired vision of His Holiness Maharishi Mahesh Yogi. Located in Shalimar Bagh, North Delhi, the hospital has served patients from over 100 countries across 35+ years. It offers a unique multi-modal healing approach integrating Panchakarma, Pulse Diagnosis (Nadi Pariksha), Transcendental Meditation, Yoga, Maharishi Vastu Consultation, Maharishi Jyotish, Leech Therapy, and in-house manufactured herbal products. Recognized by the International Society for Quality in Healthcare and CGHS empanelled with cashless insurance. Free OPD services provided for EWS patients.",
   rating: 4.5,
   reviews: "860",
   image: "/Anchor pages/Delhi/images/1.webp",
-  slug: "maharishi-ayurveda-hospital-shalimar-bagh-north-delhi-india",
+  slug: "maharishi-ayurveda-hospital-shalimar-bagh-new-delhi-india",
 };
 
 const AryaVaidyaSala: DelhiCenter = {

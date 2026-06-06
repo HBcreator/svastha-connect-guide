@@ -294,7 +294,7 @@ const App = () => (
           <Route path="/centers/tarunveda-ayurveda-hospital-dwarka-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
           <Route path="/centers/aasha-ayruveda-centre-rajouri-garden-west-delhi-india" element={<AashaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-research-centre-and-ayurvedia-hospital-karkardooma-east-delhi-india" element={<AryaVaidyaSala/>}/>
-          <Route path="/centers/maharishi-ayurveda-hospital-shalimar-bagh-north-delhi-india" element={<MaharishiAyurvedaHospital />}/>
+          <Route path="/centers/maharishi-ayurveda-hospital-shalimar-bagh-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
 
           <Route path="/centers/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
           <Route path="/centers/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
