@@ -379,7 +379,7 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Bhole Baba Hospital</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Bhole Baba Ayurvedic Hospital & Research Centre</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,7 +409,7 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Bhole Baba Ayurvedic Hospital</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Bhole Baba Ayurvedic Hospital & Research Centre</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience Mahavatar Babaji's vision, gold medalist doctors, and the healing synergy of the adjacent Chilianaula Ashram.
               </p>
@@ -440,7 +440,7 @@ export default function BholeBabaAyurvedicHospitalResearchCentre() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Bhole Baba Ayurvedic Hospital & Research Centre</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>
