@@ -307,10 +307,10 @@ I feel fully purified, mentally alert, and my general health has improved.`,
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Ayurvedic Spa & <br className="hidden lg:block" />
-                Holistic Wellness in Rishikesh
-              </h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+                Authentic Ayurvedic Excellence <br className="hidden lg:block" />
+                at Arogyadham Retreat Luxury Ayurveda Hotel
+</h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -393,7 +393,9 @@ I feel fully purified, mentally alert, and my general health has improved.`,
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages Arogyadham Retreat Luxury Ayurveda Hotel</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Arogyadham Retreat Luxury Ayurveda Hotel
+</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -423,7 +425,9 @@ I feel fully purified, mentally alert, and my general health has improved.`,
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Arogyadham Retreat Luxury Ayurveda Hotel</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+                Why Choose <br className="hidden lg:block" /> Arogyadham Retreat Luxury Ayurveda Hotel
+</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience authentic Tridosha consultations, therapeutic spa, and yoga in a supportive, positive environment.
               </p>
@@ -454,7 +458,9 @@ I feel fully purified, mentally alert, and my general health has improved.`,
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Arogyadham Retreat Luxury Ayurveda Hotel</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              Your Healing Journey at <br className="hidden lg:block" /> Arogyadham Retreat Luxury Ayurveda Hotel
+</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>
