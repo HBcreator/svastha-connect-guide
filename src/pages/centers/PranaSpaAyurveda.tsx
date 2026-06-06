@@ -16,7 +16,7 @@ export default function PranaSpaAyurveda() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function PranaSpaAyurveda() {
   const testimonials = [
     {
       title: "Phenomenal 5-Day Massage Training Course!",
-      review: "Prana Spa is an absolute gem in Laxman Jhula! I took their 5-Day Massage Training Course and was so impressed by the patience and depth of knowledge of the instructors. They didn't just teach the strokes; they explained the energy flow and anatomy.",
+      review: `Prana Spa is an absolute gem in Laxman Jhula for high-quality bodywork.
+I took their 5-Day Massage Training Course and was impressed by the knowledge.
+They didn't just teach the strokes; they explained energy flow and anatomy.`,
       name: "Brigitte Dubois",
       verified: true,
       location: "Lyon, France",
@@ -85,7 +87,9 @@ export default function PranaSpaAyurveda() {
     },
     {
       title: "Incredibly peaceful and authentic Shirodhara",
-      review: "After a long and tiring journey to Rishikesh, the Shirodhara and Abhyanga treatment at Prana Spa was exactly what I needed to reset. The therapist's hands were incredibly skilled, and the warm oil streaming on my forehead induced a state of deep peace I hadn't felt in years.",
+      review: `After a long and tiring journey to Rishikesh, this was exactly what I needed.
+The Shirodhara and Abhyanga treatment at Prana Spa induced a state of deep peace.
+The therapists were extremely skilled, professional, and had highly healing hands.`,
       name: "Hans Meyer",
       verified: true,
       location: "Hamburg, Germany",
@@ -94,7 +98,9 @@ export default function PranaSpaAyurveda() {
     },
     {
       title: "Transformative 10-Day Certification",
-      review: "I completed the 10-Day Massage Certification Program here, and it was a life-changing experience. We covered Swedish, Deep Tissue, and structural anatomy in detail. The training is very hands-on and personalized.",
+      review: `I completed the 10-Day Massage Certification Program here, and it was life-changing.
+We covered Swedish, Deep Tissue, and structural anatomy in extensive clinical detail.
+The training is very hands-on, encouraging, and personalized for every student.`,
       name: "Chloe Tremay",
       verified: true,
       location: "Montreal, Canada",
@@ -103,7 +109,9 @@ export default function PranaSpaAyurveda() {
     },
     {
       title: "The 45-Minute Delight was pure heaven",
-      review: "I stopped by Prana Spa for their '45 Minute Delight' massage after a day of walking around Rishikesh. It was heaven! The focus on the head, back, face, and feet completely melted away my muscle tension.",
+      review: `I stopped by Prana Spa for their '45 Minute Delight' massage after a long day.
+The focus on the head, back, face, and feet completely melted my muscle tension.
+It was pure heaven and highly recommended to anyone visiting the local area.`,
       name: "Elena Rostova",
       verified: true,
       location: "St. Petersburg, Russia",
@@ -112,7 +120,9 @@ export default function PranaSpaAyurveda() {
     },
     {
       title: "Highly skilled therapists and clean environment",
-      review: "Excellent Swedish massage and a wonderful Ayurvedic consult. The therapists at Prana are exceptionally skilled and know exactly how to work out chronic knots in the neck and shoulders.",
+      review: `Excellent Swedish massage and a wonderful Ayurvedic consult during my visit.
+The therapists at Prana are exceptionally skilled and know how to work out chronic knots.
+The space is clean, cozy, and perfect for getting away from the busy streets.`,
       name: "Oliver Jenkins",
       verified: true,
       location: "Bristol, United Kingdom",
@@ -384,7 +394,7 @@ export default function PranaSpaAyurveda() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Prana Spa & Ayurveda</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Prana Spa & Ayurveda</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -445,7 +455,7 @@ export default function PranaSpaAyurveda() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Prana Spa & Ayurveda</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining physical assessment, custom massage techniques, and detailed anatomical integration.
             </p>

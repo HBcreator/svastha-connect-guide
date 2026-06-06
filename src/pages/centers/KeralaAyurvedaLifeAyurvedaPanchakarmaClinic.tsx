@@ -16,7 +16,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -307,7 +307,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Kerala Ayurveda Life</strong>, Green Park's premier destination for authentic, clinical-grade Ayurvedic care and root-cause healing. Affiliated with the 80-year legacy of Kerala Ayurveda Ltd, our wellness clinic combines classical Kerala therapies with modern diagnostic checks to restore biological balance. Conveniently located at E-2, Green Park Extension, GP Main Market Road, near the Green Park Metro Station, our clinic provides a peaceful sanctuary in South Delhi. Under the guidance of Dr. Om Prakash Arya (BAMS, with over 15 years of experience), our center is recognized for its therapeutic excellence in joint care, neuro-rehabilitation, and chronic disorders.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)</strong>, Green Park's premier destination for authentic, clinical-grade Ayurvedic care and root-cause healing. Affiliated with the 80-year legacy of Kerala Ayurveda Ltd, our wellness clinic combines classical Kerala therapies with modern diagnostic checks to restore biological balance. Conveniently located at E-2, Green Park Extension, GP Main Market Road, near the Green Park Metro Station, our clinic provides a peaceful sanctuary in South Delhi. Under the guidance of Dr. Om Prakash Arya (BAMS, with over 15 years of experience), our center is recognized for its therapeutic excellence in joint care, neuro-rehabilitation, and chronic disorders.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -381,7 +381,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Kerala Ayurveda Life</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -411,7 +411,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Kerala Ayurveda Life</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Kerala Ayurveda Life <br/>(Ayurveda Panchakarma Clinic)</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
               </p>
@@ -442,7 +442,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>

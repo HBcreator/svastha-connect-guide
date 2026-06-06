@@ -16,7 +16,7 @@ export default function NaturovilleWellnessResort() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function NaturovilleWellnessResort() {
   const testimonials = [
     {
       title: "Excellent relief from spinal stiffness and chronic back pain",
-      review: "For years I lived with lower back stiffness that limited my activity. The specialized Kati Basti treatments and natural oil pool therapies at Naturoville did wonders.",
+      review: `For years I lived with lower back stiffness that limited my activity.
+The specialized Kati Basti treatments and natural oil pool therapies at Naturoville did wonders.
+I can bend and stretch freely now without any restriction or sharp pain.`,
       name: "Marge Benson",
       verified: true,
       location: "Gothenburg, Sweden",
@@ -85,7 +87,9 @@ export default function NaturovilleWellnessResort() {
     },
     {
       title: "Comprehensive and scientific Panchakarma purification",
-      review: "The 21-day detox program at Naturoville was a deeply transformative experience. The combinations of traditional Ayurvedic Panchakarma with naturopathic hydrotherapy and steam baths were scientifically structured.",
+      review: `The 21-day detox program at Naturoville was a deeply transformative experience.
+The combinations of traditional Ayurvedic Panchakarma with naturopathic hydrotherapy were scientifically structured.
+Every session felt tailored to my specific physical constitution and recovery needs.`,
       name: "Pierre Martin",
       verified: true,
       location: "Nice, France",
@@ -94,7 +98,9 @@ export default function NaturovilleWellnessResort() {
     },
     {
       title: "Deep recovery from work burnout and sleeplessness",
-      review: "I came here suffering from severe work stress and chronic insomnia. The daily Shirodhara, customized yoga lessons, and calm environment in Lal Tappar quieted my mind completely.",
+      review: `I came here suffering from severe work stress and chronic insomnia.
+The daily Shirodhara, customized yoga lessons, and calm environment in Lal Tappar quieted my mind completely.
+I feel mentally recharged and can sleep soundly throughout the night.`,
       name: "Fiona Galagher",
       verified: true,
       location: "Galway, Ireland",
@@ -103,7 +109,9 @@ export default function NaturovilleWellnessResort() {
     },
     {
       title: "Highly successful and natural weight management",
-      review: "The custom diet corrections, herbal dry massages (Udvarthanam), and active yoga schedules designed by the doctors helped me lose weight healthily and naturally.",
+      review: `The custom diet corrections, herbal dry massages (Udvarthanam), and active yoga schedules designed by the doctors helped me.
+I lost weight healthily and naturally while restoring my physical strength.
+The entire program was very structured and easy to follow.`,
       name: "Ester Campbell",
       verified: true,
       location: "Edinburgh, UK",
@@ -112,7 +120,9 @@ export default function NaturovilleWellnessResort() {
     },
     {
       title: "Outstanding hormonal balance and wellness recovery",
-      review: "I struggled with severe metabolic issues and PCOS for a long time. The personalized herbal therapies and detoxification treatments at Naturoville regulated my systems and reset my health.",
+      review: `I struggled with severe metabolic issues and PCOS for a long time.
+The personalized herbal therapies and detoxification treatments at Naturoville regulated my systems.
+My health is reset, and my energy levels have returned to normal.`,
       name: "Willemijn Jong",
       verified: true,
       location: "Utrecht, Netherlands",
@@ -384,7 +394,7 @@ export default function NaturovilleWellnessResort() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Naturoville Wellness Resort</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Naturoville Wellness Resort</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -445,7 +455,7 @@ export default function NaturovilleWellnessResort() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Naturoville Wellness Resort</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>

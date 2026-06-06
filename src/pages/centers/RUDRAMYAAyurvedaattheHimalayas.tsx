@@ -16,7 +16,7 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
   const testimonials = [
     {
       title: "A magical healing sanctuary in the mountains",
-      review: "I was dealing with chronic fatigue and deep mental burnout. Dr. Garima Thakur is a true Nadi expert—her pulse reading was incredibly accurate. The combined Shirodhara and Brikuti baths completely quieted my mind.",
+      review: `I was dealing with chronic fatigue and deep mental burnout when I arrived at Rudramya.
+Dr. Garima Thakur is a true Nadi expert—her pulse reading was incredibly accurate and helpful.
+The combined Shirodhara and Brikuti baths completely quieted my mind and restored my sleep.`,
       name: "Hilde Gauthier",
       verified: true,
       location: "Paris, France",
@@ -85,7 +87,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Life-changing digestive and gut reset",
-      review: "The naturopathic treatments like colon hydrotherapy and ozone baths combined with daily Ayurvedic guidelines did wonders for my gut.",
+      review: `The naturopathic treatments like colon hydrotherapy and ozone baths did wonders for my gut.
+Combined with daily Ayurvedic dietary guidelines, they completely resolved my bloating issues.
+I highly recommend this Himalayan center for anyone struggling with chronic digestion problems.`,
       name: "Kari Halvorsen",
       verified: true,
       location: "Oslo, Norway",
@@ -94,7 +98,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Incredible relief from severe lower back pain",
-      review: "As an avid hiker, lower back stiffness and sciatic pain were ruining my active lifestyle. The deluxe underwater massage and Kapal Basti targeted my muscles perfectly.",
+      review: `As an avid hiker, lower back stiffness and sciatic pain were ruining my active lifestyle.
+The deluxe underwater massage and Kapal Basti targeted my sore back muscles perfectly.
+My mobility has improved significantly, and I am back on the mountain trails.`,
       name: "Duncan Leod",
       verified: true,
       location: "Inverness, Scotland",
@@ -103,7 +109,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Stunning detox with lymphatic drainage yoga",
-      review: "I spent 12 days at Rudramya for a complete system detox. The combination of lymphatic drainage yoga and steam therapy was fantastic.",
+      review: `I spent 12 days at Rudramya for a complete system detox and immune system boost.
+The combination of lymphatic drainage yoga and steam therapy was absolutely fantastic.
+I feel lighter, stronger, and much more energetic since returning home.`,
       name: "Sybilla Keller",
       verified: true,
       location: "Bern, Switzerland",
@@ -112,7 +120,9 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
     },
     {
       title: "Authentic and scientific Ayurvedic care",
-      review: "My 14-day Panchakarma retreat was highly professional. Dr. Garima Thakur is extremely knowledgeable and closely monitors your progress.",
+      review: `My 14-day Panchakarma retreat at Rudramya was highly professional and deeply thorough.
+Dr. Garima Thakur is extremely knowledgeable and closely monitors your daily progress.
+The staff is incredibly attentive, and the facilities are clean and tranquil.`,
       name: "Gabor Kovacs",
       verified: true,
       location: "Budapest, Hungary",
@@ -389,7 +399,7 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Rudramya</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Rudramya - Ayurveda at Himalayas</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -419,7 +429,7 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Rudramya</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Rudramya - Ayurveda at Himalayas</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience traditional Ayurvedic Panchakarma, drugless naturopathy, and specialized hydrotherapy under the expert direction of Dr. Garima Thakur.
               </p>
@@ -450,7 +460,7 @@ export default function RUDRAMYAAyurvedaattheHimalayas() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Rudramya - Ayurveda at Himalayas</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>

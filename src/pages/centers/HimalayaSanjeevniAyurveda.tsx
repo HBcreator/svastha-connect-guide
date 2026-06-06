@@ -16,7 +16,7 @@ export default function HimalayaSanjeevniAyurveda() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function HimalayaSanjeevniAyurveda() {
   const testimonials = [
     {
       title: "Incredible nerve and lower back recovery",
-      review: "I was suffering from chronic nerve numbness and lower back pain for over a year. Coming to Himalaya Sanjeevni was a blessing. Under Dr. Preeti Joshi's care, the specialized Basti and nerve therapies completely relieved the pain.",
+      review: `I was suffering from chronic nerve numbness and lower back pain for over a year.
+Coming to Himalaya Sanjeevni under Dr. Preeti Joshi's care was a complete blessing.
+The specialized Basti and nerve therapies successfully and fully relieved the pain.`,
       name: "Mari Fontaine",
       verified: true,
       location: "Lyon, France",
@@ -85,7 +87,9 @@ export default function HimalayaSanjeevniAyurveda() {
     },
     {
       title: "Chronic joint and arthritis relief",
-      review: "The chronic arthritis in my knees made walking very difficult. The Panchakarma treatment and local joint pool therapies (Janu Basti) at Himalaya Sanjeevni did wonders.",
+      review: `The chronic arthritis in my knees made walking very difficult and painful.
+The Panchakarma treatment and local joint pool therapies (Janu Basti) did wonders for me.
+My joint mobility is restored, and I can now walk comfortably without discomfort.`,
       name: "Klaus Rein",
       verified: true,
       location: "Munich, Germany",
@@ -94,7 +98,9 @@ export default function HimalayaSanjeevniAyurveda() {
     },
     {
       title: "Deep purifying Panchakarma detox",
-      review: "My 14-day Panchakarma detox at Himalaya Sanjeevni was an unforgettable experience. The pulse analysis was precise, and the personalized treatments helped me eliminate long-standing toxins.",
+      review: `My 14-day Panchakarma detox at Himalaya Sanjeevni was an unforgettable experience.
+The pulse analysis was precise, and the personalized treatments helped eliminate toxins.
+The staff was caring and the whole environment was perfectly set up for recovery.`,
       name: "Sacha O'Brian",
       verified: true,
       location: "Dublin, Ireland",
@@ -103,7 +109,9 @@ export default function HimalayaSanjeevniAyurveda() {
     },
     {
       title: "Digestive rest and metabolic reset",
-      review: "I struggled with severe metabolic issues and chronic IBS for years. The personalized diet plan and cleansing treatments designed by Dr. Preeti Joshi reset my digestive system. I finally have my energy and digestive comfort back.",
+      review: `I struggled with severe metabolic issues and chronic IBS for several years.
+The personalized diet plan and cleansing treatments designed by Dr. Preeti Joshi reset my gut.
+I finally have my energy back, and my digestive comfort has returned completely.`,
       name: "Belle Mercier",
       verified: true,
       location: "Montreal, Canada",
@@ -112,7 +120,9 @@ export default function HimalayaSanjeevniAyurveda() {
     },
     {
       title: "Peaceful relief from chronic stress and insomnia",
-      review: "Severe work burnout and insomnia had left me exhausted. The Shirodhara and classical Ayurvedic therapies here quieted my nervous system. I slept deeply for the first time in months. The atmosphere is perfect for healing.",
+      review: `Severe work burnout and insomnia had left me completely exhausted and weak.
+The Shirodhara and classical Ayurvedic therapies here quieted my nervous system.
+I slept deeply for the first time in months in this perfect healing atmosphere.`,
       name: "Daan van Meer",
       verified: true,
       location: "Rotterdam, Netherlands",
@@ -385,7 +395,7 @@ export default function HimalayaSanjeevniAyurveda() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Himalaya Sanjeevni Ayurveda</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Himalaya Sanjeevni Ayurveda</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -446,7 +456,7 @@ export default function HimalayaSanjeevniAyurveda() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Himalaya Sanjeevni Ayurveda</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>

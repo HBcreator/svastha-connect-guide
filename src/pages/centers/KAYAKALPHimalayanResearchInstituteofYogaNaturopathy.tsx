@@ -16,7 +16,7 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
   const testimonials = [
     {
       title: "A Rejuvenating Reset in the Dhauladhar Range",
-      review: "I spent 10 days at Kayakalp for chronic digestive issues and high stress. The blend of Naturopathy, mud packs, and colon hydrotherapy combined with a strict custom diet from Annapoorna dining hall did wonders.",
+      review: `I spent 10 days at Kayakalp for chronic digestive issues and high stress.
+The blend of Naturopathy, mud packs, and colon hydrotherapy did wonders.
+The strict custom diet from Annapoorna dining hall helped restore my system.`,
       name: "Mat Lefevre",
       verified: true,
       location: "Geneva, Switzerland",
@@ -85,7 +87,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Authentic Panchakarma in a Serene Himalayan Setting",
-      review: "Kayakalp Palampur exceeded all my expectations for an authentic Ayurvedic detox. The doctors are highly knowledgeable and took their time to assess my body type before laying out a customized schedule.",
+      review: `Kayakalp Palampur exceeded all my expectations for an authentic Ayurvedic detox.
+The doctors are highly knowledgeable and took their time to assess my body type.
+They laid out a customized treatment schedule that left me feeling fully revitalized.`,
       name: "Freya Laufey",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +98,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Excellent Rehabilitation for My Chronic Knee Pain",
-      review: "After a knee injury, I went to Kayakalp for intensive physiotherapy and rehabilitation. Their physiotherapy unit is incredibly advanced, with state-of-the-art equipment.",
+      review: `After a knee injury, I went to Kayakalp for intensive physiotherapy and rehabilitation.
+Their physiotherapy unit is incredibly advanced, with state-of-the-art equipment and staff.
+My recovery was swift and I have regained full range of motion.`,
       name: "Arthur Delton",
       verified: true,
       location: "Bristol, UK",
@@ -103,7 +109,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Pure Solace for Mind and Soul",
-      review: "Palampur is the perfect peaceful alternative to busier yoga destinations in India. Kayakalp’s dedicated meditation hall and guided yoga sessions helped me reconnect with my inner self.",
+      review: `Palampur is the perfect peaceful alternative to busier yoga destinations in India.
+Kayakalp’s dedicated meditation hall and guided yoga sessions helped me reconnect with myself.
+The tranquil environment allowed for deep reflection and mental clarity.`,
       name: "Isabella Rossi",
       verified: true,
       location: "Florence, Italy",
@@ -112,7 +120,9 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
     },
     {
       title: "Professional Care and Outstanding Drugless Healing",
-      review: "I've tried many wellness centers globally, but the diagnostic rigor and care at Kayakalp are outstanding. The combination of acupressure, steam baths, and botanical compresses targeted my lower back stiffness perfectly.",
+      review: `I've tried many wellness centers, but the diagnostic rigor at Kayakalp is outstanding.
+The acupressure, steam baths, and botanical compresses targeted my back stiffness.
+The care here is truly professional and focused on complete wellness.`,
       name: "Gijs de Jong",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -379,7 +389,7 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Kayakalp Palampur</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in KAYAKALP - Himalayan Research Institute of Yoga & Naturopathy</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,7 +419,7 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Kayakalp Palampur</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose KAYAKALP - Himalayan Research Institute of Yoga & Naturopathy</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience ISO 9001:2015 certified integrated drugless healing under VMRT trust in a peaceful Himalayan setting.
               </p>
@@ -440,7 +450,7 @@ export default function KAYAKALPHimalayanResearchInstituteofYogaNaturopathy() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in KAYAKALP - Himalayan Research Institute of Yoga & Naturopathy</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>

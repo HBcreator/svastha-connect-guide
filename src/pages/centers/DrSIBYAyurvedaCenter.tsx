@@ -16,7 +16,7 @@ export default function DrSIBYAyurvedaCenter() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function DrSIBYAyurvedaCenter() {
   const testimonials = [
     {
       title: "A deeply spiritual and healing experience",
-      review: "I came to Dr. Siby's center in Bhagsu for a Chakra Open Massage and some general rejuvenation. The experience was far beyond a standard massage. Dr. Siby's deep understanding of the body's energy channels is remarkable.",
+      review: `I came to Dr. Siby's center in Bhagsu for a Chakra Open Massage and some general rejuvenation.
+The experience was far beyond a standard massage and reached deep spiritual layers.
+Dr. Siby's understanding of the body's energy channels is truly remarkable.`,
       name: "Sylvie Laurent",
       verified: true,
       location: "Paris, France",
@@ -85,7 +87,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Authentic Kerala Panchakarma in the Himalayas",
-      review: "Finding authentic Kerala-style Panchakarma in Himachal was a blessing. I underwent the 14-day detox program under Dr. Siby's direct supervision.",
+      review: `Finding authentic Kerala-style Panchakarma in Himachal was a blessing for my health.
+I underwent the 14-day detox program under Dr. Siby's direct and professional supervision.
+My body feels completely reset, lighter, and full of natural energy.`,
       name: "Jonas Nilsson",
       verified: true,
       location: "Stockholm, Sweden",
@@ -94,7 +98,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Incredible full body massage",
-      review: "The 2-hour traditional full-body massage was one of the best treatments I have ever had. The synchronized movements of the therapists and the warm medicated oils they used completely melted my muscle tension.",
+      review: `The 2-hour traditional full-body massage was one of the best treatments I have ever had.
+The synchronized movements of the therapists and warm medicated oils completely melted muscle tension.
+I highly recommend this center to anyone visiting the Dharamshala region.`,
       name: "Valerie Moretti",
       verified: true,
       location: "Rome, Italy",
@@ -103,7 +109,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "Significant relief from chronic back pain",
-      review: "I had been suffering from chronic lower back stiffness for years. Dr. Siby recommended a series of Kateevasthi treatments combined with customized herbal oils.",
+      review: `I had been suffering from chronic lower back stiffness for years before visiting.
+Dr. Siby recommended a series of Kateevasthi treatments combined with customized herbal oils.
+The pain has reduced by eighty percent and my range of motion is restored.`,
       name: "Thomas Miller",
       verified: true,
       location: "Berlin, Germany",
@@ -112,7 +120,9 @@ export default function DrSIBYAyurvedaCenter() {
     },
     {
       title: "A life-changing three-week detox",
-      review: "Completing a 21-day Panchakarma program here was one of the best decisions of my life. Dr. Siby and his team created a safe, loving environment for my healing journey.",
+      review: `Completing a 21-day Panchakarma program here was one of the best decisions of my life.
+Dr. Siby and his team created a safe, loving, and supportive environment for healing.
+I feel physically renewed and mentally clearer than I have in a long time.`,
       name: "Anette Fischer",
       verified: true,
       location: "Vienna, Austria",
@@ -264,7 +274,7 @@ export default function DrSIBYAyurvedaCenter() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Dr. SIBY's Ayurveda Center</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Dr. SIBY's Kerala Ayurveda & Panchakarma Center</h1>
                 <p className="text-xl mb-4 opacity-90">Traditional Kerala Ayurveda & Panchakarma Since 1986</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -383,7 +393,7 @@ export default function DrSIBYAyurvedaCenter() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Dr. SIBY's Center</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Dr. SIBY's Kerala Ayurveda & Panchakarma Center</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -413,7 +423,7 @@ export default function DrSIBYAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Dr. SIBY's Center</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Dr. SIBY's Kerala Ayurveda & Panchakarma Center</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience authentic Kerala Ayurvedic treatments, pulse diagnostics, and globally certified training programs under the guidance of Dr. Sibi George.
               </p>
@@ -444,7 +454,7 @@ export default function DrSIBYAyurvedaCenter() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Dr. SIBY's Kerala Ayurveda & Panchakarma Center</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
             </p>

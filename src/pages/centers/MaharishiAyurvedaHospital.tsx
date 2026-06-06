@@ -16,7 +16,7 @@ export default function MaharishiAyurvedaHospital() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function MaharishiAyurvedaHospital() {
   const testimonials = [
     {
       title: "Joint Pain & Back Care",
-      review: "I had been suffering from chronic lower back pain and joint stiffness for years. The pulse diagnosis by Dr. Amit Arora at Maharishi Ayurveda Hospital was incredibly precise. After 14 days of customized Panchakarma detox, oil pooling (Kati Basti), and yoga exercises, I felt a complete release.",
+      review: `I had been suffering from chronic lower back pain and joint stiffness for years.
+The pulse diagnosis by Dr. Amit Arora at Maharishi Ayurveda Hospital was incredibly precise.
+After 14 days of customized Panchakarma detox, oil pooling (Kati Basti), and yoga exercises, I felt a complete release.`,
       name: "David Vance",
       verified: true,
       location: "London, UK",
@@ -85,7 +87,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Diabetes & Metabolic Reset",
-      review: "My struggle with type II diabetes and high blood pressure led me to seek alternative care. The physicians at Maharishi Ayurveda Hospital designed a meticulous routine of detoxification, specialized herbs, and a strict Saatvic diet.",
+      review: `My struggle with type II diabetes and high blood pressure led me to seek alternative care.
+The physicians at Maharishi Ayurveda Hospital designed a meticulous routine of detoxification,
+specialized herbs, and a strict Saatvic diet.`,
       name: "Sophie Moreau",
       verified: true,
       location: "Lyon, France",
@@ -94,7 +98,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Insomnia & Stress Management",
-      review: "I checked in for severe stress, insomnia, and burnout. The blend of Transcendental Meditation, daily Shirodhara oil stream treatments, and gentle pranayama breathing was exactly what I needed.",
+      review: `I checked in for severe stress, insomnia, and burnout.
+The blend of Transcendental Meditation, daily Shirodhara oil stream treatments,
+and gentle pranayama breathing was exactly what I needed.`,
       name: "Thomas Keller",
       verified: true,
       location: "Frankfurt, Germany",
@@ -103,7 +109,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "Rejuvenation & Anti-Aging",
-      review: "The rejuvenation and detox package at Maharishi Ayurveda is outstanding. The eco-conscious room built with bamboo felt like a sanctuary.",
+      review: `The rejuvenation and detox package at Maharishi Ayurveda is outstanding.
+The eco-conscious room built with bamboo felt like a sanctuary.
+I left feeling completely refreshed, energized, and clear-headed.`,
       name: "Fleur Meer",
       verified: true,
       location: "Utrecht, Netherlands",
@@ -112,7 +120,9 @@ export default function MaharishiAyurvedaHospital() {
     },
     {
       title: "IBS & Digestive Wellness",
-      review: "I came with chronic IBS and digestive issues that conventional medicine could not resolve. Under the doctors' daily monitoring, my treatments and colon cleanses (Basti) were completely customized.",
+      review: `I came with chronic IBS and digestive issues that conventional medicine could not resolve.
+Under the doctors' daily monitoring, my treatments and colon cleanses (Basti)
+were completely customized.`,
       name: "Alistair Bell",
       verified: true,
       location: "Edinburgh, Scotland",
@@ -252,7 +262,7 @@ export default function MaharishiAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Maharishi Ayurveda Hospital Shalimar Bagh North Delhi
+              Maharishi Ayurveda Hospital Shalimar Bagh New Delhi
             </li>
           </ol>
         </div>
@@ -381,7 +391,7 @@ export default function MaharishiAyurvedaHospital() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Maharishi Ayurveda Hospital</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Maharishi Ayurveda Hospital</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -442,7 +452,7 @@ export default function MaharishiAyurvedaHospital() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Maharishi Ayurveda Hospital</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>

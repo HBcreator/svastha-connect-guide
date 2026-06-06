@@ -68,7 +68,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
     {
       number: 6,
       title: "Post-Care Rejuvenation Plan",
-      description: "Providing custom Sri Sri Tattva herbal prescriptions, exercises, and daily routines to sustain wellness.",
+      description: "Providing custom Sri Sri Ayurveda Panchakarma Ayurveda Center herbal prescriptions, exercises, and daily routines to sustain wellness.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
@@ -123,8 +123,8 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
 
   const faqItems = [
     {
-      question: "Is the Jhilmil Sri Sri Tattva Ayurveda Centre empanelled or accredited?",
-      answer: "Yes. Sri Sri Tattva Ayurveda Health & Wellness Centre in Jhilmil Colony offers standardized, high-quality Ayurvedic care following Sri Sri Tattva's international standards. For specific corporate or insurance empanelment details, please contact our front desk."
+      question: "Is the Jhilmil Sri Sri Ayurveda Panchakarma Ayurveda Centre empanelled or accredited?",
+      answer: "Yes. Sri Sri Ayurveda Panchakarma Ayurveda Center in Jhilmil Colony offers standardized, high-quality Ayurvedic care following Sri Sri Ayurveda's international standards. For specific corporate or insurance empanelment details, please contact our front desk."
     },
     {
       question: "Who is the consulting doctor at the Jhilmil clinic?",
@@ -132,7 +132,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
     },
     {
       question: "What are your center's operating hours and consulting timings?",
-      answer: "The Sri Sri Tattva Ayurveda Centre in Jhilmil Colony is open daily from 11:00 AM to 7:00 PM. Consultation with Dr. Lalita Bhatt is available during these hours, but booking in advance is highly recommended to secure your slot."
+      answer: "The Sri Sri Ayurveda Panchakarma Ayurveda Center in Jhilmil Colony is open daily from 11:00 AM to 7:00 PM. Consultation with Dr. Lalita Bhatt is available during these hours, but booking in advance is highly recommended to secure your slot."
     },
     {
       question: "What specialized treatments do you offer?",
@@ -179,7 +179,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
 
   const whyChooseUs = [
     {
-      title: "Sri Sri Tattva Affiliation",
+      title: "Sri Sri Ayruveda Affiliation",
       description: "Standardized clinical protocols, pure herbal products, and authentic Ayurvedic treatments.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
@@ -220,9 +220,9 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
   }, []);
 
   useEffect(() => {
-    document.title = "Sri Sri Tattva Ayurveda Jhilmil Delhi | Nadi Pariksha & Panchakarma";
+    document.title = "Sri Sri Ayurveda Panchakarma Ayurveda Center Jhilmil Delhi | Nadi Pariksha & Panchakarma";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurveda consultations, Nadi Pariksha (pulse diagnosis) by Dr. Lalita Bhatt, and classical Panchakarma detoxification treatments at Sri Sri Tattva Ayurveda Health & Wellness Centre in Jhilmil Colony, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurveda consultations, Nadi Pariksha (pulse diagnosis) by Dr. Lalita Bhatt, and classical Panchakarma detoxification treatments at Sri Sri Ayurveda Panchakarma Ayurveda Center in Jhilmil Colony, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -307,7 +307,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Sri Sri Ayurveda Panchakarma Ayurveda Center</strong>, Jhilmil's premier destination for authentic Ayurvedic clinical care, Nadi Pariksha, and root-cause healing. Sri Sri Tattva Ayurveda Health & Wellness Centre was established to offer systematic, pure, and affordable classical Ayurvedic therapies. Conveniently located at Triveni Apartment, near Vivek Vihar Police Station in Jhilmil Colony, our clinic combines classical Panchakarma wisdom with the time-tested technique of pulse diagnosis to restore biological balance. Under the guidance of Dr. Lalita Bhatt (BAMS, with over 19 years of experience), our center is recognized for its therapeutic excellence in personalized wellness programs and chronic disorders.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Sri Sri Ayurveda Panchakarma Ayurveda Center</strong>, Jhilmil's premier destination for authentic Ayurvedic clinical care, Nadi Pariksha, and root-cause healing. Sri Sri Ayurveda Panchakarma Ayurveda Center was established to offer systematic, pure, and affordable classical Ayurvedic therapies. Conveniently located at Triveni Apartment, near Vivek Vihar Police Station in Jhilmil Colony, our clinic combines classical Panchakarma wisdom with the time-tested technique of pulse diagnosis to restore biological balance. Under the guidance of Dr. Lalita Bhatt (BAMS, with over 19 years of experience), our center is recognized for its therapeutic excellence in personalized wellness programs and chronic disorders.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/secondary.jpg" 
-                          alt="Sri Sri Tattva Ayurveda accommodation"
+                          alt="Sri Sri Ayurveda accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                   </div>
 
                   <p>
-                    As an authentic Ayurveda wellness clinic, we maintain the highest standards of purity, clinical efficacy, and traditional care. We do not offer rigid packages; instead, every treatment is tailored to the individual. Our doctors specialize in treating joint pain, cervical and lumbar disorders, chronic digestive issues, stress management, metabolic disorders, and skin concerns. Every treatment at Sri Sri Tattva Ayurveda is supported by classic preparatory detox therapies (Snehanam and Swedanam), core Panchakarma purification, personalized herbal formulations, and lifestyle guidance to help you regain perfect health.
+                    As an authentic Ayurveda wellness clinic, we maintain the highest standards of purity, clinical efficacy, and traditional care. We do not offer rigid packages; instead, every treatment is tailored to the individual. Our doctors specialize in treating joint pain, cervical and lumbar disorders, chronic digestive issues, stress management, metabolic disorders, and skin concerns. Every treatment at Sri Sri Ayurveda Panchakarma Ayurveda Center is supported by classic preparatory detox therapies (Snehanam and Swedanam), core Panchakarma purification, personalized herbal formulations, and lifestyle guidance to help you regain perfect health.
                   </p>
 
                   
@@ -338,7 +338,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
                       src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/main.jpg" 
-                      alt="Sri Sri Tattva Ayurveda main view"
+                      alt="Sri Sri Ayurveda main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -351,7 +351,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
                         src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/secondary.jpg" 
-                        alt="Sri Sri Tattva Ayurveda therapy room"
+                        alt="Sri Sri Ayurveda therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -370,7 +370,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Sri Sri Tattva Ayurveda today.
+                My Vaidyam to connect with Sri Sri Ayurveda Panchakarma Ayurveda Center today.
               </h3>
             </div>
           </div>
@@ -381,7 +381,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Sri Sri Tattva Ayurveda</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Sri Sri Ayurveda Panchakarma Ayurveda Center</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -411,7 +411,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Sri Sri Tattva Ayurveda</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Sri Sri Ayurveda Panchakarma Ayurveda Center</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert pulse diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
               </p>
@@ -479,11 +479,11 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/main.jpg"
-                  alt="Sri Sri Tattva Ayurveda view"
+                  alt="Sri Sri Ayurveda view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sri Sri Tattva Ayurveda?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sri Sri Ayurveda Panchakarma Ayurveda Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -508,7 +508,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sri Sri Tattva Ayurveda?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sri Sri Ayurveda Panchakarma Ayurveda Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -523,7 +523,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
               <div>
                 <img
                   src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/main.jpg"
-                  alt="Sri Sri Tattva Ayurveda view"
+                  alt="Sri Sri Ayurveda view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -633,7 +633,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sri Sri Tattva Ayurveda.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sri Sri Ayurveda Panchakarma Ayurveda Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -666,7 +666,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Sri Sri Tattva Ayurveda Health & Wellness Centre<br />
+                      Sri Sri Ayurveda Panchakarma Ayurveda Center<br />
                       Triveni Apartment, Jhilmil, Near Vivek Vihar Police Station, Jhilmil Colony<br />
                       New Delhi, Delhi, India
                     </p>
@@ -712,7 +712,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Sri Sri Tattva Ayurveda Location"
+                  title="Sri Sri Ayurveda Location"
                 ></iframe>
               </div>
             </div>
@@ -725,7 +725,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
         <div className="absolute inset-0 z-0">
           <img
             src="/TOP cneters/delhi/Sri Sri Ayurveda Panchakarma Ayurveda Center/main.jpg"
-            alt="Sri Sri Tattva Ayurveda"
+            alt="Sri Sri Ayurveda"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -735,7 +735,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sri Sri Tattva Ayurveda.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sri Sri Ayurveda Panchakarma Ayurveda Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

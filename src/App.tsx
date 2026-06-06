@@ -294,7 +294,7 @@ const App = () => (
           <Route path="/centers/tarunveda-ayurveda-hospital-dwarka-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
           <Route path="/centers/aasha-ayruveda-centre-rajouri-garden-west-delhi-india" element={<AashaAyurvedaCentre />}/>
           <Route path="/centers/arya-vaidya-sala-research-centre-and-ayurvedia-hospital-karkardooma-east-delhi-india" element={<AryaVaidyaSala/>}/>
-          <Route path="/centers/maharishi-ayurveda-hospital-shalimar-bagh-north-delhi-india" element={<MaharishiAyurvedaHospital />}/>
+          <Route path="/centers/maharishi-ayurveda-hospital-shalimar-bagh-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
 
           <Route path="/centers/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
           <Route path="/centers/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
@@ -307,11 +307,11 @@ const App = () => (
           <Route path="/centers/himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india" element={<HimalayaSanjeevniAyurveda />}/>
           <Route path="/centers/rudramya-ayurveda-at-the-himalayas-hospital-himachal-india" element={<RUDRAMYAAyurvedaattheHimalayas />}/>
           <Route path="/centers/rishikesh-ayurveda-center-uttarakhand-india" element={<RishikeshAyurvedaCenter />}/>
-          <Route path="/centers/arogyam-panchkarma-centre-haridwar-uttarakhand-india" element={<ArogyamPanchkarmaCentreAyurvedicHospital />}/>
+          <Route path="/centers/arogyam-panchkarma-centre-haridwar-himachal-india" element={<ArogyamPanchkarmaCentreAyurvedicHospital />}/>
           <Route path="/centers/dr-siby-ayurveda-center-himachal-india" element={<DrSIBYAyurvedaCenter />}/>
           <Route path="/centers/vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india" element={<VedanjanaYogaAyurvedaPanchakarmaCentre />}/>
           <Route path="/centers/vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india" element={<VedicYogaAyurvedaRetreatCentre />}/>
-          <Route path="/centers/kayakalp-himalayan-research-institute-of-yoga-and-naturopath-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
+          <Route path="/centers/kayakalp-himalayan-research-institute-of-yoga-and-naturopathy-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
           <Route path="/centers/haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india" element={<HarithaAyurvedaAcademyPanchakarmaCenter />}/>
           <Route path="/centers/mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india" element={<MamgainAyurvedaClinicPanchakarmaCentre />}/>
           <Route path="/centers/bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCentre />}/>

@@ -76,7 +76,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
   const testimonials = [
     {
       title: "Life-changing Panchakarma & Sciatica Relief",
-      review: "I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain. Dr. Vinod Kumar designed a comprehensive 14-day treatment.",
+      review: `I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain.
+Dr. Vinod Kumar designed a comprehensive 14-day treatment that targetted my spine.
+The therapy successfully eliminated my pain and restored my mobility completely.`,
       name: "Liam Harrison",
       verified: true,
       location: "Melbourne, Australia",
@@ -85,7 +87,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Deeply Transformative Detox & Digestion Restoration",
-      review: "My Panchakarma detox at Ayuskama was fantastic. The Ayurvedic consultation was extremely thorough. Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.",
+      review: `My Panchakarma detox at Ayuskama was fantastic and the consultation was extremely thorough.
+Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.
+I feel completely rejuvenated, and my digestion is better than it has been in years.`,
       name: "Emma Watson",
       verified: true,
       location: "Oxford, UK",
@@ -94,7 +98,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Excellent Ayurveda Course & Certification",
-      review: "I joined the Ayurveda Nutrition and Marma Therapy certification course here. The theoretical teachings are backed by deep practical clinical sessions.",
+      review: `I joined the Ayurveda Nutrition and Marma Therapy certification course here.
+The theoretical teachings are backed by deep practical clinical sessions in the clinic.
+It was a great experience that gave me the confidence to practice Ayurveda professionally.`,
       name: "Lucas Novak",
       verified: true,
       location: "Prague, Czech Republic",
@@ -103,7 +109,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Wonderful Stress Relief & Rejuvenation Retreat",
-      review: "I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout. The Shirodhara treatment was incredibly relaxing, and the daily morning yoga sessions in Upper Tapovan helped calm my mind.",
+      review: `I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout.
+The Shirodhara treatment was relaxing, and morning yoga sessions helped calm my mind.
+This sanctuary in Upper Tapovan is exactly what I needed to heal and recharge.`,
       name: "Chloe Mercier",
       verified: true,
       location: "Geneva, Switzerland",
@@ -112,7 +120,9 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
     },
     {
       title: "Incredible Support for Women's Health",
-      review: "I went to Ayuskama to address long-standing hormonal imbalances. Dr. Neetu Singh was extremely empathetic and knowledgeable. She recommended a customized diet and specific herbs.",
+      review: `I went to Ayuskama to address long-standing hormonal imbalances and low energy.
+Dr. Neetu Singh was extremely empathetic, knowledgeable, and designed a custom plan.
+The herbs and dietary changes have brought back my vitality and balance.`,
       name: "Mia Rossi",
       verified: true,
       location: "Milan, Italy",
@@ -379,7 +389,7 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at Ayuskama Rishikesh</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Ayuskama Ayurveda Clinic & Panchakarma Centre</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,7 +419,7 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Ayuskama Ayurveda Clinic</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Ayuskama Ayurveda Clinic & Panchakarma Centre</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience veteran doctor supervision, accredited certification courses, and Upper Tapovan's tranquil healing environment.
               </p>
@@ -440,7 +450,7 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Ayuskama Ayurveda Clinic & Panchakarma Centre</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>

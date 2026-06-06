@@ -16,7 +16,7 @@ export default function VihanaRetreat() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function VihanaRetreat() {
   const testimonials = [
     {
       title: "Deeply relaxing and transformative detox retreat",
-      review: "I had a wonderful stay at Vihana for their detox retreat. The program was exactly what I needed to reset after a hectic year. Sandeep and his team are exceptionally welcoming and make you feel right at home.",
+      review: `I had a wonderful stay at Vihana for their detox retreat.
+The program was exactly what I needed to reset after a hectic year of work.
+Sandeep and his team are exceptionally welcoming and make you feel right at home.`,
       name: "Ann Sorensen",
       verified: true,
       location: "Aarhus, Denmark",
@@ -85,7 +87,9 @@ export default function VihanaRetreat() {
     },
     {
       title: "Exceptional weight management and personal care",
-      review: "My mother joined the weight management retreat here, and it was a genuinely life-changing trip for her. The staff and instructors are down-to-earth and incredibly caring.",
+      review: `My mother joined the weight management retreat here, and she loved it.
+It was a genuinely life-changing trip for her health and joints.
+The staff and instructors are down-to-earth and incredibly caring throughout our stay.`,
       name: "Heidi Klein",
       verified: true,
       location: "Munich, Germany",
@@ -94,7 +98,9 @@ export default function VihanaRetreat() {
     },
     {
       title: "Wonderful organic food and heartwarming host",
-      review: "An outstanding experience at Vihana. Sandeep is an incredibly warm host who treats everyone like family. The organic meals served at the wellness cafe are fresh, healthy, and absolutely delicious.",
+      review: `An outstanding experience at Vihana during my rejuvenation trip.
+Sandeep is an incredibly warm host who treats everyone like a member of his family.
+The organic meals served at the wellness cafe are fresh, healthy, and delicious.`,
       name: "Pierre Laurent",
       verified: true,
       location: "Marseille, France",
@@ -103,7 +109,9 @@ export default function VihanaRetreat() {
     },
     {
       title: "Highly supportive team and beautiful stress relief",
-      review: "Our stay at the retreat was beautiful and heart-warming. Sandeep and the entire team looked after us with so much genuine love and hospitality. It truly felt like a home away from home.",
+      review: `Our stay at the retreat was beautiful and heart-warming from start to finish.
+Sandeep and the entire team looked after us with genuine love and hospitality.
+It truly felt like a peaceful home away from home in Tapovan.`,
       name: "Isabel Linden",
       verified: true,
       location: "Rotterdam, Netherlands",
@@ -112,7 +120,9 @@ export default function VihanaRetreat() {
     },
     {
       title: "Perfect sensory vacation and excellent hospitality",
-      review: "Probably the most relaxing vacation I've ever had. Vihana is a tranquil sanctuary in Tapovan with excellent wellness programs, delicious organic cuisine, and wonderful hospitality from Sandeep.",
+      review: `Probably the most relaxing vacation I've ever had in my life.
+Vihana is a tranquil sanctuary in Tapovan with excellent wellness and yoga programs.
+The organic cuisine was delicious, and Sandeep was a wonderful and attentive host.`,
       name: "Alastair Intosh",
       verified: true,
       location: "Inverness, Scotland",
@@ -252,7 +262,7 @@ export default function VihanaRetreat() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Vihana Retreat Rishikesh Uttarakhand
+              Vihana Retreat Hospital Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -384,7 +394,7 @@ export default function VihanaRetreat() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Vihana Retreat</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Vihana Retreat</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -445,7 +455,7 @@ export default function VihanaRetreat() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Vihana Retreat</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>

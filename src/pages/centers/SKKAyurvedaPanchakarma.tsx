@@ -16,7 +16,7 @@ export default function SKKAyurvedaPanchakarma() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function SKKAyurvedaPanchakarma() {
   const testimonials = [
     {
       title: "Chronic Digestive Issues & IBS",
-      review: "Severe bloating and acid reflux made my daily life miserable. The doctors at SKK diagnosed a major Pitta imbalance through Nadi Pariksha and designed a customized detox plan involving Virechana (cleansing) and a specific Saatvic diet.",
+      review: `Severe bloating and acid reflux made my daily life miserable.
+The doctors at SKK diagnosed a major Pitta imbalance through Nadi Pariksha and
+designed a customized detox plan involving Virechana (cleansing) and a specific Saatvic diet.`,
       name: "Noah Jenkins",
       verified: true,
       location: "Toronto, Canada",
@@ -85,7 +87,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "PCOD & Gynecological Care",
-      review: "I consulted Dr. Rani Gupta for my chronic PCOD and irregular cycles. She is extremely knowledgeable and warm. The personalized Panchakarma cleansing therapies combined with specific gynecological herbs completely regulated my cycles within three months.",
+      review: `I consulted Dr. Rani Gupta for my chronic PCOD and irregular cycles. She is extremely knowledgeable and warm.
+The personalized Panchakarma cleansing therapies combined with specific gynecological herbs
+completely regulated my cycles within three months.`,
       name: "Katarina Lind",
       verified: true,
       location: "Oslo, Norway",
@@ -94,7 +98,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Rheumatoid Arthritis & Joint Stiffness",
-      review: "Joint pain was making it hard for me to move my fingers and knees. The herbal poultice massage (Potli Sweda) and specialized Basti therapies at SKK worked wonders.",
+      review: `Joint pain was making it hard for me to move my fingers and knees.
+The herbal poultice massage (Potli Sweda) and specialized Basti therapies
+at SKK worked wonders and restored my mobility.`,
       name: "William Carter",
       verified: true,
       location: "Manchester, UK",
@@ -103,7 +109,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Psoriasis & Eczema Recovery",
-      review: "I had stubborn skin patches and psoriasis flare-ups that weren't responding to typical treatments. The custom detoxification therapies (Snehan & Swedan) and pure herbal remedies prescribed by Dr.",
+      review: `I had stubborn skin patches and psoriasis flare-ups that weren't responding to typical treatments.
+The custom detoxification therapies (Snehan & Swedan) and pure herbal remedies
+prescribed by the doctors completely cleared my skin.`,
       name: "Zoe Lefevre",
       verified: true,
       location: "Geneva, Switzerland",
@@ -112,7 +120,9 @@ export default function SKKAyurvedaPanchakarma() {
     },
     {
       title: "Sciatica & Lower Back Pain",
-      review: "My back stiffness and severe sciatica made even sitting for an hour painful. Under Dr. Tarun Gupta's guidance, I went through a 14-day Basti (medicated enema) protocol.",
+      review: `My back stiffness and severe sciatica made even sitting for an hour painful.
+Under Dr. Tarun Gupta's guidance, I went through a 14-day Basti (medicated enema) protocol
+which completely relieved my pain and tension.`,
       name: "Daan Visser",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -381,7 +391,7 @@ export default function SKKAyurvedaPanchakarma() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at SKK Ayurveda & Panchakarma</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in SKK Ayurveda & Panchakarma</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -442,7 +452,7 @@ export default function SKKAyurvedaPanchakarma() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in SKK Ayurveda & Panchakarma</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>

@@ -76,7 +76,7 @@ export default function SRHUAyurvedaCentre() {
   const testimonials = [
     {
       title: "Highly Professional Panchakarma Treatment",
-      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the SRHU Ayurvedic Center. The medical integration is superb here.",
+      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the Swami Rama Himalayan University Ayurvedic Center. The medical integration is superb here.",
       name: "Sophia Bennett",
       verified: true,
       location: "London, UK",
@@ -123,8 +123,8 @@ export default function SRHUAyurvedaCentre() {
 
   const faqItems = [
     {
-      question: "What makes the SRHU Ayurvedic Center in Dehradun unique?",
-      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University (SRHU) in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
+      question: "What makes the Swami Rama Himalayan University Ayurvedic Center in Dehradun unique?",
+      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
     },
     {
       question: "What primary clinical packages and therapies are offered?",
@@ -220,9 +220,9 @@ export default function SRHUAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "SRHU Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
+    document.title = "Swami Rama Himalayan University Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University (SRHU) Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -299,7 +299,7 @@ export default function SRHUAyurvedaCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
                 Integrated Wellness & Authentic <br className="hidden lg:block" />
-                Ayurveda at SRHU Dehradun
+                Ayurveda at Swami Rama Himalayan University Ayurvedic Center Dehradun
               </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SRHUAyurvedaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">SRHU Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University (SRHU) in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Swami Rama Himalayan University Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University Ayurvedic Center in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -316,7 +316,7 @@ export default function SRHUAyurvedaCentre() {
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
                           src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                          alt="SRHU Ayurvedic Center gardens and view"
+                          alt="Swami Rama Himalayan University Ayurvedic Center gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -336,7 +336,7 @@ export default function SRHUAyurvedaCentre() {
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
                       src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp" 
-                      alt="SRHU Ayurvedic Center Dehradun Campus"
+                      alt="Swami Rama Himalayan University Ayurvedic Center Dehradun Campus"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -349,7 +349,7 @@ export default function SRHUAyurvedaCentre() {
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
                         src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                        alt="Therapy Room at SRHU Ayurvedic Center"
+                        alt="Therapy Room at Swami Rama Himalayan University Ayurvedic Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function SRHUAyurvedaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with SRHU Ayurvedic Center today.
+                My Vaidyam to connect with Swami Rama Himalayan University Ayurvedic Center today.
               </h3>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function SRHUAyurvedaCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages at SRHU Ayurvedic Center</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Swami Rama Himalayan University Ayurvedic Center</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -409,7 +409,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose SRHU Ayurvedic Center</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Swami Rama Himalayan University Ayurvedic Center</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience clinical research standards, medical team safety integration, and H.H. Swami Rama's healing legacy.
               </p>
@@ -440,7 +440,7 @@ export default function SRHUAyurvedaCentre() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Swami Rama Himalayan University Ayurvedic Center</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>
@@ -477,11 +477,11 @@ export default function SRHUAyurvedaCentre() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  alt="Swami Rama Himalayan University Ayurvedic Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -506,7 +506,7 @@ export default function SRHUAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at SRHU Ayurvedic Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -521,7 +521,7 @@ export default function SRHUAyurvedaCentre() {
               <div>
                 <img
                   src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="SRHU Ayurvedic Center"
+                  alt="Swami Rama Himalayan University Ayurvedic Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -631,7 +631,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at SRHU Ayurvedic Center.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Swami Rama Himalayan University Ayurvedic Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -665,7 +665,7 @@ export default function SRHUAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      SRHU Ayurvedic Center<br />
+                      Swami Rama Himalayan University Ayurvedic Center<br />
                       Swami Rama Himalayan University Campus, Swami Ram Nagar<br />
                       Jolly Grant, Dehradun, Uttarakhand
                     </p>
@@ -709,7 +709,7 @@ export default function SRHUAyurvedaCentre() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="SRHU Ayurvedic Center Location"
+                  title="Swami Rama Himalayan University Ayurvedic Center Location"
                 ></iframe>
               </div>
             </div>
@@ -722,7 +722,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="absolute inset-0 z-0">
           <img
             src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-            alt="SRHU Ayurvedic Center foothills view"
+            alt="Swami Rama Himalayan University Ayurvedic Center foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -732,7 +732,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at SRHU Ayurvedic Center.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Swami Rama Himalayan University Ayurvedic Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

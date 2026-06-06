@@ -16,7 +16,7 @@ export default function RishikeshAyurvedaCenter() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -76,7 +76,9 @@ export default function RishikeshAyurvedaCenter() {
   const testimonials = [
     {
       title: "A profoundly calming and restorative experience",
-      review: "I arrived in Rishikesh completely exhausted from years of corporate stress and constant insomnia. Dr. Sachin Dua spent a lot of time analyzing my lifestyle and pulse.",
+      review: `I arrived in Rishikesh completely exhausted from years of corporate stress and constant insomnia.
+Dr. Sachin Dua spent a lot of time analyzing my lifestyle and pulse to locate my imbalances.
+The customized plan of therapies and herbs completely restored my sleep patterns and energy.`,
       name: "Saskia de Jong",
       verified: true,
       location: "Amsterdam, Netherlands",
@@ -85,7 +87,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "The ultimate Ayurvedic detox in Tapovan",
-      review: "Doing the 14-day Panchakarma at Amritash was one of the best decisions I've made. The treatments were customized day-by-day based on how my body responded.",
+      review: `Doing the 14-day Panchakarma was one of the best decisions I've made.
+The treatments were customized day-by-day based on how my body responded to the therapies.
+The therapists were extremely professional and the clinic is clean and peaceful.`,
       name: "Aveline Dupont",
       verified: true,
       location: "Geneva, Switzerland",
@@ -94,7 +98,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Significant relief from long-term back stiffness",
-      review: "As an active cyclist, chronic lower back stiffness was holding me back. The warm oil massages and Potali pouch therapy targeted exactly where my muscles were tightest.",
+      review: `As an active cyclist, chronic lower back stiffness was holding me back from long rides.
+The warm oil massages and Potali pouch therapy targeted exactly where my muscles were tightest.
+I can now ride long distances without any of the stiffness or aching I used to experience.`,
       name: "Niels Mort",
       verified: true,
       location: "Copenhagen, Denmark",
@@ -103,7 +109,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Gentle and effective gut reset",
-      review: "I suffered from constant bloating and erratic digestion for several years. Dr. Dua explained that my body's fire (Agni) was weak and put me on a custom diet plan and mild herbal cleanses.",
+      review: `I suffered from constant bloating and erratic digestion for several years.
+Dr. Dua explained that my body's fire (Agni) was weak and put me on a custom diet plan.
+The mild herbal cleanses and meals restored my gut health and overall vitality.`,
       name: "Marc-Antoine",
       verified: true,
       location: "Montreal, Canada",
@@ -112,7 +120,9 @@ export default function RishikeshAyurvedaCenter() {
     },
     {
       title: "Natural healing for hair and skin issues",
-      review: "I visited Dr. Neha Batra for hair thinning and dry skin issues. She combined classical Ayurvedic herbs with a very gentle scalp routine.",
+      review: `I visited Dr. Neha Batra for hair thinning and dry skin issues that troubled me.
+She combined classical Ayurvedic herbs with a very gentle scalp routine and diet adjustments.
+My hair feels much stronger now and my skin has returned to its natural, healthy glow.`,
       name: "Gene Dubois",
       verified: true,
       location: "Paris, France",
@@ -252,7 +262,7 @@ export default function RishikeshAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rishikesh Ayurveda Clinic Uttarakhand
+              Rishikesh Ayurveda Center Uttarakhand
             </li>
           </ol>
         </div>
@@ -325,7 +335,7 @@ export default function RishikeshAyurvedaCenter() {
                   </div>
 
                   <p>
-                    Nestled in the peaceful foothills of Tapovan—renowned as the yoga capital of the world—Amritash provides customized consultations and therapies. We offer targeted solutions for joint stiffness, anxiety and stress disorders, chronic digestive issues, reproductive health, and natural skin and hair care.
+                    Nestled in the peaceful foothills of Tapovan—renowned as the yoga capital of the world—<strong className="font-bold text-[#2C4E5A]">Rishikesh Ayurveda</strong> provides customized consultations and therapies. We offer targeted solutions for joint stiffness, anxiety and stress disorders, chronic digestive issues, reproductive health, and natural skin and hair care.
                   </p>
 
                   <p>
@@ -333,7 +343,7 @@ export default function RishikeshAyurvedaCenter() {
                   </p>
 
                   <p>
-                    Anyone who visits Amritash Ayurveda by Dr. Sachin Dua can stay assured of complete recovery and overall cleansing, which eventually boosts the overall health naturally.
+                    Anyone who visits <strong className="font-bold text-[#2C4E5A]">Rishikesh Ayurveda</strong> by Dr. Sachin Dua can stay assured of complete recovery and overall cleansing, which eventually boosts the overall health naturally.
                   </p>
                 </div>
               </div>
@@ -387,7 +397,7 @@ export default function RishikeshAyurvedaCenter() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Amritash</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Ayurveda Packages in Rishikesh Ayurveda</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -448,7 +458,7 @@ export default function RishikeshAyurvedaCenter() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey in Rishikesh Ayurveda</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A structured, step-by-step path combining pulse diagnostics, custom detoxification therapies, and yogic integration.
             </p>
@@ -489,7 +499,7 @@ export default function RishikeshAyurvedaCenter() {
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rishikesh Ayurveda?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +524,7 @@ export default function RishikeshAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Amritash?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rishikesh Ayurveda?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
