@@ -252,7 +252,7 @@ export default function RishikeshAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rishikesh Ayurveda Clinic Uttarakhand
+              Rishikesh Ayurveda Center Uttarakhand
             </li>
           </ol>
         </div>
