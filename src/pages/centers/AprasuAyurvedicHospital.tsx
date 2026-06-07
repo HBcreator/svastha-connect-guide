@@ -252,7 +252,7 @@ export default function AprasuAyurvedicHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Aprasu Ayurveda Hospital New Delhi
+              Aprasu Ayurveda Hospital North Delhi
             </li>
           </ol>
         </div>

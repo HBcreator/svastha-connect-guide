@@ -289,11 +289,11 @@ const App = () => (
           <Route path="/centers/kerala-ayurveda-life-panchakarma-clinic-new-delhi-india" element={<KeralaAyurvedaLifeAyurvedaPanchakarmaClinic />}/>
           <Route path="/centers/sri-sri-ayurveda-panchakarma-center-new-delhi-india" element={<SriSriAyurvedaPanchakarmaAyurvedaCenter />}/>
           <Route path="/centers/sanjeevani-ayurveda-hospital-new-delhi-india" element={<SanjeevaniAyurveda />}/>
-          <Route path="/centers/aprasu-ayurvedic-hospital-new-delhi-india" element={<AprasuAyurvedicHospital />}/>
+          <Route path="/centers/aprasu-ayurvedic-hospital-north-delhi-india" element={<AprasuAyurvedicHospital />}/>
           <Route path="/centers/skk-ayurveda-and-panchakarma-hospital-new-delhi-india" element={<SKKAyurvedaPanchakarma />}/>
           <Route path="/centers/tarunveda-ayurveda-hospital-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
           <Route path="/centers/aasha-ayruveda-center-rajouri-garden-west-delhi-india" element={<AashaAyurvedaCenter />}/>
-          <Route path="/centers/arya-vaidya-sala-ayurvedic-hospital-and-research-center-new-delhi-india" element={<AryaVaidyaSala/>}/>
+          <Route path="/centers/arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india" element={<AryaVaidyaSala/>}/>
           <Route path="/centers/maharishi-ayurveda-hospital-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
 
           <Route path="/centers/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
