@@ -252,7 +252,7 @@ export default function KeralaAyurvedaLifeAyurvedaPanchakarmaClinic() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Kerala Ayurveda Life (Ayurveda Panchakarma Clinic) Green Park New Delhi
+              Kerala Ayurveda Life (Ayurveda Panchakarma Clinic) New Delhi
             </li>
           </ol>
         </div>

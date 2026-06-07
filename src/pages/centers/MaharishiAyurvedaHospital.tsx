@@ -262,7 +262,7 @@ were completely customized.`,
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Maharishi Ayurveda Hospital Shalimar Bagh New Delhi
+              Maharishi Ayurveda Hospital New Delhi
             </li>
           </ol>
         </div>

@@ -252,7 +252,7 @@ export default function AryaVaidyaSala() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Arya Vaidya Sala - Ayurvedic Hospital & Research Center Karkardooma East Delhi
+              Arya Vaidya Sala - Ayurvedic Hospital & Research Center New Delhi
             </li>
           </ol>
         </div>

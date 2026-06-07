@@ -252,7 +252,7 @@ export default function TarunVedaAyurvedaHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Tarunveda Ayurveda Hospital Dwarka New Delhi
+              Tarunveda Ayurveda Hospital New Delhi
             </li>
           </ol>
         </div>
