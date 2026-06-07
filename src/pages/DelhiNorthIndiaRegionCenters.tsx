@@ -208,7 +208,7 @@ const AryaVaidyaSala: DelhiCenter = {
   rating: 4.5,
   reviews: "40",
   image: "/Anchor pages/Delhi/images/2.jpg",
-  slug: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-new-delhi-india",
+  slug: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india",
 };
 
 const AashaAyurvedaCenter: DelhiCenter = {
@@ -256,7 +256,7 @@ const AprasuAyurvedicHospital: DelhiCenter = {
   rating: 4.8,
   reviews: "340",
   image: "/Anchor pages/Delhi/images/6.webp",
-  slug: "aprasu-ayurvedic-hospital-new-delhi-india",
+  slug: "aprasu-ayurvedic-hospital-north-delhi-india",
 };
 
 const SanjeevaniAyurveda: DelhiCenter = {
