@@ -1052,7 +1052,7 @@ export default function FazlaniNaturesNest() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Fazlani Nature's Nest Wellness Centre
+                  Fazlani Nature's Nest Wellness Center
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
                   A serene, nature-immersed retreat for holistic healing and renewal

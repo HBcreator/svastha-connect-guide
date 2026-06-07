@@ -2239,7 +2239,7 @@ export default function ChamundiHillPalace() {
                         <div className="relative w-full aspect-[800/600]">
                           <iframe
                             title="Chamundi Hill Palace Map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.6359558067156!2d76.84251357407243!3d9.540322380777535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0649f13b2bd955%3A0xe3da36c4d8b000c7!2sChamundi%20Hill%20Palace%20Ayurveda%20Treatment%20Centre!5e0!3m2!1sen!2sin!4v1768820593576!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3934.6359558067156!2d76.84251357407243!3d9.540322380777535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0649f13b2bd955%3A0xe3da36c4d8b000c7!2sChamundi%20Hill%20Palace%20Ayurveda%20Treatment%20Center!5e0!3m2!1sen!2sin!4v1768820593576!5m2!1sen!2sin"
                             className="absolute inset-0 h-full w-full"
                             style={{ border: 0 }}
                             allowFullScreen

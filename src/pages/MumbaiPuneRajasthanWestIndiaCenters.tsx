@@ -139,14 +139,14 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     },
     {
       series: -1,
-      name: "Fazlani Nature's Nest Wellness Centre",
+      name: "Fazlani Nature's Nest Wellness Center",
       city: "Pune, Maharashtra, India",
       description:
         "Fazlani Nature's Nest is a premier wellness retreat near Lonavala that blends time-honored natural healing traditions with modern therapeutic excellence. Nestled within lush green landscapes, the center offers a serene environment dedicated to restoring balance through authentic Ayurveda, Naturopathy, and mindful living.",
       rating: 4.7,
       reviews: "1800",
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-      slug: "fazlani-natures-nest-wellness-centre-mumbai-india",
+      slug: "fazlani-natures-nest-wellness-center-mumbai-india",
     },
     {
       series: -6,

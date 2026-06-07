@@ -157,7 +157,7 @@ const getFacilityIcon = (t: string) => {
   if (s.includes("farm") || s.includes("organic") || s.includes("garden") || s.includes("acre") || s.includes("trail"))
     return <TreePine className="h-7 w-7 text-white" />;
 
-  if (s.includes("infrastructure") || s.includes("treatment") || s.includes("therapy") || s.includes("pharmacy") || s.includes("centre"))
+  if (s.includes("infrastructure") || s.includes("treatment") || s.includes("therapy") || s.includes("pharmacy") || s.includes("center"))
     return <Stethoscope className="h-7 w-7 text-white" />;
 
   if (s.includes("yoga") || s.includes("meditation") || s.includes("hall") || s.includes("mindful"))
@@ -957,7 +957,7 @@ const MercureGoaDevaayaResort = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                  Mercure Goa Devaaya Resort - Ayurveda Wellness Centre
+                  Mercure Goa Devaaya Resort - Ayurveda Wellness Center
                 </h1>
                 <p className="text-lg md:text-xl mb-4 opacity-90">
                   A tranquil island retreat blending authentic Ayurveda with serene backwater living.

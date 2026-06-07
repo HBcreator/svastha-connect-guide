@@ -124,7 +124,7 @@ export default function VydehiAyurvedaHospital() {
   const faqItems = [
     {
       question: "Is Vydehi Ayurveda Hospital equipped for emergencies?",
-      answer: "Yes, our Ayurveda center is located within the expansive Vydehi Institute of Medical Sciences & Research Centre. This unique integration ensures that world-class emergency and modern medical support is available 24/7 if needed."
+      answer: "Yes, our Ayurveda center is located within the expansive Vydehi Institute of Medical Sciences & Research Center. This unique integration ensures that world-class emergency and modern medical support is available 24/7 if needed."
     },
     {
       question: "Do you provide in-patient facilities for international patients?",
@@ -307,7 +307,7 @@ export default function VydehiAyurvedaHospital() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Vydehi Ayurveda Hospital (VAYU)</strong>, a premier destination for holistic healing located within the expansive 1,600-bed Vydehi Institute of Medical Sciences &amp; Research Centre in Whitefield, Bengaluru. We integrate the profound, time-tested wisdom of traditional Kerala Ayurveda with the safety and reliability of modern clinical infrastructure. Our facility offers a sanctuary for both in-patient and out-patient care, surrounded by a lush green campus that naturally promotes healing and tranquility.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Vydehi Ayurveda Hospital (VAYU)</strong>, a premier destination for holistic healing located within the expansive 1,600-bed Vydehi Institute of Medical Sciences &amp; Research Center in Whitefield, Bengaluru. We integrate the profound, time-tested wisdom of traditional Kerala Ayurveda with the safety and reliability of modern clinical infrastructure. Our facility offers a sanctuary for both in-patient and out-patient care, surrounded by a lush green campus that naturally promotes healing and tranquility.
                   </p>
                   
                   <div className="lg:hidden py-4">

@@ -86,7 +86,7 @@ export default function Index() {
       usp: "Multi-Time National Tourism Award Winner",
     },
     {
-      name: "SOUKYA International Holistic Health Centre",
+      name: "SOUKYA International Holistic Health Center",
       location: "Whitefield, Bangalore",
       desc: "World-renowned integrative health center preferred by international royalty. 30-acre certified organic farm environment.",
       specialties: ["Panchakarma", "Integrative Medicine", "Chronic Detox"],
@@ -108,14 +108,14 @@ export default function Index() {
       usp: "World's Leading Luxury Wellness Retreat",
     },
     {
-      name: "Indus Valley Ayurvedic Centre",
+      name: "Indus Valley Ayurvedic Center",
       location: "Mysore, Karnataka",
       desc: "Designed according to Vastu Shastra, offering authentic treatments in a royal setting at the foothills of Chamundi Hill.",
       specialties: ["Rejuvenation", "Beauty Detox", "Wellness"],
       rating: 4.7,
       price: "$$$",
-      path: "/centers/mysore/indus-valley-ayurvedic-centre",
-      image: "/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg",
+      path: "/centers/mysore/indus-valley-ayurvedic-center",
+      image: "/Center Images/Indus Valley Ayurvedic Center/CTA mid.jpg",
       usp: "Vastu-Compliant Royal Architecture",
     },
     {

@@ -337,7 +337,7 @@ const YanCureYogaRetreat = () => {
     },
     {
       title: "Udyam Registration Certificate",
-      description: "Government of India MSME Udyam registration for Yan Cure Yoga Retreat & Ayurveda Centre as a micro enterprise.",
+      description: "Government of India MSME Udyam registration for Yan Cure Yoga Retreat & Ayurveda Center as a micro enterprise.",
       image: "/Center Images/Yan Cure Yoga Retreat/Awards/Award 3 (Udyyam regitration certificate).webp",
     },
     {
@@ -347,7 +347,7 @@ const YanCureYogaRetreat = () => {
     },
     {
       title: "Importer-Exporter Code (IEC)",
-      description: "Directorate General of Foreign Trade certificate confirming IEC issuance for Yan Cure Yoga Retreat & Ayurveda Centre.",
+      description: "Directorate General of Foreign Trade certificate confirming IEC issuance for Yan Cure Yoga Retreat & Ayurveda Center.",
       image: "/Center Images/Yan Cure Yoga Retreat/Awards/Award 5 (certificate of partipation).webp",
     },
   ];
@@ -1131,7 +1131,7 @@ const YanCureYogaRetreat = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Yan Cure</h1>
-                <p className="text-xl mb-4 opacity-90">Yoga Retreat & Ayurveda Centre</p>
+                <p className="text-xl mb-4 opacity-90">Yoga Retreat & Ayurveda Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Rishikesh, Uttarakhand</span>
@@ -2330,7 +2330,7 @@ const YanCureYogaRetreat = () => {
                         <div className="relative w-full aspect-[800/600]">
                           <iframe
                             title="Yan Cure Yoga Retreat Map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.4177054449747!2d78.25905977463218!3d30.053559118140498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909173f10633013%3A0x13c870ee662edecf!2sYan%20Cure%20Yoga%20Retreat%20%26%20Ayurveda%20Centre!5e0!3m2!1sen!2sin!4v1770106099959!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.4177054449747!2d78.25905977463218!3d30.053559118140498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909173f10633013%3A0x13c870ee662edecf!2sYan%20Cure%20Yoga%20Retreat%20%26%20Ayurveda%20Center!5e0!3m2!1sen!2sin!4v1770106099959!5m2!1sen!2sin"
                             className="absolute inset-0 h-full w-full"
                             style={{ border: 0 }}
                             allowFullScreen

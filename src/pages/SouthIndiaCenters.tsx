@@ -14,8 +14,8 @@ const SouthIndiaCenters = () => {
   const navigate = useNavigate();
 
   const enabledDetailSlugs = new Set([
-    "soukya-international-holistic-health-centre-bangalore-india",
-    "ayurvedagram-heritage-wellness-centre-bangalore-india",
+    "soukya-international-holistic-health-center-bangalore-india",
+    "ayurvedagram-heritage-wellness-center-bangalore-india",
     "indus-valley-ayurvedic-hospital-mysore-india",
     "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
     "sri-sri-ayurveda-hospital-bengaluru-india",
@@ -43,7 +43,7 @@ const SouthIndiaCenters = () => {
 
   const centers = [
     {
-      name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+      name: "SOUKYA - Dr. Mathai's International Holistic Health Center",
       city: "Bengaluru, Karnataka, India",
       description:
         "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga and Naturopathy on a 30-acre organic farm. The center offers a holistic approach to wellness with personalized treatments guided by experienced practitioners in a serene, nature-rich environment. Guests benefit from preventive care, restorative therapies, and integrated healing plans designed to improve long-term physical and mental well-being.",
@@ -51,18 +51,18 @@ const SouthIndiaCenters = () => {
       reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/SOUKYA/top center Thumb.jpg",
-      slug: "soukya-international-holistic-health-centre-bangalore-india",
+      slug: "soukya-international-holistic-health-center-bangalore-india",
     },
     {
-      name: "AyurvedaGram Heritage Wellness Centre",
+      name: "AyurvedaGram Heritage Wellness Center",
       city: "Bengaluru, Karnataka, India",
       description:
-        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination for traditional Ayurvedic Healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by therapeutic yoga, mindful routines, and sattvic nutrition. Each program is tailored to restore balance of body and mind through time-tested, evidence-informed care.",
+        "AyurvedaGram Heritage Wellness Center is a globally recognized destination for traditional Ayurvedic Healing rooted in classical principles. Set within a tranquil heritage village, the center provides personalized therapies guided by experienced Vaidyas and supported by therapeutic yoga, mindful routines, and sattvic nutrition. Each program is tailored to restore balance of body and mind through time-tested, evidence-informed care.",
       rating: 4.7,
       reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/AyurvedaGram/Thumb.jpg",
-      slug: "ayurvedagram-heritage-wellness-centre-bangalore-india",
+      slug: "ayurvedagram-heritage-wellness-center-bangalore-india",
     },
 
     {
@@ -77,14 +77,14 @@ const SouthIndiaCenters = () => {
       slug: "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
     },
     {
-      name: "Indus Valley Ayurvedic Centre",
+      name: "Indus Valley Ayurvedic Center",
       city: "Mysuru, Karnataka, India",
       description:
-        "Indus Valley Ayurvedic Centre (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
+        "Indus Valley Ayurvedic Center (IVAC) is a luxury retreat in Mysuru blending classical Kerala Ayurveda with modern wellness standards. Located near the Chamundi Hills, it offers personalized programs for detoxification, stress reduction, pain management, and rejuvenation under expert medical guidance. The center's quiet setting and structured therapies support deep healing for body, mind, and lifestyle renewal.",
       rating: 4.8,
       reviews: 450,
       priceRange: "$$$$",
-      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+      image: "/Center Images/Indus Valley Ayurvedic Center/Thumb.jpg",
       slug: "indus-valley-ayurvedic-hospital-mysore-india",
     },
     {
@@ -126,7 +126,7 @@ const SouthIndiaCenters = () => {
       name: "Vydehi Ayurveda Hospital (VAYU)",
       city: "Bengaluru (Whitefield), Karnataka, India",
       description:
-        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Centre in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurveda treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
+        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Center in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurveda treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
       rating: 4.3,
       reviews: 600,
       priceRange: "$$$",
@@ -318,7 +318,7 @@ const SouthIndiaCenters = () => {
       name: "Ayurillam - Home of Ayurvedic Therapy Center",
       city: "Chennai, Tamil Nadu, India",
       description:
-        "Ayurillam is a premium Kerala-rooted Ayurvedic therapy centre offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The centre addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
+        "Ayurillam is a premium Kerala-rooted Ayurvedic therapy center offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The center addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
       rating: 4.7,
       reviews: 890,
       priceRange: "$$$",

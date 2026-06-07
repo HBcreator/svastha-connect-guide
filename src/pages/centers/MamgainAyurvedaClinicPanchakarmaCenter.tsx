@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function MamgainAyurvedaClinicPanchakarmaCentre() {
+export default function MamgainAyurvedaClinicPanchakarmaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -220,7 +220,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Mamgain's Ayurveda Clinic & Panchakarma Centre | Rishikesh";
+    document.title = "Mamgain's Ayurveda Clinic & Panchakarma Center | Rishikesh";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Panchakarma detoxification, specialized arthritis care, and traditional Himalayan healing under senior BHU professors Dr. R.K. Mamgain and Dr. Pratibha Mamgain in Rishikesh.");
 
@@ -252,7 +252,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Mamgain's Ayurveda Clinic & Panchakarma Centre Rishikesh Uttarakhand
+              Mamgain's Ayurveda Clinic & Panchakarma Center Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,7 +264,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Mamgain's Ayurveda Clinic & Panchakarma Centre</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Mamgain's Ayurveda Clinic & Panchakarma Center</h1>
                 <p className="text-xl mb-4 opacity-90">35+ Years of Academic and Clinical Excellence in Rishikesh</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -299,7 +299,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Mamgain's Ayurveda Clinic & Panchakarma Centre
+                at Mamgain's Ayurveda Clinic & Panchakarma Center
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Mamgain's Ayurveda Clinic & Panchakarma Centre</strong>, a premier destination for traditional and authentic Ayurvedic treatments in Rishikesh. Located in the peaceful setting of Aam Bagh, Pashulok, our clinic has earned a trusted reputation for providing safe, effective, and affordable healing. Our medical panel is led by senior consultants <strong className="font-bold text-[#2C4E5A]">Dr. R.K. Mamgain (Dr. Ravindra Kumar Mamgain)</strong> and <strong className="font-bold text-[#2C4E5A]">Dr. Pratibha Mamgain</strong>. Both hold B.A.M.S., M.D., and Ph.D. degrees in Ayurvedic Medicine from the Institute of Medical Sciences, Banaras Hindu University (IMS BHU) and possess more than 35 years of clinical and teaching experience.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Mamgain's Ayurveda Clinic & Panchakarma Center</strong>, a premier destination for traditional and authentic Ayurvedic treatments in Rishikesh. Located in the peaceful setting of Aam Bagh, Pashulok, our clinic has earned a trusted reputation for providing safe, effective, and affordable healing. Our medical panel is led by senior consultants <strong className="font-bold text-[#2C4E5A]">Dr. R.K. Mamgain (Dr. Ravindra Kumar Mamgain)</strong> and <strong className="font-bold text-[#2C4E5A]">Dr. Pratibha Mamgain</strong>. Both hold B.A.M.S., M.D., and Ph.D. degrees in Ayurvedic Medicine from the Institute of Medical Sciences, Banaras Hindu University (IMS BHU) and possess more than 35 years of clinical and teaching experience.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,7 +315,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/secondary.webp" 
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/secondary.webp" 
                           alt="Mamgain's Ayurveda Clinic gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -335,7 +335,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/main.webp" 
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/main.webp" 
                       alt="Mamgain's Ayurveda Clinic Rishikesh"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -348,7 +348,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/secondary.webp" 
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/secondary.webp" 
                         alt="Therapy Room at Mamgain's Ayurveda"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -380,7 +380,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Centre
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Center
 </h2>
           </div>
           
@@ -412,7 +412,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Centre
+                Why Choose <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience over 35 years of clinical expertise under double BHU professors in a peaceful Pashulok setting.
@@ -445,7 +445,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Centre
+              Your Healing Journey at <br className="hidden lg:block" /> Mamgain's Ayurveda Clinic & Panchakarma Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
@@ -482,7 +482,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/main.webp"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/main.webp"
                   alt="Mamgain's Ayurveda Clinic"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -526,7 +526,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/main.webp"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/main.webp"
                   alt="Mamgain's Ayurveda Clinic"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -671,7 +671,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Clinic Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Mamgain's Ayurveda Clinic & Panchakarma Centre<br />
+                      Mamgain's Ayurveda Clinic & Panchakarma Center<br />
                       Lane No. 2, Aam Bagh, Nirmal Bagh A, Pashulok<br />
                       Rishikesh, Uttarakhand
                     </p>
@@ -708,7 +708,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.8425704249034!2d78.27044347555476!3d30.070046774910665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093f249dc163ef%3A0x1a7a49eb4cf8193d!2sMamgain&#39;s%20Ayurveda%20Clinic%20%26%20Panchakarma%20centre!5e0!3m2!1sen!2sin!4v1780487103961!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.8425704249034!2d78.27044347555476!3d30.070046774910665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093f249dc163ef%3A0x1a7a49eb4cf8193d!2sMamgain&#39;s%20Ayurveda%20Clinic%20%26%20Panchakarma%20center!5e0!3m2!1sen!2sin!4v1780487103961!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -727,7 +727,7 @@ export default function MamgainAyurvedaClinicPanchakarmaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Centre/main.webp"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/main.webp"
             alt="Mamgain's Ayurveda Clinic foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

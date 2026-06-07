@@ -275,7 +275,7 @@ were completely customized.`,
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Maharishi Ayurveda Hospital</h1>
-                <p className="text-xl mb-4 opacity-90">Panchakarma & Chronic Disease Care Centre</p>
+                <p className="text-xl mb-4 opacity-90">Panchakarma & Chronic Disease Care Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Shalimar Bagh, New Delhi, India</span>
@@ -681,7 +681,7 @@ were completely customized.`,
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Maharishi Ayurveda Hospital<br />
                       Block B, Pocket P, Shalimar Bagh (West), New Delhi<br />

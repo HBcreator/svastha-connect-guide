@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function RasayanaAyurvedaCentre() {
+export default function SRHUAyurvedaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function RasayanaAyurvedaCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Meticulous Vaidya Evaluation",
-      description: "A comprehensive baseline diagnostic check-up and pulse analysis (Naadi Pariksha) by experienced physician panels to determine specific dosha profiling.",
+      title: "Dosha & Prakriti Assessment",
+      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Classical Prescription Drafting",
-      description: "Compiling an individualized therapeutic blueprint utilizing authentic, standard-potency formulations directed by our Chief Medical Officer.",
+      title: "Custom Healing Schedule",
+      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Purva Karma",
-      description: "Administering warm synchronized massage (Abhyangam) and customized steam baths (Swedana) to mobilize deep metabolic wastes.",
+      title: "Purva Karma Warmups",
+      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Supervised Panchakarma Purification",
-      description: "Executing precise, highly controlled biological detoxification procedures (Virechana, Vasti, or Vamana) tailored to deep impurities.",
+      title: "Pradhana Karma Cleansing",
+      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Traditional Restorative Retention",
-      description: "Applying targeted warm Keralite therapies like Kati Vasti, Janu Vasti, or Greeva Vasti to soothe nerve compression and joint stiffness.",
+      title: "Mindfulness & Restorative Yoga",
+      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Continuing Path to Vitality",
-      description: "Long-term health preservation through customized home diet charts, wellness guidelines, single-herb extracts, and structured follow-up checks.",
+      title: "Dinacharya Home Care",
+      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Superb Preventive Cardiology Care",
-      review: "The highly specialized Preventive Cardiology program here perfectly balanced traditional Ayurveda with modern cardiac parameters. The expert physicians and customized therapies significantly improved my cardiovascular health. I feel vastly more energetic and my vitals are excellent.",
-      name: "Lukas Weber",
+      title: "Highly Professional Panchakarma Treatment",
+      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the Swami Rama Himalayan University Ayurvedic Center. The medical integration is superb here.",
+      name: "Sophia Bennett",
+      verified: true,
+      location: "London, UK",
+      condition: "Panchakarma Detox & Digestion Restoration",
+      rating: 5
+    },
+    {
+      title: "Remarkable Recovery from Chronic Sciatica",
+      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan.",
+      name: "Ethan Hunt",
+      verified: true,
+      location: "Boston, USA",
+      condition: "Joint & Spine Care",
+      rating: 5
+    },
+    {
+      title: "Exceptional Burnout Reset in a Serene Setting",
+      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus.",
+      name: "Astrid Lind",
+      verified: true,
+      location: "Stockholm, Sweden",
+      condition: "Stress Reset & Rejuvenation",
+      rating: 5
+    },
+    {
+      title: "Excellent Post-Surgical Detoxification",
+      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs.",
+      name: "Oliver Laurent",
+      verified: true,
+      location: "Paris, France",
+      condition: "Post-Clinical Recovery & Detox",
+      rating: 5
+    },
+    {
+      title: "A Truly Holistic Clinical Haven",
+      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments.",
+      name: "Elena Rostova",
       verified: true,
       location: "Munich, Germany",
-      condition: "Preventive Cardiology",
-      rating: 5
-    },
-    {
-      title: "Wonderful Geriatric Care & Rejuvenation",
-      review: "At 72, I struggled with severe joint stiffness and low energy. Rasayana's tailored geriatric care protocols and warm synchronized massages completely restored my mobility. The peaceful plantation environment and incredibly dedicated staff make this an absolute haven for seniors.",
-      name: "Sylvie Dubois",
-      verified: true,
-      location: "Geneva, Switzerland",
-      condition: "Geriatric Rejuvenation",
-      rating: 5
-    },
-    {
-      title: "Profound Strength and Vitality After Cancer",
-      review: "Following intense cancer treatments, I desperately needed restorative care. The customized cellular nourishment and chronic fatigue management therapies here were absolutely life-changing. My natural appetite returned completely, and I feel profoundly stronger. Their integrative approach is incredibly effective.",
-      name: "Alexander Ivanov",
-      verified: true,
-      location: "Sofia, Bulgaria",
-      condition: "Post-Cancer Rehab",
-      rating: 5
-    },
-    {
-      title: "Remarkable Relief from Psoriatic Arthritis",
-      review: "Living with psoriatic arthritis was agonizing. The specialized autoimmune protocols, combining deep detoxification with restorative botanical wraps, completely halted my flare-ups. My skin cleared beautifully and my joint pain vanished. A truly phenomenal hospital for chronic disease management.",
-      name: "Fiona Gallagher",
-      verified: true,
-      location: "Dublin, Ireland",
-      condition: "Psoriatic Arthritis",
-      rating: 5
-    },
-    {
-      title: "Amazing Stroke & Neurological Recovery",
-      review: "After my stroke, my left side was severely weakened. The neurological rehabilitation team's intensive therapy, featuring targeted nerve-stimulating massages and strict dietary support, worked absolute miracles. I wonderfully regained my coordination and strength. Outstanding, world-class Keralite medical care.",
-      name: "Hans Christian",
-      verified: true,
-      location: "Oslo, Norway",
-      condition: "Stroke & Neuro Rehab",
+      condition: "Metabolic & Skin Recovery",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes Rasayana Ayurveda Center in Ezhakkaranad unique?",
-      answer: "Rasayana Ayurveda Center is a specialized Ayurvedic hospital situated on a serene plantation estate in Ezhakkaranad, Kochi. We focus on authentic classical Ayurveda in a nature-rich environment, offering comfortable private villas, an organic dining facility, and integrated clinical care."
+      question: "What makes the Swami Rama Himalayan University Ayurvedic Center in Dehradun unique?",
+      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
     },
     {
-      question: "Who leads the medical and consulting panel at the centre?",
-      answer: "Our clinical team is led by Chief Medical Officer Dr. V. Madhavachandran, a senior physician with over 30 years of clinical experience. He is a internationally published researcher, drug developer, and expert in chronic disease management."
+      question: "What primary clinical packages and therapies are offered?",
+      answer: "We offer comprehensive residential packages focusing on Classical Panchakarma (body purification), Joint & Spine Care (for sciatica, arthritis, and back pain), Stress & Anxiety Reset, Rejuvenation & Detox, Chronic Illness Support, and Post-Clinical Recovery (detoxification after surgery or chemotherapy)."
     },
     {
-      question: "What are the core clinical specialties offered here?",
-      answer: "We specialize in Geriatric Care (Rasayana), Integrative Preventive Cardiology (combining classical Ayurveda with modern cardiac diagnostics), Post-Cancer Rehabilitation, Neurological Rehabilitation (stroke and dystrophy), and classical Panchakarma detoxification."
+      question: "Are the herbal formulations and meals prepared on campus?",
+      answer: "Yes. All traditional oils and herbal extracts used in our therapies are carefully managed to ensure purity. Guests are provided with fresh, balanced, vegetarian meals prepared in our dining hall according to dietary guidelines that support the healing process."
     },
     {
-      question: "What accommodation and facilities are available for in-patients?",
-      answer: "The centre offers comfortable private villas and air-conditioned suites set within a quiet plantation. Facilities include yoga halls, transport/guide services, a conference hall, and an in-house kitchen serving fresh meals made with locally sourced organic ingredients."
+      question: "Can guests coordinate consultations or follow-up care online?",
+      answer: "Yes, we support our clients even after they leave the university campus. Our doctors provide a comprehensive daily routine guidelines (Dinacharya) and home-care plan upon discharge, and follow-up consultations can be coordinated online."
     },
     {
-      question: "Does the centre accept or support health insurance claims?",
-      answer: "Yes, our clinical team provides detailed medical certificates, case sheets, diagnostic logs, and treatment records to facilitate cashless or reimbursement claims for private or corporate AYUSH health insurance."
+      question: "How close is the center to major transport hubs?",
+      answer: "Our center is exceptionally accessible. It is situated just 2 km (approx. 5 minutes) from the Jolly Grant Airport (Dehradun Airport). Doiwala Railway Station is about 6 km away, and Dehradun Railway Station is approximately 25 km from the campus."
     }
   ];
 
   const programs = [
     {
-      title: "Geriatric Care & Rasayana",
-      description: "Specialized anti-aging and cell-restorative therapies designed to build natural immunity, improve mobility, and promote healthy longevity for elderly individuals.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Preventive Cardiology",
-      description: "An innovative program integrating modern cardiac assessments with classical Ayurvedic therapies to manage and reverse cardiovascular risks.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Post-Cancer Rehabilitation",
-      description: "Supportive clinical therapies focusing on cell nourishment, chronic fatigue management, post-chemo recovery, and immune-system strengthening.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Neurological Rehabilitation",
-      description: "Intensive care for stroke recovery, dystrophy, paralysis, and severe neuro-degenerative issues led by experienced medical officers.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Classical Panchakarma Detox",
-      description: "Completely supervised physiological detox programs (Virechana, Vasti, Vamana) administered in a peaceful, plantation setting to restore cellular balance.",
+      title: "Residential Panchakarma",
+      description: "Complete biological cleansing program overseen by experienced Vaidyas to purge cellular impurities and restore physiological equilibrium.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Autoimmune & Chronic Care",
-      description: "Targeted Ayurvedic protocols addressing chronic skin diseases (psoriasis, eczema), rheumatoid arthritis, and complex gastrointestinal issues.",
+      title: "Joint & Spine Wellness",
+      description: "Specialized traditional therapies including warm oil poolings (Basti) and herbal poultice massage (Kizhi) for sciatica, arthritis, and joint pain.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Stress & Anxiety Reset",
+      description: "Deep neural calming treatments utilizing warm Shirodhara oil flows, soothing massages, and guided pranayama at our university campus.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Rejuvenation & Detox",
+      description: "Nourishing oil poolings, organic steam baths, and cellular tonics designed to slow down physiological aging and revitalize body tissue.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Chronic Illness Support",
+      description: "Targeted clinical protocols designed to support management of conditions such as hypertension, IBS, and neurological disorders.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Post-Clinical Recovery",
+      description: "Gentle detox and therapeutic support for patients recovering from surgery, chemotherapy, or radiotherapy to rebuild immunity.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Eminent Medical Doyen",
-      description: "Directed by Chief Medical Officer Dr. V. Madhavachandran, bringing over 30 years of clinical expertise and international research.",
+      title: "Swami Rama's Vision",
+      description: "Founded under H.H. Dr. Swami Rama's vision of integrated healthcare where traditional wisdom complements modern scientific standards.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Integrative Cardiology Setup",
-      description: "A unique setup that combines traditional Keralite oil therapies with modern cardiovascular diagnostic parameters.",
+      title: "University Integration",
+      description: "Located within Swami Rama Himalayan University campus, backed by professional academic research and certified wellness guidelines.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Plantation Villa Infrastructure",
-      description: "Set within a serene Pullamkottu Cheri Estate plantation, featuring 12 private villas and 16 suites for complete recovery.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Organic Farm-to-Table Dining",
-      description: "Meals prepared daily under dietary supervision using fresh, locally sourced, estate-grown organic ingredients.",
+      title: "Hospital Collaboration",
+      description: "Works alongside the adjacent multispecialty Himalayan Hospital, providing clinical safety and collaborative medical monitoring.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Comprehensive Chronic Care",
-      description: "Dedicated clinical protocols addressing post-cancer recovery, stroke rehabilitation, and complex autoimmune issues.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+      title: " Foothill Peace",
+      description: "Set in Swami Ram Nagar at the foot of the Shivalik hills, providing a tranquil, clean, and highly therapeutic environment.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "AYUSH Insurance Support",
-      description: "Providing detailed diagnostic papers, clinical case sheets, and support to facilitate smooth insurance claims.",
+      title: "Scenic Yoga & Breathwork",
+      description: "Guided daily yoga and mindfulness practices integrated directly with your health routine at our dedicated university facilities.",
+      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "In-House Organic Meals",
+      description: "Chef-prepared, nutrient-dense vegetarian diet served in our dining hall to balance doshas and boost metabolic strength.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function RasayanaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Rasayana Ayurveda Center | Best Ayurvedic Hospital in Ernakulam, Kochi";
+    document.title = "Swami Rama Himalayan University Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Rasayana Ayurveda Center in Ezhakkaranad, Kochi. Specialized plantation-based hospital offering geriatric care, cardiology, and cancer recovery.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function RasayanaAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Rasayana Ayurveda Center Kerala
+              Swami Rama Himalayan University Ayurvedic Center Dehradun Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function RasayanaAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Rasayana Ayurveda Center</h1>
-                <p className="text-xl mb-4 opacity-90">Plantation-Based Speciality Hospital & Integrative Cardiology Rehab Centre</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Swami Rama Himalayan University Ayurvedic Center</h1>
+                <p className="text-xl mb-4 opacity-90">Swami Rama Himalayan University Integrated Holistic Health Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Ezhakkaranadu, Ernakulam, Kerala, India</span>
+                  <span className="text-lg">Dehradun, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(210 Reviews)</span>
+                  <span className="opacity-90">(50 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -297,17 +297,17 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Rasayana Ayurveda Center
-</h2>
+                at Swami Rama Himalayan University Ayurvedic Center
+              </h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Rasayana Ayurveda Center</strong>, a premier specialized Ayurvedic hospital set within the tranquil plantation landscapes of Ezhakkaranad, near Kochi, Kerala. The centre rejects standardized clinical profiles to deliver customized, physician-led clinical care. Spanning a quiet plantation estate (Pullamkottu Cheri Estate), the centre is world-renowned for its specialized focus on Geriatric Care (Rasayana), Preventive Cardiology (integrating traditional Ayurveda with modern cardiac parameters), Post-Cancer Rehabilitation, Stroke/Neurological Rehabilitation, and classical Panchakarma detoxification.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Swami Rama Himalayan University Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University Ayurvedic Center in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function RasayanaAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
-                          alt="Rasayana Ayurveda Center"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
+                          alt="Swami Rama Himalayan University Ayurvedic Center gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function RasayanaAyurvedaCentre() {
                   </div>
 
                   <p>
-                    The medical panel is directed by Chief Medical Officer <strong className="font-bold text-[#2c4e5a]">Dr. V. Madhavachandran</strong>, an eminent senior physician with over 30 years of clinical experience, a internationally published researcher, and expert in drug development. Rasayana Ayurveda Center features a serene eco-friendly infrastructure including 12 private villas, 16 suites, in-house organic food prepared with locally sourced farm ingredients, a yoga center, and comprehensive documentation to facilitate private and corporate AYUSH health insurance claims.
+                    Supervised by a panel of highly qualified Ayurvedic physicians (Vaidyas), naturopathic experts, and trained therapists, the center offers personalized residential Panchakarma treatments. We specialize in addressing chronic conditions such as osteoarthritis, rheumatoid arthritis, back pain, joint stiffness, and stress-related ailments. By collaborating directly with the adjacent multispecialty Himalayan Hospital, our guests receive the highest standard of medical safety, diagnostic monitoring, and professional care.
                   </p>
                 </div>
               </div>
@@ -335,8 +335,8 @@ export default function RasayanaAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg" 
-                      alt="Rasayana Ayurveda Center Exterior"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp" 
+                      alt="Swami Rama Himalayan University Ayurvedic Center Dehradun Campus"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +348,8 @@ export default function RasayanaAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
-                        alt="Therapy Chamber at Rasayana Ayurveda Center"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
+                        alt="Therapy Room at Swami Rama Himalayan University Ayurvedic Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -368,7 +368,7 @@ export default function RasayanaAyurvedaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Rasayana Ayurveda Center today.
+                My Vaidyam to connect with Swami Rama Himalayan University Ayurvedic Center today.
               </h3>
             </div>
           </div>
@@ -379,9 +379,9 @@ export default function RasayanaAyurvedaCentre() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Rasayana Ayurveda Center
-</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2" style={{ lineHeight: '1.2' }}>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
+            </h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -412,10 +412,10 @@ export default function RasayanaAyurvedaCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Rasayana Ayurveda Center
-</h2>
+                Why Choose <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
+              </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic healing with certified professionals, complete diagnostics integration, and insurance support.
+                Experience clinical research standards, medical team safety integration, and H.H. Swami Rama's healing legacy.
               </p>
             </div>
             
@@ -445,10 +445,10 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Rasayana Ayurveda Center
-</h2>
+              Your Healing Journey at <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
+            </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly standardized clinical approach integrating legacy Keralite Vaidya care, fresh oils, and strict patient-centered procedures.
+              A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>
           </div>
           
@@ -482,12 +482,12 @@ export default function RasayanaAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
-                  alt="Rasayana Ayurveda Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
+                  alt="Swami Rama Himalayan University Ayurvedic Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -512,7 +512,7 @@ export default function RasayanaAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -526,8 +526,8 @@ export default function RasayanaAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
-                  alt="Rasayana Ayurveda Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
+                  alt="Swami Rama Himalayan University Ayurvedic Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -542,7 +542,7 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -576,7 +576,7 @@ export default function RasayanaAyurvedaCentre() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -637,7 +637,7 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Rasayana Ayurveda.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Swami Rama Himalayan University Ayurvedic Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -671,9 +671,9 @@ export default function RasayanaAyurvedaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Rasayana Ayurveda Center<br />
-                      Pullamkottu Cheri Estate, Srappilly - Blaippadi Road<br />
-                      P.O. Ezhakkaranad (N), Ernakulam District, Kerala
+                      Swami Rama Himalayan University Ayurvedic Center<br />
+                      Swami Rama Himalayan University Campus, Swami Ram Nagar<br />
+                      Jolly Grant, Dehradun, Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -681,8 +681,10 @@ export default function RasayanaAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
-                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                        +91 989 xxxx xxx
+                    </div>
                   </div>
                 </div>
 
@@ -690,9 +692,15 @@ export default function RasayanaAyurvedaCentre() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 30 km from Cochin International Airport</li>
-                      <li>• Approx. 14 km from Tripunithura Railway Station</li>
+                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 2 km from Jolly Grant Airport</span>
+                      </li>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 6 km from Doiwala Railway Station</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -700,14 +708,14 @@ export default function RasayanaAyurvedaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.050220931125!2d76.4516809750302!3d9.929775690172075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08754c0429365d%3A0xcd90baa8c5676d02!2sRasayana%20Ayurveda%20-%20Ayurvedic%20Hospital%20Kochi!5e0!3m2!1sen!2sin!4v1779862965967!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110305.9646300226!2d78.03885810667268!3d30.235325671534614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390924c4a8865ddf%3A0xb914eca09be3ef0!2sAYURVEDA%20CENTER%20SRHU%20%2F%20RESIDENTIAL%20PANCHAKARMA%20THERAPY%20CENTER!5e0!3m2!1sen!2sin!4v1780480187208!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Rasayana Ayurveda Center Location"
+                  title="Swami Rama Himalayan University Ayurvedic Center Location"
                 ></iframe>
               </div>
             </div>
@@ -719,8 +727,8 @@ export default function RasayanaAyurvedaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
-            alt="Rasayana Ayurveda Center"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
+            alt="Swami Rama Himalayan University Ayurvedic Center foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -730,7 +738,7 @@ export default function RasayanaAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Rasayana Ayurveda Center.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Swami Rama Himalayan University Ayurvedic Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -740,7 +748,7 @@ export default function RasayanaAyurvedaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919961883203?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Rasayana%20Ayurveda%20Centre."
+              href="https://wa.me/911352471249?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SRHU%20Ayurvedic%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

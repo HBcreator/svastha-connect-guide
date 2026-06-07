@@ -673,7 +673,7 @@ export default function AyurVAIDKalmatia() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div className="min-w-0">
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
                       <p>Kalimat Estate, Kasar Devi, Upper Binsar Road, Almora, Uttarakhand</p>
                     </div>
@@ -711,7 +711,7 @@ export default function AyurVAIDKalmatia() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.898761369464!2d79.66603309999999!3d29.6356835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0b732389934db%3A0x6e8bc474cf86362!2sAyurVAID%20Kalmatia%20-%20Centre%20of%20Healing%20in%20Almora%2C%20Uttrakhand!5e0!3m2!1sen!2sin!4v1780565820361!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.898761369464!2d79.66603309999999!3d29.6356835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0b732389934db%3A0x6e8bc474cf86362!2sAyurVAID%20Kalmatia%20-%20Center%20of%20Healing%20in%20Almora%2C%20Uttrakhand!5e0!3m2!1sen!2sin!4v1780565820361!5m2!1sen!2sin"
                   height="100%" 
                   width={"100%"}
                   style={{ border: 0 }} 

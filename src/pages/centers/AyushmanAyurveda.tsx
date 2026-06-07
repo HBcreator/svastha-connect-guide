@@ -220,7 +220,7 @@ export default function AyushmanAyurveda() {
   }, []);
 
   useEffect(() => {
-    document.title = "Ayushman Ayurveda | Best Ayurvedic Treatment Centre in Sahakar Nagar, Bangalore";
+    document.title = "Ayushman Ayurveda | Best Ayurvedic Treatment Center in Sahakar Nagar, Bangalore";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute("content", "Book consultations at Ayushman Ayurveda Clinic in Sahakar Nagar, Bangalore. Experience expert pain management, authentic Kerala Ayurveda, and classical Panchakarma from highly qualified doctors.");
 
@@ -669,7 +669,7 @@ export default function AyushmanAyurveda() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Ayushman Ayurveda Clinic<br />
                       No. 316, 10th Cross, F/G Block Road<br />

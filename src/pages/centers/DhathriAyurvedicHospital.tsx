@@ -2092,7 +2092,7 @@ export default function DhathriAyurvedicHospital() {
                         <div className="relative w-full aspect-[800/600]">
                           <iframe
                             title="Dhathri Ayurveda Hospital Map"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252070.24919101104!2d76.468624!3d9.190718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Centre!5e0!3m2!1sen!2sin!4v1767348975908!5m2!1sen!2sin"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252070.24919101104!2d76.468624!3d9.190718!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b061de4dbaacbbb%3A0xe0b7ca7b5c139025!2sDhathri%20Ayurveda%20Hospital%20and%20Panchakarma%20Center!5e0!3m2!1sen!2sin!4v1767348975908!5m2!1sen!2sin"
                             className="absolute inset-0 h-full w-full"
                             style={{ border: 0 }}
                             allowFullScreen

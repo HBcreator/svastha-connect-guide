@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AashaAyurvedaCentre() {
+export default function AyuskamaAyurvedaClinicPanchakarmaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -16,7 +16,7 @@ export default function AashaAyurvedaCentre() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Programs" },
+    { id: "programs", title: "Top Ayurveda Packages" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -37,176 +37,186 @@ export default function AashaAyurvedaCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Initial Consultation",
-      description: "Comprehensive assessment of medical history, lifestyle, and reproductive health markers under fertility specialists.",
+      title: "Dosha & Prakriti Assessment",
+      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Prakriti & Dosha Analysis",
-      description: "Identifying constitutional details and metabolic imbalances causing infertility or reproductive disorders.",
+      title: "Custom Healing Schedule",
+      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purvakarma Preparation",
-      description: "Preparing the body with herbal oil therapies and steam to loosen accumulated toxins in the tissues.",
+      title: "Purva Karma Warmups",
+      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Customized Panchakarma",
-      description: "Cleansing the reproductive tract and purifying organs via tailored detoxification procedures.",
+      title: "Pradhana Karma Cleansing",
+      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Specialized Uttar Basti",
-      description: "Administering therapeutic herbal oils directly into the uterine cavity to clear blocks and heal the lining.",
+      title: "Mindfulness & Restorative Yoga",
+      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Natural Conception Plan",
-      description: "Prescribing dietary changes, rasayana herbs, and tracking ovulation for successful conception.",
+      title: "Dinacharya Home Care",
+      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Fallopian Tubal Blockage & Fertility",
-      review: "After two failed IVF cycles, I was absolutely devastated and felt hopeless. We traveled to Delhi specifically for Dr. Chanchal Sharma's Uttar Basti treatment at Aasha Ayurveda. The therapies were gentle, and the herbal regimen was tailored precisely for my condition.",
-      name: "Hannah Abbott",
-      verified: true,
-      location: "London, UK",
-      condition: "Fallopian Tubal Blockage & Fertility",
-      rating: 5
-    },
-    {
-      title: "Male Infertility & Low Sperm Count",
-      review: "My wife and I were struggling with conception due to my low sperm count and motility issues. Traditional treatments back in Sweden offered no real solutions except direct IVF. Under Dr. Chanchal's guidance, I went through a 14-day Panchakarma detoxification.",
-      name: "Sven Lindqvist",
-      verified: true,
-      location: "Gothenburg, Sweden",
-      condition: "Male Infertility & Low Sperm Count",
-      rating: 5
-    },
-    {
-      title: "PCOS & Anovulatory Cycles",
-      review: "I had extremely irregular periods and anovulatory cycles due to severe PCOS. Aasha Ayurveda's natural treatment approach completely regulated my system. Through customized Panchakarma therapies and dietary adjustments, my menstrual cycle returned to a healthy 28 days.",
-      name: "Julie Mercier",
-      verified: true,
-      location: "Geneva, Switzerland",
-      condition: "PCOS & Anovulatory Cycles",
-      rating: 5
-    },
-    {
-      title: "Failed IVF Support & Low AMH",
-      review: "My wife had very low AMH levels and we had been told that donor eggs were our only option after IVF failed. We decided to try Ayurveda as a last resort.",
-      name: "Oliver Vance",
+      title: "Life-changing Panchakarma & Sciatica Relief",
+      review: `I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain.
+Dr. Vinod Kumar designed a comprehensive 14-day treatment that targetted my spine.
+The therapy successfully eliminated my pain and restored my mobility completely.`,
+      name: "Liam Harrison",
       verified: true,
       location: "Melbourne, Australia",
-      condition: "Failed IVF Support & Low AMH",
+      condition: "Chronic Sciatica & Spine Care",
       rating: 5
     },
     {
-      title: "Endometriosis & Pelvic Pain",
-      review: "Endometriosis caused me constant, debilitating pelvic pain and painful periods, making my life miserable. The soothing therapies, customized herbal decoctions, and detox treatments at the clinic reduced my pain by 90%.",
-      name: "Chloe DuPont",
+      title: "Deeply Transformative Detox & Digestion Restoration",
+      review: `My Panchakarma detox at Ayuskama was fantastic and the consultation was extremely thorough.
+Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.
+I feel completely rejuvenated, and my digestion is better than it has been in years.`,
+      name: "Emma Watson",
       verified: true,
-      location: "Paris, France",
-      condition: "Endometriosis & Pelvic Pain",
+      location: "Oxford, UK",
+      condition: "Panchakarma Detox & Digestion",
+      rating: 5
+    },
+    {
+      title: "Excellent Ayurveda Course & Certification",
+      review: `I joined the Ayurveda Nutrition and Marma Therapy certification course here.
+The theoretical teachings are backed by deep practical clinical sessions in the clinic.
+It was a great experience that gave me the confidence to practice Ayurveda professionally.`,
+      name: "Lucas Novak",
+      verified: true,
+      location: "Prague, Czech Republic",
+      condition: "Ayurveda Nutrition & Marma Course",
+      rating: 5
+    },
+    {
+      title: "Wonderful Stress Relief & Rejuvenation Retreat",
+      review: `I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout.
+The Shirodhara treatment was relaxing, and morning yoga sessions helped calm my mind.
+This sanctuary in Upper Tapovan is exactly what I needed to heal and recharge.`,
+      name: "Chloe Mercier",
+      verified: true,
+      location: "Geneva, Switzerland",
+      condition: "Stress & Rejuvenation Retreat",
+      rating: 5
+    },
+    {
+      title: "Incredible Support for Women's Health",
+      review: `I went to Ayuskama to address long-standing hormonal imbalances and low energy.
+Dr. Neetu Singh was extremely empathetic, knowledgeable, and designed a custom plan.
+The herbs and dietary changes have brought back my vitality and balance.`,
+      name: "Mia Rossi",
+      verified: true,
+      location: "Milan, Italy",
+      condition: "Women's Hormonal Health & Vitality",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is Aasha Ayurveda's approach to fertility?",
-      answer: "We focus on natural, non-surgical reproductive care. By using custom-tailored Panchakarma detoxification, specific Ayurvedic fertility herbs, and dietary corrections, we clear systemic blocks, strengthen the reproductive organs, and help couples conceive naturally, even after failed IVF cycles."
+      question: "What makes Ayuskama Ayurveda Clinic & Panchakarma Center unique?",
+      answer: "Ayuskama Ayurveda is located in Upper Tapovan, Rishikesh. The center is led by Dr. Vinod Kumar (an expert in Panchakarma with over 25 years of experience) and Dr. Neetu Singh (specializing in women's health and yoga therapy with over 20 years of experience). We combine authentic Keralite Panchakarma treatments, clinical research-oriented practices, and globally certified educational courses in a quiet, serene environment."
     },
     {
-      question: "What is Uttar Basti and how does it work?",
-      answer: "Uttar Basti is a specialized Ayurvedic treatment where sterile medicated oil or ghee is administered directly into the uterine cavity via the cervix. It is highly effective for clearing fallopian tube blockages, nourishing the endometrium, improving egg implantation, and regulating ovulation."
+      question: "What certification courses do you offer?",
+      answer: "We offer professional, globally recognized certification courses including Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition. We provide both short-term training and intensive 4-week certification programs designed for beginners to advanced practitioners."
     },
     {
-      question: "Can tubal blockages be treated without surgery?",
-      answer: "Yes. In Ayurveda, fallopian tube blockage is seen as a Vata-Kapha disorder. Through internal medicines and a series of specialized Uttar Basti therapies, we dissolve the blockage and restore normal tubal function naturally without any surgical intervention."
+      question: "Are meals and accommodations included in the packages?",
+      answer: "Yes. Our residential Panchakarma and rejuvenation retreats include private accommodation and fresh, balanced Saatvic vegetarian meals prepared daily according to Ayurvedic principles to support your purification process."
     },
     {
-      question: "What gynecological conditions do you specialize in treating?",
-      answer: "We offer successful treatments for PCOS/PCOD, Endometriosis, low ovarian reserve (Low AMH), uterine fibroids, hydrosalpinx, unexplained female infertility, and male infertility issues like low sperm count, motility, and abnormal morphology."
+      question: "How do I book a treatment program at Ayuskama?",
+      answer: "You can book by contacting us through My Vaidyam. We require an initial deposit to confirm your booking, and the remaining balance can be settled upon arrival at the center. Consultations can be scheduled both offline and online."
     },
     {
-      question: "How far is the Rajouri Garden clinic from transit points?",
-      answer: "Our Delhi center is located in Rajouri Garden. It is approximately 14 km from Indira Gandhi International (IGI) Airport (25-30 min drive), about 6 km from Delhi Cantonment Railway Station (DEC), and 14 km from New Delhi Railway Station (NDLS). We are also just a short 400-meter walk from the Rajouri Garden Metro Station (Blue & Pink Lines)."
+      question: "How far is the center from the nearest airport and railway stations?",
+      answer: "Our center is located in Upper Tapovan, Rishikesh. It is approximately 21 km (about 40 minutes) from Jolly Grant Airport (Dehradun Airport - DED). The Yog Nagari Rishikesh and Rishikesh Railway Stations are about 5–6 km away, while the Haridwar Railway Station is approximately 30 km away."
     }
   ];
 
   const programs = [
     {
-      title: "Fallopian Tubal Blockage",
-      description: "Non-surgical clearance using specialized Uttar Basti therapy and customized herbs.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Ayurvedic Infertility Care",
-      description: "Holistic protocols for female and male infertility factors to promote natural conception.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "PCOS & PCOD Management",
-      description: "Regulating ovulation and metabolic imbalances through natural cleansing and diet.",
+      title: "Classical Panchakarma",
+      description: "A complete five-fold biological detoxification program including Abhyanga (massage), Virechana, and Basti under close supervision of senior physicians.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Low AMH & Ovarian Health",
-      description: "Rasayana therapies to nourish ovarian tissue and improve egg quality naturally.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Ayurveda Training & Certification",
+      description: "Globally accredited professional courses in Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition taught by experienced doctors.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Male Infertility Treatment",
-      description: "Targeting low sperm count, motility, and morphology issues with potent herbs.",
+      title: "Rejuvenation & Yoga Retreat",
+      description: "Scenic 7, 14, and 21-day wellness programs integrating daily yoga, customized therapies, and organic Saatvic dining in Tapovan.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Panchakarma Detoxification",
-      description: "Purification therapies including Basti, Virechana, and Nasya to clear reproductive system blockages.",
+      title: "Spine & Joint Wellness",
+      description: "Targeted clinical treatments for sciatica, back pain, arthritis, and joint stiffness using specialized herbal poultices and oil pools.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Women's Health & Gynecology",
+      description: "Specialized clinical consultations and therapeutic regimens focusing on hormonal balance, prenatal/postnatal care, and wellness led by Dr. Neetu Singh.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Stress & Anxiety Reset",
+      description: "Deep calming therapies featuring warm Shirodhara oil flows, guided meditation, and therapeutic breathwork to heal corporate burnout.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialization in Fertility",
-      description: "Led by Dr. Chanchal Sharma, a renowned expert in Ayurvedic gynecology and natural conception.",
+      title: "Veteran Doctor Panel",
+      description: "Led by Dr. Vinod Kumar (25+ yrs experience) and Dr. Neetu Singh (20+ yrs experience) who supervise all clinical therapies.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Successful Uttar Basti",
-      description: "Proven non-surgical solution for blocked tubes, thin endometrium, and uterine issues.",
+      title: "Accredited Training",
+      description: "Offers globally recognized certifications in Ayurvedic Massage, Marma, and Nutrition, ensuring high academic standards.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "90%+ Natural Success Rate",
-      description: "Thousands of couples have successfully conceived naturally after failed IVF cycles.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Personalized Health Care",
-      description: "Therapies customized to each individual's dosha imbalance and reproductive health history.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "High Clinical Hygiene",
-      description: "A modern clinical environment operating under strict traditional Panchakarma protocols.",
+      title: "Tapovan Foothills Peace",
+      description: "Located near the secret waterfall road in Upper Tapovan, providing a quiet, pollution-free, and inspiring natural sanctuary.",
       icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Safe & Drug-Free Care",
-      description: "100% natural therapies and herbal formulations with zero side effects.",
+      title: "Integrated Yoga Therapy",
+      description: "Therapies are coupled with morning yoga, pranayama, and meditation designed to align the body's energy channels.",
+      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Saatvic Healing Meals",
+      description: "Nutritious organic vegetarian food prepared in accordance with Ayurvedic principles to balance individual Doshas.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Personalized Care",
+      description: "Maintaining small residential batches to guarantee that every guest receives individual attention from our Vaidyas and therapists.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +230,9 @@ export default function AashaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Aasha Ayurveda Centre Delhi | Ayurvedic Infertility Treatment";
+    document.title = "Ayuskama Ayurveda Clinic & Panchakarma Center | Rishikesh";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic fertility treatments, non-surgical fallopian tube blockage reversal (Uttar Basti), PCOD/PCOS care, and natural conception programs at Aasha Ayurveda Centre in Rajouri Garden, New Delhi under Dr. Chanchal Sharma.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Panchakarma detoxification, globally certified Ayurvedic training courses, and holistic yoga retreats at Ayuskama Ayurveda Clinic in Upper Tapovan, Rishikesh under veteran Ayurvedic doctors.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +262,7 @@ export default function AashaAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Aasha Ayurveda Centre Rajouri Garden West Delhi
+              Ayuskama Ayurveda Clinic & Panchakarma Center Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +274,16 @@ export default function AashaAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Aasha Ayurveda Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Ayurvedic Infertility & Women's Health Clinic</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayuskama Ayurveda Clinic & Panchakarma Center</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Healing & Panchakarma Detoxification</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rajouri Garden, West Delhi, India</span>
+                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(1,300 Reviews)</span>
+                  <span className="opacity-90">(340 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -297,17 +307,17 @@ export default function AashaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
-                Authentic Ayurvedic Infertility & <br className="hidden lg:block" />
-                Panchakarma Treatments
-              </h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+                Authentic Ayurvedic Excellence <br className="hidden lg:block" />
+                at Ayuskama Ayurveda Clinic & Panchakarma Center
+</h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Aasha Ayurveda Centre</strong>, New Delhi's premier destination for holistic fertility and Ayurvedic women's health care. Conveniently located in Rajouri Garden, our clinic specializes in non-surgical infertility solutions, gynecological disorders, and traditional Panchakarma therapies. Under the expert clinical leadership of <strong className="font-bold text-[#2C4E5A]">Dr. Chanchal Sharma</strong> (BAMS, MD, DGO), a renowned pioneer in Ayurvedic gynecology, we utilize classic diagnostic methods to trace and treat the root cause of reproductive issues.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Ayuskama Ayurveda Clinic & Panchakarma Center</strong>, a premier healing sanctuary and educational institution located in the serene surroundings of Upper Tapovan, Rishikesh. Established to revive the ancient, time-tested wisdom of Ayurveda, Ayuskama is led by the highly regarded <strong className="font-bold text-[#2C4E5A]">Dr. Vinod Kumar</strong>, a veteran Ayurvedic physician and Panchakarma expert with over 25 years of experience, and <strong className="font-bold text-[#2C4E5A]">Dr. Neetu Singh</strong>, a specialist in therapeutic yoga and women's health with over 20 years of experience. We provide a peaceful retreat for profound body purification, mental clarity, and professional Ayurvedic training courses.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +325,8 @@ export default function AashaAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                          alt="Aasha Ayurveda Centre accommodation"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/secondary.jpg" 
+                          alt="Ayuskama Ayurveda Clinic gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,10 +335,8 @@ export default function AashaAyurvedaCentre() {
                   </div>
 
                   <p>
-                    Our clinic is globally recognized for its success in treating complex conditions such as fallopian tube blockage, PCOS/PCOD, endometriosis, low AMH, hydrosalpinx, and unexplained infertility. We are especially distinguished for performing <strong className="font-bold text-[#2C4E5A]">Uttar Basti</strong>, a classical Ayurvedic procedure that delivers sterile medicated oils directly into the uterine cavity, helping clear tubal blocks and strengthen the uterine lining without surgery or side effects. At Aasha Ayurveda Centre, we combine authentic Panchakarma detoxification, specialized fertility-boosting herbs, tailored Saatvic diets, and lifestyle counseling to prepare your body for a healthy, natural pregnancy.
+                    Our center specializes in custom Panchakarma detoxification, Ayurvedic nutrition, and chronic disease management. Under the direct supervision of our experienced Vaidyas and skilled therapists, we offer personalized treatment programs targeting spinal conditions, joint stiffness, sciatic pain, digestive issues, and stress-related ailments. We integrate therapeutic yoga and pranayama with authentic oil massages (Abhyanga), warm Shirodhara flows, and organic herbal formulations to restore constitutional balance.
                   </p>
-
-                  
                 </div>
               </div>
 
@@ -337,8 +345,8 @@ export default function AashaAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.avif" 
-                      alt="Aasha Ayurveda Centre main view"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/main.avif" 
+                      alt="Ayuskama Ayurveda Clinic Tapovan Rishikesh"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +358,8 @@ export default function AashaAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                        alt="Aasha Ayurveda Centre therapy room"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/secondary.jpg" 
+                        alt="Therapy Room at Ayuskama Ayurveda Clinic"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -363,25 +371,27 @@ export default function AashaAyurvedaCentre() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to self-awareness and balance begins with a single step.{" "}
+                Your journey to renewed health begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Aasha Ayurveda Centre today.
+                My Vaidyam to connect with Ayuskama Ayurveda Clinic today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* Ayurveda Packages Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Aasha Ayurveda Centre</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Center
+</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -411,9 +421,11 @@ export default function AashaAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Aasha Ayurveda Centre</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+                Why Choose <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Center
+</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic Tridosha consultations, therapeutic spa, and yoga in a supportive, positive environment.
+                Experience veteran doctor supervision, accredited certification courses, and Upper Tapovan's tranquil healing environment.
               </p>
             </div>
             
@@ -442,9 +454,11 @@ export default function AashaAyurvedaCentre() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              Your Healing Journey at <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Center
+</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
+              A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>
           </div>
           
@@ -478,12 +492,12 @@ export default function AashaAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.avif"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/main.avif"
+                  alt="Ayuskama Ayurveda Clinic"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -508,7 +522,7 @@ export default function AashaAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -522,8 +536,8 @@ export default function AashaAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.avif"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/main.avif"
+                  alt="Ayuskama Ayurveda Clinic"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -577,7 +591,7 @@ export default function AashaAyurvedaCentre() {
                     </p>
                   </div>
                 </div>
- 
+
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -588,7 +602,7 @@ export default function AashaAyurvedaCentre() {
                 </div>
               </CardContent>
             </Card>
- 
+
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -611,7 +625,7 @@ export default function AashaAyurvedaCentre() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
- 
+
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -627,13 +641,13 @@ export default function AashaAyurvedaCentre() {
           </div>
         </div>
       </section>
- 
+
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, accommodations, and therapies at Aasha Ayurveda Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Ayuskama Rishikesh.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -650,7 +664,7 @@ export default function AashaAyurvedaCentre() {
           </Accordion>
         </div>
       </section>
- 
+
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -665,11 +679,11 @@ export default function AashaAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Clinic Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Aasha Ayurveda Centre<br />
-                      J-146, Rajouri Garden<br />
-                      West Delhi, Delhi, India
+                      Ayuskama Ayurveda Clinic & Panchakarma Center<br />
+                      60s Caffe, Next street to Hotel Green Hill, Secret Waterfall Road<br />
+                      Upper Tapovan, Rishikesh, Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -677,14 +691,13 @@ export default function AashaAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <div>+91 989 xxxx xxx</div>
-                      
                     </div>
                   </div>
                 </div>
- 
+
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
@@ -692,13 +705,12 @@ export default function AashaAyurvedaCentre() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 14 km from Indira Gandhi International (IGI) Airport</span>
+                        <span>Approx. 21 km from Jolly Grant Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 6 km from Delhi Cantonment Railway Station (DEC)</span>
+                        <span>Approx. 6 km from Yog Nagari Rishikesh / Rishikesh Railway Station</span>
                       </li>
-                      
                     </ul>
                   </div>
                 </div>
@@ -706,27 +718,27 @@ export default function AashaAyurvedaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4340580293892!2d77.12056860000001!3d28.6467193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d035df94f9b5b%3A0x1fbdc28f4898f18b!2sAasha%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1780632890235!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.589483503737!2d78.31577877555722!3d30.134558274878227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909118e036b0fed%3A0x62811558f33c6cc8!2sAyuskama%20Ayurveda%20Clinic%20%26%20Panchakarma%20Center.!5e0!3m2!1sen!2sin!4v1780484142716!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Aasha Ayurveda Centre Location"
+                  title="Ayuskama Ayurveda Clinic Location"
                 ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
- 
+
       {/* Footer CTA */}
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.avif"
-            alt="Aasha Ayurveda Centre"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Center/main.avif"
+            alt="Ayuskama Ayurveda Clinic foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -736,7 +748,7 @@ export default function AashaAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Aasha Ayurveda Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayuskama Ayurveda Clinic.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -746,7 +758,7 @@ export default function AashaAyurvedaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919811773770?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Aasha%20Ayurveda%20Centre."
+              href="https://wa.me/919917317388?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Ayuskama%20Ayurveda%20Clinic."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -756,21 +768,21 @@ export default function AashaAyurvedaCentre() {
           </div>
         </div>
       </section>
- 
+
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
- 
+
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
- 
+
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
- 
+
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
- 
+
       <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
@@ -796,4 +808,3 @@ export default function AashaAyurvedaCentre() {
     </div>
   );
 }
-

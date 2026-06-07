@@ -673,7 +673,7 @@ export default function MadukkakuzhyAyurveda() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Madukkakuzhy Ayurveda Homestay & Treatment Centre<br />
+                      Madukkakuzhy Ayurveda Homestay & Treatment Center<br />
                       Parathodu P.O., Kanjirappally<br />
                       Kottayam District, Kerala, India
                     </p>
@@ -708,7 +708,7 @@ export default function MadukkakuzhyAyurveda() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251698.77715718187!2d76.6427482811875!3d9.69866743663296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0635f79b3d52b3%3A0xd060d230b7b1da2f!2sMadukkakuzhy%20Ayurveda%20-%20Ayurvedic%20Treatment%20Centre%20in%20Kottayam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1779866287720!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d251698.77715718187!2d76.6427482811875!3d9.69866743663296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0635f79b3d52b3%3A0xd060d230b7b1da2f!2sMadukkakuzhy%20Ayurveda%20-%20Ayurvedic%20Treatment%20Center%20in%20Kottayam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1779866287720!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

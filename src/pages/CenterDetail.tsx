@@ -53,11 +53,11 @@ const CenterDetail = () => {
     },
     ayurvedagram: {
       id: "ayurvedagram",
-      name: "AyurvedaGram Heritage Wellness Centre",
+      name: "AyurvedaGram Heritage Wellness Center",
       city: "Bangalore",
       region: "India",
       description:
-        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
+        "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Center, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas. Each treatment is personalized to restore balance of body, mind, and spirit, promoting long-lasting wellness through time-tested natural healing practices.",
       specialties: [
         "Panchakarma",
         "Authentic Ayurveda",

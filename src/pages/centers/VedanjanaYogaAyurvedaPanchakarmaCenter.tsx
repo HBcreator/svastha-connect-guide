@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function SRHUAyurvedaCentre() {
+export default function VedanjanaYogaAyurvedaPanchakarmaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,176 +37,176 @@ export default function SRHUAyurvedaCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Dosha & Prakriti Assessment",
-      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
+      title: "Prakriti & Health Evaluation",
+      description: "Beginning with an in-depth diagnosis by our qualified B.A.M.S. Ayurveda doctor and BNYS Naturopathy physician to assess your constitutional type (Dosha balance) and health goals.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Custom Healing Schedule",
-      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
+      title: "Individualized Therapy Plan",
+      description: "Structuring a personalized program combining daily Panchakarma therapies, therapeutic yoga sessions, specific naturopathy treatments, and tailored organic meals.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Warmups",
-      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
+      title: "Preparatory Purva Karma",
+      description: "Employing gentle preparatory procedures such as classical Abhyanga herbal oil massages and customized herbal steam baths to release accumulated toxins (Ama) from deeper tissues.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Pradhana Karma Cleansing",
-      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
+      title: "Core Panchakarma Cleansing",
+      description: "Administering targeted purification practices such as classical Shirodhara oil flows, specialized Basti therapies, and gentle detoxification protocols based on your system's needs.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Mindfulness & Restorative Yoga",
-      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
+      title: "Therapeutic Yoga & Naturopathy",
+      description: "Participating in structured daily yoga, breathing exercises, and natural therapies to restore mental clarity, increase vitality, and soothe the nervous system.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Home Care",
-      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
+      title: "Healthy Lifestyle Blueprint",
+      description: "Receiving a detailed post-retreat lifestyle plan with Ayurvedic nutritional tips and daily routines (Dinacharya) to help sustain your health and balance back home.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Highly Professional Panchakarma Treatment",
-      review: "After struggling with chronic metabolic issues, I spent two weeks undergoing residential Panchakarma at the Swami Rama Himalayan University Ayurvedic Center. The medical integration is superb here.",
-      name: "Sophia Bennett",
+      title: "A genuine sanctuary in Rishikesh",
+      review: "I signed up for the 7 Days Yoga & Meditation Retreat expecting a standard wellness program, but it turned out to be so much more. Pragya Ji's classes on yoga and meditation were gentle yet incredibly profound.",
+      name: "Lukas Haas",
       verified: true,
-      location: "London, UK",
-      condition: "Panchakarma Detox & Digestion Restoration",
+      location: "Vienna, Austria",
+      condition: "7 Days Yoga & Meditation Retreat",
       rating: 5
     },
     {
-      title: "Remarkable Recovery from Chronic Sciatica",
-      review: "I had severe sciatica and stiffness in my joints that made it difficult to walk comfortably. The doctors at the Himalayan Hospital Ayurvedic center designed a comprehensive physical recovery plan.",
-      name: "Ethan Hunt",
+      title: "Life-changing detoxification experience",
+      review: "The 14-day Panchakarma detox under Dr. Pooja Gangwar’s guidance was exactly what my body needed. The therapies were customized for my specific doshas, and the daily massages by the skilled staff were deeply relaxing.",
+      name: "Elena Varga",
       verified: true,
-      location: "Boston, USA",
-      condition: "Joint & Spine Care",
+      location: "Budapest, Hungary",
+      condition: "14 Days Panchakarma Detox",
       rating: 5
     },
     {
-      title: "Exceptional Burnout Reset in a Serene Setting",
-      review: "The peace here at the foothills of the Himalayas is incredible. I booked a rejuvenation package for stress reset. The warm Shirodhara oil flows, daily morning pranayama classes, and quiet meditation in their beautiful campus.",
-      name: "Astrid Lind",
+      title: "Highly professional naturopathy care",
+      review: "Dr. Smriti Bijalwan is an exceptional practitioner. Her BNYS training really shines through. During the 7 Days Naturopathy Retreat, she customized a lifestyle and nutrition plan that addressed my chronic lower back issues.",
+      name: "Marc Dubois",
+      verified: true,
+      location: "Geneva, Switzerland",
+      condition: "7 Days Ayurvedic Naturopathy",
+      rating: 5
+    },
+    {
+      title: "Peaceful environment and outstanding team",
+      review: "I was looking for an authentic Ayurvedic detox in India and stumbled upon Vedanjana. I am so glad I did! The 10 Days Detoxification program was challenging but incredibly rewarding.",
+      name: "Dan O'Connor",
+      verified: true,
+      location: "Dublin, Ireland",
+      condition: "10 Days Ayurvedic Detoxification",
+      rating: 5
+    },
+    {
+      title: "Reconnected with my inner self",
+      review: "The 7 Days Panchakarma program was a beautiful introduction to Ayurvedic healing. The daily oil massages, herbal steam baths, and yoga classes with Kushal Bisht helped me release years of built-up stress.",
+      name: "Birgitta Lind",
       verified: true,
       location: "Stockholm, Sweden",
-      condition: "Stress Reset & Rejuvenation",
-      rating: 5
-    },
-    {
-      title: "Excellent Post-Surgical Detoxification",
-      review: "After completing my clinical post-surgical recovery, my body felt heavy and toxic. The physicians here prescribed a gentle detox schedule combining mild swedana steam baths and internal cleansing herbs.",
-      name: "Oliver Laurent",
-      verified: true,
-      location: "Paris, France",
-      condition: "Post-Clinical Recovery & Detox",
-      rating: 5
-    },
-    {
-      title: "A Truly Holistic Clinical Haven",
-      review: "What sets this place apart is the university connection. You get authentic, scientific Ayurvedic treatments backed by proper clinical expertise rather than just spa treatments.",
-      name: "Elena Rostova",
-      verified: true,
-      location: "Munich, Germany",
-      condition: "Metabolic & Skin Recovery",
+      condition: "7 Days Panchakarma Retreat",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes the Swami Rama Himalayan University Ayurvedic Center in Dehradun unique?",
-      answer: "The Ayurvedic Center is located on the campus of Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. It operates under the Himalayan Institute Hospital Trust (HIHT), established in 1989 by H.H. Dr. Swami Rama. The center is unique because it integrates traditional Ayurveda and yoga sciences with modern medical diagnostics and standards, working hand-in-hand with the multispecialty Himalayan Hospital."
+      question: "What is the therapeutic approach at Vedanjana?",
+      answer: "Vedanjana integrates traditional B.A.M.S. Ayurveda, BNYS Naturopathy, and authentic Yoga science. By combining biological purification (Panchakarma) with nature-based therapies and yogic practices, we offer a comprehensive approach to address chronic health issues and restore overall balance."
     },
     {
-      question: "What primary clinical packages and therapies are offered?",
-      answer: "We offer comprehensive residential packages focusing on Classical Panchakarma (body purification), Joint & Spine Care (for sciatica, arthritis, and back pain), Stress & Anxiety Reset, Rejuvenation & Detox, Chronic Illness Support, and Post-Clinical Recovery (detoxification after surgery or chemotherapy)."
+      question: "Where is the center located and what is the surrounding environment?",
+      answer: "Our main center is located in Village Kunaw, Barrage Road, Rishikesh, situated near the Rajaji National Forest Park. It provides a peaceful, natural setting far from the noise of the main town, and is just a short 5-7 minute walk away from the holy Ganges River."
     },
     {
-      question: "Are the herbal formulations and meals prepared on campus?",
-      answer: "Yes. All traditional oils and herbal extracts used in our therapies are carefully managed to ensure purity. Guests are provided with fresh, balanced, vegetarian meals prepared in our dining hall according to dietary guidelines that support the healing process."
+      question: "What kind of food is served during the retreats?",
+      answer: "We provide freshly prepared, organic, and nutritious vegetarian meals in harmony with Ayurvedic diet principles. The meals are tailored to support your detoxification process and are prepared using locally sourced, fresh ingredients."
     },
     {
-      question: "Can guests coordinate consultations or follow-up care online?",
-      answer: "Yes, we support our clients even after they leave the university campus. Our doctors provide a comprehensive daily routine guidelines (Dinacharya) and home-care plan upon discharge, and follow-up consultations can be coordinated online."
+      question: "Who will guide my treatments and therapies?",
+      answer: "Your consultations and therapies are supervised by qualified professionals, including Dr. Pooja Gangwar (B.A.M.S. Ayurvedic doctor with 16+ years of experience), Dr. Smriti Bijalwan (BNYS Naturopathy physician), and senior yoga teachers like Yogacharya Kushal Bisht."
     },
     {
-      question: "How close is the center to major transport hubs?",
-      answer: "Our center is exceptionally accessible. It is situated just 2 km (approx. 5 minutes) from the Jolly Grant Airport (Dehradun Airport). Doiwala Railway Station is about 6 km away, and Dehradun Railway Station is approximately 25 km from the campus."
+      question: "How do I reach Vedanjana in Rishikesh?",
+      answer: "The nearest airport is Jolly Grant Airport (Dehradun - DED), which is approximately 21 km away (about a 45-minute drive). Yog Nagari Rishikesh Railway Station is approximately 5 km from the center, Haridwar Railway Station is around 25 km away, and Delhi Airport is about 240 km away."
     }
   ];
 
   const programs = [
     {
-      title: "Residential Panchakarma",
-      description: "Complete biological cleansing program overseen by experienced Vaidyas to purge cellular impurities and restore physiological equilibrium.",
+      title: "7 Days Panchakarma Retreat",
+      description: "A week-long introductory purification program featuring classical therapies, custom dietary planning, and daily therapeutic yoga to cleanse and reset.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "14 Days Panchakarma Retreat",
+      description: "A deeper detoxification journey comprising thorough Purva and Pradhana Karma procedures to eliminate deep-seated toxins and rebuild cellular immunity.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Joint & Spine Wellness",
-      description: "Specialized traditional therapies including warm oil poolings (Basti) and herbal poultice massage (Kizhi) for sciatica, arthritis, and joint pain.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Stress & Anxiety Reset",
-      description: "Deep neural calming treatments utilizing warm Shirodhara oil flows, soothing massages, and guided pranayama at our university campus.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Rejuvenation & Detox",
-      description: "Nourishing oil poolings, organic steam baths, and cellular tonics designed to slow down physiological aging and revitalize body tissue.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Chronic Illness Support",
-      description: "Targeted clinical protocols designed to support management of conditions such as hypertension, IBS, and neurological disorders.",
+      title: "7 Days Yoga & Meditation Retreat",
+      description: "A rejuvenating escape combining structured Hatha & Vinyasa classes, daily pranayama, and relaxing meditation in a peaceful nature setting.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Post-Clinical Recovery",
-      description: "Gentle detox and therapeutic support for patients recovering from surgery, chemotherapy, or radiotherapy to rebuild immunity.",
+      title: "10 Days Ayurvedic Detoxification",
+      description: "A personalized therapeutic routine focusing on restorative bodywork, digestive health, stress relief, and nutrient-rich organic meals.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "7 Days Naturopathy Retreat",
+      description: "Leveraging nature-cure therapies, custom acupuncture, lifestyle consultations, and nutritional education under specialized BNYS supervision.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Custom Consultation & Therapy",
+      description: "One-on-one evaluations to diagnose constitutional imbalances and design targeted sessions for stress management, weight loss, or chronic joint care.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Swami Rama's Vision",
-      description: "Founded under H.H. Dr. Swami Rama's vision of integrated healthcare where traditional wisdom complements modern scientific standards.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "University Integration",
-      description: "Located within Swami Rama Himalayan University campus, backed by professional academic research and certified wellness guidelines.",
+      title: "Expert B.A.M.S. & BNYS Doctors",
+      description: "Consultations and treatments are guided by qualified Ayurvedic physicians and Naturopathy doctors with years of clinical expertise.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Hospital Collaboration",
-      description: "Works alongside the adjacent multispecialty Himalayan Hospital, providing clinical safety and collaborative medical monitoring.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Quiet Forest Edge Setting",
+      description: "Located near Rajaji National Forest Park, providing a serene, pollution-free atmosphere that is perfect for deep healing.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: " Foothill Peace",
-      description: "Set in Swami Ram Nagar at the foot of the Shivalik hills, providing a tranquil, clean, and highly therapeutic environment.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Walk to the Holy Ganges",
+      description: "Just a 5 to 7-minute walk to the banks of the Ganges River, allowing you to connect with the sacred flow and local beauty easily.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Scenic Yoga & Breathwork",
-      description: "Guided daily yoga and mindfulness practices integrated directly with your health routine at our dedicated university facilities.",
+      title: "Integrated Healing System",
+      description: "Combining classical Ayurvedic Panchakarma, Naturopathy, and authentic Yoga to address the root cause of imbalances.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Customized Organic Diet",
+      description: "Every meal is freshly cooked, organic, vegetarian, and designed specifically to support your detox plan and general well-being.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "In-House Organic Meals",
-      description: "Chef-prepared, nutrient-dense vegetarian diet served in our dining hall to balance doshas and boost metabolic strength.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Eco-Friendly & Sustainable",
+      description: "We are committed to sustainable practices, eco-friendly facilities, and natural healing methods in harmony with nature.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function SRHUAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Swami Rama Himalayan University Ayurvedic Center | Swami Rama Himalayan University, Dehradun";
+    document.title = "Vedanjana Yoga & Ayurveda Panchakarma Center | Healing & Detox in Rishikesh";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience integrated clinical healthcare and traditional Ayurvedic treatments at Swami Rama Himalayan University Ayurvedic Center in Jolly Grant, Dehradun. Offering residential Panchakarma, physician supervision, and yoga therapy.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, Naturopathy, and traditional Yoga retreats in Rishikesh at Vedanjana. Holistic healing in the peaceful Rajaji National Forest area.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SRHUAyurvedaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Swami Rama Himalayan University Ayurvedic Center Dehradun Uttarakhand
+              Vedanjana Yoga & Ayurveda Panchakarma Center Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function SRHUAyurvedaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Swami Rama Himalayan University Ayurvedic Center</h1>
-                <p className="text-xl mb-4 opacity-90">Swami Rama Himalayan University Integrated Holistic Health Center</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vedanjana Yoga & Ayurveda Panchakarma Center</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Panchakarma, Naturopathy, and Traditional Yoga Retreats</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Dehradun, Uttarakhand, India</span>
+                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(50 Reviews)</span>
+                  <span className="text-lg font-semibold">5</span>
+                  <span className="opacity-90">(310 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -297,17 +297,17 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2" style={{ lineHeight: '1.2' }}>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Swami Rama Himalayan University Ayurvedic Center
-              </h2>
+                at Vedanjana Yoga & Ayurveda Panchakarma Center
+</h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Swami Rama Himalayan University Ayurvedic Center</strong>, a specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University Ayurvedic Center in Swami Ram Nagar, Jolly Grant, Dehradun. Operating under the aegis of the Himalayan Institute Hospital Trust (HIHT), which was founded in <strong className="font-bold text-[#2C4E5A]">1989</strong> by the renowned yogi <strong className="font-bold text-[#2C4E5A]">H.H. Dr. Swami Rama</strong>, the center is the realization of his vision for integrated health care. Our philosophy is built upon the synthesis of traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Vedanjana Yoga & Ayurveda Panchakarma Center</strong>, a holistic sanctuary located in the serene foothills of Rishikesh. Under the direction of qualified medical experts and experienced yoga teachers, our center integrates the ancient sciences of Ayurveda, Naturopathy, and Yoga to promote complete rejuvenation of body, mind, and spirit.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function SRHUAyurvedaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                          alt="Swami Rama Himalayan University Ayurvedic Center gardens and view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/secondary.webp" 
+                          alt="Vedanjana Center gardens and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,11 @@ export default function SRHUAyurvedaCentre() {
                   </div>
 
                   <p>
-                    Supervised by a panel of highly qualified Ayurvedic physicians (Vaidyas), naturopathic experts, and trained therapists, the center offers personalized residential Panchakarma treatments. We specialize in addressing chronic conditions such as osteoarthritis, rheumatoid arthritis, back pain, joint stiffness, and stress-related ailments. By collaborating directly with the adjacent multispecialty Himalayan Hospital, our guests receive the highest standard of medical safety, diagnostic monitoring, and professional care.
+                    Situated near the tranquil Rajaji National Forest Park and within a scenic 5-7 minute walk of the sacred Ganges River, the center provides a peaceful and quiet environment away from the city's noise. We offer customized 7-day and 14-day Panchakarma detoxification retreats, nature-cure Naturopathy treatments, and specialized yoga and meditation retreats.
+                  </p>
+
+                  <p>
+                    Guests receive professional care from our dedicated team, which includes B.A.M.S. Ayurvedic doctors and BNYS Naturopathy physicians. Each healing plan is customized to individual body types and health goals, supported by nutritious, organic vegetarian meals cooked fresh at the center.
                   </p>
                 </div>
               </div>
@@ -335,8 +339,8 @@ export default function SRHUAyurvedaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp" 
-                      alt="Swami Rama Himalayan University Ayurvedic Center Dehradun Campus"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/main.webp" 
+                      alt="Vedanjana Yoga & Ayurveda Panchakarma Center"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -348,8 +352,8 @@ export default function SRHUAyurvedaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/secondary.webp" 
-                        alt="Therapy Room at Swami Rama Himalayan University Ayurvedic Center"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/secondary.webp" 
+                        alt="Vedanjana Center Therapy Space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -361,27 +365,27 @@ export default function SRHUAyurvedaCentre() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to renewed health begins with a single step.{" "}
+                Your journey to authentic healing and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Swami Rama Himalayan University Ayurvedic Center today.
+                My Vaidyam to connect with Vedanjana today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ayurveda Packages Section */}
+      {/* Programs Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
-            </h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Vedanjana Yoga & Ayurveda Panchakarma Center
+</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -412,10 +416,10 @@ export default function SRHUAyurvedaCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
-              </h2>
+                Why Choose <br className="hidden lg:block" /> Vedanjana Yoga & Ayurveda Panchakarma Center
+</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience clinical research standards, medical team safety integration, and H.H. Swami Rama's healing legacy.
+                Experience authentic Ayurvedic treatments, Naturopathy therapies, and professional yoga retreats in a peaceful forest-edge setting.
               </p>
             </div>
             
@@ -445,10 +449,10 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Swami Rama Himalayan University Ayurvedic Center
-            </h2>
+              Your Healing Journey at <br className="hidden lg:block" /> Vedanjana Yoga & Ayurveda Panchakarma Center
+</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
+              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
             </p>
           </div>
           
@@ -482,12 +486,12 @@ export default function SRHUAyurvedaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="Swami Rama Himalayan University Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/main.webp"
+                  alt="Vedanjana"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Vedanjana?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -512,7 +516,7 @@ export default function SRHUAyurvedaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Swami Rama Himalayan University Ayurvedic Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Vedanjana?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -526,8 +530,8 @@ export default function SRHUAyurvedaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-                  alt="Swami Rama Himalayan University Ayurvedic Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/main.webp"
+                  alt="Vedanjana"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -637,7 +641,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Swami Rama Himalayan University Ayurvedic Center.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, retreats, and therapies at Vedanjana.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -669,11 +673,11 @@ export default function SRHUAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Swami Rama Himalayan University Ayurvedic Center<br />
-                      Swami Rama Himalayan University Campus, Swami Ram Nagar<br />
-                      Jolly Grant, Dehradun, Uttarakhand
+                      Vedanjana Yoga & Ayurveda Panchakarma Center<br />
+                      Barrage Road, Village Kunaw, Rishikesh<br />
+                      Uttarakhand, India
                     </p>
                   </div>
                 </div>
@@ -681,9 +685,9 @@ export default function SRHUAyurvedaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                        +91 989 xxxx xxx
+                      <div>+91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>
@@ -695,11 +699,11 @@ export default function SRHUAyurvedaCentre() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 2 km from Jolly Grant Airport</span>
+                        <span>Approx. 21 km from Jolly Grant Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 6 km from Doiwala Railway Station</span>
+                        <span>Approx. 5 km from Yog Nagari Rishikesh Railway Station</span>
                       </li>
                     </ul>
                   </div>
@@ -708,14 +712,14 @@ export default function SRHUAyurvedaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110305.9646300226!2d78.03885810667268!3d30.235325671534614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390924c4a8865ddf%3A0xb914eca09be3ef0!2sAYURVEDA%20CENTRE%20SRHU%20%2F%20RESIDENTIAL%20PANCHAKARMA%20THERAPY%20CENTRE!5e0!3m2!1sen!2sin!4v1780480187208!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.063841212686!2d78.2825985755545!3d30.063704474913877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39093f9ae973f4dd%3A0x51794a93603de2cf!2sVedanjana%20Yoga%20%26%20Ayurveda%20Panchakarma%20Center!5e0!3m2!1sen!2sin!4v1780494141490!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Swami Rama Himalayan University Ayurvedic Center Location"
+                  title="Vedanjana Yoga & Ayurveda Panchakarma Center Location"
                 ></iframe>
               </div>
             </div>
@@ -727,8 +731,8 @@ export default function SRHUAyurvedaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp"
-            alt="Swami Rama Himalayan University Ayurvedic Center foothills view"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/main.webp"
+            alt="Vedanjana"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -738,7 +742,7 @@ export default function SRHUAyurvedaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Swami Rama Himalayan University Ayurvedic Center.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Vedanjana.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -748,7 +752,7 @@ export default function SRHUAyurvedaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/911352471249?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SRHU%20Ayurvedic%20Center."
+              href="https://wa.me/919350511275?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Vedanjana%20Yoga%20%26%20Ayurveda%20Panchakarma%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

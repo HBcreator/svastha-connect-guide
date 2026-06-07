@@ -51,19 +51,19 @@ const TOP_CENTER_IMAGE_FALLBACK_BY_SERIES: Record<number, string> = {
 
 const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   1: "swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india",
-  2: "ayuskama-ayurveda-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
+  2: "ayuskama-ayurveda-clinic-and-panchakarma-center-rishikesh-uttarakhand-india",
   3: "ananda-in-the-himalayas-uttarakhand-india",
   4: "ayuskama-ayurveda-and-panchakarma-center-dharamshala-india",
-  5: "bhole-baba-ayurvedic-hospital-and-research-centre-ranikhet-uttarakhand-india",
+  5: "bhole-baba-ayurvedic-hospital-and-research-center-ranikhet-uttarakhand-india",
   6: "veda5-ayurveda-and-yoga-retreat-rishikesh-india",
-  7: "mamgain-ayurvedic-clinic-and-panchakarma-centre-rishikesh-uttarakhand-india",
+  7: "mamgain-ayurvedic-clinic-and-panchakarma-center-rishikesh-uttarakhand-india",
   8: "haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india",
   9: "kayakalp-himalayan-research-institute-of-yoga-and-naturopathy-hospital-himachal-india",
-  10: "yan-cure-yoga-retreat-and-ayurveda-centre-rishikesh-india",
+  10: "yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india",
   11: "vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india",
   12: "vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india",
-  13: "dr-siby-ayurveda-center-himachal-india",
-  14: "arogyam-panchkarma-centre-haridwar-himachal-india",
+  13: "dr-sibys-kerala-ayurveda-and-panchakarma-center-himachal-india",
+  14: "arogyam-panchkarma-center-haridwar-himachal-india",
   15: "rishikesh-ayurveda-center-uttarakhand-india",
   16: "rudramya-ayurveda-at-the-himalayas-hospital-himachal-india",
   17: "himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india",
@@ -72,7 +72,7 @@ const SLUG_BY_SERIES: Partial<Record<number, string>> = {
   20: "prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india",
   21: "moksha-himalaya-spa-resort-himachal-india",
   22: "ayurveda-house-himalayan-ayurveda-hospital-himachal-india",
-  23: "ayurvaid-kalmatia-centre-almora-uttarakhand-india",
+  23: "ayurvaid-kalmatia-center-almora-uttarakhand-india",
   24: "modi-yoga-retreat-hospital-rishikesh-uttarakhand-india",
   25: "arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india",
 };
@@ -173,7 +173,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     },
     {
       series: 4,
-      name: "Ayuskama Ayurveda Clinic & Panchakarma Centre",
+      name: "Ayuskama Ayurveda Clinic & Panchakarma Center",
       city: "Dharamshala, Himachal Pradesh, India",
       description:
         "Ayuskama Ayurveda is a distinguished wellness center in Dharamshala that seamlessly integrates authentic traditional Ayurveda with modern holistic health standards.",
@@ -184,10 +184,10 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     },
     {
       series: -1,
-      name: "HimVeda Heritage Wellness Centre",
+      name: "HimVeda Heritage Wellness Center",
       city: "Dharamshala, Himachal Pradesh, India",
       description:
-        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing and professional clinical care. The center specializes in traditional Panchakarma and herbal medicine, providing highly personalized treatments for chronic lifestyle disorders and metabolic rejuvenation. Guests experience a peaceful healing environment guided by experienced Vaidyas, where ancient Vedic wisdom is combined with modern diagnostic precision to ensure sustainable health outcomes.",
+        "HimVeda Heritage Wellness Center is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing and professional clinical care. The center specializes in traditional Panchakarma and herbal medicine, providing highly personalized treatments for chronic lifestyle disorders and metabolic rejuvenation. Guests experience a peaceful healing environment guided by experienced Vaidyas, where ancient Vedic wisdom is combined with modern diagnostic precision to ensure sustainable health outcomes.",
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/HimVeda/Thumb.jpeg",
@@ -195,10 +195,10 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     },
     {
       series: 10,
-      name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+      name: "Yan Cure Yoga Retreat & Ayurveda Center",
       city: "Rishikesh, Uttarakhand, India",
       description:
-        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing.",
+        "Yan Cure Yoga Retreat & Ayurveda Center is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing.",
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",

@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function VedicYogaAyurvedaRetreatCentre() {
+export default function RasayanaAyurvedaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,176 +37,176 @@ export default function VedicYogaAyurvedaRetreatCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Pulse & Prakriti Assessment",
-      description: "An initial thorough evaluation by Master Shailendra and our resident therapists to analyze your constitutional type (Dosha and Prakriti balance) and yogic energy.",
+      title: "Meticulous Vaidya Evaluation",
+      description: "A comprehensive baseline diagnostic check-up and pulse analysis (Naadi Pariksha) by experienced physician panels to determine specific dosha profiling.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Daily Schedule",
-      description: "Structuring a personalized daily routine merging Hatha/Kundalini yoga, meditation, Ayurvedic steam, and custom dietary rules to match your healing goals.",
+      title: "Classical Prescription Drafting",
+      description: "Compiling an individualized therapeutic blueprint utilizing authentic, standard-potency formulations directed by our Chief Medical Officer.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Cleansing",
-      description: "Initial preparation phases including full-body Abhyangam oil massage and Swedanam steam baths to mobilize toxins and calm the nervous system.",
+      title: "Preparatory Purva Karma",
+      description: "Administering warm synchronized massage (Abhyangam) and customized steam baths (Swedana) to mobilize deep metabolic wastes.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Core Panchakarma Detox",
-      description: "Administering core cleansing therapies such as Shirodhara oil flows, customized herbal Basti, or target Ayurvedic treatments based on your needs.",
+      title: "Supervised Panchakarma Purification",
+      description: "Executing precise, highly controlled biological detoxification procedures (Virechana, Vasti, or Vamana) tailored to deep impurities.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Kriya & Meditation sessions",
-      description: "Daily guided Kundalini Kriya and Himalayan meditation in our peaceful riverfront space to dissolve prana blockages and settle the busy mind.",
+      title: "Traditional Restorative Retention",
+      description: "Applying targeted warm Keralite therapies like Kati Vasti, Janu Vasti, or Greeva Vasti to soothe nerve compression and joint stiffness.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Integration",
-      description: "Receiving a personalized conscious lifestyle blueprint with Ayurvedic nutrition guidance and home yoga practices to maintain inner harmony.",
+      title: "Continuing Path to Vitality",
+      description: "Long-term health preservation through customized home diet charts, wellness guidelines, single-herb extracts, and structured follow-up checks.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Profound Peace on the Ganges Banks",
-      review: "My 7-day yoga retreat at the Vedic Yoga Centre was a profound experience. Practicing daily on the Ganga banks, opposite Laxman Jhula, gave me a deep sense of stillness. Master Shailendra's wisdom is genuine and his teachings are accessible yet incredibly deep.",
-      name: "Clara Dupont",
+      title: "Superb Preventive Cardiology Care",
+      review: "The highly specialized Preventive Cardiology program here perfectly balanced traditional Ayurveda with modern cardiac parameters. The expert physicians and customized therapies significantly improved my cardiovascular health. I feel vastly more energetic and my vitals are excellent.",
+      name: "Lukas Weber",
       verified: true,
-      location: "Brussels, Belgium",
-      condition: "Yoga & Meditation Retreat",
+      location: "Munich, Germany",
+      condition: "Preventive Cardiology",
       rating: 5
     },
     {
-      title: "Transformative Kundalini Guidance",
-      review: "The Kundalini Kriya and meditation program here opened a new level of self-awareness for me. The small group setting meant personalized guidance from Shailendra, which is rare these days. Truly a sacred environment for spiritual growth.",
-      name: "Julian Vance",
+      title: "Wonderful Geriatric Care & Rejuvenation",
+      review: "At 72, I struggled with severe joint stiffness and low energy. Rasayana's tailored geriatric care protocols and warm synchronized massages completely restored my mobility. The peaceful plantation environment and incredibly dedicated staff make this an absolute haven for seniors.",
+      name: "Sylvie Dubois",
       verified: true,
-      location: "London, UK",
-      condition: "Kundalini Kriya Yoga Course",
+      location: "Geneva, Switzerland",
+      condition: "Geriatric Rejuvenation",
       rating: 5
     },
     {
-      title: "Authentic Panchakarma & Warm Care",
-      review: "I came for the 14-day Panchakarma detox. The Kerala-certified Ayurvedic massages by Rajendra were transformative, and the clean vegetarian meals made with fresh herbs helped my digestion recover completely. I felt so cared for by the family.",
-      name: "Amara Thorne",
+      title: "Profound Strength and Vitality After Cancer",
+      review: "Following intense cancer treatments, I desperately needed restorative care. The customized cellular nourishment and chronic fatigue management therapies here were absolutely life-changing. My natural appetite returned completely, and I feel profoundly stronger. Their integrative approach is incredibly effective.",
+      name: "Alexander Ivanov",
       verified: true,
-      location: "Cape Town, South Africa",
-      condition: "Ayurveda Detox & Panchakarma",
+      location: "Sofia, Bulgaria",
+      condition: "Post-Cancer Rehab",
       rating: 5
     },
     {
-      title: "Life-Changing Teacher Training",
-      review: "Completing my 200-hour YTTC here was life-changing. It's not just a course; it's a living tradition. We dived deep into asana alignment, pranayama, and Vedic philosophy. The accommodation is clean, quiet, and right by the river.",
-      name: "Finn O'Shea",
+      title: "Remarkable Relief from Psoriatic Arthritis",
+      review: "Living with psoriatic arthritis was agonizing. The specialized autoimmune protocols, combining deep detoxification with restorative botanical wraps, completely halted my flare-ups. My skin cleared beautifully and my joint pain vanished. A truly phenomenal hospital for chronic disease management.",
+      name: "Fiona Gallagher",
       verified: true,
       location: "Dublin, Ireland",
-      condition: "200-Hour Yoga Teacher Training (YTTC)",
+      condition: "Psoriatic Arthritis",
       rating: 5
     },
     {
-      title: "Sanctuary for the Soul",
-      review: "A peaceful sanctuary in the middle of busy Rishikesh. The Himalayan Art of Mindfulness retreat helped me learn to live consciously and without fear. The purity of the teachings and the warmth of the Negi family make this place a home.",
-      name: "Elsa Lind",
+      title: "Amazing Stroke & Neurological Recovery",
+      review: "After my stroke, my left side was severely weakened. The neurological rehabilitation team's intensive therapy, featuring targeted nerve-stimulating massages and strict dietary support, worked absolute miracles. I wonderfully regained my coordination and strength. Outstanding, world-class Keralite medical care.",
+      name: "Hans Christian",
       verified: true,
       location: "Oslo, Norway",
-      condition: "Himalayan Art of Mindfulness",
+      condition: "Stroke & Neuro Rehab",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is the background of the Vedic Yoga Centre and its lineage?",
-      answer: "The Vedic Yoga Centre is a unit of the Vedic Yoga Trust, a non-profit NGO founded in 2007 by Trustee Shailendra Singh Negi. Our teachings focus on pure, traditional Vedic and Tantric yoga lineage, including Kundalini Kriyas, Hatha yoga, and Himalayan meditation techniques, taught without dilution."
+      question: "What makes Rasayana Ayurveda Center in Ezhakkaranad unique?",
+      answer: "Rasayana Ayurveda Center is a specialized Ayurvedic hospital situated on a serene plantation estate in Ezhakkaranad, Kochi. We focus on authentic classical Ayurveda in a nature-rich environment, offering comfortable private villas, an organic dining facility, and integrated clinical care."
     },
     {
-      question: "Where is the centre located and what is the environment like?",
-      answer: "We are situated in Laxman Jhula, Rishikesh, right on the banks of the holy river Ganges, in the foothills of the Himalayas. The centre serves as a peaceful, green oasis, offering river-facing rooms and a dedicated, quiet atmosphere for study and wellness."
+      question: "Who leads the medical and consulting panel at the center?",
+      answer: "Our clinical team is led by Chief Medical Officer Dr. V. Madhavachandran, a senior physician with over 30 years of clinical experience. He is a internationally published researcher, drug developer, and expert in chronic disease management."
     },
     {
-      question: "What kind of meals are provided during the programs?",
-      answer: "We serve authentic Ayurvedic vegetarian meals freshly prepared in-house. The diet is designed to support physical purification, balance energy channels, and is enriched with local healing herbs tailored to your detox or study requirements."
+      question: "What are the core clinical specialties offered here?",
+      answer: "We specialize in Geriatric Care (Rasayana), Integrative Preventive Cardiology (combining classical Ayurveda with modern cardiac diagnostics), Post-Cancer Rehabilitation, Neurological Rehabilitation (stroke and dystrophy), and classical Panchakarma detoxification."
     },
     {
-      question: "Are your yoga courses certified?",
-      answer: "Yes, our Vedic Yoga Centre is a registered Yoga Alliance school (RYS). We offer certified 200-hour, 300-hour, and 500-hour Yoga Teacher Training Courses (YTTC), as well as continuing education programs for certified teachers."
+      question: "What accommodation and facilities are available for in-patients?",
+      answer: "The center offers comfortable private villas and air-conditioned suites set within a quiet plantation. Facilities include yoga halls, transport/guide services, a conference hall, and an in-house kitchen serving fresh meals made with locally sourced organic ingredients."
     },
     {
-      question: "How can I travel to the Vedic Yoga Centre in Rishikesh?",
-      answer: "The nearest airport is Jolly Grant Airport (Dehradun Airport - DED), which is approximately 21 km away (about a 45-minute drive). Yog Nagari Rishikesh Railway Station is about 5 km from the centre, while Haridwar Railway Station is around 25 km away."
+      question: "Does the center accept or support health insurance claims?",
+      answer: "Yes, our clinical team provides detailed medical certificates, case sheets, diagnostic logs, and treatment records to facilitate cashless or reimbursement claims for private or corporate AYUSH health insurance."
     }
   ];
 
   const programs = [
     {
-      title: "Yoga Teacher Training (YTTC)",
-      description: "Yoga Alliance certified 200, 300, and 500-hour programs teaching Hatha, pranayama, philosophy, and alignment under Himalayan Master Shailendra.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Geriatric Care & Rasayana",
+      description: "Specialized anti-aging and cell-restorative therapies designed to build natural immunity, improve mobility, and promote healthy longevity for elderly individuals.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Ayurvedic Panchakarma Detox",
-      description: "Traditional detoxification therapies including Abhyangam massage, calmative Shirodhara oil flows, and herbal steam baths to cleanse body tissues.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Kundalini Kriya & Meditation",
-      description: "Guided daily practices in our river-facing shala to awaken inner energy channels using traditional Tantric Kriyas and Himalayan concentration methods.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Massage & Therapy Course",
-      description: "Sincere hands-on courses led by Rajendra Negi to study the science of Ayurvedic bodywork, Marma points, and traditional healing oils.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "7-Day Yoga Retreat",
-      description: "Rejuvenating weekly wellness escapes blending riverfront yoga, meditation, organic meals, and cultural integration in sacred Rishikesh.",
+      title: "Preventive Cardiology",
+      description: "An innovative program integrating modern cardiac assessments with classical Ayurvedic therapies to manage and reverse cardiovascular risks.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Himalayan Sacred Walks",
-      description: "Guided pilgrimage walks to the high-vibration peaks and shrines of the Himalayas (such as Gangotri) to experience silence and natural grace.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Post-Cancer Rehabilitation",
+      description: "Supportive clinical therapies focusing on cell nourishment, chronic fatigue management, post-chemo recovery, and immune-system strengthening.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Neurological Rehabilitation",
+      description: "Intensive care for stroke recovery, dystrophy, paralysis, and severe neuro-degenerative issues led by experienced medical officers.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Classical Panchakarma Detox",
+      description: "Completely supervised physiological detox programs (Virechana, Vasti, Vamana) administered in a peaceful, plantation setting to restore cellular balance.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Autoimmune & Chronic Care",
+      description: "Targeted Ayurvedic protocols addressing chronic skin diseases (psoriasis, eczema), rheumatoid arthritis, and complex gastrointestinal issues.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Himalayan Tradition Lineage",
-      description: "Pure teachings based on ancient Vedic and Tantric wisdom, helping seekers connect back to their true nature without dilution.",
-      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "22+ Years Mastery",
-      description: "Guided directly by Founder and Master Shailendra Singh Negi, ensuring authentic wisdom and decades of dedicated guidance.",
+      title: "Eminent Medical Doyen",
+      description: "Directed by Chief Medical Officer Dr. V. Madhavachandran, bringing over 30 years of clinical expertise and international research.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Ganges Riverfront Setting",
-      description: "Located right on the banks of the sacred Ganges river opposite Laxman Jhula, providing an unmatched serene environment.",
-      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Integrative Cardiology Setup",
+      description: "A unique setup that combines traditional Keralite oil therapies with modern cardiovascular diagnostic parameters.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "NGO Trust Governance",
-      description: "Managed by the Vedic Yoga Trust (est. 2007), where all revenues support the propagation of traditional wellness and local charities.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Plantation Villa Infrastructure",
+      description: "Set within a serene Pullamkottu Cheri Estate plantation, featuring 12 private villas and 16 suites for complete recovery.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Small Group Intimacy",
-      description: "We intentionally work with small groups to provide individualized guidance, personal attention, and a supportive atmosphere.",
-      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Organic Sattvic Dining",
-      description: "Enjoy clean, delicious vegetarian meals prepared fresh by the family, customized with healing herbs for complete purification.",
+      title: "Organic Farm-to-Table Dining",
+      description: "Meals prepared daily under dietary supervision using fresh, locally sourced, estate-grown organic ingredients.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Comprehensive Chronic Care",
+      description: "Dedicated clinical protocols addressing post-cancer recovery, stroke rehabilitation, and complex autoimmune issues.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "AYUSH Insurance Support",
+      description: "Providing detailed diagnostic papers, clinical case sheets, and support to facilitate smooth insurance claims.",
+      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function VedicYogaAyurvedaRetreatCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "Vedic Yoga & Ayurveda Retreat Centre | Yoga & Detox in Rishikesh";
+    document.title = "Rasayana Ayurveda Center | Best Ayurvedic Hospital in Ernakulam, Kochi";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience traditional Hatha, Kundalini Kriya & meditation courses, alongside authentic Kerala Ayurveda & Panchakarma retreats at Vedic Yoga Centre on the banks of Ganga, Laxman Jhula, Rishikesh.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book a consultation at Rasayana Ayurveda Center in Ezhakkaranad, Kochi. Specialized plantation-based hospital offering geriatric care, cardiology, and cancer recovery.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Vedic Yoga & Ayurveda Retreat Centre Rishikesh Uttarakhand
+              Rasayana Ayurveda Center Kerala
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function VedicYogaAyurvedaRetreatCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vedic Yoga & Ayurveda Retreat Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Yoga, Meditation, and Ayurveda on the Banks of the Holy Ganges</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Rasayana Ayurveda Center</h1>
+                <p className="text-xl mb-4 opacity-90">Plantation-Based Speciality Hospital & Integrative Cardiology Rehab Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
+                  <span className="text-lg">Ezhakkaranadu, Ernakulam, Kerala, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(180 Reviews)</span>
+                  <span className="text-lg font-semibold">4.8</span>
+                  <span className="opacity-90">(210 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +299,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Vedic Yoga & Ayurveda Retreat Centre
+                at Rasayana Ayurveda Center
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Vedic Yoga & Ayurveda Retreat Centre</strong>, a peaceful sanctuary for raising human consciousness located in Laxman Jhula, Rishikesh. Under the direction of Himalayan Yoga Master Shailendra Singh Negi and governed by the non-profit Vedic Yoga Trust (founded in 2007), our centre offers traditional teachings in their pure, undiluted form. We aim to guide seekers back to their true nature, helping them integrate the layers of body, breath, mind, and spirit.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Rasayana Ayurveda Center</strong>, a premier specialized Ayurvedic hospital set within the tranquil plantation landscapes of Ezhakkaranad, near Kochi, Kerala. The center rejects standardized clinical profiles to deliver customized, physician-led clinical care. Spanning a quiet plantation estate (Pullamkottu Cheri Estate), the center is world-renowned for its specialized focus on Geriatric Care (Rasayana), Preventive Cardiology (integrating traditional Ayurveda with modern cardiac parameters), Post-Cancer Rehabilitation, Stroke/Neurological Rehabilitation, and classical Panchakarma detoxification.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/secondary.jpg" 
-                          alt="Vedic Yoga Centre gardens and view"
+                          src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
+                          alt="Rasayana Ayurveda Center"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,11 +325,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                   </div>
 
                   <p>
-                    Nestled directly on the quiet banks of the holy river Ganges, the Centre provides a genuine environment for self-discipline, inner peace, and spiritual growth. We offer Yoga Alliance-certified teacher training (YTTC 200/300/500 hours), Kundalini Kriya practices, and traditional Kerala Ayurveda Panchakarma treatments.
-                  </p>
-
-                  <p>
-                    Guests can rest their minds in our river-facing shala, participate in guided meditation, and enjoy nutritious, organic vegetarian meals freshly prepared by the family.
+                    The medical panel is directed by Chief Medical Officer <strong className="font-bold text-[#2c4e5a]">Dr. V. Madhavachandran</strong>, an eminent senior physician with over 30 years of clinical experience, a internationally published researcher, and expert in drug development. Rasayana Ayurveda Center features a serene eco-friendly infrastructure including 12 private villas, 16 suites, in-house organic food prepared with locally sourced farm ingredients, a yoga center, and comprehensive documentation to facilitate private and corporate AYUSH health insurance claims.
                   </p>
                 </div>
               </div>
@@ -339,8 +335,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg" 
-                      alt="Vedic Yoga & Ayurveda Retreat Centre"
+                      src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg" 
+                      alt="Rasayana Ayurveda Center Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -352,8 +348,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/secondary.jpg" 
-                        alt="Vedic Yoga Centre Therapy Space"
+                        src="/TOP cneters/kerela/Rasayana Ayurveda Center/secondary.webp" 
+                        alt="Therapy Chamber at Rasayana Ayurveda Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -365,26 +361,26 @@ export default function VedicYogaAyurvedaRetreatCentre() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to self-awareness and balance begins with a single step.{" "}
+                Your journey to renewed health begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Vedic Yoga Centre today.
+                My Vaidyam to connect with Rasayana Ayurveda Center today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* Ayurveda Packages Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Centre
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Rasayana Ayurveda Center
 </h2>
           </div>
           
@@ -416,10 +412,10 @@ export default function VedicYogaAyurvedaRetreatCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Centre
+                Why Choose <br className="hidden lg:block" /> Rasayana Ayurveda Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic Himalayan wisdom and traditional healing techniques in a dedicated, supportive riverfront setting.
+                Experience authentic healing with certified professionals, complete diagnostics integration, and insurance support.
               </p>
             </div>
             
@@ -449,10 +445,10 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Centre
+              Your Healing Journey at <br className="hidden lg:block" /> Rasayana Ayurveda Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
+              A highly standardized clinical approach integrating legacy Keralite Vaidya care, fresh oils, and strict patient-centered procedures.
             </p>
           </div>
           
@@ -486,12 +482,12 @@ export default function VedicYogaAyurvedaRetreatCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-                  alt="Vedic Yoga Centre"
+                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+                  alt="Rasayana Ayurveda Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Vedic Yoga Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -516,7 +512,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Vedic Yoga Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Rasayana Ayurveda Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -530,8 +526,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-                  alt="Vedic Yoga Centre"
+                  src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+                  alt="Rasayana Ayurveda Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -546,7 +542,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -580,7 +576,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                         </span>
                       )}
                     </div>
-                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -641,7 +637,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about courses, retreats, and therapies at Vedic Yoga Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Rasayana Ayurveda.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -673,11 +669,11 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Vedic Yoga & Ayurveda Retreat Centre<br />
-                      36 Neelkanth Road, Laxman Jhula, Rishikesh<br />
-                      Uttarakhand, India
+                      Rasayana Ayurveda Center<br />
+                      Pullamkottu Cheri Estate, Srappilly - Blaippadi Road<br />
+                      P.O. Ezhakkaranad (N), Ernakulam District, Kerala
                     </p>
                   </div>
                 </div>
@@ -685,10 +681,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <div>+91 989 xxxx xxx</div>
-                    </div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers & Timings</h3>
+                    <p className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>+91 989 xxxx xxx</p>
                   </div>
                 </div>
 
@@ -696,15 +690,9 @@ export default function VedicYogaAyurvedaRetreatCentre() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <li className="flex items-start gap-1">
-                        <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 21 km from Jolly Grant Airport (Dehradun)</span>
-                      </li>
-                      <li className="flex items-start gap-1">
-                        <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 5 km from Yog Nagari Rishikesh Railway Station</span>
-                      </li>
+                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
+                      <li>• Approx. 30 km from Cochin International Airport</li>
+                      <li>• Approx. 14 km from Tripunithura Railway Station</li>
                     </ul>
                   </div>
                 </div>
@@ -712,14 +700,14 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15226528.095350351!2d65.74568639586064!3d21.29464825586949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909165bf5c942cd%3A0x79dfb2d461f87cb9!2sVedic%20Yoga%20%26%20Ayurveda%20Retreat%20Centre!5e0!3m2!1sen!2sin!4v1780493642074!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.050220931125!2d76.4516809750302!3d9.929775690172075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08754c0429365d%3A0xcd90baa8c5676d02!2sRasayana%20Ayurveda%20-%20Ayurvedic%20Hospital%20Kochi!5e0!3m2!1sen!2sin!4v1779862965967!5m2!1sen!2sin" 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Vedic Yoga Centre Location"
+                  title="Rasayana Ayurveda Center Location"
                 ></iframe>
               </div>
             </div>
@@ -731,8 +719,8 @@ export default function VedicYogaAyurvedaRetreatCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Centre/main.jpg"
-            alt="Vedic Yoga Centre"
+            src="/TOP cneters/kerela/Rasayana Ayurveda Center/main.jpg"
+            alt="Rasayana Ayurveda Center"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -742,7 +730,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Vedic Yoga Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Rasayana Ayurveda Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -752,7 +740,7 @@ export default function VedicYogaAyurvedaRetreatCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919760932106?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Vedic%20Yoga%20Centre."
+              href="https://wa.me/919961883203?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Rasayana%20Ayurveda%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

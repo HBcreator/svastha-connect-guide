@@ -956,7 +956,7 @@ const SoulVacationResort = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">Soul Vacation</h1>
-                <p className="text-xl mb-4 opacity-90">Resort & Wellness Centre</p>
+                <p className="text-xl mb-4 opacity-90">Resort & Wellness Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">South Goa, India</span>
@@ -1755,7 +1755,7 @@ const SoulVacationResort = () => {
                     </div>
                     <div>
                       <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">Our Vision</h3>
-                      <p className="text-xs md:text-sm mt-1 text-primary/70">Soul Vacation Resort &amp; Wellness Centre</p>
+                      <p className="text-xs md:text-sm mt-1 text-primary/70">Soul Vacation Resort &amp; Wellness Center</p>
                     </div>
                   </div>
 

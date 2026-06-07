@@ -1115,7 +1115,7 @@ export default function SOUKYACenter() {
                   SOUKYA
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
-                  Dr. Mathai's International Holistic Health Centre
+                  Dr. Mathai's International Holistic Health Center
                 </p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />

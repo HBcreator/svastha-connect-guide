@@ -222,7 +222,7 @@ export default function AryaVaidyaSala() {
   useEffect(() => {
     document.title = "Arya Vaidya Sala Kottakkal Delhi | Kottakkal Ayurvedic Hospital";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Kerala Panchakarma therapies, 49-bed inpatient research center, and classical Ayurvedic treatments at Kottakkal Ayurvedic Hospital & Research Centre in Karkardooma, East Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Kerala Panchakarma therapies, 49-bed inpatient research center, and classical Ayurvedic treatments at Kottakkal Ayurvedic Hospital & Research Center in Karkardooma, East Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function AryaVaidyaSala() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Arya Vaidya Sala Research Centre And Ayruveda Hospital Karkardooma East Delhi
+              Arya Vaidya Sala - Ayurvedic Hospital & Research Center Karkardooma East Delhi
             </li>
           </ol>
         </div>
@@ -264,8 +264,8 @@ export default function AryaVaidyaSala() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arya Vaidya Sala Research Centre And Ayruveda Hospital</h1>
-                <p className="text-xl mb-4 opacity-90">Kottakkal Ayurvedic Hospital & Research Centre</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arya Vaidya Sala - Ayurvedic Hospital & Research Center</h1>
+                <p className="text-xl mb-4 opacity-90">Kottakkal Ayurvedic Hospital & Research Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Karkardooma, East Delhi, India</span>
@@ -299,7 +299,7 @@ export default function AryaVaidyaSala() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Arya Vaidya Sala Research Centre And Ayruveda Hospital
+                at Arya Vaidya Sala - Ayurvedic Hospital & Research Center
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function AryaVaidyaSala() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Arya Vaidya Research Centre And Ayruveda Hospital</strong>, the premier East Delhi branch of Vaidyaratnam P.S. Varier's Arya Vaidya Sala (AVS), Kottakkal. Established in the year 2000, this specialized 49-bed clinical research hospital brings authentic Kerala Ayurvedic treatments and Panchakarma therapies to North India. Under the clinical supervision of senior, highly experienced BAMS/MD Ayurvedic physicians from Kerala, we utilize traditional diagnostic protocols to tailor treatments to your unique constitution and health goals.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Arya Vaidya Research Center And Ayruveda Hospital</strong>, the premier East Delhi branch of Vaidyaratnam P.S. Varier's Arya Vaidya Sala (AVS), Kottakkal. Established in the year 2000, this specialized 49-bed clinical research hospital brings authentic Kerala Ayurvedic treatments and Panchakarma therapies to North India. Under the clinical supervision of senior, highly experienced BAMS/MD Ayurvedic physicians from Kerala, we utilize traditional diagnostic protocols to tailor treatments to your unique constitution and health goals.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,7 +315,7 @@ export default function AryaVaidyaSala() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/secondary.jpg" 
+                          src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/secondary.jpg" 
                           alt="Arya Vaidya Sala Kottakkal accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -337,7 +337,7 @@ export default function AryaVaidyaSala() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/main.jpg" 
+                      src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/main.jpg" 
                       alt="Arya Vaidya Sala Kottakkal main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -350,7 +350,7 @@ export default function AryaVaidyaSala() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/secondary.jpg" 
+                        src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/secondary.jpg" 
                         alt="Arya Vaidya Sala Kottakkal therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -382,7 +382,7 @@ export default function AryaVaidyaSala() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Arya Vaidya Sala Research Centre And Ayruveda Hospital
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Arya Vaidya Sala - Ayurvedic Hospital & Research Center
 </h2>
           </div>
           
@@ -414,7 +414,7 @@ export default function AryaVaidyaSala() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Arya Vaidya Sala Research Centre And Ayruveda Hospital
+                Why Choose <br className="hidden lg:block" /> Arya Vaidya Sala - Ayurvedic Hospital & Research Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience authentic Tridosha consultations, therapeutic spa, and yoga in a supportive, positive environment.
@@ -447,7 +447,7 @@ export default function AryaVaidyaSala() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Arya Vaidya Sala Research Centre And Ayruveda Hospital
+              Your Healing Journey at <br className="hidden lg:block" /> Arya Vaidya Sala - Ayurvedic Hospital & Research Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
@@ -484,7 +484,7 @@ export default function AryaVaidyaSala() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/main.jpg"
+                  src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/main.jpg"
                   alt="Arya Vaidya Sala Kottakkal view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -528,7 +528,7 @@ export default function AryaVaidyaSala() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/main.jpg"
+                  src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/main.jpg"
                   alt="Arya Vaidya Sala Kottakkal view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -671,9 +671,9 @@ export default function AryaVaidyaSala() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Kottakkal Ayurvedic Hospital & Research Centre<br />
+                      Kottakkal Ayurvedic Hospital & Research Center<br />
                       Plot No. 18-X & 19-X, Hargobind Enclave, Karkardooma<br />
                       East Delhi, Delhi, India
                     </p>
@@ -712,7 +712,7 @@ export default function AryaVaidyaSala() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4001495814755!2d77.29773899999999!3d28.647734999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb419d9eb107%3A0x25655e15d2644f68!2sKottakal%20Arya%20Vaidyasala%20Hospital%20%26%20Research%20Centre!5e0!3m2!1sen!2sin!4v1780630166510!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4001495814755!2d77.29773899999999!3d28.647734999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb419d9eb107%3A0x25655e15d2644f68!2sKottakal%20Arya%20Vaidyasala%20Hospital%20%26%20Research%20Center!5e0!3m2!1sen!2sin!4v1780630166510!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -731,7 +731,7 @@ export default function AryaVaidyaSala() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Arya Vaidya Sala – Ayurvedic Hospital & Research Centre (Delhi)/main.jpg"
+            src="/TOP cneters/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/main.jpg"
             alt="Arya Vaidya Sala Kottakkal"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

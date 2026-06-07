@@ -85,7 +85,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
     },
     {
       title: "Panchakarma Detox & Rejuvenation",
-      review: "The Panchakarma therapy at this Jhilmil centre was a rejuvenating experience. The staff is extremely polite, and the hygiene levels are top-notch. Highly recommend their detoxification therapies.",
+      review: "The Panchakarma therapy at this Jhilmil center was a rejuvenating experience. The staff is extremely polite, and the hygiene levels are top-notch. Highly recommend their detoxification therapies.",
       name: "Liam Kowalski",
       verified: true,
       location: "Warsaw, Poland",
@@ -103,7 +103,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
     },
     {
       title: "Effective Joint Pain Management",
-      review: "I visited the centre for my knee arthritis. The warm herbal oil treatments and specialized basti therapies recommended by the doctor reduced the swelling and pain significantly. I can walk comfortably now.",
+      review: "I visited the center for my knee arthritis. The warm herbal oil treatments and specialized basti therapies recommended by the doctor reduced the swelling and pain significantly. I can walk comfortably now.",
       name: "Yuki Tanaka",
       verified: true,
       location: "Tokyo, Japan",
@@ -123,7 +123,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
 
   const faqItems = [
     {
-      question: "Is the Jhilmil Sri Sri Ayurveda Panchakarma Ayurveda Centre empanelled or accredited?",
+      question: "Is the Jhilmil Sri Sri Ayurveda Panchakarma Ayurveda Center empanelled or accredited?",
       answer: "Yes. Sri Sri Ayurveda Panchakarma Ayurveda Center in Jhilmil Colony offers standardized, high-quality Ayurvedic care following Sri Sri Ayurveda's international standards. For specific corporate or insurance empanelment details, please contact our front desk."
     },
     {
@@ -265,7 +265,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sri Sri Ayurveda Panchakarma Ayurveda Center</h1>
-                <p className="text-xl mb-4 opacity-90">Health & Wellness Centre | Nadi Pariksha & Classical Panchakarma</p>
+                <p className="text-xl mb-4 opacity-90">Health & Wellness Center | Nadi Pariksha & Classical Panchakarma</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Jhilmil, New Delhi, India</span>
@@ -670,7 +670,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Sri Sri Ayurveda Panchakarma Ayurveda Center<br />
                       Triveni Apartment, Jhilmil, Near Vivek Vihar Police Station, Jhilmil Colony<br />
@@ -711,7 +711,7 @@ export default function SriSriAyurvedaPanchakarmaAyurvedaCenter() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Sri+Sri+Tattva+Ayurveda+Health+Wellness+Centre+Triveni+Apartment+Jhilmil+Colony+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Sri+Sri+Tattva+Ayurveda+Health+Wellness+Center+Triveni+Apartment+Jhilmil+Colony+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%" 
                   style={{ border: 0 }} 

@@ -56,7 +56,7 @@ const LOCATION_OVERRIDE_BY_CENTER: Record<string, string> = {
   "Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)": "Green Park, New Delhi, India",
   "Sri Vaidya Ayurveda Panchakarma": "Vasant Kunj, Delhi, India",
   "Sanjivani Ayurvedic Research Institute": "Vijay Nagar, Delhi, India",
-  "Sri Sri Tattva Panchakarma Centre – Delhi": "Jhilmil, Delhi, India",
+  "Sri Sri Tattva Panchakarma Center – Delhi": "Jhilmil, Delhi, India",
 };
 
 const cleanMarkdownText = (value: string) =>
@@ -148,7 +148,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     rating: 4.8,
     reviews: "200",
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    slug: "naad-wellness-centre-sonepat-delhi-india",
+    slug: "naad-wellness-center-sonepat-delhi-india",
   };
 
   const imperialSpaCenter: DelhiCenter = {
@@ -201,31 +201,31 @@ const DelhiNorthIndiaRegionCenters = () => {
 
 const AryaVaidyaSala: DelhiCenter = {
   series: -6,
-  name: "Arya Vaidya Sala – Research Centre & Ayurvedic Hospital (Delhi)",
+  name: "Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)",
   city: "Karkardooma, East Delhi, India",
   description:
     "One of Delhi's leading Ayurvedic Panchakarma clinics, Aasha Ayurveda is renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic is a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe. Employs the Uttara Basti technique and Kerala Panchakarma for reproductive conditions with a reported 90% positive outcomes. Now has 5 convenient locations across Delhi.",
   rating: 4.5,
   reviews: "40",
   image: "/Anchor pages/Delhi/images/2.jpg",
-  slug: "arya-vaidya-sala-research-centre-and-ayurvedia-hospital-karkardooma-east-delhi-india",
+  slug: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india",
 };
 
-const AashaAyurvedaCentre: DelhiCenter = {
+const AashaAyurvedaCenter: DelhiCenter = {
   series: -7,
-  name: "Aasha Ayurveda Centre",
+  name: "Aasha Ayurveda Center",
   city: "Rajouri Garden, West Delhi, India",
   description:
     "One of Delhi's leading Ayurvedic Panchakarma clinics, Aasha Ayurveda is renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic is a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe. Employs the Uttara Basti technique and Kerala Panchakarma for reproductive conditions with a reported 90% positive outcomes. Now has 5 convenient locations across Delhi.",
   rating: 4.8,
   reviews: "1300",
   image: "/Anchor pages/Delhi/images/3.jpg",
-  slug: "aasha-ayruveda-centre-rajouri-garden-west-delhi-india",
+  slug: "aasha-ayruveda-center-rajouri-garden-west-delhi-india",
 };
 
 const TarunVedaAyurvedaHospital: DelhiCenter = {
   series: -8,
-  name: "TarunVeda Ayurveda Hospital",
+  name: "Tarunveda Ayurveda Hospital",
   city: "Dwarka, New Delhi, India",
   description:
     "A dedicated, doctor-led Ayurvedic Panchakarma hospital in Dwarka, New Delhi, offering authentic Kerala and classical Ayurvedic treatments in a clinical, safe environment. TarunVeda specializes in full Panchakarma programs including Vamana, Virechana, Basti, Nasyam, and Raktamokshan, alongside Abhyanga, Shirodhara, Thalapothichil, and Pinda Sweda. Specialties include mental health, skin diseases, paralysis, arthritis, chronic digestive conditions, and neurological recovery. Known as one of the best Panchakarma treatment centers in Delhi, with online consultations and personalized post-treatment diet plans.",
@@ -240,7 +240,7 @@ const SKKAyurvedaPanchakarma: DelhiCenter = {
   name: "SKK Ayurveda & Panchakarma",
   city: "Janak Puri, New Delhi, India",
   description:
-    "The first and only NABH-accredited Panchakarma centre in West Delhi, founded by Dr. Tarun Gupta (BAMS, Delhi University), and CGHS, NHAI, DDA, and NDMC empanelled. SKK Ayurveda pioneered a data-driven, protocol-based approach to Ayurvedic diagnosis and treatment — enabling highly personalized and measurable outcomes. Specializes in Panchakarma detox, endometriosis, PCOD, arthritis, digestive disorders, back pain, and Rasayana therapies. Known for its scientific rigour, compassionate care, and systematic lifestyle modification approach alongside classical Ayurvedic treatment.",
+    "The first and only NABH-accredited Panchakarma center in West Delhi, founded by Dr. Tarun Gupta (BAMS, Delhi University), and CGHS, NHAI, DDA, and NDMC empanelled. SKK Ayurveda pioneered a data-driven, protocol-based approach to Ayurvedic diagnosis and treatment — enabling highly personalized and measurable outcomes. Specializes in Panchakarma detox, endometriosis, PCOD, arthritis, digestive disorders, back pain, and Rasayana therapies. Known for its scientific rigour, compassionate care, and systematic lifestyle modification approach alongside classical Ayurvedic treatment.",
   rating: 4.9,
   reviews: "810",
   image: "/Anchor pages/Delhi/images/5.webp",
@@ -264,7 +264,7 @@ const SanjeevaniAyurveda: DelhiCenter = {
   name: "Sanjeevani Ayurveda",
   city: "Dwarka, New Delhi, India",
   description:
-    "A multi-specialty Kerala Ayurveda and Panchakarma Day Care Centre located in Dwarka Sector 13 — and one of the most trusted names in Delhi-NCR for Panchakarma since 2013. Winner of 'Best Centre of the Year 2019' in Delhi NCR and 'Excellence in Ayurveda 2021'. CGHS, ECHS, NDMC, DDA, and CWC empanelled. Led by an MD Panchakarma Specialist with 15+ years of experience, it excels in treating bone, joint, and spine diseases through Kerala Ayurveda techniques including Pizhichil, Kizhi, Shirodhara, Kati Vasti, and Abhyangam. Rated among the highest in Delhi at 4.8 on JustDial.",
+    "A multi-specialty Kerala Ayurveda and Panchakarma Day Care Center located in Dwarka Sector 13 — and one of the most trusted names in Delhi-NCR for Panchakarma since 2013. Winner of 'Best Center of the Year 2019' in Delhi NCR and 'Excellence in Ayurveda 2021'. CGHS, ECHS, NDMC, DDA, and CWC empanelled. Led by an MD Panchakarma Specialist with 15+ years of experience, it excels in treating bone, joint, and spine diseases through Kerala Ayurveda techniques including Pizhichil, Kizhi, Shirodhara, Kati Vasti, and Abhyangam. Rated among the highest in Delhi at 4.8 on JustDial.",
   rating: 4.9,
   reviews: "1070",
   image: "/Anchor pages/Delhi/images/7.webp",
@@ -335,7 +335,7 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
       amanbaghCenter,
       maharishiAyurvedaHospitalCenter,
       AryaVaidyaSala,
-      // AashaAyurvedaCentre,
+      // AashaAyurvedaCenter,
       TarunVedaAyurvedaHospital,
       SKKAyurvedaPanchakarma,
       AprasuAyurvedicHospital,
