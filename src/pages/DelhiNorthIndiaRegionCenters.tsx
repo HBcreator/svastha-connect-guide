@@ -196,7 +196,7 @@ const DelhiNorthIndiaRegionCenters = () => {
   rating: 4.5,
   reviews: "860",
   image: "/Anchor pages/Delhi/images/1.webp",
-  slug: "maharishi-ayurveda-hospital-shalimar-bagh-new-delhi-india",
+  slug: "maharishi-ayurveda-hospital-new-delhi-india",
 };
 
 const AryaVaidyaSala: DelhiCenter = {
@@ -208,7 +208,7 @@ const AryaVaidyaSala: DelhiCenter = {
   rating: 4.5,
   reviews: "40",
   image: "/Anchor pages/Delhi/images/2.jpg",
-  slug: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india",
+  slug: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-new-delhi-india",
 };
 
 const AashaAyurvedaCenter: DelhiCenter = {
@@ -232,7 +232,7 @@ const TarunVedaAyurvedaHospital: DelhiCenter = {
   rating: 4.8,
   reviews: "210",
   image: "/Anchor pages/Delhi/images/4.webp",
-  slug: "tarunveda-ayurveda-hospital-dwarka-new-delhi-india",
+  slug: "tarunveda-ayurveda-hospital-new-delhi-india",
 };
 
 const SKKAyurvedaPanchakarma: DelhiCenter = {
@@ -244,7 +244,7 @@ const SKKAyurvedaPanchakarma: DelhiCenter = {
   rating: 4.9,
   reviews: "810",
   image: "/Anchor pages/Delhi/images/5.webp",
-  slug: "skk-ayurveda-and-panchakarma-hospital-janak-puri-new-delhi-india",
+  slug: "skk-ayurveda-and-panchakarma-hospital-new-delhi-india",
 };
 
 const AprasuAyurvedicHospital: DelhiCenter = {
@@ -256,7 +256,7 @@ const AprasuAyurvedicHospital: DelhiCenter = {
   rating: 4.8,
   reviews: "340",
   image: "/Anchor pages/Delhi/images/6.webp",
-  slug: "aprasu-ayurvedic-hospital-rohini-north-delhi-india",
+  slug: "aprasu-ayurvedic-hospital-new-delhi-india",
 };
 
 const SanjeevaniAyurveda: DelhiCenter = {
@@ -268,7 +268,7 @@ const SanjeevaniAyurveda: DelhiCenter = {
   rating: 4.9,
   reviews: "1070",
   image: "/Anchor pages/Delhi/images/7.webp",
-  slug: "sanjeevani-ayurveda-hospital-dwarka-new-delhi-india",
+  slug: "sanjeevani-ayurveda-hospital-new-delhi-india",
 };
 
 const SriSriAyurvedaPanchakarmaAyurvedaCenter: DelhiCenter = {
@@ -280,7 +280,7 @@ const SriSriAyurvedaPanchakarmaAyurvedaCenter: DelhiCenter = {
   rating: 4.1,
   reviews: "60",
   image: "/Anchor pages/Delhi/images/8.webp",
-  slug: "sri-sri-ayurveda-panchakarma-ayurveda-center-hospital-jhilmil-new-delhi-india",
+  slug: "sri-sri-ayurveda-panchakarma-center-new-delhi-india",
 };
 
 const KeralaAyurvedaLifeAyurvedaPanchakarmaClinic: DelhiCenter = {
@@ -292,7 +292,7 @@ const KeralaAyurvedaLifeAyurvedaPanchakarmaClinic: DelhiCenter = {
   rating: 4.9,
   reviews: "750",
   image: "/Anchor pages/Delhi/images/9.jpg",
-  slug: "kerala-ayurveda-life-ayurveda-panchakarma-clinic-hospital-green-park-new-delhi-india",
+  slug: "kerala-ayurveda-life-panchakarma-clinic-new-delhi-india",
 };
 
 const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
@@ -304,7 +304,7 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
   rating: 4.3,
   reviews: "170",
   image: "/Anchor pages/Delhi/images/10.webp",
-  slug: "apollo-ayurvaid-life-hospital-nehru-enclave-new-delhi-india",
+  slug: "apollo-ayurvaid-life-hospital-new-delhi-india",
 };
 
   useEffect(() => {

@@ -252,7 +252,7 @@ export default function SanjeevaniAyurveda() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Sanjeevani Ayurveda Dwarka New Delhi
+              Sanjeevani Ayurveda New Delhi
             </li>
           </ol>
         </div>

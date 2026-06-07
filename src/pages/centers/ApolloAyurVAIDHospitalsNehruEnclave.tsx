@@ -252,7 +252,7 @@ export default function ApolloAyurVAIDHospitalsNehruEnclave() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Apollo AyurVAID Hospital Nehru Enclave New Delhi
+              Apollo AyurVAID Hospital New Delhi
             </li>
           </ol>
         </div>
