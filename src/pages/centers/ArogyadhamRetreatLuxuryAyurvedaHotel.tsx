@@ -134,7 +134,7 @@ I feel fully purified, mentally alert, and my general health has improved.`,
   const faqItems = [
     {
       question: "What is the background and philosophy of Arogyadham Retreat Luxury Ayurveda Hotel?",
-      answer: "Arogyadham Retreat Luxury Ayurveda Hotel in Tapovan, Rishikesh, is a dedicated centre combining traditional Ayurvedic principles with yoga and meditation. Led by experienced Ayurvedic doctors, we focus on identifying Dosha imbalances to create personalized treatments, diets, and exercise plans."
+      answer: "Arogyadham Retreat Luxury Ayurveda Hotel in Tapovan, Rishikesh, is a dedicated center combining traditional Ayurvedic principles with yoga and meditation. Led by experienced Ayurvedic doctors, we focus on identifying Dosha imbalances to create personalized treatments, diets, and exercise plans."
     },
     {
       question: "What types of rooms are available for guests?",
@@ -683,7 +683,7 @@ I feel fully purified, mentally alert, and my general health has improved.`,
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Arogyadham Retreat<br />
                       Aamkhala, Badrinath Road, Near Maa Yoga Ashram, Tapovan, Rishikesh<br />

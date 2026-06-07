@@ -668,7 +668,7 @@ export default function TravancoreAyurvedaJayanagar() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Travancore Ayurveda Jayanagar Clinic<br />
                     211/34, 6th Main Road, 4th Block<br />
@@ -698,7 +698,7 @@ export default function TravancoreAyurvedaJayanagar() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.753042269069!2d77.57873327507562!3d12.923587787387367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159e5abb1385%3A0x6da3f055cb2887f7!2sTravancore%20Ayurveda%20Jayanagar%20-%20Ayurvedic%20Clinic%20%26%20Best%20Ayurvedic%20Panchakarma%20Treatment%20Centre%20in%20Bangalore!5e0!3m2!1sen!2sin!4v1779754177636!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.753042269069!2d77.57873327507562!3d12.923587787387367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae159e5abb1385%3A0x6da3f055cb2887f7!2sTravancore%20Ayurveda%20Jayanagar%20-%20Ayurvedic%20Clinic%20%26%20Best%20Ayurvedic%20Panchakarma%20Treatment%20Center%20in%20Bangalore!5e0!3m2!1sen!2sin!4v1779754177636!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

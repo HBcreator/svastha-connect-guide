@@ -706,7 +706,7 @@ export default function AyurTouchAyurvedicHealthcare() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.369125015232!2d73.76379727591517!3d15.518330353948624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc194129ec4ad%3A0x666ac2f0624d8917!2sAyurtouch%20-%20Dr%20Jayan&#39;s%20Kerala%20Ayurveda%20Wellness%20centre.!5e0!3m2!1sen!2sin!4v1779906590114!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.369125015232!2d73.76379727591517!3d15.518330353948624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc194129ec4ad%3A0x666ac2f0624d8917!2sAyurtouch%20-%20Dr%20Jayan&#39;s%20Kerala%20Ayurveda%20Wellness%20center.!5e0!3m2!1sen!2sin!4v1779906590114!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

@@ -687,7 +687,7 @@ My hair feels much stronger now and my skin has returned to its natural, healthy
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
                       <p>Near Deecon Valley, Tapovan, Rishikesh, Uttarakhand, India</p>
                     </div>

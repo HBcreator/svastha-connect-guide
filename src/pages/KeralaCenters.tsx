@@ -55,7 +55,7 @@ const KeralaCenters = () => {
       rating: 4.9,
       reviews: 150,
       priceRange: "$$$",
-      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+      image: "/Center Images/Dheemahi Ayurvedic Center/center dp.jpg",
       slug: "dheemahi-ayurveda-village-kumarakom-kerala-india",
     },
     {
@@ -73,12 +73,12 @@ const KeralaCenters = () => {
       name: "Nagarjuna Ayurveda",
       city: "Kalady, Kerala, India",
       description:
-        "Nagarjuna Ayurveda Centre is one of India's most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the centre follows traditional Ayurvedic principles combined with strict diagnostic protocols.",
+        "Nagarjuna Ayurveda Center is one of India's most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the center follows traditional Ayurvedic principles combined with strict diagnostic protocols.",
       rating: 4.8,
       reviews: 200,
       priceRange: "$$$",
       image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-      slug: "nagarjuna-ayurvedic-centre-kerala-india",
+      slug: "nagarjuna-ayurvedic-center-kerala-india",
     },
     {
       name: "Sanjeevanam Ayurveda Hospital",
@@ -133,7 +133,7 @@ const KeralaCenters = () => {
       reviews: 234,
       priceRange: "$$$$",
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
-      slug: "ayurmana-dharma-ayurvedic-centre-kerala-india",
+      slug: "ayurmana-dharma-ayurvedic-center-kerala-india",
     },
     {
       name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -147,15 +147,15 @@ const KeralaCenters = () => {
       slug: "chamundi-hill-palace-ayurvedic-resort-mysore-india",
     },
     {
-      name: "Athreya Ayurvedic Centre",
+      name: "Athreya Ayurvedic Center",
       city: "Kottayam, Kerala, India",
       description:
-        "Athreya Ayurvedic Centre offers consultation-led Ayurveda with customized treatment protocols based on individual body constitution. Its approach emphasizes authentic Kerala therapies, disciplined daily routines, and doctor-guided recovery plans.",
+        "Athreya Ayurvedic Center offers consultation-led Ayurveda with customized treatment protocols based on individual body constitution. Its approach emphasizes authentic Kerala therapies, disciplined daily routines, and doctor-guided recovery plans.",
       rating: 4.8,
       reviews: 188,
       priceRange: "$$$$",
-      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-      slug: "athreya-ayurvedic-centre-kerala-india",
+      image: "/Center Images/Athreya Ayurvedic Center/CTA.jpg",
+      slug: "athreya-ayurvedic-center-kerala-india",
     },
     {
       name: "Ayur Bethaniya Ayurveda Hospital",

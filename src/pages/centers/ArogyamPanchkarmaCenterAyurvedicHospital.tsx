@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
+export default function ArogyamPanchkarmaCenterAyurvedicHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,186 +37,176 @@ export default function AyuskamaAyurvedaClinicPanchakarmaCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Dosha & Prakriti Assessment",
-      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
+      title: "Pulse & Nadi Assessment",
+      description: "Undergoing an initial detailed health consultation and traditional pulse diagnosis (Nadi Pariksha) with Dr. Vipul Sharma to assess constitution (Prakriti) and current imbalances.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Custom Healing Schedule",
-      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
+      title: "Customized Herbal Selection",
+      description: "Formulating chemical-free, hormone-free, and steroid-free organic herbal decoctions and creating a tailored Ayurvedic diet plan.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purva Karma Warmups",
-      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
+      title: "Preparatory Snehana & Swedana",
+      description: "Beginning internal and external oil lubrication, combined with specialized steam baths to mobilize deep-seated bodily toxins.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Pradhana Karma Cleansing",
-      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
+      title: "Core Shodhana Purification",
+      description: "Administering custom-tailored Panchakarma therapies like Vamana, Virechana, or customized herbal Basti based on clinical requirements.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Mindfulness & Restorative Yoga",
-      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
+      title: "Naturopathic Accents",
+      description: "Integrating complementary drugless treatments such as hydrotherapy, magnetotherapy, or acupressure to build system-wide immunity.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Dinacharya Home Care",
-      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
+      title: "Rasayana Rejuvenation",
+      description: "Receiving long-term dietary plans, lifestyle guidance, and natural health blue-prints to sustain wellness at home.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Life-changing Panchakarma & Sciatica Relief",
-      review: `I came to Ayuskama Rishikesh suffering from severe chronic sciatica and constant lower back pain.
-Dr. Vinod Kumar designed a comprehensive 14-day treatment that targetted my spine.
-The therapy successfully eliminated my pain and restored my mobility completely.`,
-      name: "Liam Harrison",
+      title: "Clear skin after years of struggle",
+      review: "I suffered from severe psoriasis for almost a decade and tried all kinds of modern treatments with little success. The specialized skin program at Arogyam completely changed my life.",
+      name: "Bernard Stan",
       verified: true,
-      location: "Melbourne, Australia",
-      condition: "Chronic Sciatica & Spine Care",
+      location: "Marseille, France",
+      condition: "Chronic Psoriasis & Skin Care",
       rating: 5
     },
     {
-      title: "Deeply Transformative Detox & Digestion Restoration",
-      review: `My Panchakarma detox at Ayuskama was fantastic and the consultation was extremely thorough.
-Dr. Neetu Singh analyzed my imbalances and guided me through Virechana and daily oil massages.
-I feel completely rejuvenated, and my digestion is better than it has been in years.`,
-      name: "Emma Watson",
+      title: "Highly professional Ayurvedic hospital",
+      review: "The 14-day Panchakarma detox program was excellent. The hospital has top-class facilities, and Dr. Sharma is a highly qualified expert. The therapy sessions were done with great care.",
+      name: "Zoltan Kovacs",
       verified: true,
-      location: "Oxford, UK",
-      condition: "Panchakarma Detox & Digestion",
+      location: "Budapest, Hungary",
+      condition: "14 Days Complete Panchakarma",
       rating: 5
     },
     {
-      title: "Excellent Ayurveda Course & Certification",
-      review: `I joined the Ayurveda Nutrition and Marma Therapy certification course here.
-The theoretical teachings are backed by deep practical clinical sessions in the clinic.
-It was a great experience that gave me the confidence to practice Ayurveda professionally.`,
-      name: "Lucas Novak",
+      title: "Significant relief from joint stiffness",
+      review: "I came to Arogyam suffering from severe knee joint pain and stiffness. The customized therapeutic treatments, warm herbal poultice massages, and specific oil therapies gave me incredible relief.",
+      name: "Kieran O'Reilly",
       verified: true,
-      location: "Prague, Czech Republic",
-      condition: "Ayurveda Nutrition & Marma Course",
+      location: "Dublin, Ireland",
+      condition: "Joint Pain & Arthritis Care",
       rating: 5
     },
     {
-      title: "Wonderful Stress Relief & Rejuvenation Retreat",
-      review: `I booked a 7-day rejuvenation retreat at Ayuskama to recover from career burnout.
-The Shirodhara treatment was relaxing, and morning yoga sessions helped calm my mind.
-This sanctuary in Upper Tapovan is exactly what I needed to heal and recharge.`,
-      name: "Chloe Mercier",
+      title: "Wonderful care for women's health",
+      review: "The PCOS and fertility wellness program at Arogyam is outstanding. The holistic combination of detox therapies, targeted diet guidelines, and natural herbal formulations helped restore my body's balance.",
+      name: "Anouk Hyung",
       verified: true,
-      location: "Geneva, Switzerland",
-      condition: "Stress & Rejuvenation Retreat",
+      location: "Antwerp, Belgium",
+      condition: "Infertility & Metabolic Reset",
       rating: 5
     },
     {
-      title: "Incredible Support for Women's Health",
-      review: `I went to Ayuskama to address long-standing hormonal imbalances and low energy.
-Dr. Neetu Singh was extremely empathetic, knowledgeable, and designed a custom plan.
-The herbs and dietary changes have brought back my vitality and balance.`,
-      name: "Mia Rossi",
+      title: "Deeply purifying naturopathy and detox",
+      review: "My experience at Arogyam was exceptional. Combining traditional Panchakarma with naturopathic treatments like hydrotherapy and acupressure felt very complete.",
+      name: "Marta Strom",
       verified: true,
-      location: "Milan, Italy",
-      condition: "Women's Hormonal Health & Vitality",
+      location: "Gothenburg, Sweden",
+      condition: "Naturopathy & Detoxification",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes Ayuskama Ayurveda Clinic & Panchakarma Centre unique?",
-      answer: "Ayuskama Ayurveda is located in Upper Tapovan, Rishikesh. The center is led by Dr. Vinod Kumar (an expert in Panchakarma with over 25 years of experience) and Dr. Neetu Singh (specializing in women's health and yoga therapy with over 20 years of experience). We combine authentic Keralite Panchakarma treatments, clinical research-oriented practices, and globally certified educational courses in a quiet, serene environment."
+      question: "What clinical specializations does Arogyam focus on?",
+      answer: "We specialize in traditional Ayurvedic solutions for chronic skin disorders (like Psoriasis, Vitiligo, eczema), joint care, metabolic disorders, infertility, PCOD, hair loss, and holistic detoxification."
     },
     {
-      question: "What certification courses do you offer?",
-      answer: "We offer professional, globally recognized certification courses including Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition. We provide both short-term training and intensive 4-week certification programs designed for beginners to advanced practitioners."
+      question: "Where is the hospital located and what facilities are available?",
+      answer: "Our hospital is located in Mehatpur, Una, on the Himachal-Punjab border. The facility is fully equipped with inpatient (IPD) and outpatient (OPD) facilities, diagnostic rooms, dedicated Panchakarma chambers, and a naturopathy section."
     },
     {
-      question: "Are meals and accommodations included in the packages?",
-      answer: "Yes. Our residential Panchakarma and rejuvenation retreats include private accommodation and fresh, balanced Saatvic vegetarian meals prepared daily according to Ayurvedic principles to support your purification process."
+      question: "Are the herbal medicines chemical-free?",
+      answer: "Yes. All medicines and herbal formulations used at Arogyam are 100% natural and prepared without chemicals, hormones, steroids, or synthetic additives."
     },
     {
-      question: "How do I book a treatment program at Ayuskama?",
-      answer: "You can book by contacting us through My Vaidyam. We require an initial deposit to confirm your booking, and the remaining balance can be settled upon arrival at the center. Consultations can be scheduled both offline and online."
+      question: "Who supervises the treatments and clinical diagnostics?",
+      answer: "All programs are directly supervised by Dr. Vipul Sharma, holding a BAMS from Dayanand Ayurvedic College, advanced Panchakarma certifications from Kerala, an MD in Bio-Medicines, and a Ph.D."
     },
     {
-      question: "How far is the center from the nearest airport and railway stations?",
-      answer: "Our center is located in Upper Tapovan, Rishikesh. It is approximately 21 km (about 40 minutes) from Jolly Grant Airport (Dehradun Airport - DED). The Yog Nagari Rishikesh and Rishikesh Railway Stations are about 5–6 km away, while the Haridwar Railway Station is approximately 30 km away."
+      question: "How do I reach the center in Mehatpur, Una?",
+      answer: "The closest main railway station is Una Himachal Railway Station (UHL), located about 10 km away. The nearest international airport is Chandigarh International Airport (IXC), which is approximately 130 km away."
     }
   ];
 
   const programs = [
     {
-      title: "Classical Panchakarma",
-      description: "A complete five-fold biological detoxification program including Abhyanga (massage), Virechana, and Basti under close supervision of senior physicians.",
+      title: "7 to 28 Days Classic Panchakarma",
+      description: "Complete biological cleansing and detoxification including Vamana, Virechana, Basti, Nasya, and Raktamokshana to eliminate toxins and restore balance.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Chronic Skin & Hair Care",
+      description: "Specialized Ayurvedic protocols designed to address chronic skin diseases such as Psoriasis, Vitiligo, eczema, and hair loss from the root.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Ayurveda Training & Certification",
-      description: "Globally accredited professional courses in Ayurvedic Massage, Marma Therapy, and Ayurvedic Nutrition taught by experienced doctors.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Rejuvenation & Yoga Retreat",
-      description: "Scenic 7, 14, and 21-day wellness programs integrating daily yoga, customized therapies, and organic Saatvic dining in Tapovan.",
+      title: "Joint & Arthritis Relief",
+      description: "Therapeutic oil pooling, herbal poultice massage, and custom decoctions to treat rheumatoid arthritis, gout, sciatica, and joint stiffness.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Spine & Joint Wellness",
-      description: "Targeted clinical treatments for sciatica, back pain, arthritis, and joint stiffness using specialized herbal poultices and oil pools.",
+      title: "Infertility & Women's Health",
+      description: "Holistic detoxification, customized diet plans, and natural herbal therapies to support fertility and manage PCOS/PCOD imbalances.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Women's Health & Gynecology",
-      description: "Specialized clinical consultations and therapeutic regimens focusing on hormonal balance, prenatal/postnatal care, and wellness led by Dr. Neetu Singh.",
+      title: "Lifestyle & Diabetes Management",
+      description: "Integrative therapies combining dietary charts, herbal remedies, and lifestyle routines to manage metabolic disorders and diabetes.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Stress & Anxiety Reset",
-      description: "Deep calming therapies featuring warm Shirodhara oil flows, guided meditation, and therapeutic breathwork to heal corporate burnout.",
+      title: "Naturopathy & Acupressure",
+      description: "Complementary drugless healing modalities including hydrotherapy, magnetotherapy, and targeted acupressure to boost immunity.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Veteran Doctor Panel",
-      description: "Led by Dr. Vinod Kumar (25+ yrs experience) and Dr. Neetu Singh (20+ yrs experience) who supervise all clinical therapies.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Accredited Training",
-      description: "Offers globally recognized certifications in Ayurvedic Massage, Marma, and Nutrition, ensuring high academic standards.",
+      title: "Founder's Academic Expertise",
+      description: "Led by Dr. Vipul Sharma, holding BAMS, an MD in Bio-Medicines, and a Ph.D., providing a deeply scientific approach to traditional Ayurveda.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Tapovan Foothills Peace",
-      description: "Located near the secret waterfall road in Upper Tapovan, providing a quiet, pollution-free, and inspiring natural sanctuary.",
+      title: "Advanced Kerala Training",
+      description: "Dr. Vipul Sharma holds advanced certifications in Panchakarma and specialized classical therapies completed directly in Kerala.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Established since 2007",
+      description: "Over 18+ years of dedicated clinical experience in treating chronic skin, joint, and reproductive disorders in Northern India.",
       icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Integrated Yoga Therapy",
-      description: "Therapies are coupled with morning yoga, pranayama, and meditation designed to align the body's energy channels.",
+      title: "Fully Equipped Hospital",
+      description: "Offers complete IPD and OPD facilities, diagnostic rooms, dedicated therapy chambers, and naturopathy sections.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Border Highway Connectivity",
+      description: "Located right on the Una-Nangal Highway in Mehatpur, offering easy accessibility for patients from Himachal, Punjab, and neighboring regions.",
       icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Saatvic Healing Meals",
-      description: "Nutritious organic vegetarian food prepared in accordance with Ayurvedic principles to balance individual Doshas.",
+      title: "Pure Herbal Formulations",
+      description: "Strictly utilizes 100% natural, chemical-free, hormone-free, and steroid-free formulations for all internal and external therapies.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Personalized Care",
-      description: "Maintaining small residential batches to guarantee that every guest receives individual attention from our Vaidyas and therapists.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -230,9 +220,9 @@ The herbs and dietary changes have brought back my vitality and balance.`,
   }, []);
 
   useEffect(() => {
-    document.title = "Ayuskama Ayurveda Clinic & Panchakarma Centre | Rishikesh";
+    document.title = "Arogyam Panchkarma Center & Ayurvedic Hospital | Una Himachal";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Panchakarma detoxification, globally certified Ayurvedic training courses, and holistic yoga retreats at Ayuskama Ayurveda Clinic in Upper Tapovan, Rishikesh under veteran Ayurvedic doctors.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, chronic skin care (psoriasis/vitiligo), joint relief, and natural wellness under Dr. Vipul Sharma. Foundations since 2007.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -262,7 +252,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Ayuskama Ayurveda Clinic & Panchakarma Centre Rishikesh Uttarakhand
+              Arogyam Panchkarma Center & Ayurvedic Hospital Himachal
             </li>
           </ol>
         </div>
@@ -274,16 +264,16 @@ The herbs and dietary changes have brought back my vitality and balance.`,
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Ayuskama Ayurveda Clinic & Panchakarma Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Healing & Panchakarma Detoxification</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arogyam Panchkarma Center & Ayurvedic Hospital</h1>
+                <p className="text-xl mb-4 opacity-90">Traditional Ayurvedic Panchakarma & Chronic Disease Management Since 2007</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
+                  <span className="text-lg">Haridwar, Himachal Pradesh, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(340 Reviews)</span>
+                  <span className="text-lg font-semibold">4.9</span>
+                  <span className="opacity-90">(110 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -309,7 +299,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Ayuskama Ayurveda Clinic & Panchakarma Centre
+                at Arogyam Panchkarma Center & Ayurvedic Hospital
 </h2>
             </div>
 
@@ -317,7 +307,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Ayuskama Ayurveda Clinic & Panchakarma Centre</strong>, a premier healing sanctuary and educational institution located in the serene surroundings of Upper Tapovan, Rishikesh. Established to revive the ancient, time-tested wisdom of Ayurveda, Ayuskama is led by the highly regarded <strong className="font-bold text-[#2C4E5A]">Dr. Vinod Kumar</strong>, a veteran Ayurvedic physician and Panchakarma expert with over 25 years of experience, and <strong className="font-bold text-[#2C4E5A]">Dr. Neetu Singh</strong>, a specialist in therapeutic yoga and women's health with over 20 years of experience. We provide a peaceful retreat for profound body purification, mental clarity, and professional Ayurvedic training courses.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Arogyam Panchkarma Center & Ayurvedic Hospital</strong>, a premier alternative medicine hospital located in Mehatpur, Una district, Himachal Pradesh. Established in 2007 by Dr. Vipul Sharma, our facility combines classical Ayurvedic Panchakarma, diagnostic expertise, and natural drugless treatments to support full-body recovery and wellness.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -325,8 +315,8 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/secondary.jpg" 
-                          alt="Ayuskama Ayurveda Clinic gardens and view"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/secondary.webp" 
+                          alt="Arogyam Panchkarma Center & Ayurvedic Hospital grounds and view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -335,7 +325,11 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                   </div>
 
                   <p>
-                    Our center specializes in custom Panchakarma detoxification, Ayurvedic nutrition, and chronic disease management. Under the direct supervision of our experienced Vaidyas and skilled therapists, we offer personalized treatment programs targeting spinal conditions, joint stiffness, sciatic pain, digestive issues, and stress-related ailments. We integrate therapeutic yoga and pranayama with authentic oil massages (Abhyanga), warm Shirodhara flows, and organic herbal formulations to restore constitutional balance.
+                    Situated conveniently on the Una-Nangal Highway, the hospital offers comprehensive inpatient (IPD) and outpatient (OPD) care. We focus heavily on chronic and acute disorders, particularly joint pain, rheumatoid arthritis, reproductive imbalances, infertility, and chronic skin conditions like Psoriasis and Vitiligo.
+                  </p>
+
+                  <p>
+                    Each patient receives a customized diagnostic plan under Dr. Sharma's direct supervision. By integrating traditional detoxification therapies with tailored Saatvic diet charts, naturopathic hydrotherapy, and acupressure, Arogyam helps patients activate their body's innate healing potential without relying on chemicals or steroids.
                   </p>
                 </div>
               </div>
@@ -345,8 +339,8 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif" 
-                      alt="Ayuskama Ayurveda Clinic Tapovan Rishikesh"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/main.JPG" 
+                      alt="Arogyam Panchkarma Center & Ayurvedic Hospital"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -358,8 +352,8 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/secondary.jpg" 
-                        alt="Therapy Room at Ayuskama Ayurveda Clinic"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/secondary.webp" 
+                        alt="Arogyam Panchkarma Center Therapy Space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -371,26 +365,26 @@ The herbs and dietary changes have brought back my vitality and balance.`,
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to renewed health begins with a single step.{" "}
+                Your journey to authentic healing and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
-                  onClick={() => setQuoteModalOpen(true)}
+                  onClick={() => setQuoteModalOpen}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Ayuskama Ayurveda Clinic today.
+                My Vaidyam to connect with Arogyam Panchkarma Center & Ayurvedic Hospital today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ayurveda Packages Section */}
+      {/* Programs Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Centre
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Arogyam Panchkarma Center & Ayurvedic Hospital
 </h2>
           </div>
           
@@ -422,10 +416,10 @@ The herbs and dietary changes have brought back my vitality and balance.`,
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Centre
+                Why Choose <br className="hidden lg:block" /> Arogyam Panchkarma Center & Ayurvedic Hospital
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience veteran doctor supervision, accredited certification courses, and Upper Tapovan's tranquil healing environment.
+                Experience authentic Ayurvedic treatments, advanced clinical specializations, and naturopathic care under the expert direction of Dr. Vipul Sharma.
               </p>
             </div>
             
@@ -455,10 +449,10 @@ The herbs and dietary changes have brought back my vitality and balance.`,
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Ayuskama Ayurveda Clinic & Panchakarma Centre
+              Your Healing Journey at <br className="hidden lg:block" /> Arogyam Panchkarma Center & Ayurvedic Hospital
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
+              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
             </p>
           </div>
           
@@ -492,12 +486,12 @@ The herbs and dietary changes have brought back my vitality and balance.`,
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
-                  alt="Ayuskama Ayurveda Clinic"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/main.JPG"
+                  alt="Arogyam Panchkarma Center & Ayurvedic Hospital"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Arogyam?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -522,7 +516,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Ayuskama Ayurveda Clinic?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Arogyam?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -536,8 +530,8 @@ The herbs and dietary changes have brought back my vitality and balance.`,
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
-                  alt="Ayuskama Ayurveda Clinic"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/main.JPG"
+                  alt="Arogyam Panchkarma Center & Ayurvedic Hospital"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -647,7 +641,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Ayuskama Rishikesh.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments and clinical services at Arogyam.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -679,21 +673,20 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Clinic Address</h3>
-                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Ayuskama Ayurveda Clinic & Panchakarma Centre<br />
-                      60s Caffe, Next street to Hotel Green Hill, Secret Waterfall Road<br />
-                      Upper Tapovan, Rishikesh, Uttarakhand
-                    </p>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
+                      <p>Arogyam Tower, Una-Nangal Highway, Opposite Police Station, Mehatpur, District Una, Himachal Pradesh</p>
+                    </div>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
                       <div>+91 989 xxxx xxx</div>
+                      
                     </div>
                   </div>
                 </div>
@@ -702,15 +695,16 @@ The herbs and dietary changes have brought back my vitality and balance.`,
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 21 km from Jolly Grant Airport</span>
+                        <span>Approx. 10 km from Una Himachal Railway Station</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 6 km from Yog Nagari Rishikesh / Rishikesh Railway Station</span>
+                        <span>Approx. 130 km from Chandigarh International Airport</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -718,14 +712,14 @@ The herbs and dietary changes have brought back my vitality and balance.`,
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.589483503737!2d78.31577877555722!3d30.134558274878227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909118e036b0fed%3A0x62811558f33c6cc8!2sAyuskama%20Ayurveda%20Clinic%20%26%20Panchakarma%20Centre.!5e0!3m2!1sen!2sin!4v1780484142716!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7333447.253783441!2d72.41503887297377!3d26.171137415811945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390949f3edc62c27%3A0xb928111491814333!2sAarogyam%20Yoga%20and%20Panchakarma%20Center!5e0!3m2!1sen!2sin!4v1780496170481!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Ayuskama Ayurveda Clinic Location"
+                  title="Arogyam Panchkarma Center & Ayurvedic Hospital Location"
                 ></iframe>
               </div>
             </div>
@@ -737,8 +731,8 @@ The herbs and dietary changes have brought back my vitality and balance.`,
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif"
-            alt="Ayuskama Ayurveda Clinic foothills view"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/main.JPG"
+            alt="Arogyam Panchkarma Center & Ayurvedic Hospital"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -748,7 +742,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Ayuskama Ayurveda Clinic.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or wellness program at Arogyam.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -758,7 +752,7 @@ The herbs and dietary changes have brought back my vitality and balance.`,
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919917317388?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Ayuskama%20Ayurveda%20Clinic."
+              href="https://wa.me/919805038733?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Arogyam%20Panchkarma%20Center%20%26%20Ayurvedic%20Hospital."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

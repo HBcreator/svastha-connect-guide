@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function SDAyurvedaManeHolisticWellnessCentre() {
+export default function VedicYogaAyurvedaRetreatCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,176 +37,176 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Naadi Pariksha & Clinical Diagnosis",
-      description: "A meticulous baseline assessment via traditional Ayurvedic pulse diagnosis (Naadi Pariksha) and comprehensive medical case history review.",
+      title: "Pulse & Prakriti Assessment",
+      description: "An initial thorough evaluation by Master Shailendra and our resident therapists to analyze your constitutional type (Dosha and Prakriti balance) and yogic energy.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Individualized Remedial Blueprint",
-      description: "Formulating a tailored therapeutic roadmap encompassing specialized botanical formulations, exact dietary schedules, and target treatments.",
+      title: "Customized Daily Schedule",
+      description: "Structuring a personalized daily routine merging Hatha/Kundalini yoga, meditation, Ayurvedic steam, and custom dietary rules to match your healing goals.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Warm Mobilization (Purvakarma)",
-      description: "Administering targeted external warm oil therapies (Snehana) and synchronized herbal steam baths (Swedana) to loosen systemic toxins.",
+      title: "Purva Karma Cleansing",
+      description: "Initial preparation phases including full-body Abhyangam oil massage and Swedanam steam baths to mobilize toxins and calm the nervous system.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Classical Bio-Cleansing (Panchakarma)",
-      description: "Executing precise, clinically supervised physiological purification treatments tailored specifically to eliminate metabolic wastes.",
+      title: "Core Panchakarma Detox",
+      description: "Administering core cleansing therapies such as Shirodhara oil flows, customized herbal Basti, or target Ayurvedic treatments based on your needs.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Specialized Postnatal Rejuvenation",
-      description: "Tailoring custom restorative therapies, pelvic strengthening, lactational support, and infant bath training under direct physician supervision.",
+      title: "Kriya & Meditation sessions",
+      description: "Daily guided Kundalini Kriya and Himalayan meditation in our peaceful riverfront space to dissolve prana blockages and settle the busy mind.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Sustained Continuing Care",
-      description: "Ensuring long-term health and stability through practical home diet charts, tailored post-natal exercises, and virtual follow-up sessions.",
+      title: "Dinacharya Integration",
+      description: "Receiving a personalized conscious lifestyle blueprint with Ayurvedic nutrition guidance and home yoga practices to maintain inner harmony.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Phenomenal Postnatal Recovery support!",
-      review: "After giving birth, I felt completely drained with intense lower back pain. The residential postnatal stay at SD Ayurveda Mane was the best decision. Customized massages and herbal baths fully restored my strength and cured my pain.",
-      name: "Svetlana Sokolov",
+      title: "Profound Peace on the Ganges Banks",
+      review: "My 7-day yoga retreat at the Vedic Yoga Center was a profound experience. Practicing daily on the Ganga banks, opposite Laxman Jhula, gave me a deep sense of stillness. Master Shailendra's wisdom is genuine and his teachings are accessible yet incredibly deep.",
+      name: "Clara Dupont",
       verified: true,
-      location: "St. Petersburg, Russia",
-      condition: "Postpartum Recovery & Backache",
+      location: "Brussels, Belgium",
+      condition: "Yoga & Meditation Retreat",
       rating: 5
     },
     {
-      title: "Proficient Family Stress relief!",
-      review: "As an exhausted new father, the clinic's residential wellness program was remarkable. The deeply relaxing therapeutic bodywork, Ayurvedic detox treatments, and peaceful environment helped me completely reset. The staff treated us like family; I highly recommend their packages.",
-      name: "Zachary Miller",
+      title: "Transformative Kundalini Guidance",
+      review: "The Kundalini Kriya and meditation program here opened a new level of self-awareness for me. The small group setting meant personalized guidance from Shailendra, which is rare these days. Truly a sacred environment for spiritual growth.",
+      name: "Julian Vance",
       verified: true,
-      location: "Sydney, Australia",
-      condition: "Parental Exhaustion & Stress",
+      location: "London, UK",
+      condition: "Kundalini Kriya Yoga Course",
       rating: 5
     },
     {
-      title: "pelvic Instability Healed naturally!",
-      review: "I suffered from severe pelvic pain and muscle weakness after my delivery. Dr. Asha's specialized binding therapies, herbal steam sessions, and pelvic strengthening oils worked absolute wonders. I can now comfortably walk and carry my baby completely pain-free.",
-      name: "Kirsten Berg",
+      title: "Authentic Panchakarma & Warm Care",
+      review: "I came for the 14-day Panchakarma detox. The Kerala-certified Ayurvedic massages by Rajendra were transformative, and the clean vegetarian meals made with fresh herbs helped my digestion recover completely. I felt so cared for by the family.",
+      name: "Amara Thorne",
       verified: true,
-      location: "Copenhagen, Denmark",
-      condition: "Postpartum Pelvic Instability",
+      location: "Cape Town, South Africa",
+      condition: "Ayurveda Detox & Panchakarma",
       rating: 5
     },
     {
-      title: "Amazing Infant care and bath Training!",
-      review: "During our two-week stay, the expert therapists trained us in traditional baby massage and bathing techniques. Thanks to their guidance, our newborn's digestion and sleep improved significantly. The doctors provided truly exceptional, compassionate, and daily clinical care.",
-      name: "Dominic Becker",
+      title: "Life-Changing Teacher Training",
+      review: "Completing my 200-hour YTTC here was life-changing. It's not just a course; it's a living tradition. We dived deep into asana alignment, pranayama, and Vedic philosophy. The accommodation is clean, quiet, and right by the river.",
+      name: "Finn O'Shea",
       verified: true,
-      location: "Frankfurt, Germany",
-      condition: "Newborn Baby Care & Training",
+      location: "Dublin, Ireland",
+      condition: "200-Hour Yoga Teacher Training (YTTC)",
       rating: 5
     },
     {
-      title: "Superb Lactation Support and hormone Balance!",
-      review: "Struggling with severe fatigue and low breast milk supply, the compassionate care of Dr. Asha and Dr. Georly changed everything. Their custom herbal tonics and lactation support beautifully balanced my hormones and significantly boosted my milk supply.",
-      name: "Theresa Fontaine",
+      title: "Sanctuary for the Soul",
+      review: "A peaceful sanctuary in the middle of busy Rishikesh. The Himalayan Art of Mindfulness retreat helped me learn to live consciously and without fear. The purity of the teachings and the warmth of the Negi family make this place a home.",
+      name: "Elsa Lind",
       verified: true,
-      location: "Lyon, France",
-      condition: "Lactation Issues & Fatigue",
+      location: "Oslo, Norway",
+      condition: "Himalayan Art of Mindfulness",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes SD Ayurveda Mane unique?",
-      answer: "SD Ayurveda Mane is a premier clinical Ayurvedic hospital in Electronic City, Bangalore, highly celebrated for its complete family postnatal (post-pregnancy) health care programs. We combine traditional Kerala Ayurveda, authentic Panchakarma purification, therapeutic infant care, and Naturopathy within a fully residential stay framework."
+      question: "What is the background of the Vedic Yoga Center and its lineage?",
+      answer: "The Vedic Yoga Center is a unit of the Vedic Yoga Trust, a non-profit NGO founded in 2007 by Trustee Shailendra Singh Negi. Our teachings focus on pure, traditional Vedic and Tantric yoga lineage, including Kundalini Kriyas, Hatha yoga, and Himalayan meditation techniques, taught without dilution."
     },
     {
-      question: "Who oversees the postnatal and clinical protocols?",
-      answer: "All clinical treatments are directed by a highly qualified panel of senior Ayurvedic physicians, including Dr. Asha (19 years experience) and Dr. Georly George (20 years experience), alongside specialists in Naturopathy, Yoga, and pediatric care."
+      question: "Where is the center located and what is the environment like?",
+      answer: "We are situated in Laxman Jhula, Rishikesh, right on the banks of the holy river Ganges, in the foothills of the Himalayas. The center serves as a peaceful, green oasis, offering river-facing rooms and a dedicated, quiet atmosphere for study and wellness."
     },
     {
-      question: "What is included in the residential postnatal packages?",
-      answer: "Packages include 24/7 clinical supervision, specialized mother care (daily Abhyangam, Vedu Kuli herbal baths, belly binding, lactational tonics), infant care (herbal baby massages and bath training), doctor-prescribed Ayurvedic postnatal meals, and stress-relief therapies for fathers."
+      question: "What kind of meals are provided during the programs?",
+      answer: "We serve authentic Ayurvedic vegetarian meals freshly prepared in-house. The diet is designed to support physical purification, balance energy channels, and is enriched with local healing herbs tailored to your detox or study requirements."
     },
     {
-      question: "Do you treat general chronic ailments as well?",
-      answer: "Yes, beyond postnatal care, our hospital provides highly successful Panchakarma and integrated treatments for slipped disc, spondylosis, sciatica, joint arthritis, chronic stress, insomnia, and digestive disorders."
+      question: "Are your yoga courses certified?",
+      answer: "Yes, our Vedic Yoga Center is a registered Yoga Alliance school (RYS). We offer certified 200-hour, 300-hour, and 500-hour Yoga Teacher Training Courses (YTTC), as well as continuing education programs for certified teachers."
     },
     {
-      question: "Is the hospital insurance-friendly for AYUSH claims?",
-      answer: "Yes. SD Ayurveda Mane is a licensed clinical facility. We provide standard diagnostic summaries, detailed treatment charts, and itemized medical bills to enable patients to smoothly claim cashless or reimbursement AYUSH insurance."
+      question: "How can I travel to the Vedic Yoga Center in Rishikesh?",
+      answer: "The nearest airport is Jolly Grant Airport (Dehradun Airport - DED), which is approximately 21 km away (about a 45-minute drive). Yog Nagari Rishikesh Railway Station is about 5 km from the center, while Haridwar Railway Station is around 25 km away."
     }
   ];
 
   const programs = [
     {
-      title: "Complete Postnatal Mother Care",
-      description: "Medically supervised postpartum recovery featuring daily Abhyangam, Vedu Kuli herbal baths, Pizhichil, Kizhi, and belly binding to restore pelvic, uterine, and hormonal health.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Panchakarma Purification",
-      description: "Authentic, clinically monitored 5-fold physiological purification therapies designed to systematically extract deep cellular toxins and restore dosha balance.",
+      title: "Yoga Teacher Training (YTTC)",
+      description: "Yoga Alliance certified 200, 300, and 500-hour programs teaching Hatha, pranayama, philosophy, and alignment under Himalayan Master Shailendra.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Therapeutic Infant Baby Care",
-      description: "Gentle traditional massages to support infant bone development, healthy digestion, natural immunity, and professional training for parents in baby bathing.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Ayurvedic Panchakarma Detox",
+      description: "Traditional detoxification therapies including Abhyangam massage, calmative Shirodhara oil flows, and herbal steam baths to cleanse body tissues.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Spine & Joint Restoration",
-      description: "Advanced orthopedics and clinical therapies designed to successfully treat slipped disc, sciatica, cervical spondylosis, and severe joint arthritis pain.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Lifestyle Stress & Fatigue Management",
-      description: "Integrated treatments combining classical Kerala bodywork, specific Naturopathy, and targeted Yoga to counter chronic exhaustion, anxiety, and insomnia.",
+      title: "Kundalini Kriya & Meditation",
+      description: "Guided daily practices in our river-facing shala to awaken inner energy channels using traditional Tantric Kriyas and Himalayan concentration methods.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Family Rejuvenation & Father Care",
-      description: "Stress-relief and restorative wellness therapies custom-tailored for fathers and family members to foster collective household health and vitality.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Massage & Therapy Course",
+      description: "Sincere hands-on courses led by Rajendra Negi to study the science of Ayurvedic bodywork, Marma points, and traditional healing oils.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "7-Day Yoga Retreat",
+      description: "Rejuvenating weekly wellness escapes blending riverfront yoga, meditation, organic meals, and cultural integration in sacred Rishikesh.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Himalayan Sacred Walks",
+      description: "Guided pilgrimage walks to the high-vibration peaks and shrines of the Himalayas (such as Gangotri) to experience silence and natural grace.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialized Postnatal Focus",
-      description: "Widely regarded as Bengaluru's leading clinical hospital for comprehensive, family-centered postnatal recovery and infant training packages.",
+      title: "Himalayan Tradition Lineage",
+      description: "Pure teachings based on ancient Vedic and Tantric wisdom, helping seekers connect back to their true nature without dilution.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "22+ Years Mastery",
+      description: "Guided directly by Founder and Master Shailendra Singh Negi, ensuring authentic wisdom and decades of dedicated guidance.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Ganges Riverfront Setting",
+      description: "Located right on the banks of the sacred Ganges river opposite Laxman Jhula, providing an unmatched serene environment.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "NGO Trust Governance",
+      description: "Managed by the Vedic Yoga Trust (est. 2007), where all revenues support the propagation of traditional wellness and local charities.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Eminent Doctor Leadership",
-      description: "Guided by senior specialists Dr. Asha and Dr. Georly George, who bring up to 20 years of dedicated clinical experience in Kerala Ayurveda.",
+      title: "Small Group Intimacy",
+      description: "We intentionally work with small groups to provide individualized guidance, personal attention, and a supportive atmosphere.",
+      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Organic Sattvic Dining",
+      description: "Enjoy clean, delicious vegetarian meals prepared fresh by the family, customized with healing herbs for complete purification.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Authentic Kerala Ayurveda",
-      description: "Delivering traditional, meticulously administered bio-purification and rejuvenative therapies in a deeply hygienic and peaceful environment.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Comfortable Residential Stay",
-      description: "Fully serviced, clean residential accommodations under 24/7 medical supervision with specialized, doctor-recommended Ayurvedic meals.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Transdisciplinary Wellness",
-      description: "Blends classical Ayurveda, clinical Naturopathy, baby massage training, and therapeutic Yoga for complete multi-dimensional recovery.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "AYUSH Insurance Support",
-      description: "Provides highly detailed diagnostic summaries and case charts to facilitate smooth cashless or reimbursement insurance claims.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +220,9 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "SD Ayurveda Mane | Best Postnatal Care & Kerala Ayurveda in Bangalore";
+    document.title = "Vedic Yoga & Ayurveda Retreat Center | Yoga & Detox in Rishikesh";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book consultations at SD Ayurveda Mane – Holistic Wellness Center in Electronic City, Bangalore. Experience expert postnatal care, Kerala Ayurveda, and authentic Panchakarma in a fully residential setting.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience traditional Hatha, Kundalini Kriya & meditation courses, alongside authentic Kerala Ayurveda & Panchakarma retreats at Vedic Yoga Center on the banks of Ganga, Laxman Jhula, Rishikesh.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              SD Ayurveda Mane – Holistic Wellness Center Bengaluru
+              Vedic Yoga & Ayurveda Retreat Center Rishikesh Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>SD Ayurveda Mane – Holistic Wellness Center</h1>
-                <p className="text-xl mb-4 opacity-90">Specialized Postnatal Care, Natural Herbal Ayurveda & Residential Wellness</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Vedic Yoga & Ayurveda Retreat Center</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Yoga, Meditation, and Ayurveda on the Banks of the Holy Ganges</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Electronic City Phase 1, Bengaluru, Karnataka</span>
+                  <span className="text-lg">Rishikesh, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">5.0</span>
-                  <span className="opacity-90">(10 reviews)</span>
+                  <span className="text-lg font-semibold">4.9</span>
+                  <span className="opacity-90">(180 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +299,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at SD Ayurveda Mane – Holistic Wellness Center
+                at Vedic Yoga & Ayurveda Retreat Center
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">SD Ayurveda Mane – Holistic Wellness Center</strong>, Bengaluru’s premier hospital dedicated to authentic Kerala Ayurveda, complete family postnatal recovery, and advanced residential rejuvenation. Conveniently located on Vinayaka Layout opposite the Saniswara Swami Temple in Doddathoguru, Electronic City Phase 1, our center rejects commercial spa formatting to focus exclusively on physician-directed healing. Under standard medical guidelines, SD Ayurveda Mane has earned a distinguished clinical reputation for supporting new families and patient recovery from chronic, multi-system ailments.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Vedic Yoga & Ayurveda Retreat Center</strong>, a peaceful sanctuary for raising human consciousness located in Laxman Jhula, Rishikesh. Under the direction of Himalayan Yoga Master Shailendra Singh Negi and governed by the non-profit Vedic Yoga Trust (founded in 2007), our center offers traditional teachings in their pure, undiluted form. We aim to guide seekers back to their true nature, helping them integrate the layers of body, breath, mind, and spirit.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,17 +315,21 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg" 
-                          alt="SD Ayurveda Mane Exterior"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/secondary.jpg" 
+                          alt="Vedic Yoga Center gardens and view"
                           className="w-full h-full object-cover"
-                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
+                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
                       </div>
                     </div>
                   </div>
 
                   <p>
-                    Directed by a senior panel of Ayurvedic physicians featuring Dr. Asha and Dr. Georly George (possessing up to 20 years of clinical experience), SD Ayurveda Mane offers highly customized wellness paths. Every therapy roadmap begins with traditional pulse diagnosis <strong className="font-bold text-[#2c4e5a]">(Naadi Pariksha)</strong>. The center features clean, comfortable residential rooms with 24/7 medical supervision and doctor-prescribed Ayurvedic meals. We specialize in comprehensive mother care (Abhyangam, Vedu Kuli baths, belly binding, lactation support), baby massage training, classical Panchakarma detox, and orthopedic spine restoration.
+                    Nestled directly on the quiet banks of the holy river Ganges, the Center provides a genuine environment for self-discipline, inner peace, and spiritual growth. We offer Yoga Alliance-certified teacher training (YTTC 200/300/500 hours), Kundalini Kriya practices, and traditional Kerala Ayurveda Panchakarma treatments.
+                  </p>
+
+                  <p>
+                    Guests can rest their minds in our river-facing shala, participate in guided meditation, and enjoy nutritious, organic vegetarian meals freshly prepared by the family.
                   </p>
                 </div>
               </div>
@@ -335,10 +339,10 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Center/main.jpeg" 
-                      alt="SD Ayurveda Mane Electronic City"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/main.jpg" 
+                      alt="Vedic Yoga & Ayurveda Retreat Center"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
+                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
                   </div>
                 </div>
@@ -348,10 +352,10 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Center/secondary.webp" 
-                        alt="Integrated Therapy chamber at SD Ayurveda Mane"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/secondary.jpg" 
+                        alt="Vedic Yoga Center Therapy Space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg"; }}
+                        onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
                     </div>
                   </div>
@@ -361,26 +365,26 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to renewed health begins with a single step.{" "}
+                Your journey to self-awareness and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with SD Ayurveda Mane today.
+                My Vaidyam to connect with Vedic Yoga Center today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ayurveda Packages Section */}
+      {/* Programs Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> SD Ayurveda Mane – Holistic Wellness Center
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Center
 </h2>
           </div>
           
@@ -412,10 +416,10 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> SD Ayurveda Mane – Holistic Wellness Center
+                Why Choose <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Discover a dedicated clinical setting that integrates authentic Kerala Ayurveda, complete postnatal care, and comfortable residential stayed recovery.
+                Experience authentic Himalayan wisdom and traditional healing techniques in a dedicated, supportive riverfront setting.
               </p>
             </div>
             
@@ -445,10 +449,10 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> SD Ayurveda Mane – Holistic Wellness Center
+              Your Healing Journey at <br className="hidden lg:block" /> Vedic Yoga & Ayurveda Retreat Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured, integrated recovery pathway directed entirely by senior physicians from pulse diagnostics to complete family wellness.
+              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
             </p>
           </div>
           
@@ -482,12 +486,12 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"
-                  alt="SD Ayurveda Mane"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/main.jpg"
+                  alt="Vedic Yoga Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at SD Ayurveda Mane?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Vedic Yoga Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -512,7 +516,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at SD Ayurveda Mane?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Vedic Yoga Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -526,10 +530,10 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Center/main.jpeg"
-                  alt="SD Ayurveda Mane"
-                  className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg"; }}
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/main.jpg"
+                  alt="Vedic Yoga Center"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
               </div>
             </div>
@@ -542,7 +546,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -572,11 +576,11 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                       <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A]">{testimonials[currentReview]?.name}</h4>
                       {testimonials[currentReview]?.verified && (
                         <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
-                           Verified
+                          <span className="text-xs">✓</span> Verified
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -637,7 +641,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at SD Ayurveda Mane.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about courses, retreats, and therapies at Vedic Yoga Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -669,12 +673,11 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      SD Ayurveda Mane (Holistic Wellness Center)<br />
-                      No. 25, Vinayaka Layout, opposite Saniswara Swami Temple<br />
-                      Doddathoguru, Electronic City Phase 1, Bengaluru<br />
-                      Karnataka
+                      Vedic Yoga & Ayurveda Retreat Center<br />
+                      36 Neelkanth Road, Laxman Jhula, Rishikesh<br />
+                      Uttarakhand, India
                     </p>
                   </div>
                 </div>
@@ -682,16 +685,26 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    +91 989 xxxx xxx</div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <div>+91 989 xxxx xxx</div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-1" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 52 km from Kempegowda International Airport</li>
-                      <li>• Approx. 22 km from KSR Bengaluru City Railway Station</li>
+                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 21 km from Jolly Grant Airport (Dehradun)</span>
+                      </li>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 5 km from Yog Nagari Rishikesh Railway Station</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -699,14 +712,14 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31117.446646411354!2d77.61447276107899!3d12.863879546248144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6bf20ce6a35b%3A0x7a1cd3232423896!2sSD%20Ayurveda%20Mane-%20Holistic%20Wellness%20Centre!5e0!3m2!1sen!2sin!4v1779751284845!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15226528.095350351!2d65.74568639586064!3d21.29464825586949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3909165bf5c942cd%3A0x79dfb2d461f87cb9!2sVedic%20Yoga%20%26%20Ayurveda%20Retreat%20Center!5e0!3m2!1sen!2sin!4v1780493642074!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="SD Ayurveda Mane Location"
+                  title="Vedic Yoga Center Location"
                 ></iframe>
               </div>
             </div>
@@ -718,8 +731,8 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/SD Ayurveda Mane – Holistic Wellness Center/main.jpeg"
-            alt="Ayurvedic Therapy at SD Ayurveda Mane"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/main.jpg"
+            alt="Vedic Yoga Center"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -729,7 +742,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a free consultation. Our residential specialists will guide you towards the perfect treatment program at SD Ayurveda Mane.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Vedic Yoga Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -739,7 +752,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/918048037866?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20SD%20Ayurveda%20Mane."
+              href="https://wa.me/919760932106?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Vedic%20Yoga%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -780,7 +793,7 @@ export default function SDAyurvedaManeHolisticWellnessCentre() {
             {jumpSections.map((section, idx) => (
               <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
                 <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
-                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200"><ChevronRight className="h-3.5 w-3.5 text-[#2C4E5A] group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" /></div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200 border border-[#2C4E5A]/10 group-hover:border-transparent"><ChevronRight size={14} className="text-[#2C4E5A] group-hover:text-white transition-colors" /></div>
               </button>
             ))}
           </div>

@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
+export default function AashaAyurvedaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -16,7 +16,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
   const jumpSections = [
     { id: "overview", title: "Center Overview" },
     { id: "about", title: "About Center" },
-    { id: "programs", title: "Top Ayurveda Packages" },
+    { id: "programs", title: "Top Programs" },
     { id: "why-choose", title: "Why Choose Us" },
     { id: "process", title: "Your Healing Journey" },
     { id: "reviews", title: "Patient Stories" },
@@ -37,175 +37,175 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Pulse & Nadi Assessment",
-      description: "Undergoing an initial detailed health consultation and traditional pulse diagnosis (Nadi Pariksha) with Dr. Vipul Sharma to assess constitution (Prakriti) and current imbalances.",
+      title: "Initial Consultation",
+      description: "Comprehensive assessment of medical history, lifestyle, and reproductive health markers under fertility specialists.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Herbal Selection",
-      description: "Formulating chemical-free, hormone-free, and steroid-free organic herbal decoctions and creating a tailored Ayurvedic diet plan.",
+      title: "Prakriti & Dosha Analysis",
+      description: "Identifying constitutional details and metabolic imbalances causing infertility or reproductive disorders.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Snehana & Swedana",
-      description: "Beginning internal and external oil lubrication, combined with specialized steam baths to mobilize deep-seated bodily toxins.",
+      title: "Purvakarma Preparation",
+      description: "Preparing the body with herbal oil therapies and steam to loosen accumulated toxins in the tissues.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Core Shodhana Purification",
-      description: "Administering custom-tailored Panchakarma therapies like Vamana, Virechana, or customized herbal Basti based on clinical requirements.",
+      title: "Customized Panchakarma",
+      description: "Cleansing the reproductive tract and purifying organs via tailored detoxification procedures.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Naturopathic Accents",
-      description: "Integrating complementary drugless treatments such as hydrotherapy, magnetotherapy, or acupressure to build system-wide immunity.",
+      title: "Specialized Uttar Basti",
+      description: "Administering therapeutic herbal oils directly into the uterine cavity to clear blocks and heal the lining.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Rasayana Rejuvenation",
-      description: "Receiving long-term dietary plans, lifestyle guidance, and natural health blue-prints to sustain wellness at home.",
+      title: "Natural Conception Plan",
+      description: "Prescribing dietary changes, rasayana herbs, and tracking ovulation for successful conception.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Clear skin after years of struggle",
-      review: "I suffered from severe psoriasis for almost a decade and tried all kinds of modern treatments with little success. The specialized skin program at Arogyam completely changed my life.",
-      name: "Bernard Stan",
+      title: "Fallopian Tubal Blockage & Fertility",
+      review: "After two failed IVF cycles, I was absolutely devastated and felt hopeless. We traveled to Delhi specifically for Dr. Chanchal Sharma's Uttar Basti treatment at Aasha Ayurveda. The therapies were gentle, and the herbal regimen was tailored precisely for my condition.",
+      name: "Hannah Abbott",
       verified: true,
-      location: "Marseille, France",
-      condition: "Chronic Psoriasis & Skin Care",
+      location: "London, UK",
+      condition: "Fallopian Tubal Blockage & Fertility",
       rating: 5
     },
     {
-      title: "Highly professional Ayurvedic hospital",
-      review: "The 14-day Panchakarma detox program was excellent. The hospital has top-class facilities, and Dr. Sharma is a highly qualified expert. The therapy sessions were done with great care.",
-      name: "Zoltan Kovacs",
-      verified: true,
-      location: "Budapest, Hungary",
-      condition: "14 Days Complete Panchakarma",
-      rating: 5
-    },
-    {
-      title: "Significant relief from joint stiffness",
-      review: "I came to Arogyam suffering from severe knee joint pain and stiffness. The customized therapeutic treatments, warm herbal poultice massages, and specific oil therapies gave me incredible relief.",
-      name: "Kieran O'Reilly",
-      verified: true,
-      location: "Dublin, Ireland",
-      condition: "Joint Pain & Arthritis Care",
-      rating: 5
-    },
-    {
-      title: "Wonderful care for women's health",
-      review: "The PCOS and fertility wellness program at Arogyam is outstanding. The holistic combination of detox therapies, targeted diet guidelines, and natural herbal formulations helped restore my body's balance.",
-      name: "Anouk Hyung",
-      verified: true,
-      location: "Antwerp, Belgium",
-      condition: "Infertility & Metabolic Reset",
-      rating: 5
-    },
-    {
-      title: "Deeply purifying naturopathy and detox",
-      review: "My experience at Arogyam was exceptional. Combining traditional Panchakarma with naturopathic treatments like hydrotherapy and acupressure felt very complete.",
-      name: "Marta Strom",
+      title: "Male Infertility & Low Sperm Count",
+      review: "My wife and I were struggling with conception due to my low sperm count and motility issues. Traditional treatments back in Sweden offered no real solutions except direct IVF. Under Dr. Chanchal's guidance, I went through a 14-day Panchakarma detoxification.",
+      name: "Sven Lindqvist",
       verified: true,
       location: "Gothenburg, Sweden",
-      condition: "Naturopathy & Detoxification",
+      condition: "Male Infertility & Low Sperm Count",
+      rating: 5
+    },
+    {
+      title: "PCOS & Anovulatory Cycles",
+      review: "I had extremely irregular periods and anovulatory cycles due to severe PCOS. Aasha Ayurveda's natural treatment approach completely regulated my system. Through customized Panchakarma therapies and dietary adjustments, my menstrual cycle returned to a healthy 28 days.",
+      name: "Julie Mercier",
+      verified: true,
+      location: "Geneva, Switzerland",
+      condition: "PCOS & Anovulatory Cycles",
+      rating: 5
+    },
+    {
+      title: "Failed IVF Support & Low AMH",
+      review: "My wife had very low AMH levels and we had been told that donor eggs were our only option after IVF failed. We decided to try Ayurveda as a last resort.",
+      name: "Oliver Vance",
+      verified: true,
+      location: "Melbourne, Australia",
+      condition: "Failed IVF Support & Low AMH",
+      rating: 5
+    },
+    {
+      title: "Endometriosis & Pelvic Pain",
+      review: "Endometriosis caused me constant, debilitating pelvic pain and painful periods, making my life miserable. The soothing therapies, customized herbal decoctions, and detox treatments at the clinic reduced my pain by 90%.",
+      name: "Chloe DuPont",
+      verified: true,
+      location: "Paris, France",
+      condition: "Endometriosis & Pelvic Pain",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What clinical specializations does Arogyam focus on?",
-      answer: "We specialize in traditional Ayurvedic solutions for chronic skin disorders (like Psoriasis, Vitiligo, eczema), joint care, metabolic disorders, infertility, PCOD, hair loss, and holistic detoxification."
+      question: "What is Aasha Ayurveda's approach to fertility?",
+      answer: "We focus on natural, non-surgical reproductive care. By using custom-tailored Panchakarma detoxification, specific Ayurvedic fertility herbs, and dietary corrections, we clear systemic blocks, strengthen the reproductive organs, and help couples conceive naturally, even after failed IVF cycles."
     },
     {
-      question: "Where is the hospital located and what facilities are available?",
-      answer: "Our hospital is located in Mehatpur, Una, on the Himachal-Punjab border. The facility is fully equipped with inpatient (IPD) and outpatient (OPD) facilities, diagnostic rooms, dedicated Panchakarma chambers, and a naturopathy section."
+      question: "What is Uttar Basti and how does it work?",
+      answer: "Uttar Basti is a specialized Ayurvedic treatment where sterile medicated oil or ghee is administered directly into the uterine cavity via the cervix. It is highly effective for clearing fallopian tube blockages, nourishing the endometrium, improving egg implantation, and regulating ovulation."
     },
     {
-      question: "Are the herbal medicines chemical-free?",
-      answer: "Yes. All medicines and herbal formulations used at Arogyam are 100% natural and prepared without chemicals, hormones, steroids, or synthetic additives."
+      question: "Can tubal blockages be treated without surgery?",
+      answer: "Yes. In Ayurveda, fallopian tube blockage is seen as a Vata-Kapha disorder. Through internal medicines and a series of specialized Uttar Basti therapies, we dissolve the blockage and restore normal tubal function naturally without any surgical intervention."
     },
     {
-      question: "Who supervises the treatments and clinical diagnostics?",
-      answer: "All programs are directly supervised by Dr. Vipul Sharma, holding a BAMS from Dayanand Ayurvedic College, advanced Panchakarma certifications from Kerala, an MD in Bio-Medicines, and a Ph.D."
+      question: "What gynecological conditions do you specialize in treating?",
+      answer: "We offer successful treatments for PCOS/PCOD, Endometriosis, low ovarian reserve (Low AMH), uterine fibroids, hydrosalpinx, unexplained female infertility, and male infertility issues like low sperm count, motility, and abnormal morphology."
     },
     {
-      question: "How do I reach the center in Mehatpur, Una?",
-      answer: "The closest main railway station is Una Himachal Railway Station (UHL), located about 10 km away. The nearest international airport is Chandigarh International Airport (IXC), which is approximately 130 km away."
+      question: "How far is the Rajouri Garden clinic from transit points?",
+      answer: "Our Delhi center is located in Rajouri Garden. It is approximately 14 km from Indira Gandhi International (IGI) Airport (25-30 min drive), about 6 km from Delhi Cantonment Railway Station (DEC), and 14 km from New Delhi Railway Station (NDLS). We are also just a short 400-meter walk from the Rajouri Garden Metro Station (Blue & Pink Lines)."
     }
   ];
 
   const programs = [
     {
-      title: "7 to 28 Days Classic Panchakarma",
-      description: "Complete biological cleansing and detoxification including Vamana, Virechana, Basti, Nasya, and Raktamokshana to eliminate toxins and restore balance.",
+      title: "Fallopian Tubal Blockage",
+      description: "Non-surgical clearance using specialized Uttar Basti therapy and customized herbs.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Chronic Skin & Hair Care",
-      description: "Specialized Ayurvedic protocols designed to address chronic skin diseases such as Psoriasis, Vitiligo, eczema, and hair loss from the root.",
-      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Joint & Arthritis Relief",
-      description: "Therapeutic oil pooling, herbal poultice massage, and custom decoctions to treat rheumatoid arthritis, gout, sciatica, and joint stiffness.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Infertility & Women's Health",
-      description: "Holistic detoxification, customized diet plans, and natural herbal therapies to support fertility and manage PCOS/PCOD imbalances.",
+      title: "Ayurvedic Infertility Care",
+      description: "Holistic protocols for female and male infertility factors to promote natural conception.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Lifestyle & Diabetes Management",
-      description: "Integrative therapies combining dietary charts, herbal remedies, and lifestyle routines to manage metabolic disorders and diabetes.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "PCOS & PCOD Management",
+      description: "Regulating ovulation and metabolic imbalances through natural cleansing and diet.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Naturopathy & Acupressure",
-      description: "Complementary drugless healing modalities including hydrotherapy, magnetotherapy, and targeted acupressure to boost immunity.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Low AMH & Ovarian Health",
+      description: "Rasayana therapies to nourish ovarian tissue and improve egg quality naturally.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Male Infertility Treatment",
+      description: "Targeting low sperm count, motility, and morphology issues with potent herbs.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Panchakarma Detoxification",
+      description: "Purification therapies including Basti, Virechana, and Nasya to clear reproductive system blockages.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Founder's Academic Expertise",
-      description: "Led by Dr. Vipul Sharma, holding BAMS, an MD in Bio-Medicines, and a Ph.D., providing a deeply scientific approach to traditional Ayurveda.",
-      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Advanced Kerala Training",
-      description: "Dr. Vipul Sharma holds advanced certifications in Panchakarma and specialized classical therapies completed directly in Kerala.",
+      title: "Specialization in Fertility",
+      description: "Led by Dr. Chanchal Sharma, a renowned expert in Ayurvedic gynecology and natural conception.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Established since 2007",
-      description: "Over 18+ years of dedicated clinical experience in treating chronic skin, joint, and reproductive disorders in Northern India.",
-      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Successful Uttar Basti",
+      description: "Proven non-surgical solution for blocked tubes, thin endometrium, and uterine issues.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Fully Equipped Hospital",
-      description: "Offers complete IPD and OPD facilities, diagnostic rooms, dedicated therapy chambers, and naturopathy sections.",
+      title: "90%+ Natural Success Rate",
+      description: "Thousands of couples have successfully conceived naturally after failed IVF cycles.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Personalized Health Care",
+      description: "Therapies customized to each individual's dosha imbalance and reproductive health history.",
       icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Border Highway Connectivity",
-      description: "Located right on the Una-Nangal Highway in Mehatpur, offering easy accessibility for patients from Himachal, Punjab, and neighboring regions.",
-      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+      title: "High Clinical Hygiene",
+      description: "A modern clinical environment operating under strict traditional Panchakarma protocols.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Pure Herbal Formulations",
-      description: "Strictly utilizes 100% natural, chemical-free, hormone-free, and steroid-free formulations for all internal and external therapies.",
+      title: "Safe & Drug-Free Care",
+      description: "100% natural therapies and herbal formulations with zero side effects.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
   }, []);
 
   useEffect(() => {
-    document.title = "Arogyam Panchkarma Centre & Ayurvedic Hospital | Una Himachal";
+    document.title = "Aasha Ayurveda Center Delhi | Ayurvedic Infertility Treatment";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, chronic skin care (psoriasis/vitiligo), joint relief, and natural wellness under Dr. Vipul Sharma. Foundations since 2007.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic fertility treatments, non-surgical fallopian tube blockage reversal (Uttar Basti), PCOD/PCOS care, and natural conception programs at Aasha Ayurveda Center in Rajouri Garden, New Delhi under Dr. Chanchal Sharma.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Arogyam Panchkarma Centre & Ayurvedic Hospital Himachal
+              Aasha Ayurveda Center Rajouri Garden West Delhi
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Arogyam Panchkarma Centre & Ayurvedic Hospital</h1>
-                <p className="text-xl mb-4 opacity-90">Traditional Ayurvedic Panchakarma & Chronic Disease Management Since 2007</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Aasha Ayurveda Center</h1>
+                <p className="text-xl mb-4 opacity-90">Ayurvedic Infertility & Women's Health Clinic</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Haridwar, Himachal Pradesh, India</span>
+                  <span className="text-lg">Rajouri Garden, West Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(110 Reviews)</span>
+                  <span className="text-lg font-semibold">4.8</span>
+                  <span className="opacity-90">(1,300 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -297,17 +297,17 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-white rounded-3xl p-6 md:p-12 shadow-sm border border-[#2C4E5A]/5">
             <div className="text-center mb-8 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Arogyam Panchkarma Centre & Ayurvedic Hospital
-</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] leading-tight md:leading-[1.1] max-w-4xl mx-auto px-2">
+                Authentic Ayurvedic Infertility & <br className="hidden lg:block" />
+                Panchakarma Treatments
+              </h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Arogyam Panchkarma Centre & Ayurvedic Hospital</strong>, a premier alternative medicine hospital located in Mehatpur, Una district, Himachal Pradesh. Established in 2007 by Dr. Vipul Sharma, our facility combines classical Ayurvedic Panchakarma, diagnostic expertise, and natural drugless treatments to support full-body recovery and wellness.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Aasha Ayurveda Center</strong>, New Delhi's premier destination for holistic fertility and Ayurvedic women's health care. Conveniently located in Rajouri Garden, our clinic specializes in non-surgical infertility solutions, gynecological disorders, and traditional Panchakarma therapies. Under the expert clinical leadership of <strong className="font-bold text-[#2C4E5A]">Dr. Chanchal Sharma</strong> (BAMS, MD, DGO), a renowned pioneer in Ayurvedic gynecology, we utilize classic diagnostic methods to trace and treat the root cause of reproductive issues.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/secondary.webp" 
-                          alt="Arogyam Panchkarma Centre & Ayurvedic Hospital grounds and view"
+                          src="/TOP cneters/delhi/Aasha Ayurveda Center/secondary.webp" 
+                          alt="Aasha Ayurveda Center accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,12 +325,10 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                   </div>
 
                   <p>
-                    Situated conveniently on the Una-Nangal Highway, the hospital offers comprehensive inpatient (IPD) and outpatient (OPD) care. We focus heavily on chronic and acute disorders, particularly joint pain, rheumatoid arthritis, reproductive imbalances, infertility, and chronic skin conditions like Psoriasis and Vitiligo.
+                    Our clinic is globally recognized for its success in treating complex conditions such as fallopian tube blockage, PCOS/PCOD, endometriosis, low AMH, hydrosalpinx, and unexplained infertility. We are especially distinguished for performing <strong className="font-bold text-[#2C4E5A]">Uttar Basti</strong>, a classical Ayurvedic procedure that delivers sterile medicated oils directly into the uterine cavity, helping clear tubal blocks and strengthen the uterine lining without surgery or side effects. At Aasha Ayurveda Center, we combine authentic Panchakarma detoxification, specialized fertility-boosting herbs, tailored Saatvic diets, and lifestyle counseling to prepare your body for a healthy, natural pregnancy.
                   </p>
 
-                  <p>
-                    Each patient receives a customized diagnostic plan under Dr. Sharma's direct supervision. By integrating traditional detoxification therapies with tailored Saatvic diet charts, naturopathic hydrotherapy, and acupressure, Arogyam helps patients activate their body's innate healing potential without relying on chemicals or steroids.
-                  </p>
+                  
                 </div>
               </div>
 
@@ -339,8 +337,8 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/main.JPG" 
-                      alt="Arogyam Panchkarma Centre & Ayurvedic Hospital"
+                      src="/TOP cneters/delhi/Aasha Ayurveda Center/main.avif" 
+                      alt="Aasha Ayurveda Center main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -352,8 +350,8 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/secondary.webp" 
-                        alt="Arogyam Panchkarma Centre Therapy Space"
+                        src="/TOP cneters/delhi/Aasha Ayurveda Center/secondary.webp" 
+                        alt="Aasha Ayurveda Center therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -365,14 +363,14 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to authentic healing and balance begins with a single step.{" "}
+                Your journey to self-awareness and balance begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
-                  onClick={() => setQuoteModalOpen}
+                  onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Arogyam Panchkarma Centre & Ayurvedic Hospital today.
+                My Vaidyam to connect with Aasha Ayurveda Center today.
               </h3>
             </div>
           </div>
@@ -383,9 +381,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Arogyam Panchkarma Centre & Ayurvedic Hospital
-</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A]">Top Programs at Aasha Ayurveda Center</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -415,11 +411,9 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Arogyam Panchkarma Centre & Ayurvedic Hospital
-</h2>
+              <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Why Choose Aasha Ayurveda Center</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience authentic Ayurvedic treatments, advanced clinical specializations, and naturopathic care under the expert direction of Dr. Vipul Sharma.
+                Experience authentic Tridosha consultations, therapeutic spa, and yoga in a supportive, positive environment.
               </p>
             </div>
             
@@ -448,11 +442,9 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
       <section id="process" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Arogyam Panchkarma Centre & Ayurvedic Hospital
-</h2>
+            <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Your Healing Journey</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A systematic approach of yoga, meditation, and traditional purification to harmonize your physical body, breath, and awareness.
+              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>
           </div>
           
@@ -486,12 +478,12 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/main.JPG"
-                  alt="Arogyam Panchkarma Centre & Ayurvedic Hospital"
+                  src="/TOP cneters/delhi/Aasha Ayurveda Center/main.avif"
+                  alt="Aasha Ayurveda Center view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Arogyam?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Aasha Ayurveda Center?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -516,7 +508,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Arogyam?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Aasha Ayurveda Center?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -530,8 +522,8 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/main.JPG"
-                  alt="Arogyam Panchkarma Centre & Ayurvedic Hospital"
+                  src="/TOP cneters/delhi/Aasha Ayurveda Center/main.avif"
+                  alt="Aasha Ayurveda Center view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -585,7 +577,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                     </p>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -596,7 +588,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                 </div>
               </CardContent>
             </Card>
-
+ 
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -619,7 +611,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-
+ 
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -635,13 +627,13 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments and clinical services at Arogyam.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, accommodations, and therapies at Aasha Ayurveda Center.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -658,7 +650,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
           </Accordion>
         </div>
       </section>
-
+ 
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -673,10 +665,12 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-2 text-sm md:text-base" style={{ color: "#7F543D" }}>
-                      <p>Arogyam Tower, Una-Nangal Highway, Opposite Police Station, Mehatpur, District Una, Himachal Pradesh</p>
-                    </div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
+                    <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
+                      Aasha Ayurveda Center<br />
+                      J-146, Rajouri Garden<br />
+                      West Delhi, Delhi, India
+                    </p>
                   </div>
                 </div>
                 
@@ -684,25 +678,25 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
-                    <div className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <div>+91 989 xxxx xxx</div>
                       
                     </div>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-1.5" style={{ color: "#7F543D" }}>
+                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 10 km from Una Himachal Railway Station</span>
+                        <span>Approx. 14 km from Indira Gandhi International (IGI) Airport</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 130 km from Chandigarh International Airport</span>
+                        <span>Approx. 6 km from Delhi Cantonment Railway Station (DEC)</span>
                       </li>
                       
                     </ul>
@@ -712,27 +706,27 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7333447.253783441!2d72.41503887297377!3d26.171137415811945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390949f3edc62c27%3A0xb928111491814333!2sAarogyam%20Yoga%20and%20Panchakarma%20Center!5e0!3m2!1sen!2sin!4v1780496170481!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.4340580293892!2d77.12056860000001!3d28.6467193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d035df94f9b5b%3A0x1fbdc28f4898f18b!2sAasha%20Ayurvedic%20Center!5e0!3m2!1sen!2sin!4v1780632890235!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Arogyam Panchkarma Centre & Ayurvedic Hospital Location"
+                  title="Aasha Ayurveda Center Location"
                 ></iframe>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+ 
       {/* Footer CTA */}
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Centre & Ayurvedic Hospital/main.JPG"
-            alt="Arogyam Panchkarma Centre & Ayurvedic Hospital"
+            src="/TOP cneters/delhi/Aasha Ayurveda Center/main.avif"
+            alt="Aasha Ayurveda Center"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -742,7 +736,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or wellness program at Arogyam.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or retreat program at Aasha Ayurveda Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -752,7 +746,7 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919805038733?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Arogyam%20Panchkarma%20Centre%20%26%20Ayurvedic%20Hospital."
+              href="https://wa.me/919811773770?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Aasha%20Ayurveda%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -762,21 +756,21 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
           </div>
         </div>
       </section>
-
+ 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
+ 
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
-
+ 
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
-
+ 
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
-
+ 
       <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
@@ -802,3 +796,4 @@ export default function ArogyamPanchkarmaCentreAyurvedicHospital() {
     </div>
   );
 }
+

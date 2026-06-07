@@ -671,7 +671,7 @@ export default function SanjeevaniAyurveda() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Sanjeevani Ayurveda<br />
                       Plot no-54, Upper Ground Floor, Opposite Pragati Public School (Gate no. 2), Sector 13 B, Dwarka<br />

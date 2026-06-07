@@ -761,7 +761,7 @@ const AyurSomaAyurvedaRoyalRetreat = () => {
     if (s.includes("farm") || s.includes("organic") || s.includes("garden") || s.includes("acre") || s.includes("beach") || s.includes("location") || s.includes("green")) {
       return <TreePine className="h-7 w-7 text-white" />;
     }
-    if (s.includes("infrastructure") || s.includes("treatment") || s.includes("therapy") || s.includes("pharmacy") || s.includes("centre") || s.includes("center")) {
+    if (s.includes("infrastructure") || s.includes("treatment") || s.includes("therapy") || s.includes("pharmacy") || s.includes("center") || s.includes("center")) {
       return <Stethoscope className="h-7 w-7 text-white" />;
     }
     if (s.includes("yoga") || s.includes("meditation") || s.includes("hall") || s.includes("mindful")) {

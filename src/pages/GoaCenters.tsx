@@ -15,10 +15,10 @@ const GoaCenters = () => {
 
   const centers = [
     {
-      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Center",
       city: "Divar Island, Goa, India",
       description:
-        "The Ayurveda Wellness Centre at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management.",
+        "The Ayurveda Wellness Center at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management.",
       rating: 4.9,
       reviews: 1450,
       priceRange: "$$$$",
@@ -48,7 +48,7 @@ const GoaCenters = () => {
       slug: "nalanda-retreat-goa-india",
     },
     {
-      name: "Soul Vacation Resort & Wellness Centre",
+      name: "Soul Vacation Resort & Wellness Center",
       city: "Colva Beach, South Goa, India",
       description:
         "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort near South Goa beaches. It blends serene coastal living with authentic Ayurveda, stress-relief therapies, and personalized wellness plans for deep rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",

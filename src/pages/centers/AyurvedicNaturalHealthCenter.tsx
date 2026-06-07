@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AyurvedicNaturalHealthCentre() {
+export default function AyurvedicNaturalHealthCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -709,7 +709,7 @@ export default function AyurvedicNaturalHealthCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.7918241524826!2d73.76223408552455!3d15.54928671463476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfeb051f90c893%3A0x5098534d3dbfbd54!2sANHC%20-%20Ayurvedic%20Natural%20Health%20Centre%2C%20Calangute%2C%20Goa!5e0!3m2!1sen!2sin!4v1779909735887!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3843.7918241524826!2d73.76223408552455!3d15.54928671463476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfeb051f90c893%3A0x5098534d3dbfbd54!2sANHC%20-%20Ayurvedic%20Natural%20Health%20Center%2C%20Calangute%2C%20Goa!5e0!3m2!1sen!2sin!4v1779909735887!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 

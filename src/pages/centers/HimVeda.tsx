@@ -1166,7 +1166,7 @@ const HimVeda = () => {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">HimVeda</h1>
-                <p className="text-xl mb-4 opacity-90">Heritage Wellness Centre</p>
+                <p className="text-xl mb-4 opacity-90">Heritage Wellness Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">Dharamshala, Himachal Pradesh</span>
@@ -2728,7 +2728,7 @@ const HimVeda = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-              HimVeda Heritage Wellness Centre
+              HimVeda Heritage Wellness Center
             </div>
             <div className="relative rounded-lg overflow-hidden w-full" style={{ paddingBottom: "56.25%" }}>
               <img

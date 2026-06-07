@@ -2619,7 +2619,7 @@ export default function AyurmanaCenter() {
                       <div className="relative w-full aspect-[800/600]">
                         <iframe
                           title="Ayurmana Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.932453995799!2d76.91816697421514!3d8.602483995521123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b8acfe00e83b%3A0x51423f7abcbba53!2sAyurMana%20%7C%20Dharma%20Ayurveda%20Centre%20for%20Advanced%20Healing!5e0!3m2!1sen!2sin!4v1768652250943!5m2!1sen!2sin"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.932453995799!2d76.91816697421514!3d8.602483995521123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b8acfe00e83b%3A0x51423f7abcbba53!2sAyurMana%20%7C%20Dharma%20Ayurveda%20Center%20for%20Advanced%20Healing!5e0!3m2!1sen!2sin!4v1768652250943!5m2!1sen!2sin"
                           className="absolute inset-0 h-full w-full"
                           style={{ border: 0 }}
                           allowFullScreen

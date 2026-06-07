@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AyurKutiraPanchakarmaCentre() {
+export default function BholeBabaAyurvedicHospitalResearchCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,176 +37,186 @@ export default function AyurKutiraPanchakarmaCentre() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Pulse Diagnostic Consultation",
-      description: "Thorough individual diagnostic assessment using traditional Ayurvedic pulse reading (Nadi Pariksha) and comprehensive physical evaluations.",
+      title: "Dosha & Prakriti Assessment",
+      description: "A detailed clinical check-up and pulse review overseen by senior Vaidyas to establish your body constitution, determine dosha balances, and outline healing goals.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Remedial Map",
-      description: "Formulating a targeted therapeutic blueprint spanning tailored dietary structures, specific lifestyle alterations, and exact therapy lists.",
+      title: "Custom Healing Schedule",
+      description: "Compiling a customized daily timeline of botanical therapies, dietary directions, mindful breathing sets, and recommended organic herbal extracts.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Preparatory Snehana & Swedana",
-      description: "Administering specialized external warm oil applications and synchronized herbal steam sessions to loosen and mobilize deep somatic wastes.",
+      title: "Purva Karma Warmups",
+      description: "Warm synchronized oil massage (Abhyangam) and customized steam baths (Swedana) using fresh herbal infusions to loosen metabolic cell wastes and prep the body's channels.",
       icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Classical Panchakarma Detox",
-      description: "Undergoing customized bio-purification procedures (Vamana, Virechana, or Basti) designed to eliminate root physiological imbalances.",
+      title: "Pradhana Karma Cleansing",
+      description: "Supervised administration of traditional biological cleansing (such as Virechana, Vasti, or Nasyam) to eliminate deep toxic accumulations and balance key functions.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Rasayana Rejuvenation",
-      description: "Nourishing deep tissues and building natural immunity (Ojas) with potent Ayurvedic formulations (Rasayana Chikitsa) and tailored supplements.",
+      title: "Mindfulness & Restorative Yoga",
+      description: "Sunset breathwork and physician-guided yoga exercises at our scenic open-air shala to restore cellular energy, build core strength, and calm the nerves.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Sustained Wellness Continuum",
-      description: "Ensuring long-term stability with practical dietary guides, targeted home exercises, and scheduled virtual follow-up appointments.",
+      title: "Dinacharya Home Care",
+      description: "Compiling a personal daily routine plan, customized home diet guidelines, breathing exercises, and recommended organic supplements to sustain long-term vital health.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "An Absolute Miracle for Infertility & PCOS!",
-      review: "After struggling with severe PCOS for four years, Dr. Latha designed a targeted Panchakarma detox and custom fertility herbs. We naturally conceived just four months after finishing the treatment! Absolute miracle workers.",
-      name: "Olivia Bennett",
+      title: "Proficient Sciatica Care in Ranikhet",
+      review: `I stayed at Bhole Baba Hospital in Chilianaula for 3 weeks to treat my painful sciatica and spinal stiffness.
+Dr. Vijay and his therapists did a marvelous job with the traditional massage techniques.
+My spinal flexibility has greatly improved, and I am finally pain-free.`,
+      name: "Charlie Dubois",
       verified: true,
-      location: "Sydney, Australia",
-      condition: "Infertility & Severe PCOS",
+      location: "Lyon, France",
+      condition: "Joint Pain & Spine Care",
       rating: 5
     },
     {
-      title: "Complete Sciatica and Spondylosis Relief!",
-      review: "Shooting sciatica pain down my leg made standing unbearable. The targeted warm oil Kati Basti treatments and synchronized massage therapies at AyurKutira did absolute wonders. The physical relief is extraordinary—I am fully active and walking miles completely pain-free now.",
-      name: "William Davies",
+      title: "Exceptional Panchakarma Detox & Peace",
+      review: `My 14-day residential Panchakarma detox at the Bhole Baba center was deeply transformative.
+The daily treatments combined with the serene mountain environment of Ranikhet helped me reset.
+The organic food, professional staff, and peaceful ashram atmosphere were top-notch.`,
+      name: "Alex Wright",
       verified: true,
-      location: "Cardiff, Wales",
-      condition: "Sciatica & Spondylosis",
+      location: "Toronto, Canada",
+      condition: "Classical Panchakarma Detox",
       rating: 5
     },
     {
-      title: "Incredible Post-Chemo Recovery and Energy Boost",
-      review: "After chemotherapy left me with debilitating fatigue, the restorative care at AyurKutira safely rebuilt my strength. It quickly ended my chronic nausea and completely restored my appetite. The highly skilled doctors treat every patient with profound compassion.",
-      name: "Astrid Lindgren",
+      title: "Perfect Burnout Recovery & Rejuvenation",
+      review: `I completed a 10-day Kayakalpa rejuvenation package at the hospital to recover from mental exhaustion.
+The Shirodhara treatments and the guidance on mindfulness completely restored my energy.
+It is an amazing place for anyone seeking true spiritual and physical recovery.`,
+      name: "Ingel Nielsen",
       verified: true,
-      location: "Stockholm, Sweden",
-      condition: "Post-Chemo Rejuvenation",
+      location: "Copenhagen, Denmark",
+      condition: "Stress Relief & Rejuvenation",
       rating: 5
     },
     {
-      title: "Remarkable Male Infertility Improvement",
-      review: "Dealing with male-factor infertility, the doctor-guided Ayurvedic purification therapies and specific botanical supplements at AyurKutira made a massive difference. Our follow-up tests showed a major, healthy increase in sperm count and motility. We are deeply grateful for their incredible expertise.",
-      name: "Nathaniel Cross",
+      title: "Incredible Respiratory & Asthma Relief",
+      review: `As a long-term asthma sufferer, the pure mountain air of Chilianaula was already helpful.
+The specialized respiratory therapies designed by Dr. Priyanka Ramola worked wonders for me.
+I haven't breathed this easily in years, and my chest feels completely clear.`,
+      name: "James Sterling",
       verified: true,
-      location: "New York, USA",
-      condition: "Oligospermia & Low Motility",
+      location: "Chicago, USA",
+      condition: "Respiratory & Chronic Asthma Care",
       rating: 5
     },
     {
-      title: "Dramatically Cleared Asthma & Sinus Allergies!",
-      review: "Severe seasonal asthma and nasal allergies made cold weather a nightmare. The specialized respiratory detox therapies at AyurKutira cleared my chest congestion entirely. I am happily off my daily inhalers and highly recommend their authentic treatments!",
-      name: "Sophie Lebrun",
+      title: "Scientific Clinical Care with Heart",
+      review: `What makes Bhole Baba Hospital stand out is the combination of scientific medical supervision and Babaji's charitable spirit.
+I received excellent treatment for metabolic issues and digestion during my stay.
+The doctors and caretakers show a level of empathy that is hard to find elsewhere.`,
+      name: "Talia Kovako",
       verified: true,
-      location: "Montreal, Canada",
-      condition: "Bronchial Asthma & Allergies",
+      location: "Kyiv, Ukraine",
+      condition: "Digestive Reset & Metabolic Balance",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What is the primary medical specialization of AyurKutira?",
-      answer: "AyurKutira is a premier multispecialty Ayurveda and Panchakarma sanctuary renowned for its highly successful 'Garba Ayu' infertility clinic, targeted spine and joint rehabilitation, and supportive cancer care."
+      question: "What is the history and lineage of the Bhole Baba Ayurvedic Hospital?",
+      answer: "The hospital was established in 1984 under the guidance of H.H. Sri Babaji (Haidakhan Babaji) to bring authentic Ayurvedic healing and research to the Kumaon region. It is situated adjacent to the Baba Haidakhan Temple and Ashram in Chilianaula, Ranikhet, Almora, operating under a charitable trust."
     },
     {
-      question: "Who are the lead physicians directing the treatments?",
-      answer: "All clinical protocols are directed by senior, highly experienced Ayurvedic practitioners Dr. Dileep and Dr. Latha Dileep, recognized for their deep expertise in classical pulse reading, traditional Panchakarma, and holistic endocrinology."
+      question: "Who leads the medical and clinical team at the hospital?",
+      answer: "Our expert clinical team is led by Dr. Vijay (M.D. in Ayurveda, Gold Medalist, and experienced clinical researcher) and Dr. S.S. Misra (In-charge with over 24 years of Ayurvedic clinical experience), alongside resident physician Dr. Priyanka Ramola."
     },
     {
-      question: "What conditions are treated in the Garba Ayu infertility clinic?",
-      answer: "We offer comprehensive natural protocols for both female issues (PCOD/PCOS, uterine fibroids, endometriosis, adenomyosis, dysmenorrhea) and male issues (oligospermia, low sperm motility, teratozoospermia, and erectile dysfunction)."
+      question: "What primary treatment packages and durations are available?",
+      answer: "We offer classical Panchakarma detoxification, Kayakalpa & Rejuvenation, Stress & Mental Wellness, and specialized care for chronic joint disorders, asthma, and digestive issues. Treatment durations range from 3, 5, 7, 14, 21, to 45 days based on physician consultations."
     },
     {
-      question: "Do you offer supportive care for patients recovering from cancer?",
-      answer: "Yes, we specialize in gentle, restorative post-chemo, radiation, and post-surgery supportive rejuvenation. These therapies safely rebuild natural immunity, reduce chronic fatigue, and eliminate chemical systemic residues."
+      question: "Are the Ayurvedic medicines prepared in-house?",
+      answer: "Yes. All herbal preparations, oils, and decoctions used in our therapies are carefully processed and manufactured in our in-house certified pharmacy to ensure maximum purity, potency, and traditional authenticity."
     },
     {
-      question: "Can I get health insurance reimbursement for treatments at AyurKutira?",
-      answer: "Yes, AyurKutira complies with standard medical documentation requirements. We provide detailed clinical summaries, bills, and diagnostics to enable patients to easily claim AYUSH insurance reimbursement."
+      question: "How do I reach Chilianaula, Ranikhet from the nearest hubs?",
+      answer: "The nearest airport is Pantnagar Airport (PGH), approximately 110 km away. The nearest railway stations are Kathgodam and Haldwani, located about 90 km from the hospital. Private taxis are easily available from the airport and railway stations to reach Ranikhet (approx. 2.5 to 4 hours drive)."
     }
   ];
 
   const programs = [
     {
-      title: "Garba Ayu Fertility Care",
-      description: "Specialized, highly successful natural protocols addressing PCOS, uterine fibroids, endometriosis, oligospermia, and low sperm motility.",
+      title: "Classical Panchakarma",
+      description: "A complete five-fold biological detoxification program including Vamana, Virechana, and Basti supervised by Dr. Vijay and Dr. S.S. Misra.",
       icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Panchakarma detoxification",
-      description: "Authentic, 5-fold physiological purification procedures custom-tailored to systematically extract cellular toxins and restore humoral balance.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Spine & Joint Restoration",
-      description: "Targeted spinal treatments utilizing specialized warm herbal oils and local heat applications for sciatica, spondylosis, and osteoarthritis.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Cancer Recovery & Rejuvenation",
-      description: "Restorative post-chemo, radiation, and surgical supportive therapies to safely combat chronic fatigue and rebuild immune cell health.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Respiratory & Allergy Care",
-      description: "Targeted bio-cleansing and lung-nourishing therapies providing permanent relief from chronic asthma, bronchitis, and allergic rhinitis.",
+      title: "Kayakalpa & Rejuvenation",
+      description: "Premium cellular revitalization and Rasayana therapies designed to slow physiological aging, build immunity, and increase vital energy.",
       icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Metabolic & Lifestyle Management",
-      description: "Integrated dietary adjustments, clinically supervised yoga, and specific herbal remedies to control hypertension and type 2 diabetes.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Stress & Mental Wellness",
+      description: "Neural soothing therapies utilizing warm Shirodhara oil flows, guided meditation, and yoga sessions at the tranquil Haidakhan temple campus.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Chronic Ailments Recovery",
+      description: "Targeted clinical protocols for rheumatoid arthritis, sciatica, back pain, and joint stiffness using specialized herbal poultices and oil pools.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Respiratory & Asthma Care",
+      description: "Unique therapies utilizing pure Himalayan air, herbal steam inhalations, and chest massages to relieve chronic asthma, bronchitis, and allergies.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Digestive & Metabolic Reset",
+      description: "Custom herbal preparations, therapeutic mild purgations, and individually designed Saatvic vegetarian diets to balance metabolic functions.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialized Infertility Success",
-      description: "A stellar track record in naturally resolving complex male and female infertility cases with personalized Ayurvedic protocols.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Haidakhan Babaji's Vision",
+      description: "Established in 1984 under H.H. Sri Babaji's guidance to serve and heal through authentic Himalayan Ayurvedic principles.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Eminent Medical Leadership",
-      description: "Led by highly respected senior practitioners Dr. Dileep and Dr. Latha Dileep, experts in traditional pulse reading and Panchakarma.",
+      title: "Gold Medalist Doctor Panel",
+      description: "Led by Dr. Vijay (M.D., Gold Medalist) and Dr. S.S. Misra (24+ yrs clinical experience), ensuring the highest medical standard.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Adjoining Ashram Synergy",
+      description: "Located next to the sacred Baba Haidakhan Temple and Ashram in Chilianaula, providing a peaceful spiritual energy.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Pure Mountain Altitude",
+      description: "Set in Ranikhet at a high altitude overlooking the snow-capped Himalayas, providing crisp, clean, pollution-free air.",
+      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Certified In-House Pharmacy",
+      description: "Uses fresh, authentic herbal preparations manufactured in our own certified medicine unit to guarantee purity and potency.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Traditional Panchakarma",
-      description: "Offering authentic, meticulously administered detoxification therapies in a deeply peaceful, highly hygienic clinical setting.",
+      title: "Charitable Samaj Value",
+      description: "Supported by Sri Baba Haidakhan Trust, offering accessible, research-backed Ayurvedic treatments with compassionate care.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Restorative Cancer Care",
-      description: "Renowned for safe supportive oncology recovery and post-operative biological rejuvenation that restores core cellular energy.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Empathetic Patient Care",
-      description: "Highly praised by thousands of patients for deep clinical patience, highly detailed consultations, and excellent bedside manner.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Insurance Reimbursement",
-      description: "Provides comprehensive cashless and standard documentation support for smooth AYUSH insurance reimbursement.",
-      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
@@ -220,9 +230,9 @@ export default function AyurKutiraPanchakarmaCentre() {
   }, []);
 
   useEffect(() => {
-    document.title = "AyurKutira Panchakarma Center | Best Fertility & Ayurveda Clinic in Bangalore";
+    document.title = "Bhole Baba Ayurvedic Hospital & Research Center | Ranikhet";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Book consultations and treatments at AyurKutira Panchakarma Center in Mahalakshmipuram, Bangalore. Renowned for infertility treatments and authentic Panchakarma.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Kumaon Himalayan Panchakarma, anti-aging Kayakalpa, and clinical research therapies under Dr. Vijay and Dr. S.S. Misra at Bhole Baba Ayurvedic Hospital next to Haidakhan Temple in Chilianaula, Ranikhet.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +262,7 @@ export default function AyurKutiraPanchakarmaCentre() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              AyurKutira – Panchakarma Center Bengaluru
+              Bhole Baba Ayurvedic Hospital & Research Center Ranikhet Uttarakhand
             </li>
           </ol>
         </div>
@@ -264,16 +274,16 @@ export default function AyurKutiraPanchakarmaCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>AyurKutira – Panchakarma Center</h1>
-                <p className="text-xl mb-4 opacity-90">Specialized Infertility & Classical Ayurveda Care</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Bhole Baba Ayurvedic Hospital & Research Center</h1>
+                <p className="text-xl mb-4 opacity-90">Haidakhan Babaji's Healing & Research Sanctuary</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Mahalakshmipuram Layout, Bengaluru, Karnataka</span>
+                  <span className="text-lg">Ranikhet, Uttarakhand, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.9</span>
-                  <span className="opacity-90">(140 reviews)</span>
+                  <span className="text-lg font-semibold">5</span>
+                  <span className="opacity-90">(20 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +309,7 @@ export default function AyurKutiraPanchakarmaCentre() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at AyurKutira – Panchakarma Center
+                at Bhole Baba Ayurvedic Hospital & Research Center
 </h2>
             </div>
 
@@ -307,7 +317,7 @@ export default function AyurKutiraPanchakarmaCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">AyurKutira – Panchakarma Center</strong>, Bengaluru’s highly trusted multispecialty sanctuary for classical Ayurvedic medicine and advanced reproductive wellness. Nestled in the quiet, residential layout of Mahalakshmipuram, opposite the Jain Temple in Ganesha Block, our premier clinic rejects generic wellness treatments and focuses entirely on physician-led therapeutic care. AyurKutira has earned an outstanding reputation for combining precise traditional diagnostics with customized healing plans to resolve persistent and deep-seated health disorders.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Bhole Baba Ayurvedic Hospital & Research Center</strong>, a highly regarded hospital and research facility located in the serene surroundings of Chilianaula, Ranikhet, overlooking the majestic snow-capped peaks of the Kumaon Himalayas. Established in <strong className="font-bold text-[#2C4E5A]">1984</strong> under the guidance of <strong className="font-bold text-[#2C4E5A]">H.H. Sri Babaji</strong> (Haidakhan Babaji), the hospital was founded to deliver authentic, research-backed Ayurvedic treatments. Our clinical panel is led by <strong className="font-bold text-[#2C4E5A]">Dr. Vijay</strong>, an M.D. in Ayurveda and a distinguished gold medalist, and <strong className="font-bold text-[#2C4E5A]">Dr. S.S. Misra</strong>, who holds over 24 years of clinical experience. We integrate traditional healing sciences to support physical detoxification and long-term wellness.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,17 +325,17 @@ export default function AyurKutiraPanchakarmaCentre() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG" 
-                          alt="AyurKutira Panchakarma Center Exterior"
+                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/secondary.webp" 
+                          alt="Bhole Baba Ayurvedic Hospital gardens and view"
                           className="w-full h-full object-cover"
-                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG"; }}
+                          onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
                       </div>
                     </div>
                   </div>
 
                   <p>
-                    Under the expert, dedicated leadership of senior practitioners <strong className="font-bold text-[#2C4E5A]">Dr. Dileep</strong> and <strong className="font-bold text-[#2C4E5A]">Dr. Latha Dileep</strong>, AyurKutira houses the renowned Garba Ayu Infertility Clinic. We specialize in highly successful natural protocols for both female issues (PCOS, endometriosis, adenomyosis, uterine fibroids) and male issues (oligospermia, teratozoospermia, low sperm motility, and erectile dysfunction). Our clinic also excels in authentic Panchakarma detoxification, targeted spine and joint rehabilitation, chronic respiratory care, and compassionate post-chemo/surgical cancer supportive rejuvenation to rebuild cellular energy and natural immunity.
+                    Our facility specializes in residential Panchakarma therapies, anti-aging Kayakalpa rejuvenation, and chronic disease recovery. Under the supervision of our experienced Vaidyas and caring therapists, patients receive individual treatment plans targeting rheumatoid arthritis, joint pain, sciatica, chronic respiratory issues, asthma, and digestive disorders. We combine traditional Keralite oil therapies (Abhyanga), warm Shirodhara flows, and customized steam baths with in-house prepared herbal extracts.
                   </p>
                 </div>
               </div>
@@ -335,10 +345,10 @@ export default function AyurKutiraPanchakarmaCentre() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/AyurKutira Panchakarma Center/main.jpg" 
-                      alt="AyurKutira Panchakarma Center Lobby"
+                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp" 
+                      alt="Bhole Baba Ayurvedic Hospital Ranikhet"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG"; }}
+                      onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
                   </div>
                 </div>
@@ -348,10 +358,10 @@ export default function AyurKutiraPanchakarmaCentre() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/AyurKutira Panchakarma Center/secondary.webp" 
-                        alt="Ayurvedic Therapy Room at AyurKutira"
+                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/secondary.webp" 
+                        alt="Therapy Room at Bhole Baba Hospital"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
+                        onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
                     </div>
                   </div>
@@ -368,7 +378,7 @@ export default function AyurKutiraPanchakarmaCentre() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with AyurKutira – Panchakarma Center today.
+                My Vaidyam to connect with Bhole Baba Ayurvedic Hospital today.
               </h3>
             </div>
           </div>
@@ -380,7 +390,7 @@ export default function AyurKutiraPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> AyurKutira – Panchakarma Center
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Bhole Baba Ayurvedic Hospital & Research Center
 </h2>
           </div>
           
@@ -412,10 +422,10 @@ export default function AyurKutiraPanchakarmaCentre() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> AyurKutira – Panchakarma Center
+                Why Choose <br className="hidden lg:block" /> Bhole Baba Ayurvedic Hospital & Research Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Discover a dedicated wellness clinic that brings specialized natural solutions for fertility, detox, and rehabilitation.
+                Experience Mahavatar Babaji's vision, gold medalist doctors, and the healing synergy of the adjacent Chilianaula Ashram.
               </p>
             </div>
             
@@ -445,10 +455,10 @@ export default function AyurKutiraPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> AyurKutira – Panchakarma Center
+              Your Healing Journey at <br className="hidden lg:block" /> Bhole Baba Ayurvedic Hospital & Research Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A highly structured, traditional recovery pathway guided entirely by senior physicians from pulse diagnostics to complete long-term home health.
+              A highly structured scientific healing system combining authentic Keralite Panchakarma therapies with modern naturopathic wellness standards.
             </p>
           </div>
           
@@ -482,12 +492,12 @@ export default function AyurKutiraPanchakarmaCentre() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG"
-                  alt="AyurKutira Panchakarma Center"
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+                  alt="Bhole Baba Ayurvedic Hospital"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG"; }}
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at AyurKutira – Panchakarma Center?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Bhole Baba Ayurvedic Hospital?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -512,7 +522,7 @@ export default function AyurKutiraPanchakarmaCentre() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at AyurKutira – Panchakarma Center?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Bhole Baba Ayurvedic Hospital?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -526,10 +536,10 @@ export default function AyurKutiraPanchakarmaCentre() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/AyurKutira Panchakarma Center/main.JPG"
-                  alt="AyurKutira Panchakarma Center"
-                  className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
-                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG"; }}
+                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+                  alt="Bhole Baba Ayurvedic Hospital"
+                  className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
+                  onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
               </div>
             </div>
@@ -542,7 +552,7 @@ export default function AyurKutiraPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -572,11 +582,11 @@ export default function AyurKutiraPanchakarmaCentre() {
                       <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A]">{testimonials[currentReview]?.name}</h4>
                       {testimonials[currentReview]?.verified && (
                         <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
-                           Verified
+                          <span className="text-xs">✓</span> Verified
                         </span>
                       )}
                     </div>
-                    <p className="text-sm md:text-base" style={{ color: "#7F543D" }}>
+                    <p className="text-[13px] md:text-base" style={{ color: "#7F543D" }}>
                       {testimonials[currentReview]?.location} • Treated for {testimonials[currentReview]?.condition}
                     </p>
                   </div>
@@ -637,7 +647,7 @@ export default function AyurKutiraPanchakarmaCentre() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at AyurKutira – Panchakarma Center.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at Bhole Baba Hospital.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -671,10 +681,9 @@ export default function AyurKutiraPanchakarmaCentre() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      AyurKutira (Ayurveda Panchakarma Center)<br />
-                      1st Main Road, opposite Jain Temple, Ganesha Block<br />
-                      Mahalakshmipuram Layout, Mahalakshmi Layout<br />
-                      Bengaluru, Karnataka
+                      Bhole Baba Ayurvedic Hospital & Research Center<br />
+                      Baba Haidakhan Temple & Ashram Campus, Chilianaula<br />
+                      Ranikhet, Almora District, Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -682,16 +691,26 @@ export default function AyurKutiraPanchakarmaCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><Phone className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    +91 989 xxxx xxx</div>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Numbers</h3>
+                    <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <div>+91 989 xxxx xxx</div>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance</h3>
-                    <ul className="text-foreground/70 leading-relaxed space-y-1" style={{ color: "#7F543D" }}>
-                      <li>• Approx. 34 km from Kempegowda International Airport</li>
-                      <li>• Approx. 3 km from Yesvantpur Junction Railway Station</li>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Distance & Transit</h3>
+                    <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 110 km from Pantnagar Airport</span>
+                      </li>
+                      <li className="flex items-start gap-1">
+                        <span className="text-[#2C4E5A]">•</span>
+                        <span>Approx. 90 km from Kathgodam / Haldwani Railway Station</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -699,14 +718,14 @@ export default function AyurKutiraPanchakarmaCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7813398.380403486!2d73.03466890508541!3d17.01700141417719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d3505c9f7f5%3A0xf5448df8ce7ee151!2sAyurkutira%20Best%20super%20speciality%20Ayurveda%20panchakarma%20center!5e0!3m2!1sen!2sin!4v1779693126565!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.0060476691892!2d79.40828007553911!3d29.661598875118553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a0aa39023f2fed%3A0xac0fff02134d348a!2sBhole%20Baba%20Ayurvedic%20Hospital%20%26%20Research%20Center!5e0!3m2!1sen!2sin!4v1780485632042!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="AyurKutira – Panchakarma Center Location"
+                  title="Bhole Baba Ayurvedic Hospital Location"
                 ></iframe>
               </div>
             </div>
@@ -718,8 +737,8 @@ export default function AyurKutiraPanchakarmaCentre() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/AyurKutira Panchakarma Center/main.JPG"
-            alt="Ayurvedic Therapy at AyurKutira"
+            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp"
+            alt="Bhole Baba Ayurvedic Hospital foothills view"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -729,7 +748,7 @@ export default function AyurKutiraPanchakarmaCentre() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a free consultation. Our doctors will guide you towards the perfect treatment program at AyurKutira.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at Bhole Baba Ayurvedic Hospital.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -739,7 +758,7 @@ export default function AyurKutiraPanchakarmaCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919591595916?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20AyurKutira%20Panchakarma%20Centre."
+              href="https://wa.me/917579200499?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Bhole%20Baba%20Ayurvedic%20Hospital."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -780,7 +799,7 @@ export default function AyurKutiraPanchakarmaCentre() {
             {jumpSections.map((section, idx) => (
               <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
                 <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
-                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200"><ChevronRight className="h-3.5 w-3.5 text-[#2C4E5A] group-hover:text-white group-hover:translate-x-0.5 transition-all duration-200" /></div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200 border border-[#2C4E5A]/10 group-hover:border-transparent"><ChevronRight size={14} className="text-[#2C4E5A] group-hover:text-white transition-colors" /></div>
               </button>
             ))}
           </div>

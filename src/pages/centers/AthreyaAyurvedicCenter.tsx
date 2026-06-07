@@ -41,11 +41,11 @@ import {
   Award,
 } from "lucide-react";
 
-export default function AthreyaAyurvedicCentre() {
+export default function AthreyaAyurvedicCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
-  const founderImage = "/Center Images/Athreya Ayurvedic Centre/Founder/Foudner.jpg";
-  const teamImage = "/Center Images/Athreya Ayurvedic Centre/Founder/Team.jpg";
+  const founderImage = "/Center Images/Athreya Ayurvedic Center/Founder/Foudner.jpg";
+  const teamImage = "/Center Images/Athreya Ayurvedic Center/Founder/Team.jpg";
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -176,17 +176,17 @@ export default function AthreyaAyurvedicCentre() {
     {
       title: "Tripadvisor Travelers' Choice 2023",
       description: "Recognized by travelers for consistently excellent experiences.",
-      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 1.webp",
+      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 1.webp",
     },
     {
       title: "NABH Accredited Facility",
       description: "Patient safety and quality of care aligned to NABH standards.",
-      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 2.webp",
+      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 2.webp",
     },
     {
       title: "Tripadvisor Certificate of Excellence",
       description: "A long-standing mark of guest satisfaction and trust.",
-      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 3 Trip advisor.webp",
+      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 3 Trip advisor.webp",
     },
   ];
 
@@ -202,7 +202,7 @@ export default function AthreyaAyurvedicCentre() {
   ].filter(Boolean) as string[];
 
   useEffect(() => {
-    fetch("/Center Images/Athreya Ayurvedic Centre/Photo Gallery/Photo links.txt")
+    fetch("/Center Images/Athreya Ayurvedic Center/Photo Gallery/Photo links.txt")
       .then((res) => res.text())
       .then((text) => {
         const imgs = text
@@ -214,7 +214,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya images:", err));
 
-    fetch("/Center Videos/Athreya Ayurvedic Centre/Video links.txt")
+    fetch("/Center Videos/Athreya Ayurvedic Center/Video links.txt")
       .then((res) => res.text())
       .then((text) => {
         const vids = text
@@ -227,7 +227,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya videos:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Wellness Programs.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Wellness Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -266,7 +266,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya wellness content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Medical Programs.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Medical Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -305,7 +305,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya medical content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Why Choose Athreya.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Why Choose Athreya.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -345,7 +345,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya why choose:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Treatment Process & Patient Journey.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Treatment Process & Patient Journey.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -387,7 +387,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya treatment process:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Facilities & Amenities.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Facilities & Amenities.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n");
@@ -422,7 +422,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya facilities content:", err));
 
-    fetch("/Center Images/Athreya Ayurvedic Centre/Facilities/Facilities.txt")
+    fetch("/Center Images/Athreya Ayurvedic Center/Facilities/Facilities.txt")
       .then((res) => res.text())
       .then((text) => {
         const imgs = text
@@ -435,7 +435,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya facilities images:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Founder & Team Info.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Founder & Team Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -524,7 +524,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya founder content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Patient Stories & Reviews.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -571,7 +571,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya reviews:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Insurance & Payment Info.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Insurance & Payment Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -617,7 +617,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya insurance content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Frequently Asked Questions.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Frequently Asked Questions.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -640,7 +640,7 @@ export default function AthreyaAyurvedicCentre() {
       })
       .catch((err) => console.error("Error loading Athreya FAQs:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Contact Information.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Center/Contact Information.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -987,7 +987,7 @@ export default function AthreyaAyurvedicCentre() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-4xl font-bold leading-relaxed mb-4">Athreya Ayurvedic Centre</h1>
+                <h1 className="text-4xl md:text-4xl font-bold leading-relaxed mb-4">Athreya Ayurvedic Center</h1>
                 <p className="text-xl mb-4 opacity-90">Authentic Ayurveda & Personalized Healing</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -1183,7 +1183,7 @@ export default function AthreyaAyurvedicCentre() {
                   </button>
 
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Athreya Ayurvedic Centre</div>
+                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Athreya Ayurvedic Center</div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                       {images[lightboxImage] && (
                         <img
@@ -1218,7 +1218,7 @@ export default function AthreyaAyurvedicCentre() {
               <Card className="mb-12">
                 <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
                   <MarkdownContent
-                    contentPath="/content/Top Centers/Athreya Ayurvedic Centre/Main content.txt"
+                    contentPath="/content/Top Centers/Athreya Ayurvedic Center/Main content.txt"
                     h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                     titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                     onLinkClick={(action) => {
@@ -1614,8 +1614,8 @@ export default function AthreyaAyurvedicCentre() {
                   <div className="md:hidden">
                     <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
                       <img
-                        src="/Center Images/Athreya Ayurvedic Centre/CTA ready.jpg"
-                        alt="Athreya Ayurvedic Centre"
+                        src="/Center Images/Athreya Ayurvedic Center/CTA ready.jpg"
+                        alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
                       <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
@@ -1689,8 +1689,8 @@ export default function AthreyaAyurvedicCentre() {
                     </div>
                     <div>
                       <img
-                        src="/Center Images/Athreya Ayurvedic Centre/CTA ready.jpg"
-                        alt="Athreya Ayurvedic Centre"
+                        src="/Center Images/Athreya Ayurvedic Center/CTA ready.jpg"
+                        alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
                     </div>
@@ -1829,7 +1829,7 @@ export default function AthreyaAyurvedicCentre() {
                     <ChevronRight className="h-6 w-6" />
                   </button>
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Athreya Ayurvedic Centre</div>
+                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Athreya Ayurvedic Center</div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                       <img
                         src={facilityImages[facilityLightboxImage]}
@@ -2291,8 +2291,8 @@ export default function AthreyaAyurvedicCentre() {
                           <div className="rounded-xl overflow-hidden">
                             <div className="relative w-full aspect-[800/600]">
                               <iframe
-                                title="Athreya Ayurvedic Centre Map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8058169.402913361!2d66.754882625!3d9.538842999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06297baaaaaaab%3A0x2dc7203891c4f5b3!2sAthreya%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1768999464523!5m2!1sen!2sin"
+                                title="Athreya Ayurvedic Center Map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8058169.402913361!2d66.754882625!3d9.538842999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06297baaaaaaab%3A0x2dc7203891c4f5b3!2sAthreya%20Ayurvedic%20Center!5e0!3m2!1sen!2sin!4v1768999464523!5m2!1sen!2sin"
                                 className="absolute inset-0 h-full w-full"
                                 style={{ border: 0 }}
                                 allowFullScreen
@@ -2331,11 +2331,11 @@ export default function AthreyaAyurvedicCentre() {
                   <div className="md:hidden">
                     <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                       <img
-                        src="/Center Images/Athreya Ayurvedic Centre/CTA bottom.jpg"
-                        alt="Athreya Ayurvedic Centre"
+                        src="/Center Images/Athreya Ayurvedic Center/CTA bottom.jpg"
+                        alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
-                      <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Athreya Ayurvedic Centre</h2>
+                      <h2 className="text-xl font-bold text-white text-center mb-4">Begin Your Holistic Healing Journey at Athreya Ayurvedic Center</h2>
                       <div className="space-y-3">
                         <Button
                           size="lg"
@@ -2364,7 +2364,7 @@ export default function AthreyaAyurvedicCentre() {
 
                   <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
                     <div>
-                      <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Athreya Ayurvedic Centre</h2>
+                      <h2 className="text-2xl md:text-4xl font-bold text-white mb-3">Begin Your Holistic Healing Journey at Athreya Ayurvedic Center</h2>
                       <div className="flex flex-wrap gap-3">
                         <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                           <Phone className="mr-2 h-5 w-5" />
@@ -2387,8 +2387,8 @@ export default function AthreyaAyurvedicCentre() {
                     </div>
                     <div>
                       <img
-                        src="/Center Images/Athreya Ayurvedic Centre/CTA bottom.jpg"
-                        alt="Athreya Ayurvedic Centre"
+                        src="/Center Images/Athreya Ayurvedic Center/CTA bottom.jpg"
+                        alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-2xl object-cover shadow-2xl border-2 border-white/20 transition-transform duration-700 ease-out hover:scale-[1.02]"
                       />
                     </div>

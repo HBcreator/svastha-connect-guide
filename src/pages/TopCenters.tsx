@@ -39,7 +39,7 @@ const TopCenters = () => {
 
   const centers = [
     {
-      name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+      name: "SOUKYA - Dr. Mathai's International Holistic Health Center",
       city: "Bangalore",
       description:
         "SOUKYA is a premier integrative health sanctuary in Bangalore, blending ancient Ayurveda, Homeopathy, and Naturopathy with modern medical standards. As India's first NABH-accredited AYUSH hospital, it offers highly personalized clinical protocols on a lush 30-acre organic farm. Guided by Dr. Isaac Mathai, the center specializes in treating chronic conditions and promoting deep metabolic rejuvenation through authentic healing traditions. Guests experience a tranquil environment where sustainable living meets medical excellence for a truly transformative wellness journey. This world-class retreat is dedicated to restoring the harmony of body, mind, and spirit through integrated natural medicine.",
@@ -58,10 +58,10 @@ const TopCenters = () => {
       slug: "bangalore/soukya" as string | undefined,
     },
     {
-      name: "AyurvedaGram Heritage Wellness Centre",
+      name: "AyurvedaGram Heritage Wellness Center",
       city: "Bangalore",
       description:
-        "AyurvedaGram Heritage Wellness Centre is a globally recognized destination in Bangalore that offers an authentic immersion into the ancient world of Ayurvedic Healing. Set within a meticulously restored heritage village, the center provides a sanctuary where classical Vedic principles are practiced with deep reverence and precision. Guests receive personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic sattvic nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through evidence-informed care and time-tested protocols. This tranquil retreat is the perfect choice for those seeking profound detoxification, rejuvenation, and long-term sustainable wellness.",
+        "AyurvedaGram Heritage Wellness Center is a globally recognized destination in Bangalore that offers an authentic immersion into the ancient world of Ayurvedic Healing. Set within a meticulously restored heritage village, the center provides a sanctuary where classical Vedic principles are practiced with deep reverence and precision. Guests receive personalized treatments guided by experienced Vaidyas, complemented by therapeutic yoga, mindful routines, and organic sattvic nutrition. Every healing journey is tailored to restore the delicate balance of body, mind, and spirit through evidence-informed care and time-tested protocols. This tranquil retreat is the perfect choice for those seeking profound detoxification, rejuvenation, and long-term sustainable wellness.",
       specialties: [
         "Authentic Ayurveda",
         "Panchakarma",
@@ -138,7 +138,7 @@ const TopCenters = () => {
       slug: "sonepat/naad-wellness" as string | undefined,
     },
     {
-      name: "Fazlani Nature's Nest Wellness Centre",
+      name: "Fazlani Nature's Nest Wellness Center",
       city: "Mumbai",
       description:
         "Fazlani Nature's Nest is a premier wellness retreat near Lonavala that blends time-honored natural healing traditions with modern therapeutic excellence. Nestled within lush green landscapes, the center offers a serene environment dedicated to restoring balance through authentic Ayurveda, Naturopathy, and mindful living. Guests can experience personalized programs guided by expert professionals, focusing on deep detoxification, stress relief, and sustainable healthy lifestyles. Every healing journey is complemented by nourishing organic cuisine and rejuvenating experiences designed to enhance physical vitality and mental clarity. This nature-inspired sanctuary provides a peaceful space for guests to unwind, heal, and rediscover their inner strength through holistic and expert care.",
@@ -319,10 +319,10 @@ const TopCenters = () => {
       slug: "rajasthan/amanbagh-heritage-wellness-retreat" as string | undefined,
     },
     {
-      name: "HimVeda Heritage Wellness Centre",
+      name: "HimVeda Heritage Wellness Center",
       city: "Dharamshala",
       description:
-        "HimVeda Heritage Wellness Centre is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing. Rooted in traditional Vedic principles, the center offers personalized treatments guided by highly experienced Ayurvedic doctors and skilled therapists who focus on the root causes of disease. Guests experience an immersive journey featuring professional Panchakarma, chronic disease management, and nature-centric living designed for holistic well-being. The calm mountain environment and specialized sattvic nutrition create a unique atmosphere for detoxification, rejuvenation, and sustainable health restoration. HimVeda remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a peaceful and medically sound setting.",
+        "HimVeda Heritage Wellness Center is a distinguished Ayurvedic sanctuary nestled in the serene Himalayan foothills near Dharamshala, dedicated to authentic classical healing. Rooted in traditional Vedic principles, the center offers personalized treatments guided by highly experienced Ayurvedic doctors and skilled therapists who focus on the root causes of disease. Guests experience an immersive journey featuring professional Panchakarma, chronic disease management, and nature-centric living designed for holistic well-being. The calm mountain environment and specialized sattvic nutrition create a unique atmosphere for detoxification, rejuvenation, and sustainable health restoration. HimVeda remains a trusted destination for those seeking serious, results-driven Ayurvedic care in a peaceful and medically sound setting.",
       specialties: [
         "Panchakarma",
         "Authentic Himalayan Ayurveda",
@@ -537,10 +537,10 @@ const TopCenters = () => {
       locationText: "Rishikesh, Kerala, Goa, India",
     },
     {
-      name: "Yan Cure Yoga Retreat & Ayurveda Centre",
+      name: "Yan Cure Yoga Retreat & Ayurveda Center",
       city: "Rishikesh",
       description:
-        "Yan Cure Yoga Retreat & Ayurveda Centre is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing. Located in a tranquil natural environment, the center provides a peaceful space where professional clinical care and mindful living practices are practiced with clinical precision. Guests receive personalized treatment programs guided by experienced Ayurvedic doctors and certified yoga instructors, focusing on deep detoxification and stress management. Every healing journey is designed to restore the harmony of body, mind, and soul through time-tested and evidence-informed therapies. Yan Cure is dedicated to fostering inner peace and long-term vitality through a comprehensive approach to preventive health and professional rejuvenation.",
+        "Yan Cure Yoga Retreat & Ayurveda Center is a premier holistic sanctuary in Rishikesh that offers a powerful combination of traditional yoga philosophy and authentic Ayurvedic Healing. Located in a tranquil natural environment, the center provides a peaceful space where professional clinical care and mindful living practices are practiced with clinical precision. Guests receive personalized treatment programs guided by experienced Ayurvedic doctors and certified yoga instructors, focusing on deep detoxification and stress management. Every healing journey is designed to restore the harmony of body, mind, and soul through time-tested and evidence-informed therapies. Yan Cure is dedicated to fostering inner peace and long-term vitality through a comprehensive approach to preventive health and professional rejuvenation.",
       specialties: [
         "Panchakarma Therapy",
         "Authentic Ayurveda Treatments",
@@ -557,7 +557,7 @@ const TopCenters = () => {
       slug: "rishikesh/yan-cure" as string | undefined,
     },
     {
-      name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
+      name: "🧘‍♂️ Soul Vacation Resort & Wellness Center",
       city: "Goa",
       description:
         "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort nestled near the tranquil beaches of South Goa. This destination blends serene coastal living with holistic healing, offering an ideal retreat for those seeking relaxation, stress relief, and natural wellness. Rooted in traditional Ayurvedic principles and enhanced with modern wellness therapies, Soul Vacation provides personalized care designed to restore balance to the body, mind, and spirit — promoting deep rejuvenation through time-honored healing practices.",
@@ -596,10 +596,10 @@ const TopCenters = () => {
       slug: "swan-yoga-retreat-goa-india" as string | undefined,
     },
     {
-      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
+      name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Center",
       city: "Goa",
       description:
-        "The Ayurveda Wellness Centre at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through professional clinical protocols and mindful integration of yoga. This world-class retreat provides a serene and opulent environment for those seeking profound rejuvenation and long-term health empowerment.",
+        "The Ayurveda Wellness Center at Mercure Goa Devaaya Resort is a distinguished sanctuary on Divar Island, blending ancient Vedic wisdom with tranquil island living. Perched along the serene backwaters, the center offers an immersive healing experience where classical Panchakarma and rejuvenation therapies are practiced with medical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors and therapists, focusing on deep detoxification and lifestyle disorder management. Every healing journey is tailored to restore the natural balance of body, mind, and spirit through professional clinical protocols and mindful integration of yoga. This world-class retreat provides a serene and opulent environment for those seeking profound rejuvenation and long-term health empowerment.",
       specialties: [
         "Panchakarma Therapies",
         "Authentic Ayurveda Treatments",
@@ -792,7 +792,7 @@ const TopCenters = () => {
       rating: 4.9,
       reviews: 1000,
       priceRange: "$$$",
-      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
+      image: "/Center Images/Dheemahi Ayurvedic Center/center dp.jpg",
       locationText: "Kumarakom, Kerala, India",
       slug: "kerala/dheemahi-kumarakom" as string | undefined,
     },
@@ -817,10 +817,10 @@ const TopCenters = () => {
       slug: "kerala/kumarakom-lake-resort" as string | undefined,
     },
     {
-      name: "Nagarjuna Ayurveda Centre",
+      name: "Nagarjuna Ayurveda Center",
       city: "Kerala",
       description:
-        "Nagarjuna Ayurveda Centre is one of India’s most trusted and heritage-rich clinical institutions, renowned for its authentic and result-oriented approach to traditional care. Backed by decades of pharmaceutical and clinical expertise, the centre follows strict diagnostic protocols combined with classical Ayurvedic principles to deliver effective treatments. Guests undergo a transformative journey featuring intensive Panchakarma, chronic disease management, and metabolic rejuvenation guided by a team of expert Vaidyas. The professional clinical environment and dedicated therapeutic care ensure that every element of the stay is focused on restoring long-term health and vitality. Nagarjuna remains a global benchmark for authentic Ayurvedic healthcare, dedicated to delivering transformative results in a professional setting.",
+        "Nagarjuna Ayurveda Center is one of India’s most trusted and heritage-rich clinical institutions, renowned for its authentic and result-oriented approach to traditional care. Backed by decades of pharmaceutical and clinical expertise, the center follows strict diagnostic protocols combined with classical Ayurvedic principles to deliver effective treatments. Guests undergo a transformative journey featuring intensive Panchakarma, chronic disease management, and metabolic rejuvenation guided by a team of expert Vaidyas. The professional clinical environment and dedicated therapeutic care ensure that every element of the stay is focused on restoring long-term health and vitality. Nagarjuna remains a global benchmark for authentic Ayurvedic healthcare, dedicated to delivering transformative results in a professional setting.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -834,7 +834,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/nagarjuna-ayurveda-centre" as string | undefined,
+      slug: "kerala/nagarjuna-ayurveda-center" as string | undefined,
     },
     {
       name: "Sanjeevanam Ayurveda Hospital",
@@ -914,9 +914,9 @@ const TopCenters = () => {
       slug: "kerala/krishnendu-ayurveda-hospital" as string | undefined,
     },
     {
-      name: "Athreya Ayurvedic Centre",
+      name: "Athreya Ayurvedic Center",
       city: "Kerala",
-      description: "Athreya Ayurvedic Centre is a distinguished sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic Healing. Nestled in a serene and peaceful environment, the center provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with clinical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil retreat provides an ideal space for those seeking profound rejuvenation and a sustainable foundation for holistic wellness.",
+      description: "Athreya Ayurvedic Center is a distinguished sanctuary in Kerala that offers an authentic and immersive journey into the traditional science of Ayurvedic Healing. Nestled in a serene and peaceful environment, the center provides a nurturing atmosphere where classical Panchakarma and rejuvenation therapies are practiced with clinical precision. Guests receive highly personalized care guided by experienced Ayurvedic doctors, focusing on restoring the natural balance of body, mind, and spirit. Every program is thoughtfully designed to support deep detoxification, stress management, and long-term metabolic health through professional protocols. This tranquil retreat provides an ideal space for those seeking profound rejuvenation and a sustainable foundation for holistic wellness.",
       specialties: [
         "Ayurveda",
         "Panchakarma",
@@ -928,9 +928,9 @@ const TopCenters = () => {
       rating: 4.8,
       reviews: 1000,
       priceRange: "$$$$",
-      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+      image: "/Center Images/Athreya Ayurvedic Center/CTA.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/athreya-ayurvedic-centre" as string | undefined,
+      slug: "kerala/athreya-ayurvedic-center" as string | undefined,
     },
     {
       name: "Ayur Bethaniya Ayurveda Hospital",
@@ -1013,10 +1013,10 @@ const TopCenters = () => {
       slug: "kochi/akanta-ayurveda-and-yoga-resort" as string | undefined,
     },
     {
-      name: "Indus Valley Ayurvedic Centre",
+      name: "Indus Valley Ayurvedic Center",
       city: "Mysore",
       description:
-        "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+        "Indus Valley Ayurvedic Center (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
       specialties: [
         "Panchakarma",
         "Detox & Rejuvenation",
@@ -1030,9 +1030,9 @@ const TopCenters = () => {
       rating: 4.8,
       reviews: 600,
       priceRange: "$$$$",
-      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+      image: "/Center Images/Indus Valley Ayurvedic Center/Thumb.jpg",
       locationText: "Mysuru (Mysore), Karnataka, India",
-      slug: "mysore/indus-valley-ayurvedic-centre" as string | undefined,
+      slug: "mysore/indus-valley-ayurvedic-center" as string | undefined,
     },
     {
       name: "Shathayu Ayurveda Yoga Retreat",

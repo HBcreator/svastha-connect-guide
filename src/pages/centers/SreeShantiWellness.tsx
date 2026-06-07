@@ -124,7 +124,7 @@ export default function SreeShantiWellness() {
   const faqItems = [
     {
       question: "Who leads SreeShanti Wellness, and what are their qualifications?",
-      answer: "SreeShanti Wellness is founded and directed by the highly distinguished Ayurvedic physician Dr. Jijith C. Ravindran (BAMS, DSM, YIC). An alumnus of Gomantak Ayurveda Mahavidyalaya and Research Centre, he possesses over 12 years of clinical expertise specializing in classical Kerala Panchakarma and element-based Panchabhautik Chikitsa."
+      answer: "SreeShanti Wellness is founded and directed by the highly distinguished Ayurvedic physician Dr. Jijith C. Ravindran (BAMS, DSM, YIC). An alumnus of Gomantak Ayurveda Mahavidyalaya and Research Center, he possesses over 12 years of clinical expertise specializing in classical Kerala Panchakarma and element-based Panchabhautik Chikitsa."
     },
     {
       question: "What main clinical programs do you offer?",
@@ -307,7 +307,7 @@ export default function SreeShantiWellness() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">SreeShanti Wellness</strong>, an authentic Ayurvedic clinic and classical Panchakarma center situated in the tranquil backwater village of Nerul, North Goa, India. Led by the highly accomplished chief physician <strong className="font-bold text-[#2C4E5A]">Dr. Jijith C. Ravindran</strong> (BAMS, DSM, YIC), the center provides custom, doctor-directed treatments in a peaceful and welcoming environment on Nerul - Reis Margos Road. Dr. Jijith is a distinguished graduate of Gomantak Ayurveda Mahavidyalaya and Research Centre, possessing over 12 years of clinical experience in Kerala Panchakarma and element-based traditional medicine.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">SreeShanti Wellness</strong>, an authentic Ayurvedic clinic and classical Panchakarma center situated in the tranquil backwater village of Nerul, North Goa, India. Led by the highly accomplished chief physician <strong className="font-bold text-[#2C4E5A]">Dr. Jijith C. Ravindran</strong> (BAMS, DSM, YIC), the center provides custom, doctor-directed treatments in a peaceful and welcoming environment on Nerul - Reis Margos Road. Dr. Jijith is a distinguished graduate of Gomantak Ayurveda Mahavidyalaya and Research Center, possessing over 12 years of clinical experience in Kerala Panchakarma and element-based traditional medicine.
                   </p>
                   
                   <div className="lg:hidden py-4">

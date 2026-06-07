@@ -262,7 +262,7 @@ export default function Somatheeram() {
 
   const awards = [
     {
-      title: "Best Ayurvedic Centre Award",
+      title: "Best Ayurvedic Center Award",
       description: "Recognized multiple times by the Government of Kerala for excellence in authentic Ayurveda treatments and patient care.",
       image: "/Center Images/somatheeram/Awards/Lay_BestAyurvedic.png"
     },
@@ -364,7 +364,7 @@ export default function Somatheeram() {
           // Review Body (Text paragraphs or bullets)
           // Avoid adding the rating line itself to the body if the regex above didn't catch it perfectly
           if (!line.includes("Rating:")) {
-            current.review += (current.review ? "\n\n" : "") + line.replace(/^\*+\s*/, "• ");
+            current.review += (current.review ? "\n\n" : "") + line.replace(/^\*+\s*/, "ï¿½ ");
           }
         }
 

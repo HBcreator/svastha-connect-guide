@@ -2100,7 +2100,7 @@ const AshiyanaYogaRetreat = () => {
                             <div className="relative w-full aspect-[800/600]">
                               <iframe
                                 title="Ashiyana Yoga Retreat Map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.675038311984!2d73.71209377336379!3d15.66228365020715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfeeef6f48a06b%3A0x5f097ffd12b761e0!2sAshiyana%20Goa%20-%20Yoga%20Retreat%20Centre!5e0!3m2!1sen!2sin!4v1774536576242!5m2!1sen!2sin"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3841.675038311984!2d73.71209377336379!3d15.66228365020715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfeeef6f48a06b%3A0x5f097ffd12b761e0!2sAshiyana%20Goa%20-%20Yoga%20Retreat%20Center!5e0!3m2!1sen!2sin!4v1774536576242!5m2!1sen!2sin"
                                 className="absolute inset-0 h-full w-full"
                                 style={{ border: 0 }}
                                 allowFullScreen

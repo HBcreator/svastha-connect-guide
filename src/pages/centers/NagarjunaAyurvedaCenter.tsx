@@ -8,7 +8,7 @@ import MarkdownContent from "@/components/MarkdownContent";
 import { MapPin, Star, Calendar, ChevronLeft, ChevronRight, Images, Video, Users, TrendingUp, Heart, Brain, Sparkles, Activity, HeartPulse, UserCheck, ShieldCheck, Droplet, Stethoscope, Pill, Award, Leaf, Hospital, Home, FileSearch, ClipboardList, Utensils, Phone, Mail, MessageCircle, MessageCircleHeart, Building2, Globe, TreePine, Search, X } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-export default function NagarjunaAyurvedaCentre() {
+export default function NagarjunaAyurvedaCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [showVideoGallery, setShowVideoGallery] = useState(false);
@@ -112,7 +112,7 @@ export default function NagarjunaAyurvedaCentre() {
   const [currentAwardSlide, setCurrentAwardSlide] = useState(0);
 
   useEffect(() => {
-    // Researched awards for Nagarjuna Ayurveda Centre
+    // Researched awards for Nagarjuna Ayurveda Center
     const researchedAwards = [
       {
         title: "NABH Accredited Hospital",
@@ -145,7 +145,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Patient Stories & Reviews.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -240,7 +240,7 @@ export default function NagarjunaAyurvedaCentre() {
   };
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Founder & Team Info.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Founder & Team Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -429,7 +429,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, [videos]);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Wellness & Rejuvenation Programs.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Wellness & Rejuvenation Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -468,7 +468,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Medical Programs.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Medical Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -507,7 +507,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Why Chosse Nagarjuna Ayurvedic Centre.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Why Chosse Nagarjuna Ayurvedic Center.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -546,7 +546,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Treatment Process & Patient Journey.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Treatment Process & Patient Journey.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -584,7 +584,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Facilities & Amenities.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Facilities & Amenities.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n");
@@ -644,7 +644,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, [facilityImages.length, facilityLightboxOpen]);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Insurance & Payment Info.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Insurance & Payment Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -680,7 +680,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Frequently Asked Questions.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Frequently Asked Questions.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -735,7 +735,7 @@ export default function NagarjunaAyurvedaCentre() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Nagarjuna Ayurvedic Centre/Contact Information.txt")
+    fetch("/content/Top Centers/Nagarjuna Ayurvedic Center/Contact Information.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -903,7 +903,7 @@ export default function NagarjunaAyurvedaCentre() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-4xl font-bold leading-relaxed mb-4">
-                  Nagarjuna Ayurveda Centre
+                  Nagarjuna Ayurveda Center
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
                   Authentic Classical Ayurveda & Clinical Expertise
@@ -1062,7 +1062,7 @@ export default function NagarjunaAyurvedaCentre() {
                         Back
                       </Button>
                       <div className="text-center text-primary font-bold leading-relaxed whitespace-nowrap text-lg md:text-2xl">
-                        Nagarjuna Ayurveda Centre
+                        Nagarjuna Ayurveda Center
                       </div>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -1101,7 +1101,7 @@ export default function NagarjunaAyurvedaCentre() {
                     <ChevronRight className="h-6 w-6" />
                   </button>
                   <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
-                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Nagarjuna Ayurveda Centre</div>
+                    <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">Nagarjuna Ayurveda Center</div>
                     <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                       <img src={images[lightboxImage]} alt={`Nagarjuna ${lightboxImage + 1}`} className="absolute inset-0 w-full h-full object-cover" />
                       <button
@@ -1157,7 +1157,7 @@ export default function NagarjunaAyurvedaCentre() {
           <Card className="mb-12 mt-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed">
               <MarkdownContent
-                contentPath="/content/Top Centers/Nagarjuna Ayurvedic Centre/main content.txt"
+                contentPath="/content/Top Centers/Nagarjuna Ayurvedic Center/main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                 onLinkClick={(action) => {
@@ -1389,11 +1389,11 @@ export default function NagarjunaAyurvedaCentre() {
             </div>
           </div>
 
-          {/* Testimonials of Nagarjuna Ayurveda Centre - Video Section */}
+          {/* Testimonials of Nagarjuna Ayurveda Center - Video Section */}
           <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
             <div className="text-center mb-8 md:mb-10 px-4">
               <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
-                Testimonials of Nagarjuna Ayurveda Centre
+                Testimonials of Nagarjuna Ayurveda Center
               </h2>
               <div className="w-12 h-1 bg-primary/20 mx-auto mb-3 rounded-full hidden md:block" />
               <p className="text-sm md:text-lg mx-auto max-w-none leading-relaxed italic" style={{ color: "#7F543D" }}>
@@ -1522,7 +1522,7 @@ export default function NagarjunaAyurvedaCentre() {
             <div className="rounded-3xl p-6 md:p-10" style={{ backgroundColor: '#EDE8D0' }}>
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
-                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Center" className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
                   <p className="text-sm text-center mb-4" style={{ color: '#7F543D' }}>
                     Take the first step towards holistic healing. Our expert team guides you with personalized treatment plans tailored to your unique needs.
@@ -1566,7 +1566,7 @@ export default function NagarjunaAyurvedaCentre() {
                   </div>
                 </div>
                 <div>
-                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Centre" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
+                  <img src="/Center Images/Nagarjuna-ayurveda/Center image.jpg" alt="Nagarjuna Ayurvedic Center" className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -1726,7 +1726,7 @@ export default function NagarjunaAyurvedaCentre() {
           </button>
           <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
             <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-              Nagarjuna Ayurveda Centre
+              Nagarjuna Ayurveda Center
             </div>
             <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
               <img
@@ -2188,8 +2188,8 @@ export default function NagarjunaAyurvedaCentre() {
                     <div className="rounded-xl overflow-hidden">
                       <div className="relative w-full aspect-[800/600]">
                         <iframe
-                          title="Nagarjuna Ayurvedic Centre Map"
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.356963075815!2d76.4320607740796!3d10.151611570409566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d6a9d2242c7%3A0xabdfbda52b4cdabb!2sNagarjuna%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1767602779315!5m2!1sen!2sin"
+                          title="Nagarjuna Ayurvedic Center Map"
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.356963075815!2d76.4320607740796!3d10.151611570409566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b086d6a9d2242c7%3A0xabdfbda52b4cdabb!2sNagarjuna%20Ayurvedic%20Center!5e0!3m2!1sen!2sin!4v1767602779315!5m2!1sen!2sin"
                           className="absolute inset-0 h-full w-full"
                           style={{ border: 0 }}
                           allowFullScreen
@@ -2231,10 +2231,10 @@ export default function NagarjunaAyurvedaCentre() {
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
                   src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
-                  alt="Nagarjuna Ayurvedic Centre"
+                  alt="Nagarjuna Ayurvedic Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
-                <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Centre</h2>
+                <h2 className="text-xl font-extrabold text-white text-center mb-8 leading-tight tracking-tight">Begin Your Holistic Healing Journey at Nagarjuna Ayurvedic Center</h2>
                 <div className="space-y-4">
                   <Button
                     size="lg"
@@ -2264,7 +2264,7 @@ export default function NagarjunaAyurvedaCentre() {
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-10 leading-tight tracking-tight">
-                  Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Nagarjuna Ayurvedic Centre</span>
+                  Begin Your <span className="text-white/90">Holistic Healing Journey</span> at <span className="text-white underline decoration-white/20 underline-offset-8">Nagarjuna Ayurvedic Center</span>
                 </h2>
                 <div className="flex flex-wrap gap-5">
                   <Button size="lg" className="rounded-full px-6 bg-white text-primary hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
@@ -2284,7 +2284,7 @@ export default function NagarjunaAyurvedaCentre() {
               <div>
                 <img
                   src="/Center Images/Nagarjuna-ayurveda/CTA bottom.jpg"
-                  alt="Nagarjuna Ayurvedic Centre"
+                  alt="Nagarjuna Ayurvedic Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                 />
               </div>
@@ -2406,7 +2406,7 @@ export default function NagarjunaAyurvedaCentre() {
               <div className="w-8 h-[1px] bg-primary/20" />
             </div>
             <p className="text-[10px] font-bold text-primary/40 uppercase tracking-[0.3em] select-none">
-              Nagarjuna Ayurveda Centre
+              Nagarjuna Ayurveda Center
             </p>
           </div>
         </div>

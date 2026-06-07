@@ -264,7 +264,7 @@ export default function DhanwanthralayaAyurvedaSpecialityHospital() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Dhanwanthralaya Ayurveda Speciality Hospital</h1>
-                <p className="text-xl mb-4 opacity-90">Non-Surgical Joint Rehabilitation Centre</p>
+                <p className="text-xl mb-4 opacity-90">Non-Surgical Joint Rehabilitation Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
                   <span className="text-lg">West Tambaram, Chennai, Tamil Nadu</span>

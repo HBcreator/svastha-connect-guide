@@ -1060,7 +1060,7 @@ const AyurvedaGram = () => {
                   AyurvedaGram
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
-                  Heritage Wellness Centre
+                  Heritage Wellness Center
                 </p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />

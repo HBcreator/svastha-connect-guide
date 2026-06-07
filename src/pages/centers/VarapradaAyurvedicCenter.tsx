@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function VarapradaAyurvedicCentre() {
+export default function VarapradaAyurvedicCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -307,7 +307,7 @@ export default function VarapradaAyurvedicCentre() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Center</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our centre is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Varaprada Ayurvedic Center</strong>, Basavanagudi’s premier clinic for authentic integrated Ayurveda, classical Panchakarma detoxification, and advanced physical rehabilitation. Conveniently located on 5th Main Road in N. R. Colony, near BMS College of Engineering and Mookambika School, our center is designed to provide expert clinical care away from the format of generic relaxation spas. Guided by strict sanitization and therapeutic standards, Varaprada has built an exceptional reputation in south Bengaluru for successfully managing complex, chronic complaints through highly individualized patient protocols.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -669,7 +669,7 @@ export default function VarapradaAyurvedicCentre() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Centre Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Varaprada Ayurvedic Center<br />
                       53, 5th Main Road, Bull Temple Road<br />
@@ -699,7 +699,7 @@ export default function VarapradaAyurvedicCentre() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.514941567418!2d77.56409137507589!3d12.938867187373503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158bec8cc297%3A0xd6e365b21358ea53!2sVaraprada%20Ayurvedic%20Centre!5e0!3m2!1sen!2sin!4v1779750665366!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.514941567418!2d77.56409137507589!3d12.938867187373503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae158bec8cc297%3A0xd6e365b21358ea53!2sVaraprada%20Ayurvedic%20Center!5e0!3m2!1sen!2sin!4v1779750665366!5m2!1sen!2sin"
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
@@ -739,7 +739,7 @@ export default function VarapradaAyurvedicCentre() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919535215898?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Varaprada%20Ayurvedic%20Centre."
+              href="https://wa.me/919535215898?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Varaprada%20Ayurvedic%20Center."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
