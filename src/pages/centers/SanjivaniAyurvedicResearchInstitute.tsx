@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AashaAyurvedaCenter() {
+export default function SanjivaniAyurvedicResearchInstitute() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,191 +37,192 @@ export default function AashaAyurvedaCenter() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Precision Infertility Consultation",
-      description: "Detailed analysis of your Prakriti, medical records, and reproductive health by Dr. Chanchal Sharma.",
+      title: "Evidence-Based Diagnosis",
+      description: "A comprehensive clinical evaluation combining traditional Nadi Pariksha (pulse diagnosis) with modern diagnostic reports to pinpoint the root cause.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Treatment Plan",
-      description: "Customizing evidence-based Ayurvedic clinical protocols focusing on fallopian tube blockage, PCOD, and endometriosis.",
+      title: "Research-Backed Planning",
+      description: "Our panel of research physicians formulate a personalized treatment roadmap using clinically validated Ayurvedic protocols.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purvakarma Preparation",
-      description: "Systematically preparing the body using warm herbal oils and steam therapies to clear energy channels.",
-      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
+      title: "Targeted Medication",
+      description: "Prescribing highly potent, in-house researched herbal formulations designed to act efficiently on specific disease pathways.",
+      icon: <Heart className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Uttara Basti & Core Panchakarma",
-      description: "Administering targeted Uttara Basti and classical Kerala Panchakarma therapies for reproductive conditions.",
+      title: "Clinical Panchakarma",
+      description: "Administering precise detoxification therapies like Vamana or Virechana under strict clinical observation to ensure maximum safety and efficacy.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Dietary & Lifestyle Tracking",
-      description: "Ongoing guidance with specific diet plans and lifestyle modifications to support reproductive health.",
+      title: "Progress Tracking",
+      description: "Continuously monitoring patient progress using measurable health metrics to adjust therapies and ensure optimal healing outcomes.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Post-Treatment Support",
-      description: "Continuous monitoring and online consultations to ensure long-term wellness and positive outcomes.",
+      title: "Sustainable Wellness",
+      description: "Providing a detailed, research-backed dietary and lifestyle plan to maintain the benefits of the treatment permanently.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Outstanding PCOD Treatment",
-      review: "Dr. Chanchal Sharma's treatment for my complex PCOD case was absolutely life-changing. After struggling with hormonal imbalances for years and trying multiple modern therapies without success, the personalized Ayurvedic approach and Uttara Basti therapy restored my cycles. We were finally able to conceive naturally after years of trying.",
-      name: "Sarah Jenkins",
+      title: "Scientifically Sound Approach",
+      review: "The approach at Sanjivani is refreshingly scientific. Unlike other centers that just offer generic massages, the doctors here studied my blood reports and MRI before prescribing a targeted Ayurvedic protocol. My severe rheumatoid arthritis has shown measurable improvement within just two months. The hygiene is also impeccable.",
+      name: "Arthur Pendelton",
       verified: true,
       location: "London, UK",
-      condition: "PCOD & Infertility",
+      condition: "Rheumatoid Arthritis",
       rating: 5
     },
     {
-      title: "Successful Tube Blockage Treatment",
-      review: "I was diagnosed with bilateral fallopian tube blockage and was losing all hope of ever having a child naturally. Aasha Ayurveda's highly specialized Panchakarma therapies completely cleared the blockage without the need for invasive surgery. Their continuous support and online consultations made the entire international healing process seamless.",
-      name: "Elena Rodriguez",
+      title: "Exceptional Neurological Care",
+      review: "I travelled to Delhi specifically for Sanjivani's research-backed treatments for neuropathy. The specialized neuro-stimulation massages and their proprietary herbal medicines have significantly restored the sensation in my limbs. The level of clinical expertise and patient care here is truly world-class.",
+      name: "Isabella Martinez",
       verified: true,
       location: "Madrid, Spain",
-      condition: "Fallopian Tube Blockage",
+      condition: "Peripheral Neuropathy",
       rating: 5
     },
     {
-      title: "Excellent Endometriosis Care",
-      review: "The holistic care and precise pulse diagnosis for my severe endometriosis brought me immense relief from chronic pain. The authentic classical herbs and dietary regimen improved my overall health significantly within just a few months. I felt truly heard and cared for by their brilliant medical team during my stay.",
-      name: "Sophia Rossi",
-      verified: true,
-      location: "Rome, Italy",
-      condition: "Endometriosis",
-      rating: 5
-    },
-    {
-      title: "Relief from Male Infertility",
-      review: "We consulted Aasha Ayurveda remotely for severe male infertility issues after several failed clinical treatments here. The classical Ayurvedic medicines, Vajikarana therapies, and dedicated lifestyle guidance showed remarkable, scientifically proven improvements in motility and count in just a few months. It completely exceeded our expectations.",
-      name: "David Mueller",
+      title: "Resolved Chronic Gut Issues",
+      review: "After years of suffering from severe IBS and trying countless allopathic treatments with no luck, Sanjivani's integrated approach finally provided relief. They didn't just treat the symptoms; they repaired my gut lining through a strict clinical diet and highly effective Panchakarma detox therapies.",
+      name: "Marcus Schmidt",
       verified: true,
       location: "Berlin, Germany",
-      condition: "Male Infertility",
+      condition: "Severe IBS",
+      rating: 4
+    },
+    {
+      title: "Professional and Transparent",
+      review: "What I loved most about the institute is their transparency. They explain the science behind every herb they prescribe and how it interacts with the body. The Shirodhara sessions I received for chronic insomnia were conducted with clinical precision, resulting in the best sleep I've had in a decade.",
+      name: "Eleanor Vance",
+      verified: true,
+      location: "Sydney, Australia",
+      condition: "Chronic Insomnia",
       rating: 5
     },
     {
-      title: "Compassionate Online Consultation",
-      review: "Living in the UAE, the online consultation process was incredibly seamless and perfectly organized. Dr. Sharma's unparalleled expertise and the strictly prescribed herbal regimen helped us achieve a successful, healthy pregnancy after multiple devastating IVF failures. We are forever grateful to the entire team.",
-      name: "Fatima Al-Fasi",
+      title: "Great Pain Management",
+      review: "The doctors and therapists work seamlessly as a team. I was dealing with a frozen shoulder that severely restricted my movement. Through their researched formulations and localized Kati Basti treatments, I have regained about 90% of my mobility in just a few weeks. Highly recommended for pain relief.",
+      name: "James O'Connor",
       verified: true,
-      location: "Dubai, UAE",
-      condition: "IVF Failure",
-      rating: 5
+      location: "Dublin, Ireland",
+      condition: "Frozen Shoulder",
+      rating: 4
     }
   ];
 
   const faqItems = [
     {
-      question: "What conditions does Aasha Ayurveda specialize in?",
-      answer: "We specialize in female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases using classical Ayurvedic approaches."
+      question: "What makes a 'Research Institute' different from a regular Ayurvedic clinic?",
+      answer: "As a research institute, our treatments are backed by clinical studies and evidence-based medicine. We continuously refine our herbal formulations and therapeutic protocols to ensure they deliver measurable, scientifically validated results for complex diseases."
     },
     {
-      question: "Who leads the medical team?",
-      answer: "The clinic is founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma), a highly experienced Gynecology specialist."
+      question: "Do I need to bring my previous medical reports?",
+      answer: "Yes, we highly encourage patients to bring all relevant medical history, blood tests, and imaging reports (MRI/X-rays). Our doctors integrate these modern diagnostics with traditional Ayurvedic assessments to create a highly accurate treatment plan."
     },
     {
-      question: "What is Uttara Basti therapy?",
-      answer: "Uttara Basti is a specialized Ayurvedic Panchakarma therapy where medicated oil or decoction is administered into the uterus to treat reproductive disorders and clear blockages."
+      question: "Are your herbal medicines safe and tested?",
+      answer: "Absolutely. All our proprietary herbal formulations undergo rigorous quality control and safety testing in our research wing to ensure they are free from heavy metals and contaminants."
     },
     {
-      question: "Do you offer online consultations?",
-      answer: "Yes, Aasha Ayurveda is a pioneer in online consultation for Ayurvedic infertility care, serving patients across India, the UAE, and Europe."
+      question: "Can I take your Ayurvedic treatments alongside allopathic medicine?",
+      answer: "Yes, our expert physicians are highly trained in integrative medicine. They will carefully review your current prescriptions to ensure our Ayurvedic treatments do not cause adverse drug interactions."
     },
     {
-      question: "Where are your clinics located?",
-      answer: "We have 5 convenient locations across Delhi. Our main center is located in Rajouri Garden, West Delhi."
+      question: "Do you offer full Panchakarma detoxification?",
+      answer: "Yes, we offer comprehensive, clinically monitored Panchakarma therapies. However, these are strictly prescribed based on the patient's physical strength and specific disease profile following a thorough consultation."
     }
   ];
 
   const programs = [
     {
-      title: "Female Infertility Treatment",
-      description: "Comprehensive Ayurvedic protocols tailored to enhance female reproductive health and address underlying causes of infertility naturally.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Autoimmune & Joint Care",
+      description: "Research-backed protocols targeting the root cause of rheumatoid arthritis, osteoarthritis, and gout.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Fallopian Tube Blockage",
-      description: "Non-surgical Ayurvedic management using Uttara Basti and targeted therapies to clear bilateral or unilateral fallopian tube blockages.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Neurological Rehabilitation",
+      description: "Advanced Ayurvedic therapies for managing neuropathy, paralysis recovery, and neurodegenerative conditions.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "PCOD & PCOS Management",
-      description: "Holistic care focusing on hormonal balance, metabolic reset, and menstrual regulation through diet, lifestyle, and classical herbs.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Gastro-Intestinal Healing",
+      description: "Clinically proven dietary and herbal interventions for chronic acidity, IBS, and inflammatory bowel diseases.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Endometriosis Care",
-      description: "Effective pain management and disease progression control using specialized Panchakarma treatments and customized formulations.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Metabolic & Endocrine Control",
+      description: "Evidence-based management of diabetes, thyroid imbalances, and severe obesity using integrated Ayurveda.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Male Infertility Solutions",
-      description: "Enhancing male reproductive vitality, improving sperm count and motility through targeted Ayurvedic therapies and Vajikarana techniques.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Stress & Sleep Disorders",
+      description: "Scientifically validated relaxation therapies like Shirodhara to treat chronic insomnia, anxiety, and depression.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "IVF Failure Support",
-      description: "Pre-conception detoxification and strengthening therapies to prepare the body for successful conception after previous IVF failures.",
-      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Immunity & Allergy Management",
+      description: "Specialized Rasayana (rejuvenation) therapies designed to boost cellular immunity and resolve chronic allergies.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialized Infertility Care",
-      description: "Focused exclusively on reproductive health, offering unparalleled expertise in treating complex infertility cases.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Evidence-Based Treatments",
+      description: "All therapies and medicines are backed by rigorous clinical research and validated outcomes.",
+      icon: <FileSearch className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Led by Dr. Chanchal Sharma",
-      description: "Guidance from a renowned expert with profound experience in Ayurvedic gynecology and Panchakarma.",
+      title: "Integrative Diagnostics",
+      description: "We combine traditional pulse diagnosis with modern lab reports for flawless accuracy.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Specialized Researchers",
+      description: "Consultations provided by senior Vaidyas who are also active researchers in the field of Ayurveda.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "High Success Rate",
-      description: "A proven track record with a reported 90% positive outcome in treating severe reproductive conditions.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Quality Controlled Herbs",
+      description: "Utilizing highly potent, lab-tested herbal formulations for maximum safety and efficacy.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Non-Surgical Solutions",
-      description: "Effective alternatives to surgery for conditions like fallopian tube blockage using therapies like Uttara Basti.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Clinical Panchakarma",
+      description: "Detoxification therapies performed under strict medical supervision in a sterile environment.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Global Reach",
-      description: "Pioneering online consultations to bring world-class Ayurvedic care to patients across India, UAE, and Europe.",
-      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "5 Convenient Locations",
-      description: "Accessible care with multiple state-of-the-art clinics spread across Delhi for your convenience.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Central Location",
+      description: "Easily accessible facility located in Dwarka Sector 13, Delhi, with comprehensive patient amenities.",
+      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
   const breadcrumbRef = useRef<HTMLOListElement>(null);
 
   useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
     if (breadcrumbRef.current) {
       breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
     }
   }, []);
 
   useEffect(() => {
-    document.title = "Aasha Ayurveda Centre Delhi | Specialized Infertility Care";
+    document.title = "Sanjivani Ayurvedic Institute Dwarka Sector 13 Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience specialized Ayurvedic infertility care, fallopian tube blockage treatment, and PCOD management at Aasha Ayurveda Centre in New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Ayurvedic researchers at the NABH-accredited, 40-bed Sanjivani Ayurvedic Institute in Dwarka Sector 13, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -251,7 +252,7 @@ export default function AashaAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Aasha Ayurveda Centre New Delhi
+              Sanjivani Ayurvedic Institute New Delhi
             </li>
           </ol>
         </div>
@@ -263,16 +264,16 @@ export default function AashaAyurvedaCenter() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Aasha Ayurveda Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Specialized Infertility Care | Fallopian Tube Blockage & PCOD Experts</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sanjivani Ayurvedic Research Institute</h1>
+                <p className="text-xl mb-4 opacity-90">Evidence-Based Ayurveda & Advanced Clinical Research Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rajouri Garden, New Delhi, India</span>
+                  <span className="text-lg">Dwarka Sector 13, Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(1300 Reviews)</span>
+                  <span className="text-lg font-semibold">4.7</span>
+                  <span className="opacity-90">(400+ Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,15 +299,15 @@ export default function AashaAyurvedaCenter() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Aasha Ayurveda Centre
-              </h2>
+                at Sanjivani Ayurvedic Research Institute
+</h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Aasha Ayurveda Centre</strong>, one of Delhi's leading Ayurvedic Panchakarma clinics renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic has established itself as a beacon of hope for countless couples seeking natural, non-surgical reproductive care.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Sanjivani Ayurvedic Research Institute</strong>, a premier center of healing located in Dwarka Sector 13, Delhi. We stand at the intersection of ancient Ayurvedic wisdom and modern clinical research. Our institute is dedicated to providing evidence-based, scientifically validated Ayurvedic treatments for chronic and lifestyle-induced diseases. By maintaining an in-house research wing, we ensure that every formulation and therapy protocol administered to our patients is optimized for maximum efficacy, safety, and holistic healing.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -314,8 +315,8 @@ export default function AashaAyurvedaCenter() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                          alt="Aasha Ayurveda Centre facility"
+                          src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
+                          alt="Sanjivani Ayurvedic Research Institute accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -324,8 +325,10 @@ export default function AashaAyurvedaCenter() {
                   </div>
 
                   <p>
-                    As a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe, Aasha Ayurveda employs advanced techniques like Uttara Basti and classical Kerala Panchakarma therapies. Our evidence-based protocols and holistic approach have resulted in an outstanding 90% positive outcome rate. With 5 convenient locations across Delhi, we are dedicated to restoring your reproductive wellness through authentic Ayurvedic healing.
+                    Our expert team of senior Ayurvedic researchers and clinical specialists meticulously assess each patient to uncover the root cause of their ailment. We have achieved remarkable success rates in managing complex autoimmune conditions, severe joint disorders, neurological ailments, and chronic digestive issues. At Sanjivani Ayurvedic Research Institute, you don't just receive generic traditional therapies; you benefit from cutting-edge Ayurvedic research integrated seamlessly into personalized, highly effective treatment plans designed to restore your long-term health.
                   </p>
+
+                  
                 </div>
               </div>
 
@@ -334,8 +337,8 @@ export default function AashaAyurvedaCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp" 
-                      alt="Aasha Ayurveda Centre main view"
+                      src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg" 
+                      alt="Sanjivani Ayurvedic Research Institute main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -347,8 +350,8 @@ export default function AashaAyurvedaCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                        alt="Aasha Ayurveda Centre therapy room"
+                        src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
+                        alt="Sanjivani Ayurvedic Research Institute therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -367,7 +370,7 @@ export default function AashaAyurvedaCenter() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Aasha Ayurveda Centre today.
+                My Vaidyam to connect with Sanjivani Ayurvedic Research Institute today.
               </h3>
             </div>
           </div>
@@ -379,8 +382,8 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Aasha Ayurveda Centre
-            </h2>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -411,10 +414,10 @@ export default function AashaAyurvedaCenter() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Aasha Ayurveda Centre
-              </h2>
+                Why Choose <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience exceptional reproductive care with a pioneer in Ayurvedic infertility treatments, guided by Dr. Chanchal Sharma.
+                Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
               </p>
             </div>
             
@@ -444,10 +447,10 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Aasha Ayurveda Centre
-            </h2>
+              Your Healing Journey at <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A carefully structured and personalized process to restore reproductive health and vitality.
+              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>
           </div>
           
@@ -481,12 +484,12 @@ export default function AashaAyurvedaCenter() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+                  alt="Sanjivani Ayurvedic Research Institute view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sanjivani?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -511,7 +514,7 @@ export default function AashaAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sanjivani?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -525,8 +528,8 @@ export default function AashaAyurvedaCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+                  alt="Sanjivani Ayurvedic Research Institute view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -541,7 +544,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients across the globe.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -580,7 +583,7 @@ export default function AashaAyurvedaCenter() {
                     </p>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -591,7 +594,7 @@ export default function AashaAyurvedaCenter() {
                 </div>
               </CardContent>
             </Card>
-
+ 
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -614,7 +617,7 @@ export default function AashaAyurvedaCenter() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-
+ 
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -630,13 +633,13 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and the specialized care at Aasha Ayurveda Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sanjivani.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -653,14 +656,13 @@ export default function AashaAyurvedaCenter() {
           </Accordion>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Contact Information</h2>
-              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic reproductive health.</p>
+              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic health.</p>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -670,9 +672,9 @@ export default function AashaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Aasha Ayurveda Centre<br />
-                      J-146, Near Metro Station, Rajouri Garden<br />
-                      New Delhi, Delhi 110027, India
+                      Sanjivani Ayurvedic Research Institute<br />
+                      Plot No. 54, Upper Ground Floor, Sector 13 B, Dwarka<br />
+                      New Delhi, Delhi, India
                     </p>
                   </div>
                 </div>
@@ -682,7 +684,7 @@ export default function AashaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <div>+91 98 xxxxx xxx</div>
+                      <div>+91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>
@@ -694,12 +696,13 @@ export default function AashaAyurvedaCenter() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Located conveniently near Rajouri Garden Metro Station</span>
+                        <span>Approx. 800 meters from Dwarka Sector 13 Metro Station (Blue Line)</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Multiple clinic locations accessible across Delhi</span>
+                        <span>Approx. 15-18 km from Indira Gandhi International (IGI) Airport (T3)</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -707,14 +710,14 @@ export default function AashaAyurvedaCenter() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Aasha+Ayurveda+Centre+Rajouri+Garden+New+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Sanjeevani+Ayurveda+Dwarka+Sector+13+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Aasha Ayurveda Centre Location"
+                  title="Sanjivani Location"
                 ></iframe>
               </div>
             </div>
@@ -726,8 +729,8 @@ export default function AashaAyurvedaCenter() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-            alt="Aasha Ayurveda Centre"
+            src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+            alt="Sanjivani Ayurvedic Research Institute"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -737,7 +740,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Aasha Ayurveda Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sanjivani Ayurvedic Research Institute.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -747,7 +750,7 @@ export default function AashaAyurvedaCenter() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Aasha%20Ayurveda%20Centre."
+              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Sanjivani%20Ayurvedic%20Research%20Institute."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -757,22 +760,22 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
+ 
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
-
+ 
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
-
+ 
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
-
-            <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
+ 
+      <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
           <div className="h-1.5 w-full bg-gradient-to-r from-[#2C4E5A]/20 via-[#2C4E5A] to-[#2C4E5A]/20" />
@@ -786,7 +789,7 @@ export default function AashaAyurvedaCenter() {
           </div>
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
             {jumpSections.map((section, idx) => (
-              <button key={section.id || idx} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
+              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
                 <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
                 <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200 border border-[#2C4E5A]/10 group-hover:border-transparent"><ChevronRight size={14} className="text-[#2C4E5A] group-hover:text-white transition-colors" /></div>
               </button>
@@ -797,3 +800,4 @@ export default function AashaAyurvedaCenter() {
     </div>
   );
 }
+

@@ -195,6 +195,28 @@ import ApolloAyurVAIDHospitalsNehruEnclave from "./pages/centers/ApolloAyurVAIDH
 
 const queryClient = new QueryClient();
 
+
+import MirasaAyurvedaHospital from "./pages/centers/MirasaAyurvedaHospital";
+import AyurvedaKendraHospital from "./pages/centers/AyurvedaKendraHospital";
+import NirmalAyurvedPanchkarmClinic from "./pages/centers/NirmalAyurvedPanchkarmClinic";
+import AyurNavaKeralaAyurvedaHospital from "./pages/centers/AyurNavaKeralaAyurvedaHospital";
+import KuriasEarthAyurvedaHospital from "./pages/centers/KuriasEarthAyurvedaHospital";
+import AllIndiaInstituteOfAyurveda from "./pages/centers/AllIndiaInstituteOfAyurveda";
+import ChBrahmPrakashAyurvedCharakSansthan from "./pages/centers/ChBrahmPrakashAyurvedCharakSansthan";
+import SriVaidyaAyurvedaPanchakarma from "./pages/centers/SriVaidyaAyurvedaPanchakarma";
+
+import KeralaAyurvedaWellnessClinicEastofKailash from "./pages/centers/KeralaAyurvedaWellnessClinicEastofKailash";
+
+import HolyFamilyHospitalAyurvedaDepartment from "./pages/centers/HolyFamilyHospitalAyurvedaDepartment";
+
+import AandUTibbiaCollegeHospitalPanchakarma from "./pages/centers/AandUTibbiaCollegeHospitalPanchakarma";
+
+import KairaliTheAyurvedicHealingVillageDelhiNCR from "./pages/centers/KairaliTheAyurvedicHealingVillageDelhiNCR";
+
+import SanjivaniAyurvedicResearchInstitute from "./pages/centers/SanjivaniAyurvedicResearchInstitute";
+
+import SriSriTattvaPanchakarmaCentre from "./pages/centers/SriSriTattvaPanchakarmaCentre";
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -644,6 +666,28 @@ const App = () => (
           <Route path="/ayurvedic-programs/integrated-retreat/ayurveda-digital-detox" element={<Navigate to="/ayurveda-packages/ayurvedic-digital-detox-retreat-in-india" replace />} />
           <Route path="/integrated-retreat/ayurveda-digital-detox" element={<Navigate to="/ayurveda-packages/ayurvedic-digital-detox-retreat-in-india" replace />} />
           <Route path="*" element={<NotFound />} />
+        
+          <Route path="/centers/mirasa-ayurveda-hospital-new-delhi-india" element={<MirasaAyurvedaHospital />} />
+          <Route path="/centers/ayurveda-kendra-hospital-safdarjung-delhi-india" element={<AyurvedaKendraHospital />} />
+          <Route path="/centers/nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india" element={<NirmalAyurvedPanchkarmClinic />} />
+          <Route path="/centers/ayurnava-kerala-ayurveda-hospital-dwarka-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
+          <Route path="/centers/kurias-earth-ayurveda-hospital-green-park-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
+          <Route path="/centers/all-india-institute-of-ayurveda-hospital-new-delhi-india" element={<AllIndiaInstituteOfAyurveda />} />
+          <Route path="/centers/ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india" element={<ChBrahmPrakashAyurvedCharakSansthan />} />
+          <Route path="/centers/sri-vaidya-ayurveda-panchakarma-hospital-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />
+
+        
+          <Route path="/centers/kerala-ayurveda-wellness-clinic-hospital-new-delhi-india" element={<KeralaAyurvedaWellnessClinicEastofKailash />} />
+        
+          <Route path="/centers/holy-family-hospital-ayurveda-department-hospital-new-delhi-india" element={<HolyFamilyHospitalAyurvedaDepartment />} />
+        
+          <Route path="/centers/a-and-u-tibbia-college-hospital-new-delhi-india" element={<AandUTibbiaCollegeHospitalPanchakarma />} />
+        
+          <Route path="/centers/kairali-the-ayurvedic-healing-village-hospital-new-delhi-india" element={<KairaliTheAyurvedicHealingVillageDelhiNCR />} />
+        
+          <Route path="/centers/sanjivani-ayurvedic-research-institute-center-delhi-india" element={<SanjivaniAyurvedicResearchInstitute />} />
+        
+          <Route path="/centers/sri-sri-tattva-panchakarma-centre-new-delhi-india" element={<SriSriTattvaPanchakarmaCentre />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

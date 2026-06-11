@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AashaAyurvedaCenter() {
+export default function KarmaAyurvedaHospital() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,191 +37,192 @@ export default function AashaAyurvedaCenter() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Precision Infertility Consultation",
-      description: "Detailed analysis of your Prakriti, medical records, and reproductive health by Dr. Chanchal Sharma.",
+      title: "Detailed Renal Health Consultation",
+      description: "Comprehensive assessment of your kidney function reports and holistic Prakriti analysis by Dr. Puneet Dhawan.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Treatment Plan",
-      description: "Customizing evidence-based Ayurvedic clinical protocols focusing on fallopian tube blockage, PCOD, and endometriosis.",
+      title: "Customized Ayurvedic Protocol",
+      description: "Designing a personalized treatment pathway including specific herbal formulations designed to restore kidney function naturally.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purvakarma Preparation",
-      description: "Systematically preparing the body using warm herbal oils and steam therapies to clear energy channels.",
-      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
+      title: "Renal Diet Plan",
+      description: "Provision of a highly specialized renal diet plan to reduce the workload on the kidneys and manage creatinine levels.",
+      icon: <Leaf className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Uttara Basti & Core Panchakarma",
-      description: "Administering targeted Uttara Basti and classical Kerala Panchakarma therapies for reproductive conditions.",
+      title: "Herbal Medicine Administration",
+      description: "Using authentic Ayurvedic medicines sourced from pure herbs to repair damaged kidney cells and improve GFR.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Dietary & Lifestyle Tracking",
-      description: "Ongoing guidance with specific diet plans and lifestyle modifications to support reproductive health.",
+      title: "Continuous Monitoring",
+      description: "Regular follow-ups and tracking of crucial renal markers (Creatinine, Urea, eGFR) to evaluate treatment progress.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Post-Treatment Support",
-      description: "Continuous monitoring and online consultations to ensure long-term wellness and positive outcomes.",
-      icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
+      title: "Dialysis Dependency Reduction",
+      description: "Gradual strategies implemented to reduce dependency on dialysis and support the kidneys in functioning independently.",
+      icon: <ShieldCheck className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Outstanding PCOD Treatment",
-      review: "Dr. Chanchal Sharma's treatment for my complex PCOD case was absolutely life-changing. After struggling with hormonal imbalances for years and trying multiple modern therapies without success, the personalized Ayurvedic approach and Uttara Basti therapy restored my cycles. We were finally able to conceive naturally after years of trying.",
-      name: "Sarah Jenkins",
+      title: "Significant Drop in Creatinine",
+      review: "My mother's creatinine levels were dangerously high and doctors back home in London suggested immediate dialysis. After discovering Karma Ayurveda and starting their remote treatment plan, her levels have dropped significantly. She is much more active and we avoided dialysis entirely.",
+      name: "Arthur Pendelton",
       verified: true,
       location: "London, UK",
-      condition: "PCOD & Infertility",
+      condition: "High Creatinine & CKD",
       rating: 5
     },
     {
-      title: "Successful Tube Blockage Treatment",
-      review: "I was diagnosed with bilateral fallopian tube blockage and was losing all hope of ever having a child naturally. Aasha Ayurveda's highly specialized Panchakarma therapies completely cleared the blockage without the need for invasive surgery. Their continuous support and online consultations made the entire international healing process seamless.",
-      name: "Elena Rodriguez",
+      title: "Saved from Dialysis",
+      review: "Dr. Puneet Dhawan's treatment protocol has been an absolute miracle for my renal failure. I was on dialysis twice a week in Canada. Following his incredibly strict diet and authentic Ayurvedic medicines, my kidney function improved so much that I no longer require dialysis sessions.",
+      name: "Marcus Thorne",
       verified: true,
-      location: "Madrid, Spain",
-      condition: "Fallopian Tube Blockage",
+      location: "Toronto, Canada",
+      condition: "Renal Failure",
       rating: 5
     },
     {
-      title: "Excellent Endometriosis Care",
-      review: "The holistic care and precise pulse diagnosis for my severe endometriosis brought me immense relief from chronic pain. The authentic classical herbs and dietary regimen improved my overall health significantly within just a few months. I felt truly heard and cared for by their brilliant medical team during my stay.",
-      name: "Sophia Rossi",
-      verified: true,
-      location: "Rome, Italy",
-      condition: "Endometriosis",
-      rating: 5
-    },
-    {
-      title: "Relief from Male Infertility",
-      review: "We consulted Aasha Ayurveda remotely for severe male infertility issues after several failed clinical treatments here. The classical Ayurvedic medicines, Vajikarana therapies, and dedicated lifestyle guidance showed remarkable, scientifically proven improvements in motility and count in just a few months. It completely exceeded our expectations.",
-      name: "David Mueller",
+      title: "Effective Kidney Stone Treatment",
+      review: "The specialized herbal medications prescribed by the excellent doctors here helped me pass a surprisingly large kidney stone without any invasive surgery. The pain relief was impressively quick and the remote care team was exceptionally attentive.",
+      name: "Lucas Schmidt",
       verified: true,
       location: "Berlin, Germany",
-      condition: "Male Infertility",
+      condition: "Kidney Stones",
       rating: 5
     },
     {
-      title: "Compassionate Online Consultation",
-      review: "Living in the UAE, the online consultation process was incredibly seamless and perfectly organized. Dr. Sharma's unparalleled expertise and the strictly prescribed herbal regimen helped us achieve a successful, healthy pregnancy after multiple devastating IVF failures. We are forever grateful to the entire team.",
-      name: "Fatima Al-Fasi",
+      title: "Holistic Care and Support",
+      review: "The customized diet plan they provided is tough but incredibly effective for stopping disease progression. The doctors explained my condition very well and the natural medicines are working steadily to repair my kidneys and lower my blood pressure.",
+      name: "Sophie Laurent",
       verified: true,
-      location: "Dubai, UAE",
-      condition: "IVF Failure",
+      location: "Paris, France",
+      condition: "Chronic Kidney Disease",
+      rating: 5
+    },
+    {
+      title: "Proteinuria Controlled",
+      review: "I was losing a dangerous amount of protein in my urine due to my condition. The Ayurvedic protocol from Karma Ayurveda brought it completely under control within just a few short months. I highly recommend their expertise to anyone struggling.",
+      name: "Mateo Garcia",
+      verified: true,
+      location: "Barcelona, Spain",
+      condition: "Proteinuria",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What conditions does Aasha Ayurveda specialize in?",
-      answer: "We specialize in female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases using classical Ayurvedic approaches."
+      question: "What does Karma Ayurveda Hospital specialize in?",
+      answer: "Karma Ayurveda Hospital is a world-renowned Ayurvedic institution primarily specializing in the natural treatment of kidney diseases, including Chronic Kidney Disease (CKD), high creatinine levels, proteinuria, and polycystic kidney disease, aiming to reduce or eliminate the need for dialysis."
     },
     {
-      question: "Who leads the medical team?",
-      answer: "The clinic is founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma), a highly experienced Gynecology specialist."
+      question: "Who leads the medical team at Karma Ayurveda?",
+      answer: "The hospital is led by Dr. Puneet Dhawan, a renowned 5th-generation Ayurvedic physician specializing in renal care, supported by a large panel of expert Ayurvedic doctors."
     },
     {
-      question: "What is Uttara Basti therapy?",
-      answer: "Uttara Basti is a specialized Ayurvedic Panchakarma therapy where medicated oil or decoction is administered into the uterus to treat reproductive disorders and clear blockages."
+      question: "Can Ayurvedic treatment stop dialysis?",
+      answer: "While results vary depending on the severity of the condition, our specialized Ayurvedic treatments and strict renal diet plans have successfully helped many patients significantly reduce the frequency of dialysis or stop it entirely by naturally improving kidney function."
     },
     {
-      question: "Do you offer online consultations?",
-      answer: "Yes, Aasha Ayurveda is a pioneer in online consultation for Ayurvedic infertility care, serving patients across India, the UAE, and Europe."
+      question: "What are the clinic timings?",
+      answer: "The clinic in Pitampura is open from 9:00 AM to 6:00 PM. Prior appointment booking is necessary to ensure ample consultation time with our specialists."
     },
     {
-      question: "Where are your clinics located?",
-      answer: "We have 5 convenient locations across Delhi. Our main center is located in Rajouri Garden, West Delhi."
+      question: "Where is the clinic located in Delhi?",
+      answer: "Our main center is located at Second Floor, 77, Block C, Tarun Enclave, Pitampura, New Delhi, opposite Bhagwan Buddha Parwana Road."
     }
   ];
 
   const programs = [
     {
-      title: "Female Infertility Treatment",
-      description: "Comprehensive Ayurvedic protocols tailored to enhance female reproductive health and address underlying causes of infertility naturally.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Fallopian Tube Blockage",
-      description: "Non-surgical Ayurvedic management using Uttara Basti and targeted therapies to clear bilateral or unilateral fallopian tube blockages.",
+      title: "Chronic Kidney Disease (CKD) Care",
+      description: "Holistic management of CKD focusing on repairing damaged renal tissues and preventing disease progression.",
       icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "PCOD & PCOS Management",
-      description: "Holistic care focusing on hormonal balance, metabolic reset, and menstrual regulation through diet, lifestyle, and classical herbs.",
+      title: "Dialysis Reversal Protocol",
+      description: "Specialized treatments aiming to revive natural kidney function and reduce dependency on artificial dialysis.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Creatinine Management",
+      description: "Herbal formulations and specific diets to effectively lower elevated blood creatinine and urea levels naturally.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Proteinuria Treatment",
+      description: "Targeted Ayurvedic therapies to stop protein leakage in urine and strengthen the glomerular filtration barrier.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
+    },
+    {
+      title: "Polycystic Kidney Disease",
+      description: "Managing PKD symptoms, reducing cyst growth, and preserving existing kidney function through Ayurveda.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Endometriosis Care",
-      description: "Effective pain management and disease progression control using specialized Panchakarma treatments and customized formulations.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "Male Infertility Solutions",
-      description: "Enhancing male reproductive vitality, improving sperm count and motility through targeted Ayurvedic therapies and Vajikarana techniques.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
-    },
-    {
-      title: "IVF Failure Support",
-      description: "Pre-conception detoxification and strengthening therapies to prepare the body for successful conception after previous IVF failures.",
-      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Kidney Stone Removal",
+      description: "Natural remedies to dissolve and flush out renal calculi without surgical intervention.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialized Infertility Care",
-      description: "Focused exclusively on reproductive health, offering unparalleled expertise in treating complex infertility cases.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Led by Dr. Chanchal Sharma",
-      description: "Guidance from a renowned expert with profound experience in Ayurvedic gynecology and Panchakarma.",
+      title: "Decades of Legacy",
+      description: "A trusted 5th-generation Ayurvedic institution with a long history of healing complex diseases.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "High Success Rate",
-      description: "A proven track record with a reported 90% positive outcome in treating severe reproductive conditions.",
+      title: "Renal Care Pioneers",
+      description: "Globally recognized for specializing exclusively in kidney diseases and avoiding dialysis naturally.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Non-Surgical Solutions",
-      description: "Effective alternatives to surgery for conditions like fallopian tube blockage using therapies like Uttara Basti.",
+      title: "Expert Leadership",
+      description: "Guided by Dr. Puneet Dhawan, a globally respected figure in Ayurvedic nephrology.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "100% Herbal Medicines",
+      description: "Using authentic, heavy-metal-free herbal formulations that are safe and deeply effective.",
       icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Global Reach",
-      description: "Pioneering online consultations to bring world-class Ayurvedic care to patients across India, UAE, and Europe.",
-      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Strict Renal Diets",
+      description: "Providing customized dietary plans critical for managing kidney diseases effectively.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "5 Convenient Locations",
-      description: "Accessible care with multiple state-of-the-art clinics spread across Delhi for your convenience.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "High Success Rate",
+      description: "Thousands of documented cases showing improved GFR and reduced creatinine levels.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
   const breadcrumbRef = useRef<HTMLOListElement>(null);
 
   useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
     if (breadcrumbRef.current) {
       breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
     }
   }, []);
 
   useEffect(() => {
-    document.title = "Aasha Ayurveda Centre Delhi | Specialized Infertility Care";
+    document.title = "Karma Ayurveda Hospital New Delhi | Ayurvedic Kidney Care";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience specialized Ayurvedic infertility care, fallopian tube blockage treatment, and PCOD management at Aasha Ayurveda Centre in New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience world-class Ayurvedic treatment for Chronic Kidney Disease, high creatinine, and dialysis prevention at Karma Ayurveda Hospital in Pitampura, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -251,7 +252,7 @@ export default function AashaAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Aasha Ayurveda Centre New Delhi
+              Karma Ayurveda Hospital New Delhi
             </li>
           </ol>
         </div>
@@ -263,16 +264,16 @@ export default function AashaAyurvedaCenter() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Aasha Ayurveda Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Specialized Infertility Care | Fallopian Tube Blockage & PCOD Experts</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Karma Ayurveda Hospital</h1>
+                <p className="text-xl mb-4 opacity-90">Specialized Ayurvedic Kidney Care & Treatment</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rajouri Garden, New Delhi, India</span>
+                  <span className="text-lg">Pitampura, New Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(1300 Reviews)</span>
+                  <span className="text-lg font-semibold">4.6</span>
+                  <span className="opacity-90">(260 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,7 +299,7 @@ export default function AashaAyurvedaCenter() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Aasha Ayurveda Centre
+                at Karma Ayurveda Hospital
               </h2>
             </div>
 
@@ -306,7 +307,7 @@ export default function AashaAyurvedaCenter() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Aasha Ayurveda Centre</strong>, one of Delhi's leading Ayurvedic Panchakarma clinics renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic has established itself as a beacon of hope for countless couples seeking natural, non-surgical reproductive care.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Karma Ayurveda Hospital</strong>, one of India's most trusted destinations for authentic Ayurvedic treatment of kidney diseases. Located in Pitampura, New Delhi, our specialized hospital provides a revolutionary, non-invasive approach to overcoming chronic renal conditions naturally. Under the esteemed guidance of Dr. Puneet Dhawan, a 5th-generation Ayurvedic physician, we have established an unparalleled track record of treating CKD, high creatinine, and proteinuria, helping thousands of patients reduce or eliminate the need for dialysis.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -314,8 +315,8 @@ export default function AashaAyurvedaCenter() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                          alt="Aasha Ayurveda Centre facility"
+                          src="/TOP cneters/delhi/Karma Ayurveda Hospital/secondary.jpg" 
+                          alt="Karma Ayurveda Hospital therapy"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -324,7 +325,7 @@ export default function AashaAyurvedaCenter() {
                   </div>
 
                   <p>
-                    As a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe, Aasha Ayurveda employs advanced techniques like Uttara Basti and classical Kerala Panchakarma therapies. Our evidence-based protocols and holistic approach have resulted in an outstanding 90% positive outcome rate. With 5 convenient locations across Delhi, we are dedicated to restoring your reproductive wellness through authentic Ayurvedic healing.
+                    Our mission is to offer root-cause healing through personalized herbal therapies and highly structured renal diets. We blend centuries-old Vedic medicinal knowledge with deep insights into modern renal pathophysiology to deliver treatments that are both safe and highly effective. Whether you are dealing with early-stage kidney disease or seeking alternatives to painful dialysis, Karma Ayurveda is dedicated to restoring your kidney function, vitality, and overall quality of life.
                   </p>
                 </div>
               </div>
@@ -334,8 +335,8 @@ export default function AashaAyurvedaCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp" 
-                      alt="Aasha Ayurveda Centre main view"
+                      src="/TOP cneters/delhi/Karma Ayurveda Hospital/main.webp" 
+                      alt="Karma Ayurveda Hospital main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -347,8 +348,8 @@ export default function AashaAyurvedaCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                        alt="Aasha Ayurveda Centre therapy room"
+                        src="/TOP cneters/delhi/Karma Ayurveda Hospital/secondary.jpg" 
+                        alt="Karma Ayurveda Hospital therapy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -360,14 +361,14 @@ export default function AashaAyurvedaCenter() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to self-awareness and balance begins with a single step.{" "}
+                Your journey to healthy kidneys and balanced life begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Aasha Ayurveda Centre today.
+                My Vaidyam to connect with Karma Ayurveda Hospital today.
               </h3>
             </div>
           </div>
@@ -379,7 +380,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Aasha Ayurveda Centre
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Karma Ayurveda Hospital
             </h2>
           </div>
           
@@ -411,10 +412,10 @@ export default function AashaAyurvedaCenter() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Aasha Ayurveda Centre
+                Why Choose <br className="hidden lg:block" /> Karma Ayurveda Hospital
               </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience exceptional reproductive care with a pioneer in Ayurvedic infertility treatments, guided by Dr. Chanchal Sharma.
+                Experience unparalleled expertise in Ayurvedic renal care in a supportive and deeply healing environment.
               </p>
             </div>
             
@@ -444,10 +445,10 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Aasha Ayurveda Centre
+              Your Healing Journey at <br className="hidden lg:block" /> Karma Ayurveda Hospital
             </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A carefully structured and personalized process to restore reproductive health and vitality.
+              A systematic approach of consulting, naturally repairing, and monitoring to revive your kidney health.
             </p>
           </div>
           
@@ -481,12 +482,12 @@ export default function AashaAyurvedaCenter() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Karma Ayurveda Hospital/main.webp"
+                  alt="Karma Ayurveda Hospital view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Karma Ayurveda Hospital?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -511,7 +512,7 @@ export default function AashaAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Karma Ayurveda Hospital?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -525,8 +526,8 @@ export default function AashaAyurvedaCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Karma Ayurveda Hospital/main.webp"
+                  alt="Karma Ayurveda Hospital view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -537,6 +538,7 @@ export default function AashaAyurvedaCenter() {
       </section>
 
       {/* Reviews Section */}
+            {/* Reviews Section */}
       <section id="reviews" className="py-8 md:py-12 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
@@ -630,13 +632,13 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and the specialized care at Aasha Ayurveda Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Karma Ayurveda Hospital.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -660,7 +662,7 @@ export default function AashaAyurvedaCenter() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Contact Information</h2>
-              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic reproductive health.</p>
+              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic health.</p>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -670,9 +672,9 @@ export default function AashaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Aasha Ayurveda Centre<br />
-                      J-146, Near Metro Station, Rajouri Garden<br />
-                      New Delhi, Delhi 110027, India
+                      Karma Ayurveda Hospital<br />
+                      Second Floor, 77, Block C, Tarun Enclave<br />
+                      Pitampura, New Delhi, Delhi 110034, India
                     </p>
                   </div>
                 </div>
@@ -694,12 +696,13 @@ export default function AashaAyurvedaCenter() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Located conveniently near Rajouri Garden Metro Station</span>
+                        <span>Opposite Bhagwan Buddha Parwana Road</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Multiple clinic locations accessible across Delhi</span>
+                        <span>Accessible from Pitampura Metro Station</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -707,14 +710,14 @@ export default function AashaAyurvedaCenter() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Aasha+Ayurveda+Centre+Rajouri+Garden+New+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Karma+Ayurveda+Pitampura+New+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Aasha Ayurveda Centre Location"
+                  title="Karma Ayurveda Location"
                 ></iframe>
               </div>
             </div>
@@ -726,8 +729,8 @@ export default function AashaAyurvedaCenter() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-            alt="Aasha Ayurveda Centre"
+            src="/TOP cneters/delhi/Karma Ayurveda Hospital/main.webp"
+            alt="Karma Ayurveda Hospital"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -737,7 +740,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Aasha Ayurveda Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Karma Ayurveda Hospital.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -747,7 +750,7 @@ export default function AashaAyurvedaCenter() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Aasha%20Ayurveda%20Centre."
+              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Karma%20Ayurveda%20Hospital."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -757,21 +760,21 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
+ 
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
-
+ 
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
-
+ 
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
-
+ 
             <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>

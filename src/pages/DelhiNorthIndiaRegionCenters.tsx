@@ -47,6 +47,7 @@ const IMAGE_BY_SERIES: Record<number, string> = {
 };
 
 const LOCATION_OVERRIDE_BY_CENTER: Record<string, string> = {
+  "Ayurveda Kendra (Dr. Sudha Asokan)": "Safdarjung Enclave, Delhi, India",
   "Nirmal Ayurved & Panchkarm Clinic": "Shahdara, New Delhi, India",
   "Ch. Brahm Prakash Ayurved Charak Sansthan (CBPACS)": "Khera Dabar, New Delhi, India",
   "Kairali The Ayurvedic Healing Village – Delhi NCR": "Mehrauli, New Delhi, India",
@@ -55,8 +56,8 @@ const LOCATION_OVERRIDE_BY_CENTER: Record<string, string> = {
   "Mirasa Ayurveda": "East Of Kailash, Delhi, India",
   "Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)": "Green Park, New Delhi, India",
   "Sri Vaidya Ayurveda Panchakarma": "Vasant Kunj, Delhi, India",
-  "Sanjivani Ayurvedic Research Institute": "Vijay Nagar, Delhi, India",
-  "Sri Sri Tattva Panchakarma Center – Delhi": "Jhilmil, Delhi, India",
+  "Sanjivani Ayurvedic Research Institute": "Dwarka Sector 13, Delhi, India",
+  "Sri Sri Tattva Panchakarma Centre - Delhi": "Dwarka Sector 19, New Delhi, India",
 };
 
 const cleanMarkdownText = (value: string) =>
@@ -84,6 +85,15 @@ const parseCentersFromMarkdown = (markdown: string): DelhiCenter[] => {
       if (name === "Sri Sri Ayurveda Panchakarma (PanchkarmaTreatment.com)") {
         name = "Sri Sri Ayurveda Panchakarma Ayurveda Center";
       }
+      if (name.includes("Sri Sri Tattva Panchakarma Centre")) {
+        name = "Sri Sri Tattva Panchakarma Centre - Delhi";
+      }
+      if (name.includes("Tibbia College")) {
+        name = "A & U Tibbia College & Hospital";
+      }
+      if (name.includes("Sanjivani")) {
+        name = "Sanjivani Ayurvedic Research Institute";
+      }
       const description = cleanMarkdownText(parts[3]);
       const ratingCell = cleanMarkdownText(parts[4]);
       let city = cleanMarkdownText(parts[5]).replace(/\s+/g, " ").trim();
@@ -107,14 +117,69 @@ const parseCentersFromMarkdown = (markdown: string): DelhiCenter[] => {
       const reviews = reviewsMatch ? reviewsMatch[1].replace(/\+/g, "").trim() : "0";
       const image = IMAGE_BY_SERIES[series] || "/Anchor pages/Delhi/images/1.webp";
 
+      let finalSlug = "";
+      let finalRating = rating;
+      let finalReviews = reviews;
+
+      if (name.includes("Mirasa")) {
+        finalSlug = "mirasa-ayurveda-hospital-new-delhi-india";
+      } else if (name.includes("Ayurveda Kendra")) {
+        finalSlug = "ayurveda-kendra-hospital-safdarjung-delhi-india";
+      } else if (name.includes("All India Institute")) {
+        finalSlug = "all-india-institute-of-ayurveda-hospital-new-delhi-india";
+      } else if (name.includes("Nirmal Ayurved")) {
+        finalSlug = "nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india";
+      } else if (name.includes("AyurNava Kerala Ayurveda")) {
+        finalSlug = "ayurnava-kerala-ayurveda-hospital-dwarka-new-delhi-india";
+      } else if (name.includes("Kurias Earth Ayurveda")) {
+        finalSlug = "kurias-earth-ayurveda-hospital-green-park-new-delhi-india";
+      } else if (name.includes("Sri Vaidya")) {
+        finalSlug = "sri-vaidya-ayurveda-panchakarma-hospital-delhi-india";
+        finalRating = 4.6;
+        finalReviews = "250+";
+      } else if (name.includes("Tibbia College")) {
+        finalSlug = "a-and-u-tibbia-college-hospital-new-delhi-india";
+        finalRating = 4.1;
+        finalReviews = "500+";
+      } else if (name.includes("Sri Sri Ayurveda Panchakarma Ayurveda Center")) {
+        finalSlug = "sri-sri-ayurveda-panchakarma-center-new-delhi-india";
+        finalRating = 4.1;
+        finalReviews = "60+";
+      } else if (name.includes("Sri Sri Tattva Panchakarma Centre")) {
+        finalSlug = "sri-sri-tattva-panchakarma-centre-new-delhi-india";
+        finalRating = 4.6;
+        finalReviews = "250+";
+      } else if (name.includes("Sanjivani")) {
+        finalSlug = "sanjivani-ayurvedic-research-institute-center-delhi-india";
+        finalRating = 4.7;
+        finalReviews = "400+";
+      } else if (name.includes("Kairali")) {
+        finalSlug = "kairali-the-ayurvedic-healing-village-hospital-new-delhi-india";
+        finalRating = 4.7;
+        finalReviews = "300+";
+      } else if (name.includes("Holy Family Hospital")) {
+        finalSlug = "holy-family-hospital-ayurveda-department-hospital-new-delhi-india";
+        finalRating = 4.6;
+        finalReviews = "150+";
+      } else if (name.includes("Kerala Ayurveda Wellness Clinic")) {
+        finalSlug = "kerala-ayurveda-wellness-clinic-hospital-new-delhi-india";
+        finalRating = 4.8;
+        finalReviews = "200+";
+      } else if (name.includes("CBPACS")) {
+        finalSlug = "ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india";
+        finalRating = 4.4;
+        finalReviews = "1,500+";
+      }
+
       return {
         series,
         name,
         city,
         description,
-        rating,
-        reviews,
+        rating: finalRating,
+        reviews: finalReviews,
         image,
+        ...(finalSlug ? { slug: finalSlug } : {})
       };
     })
     .filter((center): center is DelhiCenter => center !== null)
@@ -275,10 +340,9 @@ const SriSriAyurvedaPanchakarmaAyurvedaCenter: DelhiCenter = {
   series: -12,
   name: "Sri Sri Ayurveda Panchakarma Ayurveda Center",
   city: "Jhilmil, Delhi, India",
-  description:
-    "An Ayurvedic Panchakarma clinic in Delhi affiliated with the Sri Sri Tattva brand, delivering authentic Ayurvedic therapies in a spiritually aligned, peaceful environment. The center offers personalized Panchakarma detox programs, Abhyanga, Shirodhara, Udwarthanam, herbal steam, and rejuvenation therapies under qualified Ayurvedic doctors. Known for integrating yoga and meditation with clinical Ayurveda, this center appeals to patients from across India and international visitors seeking genuine, protocol-driven Ayurvedic healing in the capital city.",
+  description: "An Ayurvedic Panchakarma clinic in Delhi affiliated with the Sri Sri Tattva brand, delivering authentic Ayurvedic therapies in a spiritually aligned, peaceful environment. The center offers personalized Panchakarma detox programs, Abhyanga, Shirodhara, Udwarthanam, herbal steam, and rejuvenation therapies under qualified Ayurvedic doctors. Known for integrating yoga and meditation with clinical Ayurveda, this center appeals to patients from across India and international visitors seeking genuine, protocol-driven Ayurvedic healing in the capital city.",
   rating: 4.1,
-  reviews: "60",
+  reviews: "60+",
   image: "/Anchor pages/Delhi/images/8.webp",
   slug: "sri-sri-ayurveda-panchakarma-center-new-delhi-india",
 };

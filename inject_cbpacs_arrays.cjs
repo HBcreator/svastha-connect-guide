@@ -1,0 +1,196 @@
+const fs = require('fs');
+const path = 'src/pages/centers/ChBrahmPrakashAyurvedCharakSansthan.tsx';
+let content = fs.readFileSync(path, 'utf8');
+
+const newArrays = `  const treatmentProcess = [
+    {
+      number: 1,
+      title: "Detailed Ayurvedic Consultation",
+      description: "Comprehensive assessment of your body constitution (Prakriti), medical history, and specific ailments by highly qualified doctors.",
+      icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 2,
+      title: "Personalized Treatment Planning",
+      description: "Creating an evidence-based clinical pathway utilizing classical Ayurvedic formulations and procedures tailored for you.",
+      icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 3,
+      title: "Purvakarma (Preparatory Care)",
+      description: "Preparing the body for deep detoxification through specialized therapies like Snehana (oleation) and Swedana (sudation).",
+      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 4,
+      title: "Pradhankarma (Main Detoxification)",
+      description: "Executing core Panchakarma procedures under strict medical supervision to eliminate deep-seated toxins and restore balance.",
+      icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 5,
+      title: "Diet & Lifestyle Management",
+      description: "Recommending specific dietary modifications (Pathya-Apathya) and Yoga practices to complement the ongoing treatments.",
+      icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
+    },
+    {
+      number: 6,
+      title: "Paschatkarma & Follow-up",
+      description: "Providing rejuvenating rasayanas and continuous follow-up care to ensure long-term health benefits and disease prevention.",
+      icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
+    }
+  ];
+
+  const testimonials = [
+    {
+      title: "Excellent Hospital Infrastructure",
+      review: "The hospital infrastructure is excellent with well-equipped labs, a clean environment, and specialized OPDs. The doctors are highly attentive and provide personalized care. Free medicines are a great support.",
+      name: "Ramesh Sharma",
+      verified: true,
+      location: "New Delhi, India",
+      condition: "General Ayurveda Care",
+      rating: 5
+    },
+    {
+      title: "Effective Joint Pain Relief",
+      review: "I have been suffering from severe knee joint pain for years. The classical Ayurvedic treatments and therapies here provided significant relief. The campus is green and peaceful, perfect for healing.",
+      name: "Suman Devi",
+      verified: true,
+      location: "Gurugram, India",
+      condition: "Arthritis & Joint Pain",
+      rating: 5
+    },
+    {
+      title: "Great Doctors and Facilities",
+      review: "CBPACS is truly the AIIMS of Ayurveda. The clinical exposure and facilities are top-notch. The doctors listen carefully and prescribe effective authentic medicines that helped clear my skin condition.",
+      name: "Priya Verma",
+      verified: true,
+      location: "New Delhi, India",
+      condition: "Skin Disorder",
+      rating: 4
+    },
+    {
+      title: "Holistic Healing Environment",
+      review: "A highly disciplined and well-maintained government institution. The Panchakarma therapies are done systematically. Though it is quite far from central Delhi, the quality of care makes the travel worth it.",
+      name: "Vikas Kumar",
+      verified: true,
+      location: "Faridabad, India",
+      condition: "Panchakarma Detox",
+      rating: 4
+    },
+    {
+      title: "Outstanding Ayurvedic Care",
+      review: "The doctors take time to explain the root cause of the problem. The holistic approach combining diet, medicines, and therapies worked wonders for my chronic digestive issues. Highly recommended.",
+      name: "Anjali Gupta",
+      verified: true,
+      location: "Noida, India",
+      condition: "Digestive Issues",
+      rating: 5
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "Is CBPACS a government or private hospital?",
+      answer: "Ch. Brahm Prakash Ayurved Charak Sansthan (CBPACS) is an autonomous government Ayurvedic medical college and hospital operating under the Government of NCT of Delhi."
+    },
+    {
+      question: "Are medicines provided for free?",
+      answer: "Yes, CBPACS provides free consultations and dispenses many Ayurvedic medicines free of cost to patients, making authentic healthcare highly accessible."
+    },
+    {
+      question: "Where is the hospital located and how can I reach there?",
+      answer: "The hospital is situated in Khera Dabar, Najafgarh, New Delhi. Due to its remote location, it is best reached by private vehicle or specific bus routes leading towards Najafgarh."
+    },
+    {
+      question: "Does the hospital have a Panchakarma facility?",
+      answer: "Yes, CBPACS has a fully functional and highly specialized Panchakarma department offering classical detoxification and rejuvenation therapies under expert medical supervision."
+    },
+    {
+      question: "Do I need to book an appointment in advance?",
+      answer: "While walk-ins are allowed, there can be a high patient inflow. It is advisable to reach early to secure an OPD token for consultation with the specialist doctors."
+    }
+  ];
+
+  const programs = [
+    {
+      title: "Complete Panchakarma Therapy",
+      description: "Authentic five-fold detoxification procedures to cleanse the body of toxins and restore the natural balance of Doshas.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Joint & Spine Care",
+      description: "Specialized Ayurvedic management for arthritis, spondylosis, and musculoskeletal disorders to reduce pain and improve mobility.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Skin & Respiratory Care",
+      description: "Holistic protocols for chronic skin conditions, asthma, and allergies using internal medications and specific external applications.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Neurological & Stroke Care",
+      description: "Protocol-driven therapies and recovery plans for stroke rehabilitation, Parkinson's disease, and neurodegenerative conditions.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Digestive Disorders",
+      description: "Ayurvedic management for gastrointestinal conditions like IBS, IBD, gastritis, and chronic constipation.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "General Wellness & Immunity",
+      description: "Immunity-boosting treatments, Rasayana therapies, and wellness programs to restore physical balance and vital energy.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
+    }
+  ];
+
+  const whyChooseUs = [
+    {
+      title: "Premier Government Institution",
+      description: "Recognized as the 'AIIMS of Ayurveda', operating under the Govt of NCT of Delhi with top-tier infrastructure.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Expert Medical Faculty",
+      description: "Care provided by highly qualified professors, senior doctors, and specialists with vast clinical experience.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Extensive Green Campus",
+      description: "Spread across 95 acres of lush green, pollution-free campus creating a perfect healing environment.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Affordable Authentic Care",
+      description: "Providing high-quality classical Ayurvedic treatments, therapies, and medicines to the public either free or at very nominal costs.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Comprehensive Facilities",
+      description: "200-bed hospital equipped with modern diagnostics combined with traditional Ayurvedic treatment rooms.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Central Khera Dabar",
+      description: "Easily accessible from major parts of Delhi, ensuring convenience for outstation and local patients.",
+      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
+    }
+  ];`;
+
+// We'll replace the block from "const treatmentProcess = [" up to the closing "];" of whyChooseUs
+const startString = "  const treatmentProcess = [";
+const endString = `    }
+  ];`;
+
+const startIndex = content.indexOf(startString);
+const whyChooseIndex = content.indexOf("const whyChooseUs = [");
+const endIndex = content.indexOf(endString, whyChooseIndex) + endString.length;
+
+if (startIndex !== -1 && endIndex !== -1) {
+  content = content.substring(0, startIndex) + newArrays + content.substring(endIndex);
+  fs.writeFileSync(path, content);
+  console.log("Replaced arrays successfully!");
+} else {
+  console.log("Could not find array blocks.");
+}

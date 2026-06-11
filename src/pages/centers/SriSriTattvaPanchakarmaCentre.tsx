@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function AashaAyurvedaCenter() {
+export default function SriSriTattvaPanchakarmaCentre() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,191 +37,192 @@ export default function AashaAyurvedaCenter() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Precision Infertility Consultation",
-      description: "Detailed analysis of your Prakriti, medical records, and reproductive health by Dr. Chanchal Sharma.",
+      title: "Nadi Pariksha Consultation",
+      description: "An ancient, non-invasive pulse diagnosis technique by our expert Vaidyas to accurately assess your physical and mental doshic imbalances.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Treatment Plan",
-      description: "Customizing evidence-based Ayurvedic clinical protocols focusing on fallopian tube blockage, PCOD, and endometriosis.",
+      title: "Holistic Health Plan",
+      description: "Designing a comprehensive roadmap that integrates personalized Ayurvedic therapies, herbal supplements, and dietary guidelines.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Purvakarma Preparation",
-      description: "Systematically preparing the body using warm herbal oils and steam therapies to clear energy channels.",
-      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
+      title: "Premium Herbal Support",
+      description: "Utilizing highly pure, laboratory-tested Sri Sri Tattva herbal formulations specifically prescribed for your unique constitution.",
+      icon: <Heart className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Uttara Basti & Core Panchakarma",
-      description: "Administering targeted Uttara Basti and classical Kerala Panchakarma therapies for reproductive conditions.",
+      title: "Authentic Therapies",
+      description: "Experiencing deeply relaxing and detoxifying treatments like Shirodhara and Abhyangam, performed by specially trained therapists.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Dietary & Lifestyle Tracking",
-      description: "Ongoing guidance with specific diet plans and lifestyle modifications to support reproductive health.",
+      title: "Mind-Body Integration",
+      description: "Complementing physical treatments with guidance on breathwork (Pranayama) and meditation for accelerated holistic healing.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Post-Treatment Support",
-      description: "Continuous monitoring and online consultations to ensure long-term wellness and positive outcomes.",
+      title: "Sustained Balance",
+      description: "Receiving continuous support and lifestyle modifications to maintain the harmony of your mind, body, and spirit post-treatment.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "Outstanding PCOD Treatment",
-      review: "Dr. Chanchal Sharma's treatment for my complex PCOD case was absolutely life-changing. After struggling with hormonal imbalances for years and trying multiple modern therapies without success, the personalized Ayurvedic approach and Uttara Basti therapy restored my cycles. We were finally able to conceive naturally after years of trying.",
-      name: "Sarah Jenkins",
+      title: "Profoundly Spiritual Experience",
+      review: "The Nadi Pariksha consultation was incredibly accurate; the doctor diagnosed my chronic stress and digestive issues just by checking my pulse. The subsequent Shirodhara and meditation sessions brought a level of mental clarity and deep peace that I haven't felt in years. The entire atmosphere is infused with positivity.",
+      name: "Michael Peterson",
       verified: true,
-      location: "London, UK",
-      condition: "PCOD & Infertility",
+      location: "Toronto, Canada",
+      condition: "Chronic Stress",
       rating: 5
     },
     {
-      title: "Successful Tube Blockage Treatment",
-      review: "I was diagnosed with bilateral fallopian tube blockage and was losing all hope of ever having a child naturally. Aasha Ayurveda's highly specialized Panchakarma therapies completely cleared the blockage without the need for invasive surgery. Their continuous support and online consultations made the entire international healing process seamless.",
-      name: "Elena Rodriguez",
+      title: "Excellent Detoxification",
+      review: "I visited the center for a full Panchakarma detox program. The therapists were exceptional, maintaining high standards of hygiene and care. The Sri Sri Tattva herbal supplements provided alongside the physical therapies drastically improved my metabolism and cleared up my skin within weeks.",
+      name: "Sophie Laurent",
       verified: true,
-      location: "Madrid, Spain",
-      condition: "Fallopian Tube Blockage",
+      location: "Paris, France",
+      condition: "Metabolic Issues",
       rating: 5
     },
     {
-      title: "Excellent Endometriosis Care",
-      review: "The holistic care and precise pulse diagnosis for my severe endometriosis brought me immense relief from chronic pain. The authentic classical herbs and dietary regimen improved my overall health significantly within just a few months. I felt truly heard and cared for by their brilliant medical team during my stay.",
-      name: "Sophia Rossi",
+      title: "Relief from Joint Pain",
+      review: "The holistic approach here is what makes the difference. I came in for severe knee pain. The specialized Kati and Janu Basti therapies, combined with their specific dietary advice, reduced the inflammation significantly. They don't just treat the pain, they teach you how to prevent it from returning.",
+      name: "David Chen",
       verified: true,
-      location: "Rome, Italy",
-      condition: "Endometriosis",
+      location: "Singapore",
+      condition: "Joint Inflammation",
+      rating: 4
+    },
+    {
+      title: "Authentic and Calming",
+      review: "From the moment you walk in, the aroma and the serene chants immediately relax your nervous system. I underwent an Abhyangam massage to relieve muscle stiffness from frequent traveling. The oil quality is premium, and the therapists are very attentive to your specific pressure preferences.",
+      name: "Elena Rossi",
+      verified: true,
+      location: "Milan, Italy",
+      condition: "Muscle Stiffness",
       rating: 5
     },
     {
-      title: "Relief from Male Infertility",
-      review: "We consulted Aasha Ayurveda remotely for severe male infertility issues after several failed clinical treatments here. The classical Ayurvedic medicines, Vajikarana therapies, and dedicated lifestyle guidance showed remarkable, scientifically proven improvements in motility and count in just a few months. It completely exceeded our expectations.",
-      name: "David Mueller",
+      title: "A True Healing Sanctuary",
+      review: "What impressed me most was the integration of Ayurveda with mental wellness. The Vaidya took time to explain how my anxiety was linked to my gut health. The personalized treatment plan involving diet changes, herbs, and Marma therapy completely restored my sleep cycle and digestion.",
+      name: "Johnathan Brooks",
       verified: true,
-      location: "Berlin, Germany",
-      condition: "Male Infertility",
-      rating: 5
-    },
-    {
-      title: "Compassionate Online Consultation",
-      review: "Living in the UAE, the online consultation process was incredibly seamless and perfectly organized. Dr. Sharma's unparalleled expertise and the strictly prescribed herbal regimen helped us achieve a successful, healthy pregnancy after multiple devastating IVF failures. We are forever grateful to the entire team.",
-      name: "Fatima Al-Fasi",
-      verified: true,
-      location: "Dubai, UAE",
-      condition: "IVF Failure",
+      location: "Melbourne, Australia",
+      condition: "Anxiety & Insomnia",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What conditions does Aasha Ayurveda specialize in?",
-      answer: "We specialize in female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases using classical Ayurvedic approaches."
+      question: "What is Nadi Pariksha and how does it help?",
+      answer: "Nadi Pariksha is an ancient Ayurvedic technique of pulse diagnosis. By placing fingers on your wrist, our expert Vaidyas can accurately read the vibrational frequencies of your doshas, identifying both physical and mental root causes of diseases even before symptoms manifest."
     },
     {
-      question: "Who leads the medical team?",
-      answer: "The clinic is founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma), a highly experienced Gynecology specialist."
+      question: "Are the herbal medicines safe and certified?",
+      answer: "Yes, all our treatments use authentic Sri Sri Tattva herbal formulations, which are manufactured in world-class facilities maintaining strict GMP and ISO certifications to ensure absolute purity and safety."
     },
     {
-      question: "What is Uttara Basti therapy?",
-      answer: "Uttara Basti is a specialized Ayurvedic Panchakarma therapy where medicated oil or decoction is administered into the uterus to treat reproductive disorders and clear blockages."
+      question: "Do I need to be a follower of the Art of Living to get treated?",
+      answer: "Not at all. Sri Sri Tattva Panchakarma Centre is a purely medical and wellness facility open to everyone, regardless of their background or beliefs, who seeks genuine Ayurvedic healing."
     },
     {
-      question: "Do you offer online consultations?",
-      answer: "Yes, Aasha Ayurveda is a pioneer in online consultation for Ayurvedic infertility care, serving patients across India, the UAE, and Europe."
+      question: "How long does a typical Panchakarma therapy take?",
+      answer: "A single relaxing therapy like Abhyangam takes about 60 to 90 minutes. However, a comprehensive clinical Panchakarma detox program can last anywhere from 7 to 21 days depending on your medical condition and the Vaidya's prescription."
     },
     {
-      question: "Where are your clinics located?",
-      answer: "We have 5 convenient locations across Delhi. Our main center is located in Rajouri Garden, West Delhi."
+      question: "Can Ayurveda help with chronic mental stress?",
+      answer: "Absolutely. Ayurveda views the mind and body as deeply connected. Therapies like Shirodhara and Marma chikitsa, combined with our lifestyle advice on breathwork, are highly effective in treating stress, anxiety, and insomnia."
     }
   ];
 
   const programs = [
     {
-      title: "Female Infertility Treatment",
-      description: "Comprehensive Ayurvedic protocols tailored to enhance female reproductive health and address underlying causes of infertility naturally.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Nadi Pariksha & Consultation",
+      description: "Comprehensive pulse diagnosis to detect root imbalances and create a personalized wellness roadmap.",
+      icon: <FileSearch className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Fallopian Tube Blockage",
-      description: "Non-surgical Ayurvedic management using Uttara Basti and targeted therapies to clear bilateral or unilateral fallopian tube blockages.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Stress & Anxiety Relief",
+      description: "Deeply calming therapies like Shirodhara designed to pacify the nervous system and restore mental peace.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "PCOD & PCOS Management",
-      description: "Holistic care focusing on hormonal balance, metabolic reset, and menstrual regulation through diet, lifestyle, and classical herbs.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Panchakarma Detox",
+      description: "Systematic purification therapies to eliminate deep-seated toxins and rejuvenate cellular health.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Endometriosis Care",
-      description: "Effective pain management and disease progression control using specialized Panchakarma treatments and customized formulations.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Pain Management",
+      description: "Targeted localized treatments using warm medicated oils for arthritis, backache, and muscle stiffness.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Male Infertility Solutions",
-      description: "Enhancing male reproductive vitality, improving sperm count and motility through targeted Ayurvedic therapies and Vajikarana techniques.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Skin & Hair Care",
+      description: "Holistic beauty therapies using pure, natural Sri Sri Tattva products for glowing skin and healthy hair.",
+      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "IVF Failure Support",
-      description: "Pre-conception detoxification and strengthening therapies to prepare the body for successful conception after previous IVF failures.",
-      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />,
+      title: "Immunity Enhancement",
+      description: "Specialized Rasayana protocols and diet plans focused on boosting natural resistance against illnesses.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Specialized Infertility Care",
-      description: "Focused exclusively on reproductive health, offering unparalleled expertise in treating complex infertility cases.",
+      title: "Expert Nadi Pariksha",
+      description: "Highly accurate, non-invasive pulse diagnosis by specially trained and experienced Vaidyas.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Premium Products",
+      description: "Exclusive use of high-quality, lab-tested Sri Sri Tattva herbal oils and supplements.",
+      icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Holistic Philosophy",
+      description: "Integrating physical Ayurvedic treatments with guidance on mental wellness and breathwork.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Hygienic Environment",
+      description: "A serene, clean, and spiritually uplifting atmosphere that accelerates the healing process.",
       icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Led by Dr. Chanchal Sharma",
-      description: "Guidance from a renowned expert with profound experience in Ayurvedic gynecology and Panchakarma.",
+      title: "Skilled Therapists",
+      description: "Professional therapists trained extensively in traditional Kerala and classical Ayurvedic techniques.",
       icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "High Success Rate",
-      description: "A proven track record with a reported 90% positive outcome in treating severe reproductive conditions.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Non-Surgical Solutions",
-      description: "Effective alternatives to surgery for conditions like fallopian tube blockage using therapies like Uttara Basti.",
-      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Global Reach",
-      description: "Pioneering online consultations to bring world-class Ayurvedic care to patients across India, UAE, and Europe.",
-      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "5 Convenient Locations",
-      description: "Accessible care with multiple state-of-the-art clinics spread across Delhi for your convenience.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Accessible Location",
+      description: "Conveniently located in Dwarka, making authentic Ayurvedic wellness accessible in the capital.",
+      icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
 
   const breadcrumbRef = useRef<HTMLOListElement>(null);
 
   useEffect(() => {
+    // Scroll breadcrumb to the end on mobile so current page is visible
     if (breadcrumbRef.current) {
       breadcrumbRef.current.scrollLeft = breadcrumbRef.current.scrollWidth;
     }
   }, []);
 
   useEffect(() => {
-    document.title = "Aasha Ayurveda Centre Delhi | Specialized Infertility Care";
+    document.title = "Sri Sri Tattva Centre Dwarka Sector 19 Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience specialized Ayurvedic infertility care, fallopian tube blockage treatment, and PCOD management at Aasha Ayurveda Centre in New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Ayurvedic Vaidyas at the NABH-accredited, 40-bed Sri Sri Tattva Centre in Dwarka Sector 19, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -251,7 +252,7 @@ export default function AashaAyurvedaCenter() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Aasha Ayurveda Centre New Delhi
+              Sri Sri Tattva Centre New Delhi
             </li>
           </ol>
         </div>
@@ -263,16 +264,16 @@ export default function AashaAyurvedaCenter() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Aasha Ayurveda Centre</h1>
-                <p className="text-xl mb-4 opacity-90">Specialized Infertility Care | Fallopian Tube Blockage & PCOD Experts</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sri Sri Tattva Panchakarma Centre</h1>
+                <p className="text-xl mb-4 opacity-90">Holistic Ayurveda, Nadi Pariksha & Authentic Wellness Therapies</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Rajouri Garden, New Delhi, India</span>
+                  <span className="text-lg">Dwarka Sector 19, New Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.8</span>
-                  <span className="opacity-90">(1300 Reviews)</span>
+                  <span className="text-lg font-semibold">4.6</span>
+                  <span className="opacity-90">(250+ Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -298,15 +299,15 @@ export default function AashaAyurvedaCenter() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Aasha Ayurveda Centre
-              </h2>
+                at Sri Sri Tattva Panchakarma Centre
+</h2>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Aasha Ayurveda Centre</strong>, one of Delhi's leading Ayurvedic Panchakarma clinics renowned for its highly specialized treatment of female and male infertility, fallopian tube blockage, PCOD, endometriosis, and IVF failure cases. Founded and led by Dr. Chanchal Sharma (BAMS, DGO, MD-AM, Diploma in Panchakarma, Gynecology specialist), the clinic has established itself as a beacon of hope for countless couples seeking natural, non-surgical reproductive care.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Sri Sri Tattva Panchakarma Centre</strong>, a sanctuary of holistic wellness located in Dwarka Sector 19, New Delhi. Inspired by the profound vision of Gurudev Sri Sri Ravi Shankar, our center brings the ancient, time-tested science of Ayurveda to modern urban life. We specialize in Nadi Pariksha (Ayurvedic pulse diagnosis), a non-invasive technique that accurately assesses the physical, mental, and emotional imbalances in your body. Our environment is designed to be deeply calming, integrating the physical therapies of Ayurveda with the spiritual essence of meditation and breathwork.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -314,8 +315,8 @@ export default function AashaAyurvedaCenter() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                          alt="Aasha Ayurveda Centre facility"
+                          src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 2.webp" 
+                          alt="Sri Sri Tattva Panchakarma Centre accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -324,8 +325,10 @@ export default function AashaAyurvedaCenter() {
                   </div>
 
                   <p>
-                    As a pioneer in online consultation for Ayurvedic infertility care across India, UAE, and Europe, Aasha Ayurveda employs advanced techniques like Uttara Basti and classical Kerala Panchakarma therapies. Our evidence-based protocols and holistic approach have resulted in an outstanding 90% positive outcome rate. With 5 convenient locations across Delhi, we are dedicated to restoring your reproductive wellness through authentic Ayurvedic healing.
+                    Our expert Vaidyas and skilled therapists use premium Sri Sri Tattva herbal formulations, crafted under stringent quality standards. We offer highly customized Panchakarma detox programs, stress management therapies, and immune-boosting protocols tailored to your unique Prakriti (body constitution). At Sri Sri Tattva, healing is not just about alleviating symptoms; it is about restoring harmony between the mind, body, and spirit, empowering you to live a vibrant, joyful, and disease-free life.
                   </p>
+
+                  
                 </div>
               </div>
 
@@ -334,8 +337,8 @@ export default function AashaAyurvedaCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp" 
-                      alt="Aasha Ayurveda Centre main view"
+                      src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 1.jpg" 
+                      alt="Sri Sri Tattva Panchakarma Centre main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -347,8 +350,8 @@ export default function AashaAyurvedaCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Aasha Ayurveda Centre/secondary.webp" 
-                        alt="Aasha Ayurveda Centre therapy room"
+                        src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 2.webp" 
+                        alt="Sri Sri Tattva Panchakarma Centre therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -367,7 +370,7 @@ export default function AashaAyurvedaCenter() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Aasha Ayurveda Centre today.
+                My Vaidyam to connect with Sri Sri Tattva Panchakarma Centre today.
               </h3>
             </div>
           </div>
@@ -379,8 +382,8 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Aasha Ayurveda Centre
-            </h2>
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Sri Sri Tattva Panchakarma Centre
+</h2>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -411,10 +414,10 @@ export default function AashaAyurvedaCenter() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Aasha Ayurveda Centre
-              </h2>
+                Why Choose <br className="hidden lg:block" /> Sri Sri Tattva Panchakarma Centre
+</h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience exceptional reproductive care with a pioneer in Ayurvedic infertility treatments, guided by Dr. Chanchal Sharma.
+                Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
               </p>
             </div>
             
@@ -444,10 +447,10 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Aasha Ayurveda Centre
-            </h2>
+              Your Healing Journey at <br className="hidden lg:block" /> Sri Sri Tattva Panchakarma Centre
+</h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A carefully structured and personalized process to restore reproductive health and vitality.
+              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
             </p>
           </div>
           
@@ -481,12 +484,12 @@ export default function AashaAyurvedaCenter() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 1.jpg"
+                  alt="Sri Sri Tattva Panchakarma Centre view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sri Sri Tattva?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -511,7 +514,7 @@ export default function AashaAyurvedaCenter() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Aasha Ayurveda Centre?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sri Sri Tattva?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -525,8 +528,8 @@ export default function AashaAyurvedaCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-                  alt="Aasha Ayurveda Centre view"
+                  src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 1.jpg"
+                  alt="Sri Sri Tattva Panchakarma Centre view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -541,7 +544,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Patient Stories & Reviews</h2>
-            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our patients across the globe.</p>
+            <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Real stories of healing from our international patients.</p>
           </div>
           
           <div className="max-w-4xl mx-auto relative">
@@ -580,7 +583,7 @@ export default function AashaAyurvedaCenter() {
                     </p>
                   </div>
                 </div>
-
+ 
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -591,7 +594,7 @@ export default function AashaAyurvedaCenter() {
                 </div>
               </CardContent>
             </Card>
-
+ 
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -614,7 +617,7 @@ export default function AashaAyurvedaCenter() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
-
+ 
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -630,13 +633,13 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and the specialized care at Aasha Ayurveda Centre.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sri Sri Tattva.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -653,14 +656,13 @@ export default function AashaAyurvedaCenter() {
           </Accordion>
         </div>
       </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Contact Information</h2>
-              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic reproductive health.</p>
+              <p className="text-lg text-foreground/70" style={{ color: "#7F543D" }}>Reach out to us to begin your journey towards holistic health.</p>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -670,9 +672,9 @@ export default function AashaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Aasha Ayurveda Centre<br />
-                      J-146, Near Metro Station, Rajouri Garden<br />
-                      New Delhi, Delhi 110027, India
+                      Sri Sri Tattva Panchakarma Centre<br />
+                      Flat No. 169, Akshardham Apartment, Pocket 3, Sector 19, Dwarka, Kalkaji<br />
+                      New Delhi, Delhi, India
                     </p>
                   </div>
                 </div>
@@ -682,7 +684,7 @@ export default function AashaAyurvedaCenter() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <div>+91 98 xxxxx xxx</div>
+                      <div>+91 989 xxxx xxx</div>
                     </div>
                   </div>
                 </div>
@@ -694,12 +696,13 @@ export default function AashaAyurvedaCenter() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Located conveniently near Rajouri Garden Metro Station</span>
+                        <span>Approx. 1 km from Dwarka Sector 12 Metro Station (Blue Line)</span>
                       </li>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Multiple clinic locations accessible across Delhi</span>
+                        <span>Approx. 15-18 km from Indira Gandhi International (IGI) Airport (T3)</span>
                       </li>
+                      
                     </ul>
                   </div>
                 </div>
@@ -707,14 +710,14 @@ export default function AashaAyurvedaCenter() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Aasha+Ayurveda+Centre+Rajouri+Garden+New+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Sri+Sri+Ayurveda+Clinic+Dwarka+Sector+19+New+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Aasha Ayurveda Centre Location"
+                  title="Sri Sri Tattva Location"
                 ></iframe>
               </div>
             </div>
@@ -726,8 +729,8 @@ export default function AashaAyurvedaCenter() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Aasha Ayurveda Centre/main.webp"
-            alt="Aasha Ayurveda Centre"
+            src="/TOP cneters/delhi/Sri Sri Tattva Panchakarma Centre – Delhi/image 1.jpg"
+            alt="Sri Sri Tattva Panchakarma Centre"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -737,7 +740,7 @@ export default function AashaAyurvedaCenter() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Aasha Ayurveda Centre.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sri Sri Tattva Panchakarma Centre.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -747,7 +750,7 @@ export default function AashaAyurvedaCenter() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Aasha%20Ayurveda%20Centre."
+              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Sri%20Sri%20Tattva%20Panchakarma%20Centre."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -757,22 +760,22 @@ export default function AashaAyurvedaCenter() {
           </div>
         </div>
       </section>
-
+ 
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-
+ 
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
-
+ 
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
-
+ 
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
-
-            <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
+ 
+      <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
           <div className="h-1.5 w-full bg-gradient-to-r from-[#2C4E5A]/20 via-[#2C4E5A] to-[#2C4E5A]/20" />
@@ -786,7 +789,7 @@ export default function AashaAyurvedaCenter() {
           </div>
           <div className="flex-1 overflow-y-auto px-5 py-4 space-y-2.5">
             {jumpSections.map((section, idx) => (
-              <button key={section.id || idx} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
+              <button key={section.id} onClick={() => jumpToSection(section.id)} className="w-full group relative bg-white hover:bg-[#2C4E5A] transition-all duration-300 p-3 rounded-xl border-2 border-[#2C4E5A]/20 hover:border-[#2C4E5A] flex items-center justify-between shadow-md hover:shadow-xl">
                 <div className="flex items-center gap-4 relative z-10"><div className="w-9 h-9 rounded-lg bg-[#2C4E5A]/5 group-hover:bg-white/10 flex items-center justify-center transition-all duration-200"><span className="text-xs font-black text-[#2C4E5A] group-hover:text-white transition-all duration-200">{(idx + 1).toString().padStart(2, "0")}</span></div><span className="text-sm md:text-base font-bold text-[#2C4E5A] group-hover:text-white transition-all duration-200 text-left">{section.title}</span></div>
                 <div className="w-7 h-7 rounded-full flex items-center justify-center group-hover:bg-white/20 transition-all duration-200 border border-[#2C4E5A]/10 group-hover:border-transparent"><ChevronRight size={14} className="text-[#2C4E5A] group-hover:text-white transition-colors" /></div>
               </button>
@@ -797,3 +800,4 @@ export default function AashaAyurvedaCenter() {
     </div>
   );
 }
+
