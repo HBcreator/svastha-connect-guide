@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function SanjivaniAyurvedicResearchInstitute() {
+export default function SanjeevaniAyurvedicResearchInstitute() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -76,7 +76,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
   const testimonials = [
     {
       title: "Scientifically Sound Approach",
-      review: "The approach at Sanjivani is refreshingly scientific. Unlike other centers that just offer generic massages, the doctors here studied my blood reports and MRI before prescribing a targeted Ayurvedic protocol. My severe rheumatoid arthritis has shown measurable improvement within just two months. The hygiene is also impeccable.",
+      review: "The approach at Sanjeevani is refreshingly scientific. Unlike other centers that just offer generic massages, the doctors here studied my blood reports and MRI before prescribing a targeted Ayurvedic protocol. My severe rheumatoid arthritis has shown measurable improvement within just two months. The hygiene is also impeccable.",
       name: "Arthur Pendelton",
       verified: true,
       location: "London, UK",
@@ -85,7 +85,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
     },
     {
       title: "Exceptional Neurological Care",
-      review: "I travelled to Delhi specifically for Sanjivani's research-backed treatments for neuropathy. The specialized neuro-stimulation massages and their proprietary herbal medicines have significantly restored the sensation in my limbs. The level of clinical expertise and patient care here is truly world-class.",
+      review: "I travelled to Delhi specifically for Sanjeevani's research-backed treatments for neuropathy. The specialized neuro-stimulation massages and their proprietary herbal medicines have significantly restored the sensation in my limbs. The level of clinical expertise and patient care here is truly world-class.",
       name: "Isabella Martinez",
       verified: true,
       location: "Madrid, Spain",
@@ -94,7 +94,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
     },
     {
       title: "Resolved Chronic Gut Issues",
-      review: "After years of suffering from severe IBS and trying countless allopathic treatments with no luck, Sanjivani's integrated approach finally provided relief. They didn't just treat the symptoms; they repaired my gut lining through a strict clinical diet and highly effective Panchakarma detox therapies.",
+      review: "After years of suffering from severe IBS and trying countless allopathic treatments with no luck, Sanjeevani's integrated approach finally provided relief. They didn't just treat the symptoms; they repaired my gut lining through a strict clinical diet and highly effective Panchakarma detox therapies.",
       name: "Marcus Schmidt",
       verified: true,
       location: "Berlin, Germany",
@@ -220,9 +220,9 @@ export default function SanjivaniAyurvedicResearchInstitute() {
   }, []);
 
   useEffect(() => {
-    document.title = "Sanjivani Ayurvedic Institute Dwarka Sector 13 Delhi | Precision Ayurveda & Rehab";
+    document.title = "Sanjeevani Ayurveda Center Dwarka Sector 13 Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Ayurvedic researchers at the NABH-accredited, 40-bed Sanjivani Ayurvedic Institute in Dwarka Sector 13, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Ayurvedic researchers at the NABH-accredited, 40-bed Sanjeevani Ayurveda Center in Dwarka Sector 13, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Sanjivani Ayurvedic Institute New Delhi
+              Sanjeevani Ayurveda Center in Delhi NCR
             </li>
           </ol>
         </div>
@@ -264,11 +264,11 @@ export default function SanjivaniAyurvedicResearchInstitute() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sanjivani Ayurvedic Research Institute</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sanjeevani Ayurveda Center</h1>
                 <p className="text-xl mb-4 opacity-90">Evidence-Based Ayurveda & Advanced Clinical Research Center</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Dwarka Sector 13, Delhi, India</span>
+                  <span className="text-lg">Dwarka Sector 13, Delhi NCR, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -299,7 +299,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Sanjivani Ayurvedic Research Institute
+                at Sanjeevani Ayurveda Center
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Sanjivani Ayurvedic Research Institute</strong>, a premier center of healing located in Dwarka Sector 13, Delhi. We stand at the intersection of ancient Ayurvedic wisdom and modern clinical research. Our institute is dedicated to providing evidence-based, scientifically validated Ayurvedic treatments for chronic and lifestyle-induced diseases. By maintaining an in-house research wing, we ensure that every formulation and therapy protocol administered to our patients is optimized for maximum efficacy, safety, and holistic healing.
+                    Welcome to the <strong className="font-bold text-[#2C4E5A]">Sanjeevani Ayurveda Center</strong>, a premier center of healing located in Dwarka Sector 13, Delhi. We stand at the intersection of ancient Ayurvedic wisdom and modern clinical research. Our institute is dedicated to providing evidence-based, scientifically validated Ayurvedic treatments for chronic and lifestyle-induced diseases. By maintaining an in-house research wing, we ensure that every formulation and therapy protocol administered to our patients is optimized for maximum efficacy, safety, and holistic healing.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
-                          alt="Sanjivani Ayurvedic Research Institute accommodation"
+                          src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
+                          alt="Sanjeevani Ayurveda Center accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                   </div>
 
                   <p>
-                    Our expert team of senior Ayurvedic researchers and clinical specialists meticulously assess each patient to uncover the root cause of their ailment. We have achieved remarkable success rates in managing complex autoimmune conditions, severe joint disorders, neurological ailments, and chronic digestive issues. At Sanjivani Ayurvedic Research Institute, you don't just receive generic traditional therapies; you benefit from cutting-edge Ayurvedic research integrated seamlessly into personalized, highly effective treatment plans designed to restore your long-term health.
+                    Our expert team of senior Ayurvedic researchers and clinical specialists meticulously assess each patient to uncover the root cause of their ailment. We have achieved remarkable success rates in managing complex autoimmune conditions, severe joint disorders, neurological ailments, and chronic digestive issues. At Sanjeevani Ayurveda Center, you don't just receive generic traditional therapies; you benefit from cutting-edge Ayurvedic research integrated seamlessly into personalized, highly effective treatment plans designed to restore your long-term health.
                   </p>
 
                   
@@ -337,8 +337,8 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg" 
-                      alt="Sanjivani Ayurvedic Research Institute main view"
+                      src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg" 
+                      alt="Sanjeevani Ayurveda Center main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +350,8 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
-                        alt="Sanjivani Ayurvedic Research Institute therapy room"
+                        src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 2.jpg" 
+                        alt="Sanjeevani Ayurveda Center therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -370,7 +370,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Sanjivani Ayurvedic Research Institute today.
+                My Vaidyam to connect with Sanjeevani Ayurveda Center today.
               </h3>
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Sanjeevani Ayurveda Center
 </h2>
           </div>
           
@@ -414,7 +414,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+                Why Choose <br className="hidden lg:block" /> Sanjeevani Ayurveda Center
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
@@ -447,7 +447,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Sanjivani Ayurvedic Research Institute
+              Your Healing Journey at <br className="hidden lg:block" /> Sanjeevani Ayurveda Center
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
@@ -484,12 +484,12 @@ export default function SanjivaniAyurvedicResearchInstitute() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
-                  alt="Sanjivani Ayurvedic Research Institute view"
+                  src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+                  alt="Sanjeevani Ayurveda Center view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sanjivani?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Sanjeevani?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +514,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sanjivani?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Sanjeevani?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -528,8 +528,8 @@ export default function SanjivaniAyurvedicResearchInstitute() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
-                  alt="Sanjivani Ayurvedic Research Institute view"
+                  src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+                  alt="Sanjeevani Ayurveda Center view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -639,7 +639,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sanjivani.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Sanjeevani.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -672,7 +672,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Sanjivani Ayurvedic Research Institute<br />
+                      Sanjeevani Ayurveda Center<br />
                       Plot No. 54, Upper Ground Floor, Sector 13 B, Dwarka<br />
                       New Delhi, Delhi, India
                     </p>
@@ -717,7 +717,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Sanjivani Location"
+                  title="Sanjeevani Location"
                 ></iframe>
               </div>
             </div>
@@ -729,8 +729,8 @@ export default function SanjivaniAyurvedicResearchInstitute() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
-            alt="Sanjivani Ayurvedic Research Institute"
+            src="/TOP centers/delhi/Sanjivani Ayurvedic Research Institute/image 1.jpg"
+            alt="Sanjeevani Ayurveda Center"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -740,7 +740,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sanjivani Ayurvedic Research Institute.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sanjeevani Ayurveda Center.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -750,7 +750,7 @@ export default function SanjivaniAyurvedicResearchInstitute() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Sanjivani%20Ayurvedic%20Research%20Institute."
+              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Sanjeevani%20Ayurvedic%20Research%20Institute."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

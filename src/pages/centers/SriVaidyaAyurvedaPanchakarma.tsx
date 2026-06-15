@@ -76,48 +76,48 @@ export default function SriVaidyaAyurvedaPanchakarma() {
   const testimonials = [
     {
       title: "Remarkable Relief from Knee Pain",
-      review: "The doctors at Sri Vaidya are very knowledgeable. I had severe knee pain and osteoarthritis. The authentic Kerala Janu Basti and massage therapies provided me immense relief. The staff is highly cooperative.",
-      name: "Sanjay Kumar",
+      review: "I traveled from the UK for my severe knee pain. The doctors at Sri Vaidya are very knowledgeable. The authentic Kerala Janu Basti and massage therapies provided me immense relief.",
+      name: "Arthur Pendelton",
       verified: true,
-      location: "New Delhi, India",
+      location: "London, UK",
       condition: "Knee Pain & Arthritis",
       rating: 5
     },
     {
       title: "Best Panchakarma Experience",
-      review: "I underwent a complete 14-day Panchakarma detox here. The hygiene, the quality of oils used, and the professionalism of the therapists are outstanding. I feel completely rejuvenated and lighter.",
-      name: "Meera Reddy",
+      review: "I underwent a complete 14-day Panchakarma detox while visiting India. The hygiene, quality of oils, and professionalism of the therapists are outstanding. I feel completely rejuvenated.",
+      name: "Sophia Martinez",
       verified: true,
-      location: "Delhi, India",
+      location: "Madrid, Spain",
       condition: "Panchakarma Detox",
       rating: 5
     },
     {
       title: "Excellent Sinusitis Treatment",
-      review: "Suffering from chronic sinusitis for years, I tried many treatments with no luck. The Nasya therapy at Sri Vaidya worked like magic. The ambiance of the clinic is very soothing and peaceful.",
-      name: "Amit Sharma",
+      review: "Suffering from chronic sinusitis for years, I tried many treatments in Canada with no luck. The Nasya therapy at Sri Vaidya worked like magic. The ambiance is incredibly soothing.",
+      name: "David Chen",
       verified: true,
-      location: "Vasant Kunj, India",
+      location: "Toronto, Canada",
       condition: "Chronic Sinusitis",
-      rating: 4
+      rating: 5
     },
     {
       title: "Cured My Chronic Back Pain",
-      review: "The Kati Basti treatment here is very authentic. The therapists are well-trained from Kerala. My back pain has significantly reduced after just a few sessions. Highly recommend this center.",
-      name: "Pooja Singh",
+      review: "The Kati Basti treatment here is very authentic. The therapists are exceptionally well-trained. My back pain has significantly reduced after just a few sessions. Highly recommended!",
+      name: "Emma Thompson",
       verified: true,
-      location: "Gurugram, India",
+      location: "Melbourne, Australia",
       condition: "Lower Back Pain",
       rating: 5
     },
     {
       title: "Great for Digestive Issues",
-      review: "I visited for chronic acidity and digestion problems. The Vaidya took time to explain the root cause and gave dietary changes along with Ayurvedic medicines. It has been very effective so far.",
-      name: "Rahul Verma",
+      review: "I visited from Germany for chronic acidity. The Vaidya took time to explain the root cause and gave dietary changes with Ayurvedic medicines. It has been incredibly effective.",
+      name: "Lucas Weber",
       verified: true,
-      location: "Delhi, India",
+      location: "Berlin, Germany",
       condition: "Digestive Disorders",
-      rating: 4
+      rating: 5
     }
   ];
 
@@ -220,9 +220,9 @@ export default function SriVaidyaAyurvedaPanchakarma() {
   }, []);
 
   useEffect(() => {
-    document.title = "Sri Vaidya Ayurveda Panchakarma Vasant Kunj Delhi | Precision Ayurveda & Rehab";
+    document.title = "Sri Vaidya Ayurveda Panchkarma Vasant Kunj Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Vaidyas at the NABH-accredited, 40-bed Sri Vaidya Ayurveda Panchakarma in Vasant Kunj, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior Vaidyas at the NABH-accredited, 40-bed Sri Vaidya Ayurveda Panchkarma in Vasant Kunj, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Sri Vaidya Ayurveda Panchakarma New Delhi
+              Sri Vaidya Ayurveda Panchkarma New Delhi
             </li>
           </ol>
         </div>
@@ -264,11 +264,11 @@ export default function SriVaidyaAyurvedaPanchakarma() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sri Vaidya Ayurveda Panchakarma</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Sri Vaidya Ayurveda Panchkarma</h1>
                 <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Advanced Ayurvedic Therapies</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Vasant Kunj, Delhi, India</span>
+                  <span className="text-lg">Vasant Kunj, New Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -299,7 +299,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Sri Vaidya Ayurveda Panchakarma
+                at Sri Vaidya Ayurveda Panchkarma
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Sri Vaidya Ayurveda Panchakarma</strong>, a premium destination for authentic Kerala Ayurvedic treatments located in Vasant Kunj, Delhi. We specialize in classical Panchakarma detoxification therapies and holistic disease management. Our facility blends the profound ancient wisdom of Ayurveda with modern diagnostic approaches to provide effective, root-cause healing. Maintained with exceptional hygiene and a deeply relaxing ambiance, Sri Vaidya is dedicated to restoring your physical, mental, and spiritual well-being through highly personalized care.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Sri Vaidya Ayurveda Panchkarma</strong>, a premium destination for authentic Kerala Ayurvedic treatments located in Vasant Kunj, Delhi. We specialize in classical Panchakarma detoxification therapies and holistic disease management. Our facility blends the profound ancient wisdom of Ayurveda with modern diagnostic approaches to provide effective, root-cause healing. Maintained with exceptional hygiene and a deeply relaxing ambiance, Sri Vaidya is dedicated to restoring your physical, mental, and spiritual well-being through highly personalized care.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 2.PNG" 
-                          alt="Sri Vaidya Ayurveda Panchakarma accommodation"
+                          src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 2.PNG" 
+                          alt="Sri Vaidya Ayurveda Panchkarma accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -337,8 +337,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG" 
-                      alt="Sri Vaidya Ayurveda Panchakarma main view"
+                      src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG" 
+                      alt="Sri Vaidya Ayurveda Panchkarma main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +350,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 2.PNG" 
-                        alt="Sri Vaidya Ayurveda Panchakarma therapy room"
+                        src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 2.PNG" 
+                        alt="Sri Vaidya Ayurveda Panchkarma therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -370,7 +370,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Sri Vaidya Ayurveda Panchakarma today.
+                My Vaidyam to connect with Sri Vaidya Ayurveda Panchkarma today.
               </h3>
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchakarma
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchkarma
 </h2>
           </div>
           
@@ -414,7 +414,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchakarma
+                Why Choose <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchkarma
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
@@ -447,7 +447,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchakarma
+              Your Healing Journey at <br className="hidden lg:block" /> Sri Vaidya Ayurveda Panchkarma
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
@@ -484,8 +484,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
-                  alt="Sri Vaidya Ayurveda Panchakarma view"
+                  src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
+                  alt="Sri Vaidya Ayurveda Panchkarma view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -528,8 +528,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
-                  alt="Sri Vaidya Ayurveda Panchakarma view"
+                  src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
+                  alt="Sri Vaidya Ayurveda Panchkarma view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -672,7 +672,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Sri Vaidya Ayurveda Panchakarma<br />
+                      Sri Vaidya Ayurveda Panchkarma<br />
                       R2, Outer Ring Road, Pocket 40/203, Vasant Kunj, Kalkaji<br />
                       New Delhi, Delhi, India
                     </p>
@@ -729,8 +729,8 @@ export default function SriVaidyaAyurvedaPanchakarma() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
-            alt="Sri Vaidya Ayurveda Panchakarma"
+            src="/TOP centers/delhi/Sri Vaidya Ayurveda Panchakarma/image 1.PNG"
+            alt="Sri Vaidya Ayurveda Panchkarma"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -740,7 +740,7 @@ export default function SriVaidyaAyurvedaPanchakarma() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sri Vaidya Ayurveda Panchakarma.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Sri Vaidya Ayurveda Panchkarma.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

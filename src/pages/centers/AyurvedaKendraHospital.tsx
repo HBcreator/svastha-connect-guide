@@ -94,7 +94,7 @@ export default function AyurvedaKendraHospital() {
     },
     {
       title: "Autoimmune Arthritis Control",
-      review: "Dealing with rheumatoid arthritis was a nightmare. The individualized treatments and targeted detoxification at Apollo AyurVAID completely reduced the inflammation and swelling. Highly professional staff!",
+      review: "Dealing with rheumatoid arthritis was a nightmare. The individualized treatments and targeted detoxification at Ayurveda Kendra completely reduced the inflammation and swelling. Highly professional staff!",
       name: "Ken Takahashi",
       verified: true,
       location: "Tokyo, Japan",
@@ -124,7 +124,7 @@ export default function AyurvedaKendraHospital() {
   const faqItems = [
     {
       question: "Is the Ayurveda Kendra Delhi hospital accredited and empanelled?",
-      answer: "Yes. Apollo AyurVAID is a fully NABH-accredited 40-bed Ayurveda hospital, representing the highest standards of safety, quality, and hygiene in clinical Ayurveda. We are empanelled with CGHS and accept cashless insurance policies."
+      answer: "Yes. Ayurveda Kendra is a fully NABH-accredited 40-bed Ayurveda hospital, representing the highest standards of safety, quality, and hygiene in clinical Ayurveda. We are empanelled with CGHS and accept cashless insurance policies."
     },
     {
       question: "Who is the lead doctor at the Nehru Enclave hospital?",
@@ -179,8 +179,8 @@ export default function AyurvedaKendraHospital() {
 
   const whyChooseUs = [
     {
-      title: "Backed by Apollo",
-      description: "Collaborating with Apollo Hospitals to combine standard medical safety with traditional Ayurvedic precision.",
+      title: "Authentic Heritage",
+      description: "Collaborating with traditional experts to combine standard medical safety with traditional Ayurvedic precision.",
       icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
@@ -220,9 +220,9 @@ export default function AyurvedaKendraHospital() {
   }, []);
 
   useEffect(() => {
-    document.title = "Apollo AyurVAID Hospital Nehru Enclave Delhi | Precision Ayurveda & Rehab";
+    document.title = "Ayurveda Kendra Hospital Nehru Enclave Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under Dr. Bheema Bhatta at the NABH-accredited, 40-bed Apollo AyurVAID Hospital in Nehru Enclave, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under Dr. Bheema Bhatta at the NABH-accredited, 40-bed Ayurveda Kendra Hospital in Nehru Enclave, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function AyurvedaKendraHospital() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Apollo AyurVAID Hospital New Delhi
+              Ayurveda Kendra Delhi
             </li>
           </ol>
         </div>
@@ -315,7 +315,7 @@ export default function AyurvedaKendraHospital() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 2.jfif" 
+                          src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 2.jfif" 
                           alt="Ayurveda Kendra accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -337,7 +337,7 @@ export default function AyurvedaKendraHospital() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif" 
+                      src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif" 
                       alt="Ayurveda Kendra main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -350,7 +350,7 @@ export default function AyurvedaKendraHospital() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 2.jfif" 
+                        src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 2.jfif" 
                         alt="Ayurveda Kendra therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -484,12 +484,12 @@ export default function AyurvedaKendraHospital() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
+                  src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
                   alt="Ayurveda Kendra view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Apollo AyurVAID?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Ayurveda Kendra?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +514,7 @@ export default function AyurvedaKendraHospital() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Apollo AyurVAID?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Ayurveda Kendra?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -528,7 +528,7 @@ export default function AyurvedaKendraHospital() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
+                  src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
                   alt="Ayurveda Kendra view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -639,7 +639,7 @@ export default function AyurvedaKendraHospital() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Apollo AyurVAID.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Ayurveda Kendra.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -717,7 +717,7 @@ export default function AyurvedaKendraHospital() {
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Apollo AyurVAID Location"
+                  title="Ayurveda Kendra Location"
                 ></iframe>
               </div>
             </div>
@@ -729,7 +729,7 @@ export default function AyurvedaKendraHospital() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
+            src="/TOP centers/delhi/Ayurveda Kendra (Dr. Sudha Asokan)/image 1.jfif"
             alt="Ayurveda Kendra"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
@@ -750,7 +750,7 @@ export default function AyurvedaKendraHospital() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Apollo%20AyurVAID%20Nehru%20Enclave."
+              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20Ayurveda Kendra%20AyurVAID%20Nehru%20Enclave."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"

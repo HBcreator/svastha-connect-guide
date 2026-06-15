@@ -147,22 +147,22 @@ export default function DheemahiKumarakom() {
     {
       title: "NABH Accredited Hospital",
       description: "Recognized for maintaining the highest standards in healthcare quality and patient safety as an accredited Ayurvedic medical facility.",
-      image: "/Center Images/Dheemahi Ayurvedic Center/Awards/2.jpg"
+      image: "/Center Images/Dheemahi Ayurvedic Centre/Awards/2.jpg"
     },
     {
       title: "GMP Certified Pharmacy",
       description: "Our in-house herbal pharmacy is GMP certified, guaranteeing the purity, safety, and absolute potency of every medicine provided.",
-      image: "/Center Images/Dheemahi Ayurvedic Center/Awards/1.jpg"
+      image: "/Center Images/Dheemahi Ayurvedic Centre/Awards/1.jpg"
     },
     {
       title: "100-Year Healing Legacy",
       description: "Our greatest recognition is our 100-year healing legacy since 1921, backed by the trust of thousands of patients from across the globe.",
-      image: "/Center Images/Dheemahi Ayurvedic Center/Awards/Award 4 (Our greatest recognition is our 100-year healing legacy since 1921, backed by the trust of thousands of patients from across the globe).jpg"
+      image: "/Center Images/Dheemahi Ayurvedic Centre/Awards/Award 4 (Our greatest recognition is our 100-year healing legacy since 1921, backed by the trust of thousands of patients from across the globe).jpg"
     },
     {
       title: "Kerala Govt. Green Leaf",
       description: "Officially recognized and approved as a 'Green Leaf' category center by the Government of Kerala for excellence in Ayurvedic practices.",
-      image: "/Center Images/Dheemahi Ayurvedic Center/Awards/3.png"
+      image: "/Center Images/Dheemahi Ayurvedic Centre/Awards/3.png"
     }
   ];
 
@@ -218,7 +218,7 @@ export default function DheemahiKumarakom() {
   };
 
   useEffect(() => {
-    fetch("/Center Videos/Dheemahi Ayurvedic Center/yt i frame testimonies.txt")
+    fetch("/Center Videos/Dheemahi Ayurvedic Centre/yt i frame testimonies.txt")
       .then((res) => res.text())
       .then((text) => {
         const parser = new DOMParser();
@@ -282,7 +282,7 @@ export default function DheemahiKumarakom() {
   };
 
   useEffect(() => {
-    fetch("/Center Images/Dheemahi Ayurvedic Center/Photo Gallery/CDN images-data.txt")
+    fetch("/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CDN images-data.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
@@ -291,7 +291,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Patient Stories & Reviews.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -358,7 +358,7 @@ export default function DheemahiKumarakom() {
     return () => clearInterval(id);
   }, [reviews]);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Founder & Expert Medical Team.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Founder & Expert Medical Team.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -447,7 +447,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Insurance & Payment Info.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Insurance & Payment Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -476,7 +476,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Frequently Asked Questions.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Frequently Asked Questions.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -500,7 +500,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/contact info.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/contact info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -575,7 +575,7 @@ export default function DheemahiKumarakom() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Why Choose Dheemahi.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Why Choose Dheemahi.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -652,7 +652,7 @@ export default function DheemahiKumarakom() {
   };
 
   useEffect(() => {
-    fetch("/Center Videos/Dheemahi Ayurvedic Center/CDN-videos.txt")
+    fetch("/Center Videos/Dheemahi Ayurvedic Centre/CDN-videos.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
@@ -694,7 +694,7 @@ export default function DheemahiKumarakom() {
       return sections;
     };
     fetch(
-      "/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Wellness & Rejuvenation Programs.txt"
+      "/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Wellness & Rejuvenation Programs.txt"
     )
       .then((res) => res.text())
       .then((text) => setWrpSections(parseWRP(text)))
@@ -734,14 +734,14 @@ export default function DheemahiKumarakom() {
       return sections;
     };
     fetch(
-      "/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Medical Treatment Programs.txt"
+      "/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Medical Treatment Programs.txt"
     )
       .then((res) => res.text())
       .then((text) => setMedSections(parseMED(text)))
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Treatment Process & Patient Journey.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Treatment Process & Patient Journey.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -775,7 +775,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Facilities & Amenities.txt")
+    fetch("/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Facilities & Amenities.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -805,7 +805,7 @@ export default function DheemahiKumarakom() {
       .catch(() => { });
   }, []);
   useEffect(() => {
-    fetch("/Center Images/Dheemahi Ayurvedic Center/Facilities and Ameties/CDN-images data.txt")
+    fetch("/Center Images/Dheemahi Ayurvedic Centre/Facilities and Ameties/CDN-images data.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text.split("\n").map((s) => s.trim()).filter((s) => s);
@@ -892,7 +892,7 @@ export default function DheemahiKumarakom() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Dheemahi Kumarakom Ayurvedic Center
+                  Dheemahi Kumarakom Ayurvedic Centre
 
                 </h1>
                 <p className="text-xl mb-4 opacity-90">
@@ -1084,7 +1084,7 @@ export default function DheemahiKumarakom() {
           <Card className="mb-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
               <MarkdownContent
-                contentPath="/content/Top Centers/Dheemahi Kumarakom Ayurvedic Center/Main content.txt"
+                contentPath="/content/Top Centers/Dheemahi Kumarakom Ayurvedic Centre/Main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                 onLinkClick={() => setQuoteModalOpen(true)}
@@ -1392,11 +1392,11 @@ export default function DheemahiKumarakom() {
             </div>
           </div>
 
-          {/* Testimonials of Dheemahi Ayurvedic Center - Video Section */}
+          {/* Testimonials of Dheemahi Ayurvedic Centre - Video Section */}
           <div className="mb-12" id="testimonial-videos" ref={testimonialSectionRef}>
             <div className="text-center mb-8 md:mb-10 px-4">
               <h2 className="text-xl md:text-4xl font-extrabold text-primary mb-2 leading-tight tracking-tight">
-                Testimonials of Dheemahi Ayurvedic Center
+                Testimonials of Dheemahi Ayurvedic Centre
               </h2>
               <div className="w-12 h-1 bg-primary/20 mx-auto mb-3 rounded-full hidden md:block" />
               <p className="text-sm md:text-lg mx-auto max-w-none leading-relaxed italic" style={{ color: "#7F543D" }}>
@@ -1530,8 +1530,8 @@ export default function DheemahiKumarakom() {
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
                   <img
-                    src={"/Center Images/Dheemahi Ayurvedic Center/Photo Gallery/CTA image.jpg"}
-                    alt="Dheemahi Kumarakom Ayurvedic Center"
+                    src={"/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"}
+                    alt="Dheemahi Kumarakom Ayurvedic Centre"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                   <h3 className="text-xl font-bold text-primary text-center mb-3">Ready to Start Your Wellness Journey?</h3>
@@ -1591,8 +1591,8 @@ export default function DheemahiKumarakom() {
                 </div>
                 <div>
                   <img
-                    src={"/Center Images/Dheemahi Ayurvedic Center/Photo Gallery/CTA image.jpg"}
-                    alt="Dheemahi Kumarakom Ayurvedic Center"
+                    src={"/Center Images/Dheemahi Ayurvedic Centre/Photo Gallery/CTA image.jpg"}
+                    alt="Dheemahi Kumarakom Ayurvedic Centre"
                     className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
                 </div>
@@ -1723,7 +1723,7 @@ export default function DheemahiKumarakom() {
                     <div className="p-[3px] rounded-full flex-shrink-0 shadow-2xl aspect-square" style={{ background: 'conic-gradient(from 45deg, #F0E68C, #B8860B, #FFD700, #B8860B, #F0E68C)' }}>
                       <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-[2px] border-white bg-white">
                         <img
-                          src="/Center Images/Dheemahi Ayurvedic Center/founder.jpg"
+                          src="/Center Images/Dheemahi Ayurvedic Centre/founder.jpg"
                           alt={founderName || "Founder"}
                           className="w-full h-full object-cover"
                         />
@@ -1765,8 +1765,8 @@ export default function DheemahiKumarakom() {
                         <img
                           src={
                             teamImageError
-                              ? "/Center Images/Dheemahi Ayurvedic Center/center dp.jpg"
-                              : "/Center Images/Dheemahi Ayurvedic Center/Team.jpg"
+                              ? "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg"
+                              : "/Center Images/Dheemahi Ayurvedic Centre/Team.jpg"
                           }
                           alt="Expert Medical Team"
                           className="w-full h-full object-cover"
@@ -2184,7 +2184,7 @@ export default function DheemahiKumarakom() {
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                   <img
-                    src="/Center Images/Dheemahi Ayurvedic Center/CTA bottom.jpg"
+                    src="/Center Images/Dheemahi Ayurvedic Centre/CTA bottom.jpg"
                     alt="Dheemahi Ayurvedic Village"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -2237,7 +2237,7 @@ export default function DheemahiKumarakom() {
                 </div>
                 <div>
                   <img
-                    src="/Center Images/Dheemahi Ayurvedic Center/CTA bottom.jpg"
+                    src="/Center Images/Dheemahi Ayurvedic Centre/CTA bottom.jpg"
                     alt="Dheemahi Ayurvedic Village"
                     className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -2269,7 +2269,7 @@ export default function DheemahiKumarakom() {
                 </button>
                 <div className="bg-background/90 rounded-xl shadow-2xl p-4 w-full max-w-5xl">
                   <div className="text-center text-primary text-2xl font-bold mb-3 leading-relaxed">
-                    Dheemahi Kumarakom Ayurvedic Center
+                    Dheemahi Kumarakom Ayurvedic Centre
                   </div>
                   <div className="relative rounded-lg overflow-hidden shadow-lg w-full" style={{ paddingBottom: "56.25%" }}>
                     <img

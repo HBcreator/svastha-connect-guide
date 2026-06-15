@@ -39,9 +39,9 @@ const IMAGE_BY_SERIES: Record<number, string> = {
   19: "/Anchor pages/mumbai/images/19.jpg",
   20: "/Anchor pages/mumbai/images/20.jpg",
   21: "/Anchor pages/mumbai/images/21.jpg",
-  22: "/Anchor pages/mumbai/images/22.webp",
-  23: "/Anchor pages/mumbai/images/23.webp",
-  24: "/Anchor pages/mumbai/images/24.jpg",
+  22: "/TOP centers/mumbai pune nashik/Ashtang Ayurveda Super Multi Speciality Hospital/image 1.webp",
+  23: "/TOP centers/mumbai pune nashik/Ayushman Bhava Ayurveda & Keraliya Panchakarma Clinic/image 1.jpg",
+  24: "/TOP centers/mumbai pune nashik/Shree Vishwavallabh Ayurvedic Panchakarma & Garbh Sanskar Center/image 1.webp",
   25: "/Anchor pages/mumbai/images/25.webp",
 };
 
@@ -77,6 +77,32 @@ const formatMumbaiLocation = (value: string) => {
   return cleaned;
 };
 
+const SLUG_OVERRIDE_BY_SERIES: Record<number, string> = {
+  1: "swarayu-ayurveda-clinic-panchakarma-center-mumbai-india",
+  2: "prof-kr-kohlis-ayurveda-panchakarma-center-mumbai-india",
+  3: "ayushakti-ayurved-health-center-mumbai-india",
+  4: "sharayu-ayurveda-best-ayurvedic-doctor-center-mumbai-india",
+  5: "aushadhgyan-ayurveda-wellness-center-mumbai-india",
+  6: "karma-ayurveda-clinic-mumbai-india",
+  7: "sriaas-sr-institute-of-advanced-ayurvedic-sciences-hospital-mumbai-india",
+  9: "aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india",
+  11: "thapovan-ayurveda-hospital-mumbai-india",
+  12: "somaiya-ayurvihar-panchakarma-center-mumbai-india",
+  13: "herbal-hills-ayurvedic-wellness-center-mumbai-india",
+  14: "pravaayu-ayurveda-panchkarma-clinic-mumbai-india",
+  15: "aradhana-ayurveda-clinic-panchakarma-center-mumbai-india",
+  16: "divyamrut-ayurcare-hospital-mumbai-india",
+  17: "kerala-ayurveda-multi-speciality-clinic-mumbai-india",
+  18: "ayush-ayurved-panchakarma-center-mumbai-india",
+  19: "bharati-ayurved-hospital-pune-india",
+  20: "shree-ayurved-panchakarma-hospital-pune-india",
+  21: "aatreya-ayurved-panchakarma-clinic-pune-india",
+  22: "ashtang-ayurveda-super-multi-speciality-hospital-nashik-india",
+  23: "ayushman-bhava-ayurveda-keraliya-panchakarma-clinic-nashik-india",
+  24: "shree-vishwavallabh-ayurvedic-panchakarma-garbh-sanskar-center-nashik-india",
+  25: "sukhayu-ayurveda-panchakarma-center-nashik-india"
+};
+
 const parseCentersFromMarkdown = (markdown: string): MumbaiCenter[] => {
   const lines = markdown
     .split("\n")
@@ -103,6 +129,7 @@ const parseCentersFromMarkdown = (markdown: string): MumbaiCenter[] => {
       const rating = ratingMatch ? Number(ratingMatch[0]) : 0;
       const reviews = reviewsMatch ? reviewsMatch[1].replace(/\+/g, "").trim() : "0";
       const image = IMAGE_BY_SERIES[series] || "/Anchor pages/mumbai/images/1.webp";
+      const slug = SLUG_OVERRIDE_BY_SERIES[series];
 
       return {
         series,
@@ -113,6 +140,7 @@ const parseCentersFromMarkdown = (markdown: string): MumbaiCenter[] => {
         reviews,
         image,
         website,
+        slug,
       };
     })
     .filter((center): center is MumbaiCenter => center !== null)
@@ -230,7 +258,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     // Explicitly exclude these from the dynamic list as they are now in staticPremiumCenters
     const excludedSeries = [0, 10]; // Agni and Atmantan series from markdown if any
     
-    const baseSeries = [19, 25, 1, 3, 6, 7, 11, 12, 14, 24];
+    const baseSeries = [19, 25, 1, 3, 6, 7, 11, 12];
     
     const pageOne = [
       ...staticPremiumCenters,
@@ -330,7 +358,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
 
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      {center.slug && !center.name.includes("Sukhayu") ? (
+                      {center.slug ? (
                         <Button
                           asChild
                           variant="outline"
@@ -340,7 +368,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
                             View Details
                           </Link>
                         </Button>
-                      ) : (center.website && !center.name.includes("Sukhayu")) ? (
+                      ) : center.website ? (
                         <Button
                           asChild
                           variant="outline"

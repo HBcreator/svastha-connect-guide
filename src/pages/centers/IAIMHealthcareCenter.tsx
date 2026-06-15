@@ -335,7 +335,7 @@ export default function IAIMHealthcareCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/main.png" 
+                      src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/main.png" 
                       alt="IAIM Healthcare Center Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg"; }}
@@ -348,7 +348,7 @@ export default function IAIMHealthcareCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/secondary.webp" 
+                        src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/secondary.webp" 
                         alt="IAIM Healthcare Center Treatment Room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg"; }}
@@ -526,7 +526,7 @@ export default function IAIMHealthcareCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/main.png"
+                  src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/IAIM Healthcare Center/main.png"
                   alt="IAIM Healthcare Center"
                   className="w-full h-auto rounded-3xl object-cover shadow-2xl border-4 border-white/20 transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg"; }}

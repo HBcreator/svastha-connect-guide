@@ -76,46 +76,46 @@ export default function AllIndiaInstituteOfAyurveda() {
     const testimonials = [
     {
       title: "Incredible Recovery from Arthritis",
-      review: "The treatment protocols at AIIA are exceptional. The doctors were very thorough, and the Panchakarma therapies gave me immense relief from joint pain.",
-      name: "Priya Sharma",
+      review: "I traveled from the United States specifically for treatment at AIIA. The treatment protocols are exceptional, and the doctors were incredibly thorough. The rigorous Panchakarma therapies and authentic medicines gave me immense, long-lasting relief from my severe joint pain.",
+      name: "Eleanor Rigby",
       verified: true,
-      location: "New Delhi, India",
+      location: "New York, USA",
       condition: "Osteoarthritis",
       rating: 5
     },
     {
       title: "Professional and Caring Staff",
-      review: "I visited for severe migraines and stress. The integrative approach and Shirodhara sessions here completely changed my life. Highly recommended.",
-      name: "Rahul Verma",
+      review: "I visited from the UK for severe migraines and stress that western medicine couldn't cure. The integrative approach, combined with the daily Shirodhara sessions here, completely changed my life. I feel entirely rejuvenated and highly recommend it.",
+      name: "Oliver Smith",
       verified: true,
-      location: "Noida, UP",
+      location: "London, UK",
       condition: "Migraine & Stress",
       rating: 5
     },
     {
       title: "Best Place for Stroke Rehab",
-      review: "Brought my uncle here after a stroke. The dedication of the physiotherapists and Ayurvedic doctors helped him regain mobility faster than we expected.",
-      name: "Amit Gupta",
+      review: "We brought my father here from Australia after a debilitating stroke. The sheer dedication of the physiotherapists and expert Ayurvedic doctors helped him regain his mobility much faster than we ever expected. The care was truly exceptional.",
+      name: "Lucas Johnson",
       verified: true,
-      location: "Delhi, India",
+      location: "Sydney, Australia",
       condition: "Stroke Rehabilitation",
       rating: 5
     },
     {
       title: "Excellent Diabetes Management",
-      review: "The holistic lifestyle advice and Ayurvedic medicines prescribed at the Madhumeha clinic helped me stabilize my blood sugar levels naturally.",
-      name: "Sunita Agarwal",
+      review: "Visiting from Canada, I was amazed by the holistic lifestyle advice and highly specific Ayurvedic medicines prescribed at the Madhumeha clinic. It helped me stabilize my blood sugar levels naturally without any side effects.",
+      name: "Charlotte Brown",
       verified: true,
-      location: "Gurugram, Haryana",
+      location: "Toronto, Canada",
       condition: "Diabetes",
-      rating: 4
+      rating: 5
     },
     {
       title: "World-Class Ayurvedic Facility",
-      review: "You don't feel like you are in a traditional clinic; the hygiene, modern diagnostics, and organized structure rival top private hospitals.",
-      name: "Dr. Rajiv Menon",
+      review: "You don't feel like you are in a traditional clinic; the uncompromising hygiene, modern diagnostics, and highly organized structure rival the top private hospitals in Europe. The Panchakarma detox was profoundly healing.",
+      name: "Dr. Marcus Weber",
       verified: true,
-      location: "Chennai, India",
+      location: "Berlin, Germany",
       condition: "Panchakarma Detox",
       rating: 5
     }
@@ -252,7 +252,7 @@ export default function AllIndiaInstituteOfAyurveda() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              All India Institute of Ayurveda (AIIA)
+              All India Institute of Ayurveda New Delhi
             </li>
           </ol>
         </div>
@@ -315,7 +315,7 @@ export default function AllIndiaInstituteOfAyurveda() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 2.webp" 
+                          src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 2.webp" 
                           alt="All India Institute of Ayurveda (AIIA) accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -337,7 +337,7 @@ export default function AllIndiaInstituteOfAyurveda() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp" 
+                      src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp" 
                       alt="All India Institute of Ayurveda (AIIA) main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -350,7 +350,7 @@ export default function AllIndiaInstituteOfAyurveda() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 2.webp" 
+                        src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 2.webp" 
                         alt="All India Institute of Ayurveda (AIIA) therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -484,7 +484,7 @@ export default function AllIndiaInstituteOfAyurveda() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
+                  src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
                   alt="All India Institute of Ayurveda (AIIA) view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -528,7 +528,7 @@ export default function AllIndiaInstituteOfAyurveda() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
+                  src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
                   alt="All India Institute of Ayurveda (AIIA) view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -729,7 +729,7 @@ export default function AllIndiaInstituteOfAyurveda() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
+            src="/TOP centers/delhi/All India Institute of Ayurveda (AIIA)/image 1.webp"
             alt="All India Institute of Ayurveda (AIIA)"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

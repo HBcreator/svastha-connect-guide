@@ -315,7 +315,7 @@ export default function HealingEarthAyurvedaHospital() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.jpg" 
+                          src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.jpg" 
                           alt="Rashtrotthana Hospital Ayurveda"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -338,7 +338,7 @@ export default function HealingEarthAyurvedaHospital() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp" 
+                      src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp" 
                       alt="Rashtrotthana Hospital Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -351,7 +351,7 @@ export default function HealingEarthAyurvedaHospital() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/secondary.webp" 
+                        src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/secondary.webp" 
                         alt="Rashtrotthana Hospital Treatment"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -529,7 +529,7 @@ export default function HealingEarthAyurvedaHospital() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp"
+                  src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp"
                   alt="Rashtrotthana Hospital"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -722,7 +722,7 @@ export default function HealingEarthAyurvedaHospital() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp"
+            src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Healing Earth Ayurveda Hospital/main.webp"
             alt="Ayurvedic Therapy at Adyant Ayurveda"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

@@ -115,7 +115,7 @@ export default function Index() {
       rating: 4.7,
       price: "$$$",
       path: "/centers/mysore/indus-valley-ayurvedic-center",
-      image: "/Center Images/Indus Valley Ayurvedic Center/CTA mid.jpg",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg",
       usp: "Vastu-Compliant Royal Architecture",
     },
     {

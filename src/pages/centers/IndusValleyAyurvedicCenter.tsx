@@ -179,8 +179,8 @@ export default function IndusValleyAyurvedicCenter() {
   const [teamGroups, setTeamGroups] = useState<{ title: string; description: string; items: string[] }[]>([]);
   const [currentTeamSlide, setCurrentTeamSlide] = useState(0);
   const [isTeamAutoPlaying, setIsTeamAutoPlaying] = useState(true);
-  const founderImage = "/Center Images/Indus Valley Ayurvedic Center/Founder/Founder.jpg";
-  const teamImage = "/Center Images/Indus Valley Ayurvedic Center/Founder/team.jpg";
+  const founderImage = "/Center Images/Indus Valley Ayurvedic Centre/Founder/Founder.jpg";
+  const teamImage = "/Center Images/Indus Valley Ayurvedic Centre/Founder/team.jpg";
   const [testimonials, setTestimonials] = useState<{ id: number; name: string; location: string; condition: string; title: string; review: string; rating: number; verified: boolean }[]>([]);
   const [currentReview, setCurrentReview] = useState(0);
   const [isReviewAutoPlaying, setIsReviewAutoPlaying] = useState(true);
@@ -208,24 +208,24 @@ export default function IndusValleyAyurvedicCenter() {
     {
       title: "Tripadvisor Recognition",
       description: "Recognized on a leading global travel platform for guest satisfaction and consistent service quality.",
-      image: "/Center Images/Indus Valley Ayurvedic Center/Awards/Award 1 (Tripadvisor).webp",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Awards/Award 1 (Tripadvisor).webp",
     },
     {
       title: "Best Ayurvedic Centers",
       description: "Featured among top Ayurvedic centers for authenticity, clinical discipline, and patient outcomes.",
-      image: "/Center Images/Indus Valley Ayurvedic Center/Awards/Award 2 (Best ayurvedic centers).webp",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Awards/Award 2 (Best ayurvedic centers).webp",
     },
     {
       title: "Premium Hospitality",
       description: "Acknowledged for combining classical Ayurveda with premium, comfortable retreat experiences.",
-      image: "/Center Images/Indus Valley Ayurvedic Center/Awards/Award 3 (fit premium hotel).webp",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Awards/Award 3 (fit premium hotel).webp",
     },
   ];
 
   const [maxAwardIndex, setMaxAwardIndex] = useState(awards.length - 1);
 
   useEffect(() => {
-    fetch("/Center Images/Indus Valley Ayurvedic Center/photo gallery/photo gallery links.txt")
+    fetch("/Center Images/Indus Valley Ayurvedic Centre/photo gallery/photo gallery links.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text
@@ -240,7 +240,7 @@ export default function IndusValleyAyurvedicCenter() {
         setImages([]);
       });
 
-    fetch("/Center Videos/Indus Valley Ayurvedic Center/Video gallery links.txt")
+    fetch("/Center Videos/Indus Valley Ayurvedic Centre/Video gallery links.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text
@@ -254,7 +254,7 @@ export default function IndusValleyAyurvedicCenter() {
         setVideos([]);
       });
 
-    fetch("/Center Videos/Indus Valley Ayurvedic Center/yt tesitimonies link.txt")
+    fetch("/Center Videos/Indus Valley Ayurvedic Centre/yt tesitimonies link.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text
@@ -275,7 +275,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Wellness Programs.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Wellness Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -314,7 +314,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Medical Programs.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Medical Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -353,7 +353,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Why Choose Indus Valley.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Why Choose Indus Valley.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -392,7 +392,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Treatment Process & Patient Journey.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Treatment Process & Patient Journey.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -431,13 +431,13 @@ export default function IndusValleyAyurvedicCenter() {
       .catch((err) => console.error("Error loading Indus Valley treatment process:", err));
 
     // Load Facilities & Amenities
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Facilities & Amenities.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Facilities & Amenities.txt")
       .then((res) => res.text())
       .then((text) => setFacilitiesData(parseCardSection(text)))
       .catch((err) => console.error("Error loading Facilities:", err));
 
     // Load Facilities Images
-    fetch("/Center Images/Indus Valley Ayurvedic Center/facilities/Facilities.txt")
+    fetch("/Center Images/Indus Valley Ayurvedic Centre/facilities/Facilities.txt")
       .then((res) => res.text())
       .then((text) => {
         const urls = text
@@ -470,7 +470,7 @@ export default function IndusValleyAyurvedicCenter() {
   };
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Founder & Team Info.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Founder & Team Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -557,7 +557,7 @@ export default function IndusValleyAyurvedicCenter() {
   };
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Patient Stories & Reviews.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -634,7 +634,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, [isAwardAutoPlaying, isAwardMobile, maxAwardIndex]);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Insurance & Payment Info.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Insurance & Payment Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -684,7 +684,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Frequently Asked Questions.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Frequently Asked Questions.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -709,7 +709,7 @@ export default function IndusValleyAyurvedicCenter() {
   }, []);
 
   useEffect(() => {
-    fetch("/content/Top Centers/Indus Valley Ayurvedic Center/Contact Information.txt")
+    fetch("/content/Top Centers/Indus Valley Ayurvedic Centre/Contact Information.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -1345,7 +1345,7 @@ export default function IndusValleyAyurvedicCenter() {
           <Card className="mb-12">
             <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
               <MarkdownContent
-                contentPath="/content/Top Centers/Indus Valley Ayurvedic Center/main content.txt"
+                contentPath="/content/Top Centers/Indus Valley Ayurvedic Centre/main content.txt"
                 h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                 titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                 onLinkClick={(action) => {
@@ -1733,7 +1733,7 @@ export default function IndusValleyAyurvedicCenter() {
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
                   <img
-                    src="/Center Images/Indus Valley Ayurvedic Center/CTA mid.jpg"
+                    src="/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg"
                     alt="Indus Valley Ayurvedic Center"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -1794,7 +1794,7 @@ export default function IndusValleyAyurvedicCenter() {
                 </div>
                 <div>
                   <img
-                    src="/Center Images/Indus Valley Ayurvedic Center/CTA mid.jpg"
+                    src="/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg"
                     alt="Indus Valley Ayurvedic Center"
                     className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -2445,7 +2445,7 @@ export default function IndusValleyAyurvedicCenter() {
               <div className="md:hidden">
                 <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                   <img
-                    src="/Center Images/Indus Valley Ayurvedic Center/CTA bottom.jpg"
+                    src="/Center Images/Indus Valley Ayurvedic Centre/CTA bottom.jpg"
                     alt="Indus Valley Ayurvedic Center"
                     className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
@@ -2496,7 +2496,7 @@ export default function IndusValleyAyurvedicCenter() {
                 </div>
                 <div>
                   <img
-                    src="/Center Images/Indus Valley Ayurvedic Center/CTA bottom.jpg"
+                    src="/Center Images/Indus Valley Ayurvedic Centre/CTA bottom.jpg"
                     alt="Indus Valley Ayurvedic Center"
                     className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   />
