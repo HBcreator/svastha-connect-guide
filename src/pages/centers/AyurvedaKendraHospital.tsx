@@ -328,10 +328,11 @@ export default function AyurvedaKendraHospital() {
                     As a premier clinical destination, we maintain the highest standards of safety, quality, and medical precision, recording an extraordinary 98% patient satisfaction rate. Our experienced medical team, including Senior Physician Dr. Deepika Gunawant and Dr. Jairam S. Nair, specializes in treating stroke rehabilitation, Parkinson's disease, osteoarthritis, rheumatoid arthritis, PCOS, nephrotic syndrome, gastrointestinal conditions, and integrative oncology.
                   </p>
 
-                  
+                  <p className="mt-6">
+                    We take pride in our in-house Ayurvedic pharmacy, where we prepare classical formulations using pristine herbs sourced from the dense forests of Kerala. This ensures that every medicine prescribed adheres to the strictest parameters of purity and efficacy. Our residential facilities provide a deeply healing atmosphere with dedicated meditation zones, organic sattvic meals, and serene surroundings that amplify the therapeutic process.
+                  </p>
                 </div>
               </div>
-
               <div className="flex flex-col gap-8 order-first lg:order-last">
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
