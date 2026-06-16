@@ -140,7 +140,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
     },
     {
       question: "Where is the main clinic located?",
-      answer: "Our main branch is situated in Shahdara, East Delhi (A-1/5, Jyoti Nagar West, Loni Road). We also have fully equipped branches in Paschim Vihar and Noida."
+      answer: "Our main branch is situated in Shahdara, New Delhi (A-1/5, Jyoti Nagar West, Loni Road). We also have fully equipped branches in Paschim Vihar and Noida."
     }
   ];
 
@@ -221,7 +221,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
   useEffect(() => {
     document.title = "Nirmal Ayurved & Panchkarm Clinic Delhi | Chronic Disease & Panchakarma Experts";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, neurological care, and infertility treatments by Dr. Prashant Jain at Nirmal Ayurved & Panchkarm Clinic in East Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Ayurvedic Panchakarma, neurological care, and infertility treatments by Dr. Prashant Jain at Nirmal Ayurved & Panchkarm Clinic in New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -251,7 +251,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Nirmal Ayurved & Panchkarm Clinic East Delhi
+              Nirmal Ayurved & Panchkarm Clinic New Delhi
             </li>
           </ol>
         </div>
@@ -267,7 +267,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
                 <p className="text-xl mb-4 opacity-90">Authentic Panchakarma | Neurological & Chronic Disease Care</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Shahdara, East Delhi, India</span>
+                  <span className="text-lg">Shahdara, New Delhi, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
@@ -314,7 +314,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 2.webp" 
+                          src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 2.webp" 
                           alt="Nirmal Ayurved Clinic facility"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -334,7 +334,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp" 
+                      src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp" 
                       alt="Nirmal Ayurved main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -347,7 +347,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 2.webp" 
+                        src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 2.webp" 
                         alt="Nirmal Ayurved therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -481,7 +481,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
+                  src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
                   alt="Nirmal Ayurved Clinic view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -525,7 +525,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
+                  src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
                   alt="Nirmal Ayurved Clinic view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -671,8 +671,10 @@ export default function NirmalAyurvedPanchkarmClinic() {
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Main Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
                       Nirmal Ayurved & Panchkarm Clinic<br />
-                      A-1/5, Jyoti Nagar West, Loni Road<br />
-                      Shahdara, Delhi 110094, India
+                      A-1, West Jyoti Nagar,<br />
+                      Kardam Puri Extension,<br />
+                      Kardam Puri, Shahdara,<br />
+                      New Delhi, Delhi, 110094
                     </p>
                   </div>
                 </div>
@@ -726,7 +728,7 @@ export default function NirmalAyurvedPanchkarmClinic() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
+            src="/TOP centers/delhi/Nirmal Ayurved & Panchkarm Clinic/image 1.webp"
             alt="Nirmal Ayurved Clinic"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

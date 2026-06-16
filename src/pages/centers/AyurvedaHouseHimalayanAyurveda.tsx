@@ -325,7 +325,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/secondary.jpg" 
+                          src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/secondary.jpg" 
                           alt="Ayurveda House treatment room view"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -346,7 +346,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg" 
+                      src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg" 
                       alt="Ayurveda House lobby view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -359,7 +359,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/secondary.jpg" 
+                        src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/secondary.jpg" 
                         alt="Ayurveda House treatment room space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -493,7 +493,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
+                  src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
                   alt="Ayurveda House center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -537,7 +537,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
               </div>
               <div>
                 <img
-                  src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
+                  src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
                   alt="Ayurveda House center view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -737,7 +737,7 @@ My diet was customized alongside herb treatments, resulting in great digestive c
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
+            src="/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg"
             alt="Ayurveda House background"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}

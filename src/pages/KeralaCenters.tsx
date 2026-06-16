@@ -55,7 +55,7 @@ const KeralaCenters = () => {
       rating: 4.9,
       reviews: 150,
       priceRange: "$$$",
-      image: "/Center Images/Dheemahi Ayurvedic Center/center dp.jpg",
+      image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
       slug: "dheemahi-ayurveda-village-kumarakom-kerala-india",
     },
     {
@@ -154,7 +154,7 @@ const KeralaCenters = () => {
       rating: 4.8,
       reviews: 188,
       priceRange: "$$$$",
-      image: "/Center Images/Athreya Ayurvedic Center/CTA.jpg",
+      image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
       slug: "athreya-ayurvedic-center-kerala-india",
     },
     {

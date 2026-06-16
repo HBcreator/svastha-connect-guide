@@ -264,7 +264,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Holy Family Hospital – Ayurveda Department</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Holy Family Hospital Ayurveda</h1>
                 <p className="text-xl mb-4 opacity-90">Holistic Ayurvedic Healthcare & Natural Healing Wisdom</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -299,7 +299,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Holy Family Hospital – Ayurveda Department
+                at Holy Family Hospital Ayurveda
 </h2>
             </div>
 
@@ -315,8 +315,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 2.jfif" 
-                          alt="Holy Family Hospital – Ayurveda Department accommodation"
+                          src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 2.jfif" 
+                          alt="Holy Family Hospital Ayurveda accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -337,8 +337,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 1.jfif" 
-                      alt="Holy Family Hospital – Ayurveda Department main view"
+                      src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 1.jfif" 
+                      alt="Holy Family Hospital Ayurveda main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +350,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 2.jfif" 
-                        alt="Holy Family Hospital – Ayurveda Department therapy room"
+                        src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 2.jfif" 
+                        alt="Holy Family Hospital Ayurveda therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -370,7 +370,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Holy Family Hospital – Ayurveda Department today.
+                My Vaidyam to connect with Holy Family Hospital Ayurveda today.
               </h3>
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Holy Family Hospital – Ayurveda Department
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Holy Family Hospital Ayurveda
 </h2>
           </div>
           
@@ -414,7 +414,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Holy Family Hospital – Ayurveda Department
+                Why Choose <br className="hidden lg:block" /> Holy Family Hospital Ayurveda
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
@@ -447,7 +447,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Holy Family Hospital – Ayurveda Department
+              Your Healing Journey at <br className="hidden lg:block" /> Holy Family Hospital Ayurveda
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
@@ -484,8 +484,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 1.jfif"
-                  alt="Holy Family Hospital – Ayurveda Department view"
+                  src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 1.jfif"
+                  alt="Holy Family Hospital Ayurveda view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -528,8 +528,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 1.jfif"
-                  alt="Holy Family Hospital – Ayurveda Department view"
+                  src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 1.jfif"
+                  alt="Holy Family Hospital Ayurveda view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -672,7 +672,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Holy Family Hospital – Ayurveda Department<br />
+                      Holy Family Hospital Ayurveda<br />
                       R2, Outer Ring Road, Pocket 40/203, Okhla, Kalkaji<br />
                       New Delhi, Delhi, India
                     </p>
@@ -729,8 +729,8 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Holy Family Hospital – Ayurveda Department/image 1.jfif"
-            alt="Holy Family Hospital – Ayurveda Department"
+            src="/TOP centers/delhi/Holy Family Hospital Ayurveda/image 1.jfif"
+            alt="Holy Family Hospital Ayurveda"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -740,7 +740,7 @@ export default function HolyFamilyHospitalAyurvedaDepartment() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Holy Family Hospital – Ayurveda Department.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Holy Family Hospital Ayurveda.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

@@ -84,7 +84,7 @@ const SouthIndiaCenters = () => {
       rating: 4.8,
       reviews: 450,
       priceRange: "$$$$",
-      image: "/Center Images/Indus Valley Ayurvedic Center/Thumb.jpg",
+      image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
       slug: "indus-valley-ayurvedic-hospital-mysore-india",
     },
     {
@@ -299,7 +299,7 @@ const SouthIndiaCenters = () => {
       reviews: 800,
       priceRange: "$$$",
       image:
-        "/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Travancore Ayurveda – Jayanagar/main.webp",
+        "/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Travancore Ayurveda – Jayanagar/main.webp",
       slug: "travancore-ayurveda-hospital-bengaluru-india",
     },
     {

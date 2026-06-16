@@ -44,8 +44,8 @@ import {
 export default function AthreyaAyurvedicCenter() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
-  const founderImage = "/Center Images/Athreya Ayurvedic Center/Founder/Foudner.jpg";
-  const teamImage = "/Center Images/Athreya Ayurvedic Center/Founder/Team.jpg";
+  const founderImage = "/Center Images/Athreya Ayurvedic Centre/Founder/Foudner.jpg";
+  const teamImage = "/Center Images/Athreya Ayurvedic Centre/Founder/Team.jpg";
 
   const [selectedImage, setSelectedImage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -176,17 +176,17 @@ export default function AthreyaAyurvedicCenter() {
     {
       title: "Tripadvisor Travelers' Choice 2023",
       description: "Recognized by travelers for consistently excellent experiences.",
-      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 1.webp",
+      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 1.webp",
     },
     {
       title: "NABH Accredited Facility",
       description: "Patient safety and quality of care aligned to NABH standards.",
-      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 2.webp",
+      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 2.webp",
     },
     {
       title: "Tripadvisor Certificate of Excellence",
       description: "A long-standing mark of guest satisfaction and trust.",
-      image: "/Center Images/Athreya Ayurvedic Center/Awards/Award 3 Trip advisor.webp",
+      image: "/Center Images/Athreya Ayurvedic Centre/Awards/Award 3 Trip advisor.webp",
     },
   ];
 
@@ -202,7 +202,7 @@ export default function AthreyaAyurvedicCenter() {
   ].filter(Boolean) as string[];
 
   useEffect(() => {
-    fetch("/Center Images/Athreya Ayurvedic Center/Photo Gallery/Photo links.txt")
+    fetch("/Center Images/Athreya Ayurvedic Centre/Photo Gallery/Photo links.txt")
       .then((res) => res.text())
       .then((text) => {
         const imgs = text
@@ -214,7 +214,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya images:", err));
 
-    fetch("/Center Videos/Athreya Ayurvedic Center/Video links.txt")
+    fetch("/Center Videos/Athreya Ayurvedic Centre/Video links.txt")
       .then((res) => res.text())
       .then((text) => {
         const vids = text
@@ -227,7 +227,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya videos:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Wellness Programs.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Wellness Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -266,7 +266,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya wellness content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Medical Programs.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Medical Programs.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -305,7 +305,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya medical content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Why Choose Athreya.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Why Choose Athreya.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -345,7 +345,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya why choose:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Treatment Process & Patient Journey.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Treatment Process & Patient Journey.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -387,7 +387,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya treatment process:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Facilities & Amenities.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Facilities & Amenities.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n");
@@ -422,7 +422,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya facilities content:", err));
 
-    fetch("/Center Images/Athreya Ayurvedic Center/Facilities/Facilities.txt")
+    fetch("/Center Images/Athreya Ayurvedic Centre/Facilities/Facilities.txt")
       .then((res) => res.text())
       .then((text) => {
         const imgs = text
@@ -435,7 +435,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya facilities images:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Founder & Team Info.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Founder & Team Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -524,7 +524,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya founder content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Patient Stories & Reviews.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Patient Stories & Reviews.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -571,7 +571,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya reviews:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Insurance & Payment Info.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Insurance & Payment Info.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -617,7 +617,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya insurance content:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Frequently Asked Questions.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Frequently Asked Questions.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -640,7 +640,7 @@ export default function AthreyaAyurvedicCenter() {
       })
       .catch((err) => console.error("Error loading Athreya FAQs:", err));
 
-    fetch("/content/Top Centers/Athreya Ayurvedic Center/Contact Information.txt")
+    fetch("/content/Top Centers/Athreya Ayurvedic Centre/Contact Information.txt")
       .then((res) => res.text())
       .then((text) => {
         const lines = text.split("\n").map((l) => l.trim());
@@ -1218,7 +1218,7 @@ export default function AthreyaAyurvedicCenter() {
               <Card className="mb-12">
                 <CardContent className="px-4 md:px-8 py-6 md:py-8 prose md:prose-lg max-w-none prose-p:text-justify prose-p:leading-relaxed prose-p:text-base md:prose-p:text-lg">
                   <MarkdownContent
-                    contentPath="/content/Top Centers/Athreya Ayurvedic Center/Main content.txt"
+                    contentPath="/content/Top Centers/Athreya Ayurvedic Centre/Main content.txt"
                     h3ClassName="text-xl sm:text-2xl md:text-2xl font-semibold text-primary leading-snug"
                     titleClassName="text-2xl sm:text-3xl md:text-3xl font-semibold text-primary border-b-2 border-primary/20 pb-2"
                     onLinkClick={(action) => {
@@ -1614,7 +1614,7 @@ export default function AthreyaAyurvedicCenter() {
                   <div className="md:hidden">
                     <div className="max-w-sm mx-auto bg-white/80 rounded-2xl p-4 shadow-lg border-2 border-primary/30">
                       <img
-                        src="/Center Images/Athreya Ayurvedic Center/CTA ready.jpg"
+                        src="/Center Images/Athreya Ayurvedic Centre/CTA ready.jpg"
                         alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
@@ -1689,7 +1689,7 @@ export default function AthreyaAyurvedicCenter() {
                     </div>
                     <div>
                       <img
-                        src="/Center Images/Athreya Ayurvedic Center/CTA ready.jpg"
+                        src="/Center Images/Athreya Ayurvedic Centre/CTA ready.jpg"
                         alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-2xl shadow-lg border-2 border-primary/30 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
@@ -2331,7 +2331,7 @@ export default function AthreyaAyurvedicCenter() {
                   <div className="md:hidden">
                     <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                       <img
-                        src="/Center Images/Athreya Ayurvedic Center/CTA bottom.jpg"
+                        src="/Center Images/Athreya Ayurvedic Centre/CTA bottom.jpg"
                         alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                       />
@@ -2387,7 +2387,7 @@ export default function AthreyaAyurvedicCenter() {
                     </div>
                     <div>
                       <img
-                        src="/Center Images/Athreya Ayurvedic Center/CTA bottom.jpg"
+                        src="/Center Images/Athreya Ayurvedic Centre/CTA bottom.jpg"
                         alt="Athreya Ayurvedic Center"
                         className="w-full h-auto rounded-2xl object-cover shadow-2xl border-2 border-white/20 transition-transform duration-700 ease-out hover:scale-[1.02]"
                       />

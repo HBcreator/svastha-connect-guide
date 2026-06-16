@@ -60,6 +60,34 @@ const LOCATION_OVERRIDE_BY_CENTER: Record<string, string> = {
   "Sri Sri Tattva Panchakarma Centre - Delhi": "Dwarka Sector 19, New Delhi, India",
 };
 
+const SLUG_OVERRIDE_BY_SERIES: Record<number, string> = {
+  1: "maharishi-ayurveda-hospital-new-delhi-india",
+  2: "arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india",
+  3: "aasha-ayurveda-center-new-delhi-india",
+  4: "tarunveda-ayurveda-hospital-new-delhi-india",
+  5: "skk-ayurveda-and-panchakarma-hospital-new-delhi-india",
+  6: "aprasu-ayurvedic-hospital-north-delhi-india",
+  7: "sanjeevani-ayurveda-hospital-new-delhi-india",
+  8: "sri-sri-ayurveda-panchakarma-center-new-delhi-india",
+  9: "kerala-ayurveda-life-panchakarma-clinic-new-delhi-india",
+  10: "apollo-ayurvaid-life-hospital-new-delhi-india",
+  11: "karma-ayurveda-hospital-new-delhi-india",
+  12: "nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india",
+  13: "ayurnava-kerala-ayurveda-hospital-new-delhi-india",
+  14: "kurias-earth-ayurveda-hospital-green-park-new-delhi-india",
+  15: "mirasa-ayurveda-hospital-new-delhi-india",
+  16: "ayurveda-kendra-hospital-delhi-india",
+  17: "all-india-institute-of-ayurveda-hospital-new-delhi-india",
+  18: "ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india",
+  19: "sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india",
+  20: "kerala-ayurveda-wellness-center-new-delhi-india",
+  21: "holy-family-ayurveda-hospital-new-delhi-india",
+  22: "a-and-u-tibbia-college-hospital-new-delhi-india",
+  23: "kairali-the-ayurvedic-healing-village-center-new-delhi-india",
+  24: "sanjivani-ayurveda-center-delhi-ncr-india",
+  25: "sri-sri-tattva-panchkarma-center-new-delhi-india",
+};
+
 const cleanMarkdownText = (value: string) =>
   value
     .replace(/\*\*/g, "")
@@ -121,7 +149,9 @@ const parseCentersFromMarkdown = (markdown: string): DelhiCenter[] => {
       let finalRating = rating;
       let finalReviews = reviews;
 
-      if (name.includes("Mirasa")) {
+      if (SLUG_OVERRIDE_BY_SERIES[series]) {
+        finalSlug = SLUG_OVERRIDE_BY_SERIES[series];
+      } else if (name.includes("Mirasa")) {
         finalSlug = "mirasa-ayurveda-hospital-new-delhi-india";
       } else if (name.includes("Ayurveda Kendra")) {
         finalSlug = "ayurveda-kendra-hospital-safdarjung-delhi-india";
@@ -285,7 +315,7 @@ const AashaAyurvedaCenter: DelhiCenter = {
   rating: 4.8,
   reviews: "1300",
   image: "/Anchor pages/Delhi/images/3.jpg",
-  slug: "aasha-ayruveda-center-rajouri-garden-west-delhi-india",
+  slug: "aasha-ayurveda-center-new-delhi-india",
 };
 
 const TarunVedaAyurvedaHospital: DelhiCenter = {

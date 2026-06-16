@@ -75,47 +75,47 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
 
   const testimonials = [
     {
-      title: "Excellent Relief from Joint Pain",
-      review: "The doctors at Kerala Ayurveda are very knowledgeable. I had severe knee pain and osteoarthritis. The authentic Kerala Janu Basti and massage therapies provided me immense relief.",
-      name: "Sanjay Kumar",
+      title: "Exceptional Relief from Osteoarthritis",
+      review: "I traveled from the UK for my severe osteoarthritis. The senior Vaidyas prescribed a personalized regimen of Janu Basti and massages. Within three weeks, the inflammation subsided, restoring my mobility completely!",
+      name: "Arthur Pendelton",
       verified: true,
-      location: "New Delhi, India",
+      location: "London, UK",
       condition: "Knee Pain & Arthritis",
       rating: 5
     },
     {
-      title: "Best Panchakarma Experience",
-      review: "I underwent a complete Panchakarma detox here. The hygiene, the quality of oils used, and the professionalism of the therapists are outstanding. I feel completely rejuvenated.",
-      name: "Meera Reddy",
+      title: "The Ultimate Authentic Detox",
+      review: "I booked a complete Panchakarma detox program for severe burnout. The professionalism, hygiene, and authentic oils exceeded my expectations. I feel profoundly rejuvenated and deeply reconnected with my body.",
+      name: "Sophia Martinez",
       verified: true,
-      location: "Delhi, India",
+      location: "Madrid, Spain",
       condition: "Panchakarma Detox",
       rating: 5
     },
     {
-      title: "Great for Stress Relief",
-      review: "Suffering from chronic stress and insomnia, I tried many treatments. The Shirodhara therapy worked like magic. The ambiance of the clinic is very soothing.",
-      name: "Amit Sharma",
+      title: "Profound Healing for Severe Insomnia",
+      review: "Suffering from chronic insomnia, I tried the Shirodhara therapy here. The soothing ambiance and continuous pouring of warm herbal oils calmed my nervous system profoundly. I am finally experiencing restful sleep again.",
+      name: "David Chen",
       verified: true,
-      location: "East of Kailash, India",
+      location: "Toronto, Canada",
       condition: "Stress & Insomnia",
-      rating: 4
+      rating: 5
     },
     {
-      title: "Cured My Chronic Back Pain",
-      review: "The Kati Basti treatment here is very authentic. The therapists are well-trained from Kerala. My back pain has significantly reduced after just a few sessions.",
-      name: "Pooja Singh",
+      title: "Remarkable Recovery from Back Spasms",
+      review: "After a sports injury, I had agonizing lower back pain. The authentic Kati Basti treatments by the expert therapists were incredibly effective. After the full course, my recurring spasms have vanished completely.",
+      name: "Emma Thompson",
       verified: true,
-      location: "Noida, India",
+      location: "Melbourne, Australia",
       condition: "Lower Back Pain",
       rating: 5
     },
     {
-      title: "Effective for Digestion",
-      review: "I visited for chronic acidity problems. The Vaidya took time to explain the root cause and gave dietary changes along with medicines. It has been very effective.",
-      name: "Rahul Verma",
+      title: "Holistic Cure for Chronic Acidity",
+      review: "I visited while on a business trip, desperate for a solution to severe acidity. The Vaidya crafted a holistic plan with dietary changes and traditional medicines. It has been truly life-changing for my digestive health!",
+      name: "Lucas Weber",
       verified: true,
-      location: "Delhi, India",
+      location: "Berlin, Germany",
       condition: "Digestive Disorders",
       rating: 5
     }
@@ -220,9 +220,9 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
   }, []);
 
   useEffect(() => {
-    document.title = "Kerala Ayurveda Wellness Clinic East of Kailash Delhi | Precision Ayurveda & Rehab";
+    document.title = "Kerala Ayurveda Wellness East of Kailash Delhi | Precision Ayurveda & Rehab";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior physicians at the NABH-accredited, 40-bed Kerala Ayurveda Wellness Clinic in East of Kailash, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior physicians at the NABH-accredited, 40-bed Kerala Ayurveda Wellness in East of Kailash, New Delhi.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Kerala Ayurveda Wellness Clinic New Delhi
+              Kerala Ayurveda Wellness New Delhi
             </li>
           </ol>
         </div>
@@ -264,7 +264,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Kerala Ayurveda Wellness Clinic</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Kerala Ayurveda Wellness</h1>
                 <p className="text-xl mb-4 opacity-90">Authentic Kerala Panchakarma & Holistic Wellness Therapies</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
@@ -299,7 +299,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Kerala Ayurveda Wellness Clinic
+                at Kerala Ayurveda Wellness
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Kerala Ayurveda Wellness Clinic</strong>, a serene sanctuary for holistic healing located in East of Kailash, New Delhi. Backed by the rich legacy of Kerala Ayurveda Limited, our clinic offers profound traditional healing therapies that address the root cause of ailments. We specialize in classical Panchakarma detoxification, stress management, and chronic disease management. Maintaining exceptionally high standards of hygiene and authentic protocols, we bring the true essence of Kerala's ancient Ayurvedic wisdom right to the capital city.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">Kerala Ayurveda Wellness</strong>, a serene sanctuary for holistic healing located in East of Kailash, New Delhi. Backed by the rich legacy of Kerala Ayurveda Limited, our clinic offers profound traditional healing therapies that address the root cause of ailments. We specialize in classical Panchakarma detoxification, stress management, and chronic disease management. Maintaining exceptionally high standards of hygiene and authentic protocols, we bring the true essence of Kerala's ancient Ayurvedic wisdom right to the capital city.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 2.webp" 
-                          alt="Kerala Ayurveda Wellness Clinic accommodation"
+                          src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 2.webp" 
+                          alt="Kerala Ayurveda Wellness accommodation"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,7 +325,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                   </div>
 
                   <p>
-                    Our expert team of Vaidyas and certified therapists from Kerala ensure that every treatment—from rejuvenating Abhyangam to precise Nadi Pariksha (pulse diagnosis)—is performed with utmost precision using proprietary herbal formulations. We hold a strong reputation for effectively managing chronic joint pain, arthritis, respiratory issues, and modern lifestyle disorders. At Kerala Ayurveda Wellness Clinic, you don't just receive symptomatic relief; you embark on a comprehensive, tailor-made journey of profound healing and rejuvenation.
+                    Our expert team of Vaidyas and certified therapists from Kerala ensure that every treatment—from rejuvenating Abhyangam to precise Nadi Pariksha (pulse diagnosis)—is performed with utmost precision using proprietary herbal formulations. We hold a strong reputation for effectively managing chronic joint pain, arthritis, respiratory issues, and modern lifestyle disorders. At Kerala Ayurveda Wellness, you don't just receive symptomatic relief; you embark on a comprehensive, tailor-made journey of profound healing and rejuvenation.
                   </p>
 
                   
@@ -337,8 +337,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp" 
-                      alt="Kerala Ayurveda Wellness Clinic main view"
+                      src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp" 
+                      alt="Kerala Ayurveda Wellness main view"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +350,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 2.webp" 
-                        alt="Kerala Ayurveda Wellness Clinic therapy room"
+                        src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 2.webp" 
+                        alt="Kerala Ayurveda Wellness therapy room"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -370,7 +370,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Kerala Ayurveda Wellness Clinic today.
+                My Vaidyam to connect with Kerala Ayurveda Wellness today.
               </h3>
             </div>
           </div>
@@ -382,7 +382,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Kerala Ayurveda Wellness Clinic
+              Top Ayurveda Programs in <br className="hidden lg:block" /> Kerala Ayurveda Wellness
 </h2>
           </div>
           
@@ -414,7 +414,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Kerala Ayurveda Wellness Clinic
+                Why Choose <br className="hidden lg:block" /> Kerala Ayurveda Wellness
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
                 Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
@@ -447,7 +447,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Kerala Ayurveda Wellness Clinic
+              Your Healing Journey at <br className="hidden lg:block" /> Kerala Ayurveda Wellness
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
@@ -484,8 +484,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
-                  alt="Kerala Ayurveda Wellness Clinic view"
+                  src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
+                  alt="Kerala Ayurveda Wellness view"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -528,8 +528,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
-                  alt="Kerala Ayurveda Wellness Clinic view"
+                  src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
+                  alt="Kerala Ayurveda Wellness view"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -672,7 +672,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Kerala Ayurveda Wellness Clinic<br />
+                      Kerala Ayurveda Wellness<br />
                       R2, Outer Ring Road, Pocket 40/203, East of Kailash, Kalkaji<br />
                       New Delhi, Delhi, India
                     </p>
@@ -729,8 +729,8 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
-            alt="Kerala Ayurveda Wellness Clinic"
+            src="/TOP centers/delhi/Kerala Ayurveda Wellness Clinic – East of Kailash/image 1.webp"
+            alt="Kerala Ayurveda Wellness"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -740,7 +740,7 @@ export default function KeralaAyurvedaWellnessClinicEastofKailash() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Kerala Ayurveda Wellness Clinic.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Kerala Ayurveda Wellness.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button

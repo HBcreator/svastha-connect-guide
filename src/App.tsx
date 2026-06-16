@@ -11,6 +11,30 @@ import Treatments from "./pages/Treatments";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import CenterDetail from "./pages/CenterDetail";
+import BharatiAyurvedHospital from "./pages/centers/BharatiAyurvedHospital";
+import SukhayuAyurveda from "./pages/centers/SukhayuAyurveda";
+import SwarayuAyurveda from "./pages/centers/SwarayuAyurveda";
+import AyushaktiAyurved from "./pages/centers/AyushaktiAyurved";
+import KarmaAyurveda from "./pages/centers/KarmaAyurveda";
+import KarmaAyurvedaHospital from "./pages/centers/KarmaAyurvedaHospital";
+import SRIAASInstitute from "./pages/centers/SRIAASInstitute";
+import ThapovanAyurveda from "./pages/centers/ThapovanAyurveda";
+import SomaiyaAyurvihar from "./pages/centers/SomaiyaAyurvihar";
+import ProfKRKohliAyurveda from "./pages/centers/ProfKRKohliAyurveda";
+import SharayuAyurveda from "./pages/centers/SharayuAyurveda";
+import AushadhgyanAyurveda from "./pages/centers/AushadhgyanAyurveda";
+import AayushreeAyurvedic from "./pages/centers/AayushreeAyurvedic";
+import HerbalHillsAyurveda from "./pages/centers/HerbalHillsAyurveda";
+import PravaayuAyurveda from "./pages/centers/PravaayuAyurveda";
+import AradhanaAyurveda from "./pages/centers/AradhanaAyurveda";
+import DivyamrutAyurcare from "./pages/centers/DivyamrutAyurcare";
+import KeralaAyurvedaClinic from "./pages/centers/KeralaAyurvedaClinic";
+import AyushAyurvedPanchakarmaCenter from "./pages/centers/AyushAyurvedPanchakarmaCenter";
+import ShreeAyurvedHospital from "./pages/centers/ShreeAyurvedHospital";
+import AatreyaAyurvedClinic from "./pages/centers/AatreyaAyurvedClinic";
+import AshtangAyurvedaHospital from "./pages/centers/AshtangAyurvedaHospital";
+import AyushmanBhavaAyurvedaClinic from "./pages/centers/AyushmanBhavaAyurvedaClinic";
+import ShreeVishwavallabhAyurvedicCenter from "./pages/centers/ShreeVishwavallabhAyurvedicCenter";
 import SOUKYACenter from "./pages/centers/SOUKYACenter";
 import Somatheeram from "./pages/centers/Somatheeram";
 import Veda5Center from "./pages/centers/Veda5Center";
@@ -248,6 +272,27 @@ const App = () => (
           <Route path="/centers/kerala/agni-ayurvedic-village" element={<AgniAyurvedicVillage />} />
           <Route path="/centers/agni-ayurvedic-village-resort-panvel-mumbai-india" element={<Navigate to="/centers/kerala/agni-ayurvedic-village" replace />} />
           <Route path="/centers/fazlani-natures-nest-wellness-center-mumbai-india" element={<FazlaniNaturesNest />} />
+          <Route path="/centers/bharati-ayurved-hospital-pune-india" element={<BharatiAyurvedHospital />} />
+          <Route path="/centers/sukhayu-ayurveda-panchakarma-center-nashik-india" element={<SukhayuAyurveda />} />
+          <Route path="/centers/swarayu-ayurveda-clinic-panchakarma-center-mumbai-india" element={<SwarayuAyurveda />} />
+          <Route path="/centers/ayushakti-ayurved-health-center-mumbai-india" element={<AyushaktiAyurved />} />
+          <Route path="/centers/karma-ayurveda-clinic-mumbai-india" element={<KarmaAyurveda />} />
+          <Route path="/centers/karma-ayurveda-hospital-new-delhi-india" element={<KarmaAyurvedaHospital />} />
+          <Route path="/centers/sriaas-sr-institute-of-advanced-ayurvedic-sciences-hospital-mumbai-india" element={<SRIAASInstitute />} />
+          <Route path="/centers/thapovan-ayurveda-hospital-mumbai-india" element={<ThapovanAyurveda />} />
+          <Route path="/centers/somaiya-ayurvihar-panchakarma-center-mumbai-india" element={<SomaiyaAyurvihar />} />
+          <Route path="/centers/prof-kr-kohlis-ayurveda-panchakarma-center-mumbai-india" element={<ProfKRKohliAyurveda />} />
+          <Route path="/centers/sharayu-ayurveda-best-ayurvedic-doctor-center-mumbai-india" element={<SharayuAyurveda />} />
+          <Route path="/centers/aushadhgyan-ayurveda-wellness-center-mumbai-india" element={<AushadhgyanAyurveda />} />
+          <Route path="/centers/aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india" element={<AayushreeAyurvedic />} />
+          <Route path="/centers/herbal-hills-ayurvedic-wellness-center-mumbai-india" element={<HerbalHillsAyurveda />} />
+          <Route path="/centers/pravaayu-ayurveda-panchkarma-clinic-mumbai-india" element={<PravaayuAyurveda />} />
+          <Route path="/centers/aradhana-ayurveda-clinic-panchakarma-center-mumbai-india" element={<AradhanaAyurveda />} />
+          <Route path="/centers/divyamrut-ayurcare-hospital-mumbai-india" element={<DivyamrutAyurcare />} />
+          <Route path="/centers/kerala-ayurveda-multi-speciality-clinic-mumbai-india" element={<KeralaAyurvedaClinic />} />
+          <Route path="/centers/ayush-ayurved-panchakarma-center-mumbai-india" element={<AyushAyurvedPanchakarmaCenter />} />
+          <Route path="/centers/shree-ayurved-panchakarma-hospital-pune-india" element={<ShreeAyurvedHospital />} />
+          <Route path="/centers/aatreya-ayurved-panchakarma-clinic-pune-india" element={<AatreyaAyurvedClinic />} />
           <Route path="/centers/atmantan-wellness-resort-pune-india" element={<AtmantanWellnessResort />} />
           <Route path="/centers/viveda-wellness-village-mumbai-india" element={<VivedaWellnessVillage />} />
           <Route path="/centers/dharana-at-shillim-wellness-retreat-pune-india" element={<DharanaAtShillim />} />
@@ -314,7 +359,7 @@ const App = () => (
           <Route path="/centers/aprasu-ayurvedic-hospital-north-delhi-india" element={<AprasuAyurvedicHospital />}/>
           <Route path="/centers/skk-ayurveda-and-panchakarma-hospital-new-delhi-india" element={<SKKAyurvedaPanchakarma />}/>
           <Route path="/centers/tarunveda-ayurveda-hospital-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
-          <Route path="/centers/aasha-ayruveda-center-rajouri-garden-west-delhi-india" element={<AashaAyurvedaCenter />}/>
+          <Route path="/centers/aasha-ayurveda-center-new-delhi-india" element={<AashaAyurvedaCenter />}/>
           <Route path="/centers/arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india" element={<AryaVaidyaSala/>}/>
           <Route path="/centers/maharishi-ayurveda-hospital-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
 
@@ -668,26 +713,29 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         
           <Route path="/centers/mirasa-ayurveda-hospital-new-delhi-india" element={<MirasaAyurvedaHospital />} />
-          <Route path="/centers/ayurveda-kendra-hospital-safdarjung-delhi-india" element={<AyurvedaKendraHospital />} />
+          <Route path="/centers/ayurveda-kendra-hospital-delhi-india" element={<AyurvedaKendraHospital />} />
           <Route path="/centers/nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india" element={<NirmalAyurvedPanchkarmClinic />} />
-          <Route path="/centers/ayurnava-kerala-ayurveda-hospital-dwarka-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
+          <Route path="/centers/ayurnava-kerala-ayurveda-hospital-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
           <Route path="/centers/kurias-earth-ayurveda-hospital-green-park-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
           <Route path="/centers/all-india-institute-of-ayurveda-hospital-new-delhi-india" element={<AllIndiaInstituteOfAyurveda />} />
           <Route path="/centers/ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india" element={<ChBrahmPrakashAyurvedCharakSansthan />} />
-          <Route path="/centers/sri-vaidya-ayurveda-panchakarma-hospital-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />
+          <Route path="/centers/sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />
 
         
-          <Route path="/centers/kerala-ayurveda-wellness-clinic-hospital-new-delhi-india" element={<KeralaAyurvedaWellnessClinicEastofKailash />} />
+          <Route path="/centers/kerala-ayurveda-wellness-center-new-delhi-india" element={<KeralaAyurvedaWellnessClinicEastofKailash />} />
         
-          <Route path="/centers/holy-family-hospital-ayurveda-department-hospital-new-delhi-india" element={<HolyFamilyHospitalAyurvedaDepartment />} />
+          <Route path="/centers/holy-family-ayurveda-hospital-new-delhi-india" element={<HolyFamilyHospitalAyurvedaDepartment />} />
         
           <Route path="/centers/a-and-u-tibbia-college-hospital-new-delhi-india" element={<AandUTibbiaCollegeHospitalPanchakarma />} />
         
-          <Route path="/centers/kairali-the-ayurvedic-healing-village-hospital-new-delhi-india" element={<KairaliTheAyurvedicHealingVillageDelhiNCR />} />
+          <Route path="/centers/kairali-the-ayurvedic-healing-village-center-new-delhi-india" element={<KairaliTheAyurvedicHealingVillageDelhiNCR />} />
         
-          <Route path="/centers/sanjivani-ayurvedic-research-institute-center-delhi-india" element={<SanjivaniAyurvedicResearchInstitute />} />
+          <Route path="/centers/sanjivani-ayurveda-center-delhi-ncr-india" element={<SanjivaniAyurvedicResearchInstitute />} />
         
-          <Route path="/centers/sri-sri-tattva-panchakarma-centre-new-delhi-india" element={<SriSriTattvaPanchakarmaCentre />} />
+          <Route path="/centers/sri-sri-tattva-panchkarma-center-new-delhi-india" element={<SriSriTattvaPanchakarmaCentre />} />
+          <Route path="/centers/ashtang-ayurveda-super-multi-speciality-hospital-nashik-india" element={<AshtangAyurvedaHospital />} />
+          <Route path="/centers/ayushman-bhava-ayurveda-keraliya-panchakarma-clinic-nashik-india" element={<AyushmanBhavaAyurvedaClinic />} />
+          <Route path="/centers/shree-vishwavallabh-ayurvedic-panchakarma-garbh-sanskar-center-nashik-india" element={<ShreeVishwavallabhAyurvedicCenter />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

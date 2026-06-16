@@ -354,7 +354,7 @@ export default function SriSriAyurvedaHospital() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
+                          src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
                           alt="Sri Sri Ayurveda Hospital Bengaluru Secondary View"
                           className="w-full h-full object-cover"
                         />
@@ -373,7 +373,7 @@ export default function SriSriAyurvedaHospital() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/Main Image.webp" 
+                      src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/Main Image.webp" 
                       alt="Sri Sri Ayurveda Hospital Bengaluru Main View"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -386,7 +386,7 @@ export default function SriSriAyurvedaHospital() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
+                        src="/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Sri Sri Ayurveda Hospital Bengaluru/second image.webp" 
                         alt="Sri Sri Ayurveda Hospital Bengaluru Secondary View"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />

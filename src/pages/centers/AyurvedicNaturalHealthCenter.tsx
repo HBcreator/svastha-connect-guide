@@ -315,7 +315,7 @@ export default function AyurvedicNaturalHealthCenter() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
+                          src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
                           alt="Ayurvedic Natural Health Center diagnostic setups"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -335,7 +335,7 @@ export default function AyurvedicNaturalHealthCenter() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp" 
+                      src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/main.webp" 
                       alt="Ayurvedic Natural Health Center Calangute Exterior"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -348,7 +348,7 @@ export default function AyurvedicNaturalHealthCenter() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
+                        src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/secondary.webp" 
                         alt="Clinical Therapy Room at Ayurvedic Natural Health Center"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -482,7 +482,7 @@ export default function AyurvedicNaturalHealthCenter() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
+                  src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/main.webp"
                   alt="Ayurvedic Natural Health Center"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -526,7 +526,7 @@ export default function AyurvedicNaturalHealthCenter() {
               </div>
               <div>
                 <img
-                  src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
+                  src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/main.webp"
                   alt="Ayurvedic Natural Health Center"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
@@ -728,7 +728,7 @@ export default function AyurvedicNaturalHealthCenter() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP cneters/goa/Health and Ayurveda (ANHC Goa)/main.webp"
+            src="/TOP centers/goa/Health and Ayurveda (ANHC Goa)/main.webp"
             alt="Ayurvedic Natural Health Center Coconut Palms"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
