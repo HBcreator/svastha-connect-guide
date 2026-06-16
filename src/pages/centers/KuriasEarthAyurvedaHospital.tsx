@@ -326,6 +326,10 @@ export default function KuriasEarthAyurvedaHospital() {
                   <p>
                     With our central facility located in Green Park, New Delhi, we specialize in the comprehensive management of paralysis, diabetes, thyroid conditions, infertility, obesity, and bone & joint disorders. Utilizing our unique 'Monomedi' approach—which employs single-ingredient medicines—Kurias Earth offers unparalleled clinical excellence, Shodhana Karmas, and specialized Panchakarma to restore your physical and mental harmony.
                   </p>
+
+                  <p className="mt-6">
+                    Our serene, eco-friendly environment provides the perfect setting for deep healing. Every treatment protocol is carefully personalized, combining ancient herbal wisdom with modern diagnostic precision to ensure safe and effective recovery for every patient.
+                  </p>
                 </div>
               </div>
 

@@ -716,7 +716,7 @@ const App = () => (
           <Route path="/centers/ayurveda-kendra-hospital-delhi-india" element={<AyurvedaKendraHospital />} />
           <Route path="/centers/nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india" element={<NirmalAyurvedPanchkarmClinic />} />
           <Route path="/centers/ayurnava-kerala-ayurveda-hospital-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
-          <Route path="/centers/kurias-earth-ayurveda-hospital-green-park-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
+          <Route path="/centers/kurias-earth-ayurveda-hospital-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
           <Route path="/centers/all-india-institute-of-ayurveda-hospital-new-delhi-india" element={<AllIndiaInstituteOfAyurveda />} />
           <Route path="/centers/ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india" element={<ChBrahmPrakashAyurvedCharakSansthan />} />
           <Route path="/centers/sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />

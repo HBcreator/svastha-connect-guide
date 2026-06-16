@@ -74,7 +74,7 @@ const SLUG_OVERRIDE_BY_SERIES: Record<number, string> = {
   11: "karma-ayurveda-hospital-new-delhi-india",
   12: "nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india",
   13: "ayurnava-kerala-ayurveda-hospital-new-delhi-india",
-  14: "kurias-earth-ayurveda-hospital-green-park-new-delhi-india",
+  14: "kurias-earth-ayurveda-hospital-new-delhi-india",
   15: "mirasa-ayurveda-hospital-new-delhi-india",
   16: "ayurveda-kendra-hospital-delhi-india",
   17: "all-india-institute-of-ayurveda-hospital-new-delhi-india",
