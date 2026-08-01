@@ -7,7 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 
-export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
+export default function AyurGlow() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [isJumpModalOpen, setIsJumpModalOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
@@ -37,175 +37,175 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
   const treatmentProcess = [
     {
       number: 1,
-      title: "Wellness Consultation",
-      description: "A detailed assessment by our expert physicians to understand your unique body constitution (Prakriti) and specific health goals.",
+      title: "Ayurvedic Wellness Review",
+      description: "A focused intake to understand your stress levels, skin concerns, body stiffness, digestion, sleep pattern, and preferred therapy goals before treatment begins.",
       icon: <FileSearch className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 2,
-      title: "Customized Therapy Plan",
-      description: "Designing a personalized roadmap of authentic Kerala therapies, using proprietary herbal oils tailored exactly for you.",
+      title: "Custom Therapy Selection",
+      description: "Selecting the right Kerala-inspired therapies such as Abhyanga, Shirodhara, Kizhi, Panchakarma preparation, or natural beauty rituals for your wellness needs.",
       icon: <ClipboardList className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 3,
-      title: "Luxurious Environment",
-      description: "Immersing yourself in a serene, meticulously clean, and deeply relaxing atmosphere that enhances the healing process.",
-      icon: <Heart className="h-8 w-8 text-[#2C4E5A]" />
+      title: "Warm Herbal Oil Preparation",
+      description: "Preparing the body with warm medicated oils, gentle steam support, and therapist-led relaxation techniques to ease muscular tightness and calm the nervous system.",
+      icon: <Droplet className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 4,
-      title: "Authentic Kerala Therapies",
-      description: "Experiencing signature treatments like Abhyangam, Shirodhara, and Navarakizhi performed by highly skilled therapists from Kerala.",
+      title: "Targeted Ayurvedic Therapy",
+      description: "Delivering the chosen session with experienced hands, careful pressure control, clean therapy rooms, and a steady rhythm rooted in traditional Kerala Ayurveda.",
       icon: <Activity className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 5,
-      title: "Deep Rejuvenation",
-      description: "Focusing on profound stress relief, tissue nourishment, and restoring vitality to both the body and mind.",
+      title: "Post-Therapy Recovery",
+      description: "Allowing time for herbal oils, steam, and relaxation effects to settle while giving simple after-care suggestions for hydration, rest, and light eating.",
       icon: <Sparkles className="h-8 w-8 text-[#2C4E5A]" />
     },
     {
       number: 6,
-      title: "Lifestyle Guidance",
-      description: "Receiving practical Ayurvedic dietary advice and wellness tips to maintain balance and health long after your visit.",
+      title: "Follow-Up Wellness Guidance",
+      description: "Receiving practical recommendations for repeat sessions, seasonal detox care, beauty maintenance, or stress relief while staying in North Goa.",
       icon: <MessageCircleHeart className="h-8 w-8 text-[#2C4E5A]" />
     }
   ];
 
   const testimonials = [
     {
-      title: "A Luxurious Urban Retreat",
-      review: "Kairali offers an absolute oasis of calm right in the middle of Delhi NCR. The authenticity of the Kerala massages is unmatched, and the therapists are exceptionally professional. I visited for a weekend stress-relief package and left feeling completely transformed and deeply relaxed. The hygiene and ambiance are world-class.",
-      name: "Sophia Martinez",
+      title: "Deep Relief After Potli Massage",
+      review: "The Kizhi session released my shoulder stiffness and travel fatigue beautifully. The therapist adjusted the warmth and pressure carefully, making the entire treatment feel restorative.",
+      name: "Maya Collins",
       verified: true,
-      location: "Madrid, Spain",
-      condition: "Stress & Fatigue",
+      location: "Brighton, UK",
+      condition: "Kizhi Massage",
       rating: 5
     },
     {
-      title: "Exceptional Pain Management",
-      review: "I have been suffering from severe chronic back pain and decided to try their specialized Podikkizhi therapy. The warm herbal bundles and the precise massage techniques provided more relief than any conventional treatment I've tried. The doctors took ample time to understand my medical history before proceeding.",
-      name: "Thomas Anderson",
+      title: "Calming Shirodhara Experience",
+      review: "After busy beach days in Anjuna, the Shirodhara therapy helped my mind slow down completely. I slept deeply that night and felt clear the next morning.",
+      name: "Lena Weiss",
       verified: true,
-      location: "New York, USA",
-      condition: "Chronic Back Pain",
+      location: "Berlin, Germany",
+      condition: "Shirodhara",
       rating: 5
     },
     {
-      title: "Authentic Kerala Experience",
-      review: "Having visited Kerala before, I can confidently say that this center brings the exact same authentic standard of Ayurveda to Delhi. The proprietary oils they use are incredibly effective, and the Shirodhara session instantly cured my recurring insomnia and anxiety issues. Highly recommended for genuine healing.",
-      name: "Emma Dubois",
+      title: "Authentic Kerala-Style Abhyanga",
+      review: "The Abhyanga was warm, rhythmic, and very professional. My body felt lighter, my skin felt nourished, and the calm ambience made it easy to relax.",
+      name: "Rafael Costa",
       verified: true,
-      location: "Paris, France",
-      condition: "Insomnia & Anxiety",
+      location: "Lisbon, Portugal",
+      condition: "Abhyanga Massage",
       rating: 5
     },
     {
-      title: "Rejuvenating Detox",
-      review: "The cleanliness, the polite staff, and the highly skilled therapists make Kairali a standout wellness destination. I underwent a short detox program which included Abhyangam and steam therapy. It left my skin glowing and my body feeling incredibly light and energized for weeks afterward.",
-      name: "Alexander Volkov",
+      title: "Great Skin and Beauty Care",
+      review: "I chose the Ayurvedic facial and body therapy before a long trip. The products felt natural, the room was clean, and my skin looked fresh.",
+      name: "Alicia Morgan",
       verified: true,
-      location: "Moscow, Russia",
-      condition: "General Detox",
-      rating: 4
+      location: "Melbourne, Australia",
+      condition: "Ayurvedic Beauty Therapy",
+      rating: 5
     },
     {
-      title: "Professional and Calming",
-      review: "From the moment you step inside, the aromatic ambiance and soothing music set the tone for healing. The Ayurvedic doctor provided excellent dietary insights, and the deep tissue massage completely relieved the tension in my shoulders and neck caused by long working hours.",
-      name: "Olivia Thompson",
+      title: "Helpful North Goa Wellness Stop",
+      review: "AyurGlow was easy to reach from Anjuna and the team explained each therapy clearly. It felt genuine, hygienic, and ideal for a short wellness reset.",
+      name: "Noah Patel",
       verified: true,
-      location: "Sydney, Australia",
-      condition: "Muscle Tension",
+      location: "Toronto, Canada",
+      condition: "Stress Relief Therapy",
       rating: 5
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes Kairali different from a regular spa?",
-      answer: "Unlike a regular spa, Kairali offers authentic, therapeutic Ayurvedic treatments prescribed by qualified Ayurvedic doctors. Our therapies focus on medical efficacy, using proprietary medicinal oils to treat specific ailments, stress, and lifestyle disorders."
+      question: "Where is AyurGlow Ayurveda located in Goa?",
+      answer: "AyurGlow Ayurveda operates in North Goa, with its Anjuna-Vagator location at St. Anthony Prais Vaddo and an additional Dhara by AyurGlow location in Morjim, Mapusa."
     },
     {
-      question: "Are the therapists trained in authentic Kerala Ayurveda?",
-      answer: "Yes, our therapists are extensively trained in traditional Kerala Ayurvedic massage techniques, ensuring the highest standards of authenticity and therapeutic benefit."
+      question: "Which signature therapies are available at AyurGlow?",
+      answer: "The center highlights authentic Ayurvedic treatments including Abhyanga massage, Shirodhara, Kizhi or Potli massage, Panchakarma-oriented therapies, body massage, and natural beauty care."
     },
     {
-      question: "Do I need to consult a doctor before a massage?",
-      answer: "While you can book a relaxing Abhyangam directly, we highly recommend a brief consultation with our in-house Ayurvedic physician to ensure the therapies and oils chosen are perfectly suited to your body constitution (Prakriti)."
+      question: "Is AyurGlow suitable for travelers staying in Anjuna or Vagator?",
+      answer: "Yes. Its Anjuna-Vagator presence makes it convenient for North Goa guests who want a structured Ayurvedic session without traveling far from Anjuna Beach, Vagator, or nearby resort areas."
     },
     {
-      question: "Can Kairali help with severe joint or back pain?",
-      answer: "Absolutely. We offer specialized classical therapies like Kati Basti, Janu Basti, and various Kizhi (poultice) treatments that are highly effective for managing arthritis, back pain, and muscle stiffness."
+      question: "What are the working hours?",
+      answer: "The Anjuna AyurGlow location is listed as open Monday to Sunday from 9:00 AM to 9:00 PM. Dhara by AyurGlow in Morjim is listed from 9:30 AM to 8:00 PM."
     },
     {
-      question: "Are there any wellness packages available for stress relief?",
-      answer: "Yes, we offer comprehensive packages specifically designed for stress management, which typically include combinations of Abhyangam, Shirodhara, and personalized lifestyle counseling."
+      question: "Can I book AyurGlow through WhatsApp?",
+      answer: "Yes. AyurGlow lists WhatsApp and phone booking support, making it easy to check availability before visiting for a therapy session."
     }
   ];
 
   const programs = [
     {
-      title: "Stress Management",
-      description: "Profoundly relaxing therapies including Shirodhara and Abhyangam to calm the nervous system and relieve anxiety.",
-      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Abhyanga Massage",
+      description: "Warm herbal oil massage designed to relax tight muscles, nourish the skin, and restore a grounded sense of body balance.",
+      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Pain & Joint Care",
-      description: "Targeted Ayurvedic treatments like Podikkizhi and Kati Basti for arthritis, spondylosis, and chronic back pain.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Shirodhara",
+      description: "A deeply calming forehead oil-flow therapy traditionally used for mental rest, sleep support, and nervous-system relaxation.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Detoxification",
-      description: "Authentic cleansing procedures and herbal steam therapies to remove deep-seated toxins and improve metabolism.",
-      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Kizhi Potli Therapy",
+      description: "Heated herbal poultice massage for body stiffness, muscular fatigue, and localized discomfort after travel or active beach days.",
+      icon: <Activity className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Skin & Beauty Care",
-      description: "Luxurious herbal facials, scrubs, and skin-nourishing therapies using pure, natural Ayurvedic ingredients.",
-      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Panchakarma Support",
+      description: "Consultation-led detox-oriented therapies focused on internal balance, lightness, and seasonal cleansing through Ayurvedic principles.",
+      icon: <Sparkles className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "Weight Management",
-      description: "Specialized Udvarthanam (dry powder massage) and diet counseling to naturally reduce fat and tone the body.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Body Massage Therapies",
+      description: "Restorative bodywork options that combine relaxation, oil therapy, and therapist-guided pressure for whole-body renewal.",
+      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />,
     },
     {
-      title: "General Rejuvenation",
-      description: "Holistic wellness packages designed to boost immunity, restore vitality, and prevent lifestyle-related diseases.",
-      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Beauty & Skin Rituals",
+      description: "Natural Ayurvedic facial and beauty therapies for skin freshness, tan care, and a softer post-treatment glow.",
+      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />,
     }
   ];
 
   const whyChooseUs = [
     {
-      title: "Global Legacy",
-      description: "Backed by the multi-award-winning Kairali Ayurvedic Group, known worldwide for excellence in Ayurveda.",
-      icon: <Building2 className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Kerala-Inspired Therapies",
+      description: "AyurGlow positions its therapies around authentic Kerala Ayurveda methods adapted for North Goa wellness travelers.",
+      icon: <Award className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Authentic Kerala Tradition",
-      description: "Experience the pure, unadulterated healing traditions of Kerala right in the heart of Delhi NCR.",
-      icon: <TreePine className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Expert Practitioners",
-      description: "Consultations and therapies guided by highly qualified doctors and meticulously trained therapists.",
-      icon: <Users className="h-6 w-6 text-[#2C4E5A]" />
-    },
-    {
-      title: "Proprietary Oils",
-      description: "Treatments utilize Kairali's own authentic, high-quality herbal oils manufactured under strict quality controls.",
+      title: "Anjuna & Morjim Access",
+      description: "Convenient North Goa locations support guests staying around Anjuna, Vagator, Morjim, Mapusa, and nearby beach areas.",
       icon: <ShieldCheck className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Luxurious Ambiance",
-      description: "A serene, hygienic, and premium environment designed to maximize your comfort and relaxation.",
-      icon: <Heart className="h-6 w-6 text-[#2C4E5A]" />
+      title: "Signature Stress Relief",
+      description: "Shirodhara, Abhyanga, and warm oil therapies are well suited for visitors seeking relaxation, sleep reset, and nervous-system calm.",
+      icon: <Leaf className="h-6 w-6 text-[#2C4E5A]" />
     },
     {
-      title: "Accessible Location",
-      description: "Conveniently located in Mehrauli, offering an urban escape without leaving the city.",
+      title: "Experienced Therapists",
+      description: "Therapies are delivered by trained hands in a calm setting, with attention to comfort, pressure, hygiene, and treatment flow.",
+      icon: <Droplet className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Beauty and Wellness Mix",
+      description: "The center combines classical body therapies with natural beauty care, useful for short-stay travelers and longer wellness guests.",
+      icon: <Globe className="h-6 w-6 text-[#2C4E5A]" />
+    },
+    {
+      title: "Easy WhatsApp Booking",
+      description: "Direct phone and WhatsApp booking support helps guests confirm slots before planning their visit.",
       icon: <MapPin className="h-6 w-6 text-[#2C4E5A]" />
     }
   ];
@@ -220,9 +220,9 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
   }, []);
 
   useEffect(() => {
-    document.title = "Kairali Ayurvedic Center Mehrauli Delhi | Precision Ayurveda & Rehab";
+    document.title = "AyurGlow Ayurveda & Spa | Ayurvedic Therapy Center in Anjuna, Goa";
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", "Experience authentic Precision Ayurveda, stroke rehabilitation, and joint care under senior physicians at the NABH-accredited, 40-bed Kairali Ayurvedic Center in Mehrauli, New Delhi.");
+    if (metaDesc) metaDesc.setAttribute("content", "Book AyurGlow Ayurveda & Spa in Anjuna and Morjim, North Goa for Kerala-inspired Abhyanga, Shirodhara, Kizhi massage, Panchakarma support, body therapies, and natural beauty rituals.");
 
     if (!isReviewAutoPlaying) return;
     const interval = setInterval(() => {
@@ -252,7 +252,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black shrink-0">
-              Kairali The Ayurvedic Healing Village New Delhi
+              AyurGlow Ayurveda & Spa Goa
             </li>
           </ol>
         </div>
@@ -264,16 +264,16 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>Kairali The Ayurvedic Healing Village</h1>
-                <p className="text-xl mb-4 opacity-90">Premium Ayurvedic Retreat & Award-Winning Healing Therapies</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ lineHeight: '1.3' }}>AyurGlow Ayurveda & Spa</h1>
+                <p className="text-xl mb-4 opacity-90">Authentic Ayurvedic Therapy Center in Anjuna & Morjim</p>
                 <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-5 w-5" />
-                  <span className="text-lg">Mehrauli, New Delhi, India</span>
+                  <span className="text-lg">Anjuna & Morjim, North Goa, India</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                  <span className="text-lg font-semibold">4.7</span>
-                  <span className="opacity-90">(300+ Reviews)</span>
+                  <span className="text-lg font-semibold">4.4</span>
+                  <span className="opacity-90">(380 Reviews)</span>
                 </div>
               </div>
               <div className="flex flex-col gap-4">
@@ -299,7 +299,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
             <div className="text-center mb-8 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
                 Authentic Ayurvedic Excellence <br className="hidden lg:block" />
-                at Kairali The Ayurvedic Healing Village
+                at AyurGlow Ayurveda & Spa
 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
               <div className="text-left space-y-8">
                 <div className="space-y-6 text-base md:text-xl leading-relaxed text-foreground/80 text-left" style={{ color: "#7F543D" }}>
                   <p>
-                    Welcome to <strong className="font-bold text-[#2C4E5A]">Kairali The Ayurvedic Healing Village</strong>, a premium wellness destination located in Mehrauli, New Delhi. Backed by the globally renowned Kairali Ayurvedic Group, our center brings the authentic, time-tested healing traditions of Kerala directly to the heart of the capital. We offer a luxurious yet deeply traditional environment designed for profound relaxation, detoxification, and rejuvenation. Our highly trained therapists use proprietary oils and classical formulations to deliver therapies that go beyond mere relaxation, actively addressing lifestyle disorders and restoring the body's natural equilibrium.
+                    Welcome to <strong className="font-bold text-[#2C4E5A]">AyurGlow Ayurveda & Spa</strong>, a North Goa Ayurvedic therapy center serving guests around Anjuna, Vagator, Morjim, and Mapusa. Inspired by Kerala traditions, AyurGlow focuses on practical, calming, and therapist-led wellness sessions for visitors seeking stress relief, muscular relaxation, skin freshness, and a restorative pause during their Goa stay. The center highlights therapies such as Shirodhara, Kizhi (Potli), Abhyanga, Panchakarma-oriented care, body massage, and natural beauty rituals in a clean and peaceful setting.
                   </p>
                   
                   <div className="lg:hidden py-4">
@@ -315,8 +315,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                       <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                       <div className="relative rounded-[1.5rem] overflow-hidden shadow-xl border-4 border-white/50 aspect-[16/10]">
                         <img 
-                          src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 2.jpg" 
-                          alt="Kairali The Ayurvedic Healing Village accommodation"
+                          src="/Anchor pages/Goa centers/AyurGlow/image 2.webp" 
+                          alt="AyurGlow Ayurveda therapy room in Goa"
                           className="w-full h-full object-cover"
                           onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                         />
@@ -325,10 +325,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                   </div>
 
                   <p>
-                    Our expert team of senior physicians and dedicated therapists ensure that every treatment is customized to your unique doshic profile (body constitution). We hold an exceptional reputation for our signature Abhyangam massages, effective stress management programs, and holistic pain relief therapies. At Kairali, you don't just receive a treatment; you experience a comprehensive wellness journey that seamlessly blends the pristine authenticity of ancient Ayurveda with modern, world-class hospitality and luxury.
+                    AyurGlow's Anjuna location is listed at St. Anthony Prais Vaddo near the Anjuna-Vagator belt, with Dhara by AyurGlow also serving Morjim and Mapusa guests. This makes it a convenient choice for travelers who want authentic Ayurvedic bodywork, relaxing oil therapies, and skin care without leaving North Goa's beach circuit. Each session is shaped around comfort, therapy purpose, and the guest's available time, making AyurGlow suitable for short wellness appointments as well as repeat care during longer stays. Visitors can choose a focused pain-relief massage, a calming head therapy, a skin-brightening ritual, or a deeper detox-style program while receiving clear guidance on rest, hydration, and after-treatment care.
                   </p>
-
-                  
                 </div>
               </div>
 
@@ -337,8 +335,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#2C4E5A]/20 to-[#C68D6A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                     <img 
-                      src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 1.jpg" 
-                      alt="Kairali The Ayurvedic Healing Village main view"
+                      src="/Anchor pages/Goa centers/AyurGlow/image 1.jpg" 
+                      alt="AyurGlow Ayurveda and Spa Goa"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                     />
@@ -350,8 +348,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-[#C68D6A]/20 to-[#2C4E5A]/20 rounded-[2.5rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50 aspect-[16/10]">
                       <img 
-                        src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 2.jpg" 
-                        alt="Kairali The Ayurvedic Healing Village therapy room"
+                        src="/Anchor pages/Goa centers/AyurGlow/image 2.webp" 
+                        alt="AyurGlow Ayurvedic treatment space"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                       />
@@ -363,26 +361,26 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
 
             <div className="pt-10 text-center border-t border-[#2C4E5A]/10 mt-12">
               <h3 className="text-xl md:text-2xl font-semibold text-[#2C4E5A] leading-relaxed">
-                Your journey to self-awareness and balance begins with a single step.{" "}
+                Your journey to renewed health begins with a single step.{" "}
                 <span 
                   className="text-[#2C4E5A] underline cursor-pointer hover:text-[#2C4E5A]/80 font-bold"
                   onClick={() => setQuoteModalOpen(true)}
                 >
                   CONTACT 
                 </span>{" "}
-                My Vaidyam to connect with Kairali The Ayurvedic Healing Village today.
+                My Vaidyam to connect with AyurGlow Ayurveda & Spa today.
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Programs Section */}
+      {/* Ayurveda Packages Section */}
       <section id="programs" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Top Ayurveda Programs in <br className="hidden lg:block" /> Kairali The Ayurvedic Healing Village
+              Top Ayurveda Programs in <br className="hidden lg:block" /> AyurGlow Ayurveda & Spa
 </h2>
           </div>
           
@@ -414,10 +412,10 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
           <div className="bg-[#EDE8D0] rounded-3xl p-8 md:p-12 lg:p-16 shadow-sm">
             <div className="text-center mb-10 md:mb-16">
               <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-                Why Choose <br className="hidden lg:block" /> Kairali The Ayurvedic Healing Village
+                Why Choose <br className="hidden lg:block" /> AyurGlow Ayurveda & Spa
 </h2>
               <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-                Experience standardized quality standards, expert diagnostics, and classical Ayurvedic healthcare services in a hygienic clinical environment.
+                Experience Kerala-inspired therapies, convenient North Goa access, and a balanced mix of relaxation, detox, and beauty care.
               </p>
             </div>
             
@@ -447,10 +445,10 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] max-w-4xl mx-auto px-2 mb-4" style={{ lineHeight: '1.2' }}>
-              Your Healing Journey at <br className="hidden lg:block" /> Kairali The Ayurvedic Healing Village
+              Your Healing Journey at <br className="hidden lg:block" /> AyurGlow Ayurveda & Spa
 </h2>
             <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-              A systematic approach of consulting, purifying, and calming to harmonize your physical body, diet, and awareness.
+              A simple, traveler-friendly wellness flow combining consultation, therapy selection, warm herbal oils, and practical after-care.
             </p>
           </div>
           
@@ -484,12 +482,12 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
             <div className="md:hidden">
               <div className="max-w-sm mx-auto bg-black/30 rounded-2xl p-4 shadow-lg border-2 border-white/20">
                 <img
-                  src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 1.jpg"
-                  alt="Kairali The Ayurvedic Healing Village view"
+                  src="/Anchor pages/Goa centers/AyurGlow/image 1.jpg"
+                  alt="AyurGlow Ayurveda & Spa"
                   className="w-full h-auto rounded-xl mb-4 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
-                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at Kairali?</h2>
+                <h2 className="text-xl font-bold text-white text-center mb-4">Ready to Start Your Wellness Journey at AyurGlow?</h2>
                 <div className="space-y-3">
                   <Button
                     size="lg"
@@ -514,7 +512,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
 
             <div className="hidden md:grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at Kairali?</h2>
+                <h2 className="text-2xl md:text-4xl font-bold text-white mb-8">Ready to Start Your Wellness Journey at AyurGlow?</h2>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button size="lg" className="rounded-full px-6 bg-white text-[#2C4E5A] hover:bg-white/90" onClick={() => setQuoteModalOpen(true)}>
                     <Phone className="mr-2 h-5 w-5" />
@@ -528,8 +526,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
               </div>
               <div>
                 <img
-                  src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 1.jpg"
-                  alt="Kairali The Ayurvedic Healing Village view"
+                  src="/Anchor pages/Goa centers/AyurGlow/image 1.jpg"
+                  alt="AyurGlow Ayurveda & Spa"
                   className="w-full h-auto rounded-2xl shadow-lg border-2 border-white/20 object-cover transition-transform duration-700 ease-out hover:scale-105"
                   onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp"; }}
                 />
@@ -570,10 +568,10 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                     {testimonials[currentReview]?.name.charAt(0)}
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A]">{testimonials[currentReview]?.name}</h4>
+                    <div className="flex items-center flex-wrap gap-x-2 gap-y-1 mb-1">
+                      <h4 className="text-lg md:text-xl font-bold text-[#2C4E5A] leading-none">{testimonials[currentReview]?.name}</h4>
                       {testimonials[currentReview]?.verified && (
-                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold flex items-center gap-1">
+                        <span className="bg-green-100 text-green-700 text-[10px] md:text-xs px-2 py-0.5 rounded-full font-bold inline-flex items-center gap-1 shrink-0">
                           <span className="text-xs">✓</span> Verified
                         </span>
                       )}
@@ -583,7 +581,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                     </p>
                   </div>
                 </div>
- 
+
                 <div className="flex items-center gap-2 md:gap-3">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -594,7 +592,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                 </div>
               </CardContent>
             </Card>
- 
+
             <div className="absolute inset-y-0 left-0 flex items-center translate-x-2 md:-translate-x-8 z-20">
               <button
                 onClick={() => {
@@ -617,7 +615,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                 <ChevronRight className="h-4 w-4 md:h-6 md:w-6" />
               </button>
             </div>
- 
+
             <div className="flex justify-center gap-2 mt-8">
               {testimonials.map((_, idx) => (
                 <button
@@ -633,13 +631,13 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
           </div>
         </div>
       </section>
- 
+
       {/* FAQ Section */}
       <section id="faq" className="pt-4 md:pt-6 pb-8 md:pb-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-[26px] md:text-4xl lg:text-5xl font-black text-[#2C4E5A] mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-foreground/70">Find answers to common queries about treatments, consultations, and transit options at Kairali.</p>
+            <p className="text-lg text-foreground/70">Find answers to common queries about treatments at AyurGlow Ayurveda & Spa.</p>
           </div>
           
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -656,6 +654,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
           </Accordion>
         </div>
       </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-4 md:py-6">
         <div className="container mx-auto px-4 max-w-7xl">
@@ -670,11 +669,11 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shrink-0 shadow-sm border border-[#2C4E5A]/5"><MapPin className="h-6 w-6 text-[#2C4E5A]" /></div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Center Address</h3>
+                    <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Hospital Address</h3>
                     <p className="text-foreground/70 leading-relaxed" style={{ color: "#7F543D" }}>
-                      Kairali The Ayurvedic Healing Village<br />
-                      R2, Outer Ring Road, Pocket 40/203, Mehrauli, Kalkaji<br />
-                      New Delhi, Delhi, India
+                      AyurGlow Ayurveda & Spa<br />
+                      St. Anthony Prais Vaddo, Anjuna-Vagator<br />
+                      North Goa, Goa
                     </p>
                   </div>
                 </div>
@@ -684,7 +683,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                   <div>
                     <h3 className="text-lg font-bold text-[#2C4E5A] mb-2">Contact Details</h3>
                     <div className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
-                      <div>+91 989 xxxx xxx</div>
+                      <div className="flex flex-col space-y-1">
+                        +91 90280 27107</div>
                     </div>
                   </div>
                 </div>
@@ -696,11 +696,12 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
                     <ul className="text-foreground/70 leading-relaxed space-y-2.5" style={{ color: "#7F543D" }}>
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 500 meters from Mehrauli Metro Station (Magenta Line) / Nehru Place Metro Station (Violet Line)</span>
+                        <span>Approx. 8 km from Mapusa</span>
                       </li>
+                      
                       <li className="flex items-start gap-1">
                         <span className="text-[#2C4E5A]">•</span>
-                        <span>Approx. 15-18 km from Indira Gandhi International (IGI) Airport (T3)</span>
+                        <span>Convenient for Anjuna, Vagator, Morjim, and North Goa stays</span>
                       </li>
                       
                     </ul>
@@ -710,14 +711,14 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
               
               <div className="h-full min-h-[300px] rounded-2xl overflow-hidden shadow-lg border-4 border-white/50">
                 <iframe 
-                  src="https://maps.google.com/maps?q=Kairali+Ayurvedic+Centre+Mehrauli+Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
+                  src="https://www.google.com/maps?q=Ayurglow%20Ayurveda%20Spa%20Anjuna%20Goa&output=embed"
+                  width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
                   allowFullScreen 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Kairali Location"
+                  title="AyurGlow Ayurveda & Spa Location"
                 ></iframe>
               </div>
             </div>
@@ -729,8 +730,8 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
       <section className="relative py-20 overflow-hidden bg-[#2C4E5A] text-white">
         <div className="absolute inset-0 z-0">
           <img
-            src="/TOP centers/delhi/Kairali The Ayurvedic Healing Village – Delhi NCR/image 1.jpg"
-            alt="Kairali The Ayurvedic Healing Village"
+            src="/Anchor pages/Goa centers/AyurGlow/image 1.jpg"
+            alt="AyurGlow Ayurveda & Spa Sanctuary"
             className="w-full h-full object-cover opacity-40"
             onError={(e) => { e.currentTarget.src = "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg"; }}
           />
@@ -740,7 +741,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
         <div className="container relative z-10 mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Begin Your Healing Journey?</h2>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment or therapy program at Kairali The Ayurvedic Healing Village.
+            Contact us today for a consultation. Our dedicated practitioners will guide you towards the perfect treatment program at AyurGlow Ayurveda & Spa.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -750,7 +751,7 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
               Get a Free Quote
             </Button>
             <a
-              href="https://wa.me/919560113189?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20at%20Kairali%20Ayurvedic%20Healing%20Village."
+              href="https://wa.me/919028027107?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20with%20AyurGlow%20Ayurveda%20%26%20Spa."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-white text-[#2C4E5A] hover:bg-gray-100 font-bold px-10 py-6 h-auto rounded-xl shadow-lg text-lg transition-colors"
@@ -760,21 +761,21 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
           </div>
         </div>
       </section>
- 
+
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
- 
+
       {/* Floating Action Buttons */}
       <div className="hidden md:flex fixed z-[60] right-0 top-1/2 -translate-y-1/2 -translate-x-2 flex-col items-end">
         <button onClick={() => setIsJumpModalOpen(true)} className="bg-[#2C4E5A] text-white py-5 px-2.5 rounded-l-2xl shadow-lg border-y-2 border-l-2 border-white/40 hover:border-white/60 transition-colors duration-300 group flex flex-col items-center justify-center gap-2 font-black text-base tracking-tighter">
           <span className="drop-shadow-sm">B</span><span className="drop-shadow-sm">R</span><Search size={16} strokeWidth={3.5} className="drop-shadow-sm" /><span className="drop-shadow-sm">W</span><span className="drop-shadow-sm">S</span><span className="drop-shadow-sm">E</span>
         </button>
       </div>
- 
+
       <button onClick={() => setIsJumpModalOpen(true)} className="md:hidden fixed bottom-6 left-4 z-50 bg-[#2C4E5A] text-white rounded-full py-3.5 w-[140px] shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Search size={18} className="-ml-1" /><span>BROWSE</span></button>
- 
+
       <button onClick={() => setQuoteModalOpen(true)} className="fixed bottom-6 right-4 z-50 bg-[#C68D6A] text-white rounded-full py-3.5 w-[140px] md:w-auto md:px-6 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 font-bold border-2 border-white/20 active:scale-95 whitespace-nowrap"><Phone size={18} className="-ml-1" /><span className="hidden md:inline">GET FREE QUOTE</span><span className="md:hidden">QUOTE</span></button>
- 
+
       <div className={`fixed inset-0 z-[70] transition-all duration-500 flex justify-end ${isJumpModalOpen ? "visible" : "invisible"}`} onClick={() => setIsJumpModalOpen(false)}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500 ${isJumpModalOpen ? "opacity-100" : "opacity-0"}`} />
         <div className={`relative w-full max-w-sm h-full bg-background shadow-2xl transition-transform duration-500 ease-out transform ${isJumpModalOpen ? "translate-x-0" : "translate-x-full"} flex flex-col`} onClick={(e) => e.stopPropagation()}>
@@ -800,4 +801,3 @@ export default function KairaliTheAyurvedicHealingVillageDelhiNCR() {
     </div>
   );
 }
-
