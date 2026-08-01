@@ -186,6 +186,19 @@ import AyurvedicNaturalHealthCenter from "./pages/centers/AyurvedicNaturalHealth
 import SreeShantiWellness from "./pages/centers/SreeShantiWellness.tsx";
 import NaturalTouchAyurveda from "./pages/centers/NaturalTouchAyurveda.tsx";
 import KAREHealth from "./pages/centers/KAREHealth.tsx";
+import DharaAyurGlow from "./pages/centers/DharaAyurGlow.tsx";
+import LotusGoa from "./pages/centers/LotusGoa.tsx";
+import AnviAyurved from "./pages/centers/AnviAyurved.tsx";
+import AyushaktiGoaBranch from "./pages/centers/AyushaktiGoaBranch.tsx";
+import YogaGoaAyurvedaRetreats from "./pages/centers/YogaGoaAyurvedaRetreats.tsx";
+import AyurvedaGoa from "./pages/centers/AyurvedaGoa.tsx";
+import SaiAyurvedaClinic from "./pages/centers/SaiAyurvedaClinic.tsx";
+import AyurvedaYogaVillage from "./pages/centers/AyurvedaYogaVillage.tsx";
+import AbhayaAyurved from "./pages/centers/AbhayaAyurved.tsx";
+import AyurcareGoa from "./pages/centers/AyurcareGoa.tsx";
+import GoaSianSpa from "./pages/centers/GoaSianSpa.tsx";
+import TattvamOnTheBeach from "./pages/centers/TattvamOnTheBeach.tsx";
+import AyurGlow from "./pages/centers/AyurGlow.tsx";
 import SRHUAyurvedaCenter from "./pages/centers/SRHUAyurvedaCenter.tsx";
 import AyuskamaAyurvedaClinicPanchakarmaCenter from "./pages/centers/AyuskamaAyurvedaClinicPanchakarmaCenter.tsx";
 import BholeBabaAyurvedicHospitalResearchCenter from "./pages/centers/BholeBabaAyurvedicHospitalResearchCenter.tsx";
@@ -337,6 +350,19 @@ const App = () => (
           <Route path="/centers/soukya-international-holistic-health-center-bangalore-india" element={<SOUKYACenter />} />
 
           <Route path="/centers/kare-health-hospital-goa-india" element={<KAREHealth />}/>
+          <Route path="/centers/dhara-ayurglow-center-goa-india" element={<DharaAyurGlow />}/>
+          <Route path="/centers/lotus-goa-resort-goa-india" element={<LotusGoa />}/>
+          <Route path="/centers/anvi-ayurved-center-goa-india" element={<AnviAyurved />}/>
+          <Route path="/centers/ayushakti-goa-branch-center-goa-india" element={<AyushaktiGoaBranch />}/>
+          <Route path="/centers/yoga-goa-ayurveda-retreats-resort-goa-india" element={<YogaGoaAyurvedaRetreats />}/>
+          <Route path="/centers/ayurveda-goa-center-goa-india" element={<AyurvedaGoa />}/>
+          <Route path="/centers/sai-ayurveda-clinic-center-goa-india" element={<SaiAyurvedaClinic />}/>
+          <Route path="/centers/ayurveda-yoga-village-resort-goa-india" element={<AyurvedaYogaVillage />}/>
+          <Route path="/centers/abhaya-ayurved-center-goa-india" element={<AbhayaAyurved />}/>
+          <Route path="/centers/ayurcare-goa-center-goa-india" element={<AyurcareGoa />}/>
+          <Route path="/centers/goa-sian-spa-center-goa-india" element={<GoaSianSpa />}/>
+          <Route path="/centers/ayurglow-ayurveda-center-goa-india" element={<AyurGlow />}/>
+          <Route path="/centers/tattvam-on-the-beach-resort-goa-india" element={<TattvamOnTheBeach />}/>
           <Route path="/centers/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
           <Route path="/centers/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
           <Route path="/centers/ayurvedic-natural-health-center-hospital-goa-india" element={<AyurvedicNaturalHealthCenter />}/>
