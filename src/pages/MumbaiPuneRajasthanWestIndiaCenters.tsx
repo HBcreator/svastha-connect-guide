@@ -185,7 +185,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "3200",
       image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-      slug: "atmantan-wellness-resort-pune-india",
+      slug: "atmantan-wellness-resort-center-pune-india",
     },
     {
       series: -2,
@@ -196,7 +196,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "1100",
       image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-      slug: "viveda-wellness-village-mumbai-india",
+      slug: "viveda-wellness-village-resort-mumbai-india",
     },
     {
       series: -3,
@@ -207,7 +207,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.8,
       reviews: "3900",
       image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-      slug: "dharana-at-shillim-wellness-retreat-pune-india",
+      slug: "dharana-at-shillim-wellness-retreat-center-pune-india",
     },
     {
       series: -4,
@@ -218,7 +218,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
       rating: 4.7,
       reviews: "1200",
       image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-      slug: "toyam-by-orchid-hotels-wellness-resort-pune-india",
+      slug: "toyam-by-orchid-hotels-wellness-resort-center-pune-india",
     },
     {
       series: -5,
@@ -252,7 +252,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     };
   }, []);
 
-  const { pageOneCenters, pageTwoCenters } = useMemo(() => {
+  const { paginatedCenters, totalPages } = useMemo(() => {
     const centerBySeries = new Map(centers.map((center) => [center.series, center]));
     
     // Explicitly exclude these from the dynamic list as they are now in staticPremiumCenters
@@ -260,19 +260,27 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
     
     const baseSeries = [19, 25, 1, 3, 6, 7, 11, 12];
     
-    const pageOne = [
+    const baseList = [
       ...staticPremiumCenters,
       ...baseSeries.map((series) => centerBySeries.get(series)).filter(Boolean),
     ] as MumbaiCenter[];
     
-    const pageOneSeriesIds = new Set(pageOne.map(c => c.series));
-    const pageTwo = centers.filter((center) => !pageOneSeriesIds.has(center.series) && !excludedSeries.includes(center.series));
+    const baseSeriesIds = new Set(baseList.map(c => c.series));
+    const remainingCenters = centers.filter(
+      (center) => !baseSeriesIds.has(center.series) && !excludedSeries.includes(center.series)
+    );
     
-    return { pageOneCenters: pageOne, pageTwoCenters: pageTwo };
-  }, [centers]);
-
-  const totalPages = pageTwoCenters.length > 0 ? 2 : 1;
-  const paginatedCenters = currentPage === 1 ? pageOneCenters : pageTwoCenters;
+    // Extra safety against name duplicates
+    const manualNames = new Set(baseList.map(c => c.name.toLowerCase().trim()));
+    const uniqueRemaining = remainingCenters.filter(c => !manualNames.has(c.name.toLowerCase().trim()));
+    
+    const allOrderedCenters = [...baseList, ...uniqueRemaining];
+    
+    const pages = Math.ceil(allOrderedCenters.length / 12) || 1;
+    const paginated = allOrderedCenters.slice((currentPage - 1) * 12, currentPage * 12);
+    
+    return { paginatedCenters: paginated, totalPages: pages };
+  }, [centers, currentPage]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -364,7 +372,7 @@ const MumbaiPuneRajasthanWestIndiaCenters = () => {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>

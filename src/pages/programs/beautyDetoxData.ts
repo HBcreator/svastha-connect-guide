@@ -244,7 +244,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Somatheeram Ayurvedic Health Resort",
@@ -254,7 +254,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram"
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -264,7 +264,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -274,7 +274,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -284,7 +284,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -294,7 +294,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -304,7 +304,7 @@ export const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Nalanda Retreat Goa",
@@ -314,7 +314,7 @@ export const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 500,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa"
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa"
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -324,7 +324,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace"
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace"
   },
   {
     name: "Sitaram Beach Retreat",
@@ -334,7 +334,7 @@ export const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "Namaste Dwaar – Countryside Wellness Retreat",
@@ -344,7 +344,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar"
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -354,7 +354,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
 ];
 

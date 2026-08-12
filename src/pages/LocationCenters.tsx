@@ -8,7 +8,7 @@ import { Link, useParams } from "react-router-dom";
 
 const goaCenters = [
   {
-    id: "veda5",
+    id: "veda5-ayurveda-yoga-wellness-retreat-center-rishikesh-india",
     name: "Veda5 Ayurveda & Yoga Retreat",
     city: "Goa",
     region: "North Goa",
@@ -67,7 +67,7 @@ const LocationCenters = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <Link to={`/centers/${center.city.toLowerCase()}/${center.id}`} className="flex-1">
+                  <Link to={`/top-ayurvedic-centers-in-india/${center.city.toLowerCase()}/${center.id}`} className="flex-1">
                     <Button variant="outline" className="w-full font-semibold">View Details</Button>
                   </Link>
                   <Button onClick={() => setQuoteModalOpen(true)} className="flex-1 font-semibold">Get Quote</Button>

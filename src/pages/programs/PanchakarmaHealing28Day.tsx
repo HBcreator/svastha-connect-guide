@@ -440,7 +440,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -450,7 +450,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Somatheeram Ayurvedic Health Resort",
@@ -460,7 +460,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram"
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram"
   },
   {
     name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
@@ -470,7 +470,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -480,7 +480,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -490,7 +490,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Ayurmana",
@@ -500,7 +500,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "Kairali – The Ayurvedic Healing Village",
@@ -510,7 +510,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -520,7 +520,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Sitaram Beach Retreat",
@@ -530,7 +530,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "Indus Valley Ayurvedic Centre",
@@ -540,7 +540,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -550,7 +550,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
 ];
 

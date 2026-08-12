@@ -214,7 +214,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort"
   },
   {
     name: "Sandhya Hot Spring Health Care",
@@ -224,7 +224,7 @@ export const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/centers/himachal/sandhya-hot-spring-health-care"
+    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care"
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -234,7 +234,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Modi Yoga Retreat",
@@ -244,7 +244,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
-    link: "/centers/rishikesh/modi-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/modi-yoga-retreat"
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -254,7 +254,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma"
   },
   {
     name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -264,7 +264,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -274,7 +274,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram"
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -284,7 +284,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -294,7 +294,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Indus Valley Ayurvedic Centre",
@@ -304,7 +304,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -314,7 +314,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "SWAN Yoga Retreat & Ayurveda",
@@ -324,7 +324,7 @@ export const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/swan-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/swan-yoga-retreat"
   },
 ];
 

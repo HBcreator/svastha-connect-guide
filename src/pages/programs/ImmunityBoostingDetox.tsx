@@ -649,7 +649,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram",
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram",
   },
   {
     name: "Kairali – The Ayurvedic Healing Village",
@@ -658,7 +658,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village",
   },
   {
     name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -667,7 +667,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 150,
     image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-    link: "/centers/kerala/dheemahi-kumarakom",
+    link: "/top-ayurvedic-centers-in-india/kerala/dheemahi-kumarakom",
   },
   {
     name: "Carnoustie Ayurveda & Wellness Resort",
@@ -676,7 +676,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    link: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort",
   },
   {
     name: "Amanbagh Heritage Wellness Retreat",
@@ -685,7 +685,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat",
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda",
@@ -694,7 +694,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure",
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure",
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -703,7 +703,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 0,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels",
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels",
   },
   {
     name: "Nagarjuna Ayurveda Centre",
@@ -712,7 +712,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-    link: "/centers/kerala/nagarjuna-ayurveda-centre",
+    link: "/top-ayurvedic-centers-in-india/kerala/nagarjuna-ayurveda-centre",
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -721,7 +721,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace",
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace",
   },
   {
     name: "Namaste Dwaar – Countryside Retreat",
@@ -730,7 +730,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar",
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar",
   },
   {
     name: "Viveda Wellness Village",
@@ -739,7 +739,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 0,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village",
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village",
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -748,7 +748,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village",
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village",
   },
 ];
 

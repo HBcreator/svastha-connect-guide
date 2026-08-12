@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
     name: "The Nattika Beach Resort",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort"
   },
   {
     name: "Atmantan Wellness Resort",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Viveda Wellness Village",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village"
   },
   {
     name: "Ananda In The Himalayas",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
     name: "Ayur Bethaniya Ayurveda Hospital",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
-    link: "/centers/kerala/ayur-bethaniya-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayur-bethaniya-ayurveda-hospital"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
   {
     name: "Sandhya Hot Spring Health Care",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/centers/himachal/sandhya-hot-spring-health-care"
+    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care"
   },
   {
     name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-    link: "/centers/goa/soul-vacation"
+    link: "/top-ayurvedic-centers-in-india/goa/soul-vacation"
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -245,7 +245,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma"
   },
 ];
 
@@ -719,7 +719,7 @@ const ArthritisTreatment = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

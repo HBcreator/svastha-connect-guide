@@ -664,7 +664,7 @@ const Veda5Center = () => {
   const getStepTag = (step: number) => {
     switch (step) {
       case 1: return "Day 1";
-      case 2: return "Day 1–2";
+      case 2: return "Day 1ï¿½2";
       case 3: return "Ongoing";
       case 4: return "Daily";
       case 5: return "Throughout Stay";
@@ -867,6 +867,29 @@ const Veda5Center = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/top-ayurvedic-centers-in-india" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              VEDA5 AYURVEDA YOGA WELLNESS RETREAT CENTER RISHIKESH
+            </li>
+          </ol>
+        </div>
+      </nav>
+
 
       <div className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-3 md:px-4 max-w-full">
@@ -1219,7 +1242,7 @@ const Veda5Center = () => {
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{wellnessSection?.heading || "Wellness Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              {wellnessSection?.intro || "Loading programs…"}
+              {wellnessSection?.intro || "Loading programsï¿½"}
             </p>
           </div>
 
@@ -1267,7 +1290,7 @@ const Veda5Center = () => {
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-primary mb-3">{medicalSection?.heading || "Medical Programs"}</h3>
             <p className="text-sm md:text-base mb-8 max-w-4xl mx-auto" style={{ color: '#7F543D' }}>
-              {medicalSection?.intro || "Loading programs…"}
+              {medicalSection?.intro || "Loading programsï¿½"}
             </p>
           </div>
           <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
@@ -1415,7 +1438,7 @@ const Veda5Center = () => {
               {whyChooseSection?.heading || "Why Choose VEDA5 for Your Holistic Health Journey"}
             </h2>
             <p className="text-base md:text-lg mx-auto" style={{ color: "#7F543D" }}>
-              {whyChooseSection?.intro || "Loading…"}
+              {whyChooseSection?.intro || "Loadingï¿½"}
             </p>
           </div>
 
@@ -1817,7 +1840,7 @@ const Veda5Center = () => {
                   </div>
                   <div>
                     <h3 className="text-lg md:text-2xl font-bold text-primary mb-1 md:mb-2">VEDA5 Leadership</h3>
-                    <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>Ayurveda • Yoga • Naturopathy</p>
+                    <p className="text-xs md:text-sm font-semibold" style={{ color: '#7F543D' }}>Ayurveda ï¿½ Yoga ï¿½ Naturopathy</p>
                     <p className="text-xs md:text-sm mt-1 text-primary/70">Guided by experienced wellness experts</p>
                   </div>
                 </div>

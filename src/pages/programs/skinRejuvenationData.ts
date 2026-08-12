@@ -201,7 +201,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-    link: "/centers/goa/mercure-goa-devaaya-resort"
+    link: "/top-ayurvedic-centers-in-india/goa/mercure-goa-devaaya-resort"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -211,7 +211,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -221,7 +221,7 @@ export const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Sitaram Beach Retreat",
@@ -231,7 +231,7 @@ export const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -241,7 +241,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Ayurmana",
@@ -251,7 +251,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "Carnoustie Ayurveda & Wellness Resort",
@@ -261,7 +261,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort"
   },
   {
     name: "Amanbagh Heritage Wellness Retreat",
@@ -271,7 +271,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
     name: "Krishnendu Ayurveda Hospital",
@@ -281,7 +281,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 1500,
     image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
-    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/krishnendu-ayurveda-hospital"
   },
   {
     name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -291,7 +291,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 150,
     image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-    link: "/centers/kerala/dheemahi-kumarakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/dheemahi-kumarakom"
   },
   {
     name: "Dharana At Shillim",
@@ -301,7 +301,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim"
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim"
   },
   {
     name: "Atmantan Wellness Resort",
@@ -311,7 +311,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort"
   },
 ];
 

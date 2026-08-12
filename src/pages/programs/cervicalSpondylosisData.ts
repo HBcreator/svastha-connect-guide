@@ -255,7 +255,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Viveda Wellness Village",
@@ -265,7 +265,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -275,7 +275,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -285,7 +285,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -295,7 +295,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Dharana At Shillim",
@@ -305,7 +305,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim"
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -315,7 +315,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram"
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
   },
   {
     name: "Kairali – The Ayurvedic Healing Village",
@@ -325,7 +325,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village"
   },
   {
     name: "Naad Wellness",
@@ -335,7 +335,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness"
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness"
   },
   {
     name: "Ayurmana",
@@ -345,7 +345,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "Ayushi Ayurvedic Retreat",
@@ -355,7 +355,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-    link: "/centers/kerala/ayushi-ayurvedic-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayushi-ayurvedic-retreat"
   },
   {
     name: "Krishnendu Ayurveda Hospital",
@@ -365,7 +365,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 1500,
     image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
-    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/krishnendu-ayurveda-hospital"
   },
 ];
 

@@ -268,7 +268,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
-    link: "/centers/delhi/the-imperial-spa-and-wellness"
+    link: "/top-ayurvedic-centers-in-india/delhi/the-imperial-spa-and-wellness"
   },
   {
     name: "SWAN Yoga Retreat & Ayurveda",
@@ -278,7 +278,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/swan-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/swan-yoga-retreat"
   },
   {
     name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -288,7 +288,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-    link: "/centers/kerala/dhathri-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/kerala/dhathri-ayurveda"
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -298,7 +298,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -308,7 +308,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "Modi Yoga Retreat",
@@ -318,7 +318,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
-    link: "/centers/rishikesh/modi-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/modi-yoga-retreat"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -328,7 +328,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Amanbagh Heritage Wellness Retreat",
@@ -338,7 +338,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
     name: "Krishnendu Ayurveda Hospital",
@@ -348,7 +348,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 1500,
     image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
-    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/krishnendu-ayurveda-hospital"
   },
   {
     name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
@@ -358,7 +358,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 420,
     image: "/Center Images/veda5/veda5-1.jpg",
-    link: "/centers/veda5"
+    link: "/top-ayurvedic-centers-in-india/veda5"
   },
   {
     name: "The Nattika Beach Resort",
@@ -368,7 +368,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort"
   },
   {
     name: "Athreya Ayurvedic Centre",
@@ -378,7 +378,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/centers/kerala/athreya-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
   },
 ];
 

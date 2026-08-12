@@ -15,6 +15,8 @@ const heroImages = [
 
 export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [typedText1, setTypedText1] = useState("");
+  const [typedText2, setTypedText2] = useState("");
 
   // Background auto-slideshow effect
   useEffect(() => {
@@ -23,6 +25,37 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
     }, 4500); // Change image every 4.5 seconds
 
     return () => clearInterval(interval);
+  }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    const fullText1 = "Authentic Ayurveda Meets ";
+    const fullText2 = "World-Class Healthcare";
+    let i1 = 0;
+    let i2 = 0;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    const typePart2 = () => {
+      if (i2 < fullText2.length) {
+        setTypedText2(fullText2.slice(0, i2 + 1));
+        i2++;
+        timeoutId = setTimeout(typePart2, 15);
+      }
+    };
+
+    const typePart1 = () => {
+      if (i1 < fullText1.length) {
+        setTypedText1(fullText1.slice(0, i1 + 1));
+        i1++;
+        timeoutId = setTimeout(typePart1, 15);
+      } else {
+        timeoutId = setTimeout(typePart2, 30);
+      }
+    };
+
+    timeoutId = setTimeout(typePart1, 100);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
@@ -61,10 +94,10 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
             </div>
 
             {/* Results-Oriented High-Impact Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-              Authentic Ayurveda Meets <br className="hidden sm:inline" />
+            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-[1.15] mb-6 min-h-[90px] sm:min-h-[110px]">
+              {typedText1 || "\u00A0"} <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EDE8D0] via-[#F0E68C] to-white font-extrabold">
-                World-Class Healthcare
+                {typedText2}
               </span>
             </h1>
 
@@ -110,7 +143,7 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
           <div className="lg:col-span-4 flex flex-row lg:flex-col justify-center lg:items-end gap-3 sm:gap-4 mt-6 lg:mt-0">
             
             {/* Metric Card 1 */}
-            <div className="flex flex-col items-center justify-center gap-1.5 p-3 lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
+            <div className="flex flex-col items-center justify-center gap-1.5 p-2 sm:p-3 w-[90px] h-[100px] sm:w-[110px] sm:h-[110px] lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
               <div className="p-2 rounded-xl bg-[#F0E68C]/20 group-hover:scale-110 transition-transform">
                 <Globe2 className="h-5 w-5 lg:h-8 lg:w-8 text-[#F0E68C]" />
               </div>
@@ -121,7 +154,7 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
             </div>
 
             {/* Metric Card 2 */}
-            <div className="flex flex-col items-center justify-center gap-1.5 p-3 lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
+            <div className="flex flex-col items-center justify-center gap-1.5 p-2 sm:p-3 w-[90px] h-[100px] sm:w-[110px] sm:h-[110px] lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
               <div className="p-2 rounded-xl bg-[#F0E68C]/20 group-hover:scale-110 transition-transform">
                 <Star className="h-5 w-5 lg:h-8 lg:w-8 text-[#F0E68C]" />
               </div>
@@ -132,7 +165,7 @@ export default function HeroSection({ onQuoteClick }: HeroSectionProps) {
             </div>
 
             {/* Metric Card 3 */}
-            <div className="flex flex-col items-center justify-center gap-1.5 p-3 lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
+            <div className="flex flex-col items-center justify-center gap-1.5 p-2 sm:p-3 w-[90px] h-[100px] sm:w-[110px] sm:h-[110px] lg:w-32 lg:h-32 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 text-white hover:bg-white/15 transition-all shadow-xl group">
               <div className="p-2 rounded-xl bg-[#F0E68C]/20 group-hover:scale-110 transition-transform">
                 <Users2 className="h-5 w-5 lg:h-8 lg:w-8 text-[#F0E68C]" />
               </div>

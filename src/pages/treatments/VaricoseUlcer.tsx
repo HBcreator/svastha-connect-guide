@@ -56,7 +56,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -66,7 +66,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -76,7 +76,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -86,7 +86,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -96,7 +96,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -106,7 +106,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "Akanta Ayurveda and Yoga Resort",
@@ -116,7 +116,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 479,
     image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
-    link: "/centers/kochi/akanta-ayurveda-and-yoga-resort"
+    link: "/top-ayurvedic-centers-in-india/kochi/akanta-ayurveda-and-yoga-resort"
   },
   {
     name: "Shathayu Ayurveda Yoga Retreat",
@@ -126,7 +126,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/udupi/shathayu-ayurveda-yoga-retreat"
   },
   {
     name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -136,7 +136,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "Ayur Bethaniya Ayurveda Hospital",
@@ -146,7 +146,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
-    link: "/centers/kerala/ayur-bethaniya-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayur-bethaniya-ayurveda-hospital"
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -156,7 +156,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom"
   },
   {
     name: "Ashiyana Yoga Retreat",
@@ -166,7 +166,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/ashiyana-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat"
   },
 ];
 
@@ -773,7 +773,7 @@ const VaricoseUlcer = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

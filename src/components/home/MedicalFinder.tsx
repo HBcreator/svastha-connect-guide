@@ -405,7 +405,7 @@ export default function MedicalFinder() {
 
               <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Want to view all authenticated centers simultaneously?</span>
-                <Button onClick={() => window.open("/centers", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
+                <Button onClick={() => window.open("/top-ayurvedic-centers-in-india", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   Browse All India Top Centers Directory →
                 </Button>
               </div>

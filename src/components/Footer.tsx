@@ -18,7 +18,7 @@ const Footer = () => {
             <h4 className="font-semibold text-foreground font-poppins mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/centers" className="text-muted-foreground hover:text-primary transition-colors">Top Centers</Link></li>
+              <li><Link to="/top-ayurvedic-centers-in-india" className="text-muted-foreground hover:text-primary transition-colors">Top Centers</Link></li>
               <li><Link to="/ayurveda-treatments" className="text-muted-foreground hover:text-primary transition-colors">Treatments</Link></li>
               <li><Link to="/about-myvaidyam" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
             </ul>

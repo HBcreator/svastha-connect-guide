@@ -179,7 +179,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness",
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness",
   },
   {
     name: "Dharana At Shillim",
@@ -188,7 +188,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim",
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim",
   },
   {
     name: "Ananda In The Himalayas",
@@ -197,7 +197,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas",
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -206,7 +206,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda",
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
   },
   {
     name: "SWAN Yoga Retreat & Ayurveda",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/swan-yoga-retreat",
+    link: "/top-ayurvedic-centers-in-india/goa/swan-yoga-retreat",
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -224,7 +224,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma",
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma",
   },
   {
     name: "Kumarakom Lake Resort",
@@ -233,7 +233,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort",
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort",
   },
   {
     name: "Sitaram Beach Retreat",
@@ -242,7 +242,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat",
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat",
   },
   {
     name: "Ashiyana Yoga Retreat",
@@ -251,7 +251,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/ashiyana-yoga-retreat",
+    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat",
   },
   {
     name: "Shreyas Yoga Retreat",
@@ -260,7 +260,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat",
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat",
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -269,7 +269,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital",
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital",
   },
   {
     name: "Sandhya Hot Spring Health Care",
@@ -278,7 +278,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/centers/himachal/sandhya-hot-spring-health-care",
+    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care",
   },
 ];
 

@@ -169,7 +169,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.8,
       reviews: "900",
       image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-      slug: "uttarakhand/ananda-in-the-himalayas",
+      slug: "ananda-in-the-himalayas-resort-uttarakhand-india",
     },
     {
       series: 4,
@@ -180,7 +180,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-      slug: "dharamshala/ayuskama-ayurveda",
+      slug: "ayuskama-ayurveda-center-himachal-india",
     },
     {
       series: -1,
@@ -191,7 +191,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/HimVeda/Thumb.jpeg",
-      slug: "dharamshala/himveda",
+      slug: "himveda-heritage-wellness-center-himachal-india",
     },
     {
       series: 10,
@@ -202,7 +202,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.8,
       reviews: "500",
       image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-      slug: "rishikesh/yan-cure",
+      slug: "yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india",
     },
     {
       series: -2,
@@ -213,7 +213,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.6,
       reviews: "500",
       image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-      slug: "himachal/sandhya-hot-spring-health-care",
+      slug: "sandhya-hot-spring-health-care-hospital-himachal-india",
     },
     {
       series: -3,
@@ -224,7 +224,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
       rating: 4.7,
       reviews: "600",
       image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
-      slug: "rishikesh/modi-yoga-retreat",
+      slug: "modi-yoga-retreat-center-rishikesh-india",
     },
     {
       series: 6,
@@ -272,17 +272,26 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
     
     const baseSeries = [1, 2, 5, 7, 8, 9, 11, 12];
     
-    const pageOneList = [
+    const baseList = [
       ...staticPremiumCenters,
       ...baseSeries.map((series) => centerBySeries.get(series)).filter(Boolean),
     ] as HimalayanCenter[];
     
-    const pageOneSeriesIds = new Set(pageOneList.map(c => c.series));
-    const pageTwoList = centers.filter((center) => !pageOneSeriesIds.has(center.series) && !excludedSeries.includes(center.series));
+    const baseSeriesIds = new Set(baseList.map(c => c.series));
+    const remainingCenters = centers.filter(
+      (center) => !baseSeriesIds.has(center.series) && !excludedSeries.includes(center.series)
+    );
     
-    const paginated = currentPage === 1 ? pageOneList : pageTwoList;
+    // Extra safety against name duplicates
+    const manualNames = new Set(baseList.map(c => c.name.toLowerCase().trim()));
+    const uniqueRemaining = remainingCenters.filter(c => !manualNames.has(c.name.toLowerCase().trim()));
     
-    return { paginatedCenters: paginated, totalPages: 2 };
+    const allOrderedCenters = [...baseList, ...uniqueRemaining];
+    
+    const pages = Math.ceil(allOrderedCenters.length / 12) || 1;
+    const paginated = allOrderedCenters.slice((currentPage - 1) * 12, currentPage * 12);
+    
+    return { paginatedCenters: paginated, totalPages: pages };
   }, [centers, currentPage]);
 
   useEffect(() => {
@@ -381,7 +390,7 @@ const HimalayasRishikeshUttarakhandNorthEastCenters = () => {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>
