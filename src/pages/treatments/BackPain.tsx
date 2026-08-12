@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Atmantan Wellness Resort",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort"
   },
   {
     name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-    link: "/centers/kerala/dhathri-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/kerala/dhathri-ayurveda"
   },
   {
     name: "Nalanda Retreat Goa",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 500,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa"
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa"
   },
   {
     name: "Athreya Ayurvedic Centre",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/centers/kerala/athreya-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
   },
   {
     name: "Sitaram Beach Retreat",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "Nagarjuna Ayurveda Centre",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-    link: "/centers/kerala/nagarjuna-ayurveda-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/nagarjuna-ayurveda-centre"
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma"
   },
   {
     name: "Dharana At Shillim",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim"
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Ayurmana",
@@ -245,7 +245,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
 ];
 
@@ -747,7 +747,7 @@ const BackPain = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
@@ -25,6 +25,7 @@ const TopCenters = () => {
   const [cityOpen, setCityOpen] = useState(false);
   const [treatmentOpen, setTreatmentOpen] = useState(false);
   const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+  const [currentPage, setCurrentPage] = useState(1);
 
   const toggleExpand = (index: number) => {
     setExpandedCards(prev => {
@@ -55,7 +56,7 @@ const TopCenters = () => {
       reviews: 600,
       priceRange: "$$$$",
       image: "/Center Images/SOUKYA/top center Thumb.jpg",
-      slug: "bangalore/soukya" as string | undefined,
+      slug: "soukya-international-holistic-health-center-bangalore-india" as string | undefined,
     },
     {
       name: "AyurvedaGram Heritage Wellness Center",
@@ -75,7 +76,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/AyurvedaGram/Thumb.jpg",
       locationText: "Bangalore, India",
-      slug: "bangalore/ayurvedagram" as string | undefined,
+      slug: "ayurvedagram-heritage-wellness-center-bangalore-india" as string | undefined,
     },
     {
       name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -95,7 +96,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
       locationText: "Nelamangala, Bangalore, India",
-      slug: "shreyas-yoga-retreat-bangalore-india" as string | undefined,
+      slug: "shreyas-yoga-retreat-center-bangalore-india" as string | undefined,
     },
     {
       name: "Viveda Wellness Village",
@@ -115,7 +116,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
       locationText: "Nashik, Maharashtra, India",
-      slug: "maharashtra/viveda-wellness-village" as string | undefined,
+      slug: "viveda-wellness-village-resort-mumbai-india" as string | undefined,
     },
     {
       name: "Naad Wellness",
@@ -135,7 +136,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Naad Wellness/Thumb.jpg",
       locationText: "Sonepat, Haryana, Near Delhi NCR, India",
-      slug: "sonepat/naad-wellness" as string | undefined,
+      slug: "naad-wellness-center-delhi-india" as string | undefined,
     },
     {
       name: "Fazlani Nature's Nest Wellness Center",
@@ -155,7 +156,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
       locationText: "Pune, Maharashtra, India",
-      slug: "maharashtra/fazlani-natures-nest" as string | undefined,
+      slug: "fazlani-natures-nest-wellness-center-mumbai-india" as string | undefined,
     },
     {
       name: "Atmantan Wellness Resort",
@@ -175,7 +176,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
       locationText: "Mulshi, Near Pune, Maharashtra, India",
-      slug: "pune/atmantan-wellness-resort" as string | undefined,
+      slug: "atmantan-wellness-resort-center-pune-india" as string | undefined,
     },
     {
       name: "Toyam By Orchid Hotels",
@@ -195,7 +196,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
       locationText: "Pune (Bhor), Maharashtra, India",
-      slug: "pune/toyam-by-orchid-hotels" as string | undefined,
+      slug: "toyam-by-orchid-hotels-wellness-resort-center-pune-india" as string | undefined,
     },
     {
       name: "Dharana At Shillim",
@@ -215,7 +216,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Dharana At Shillim/Thumb.jpg",
       locationText: "Shillim, Pune, Maharashtra, India",
-      slug: "pune/dharana-at-shillim" as string | undefined,
+      slug: "dharana-at-shillim-wellness-retreat-center-pune-india" as string | undefined,
     },
     {
       name: "The Imperial Spa and Wellness",
@@ -235,7 +236,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
       locationText: "New Delhi, India",
-      slug: "delhi/the-imperial-spa-and-wellness" as string | undefined,
+      slug: "the-imperial-spa-and-wellness-center-delhi-india" as string | undefined,
     },
     {
       name: "ITC Grand Bharat",
@@ -255,7 +256,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
       locationText: "Gurugram (near New Delhi), India",
-      slug: "gurugram/itc-grand-bharat" as string | undefined,
+      slug: "itc-grand-bharat-wellness-retreat-center-delhi-india" as string | undefined,
     },
 
     {
@@ -276,7 +277,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/niraamaya-retreats-surya-samudra" as string | undefined,
+      slug: "niraamaya-retreats-surya-samudra-resort-kerala-india" as string | undefined,
     },
     {
       name: "Modi Yoga Retreat",
@@ -294,9 +295,9 @@ const TopCenters = () => {
       rating: 4.7,
       reviews: 600,
       priceRange: "$$$$",
-      image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Modi Yoga Retreat/main.webp",
       locationText: "Rishikesh, Uttarakhand, India",
-      slug: "rishikesh/modi-yoga-retreat" as string | undefined,
+      slug: "modi-yoga-retreat-center-rishikesh-india" as string | undefined,
     },
     {
       name: "Amanbagh Heritage Wellness Retreat",
@@ -316,7 +317,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Amanbagh/thumb.jpg",
       locationText: "Alwar, Rajasthan, India",
-      slug: "rajasthan/amanbagh-heritage-wellness-retreat" as string | undefined,
+      slug: "amanbagh-heritage-wellness-retreat-resort-rajasthan-india" as string | undefined,
     },
     {
       name: "HimVeda Heritage Wellness Center",
@@ -336,7 +337,7 @@ const TopCenters = () => {
       priceRange: "Premium Wellness Retreat",
       image: "/Center Images/HimVeda/Thumb.jpeg",
       locationText: "Dharamshala, Himachal Pradesh, India",
-      slug: "dharamshala/himveda" as string | undefined,
+      slug: "himveda-heritage-wellness-center-himachal-india" as string | undefined,
     },
     {
       name: "Sandhya Hot Spring Health Care",
@@ -356,7 +357,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
       locationText: "Manikaran, Himachal Pradesh, India",
-      slug: "himachal/sandhya-hot-spring-health-care" as string | undefined,
+      slug: "sandhya-hot-spring-health-care-hospital-himachal-india" as string | undefined,
     },
     {
       name: "Ayuskama Ayurveda",
@@ -376,7 +377,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
       locationText: "Dharamkot, Dharamshala, Himachal Pradesh",
-      slug: "dharamshala/ayuskama-ayurveda" as string | undefined,
+      slug: "ayuskama-ayurveda-center-himachal-india" as string | undefined,
     },
     {
       name: "Somatheeram Ayurvedic Health Resort",
@@ -395,7 +396,7 @@ const TopCenters = () => {
       reviews: 320,
       priceRange: "$$$",
       image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-      slug: "kerala/somatheeram" as string | undefined,
+      slug: "somatheeram-ayurvedic-health-resort-kerala-india" as string | undefined,
     },
     {
       name: "AyurSoma Ayurveda Royal Retreat",
@@ -414,7 +415,7 @@ const TopCenters = () => {
       reviews: 1000,
       priceRange: "$$$$$",
       image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-      slug: "kerala/ayursoma" as string | undefined,
+      slug: "ayursoma-ayurveda-royal-retreat-resort-kerala-india" as string | undefined,
     },
     {
       name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -434,7 +435,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
       locationText: "Palakkad, Kerala, India",
-      slug: "kerala/kalari-kovilakom" as string | undefined,
+      slug: "kalari-kovilakom-ayurveda-hospital-kerala-india" as string | undefined,
     },    {
       name: "Carnoustie Ayurveda & Wellness Resort",
       city: "Mararikulam",
@@ -453,7 +454,7 @@ const TopCenters = () => {
       priceRange: "",
       image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
       locationText: "Mararikulam, Kerala, India",
-      slug: "kerala/carnoustie-ayurveda-wellness-resort" as string | undefined,
+      slug: "carnoustie-ayurveda-wellness-resort-kerala-india" as string | undefined,
     },
     {
       name: "The Nattika Beach Resort",
@@ -473,7 +474,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
       locationText: "Thrissur, Kerala, India",
-      slug: "kerala/the-nattika-beach-resort" as string | undefined,
+      slug: "the-nattika-beach-resort-kerala-india" as string | undefined,
     },
     {
       name: "Sitaram Beach Retreat",
@@ -493,7 +494,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/sitaram-beach-retreat" as string | undefined,
+      slug: "sitaram-beach-retreat-resort-kerala-india" as string | undefined,
     },
     {
       name: "Kairali – The Ayurvedic Healing Village",
@@ -513,7 +514,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
       locationText: "Palakkad, Kerala, India",
-      slug: "kerala/kairali-ayurvedic-healing-village" as string | undefined,
+      slug: "kairali-ayurvedic-healing-village-hospital-kerala-india" as string | undefined,
     },
     {
       name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
@@ -532,7 +533,7 @@ const TopCenters = () => {
       reviews: 1000,
       priceRange: "$$$$",
       image: "/Center Images/veda5/veda5-1.jpg",
-      slug: "veda5",
+      slug: "veda5-ayurveda-yoga-wellness-retreat-center-rishikesh-india",
       badgeColor: "#D9E3DC",
       locationText: "Rishikesh, Kerala, Goa, India",
     },
@@ -554,7 +555,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
       locationText: "Rishikesh, Uttarakhand, India",
-      slug: "rishikesh/yan-cure" as string | undefined,
+      slug: "yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india" as string | undefined,
     },
     {
       name: "🧘‍♂️ Soul Vacation Resort & Wellness Center",
@@ -573,7 +574,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
       locationText: "South Goa, India",
-      slug: "soul-vacation-resort-spa-goa-india" as string | undefined,
+      slug: "soul-vacation-resort-and-wellness-center-goa-india" as string | undefined,
     },
     {
       name: "SWAN Yoga Retreat & Ayurveda",
@@ -593,7 +594,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
       locationText: "Assagao, North Goa, India",
-      slug: "swan-yoga-retreat-goa-india" as string | undefined,
+      slug: "swan-yoga-retreat-and-ayurveda-center-goa-india" as string | undefined,
     },
     {
       name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Center",
@@ -613,7 +614,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
       locationText: "Divar Island, Goa, India",
-      slug: "mercure-goa-devaaya-retreat-goa-india" as string | undefined,
+      slug: "mercure-goa-devaaya-resort-ayurveda-wellness-center-goa-india" as string | undefined,
     },
     {
       name: "Ashiyana Yoga Retreat",
@@ -633,7 +634,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
       locationText: "Mandrem Beach, Goa, India",
-      slug: "ashiyana-yoga-retreat-village-goa-india" as string | undefined,
+      slug: "ashiyana-yoga-retreat-center-goa-india" as string | undefined,
     },
     {
       name: "Nalanda Retreat Goa",
@@ -653,7 +654,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
       locationText: "Mandrem, North Goa, India",
-      slug: "nalanda-retreat-goa-india" as string | undefined,
+      slug: "nalanda-retreat-center-goa-india" as string | undefined,
     },
     {
       name: "Ananda In The Himalayas",
@@ -673,7 +674,7 @@ const TopCenters = () => {
       priceRange: "$$$$$",
       image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
       locationText: "Uttarakhand, India",
-      slug: "uttarakhand/ananda-in-the-himalayas" as string | undefined,
+      slug: "ananda-in-the-himalayas-resort-uttarakhand-india" as string | undefined,
     },
     {
       name: "Namaste Dwaar – Countryside Wellness Retreat",
@@ -692,7 +693,7 @@ const TopCenters = () => {
       reviews: 1000,
       priceRange: "$$$",
       image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-      slug: "delhi/namastedwaar" as string | undefined,
+      slug: "namaste-dwaar-countryside-wellness-retreat-delhi-india" as string | undefined,
       badgeColor: "#EDE8D0",
       locationText: "Near NCR, Delhi, India",
     },
@@ -713,7 +714,7 @@ const TopCenters = () => {
       reviews: 5000,
       priceRange: "$$$$",
       image: "/Center Images/Ayurmana center/top center thumb.jpg",
-      slug: "kerala/ayurmana" as string | undefined,
+      slug: "ayurmana-ayurveda-hospital-kerala-india" as string | undefined,
       locationText: "Panvel, Mumbai, India",
     },
     {
@@ -734,7 +735,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
       locationText: "Edakkunnam, Kerala",
-      slug: "mysore/chamundi-hill-palace" as string | undefined,
+      slug: "chamundi-hill-palace-ayurvedic-center-kerala-india" as string | undefined,
     },
     {
       name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -754,7 +755,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
       locationText: "Kannur, Kerala, India",
-      slug: "kerala/kairali-heritage" as string | undefined,
+      slug: "kairali-heritage-resort-kerala-india" as string | undefined,
     },
     {
       name: "Agni Ayurvedic Village Resort",
@@ -774,7 +775,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
       locationText: "Panvel, Mumbai, Maharashtra, India",
-      slug: "kerala/agni-ayurvedic-village" as string | undefined,
+      slug: "agni-ayurvedic-village-resort-kerala-india" as string | undefined,
     },
     {
       name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -794,7 +795,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
       locationText: "Kumarakom, Kerala, India",
-      slug: "kerala/dheemahi-kumarakom" as string | undefined,
+      slug: "dheemahi-kumarakom-premium-lakeside-retreat-kerala-india" as string | undefined,
     },
     {
       name: "Kumarakom Lake Resort",
@@ -814,7 +815,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/kumarakom lake resort/Thumb.jpg",
       locationText: "Kumarakom, Kerala, India",
-      slug: "kerala/kumarakom-lake-resort" as string | undefined,
+      slug: "kumarakom-lake-resort-kerala-india" as string | undefined,
     },
     {
       name: "Nagarjuna Ayurveda Center",
@@ -834,7 +835,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/nagarjuna-ayurveda-center" as string | undefined,
+      slug: "nagarjuna-ayurveda-center-kerala-india" as string | undefined,
     },
     {
       name: "Sanjeevanam Ayurveda Hospital",
@@ -854,7 +855,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
       locationText: "Kochi, Kerala, India",
-      slug: "kerala/sanjeevanam-ayurveda-hospital" as string | undefined,
+      slug: "sanjeevanam-ayurveda-hospital-kerala-india" as string | undefined,
     },
     {
       name: "Back to Roots Ayurveda Retreat",
@@ -873,7 +874,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
       locationText: "Idukki, Kerala, India",
-      slug: "kerala/back-to-roots" as string | undefined,
+      slug: "back-to-roots-ayurveda-retreat-kerala-india" as string | undefined,
     },
     {
       name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -892,7 +893,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
       locationText: "Kayamkulam, Kerala, India",
-      slug: "kerala/dhathri-ayurveda" as string | undefined,
+      slug: "dhathri-ayurveda-hospital-kerala-india" as string | undefined,
     },
     {
       name: "Krishnendu Ayurveda Hospital",
@@ -911,7 +912,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
       locationText: "Alappuzha, Kerala, India",
-      slug: "kerala/krishnendu-ayurveda-hospital" as string | undefined,
+      slug: "krishnendu-ayurveda-hospital-kerala-india" as string | undefined,
     },
     {
       name: "Athreya Ayurvedic Center",
@@ -930,7 +931,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/athreya-ayurvedic-center" as string | undefined,
+      slug: "athreya-ayurvedic-center-kerala-india" as string | undefined,
     },
     {
       name: "Ayur Bethaniya Ayurveda Hospital",
@@ -950,7 +951,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Ayur Bethaniya/CTA.jpg",
       locationText: "Kerala, India",
-      slug: "kerala/ayur-bethaniya-ayurveda-hospital" as string | undefined,
+      slug: "ayur-bethaniya-ayurveda-hospital-kerala-india" as string | undefined,
     },
     {
       name: "Ayushi Ayurvedic Retreat",
@@ -970,7 +971,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
       locationText: "Cliff Rd, Varkala, Kerala",
-      slug: "kerala/ayushi-ayurvedic-retreat" as string | undefined,
+      slug: "ayushi-ayurvedic-retreat-kerala-india" as string | undefined,
     },
     {
       name: "Sitaram Mountain Retreat",
@@ -990,7 +991,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
       locationText: "Munnar, Kerala, India",
-      slug: "idukki/sitaram-mountain-retreat" as string | undefined,
+      slug: "sitaram-mountain-retreat-idukki-india" as string | undefined,
     },
     {
       name: "Akanta Ayurveda and Yoga Resort",
@@ -1010,7 +1011,7 @@ const TopCenters = () => {
       priceRange: "$$$$",
       image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
       locationText: "Cherai Beach, Kochi, Kerala, India",
-      slug: "kochi/akanta-ayurveda-and-yoga-resort" as string | undefined,
+      slug: "akanta-ayurveda-and-yoga-resort-kochi-india" as string | undefined,
     },
     {
       name: "Indus Valley Ayurvedic Center",
@@ -1054,7 +1055,7 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
       locationText: "Udupi, Karnataka, India",
-      slug: "udupi/shathayu-ayurveda-yoga-retreat" as string | undefined,
+      slug: "shathayu-ayurveda-yoga-retreat-banglore-india" as string | undefined,
     },
     {
       name: "Ideal Ayurvedic Resort",
@@ -1074,9 +1075,1304 @@ const TopCenters = () => {
       priceRange: "$$$",
       image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
       locationText: "Kovalam (Chowara), Kerala, India",
-      slug: "kerala/ideal-ayurvedic-resort" as string | undefined,
+      slug: "ideal-ayurvedic-resort-kerala-india" as string | undefined,
     },
-  ];
+    // SOUTH INDIA SUB CENTERS
+    {
+      name: "Sri Sri Ayurveda Hospital Bengaluru",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A NABH-accredited, ISO-certified multispecialty Ayurvedic hospital administered by Sri Sri Ravi Shankar Vidya Mandir Trust. Spanning over 1 lakh sq. ft. with 268 beds, the hospital blends classical Ayurveda, Naturopathy, Yoga, and modern diagnostics. Specialties include Panchakarma, Cancer Care, Pulse Diagnosis, Gynaecology, and Pediatrics. Offers free Nadi Pariksha consultations, 24/7 emergency services, and online consultations worldwide.",
+      rating: 4.4,
+      reviews: 950,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/1.jpg",
+      slug: "sri-sri-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Adyant Ayurveda – Jayanagar",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "One of Bangalore's most established Ayurvedic clinic chains with multiple branches across the city including Jayanagar, Indiranagar, RR Nagar, Kalyan Nagar, and Bannerghatta Road. Adyant Ayurveda specializes in Panchakarma detox, spine and joint care, skin disorders, infertility, insomnia, and PCOD. Also offers Swarna Bindu Prashana for children's immunity and comprehensive Ayurvedic beauty and rejuvenation therapies. Open daily 8 AM to 8 PM.",
+      rating: 4.8,
+      reviews: 230,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/3.jpg",
+      slug: "adyant-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Vydehi Ayurveda Hospital (VAYU)",
+      city: "Bengaluru (Whitefield), Karnataka, India",
+      description:
+        "Located within the 1,600-bed Vydehi Institute of Medical Sciences & Research Center in Whitefield, VAYU is a complete Kerala Ayurveda treatment facility offering both in-patient and out-patient care. Nestled in a lush green campus, it delivers authentic Ayurveda treatments including Panchakarma, Stress Management, Rejuvenation, Anti-Obesity therapy, and Spine & Joint Care. Experienced Ayurvedic specialists provide personalized, root-cause-focused healing using classical methods.",
+      rating: 4.3,
+      reviews: 600,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/4.jpg",
+      slug: "vydehi-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Keva Ayurveda – BTM Layout",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A well-rounded Ayurvedic clinic offering a wide spectrum of treatments from Weight Management and Panchakarma to Infertility, Paralysis, and Women's Care. Keva Ayurveda also accepts medical insurance and features specialized programs like corporate wellness, traveler's detox, and geriatric care packages. Integrates Yoga and Naturopathy alongside classical Ayurveda treatments, providing end-to-end personalized wellness solutions under one roof.",
+      rating: 4.5,
+      reviews: 250,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/5.webp",
+      slug:"keva-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Jayadev Memorial – Rashtrotthana Hospital Ayurveda Dept.",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "The Ayurveda Department at Rashtrotthana Hospital offers integrative Ayurvedic care within a trusted multispeciality hospital setting in RR Nagar, Bangalore. Combining the wisdom of classical Ayurveda with modern diagnostic support, the department provides comprehensive treatment for lifestyle disorders, musculoskeletal conditions, and chronic ailments. Patients benefit from a full hospital ecosystem including diagnostics, specialist consultations, and inpatient facilities.",
+      rating: 4.7,
+      reviews: 1490,
+      priceRange: "$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/7.jpg",
+      slug: "jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Healing Earth Ayurveda Hospital Bangalore",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Healing Earth is a dedicated Ayurvedic wellness center in Bangalore focused on holistic healing through evidence-based Ayurvedic therapies. The center offers personalized Panchakarma programs, rejuvenation treatments, and chronic disease management using authentic herbal medicines and classical treatment protocols. With a serene, therapeutic environment, Healing Earth is designed to restore balance of body, mind, and spirit for patients seeking genuine Ayurvedic care.",
+      rating: 4.6,
+      reviews: 930,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/8.jpg",
+      slug: "healing-earth-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Adivaidyam Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Adivaidyam is a unique Ayurvedic clinic in Banashankari, Bangalore, that combines classical Ayurveda and Yoga under one roof. Led by Dr. Savitha Sagar, the center focuses on reviving traditional healing practices for chronic disorders. Offerings include Panchakarma detox, Kerala treatments, beauty therapies, skin & hair care, and Swarnaprashana for children's immunity. Open daily from 6 AM to 9 PM with a patient-centered, compassionate approach.",
+      rating: 4.7,
+      reviews: 372,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/10.JPG",
+      slug: "adivaidyam-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "IAIM Healthcare Center",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "The Institute of Ayurveda and Integrative Medicine (I-AIM) Healthcare Center is a NABH-accredited Ayurvedic hospital in North Bangalore backed by the Foundation for Revitalization of Local Health Traditions (FRLHT). I-AIM integrates evidence-based Ayurvedic medicine with contemporary healthcare, offering specialized Panchakarma therapies including Shirodhara, Basti, Nasyam, Vamana, and Raktamokshana. The center is committed to research, education, and patient-centered integrative care.",
+      rating: 4.7,
+      reviews: 1140,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/11.jpg",
+      slug: "iaim-healthcare-center-hospital-bengaluru-india",
+    },
+    {
+      name: "HLC Ayurveda and Nature Cure Hospital",
+      city: "Bengaluru (Electronic City), Karnataka, India",
+      description:
+        "A holistic Ayurveda and Naturopathy hospital in Electronic City, Bangalore, offering a wide range of curative programs including Diabetic Reversal, Spine & Joint care, Obesity Management, Women's Health, Neurology, Dermatology, and more. HLC provides authentic Panchakarma therapies along with inpatient wellness stay facilities, making it ideal for patients seeking immersive, long-term Ayurvedic Healing combined with naturopathic support.",
+      rating: 4.4,
+      reviews: 180,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/12.JPG",
+      slug: "hlc-ayurveda-and-nature-cure-hospital-bengaluru-india",
+    },
+    {
+      name: "PraanaVaidya Ayurvedic Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A premier Ayurvedic healthcare network in Bangalore with 50+ doctors and a track record of 5,000+ surgeries, 13,000+ therapies, and 45,000+ patients treated. PraanaVaidya specializes in a vast range of conditions including Piles, Fistula, Diabetes Reversal, Stroke Rehabilitation, Autoimmune Diseases, Infertility, Varicose Veins, and Keloid Scars. The center combines Ayurvedic medicine with surgical expertise, offering a truly integrative approach to healing.",
+      rating: 4.8,
+      reviews: 170,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/13.jpg",
+      slug: "praana-vaidya-ayurvedic-hospital-bengaluru-india",
+    },
+    {
+      name: "Ramaiah Indic Specialty Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A NABH-accredited Ayurveda restoration hospital associated with the Ramaiah group, offering specialized care in General Ayurveda Medicine, Panchakarma, Women's Health, Paediatrics, Eye & ENT, Proctology, Palliative Care, and Integrative Medicine. Insurance facility is available, and the hospital operates from Bangalore with a branch in Yelahanka. Committed to bringing evidence-based Ayurvedic Healing with the standards of a full-fledged medical institution.",
+      rating: 4.8,
+      reviews: 450,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/14.jpg",
+      slug: "ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "AyurKutira – Panchakarma Center",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "AyurKutira is a sanctuary for holistic healing in Mahalakshmipuram, Bengaluru, guided by experienced Ayurvedic practitioners with deep expertise in classical treatments. Specialties include personalized Ayurvedic consultations, Panchakarma detox, Rasayana Chikitsa for vitality, post-chemo or post-surgery rejuvenation, and fertility treatments. The center has a particularly strong track record in treating infertility cases, with multiple patient success stories. Open daily 7 AM to 9 PM.",
+      rating: 4.9,
+      reviews: 140,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/15.JPG",
+      slug: "ayurkutira-panchakarma-center-hospital-bengaluru-india",
+    },
+    {
+      name: "Tatkshana Ayurveda Hospital",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Tatkshana Ayurveda Hospital is a dedicated Ayurveda treatment center in Bangalore offering authentic classical therapies for a wide range of health conditions. The hospital focuses on evidence-based Ayurvedic care with qualified practitioners, emphasizing personalized treatment protocols rooted in traditional Ayurvedic science. Services span Panchakarma, lifestyle disorder management, and targeted therapies for chronic and acute conditions.",
+      rating: 4.8,
+      reviews: 300,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/16.png",
+      slug: "tatkshana-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Varaprada Ayurvedic Center",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Varaprada Ayurvedic Center is a respected Ayurvedic clinic in Bangalore offering traditional healing through time-tested Ayurvedic therapies. The center provides curative and rejuvenative treatments with an emphasis on personalized care, classical formulations, and authentic Panchakarma procedures. With experienced Ayurvedic physicians guiding each patient's journey, Varaprada is a trusted destination for those seeking natural and sustainable wellness solutions.",
+      rating: 4.9,
+      reviews: 330,
+      priceRange: "$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/17.JPG",
+      slug: "varaprada-ayurvedic-center-hospital-bengaluru-india",
+    },
+    {
+      name: "SD Ayurveda Mane – Holistic Wellness Center",
+      city: "Bengaluru (Electronic City), Karnataka, India",
+      description:
+        "SD Ayurveda Mane – Holistic Wellness Center is a leading Ayurvedic hospital in Electronic City, Bangalore. Directed by expert physicians, the center is highly renowned for its specialized postnatal (post-pregnancy) care programs, traditional Kerala Ayurveda, authentic Panchakarma, and customized stress and musculoskeletal rehabilitation in a fully residential setting.",
+      rating: 5,
+      reviews: 10,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/18.jpeg",
+      slug: "sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india",
+    },
+    {
+      name: "Ayushman Ayurveda",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "A specialized Ayurveda treatment center in Bangalore offering a comprehensive range of therapies including Panchakarma, Shirodhara, Abhyangam, Pizhichil, Njavara Kizhi, and Marma Therapy. Ayushman Ayurveda is particularly known for expert pain management solutions covering Back Pain, Sciatica, Arthritis, Osteoarthritis, Cervical Spondylitis, and Fibromyalgia. The center brings together qualified Ayurvedic doctors and skilled therapists for root-cause healing.",
+      rating: 4.8,
+      reviews: 1390,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/9.JPG",
+      slug: "ayushman-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Travancore Ayurveda – Jayanagar",
+      city: "Bengaluru, Karnataka, India",
+      description:
+        "Part of a pan-India Ayurvedic clinic chain with 14+ locations across Karnataka, Telangana, and Andhra Pradesh, Travancore Ayurveda has been recognized as the Top Ayurvedic Clinic at the World Health & Wellness Congress & Awards 2025. The Jayanagar branch offers authentic Kerala-rooted treatments including Panchakarma, pain management, and chronic disease care. In-patient facilities are available, and insurance reimbursement is accepted at select branches.",
+      rating: 4.8,
+      reviews: 800,
+      priceRange: "$$",
+      image:
+        "/TOP centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers/Travancore Ayurveda – Jayanagar/main.webp",
+      slug: "travancore-ayurveda-hospital-bengaluru-india",
+    },
+    {
+      name: "Kottakkal Arya Vaidya Sala - Mahalingapuram",
+      city: "Chennai (Mahalingapuram), Tamil Nadu, India",
+      description:
+        "The Mahalingapuram branch of Arya Vaidya Sala (AVS), one of India's most iconic Ayurvedic institutions founded in 1902 by Vaidyaratnam P.S. Varier. With over a century of healing heritage, AVS offers classical Ayurvedic medicines, authentic Panchakarma therapies, and doctor consultations rooted in Kerala tradition. This branch provides Vaidya consultations, Oushadhi sales, and Panchakarma services including Shirodhara, Nasyam, Elakizhi, and Navarakizhi using genuine AVS-manufactured herbal oils and formulations.",
+      rating: 4.7,
+      reviews: 500,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/19.jpg",
+      slug: "kottakkal-arya-vaidya-sala-hospital-chennai-india",
+    },
+    {
+      name: "Ayurillam - Home of Ayurvedic Therapy Center",
+      city: "Chennai, Tamil Nadu, India",
+      description:
+        "Ayurillam is a premium Kerala-rooted Ayurvedic therapy center offering high-end holistic wellness programs and Panchakarma treatments designed to purify, rejuvenate, and restore the mind and body. Specialties include Shirodhara, Abhyangam, Kativasthi, Greevavasthi, Nasya, Januvasti, and Podikizhi. The center addresses chronic conditions including back pain, arthritis, migraines, stress, PCOD, sciatica, diabetes, and skin disorders. Treatments are fully personalized based on individual Prakriti assessment by trained male and female therapists.",
+      rating: 4.7,
+      reviews: 890,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/20.jpg",
+      slug: "ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india",
+    },
+    {
+      name: "Dhanwanthralaya Ayurveda Speciality Hospital",
+      city: "Chennai (West Tambaram), Tamil Nadu, India",
+      description:
+        "Established in 2001 by Dr. Vanitha Muralikumar, Dhanwanthralaya is a 30-bed Ayurvedic speciality hospital treating both medical and surgical conditions using natural procedures rooted in classical Ayurvedic Samhithas. Specialities include Kayachikitsa, Gynaecology, Paediatrics, ENT, Surgery, and Psychiatry. Known for effective Panchakarma for back pain, disc bulge, arthritis, fistula, and chronic ailments. Branches in Chennai (West Tambaram, Nandanam) and Delhi, with an international presence through Smrithi Ayur Care in Malaysia.",
+      rating: 4.6,
+      reviews: 250,
+      priceRange: "$$",
+      image:
+        "/Anchor pages/bangalore-hyderabad-chennai-south-india/Images/21.jpg",
+      slug: "dhanwanthralaya-ayurveda-speciality-hospital-chennai-india",
+    },
+
+    // KERALA SUB CENTERS
+    {
+      name: "Kairali - The Ayurvedic Healing Village",
+      city: "Palakkad, Kerala, India",
+      description:
+        "Kairali - The Ayurvedic Healing Village is a world-renowned wellness destination that focuses on authentic Ayurveda, Panchakarma and holistic healing. Nestled in lush greenery, this NABH-accredited retreat blends traditional Ayurvedic wisdom with modern comfort.",
+      rating: 4.9,
+      reviews: 280,
+      priceRange: "$$$$",
+      image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
+      slug: "kairali-the-ayurvedic-healing-village-kerala-india",
+    },
+    {
+      name: "Nagarjuna Ayurveda",
+      city: "Kalady, Kerala, India",
+      description:
+        "Nagarjuna Ayurveda Center is one of India's most trusted and heritage-rich Ayurvedic healthcare institutions, renowned for its authentic, classical treatment approach. Backed by decades of clinical expertise, the center follows traditional Ayurvedic principles combined with strict diagnostic protocols.",
+      rating: 4.8,
+      reviews: 200,
+      priceRange: "$$$",
+      image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
+      slug: "nagarjuna-ayurvedic-center-kerala-india",
+    },
+    {
+      name: "Dhathri Ayurveda Resort",
+      city: "Thrissur, Kerala, India",
+      description:
+        "Immerse yourself in three centuries of healing wisdom at Dhathri, a NABH-accredited hospital nestled on the serene backwaters of Kerala. Guided by a profound 300-year-old family legacy, this sanctuary offers authentic, traditional Ayurveda and Panchakarma.",
+      rating: 4.8,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
+      slug: "dhathri-ayurveda-hospital-and-retreat-kerala-india",
+    },
+    {
+      name: "Ayurmana Ayurveda Center",
+      city: "Kannur, Kerala, India",
+      description:
+        "Ayurmana Ayurveda Center is a Kerala wellness retreat focused on authentic therapies, physician-led treatment planning, and restorative lifestyle routines. The center blends classical Panchakarma with calm, nature-driven recovery programs designed to support sustainable long-term well-being.",
+      rating: 4.8,
+      reviews: 234,
+      priceRange: "$$$$",
+      image: "/Center Images/Ayurmana center/top center thumb.jpg",
+      slug: "ayurmana-dharma-ayurvedic-center-kerala-india",
+    },
+    {
+      name: "Parathuvayalil Ayurveda Hospital",
+      city: "Perumbavoor, Kochi, Kerala, India",
+      description:
+        "Parathuvayalil Ayurveda Hospital is a long-standing multispecialty center known for classical Kerala healing with a strong focus on bone, joint, and musculoskeletal care. The hospital combines traditional Marma and Kaya Chikitsa protocols with structured diagnostics, rehabilitation support, and physician-led treatment planning for both acute and chronic conditions.",
+      rating: 4.1,
+      reviews: 150,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/1.webp",
+      slug: "parathuvayalil-ayurveda-hospital-hospital-kerala-india",
+    },
+    {
+      name: "Arya Vaidya Sala (Kottakkal)",
+      city: "Kottakkal, Malappuram, Kerala, India",
+      description:
+        "Arya Vaidya Sala (Kottakkal) is one of the most respected Ayurvedic institutions in India, recognized for preserving classical treatment traditions at large scale. Patients choose AVS for authentic Panchakarma, time-tested formulations, and experienced Vaidyas delivering disciplined, protocol-based care rooted in Kerala Ayurveda heritage.",
+      rating: 4.5,
+      reviews: 380,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/2.jpg",
+      slug: "arya-vaidya-sala-hospital-kerala-india",
+    },
+    {
+      name: "Rasayana Ayurveda Center",
+      city: "Ezhakkaranadu, Ernakulam, Kerala, India",
+      description:
+        "Rasayana Ayurveda Center offers a retreat-style clinical environment focused on detoxification, rejuvenation, and metabolic balance through authentic Ayurvedic therapies. Its programs are commonly selected for digestive disorders, lifestyle diseases, stress management, and long-stay recovery supported by yoga, mindful routines, and sattvic nutrition.",
+      rating: 4.8,
+      reviews: 210,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/3.webp",
+      slug: "rasayana-ayurveda-center-hospital-kerala-india",
+    },
+    {
+      name: "Yantra Ayurvedic Resort",
+      city: "Nattika Beach, Thrissur, Kerala, India",
+      description:
+        "Yantra Ayurvedic Resort is a coastal wellness destination designed for travelers who want Panchakarma and restorative therapies in a beachside setting. The center blends traditional doctor-guided treatment plans with yoga, meditation, and customizable rejuvenation programs, making it suitable for detox, stress reset, and preventive care.",
+      rating: 4.1,
+      reviews: 520,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/4.jpeg",
+      slug: "yantra-ayurvedic-resort-hospital-kerala-india",
+    },
+    {
+      name: "Chakra Ayurvedic Resort",
+      city: "Kovalam, Thiruvananthapuram, Kerala, India",
+      description:
+        "Chakra Ayurvedic Resort combines beachside comfort with structured Ayurveda programs for purification, rejuvenation, weight management, and musculoskeletal wellness. With in-house therapies, yoga support, and a calm resort environment, it is often chosen by wellness travelers seeking practical healing outcomes with a relaxed stay format.",
+      rating: 4.4,
+      reviews: 110,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/5.jpg",
+      slug: "chakra-ayurvedic-resort-hospital-kerala-india",
+    },
+    {
+      name: "Deepanjali Ayur Retreat",
+      city: "Chazhur, Thrissur, Kerala, India",
+      description:
+        "Deepanjali Ayur Retreat is a nature-focused healing campus built around intensive Ayurveda and yoga routines in a low-noise village setting. Its physician-supervised plans are tailored for detox, skin and metabolic concerns, pain conditions, and stress disorders, with daily therapeutic schedules and diet discipline aimed at long-term results.",
+      rating: 4.9,
+      reviews: 70,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/6.jpg",
+      slug: "deepanjali-ayur-retreat-hospital-kerala-india",
+    },
+    {
+      name: "Madukkakuzhy Ayurveda",
+      city: "Kanjirappally, Kottayam, Kerala, India",
+      description:
+        "A family-owned Ayurveda institution with 9 generations of unbroken healing tradition since 1938 - Green Leaf Certified by Kerala Tourism (the highest government recognition for authentic Ayurvedic care) and Diamond Certified Homestay by the Kerala Tourism Department. Founded by Vaidyakalanidhi M.C. Mathew, now stewarded by the 9th generation of the Madukkakuzhy family in the lush mountain landscapes of Idukki. All medicines are prepared in-house from organically grown herbs, customized to each patient's Prakriti. Specialties include arthritis, fibromyalgia, digestive disorders, skin conditions, post-natal care, and pre-conception care with 3-week Panchakarma programs. Global reach spanning 42+ countries with a European center in Bad Bocklet, Germany. Endorsed by Kerala celebrities and international wellness seekers who return year after year.",
+      rating: 4.9,
+      reviews: 390,
+      priceRange: "$$$",
+      image: "/Anchor pages/Kerala centers/images/Madukkakuzhy Ayurveda.webp",
+      slug: "madukkakuzhy-ayurveda-retreat-hospital-kerala-india",
+    },
+  
+    // GOA SUB CENTERS
+    {
+      name: "Ashiyana Yoga Retreat & Ayurveda",
+      city: "Ashvem, North Goa, India",
+      description:
+        "One of Goa's most established eco-wellness Ayurveda retreats, Ashiyana offers residential detox plans, daily yoga, meditation, sattvic food, and long-stay healing experiences in a lush beach garden setting. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.8,
+      reviews: 850,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/10.jpg",
+      slug: "ashiyana-yoga-retreat-center-goa-india",
+    },
+    {
+      name: "Soul Vacation Resort & Wellness Center",
+      city: "Colva Beach, South Goa, India",
+      description:
+        "Immerse yourself in a rejuvenating escape at Soul Vacation, a boutique wellness resort near South Goa beaches. It blends serene coastal living with authentic Ayurveda, stress-relief therapies, and personalized wellness plans for deep rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.8,
+      reviews: 1200,
+      priceRange: "$$$",
+      image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
+      slug: "soul-vacation-resort-and-wellness-center-goa-india",
+    },
+    {
+      name: "Veda5 Wellness Retreat - Arambol",
+      city: "Arambol, North Goa, India",
+      description:
+        "A luxury Ayurveda and Yoga retreat spread across lush coconut groves near Arambol Beach, offering Vaidya consultations, Panchakarma detox plans, daily yoga, meditation, and sattvic nutrition. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.8,
+      reviews: 130,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/7.jpg",
+      slug: "veda5-wellness-retreat-hospital-goa-india",
+      // detailsDisabled: "veda5-wellness-retreat-hospital-goa-india",
+    },
+    {
+      name: "Health and Ayurveda (ANHC Goa)",
+      city: "Calangute, North Goa, India",
+      description:
+        "Established in 2001, ANHC is one of Goa's most trusted authentic Ayurveda institutions, known for Kerala-standard Panchakarma, yoga, detox, rejuvenation, and therapeutic healing programs in a serene retreat setting. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.9,
+      reviews: 180,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/images/1.png",
+      slug: "ayurvedic-natural-health-center-hospital-goa-india",
+    },
+    {
+      name: "Ayur Touch Ayurvedic Healthcare",
+      city: "Candolim, North Goa, India",
+      description:
+        "A popular and affordable Kerala Ayurveda clinic on Candolim Beach Road, Ayur Touch is recognized for authentic Abhyanga massage, Shirodhara, and Panchakarma therapies focused on stress relief and full-body wellness. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.6,
+      reviews: 330,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/images/2.jpg",
+      slug: "ayur-touch-ayurvedic-healthcare-hospital-goa-india",
+    },
+    {
+      name: "Yashraj Ayurveda Clinic",
+      city: "Calangute, North Goa, India",
+      description:
+        "A trusted Panchakarma clinic led by Dr. Raju Bhusnar, Yashraj provides consultation-led Ayurveda with detox, Marma, Shirodhara, and condition-specific healing plans for digestive, hormonal, and lifestyle concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.7,
+      reviews: 230,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/images/3.jpg",
+      slug: "yashraj-ayurveda-clinic-hospital-goa-india",
+    },
+    {
+      name: "SreeShanti Wellness",
+      city: "Nerul, North Goa, India",
+      description:
+        "An authentic Panchakarma clinic led by Dr. Jijith C. Ravindran, SreeShanti blends classical Kerala therapies with focused care for skin, weight, PCOD, arthritis, digestive, and chronic lifestyle disorders. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.9,
+      reviews: 150,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/images/5.PNG",
+      slug: "shree-shanti-wellness-hospital-goa-india",
+    },
+    {
+      name: "Natural Touch Ayurveda",
+      city: "Canacona, South Goa, India",
+      description:
+        "Rooted in Kerala traditional Ayurveda since 1960, Natural Touch offers beachside Abhyanga, Shirodhara, herbal steam therapies, and Panchakarma in a calm natural setting ideal for long-stay wellness seekers. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.9,
+      reviews: 130,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/images/6.jpg",
+      slug: "natural-touch-ayurveda-hospital-goa-india",
+    },
+    {
+      name: "KARE Health - Goa",
+      city: "Colva Beach, South Goa, India",
+      description:
+        "A holistic Ayurveda and Yoga retreat in South Goa offering Panchakarma cleanses, dosha consultations, stress-reset programs, Iyengar yoga, and resort-style comfort near Colva Beach. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.9,
+      reviews: 680,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/images/14.jpg",
+      slug: "kare-health-hospital-goa-india",
+    },
+    {
+      name: "Tattvam on the Beach",
+      city: "Arambol, North Goa, India",
+      description:
+        "A beachside Ayurveda and Yoga wellness retreat featuring Panchakarma programs, Abhyangam, Shirodhara, detox plans, vegetarian meals, and daily yoga for restorative healing in natural surroundings. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 3.9,
+      reviews: 450,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Tattvam on the Beach/image 1.webp",
+      slug: "tattvam-on-the-beach-resort-goa-india",
+    },
+    {
+      name: "AyurGlow",
+      city: "Anjuna, Goa, India",
+      description:
+        "AyurGlow is a trusted wellness center delivering authentic Panchakarma, rejuvenation therapies, and personalized Ayurveda consultations for stress, lifestyle disorders, skin concerns, and musculoskeletal issues. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.4,
+      reviews: 380,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/AyurGlow/image 1.jpg",
+      slug: "ayurglow-ayurveda-center-goa-india",
+    },
+    {
+      name: "Goa Sian Spa",
+      city: "Arambol, Goa, India",
+      description:
+        "A premium spa that blends traditional Ayurvedic Healing with curated Asian wellness therapies, offering customized sessions including Abhyanga, Shirodhara, Panchakarma, and holistic rejuvenation. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.3,
+      reviews: 320,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Goa Sian Spa/image 1.jpg",
+      slug: "goa-sian-spa-center-goa-india",
+    },
+    {
+      name: "Dhara AyurGlow",
+      city: "Mapusa, Goa, India",
+      description:
+        "An established Ayurvedic center known for personalized, root-cause-focused care using classical protocols, premium herbal medicines, and targeted therapies for chronic and lifestyle-related health concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.4,
+      reviews: 290,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Dhara AyurGlow/image 1.jpg",
+      slug: "dhara-ayurglow-center-goa-india",
+    },
+    {
+      name: "Lotus Goa",
+      city: "Orlim, South Goa, India",
+      description:
+        "A residential nature cure retreat near Varca Beach where Ayurveda, Naturopathy and Yoga run together on one campus, offering classical Panchakarma, Pizhichil, localised Vasti therapies and guided yoga stays. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.3,
+      reviews: 400,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Lotus Goa/image 1.jpg",
+      slug: "lotus-goa-resort-goa-india",
+    },
+    {
+      name: "Anvi Ayurved",
+      city: "Morjim, Goa, India",
+      description:
+        "Anvi Ayurved offers holistic and organic therapies including Shirodhara, Nasya, Abhyanga, and traditional herbal massage by qualified practitioners, focused on complete mind-body wellness. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.4,
+      reviews: 500,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Anvi Ayurved/image 1.jpg",
+      slug: "anvi-ayurved-center-goa-india",
+    },
+    {
+      name: "Ayushakti - Goa Branch",
+      city: "Porvorim, Goa, India",
+      description:
+        "A branch of the renowned Ayushakti network, this center is known for Nadi Pariksha-based assessment and customized Panchakarma care for chronic diseases through evidence-backed Ayurveda protocols. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.6,
+      reviews: 900,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/Ayushakti Goa Branch/image 1.jpg",
+      slug: "ayushakti-goa-branch-center-goa-india",
+    },
+    {
+      name: "Yoga Goa - Ayurveda Retreats",
+      city: "Assagao, North Goa, India",
+      description:
+        "Structured Ayurveda and yoga retreats offering 3 to 21-day healing plans with therapeutic treatments, daily yoga, vegetarian nutrition, and rejuvenation programs in a serene environment. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.5,
+      reviews: 550,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Yoga Goa Ayurveda Retreats/image 1.jpg",
+      slug: "yoga-goa-ayurveda-retreats-resort-goa-india",
+    },
+    {
+      name: "Ayurveda Goa",
+      city: "Arpora & Mandrem, North Goa, India",
+      description:
+        "Trusted by domestic and international patients since 2008, Ayurveda Goa provides consultation-led Panchakarma and chronic disease management with a practical, non-commercial, patient-first approach. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.7,
+      reviews: 1100,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Ayurveda Goa/image 1.jpg",
+      slug: "ayurveda-goa-center-goa-india",
+    },
+    {
+      name: "Sai Ayurveda Clinic",
+      city: "Colva, Goa, India",
+      description:
+        "A patient-focused Ayurveda clinic offering personalized consultations, classical Panchakarma, and herbal care for digestive, joint, skin, stress, and lifestyle-related conditions. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.3,
+      reviews: 280,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Sai Ayurveda Clinic/image 1.png",
+      slug: "sai-ayurveda-clinic-center-goa-india",
+    },
+    {
+      name: "Ayurveda Yoga Village",
+      city: "Canacona, Goa, India",
+      description:
+        "A village-style residential retreat combining classical Ayurvedic therapies, Panchakarma detox, daily yoga, meditation, and sattvic diet for immersive lifestyle reset and long-term wellness. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.5,
+      reviews: 480,
+      priceRange: "$$$$",
+      image: "/Anchor pages/Goa centers/Ayurveda Yoga Village/image 1.jpg",
+      slug: "ayurveda-yoga-village-resort-goa-india",
+    },
+    {
+      name: "Abhaya Ayurved",
+      city: "Ponda, Goa, India",
+      description:
+        "A classical Ayurveda treatment center focused on authentic formulations and time-tested protocols for chronic joint, skin, respiratory, neurological, and lifestyle health concerns. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.4,
+      reviews: 300,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Abhaya Ayurved/image 1.jpg",
+      slug: "abhaya-ayurved-center-goa-india",
+    },
+    {
+      name: "Ayurcare Goa",
+      city: "Mandrem, Goa, India",
+      description:
+        "A comprehensive Ayurveda healthcare center known for personalized treatment plans, diet and lifestyle correction, and Panchakarma therapies for preventive and curative healing. Guests usually choose this center for structured consultation-led care, personalized therapy plans, and sustainable follow-up lifestyle guidance for long-term wellness outcomes.",
+      rating: 4.5,
+      reviews: 520,
+      priceRange: "$$$",
+      image: "/Anchor pages/Goa centers/Ayurcare Goa/image 1.jpg",
+      slug: "ayurcare-goa-center-goa-india",
+    },
+
+    // HIMALAYAS/RISHIKESH SUB CENTERS
+    {
+      name: "Swami Rama Himalayan University Ayurvedic Center",
+      city: "Dehradun, Uttarakhand, India",
+      description: "A specialized clinical wellness facility located on the lush campus of Swami Rama Himalayan University. Operating under the Himalayan Institute Hospital Trust (HIHT), founded in 1989, the center integrates traditional Ayurvedic healing, yoga sciences, and modern clinical standards to promote physical vitality and mental harmony.",
+      rating: 4.6,
+      reviews: 180,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Swami Rama Himalayan University/main.webp",
+      slug: "swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india",
+    },
+    {
+      name: "Ayuskama Ayurveda Clinic & Panchakarma Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A renowned Ayurvedic retreat nestled in the foothills of the Himalayas in Rishikesh, offering authentic Panchakarma therapies, herbal treatments, and personalized wellness programs in a serene natural setting.",
+      rating: 4.7,
+      reviews: 220,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayuskama Ayurveda Clinic & Panchakarma Centre/main.avif",
+      slug: "ayuskama-ayurveda-rishikesh-india",
+    },
+    {
+      name: "Bhole Baba Ayurvedic Hospital & Research Center",
+      city: "Ranikhet, Uttarakhand, India",
+      description: "A dedicated Ayurvedic hospital and research center in the serene hills of Ranikhet, offering comprehensive Panchakarma therapies, herbal medicine research, and traditional healing programs amidst pristine Himalayan surroundings.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Bhole Baba Ayurvedic Hospital/main.webp",
+      slug: "bhole-baba-ayurvedic-hospital-and-research-center-ranikhet-uttarakhand-india",
+    },
+    {
+      name: "Mamgain's Ayurveda Clinic & Panchakarma Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A trusted Ayurvedic clinic in Rishikesh specializing in classical Panchakarma treatments, chronic disease management, and personalized herbal therapy protocols guided by experienced Vaidyas.",
+      rating: 4.6,
+      reviews: 190,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Mamgain's Ayurveda Clinic & Panchakarma Center/main.webp",
+      slug: "mamgain-ayurvedic-clinic-and-panchakarma-center-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Haritha Ayurveda Academy & Panchakarma Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "An academy-cum-treatment center in Rishikesh that combines Ayurvedic education with authentic Panchakarma therapies, offering deep detox programs and wellness retreats in a spiritually enriching environment.",
+      rating: 4.5,
+      reviews: 160,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Haritha Ayurveda Academy & Panchakarma Center/main.webp",
+      slug: "haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "KAYAKALP – Himalayan Research Institute of Yoga & Naturopathy",
+      city: "Himachal Pradesh, India",
+      description: "A unique Himalayan research institute blending Yoga, Naturopathy, and Ayurveda for holistic healing. Offers residential programs, detox retreats, and therapeutic treatments surrounded by pristine mountain landscapes.",
+      rating: 4.5,
+      reviews: 140,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/KAYAKALP – Himalayan Research Institute of Yoga & Naturopathy/main.jpg",
+      slug: "kayakalp-himalayan-research-institute-of-yoga-and-naturopathy-hospital-himachal-india",
+    },
+    {
+      name: "Vedic Yoga & Ayurveda Retreat Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A tranquil retreat center in Rishikesh offering an integrated approach of Vedic Yoga and traditional Ayurvedic therapies. Provides customized wellness programs, meditation sessions, and Panchakarma treatments.",
+      rating: 4.6,
+      reviews: 170,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Vedic Yoga & Ayurveda Retreat Center/main.jpg",
+      slug: "vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Vedanjana Yoga & Ayurveda Panchakarma Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A specialized Panchakarma and Yoga center in Rishikesh that offers authentic Ayurvedic detox programs, therapeutic yoga sessions, and holistic wellness retreats guided by certified practitioners.",
+      rating: 4.5,
+      reviews: 155,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Vedanjana Yoga & Ayurveda Panchakarma Center/main.webp",
+      slug: "vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Dr. SIBY's Kerala Ayurveda & Panchakarma Center",
+      city: "Himachal Pradesh, India",
+      description: "A Kerala-style Ayurvedic treatment center in the Himalayas, bringing authentic South Indian Panchakarma traditions to the North. Specializes in deep tissue therapies, chronic disease management, and rejuvenation programs.",
+      rating: 4.6,
+      reviews: 175,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Dr. SIBY's Ayurveda Center/main.avif",
+      slug: "dr-sibys-kerala-ayurveda-and-panchakarma-center-himachal-india",
+    },
+    {
+      name: "Arogyam Panchkarma Center & Ayurvedic Hospital",
+      city: "Haridwar, Uttarakhand, India",
+      description: "A comprehensive Ayurvedic hospital in Haridwar offering clinical Panchakarma treatments, herbal medicine consultations, and residential healing programs in a serene riverside setting near the sacred Ganges.",
+      rating: 4.5,
+      reviews: 200,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Arogyam Panchkarma Center & Ayurvedic Hospital/main.JPG",
+      slug: "arogyam-panchkarma-center-haridwar-himachal-india",
+    },
+    {
+      name: "Rishikesh Ayurveda Center",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A well-established Ayurvedic center in the heart of Rishikesh offering traditional Panchakarma therapies, Ayurvedic consultations, herbal treatments, and yoga-integrated wellness programs.",
+      rating: 4.5,
+      reviews: 165,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Rishikesh Ayurveda Center/main.avif",
+      slug: "rishikesh-ayurveda-center-uttarakhand-india",
+    },
+    {
+      name: "RUDRAMYA – Ayurveda at the Himalayas",
+      city: "Himachal Pradesh, India",
+      description: "A premium Himalayan Ayurveda retreat offering luxurious wellness experiences amidst breathtaking mountain vistas. Specializes in Panchakarma detox, stress management, and rejuvenation therapies.",
+      rating: 4.7,
+      reviews: 145,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/RUDRAMYA – Ayurveda at the Himalayas/main.webp",
+      slug: "rudramya-ayurveda-at-the-himalayas-hospital-himachal-india",
+    },
+    {
+      name: "Himalaya Sanjeevni Ayurveda",
+      city: "Dehradun, Uttarakhand, India",
+      description: "A traditional Ayurvedic healing center in Dehradun offering classical herbal treatments, Panchakarma therapies, and wellness programs designed to restore balance and vitality in the foothills of the Himalayas.",
+      rating: 4.5,
+      reviews: 130,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Himalaya Sanjeevni Ayurveda/main.webp",
+      slug: "himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india",
+    },
+    {
+      name: "Naturoville Wellness Resort",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A luxury wellness resort in Rishikesh combining Naturopathy, Ayurveda, and Yoga for comprehensive healing. Offers premium accommodation, therapeutic spa treatments, and personalized wellness programs.",
+      rating: 4.6,
+      reviews: 210,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Naturoville Wellness Resort/main.jpg",
+      slug: "naturoville-wellness-resort-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Vihana Retreat",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A boutique wellness retreat in Rishikesh offering curated Ayurvedic healing journeys, mindfulness programs, and Panchakarma therapies in an intimate and peaceful Himalayan setting.",
+      rating: 4.6,
+      reviews: 135,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Vihana Retreat/main.jpg",
+      slug: "vihana-retreat-hospital-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Prana Spa & Ayurveda (Holy Prana)",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A holistic spa and Ayurveda center in Rishikesh offering traditional healing therapies, relaxation treatments, and Panchakarma programs designed to rejuvenate mind, body, and spirit.",
+      rating: 4.5,
+      reviews: 160,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Prana Spa & Ayurveda (Holy Prana)/main.webp",
+      slug: "prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india",
+    },
+    {
+      name: "Moksha Himalaya Spa Resort",
+      city: "Himachal Pradesh, India",
+      description: "A luxurious Himalayan spa resort offering world-class Ayurvedic treatments, wellness retreats, and therapeutic programs surrounded by breathtaking mountain scenery and pristine natural beauty.",
+      rating: 4.7,
+      reviews: 195,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Moksha Himalaya Spa Resort/main.webp",
+      slug: "moksha-himalaya-spa-resort-himachal-india",
+    },
+    {
+      name: "Ayurveda House (Himalayan Ayurveda)",
+      city: "Himachal Pradesh, India",
+      description: "A traditional Himalayan Ayurveda center offering authentic herbal treatments, Panchakarma therapies, and wellness consultations in the serene mountain environment of Himachal Pradesh.",
+      rating: 4.5,
+      reviews: 140,
+      priceRange: "$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Ayurveda House (Himalayan Ayurveda)/main.jpg",
+      slug: "ayurveda-house-himalayan-ayurveda-hospital-himachal-india",
+    },
+    {
+      name: "AyurVAID Kalmatia – Center of Healing, Almora",
+      city: "Almora, Uttarakhand, India",
+      description: "A premium AyurVAID center in the tranquil hills of Almora offering evidence-based Ayurvedic treatments, Panchakarma therapies, and personalized healing programs with stunning Himalayan views.",
+      rating: 4.7,
+      reviews: 170,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/AyurVAID Kalmatia/main.webp",
+      slug: "ayurvaid-kalmatia-center-almora-uttarakhand-india",
+    },
+    {
+      name: "Arogyadham Retreat – Luxury Ayurveda Hotel",
+      city: "Rishikesh, Uttarakhand, India",
+      description: "A luxury Ayurveda hotel retreat in Rishikesh offering premium accommodation combined with authentic Ayurvedic treatments, Panchakarma therapies, and holistic wellness programs in an elegant setting.",
+      rating: 4.6,
+      reviews: 185,
+      priceRange: "$$$",
+      image: "/TOP centers/himalayas-rishikesh-uttarakhand-north-east/Arogyadham Retreat – Luxury Ayurveda Hotel/main.webp",
+      slug: "arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india",
+    },
+
+    // DELHI & NORTH INDIA SUB CENTERS
+    {
+      name: "Maharishi Ayurveda Hospital",
+      city: "New Delhi, India",
+      description: "A premier Ayurvedic hospital in Delhi offering authentic Maharishi Ayurveda treatments including Panchakarma, pulse diagnosis, and holistic wellness programs rooted in Vedic traditions.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Maharishi Ayurveda Hospital/main.avif",
+      slug: "maharishi-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)",
+      city: "New Delhi, India",
+      description: "The Delhi branch of the legendary Kottakkal Arya Vaidya Sala, offering authentic Kerala Ayurvedic treatments, Panchakarma therapies, and classical herbal formulations in the capital city.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Arya Vaidya Sala - Ayurvedic Hospital & Research Center (Delhi)/main.jpg",
+      slug: "arya-vaidya-sala-delhi-ncr-india",
+    },
+    {
+      name: "TarunVeda Ayurveda Hospital",
+      city: "New Delhi, India",
+      description: "A dedicated Ayurvedic hospital in Delhi specializing in classical treatments, Panchakarma detox, chronic disease management, and personalized herbal therapy protocols.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/TarunVeda Ayurveda Hospital/main.webp",
+      slug: "tarunveda-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "SKK Ayurveda & Panchakarma",
+      city: "New Delhi, India",
+      description: "A specialized Ayurveda and Panchakarma center in Delhi offering comprehensive detox programs, chronic disease treatments, and rejuvenation therapies guided by experienced practitioners.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/SKK Ayurveda & Panchakarma/main.jpg",
+      slug: "skk-ayurveda-and-panchakarma-hospital-new-delhi-india",
+    },
+    {
+      name: "Aprasu Ayurvedic Hospital",
+      city: "New Delhi, India",
+      description: "A well-established Ayurvedic hospital in North Delhi providing classical Ayurvedic treatments, Panchakarma therapies, and holistic healthcare solutions for chronic and acute conditions.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Aprasu Ayurvedic Hospital/main.webp",
+      slug: "aprasu-ayurvedic-hospital-north-delhi-india",
+    },
+    {
+      name: "Sanjeevani Ayurveda",
+      city: "New Delhi, India",
+      description: "A trusted Ayurvedic healthcare center in Delhi offering traditional healing therapies, Panchakarma treatments, and wellness programs designed for urban lifestyle disorders.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Sanjeevani Ayurveda/main.webp",
+      slug: "sanjeevani-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Sri Sri Ayurveda Panchakarma Ayurveda Center",
+      city: "New Delhi, India",
+      description: "Founded on the principles of Sri Sri Ravi Shankar, this center offers authentic Panchakarma detox, Ayurvedic consultations, and holistic wellness programs in a serene environment.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Karma Ayurveda Hospital/main.webp",
+      slug: "sri-sri-ayurveda-panchakarma-center-new-delhi-india",
+    },
+    {
+      name: "Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)",
+      city: "New Delhi, India",
+      description: "An authentic Kerala-style Ayurvedic clinic in Delhi offering traditional Panchakarma treatments, herbal therapies, and wellness programs by experienced Kerala Ayurveda practitioners.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)/main.jpg",
+      slug: "kerala-ayurveda-life-panchakarma-clinic-new-delhi-india",
+    },
+    {
+      name: "Apollo AyurVAID Hospitals (Nehru Enclave)",
+      city: "New Delhi, India",
+      description: "Part of the Apollo healthcare network, this AyurVAID center offers evidence-based classical Ayurveda treatments, Panchakarma therapies, and integrated wellness programs.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Apollo AyurVAID Hospitals (Nehru Enclave)/main.jpeg",
+      slug: "apollo-ayurvaid-life-hospital-new-delhi-india",
+    },
+    {
+      name: "Aasha Ayurveda",
+      city: "New Delhi, India",
+      description: "A compassionate Ayurvedic center in Delhi offering personalized treatments, Panchakarma detox programs, and natural healing solutions for a wide range of health conditions.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Aasha Ayurveda Centre/main.webp",
+      slug: "aasha-ayurveda-center-new-delhi-india",
+    },
+    {
+      name: "Karma Ayurveda Hospital",
+      city: "New Delhi, India",
+      description: "A specialized Ayurvedic hospital in Delhi focusing on kidney care, chronic disease management, and traditional Ayurvedic treatments with a modern clinical approach.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Karma Ayurveda Hospital/main.webp",
+      slug: "karma-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Nirmal Ayurved & Panchkarm Clinic",
+      city: "New Delhi, India",
+      description: "A dedicated Ayurvedic clinic in Delhi offering authentic Panchakarma treatments, herbal medicine consultations, and holistic wellness programs for chronic conditions.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/12.jpg",
+      slug: "nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india",
+    },
+    {
+      name: "AyurNava Kerala Ayurveda Hospital",
+      city: "New Delhi, India",
+      description: "A Kerala-style Ayurveda hospital in Delhi bringing authentic South Indian healing traditions to North India, specializing in Panchakarma and traditional herbal therapies.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)/main.jpg",
+      slug: "ayurnava-kerala-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Kurias Earth Ayurveda Hospital",
+      city: "New Delhi, India",
+      description: "An Ayurvedic hospital in Delhi combining earth-based natural healing with classical Ayurvedic treatments, offering Panchakarma, herbal therapies, and wellness consultations.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/14.jpg",
+      slug: "kurias-earth-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Mirasa Ayurveda",
+      city: "New Delhi, India",
+      description: "A modern Ayurvedic center in Delhi offering comprehensive treatments, Panchakarma detox, skin and hair care therapies, and personalized wellness programs.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/15.webp",
+      slug: "mirasa-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Ayurveda Kendra (Dr. Sudha Asokan)",
+      city: "New Delhi, India",
+      description: "A renowned Ayurvedic clinic led by Dr. Sudha Asokan, offering expert consultations, classical Ayurvedic treatments, Panchakarma therapies, and holistic health programs in Delhi.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/16.webp",
+      slug: "ayurveda-kendra-hospital-delhi-india",
+    },
+    {
+      name: "All India Institute of Ayurveda (AIIA)",
+      city: "New Delhi, India",
+      description: "India's apex Ayurvedic institution under the Ministry of AYUSH, offering world-class Ayurvedic treatments, research-driven therapies, and Panchakarma programs with government-backed excellence.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/17.webp",
+      slug: "all-india-institute-of-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "Ch. Brahm Prakash Ayurved Charak Sansthan (CBPACS)",
+      city: "New Delhi, India",
+      description: "A prestigious government Ayurvedic college and hospital in Delhi offering affordable classical Ayurvedic treatments, Panchakarma, and holistic healthcare with academic excellence.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/18.webp",
+      slug: "ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india",
+    },
+    {
+      name: "Sri Vaidya Ayurveda Panchakarma",
+      city: "New Delhi, India",
+      description: "A trusted Ayurvedic Panchakarma center in Delhi offering authentic detox treatments, herbal consultations, and personalized wellness programs guided by experienced Vaidyas.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/19.jpg",
+      slug: "sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india",
+    },
+    {
+      name: "Kerala Ayurveda Wellness Clinic – East of Kailash",
+      city: "New Delhi, India",
+      description: "An authentic Kerala Ayurveda wellness clinic in East of Kailash, Delhi, offering traditional Panchakarma treatments, therapeutic massages, and holistic healing programs.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/TOP centers/delhi/Kerala Ayurveda Life (Ayurveda Panchakarma Clinic)/main.jpg",
+      slug: "kerala-ayurveda-wellness-center-new-delhi-india",
+    },
+    {
+      name: "Holy Family Hospital – Ayurveda Department",
+      city: "New Delhi, India",
+      description: "The Ayurveda department of the renowned Holy Family Hospital in Delhi, offering integrated Ayurvedic treatments alongside modern medical care for comprehensive patient wellness.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/21.webp",
+      slug: "holy-family-ayurveda-hospital-new-delhi-india",
+    },
+    {
+      name: "A & U Tibbia College & Hospital – Panchakarma",
+      city: "New Delhi, India",
+      description: "A historic Unani and Ayurvedic college-hospital in Delhi offering classical Panchakarma treatments, Ayurvedic consultations, and traditional healing therapies at affordable rates.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/22.webp",
+      slug: "a-and-u-tibbia-college-hospital-new-delhi-india",
+    },
+    {
+      name: "Kairali The Ayurvedic Healing Village – Delhi NCR",
+      city: "New Delhi, India",
+      description: "The Delhi NCR branch of the famous Kairali Ayurvedic Healing Village, offering premium Panchakarma treatments, wellness packages, and authentic Kerala Ayurvedic therapies.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/23.webp",
+      slug: "kairali-the-ayurvedic-healing-village-center-new-delhi-india",
+    },
+    {
+      name: "Sanjivani Ayurvedic Research Institute",
+      city: "Delhi NCR, India",
+      description: "A research-oriented Ayurvedic institute in Delhi NCR offering evidence-based traditional treatments, Panchakarma therapies, and clinical research-driven wellness programs.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/24.jpg",
+      slug: "sanjivani-ayurveda-center-delhi-ncr-india",
+    },
+    {
+      name: "Sri Sri Tattva Panchakarma – Delhi",
+      city: "New Delhi, India",
+      description: "A Sri Sri Tattva branded Panchakarma center in Delhi offering authentic Ayurvedic detox treatments, stress management programs, and holistic wellness therapies.",
+      rating: 4.5,
+      reviews: 150,
+      priceRange: "$$",
+      image: "/Anchor pages/Delhi/images/25.webp",
+      slug: "sri-sri-tattva-panchkarma-center-new-delhi-india",
+    },
+
+    // MUMBAI, PUNE, NASHIK & WEST INDIA SUB CENTERS
+    {
+      name: "Bharati Ayurved Hospital",
+      city: "Pune, Maharashtra, India",
+      description: "A prestigious Ayurvedic teaching hospital in Pune offering classical treatments, advanced Panchakarma, and holistic wellness programs integrated with comprehensive medical care.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Bharati Ayurved Hospital/image 1.webp",
+      slug: "bharati-ayurved-hospital-pune-india",
+    },
+    {
+      name: "Sukhayu Ayurveda & Panchakarma",
+      city: "Pune, Maharashtra, India",
+      description: "A dedicated Ayurvedic clinic in Pune specializing in authentic Panchakarma therapies, herbal treatments, and personalized lifestyle counseling for chronic conditions.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Sukhayu Ayurveda & Panchakarma Centre/image 1.png",
+      slug: "sukhayu-ayurveda-panchakarma-center-nashik-india",
+    },
+    {
+      name: "Swarayu Ayurveda Clinic & Panchakarma",
+      city: "Pune, Maharashtra, India",
+      description: "An expert Ayurvedic center in Pune providing comprehensive wellness solutions, classical detox therapies, and specialized care for metabolic and joint disorders.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Swarayu Ayurveda Clinic & Panchakarma Centre/image 1.webp",
+      slug: "swarayu-ayurveda-clinic-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Ayushakti Ayurved Health",
+      city: "Mumbai, Maharashtra, India",
+      description: "A globally recognized Ayurvedic brand in Mumbai known for its proven pulse reading (Nadi Pariksha), deep detox programs, and effective natural remedies for chronic ailments.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Ayushakti Ayurved Health Centre/image 1.png",
+      slug: "ayushakti-ayurved-health-center-mumbai-india",
+    },
+    {
+      name: "Karma Ayurveda Mumbai",
+      city: "Mumbai, Maharashtra, India",
+      description: "The Mumbai branch of the renowned Karma Ayurveda network, specializing in non-surgical Ayurvedic kidney care, chronic disease management, and customized herbal protocols.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/karma ayurveda mumbai/image 1.webp",
+      slug: "karma-ayurveda-clinic-mumbai-india",
+    },
+    {
+      name: "SRIAAS – SR Institute of Advanced Ayurvedic Sciences",
+      city: "Mumbai, Maharashtra, India",
+      description: "An advanced Ayurvedic institute in Mumbai offering research-backed treatments, classical Panchakarma, and specialized care for lifestyle and neurological disorders.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/SRIAAS – SR Institute of Advanced Ayurvedic Sciences/image 1.webp",
+      slug: "sriaas-sr-institute-of-advanced-ayurvedic-sciences-mumbai-india",
+    },
+    {
+      name: "Thapovan Ayurveda",
+      city: "Mumbai, Maharashtra, India",
+      description: "A serene Kerala Ayurveda center in Mumbai delivering authentic Panchakarma detox, stress management therapies, and traditional rejuvenation programs.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Thapovan Ayurveda/image 1.webp",
+      slug: "thapovan-ayurveda-hospital-mumbai-india",
+    },
+    {
+      name: "Somaiya Ayurvihar – Panchakarma",
+      city: "Mumbai, Maharashtra, India",
+      description: "An institutional Ayurvedic center in Mumbai offering traditional Panchakarma therapies, therapeutic massages, and holistic healthcare supported by academic excellence.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Somaiya Ayurvihar – Panchakarma Centre/image 1.jpg",
+      slug: "somaiya-ayurvihar-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Prof. K.R. Kohli's Ayurveda & Panchakarma (KAPC)",
+      city: "Mumbai, Maharashtra, India",
+      description: "Led by eminent Ayurvedic physician Prof. K.R. Kohli, this Mumbai center offers expert consultations, classical Panchakarma, and specialized treatments for complex diseases.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Prof. K.R. Kohli's Ayurveda & Panchakarma Centre (KAPC)/image 1.jpg",
+      slug: "prof-kr-kohlis-ayurveda-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Sharayu Ayurveda – Best Ayurvedic Doctor in Mumbai",
+      city: "Mumbai, Maharashtra, India",
+      description: "A highly-rated Ayurvedic clinic in Mumbai providing personalized consultations, herbal medicine, and traditional healing therapies for holistic well-being.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Sharayu Ayurveda – Best Ayurvedic Doctor in Mumbai/image 1.jpg",
+      slug: "sharayu-ayurveda-best-ayurvedic-doctor-center-mumbai-india",
+    },
+    {
+      name: "Aushadhgyan Ayurveda & Wellness",
+      city: "Mumbai, Maharashtra, India",
+      description: "A comprehensive Ayurvedic wellness center in Mumbai combining traditional herbal medicine with lifestyle modifications and classical Panchakarma treatments.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Aushadhgyan Ayurveda & Wellness Centre/image 1.webp",
+      slug: "aushadhgyan-ayurveda-wellness-center-mumbai-india",
+    },
+    {
+      name: "Aayushree Ayurvedic – Polyclinic & Panchakarma",
+      city: "Mumbai, Maharashtra, India",
+      description: "A well-equipped Ayurvedic polyclinic in Mumbai offering multi-specialty consultations, Panchakarma therapies, and preventive healthcare programs.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Aayushree Ayurvedic – Polyclinic & Panchakarma Center/image 1.jpg",
+      slug: "aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Herbal Hills Ayurvedic Wellness Center",
+      city: "Mumbai, Maharashtra, India",
+      description: "An integrated Ayurvedic wellness center in Mumbai providing herbal therapies, detox programs, and lifestyle consultations for natural healing.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Herbal Hills Ayurvedic Wellness Center/image 1.webp",
+      slug: "herbal-hills-ayurvedic-wellness-center-mumbai-india",
+    },
+    {
+      name: "Pravaayu Ayurveda & Panchkarma Clinic",
+      city: "Mumbai, Maharashtra, India",
+      description: "A specialized clinic in Mumbai offering authentic Panchakarma procedures, customized herbal treatments, and holistic care for chronic diseases.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Pravaayu Ayurveda & Panchkarma Clinic/image 1.webp",
+      slug: "pravaayu-ayurveda-panchkarma-clinic-mumbai-india",
+    },
+    {
+      name: "Aradhana Ayurveda Clinic & Panchakarma",
+      city: "Mumbai, Maharashtra, India",
+      description: "A trusted Ayurvedic clinic in Mumbai focusing on root-cause healing through traditional Panchakarma therapies, diet counseling, and herbal medicine.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Aradhana Ayurveda Clinic & Panchakarma Center/image 1.webp",
+      slug: "aradhana-ayurveda-clinic-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Divyamrut Ayurcare",
+      city: "Mumbai, Maharashtra, India",
+      description: "A dedicated Ayurvedic center in Mumbai providing specialized care for joint pain, digestive disorders, and metabolic conditions using classical therapies.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Divyamrut Ayurcare/image 1.webp",
+      slug: "divyamrut-ayurcare-hospital-mumbai-india",
+    },
+    {
+      name: "Kerala Ayurveda Multi Speciality Clinic",
+      city: "Mumbai, Maharashtra, India",
+      description: "A Kerala-style multi-specialty Ayurvedic clinic in Mumbai bringing authentic South Indian healing traditions, Panchakarma, and herbal therapies to the city.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Kerala Ayurveda Multi Speciality Clinic/image 1.webp",
+      slug: "kerala-ayurveda-multi-speciality-clinic-mumbai-india",
+    },
+    {
+      name: "Ayush Ayurved Panchakarma Center",
+      city: "Nashik, Maharashtra, India",
+      description: "A renowned Ayurvedic center in Nashik offering comprehensive Panchakarma therapies, detox programs, and traditional healthcare solutions in a serene environment.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Ayush Ayurved Panchakarma Center/image 1.jpeg",
+      slug: "ayush-ayurved-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Shree Ayurved & Panchakarma Hospital",
+      city: "Pune, Maharashtra, India",
+      description: "A comprehensive Ayurvedic hospital in Pune offering inpatient facilities, classical Panchakarma, and specialized treatments for chronic lifestyle disorders.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Shree Ayurved & Panchakarma Hospital/image 1.webp",
+      slug: "aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india",
+    },
+    {
+      name: "Aatreya Ayurved & Panchakarma Clinic",
+      city: "Pune, Maharashtra, India",
+      description: "A dedicated clinic in Pune offering personalized Ayurvedic consultations, authentic Panchakarma therapies, and holistic wellness programs.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Aatreya Ayurved & Panchakarma Clinic/image 1.webp",
+      slug: "aatreya-ayurved-panchakarma-clinic-pune-india",
+    },
+    {
+      name: "Ashtang Ayurveda Super Multi Speciality Hospital",
+      city: "Pune, Maharashtra, India",
+      description: "A multi-specialty Ayurvedic hospital in Pune integrating traditional healing wisdom with modern diagnostic facilities for comprehensive patient care.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Ashtang Ayurveda Super Multi Speciality Hospital/image 1.webp",
+      slug: "ashtang-ayurveda-super-multi-speciality-hospital-nashik-india",
+    },
+    {
+      name: "Ayushman Bhava Ayurveda & Keraliya Panchakarma Clinic",
+      city: "Nashik, Maharashtra, India",
+      description: "An authentic Kerala Panchakarma clinic in Nashik offering traditional detox therapies, stress management, and rejuvenation programs.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Ayushman Bhava Ayurveda & Keraliya Panchakarma Clinic/image 1.jpg",
+      slug: "ayurveda-kendra-hospital-delhi-india",
+    },
+    {
+      name: "Shree Vishwavallabh Ayurvedic Panchakarma & Garbh Sanskar Center",
+      city: "Nashik, Maharashtra, India",
+      description: "A specialized center in Nashik offering classical Panchakarma and traditional Garbh Sanskar (prenatal care) programs for holistic maternal and child wellness.",
+      rating: 4.5,
+      reviews: 120,
+      priceRange: "$$",
+      image: "/TOP centers/mumbai pune nashik/Shree Vishwavallabh Ayurvedic Panchakarma & Garbh Sanskar Center/image 1.webp",
+      slug: "shree-vishwavallabh-ayurvedic-panchakarma-garbh-sanskar-center-nashik-india",
+    },
+];
 
   const staticTreatments = [
     "Ayurveda Treatment", "Panchakarma Treatment", "Sinusitis Treatment", "Autism Treatment", 
@@ -1087,9 +2383,76 @@ const TopCenters = () => {
     "Stress Management", "Alopecia", "Yoga & Meditation", "Detox & Rejuvenation"
   ];
   
-  const cities = ["All", ...Array.from(new Set(centers.map(c => c.city).filter(Boolean))).sort()];
-  const dynamicTreatments = centers.flatMap(c => c.specialties).filter(Boolean);
+  const REGION_MAPPING = {
+    "Kerala Region": ["Kerala", "Alappuzha", "Chazhur", "Ezhakkaranadu", "Idukki", "Kalady", "Kanjirappally", "Kannur", "Kayamkulam", "Kochi", "Kottakkal", "Kovalam", "Kumarakom", "Mararikulam", "Nattika", "Palakkad", "Perumbavoor", "Thrissur"],
+    "Goa Region": ["Goa", "Anjuna", "Arambol", "Arpora", "Ashvem", "Assagao", "Calangute", "Canacona", "Candolim", "Colva", "Mandrem", "Mapusa", "Morjim", "Nerul", "Orlim", "Ponda", "Porvorim"],
+    "Delhi & North India": ["Delhi", "Gurugram", "Sonepat", "Alwar"],
+    "Himalayas, Rishikesh, Uttarakhand & North East": ["Himalaya", "Rishikesh", "Uttarakhand", "Dehradun", "Almora", "Haridwar", "Dharamshala", "Manikaran", "Himachal Pradesh", "Ranikhet"],
+    "Mumbai, Pune, Nashik & West India": ["Mumbai", "Pune", "Nashik", "Maharashtra"],
+    "Bangalore, Hyderabad, Chennai & South India": ["Bangalore", "Bengaluru", "Chennai", "Tamil Nadu", "Karnataka", "Telangana", "Coimbatore", "Mysore", "Udupi"]
+  };
+
+  const getRegionForCenter = (cityStr: string) => {
+    const loc = (cityStr || "").toLowerCase();
+    for (const [region, keywords] of Object.entries(REGION_MAPPING)) {
+      if (keywords.some(kw => loc.includes(kw.toLowerCase()))) {
+        return region;
+      }
+    }
+    return "Other";
+  };
+
+  const cities = ["All", "Kerala Region", "Goa Region", "Delhi & North India", "Himalayas, Rishikesh, Uttarakhand & North East", "Mumbai, Pune, Nashik & West India", "Bangalore, Hyderabad, Chennai & South India"];
+  const dynamicTreatments = centers.flatMap(c => c.specialties || []).filter(Boolean);
   const treatments = ["All", ...Array.from(new Set([...staticTreatments, ...dynamicTreatments])).sort()];
+
+  const filteredCenters = useMemo(() => {
+    return centers
+      .filter((center) => {
+        const cityMatch = selectedCity === "All" || getRegionForCenter(center.city) === selectedCity;
+        return cityMatch;
+      })
+      .sort((a, b) => {
+        // Enforce Main Centers (first 52) always before Sub Centers
+        const idxA = centers.indexOf(a);
+        const idxB = centers.indexOf(b);
+        const isMainA = idxA < 52;
+        const isMainB = idxB < 52;
+        
+        if (isMainA && !isMainB) return -1;
+        if (!isMainA && isMainB) return 1;
+
+        // For sub-centers: preserve original array order (region-wise)
+        if (!isMainA && !isMainB) {
+          return idxA - idxB;
+        }
+
+        // For main centers: apply rating/treatment sorts
+        if (selectedTreatment !== "All") {
+          const aHas = (a.specialties || []).includes(selectedTreatment);
+          const bHas = (b.specialties || []).includes(selectedTreatment);
+          if (aHas && !bHas) return -1;
+          if (!aHas && bHas) return 1;
+        }
+        if (sortBy === "rating") {
+          return (b.rating || 0) - (a.rating || 0);
+        } else if (sortBy === "distance") {
+          return (a.city || "").localeCompare(b.city || "");
+        }
+        return 0;
+      });
+  }, [centers, selectedCity, selectedTreatment, sortBy]);
+
+  const totalPages = Math.ceil(filteredCenters.length / 15) || 1;
+  const paginatedCenters = filteredCenters.slice((currentPage - 1) * 15, currentPage * 15);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCountry, selectedCity, selectedTreatment, sortBy]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen font-poppins bg-[#E5E7E2] flex flex-col overflow-x-hidden">
@@ -1239,26 +2602,7 @@ const TopCenters = () => {
       {/* Centers Grid */}
       <section className="container mx-auto px-4 pb-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-          {centers
-            .filter((center) => {
-              const cityMatch = selectedCity === "All" || center.city === selectedCity;
-              return cityMatch;
-            })
-            .sort((a, b) => {
-              if (selectedTreatment !== "All") {
-                const aHas = a.specialties.includes(selectedTreatment);
-                const bHas = b.specialties.includes(selectedTreatment);
-                if (aHas && !bHas) return -1;
-                if (!aHas && bHas) return 1;
-              }
-              if (sortBy === "rating") {
-                return b.rating - a.rating;
-              } else if (sortBy === "distance") {
-                return a.city.localeCompare(b.city);
-              }
-              return 0;
-            })
-            .map((center, index) => (
+          {paginatedCenters.map((center, index) => (
               <div 
                 key={index} 
                 className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full h-full"
@@ -1305,15 +2649,14 @@ const TopCenters = () => {
                       className="flex items-center gap-1 text-[10px] font-bold text-[#2C4E5A] hover:text-[#1e363e] mb-3 transition-colors duration-200"
                     >
                       {expandedCards.has(index) ? (
-                        <><ChevronUp size={12} /> Read Less</>
-                      ) : (
+                        <><ChevronUp size={12} /> Read Less</>                      ) : (
                         <><ChevronDown size={12} /> Read More</>
                       )}
                     </button>
 
                     {/* Tags Section */}
                     <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-5">
-                      {center.specialties.slice(0, 3).map((specialty, i) => (
+                      {(center.specialties || []).slice(0, 3).map((specialty, i) => (
                         <span
                           key={i}
                           className="bg-[#F0F7F4] text-[#1E7A4D] text-[9px] md:text-[10px] font-bold px-2 py-1 rounded-md border border-[#E0EBE6] text-center truncate max-w-full"
@@ -1322,14 +2665,21 @@ const TopCenters = () => {
                           {specialty}
                         </span>
                       ))}
+                      {(center.specialties?.length || 0) > 3 && (
+                        <span className="bg-[#F0F7F4] text-[#1E7A4D] text-[9px] md:text-[10px] font-bold px-2 py-1 rounded-md border border-[#E0EBE6] text-center truncate max-w-full">
+                          +{center.specialties.length - 3} more
+                        </span>
+                      )}
                     </div>
 
                     {/* Buttons Container */}
                     <div className="mt-auto pt-4 border-t border-border/50">
                       <div className="grid grid-cols-2 gap-2">
                         <Link 
-                          to={center.slug ? `/centers/${center.slug}` : "#"} 
+                          to={center.slug ? `/top-ayurvedic-centers-in-india/${center.slug}` : "#"} 
                           className="w-full"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <Button 
                             variant="outline" 
@@ -1350,6 +2700,57 @@ const TopCenters = () => {
                 </div>
             ))}
         </div>
+        
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Button
+              variant="outline"
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              className="rounded-xl border-[#2C4E5A] text-[#2C4E5A] hover:bg-[#2C4E5A] hover:text-white"
+            >
+              Previous
+            </Button>
+            
+            <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+                let startPage = Math.max(1, currentPage - 1);
+                let endPage = Math.min(totalPages, startPage + 3);
+                if (endPage - startPage < 3) {
+                  startPage = Math.max(1, endPage - 3);
+                }
+                const isMobileVisible = pageNum >= startPage && pageNum <= endPage;
+                
+                return (
+                  <Button
+                    key={pageNum}
+                    variant={currentPage === pageNum ? "default" : "outline"}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`w-8 h-8 md:w-10 md:h-10 p-0 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-sm 
+                      ${!isMobileVisible ? "hidden md:inline-flex" : "inline-flex"} justify-center items-center
+                      ${
+                      currentPage === pageNum 
+                        ? "bg-[#2C4E5A] text-white hover:bg-[#1e363e]" 
+                        : "border-[#2C4E5A] text-[#2C4E5A] hover:bg-[#2C4E5A] hover:text-white"
+                    }`}
+                  >
+                    {pageNum}
+                  </Button>
+                );
+              })}
+            </div>
+
+            <Button
+              variant="outline"
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              className="rounded-xl border-[#2C4E5A] text-[#2C4E5A] hover:bg-[#2C4E5A] hover:text-white"
+            >
+              Next
+            </Button>
+          </div>
+        )}
       </section>
       </main>
 

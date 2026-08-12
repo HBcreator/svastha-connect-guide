@@ -332,7 +332,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas",
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
   },
   {
     name: "Somatheeram Ayurvedic Health Resort",
@@ -341,7 +341,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram",
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram",
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -350,7 +350,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda",
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -359,7 +359,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom",
   },
   {
     name: "Naad Wellness",
@@ -368,7 +368,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness",
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness",
   },
   {
     name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -377,7 +377,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 150,
     image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-    link: "/centers/kerala/dheemahi-kumarakom",
+    link: "/top-ayurvedic-centers-in-india/kerala/dheemahi-kumarakom",
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -386,7 +386,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital",
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital",
   },
   {
     name: "Dharana At Shillim",
@@ -395,7 +395,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim",
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim",
   },
   {
     name: "Sitaram Beach Retreat",
@@ -404,7 +404,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat",
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat",
   },
   {
     name: "Nagarjuna Ayurveda Centre",
@@ -413,7 +413,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-    link: "/centers/kerala/nagarjuna-ayurveda-centre",
+    link: "/top-ayurvedic-centers-in-india/kerala/nagarjuna-ayurveda-centre",
   },
   {
     name: "Viveda Wellness Village",
@@ -422,7 +422,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 0,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village",
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village",
   },
   {
     name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
@@ -431,7 +431,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 420,
     image: "/Center Images/veda5/veda5-1.jpg",
-    link: "/centers/veda5",
+    link: "/top-ayurvedic-centers-in-india/veda5",
   },
 ];
 

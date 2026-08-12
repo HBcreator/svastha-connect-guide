@@ -211,7 +211,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village"
   },
   {
     name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
@@ -221,7 +221,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -231,7 +231,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Ayushi Ayurvedic Retreat",
@@ -241,7 +241,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-    link: "/centers/kerala/ayushi-ayurvedic-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayushi-ayurvedic-retreat"
   },
   {
     name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -251,7 +251,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "Naad Wellness",
@@ -261,7 +261,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness"
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -271,7 +271,7 @@ export const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Viveda Wellness Village",
@@ -281,7 +281,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -291,7 +291,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Akanta Ayurveda and Yoga Resort",
@@ -301,7 +301,7 @@ export const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 479,
     image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
-    link: "/centers/kochi/akanta-ayurveda-and-yoga-resort"
+    link: "/top-ayurvedic-centers-in-india/kochi/akanta-ayurveda-and-yoga-resort"
   },
   {
     name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -311,7 +311,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-    link: "/centers/kerala/dhathri-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/kerala/dhathri-ayurveda"
   },
   {
     name: "Veda5 – Best Ayurveda, Yoga & Wellness Retreat Center",
@@ -321,7 +321,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 420,
     image: "/Center Images/veda5/veda5-1.jpg",
-    link: "/centers/veda5"
+    link: "/top-ayurvedic-centers-in-india/veda5"
   },
 ];
 

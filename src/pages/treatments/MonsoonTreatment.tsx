@@ -25,7 +25,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -35,7 +35,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
   {
     name: "Ayushi Ayurvedic Retreat",
@@ -45,7 +45,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-    link: "/centers/kerala/ayushi-ayurvedic-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayushi-ayurvedic-retreat"
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -55,7 +55,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -65,7 +65,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram"
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
   },
   {
     name: "Athreya Ayurvedic Centre",
@@ -75,7 +75,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/centers/kerala/athreya-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
   },
   {
     name: "Ananda In The Himalayas",
@@ -85,7 +85,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -95,7 +95,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace"
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -105,7 +105,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
   {
     name: "Naad Wellness",
@@ -115,7 +115,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness"
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness"
   },
   {
     name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
@@ -125,7 +125,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-    link: "/centers/goa/mercure-goa-devaaya-resort"
+    link: "/top-ayurvedic-centers-in-india/goa/mercure-goa-devaaya-resort"
   },
   {
     name: "Kumarakom Lake Resort",
@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort"
   },
 ];
 
@@ -625,7 +625,7 @@ const MonsoonTreatment = () => {
             )}
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg flex items-center gap-2 text-base group"

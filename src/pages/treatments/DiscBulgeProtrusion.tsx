@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-    link: "/centers/goa/mercure-goa-devaaya-resort"
+    link: "/top-ayurvedic-centers-in-india/goa/mercure-goa-devaaya-resort"
   },
   {
     name: "Amanbagh Heritage Wellness Retreat",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
     name: "Ayur Bethaniya Ayurveda Hospital",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
-    link: "/centers/kerala/ayur-bethaniya-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayur-bethaniya-ayurveda-hospital"
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom"
   },
   {
     name: "Nagarjuna Ayurveda Centre",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-    link: "/centers/kerala/nagarjuna-ayurveda-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/nagarjuna-ayurveda-centre"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace"
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace"
   },
   {
     name: "Ayurmana",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram"
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "Modi Yoga Retreat",
@@ -245,7 +245,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
-    link: "/centers/rishikesh/modi-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/modi-yoga-retreat"
   },
 ];
 
@@ -744,7 +744,7 @@ const DiscBulgeProtrusion = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

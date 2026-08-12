@@ -23,7 +23,7 @@ const GoaCenters = () => {
       reviews: 1450,
       priceRange: "$$$$",
       image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-      slug: "mercure-goa-devaaya-retreat-goa-india",
+      slug: "mercure-goa-devaaya-resort-ayurveda-wellness-center-goa-india",
     },
     {
       name: "Ashiyana Yoga Retreat & Ayurveda",
@@ -34,7 +34,7 @@ const GoaCenters = () => {
       reviews: 850,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/10.jpg",
-      slug: "ashiyana-yoga-retreat-village-goa-india",
+      slug: "ashiyana-yoga-retreat-center-goa-india",
     },
     {
       name: "Nalanda Retreat Goa",
@@ -45,7 +45,7 @@ const GoaCenters = () => {
       reviews: 920,
       priceRange: "$$$$",
       image: "/Anchor pages/Goa centers/images/9.jpg",
-      slug: "nalanda-retreat-goa-india",
+      slug: "nalanda-retreat-center-goa-india",
     },
     {
       name: "Soul Vacation Resort & Wellness Center",
@@ -56,7 +56,7 @@ const GoaCenters = () => {
       reviews: 1200,
       priceRange: "$$$",
       image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-      slug: "soul-vacation-resort-spa-goa-india",
+      slug: "soul-vacation-resort-and-wellness-center-goa-india",
     },
     {
       name: "SWAN Yoga Retreat & Ayurveda",
@@ -67,7 +67,7 @@ const GoaCenters = () => {
       reviews: 650,
       priceRange: "$$$",
       image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-      slug: "swan-yoga-retreat-goa-india",
+      slug: "swan-yoga-retreat-and-ayurveda-center-goa-india",
     },
     {
       name: "Veda5 Wellness Retreat - Arambol",
@@ -402,7 +402,7 @@ const GoaCenters = () => {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>

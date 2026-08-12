@@ -59,7 +59,7 @@ export default function Index() {
       specialties: ["Panchakarma", "Rejuvenation", "Anti-Aging"],
       rating: 4.7,
       price: "$$$$",
-      path: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+      path: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort",
       image: "/Center Images/Carnoustie Ayurveda/CTA mid.jpg",
       usp: "NABH Accredited & Award-Winning Luxury",
     },
@@ -70,7 +70,7 @@ export default function Index() {
       specialties: ["Detox", "Yoga", "Holistic Healing"],
       rating: 4.7,
       price: "$$$",
-      path: "/centers/pune/toyam-by-orchid-hotels",
+      path: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels",
       image: "/Center Images/Toyam By Orchid Hotels/CTA mid.webp",
       usp: "Eco-Friendly Wellness Sanctuary",
     },
@@ -81,7 +81,7 @@ export default function Index() {
       specialties: ["Psoriasis Protocols", "Weight Care", "Immunity Reset"],
       rating: 4.8,
       price: "$$$",
-      path: "/centers/kerala/somatheeram",
+      path: "/top-ayurvedic-centers-in-india/kerala/somatheeram",
       image: "/Center Images/somatheeram/Somatheeram 01.jpg",
       usp: "Multi-Time National Tourism Award Winner",
     },
@@ -92,7 +92,7 @@ export default function Index() {
       specialties: ["Panchakarma", "Integrative Medicine", "Chronic Detox"],
       rating: 4.9,
       price: "$$$$",
-      path: "/centers/bangalore/soukya",
+      path: "/top-ayurvedic-centers-in-india/bangalore/soukya",
       image: "https://Savastha.b-cdn.net/Centers/Soukya%20Center/Images/Photo%20Gallery/1%20Soukya.jpg",
       usp: "NABH Accredited & Global Royal Favorite",
     },
@@ -103,7 +103,7 @@ export default function Index() {
       specialties: ["Stress Rebalance", "Yoga Therapy", "Detox Protocols"],
       rating: 4.9,
       price: "$$$$",
-      path: "/centers/uttarakhand/ananda-in-the-himalayas",
+      path: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
       image: "/Center Images/Ananda in the Himalayas/CTA bottom.jpg",
       usp: "World's Leading Luxury Wellness Retreat",
     },
@@ -114,7 +114,7 @@ export default function Index() {
       specialties: ["Rejuvenation", "Beauty Detox", "Wellness"],
       rating: 4.7,
       price: "$$$",
-      path: "/centers/mysore/indus-valley-ayurvedic-center",
+      path: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-center",
       image: "/Center Images/Indus Valley Ayurvedic Centre/CTA mid.jpg",
       usp: "Vastu-Compliant Royal Architecture",
     },
@@ -125,7 +125,7 @@ export default function Index() {
       specialties: ["Weight Loss", "Panchakarma", "Stress"],
       rating: 4.8,
       price: "$$$",
-      path: "/centers/kerala/kairali-ayurvedic-healing-village",
+      path: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village",
       image: "/Center Images/The Ayurvedic Healing Village/CTA image (2).jpg",
       usp: "50-Acre Lush Green Sanctuary",
     },
@@ -136,7 +136,7 @@ export default function Index() {
       specialties: ["Detox", "Pain Management", "Relaxation"],
       rating: 4.6,
       price: "$$",
-      path: "/centers/kerala/agni-ayurvedic-village",
+      path: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village",
       image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
       usp: "Premium Eco-Friendly Sanctuary",
     },
@@ -147,7 +147,7 @@ export default function Index() {
       specialties: ["Immunity", "Detox", "Spiritual Healing"],
       rating: 4.8,
       price: "$$$",
-      path: "/centers/veda5",
+      path: "/top-ayurvedic-centers-in-india/veda5",
       image: "/Center Images/veda5/Facilities & Amenities/veda5-01.jpg",
       usp: "Himalayan Wellness & Yoga Retreat",
     }
@@ -228,7 +228,7 @@ export default function Index() {
             <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
               Discover India's most prestigious NABH-accredited Ayurvedic hospitals and retreat sanctuaries — handpicked across Kerala, the Himalayas, Goa, Bangalore, and beyond.
             </p>
-            <Link to="/centers" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
+            <Link to="/top-ayurvedic-centers-in-india" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
               Browse All Centers →
             </Link>
           </div>
@@ -374,7 +374,7 @@ export default function Index() {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

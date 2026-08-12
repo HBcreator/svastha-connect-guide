@@ -274,7 +274,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 420,
     image: "/Center Images/veda5/veda5-1.jpg",
-    link: "/centers/veda5"
+    link: "/top-ayurvedic-centers-in-india/veda5"
   },
   {
     name: "The Imperial Spa and Wellness",
@@ -284,7 +284,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
-    link: "/centers/delhi/the-imperial-spa-and-wellness"
+    link: "/top-ayurvedic-centers-in-india/delhi/the-imperial-spa-and-wellness"
   },
   {
     name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
@@ -294,7 +294,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Kumarakom Lake Resort",
@@ -304,7 +304,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort"
   },
   {
     name: "Nalanda Retreat Goa",
@@ -314,7 +314,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 500,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa"
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa"
   },
   {
     name: "Dharana At Shillim",
@@ -324,7 +324,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim"
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim"
   },
   {
     name: "AyurvedaGram Heritage Wellness Centre",
@@ -334,7 +334,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/centers/bangalore/ayurvedagram"
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -344,7 +344,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace"
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace"
   },
   {
     name: "Mercure Goa Devaaya Resort – Ayurveda Wellness Centre",
@@ -354,7 +354,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Mercure Goa Devaaya Resort/Thumb.jpg",
-    link: "/centers/goa/mercure-goa-devaaya-resort"
+    link: "/top-ayurvedic-centers-in-india/goa/mercure-goa-devaaya-resort"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -364,7 +364,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -374,7 +374,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -384,7 +384,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
 ];
 

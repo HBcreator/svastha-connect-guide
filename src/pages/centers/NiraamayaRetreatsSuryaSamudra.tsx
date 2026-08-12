@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState, JSX } from "react";
 import { Calendar, MapPin, Star, ChevronLeft, ChevronRight, Images, Video, Users, TrendingUp, Heart, Stethoscope, ShieldCheck, Leaf, Activity, Sparkles, ClipboardList, FileSearch, Pill, Utensils, Home, Phone, MessageCircle, Building2, Droplet, Globe, TreePine, Award, X, MessageCircleHeart, Search, Waves, Sunset, Palmtree, Wind, Flower2, Dumbbell, Bone, Brain, Scale, UserRoundCheck, FileText, HandHelping, GraduationCap } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -829,6 +830,30 @@ export default function NiraamayaRetreatsSuryaSamudra() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/top-ayurvedic-centers-in-india" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              NIRAAMAYA RETREATS SURYA SAMUDRA KERALA
+            </li>
+          </ol>
+        </div>
+      </nav>
+
 
       <div className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-3 md:px-4 max-w-full">

@@ -220,7 +220,7 @@ const KeralaCenters = () => {
       reviews: 500,
       priceRange: "$$$$$",
       image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-      slug: "kerala/kalari-kovilakom",
+      slug: "kalari-kovilakom-ayurveda-hospital-kerala-india",
     },
     {
       name: "Carnoustie Ayurveda & Wellness Resort",
@@ -230,7 +230,7 @@ const KeralaCenters = () => {
       reviews: 3000,
       priceRange: "$$$$$",
       image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-      slug: "kerala/carnoustie-ayurveda-wellness-resort",
+      slug: "carnoustie-ayurveda-wellness-resort-kerala-india",
     },
     {
       name: "The Nattika Beach Resort",
@@ -240,7 +240,7 @@ const KeralaCenters = () => {
       reviews: 3500,
       priceRange: "$$$$",
       image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-      slug: "kerala/the-nattika-beach-resort",
+      slug: "the-nattika-beach-resort-kerala-india",
     },
     {
       name: "Niraamaya Retreats Surya Samudra",
@@ -250,7 +250,7 @@ const KeralaCenters = () => {
       reviews: 5000,
       priceRange: "$$$$$",
       image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-      slug: "kerala/niraamaya-retreats-surya-samudra",
+      slug: "niraamaya-retreats-surya-samudra-resort-kerala-india",
     },
     {
       name: "Sitaram Beach Retreat",
@@ -271,7 +271,7 @@ const KeralaCenters = () => {
       reviews: 400,
       priceRange: "$$",
       image: "/Anchor pages/Kerala centers/images/1.webp",
-      slug: "kerala/ideal-ayurvedic-resort",
+      slug: "ideal-ayurvedic-resort-kerala-india",
     },
     {
       name: "Kumarakom Lake Resort",
@@ -281,7 +281,7 @@ const KeralaCenters = () => {
       reviews: 1200,
       priceRange: "$$$$$",
       image: "/Anchor pages/Kerala centers/images/2.jpg",
-      slug: "kerala/kumarakom-lake-resort",
+      slug: "kumarakom-lake-resort-kerala-india",
     },
     {
       name: "Parathuvayalil Ayurveda Hospital",
@@ -570,7 +570,7 @@ const KeralaCenters = () => {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>

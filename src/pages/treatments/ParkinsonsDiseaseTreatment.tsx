@@ -21,11 +21,11 @@ const topAyurvedicCenters = [
     name: "Agni Ayurvedic Village Resort",
     city: "Kerala",
     location: "Kerala",
-    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, it’s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
+    description: "A tranquil wellness hideaway in the heart of Kerala, Agni Ayurvedic Village Resort blends ancient Ayurvedic wisdom with the serenity of nature. Surrounded by lush greenery and peaceful water features, itï¿½s a sanctuary where you can slow down, reset your mind, and allow your body to rejuvenate through time-honored therapies. Expect genuine care, nurturing treatments, and an atmosphere that feels like coming home to yourself.",
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
   {
     name: "Akanta Ayurveda and Yoga Resort",
@@ -35,7 +35,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 479,
     image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
-    link: "/centers/kochi/akanta-ayurveda-and-yoga-resort"
+    link: "/top-ayurvedic-centers-in-india/kochi/akanta-ayurveda-and-yoga-resort"
   },
   {
     name: "Atmantan Wellness Resort",
@@ -45,7 +45,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort"
   },
   {
     name: "Sitaram Beach Retreat",
@@ -55,7 +55,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -65,17 +65,17 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "Ananda In The Himalayas",
     city: "Uttarakhand",
     location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spiritï¿½creating lasting transformation through mindful living and natural healing practices.",
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -85,27 +85,27 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
-    name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
+    name: "Dheemahi Kumarakom ï¿½ Premium Lakeside Retreat",
     city: "Kumarakom",
     location: "Kumarakom",
     description: "Nestled on the serene banks of Lake Vembanad, Dheemahi Kumarakom is a premium NABH-accredited sanctuary for authentic healing. Rooted in over 90 years of family heritage, this retreat masterfully blends deep-rooted Ayurvedic wisdom with modern luxury, offering personalized care in a tranquil lakeside haven.",
     rating: 4.9,
     reviews: 150,
     image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-    link: "/centers/kerala/dheemahi-kumarakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/dheemahi-kumarakom"
   },
   {
     name: "Shathayu Ayurveda Yoga Retreat",
     city: "Udupi",
     location: "Udupi",
-    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environment—ideal for deep restoration of body and mind.",
+    description: "Immerse yourself in a serene coastal sanctuary dedicated to authentic Ayurvedic Healing and yogic living. Shathayu Ayurveda Yoga Retreat blends classical Ayurvedic therapies with structured yoga programs, offering a holistic pathway to detoxification, rejuvenation, and lifestyle transformation. Guided by experienced Vaidyas and yoga practitioners, the retreat emphasizes personalized treatment protocols in a peaceful, nature-rich environmentï¿½ideal for deep restoration of body and mind.",
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/udupi/shathayu-ayurveda-yoga-retreat"
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -115,7 +115,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom"
   },
   {
     name: "Athreya Ayurvedic Centre",
@@ -125,7 +125,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/centers/kerala/athreya-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
 ];
 
@@ -677,7 +677,7 @@ const ParkinsonsDiseaseTreatment = () => {
             )}
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base group"

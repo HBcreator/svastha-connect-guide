@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sitaram Beach Retreat/Thumb.jpg",
-    link: "/centers/kerala/sitaram-beach-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/sitaram-beach-retreat"
   },
   {
     name: "🧘‍♂️ Soul Vacation Resort & Wellness Centre",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-    link: "/centers/goa/soul-vacation"
+    link: "/top-ayurvedic-centers-in-india/goa/soul-vacation"
   },
   {
     name: "Ayuskama Ayurveda",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-    link: "/centers/dharamshala/ayuskama-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/ayuskama-ayurveda"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "Ananda In The Himalayas",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
     name: "Dharana At Shillim",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 3900,
     image: "/Center Images/Dharana At Shillim/Thumb.jpg",
-    link: "/centers/pune/dharana-at-shillim"
+    link: "/top-ayurvedic-centers-in-india/pune/dharana-at-shillim"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
     name: "Kumarakom Lake Resort",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort"
   },
   {
     name: "Namaste Dwaar – Countryside Wellness Retreat",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar"
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar"
   },
   {
     name: "Somatheeram Ayurvedic Health Resort",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram"
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram"
   },
   {
     name: "Shreyas Yoga Retreat (Nelamangala)",
@@ -245,7 +245,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat"
   },
 ];
 
@@ -719,7 +719,7 @@ const Psoriasis = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

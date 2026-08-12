@@ -137,7 +137,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 0,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort",
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort",
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -146,7 +146,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 0,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest",
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest",
   },
   {
     name: "Kairali – The Ayurvedic Healing Village",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village",
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village",
   },
   {
     name: "Carnoustie Ayurveda & Wellness Resort",
@@ -164,7 +164,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort",
+    link: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort",
   },
   {
     name: "The Nattika Beach Resort",
@@ -173,7 +173,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort",
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort",
   },
   {
     name: "Shreyas Yoga Retreat",
@@ -182,7 +182,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-    link: "/centers/bangalore/shreyas-yoga-retreat",
+    link: "/top-ayurvedic-centers-in-india/bangalore/shreyas-yoga-retreat",
   },
   {
     name: "ITC Grand Bharat",
@@ -191,7 +191,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 17000,
     image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/centers/gurugram/itc-grand-bharat",
+    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
   },
   {
     name: "Toyam By Orchid Hotels",
@@ -200,7 +200,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 0,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels",
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels",
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -209,7 +209,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots",
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots",
   },
   {
     name: "Naad Wellness",
@@ -218,7 +218,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    link: "/centers/sonepat/naad-wellness",
+    link: "/top-ayurvedic-centers-in-india/sonepat/naad-wellness",
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -227,7 +227,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village",
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village",
   },
   {
     name: "Namaste Dwaar – Countryside Wellness Retreat",
@@ -236,7 +236,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar",
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar",
   },
 ];
 

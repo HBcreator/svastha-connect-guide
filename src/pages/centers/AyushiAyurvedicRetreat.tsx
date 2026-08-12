@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import {
   Activity,
@@ -1079,6 +1080,29 @@ export default function AyushiAyurvedicRetreat() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/top-ayurvedic-centers-in-india" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              AYUSHI AYURVEDIC RETREAT KERALA
+            </li>
+          </ol>
+        </div>
+      </nav>
+
 
       {/* Hero Section */}
       <div className="bg-primary text-primary-foreground py-10">
@@ -1188,7 +1212,7 @@ export default function AyushiAyurvedicRetreat() {
                   )}
                 </div>
 
-                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2×2) */}
+                {/* Fixed Grid Gallery - 1 Large (16:9) + 4 Small (2ï¿½2) */}
                 {thumbnailImages.length > 0 && (
                   <div className="flex flex-col md:flex-row gap-3 mb-6">
                     {/* Large Image - Left Side - Fixed 16:9 Aspect Ratio */}
@@ -1207,7 +1231,7 @@ export default function AyushiAyurvedicRetreat() {
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
                     </div>
 
-                    {/* Small Images - Right Side - Fixed 2×2 Grid */}
+                    {/* Small Images - Right Side - Fixed 2ï¿½2 Grid */}
                     <div className="flex-none w-full md:w-[calc(33.333%-0.375rem)] grid grid-cols-2 gap-3">
                       {thumbnailImages.slice(1, 5).map((img, idx) => {
                         const actualIndex = images.indexOf(img);

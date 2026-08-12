@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect, useRef, useMemo } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -391,7 +392,7 @@ export default function NamasteDwaar() {
 
             const parts = content.split("-");
             // Assuming format "Name - Location" or "Name, Location" (Review header had combo)
-            // The file format is "**Sophia Müller - Berlin, Germany**"
+            // The file format is "**Sophia Mï¿½ller - Berlin, Germany**"
             const name = parts[0].trim();
             const location = parts.length > 1 ? parts.slice(1).join("-").trim() : "";
 
@@ -457,7 +458,7 @@ export default function NamasteDwaar() {
       .catch(() => {
         setAwardsList([
           { title: "Best Spa & Wellness Property", desc: "Recognized for excellence in spa and wellness services." },
-          { title: "Hotel of the Year – Mid Market", desc: "Awarded for hospitality leadership and guest satisfaction." },
+          { title: "Hotel of the Year ï¿½ Mid Market", desc: "Awarded for hospitality leadership and guest satisfaction." },
           { title: "Best New Hospitality Product", desc: "Celebrated as an innovative new hospitality product." },
           { title: "Appreciation for Promoting Wellness Tourism", desc: "Appreciated for promoting wellness tourism in the region." },
           { title: "A Mark of Professional Excellence", desc: "Affiliated with leading industry bodies for professional excellence." }
@@ -893,6 +894,29 @@ export default function NamasteDwaar() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-[#FCFBF7] border-b border-[#EDE8D0] py-3">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <ol className="flex items-center gap-2 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.1em] overflow-x-auto whitespace-nowrap pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/" className="text-primary/50 hover:text-primary transition-colors flex items-center gap-1">
+                Home
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="flex items-center gap-2 shrink-0">
+              <Link to="/top-ayurvedic-centers-in-india" className="text-primary/50 hover:text-primary transition-colors">
+                Centers
+              </Link>
+              <ChevronRight className="h-3 w-3 text-primary/20" />
+            </li>
+            <li className="text-primary/90 font-black shrink-0">
+              NAMASTE DWAAR COUNTRYSIDE WELLNESS RETREAT DELHI
+            </li>
+          </ol>
+        </div>
+      </nav>
+
 
       <div className="bg-primary text-primary-foreground py-10">
         <div className="container mx-auto px-3 md:px-4 max-w-full">

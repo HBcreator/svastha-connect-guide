@@ -17,9 +17,9 @@ const SouthIndiaCenters = () => {
     "soukya-international-holistic-health-center-bangalore-india",
     "ayurvedagram-heritage-wellness-center-bangalore-india",
     "indus-valley-ayurvedic-hospital-mysore-india",
-    "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
+    "shathayu-ayurveda-yoga-retreat-banglore-india",
     "sri-sri-ayurveda-hospital-bengaluru-india",
-    "shreyas-yoga-retreat-bangalore-india",
+    "shreyas-yoga-retreat-center-bangalore-india",
     "adyant-ayurveda-hospital-bengaluru-india",
     "vydehi-ayurveda-hospital-bengaluru-india",
     "keva-ayurveda-hospital-bengaluru-india",
@@ -74,7 +74,7 @@ const SouthIndiaCenters = () => {
       reviews: 380,
       priceRange: "$$$",
       image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-      slug: "shathayu-ayurveda-yoga-retreat-udupi-banglore-india",
+      slug: "shathayu-ayurveda-yoga-retreat-banglore-india",
     },
     {
       name: "Indus Valley Ayurvedic Center",
@@ -96,7 +96,7 @@ const SouthIndiaCenters = () => {
       reviews: 500,
       priceRange: "$$$$",
       image: "/Center Images/Shreyas Yoga Retreat/thumb.jpg",
-      slug: "shreyas-yoga-retreat-bangalore-india",
+      slug: "shreyas-yoga-retreat-center-bangalore-india",
     },
     {
       name: "Sri Sri Ayurveda Hospital Bengaluru",
@@ -454,7 +454,7 @@ const SouthIndiaCenters = () => {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>

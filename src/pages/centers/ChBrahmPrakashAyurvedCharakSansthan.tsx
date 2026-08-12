@@ -246,7 +246,7 @@ export default function ChBrahmPrakashAyurvedCharakSansthan() {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="flex items-center gap-2 shrink-0">
-              <a href="/centers" className="text-primary/50 hover:text-primary transition-colors">
+              <a href="/top-ayurvedic-centers-in-india" className="text-primary/50 hover:text-primary transition-colors">
                 Centers
               </a>
               <ChevronRight className="h-3 w-3 text-primary/20" />

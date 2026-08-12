@@ -263,12 +263,10 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/centers" element={<TopCenters />} />
+          <Route path="/top-ayurvedic-centers-in-india" element={<TopCenters />} />
           <Route path="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" element={<SouthIndiaCenters />} />
           <Route path="/top-10-ayurvedic-centers-hospitals-bangalore" element={<Navigate to="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" replace />} />
-          <Route path="/centers/bangalore-south-india" element={<Navigate to="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" replace />} />
-          <Route path="/centers/bangalore-hyderabad-chennai-south-india-ayurvedic-centers-and-hospitals" element={<Navigate to="/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india" replace />} />
-          <Route path="/centers/south-india" element={<SouthIndiaCenters />} />
+          <Route path="/top-ayurvedic-centers-in-india/south-india" element={<SouthIndiaCenters />} />
           <Route path="/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india" element={<HimalayasRishikeshUttarakhandNorthEastCenters />} />
           <Route path="/himalayas-rishikesh-uttarakhand-north-east-ayurvedic-centers-and-hospitals" element={<Navigate to="/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india" replace />} />
           <Route path="/top-11-ayurvedic-centers-hospitals-delhi-ncr-north-india" element={<DelhiNorthIndiaRegionCenters />} />
@@ -282,211 +280,176 @@ const App = () => (
           <Route path="/top-15-ayurvedic-centers-hospitals-goa-india" element={<GoaCenters />} />
           <Route path="/top-10-ayurvedic-centers-hospitals-goa" element={<Navigate to="/top-15-ayurvedic-centers-hospitals-goa-india" replace />} />
           <Route path="/goa-ayurvedic-centers-and-hospitals" element={<Navigate to="/top-15-ayurvedic-centers-hospitals-goa-india" replace />} />
-          <Route path="/centers/kerala/agni-ayurvedic-village" element={<AgniAyurvedicVillage />} />
-          <Route path="/centers/agni-ayurvedic-village-resort-panvel-mumbai-india" element={<Navigate to="/centers/kerala/agni-ayurvedic-village" replace />} />
-          <Route path="/centers/fazlani-natures-nest-wellness-center-mumbai-india" element={<FazlaniNaturesNest />} />
-          <Route path="/centers/bharati-ayurved-hospital-pune-india" element={<BharatiAyurvedHospital />} />
-          <Route path="/centers/sukhayu-ayurveda-panchakarma-center-nashik-india" element={<SukhayuAyurveda />} />
-          <Route path="/centers/swarayu-ayurveda-clinic-panchakarma-center-mumbai-india" element={<SwarayuAyurveda />} />
-          <Route path="/centers/ayushakti-ayurved-health-center-mumbai-india" element={<AyushaktiAyurved />} />
-          <Route path="/centers/karma-ayurveda-clinic-mumbai-india" element={<KarmaAyurveda />} />
-          <Route path="/centers/karma-ayurveda-hospital-new-delhi-india" element={<KarmaAyurvedaHospital />} />
-          <Route path="/centers/sriaas-sr-institute-of-advanced-ayurvedic-sciences-hospital-mumbai-india" element={<SRIAASInstitute />} />
-          <Route path="/centers/thapovan-ayurveda-hospital-mumbai-india" element={<ThapovanAyurveda />} />
-          <Route path="/centers/somaiya-ayurvihar-panchakarma-center-mumbai-india" element={<SomaiyaAyurvihar />} />
-          <Route path="/centers/prof-kr-kohlis-ayurveda-panchakarma-center-mumbai-india" element={<ProfKRKohliAyurveda />} />
-          <Route path="/centers/sharayu-ayurveda-best-ayurvedic-doctor-center-mumbai-india" element={<SharayuAyurveda />} />
-          <Route path="/centers/aushadhgyan-ayurveda-wellness-center-mumbai-india" element={<AushadhgyanAyurveda />} />
-          <Route path="/centers/aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india" element={<AayushreeAyurvedic />} />
-          <Route path="/centers/herbal-hills-ayurvedic-wellness-center-mumbai-india" element={<HerbalHillsAyurveda />} />
-          <Route path="/centers/pravaayu-ayurveda-panchkarma-clinic-mumbai-india" element={<PravaayuAyurveda />} />
-          <Route path="/centers/aradhana-ayurveda-clinic-panchakarma-center-mumbai-india" element={<AradhanaAyurveda />} />
-          <Route path="/centers/divyamrut-ayurcare-hospital-mumbai-india" element={<DivyamrutAyurcare />} />
-          <Route path="/centers/kerala-ayurveda-multi-speciality-clinic-mumbai-india" element={<KeralaAyurvedaClinic />} />
-          <Route path="/centers/ayush-ayurved-panchakarma-center-mumbai-india" element={<AyushAyurvedPanchakarmaCenter />} />
-          <Route path="/centers/shree-ayurved-panchakarma-hospital-pune-india" element={<ShreeAyurvedHospital />} />
-          <Route path="/centers/aatreya-ayurved-panchakarma-clinic-pune-india" element={<AatreyaAyurvedClinic />} />
-          <Route path="/centers/atmantan-wellness-resort-pune-india" element={<AtmantanWellnessResort />} />
-          <Route path="/centers/viveda-wellness-village-mumbai-india" element={<VivedaWellnessVillage />} />
-          <Route path="/centers/dharana-at-shillim-wellness-retreat-pune-india" element={<DharanaAtShillim />} />
-          <Route path="/centers/toyam-by-orchid-hotels-wellness-resort-pune-india" element={<ToyamByOrchidHotels />} />
-          <Route path="/centers/shathayu-ayurveda-yoga-retreat-udupi-banglore-india" element={<ShathayuAyurvedaYogaRetreat />} />
-          <Route path="/centers/shreyas-yoga-retreat-bangalore-india" element={<ShreyasYogaRetreat />} />
-          <Route path="/centers/indus-valley-ayurvedic-hospital-mysore-india" element={<IndusValleyAyurvedicCenter />} />
-          <Route path="/centers/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/agni-ayurvedic-village-resort-kerala-india" element={<AgniAyurvedicVillage />} />
+          <Route path="/top-ayurvedic-centers-in-india/fazlani-natures-nest-wellness-center-mumbai-india" element={<FazlaniNaturesNest />} />
+          <Route path="/top-ayurvedic-centers-in-india/bharati-ayurved-hospital-pune-india" element={<BharatiAyurvedHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/sukhayu-ayurveda-panchakarma-center-nashik-india" element={<SukhayuAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/swarayu-ayurveda-clinic-panchakarma-center-mumbai-india" element={<SwarayuAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayushakti-ayurved-health-center-mumbai-india" element={<AyushaktiAyurved />} />
+          <Route path="/top-ayurvedic-centers-in-india/karma-ayurveda-clinic-mumbai-india" element={<KarmaAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/karma-ayurveda-hospital-new-delhi-india" element={<KarmaAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/sriaas-sr-institute-of-advanced-ayurvedic-sciences-hospital-mumbai-india" element={<SRIAASInstitute />} />
+          <Route path="/top-ayurvedic-centers-in-india/thapovan-ayurveda-hospital-mumbai-india" element={<ThapovanAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/somaiya-ayurvihar-panchakarma-center-mumbai-india" element={<SomaiyaAyurvihar />} />
+          <Route path="/top-ayurvedic-centers-in-india/prof-kr-kohlis-ayurveda-panchakarma-center-mumbai-india" element={<ProfKRKohliAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/sharayu-ayurveda-best-ayurvedic-doctor-center-mumbai-india" element={<SharayuAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/aushadhgyan-ayurveda-wellness-center-mumbai-india" element={<AushadhgyanAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/aayushree-ayurvedic-polyclinic-panchakarma-center-mumbai-india" element={<AayushreeAyurvedic />} />
+          <Route path="/top-ayurvedic-centers-in-india/herbal-hills-ayurvedic-wellness-center-mumbai-india" element={<HerbalHillsAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/pravaayu-ayurveda-panchkarma-clinic-mumbai-india" element={<PravaayuAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/aradhana-ayurveda-clinic-panchakarma-center-mumbai-india" element={<AradhanaAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/divyamrut-ayurcare-hospital-mumbai-india" element={<DivyamrutAyurcare />} />
+          <Route path="/top-ayurvedic-centers-in-india/kerala-ayurveda-multi-speciality-clinic-mumbai-india" element={<KeralaAyurvedaClinic />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayush-ayurved-panchakarma-center-mumbai-india" element={<AyushAyurvedPanchakarmaCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/shree-ayurved-panchakarma-hospital-pune-india" element={<ShreeAyurvedHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/aatreya-ayurved-panchakarma-clinic-pune-india" element={<AatreyaAyurvedClinic />} />
+          <Route path="/top-ayurvedic-centers-in-india/atmantan-wellness-resort-center-pune-india" element={<AtmantanWellnessResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/viveda-wellness-village-resort-mumbai-india" element={<VivedaWellnessVillage />} />
+          <Route path="/top-ayurvedic-centers-in-india/dharana-at-shillim-wellness-retreat-center-pune-india" element={<DharanaAtShillim />} />
+          <Route path="/top-ayurvedic-centers-in-india/toyam-by-orchid-hotels-wellness-resort-center-pune-india" element={<ToyamByOrchidHotels />} />
+          <Route path="/top-ayurvedic-centers-in-india/shreyas-yoga-retreat-center-bangalore-india" element={<ShreyasYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/indus-valley-ayurvedic-hospital-mysore-india" element={<IndusValleyAyurvedicCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
 
           {/* Kerala flat URL redirects for SEO and button compatibility */}
-          <Route path="/centers/somatheeram-ayurvedic-health-resort-kerala-india" element={<Navigate to="/centers/kerala/somatheeram" replace />} />
-          <Route path="/centers/veda5-ayurveda-and-yoga-retreat-kerala-india" element={<Navigate to="/centers/veda5" replace />} />
-          <Route path="/centers/kairali-heritage-resort-kerala-india" element={<Navigate to="/centers/kerala/kairali-heritage" replace />} />
-          <Route path="/centers/dheemahi-ayurveda-village-kumarakom-kerala-india" element={<Navigate to="/centers/kerala/dheemahi-kumarakom" replace />} />
-          <Route path="/centers/kairali-the-ayurvedic-healing-village-kerala-india" element={<Navigate to="/centers/kerala/kairali-ayurvedic-healing-village" replace />} />
-          <Route path="/centers/nagarjuna-ayurvedic-center-kerala-india" element={<Navigate to="/centers/kerala/nagarjuna-ayurveda-center" replace />} />
-          <Route path="/centers/sanjeevanam-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/sanjeevanam-ayurveda-hospital" replace />} />
-          <Route path="/centers/back-to-roots-ayurveda-retreat-kerala-india" element={<Navigate to="/centers/kerala/back-to-roots" replace />} />
-          <Route path="/centers/dhathri-ayurveda-hospital-and-retreat-kerala-india" element={<Navigate to="/centers/kerala/dhathri-ayurveda" replace />} />
-          <Route path="/centers/krishnendu-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/krishnendu-ayurveda-hospital" replace />} />
-          <Route path="/centers/ayurmana-dharma-ayurvedic-center-kerala-india" element={<Navigate to="/centers/kerala/ayurmana" replace />} />
-          <Route path="/centers/chamundi-hill-palace-ayurvedic-resort-mysore-india" element={<Navigate to="/centers/mysore/chamundi-hill-palace" replace />} />
-          <Route path="/centers/athreya-ayurvedic-center-kerala-india" element={<Navigate to="/centers/kerala/athreya-ayurvedic-center" replace />} />
-          <Route path="/centers/ayur-bethaniya-ayurveda-hospital-kerala-india" element={<Navigate to="/centers/kerala/ayur-bethaniya-ayurveda-hospital" replace />} />
-          <Route path="/centers/ayursoma-ayurveda-royal-retreat-kerala-india" element={<Navigate to="/centers/kerala/ayursoma" replace />} />
-          <Route path="/centers/ayushi-ayurvedic-retreat-kerala-india" element={<Navigate to="/centers/kerala/ayushi-ayurvedic-retreat" replace />} />
-          <Route path="/centers/sitaram-mountain-retreat-idukki-india" element={<Navigate to="/centers/idukki/sitaram-mountain-retreat" replace />} />
-          <Route path="/centers/akanta-ayurveda-and-yoga-resort-kochi-india" element={<Navigate to="/centers/kochi/akanta-ayurveda-and-yoga-resort" replace />} />
-          <Route path="/centers/sitaram-beach-retreat-kerala-india" element={<Navigate to="/centers/kerala/sitaram-beach-retreat" replace />} />
 
           {/* Himalayas / Rishikesh / Uttarakhand / North East flat URL redirects for SEO */}
-          <Route path="/centers/veda5-ayurveda-and-yoga-retreat-rishikesh-india" element={<Navigate to="/centers/veda5" replace />} />
-          <Route path="/centers/ayuskama-ayurveda-and-panchakarma-center-dharamshala-india" element={<Navigate to="/centers/dharamshala/ayuskama-ayurveda" replace />} />
 
           {/* Delhi NCR / North India flat URL redirects for SEO */}
-          <Route path="/centers/namaste-dwaar-countryside-wellness-retreat-delhi-india" element={<Navigate to="/centers/delhi/namastedwaar" replace />} />
-          <Route path="/centers/naad-wellness-center-sonepat-delhi-india" element={<Navigate to="/centers/sonepat/naad-wellness" replace />} />
-          <Route path="/centers/the-imperial-spa-and-wellness-delhi-india" element={<Navigate to="/centers/delhi/the-imperial-spa-and-wellness" replace />} />
-          <Route path="/centers/amanbagh-heritage-wellness-retreat-rajasthan-delhi-india" element={<Navigate to="/centers/rajasthan/amanbagh-heritage-wellness-retreat" replace />} />
+          <Route path="/top-ayurvedic-centers-in-india/naad-wellness-center-delhi-india" element={<NaadWellness />} />
+          <Route path="/top-ayurvedic-centers-in-india/the-imperial-spa-and-wellness-center-delhi-india" element={<TheImperialSpaAndWellness />} />
 
-          <Route path="/centers/:location" element={<LocationCenters />} />
-          <Route path="/centers/soukya-international-holistic-health-center-bangalore-india" element={<SOUKYACenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/:location" element={<LocationCenters />} />
+          <Route path="/top-ayurvedic-centers-in-india/soukya-international-holistic-health-center-bangalore-india" element={<SOUKYACenter />} />
 
-          <Route path="/centers/kare-health-hospital-goa-india" element={<KAREHealth />}/>
-          <Route path="/centers/dhara-ayurglow-center-goa-india" element={<DharaAyurGlow />}/>
-          <Route path="/centers/lotus-goa-resort-goa-india" element={<LotusGoa />}/>
-          <Route path="/centers/anvi-ayurved-center-goa-india" element={<AnviAyurved />}/>
-          <Route path="/centers/ayushakti-goa-branch-center-goa-india" element={<AyushaktiGoaBranch />}/>
-          <Route path="/centers/yoga-goa-ayurveda-retreats-resort-goa-india" element={<YogaGoaAyurvedaRetreats />}/>
-          <Route path="/centers/ayurveda-goa-center-goa-india" element={<AyurvedaGoa />}/>
-          <Route path="/centers/sai-ayurveda-clinic-center-goa-india" element={<SaiAyurvedaClinic />}/>
-          <Route path="/centers/ayurveda-yoga-village-resort-goa-india" element={<AyurvedaYogaVillage />}/>
-          <Route path="/centers/abhaya-ayurved-center-goa-india" element={<AbhayaAyurved />}/>
-          <Route path="/centers/ayurcare-goa-center-goa-india" element={<AyurcareGoa />}/>
-          <Route path="/centers/goa-sian-spa-center-goa-india" element={<GoaSianSpa />}/>
-          <Route path="/centers/ayurglow-ayurveda-center-goa-india" element={<AyurGlow />}/>
-          <Route path="/centers/tattvam-on-the-beach-resort-goa-india" element={<TattvamOnTheBeach />}/>
-          <Route path="/centers/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
-          <Route path="/centers/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
-          <Route path="/centers/ayurvedic-natural-health-center-hospital-goa-india" element={<AyurvedicNaturalHealthCenter />}/>
-          <Route path="/centers/yashraj-ayurveda-clinic-hospital-goa-india" element={<YashrajAyurvedaClinic />}/>
-          <Route path="/centers/ayur-touch-ayurvedic-healthcare-hospital-goa-india" element={<AyurTouchAyurvedicHealthcare />}/>
-          <Route path="/centers/veda5-wellness-retreat-hospital-goa-india" element={<Veda5WellnessRetreat />}/>
+          <Route path="/top-ayurvedic-centers-in-india/kare-health-hospital-goa-india" element={<KAREHealth />}/>
+          <Route path="/top-ayurvedic-centers-in-india/dhara-ayurglow-center-goa-india" element={<DharaAyurGlow />}/>
+          <Route path="/top-ayurvedic-centers-in-india/lotus-goa-resort-goa-india" element={<LotusGoa />}/>
+          <Route path="/top-ayurvedic-centers-in-india/anvi-ayurved-center-goa-india" element={<AnviAyurved />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayushakti-goa-branch-center-goa-india" element={<AyushaktiGoaBranch />}/>
+          <Route path="/top-ayurvedic-centers-in-india/yoga-goa-ayurveda-retreats-resort-goa-india" element={<YogaGoaAyurvedaRetreats />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurveda-goa-center-goa-india" element={<AyurvedaGoa />}/>
+          <Route path="/top-ayurvedic-centers-in-india/sai-ayurveda-clinic-center-goa-india" element={<SaiAyurvedaClinic />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurveda-yoga-village-resort-goa-india" element={<AyurvedaYogaVillage />}/>
+          <Route path="/top-ayurvedic-centers-in-india/abhaya-ayurved-center-goa-india" element={<AbhayaAyurved />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurcare-goa-center-goa-india" element={<AyurcareGoa />}/>
+          <Route path="/top-ayurvedic-centers-in-india/goa-sian-spa-center-goa-india" element={<GoaSianSpa />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurglow-ayurveda-center-goa-india" element={<AyurGlow />}/>
+          <Route path="/top-ayurvedic-centers-in-india/tattvam-on-the-beach-resort-goa-india" element={<TattvamOnTheBeach />}/>
+          <Route path="/top-ayurvedic-centers-in-india/natural-touch-ayurveda-hospital-goa-india" element={<NaturalTouchAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/shree-shanti-wellness-hospital-goa-india" element={<SreeShantiWellness />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurvedic-natural-health-center-hospital-goa-india" element={<AyurvedicNaturalHealthCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/yashraj-ayurveda-clinic-hospital-goa-india" element={<YashrajAyurvedaClinic />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayur-touch-ayurvedic-healthcare-hospital-goa-india" element={<AyurTouchAyurvedicHealthcare />}/>
+          <Route path="/top-ayurvedic-centers-in-india/veda5-wellness-retreat-hospital-goa-india" element={<Veda5WellnessRetreat />}/>
 
-          <Route path="/centers/madukkakuzhy-ayurveda-retreat-hospital-kerala-india" element={<MadukkakuzhyAyurveda />}/>
-          <Route path="/centers/deepanjali-ayur-retreat-hospital-kerala-india" element={<DeepanjaliAyurRetreat />}/>
-          <Route path="/centers/chakra-ayurvedic-resort-hospital-kerala-india" element={<ChakraAyurvedicResort />}/>
-          <Route path="/centers/yantra-ayurvedic-resort-hospital-kerala-india" element={<YantraAyurvedicResort />}/>
-          <Route path="/centers/rasayana-ayurveda-center-hospital-kerala-india" element={<RasayanaAyurvedaCenter />}/>
-          <Route path="/centers/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
-          <Route path="/centers/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/madukkakuzhy-ayurveda-retreat-hospital-kerala-india" element={<MadukkakuzhyAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/deepanjali-ayur-retreat-hospital-kerala-india" element={<DeepanjaliAyurRetreat />}/>
+          <Route path="/top-ayurvedic-centers-in-india/chakra-ayurvedic-resort-hospital-kerala-india" element={<ChakraAyurvedicResort />}/>
+          <Route path="/top-ayurvedic-centers-in-india/yantra-ayurvedic-resort-hospital-kerala-india" element={<YantraAyurvedicResort />}/>
+          <Route path="/top-ayurvedic-centers-in-india/rasayana-ayurveda-center-hospital-kerala-india" element={<RasayanaAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/arya-vaidya-sala-hospital-kerala-india" element={<AryaVaidyaSala />}/>
+          <Route path="/top-ayurvedic-centers-in-india/parathuvayalil-ayurveda-hospital-hospital-kerala-india" element={<ParathuvayalilAyurvedaHospital />}/>
 
-          <Route path="/centers/apollo-ayurvaid-life-hospital-new-delhi-india" element={<ApolloAyurVAIDHospitalsNehruEnclave />}/>
-          <Route path="/centers/kerala-ayurveda-life-panchakarma-clinic-new-delhi-india" element={<KeralaAyurvedaLifeAyurvedaPanchakarmaClinic />}/>
-          <Route path="/centers/sri-sri-ayurveda-panchakarma-center-new-delhi-india" element={<SriSriAyurvedaPanchakarmaAyurvedaCenter />}/>
-          <Route path="/centers/sanjeevani-ayurveda-hospital-new-delhi-india" element={<SanjeevaniAyurveda />}/>
-          <Route path="/centers/aprasu-ayurvedic-hospital-north-delhi-india" element={<AprasuAyurvedicHospital />}/>
-          <Route path="/centers/skk-ayurveda-and-panchakarma-hospital-new-delhi-india" element={<SKKAyurvedaPanchakarma />}/>
-          <Route path="/centers/tarunveda-ayurveda-hospital-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
-          <Route path="/centers/aasha-ayurveda-center-new-delhi-india" element={<AashaAyurvedaCenter />}/>
-          <Route path="/centers/arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india" element={<AryaVaidyaSala/>}/>
-          <Route path="/centers/maharishi-ayurveda-hospital-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/apollo-ayurvaid-life-hospital-new-delhi-india" element={<ApolloAyurVAIDHospitalsNehruEnclave />}/>
+          <Route path="/top-ayurvedic-centers-in-india/kerala-ayurveda-life-panchakarma-clinic-new-delhi-india" element={<KeralaAyurvedaLifeAyurvedaPanchakarmaClinic />}/>
+          <Route path="/top-ayurvedic-centers-in-india/sri-sri-ayurveda-panchakarma-center-new-delhi-india" element={<SriSriAyurvedaPanchakarmaAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/sanjeevani-ayurveda-hospital-new-delhi-india" element={<SanjeevaniAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/aprasu-ayurvedic-hospital-north-delhi-india" element={<AprasuAyurvedicHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/skk-ayurveda-and-panchakarma-hospital-new-delhi-india" element={<SKKAyurvedaPanchakarma />}/>
+          <Route path="/top-ayurvedic-centers-in-india/tarunveda-ayurveda-hospital-new-delhi-india" element={<TarunVedaAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/aasha-ayurveda-center-new-delhi-india" element={<AashaAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/arya-vaidya-sala-ayurvedic-hospital-and-research-center-east-delhi-india" element={<AryaVaidyaSala/>}/>
+          <Route path="/top-ayurvedic-centers-in-india/maharishi-ayurveda-hospital-new-delhi-india" element={<MaharishiAyurvedaHospital />}/>
 
-          <Route path="/centers/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
-          <Route path="/centers/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
-          <Route path="/centers/ayurvaid-kalmatia-center-almora-uttarakhand-india" element={<AyurVAIDKalmatia />}/>
-          <Route path="/centers/ayurveda-house-himalayan-ayurveda-hospital-himachal-india" element={<AyurvedaHouseHimalayanAyurveda />}/>
-          <Route path="/centers/moksha-himalaya-spa-resort-himachal-india" element={<MokshaHimalayaSpaResort />}/>
-          <Route path="/centers/prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india" element={<PranaSpaAyurveda />}/>
-          <Route path="/centers/vihana-retreat-hospital-rishikesh-uttarakhand-india" element={<VihanaRetreat />}/>
-          <Route path="/centers/naturoville-wellness-resort-rishikesh-uttarakhand-india" element={<NaturovilleWellnessResort />}/>
-          <Route path="/centers/himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india" element={<HimalayaSanjeevniAyurveda />}/>
-          <Route path="/centers/rudramya-ayurveda-at-the-himalayas-hospital-himachal-india" element={<RUDRAMYAAyurvedaattheHimalayas />}/>
-          <Route path="/centers/rishikesh-ayurveda-center-uttarakhand-india" element={<RishikeshAyurvedaCenter />}/>
-          <Route path="/centers/arogyam-panchkarma-center-haridwar-himachal-india" element={<ArogyamPanchkarmaCenterAyurvedicHospital />}/>
-          <Route path="/centers/dr-sibys-kerala-ayurveda-and-panchakarma-center-himachal-india" element={<DrSIBYAyurvedaCenter />}/>
-          <Route path="/centers/vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india" element={<VedanjanaYogaAyurvedaPanchakarmaCenter />}/>
-          <Route path="/centers/vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india" element={<VedicYogaAyurvedaRetreatCenter />}/>
-          <Route path="/centers/kayakalp-himalayan-research-institute-of-yoga-and-naturopathy-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
-          <Route path="/centers/haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india" element={<HarithaAyurvedaAcademyPanchakarmaCenter />}/>
-          <Route path="/centers/mamgain-ayurvedic-clinic-and-panchakarma-center-rishikesh-uttarakhand-india" element={<MamgainAyurvedaClinicPanchakarmaCenter />}/>
-          <Route path="/centers/bhole-baba-ayurvedic-hospital-and-research-center-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCenter />}/>
-          <Route path="/centers/ayuskama-ayurveda-clinic-and-panchakarma-center-rishikesh-uttarakhand-india" element={<AyuskamaAyurvedaClinicPanchakarmaCenter />}/>
-          <Route path="/centers/swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india" element={<SRHUAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/arogyadham-retreat-luxury-ayurveda-hotel-rishikesh-uttarakhand-india" element={<ArogyadhamRetreatLuxuryAyurvedaHotel />}/>
+          <Route path="/top-ayurvedic-centers-in-india/modi-yoga-retreat-hospital-rishikesh-uttarakhand-india" element={<ModiYogaRetreatRishikesh />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurvaid-kalmatia-center-almora-uttarakhand-india" element={<AyurVAIDKalmatia />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurveda-house-himalayan-ayurveda-hospital-himachal-india" element={<AyurvedaHouseHimalayanAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/moksha-himalaya-spa-resort-himachal-india" element={<MokshaHimalayaSpaResort />}/>
+          <Route path="/top-ayurvedic-centers-in-india/prana-spa-and-ayurveda-resort-rishikesh-uttarakhand-india" element={<PranaSpaAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/vihana-retreat-hospital-rishikesh-uttarakhand-india" element={<VihanaRetreat />}/>
+          <Route path="/top-ayurvedic-centers-in-india/naturoville-wellness-resort-rishikesh-uttarakhand-india" element={<NaturovilleWellnessResort />}/>
+          <Route path="/top-ayurvedic-centers-in-india/himalaya-sanjeevni-ayurveda-hospital-dehradun-uttarakhand-india" element={<HimalayaSanjeevniAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/rudramya-ayurveda-at-the-himalayas-hospital-himachal-india" element={<RUDRAMYAAyurvedaattheHimalayas />}/>
+          <Route path="/top-ayurvedic-centers-in-india/rishikesh-ayurveda-center-uttarakhand-india" element={<RishikeshAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/arogyam-panchkarma-center-haridwar-himachal-india" element={<ArogyamPanchkarmaCenterAyurvedicHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/dr-sibys-kerala-ayurveda-and-panchakarma-center-himachal-india" element={<DrSIBYAyurvedaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/vedanjana-yoga-and-ayurveda-panchakarma-center-rishikesh-uttarakhand-india" element={<VedanjanaYogaAyurvedaPanchakarmaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/vedic-yoga-and-ayurveda-retreat-center-rishikesh-uttarakhand-india" element={<VedicYogaAyurvedaRetreatCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/kayakalp-himalayan-research-institute-of-yoga-and-naturopathy-hospital-himachal-india" element={<KAYAKALPHimalayanResearchInstituteofYogaNaturopathy />}/>
+          <Route path="/top-ayurvedic-centers-in-india/haritha-ayurveda-academy-and-panchakarma-center-rishikesh-uttarakhand-india" element={<HarithaAyurvedaAcademyPanchakarmaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/mamgain-ayurvedic-clinic-and-panchakarma-center-rishikesh-uttarakhand-india" element={<MamgainAyurvedaClinicPanchakarmaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/bhole-baba-ayurvedic-hospital-and-research-center-ranikhet-uttarakhand-india" element={<BholeBabaAyurvedicHospitalResearchCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayuskama-ayurveda-clinic-and-panchakarma-center-rishikesh-uttarakhand-india" element={<AyuskamaAyurvedaClinicPanchakarmaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/swami-rama-himalayan-university-ayurveda-center-dehradun-uttarakhand-india" element={<SRHUAyurvedaCenter />}/>
 
-          <Route path="/centers/dhanwanthralaya-ayurveda-speciality-hospital-chennai-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
-          <Route path="/centers/ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india" element={<Ayurillam />}/>
-          <Route path="/centers/kottakkal-arya-vaidya-sala-hospital-chennai-india" element={<KottakkalAryaVaidyaSala />}/>
-          <Route path="/centers/travancore-ayurveda-hospital-bengaluru-india" element={<TravancoreAyurvedaJayanagar />}/>
-          <Route path="/centers/ayushman-ayurveda-hospital-bengaluru-india" element={<AyushmanAyurveda />}/>
-          <Route path="/centers/sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCenter />}/>
-          <Route path="/centers/varaprada-ayurvedic-center-hospital-bengaluru-india" element={<VarapradaAyurvedicCenter />}/>
-          <Route path="/centers/tatkshana-ayurveda-hospital-bengaluru-india" element={<TatkshanaAyurvedaHospital />}/>
-          <Route path="/centers/ayurkutira-panchakarma-center-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCenter />}/>
-          <Route path="/centers/ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india" element={<RamaiahIndicSpecialtyAyurvedaHospital />}/>
-          <Route path="/centers/praana-vaidya-ayurvedic-hospital-bengaluru-india" element={<PraanaVaidyaAyurvedicHospital />}/>
-          <Route path="/centers/hlc-ayurveda-and-nature-cure-hospital-bengaluru-india" element={<HLCAyurvedaAndNatureCureHospital />}/>
-          <Route path="/centers/iaim-healthcare-center-hospital-bengaluru-india" element={<IAIMHealthcareCenter />}/>
-          <Route path="/centers/adivaidyam-ayurveda-hospital-bengaluru-india" element={<AdivaidyamAyurvedaHospital />}/>
-          <Route path="/centers/healing-earth-ayurveda-hospital-bengaluru-india" element={<HealingEarthAyurvedaHospital />}/>
-          <Route path="/centers/jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india" element={<JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment/>} />
-          <Route path="/centers/keva-ayurveda-hospital-bengaluru-india" element={<KevaAyurvedaBMTLayout/>} />
-          <Route path="/centers/vydehi-ayurveda-hospital-bengaluru-india" element={<VydehiAyurvedaHospital />} />
-          <Route path="/centers/bangalore/ayurvedagram" element={<AyurvedaGram />} />
-          <Route path="/centers/ayurvedagram-heritage-wellness-center-bangalore-india" element={<Navigate to="/centers/bangalore/ayurvedagram" replace />} />
-          <Route path="/centers/ananda-in-the-himalayas-uttarakhand-india" element={<AnandaInTheHimalayas />} />
-          <Route path="/centers/yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india" element={<YanCureYogaRetreat />} />
-          <Route path="/centers/soul-vacation-resort-spa-goa-india" element={<SoulVacationResort />} />
-          <Route path="/centers/swan-yoga-retreat-goa-india" element={<SWANYogaRetreat />} />
-          <Route path="/centers/mercure-goa-devaaya-retreat-goa-india" element={<MercureGoaDevaayaResort />} />
-          <Route path="/centers/ashiyana-yoga-retreat-village-goa-india" element={<AshiyanaYogaRetreat />} />
-          <Route path="/centers/nalanda-retreat-goa-india" element={<NalandaRetreatGoa />} />
-          <Route path="/centers/rishikesh/modi-yoga-retreat" element={<ModiYogaRetreat />} />
-          <Route path="/centers/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
-          <Route path="/centers/adyant-ayurveda-hospital-bengaluru-india" element={<AdyantAyurvedaJayanagar />} />
-          <Route path="/centers/itc-grand-bharat-wellness-retreat-gurugram-delhi-india" element={<ITCGrandBharat />} />
-          <Route path="/centers/kerala/niraamaya-retreats-surya-samudra" element={<NiraamayaRetreatsSuryaSamudra />} />
-          <Route path="/centers/amanbagh-heritage-wellness-retreat-rajasthan-india" element={<AmanbaghHeritageWellnessRetreat />} />
-          <Route path="/centers/dharamshala/himveda" element={<HimVeda />} />
-          <Route path="/centers/kerala/kalari-kovilakom" element={<KalariKovilakomPalaceForAyurveda />} />
-          <Route path="/centers/kerala/carnoustie-ayurveda-wellness-resort" element={<CarnoustieAyurvedaWellnessResort />} />
-          <Route path="/centers/kerala/the-nattika-beach-resort" element={<TheNattikaBeachResort />} />
-          <Route path="/centers/kerala/sitaram-beach-retreat" element={<SitaramBeachRetreat />} />
-          <Route path="/centers/kerala/ideal-ayurvedic-resort" element={<IdealAyurvedicResort />} />
-          <Route path="/centers/kerala/somatheeram" element={<Somatheeram />} />
-          <Route path="/centers/kerala/kairali-ayurvedic-healing-village" element={<KairaliHealingVillage />} />
-          <Route path="/centers/veda5" element={<Veda5Center />} />
-          <Route path="/centers/delhi/namastedwaar" element={<NamasteDwaar />} />
-          <Route path="/centers/kerala/kairali-heritage" element={<KairaliHeritage />} />
-          <Route path="/centers/kerala/dheemahi-kumarakom" element={<DheemahiKumarakom />} />
-          <Route path="/centers/kerala/back-to-roots" element={<BackToRoots />} />
-          <Route path="/centers/kerala/krishnendu-ayurveda-hospital" element={<KrishnenduAyurvedaHospital />} />
-          <Route path="/centers/maharashtra/viveda-wellness-village" element={<VivedaWellnessVillage />} />
-          <Route path="/centers/sonepat/naad-wellness" element={<NaadWellness />} />
-          <Route path="/centers/pune/dharana-at-shillim" element={<DharanaAtShillim />} />
-          <Route path="/centers/delhi/the-imperial-spa-and-wellness" element={<TheImperialSpaAndWellness />} />
-          <Route path="/centers/gurugram/itc-grand-bharat" element={<ITCGrandBharat />} />
-          <Route path="/centers/rajasthan/amanbagh-heritage-wellness-retreat" element={<AmanbaghHeritageWellnessRetreat />} />
-          <Route path="/centers/dharamshala/ayuskama-ayurveda" element={<AyuskamaAyurveda />} />
-          <Route path="/centers/kerala/ayursoma" element={<AyurSomaAyurvedaRoyalRetreat />} />
-          <Route path="/centers/himachal/sandhya-hot-spring-health-care" element={<SandhyaHotSpringHealthCare />} />
-          <Route path="/centers/kerala/ayurmana" element={<AyurmanaCenter />} />
-          <Route path="/centers/mysore/chamundi-hill-palace" element={<ChamundiHillPalace />} />
-          <Route path="/centers/kerala/kumarakom-lake-resort" element={<KumarakomLakeResort />} />
-          <Route path="/centers/kerala/athreya-ayurvedic-center" element={<AthreyaAyurvedicCenter />} />
-          <Route path="/centers/kerala/ayur-bethaniya-ayurveda-hospital" element={<AyurBethaniyaAyurvedaHospital />} />
-          <Route path="/centers/kerala/ayushi-ayurvedic-retreat" element={<AyushiAyurvedicRetreat />} />
-          <Route path="/centers/idukki/sitaram-mountain-retreat" element={<SitaramMountainRetreat />} />
-          <Route path="/centers/kochi/akanta-ayurveda-and-yoga-resort" element={<AkantaAyurvedaYogaResort />} />
-          <Route path="/centers/mysore/indus-valley-ayurvedic-center" element={<IndusValleyAyurvedicCenter />} />
-          <Route path="/centers/udupi/shathayu-ayurveda-yoga-retreat" element={<ShathayuAyurvedaYogaRetreat />} />
-          <Route path="/centers/kerala/nagarjuna-ayurveda-center" element={<NagarjunaAyurvedaCenter />} />
-          <Route path="/centers/kerala/sanjeevanam-ayurveda-hospital" element={<SanjeevanamAyurvedaHospital />} />
-          <Route path="/centers/kerala/dhathri-ayurveda" element={<DhathriAyurvedicHospital />} />
-          <Route path="/centers/maharashtra/fazlani-natures-nest" element={<FazlaniNaturesNest />} />
-          <Route path="/centers/pune/atmantan-wellness-resort" element={<AtmantanWellnessResort />} />
-          <Route path="/centers/pune/toyam-by-orchid-hotels" element={<ToyamByOrchidHotels />} />
-          <Route path="/centers/uttarakhand/ananda-in-the-himalayas" element={<AnandaInTheHimalayas />} />
-          <Route path="/centers/rishikesh/yan-cure" element={<YanCureYogaRetreat />} />
-          <Route path="/centers/bangalore/soukya" element={<Navigate to="/centers/soukya-international-holistic-health-center-bangalore-india" replace />} />
-          <Route path="/centers/:city/:centerId" element={<CenterDetail />} />
+          <Route path="/top-ayurvedic-centers-in-india/dhanwanthralaya-ayurveda-speciality-hospital-chennai-india" element={<DhanwanthralayaAyurvedaSpecialityHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurillam-home-of-ayurvedic-therapy-hospital-chennai-india" element={<Ayurillam />}/>
+          <Route path="/top-ayurvedic-centers-in-india/kottakkal-arya-vaidya-sala-hospital-chennai-india" element={<KottakkalAryaVaidyaSala />}/>
+          <Route path="/top-ayurvedic-centers-in-india/travancore-ayurveda-hospital-bengaluru-india" element={<TravancoreAyurvedaJayanagar />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayushman-ayurveda-hospital-bengaluru-india" element={<AyushmanAyurveda />}/>
+          <Route path="/top-ayurvedic-centers-in-india/sd-ayurveda-mane-holistic-wellness-center-hospital-bengaluru-india" element={<SDAyurvedaManeHolisticWellnessCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/varaprada-ayurvedic-center-hospital-bengaluru-india" element={<VarapradaAyurvedicCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/tatkshana-ayurveda-hospital-bengaluru-india" element={<TatkshanaAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ayurkutira-panchakarma-center-hospital-bengaluru-india" element={<AyurKutiraPanchakarmaCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/ramaiah-indic-specialty-ayurveda-hospital-bengaluru-india" element={<RamaiahIndicSpecialtyAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/praana-vaidya-ayurvedic-hospital-bengaluru-india" element={<PraanaVaidyaAyurvedicHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/hlc-ayurveda-and-nature-cure-hospital-bengaluru-india" element={<HLCAyurvedaAndNatureCureHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/iaim-healthcare-center-hospital-bengaluru-india" element={<IAIMHealthcareCenter />}/>
+          <Route path="/top-ayurvedic-centers-in-india/adivaidyam-ayurveda-hospital-bengaluru-india" element={<AdivaidyamAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/healing-earth-ayurveda-hospital-bengaluru-india" element={<HealingEarthAyurvedaHospital />}/>
+          <Route path="/top-ayurvedic-centers-in-india/jayadev-memorial-rashtrotthana-ayurveda-hospital-bengaluru-india" element={<JayadevMemorialRashtrotthanaHospitalAyurvedaDepartment/>} />
+          <Route path="/top-ayurvedic-centers-in-india/keva-ayurveda-hospital-bengaluru-india" element={<KevaAyurvedaBMTLayout/>} />
+          <Route path="/top-ayurvedic-centers-in-india/vydehi-ayurveda-hospital-bengaluru-india" element={<VydehiAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayurvedagram-heritage-wellness-center-bangalore-india" element={<AyurvedaGram />} />
+          <Route path="/top-ayurvedic-centers-in-india/ananda-in-the-himalayas-uttarakhand-india" element={<AnandaInTheHimalayas />} />
+          <Route path="/top-ayurvedic-centers-in-india/yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india" element={<YanCureYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/soul-vacation-resort-and-wellness-center-goa-india" element={<SoulVacationResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/swan-yoga-retreat-and-ayurveda-center-goa-india" element={<SWANYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/mercure-goa-devaaya-resort-ayurveda-wellness-center-goa-india" element={<MercureGoaDevaayaResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/ashiyana-yoga-retreat-center-goa-india" element={<AshiyanaYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/nalanda-retreat-center-goa-india" element={<NalandaRetreatGoa />} />
+          <Route path="/top-ayurvedic-centers-in-india/modi-yoga-retreat-center-rishikesh-india" element={<ModiYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/sri-sri-ayurveda-hospital-bengaluru-india" element={<SriSriAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/adyant-ayurveda-hospital-bengaluru-india" element={<AdyantAyurvedaJayanagar />} />
+          <Route path="/top-ayurvedic-centers-in-india/itc-grand-bharat-wellness-retreat-gurugram-delhi-india" element={<ITCGrandBharat />} />
+          <Route path="/top-ayurvedic-centers-in-india/niraamaya-retreats-surya-samudra-resort-kerala-india" element={<NiraamayaRetreatsSuryaSamudra />} />
+          <Route path="/top-ayurvedic-centers-in-india/amanbagh-heritage-wellness-retreat-rajasthan-india" element={<AmanbaghHeritageWellnessRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/himveda-heritage-wellness-center-himachal-india" element={<HimVeda />} />
+          <Route path="/top-ayurvedic-centers-in-india/kalari-kovilakom-ayurveda-hospital-kerala-india" element={<KalariKovilakomPalaceForAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/carnoustie-ayurveda-wellness-resort-kerala-india" element={<CarnoustieAyurvedaWellnessResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/the-nattika-beach-resort-kerala-india" element={<TheNattikaBeachResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/sitaram-beach-retreat-resort-kerala-india" element={<SitaramBeachRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/ideal-ayurvedic-resort-kerala-india" element={<IdealAyurvedicResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/somatheeram-ayurvedic-health-resort-kerala-india" element={<Somatheeram />} />
+          <Route path="/top-ayurvedic-centers-in-india/kairali-ayurvedic-healing-village-hospital-kerala-india" element={<KairaliHealingVillage />} />
+          <Route path="/top-ayurvedic-centers-in-india/veda5-ayurveda-yoga-wellness-retreat-center-rishikesh-india" element={<Veda5Center />} />
+          <Route path="/top-ayurvedic-centers-in-india/namaste-dwaar-countryside-wellness-retreat-delhi-india" element={<NamasteDwaar />} />
+          <Route path="/top-ayurvedic-centers-in-india/kairali-heritage-resort-kerala-india" element={<KairaliHeritage />} />
+          <Route path="/top-ayurvedic-centers-in-india/dheemahi-kumarakom-premium-lakeside-retreat-kerala-india" element={<DheemahiKumarakom />} />
+          <Route path="/top-ayurvedic-centers-in-india/back-to-roots-ayurveda-retreat-kerala-india" element={<BackToRoots />} />
+          <Route path="/top-ayurvedic-centers-in-india/krishnendu-ayurveda-hospital-kerala-india" element={<KrishnenduAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/itc-grand-bharat-wellness-retreat-center-delhi-india" element={<ITCGrandBharat />} />
+          <Route path="/top-ayurvedic-centers-in-india/amanbagh-heritage-wellness-retreat-resort-rajasthan-india" element={<AmanbaghHeritageWellnessRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayuskama-ayurveda-center-himachal-india" element={<AyuskamaAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayursoma-ayurveda-royal-retreat-resort-kerala-india" element={<AyurSomaAyurvedaRoyalRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/sandhya-hot-spring-health-care-hospital-himachal-india" element={<SandhyaHotSpringHealthCare />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayurmana-ayurveda-hospital-kerala-india" element={<AyurmanaCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/chamundi-hill-palace-ayurvedic-center-kerala-india" element={<ChamundiHillPalace />} />
+          <Route path="/top-ayurvedic-centers-in-india/kumarakom-lake-resort-kerala-india" element={<KumarakomLakeResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/athreya-ayurvedic-center-kerala-india" element={<AthreyaAyurvedicCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayur-bethaniya-ayurveda-hospital-kerala-india" element={<AyurBethaniyaAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayushi-ayurvedic-retreat-kerala-india" element={<AyushiAyurvedicRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/sitaram-mountain-retreat-idukki-india" element={<SitaramMountainRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/akanta-ayurveda-and-yoga-resort-kochi-india" element={<AkantaAyurvedaYogaResort />} />
+          <Route path="/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-center" element={<IndusValleyAyurvedicCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/nagarjuna-ayurveda-center-kerala-india" element={<NagarjunaAyurvedaCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/sanjeevanam-ayurveda-hospital-kerala-india" element={<SanjeevanamAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/dhathri-ayurveda-hospital-kerala-india" element={<DhathriAyurvedicHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/ananda-in-the-himalayas-resort-uttarakhand-india" element={<AnandaInTheHimalayas />} />
+          <Route path="/top-ayurvedic-centers-in-india/yan-cure-yoga-retreat-and-ayurveda-center-rishikesh-india" element={<YanCureYogaRetreat />} />
+          <Route path="/top-ayurvedic-centers-in-india/:city/:centerId" element={<CenterDetail />} />
           <Route path="/ayurveda-treatments" element={<Treatments />} />
           <Route path="/treatments" element={<Navigate to="/ayurveda-treatments" replace />} />
           <Route path="/ayurvedic-treatments" element={<Navigate to="/ayurveda-treatments" replace />} />
@@ -738,30 +701,31 @@ const App = () => (
           <Route path="/integrated-retreat/ayurveda-digital-detox" element={<Navigate to="/ayurveda-packages/ayurvedic-digital-detox-retreat-in-india" replace />} />
           <Route path="*" element={<NotFound />} />
         
-          <Route path="/centers/mirasa-ayurveda-hospital-new-delhi-india" element={<MirasaAyurvedaHospital />} />
-          <Route path="/centers/ayurveda-kendra-hospital-delhi-india" element={<AyurvedaKendraHospital />} />
-          <Route path="/centers/nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india" element={<NirmalAyurvedPanchkarmClinic />} />
-          <Route path="/centers/ayurnava-kerala-ayurveda-hospital-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
-          <Route path="/centers/kurias-earth-ayurveda-hospital-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
-          <Route path="/centers/all-india-institute-of-ayurveda-hospital-new-delhi-india" element={<AllIndiaInstituteOfAyurveda />} />
-          <Route path="/centers/ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india" element={<ChBrahmPrakashAyurvedCharakSansthan />} />
-          <Route path="/centers/sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />
+          <Route path="/top-ayurvedic-centers-in-india/mirasa-ayurveda-hospital-new-delhi-india" element={<MirasaAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayurveda-kendra-hospital-delhi-india" element={<AyurvedaKendraHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/nirmal-ayurved-panchkarm-clinic-hospital-new-delhi-india" element={<NirmalAyurvedPanchkarmClinic />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayurnava-kerala-ayurveda-hospital-new-delhi-india" element={<AyurNavaKeralaAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/kurias-earth-ayurveda-hospital-new-delhi-india" element={<KuriasEarthAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/all-india-institute-of-ayurveda-hospital-new-delhi-india" element={<AllIndiaInstituteOfAyurveda />} />
+          <Route path="/top-ayurvedic-centers-in-india/ch-brahm-prakash-ayurved-charak-sansthan-hospital-new-delhi-india" element={<ChBrahmPrakashAyurvedCharakSansthan />} />
+          <Route path="/top-ayurvedic-centers-in-india/sri-vaidya-ayurveda-panchkarma-hospital-new-delhi-india" element={<SriVaidyaAyurvedaPanchakarma />} />
 
         
-          <Route path="/centers/kerala-ayurveda-wellness-center-new-delhi-india" element={<KeralaAyurvedaWellnessClinicEastofKailash />} />
+          <Route path="/top-ayurvedic-centers-in-india/kerala-ayurveda-wellness-center-new-delhi-india" element={<KeralaAyurvedaWellnessClinicEastofKailash />} />
         
-          <Route path="/centers/holy-family-ayurveda-hospital-new-delhi-india" element={<HolyFamilyHospitalAyurvedaDepartment />} />
+          <Route path="/top-ayurvedic-centers-in-india/holy-family-ayurveda-hospital-new-delhi-india" element={<HolyFamilyHospitalAyurvedaDepartment />} />
         
-          <Route path="/centers/a-and-u-tibbia-college-hospital-new-delhi-india" element={<AandUTibbiaCollegeHospitalPanchakarma />} />
+          <Route path="/top-ayurvedic-centers-in-india/a-and-u-tibbia-college-hospital-new-delhi-india" element={<AandUTibbiaCollegeHospitalPanchakarma />} />
         
-          <Route path="/centers/kairali-the-ayurvedic-healing-village-center-new-delhi-india" element={<KairaliTheAyurvedicHealingVillageDelhiNCR />} />
+          <Route path="/top-ayurvedic-centers-in-india/kairali-the-ayurvedic-healing-village-center-new-delhi-india" element={<KairaliTheAyurvedicHealingVillageDelhiNCR />} />
         
-          <Route path="/centers/sanjivani-ayurveda-center-delhi-ncr-india" element={<SanjivaniAyurvedicResearchInstitute />} />
+          <Route path="/top-ayurvedic-centers-in-india/sanjivani-ayurveda-center-delhi-ncr-india" element={<SanjivaniAyurvedicResearchInstitute />} />
         
-          <Route path="/centers/sri-sri-tattva-panchkarma-center-new-delhi-india" element={<SriSriTattvaPanchakarmaCentre />} />
-          <Route path="/centers/ashtang-ayurveda-super-multi-speciality-hospital-nashik-india" element={<AshtangAyurvedaHospital />} />
-          <Route path="/centers/ayushman-bhava-ayurveda-keraliya-panchakarma-clinic-nashik-india" element={<AyushmanBhavaAyurvedaClinic />} />
-          <Route path="/centers/shree-vishwavallabh-ayurvedic-panchakarma-garbh-sanskar-center-nashik-india" element={<ShreeVishwavallabhAyurvedicCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/sri-sri-tattva-panchkarma-center-new-delhi-india" element={<SriSriTattvaPanchakarmaCentre />} />
+          <Route path="/top-ayurvedic-centers-in-india/ashtang-ayurveda-super-multi-speciality-hospital-nashik-india" element={<AshtangAyurvedaHospital />} />
+          <Route path="/top-ayurvedic-centers-in-india/ayushman-bhava-ayurveda-keraliya-panchakarma-clinic-nashik-india" element={<AyushmanBhavaAyurvedaClinic />} />
+          <Route path="/top-ayurvedic-centers-in-india/shree-vishwavallabh-ayurvedic-panchakarma-garbh-sanskar-center-nashik-india" element={<ShreeVishwavallabhAyurvedicCenter />} />
+          <Route path="/top-ayurvedic-centers-in-india/shathayu-ayurveda-yoga-retreat-banglore-india" element={<ShathayuAyurvedaYogaRetreat />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

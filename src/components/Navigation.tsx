@@ -130,9 +130,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 onMouseLeave={() => setCentersDropdownOpen(false)}
               >
                 <Link
-                  to="/centers"
+                  to="/top-ayurvedic-centers-in-india"
                   className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
-                    location.pathname.startsWith("/centers") ||
+                    location.pathname.startsWith("/top-ayurvedic-centers-in-india") ||
                     location.pathname === "/top-12-ayurvedic-centers-hospitals-kerala-india" ||
                     location.pathname === "/top-15-ayurvedic-centers-hospitals-goa-india" ||
                     location.pathname === "/top-10-ayurvedic-centers-hospitals-himalayas-rishikesh-uttarakhand-north-east-india" ||
@@ -377,9 +377,9 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
               {/* Mobile Centers Section */}
               <div className="space-y-1">
                 <Link
-                  to="/centers"
+                  to="/top-ayurvedic-centers-in-india"
                   className={`w-full flex items-center justify-between py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                    location.pathname.startsWith("/centers")
+                    location.pathname.startsWith("/top-ayurvedic-centers-in-india")
                       ? "text-primary bg-primary/10"
                       : "text-foreground hover:bg-gray-100"
                   }`}
@@ -394,7 +394,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 {mobileCentersOpen && (
                   <div className="space-y-1 pl-2">
                     <Link
-                      to="/centers"
+                      to="/top-ayurvedic-centers-in-india"
                       className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
                       onClick={closeMenu}
                     >

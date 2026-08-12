@@ -55,17 +55,17 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/swan-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/swan-yoga-retreat"
   },
   {
     name: "Carnoustie Ayurveda & Wellness Resort",
     city: "Mararikulam",
     location: "Mararikulam",
-    description: "Step into a sanctuary of authentic Ayurvedic Healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the body’s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environment—surrounded by lush greenery and the calming Arabian Sea—enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
+    description: "Step into a sanctuary of authentic Ayurvedic Healing at Carnoustie Ayurveda & Wellness Resort, an award-winning beachfront retreat nestled along the serene shores of Marari Beach. Designed to harmonize luxury with traditional wisdom, the resort offers a deeply immersive wellness experience rooted in Ayurveda, Yoga, and Naturopathy. Guided by expert Vaidyas, each program is carefully personalized to balance the bodyï¿½s doshas and restore holistic well-being. From detoxification therapies to rejuvenation rituals, every treatment is crafted to promote physical vitality, mental clarity, and emotional equilibrium. The tranquil environmentï¿½surrounded by lush greenery and the calming Arabian Seaï¿½enhances the healing journey, making it both restorative and transformative. Guests can indulge in signature Panchakarma therapies, therapeutic massages, and integrated healing practices such as Marma therapy and Pranic healing, all designed to detoxify, strengthen immunity, and rejuvenate the body from within.",
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Carnoustie Ayurveda/Thumb.jpg",
-    link: "/centers/kerala/carnoustie-ayurveda-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/carnoustie-ayurveda-wellness-resort"
   },
   {
     name: "Ayuskama Ayurveda",
@@ -75,7 +75,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-    link: "/centers/dharamshala/ayuskama-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/ayuskama-ayurveda"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -85,7 +85,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "ITC Grand Bharat",
@@ -95,7 +95,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 17000,
     image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/centers/gurugram/itc-grand-bharat"
+    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -105,7 +105,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -115,7 +115,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-    link: "/centers/kerala/dhathri-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/kerala/dhathri-ayurveda"
   },
   {
     name: "Somatheeram Ayurvedic Health Resort",
@@ -125,37 +125,37 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 320,
     image: "/Center Images/somatheeram/Somatheeram 01.jpg",
-    link: "/centers/kerala/somatheeram"
+    link: "/top-ayurvedic-centers-in-india/kerala/somatheeram"
   },
   {
-    name: "Namaste Dwaar – Countryside Wellness Retreat",
+    name: "Namaste Dwaar ï¿½ Countryside Wellness Retreat",
     city: "Delhi",
     location: "Delhi",
     description: "Peaceful farmhouse sanctuary near NCR offering authentic Ayurvedic therapies, farm-fresh sattvic food, and compassionate care.",
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar"
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar"
   },
   {
     name: "Ananda In The Himalayas",
     city: "Uttarakhand",
     location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spirit—creating lasting transformation through mindful living and natural healing practices.",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists. Each journey is designed to rejuvenate the body, calm the mind, and elevate the spiritï¿½creating lasting transformation through mindful living and natural healing practices.",
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
-    name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
+    name: "Kairali Heritage Resort ï¿½ Riverside Ayurveda & Wellness Retreat",
     city: "Kerala",
     location: "Kerala",
     description: "Nestled on the banks of the Kattampally River in Kannur, Kairali Heritage offers a tranquil 11-acre riverside haven. Enjoy 24 air-conditioned river-facing cottages, authentic Ayurvedic & yoga therapies, nature-rich surroundings and personalized wellness programs close to the coast and Western Ghats.",
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "The Imperial Spa and Wellness",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
-    link: "/centers/delhi/the-imperial-spa-and-wellness"
+    link: "/top-ayurvedic-centers-in-india/delhi/the-imperial-spa-and-wellness"
   },
 ];
 
@@ -660,7 +660,7 @@ const StrokeTreatment = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

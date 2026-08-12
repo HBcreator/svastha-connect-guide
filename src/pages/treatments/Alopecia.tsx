@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Sandhya Hot Spring Health Care",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/centers/himachal/sandhya-hot-spring-health-care"
+    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care"
   },
   {
     name: "Ayuskama Ayurveda",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-    link: "/centers/dharamshala/ayuskama-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/ayuskama-ayurveda"
   },
   {
     name: "Athreya Ayurvedic Centre",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/centers/kerala/athreya-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
   },
   {
     name: "Nalanda Retreat Goa",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 500,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa"
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa"
   },
   {
     name: "Ayushi Ayurvedic Retreat",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-    link: "/centers/kerala/ayushi-ayurvedic-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayushi-ayurvedic-retreat"
   },
   {
     name: "Ayurmana",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "Ananda In The Himalayas",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
   {
     name: "Ashiyana Yoga Retreat",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/ashiyana-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat"
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots"
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots"
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Krishnendu Ayurveda Hospital",
@@ -245,7 +245,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 1500,
     image: "/Center Images/Krishnendu Ayurveda Hospital/Thumb.jpg",
-    link: "/centers/kerala/krishnendu-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/krishnendu-ayurveda-hospital"
   },
 ];
 
@@ -724,7 +724,7 @@ const Alopecia = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

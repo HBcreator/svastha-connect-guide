@@ -243,7 +243,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     rating: 4.8,
     reviews: "200",
     image: "/Center Images/Naad Wellness/Thumb.jpg",
-    slug: "naad-wellness-center-sonepat-delhi-india",
+    slug: "naad-wellness-center-delhi-india",
   };
 
   const imperialSpaCenter: DelhiCenter = {
@@ -255,7 +255,7 @@ const DelhiNorthIndiaRegionCenters = () => {
     rating: 4.8,
     reviews: "8000",
     image: "/Center Images/The Imperial Spa & Salon/Thumb.jpg",
-    slug: "the-imperial-spa-and-wellness-delhi-india",
+    slug: "the-imperial-spa-and-wellness-center-delhi-india",
   };
 
   const itcGrandBharatCenter: DelhiCenter = {
@@ -421,7 +421,7 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
   }, []);
 
   const { orderedCenters, totalPages, paginatedCenters } = useMemo(() => {
-    const baseCenters = [
+    const manualCenters = [
       namasteDwaarCenter,
       naadWellnessCenter,
       imperialSpaCenter,
@@ -436,12 +436,19 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
       SanjeevaniAyurveda,
       SriSriAyurvedaPanchakarmaAyurvedaCenter,
       KeralaAyurvedaLifeAyurvedaPanchakarmaClinic,
-      ApolloAyurVAIDHospitalsNehruEnclave,
-      ...centers
+      ApolloAyurVAIDHospitalsNehruEnclave
     ];
+    
+    // Filter out markdown centers that already exist in manualCenters
+    const manualNames = new Set(manualCenters.map(c => c.name.toLowerCase().trim()));
+    const uniqueMarkdownCenters = centers.filter(c => !manualNames.has(c.name.toLowerCase().trim()));
+    
+    const baseCenters = [...manualCenters, ...uniqueMarkdownCenters];
     const ordered = prioritizeTopCenters(baseCenters);
-    const paginated = currentPage === 1 ? ordered.slice(0, 12) : ordered.slice(12);
-    const pages = Math.min(Math.ceil(ordered.length / 12), 2);
+    
+    const pages = Math.ceil(ordered.length / 12) || 1;
+    const paginated = ordered.slice((currentPage - 1) * 12, currentPage * 12);
+    
     return { orderedCenters: ordered, totalPages: pages, paginatedCenters: paginated };
   }, [centers, currentPage, namasteDwaarCenter]);
 
@@ -541,7 +548,7 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
                           variant="outline"
                           className="w-full font-bold py-4 md:py-5 rounded-xl hover:bg-primary hover:text-white transition-all duration-300 text-sm"
                         >
-                          <Link to={`/centers/${center.slug}`} target="_blank" rel="noopener noreferrer">
+                          <Link to={`/top-ayurvedic-centers-in-india/${center.slug}`} target="_blank" rel="noopener noreferrer">
                             View Details
                           </Link>
                         </Button>

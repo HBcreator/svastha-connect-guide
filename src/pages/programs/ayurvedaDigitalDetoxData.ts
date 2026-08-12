@@ -286,7 +286,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village"
   },
   {
     name: "Dheemahi Kumarakom – Premium Lakeside Retreat",
@@ -296,7 +296,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 150,
     image: "/Center Images/Dheemahi Ayurvedic Centre/center dp.jpg",
-    link: "/centers/kerala/dheemahi-kumarakom"
+    link: "/top-ayurvedic-centers-in-india/kerala/dheemahi-kumarakom"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -306,7 +306,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
   {
     name: "The Nattika Beach Resort",
@@ -316,7 +316,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort"
   },
   {
     name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
@@ -326,7 +326,7 @@ export const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 500,
     image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/centers/bangalore/soukya"
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -336,7 +336,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -346,7 +346,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "Ayushi Ayurvedic Retreat",
@@ -356,7 +356,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayushi Ayurvedic Retreat/Thumb.jpg",
-    link: "/centers/kerala/ayushi-ayurvedic-retreat"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayushi-ayurvedic-retreat"
   },
   {
     name: "Dhathri Ayurveda Hospital & Panchakarma Center",
@@ -366,7 +366,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Dhathri Ayurveda Resort/Thumb.jpg",
-    link: "/centers/kerala/dhathri-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/kerala/dhathri-ayurveda"
   },
   {
     name: "Nagarjuna Ayurveda Centre",
@@ -376,7 +376,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 200,
     image: "/Center Images/Nagarjuna-ayurveda/Center image.jpg",
-    link: "/centers/kerala/nagarjuna-ayurveda-centre"
+    link: "/top-ayurvedic-centers-in-india/kerala/nagarjuna-ayurveda-centre"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -386,7 +386,7 @@ export const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -396,7 +396,7 @@ export const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
 ];
 

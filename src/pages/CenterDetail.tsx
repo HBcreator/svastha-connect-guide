@@ -25,7 +25,7 @@ const CenterDetail = () => {
     images: string[];
   }> = {
     veda5: {
-      id: "veda5",
+      id: "veda5-ayurveda-yoga-wellness-retreat-center-rishikesh-india",
       name: "Veda5 Ayurveda & Yoga Retreat",
       city: "Goa",
       region: "North Goa",
@@ -204,7 +204,7 @@ const CenterDetail = () => {
   };
 
   const centerKey = (centerId || "").toLowerCase();
-  const centerDetails = centersData[centerKey] || centersData["veda5"];
+  const centerDetails = centersData[centerKey] || centersData["veda5-ayurveda-yoga-wellness-retreat-center-rishikesh-india"];
 
   return (
     <div className="min-h-screen font-poppins">

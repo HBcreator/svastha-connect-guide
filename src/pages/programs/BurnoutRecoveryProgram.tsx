@@ -74,7 +74,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Modi Yoga Retreat/Thumb.jpg",
-    link: "/centers/rishikesh/modi-yoga-retreat",
+    link: "/top-ayurvedic-centers-in-india/rishikesh/modi-yoga-retreat",
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -83,7 +83,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 0,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest",
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest",
   },
   {
     name: "Veda5 – Ayurveda, Yoga & Wellness Retreat",
@@ -92,7 +92,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 420,
     image: "/Center Images/veda5/veda5-1.jpg",
-    link: "/centers/veda5",
+    link: "/top-ayurvedic-centers-in-india/veda5",
   },
   {
     name: "ITC Grand Bharat",
@@ -101,7 +101,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 17000,
     image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/centers/gurugram/itc-grand-bharat",
+    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
   },
   {
     name: "Kalari Kovilakom - The Palace For Ayurveda",
@@ -110,7 +110,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Kalari Kovilakom/Thumb.jpg",
-    link: "/centers/kerala/kalari-kovilakom",
+    link: "/top-ayurvedic-centers-in-india/kerala/kalari-kovilakom",
   },
   {
     name: "The Nattika Beach Resort",
@@ -119,7 +119,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort",
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort",
   },
   {
     name: "Ayurmana",
@@ -128,7 +128,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana",
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana",
   },
   {
     name: "Ayuskama Ayurveda",
@@ -137,7 +137,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-    link: "/centers/dharamshala/ayuskama-ayurveda",
+    link: "/top-ayurvedic-centers-in-india/dharamshala/ayuskama-ayurveda",
   },
   {
     name: "Nalanda Retreat Goa",
@@ -146,7 +146,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 0,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa",
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa",
   },
   {
     name: "Back to Roots Ayurveda Retreat",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 100,
     image: "/Center Images/Back to Roots Ayurveda Retreat/top-center thumb.jpg",
-    link: "/centers/kerala/back-to-roots",
+    link: "/top-ayurvedic-centers-in-india/kerala/back-to-roots",
   },
   {
     name: "Soul Vacation Resort & Wellness Centre",
@@ -164,7 +164,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Soul Vacation Resort and Spa/thumb.jpg",
-    link: "/centers/goa/soul-vacation",
+    link: "/top-ayurvedic-centers-in-india/goa/soul-vacation",
   },
   {
     name: "Kairali Heritage Resort",
@@ -173,7 +173,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage",
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage",
   },
 ];
 

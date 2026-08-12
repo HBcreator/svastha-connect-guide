@@ -270,7 +270,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 500,
     image: "/Center Images/Nalanda Retreat Goa/Thumb.jpg",
-    link: "/centers/goa/nalanda-retreat-goa"
+    link: "/top-ayurvedic-centers-in-india/goa/nalanda-retreat-goa"
   },
   {
     name: "Kumarakom Lake Resort",
@@ -280,7 +280,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort"
   },
   {
     name: "Niraamaya Retreats Surya Samudra",
@@ -290,7 +290,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 600,
     image: "/Center Images/Niraamaya Retreats Surya Samudra/Thumb.jpg",
-    link: "/centers/kerala/niraamaya-retreats-surya-samudra"
+    link: "/top-ayurvedic-centers-in-india/kerala/niraamaya-retreats-surya-samudra"
   },
   {
     name: "Namaste Dwaar – Countryside Wellness Retreat",
@@ -300,7 +300,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 180,
     image: "/Center Images/Namastedwaar/Namastedwaar main.jpg",
-    link: "/centers/delhi/namastedwaar"
+    link: "/top-ayurvedic-centers-in-india/delhi/namastedwaar"
   },
   {
     name: "Ayurmana",
@@ -310,7 +310,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "Ayur Bethaniya Ayurveda Hospital",
@@ -320,7 +320,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayur Bethaniya/CTA.jpg",
-    link: "/centers/kerala/ayur-bethaniya-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayur-bethaniya-ayurveda-hospital"
   },
   {
     name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -330,7 +330,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "The Nattika Beach Resort",
@@ -340,7 +340,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/The Nattika Beach Resort/Thumb.jpg",
-    link: "/centers/kerala/the-nattika-beach-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/the-nattika-beach-resort"
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -350,7 +350,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma"
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -360,7 +360,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Ayuskama Ayurveda",
@@ -370,7 +370,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayuskama Ayurveda/Thumb.jpg",
-    link: "/centers/dharamshala/ayuskama-ayurveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/ayuskama-ayurveda"
   },
   {
     name: "Ananda In The Himalayas",
@@ -380,7 +380,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 900,
     image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/centers/uttarakhand/ananda-in-the-himalayas"
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
   },
 ];
 

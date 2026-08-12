@@ -125,7 +125,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 479,
     image: "/Center Images/Akanta Ayurveda and Yoga Resort/thumb.jpg",
-    link: "/centers/kochi/akanta-ayurveda-and-yoga-resort"
+    link: "/top-ayurvedic-centers-in-india/kochi/akanta-ayurveda-and-yoga-resort"
   },
   {
     name: "Viveda Wellness Village",
@@ -135,7 +135,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Viveda Wellness Village/Thumb.jpg",
-    link: "/centers/maharashtra/viveda-wellness-village"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/viveda-wellness-village"
   },
   {
     name: "Atmantan Wellness Resort",
@@ -145,7 +145,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Atmantan Wellness Resort/Thumb.jpg",
-    link: "/centers/pune/atmantan-wellness-resort"
+    link: "/top-ayurvedic-centers-in-india/pune/atmantan-wellness-resort"
   },
   {
     name: "Indus Valley Ayurvedic Centre",
@@ -155,7 +155,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre"
   },
   {
     name: "Kairali – The Ayurvedic Healing Village",
@@ -165,7 +165,7 @@ const topAyurvedicCenters = [
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village"
   },
   {
     name: "Shathayu Ayurveda Yoga Retreat",
@@ -175,7 +175,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Shathayu Ayurveda Yoga Retreat/thumb.jpg",
-    link: "/centers/udupi/shathayu-ayurveda-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/udupi/shathayu-ayurveda-yoga-retreat"
   },
   {
     name: "Kairali Heritage Resort – Riverside Ayurveda & Wellness Retreat",
@@ -185,7 +185,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 220,
     image: "/Center Images/Kairali Heritage/Kairali Heritage Center show image.png",
-    link: "/centers/kerala/kairali-heritage"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-heritage"
   },
   {
     name: "Ideal Ayurvedic Resort",
@@ -195,7 +195,7 @@ const topAyurvedicCenters = [
     rating: 4.5,
     reviews: 400,
     image: "/Center Images/Ideal Ayurvedic Resort/Thumb.jpg",
-    link: "/centers/kerala/ideal-ayurvedic-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/ideal-ayurvedic-resort"
   },
   {
     name: "Kumarakom Lake Resort",
@@ -205,7 +205,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/kumarakom lake resort/Thumb.jpg",
-    link: "/centers/kerala/kumarakom-lake-resort"
+    link: "/top-ayurvedic-centers-in-india/kerala/kumarakom-lake-resort"
   },
   {
     name: "Yan Cure Yoga Retreat & Ayurveda Centre",
@@ -215,7 +215,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Yan Cure Yoga Retreat/Thumb.webp",
-    link: "/centers/rishikesh/yan-cure"
+    link: "/top-ayurvedic-centers-in-india/rishikesh/yan-cure"
   },
   {
     name: "Sitaram Mountain Retreat",
@@ -225,7 +225,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 928,
     image: "/Center Images/Sitaram Mountain Retreat/thumb.jpg",
-    link: "/centers/idukki/sitaram-mountain-retreat"
+    link: "/top-ayurvedic-centers-in-india/idukki/sitaram-mountain-retreat"
   },
   {
     name: "Agni Ayurvedic Village Resort",
@@ -235,7 +235,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 190,
     image: "/Center Images/Agni - Ayurvedic Village/Photo Gallery/Agni-Ayurvedic Village-01.jpg",
-    link: "/centers/kerala/agni-ayurvedic-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/agni-ayurvedic-village"
   },
 ];
 
@@ -796,7 +796,7 @@ const AyurvedaTreatment = () => {
 
             <div className="flex justify-center mt-4">
               <Link
-                to="/centers"
+                to="/top-ayurvedic-centers-in-india"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group"

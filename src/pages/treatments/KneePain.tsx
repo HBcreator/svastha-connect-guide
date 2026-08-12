@@ -57,7 +57,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Toyam By Orchid Hotels/Thumb.jpg",
-    link: "/centers/pune/toyam-by-orchid-hotels"
+    link: "/top-ayurvedic-centers-in-india/pune/toyam-by-orchid-hotels"
   },
   {
     name: "HimVeda Heritage Wellness Centre",
@@ -67,7 +67,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/centers/dharamshala/himveda"
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
   },
   {
     name: "Fazlani Nature's Nest Wellness Centre",
@@ -77,7 +77,7 @@ const topAyurvedicCenters = [
     rating: 4.7,
     reviews: 500,
     image: "/Center Images/Fazlani Natures Nest/Thumb.jpg",
-    link: "/centers/maharashtra/fazlani-natures-nest"
+    link: "/top-ayurvedic-centers-in-india/maharashtra/fazlani-natures-nest"
   },
   {
     name: "SWAN Yoga Retreat & Ayurveda",
@@ -87,7 +87,7 @@ const topAyurvedicCenters = [
     rating: 4.6,
     reviews: 500,
     image: "/Center Images/SWAN Yoga Retreat/Thumb.jpg",
-    link: "/centers/goa/swan-yoga-retreat"
+    link: "/top-ayurvedic-centers-in-india/goa/swan-yoga-retreat"
   },
   {
     name: "Amanbagh Heritage Wellness Retreat",
@@ -97,7 +97,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/centers/rajasthan/amanbagh-heritage-wellness-retreat"
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat"
   },
   {
     name: "ITC Grand Bharat",
@@ -107,7 +107,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 17000,
     image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/centers/gurugram/itc-grand-bharat"
+    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat"
   },
   {
     name: "Indus Valley Ayurvedic Centre",
@@ -117,7 +117,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/centers/mysore/indus-valley-ayurvedic-centre"
+    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre"
   },
   {
     name: "Sanjeevanam Ayurveda Hospital",
@@ -127,17 +127,17 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 1700,
     image: "/Center Images/Sanjeevanam/Top center thumbnail.jpg",
-    link: "/centers/kerala/sanjeevanam-ayurveda-hospital"
+    link: "/top-ayurvedic-centers-in-india/kerala/sanjeevanam-ayurveda-hospital"
   },
   {
-    name: "Kairali – The Ayurvedic Healing Village",
+    name: "Kairali ï¿½ The Ayurvedic Healing Village",
     city: "Palakkad",
     location: "Palakkad",
-    description: "Kairali – The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
+    description: "Kairali ï¿½ The Ayurvedic Healing Village ek world-renowned wellness destination hai jo authentic Ayurveda, Panchakarma aur holistic healing par focus karta hai. Lush green surroundings ke beech sthit, yeh NABH-accredited retreat traditional Ayurvedic wisdom ko modern comfort ke saath blend karta hai. Yahan personalized treatment plans, experienced vaidyas aur sattvic lifestyle ke through long-term health, detox aur rejuvenation par kaam kiya jata hai.",
     rating: 4.9,
     reviews: 280,
     image: "/Center Images/The Ayurvedic Healing Village/Base image.jpg",
-    link: "/centers/kerala/kairali-ayurvedic-healing-village"
+    link: "/top-ayurvedic-centers-in-india/kerala/kairali-ayurvedic-healing-village"
   },
   {
     name: "Chamundi Hill Palace Ayurvedic Resort",
@@ -147,7 +147,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Chamundi Hill Palace/CTA.jpg",
-    link: "/centers/mysore/chamundi-hill-palace"
+    link: "/top-ayurvedic-centers-in-india/mysore/chamundi-hill-palace"
   },
   {
     name: "Ayurmana",
@@ -157,7 +157,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/centers/kerala/ayurmana"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana"
   },
   {
     name: "AyurSoma Ayurveda Royal Retreat",
@@ -167,7 +167,7 @@ const topAyurvedicCenters = [
     rating: 4.8,
     reviews: 500,
     image: "/Center Images/AyurSoma Ayurveda/Photo gallery/img 1.jpg",
-    link: "/centers/kerala/ayursoma"
+    link: "/top-ayurvedic-centers-in-india/kerala/ayursoma"
   },
 ];
 
@@ -742,7 +742,7 @@ const KneePain = () => {
               </div>
             )}
             <div className="flex justify-center mt-4">
-              <Link to="/centers" target="_blank" rel="noreferrer" className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group">
+              <Link to="/top-ayurvedic-centers-in-india" target="_blank" rel="noreferrer" className="bg-[#FF7A28] hover:bg-[#E66917] text-white font-bold px-8 py-3 h-auto rounded-lg shadow-lg transition-all active:scale-95 flex items-center gap-2 text-base tracking-wide group">
                 VIEW ALL CENTERS <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
