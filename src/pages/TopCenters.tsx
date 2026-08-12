@@ -2713,19 +2713,23 @@ const TopCenters = () => {
               Previous
             </Button>
             
-            <div className="flex items-center gap-1.5 md:gap-2">
-              {(() => {
+            <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
                 let startPage = Math.max(1, currentPage - 1);
                 let endPage = Math.min(totalPages, startPage + 3);
                 if (endPage - startPage < 3) {
                   startPage = Math.max(1, endPage - 3);
                 }
-                return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i).map((pageNum) => (
+                const isMobileVisible = pageNum >= startPage && pageNum <= endPage;
+                
+                return (
                   <Button
                     key={pageNum}
                     variant={currentPage === pageNum ? "default" : "outline"}
                     onClick={() => setCurrentPage(pageNum)}
-                    className={`w-8 h-8 md:w-10 md:h-10 p-0 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-sm ${
+                    className={`w-8 h-8 md:w-10 md:h-10 p-0 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-sm 
+                      ${!isMobileVisible ? "hidden md:inline-flex" : "inline-flex"} justify-center items-center
+                      ${
                       currentPage === pageNum 
                         ? "bg-[#2C4E5A] text-white hover:bg-[#1e363e]" 
                         : "border-[#2C4E5A] text-[#2C4E5A] hover:bg-[#2C4E5A] hover:text-white"
@@ -2733,8 +2737,8 @@ const TopCenters = () => {
                   >
                     {pageNum}
                   </Button>
-                ));
-              })()}
+                );
+              })}
             </div>
 
             <Button
