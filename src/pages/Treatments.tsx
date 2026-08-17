@@ -48,6 +48,14 @@ const Treatments = () => {
       image: "/Treatments-images/Sinusitis Treatment.jpg",
     },
     {
+      name: "Asthma Treatment",
+      slug: "asthma-treatment-in-india",
+      category: "Respiratory Care",
+      description: "Clears excess Kapha from the respiratory channels using Vamana, Swedana, and Nasya therapies to restore clear, effortless breathing.",
+      benefits: ["Reduces wheezing", "Clears airways", "Strengthens lung capacity", "Fewer flare-ups"],
+      image: "/Treatments-images/Asthma/Ayurvedic Treatment for Asthma and Breathing.jpg",
+    },
+    {
       name: "Autism Treatment",
       slug: "autism-treatment-in-india",
       category: "Neurological Disorders",
@@ -248,38 +256,38 @@ const Treatments = () => {
 
       {/* Treatments Grid */}
       <section className="container mx-auto px-4 pb-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
           {filteredTreatments.map((treatment, index) => (
-            <div key={index} className="bg-card rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col">
+            <div key={index} className="bg-card rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col text-sm">
               {treatment.image && (
                 <div className="w-full overflow-hidden">
-                  <img 
-                    src={treatment.image} 
+                  <img
+                    src={treatment.image}
                     alt={treatment.name}
-                    className="w-full h-[200px] object-cover object-center hover:scale-105 transition-transform duration-300"
+                    className="w-full h-[160px] object-cover object-center hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               )}
-              
-              <div className="px-6 pt-6 pb-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-primary mb-3">{treatment.name}</h3>
-                
-                <p className="text-foreground mb-4 flex-grow">{treatment.description}</p>
-                
-                <div className="mb-4">
-                  <h4 className="font-semibold text-foreground mb-2">Key Benefits:</h4>
+
+              <div className="px-5 pt-5 pb-5 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-primary mb-2">{treatment.name}</h3>
+
+                <p className="text-foreground mb-3 flex-grow text-sm">{treatment.description}</p>
+
+                <div className="mb-3">
+                  <h4 className="font-semibold text-foreground mb-1.5 text-sm">Key Benefits:</h4>
                   <ul className="space-y-1">
                     {treatment.benefits.map((benefit, i) => (
-                      <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                      <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                        <span className="text-primary mt-0.5">•</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                
-                <Link to={`/ayurveda-treatments/${treatment.slug}`} className="w-full">
-                  <Button className="w-full font-semibold">
+
+                <Link to={`/ayurveda-treatments/${treatment.slug}`} target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button size="sm" className="w-full font-semibold">
                     Read More
                   </Button>
                 </Link>

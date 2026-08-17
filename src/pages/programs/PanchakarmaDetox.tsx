@@ -98,7 +98,7 @@ const PanchakarmaDetox = () => {
                     <div className="grid grid-cols-2 gap-2">
                       <Button
                         className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
-                        onClick={() => navigate(program.link || "/top-ayurvedic-centers-in-india")}
+                        onClick={() => window.open(program.link || "/top-ayurvedic-centers-in-india", "_blank", "noopener,noreferrer")}
                       >
                         View Details
                       </Button>
