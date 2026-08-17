@@ -107,8 +107,10 @@ const BeautyAndRejuvenation = () => {
                   {/* Buttons Container */}
                   <div className="mt-2 md:mt-auto pt-2 md:pt-3 border-t border-border/50">
                     <div className="grid grid-cols-2 gap-2">
-                      <Link 
+                      <Link
                         to={program.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none flex items-center justify-center"
                       >
                         View Details

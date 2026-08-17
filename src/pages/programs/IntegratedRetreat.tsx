@@ -38,6 +38,20 @@ const IntegratedRetreat = () => {
       rating: 4.8,
       reviews: 142,
       tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
+    },
+    {
+      category: "Integrated Retreat",
+      name: "Luxury Ayurveda Retreat Program in India",
+      duration: "14 Days",
+      targetAudience: "Privacy-focused, five-star wellness travelers",
+      keyFocus: "Indulgent, fully personalized rejuvenation",
+      description:
+        "A fully bespoke 14-day retreat at India's finest five-star and heritage wellness properties. No disease diagnosis required — just a private Vaidya, a personalized itinerary of signature therapies like Abhyanga Royale and Shirodhara, and complete privacy from arrival to departure.",
+      image: "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-retreat-hero.jpg",
+      link: "/ayurveda-packages/luxury-ayurveda-retreat-program-in-india",
+      rating: 4.9,
+      reviews: 210,
+      tags: ["14 Days", "Five-Star Stay", "Private Villa", "Bespoke Itinerary"]
     }
   ];
 
@@ -108,7 +122,7 @@ const IntegratedRetreat = () => {
                     <div className="grid grid-cols-2 gap-2">
                       <Button
                         className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-4 md:py-5 rounded-xl transition-all duration-300 text-sm h-auto border-none shadow-none"
-                        onClick={() => navigate(program.link)}
+                        onClick={() => window.open(program.link, "_blank", "noopener,noreferrer")}
                       >
                         View Details
                       </Button>

@@ -112,6 +112,7 @@ import LumbarSpondylosis from "./pages/treatments/LumbarSpondylosis";
 import GastroesophagealRefluxDisease from "./pages/treatments/GastroesophagealRefluxDisease";
 import ArthritisTreatment from "./pages/treatments/ArthritisTreatment";
 import DysmenorrheaTreatment from "./pages/treatments/DysmenorrheaTreatment";
+import AsthmaTreatment from "./pages/treatments/AsthmaTreatment";
 import UlcerativeColitisTreatment from "./pages/treatments/UlcerativeColitisTreatment";
 import DiscBulgeProtrusion from "./pages/treatments/DiscBulgeProtrusion";
 import BackPain from "./pages/treatments/BackPain";
@@ -122,6 +123,7 @@ import DelhiNorthIndiaRegionCenters from "./pages/DelhiNorthIndiaRegionCenters";
 import MumbaiPuneRajasthanWestIndiaCenters from "./pages/MumbaiPuneRajasthanWestIndiaCenters";
 import PanchakarmaDetox from "./pages/programs/PanchakarmaDetox";
 import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
+import LuxuryAyurvedaRetreatProgram from "./pages/programs/LuxuryAyurvedaRetreatProgram";
 import PanchakarmaHealing28Day from "./pages/programs/PanchakarmaHealing28Day";
 import DiseaseSpecific from "./pages/programs/DiseaseSpecific";
 import OsteoarthritisTreatment from "./pages/programs/OsteoarthritisTreatment";
@@ -525,6 +527,10 @@ const App = () => (
           <Route path="/ayurveda-treatments/dysmenorrhea-treatment-in-india" element={<DysmenorrheaTreatment />} />
           <Route path="/ayurveda-treatments/dysmenorrhea-therapy-in-india" element={<Navigate to="/ayurveda-treatments/dysmenorrhea-treatment-in-india" replace />} />
           <Route path="/ayurvedic-treatments/dysmenorrhea-therapy-in-india" element={<Navigate to="/ayurveda-treatments/dysmenorrhea-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/asthma-treatment-in-india" element={<AsthmaTreatment />} />
+          <Route path="/ayurveda-treatments/asthma-therapy-in-india" element={<Navigate to="/ayurveda-treatments/asthma-treatment-in-india" replace />} />
+          <Route path="/ayurvedic-treatments/asthma-therapy-in-india" element={<Navigate to="/ayurveda-treatments/asthma-treatment-in-india" replace />} />
           
           <Route path="/ayurveda-treatments/ulcerative-colitis-treatment-in-india" element={<UlcerativeColitisTreatment />} />
           <Route path="/ayurveda-treatments/ulcerative-colitis-therapy-in-india" element={<Navigate to="/ayurveda-treatments/ulcerative-colitis-treatment-in-india" replace />} />
@@ -687,6 +693,8 @@ const App = () => (
           <Route path="/ayurveda-packages/integrated-retreat" element={<IntegratedRetreat />} />
           <Route path="/integrated-retreat" element={<Navigate to="/ayurveda-packages/integrated-retreat" replace />} />
           <Route path="/ayurvedic-programs/integrated-retreat" element={<Navigate to="/ayurveda-packages/integrated-retreat" replace />} />
+
+          <Route path="/ayurveda-packages/luxury-ayurveda-retreat-program-in-india" element={<LuxuryAyurvedaRetreatProgram />} />
           
           <Route path="/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india" element={<AyurvedaYogaRetreat />} />
           <Route path="/integrated-retreat/ayurvedic-yoga-retreat-program-in-india" element={<Navigate to="/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india" replace />} />
