@@ -1,0 +1,276 @@
+import TreatmentPageTemplate, {
+  type TreatmentTherapy,
+  type TreatmentPackage,
+  type TreatmentReview,
+  type TreatmentFaq,
+  type TreatmentCenter,
+} from "@/components/TreatmentPageTemplate";
+import { Droplet, Leaf, Activity, Flame } from "lucide-react";
+
+const therapies: TreatmentTherapy[] = [
+  {
+    title: "Basti",
+    sanskrit: "Medicated Enema Therapy",
+    text: "Considered the primary Panchakarma therapy for Vata-Majjavaha Srotas disorders. A structured series of medicated oil and decoction enemas calms deep-seated Vata and supports nerve tissue function.",
+    icon: Droplet,
+  },
+  {
+    title: "Abhyanga (Bala Taila)",
+    sanskrit: "Strengthening Oil Massage",
+    text: "A full-body massage with Bala-infused oils, chosen specifically for their nerve and muscle strengthening properties, supports mobility and gently maintains muscular strength.",
+    icon: Activity,
+  },
+  {
+    title: "Pizhichil",
+    sanskrit: "Warm Oil Bath Immersion",
+    text: "A continuous, rhythmic pouring of warm medicated oil over the entire body by multiple therapists, deeply nourishing the nervous system and easing stiffness and fatigue.",
+    icon: Leaf,
+  },
+  {
+    title: "Majja Rasayana",
+    sanskrit: "Nerve Tissue Nourishment",
+    text: "A tailored regimen of Ashwagandha, Bala, and Shatavari specifically supports the Majja dhatu (nerve tissue), helping to maintain nerve function and overall vitality.",
+    icon: Flame,
+  },
+];
+
+const packages: TreatmentPackage[] = [
+  {
+    name: "21-Day Neuro-Support Program",
+    duration: "21 Days",
+    cost: "$2,800 - $5,000 USD",
+    focus: "Focuses on Abhyanga, gentle Basti, and supportive herbs to ease fatigue and stiffness while supporting day-to-day mobility and comfort.",
+    image: "/Treatments-images/MultipleSclerosis/Neuro Support Package.jpg",
+  },
+  {
+    name: "28-Day Majja Dhatu Rejuvenation",
+    duration: "28 Days",
+    cost: "$4,200 - $7,200 USD",
+    focus: "Combines a structured Basti series with daily Pizhichil oil bath immersion to deeply nourish nerve tissue and support long-term symptom management.",
+    image: "/Treatments-images/MultipleSclerosis/Majja Dhatu Rejuvenation Package.jpg",
+  },
+  {
+    name: "35-Day Intensive Neurological Panchakarma",
+    duration: "35+ Days",
+    cost: "$5,800 - $9,800+ USD",
+    focus: "An extended, physician-supervised program for more advanced cases, combining detoxification, Rasayana nourishment, and continuous physiotherapy-integrated care.",
+    image: "/Treatments-images/MultipleSclerosis/Intensive Neurological Panchakarma Package.jpg",
+  },
+];
+
+const reviews: TreatmentReview[] = [
+  {
+    name: "Anneke",
+    location: "Utrecht, Netherlands",
+    condition: "Relapsing-Remitting MS",
+    title: "My Fatigue and Stiffness Are Genuinely More Manageable.",
+    review:
+      "I came seeking supportive care alongside my neurologist's treatment plan. The daily Pizhichil oil bath noticeably eased my stiffness and fatigue, and I left with a home routine that has kept those improvements going.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Magnus",
+    location: "Oslo, Norway",
+    condition: "MS-Related Fatigue",
+    title: "My Energy Levels Improved More Than I Expected.",
+    review:
+      "Chronic fatigue was my biggest daily struggle. The Basti series combined with Bala oil massage gave me noticeably more stable energy through the day. My physiotherapist has noticed the difference too.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Delphine",
+    location: "Brussels, Belgium",
+    condition: "MS Mobility Support",
+    title: "A Genuinely Supportive, Well-Supervised Program.",
+    review:
+      "I was cautious about trying anything outside my neurology care, but the team worked transparently alongside my medical history throughout. The supportive therapies eased my stiffness without any adverse effects.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Callum",
+    location: "Edinburgh, UK",
+    condition: "Secondary Progressive MS",
+    title: "My Quality Of Life Has Genuinely Improved.",
+    review:
+      "This program never claimed to cure my MS — it focused on supportive, symptom-easing care, and that honesty mattered to me. The daily oil therapies have measurably improved my comfort and daily function.",
+    rating: 5,
+    verified: true,
+  },
+  {
+    name: "Freja",
+    location: "Aarhus, Denmark",
+    condition: "MS-Related Muscle Stiffness",
+    title: "The Warm Oil Therapies Eased Stiffness I'd Lived With For Years.",
+    review:
+      "Years of stiffness had become my new normal. The combination of Bala Abhyanga and Pizhichil noticeably loosened that tension within the first two weeks. My physiotherapy sessions have felt easier ever since.",
+    rating: 5,
+    verified: true,
+  },
+];
+
+const faqItems: TreatmentFaq[] = [
+  { question: "Can Ayurveda cure Multiple Sclerosis?", answer: "No. Multiple Sclerosis is a chronic autoimmune neurological condition with no known cure in any system of medicine. This program provides supportive Ayurvedic care alongside your existing neurology treatment, focused on easing stiffness, fatigue, and supporting overall quality of life." },
+  { question: "Is this program a replacement for my neurologist's treatment?", answer: "No, this program is designed purely as complementary, supportive care. You should continue all prescribed medications and neurology follow-ups, and we recommend informing your neurologist about any additional therapies you undertake." },
+  { question: "Why does Ayurveda focus on the Majja dhatu (nerve tissue) for MS?", answer: "Ayurveda associates neurological function with the Majja dhatu, governed by Vata. Supportive therapies aim to nourish this tissue and calm aggravated Vata, which may help ease associated stiffness and fatigue." },
+  { question: "Is Pizhichil oil bath safe for MS patients?", answer: "Yes, when administered by physicians familiar with your full medical history and current mobility level. The therapy is adapted to your comfort and physical capability throughout the program." },
+  { question: "How soon might I notice a difference in fatigue or stiffness?", answer: "Some patients report easier movement and reduced fatigue within the first two weeks of daily therapies, though individual results vary significantly based on disease stage and overall health." },
+];
+
+const topCenters: TreatmentCenter[] = [
+  {
+    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, specializing in treating chronic conditions with high clinical standards.",
+    rating: 4.9,
+    reviews: 500,
+    image: "/Center Images/SOUKYA/top center Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/bangalore/soukya",
+  },
+  {
+    name: "Indus Valley Ayurvedic Centre",
+    city: "Mysore",
+    location: "Mysore",
+    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre",
+  },
+  {
+    name: "AyurvedaGram Heritage Wellness Centre",
+    city: "Bangalore",
+    location: "Bangalore",
+    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas within a serene heritage village.",
+    rating: 4.7,
+    reviews: 600,
+    image: "/Center Images/AyurvedaGram/Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram",
+  },
+  {
+    name: "HimVeda Heritage Wellness Centre",
+    city: "Dharamshala",
+    location: "Dharamshala",
+    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala, offering personalized treatments guided by experienced doctors.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/HimVeda/Thumb.jpeg",
+    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
+  },
+  {
+    name: "Athreya Ayurvedic Centre",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
+    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre",
+  },
+  {
+    name: "Ananda In The Himalayas",
+    city: "Uttarakhand",
+    location: "Uttarakhand",
+    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat guided by expert physicians and therapists, rooted in Ayurveda, Yoga, and Vedanta.",
+    rating: 4.8,
+    reviews: 900,
+    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
+  },
+  {
+    name: "Amanbagh Heritage Wellness Retreat",
+    city: "Alwar",
+    location: "Alwar",
+    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat surrounded by the rugged beauty of Rajasthan's Aravalli hills, offering a serene wellness haven for deep rejuvenation.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Amanbagh/thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
+  },
+  {
+    name: "Ayurmana",
+    city: "Kerala",
+    location: "Kerala",
+    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
+    rating: 4.8,
+    reviews: 500,
+    image: "/Center Images/Ayurmana center/top center thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana",
+  },
+  {
+    name: "Sandhya Hot Spring Health Care",
+    city: "Manikaran",
+    location: "Manikaran",
+    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, blending traditional healing practices with the restorative benefits of geothermal therapy.",
+    rating: 4.6,
+    reviews: 500,
+    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care",
+  },
+  {
+    name: "ITC Grand Bharat",
+    city: "Gurugram",
+    location: "Gurugram",
+    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills, offering a deeply rejuvenating escape.",
+    rating: 4.8,
+    reviews: 17000,
+    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
+    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
+  },
+];
+
+const MultipleSclerosisTreatment = () => (
+  <TreatmentPageTemplate
+    slug="multiple-sclerosis-treatment-in-india"
+    conditionName="Multiple Sclerosis"
+    pageTitle="Multiple Sclerosis Treatment in India"
+    heroTagline="Supportive Ayurvedic Care for Living Well With MS"
+    heroDescription="Ayurveda offers supportive, physician-supervised care alongside your existing neurology treatment — nourishing nerve tissue, easing stiffness and fatigue, and supporting your quality of life."
+    heroRatingText="4.7/5 Patient Satisfaction"
+    introTitle="The Ayurvedic View of Nerve Health (Majja Dhatu)"
+    introImage="/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg"
+    introImageAlt="Ayurvedic Multiple Sclerosis Treatment"
+    introParagraphs={[
+      <>
+        Ayurveda associates neurological function with the <strong className="text-[#335765]">Majja dhatu</strong> (nerve tissue), which is governed by <strong className="text-[#335765]">Vata dosha</strong> — the subtle energy responsible for all movement and communication in the body.
+      </>,
+      <>
+        This program is offered as <strong className="text-[#335765]">supportive care</strong>, not a cure — Multiple Sclerosis is a complex autoimmune condition that requires ongoing neurological treatment. Ayurvedic therapies aim to calm aggravated Vata, nourish nerve tissue, and ease common symptoms like fatigue and stiffness, working alongside your existing medical care to support day-to-day comfort and quality of life.
+      </>,
+    ]}
+    therapiesSubtitle="The program focuses on calming Vata and nourishing the Majja dhatu, supporting mobility, comfort, and energy alongside your ongoing neurology care."
+    therapies={therapies}
+    dietIntro="Dietary correction supports Vata balance and helps maintain steady energy and nerve tissue nourishment."
+    dietFavour={[
+      "Warm, Unctuous Foods: Favour warm, ghee-rich, well-cooked meals that are grounding and easy to digest.",
+      "Nerve-Nourishing Foods: Include warm milk, nuts, and dates, which are traditionally considered supportive for Majja dhatu.",
+      "Regular Meal Times: A consistent eating schedule helps stabilize energy levels throughout the day.",
+      "Warm Herbal Teas: Ginger and ashwagandha tea support digestion and gentle nervous system nourishment.",
+    ]}
+    dietAvoid={[
+      "Cold and Raw Foods: Cold, dry, or raw foods aggravate Vata and can worsen stiffness and fatigue.",
+      "Excess Caffeine: Stimulants can increase Vata's erratic quality and disrupt energy stability.",
+      "Irregular Meals: Skipping meals or inconsistent eating times destabilizes energy and aggravates Vata.",
+      "Processed and Fried Foods: These are difficult to digest and can increase fatigue over time.",
+    ]}
+    lifestyleAdjustments={[
+      "Gentle, Regular Movement: Light, physiotherapist-approved movement supports mobility without overexertion.",
+      "Prioritize Warmth: Keeping the body warm, especially the extremities, helps calm aggravated Vata.",
+      "Protect Rest Time: Adequate rest between activities helps manage fatigue, a common MS symptom.",
+      "Maintain a Predictable Routine: A stable daily schedule is calming to Vata and supports steady energy.",
+    ]}
+    packagesSubtitle="Select a timeline that matches your care goals. Each program includes daily physician consultation, prescribed supportive therapies, and sattvic diet — always alongside your existing neurology care."
+    packages={packages}
+    reviews={reviews}
+    topCentersSubtitle="Handpicked hospitals and retreats experienced in supportive care for chronic neurological conditions."
+    topCenters={topCenters}
+    faqItems={faqItems}
+    ctaImage="/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg"
+    ctaDescription="Start a conversation about supportive Ayurvedic care for MS. We help you connect with centers experienced in complementary neurological support."
+  />
+);
+
+export default MultipleSclerosisTreatment;

@@ -54,6 +54,7 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
     { to: "/ayurveda-packages/lifestyle-wellness", label: "Lifestyle & Wellness" },
     { to: "/ayurveda-packages/beauty-rejuvenation", label: "Beauty & Rejuvenation" },
     { to: "/ayurveda-packages/integrated-retreat", label: "Integrated Retreat" },
+    { to: "/ayurveda-packages/recovery-and-rehabilitation", label: "Recovery & Rehabilitation" },
   ];
 
   const servicesLinks = [
@@ -251,6 +252,13 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                       onClick={() => setProgramsDropdownOpen(false)}
                     >
                       Integrated Retreat
+                    </Link>
+                    <Link
+                      to="/ayurveda-packages/recovery-and-rehabilitation"
+                      className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                      onClick={() => setProgramsDropdownOpen(false)}
+                    >
+                      Recovery & Rehabilitation
                     </Link>
                   </div>
                 </div>

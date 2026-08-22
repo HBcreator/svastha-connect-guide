@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import QuoteModal from "@/components/QuoteModal";
@@ -9,6 +9,8 @@ import { Phone } from "lucide-react";
 const Treatments = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [currentPage, setCurrentPage] = useState(1);
+  const CARDS_PER_PAGE = 15;
 
   const categories = [
     "All",
@@ -54,6 +56,110 @@ const Treatments = () => {
       description: "Clears excess Kapha from the respiratory channels using Vamana, Swedana, and Nasya therapies to restore clear, effortless breathing.",
       benefits: ["Reduces wheezing", "Clears airways", "Strengthens lung capacity", "Fewer flare-ups"],
       image: "/Treatments-images/Asthma/Ayurvedic Treatment for Asthma and Breathing.jpg",
+    },
+    {
+      name: "Fatty Liver Treatment",
+      slug: "fatty-liver-treatment-in-india",
+      category: "Digestive Health",
+      description: "Rekindles Agni and clears excess Kapha using Virechana and Udwarthanam therapies to restore healthier liver function and metabolic balance.",
+      benefits: ["Supports liver function", "Reduces fat accumulation", "Improves digestion", "Boosts metabolism"],
+      image: "/Treatments-images/FattyLiver/Ayurvedic Treatment for Fatty Liver and Liver Detox.jpg",
+    },
+    {
+      name: "Insomnia Treatment",
+      slug: "insomnia-treatment-in-india",
+      category: "Mental Health",
+      description: "Calms an aggravated Vata dosha with Shirodhara and Padabhyanga therapies to restore deep, natural, uninterrupted sleep.",
+      benefits: ["Falls asleep faster", "Deeper sleep quality", "Calms overactive mind", "Restores sleep rhythm"],
+      image: "/Treatments-images/Insomnia/Ayurvedic Treatment for Insomnia and Sleep Disorder.jpg",
+    },
+    {
+      name: "Anxiety & Depression Support",
+      slug: "anxiety-and-depression-treatment-in-india",
+      category: "Mental Health",
+      description: "Calms restless Rajas and lifts heavy Tamas with Shirodhara, Nasya, and Medhya herbs to restore mental clarity and emotional balance.",
+      benefits: ["Calms racing thoughts", "Lifts low mood", "Restores emotional balance", "Reduces stress reactivity"],
+      image: "/Treatments-images/AnxietyDepression/Ayurvedic Treatment for Anxiety and Depression.jpg",
+    },
+    {
+      name: "Multiple Sclerosis Support",
+      slug: "multiple-sclerosis-treatment-in-india",
+      category: "Neurological Disorders",
+      description: "Supportive Ayurvedic care alongside neurology treatment, using Basti and Pizhichil therapies to nourish nerve tissue and ease stiffness and fatigue.",
+      benefits: ["Eases stiffness", "Supports energy levels", "Nourishes nerve tissue", "Complements neurology care"],
+      image: "/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg",
+    },
+    {
+      name: "PCOS Treatment",
+      slug: "pcos-treatment-in-india",
+      category: "Women's Health",
+      description: "Clears excess Kapha and rekindles metabolic fire using Virechana and Uttar Basti therapies to restore regular cycles and hormonal balance.",
+      benefits: ["Regulates menstrual cycle", "Supports healthy weight", "Balances hormones", "Improves skin health"],
+      image: "/Treatments-images/PCOS/Ayurvedic Treatment for PCOS and Hormonal Balance.jpg",
+    },
+    {
+      name: "Fibromyalgia & Chronic Fatigue",
+      slug: "fibromyalgia-chronic-fatigue-treatment-in-india",
+      category: "Musculoskeletal",
+      description: "Calms widespread Vata aggravation and rebuilds depleted Ojas using Pizhichil and Rasayana herbs to ease pain and restore lasting energy.",
+      benefits: ["Eases widespread pain", "Restores energy", "Improves sleep quality", "Rebuilds vitality"],
+      image: "/Treatments-images/FibromyalgiaChronicFatigue/Ayurvedic Treatment for Fibromyalgia and Chronic Fatigue.jpg",
+    },
+    {
+      name: "Diabetes Management",
+      slug: "diabetes-treatment-in-india",
+      category: "Metabolic",
+      description: "Rekindles metabolic fire and clears excess Kapha using Udwarthanam and Virechana therapies to support healthier, more stable blood sugar.",
+      benefits: ["Supports blood sugar balance", "Aids weight management", "Boosts metabolism", "Complements medical care"],
+      image: "/Treatments-images/Diabetes/Ayurvedic Treatment for Diabetes Management.jpg",
+    },
+    {
+      name: "Autoimmune Disease Support",
+      slug: "autoimmune-disease-treatment-in-india",
+      category: "Detox & Wellness",
+      description: "Clears deep-seated Ama and rebuilds Ojas using Virechana and Basti therapies, offering supportive care alongside your specialist treatment.",
+      benefits: ["Reduces flare-ups", "Supports resilience", "Eases inflammation", "Complements specialist care"],
+      image: "/Treatments-images/Autoimmune/Ayurvedic Treatment for Autoimmune Disease.jpg",
+    },
+    {
+      name: "Heart Health & Hypertension",
+      slug: "heart-health-hypertension-treatment-in-india",
+      category: "Cardiovascular",
+      description: "Calms stress-linked Vata-Pitta aggravation with Shirodhara and Hridya herbs to support healthier blood pressure and circulation.",
+      benefits: ["Supports healthy BP", "Improves circulation", "Reduces stress", "Complements cardiology care"],
+      image: "/Treatments-images/HeartHealth/Ayurvedic Treatment for Heart Health and Hypertension.jpg",
+    },
+    {
+      name: "Sports Injury Recovery",
+      slug: "sports-injury-recovery-treatment-in-india",
+      category: "Musculoskeletal",
+      description: "Calms local Vata aggravation and nourishes muscle and joint tissue with Elakizhi and Abhyanga to speed complete injury recovery.",
+      benefits: ["Faster recovery", "Reduces inflammation", "Rebuilds tissue strength", "Complements physiotherapy"],
+      image: "/Treatments-images/SportsInjury/Ayurvedic Treatment for Sports Injury Recovery.jpg",
+    },
+    {
+      name: "Peripheral Neuropathy Treatment",
+      slug: "peripheral-neuropathy-treatment-in-india",
+      category: "Neurological Disorders",
+      description: "Nourishes nerve tissue and calms aggravated Vata using Pizhichil and Padabhyanga therapies to ease numbness and restore sensation.",
+      benefits: ["Reduces numbness", "Improves circulation", "Nourishes nerve tissue", "Eases tingling"],
+      image: "/Treatments-images/PeripheralNeuropathy/Ayurvedic Treatment for Peripheral Neuropathy.jpg",
+    },
+    {
+      name: "Vertigo Treatment",
+      slug: "vertigo-treatment-in-india",
+      category: "Neurological Disorders",
+      description: "Calms Vata-Pitta imbalance in the head with Shirodhara and Nasya therapies to restore the body's natural sense of balance.",
+      benefits: ["Reduces dizzy spells", "Restores balance", "Eases neck tension", "Calms nervous system"],
+      image: "/Treatments-images/Vertigo/Ayurvedic Treatment for Vertigo.jpg",
+    },
+    {
+      name: "Trigeminal Neuralgia Treatment",
+      slug: "trigeminal-neuralgia-treatment-in-india",
+      category: "Neurological Disorders",
+      description: "Calms severely aggravated Vata in the facial nerve pathway using Nasya and Shirodhara to ease sharp nerve pain episodes.",
+      benefits: ["Reduces pain episodes", "Calms facial nerve", "Eases jaw tension", "Complements neurology care"],
+      image: "/Treatments-images/TrigeminalNeuralgia/Ayurvedic Treatment for Trigeminal Neuralgia.jpg",
     },
     {
       name: "Autism Treatment",
@@ -217,9 +323,23 @@ const Treatments = () => {
     },
   ];
 
-  const filteredTreatments = selectedCategory === "All" 
-    ? treatments 
+  const filteredTreatments = selectedCategory === "All"
+    ? treatments
     : treatments.filter(t => t.category === selectedCategory);
+
+  const totalPages = Math.ceil(filteredTreatments.length / CARDS_PER_PAGE) || 1;
+  const paginatedTreatments = filteredTreatments.slice(
+    (currentPage - 1) * CARDS_PER_PAGE,
+    currentPage * CARDS_PER_PAGE
+  );
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
 
   return (
     <div className="min-h-screen font-poppins">
@@ -257,7 +377,7 @@ const Treatments = () => {
       {/* Treatments Grid */}
       <section className="container mx-auto px-4 pb-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-7xl mx-auto">
-          {filteredTreatments.map((treatment, index) => (
+          {paginatedTreatments.map((treatment, index) => (
             <div key={index} className="bg-card rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col text-sm">
               {treatment.image && (
                 <div className="w-full overflow-hidden">
@@ -295,6 +415,57 @@ const Treatments = () => {
             </div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Button
+              variant="outline"
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              className="rounded-xl border-[#335765] text-[#335765] hover:bg-[#335765] hover:text-white"
+            >
+              Previous
+            </Button>
+
+            <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => {
+                let startPage = Math.max(1, currentPage - 1);
+                let endPage = Math.min(totalPages, startPage + 3);
+                if (endPage - startPage < 3) {
+                  startPage = Math.max(1, endPage - 3);
+                }
+                const isMobileVisible = pageNum >= startPage && pageNum <= endPage;
+
+                return (
+                  <Button
+                    key={pageNum}
+                    variant={currentPage === pageNum ? "default" : "outline"}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`w-8 h-8 md:w-10 md:h-10 p-0 rounded-lg md:rounded-xl font-bold transition-all text-xs md:text-sm
+                      ${!isMobileVisible ? "hidden md:inline-flex" : "inline-flex"} justify-center items-center
+                      ${
+                      currentPage === pageNum
+                        ? "bg-[#335765] text-white hover:bg-[#25464c]"
+                        : "border-[#335765] text-[#335765] hover:bg-[#335765] hover:text-white"
+                    }`}
+                  >
+                    {pageNum}
+                  </Button>
+                );
+              })}
+            </div>
+
+            <Button
+              variant="outline"
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+              className="rounded-xl border-[#335765] text-[#335765] hover:bg-[#335765] hover:text-white"
+            >
+              Next
+            </Button>
+          </div>
+        )}
       </section>
 
       {/* CTA Section */}

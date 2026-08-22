@@ -113,6 +113,19 @@ import GastroesophagealRefluxDisease from "./pages/treatments/GastroesophagealRe
 import ArthritisTreatment from "./pages/treatments/ArthritisTreatment";
 import DysmenorrheaTreatment from "./pages/treatments/DysmenorrheaTreatment";
 import AsthmaTreatment from "./pages/treatments/AsthmaTreatment";
+import InsomniaTreatment from "./pages/treatments/InsomniaTreatment";
+import AnxietyDepressionTreatment from "./pages/treatments/AnxietyDepressionTreatment";
+import MultipleSclerosisTreatment from "./pages/treatments/MultipleSclerosisTreatment";
+import PCOSTreatment from "./pages/treatments/PCOSTreatment";
+import FattyLiverTreatment from "./pages/treatments/FattyLiverTreatment";
+import FibromyalgiaChronicFatigueTreatment from "./pages/treatments/FibromyalgiaChronicFatigueTreatment";
+import DiabetesTreatment from "./pages/treatments/DiabetesTreatment";
+import AutoimmuneTreatment from "./pages/treatments/AutoimmuneTreatment";
+import HeartHealthTreatment from "./pages/treatments/HeartHealthTreatment";
+import SportsInjuryTreatment from "./pages/treatments/SportsInjuryTreatment";
+import PeripheralNeuropathyTreatment from "./pages/treatments/PeripheralNeuropathyTreatment";
+import VertigoTreatment from "./pages/treatments/VertigoTreatment";
+import TrigeminalNeuralgiaTreatment from "./pages/treatments/TrigeminalNeuralgiaTreatment";
 import UlcerativeColitisTreatment from "./pages/treatments/UlcerativeColitisTreatment";
 import DiscBulgeProtrusion from "./pages/treatments/DiscBulgeProtrusion";
 import BackPain from "./pages/treatments/BackPain";
@@ -124,6 +137,15 @@ import MumbaiPuneRajasthanWestIndiaCenters from "./pages/MumbaiPuneRajasthanWest
 import PanchakarmaDetox from "./pages/programs/PanchakarmaDetox";
 import PanchakarmaDetox21Day from "./pages/programs/PanchakarmaDetox21Day";
 import LuxuryAyurvedaRetreatProgram from "./pages/programs/LuxuryAyurvedaRetreatProgram";
+import CompleteBodyRejuvenationProgram from "./pages/programs/CompleteBodyRejuvenationProgram";
+import CorporateExecutiveWellnessProgram from "./pages/programs/CorporateExecutiveWellnessProgram";
+import SeniorCitizensRejuvenationProgram from "./pages/programs/SeniorCitizensRejuvenationProgram";
+import WomensMenopauseWellnessPackage from "./pages/programs/WomensMenopauseWellnessPackage";
+import MensFertilityVitalityWellnessProgram from "./pages/programs/MensFertilityVitalityWellnessProgram";
+import PostChemotherapyRejuvenationProgram from "./pages/programs/PostChemotherapyRejuvenationProgram";
+import CancerRecoverySupportProgram from "./pages/programs/CancerRecoverySupportProgram";
+import PostSurgeryRehabilitationProgram from "./pages/programs/PostSurgeryRehabilitationProgram";
+import RecoveryAndRehabilitation from "./pages/programs/RecoveryAndRehabilitation";
 import PanchakarmaHealing28Day from "./pages/programs/PanchakarmaHealing28Day";
 import DiseaseSpecific from "./pages/programs/DiseaseSpecific";
 import OsteoarthritisTreatment from "./pages/programs/OsteoarthritisTreatment";
@@ -531,6 +553,46 @@ const App = () => (
           <Route path="/ayurveda-treatments/asthma-treatment-in-india" element={<AsthmaTreatment />} />
           <Route path="/ayurveda-treatments/asthma-therapy-in-india" element={<Navigate to="/ayurveda-treatments/asthma-treatment-in-india" replace />} />
           <Route path="/ayurvedic-treatments/asthma-therapy-in-india" element={<Navigate to="/ayurveda-treatments/asthma-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/insomnia-treatment-in-india" element={<InsomniaTreatment />} />
+          <Route path="/ayurveda-treatments/insomnia-therapy-in-india" element={<Navigate to="/ayurveda-treatments/insomnia-treatment-in-india" replace />} />
+          <Route path="/ayurvedic-treatments/insomnia-therapy-in-india" element={<Navigate to="/ayurveda-treatments/insomnia-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/anxiety-and-depression-treatment-in-india" element={<AnxietyDepressionTreatment />} />
+          <Route path="/ayurveda-treatments/anxiety-and-depression-therapy-in-india" element={<Navigate to="/ayurveda-treatments/anxiety-and-depression-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/multiple-sclerosis-treatment-in-india" element={<MultipleSclerosisTreatment />} />
+          <Route path="/ayurveda-treatments/multiple-sclerosis-therapy-in-india" element={<Navigate to="/ayurveda-treatments/multiple-sclerosis-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/pcos-treatment-in-india" element={<PCOSTreatment />} />
+          <Route path="/ayurveda-treatments/pcos-therapy-in-india" element={<Navigate to="/ayurveda-treatments/pcos-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/fatty-liver-treatment-in-india" element={<FattyLiverTreatment />} />
+          <Route path="/ayurveda-treatments/fatty-liver-therapy-in-india" element={<Navigate to="/ayurveda-treatments/fatty-liver-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/fibromyalgia-chronic-fatigue-treatment-in-india" element={<FibromyalgiaChronicFatigueTreatment />} />
+          <Route path="/ayurveda-treatments/fibromyalgia-chronic-fatigue-therapy-in-india" element={<Navigate to="/ayurveda-treatments/fibromyalgia-chronic-fatigue-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/diabetes-treatment-in-india" element={<DiabetesTreatment />} />
+          <Route path="/ayurveda-treatments/diabetes-therapy-in-india" element={<Navigate to="/ayurveda-treatments/diabetes-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/autoimmune-disease-treatment-in-india" element={<AutoimmuneTreatment />} />
+          <Route path="/ayurveda-treatments/autoimmune-disease-therapy-in-india" element={<Navigate to="/ayurveda-treatments/autoimmune-disease-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/heart-health-hypertension-treatment-in-india" element={<HeartHealthTreatment />} />
+          <Route path="/ayurveda-treatments/heart-health-hypertension-therapy-in-india" element={<Navigate to="/ayurveda-treatments/heart-health-hypertension-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/sports-injury-recovery-treatment-in-india" element={<SportsInjuryTreatment />} />
+          <Route path="/ayurveda-treatments/sports-injury-recovery-therapy-in-india" element={<Navigate to="/ayurveda-treatments/sports-injury-recovery-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/peripheral-neuropathy-treatment-in-india" element={<PeripheralNeuropathyTreatment />} />
+          <Route path="/ayurveda-treatments/peripheral-neuropathy-therapy-in-india" element={<Navigate to="/ayurveda-treatments/peripheral-neuropathy-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/vertigo-treatment-in-india" element={<VertigoTreatment />} />
+          <Route path="/ayurveda-treatments/vertigo-therapy-in-india" element={<Navigate to="/ayurveda-treatments/vertigo-treatment-in-india" replace />} />
+
+          <Route path="/ayurveda-treatments/trigeminal-neuralgia-treatment-in-india" element={<TrigeminalNeuralgiaTreatment />} />
+          <Route path="/ayurveda-treatments/trigeminal-neuralgia-therapy-in-india" element={<Navigate to="/ayurveda-treatments/trigeminal-neuralgia-treatment-in-india" replace />} />
           
           <Route path="/ayurveda-treatments/ulcerative-colitis-treatment-in-india" element={<UlcerativeColitisTreatment />} />
           <Route path="/ayurveda-treatments/ulcerative-colitis-therapy-in-india" element={<Navigate to="/ayurveda-treatments/ulcerative-colitis-treatment-in-india" replace />} />
@@ -695,6 +757,15 @@ const App = () => (
           <Route path="/ayurvedic-programs/integrated-retreat" element={<Navigate to="/ayurveda-packages/integrated-retreat" replace />} />
 
           <Route path="/ayurveda-packages/luxury-ayurveda-retreat-program-in-india" element={<LuxuryAyurvedaRetreatProgram />} />
+          <Route path="/ayurveda-packages/complete-body-rejuvenation-program-in-india" element={<CompleteBodyRejuvenationProgram />} />
+          <Route path="/ayurveda-packages/corporate-executive-wellness-program-in-india" element={<CorporateExecutiveWellnessProgram />} />
+          <Route path="/ayurveda-packages/senior-citizens-rejuvenation-program-in-india" element={<SeniorCitizensRejuvenationProgram />} />
+          <Route path="/ayurveda-packages/womens-menopause-wellness-package-in-india" element={<WomensMenopauseWellnessPackage />} />
+          <Route path="/ayurveda-packages/mens-fertility-vitality-wellness-program-in-india" element={<MensFertilityVitalityWellnessProgram />} />
+          <Route path="/ayurveda-packages/post-chemotherapy-rejuvenation-program-in-india" element={<PostChemotherapyRejuvenationProgram />} />
+          <Route path="/ayurveda-packages/cancer-recovery-support-program-in-india" element={<CancerRecoverySupportProgram />} />
+          <Route path="/ayurveda-packages/post-surgery-rehabilitation-program-in-india" element={<PostSurgeryRehabilitationProgram />} />
+          <Route path="/ayurveda-packages/recovery-and-rehabilitation" element={<RecoveryAndRehabilitation />} />
           
           <Route path="/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india" element={<AyurvedaYogaRetreat />} />
           <Route path="/integrated-retreat/ayurvedic-yoga-retreat-program-in-india" element={<Navigate to="/ayurveda-packages/ayurvedic-yoga-retreat-program-in-india" replace />} />
