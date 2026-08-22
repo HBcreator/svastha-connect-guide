@@ -767,7 +767,7 @@ const LuxuryAyurvedaRetreatProgram = () => {
                 </div>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Signature Therapies of the Retreat</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#335765] mb-4 text-center">Signature Therapies for Luxury Ayurveda Retreat</h2>
               <p className="text-[#7F543D] leading-relaxed mb-6 text-center max-w-3xl mx-auto">
                 Your Vaidya curates the combination of therapies below around your constitution, preferences, and how your body responds each day.
               </p>

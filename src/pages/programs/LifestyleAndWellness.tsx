@@ -77,6 +77,71 @@ const LifestyleAndWellness = () => {
       reviews: 155,
       tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
     },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Complete Body Rejuvenation Program in India",
+      duration: "21 Days",
+      targetAudience: "Adults seeking whole-body renewal",
+      keyFocus: "Rasayana rejuvenation & vitality",
+      description: "A classical 21-day Rasayana protocol for comprehensive whole-body renewal — no disease diagnosis required. Nourishes all seven tissues, rebuilds Ojas, and restores skin, strength, and vitality through Abhyanga, Shirodhara, and Njavara Kizhi.",
+      image: "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/rejuvenation-hero.jpg",
+      link: "/ayurveda-packages/complete-body-rejuvenation-program-in-india",
+      rating: 4.8,
+      reviews: 210,
+      tags: ["21 Days", "Rasayana", "Anti-Aging", "Vitality"]
+    },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Corporate Executive Wellness Program in India",
+      duration: "10 Days",
+      targetAudience: "Executives and high-performers",
+      keyFocus: "Time-efficient stress reset & resilience",
+      description: "A compact 10-day, physician-led reset for executives who cannot take weeks away. Combines Abhyanga, Shirodhara, and resilience-building Pranayama to release chronic stress and rebuild lasting focus.",
+      image: "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corporate-wellness-hero.jpg",
+      link: "/ayurveda-packages/corporate-executive-wellness-program-in-india",
+      rating: 4.8,
+      reviews: 145,
+      tags: ["10 Days", "Executive Reset", "Stress Resilience", "Time-Efficient"]
+    },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Ayurveda and Rejuvenation for Senior Citizens Program in India",
+      duration: "14 Days",
+      targetAudience: "Senior citizens (60+)",
+      keyFocus: "Gentle mobility, memory & vitality care",
+      description: "A gentle, unhurried 14-day protocol designed with the pace senior guests deserve. Eases joint stiffness, supports memory and sleep, and rebuilds vitality through age-appropriate Ayurvedic therapies.",
+      image: "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-citizens-hero.jpg",
+      link: "/ayurveda-packages/senior-citizens-rejuvenation-program-in-india",
+      rating: 4.8,
+      reviews: 180,
+      tags: ["14 Days", "Gentle Care", "Joint Mobility", "Memory Support"]
+    },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Women's Menopause Wellness Package in India",
+      duration: "14 Days",
+      targetAudience: "Women in perimenopause/menopause",
+      keyFocus: "Hormonal balance & symptom relief",
+      description: "A physician-led 14-day protocol easing hot flashes, mood swings, and sleep disruption through Shatavari-based herbs, Shirodhara, and hormone-balancing therapies.",
+      image: "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-wellness-hero.jpg",
+      link: "/ayurveda-packages/womens-menopause-wellness-package-in-india",
+      rating: 4.8,
+      reviews: 195,
+      tags: ["14 Days", "Hormonal Balance", "Women's Health", "Symptom Relief"]
+    },
+    {
+      category: "Lifestyle & Wellness",
+      name: "Men's Fertility, Vitality & Wellness Program in India",
+      duration: "14 Days",
+      targetAudience: "Men seeking vitality & fertility support",
+      keyFocus: "Vajikarana vitality therapy",
+      description: "A discreet, physician-led 14-day protocol using classical Vajikarana therapy to rebuild stamina, vitality, and support reproductive wellness goals.",
+      image: "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-vitality-hero.jpg",
+      link: "/ayurveda-packages/mens-fertility-vitality-wellness-program-in-india",
+      rating: 4.7,
+      reviews: 130,
+      tags: ["14 Days", "Vitality", "Vajikarana", "Men's Health"]
+    },
   ];
 
   return (

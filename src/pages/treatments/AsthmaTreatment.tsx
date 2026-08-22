@@ -758,7 +758,7 @@ const AsthmaTreatment = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#335765]/60 via-transparent to-transparent md:bg-gradient-to-l" />
             </div>
             <div className="p-6 md:p-12 space-y-6 flex flex-col justify-center md:order-1 text-left">
-              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Asthma Treatment Program in India</h2>
+              <h2 className="text-2xl md:text-[2.05rem] font-bold leading-tight">Book Your Asthma Treatment in India</h2>
               <p className="mt-3 text-sm md:text-base text-white/90 max-w-xl text-left">
                 Start your journey to clear, effortless breathing. We help you connect with the top Ayurvedic centers specialized in respiratory care.
               </p>
