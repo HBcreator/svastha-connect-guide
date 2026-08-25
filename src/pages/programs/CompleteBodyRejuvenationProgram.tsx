@@ -9,6 +9,7 @@ import PackagePageTemplate, {
   type PackageCenter,
   type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboLuxuryHeritage } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -16,21 +17,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/rejuvenation-hero.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/riverside-villa.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/resort-pool.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/ayurvedic-therapy-india.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/yoga-beach-india.jpg",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-hero-new.png",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-herbs.png",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-yoga.png",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-panchakarma.png",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-couple-backwaters.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Abhyanga (Full-Body Rasayana Massage)", text: "A daily warm oil massage using Rasayana-grade oils nourishes all seven bodily tissues and restores the skin's natural glow and elasticity.", icon: Droplet },
@@ -143,58 +137,7 @@ const faqItems: PackageFaq[] = [
   { question: "What is the best time of year for this program?", answer: "October to March offers the most comfortable climate across most regions, though many centers operate excellent programs year-round." },
 ];
 
-const topCenters: PackageCenter[] = [
-  {
-    name: "ITC Grand Bharat", city: "Gurugram", location: "Gurugram",
-    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills, offering a deeply rejuvenating escape.",
-    rating: 4.8, reviews: 17000, image: "/Center Images/ITC Grand Bharat/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
-  },
-  {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore",
-    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm.",
-    rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya",
-  },
-  {
-    name: "Ananda In The Himalayas", city: "Uttarakhand", location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat rooted in Ayurveda, Yoga, and Vedanta, guided by expert physicians.",
-    rating: 4.8, reviews: 900, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas within a serene heritage village.",
-    rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram",
-  },
-  {
-    name: "Amanbagh Heritage Wellness Retreat", city: "Alwar", location: "Alwar",
-    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat surrounded by the rugged beauty of Rajasthan's Aravalli hills, offering deep rejuvenation.",
-    rating: 4.8, reviews: 500, image: "/Center Images/Amanbagh/thumb.jpg", link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
-  },
-  {
-    name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.",
-    rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre",
-  },
-  {
-    name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.",
-    rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
-  },
-  {
-    name: "Ashiyana Yoga Retreat", city: "Goa", location: "Goa",
-    description: "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, set amidst lush tropical gardens along the serene Mandrem Beach.",
-    rating: 4.7, reviews: 600, image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat",
-  },
-  {
-    name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala",
-    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
-    rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre",
-  },
-  {
-    name: "Ayurmana", city: "Kerala", location: "Kerala",
-    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
-    rating: 4.8, reviews: 500, image: "/Center Images/Ayurmana center/top center thumb.jpg", link: "/top-ayurvedic-centers-in-india/kerala/ayurmana",
-  },
-];
+const topCenters: PackageCenter[] = comboLuxuryHeritage;
 
 const reviews: PackageReview[] = [
   {
@@ -308,7 +251,7 @@ const CompleteBodyRejuvenationProgram = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Complete Body Rejuvenation Program"
     ctaDescription="Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your rejuvenation goals."
-    ctaImage="/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/rejuvenation-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-hero-new.png"
     whatsappMessage="Hi, I want to book a free consultation for the Complete Body Rejuvenation Program."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Complete Body Rejuvenation in India"

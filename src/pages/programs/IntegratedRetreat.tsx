@@ -47,7 +47,7 @@ const IntegratedRetreat = () => {
       keyFocus: "Indulgent, fully personalized rejuvenation",
       description:
         "A fully bespoke 14-day retreat at India's finest five-star and heritage wellness properties. No disease diagnosis required — just a private Vaidya, a personalized itinerary of signature therapies like Abhyanga Royale and Shirodhara, and complete privacy from arrival to departure.",
-      image: "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-retreat-hero.jpg",
+      image: "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hero-new.png",
       link: "/ayurveda-packages/luxury-ayurveda-retreat-program-in-india",
       rating: 4.9,
       reviews: 210,

@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboClinicalPanchakarma } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -13,16 +14,10 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Gentle Support Package.jpg",
   "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Comfort and Strength Package.jpg",
   "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Comprehensive Recovery Panchakarma Package.jpg",
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/family-support-together.jpg",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A very gentle, carefully adapted oil massage supports circulation, comfort, and a genuine sense of care during recovery.", icon: Droplet },
@@ -102,14 +97,7 @@ const faqItems: PackageFaq[] = [
   { question: "Can family members stay with the guest during this program?", answer: "Yes, most centers can accommodate accompanying family members, either joining supportive activities or staying nearby for comfort and support." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, with strong experience in supportive recovery care.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala", description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.", rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda" },
-  { name: "Ananda In The Himalayas", city: "Uttarakhand", location: "Uttarakhand", description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat guided by expert physicians and therapists.", rating: 4.8, reviews: 900, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-  { name: "Ayurmana", city: "Kerala", location: "Kerala", description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.", rating: 4.8, reviews: 500, image: "/Center Images/Ayurmana center/top center thumb.jpg", link: "/top-ayurvedic-centers-in-india/kerala/ayurmana" },
-];
+const topCenters: PackageCenter[] = comboClinicalPanchakarma;
 
 const reviews: PackageReview[] = [
   { name: "Aurelie", location: "Lyon, France", condition: "Cancer Recovery Support (in remission)", title: "This Gave Me Space To Genuinely Rest And Heal.", review: "I came in remission, still emotionally and physically depleted from the whole journey. This gentle program, coordinated with my oncologist, gave me genuine space to rebuild comfort and calm.", rating: 5, verified: true },

@@ -5,6 +5,7 @@ import TreatmentPageTemplate, {
   type TreatmentFaq,
   type TreatmentCenter,
 } from "@/components/TreatmentPageTemplate";
+import { comboLuxuryHeritage } from "@/data/centerCombos";
 import { Droplet, Leaf, Activity, Flame } from "lucide-react";
 
 const therapies: TreatmentTherapy[] = [
@@ -119,108 +120,7 @@ const faqItems: TreatmentFaq[] = [
   { question: "How soon might I notice a reduction in dizzy spells?", answer: "Many patients notice a calmer, steadier baseline within the first week of daily therapies. More significant, lasting improvement in episode frequency typically develops over a full 21 to 28 day program." },
 ];
 
-const topCenters: TreatmentCenter[] = [
-  {
-    name: "HimVeda Heritage Wellness Centre",
-    city: "Dharamshala",
-    location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
-  },
-  {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/soukya",
-  },
-  {
-    name: "Ananda In The Himalayas",
-    city: "Uttarakhand",
-    location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat rooted in Ayurveda, Yoga, and Vedanta, guided by expert physicians.",
-    rating: 4.8,
-    reviews: 900,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas within a serene heritage village.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram",
-  },
-  {
-    name: "Indus Valley Ayurvedic Centre",
-    city: "Mysore",
-    location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre",
-  },
-  {
-    name: "Sandhya Hot Spring Health Care",
-    city: "Manikaran",
-    location: "Manikaran",
-    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, blending traditional healing practices with geothermal therapy.",
-    rating: 4.6,
-    reviews: 500,
-    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care",
-  },
-  {
-    name: "Amanbagh Heritage Wellness Retreat",
-    city: "Alwar",
-    location: "Alwar",
-    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat surrounded by the rugged beauty of Rajasthan's Aravalli hills, offering deep rejuvenation.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
-  },
-  {
-    name: "Athreya Ayurvedic Centre",
-    city: "Kerala",
-    location: "Kerala",
-    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre",
-  },
-  {
-    name: "Ashiyana Yoga Retreat",
-    city: "Goa",
-    location: "Goa",
-    description: "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, set amidst lush tropical gardens along the serene Mandrem Beach.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat",
-  },
-  {
-    name: "ITC Grand Bharat",
-    city: "Gurugram",
-    location: "Gurugram",
-    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills.",
-    rating: 4.8,
-    reviews: 17000,
-    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
-  },
-];
+const topCenters: TreatmentCenter[] = comboLuxuryHeritage;
 
 const VertigoTreatment = () => (
   <TreatmentPageTemplate
@@ -231,7 +131,7 @@ const VertigoTreatment = () => (
     heroDescription="Ayurveda treats vertigo at its root, calming the Vata-Pitta imbalance behind disorienting dizziness and restoring the body's natural sense of equilibrium."
     heroRatingText="4.8/5 Patient Satisfaction"
     introTitle="The Root Cause of Vertigo (Bhrama)"
-    introImage="/Treatments-images/Vertigo/Ayurvedic Treatment for Vertigo.jpg"
+    introImage="/Treatments-images/Vertigo/vertigo-hero-new.png"
     introImageAlt="Ayurvedic Vertigo Treatment"
     introParagraphs={[
       <>
@@ -268,7 +168,7 @@ const VertigoTreatment = () => (
     topCentersSubtitle="Handpicked hospitals and retreats with specialized care for balance and neurological conditions."
     topCenters={topCenters}
     faqItems={faqItems}
-    ctaImage="/Treatments-images/Vertigo/Ayurvedic Treatment for Vertigo.jpg"
+    ctaImage="/Treatments-images/Vertigo/vertigo-hero-new.png"
     ctaDescription="Start your journey back to steady, confident balance. We help you connect with the top Ayurvedic centers specialized in neurological and balance care."
   />
 );

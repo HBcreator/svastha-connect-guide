@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboLuxuryHeritage } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -9,20 +10,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corporate-wellness-hero.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Executive Detox Reset Package.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Stress Resilience Package.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Deep Recovery Package.jpg",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-1.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-2.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-3.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-4.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-5.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Abhyanga (Stress-Release Massage)", text: "A warm, rhythmic full-body massage releases the physical tension that accumulates from chronic desk-bound stress and long working hours.", icon: Droplet },
@@ -103,14 +98,7 @@ const faqItems: PackageFaq[] = [
   { question: "Do centers offer business-friendly amenities like private workspaces?", answer: "Some centers offer quiet, private spaces for occasional essential communication, though the program is designed to minimize work engagement for best results." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "ITC Grand Bharat", city: "Gurugram", location: "Gurugram", description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills, easily combined with Delhi NCR business travel.", rating: 4.8, reviews: 17000, image: "/Center Images/ITC Grand Bharat/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat" },
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, near Bangalore's business district.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "Amanbagh Heritage Wellness Retreat", city: "Alwar", location: "Alwar", description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat surrounded by the rugged beauty of Rajasthan's Aravalli hills, a short drive from Delhi.", rating: 4.8, reviews: 500, image: "/Center Images/Amanbagh/thumb.jpg", link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat" },
-  { name: "Ananda In The Himalayas", city: "Uttarakhand", location: "Uttarakhand", description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat guided by expert physicians and therapists.", rating: 4.8, reviews: 900, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas" },
-  { name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore", description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.", rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre" },
-];
+const topCenters: PackageCenter[] = comboLuxuryHeritage;
 
 const reviews: PackageReview[] = [
   { name: "Frederik", location: "Copenhagen, Denmark", condition: "Executive Stress Reset", title: "I Returned To Work Actually Focused, Not Just Rested.", review: "As a CEO, I couldn't justify a month away. This 10-day format fit my schedule and genuinely reset my stress response, not just gave me a tan. My team noticed the difference in my first week back.", rating: 5, verified: true },
@@ -193,7 +181,7 @@ const CorporateExecutiveWellnessProgram = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Corporate Executive Wellness Program"
     ctaDescription="Begin with a confidential, no-obligation consultation. We help you choose the right center and dates around your schedule."
-    ctaImage="/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corporate-wellness-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-1.png"
     whatsappMessage="Hi, I want to book a free consultation for the Corporate Executive Wellness Program."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Executive Wellness in India"

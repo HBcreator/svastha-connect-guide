@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboClinicalPanchakarma } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -9,20 +10,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-citizens-hero.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Gentle Vitality Package.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Joint and Mobility Care Package.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Complete Senior Wellness Package.jpg",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-hero-new.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-herbs.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-yoga.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-spa-setup.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-couple-garden.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A slow, gentle full-body oil massage adapted for age and mobility, easing joint stiffness and calming aggravated Vata without any strain.", icon: Droplet },
@@ -103,14 +98,7 @@ const faqItems: PackageFaq[] = [
   { question: "How gentle are the daily therapies really?", answer: "Very gentle by design. Every therapy is paced to your comfort, with physicians closely monitoring your response throughout the program." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, with strong experience caring for senior guests.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas within a serene heritage village.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "Ananda In The Himalayas", city: "Uttarakhand", location: "Uttarakhand", description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat guided by expert physicians and therapists.", rating: 4.8, reviews: 900, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas" },
-  { name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore", description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.", rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre" },
-  { name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala", description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.", rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-];
+const topCenters: PackageCenter[] = comboClinicalPanchakarma;
 
 const reviews: PackageReview[] = [
   { name: "Gunnar", location: "Oslo, Norway", condition: "Joint Stiffness & Mobility", title: "At 68, I Feel More Mobile Than I Have In Years.", review: "My knee and hip stiffness had gradually limited my walks. The gentle Basti protocol and daily Abhyanga eased that stiffness noticeably. I'm walking further and more comfortably than I have in a decade.", rating: 5, verified: true },
@@ -193,7 +181,7 @@ const SeniorCitizensRejuvenationProgram = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Senior Citizens Rejuvenation Program"
     ctaDescription="Begin with a no-obligation consultation. We help you choose the right center, pace, and package for your health needs."
-    ctaImage="/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-citizens-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-hero-new.png"
     whatsappMessage="Hi, I want to book a free consultation for the Senior Citizens Rejuvenation Program."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Senior Citizens in India"

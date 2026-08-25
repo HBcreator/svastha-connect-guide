@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboClassicKerala } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -9,20 +10,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-vitality-hero.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Vitality Reset Package.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Stamina and Wellness Package.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Complete Vitality Panchakarma Package.jpg",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-hero-new.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-herbs.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-yoga.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-basti.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-couple.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Vajikarana Herbs (Vitality Formulations)", text: "A classical regimen of Ashwagandha, Kapikacchu, and Gokshura traditionally used to support stamina, reproductive health, and overall vitality.", icon: Leaf },
@@ -102,14 +97,7 @@ const faqItems: PackageFaq[] = [
   { question: "How soon might I notice improved energy or stamina?", answer: "Many men notice improved energy within the first week of daily therapies. More significant, lasting vitality improvements typically develop over the full 14-day program." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore", description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.", rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-  { name: "Ananda In The Himalayas", city: "Uttarakhand", location: "Uttarakhand", description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat rooted in Ayurveda, Yoga, and Vedanta.", rating: 4.8, reviews: 900, image: "/Center Images/Ananda in the Himalayas/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas" },
-  { name: "ITC Grand Bharat", city: "Gurugram", location: "Gurugram", description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills.", rating: 4.8, reviews: 17000, image: "/Center Images/ITC Grand Bharat/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat" },
-];
+const topCenters: PackageCenter[] = comboClassicKerala;
 
 const reviews: PackageReview[] = [
   { name: "Bastiaan", location: "Rotterdam, Netherlands", condition: "Fertility Support", title: "This Gave Us Real Hope On Our Fertility Journey.", review: "My wife and I had been trying to conceive for over a year. The Vajikarana protocol addressed my vitality directly, complementing our fertility specialist's guidance. We're hopeful in a way we hadn't felt in months.", rating: 5, verified: true },
@@ -192,7 +180,7 @@ const MensFertilityVitalityWellnessProgram = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Men's Fertility, Vitality & Wellness Program"
     ctaDescription="Begin with a confidential, no-obligation consultation. We help you choose the right center, dates, and package for your goals."
-    ctaImage="/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-vitality-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-hero-new.png"
     whatsappMessage="Hi, I want to book a free consultation for the Men's Fertility, Vitality & Wellness Program."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Vitality & Wellness in India"

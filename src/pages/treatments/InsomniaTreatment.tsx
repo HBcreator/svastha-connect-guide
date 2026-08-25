@@ -5,6 +5,7 @@ import TreatmentPageTemplate, {
   type TreatmentFaq,
   type TreatmentCenter,
 } from "@/components/TreatmentPageTemplate";
+import { comboLuxuryHeritage } from "@/data/centerCombos";
 import { Droplet, Leaf, Activity, Flame } from "lucide-react";
 
 const therapies: TreatmentTherapy[] = [
@@ -119,108 +120,7 @@ const faqItems: TreatmentFaq[] = [
   { question: "Are the herbal sleep formulations safe for long-term use?", answer: "Yes, herbs like Ashwagandha, Jatamansi, and Brahmi have been used safely for centuries to support the nervous system. Your physician will tailor the formulation and duration to your specific case." },
 ];
 
-const topCenters: TreatmentCenter[] = [
-  {
-    name: "HimVeda Heritage Wellness Centre",
-    city: "Dharamshala",
-    location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala. HimVeda is dedicated to authentic Ayurvedic Healing, combining classical therapies with nature-centric living for holistic well-being.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
-  },
-  {
-    name: "ITC Grand Bharat",
-    city: "Gurugram",
-    location: "Gurugram",
-    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape.",
-    rating: 4.8,
-    reviews: 17000,
-    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
-  },
-  {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/soukya",
-  },
-  {
-    name: "Ayurmana",
-    city: "Kerala",
-    location: "Kerala",
-    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination for traditional Ayurvedic Healing. Rooted in classical Ayurvedic principles and set within a serene heritage village, AyurvedaGram offers holistic therapies guided by experienced Vaidyas.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram",
-  },
-  {
-    name: "Ashiyana Yoga Retreat",
-    city: "Goa",
-    location: "Goa",
-    description: "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, a globally renowned destination for transformation and self-discovery. Set amidst lush tropical gardens along the serene Mandrem Beach, Ashiyana offers a unique blend of traditional yoga, meditation, and healing therapies.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat",
-  },
-  {
-    name: "Amanbagh Heritage Wellness Retreat",
-    city: "Alwar",
-    location: "Alwar",
-    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
-  },
-  {
-    name: "Sandhya Hot Spring Health Care",
-    city: "Manikaran",
-    location: "Manikaran",
-    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters. Surrounded by tranquil landscapes, the center blends traditional healing practices with the restorative benefits of geothermal therapy.",
-    rating: 4.6,
-    reviews: 500,
-    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care",
-  },
-  {
-    name: "Indus Valley Ayurvedic Centre",
-    city: "Mysore",
-    location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre",
-  },
-  {
-    name: "Ananda In The Himalayas",
-    city: "Uttarakhand",
-    location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills. Surrounded by pristine forests and overlooking the Ganges valley, Ananda blends ancient Indian wellness wisdom with modern luxury.",
-    rating: 4.8,
-    reviews: 900,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
-  },
-];
+const topCenters: TreatmentCenter[] = comboLuxuryHeritage;
 
 const InsomniaTreatment = () => (
   <TreatmentPageTemplate
@@ -231,7 +131,7 @@ const InsomniaTreatment = () => (
     heroDescription="Ayurveda treats insomnia at its root, calming an overactive nervous system and restoring the body's natural sleep rhythm — so falling asleep, and staying asleep, becomes effortless again."
     heroRatingText="4.8/5 Patient Satisfaction"
     introTitle="The Root Cause of Insomnia (Anidra)"
-    introImage="/Treatments-images/Insomnia/Ayurvedic Treatment for Insomnia and Sleep Disorder.jpg"
+    introImage="/Treatments-images/Insomnia/insomnia-hero-new.png"
     introImageAlt="Ayurvedic Insomnia and Sleep Disorder Treatment"
     introParagraphs={[
       <>
@@ -268,7 +168,7 @@ const InsomniaTreatment = () => (
     topCentersSubtitle="Handpicked hospitals and retreats with specialized care for sleep and nervous system disorders."
     topCenters={topCenters}
     faqItems={faqItems}
-    ctaImage="/Treatments-images/Insomnia/Ayurvedic Treatment for Insomnia and Sleep Disorder.jpg"
+    ctaImage="/Treatments-images/Insomnia/insomnia-hero-new.png"
     ctaDescription="Start your journey to deep, effortless sleep. We help you connect with the top Ayurvedic centers specialized in nervous system and sleep care."
   />
 );
