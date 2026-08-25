@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboRetreatYoga } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -9,20 +10,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/post-surgery-hero.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Post-Surgery Recovery Package.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Mobility Rebuilding Package.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Complete Rehabilitation Package.jpg",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-1.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-2.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-3.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-4.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-5.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A carefully adapted oil massage, avoiding the surgical site as needed, supports circulation and eases compensatory muscle tension.", icon: Droplet },
@@ -102,14 +97,7 @@ const faqItems: PackageFaq[] = [
   { question: "How gentle are the therapies around my surgical site?", answer: "Very gentle and carefully adapted. Physicians avoid the surgical site directly as needed and closely monitor your comfort and healing progress throughout." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, with strong experience in post-surgical supportive care.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore", description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.", rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-  { name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala", description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.", rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda" },
-  { name: "Ayurmana", city: "Kerala", location: "Kerala", description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.", rating: 4.8, reviews: 500, image: "/Center Images/Ayurmana center/top center thumb.jpg", link: "/top-ayurvedic-centers-in-india/kerala/ayurmana" },
-];
+const topCenters: PackageCenter[] = comboRetreatYoga;
 
 const reviews: PackageReview[] = [
   { name: "Torbjorn", location: "Bergen, Norway", condition: "Post-Knee Surgery Rehabilitation", title: "My Mobility Progressed Faster Than My Surgeon Expected.", review: "Six weeks after knee surgery, with my surgeon's clearance, I began this program alongside my physiotherapy. My mobility progressed noticeably faster than expected, and my surgeon was pleased at my follow-up.", rating: 5, verified: true },
@@ -192,7 +180,7 @@ const PostSurgeryRehabilitationProgram = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Post-Surgery Rehabilitation Program"
     ctaDescription="Begin with a careful, no-obligation consultation. We help you understand what's needed, including surgeon clearance, before booking."
-    ctaImage="/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/post-surgery-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-1.png"
     whatsappMessage="Hi, I want to book a free consultation for the Post-Surgery Rehabilitation Program."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Post-Surgery Rehabilitation in India"

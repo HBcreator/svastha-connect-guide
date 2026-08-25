@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboWellnessNature } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -13,16 +14,10 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Gentle Recovery Package.jpg",
   "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Strength Rebuilding Package.jpg",
   "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Complete Rejuvenation Panchakarma Package.jpg",
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/gentle-hope-journey.jpg",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A very gentle, low-pressure oil massage, carefully adapted to post-chemotherapy sensitivity, supports circulation and gentle comfort.", icon: Droplet },
@@ -102,14 +97,7 @@ const faqItems: PackageFaq[] = [
   { question: "Should I continue my oncology follow-up appointments during this program?", answer: "Yes, absolutely. This program is designed to complement, never replace, your ongoing oncology monitoring and follow-up care." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, with strong experience in supportive recovery care.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala", description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala.", rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda" },
-  { name: "Indus Valley Ayurvedic Centre", city: "Mysore", location: "Mysore", description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards.", rating: 4.8, reviews: 500, image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-  { name: "Ayurmana", city: "Kerala", location: "Kerala", description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.", rating: 4.8, reviews: 500, image: "/Center Images/Ayurmana center/top center thumb.jpg", link: "/top-ayurvedic-centers-in-india/kerala/ayurmana" },
-];
+const topCenters: PackageCenter[] = comboWellnessNature;
 
 const reviews: PackageReview[] = [
   { name: "Beata", location: "Warsaw, Poland", condition: "Post-Chemotherapy Recovery Support", title: "This Gentle Care Was Exactly What My Body Needed.", review: "After finishing chemotherapy, I felt depleted in a way I hadn't expected. This program's gentle pace, with my oncologist's clearance, gave my body genuine space to rebuild strength and comfort.", rating: 5, verified: true },

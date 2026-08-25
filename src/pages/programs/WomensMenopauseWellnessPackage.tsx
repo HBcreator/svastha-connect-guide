@@ -2,6 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
+import { comboWellnessNature } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -9,20 +10,14 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-wellness-hero.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Hormonal Balance Package.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Mood and Sleep Balance Package.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Complete Menopause Wellness Package.jpg",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-hero-new.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-herbs.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-yoga.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-shirodhara-setup.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-tea-garden.png",
 ];
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/abhyanga-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/chest-oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/herbal-preparation.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/facial-massage-spa.jpg",
-  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/Icons/candlelight-spa.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const therapies: PackageTherapy[] = [
   { title: "Shatavari Hormonal Herbs", text: "A tailored regimen built around Shatavari, traditionally used to support hormonal balance and ease common menopausal symptoms.", icon: Leaf },
@@ -102,14 +97,7 @@ const faqItems: PackageFaq[] = [
   { question: "How soon might I notice symptom relief?", answer: "Many women notice improved sleep and mood within the first week. More significant symptom relief typically develops over the full 14-day program and the weeks following." },
 ];
 
-const topCenters: PackageCenter[] = [
-  { name: "AyurvedaGram Heritage Wellness Centre", city: "Bangalore", location: "Bangalore", description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas.", rating: 4.7, reviews: 600, image: "/Center Images/AyurvedaGram/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram" },
-  { name: "SOUKYA - Dr. Mathai's International Holistic Health Centre", city: "Bangalore", location: "Bangalore", description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm.", rating: 4.9, reviews: 500, image: "/Center Images/SOUKYA/top center Thumb.jpg", link: "/top-ayurvedic-centers-in-india/bangalore/soukya" },
-  { name: "Ayurmana", city: "Kerala", location: "Kerala", description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.", rating: 4.8, reviews: 500, image: "/Center Images/Ayurmana center/top center thumb.jpg", link: "/top-ayurvedic-centers-in-india/kerala/ayurmana" },
-  { name: "Athreya Ayurvedic Centre", city: "Kerala", location: "Kerala", description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.", rating: 4.8, reviews: 500, image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg", link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre" },
-  { name: "Ashiyana Yoga Retreat", city: "Goa", location: "Goa", description: "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, set amidst lush tropical gardens along the serene Mandrem Beach.", rating: 4.7, reviews: 600, image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg", link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat" },
-  { name: "HimVeda Heritage Wellness Centre", city: "Dharamshala", location: "Dharamshala", description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills.", rating: 4.8, reviews: 500, image: "/Center Images/HimVeda/Thumb.jpeg", link: "/top-ayurvedic-centers-in-india/dharamshala/himveda" },
-];
+const topCenters: PackageCenter[] = comboWellnessNature;
 
 const reviews: PackageReview[] = [
   { name: "Marit", location: "Bergen, Norway", condition: "Menopausal Hot Flashes", title: "My Hot Flashes Reduced By More Than Half.", review: "I was having hot flashes multiple times a day for two years. The Shatavari-based herbs and daily Abhyanga reduced them dramatically within the two weeks, and the improvement has held since.", rating: 5, verified: true },
@@ -192,7 +180,7 @@ const WomensMenopauseWellnessPackage = () => (
     inclusionsRows={inclusionsRows}
     ctaTitle="Book Your Women's Menopause Wellness Package"
     ctaDescription="Begin with a no-obligation consultation. We help you choose the right center, dates, and package for your symptoms."
-    ctaImage="/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-wellness-hero.jpg"
+    ctaImage="/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-hero-new.png"
     whatsappMessage="Hi, I want to book a free consultation for the Women's Menopause Wellness Package."
     faqItems={faqItems}
     topCentersTitle="Top Ayurvedic Centers for Menopause Wellness in India"

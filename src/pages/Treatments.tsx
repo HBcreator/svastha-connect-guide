@@ -55,7 +55,7 @@ const Treatments = () => {
       category: "Respiratory Care",
       description: "Clears excess Kapha from the respiratory channels using Vamana, Swedana, and Nasya therapies to restore clear, effortless breathing.",
       benefits: ["Reduces wheezing", "Clears airways", "Strengthens lung capacity", "Fewer flare-ups"],
-      image: "/Treatments-images/Asthma/Ayurvedic Treatment for Asthma and Breathing.jpg",
+      image: "/Treatments-images/Asthma/asthma-hero-new.png",
     },
     {
       name: "Fatty Liver Treatment",
@@ -71,7 +71,7 @@ const Treatments = () => {
       category: "Mental Health",
       description: "Calms an aggravated Vata dosha with Shirodhara and Padabhyanga therapies to restore deep, natural, uninterrupted sleep.",
       benefits: ["Falls asleep faster", "Deeper sleep quality", "Calms overactive mind", "Restores sleep rhythm"],
-      image: "/Treatments-images/Insomnia/Ayurvedic Treatment for Insomnia and Sleep Disorder.jpg",
+      image: "/Treatments-images/Insomnia/insomnia-hero-new.png",
     },
     {
       name: "Anxiety & Depression Support",
@@ -79,7 +79,7 @@ const Treatments = () => {
       category: "Mental Health",
       description: "Calms restless Rajas and lifts heavy Tamas with Shirodhara, Nasya, and Medhya herbs to restore mental clarity and emotional balance.",
       benefits: ["Calms racing thoughts", "Lifts low mood", "Restores emotional balance", "Reduces stress reactivity"],
-      image: "/Treatments-images/AnxietyDepression/Ayurvedic Treatment for Anxiety and Depression.jpg",
+      image: "/Treatments-images/AnxietyDepression/anxiety-hero-new.png",
     },
     {
       name: "Multiple Sclerosis Support",
@@ -87,7 +87,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Supportive Ayurvedic care alongside neurology treatment, using Basti and Pizhichil therapies to nourish nerve tissue and ease stiffness and fatigue.",
       benefits: ["Eases stiffness", "Supports energy levels", "Nourishes nerve tissue", "Complements neurology care"],
-      image: "/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg",
+      image: "/Treatments-images/MultipleSclerosis/ms-hero-new.png",
     },
     {
       name: "PCOS Treatment",
@@ -95,7 +95,7 @@ const Treatments = () => {
       category: "Women's Health",
       description: "Clears excess Kapha and rekindles metabolic fire using Virechana and Uttar Basti therapies to restore regular cycles and hormonal balance.",
       benefits: ["Regulates menstrual cycle", "Supports healthy weight", "Balances hormones", "Improves skin health"],
-      image: "/Treatments-images/PCOS/Ayurvedic Treatment for PCOS and Hormonal Balance.jpg",
+      image: "/Treatments-images/PCOS/pcos-hero-new.png",
     },
     {
       name: "Fibromyalgia & Chronic Fatigue",
@@ -103,7 +103,7 @@ const Treatments = () => {
       category: "Musculoskeletal",
       description: "Calms widespread Vata aggravation and rebuilds depleted Ojas using Pizhichil and Rasayana herbs to ease pain and restore lasting energy.",
       benefits: ["Eases widespread pain", "Restores energy", "Improves sleep quality", "Rebuilds vitality"],
-      image: "/Treatments-images/FibromyalgiaChronicFatigue/Ayurvedic Treatment for Fibromyalgia and Chronic Fatigue.jpg",
+      image: "/Treatments-images/FibromyalgiaChronicFatigue/fibro-hero-new.png",
     },
     {
       name: "Diabetes Management",
@@ -111,7 +111,7 @@ const Treatments = () => {
       category: "Metabolic",
       description: "Rekindles metabolic fire and clears excess Kapha using Udwarthanam and Virechana therapies to support healthier, more stable blood sugar.",
       benefits: ["Supports blood sugar balance", "Aids weight management", "Boosts metabolism", "Complements medical care"],
-      image: "/Treatments-images/Diabetes/Ayurvedic Treatment for Diabetes Management.jpg",
+      image: "/Treatments-images/Diabetes/diabetes-hero-new.png",
     },
     {
       name: "Autoimmune Disease Support",
@@ -119,7 +119,7 @@ const Treatments = () => {
       category: "Detox & Wellness",
       description: "Clears deep-seated Ama and rebuilds Ojas using Virechana and Basti therapies, offering supportive care alongside your specialist treatment.",
       benefits: ["Reduces flare-ups", "Supports resilience", "Eases inflammation", "Complements specialist care"],
-      image: "/Treatments-images/Autoimmune/Ayurvedic Treatment for Autoimmune Disease.jpg",
+      image: "/Treatments-images/Autoimmune/autoimmune-hero-new.png",
     },
     {
       name: "Heart Health & Hypertension",
@@ -127,7 +127,7 @@ const Treatments = () => {
       category: "Cardiovascular",
       description: "Calms stress-linked Vata-Pitta aggravation with Shirodhara and Hridya herbs to support healthier blood pressure and circulation.",
       benefits: ["Supports healthy BP", "Improves circulation", "Reduces stress", "Complements cardiology care"],
-      image: "/Treatments-images/HeartHealth/Ayurvedic Treatment for Heart Health and Hypertension.jpg",
+      image: "/Treatments-images/HeartHealth/heart-hero-new.png",
     },
     {
       name: "Sports Injury Recovery",
@@ -135,7 +135,7 @@ const Treatments = () => {
       category: "Musculoskeletal",
       description: "Calms local Vata aggravation and nourishes muscle and joint tissue with Elakizhi and Abhyanga to speed complete injury recovery.",
       benefits: ["Faster recovery", "Reduces inflammation", "Rebuilds tissue strength", "Complements physiotherapy"],
-      image: "/Treatments-images/SportsInjury/Ayurvedic Treatment for Sports Injury Recovery.jpg",
+      image: "/Treatments-images/SportsInjury/sports-hero-new.png",
     },
     {
       name: "Peripheral Neuropathy Treatment",
@@ -143,7 +143,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Nourishes nerve tissue and calms aggravated Vata using Pizhichil and Padabhyanga therapies to ease numbness and restore sensation.",
       benefits: ["Reduces numbness", "Improves circulation", "Nourishes nerve tissue", "Eases tingling"],
-      image: "/Treatments-images/PeripheralNeuropathy/Ayurvedic Treatment for Peripheral Neuropathy.jpg",
+      image: "/Treatments-images/PeripheralNeuropathy/neuropathy-hero-new.png",
     },
     {
       name: "Vertigo Treatment",
@@ -151,7 +151,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Calms Vata-Pitta imbalance in the head with Shirodhara and Nasya therapies to restore the body's natural sense of balance.",
       benefits: ["Reduces dizzy spells", "Restores balance", "Eases neck tension", "Calms nervous system"],
-      image: "/Treatments-images/Vertigo/Ayurvedic Treatment for Vertigo.jpg",
+      image: "/Treatments-images/Vertigo/vertigo-hero-new.png",
     },
     {
       name: "Trigeminal Neuralgia Treatment",
@@ -159,7 +159,7 @@ const Treatments = () => {
       category: "Neurological Disorders",
       description: "Calms severely aggravated Vata in the facial nerve pathway using Nasya and Shirodhara to ease sharp nerve pain episodes.",
       benefits: ["Reduces pain episodes", "Calms facial nerve", "Eases jaw tension", "Complements neurology care"],
-      image: "/Treatments-images/TrigeminalNeuralgia/Ayurvedic Treatment for Trigeminal Neuralgia.jpg",
+      image: "/Treatments-images/TrigeminalNeuralgia/trigeminal-hero-new.png",
     },
     {
       name: "Autism Treatment",

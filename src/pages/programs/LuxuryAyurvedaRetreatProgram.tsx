@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { comboClassicKerala } from "@/data/centerCombos";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
@@ -47,11 +48,11 @@ import {
 } from "lucide-react";
 
 const galleryImages = [
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-retreat-hero.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/heritage-courtyard.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/poolside-luxury.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hammam-spa.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/gazebo-pool.jpg",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hero-new.png",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-pooldeck.png",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-yoga.png",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-panchakarma.png",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-couple-courtyard.png",
 ];
 
 const quickSummaryRows = [
@@ -184,14 +185,7 @@ const benefits = {
   ],
 };
 
-const benefitsSectionImages = [
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/royal-abhyanga.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/aromatherapy-oils.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/shirodhara-relaxation.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/oil-massage.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/spa-aromatherapy.jpg",
-  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/Icons/luxury-massage-therapy.jpg",
-];
+const benefitsSectionImages = galleryImages;
 
 const chooseIndiaPoints = [
   {
@@ -259,108 +253,7 @@ const whyChooseUsPoints = [
   },
 ];
 
-const topAyurvedicCenters = [
-  {
-    name: "ITC Grand Bharat",
-    city: "Gurugram",
-    location: "Gurugram",
-    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills. Inspired by India's rich cultural legacy, the retreat blends royal architecture with modern wellness, offering a deeply rejuvenating escape.",
-    rating: 4.8,
-    reviews: 17000,
-    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat"
-  },
-  {
-    name: "Ananda In The Himalayas",
-    city: "Uttarakhand",
-    location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat nestled in the serene Himalayan foothills, overlooking the Ganges valley. Rooted in Ayurveda, Yoga, and Vedanta, Ananda offers highly personalized wellness programs guided by expert physicians and therapists.",
-    rating: 4.8,
-    reviews: 900,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas"
-  },
-  {
-    name: "Amanbagh Heritage Wellness Retreat",
-    city: "Alwar",
-    location: "Alwar",
-    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat inspired by Mughal architecture and surrounded by the rugged beauty of Rajasthan's Aravalli hills. Once a royal hunting lodge, Amanbagh now offers a serene wellness haven for deep rejuvenation.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat"
-  },
-  {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, guided by Dr. Isaac Mathai with world-class personalized clinical protocols.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/soukya"
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, a globally recognized destination set within a serene heritage village, offering holistic therapies guided by experienced Vaidyas.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram"
-  },
-  {
-    name: "Ashiyana Yoga Retreat",
-    city: "Goa",
-    location: "Goa",
-    description: "Immerse yourself in the peaceful essence of yoga and holistic wellness at Ashiyana Yoga Retreat, set amidst lush tropical gardens along the serene Mandrem Beach, offering a unique blend of traditional yoga, meditation, and healing therapies.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/Ashiyana Yoga Retreat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/goa/ashiyana-yoga-retreat"
-  },
-  {
-    name: "HimVeda Heritage Wellness Centre",
-    city: "Dharamshala",
-    location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala, offering personalized treatments guided by experienced Ayurvedic doctors.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda"
-  },
-  {
-    name: "Indus Valley Ayurvedic Centre",
-    city: "Mysore",
-    location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre"
-  },
-  {
-    name: "Sandhya Hot Spring Health Care",
-    city: "Manikaran",
-    location: "Manikaran",
-    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, a serene wellness retreat known for its therapeutic mineral-rich waters, blending traditional healing with the restorative benefits of geothermal therapy.",
-    rating: 4.6,
-    reviews: 500,
-    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care"
-  },
-  {
-    name: "Athreya Ayurvedic Centre",
-    city: "Kerala",
-    location: "Kerala",
-    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala, offering a discreet and elegant setting for a fully private wellness retreat.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre"
-  },
-];
+const topAyurvedicCenters = comboClassicKerala;
 
 const inclusionsRows = [
   { label: "Accommodation", details: "Private villa or luxury suite for 13 nights, chosen for your privacy and preferences", icon: BedDouble },
@@ -1234,7 +1127,7 @@ const LuxuryAyurvedaRetreatProgram = () => {
           <div className="grid md:grid-cols-2 gap-0">
             <div className="relative h-[220px] md:h-auto overflow-hidden md:order-2">
               <img
-                src="/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-retreat-hero.jpg"
+                src="/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hero-new.png"
                 alt="Luxury Ayurveda retreat consultation"
                 className="w-full h-full object-cover"
               />

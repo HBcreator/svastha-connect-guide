@@ -5,6 +5,7 @@ import TreatmentPageTemplate, {
   type TreatmentFaq,
   type TreatmentCenter,
 } from "@/components/TreatmentPageTemplate";
+import { comboRetreatYoga } from "@/data/centerCombos";
 import { Droplet, Leaf, Activity, Flame } from "lucide-react";
 
 const therapies: TreatmentTherapy[] = [
@@ -119,108 +120,7 @@ const faqItems: TreatmentFaq[] = [
   { question: "How soon might I notice a difference in fatigue or stiffness?", answer: "Some patients report easier movement and reduced fatigue within the first two weeks of daily therapies, though individual results vary significantly based on disease stage and overall health." },
 ];
 
-const topCenters: TreatmentCenter[] = [
-  {
-    name: "SOUKYA - Dr. Mathai's International Holistic Health Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "India's first NABH-accredited AYUSH Hospital integrating Ayurveda, Homeopathy, Yoga & Naturopathy on a 30-acre organic farm, specializing in treating chronic conditions with high clinical standards.",
-    rating: 4.9,
-    reviews: 500,
-    image: "/Center Images/SOUKYA/top center Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/soukya",
-  },
-  {
-    name: "Indus Valley Ayurvedic Centre",
-    city: "Mysore",
-    location: "Mysore",
-    description: "Indus Valley Ayurvedic Centre (IVAC) is a luxury Ayurvedic Healing retreat in serene Mysuru, blending classical Kerala Ayurveda with modern wellness standards through personalized programs for body, mind, and spirit.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Indus Valley Ayurvedic Centre/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/mysore/indus-valley-ayurvedic-centre",
-  },
-  {
-    name: "AyurvedaGram Heritage Wellness Centre",
-    city: "Bangalore",
-    location: "Bangalore",
-    description: "Immerse yourself in the authentic spirit of Ayurveda at AyurvedaGram Heritage Wellness Centre, offering holistic therapies guided by experienced Vaidyas within a serene heritage village.",
-    rating: 4.7,
-    reviews: 600,
-    image: "/Center Images/AyurvedaGram/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/bangalore/ayurvedagram",
-  },
-  {
-    name: "HimVeda Heritage Wellness Centre",
-    city: "Dharamshala",
-    location: "Dharamshala",
-    description: "Immerse yourself in the serene and healing environment of HimVeda, a peaceful Ayurvedic wellness centre located in the Himalayan foothills near Dharamshala, offering personalized treatments guided by experienced doctors.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/HimVeda/Thumb.jpeg",
-    link: "/top-ayurvedic-centers-in-india/dharamshala/himveda",
-  },
-  {
-    name: "Athreya Ayurvedic Centre",
-    city: "Kerala",
-    location: "Kerala",
-    description: "Authentic Ayurvedic care with personalized therapies and holistic healing in Kerala.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Athreya Ayurvedic Centre/CTA.jpg",
-    link: "/top-ayurvedic-centers-in-india/kerala/athreya-ayurvedic-centre",
-  },
-  {
-    name: "Ananda In The Himalayas",
-    city: "Uttarakhand",
-    location: "Uttarakhand",
-    description: "Experience ultimate luxury wellness at Ananda In The Himalayas, a world-renowned holistic retreat guided by expert physicians and therapists, rooted in Ayurveda, Yoga, and Vedanta.",
-    rating: 4.8,
-    reviews: 900,
-    image: "/Center Images/Ananda in the Himalayas/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/uttarakhand/ananda-in-the-himalayas",
-  },
-  {
-    name: "Amanbagh Heritage Wellness Retreat",
-    city: "Alwar",
-    location: "Alwar",
-    description: "Step into a sanctuary of timeless elegance at Amanbagh, a luxurious retreat surrounded by the rugged beauty of Rajasthan's Aravalli hills, offering a serene wellness haven for deep rejuvenation.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Amanbagh/thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/rajasthan/amanbagh-heritage-wellness-retreat",
-  },
-  {
-    name: "Ayurmana",
-    city: "Kerala",
-    location: "Kerala",
-    description: "Ayurvedic wellness retreat offering authentic therapies and holistic healing in a serene environment.",
-    rating: 4.8,
-    reviews: 500,
-    image: "/Center Images/Ayurmana center/top center thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/kerala/ayurmana",
-  },
-  {
-    name: "Sandhya Hot Spring Health Care",
-    city: "Manikaran",
-    location: "Manikaran",
-    description: "Immerse yourself in the healing power of natural hot springs at Sandhya Hot Spring Health Care, blending traditional healing practices with the restorative benefits of geothermal therapy.",
-    rating: 4.6,
-    reviews: 500,
-    image: "/Center Images/Sandhya Hot Spring Health Care/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/himachal/sandhya-hot-spring-health-care",
-  },
-  {
-    name: "ITC Grand Bharat",
-    city: "Gurugram",
-    location: "Gurugram",
-    description: "Immerse yourself in the grandeur of Indian heritage at ITC Grand Bharat, a luxurious all-suite retreat nestled amidst the serene Aravalli hills, offering a deeply rejuvenating escape.",
-    rating: 4.8,
-    reviews: 17000,
-    image: "/Center Images/ITC Grand Bharat/Thumb.jpg",
-    link: "/top-ayurvedic-centers-in-india/gurugram/itc-grand-bharat",
-  },
-];
+const topCenters: TreatmentCenter[] = comboRetreatYoga;
 
 const MultipleSclerosisTreatment = () => (
   <TreatmentPageTemplate
@@ -231,7 +131,7 @@ const MultipleSclerosisTreatment = () => (
     heroDescription="Ayurveda offers supportive, physician-supervised care alongside your existing neurology treatment — nourishing nerve tissue, easing stiffness and fatigue, and supporting your quality of life."
     heroRatingText="4.7/5 Patient Satisfaction"
     introTitle="The Ayurvedic View of Nerve Health (Majja Dhatu)"
-    introImage="/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg"
+    introImage="/Treatments-images/MultipleSclerosis/ms-hero-new.png"
     introImageAlt="Ayurvedic Multiple Sclerosis Treatment"
     introParagraphs={[
       <>
@@ -268,7 +168,7 @@ const MultipleSclerosisTreatment = () => (
     topCentersSubtitle="Handpicked hospitals and retreats experienced in supportive care for chronic neurological conditions."
     topCenters={topCenters}
     faqItems={faqItems}
-    ctaImage="/Treatments-images/MultipleSclerosis/Ayurvedic Treatment for Multiple Sclerosis.jpg"
+    ctaImage="/Treatments-images/MultipleSclerosis/ms-hero-new.png"
     ctaDescription="Start a conversation about supportive Ayurvedic care for MS. We help you connect with centers experienced in complementary neurological support."
   />
 );

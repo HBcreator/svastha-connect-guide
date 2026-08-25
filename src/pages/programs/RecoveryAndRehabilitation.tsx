@@ -47,7 +47,7 @@ const RecoveryAndRehabilitation = () => {
       keyFocus: "Mobility & strength rebuilding",
       description:
         "Gentle, physician-supervised Ayurvedic support to rebuild mobility and strength after surgery, coordinated alongside your prescribed physiotherapy and requiring your surgeon's clearance.",
-      image: "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/post-surgery-hero.jpg",
+      image: "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-1.png",
       link: "/ayurveda-packages/post-surgery-rehabilitation-program-in-india",
       rating: 4.8,
       reviews: 110,
