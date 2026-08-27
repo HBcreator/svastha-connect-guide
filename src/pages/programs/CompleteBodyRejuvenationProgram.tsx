@@ -24,7 +24,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-couple-backwaters.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/ayurvedic-therapy-india.jpg",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/yoga-beach-india.jpg",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/resort-pool.jpg",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/riverside-villa.jpg",
+  "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/rejuvenation-hero.jpg",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Abhyanga (Full-Body Rasayana Massage)", text: "A daily warm oil massage using Rasayana-grade oils nourishes all seven bodily tissues and restores the skin's natural glow and elasticity.", icon: Droplet },

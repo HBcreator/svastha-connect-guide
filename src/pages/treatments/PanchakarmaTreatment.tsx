@@ -35,7 +35,7 @@ const spiritualBenefits = [
   { title: "Deep Inner Cleansing", text: "Removes physical and emotional toxins, helping the soul feel lighter." },
   { title: "Restores Pranic Flow", text: "Clears blockages in energy channels (Nadis) for free flow of Prana." },
   { title: "Improved Meditation", text: "A cleansed and balanced body enhances focus and stillness." },
-  { title: "Spiritual Upliftment", text: "Aligns body, mind, and spiritâ€”bringing a sense of oneness." }
+  { title: "Spiritual Upliftment", text: "Aligns body, mind, and spirit—bringing a sense of oneness." }
 ];
 
 const threeStages = [
@@ -87,13 +87,13 @@ const patientReviews = [
   {
     name: "Albrecht Schumann", location: "Hannover, Germany", condition: "Rheumatoid Arthritis",
     title: "The Five Actions of Panchakarma Did What Years of Medication Could Not.",
-    review: "I travelled to India for Panchakarma after rheumatoid arthritis had progressively limited my mobility for three years. The three-phase protocolâ€”preparation, main therapies, and recoveryâ€”was administered with a clinical precision I had not expected. By the twenty-first day, my inflammatory markers had reduced measurably, and my joint mobility had improved to a degree my rheumatologist in Hannover found genuinely remarkable.",
+    review: "I travelled to India for Panchakarma after rheumatoid arthritis had progressively limited my mobility for three years. The three-phase protocol—preparation, main therapies, and recovery—was administered with a clinical precision I had not expected. By the twenty-first day, my inflammatory markers had reduced measurably, and my joint mobility had improved to a degree my rheumatologist in Hannover found genuinely remarkable.",
     rating: 5, verified: true
   },
   {
     name: "SinÃ©ad O'Halloran", location: "Limerick, Ireland", condition: "Panchakarma Detox",
-    title: "Authentic Panchakarma in India â€” Nothing Else Compares.",
-    review: "I had experienced so-called Panchakarma at spas in Europe, which were pleasant but had no clinical effect. Arriving in India for the classical program revealed the difference immediately. The Vaidya's hour-long assessment and the inclusion of the internal medicated ghee (Snehana) phaseâ€”often omitted elsewhereâ€”produced results in my digestion, sleep, and skin that I could feel accumulating day by day.",
+    title: "Authentic Panchakarma in India — Nothing Else Compares.",
+    review: "I had experienced so-called Panchakarma at spas in Europe, which were pleasant but had no clinical effect. Arriving in India for the classical program revealed the difference immediately. The Vaidya's hour-long assessment and the inclusion of the internal medicated ghee (Snehana) phase—often omitted elsewhere—produced results in my digestion, sleep, and skin that I could feel accumulating day by day.",
     rating: 5, verified: true
   },
   {
@@ -388,7 +388,7 @@ const PanchakarmaTreatment = () => {
         <section id="benefits" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">The Holistic Benefits</h2>
-            <p className="text-[#7F543D] text-lg">Panchakarma provides a complete reset for your entire systemâ€”physical, mental, and spiritual.</p>
+            <p className="text-[#7F543D] text-lg">Panchakarma provides a complete reset for your entire system—physical, mental, and spiritual.</p>
           </div>
 
           <div className="space-y-12">

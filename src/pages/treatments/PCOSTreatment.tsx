@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "PCOS with Irregular Cycles",
     title: "My Cycle Became Regular For The First Time In Years.",
     review:
-      "I had irregular, unpredictable cycles for nearly six years. The Virechana detox followed by Uttar Basti made a real difference. My cycle has been consistently regular for three months running now.",
+      "I had irregular, unpredictable cycles for nearly six years. The Virechana detox followed by Uttar Basti made a real difference. My cycle has been consistently regular for three months running now. The physician explained exactly what was happening hormonally at every stage, which I'd never had before. Being able to actually plan my life around a predictable cycle again feels like a small miracle.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "PCOS-Related Weight Gain",
     title: "The Udwarthanam Massage Genuinely Helped My Metabolism.",
     review:
-      "Weight management with PCOS had felt impossible despite diet and exercise. The daily herbal powder massage combined with dietary correction shifted my metabolism in a way nothing else had.",
+      "Weight management with PCOS had felt impossible despite diet and exercise. The daily herbal powder massage combined with dietary correction shifted my metabolism in a way nothing else had. The dietician tailored every meal plan specifically around my insulin resistance, not a generic template. For the first time, the scale is actually moving in the right direction.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "PCOS and Acne",
     title: "My Skin Cleared Up As My Hormones Balanced.",
     review:
-      "My hormonal acne was constant and frustrating. As my cycle regulated over the three weeks, my skin cleared up too — something my dermatologist treatments alone had never achieved.",
+      "My hormonal acne was constant and frustrating. As my cycle regulated over the three weeks, my skin cleared up too — something my dermatologist treatments alone had never achieved. It became clear my skin was always a symptom of the deeper hormonal imbalance, not a separate problem. Three months later, my skin is the clearest it has been since my teenage years.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "PCOS and Fertility Goals",
     title: "This Program Gave Me Real Hope For Conceiving.",
     review:
-      "We had been trying to conceive for over a year with no success. The complete reproductive wellness program addressed my hormonal imbalance directly. My cycles are now regular and predictable for the first time.",
+      "We had been trying to conceive for over a year with no success. The complete reproductive wellness program addressed my hormonal imbalance directly. My cycles are now regular and predictable for the first time. My husband and I both appreciated how clearly the physician explained the fertility timeline to us. We now finally have a real, hopeful sense of where things stand.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "PCOS and Insulin Resistance",
     title: "My Energy And Cravings Are Completely Different Now.",
     review:
-      "Constant sugar cravings and afternoon energy crashes were a daily struggle with my PCOS. The detox and diet correction stabilized my blood sugar noticeably. I feel like a different person day-to-day.",
+      "Constant sugar cravings and afternoon energy crashes were a daily struggle with my PCOS. The detox and diet correction stabilized my blood sugar noticeably. I feel like a different person day-to-day. The cravings that used to control my afternoons have genuinely disappeared, not just reduced. My mood swings have also settled down more than I expected from a physical treatment.",
     rating: 5,
     verified: true,
   },

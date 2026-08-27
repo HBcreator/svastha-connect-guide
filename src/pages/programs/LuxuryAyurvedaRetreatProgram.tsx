@@ -185,7 +185,13 @@ const benefits = {
   ],
 };
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/heritage-courtyard.jpg",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hammam-spa.jpg",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/gazebo-pool.jpg",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/poolside-luxury.jpg",
+  "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-retreat-hero.jpg",
+];
 
 const chooseIndiaPoints = [
   {

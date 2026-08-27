@@ -78,7 +78,7 @@ const packages = [
 const patientReviews = [
   {
     name: "Josephine Braun", location: "DÃ¼sseldorf, Germany", condition: "Rheumatoid Arthritis",
-    title: "India Is Where Ayurveda Livesâ€”As a Real Science of Healing.",
+    title: "India Is Where Ayurveda Lives—As a Real Science of Healing.",
     review: "I had tried Ayurveda treatments at European spas for years; they were pleasant but ultimately superficial. Traveling to India for an authentic Panchakarma was an entirely different experience. The physician prescribed a 14-day sequence that addressed my rheumatoid arthritis with a measurable reduction in inflammation.",
     rating: 5, verified: true
   },
@@ -113,7 +113,7 @@ const faqItems = [
   { question: "How long does an Ayurveda treatment program take?", answer: "Minimum effective programs start at 7 days for wellness, but chronic conditions usually require 14 to 28 days for deep healing and sustained results." },
   { question: "Are the herbal medicines safe and heavy-metal free?", answer: "Absolutely. We ensure that our partner centers use certified, laboratory-tested authentic medicines prepared under strict safety guidelines." },
   { question: "What kind of diet is provided during the treatment?", answer: "A personalized, purely vegetarian (sattvic) diet is provided. It is tailored to your dosha and specific health condition to act as 'food as medicine'." },
-  { question: "Can Ayurveda cure chronic diseases like arthritis or psoriasis?", answer: "Ayurveda aims to manage and often reverse chronic conditions by treating the root causeâ€”balancing doshas and removing toxins (Ama)â€”rather than just suppressing symptoms." }
+  { question: "Can Ayurveda cure chronic diseases like arthritis or psoriasis?", answer: "Ayurveda aims to manage and often reverse chronic conditions by treating the root cause—balancing doshas and removing toxins (Ama)—rather than just suppressing symptoms." }
 ];
 
 const topAyurvedicCenters = [

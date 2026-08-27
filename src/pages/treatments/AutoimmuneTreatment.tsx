@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Rheumatoid Arthritis Support",
     title: "My Flare-Ups Are Noticeably Less Frequent Now.",
     review:
-      "I came seeking supportive care alongside my rheumatologist's treatment plan. The Virechana detox and daily Abhyanga noticeably reduced how often I experienced flare-ups over the following months.",
+      "I came seeking supportive care alongside my rheumatologist's treatment plan. The Virechana detox and daily Abhyanga noticeably reduced how often I experienced flare-ups over the following months. The physicians requested my full rheumatology records before starting, which gave me real confidence in the process. Flare-ups that used to happen almost monthly are now genuinely rare for me.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Autoimmune Thyroid Support",
     title: "My Energy And Overall Wellbeing Genuinely Improved.",
     review:
-      "Chronic fatigue from my autoimmune condition had worn me down. The Ojas Rasayana herbs and structured routine gave me noticeably more stable energy, complementing my endocrinologist's ongoing care.",
+      "Chronic fatigue from my autoimmune condition had worn me down. The Ojas Rasayana herbs and structured routine gave me noticeably more stable energy, complementing my endocrinologist's ongoing care. The daily schedule was structured but gentle, never leaving me feeling more depleted than I arrived. I now have the energy for things I had quietly given up on over the years.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Psoriatic Condition Support",
     title: "A Genuinely Supportive, Well-Supervised Program.",
     review:
-      "I was cautious trying anything outside my dermatologist's care, but the physicians worked transparently with my full medical history. My skin symptoms have been noticeably calmer since completing the program.",
+      "I was cautious trying anything outside my dermatologist's care, but the physicians worked transparently with my full medical history. My skin symptoms have been noticeably calmer since completing the program. They checked in with me regularly about how my skin was responding and adjusted the herbs accordingly. It's the first program that treated my skin as connected to my whole body, not an isolated issue.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Autoimmune Fatigue and Joint Pain",
     title: "My Joint Discomfort Eased More Than I Expected.",
     review:
-      "This program never claimed to cure my condition — it focused on supportive, symptom-easing care, and that honesty mattered to me. My joint discomfort and stiffness have genuinely eased since finishing.",
+      "This program never claimed to cure my condition — it focused on supportive, symptom-easing care, and that honesty mattered to me. My joint discomfort and stiffness have genuinely eased since finishing. I appreciated that they were upfront about what to realistically expect from the very first consultation. Mornings that used to start with stiffness now start far more comfortably.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "General Autoimmune Support",
     title: "The Detox Phase Gave Me A Genuine Reset.",
     review:
-      "My immune specialist was supportive of me trying complementary care. The structured detox and herbal support gave my body a genuine reset, and I've felt steadier and more resilient in the months since.",
+      "My immune specialist was supportive of me trying complementary care. The structured detox and herbal support gave my body a genuine reset, and I've felt steadier and more resilient in the months since. The team kept my specialist informed with regular updates throughout the whole program. I feel like I finally have some real stability instead of constantly bracing for the next flare.",
     rating: 5,
     verified: true,
   },

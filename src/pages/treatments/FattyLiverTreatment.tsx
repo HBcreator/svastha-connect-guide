@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Non-Alcoholic Fatty Liver",
     title: "My Liver Enzyme Levels Are Back To Normal.",
     review:
-      "A routine scan flagged fatty liver two years ago. The Virechana detox and dietary correction noticeably improved my energy within three weeks, and my follow-up liver enzyme tests came back normal.",
+      "A routine scan flagged fatty liver two years ago. The Virechana detox and dietary correction noticeably improved my energy within three weeks, and my follow-up liver enzyme tests came back normal. My physician also explained exactly why each therapy mattered, which helped me stay committed to the plan. Two years on, I still follow the same dietary principles and my scans remain completely clear.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fatty Liver with Weight Concerns",
     title: "My Weight And Liver Health Both Improved Together.",
     review:
-      "My doctor linked my fatty liver directly to my weight. The daily Udwarthanam massage and metabolic reset diet helped me lose weight steadily while directly supporting my liver recovery.",
+      "My doctor linked my fatty liver directly to my weight. The daily Udwarthanam massage and metabolic reset diet helped me lose weight steadily while directly supporting my liver recovery. The team adjusted my meal plan every week based on how my body was responding. I've kept the weight off since returning home, and my energy has never been better.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fatty Liver and Digestive Sluggishness",
     title: "My Digestion Feels Completely Different Now.",
     review:
-      "Constant bloating and sluggish digestion turned out to be linked to my fatty liver. The Agni-kindling therapy and herbal formulations resolved both issues together within the three-week program.",
+      "Constant bloating and sluggish digestion turned out to be linked to my fatty liver. The Agni-kindling therapy and herbal formulations resolved both issues together within the three-week program. I hadn't realised how connected the two problems were until the physician explained it during consultation. Meals that used to leave me uncomfortable for hours now feel completely effortless to digest.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fatty Liver Prevention",
     title: "A Proactive Reset Before Things Got Worse.",
     review:
-      "My scan showed early-stage fatty changes, and I wanted to act before it progressed further. The comprehensive program gave me a clear, structured path back to healthy liver function.",
+      "My scan showed early-stage fatty changes, and I wanted to act before it progressed further. The comprehensive program gave me a clear, structured path back to healthy liver function. The physician was direct about what needed to change in my daily habits, without ever making me feel judged. My latest follow-up scan showed no trace of the fatty changes at all.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fatty Liver and Fatigue",
     title: "My Chronic Fatigue Lifted As My Liver Health Improved.",
     review:
-      "I had unexplained fatigue for over a year before fatty liver was identified as the cause. The liver-supportive herbs and detox protocol restored my energy levels significantly by the end of the program.",
+      "I had unexplained fatigue for over a year before fatty liver was identified as the cause. The liver-supportive herbs and detox protocol restored my energy levels significantly by the end of the program. Nobody had connected my exhaustion to my liver before this diagnosis, which was honestly a relief in itself. I now wake up genuinely rested instead of dragging myself through the mornings.",
     rating: 5,
     verified: true,
   },

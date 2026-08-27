@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Diabetic Peripheral Neuropathy",
     title: "The Numbness In My Feet Has Genuinely Reduced.",
     review:
-      "Diabetic neuropathy had left my feet numb and uncomfortable for years. The daily Pizhichil oil bath combined with Padabhyanga noticeably improved sensation and comfort, alongside my ongoing diabetes management.",
+      "Diabetic neuropathy had left my feet numb and uncomfortable for years. The daily Pizhichil oil bath combined with Padabhyanga noticeably improved sensation and comfort, alongside my ongoing diabetes management. The physicians coordinated everything around my blood sugar readings throughout the entire program. Feeling in my feet that I thought was permanently gone has genuinely started to return.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chemotherapy-Induced Neuropathy",
     title: "My Tingling And Discomfort Are Far More Manageable.",
     review:
-      "Nerve damage from past chemotherapy had left persistent tingling in my hands. The Basti protocol and nerve-nourishing herbs made a genuine difference to my daily comfort over the three-week program.",
+      "Nerve damage from past chemotherapy had left persistent tingling in my hands. The Basti protocol and nerve-nourishing herbs made a genuine difference to my daily comfort over the three-week program. The team understood exactly how chemo-induced neuropathy differs from other types, which gave me confidence early on. Simple daily tasks like typing feel far more comfortable than they have in years.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Idiopathic Peripheral Neuropathy",
     title: "My Doctors Never Found A Clear Cause, But This Helped.",
     review:
-      "My neuropathy had no clear diagnosis despite extensive testing. The Ayurvedic approach focused on nourishing my nerve tissue directly, and my symptoms have genuinely improved since completing the program.",
+      "My neuropathy had no clear diagnosis despite extensive testing. The Ayurvedic approach focused on nourishing my nerve tissue directly, and my symptoms have genuinely improved since completing the program. Not having a clear label never stopped the physicians from treating the underlying imbalance directly. It was honestly a relief to finally see real progress after years of inconclusive tests.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Peripheral Neuropathy with Balance Issues",
     title: "My Balance And Foot Sensation Both Improved.",
     review:
-      "Numbness in my feet had started affecting my balance and confidence walking. The comprehensive program improved both my sensation and my stability noticeably over the month.",
+      "Numbness in my feet had started affecting my balance and confidence walking. The comprehensive program improved both my sensation and my stability noticeably over the month. I had grown genuinely anxious about walking on uneven ground before starting this program. Now I walk confidently again, even outdoors on paths I used to avoid.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Peripheral Neuropathy",
     title: "I Can Feel My Hands Properly Again.",
     review:
-      "Fine motor tasks like buttoning a shirt had become difficult due to numbness in my fingers. After the full Panchakarma program, my hand sensation and dexterity have genuinely improved.",
+      "Fine motor tasks like buttoning a shirt had become difficult due to numbness in my fingers. After the full Panchakarma program, my hand sensation and dexterity have genuinely improved. Small daily frustrations I had quietly learned to live with are simply not an issue anymore. Being able to do these little things independently again means more than I expected.",
     rating: 5,
     verified: true,
   },

@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-tea-garden.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-benefit-1.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-benefit-2.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-benefit-3.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-benefit-4.png",
+  "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Shatavari Hormonal Herbs", text: "A tailored regimen built around Shatavari, traditionally used to support hormonal balance and ease common menopausal symptoms.", icon: Leaf },

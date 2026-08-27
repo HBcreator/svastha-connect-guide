@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Stress-Related Hypertension",
     title: "My Blood Pressure Readings Are Consistently Lower Now.",
     review:
-      "I had struggled with borderline high blood pressure for years, closely linked to work stress. The daily Shirodhara sessions calmed me noticeably, and my readings have stayed consistently lower since the program.",
+      "I had struggled with borderline high blood pressure for years, closely linked to work stress. The daily Shirodhara sessions calmed me noticeably, and my readings have stayed consistently lower since the program. The physician also taught me stress-management habits I could actually keep up once back at work. Three months on, my readings remain steady even during busy weeks.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Cardiovascular Wellness",
     title: "My Cholesterol Panel Improved At My Next Check-Up.",
     review:
-      "I approached this as complementary care alongside my cardiologist's guidance. My cholesterol panel showed genuine improvement at my follow-up appointment, which my doctor was pleased to see.",
+      "I approached this as complementary care alongside my cardiologist's guidance. My cholesterol panel showed genuine improvement at my follow-up appointment, which my doctor was pleased to see. The dietary changes were practical enough that I've actually managed to sustain them at home. Having lab results back up how I feel gave me real confidence in the program.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Hypertension Management",
     title: "The Calm I Felt Translated Directly To My Numbers.",
     review:
-      "My hypertension was closely tied to chronic stress. The combination of Abhyanga and structured routine gave me a genuine sense of calm, and my home blood pressure monitor reflected that consistently.",
+      "My hypertension was closely tied to chronic stress. The combination of Abhyanga and structured routine gave me a genuine sense of calm, and my home blood pressure monitor reflected that consistently. I hadn't realised how much my stress levels were driving my numbers until I saw the change firsthand. My family has also noticed I react far more calmly to everyday pressure now.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Cardiovascular Risk Support",
     title: "A Thoughtful, Well-Supervised Complementary Program.",
     review:
-      "The physicians reviewed my full medical history and coordinated their recommendations sensibly around my existing heart medication. The program felt genuinely safe and well-supervised throughout.",
+      "The physicians reviewed my full medical history and coordinated their recommendations sensibly around my existing heart medication. The program felt genuinely safe and well-supervised throughout. Given my heart condition, that careful, cautious approach was exactly what I needed to feel comfortable. I would happily recommend this to anyone equally cautious about trying something new.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Stress and Blood Pressure",
     title: "My Doctor Noticed The Difference At My Last Visit.",
     review:
-      "I had lived with elevated blood pressure for three years. After completing the program alongside my prescribed medication, my doctor noted my readings were the most stable they'd seen in years.",
+      "I had lived with elevated blood pressure for three years. After completing the program alongside my prescribed medication, my doctor noted my readings were the most stable they'd seen in years. The lifestyle changes I picked up during the program felt sustainable rather than a temporary fix. Stability like this is something I genuinely never expected to achieve.",
     rating: 5,
     verified: true,
   },

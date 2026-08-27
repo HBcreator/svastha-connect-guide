@@ -94,7 +94,7 @@ const packages = [
 const patientReviews = [
   {
     name: "Konrad Hartstein", location: "Leipzig, Germany", condition: "Chronic Sinusitis",
-    title: "Resolved in 14 Daysâ€”After Four Years of Failed Antibiotics.",
+    title: "Resolved in 14 Days—After Four Years of Failed Antibiotics.",
     review: "I had been managing chronic sinusitis with repeated courses of antibiotics for four years, with only temporary relief. The Ayurvedic sinusitis treatment in India was different; the physician saw a deep Vata-Kapha imbalance, not just an infection. The daily Nasya therapy, with its warm medicated oil, was incredible. It softened and expelled congestion that had been trapped for years. By day twelve, my sinuses were completely clear.",
     rating: 5, verified: true
   },
@@ -106,13 +106,13 @@ const patientReviews = [
   },
   {
     name: "VÃ©ronique Aubert", location: "Grenoble, France", condition: "Allergic Rhinosinusitis",
-    title: "They Treated the Root Causeâ€”Not Just the Symptoms.",
-    review: "For six years, my allergic rhinosinusitis was managed with sprays that only controlled symptoms. The Ayurvedic approach in India was the first to identify and treat the root causeâ€”a Kapha and Vata imbalance. The comprehensive program of Nasya therapy, cleansing, and an anti-Kapha diet was so effective that my nasal congestion reduced by eighty percent within just ten days. The Jala Neti technique they taught me has kept my sinuses clear for months.",
+    title: "They Treated the Root Cause—Not Just the Symptoms.",
+    review: "For six years, my allergic rhinosinusitis was managed with sprays that only controlled symptoms. The Ayurvedic approach in India was the first to identify and treat the root cause—a Kapha and Vata imbalance. The comprehensive program of Nasya therapy, cleansing, and an anti-Kapha diet was so effective that my nasal congestion reduced by eighty percent within just ten days. The Jala Neti technique they taught me has kept my sinuses clear for months.",
     rating: 5, verified: true
   },
   {
     name: "Nico Vandenberghe", location: "Bruges, Belgium", condition: "Sinus Headaches",
-    title: "My Brain Fog, Headaches, and Blocked Sinusesâ€”All Gone.",
+    title: "My Brain Fog, Headaches, and Blocked Sinuses—All Gone.",
     review: "I had not understood that my persistent brain fog and tension headaches were a direct result of my chronic sinus blockage. The physician here explained how they were all connected. The Nasya therapy, he explained, works on the nervous system through the nasal passages, addressing all three issues simultaneously. The treatment produced a mental clarity by week two that I hadn't experienced in years.",
     rating: 5, verified: true
   },
@@ -378,7 +378,7 @@ const SinusitisTreatment = () => {
             <div className="space-y-6 text-center md:text-left flex flex-col justify-center">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] xl:text-[2.2rem] font-bold text-[#335765] leading-tight">Beyond the Symptoms</h2>
               <p className="text-[#7F543D] leading-relaxed text-lg">
-                While modern medicine often focuses on managing symptoms, Ayurveda goes deeper to address the root cause of the issue. Known as Pinas, sinusitis is seen as a result of an imbalance in the bodyâ€™s fundamental energies.
+                While modern medicine often focuses on managing symptoms, Ayurveda goes deeper to address the root cause of the issue. Known as Pinas, sinusitis is seen as a result of an imbalance in the body’s fundamental energies.
               </p>
               <div className="space-y-4 text-left flex-grow">
                 {doshas.map((item, idx) => {

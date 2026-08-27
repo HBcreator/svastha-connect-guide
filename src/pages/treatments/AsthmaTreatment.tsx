@@ -90,31 +90,31 @@ const patientReviews = [
   {
     name: "Emma", location: "Manchester, UK", condition: "Chronic Asthma",
     title: "I Finally Reduced My Inhaler Dependence.",
-    review: "I had relied on a rescue inhaler daily for six years. The Ayurvedic physician diagnosed my condition as Tamaka Shwasa and began with Vamana therapy. Within three weeks my wheezing episodes dropped sharply, and I now barely reach for my inhaler.",
+    review: "I had relied on a rescue inhaler daily for six years. The Ayurvedic physician diagnosed my condition as Tamaka Shwasa and began with Vamana therapy. Within three weeks my wheezing episodes dropped sharply, and I now barely reach for my inhaler. The daily diet guidance made just as much difference as the therapies themselves. Six months later, I still follow the same routine and haven't had a single severe attack.",
     rating: 5, verified: true
   },
   {
     name: "Lars", location: "Aarhus, Denmark", condition: "Seasonal Bronchial Asthma",
     title: "My Winter Attacks Have Nearly Disappeared.",
-    review: "Every winter I suffered severe bronchial attacks that left me exhausted. The steam therapy and herbal decoctions cleared my chest congestion within days. This past winter was the first in years without a single emergency visit.",
+    review: "Every winter I suffered severe bronchial attacks that left me exhausted. The steam therapy and herbal decoctions cleared my chest congestion within days. This past winter was the first in years without a single emergency visit. The physician also gave me a simple herbal routine to start at the first sign of cold weather. I genuinely didn't think a seasonal problem like mine could be managed this well.",
     rating: 5, verified: true
   },
   {
     name: "Sofia", location: "Valencia, Spain", condition: "Exercise-Induced Asthma",
     title: "I Can Finally Exercise Without Fear.",
-    review: "Exercise always triggered tight, panicked breathing for me. The Nasya therapy and daily Pranayama practice retrained my lungs completely. I now jog every morning without any wheezing or chest discomfort at all.",
+    review: "Exercise always triggered tight, panicked breathing for me. The Nasya therapy and daily Pranayama practice retrained my lungs completely. I now jog every morning without any wheezing or chest discomfort at all. My physician also adjusted my warm-up routine, which made an unexpectedly big difference. For the first time in my adult life, exercise feels like something I enjoy rather than something I fear.",
     rating: 5, verified: true
   },
   {
     name: "Noah", location: "Rotterdam, Netherlands", condition: "Allergic Asthma",
     title: "The Root Cause Was Finally Addressed.",
-    review: "Western doctors only ever managed my symptoms with steroids. The Ayurvedic protocol addressed the Kapha imbalance directly through detox and diet correction. My allergic flare-ups are now rare, and my energy has genuinely improved.",
+    review: "Western doctors only ever managed my symptoms with steroids. The Ayurvedic protocol addressed the Kapha imbalance directly through detox and diet correction. My allergic flare-ups are now rare, and my energy has genuinely improved. I was skeptical at first, but the physician explained every step clearly and tracked my progress closely. Looking back, I wish I had tried this root-cause approach years earlier.",
     rating: 5, verified: true
   },
   {
     name: "Mia", location: "Perth, Australia", condition: "Chronic Bronchitis with Asthma",
     title: "Breathing Freely for the First Time in Years.",
-    review: "Years of chronic bronchitis had left my lungs permanently weak and wheezy. The full Panchakarma program with Vamana and Rasayana herbs rebuilt my lung capacity gradually. I now breathe freely, even during long walks outdoors.",
+    review: "Years of chronic bronchitis had left my lungs permanently weak and wheezy. The full Panchakarma program with Vamana and Rasayana herbs rebuilt my lung capacity gradually. I now breathe freely, even during long walks outdoors. The care team monitored me closely through every stage of the detox, which put my mind completely at ease. This is the first time in over a decade I've felt like my lungs actually belong to me again.",
     rating: 5, verified: true
   }
 ];
@@ -139,6 +139,12 @@ const AsthmaTreatment = () => {
   const [expandedCenterName, setExpandedCenterName] = useState<string | null>(null);
 
   const [currentReview, setCurrentReview] = useState(0);
+
+  useEffect(() => {
+    document.title = "Asthma Treatment and Respiratory Care in India | My Vaidyam";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", "Ayurveda treats asthma at its root, clearing congested respiratory channels and rebuilding lung strength, so every breath becomes calm, deep, and effortless again.");
+  }, []);
 
   useEffect(() => {
     const updateTopCentersLayout = () => {

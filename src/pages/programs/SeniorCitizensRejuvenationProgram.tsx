@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-couple-garden.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-benefit-1.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-benefit-2.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-benefit-3.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-benefit-4.png",
+  "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A slow, gentle full-body oil massage adapted for age and mobility, easing joint stiffness and calming aggravated Vata without any strain.", icon: Droplet },

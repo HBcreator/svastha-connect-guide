@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/family-support-together.jpg",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-benefit-1.png",
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-benefit-2.png",
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-benefit-3.png",
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-benefit-4.png",
+  "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A very gentle, carefully adapted oil massage supports circulation, comfort, and a genuine sense of care during recovery.", icon: Droplet },
