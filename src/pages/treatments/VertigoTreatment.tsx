@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Recurring Vertigo Episodes",
     title: "My Dizzy Spells Have Become Far Less Frequent.",
     review:
-      "I had unpredictable vertigo episodes for over two years that left me anxious about daily activities. The Shirodhara and Nasya combination noticeably reduced how often these episodes occurred.",
+      "I had unpredictable vertigo episodes for over two years that left me anxious about daily activities. The Shirodhara and Nasya combination noticeably reduced how often these episodes occurred. Not knowing when the next episode would hit had quietly shrunk my whole life over those two years. I finally feel comfortable making plans again without that constant background worry.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Dizziness",
     title: "I Finally Feel Steady On My Feet Again.",
     review:
-      "Chronic dizziness had made me hesitant to drive or exercise for months. The Greeva Abhyanga and balancing herbs restored a genuine sense of stability I had not felt in a long time.",
+      "Chronic dizziness had made me hesitant to drive or exercise for months. The Greeva Abhyanga and balancing herbs restored a genuine sense of stability I had not felt in a long time. Getting back behind the wheel again was a bigger milestone for me than I expected it to be. I've resumed my regular gym routine without any of the caution I had grown so used to.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Vertigo with Neck Tension",
     title: "Treating My Neck Tension Solved The Root Problem.",
     review:
-      "My physician identified my neck tension as a contributing factor to my vertigo. The focused massage therapy addressed this directly, and my dizzy spells have reduced dramatically since.",
+      "My physician identified my neck tension as a contributing factor to my vertigo. The focused massage therapy addressed this directly, and my dizzy spells have reduced dramatically since. No previous doctor had connected my neck tightness to the dizziness before this consultation. Addressing that root cause has made a difference no medication ever managed to give me.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Stress-Related Vertigo",
     title: "Calming My Nervous System Calmed My Vertigo Too.",
     review:
-      "My vertigo always worsened during stressful periods at work. The full three-week program addressed both my stress and my balance together, and I've felt remarkably steadier since returning.",
+      "My vertigo always worsened during stressful periods at work. The full three-week program addressed both my stress and my balance together, and I've felt remarkably steadier since returning. The physician was clear from day one that treating the stress was just as important as treating the balance issue. Even during a genuinely hectic month back at work, my symptoms haven't returned.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Recurrent Vertigo",
     title: "I Can Finally Trust My Balance Again.",
     review:
-      "Years of unpredictable vertigo had eroded my confidence in everyday movement. The comprehensive Panchakarma program has given me lasting stability, and I finally trust my body's balance again.",
+      "Years of unpredictable vertigo had eroded my confidence in everyday movement. The comprehensive Panchakarma program has given me lasting stability, and I finally trust my body's balance again. I had stopped doing so many small things, from climbing stairs quickly to turning my head too fast. Getting that quiet confidence back has honestly changed how I move through my whole day.",
     rating: 5,
     verified: true,
   },

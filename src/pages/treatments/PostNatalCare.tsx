@@ -31,12 +31,12 @@ const patientReviews = [
   {
     name: "Ingrid Svensson", location: "Stockholm, Sweden", condition: "Emotional Exhaustion",
     title: "They Rebuilt My Body From the Inside Out.",
-    review: "Postnatal care in Sweden focused on checkups, but the deeper depletion I feltâ€”emotional exhaustion and weak digestionâ€”was left unaddressed. The Ayurvedic approach was different. The daily Bala Taila Abhyanga (oil massage) and the medicated herbal gruel (Yavagu) restored my digestive strength. By week five, I felt stronger than I had even before my pregnancy.",
+    review: "Postnatal care in Sweden focused on checkups, but the deeper depletion I felt—emotional exhaustion and weak digestion—was left unaddressed. The Ayurvedic approach was different. The daily Bala Taila Abhyanga (oil massage) and the medicated herbal gruel (Yavagu) restored my digestive strength. By week five, I felt stronger than I had even before my pregnancy.",
     rating: 5, verified: true
   },
   {
     name: "Camille Fontaine", location: "Bordeaux, France", condition: "Postpartum Depression",
-    title: "My Postpartum Depression Liftedâ€”Without a Single Antidepressant.",
+    title: "My Postpartum Depression Lifted—Without a Single Antidepressant.",
     review: "My obstetrician had recommended antidepressants for my postpartum depression. I chose to try Ayurveda first. The physician identified an aggravated Vata in my nervous system as the root cause. The Shirodhara sessions produced a profound sense of calm from the very first sitting. Combined with nervine tonics like Brahmi and Ashwagandha, my mood stabilized completely within three weeks.",
     rating: 5, verified: true
   },
@@ -253,7 +253,7 @@ const PostNatalCare = () => {
     <div className="min-h-screen bg-background overflow-x-hidden font-poppins">
       <Navigation onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      {/* Hero Section â€” same style as Panchakarma Treatment */}
+      {/* Hero Section — same style as Panchakarma Treatment */}
       <section className="bg-[#335765] text-white py-10 md:py-14">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-8 items-center">

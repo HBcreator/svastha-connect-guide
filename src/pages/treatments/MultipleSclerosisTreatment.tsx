@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Relapsing-Remitting MS",
     title: "My Fatigue and Stiffness Are Genuinely More Manageable.",
     review:
-      "I came seeking supportive care alongside my neurologist's treatment plan. The daily Pizhichil oil bath noticeably eased my stiffness and fatigue, and I left with a home routine that has kept those improvements going.",
+      "I came seeking supportive care alongside my neurologist's treatment plan. The daily Pizhichil oil bath noticeably eased my stiffness and fatigue, and I left with a home routine that has kept those improvements going. The physicians stayed in close contact with my neurology team throughout, which reassured me completely. Months later, I'm still doing the home oil routine and the difference is easy to feel.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "MS-Related Fatigue",
     title: "My Energy Levels Improved More Than I Expected.",
     review:
-      "Chronic fatigue was my biggest daily struggle. The Basti series combined with Bala oil massage gave me noticeably more stable energy through the day. My physiotherapist has noticed the difference too.",
+      "Chronic fatigue was my biggest daily struggle. The Basti series combined with Bala oil massage gave me noticeably more stable energy through the day. My physiotherapist has noticed the difference too. The team paced the whole program around my energy levels, never pushing beyond what felt safe. I now get through my afternoons without the crash I used to dread every single day.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "MS Mobility Support",
     title: "A Genuinely Supportive, Well-Supervised Program.",
     review:
-      "I was cautious about trying anything outside my neurology care, but the team worked transparently alongside my medical history throughout. The supportive therapies eased my stiffness without any adverse effects.",
+      "I was cautious about trying anything outside my neurology care, but the team worked transparently alongside my medical history throughout. The supportive therapies eased my stiffness without any adverse effects. They asked for my full medical file before starting anything and reviewed it carefully with me. That level of caution is exactly what made me trust the whole process.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Secondary Progressive MS",
     title: "My Quality Of Life Has Genuinely Improved.",
     review:
-      "This program never claimed to cure my MS — it focused on supportive, symptom-easing care, and that honesty mattered to me. The daily oil therapies have measurably improved my comfort and daily function.",
+      "This program never claimed to cure my MS — it focused on supportive, symptom-easing care, and that honesty mattered to me. The daily oil therapies have measurably improved my comfort and daily function. Every session was adapted to how I was actually feeling that day, not a fixed rigid routine. Simple daily tasks that had become difficult are noticeably easier for me now.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "MS-Related Muscle Stiffness",
     title: "The Warm Oil Therapies Eased Stiffness I'd Lived With For Years.",
     review:
-      "Years of stiffness had become my new normal. The combination of Bala Abhyanga and Pizhichil noticeably loosened that tension within the first two weeks. My physiotherapy sessions have felt easier ever since.",
+      "Years of stiffness had become my new normal. The combination of Bala Abhyanga and Pizhichil noticeably loosened that tension within the first two weeks. My physiotherapy sessions have felt easier ever since. I honestly didn't expect such a noticeable physical change in such a short program. My physiotherapist back home even asked what I had changed, the improvement was that obvious.",
     rating: 5,
     verified: true,
   },

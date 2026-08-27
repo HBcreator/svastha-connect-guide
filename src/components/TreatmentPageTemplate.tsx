@@ -132,6 +132,12 @@ export default function TreatmentPageTemplate({
   const [currentReview, setCurrentReview] = useState(0);
 
   useEffect(() => {
+    document.title = `${pageTitle} | My Vaidyam`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", heroDescription);
+  }, [pageTitle, heroDescription]);
+
+  useEffect(() => {
     const updateTopCentersLayout = () => {
       if (window.innerWidth < 768) {
         setTopCentersPerSlide(1);

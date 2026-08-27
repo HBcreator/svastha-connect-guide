@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Insomnia",
     title: "I Slept Eight Hours Without Waking - First Time In Years.",
     review:
-      "I had not slept through a full night in over four years. The Shirodhara sessions were extraordinary — by day six I was sleeping deeply, and by the end of the program eight-hour nights felt normal again.",
+      "I had not slept through a full night in over four years. The Shirodhara sessions were extraordinary — by day six I was sleeping deeply, and by the end of the program eight-hour nights felt normal again. The physician also gave me a simple evening routine that I still follow at home every night. It's been four months since I returned, and I have not had a single sleepless night.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Stress-Related Insomnia",
     title: "I Finally Came Off Sleeping Pills.",
     review:
-      "I had relied on sleeping pills for three years. The nervous-system-focused protocol, along with the herbal Nidra formulations, gradually rebuilt my natural sleep rhythm. I am completely medication-free now.",
+      "I had relied on sleeping pills for three years. The nervous-system-focused protocol, along with the herbal Nidra formulations, gradually rebuilt my natural sleep rhythm. I am completely medication-free now. The physician tapered my dependence carefully over the program instead of asking me to stop abruptly. Falling asleep naturally again feels like getting a part of my life back.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Racing Thoughts at Night",
     title: "My Mind Finally Went Quiet At Night.",
     review:
-      "My mind used to race the moment my head hit the pillow. The daily Padabhyanga and Shirodhara combination calmed that completely. I now fall asleep within minutes most nights.",
+      "My mind used to race the moment my head hit the pillow. The daily Padabhyanga and Shirodhara combination calmed that completely. I now fall asleep within minutes most nights. The therapists were incredibly attentive, adjusting the oil temperature and pressure to exactly what worked for me. I genuinely look forward to bedtime now instead of dreading it.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Shift-Work Sleep Disruption",
     title: "My Sleep Schedule Is Finally Stable Again.",
     review:
-      "Years of shift work had completely broken my sleep cycle. The structured routine and herbal support retrained my body's clock faster than I expected. I sleep on a normal schedule again now.",
+      "Years of shift work had completely broken my sleep cycle. The structured routine and herbal support retrained my body's clock faster than I expected. I sleep on a normal schedule again now. The physician built the entire program around resetting my circadian rhythm, not just masking the symptoms. My family says I even seem like a calmer, more present person since coming back.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Menopause-Related Insomnia",
     title: "The Best Sleep I've Had In A Decade.",
     review:
-      "Menopause had wrecked my sleep for years. The Ayurvedic physician addressed it as a Vata imbalance rather than just a symptom to suppress. My sleep quality now is the best it has been in ten years.",
+      "Menopause had wrecked my sleep for years. The Ayurvedic physician addressed it as a Vata imbalance rather than just a symptom to suppress. My sleep quality now is the best it has been in ten years. She combined the sleep therapies with hormone-balancing herbs, which made a difference I genuinely didn't expect. I finally wake up feeling rested instead of counting down to my next nap.",
     rating: 5,
     verified: true,
   },

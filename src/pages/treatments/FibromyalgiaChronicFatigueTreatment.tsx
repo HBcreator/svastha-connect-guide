@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fibromyalgia",
     title: "My Widespread Pain Is Genuinely More Manageable Now.",
     review:
-      "I had lived with pain all over my body for six years. The daily Pizhichil oil bath eased my tenderness noticeably within the first week, and my energy has stayed more stable since finishing the program.",
+      "I had lived with pain all over my body for six years. The daily Pizhichil oil bath eased my tenderness noticeably within the first week, and my energy has stayed more stable since finishing the program. The warmth of the oil therapy reached places that years of physical therapy never touched. Some days are still harder than others, but the baseline pain has genuinely dropped.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Fatigue Syndrome",
     title: "I Have Real Energy Again, Not Just Caffeine.",
     review:
-      "Chronic fatigue had made basic daily tasks exhausting for years. The Ojas Rasayana herbs combined with Abhyanga rebuilt my energy gradually but consistently. I feel like myself again for the first time in years.",
+      "Chronic fatigue had made basic daily tasks exhausting for years. The Ojas Rasayana herbs combined with Abhyanga rebuilt my energy gradually but consistently. I feel like myself again for the first time in years. The physician never rushed the process, which I actually appreciated after being pushed too hard by previous treatments. I can now get through a full day without needing to lie down halfway through.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fibromyalgia with Sleep Disruption",
     title: "Better Sleep Finally Eased My Pain Too.",
     review:
-      "My pain and poor sleep fed into each other constantly. The calming therapies improved my sleep within days, and as my sleep improved, my pain sensitivity noticeably reduced as well.",
+      "My pain and poor sleep fed into each other constantly. The calming therapies improved my sleep within days, and as my sleep improved, my pain sensitivity noticeably reduced as well. Breaking that cycle was something years of separate sleep and pain treatments never managed to do. It's been a genuinely different quality of life since I started sleeping properly again.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Fatigue Syndrome",
     title: "The Root Cause Was Finally Addressed.",
     review:
-      "Years of tests never found a clear answer for my fatigue. The Ayurvedic approach addressed my depleted Ojas directly rather than just managing symptoms. My stamina has genuinely improved since the program.",
+      "Years of tests never found a clear answer for my fatigue. The Ayurvedic approach addressed my depleted Ojas directly rather than just managing symptoms. My stamina has genuinely improved since the program. Having a framework that finally made sense of my symptoms was almost as valuable as the treatment itself. I no longer plan my whole week around how tired I might feel.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Fibromyalgia",
     title: "I Can Do Daily Activities Without Dreading The Pain.",
     review:
-      "Simple tasks like grocery shopping used to leave me in pain for days. The full Panchakarma program has noticeably reduced my flare-ups, and I feel far more capable in my daily life now.",
+      "Simple tasks like grocery shopping used to leave me in pain for days. The full Panchakarma program has noticeably reduced my flare-ups, and I feel far more capable in my daily life now. The care team taught me to recognise early warning signs before a flare fully set in. Errands that used to require days of recovery now barely register as effort.",
     rating: 5,
     verified: true,
   },

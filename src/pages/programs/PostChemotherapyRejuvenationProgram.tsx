@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/gentle-hope-journey.jpg",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/chemo-benefit-1.png",
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/chemo-benefit-2.png",
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/chemo-benefit-3.png",
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/chemo-benefit-4.png",
+  "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/chemo-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A very gentle, low-pressure oil massage, carefully adapted to post-chemotherapy sensitivity, supports circulation and gentle comfort.", icon: Droplet },

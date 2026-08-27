@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-5.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/rehab-benefit-1.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/rehab-benefit-2.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/rehab-benefit-3.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/rehab-benefit-4.png",
+  "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/rehab-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Gentle Abhyanga", text: "A carefully adapted oil massage, avoiding the surgical site as needed, supports circulation and eases compensatory muscle tension.", icon: Droplet },

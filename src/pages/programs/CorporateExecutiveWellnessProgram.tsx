@@ -2,7 +2,7 @@ import PackagePageTemplate, {
   type PackageTherapy, type PackagePhase, type PackageBenefitGroup, type PackagePoint,
   type PackageWhyUsPoint, type PackageInclusionRow, type PackageFaq, type PackageCenter, type PackageReview,
 } from "@/components/PackagePageTemplate";
-import { comboLuxuryHeritage } from "@/data/centerCombos";
+import { comboRetreatYoga } from "@/data/centerCombos";
 import {
   Activity, Brain, CalendarCheck2, ClipboardCheck, Droplet, Globe2, Headset,
   HeartPulse, Leaf, Pill, ReceiptIndianRupee, Route, ShieldCheck, Sparkles,
@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-5.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corp-benefit-1.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corp-benefit-2.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corp-benefit-3.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corp-benefit-4.png",
+  "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/corp-benefit-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Abhyanga (Stress-Release Massage)", text: "A warm, rhythmic full-body massage releases the physical tension that accumulates from chronic desk-bound stress and long working hours.", icon: Droplet },
@@ -98,7 +104,7 @@ const faqItems: PackageFaq[] = [
   { question: "Do centers offer business-friendly amenities like private workspaces?", answer: "Some centers offer quiet, private spaces for occasional essential communication, though the program is designed to minimize work engagement for best results." },
 ];
 
-const topCenters: PackageCenter[] = comboLuxuryHeritage;
+const topCenters: PackageCenter[] = comboRetreatYoga;
 
 const reviews: PackageReview[] = [
   { name: "Frederik", location: "Copenhagen, Denmark", condition: "Executive Stress Reset", title: "I Returned To Work Actually Focused, Not Just Rested.", review: "As a CEO, I couldn't justify a month away. This 10-day format fit my schedule and genuinely reset my stress response, not just gave me a tan. My team noticed the difference in my first week back.", rating: 5, verified: true },

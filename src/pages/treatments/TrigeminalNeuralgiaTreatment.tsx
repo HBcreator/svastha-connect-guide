@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Trigeminal Neuralgia",
     title: "My Pain Episodes Are Far Less Frequent And Severe.",
     review:
-      "Sharp, unpredictable facial pain had disrupted my life for over three years. The daily Nasya and Shirodhara sessions noticeably reduced how often my episodes occurred, and their intensity when they did happen.",
+      "Sharp, unpredictable facial pain had disrupted my life for over three years. The daily Nasya and Shirodhara sessions noticeably reduced how often my episodes occurred, and their intensity when they did happen. Living with the constant fear of the next flare-up had worn me down more than the pain itself. Having long stretches now completely free of episodes feels like genuinely getting my life back.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Trigeminal Neuralgia with Jaw Tension",
     title: "The Facial Massage Addressed What Medication Alone Couldn't.",
     review:
-      "My neurologist's medication helped somewhat, but the underlying jaw and facial tension remained. The Mukha Abhyanga specifically addressed this, and my overall pain levels have genuinely reduced since.",
+      "My neurologist's medication helped somewhat, but the underlying jaw and facial tension remained. The Mukha Abhyanga specifically addressed this, and my overall pain levels have genuinely reduced since. The gentle facial massage reached tension my medication was never designed to touch. I've been able to reduce how often I need my rescue medication as a result.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Trigeminal Neuralgia",
     title: "This Complemented My Neurology Care Perfectly.",
     review:
-      "I approached this as complementary support alongside my neurologist's treatment plan, and coordinated closely with both teams throughout. My pain has been noticeably calmer since completing the full program.",
+      "I approached this as complementary support alongside my neurologist's treatment plan, and coordinated closely with both teams throughout. My pain has been noticeably calmer since completing the full program. Having both teams communicate directly removed a lot of the uncertainty I'd normally feel trying something new. My neurologist has since asked me to share exactly what the program involved.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Trigeminal Neuralgia",
     title: "I Can Eat And Speak Without Fear Of Triggering Pain.",
     review:
-      "Simple actions like chewing or speaking used to risk triggering sharp pain. After the full three-week program, my sensitivity to these everyday triggers has reduced significantly.",
+      "Simple actions like chewing or speaking used to risk triggering sharp pain. After the full three-week program, my sensitivity to these everyday triggers has reduced significantly. I had quietly changed how I ate and even how I spoke to avoid setting off an episode. Eating a normal meal without that constant caution feels like such a small thing that means everything.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Trigeminal Neuralgia",
     title: "The Comprehensive Program Gave Me Lasting Relief.",
     review:
-      "After years of unpredictable flare-ups, I wanted a deeper, more thorough approach. The full Panchakarma program has given me the most lasting relief I've experienced since my diagnosis.",
+      "After years of unpredictable flare-ups, I wanted a deeper, more thorough approach. The full Panchakarma program has given me the most lasting relief I've experienced since my diagnosis. I had tried several shorter treatments before that only ever gave temporary relief. This is genuinely the first time the improvement has lasted well beyond the program itself.",
     rating: 5,
     verified: true,
   },

@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Type 2 Diabetes",
     title: "My Blood Sugar Readings Are The Most Stable They've Been In Years.",
     review:
-      "I had struggled with fluctuating blood sugar for over five years despite medication. The dietary correction and Udwarthanam massage noticeably stabilized my readings within three weeks, alongside my existing treatment.",
+      "I had struggled with fluctuating blood sugar for over five years despite medication. The dietary correction and Udwarthanam massage noticeably stabilized my readings within three weeks, alongside my existing treatment. The physician coordinated everything with my regular doctor before making any changes to my routine. My readings have stayed consistently steadier even months after returning home.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Pre-Diabetes Management",
     title: "I Reversed My Pre-Diabetes Diagnosis With This Program.",
     review:
-      "My doctor had flagged pre-diabetic blood sugar levels. The metabolic reset program, combined with the dietary changes I learned, brought my levels back into a healthy range at my follow-up test.",
+      "My doctor had flagged pre-diabetic blood sugar levels. The metabolic reset program, combined with the dietary changes I learned, brought my levels back into a healthy range at my follow-up test. What stood out most was how practical the diet plan was, nothing felt impossible to sustain at home. My doctor was genuinely surprised at how much had changed in just one program.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Type 2 Diabetes with Weight Concerns",
     title: "My Weight And Blood Sugar Both Improved Together.",
     review:
-      "Managing my weight alongside diabetes had felt like an uphill battle. The comprehensive program addressed both together — I lost weight steadily and my blood sugar control improved noticeably over the month.",
+      "Managing my weight alongside diabetes had felt like an uphill battle. The comprehensive program addressed both together — I lost weight steadily and my blood sugar control improved noticeably over the month. Seeing both numbers move in the right direction at the same time was incredibly motivating. I've kept the weight off and my sugar levels stable for over four months now.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Type 2 Diabetes",
     title: "My Energy Crashes After Meals Are Finally Gone.",
     review:
-      "I used to feel exhausted after every meal due to my blood sugar spikes. The herbal formulations and dietary correction have made my energy far more stable throughout the day.",
+      "I used to feel exhausted after every meal due to my blood sugar spikes. The herbal formulations and dietary correction have made my energy far more stable throughout the day. Meals that used to be followed by an energy crash now barely affect me at all. My afternoons at work are far more productive than they used to be.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Type 2 Diabetes",
     title: "My Doctor Was Impressed With My Latest HbA1c Results.",
     review:
-      "I approached this program to complement my existing medical care, not replace it. My physician was genuinely impressed with my improved HbA1c results at my most recent check-up.",
+      "I approached this program to complement my existing medical care, not replace it. My physician was genuinely impressed with my improved HbA1c results at my most recent check-up. The Ayurvedic team welcomed that cautious approach and worked entirely within the boundaries I was comfortable with. It's reassuring to have measurable proof the program actually worked, not just how I feel.",
     rating: 5,
     verified: true,
   },

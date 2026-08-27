@@ -17,7 +17,7 @@ import {
 const patientReviews = [
   {
     name: "Werner Schindler", location: "Stuttgart, Germany", condition: "20-Year Chronic Ulcer",
-    title: "A Twenty-Year Non-Healing Ulcerâ€”Healed in 45 Days.",
+    title: "A Twenty-Year Non-Healing Ulcer—Healed in 45 Days.",
     review: "My varicose ulcer had been unresponsive to treatment for nearly twenty years. The Jalaukavacharana (leech therapy) sessions drained the impure, stagnant blood, reducing pain and inflammation within the first three sessions. Combined with internal detoxification, the ulcer showed complete healing by day forty-two.",
     rating: 5, verified: true
   },
@@ -29,7 +29,7 @@ const patientReviews = [
   },
   {
     name: "AmÃ©lie Dubois", location: "Nantes, France", condition: "Circulatory Recovery",
-    title: "They Addressed the Circulationâ€”Not Just the Surface.",
+    title: "They Addressed the Circulation—Not Just the Surface.",
     review: "In France, my ulcer was treated as a surface problem. The Ayurvedic physician treated it as a systemic circulatory disorder. The combination of Siravyadha (venesection), leech therapy, and Lepam herbal paste addressed the cause, not just the symptom. The ulcer healed completely by week six.",
     rating: 5, verified: true
   },
@@ -41,7 +41,7 @@ const patientReviews = [
   },
   {
     name: "SiobhÃ¡n Malone", location: "Galway, Ireland", condition: "Recurrent Ulcers",
-    title: "Healedâ€”With No Recurrence in Eighteen Months.",
+    title: "Healed—With No Recurrence in Eighteen Months.",
     review: "The most important outcome was not just healing, but the absence of recurrence. My ulcer had re-opened three times in two years under conventional care. The Ayurveda Package addressed the underlying venous obstruction through Raktamokshana. Eighteen months later, there has been no recurrence.",
     rating: 5, verified: true
   }
@@ -312,7 +312,7 @@ const VaricoseUlcer = () => {
                     In Ayurveda, varicose veins are known as <strong>Siraja Granthi</strong>. This condition is not just a cosmetic concern; it is a sign of deep-seated circulatory imbalances.
                   </p>
                   <p>
-                    Our approach in India focuses on the root causeâ€”purifying the blood (Rakta Shodhana), restoring the natural flow of energy, and healing the damaged vascular channels.
+                    Our approach in India focuses on the root cause—purifying the blood (Rakta Shodhana), restoring the natural flow of energy, and healing the damaged vascular channels.
                   </p>
                 </div>
               </div>

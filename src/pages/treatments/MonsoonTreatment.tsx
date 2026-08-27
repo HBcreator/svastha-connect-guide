@@ -11,9 +11,9 @@ import { Calendar, MapPin, Star, CheckCircle2, Activity, Brain, Sparkles, Drople
 const patientReviews = [
   { name: "Wolfram Becker", location: "Stuttgart, Germany", condition: "Monsoon Detox", title: "The World's Best-Kept Healing Secret.", review: "I had always associated the monsoon with travel disruption, not healing. The Karkidaka Chikitsa program in Kerala changed that completely. The physician explained how the cool, humid climate makes the body more receptive to the oil therapies. The daily medicated rice gruel (Karkidaka Kanji) and the Pizhichil warm oil bath systematically cleared an entire year's worth of accumulated toxins. I left feeling lighter, clearer, and with stronger immunity.", rating: 5, verified: true },
   { name: "Maeve Donoghue", location: "Limerick, Ireland", condition: "Preventive Healthcare", title: "A Complete Annual Reset for My Health.", review: "I traveled to Kerala specifically to experience the traditional Karkidaka Chikitsa. The 28-day treatment, following the ancient seasonal regimen, felt like the most logical and complete approach to preventive healthcare I have ever encountered. The sequential therapies, including Virechana and Vasthi, were performed in a precise order. My joint mobility, which had been declining, improved measurably by week three.", rating: 5, verified: true },
-  { name: "GeneviÃ¨ve Aumont", location: "Lyon, France", condition: "Seasonal Allergies", title: "My Seasonal Allergies Disappearedâ€”and Haven't Returned in Two Years.", review: "I had suffered from seasonal allergic rhinitis for a decade before undergoing Karkidaka Chikitsa. The monsoon treatment addressed my immune dysregulation at its root through Panchakarma and the daily immunity gruel. That winter, I experienced no allergic episode for the first time in ten years. The Vaidya explained that a successful monsoon cleanse can reset the immune response for subsequent seasons.", rating: 5, verified: true },
-  { name: "Rutger Van Hoeve", location: "Rotterdam, Netherlands", condition: "Rheumatoid Arthritis", title: "The Monsoon Rain Outside and the Healing Insideâ€”Both Profound.", review: "Arriving in Kerala during the height of the monsoon created an atmospheric dimension to the healing that I had not anticipated. The program for my rheumatoid arthritis combined Dhara oil stream therapy with an anti-inflammatory diet that eliminated the foods aggravating my Vata-Pitta imbalance. My morning joint stiffness, a daily reality for three years, was almost entirely absent by week four.", rating: 5, verified: true },
-  { name: "Ingrid HolmstrÃ¶m", location: "Stockholm, Sweden", condition: "Chronic Skin Inflammation", title: "Monsoon Is When Ayurveda Works at Its Deepest.", review: "Every wellness insider I spoke to said the same thingâ€”monsoon is when Ayurveda delivers its most profound results. The body's openness to treatment and the cool temperatures make the intensive therapies more comfortable. My 14-day Karkidaka Chikitsa program reset my digestion, cleared my chronic skin inflammation, and produced an energy and mental clarity that I returned to Stockholm carrying like a physical gift.", rating: 5, verified: true }
+  { name: "GeneviÃ¨ve Aumont", location: "Lyon, France", condition: "Seasonal Allergies", title: "My Seasonal Allergies Disappeared—and Haven't Returned in Two Years.", review: "I had suffered from seasonal allergic rhinitis for a decade before undergoing Karkidaka Chikitsa. The monsoon treatment addressed my immune dysregulation at its root through Panchakarma and the daily immunity gruel. That winter, I experienced no allergic episode for the first time in ten years. The Vaidya explained that a successful monsoon cleanse can reset the immune response for subsequent seasons.", rating: 5, verified: true },
+  { name: "Rutger Van Hoeve", location: "Rotterdam, Netherlands", condition: "Rheumatoid Arthritis", title: "The Monsoon Rain Outside and the Healing Inside—Both Profound.", review: "Arriving in Kerala during the height of the monsoon created an atmospheric dimension to the healing that I had not anticipated. The program for my rheumatoid arthritis combined Dhara oil stream therapy with an anti-inflammatory diet that eliminated the foods aggravating my Vata-Pitta imbalance. My morning joint stiffness, a daily reality for three years, was almost entirely absent by week four.", rating: 5, verified: true },
+  { name: "Ingrid HolmstrÃ¶m", location: "Stockholm, Sweden", condition: "Chronic Skin Inflammation", title: "Monsoon Is When Ayurveda Works at Its Deepest.", review: "Every wellness insider I spoke to said the same thing—monsoon is when Ayurveda delivers its most profound results. The body's openness to treatment and the cool temperatures make the intensive therapies more comfortable. My 14-day Karkidaka Chikitsa program reset my digestion, cleared my chronic skin inflammation, and produced an energy and mental clarity that I returned to Stockholm carrying like a physical gift.", rating: 5, verified: true }
 ];
 
 const topAyurvedicCenters = [
@@ -141,7 +141,7 @@ const topAyurvedicCenters = [
 
 const faqItems = [
   { question: "When is the best time for Karkidaka Chikitsa?", answer: "The ideal time is during Karkidakam, the Malayalam month corresponding to mid-July to mid-August. This is when the body's pores are most open, humidity is high, and Ayurveda treatments penetrate deepest into the tissues. However, monsoon treatments in Kerala are available from June through August." },
-  { question: "How long should a monsoon treatment program be?", answer: "A minimum of 14 days is recommended to experience meaningful benefits. The classical protocol is 21 days, which allows for all three phasesâ€”preparation, main therapies, and rejuvenationâ€”to be completed. For chronic conditions, a 28-day program is ideal." },
+  { question: "How long should a monsoon treatment program be?", answer: "A minimum of 14 days is recommended to experience meaningful benefits. The classical protocol is 21 days, which allows for all three phases—preparation, main therapies, and rejuvenation—to be completed. For chronic conditions, a 28-day program is ideal." },
   { question: "What is Karkidaka Kanji and why is it important?", answer: "Karkidaka Kanji is a special medicinal rice gruel prepared with Njavara rice and a combination of potent herbs. It is consumed daily during the program and is specifically designed to be easy to digest, kindle the digestive fire (Agni), boost immunity, and provide deep cellular nourishment during the cleanse." },
   { question: "Who should avoid monsoon Ayurveda treatment?", answer: "Pregnant women, individuals with acute fever or infections, and those who are extremely weak or debilitated should consult a physician before undergoing treatment. A thorough Ayurvedic consultation is always the first step to determine your suitability for specific therapies." },
   { question: "Why is monsoon the most effective time for Ayurveda treatment?", answer: "Ayurveda explains that during the monsoon, the body's channels (srotas) are naturally soft and open, the skin's pores are dilated, and Vata dosha is in a state of imbalance making it highly responsive to treatment. Herbal oils penetrate deeper into the tissues, and the cool, humid climate makes intensive oil therapies far more comfortable and effective than in other seasons." }
@@ -166,8 +166,8 @@ const mentalBenefits = [
 ];
 
 const whatToExpect = [
-  { title: "Personalised Panchakarma", icon: Droplet, text: "Abhyanga (oil massage), Pizhichil (warm oil bath), Kizhi (herbal poultices), and Shirodhara (forehead oil stream) â€” each tailored to your constitution." },
-  { title: "Karkidaka Kanji", icon: UtensilsCrossed, text: "A special medicinal rice gruel made with Njavara rice and potent herbs â€” easy to digest, it kindles Agni and provides deep nourishment." },
+  { title: "Personalised Panchakarma", icon: Droplet, text: "Abhyanga (oil massage), Pizhichil (warm oil bath), Kizhi (herbal poultices), and Shirodhara (forehead oil stream) — each tailored to your constitution." },
+  { title: "Karkidaka Kanji", icon: UtensilsCrossed, text: "A special medicinal rice gruel made with Njavara rice and potent herbs — easy to digest, it kindles Agni and provides deep nourishment." },
   { title: "Customised Pathya Diet", icon: Sparkles, text: "A warm, fresh, easy-to-digest Ayurvedic diet plan supports the detox process and ensures the right nourishment throughout the program." },
   { title: "Internal Herbal Rasayanas", icon: Pill, text: "Specific Ayurvedic herbal formulations prescribed by the physician support the rejuvenation process from within, at the cellular level." }
 ];
@@ -314,7 +314,7 @@ const MonsoonTreatment = () => {
         const text = line.replace(/^\*\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -324,7 +324,7 @@ const MonsoonTreatment = () => {
         const text = line.replace(/^-\s+/, "");
         elements.push(
           <li key={key++} className="text-base leading-relaxed ml-6 mb-2 flex items-start" style={{ color: '#7F543D' }}>
-            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>â€¢</span>
+            <span className="mr-2 font-bold" style={{ color: '#7F543D' }}>•</span>
             <span>{processInlineFormatting(text)}</span>
           </li>
         );
@@ -432,8 +432,8 @@ const MonsoonTreatment = () => {
             </div>
             <div className="space-y-6 text-center md:text-left">
               <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-bold text-[#335765] leading-tight">The Sacred Season for Healing</h2>
-              <p className="text-[#7F543D] leading-relaxed text-lg">In Kerala, the monsoon season (Karkidakam) is not just a change in weather â€” it is the most sacred and potent time for healing. <em>Karkidaka Chikitsa</em> is a time-honoured Ayurvedic rejuvenation program designed to detoxify, boost immunity, and restore vitality.</p>
-              <p className="text-[#7F543D] leading-relaxed text-lg">During the monsoon, the body's channels (<em>srotas</em>) are soft and open. The skin's pores are receptive, allowing herbal oils to penetrate deeper into tissues â€” making detoxification <strong>exceptionally effective</strong> compared to any other time of year.</p>
+              <p className="text-[#7F543D] leading-relaxed text-lg">In Kerala, the monsoon season (Karkidakam) is not just a change in weather — it is the most sacred and potent time for healing. <em>Karkidaka Chikitsa</em> is a time-honoured Ayurvedic rejuvenation program designed to detoxify, boost immunity, and restore vitality.</p>
+              <p className="text-[#7F543D] leading-relaxed text-lg">During the monsoon, the body's channels (<em>srotas</em>) are soft and open. The skin's pores are receptive, allowing herbal oils to penetrate deeper into tissues — making detoxification <strong>exceptionally effective</strong> compared to any other time of year.</p>
               <div className="pt-2">
                 <Button onClick={() => setQuoteModalOpen(true)} className="h-11 md:h-12 bg-[#335765] hover:bg-[#2F5B5D] text-white font-bold text-base md:text-lg rounded-xl shadow-lg px-8 transition-all">
                   Start Your Healing Journey
@@ -447,7 +447,7 @@ const MonsoonTreatment = () => {
         <section id="benefits" className="scroll-mt-24">
           <div className="text-center mb-10 max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-[#335765] mb-4">Benefits of Karkidaka Chikitsa</h2>
-            <p className="text-[#7F543D] text-lg">A complete reset for body, mind, and spirit â€” uniquely amplified by the monsoon season's healing energy.</p>
+            <p className="text-[#7F543D] text-lg">A complete reset for body, mind, and spirit — uniquely amplified by the monsoon season's healing energy.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-[#F8F4E7] rounded-2xl p-6 md:p-8 shadow-sm border border-[#d8d0ae]">

@@ -17,7 +17,13 @@ const galleryImages = [
   "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-couple.png",
 ];
 
-const benefitsSectionImages = galleryImages;
+const benefitsSectionImages = [
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/generated-mens-vitality-1.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/generated-mens-vitality-2.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/generated-mens-vitality-3.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/generated-mens-vitality-4.png",
+  "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/generated-mens-vitality-5.png",
+];
 
 const therapies: PackageTherapy[] = [
   { title: "Vajikarana Herbs (Vitality Formulations)", text: "A classical regimen of Ashwagandha, Kapikacchu, and Gokshura traditionally used to support stamina, reproductive health, and overall vitality.", icon: Leaf },

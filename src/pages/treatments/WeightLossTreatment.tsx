@@ -113,13 +113,13 @@ const patientReviews = [
   },
   {
     name: "Britta Svensson", location: "MalmÃ¶, Sweden", condition: "Cravings & Weight Gain",
-    title: "The Ayurvedic Diet Reset My Cravings â€” No Willpower Required.",
+    title: "The Ayurvedic Diet Reset My Cravings — No Willpower Required.",
     review: "What surprised me most was that this treatment addressed my food cravings directly. Within ten days of beginning the Kapha-reducing diet and herbal formulations, my desire for processed food diminished effortlessly. I lost nine kilograms in twenty-one days.",
     rating: 5, verified: true
   },
   {
     name: "Ludo Van Pelt", location: "Antwerp, Belgium", condition: "Visceral Fat & High Cholesterol",
-    title: "Visceral Fat, High Cholesterol, and Low Energy â€” All Three Transformed.",
+    title: "Visceral Fat, High Cholesterol, and Low Energy — All Three Transformed.",
     review: "My physician was managing my visceral fat and high cholesterol with separate medications. Ayurveda treated all as a Kapha-Ama imbalance. The detox sequence produced a fourteen-kilogram reduction over eight weeks. My cholesterol levels are the best in five years.",
     rating: 5, verified: true
   }

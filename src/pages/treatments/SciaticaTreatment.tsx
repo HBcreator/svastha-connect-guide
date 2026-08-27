@@ -16,7 +16,7 @@ import {
 const patientReviews = [
   {
     name: "James Hartley", location: "Manchester, UK", condition: "Chronic Sciatica",
-    title: "Three Years of Sciatica Pain â€” Gone in 21 Days.",
+    title: "Three Years of Sciatica Pain — Gone in 21 Days.",
     review: "My NHS consultant had tried everything, but nothing provided lasting relief for my sciatica. The Gridhrasi Chikitsa protocol in India, which combined Kati Basti with Panchakarma detox, addressed the root Vata imbalance completely. My follow-up showed nerve conduction improvements that were better than expected.",
     rating: 5, verified: true
   },
@@ -308,7 +308,7 @@ const SciaticaTreatment = () => {
                     Sciatica, known as <strong>Gridhrasi</strong> in Ayurveda, is a debilitating condition where sharp, shooting pain radiates from the lower back down to the leg. The name comes from "Gridhra" (vulture), reflecting the characteristic gait of the patient.
                   </p>
                   <p>
-                    While conventional medicine often focuses on managing the symptoms, Ayurveda seeks to address the <strong>root cause</strong>â€”the deep-seated imbalance of Vata that constricts the nerve pathways.
+                    While conventional medicine often focuses on managing the symptoms, Ayurveda seeks to address the <strong>root cause</strong>—the deep-seated imbalance of Vata that constricts the nerve pathways.
                   </p>
                 </div>
               </div>

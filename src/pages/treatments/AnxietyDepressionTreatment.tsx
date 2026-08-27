@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Generalized Anxiety",
     title: "My Racing Mind Finally Went Quiet.",
     review:
-      "I had lived with constant background anxiety for years. The daily Shirodhara sessions were transformative — by the second week my mind felt calm for the first time in a long time, not just distracted.",
+      "I had lived with constant background anxiety for years. The daily Shirodhara sessions were transformative — by the second week my mind felt calm for the first time in a long time, not just distracted. The Vaidya also taught me breathing techniques I could use whenever anxious thoughts crept back in. Three months later, that background hum of anxiety simply isn't there anymore.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Depressive Low Mood",
     title: "I Felt Genuinely Lighter, Not Just Numb.",
     review:
-      "Antidepressants had numbed me without really helping. The Ayurvedic approach addressed the heaviness directly through Abhyanga and Medhya herbs. I felt genuinely lighter and more present, not sedated.",
+      "Antidepressants had numbed me without really helping. The Ayurvedic approach addressed the heaviness directly through Abhyanga and Medhya herbs. I felt genuinely lighter and more present, not sedated. My physician worked closely with me to taper my medication safely alongside the herbal program. For the first time in years I feel like myself again, not just a duller version of myself.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Work-Related Anxiety",
     title: "The Counseling Sessions Made The Real Difference.",
     review:
-      "The daily Satvavajaya sessions with my Vaidya gave me tools I still use today. Combined with the calming therapies, my constant work anxiety became genuinely manageable within three weeks.",
+      "The daily Satvavajaya sessions with my Vaidya gave me tools I still use today. Combined with the calming therapies, my constant work anxiety became genuinely manageable within three weeks. She never made me feel judged for struggling, which made it much easier to open up honestly. I've since recommended the program to two colleagues who were dealing with the same thing.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Low Mood",
     title: "The Root Cause Was Finally Addressed.",
     review:
-      "Years of therapy had helped me cope but never really lift the fog. The Panchakarma program addressed my Kapha-linked low mood directly. My energy and outlook have genuinely shifted since.",
+      "Years of therapy had helped me cope but never really lift the fog. The Panchakarma program addressed my Kapha-linked low mood directly. My energy and outlook have genuinely shifted since. The detox phase was intense, but the team supported me closely through every stage of it. Friends have actually commented that I seem like a different, brighter person now.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Anxiety and Sleep Disruption",
     title: "Calmer Days And Finally, Restful Nights.",
     review:
-      "My anxiety was worst at night, keeping me awake for hours. The combination of Nasya and nervine herbs calmed my evenings completely. I now sleep peacefully and feel steadier through the day too.",
+      "My anxiety was worst at night, keeping me awake for hours. The combination of Nasya and nervine herbs calmed my evenings completely. I now sleep peacefully and feel steadier through the day too. The physician also helped me identify small daily habits that were quietly feeding my anxiety. Evenings that used to fill me with dread now feel like the calmest part of my day.",
     rating: 5,
     verified: true,
   },

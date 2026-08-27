@@ -66,7 +66,7 @@ const reviews: TreatmentReview[] = [
     condition: "Recurring Hamstring Injury",
     title: "My Recovery Was Faster Than My Physio Expected.",
     review:
-      "A recurring hamstring injury had sidelined me for months. The daily Elakizhi poultice massage combined with my physiotherapy accelerated my recovery noticeably — my physio was genuinely surprised at my progress.",
+      "A recurring hamstring injury had sidelined me for months. The daily Elakizhi poultice massage combined with my physiotherapy accelerated my recovery noticeably — my physio was genuinely surprised at my progress. The herbal warmth clearly reached tissue depths my regular sports massages never quite managed. I'm back training at full intensity with no recurrence months later.",
     rating: 5,
     verified: true,
   },
@@ -76,7 +76,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Knee Ligament Strain",
     title: "My Knee Finally Feels Stable Again.",
     review:
-      "A chronic ligament strain had left my knee unstable for over a year. The targeted Abhyanga and Basti protocol addressed the underlying stiffness that standard physiotherapy alone hadn't fully resolved.",
+      "A chronic ligament strain had left my knee unstable for over a year. The targeted Abhyanga and Basti protocol addressed the underlying stiffness that standard physiotherapy alone hadn't fully resolved. The physicians worked closely with the physio notes I brought with me, building on what had already partly worked. My knee finally feels stable enough that I trust it again during quick direction changes.",
     rating: 5,
     verified: true,
   },
@@ -86,7 +86,7 @@ const reviews: TreatmentReview[] = [
     condition: "Shoulder Injury Recovery",
     title: "I Returned To Training Weeks Ahead Of Schedule.",
     review:
-      "My shoulder injury recovery had stalled with conventional treatment alone. The tissue-nourishing herbs and targeted therapies gave my recovery a genuine push, and I was back in training well ahead of my original timeline.",
+      "My shoulder injury recovery had stalled with conventional treatment alone. The tissue-nourishing herbs and targeted therapies gave my recovery a genuine push, and I was back in training well ahead of my original timeline. My physiotherapist back home was surprised at how much range of motion I'd regained since we last spoke. Breaking through that stall point felt like getting my competitive season back.",
     rating: 5,
     verified: true,
   },
@@ -96,7 +96,7 @@ const reviews: TreatmentReview[] = [
     condition: "Post-Surgery Sports Rehabilitation",
     title: "This Complemented My Physiotherapy Perfectly.",
     review:
-      "Following knee surgery, my surgeon recommended I focus on gentle, structured rehabilitation. This program integrated well alongside my physiotherapy, and my mobility improved steadily throughout.",
+      "Following knee surgery, my surgeon recommended I focus on gentle, structured rehabilitation. This program integrated well alongside my physiotherapy, and my mobility improved steadily throughout. The team was careful never to push beyond what my surgeon had approved for this stage of recovery. Each week brought a noticeable improvement I could actually feel and measure.",
     rating: 5,
     verified: true,
   },
@@ -106,7 +106,7 @@ const reviews: TreatmentReview[] = [
     condition: "Chronic Lower Back Strain from Athletics",
     title: "My Lower Back Pain From Training Is Finally Under Control.",
     review:
-      "Years of athletics had left my lower back chronically strained. The combination of Basti and targeted massage addressed the deeper Vata imbalance, and my training has been far more comfortable since.",
+      "Years of athletics had left my lower back chronically strained. The combination of Basti and targeted massage addressed the deeper Vata imbalance, and my training has been far more comfortable since. What surprised me most was how the physicians treated the strain as a whole-body imbalance rather than just a local injury. I'm now training pain-free for the first time in several seasons.",
     rating: 5,
     verified: true,
   },
