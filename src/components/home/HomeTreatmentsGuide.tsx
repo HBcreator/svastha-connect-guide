@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Search, ArrowRight, HeartPulse, Sparkles, Filter, CircleCheck } from "lucide-react";
 import { Input } from "@/components/ui/input";
+
+// Mobile view shows only this many result cards, with a "View All Treatments" button below
+const MOBILE_RESULTS_LIMIT = 6;
 
 const treatmentConditions = [
   { name: "Alopecia & Hair Loss", path: "/ayurveda-treatments/alopecia-treatment-in-india", category: "Dermatological" },
@@ -27,6 +30,20 @@ const treatmentConditions = [
   { name: "Ulcerative Colitis Care", path: "/ayurveda-treatments/ulcerative-colitis-treatment-in-india", category: "Gastrointestinal" },
   { name: "Varicose Ulcers & Vein Health", path: "/ayurveda-treatments/varicose-ulcer-treatment-in-india", category: "Cardiovascular" },
   { name: "Clinical Weight Loss Therapy", path: "/ayurveda-treatments/weight-loss-treatment-in-india", category: "Metabolic" },
+  { name: "Asthma & Respiratory Care", path: "/ayurveda-treatments/asthma-treatment-in-india", category: "Respiratory" },
+  { name: "Insomnia & Sleep Disorders", path: "/ayurveda-treatments/insomnia-treatment-in-india", category: "Psychological" },
+  { name: "Anxiety & Depression", path: "/ayurveda-treatments/anxiety-and-depression-treatment-in-india", category: "Psychological" },
+  { name: "Multiple Sclerosis Support", path: "/ayurveda-treatments/multiple-sclerosis-treatment-in-india", category: "Neurological" },
+  { name: "PCOS & Hormonal Balance", path: "/ayurveda-treatments/pcos-treatment-in-india", category: "Gynaecological" },
+  { name: "Fibromyalgia & Chronic Fatigue", path: "/ayurveda-treatments/fibromyalgia-chronic-fatigue-treatment-in-india", category: "Musculoskeletal" },
+  { name: "Diabetes Management", path: "/ayurveda-treatments/diabetes-treatment-in-india", category: "Metabolic" },
+  { name: "Autoimmune Disease Care", path: "/ayurveda-treatments/autoimmune-disease-treatment-in-india", category: "Holistic" },
+  { name: "Heart Health & Hypertension", path: "/ayurveda-treatments/heart-health-hypertension-treatment-in-india", category: "Cardiovascular" },
+  { name: "Sports Injury Recovery", path: "/ayurveda-treatments/sports-injury-recovery-treatment-in-india", category: "Musculoskeletal" },
+  { name: "Peripheral Neuropathy Care", path: "/ayurveda-treatments/peripheral-neuropathy-treatment-in-india", category: "Neurological" },
+  { name: "Vertigo & Balance Disorders", path: "/ayurveda-treatments/vertigo-treatment-in-india", category: "Neurological" },
+  { name: "Trigeminal Neuralgia Relief", path: "/ayurveda-treatments/trigeminal-neuralgia-treatment-in-india", category: "Neurological" },
+  { name: "Fatty Liver & Liver Detox", path: "/ayurveda-treatments/fatty-liver-treatment-in-india", category: "Metabolic" },
 ];
 
 // Unique extracted categories
@@ -36,20 +53,32 @@ export default function HomeTreatmentsGuide() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Track mobile viewport (below Tailwind's sm breakpoint, 640px) to trim result cards
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 640);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
   // Filter evaluation
   const filteredConditions = treatmentConditions.filter((item) => {
-    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           item.category.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
+  // Mobile only shows the first 5 results — "View All Treatments" button covers the rest
+  const visibleConditions = isMobile ? filteredConditions.slice(0, MOBILE_RESULTS_LIMIT) : filteredConditions;
+
   return (
-    <section className="pt-4 pb-4 relative">
+    <section className="pt-2 pb-4 sm:pt-4 relative">
       <div className="container mx-auto px-4 max-w-6xl">
         
         {/* Header Block - Centered Layout */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-3">
             Top Ayurveda treatments by My Vaidyam in India
           </h2>
@@ -78,8 +107,8 @@ export default function HomeTreatmentsGuide() {
           </div>
         </div>
 
-        {/* Dynamic Category Pill Filters */}
-        <div className="mb-10 w-full overflow-hidden">
+        {/* Dynamic Category Filters */}
+        <div className="mb-5 sm:mb-10 w-full overflow-hidden">
           {/* Centered Filter Label at top */}
           <div className="flex justify-center mb-3">
             <span className="text-[11px] sm:text-xs font-bold text-primary/60 flex items-center gap-1.5 uppercase tracking-wider">
@@ -87,8 +116,21 @@ export default function HomeTreatmentsGuide() {
             </span>
           </div>
 
-          {/* Two-Row Horizontal Scroll Container */}
-          <div className="grid grid-rows-2 grid-flow-col gap-2 overflow-x-auto pb-4 px-4 no-scrollbar scroll-smooth">
+          {/* Mobile: compact single dropdown — no horizontal scrolling needed */}
+          <div className="sm:hidden px-4">
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl text-sm font-bold text-primary bg-white border border-primary/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Desktop: Two-Row Horizontal Scroll Container */}
+          <div className="hidden sm:grid grid-rows-2 grid-flow-col gap-2 overflow-x-auto pb-4 px-4 no-scrollbar scroll-smooth">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
@@ -130,14 +172,14 @@ export default function HomeTreatmentsGuide() {
             </button>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-            {filteredConditions.map((cond) => (
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
+            {visibleConditions.map((cond) => (
               <Link
                 key={cond.name}
                 to={cond.path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-xl border border-primary/15 bg-white hover:bg-primary hover:border-primary transition-all duration-300 flex items-center justify-between gap-3 group shadow-xs hover:shadow-xl hover:-translate-y-0.5"
+                className="p-2.5 sm:p-4 rounded-xl border border-primary/15 bg-white hover:bg-primary hover:border-primary transition-all duration-300 flex items-center justify-between gap-1.5 sm:gap-3 group shadow-xs hover:shadow-xl hover:-translate-y-0.5"
               >
                 <div className="min-w-0 flex-1">
                   <span className="text-[10px] font-bold text-[#7F543D] uppercase block tracking-wider mb-0.5 group-hover:text-white/70 transition-colors">
@@ -148,13 +190,21 @@ export default function HomeTreatmentsGuide() {
                   </h4>
                 </div>
 
-                <div className="h-8 w-8 rounded-lg bg-primary/5 group-hover:bg-white/20 group-hover:text-white text-primary flex items-center justify-center transition-all flex-shrink-0 border border-primary/10 group-hover:border-white/30">
-                  <ArrowRight className="h-4 w-4" />
+                <div className="h-6 w-6 sm:h-8 sm:w-8 rounded-lg bg-primary/5 group-hover:bg-white/20 group-hover:text-white text-primary flex items-center justify-center transition-all flex-shrink-0 border border-primary/10 group-hover:border-white/30">
+                  <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                 </div>
               </Link>
             ))}
           </div>
         )}
+
+        {/* Mobile-only: link straight to the full treatments directory */}
+        <Link
+          to="/ayurveda-treatments"
+          className="sm:hidden mt-6 w-full bg-primary text-white font-bold rounded-xl py-3.5 flex items-center justify-center gap-2 shadow-md"
+        >
+          View All Treatments <ArrowRight className="h-4 w-4" />
+        </Link>
 
         {/* Important Notice Section - Synced with Sciatica Page Style */}
         <div className="mt-12 rounded-xl border border-[#88a7ad] border-l-4 border-l-primary bg-[#E7F0F1] px-5 py-4 shadow-sm">

@@ -1,7 +1,7 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Activity, Stethoscope, MapPin, ChevronRight, Search, X } from "lucide-react";
+import { Activity, Stethoscope, MapPin, ChevronRight, Search, X, ArrowRight } from "lucide-react";
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
 
@@ -120,6 +120,9 @@ function TabSearchBar({ value, onChange, placeholder, hint }: SearchBarProps) {
 
 // ── MAIN COMPONENT ────────────────────────────────────────────────────────────
 
+// Mobile view shows only this many cards per tab, with a "View All" button below
+const MOBILE_CARD_LIMIT = 4;
+
 export default function MedicalFinder() {
   const [activeTab, setActiveTab] = useState<"conditions" | "therapies" | "regions">("conditions");
   const [condSearch, setCondSearch] = useState("");
@@ -127,10 +130,28 @@ export default function MedicalFinder() {
   const [regionSearch, setRegionSearch] = useState("");
   const navigate = useNavigate();
 
+  // Track mobile viewport (below Tailwind's sm breakpoint, 640px) to trim card lists
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth < 640);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
   // Smart-sorted lists (always full length, relevance order)
   const sortedConditions = useMemo(() => smartSort(conditionsList, condSearch), [condSearch]);
   const sortedTherapies  = useMemo(() => smartSort(therapiesList,  therapySearch), [therapySearch]);
   const sortedRegions    = useMemo(() => smartSort(regionsList,    regionSearch), [regionSearch]);
+
+  // On mobile, trim each list to the card limit unless the visitor is actively searching
+  const visibleConditions = isMobile && !condSearch.trim() ? sortedConditions.slice(0, MOBILE_CARD_LIMIT) : sortedConditions;
+  const visibleTherapies  = isMobile && !therapySearch.trim() ? sortedTherapies.slice(0, MOBILE_CARD_LIMIT) : sortedTherapies;
+  const visibleRegions    = isMobile && !regionSearch.trim() ? sortedRegions.slice(0, MOBILE_CARD_LIMIT) : sortedRegions;
+
+  const showCondViewAll   = isMobile && !condSearch.trim() && sortedConditions.length > MOBILE_CARD_LIMIT;
+  const showTherapyViewAll= isMobile && !therapySearch.trim() && sortedTherapies.length > MOBILE_CARD_LIMIT;
+  const showRegionViewAll = isMobile && !regionSearch.trim() && sortedRegions.length > MOBILE_CARD_LIMIT;
 
   // Whether any item has a meaningful match score
   const hasCondMatch   = condSearch.trim()   ? scoreItem(sortedConditions[0],  condSearch)   > 0 : true;
@@ -197,9 +218,9 @@ export default function MedicalFinder() {
                 </p>
               )}
 
-              {/* 4 col × 3 row grid — ALWAYS all 12 cards */}
+              {/* 4 col × 3 row grid on desktop — mobile shows first 4, rest via "View All" */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                {sortedConditions.map((item, idx) => {
+                {visibleConditions.map((item, idx) => {
                   const score = scoreItem(item, condSearch);
                   const isHighlighted = condSearch.trim() && score > 0 && idx < 4;
                   return (
@@ -256,7 +277,16 @@ export default function MedicalFinder() {
                 })}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
+              {showCondViewAll && (
+                <Button
+                  onClick={() => navigate("/ayurveda-treatments")}
+                  className="w-full mt-4 sm:hidden bg-primary text-white font-bold rounded-xl py-6 flex items-center justify-center gap-2"
+                >
+                  View All Conditions <ArrowRight className="h-4 w-4" />
+                </Button>
+              )}
+
+              <div className="mt-6 pt-4 border-t border-primary/5 hidden sm:flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Don't see your specific medical condition listed?</span>
                 <Button onClick={() => window.open("/ayurveda-treatments", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View All 23+ Clinical Conditions Guide →
@@ -283,8 +313,8 @@ export default function MedicalFinder() {
                 </p>
               )}
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sortedTherapies.map((item, idx) => {
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                {visibleTherapies.map((item, idx) => {
                   const score = scoreItem(item, therapySearch);
                   const isHighlighted = therapySearch.trim() && score > 0 && idx === 0;
                   return (
@@ -328,7 +358,16 @@ export default function MedicalFinder() {
                 })}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
+              {showTherapyViewAll && (
+                <Button
+                  onClick={() => navigate("/ayurvedic-healing")}
+                  className="w-full mt-4 sm:hidden bg-primary text-white font-bold rounded-xl py-6 flex items-center justify-center gap-2"
+                >
+                  View All Therapies <ArrowRight className="h-4 w-4" />
+                </Button>
+              )}
+
+              <div className="mt-6 pt-4 border-t border-primary/5 hidden sm:flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Looking for specific treatment applications?</span>
                 <Button onClick={() => window.open("/ayurvedic-healing", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   View Complete Range of Ayurvedic Modalities →
@@ -355,8 +394,8 @@ export default function MedicalFinder() {
                 </p>
               )}
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sortedRegions.map((item, idx) => {
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                {visibleRegions.map((item, idx) => {
                   const score = scoreItem(item, regionSearch);
                   const isHighlighted = regionSearch.trim() && score > 0 && idx === 0;
                   return (
@@ -403,7 +442,16 @@ export default function MedicalFinder() {
                 })}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-primary/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
+              {showRegionViewAll && (
+                <Button
+                  onClick={() => navigate("/top-ayurvedic-centers-in-india")}
+                  className="w-full mt-4 sm:hidden bg-primary text-white font-bold rounded-xl py-6 flex items-center justify-center gap-2"
+                >
+                  View All Regions <ArrowRight className="h-4 w-4" />
+                </Button>
+              )}
+
+              <div className="mt-6 pt-4 border-t border-primary/5 hidden sm:flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-primary/80">
                 <span>Want to view all authenticated centers simultaneously?</span>
                 <Button onClick={() => window.open("/top-ayurvedic-centers-in-india", "_blank")} variant="link" className="p-0 h-auto font-bold text-primary hover:text-primary/80 underline">
                   Browse All India Top Centers Directory →

@@ -314,7 +314,7 @@ const GoaCenters = () => {
               <ChevronRight className="h-3 w-3 text-primary/20" />
             </li>
             <li className="text-primary/90 font-black truncate">
-              Top 10 Ayurvedic Centers in Goa
+              Top 15 Ayurvedic Centers in Goa
             </li>
           </ol>
         </div>

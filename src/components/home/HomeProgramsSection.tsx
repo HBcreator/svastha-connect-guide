@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles, Droplet, Activity, ShieldPlus, Smile, Compass, Star } from "lucide-react";
+import { Sparkles, Droplet, Activity, ShieldPlus, Smile, Compass, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import QuoteModal from "@/components/QuoteModal";
 
@@ -147,6 +147,51 @@ const programCategories = {
         reviews: 155,
         tags: ["14 Days", "Immunity Boost", "Detox", "Preventive Health"]
       },
+      {
+        name: "Complete Body Rejuvenation Program in India",
+        description: "A comprehensive Rasayana-based rejuvenation program combining full-body Panchakarma detox, herbal nourishment, and restorative yoga to renew tissue health, skin vitality, and long-term stamina.",
+        image: "/Ayurvedic Programs/Images/Complete-Body-Rejuvenation-Program-India/cbr-hero-new.png",
+        link: "/ayurveda-packages/complete-body-rejuvenation-program-in-india",
+        rating: 4.8,
+        reviews: 210,
+        tags: ["14-21 Days", "Full Rejuvenation", "Rasayana", "Panchakarma"]
+      },
+      {
+        name: "Corporate Executive Wellness Program in India",
+        description: "A results-driven program for high-performing executives, combining Shirodhara stress-reset, Nadi Pariksha health screening, and Pranayama resilience training to rebuild focus, energy, and long-term work-life balance.",
+        image: "/Ayurvedic Programs/Images/Corporate-Executive-Wellness-Program-India/generated-executive-1.png",
+        link: "/ayurveda-packages/corporate-executive-wellness-program-in-india",
+        rating: 4.8,
+        reviews: 175,
+        tags: ["7-14 Days", "Executive Health", "Stress Resilience", "Nadi Pariksha"]
+      },
+      {
+        name: "Senior Citizens Rejuvenation Program in India",
+        description: "A gentle, age-appropriate wellness program combining softened Abhyanga, joint-friendly Basti, and memory-supportive Rasayana herbs to improve mobility, sleep, and mental clarity for a more active, independent life.",
+        image: "/Ayurvedic Programs/Images/Senior-Citizens-Rejuvenation-Program-India/senior-hero-new.png",
+        link: "/ayurveda-packages/senior-citizens-rejuvenation-program-in-india",
+        rating: 4.9,
+        reviews: 190,
+        tags: ["14-21 Days", "Gentle Care", "Joint Mobility", "Memory Support"]
+      },
+      {
+        name: "Women's Menopause Wellness Package in India",
+        description: "A hormone-balancing program built around Shatavari herbs, calming Shirodhara, and Vata-correcting Basti to ease hot flashes, mood swings, and sleep disruption during the menopausal transition.",
+        image: "/Ayurvedic Programs/Images/Womens-Menopause-Wellness-Package-India/menopause-hero-new.png",
+        link: "/ayurveda-packages/womens-menopause-wellness-package-in-india",
+        rating: 4.8,
+        reviews: 200,
+        tags: ["14-21 Days", "Hormonal Balance", "Shatavari", "Mood & Sleep"]
+      },
+      {
+        name: "Men's Fertility, Vitality & Wellness Program in India",
+        description: "A Vajikarana-based vitality program combining Ashwagandha and Kapikacchu herbal formulations, strength-building Abhyanga, and stress-resilience therapies to support stamina, reproductive health, and overall vitality.",
+        image: "/Ayurvedic Programs/Images/Mens-Fertility-Vitality-Wellness-Program-India/mens-fertility-hero-new.png",
+        link: "/ayurveda-packages/mens-fertility-vitality-wellness-program-in-india",
+        rating: 4.8,
+        reviews: 155,
+        tags: ["14-21 Days", "Vajikarana", "Stamina & Vitality", "Reproductive Health"]
+      },
     ],
     landingPath: "/ayurveda-packages/lifestyle-wellness",
   },
@@ -210,21 +255,71 @@ const programCategories = {
         reviews: 142,
         tags: ["14–21 Days", "Digital Detox", "Mindfulness", "Nervous System Recovery"]
       },
+      {
+        name: "Luxury Ayurveda Retreat Program in India",
+        description: "A 14-day/13-night five-star Ayurveda retreat combining heritage Kerala and Rajasthan wellness properties with classical Panchakarma, daily yoga, and personalized Vaidya care for a truly immersive luxury healing journey.",
+        image: "/Ayurvedic Programs/Images/Luxury-Ayurveda-Retreat-Program-India/luxury-hero-new.png",
+        link: "/ayurveda-packages/luxury-ayurveda-retreat-program-in-india",
+        rating: 4.9,
+        reviews: 165,
+        tags: ["14 Days", "Luxury Wellness", "Five-Star Retreat", "Panchakarma"]
+      },
     ],
     landingPath: "/ayurveda-packages/integrated-retreat",
+  },
+  recoveryRehabilitation: {
+    title: "Recovery & Rehabilitation Packages",
+    tabLabel: "Recovery & Rehabilitation",
+    desc: "Specialized supportive-care programs for post-surgery rehabilitation, post-chemotherapy recovery, and cancer recovery support, designed alongside your existing medical care.",
+    icon: ShieldPlus,
+    programs: [
+      {
+        name: "Post-Chemotherapy Rejuvenation Program in India",
+        description: "A gentle, physician-guided recovery program using Rasayana herbs, mild detoxification, and nourishing therapies to rebuild strength, appetite, and vitality after chemotherapy, in coordination with your existing oncology care.",
+        image: "/Ayurvedic Programs/Images/Post-Chemotherapy-Rejuvenation-Program-India/post-chemo-hero.jpg",
+        link: "/ayurveda-packages/post-chemotherapy-rejuvenation-program-in-india",
+        rating: 4.8,
+        reviews: 120,
+        tags: ["14-28 Days", "Gentle Recovery", "Ojas Rasayana", "Supportive Care"]
+      },
+      {
+        name: "Cancer Recovery Support Program in India",
+        description: "A supportive, symptom-easing Ayurvedic program focused on rebuilding Ojas, easing treatment-related fatigue, and restoring emotional steadiness, designed to complement your ongoing oncology treatment, not replace it.",
+        image: "/Ayurvedic Programs/Images/Cancer-Recovery-Support-Program-India/cancer-recovery-hero.jpg",
+        link: "/ayurveda-packages/cancer-recovery-support-program-in-india",
+        rating: 4.8,
+        reviews: 105,
+        tags: ["14-28 Days", "Supportive Care", "Ojas Building", "Family Support"]
+      },
+      {
+        name: "Post-Surgery Rehabilitation Program in India",
+        description: "A physiotherapy-integrated Ayurvedic rehabilitation program combining Elakizhi herbal poultices, guided mobility therapy, and tissue-nourishing Rasayana herbs to support a safe, steady return to strength after surgery.",
+        image: "/Ayurvedic Programs/Images/Post-Surgery-Rehabilitation-Program-India/generated-rehab-1.png",
+        link: "/ayurveda-packages/post-surgery-rehabilitation-program-in-india",
+        rating: 4.8,
+        reviews: 140,
+        tags: ["14-28 Days", "Mobility Rebuilding", "Physiotherapy-Integrated", "Elakizhi"]
+      },
+    ],
+    landingPath: "/ayurveda-packages/recovery-and-rehabilitation",
   },
 };
 
 export default function HomeProgramsSection() {
   const [selectedCategory, setSelectedCategory] = useState<keyof typeof programCategories>("diseaseSpecific");
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [mobileCardIndex, setMobileCardIndex] = useState(0);
 
   const handleCategoryChange = (key: keyof typeof programCategories) => {
     setSelectedCategory(key);
+    setMobileCardIndex(0);
   };
 
   const currentCategoryData = programCategories[selectedCategory];
   const programs = currentCategoryData.programs;
+
+  const goMobilePrevious = () => setMobileCardIndex((prev) => (prev - 1 + programs.length) % programs.length);
+  const goMobileNext = () => setMobileCardIndex((prev) => (prev + 1) % programs.length);
 
   return (
     <section className="pt-4 pb-4 relative">
@@ -245,7 +340,7 @@ export default function HomeProgramsSection() {
         </div>
 
         {/* Dynamic Category Switcher Tabs */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3 max-w-6xl mx-auto mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-3 max-w-6xl mx-auto mb-10">
           {(Object.keys(programCategories) as Array<keyof typeof programCategories>).map((key) => {
             const cat = programCategories[key];
             const Icon = cat.icon;
@@ -255,7 +350,7 @@ export default function HomeProgramsSection() {
               <button
                 key={key}
                 onClick={() => handleCategoryChange(key)}
-                className={`flex items-center justify-center gap-2 px-3 sm:px-5 py-3.5 rounded-xl font-bold text-[11px] sm:text-sm transition-all border last:col-span-2 lg:last:col-span-1 h-full ${
+                className={`flex items-center justify-center gap-2 px-3 sm:px-5 py-3.5 rounded-xl font-bold text-[11px] sm:text-sm transition-all border h-full ${
                   isSelected
                     ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
                     : "bg-white text-primary/80 border-primary/10 hover:bg-white/80 hover:text-primary hover:border-primary/20"
@@ -270,79 +365,46 @@ export default function HomeProgramsSection() {
 
         {/* Full Grid Framework */}
         <div className="max-w-6xl mx-auto w-full">
-          {/* Program Cards Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch">
+          {/* Desktop/Tablet: full grid, all cards visible */}
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-full items-stretch">
             {programs.map((prog, idx) => (
-              <div
-                key={`${prog.name}-${idx}`}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left"
-              >
-                {/* Image Section */}
-                <Link 
-                  to={prog.link} 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative aspect-[16/10] overflow-hidden block shrink-0"
-                >
-                  <img
-                    src={prog.image}
-                    alt={prog.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                  />
-                </Link>
-
-                {/* Content Section */}
-                <div className="p-4 sm:p-5 flex flex-col flex-grow text-left">
-                  <Link to={prog.link} target="_blank" rel="noopener noreferrer">
-                    <h3 className="text-base sm:text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] flex items-start hover:text-[#FF7A28] transition-colors">
-                      {prog.name}
-                    </h3>
-                  </Link>
-
-                  {/* Rating Row Only */}
-                  <div className="flex items-center justify-between mb-3 shrink-0">
-                    <div className="flex items-center gap-1">
-                      <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
-                      <span className="text-xs font-black text-[#2C4E5A]">({prog.rating} rating)</span>
-                    </div>
-                  </div>
-
-                  {/* Tags Row */}
-                  <div className="flex flex-wrap gap-1.5 mb-3.5 shrink-0">
-                    {prog.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="bg-[#E5E7E2]/60 text-[#2C4E5A] text-[10px] font-bold px-2 py-0.5 rounded-full border border-primary/5">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-xs sm:text-sm leading-relaxed text-foreground/80 mb-5 line-clamp-3 flex-grow font-light">
-                    {prog.description}
-                  </p>
-
-                  {/* Buttons Container */}
-                  <div className="mt-auto pt-3 border-t border-border/50 shrink-0">
-                    <div className="grid grid-cols-2 gap-2">
-                      <Link
-                        to={prog.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-3 sm:py-3.5 rounded-xl transition-all duration-300 text-xs flex items-center justify-center text-center"
-                      >
-                        View Details
-                      </Link>
-                      <Button
-                        onClick={() => setQuoteModalOpen(true)}
-                        className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-3 sm:py-3.5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-xs h-auto border-none"
-                      >
-                        Get Quote
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <ProgramCard key={`${prog.name}-${idx}`} prog={prog} onQuoteClick={() => setQuoteModalOpen(true)} />
             ))}
+          </div>
+
+          {/* Mobile: one-card-at-a-time carousel with prev/next arrows */}
+          <div className="md:hidden relative">
+            <ProgramCard prog={programs[mobileCardIndex]} onQuoteClick={() => setQuoteModalOpen(true)} />
+
+            {programs.length > 1 && (
+              <>
+                <button
+                  onClick={goMobilePrevious}
+                  aria-label="Previous program"
+                  className="absolute left-1 top-[35%] -translate-y-1/2 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-[#2C4E5A] shadow-md border border-border/60"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={goMobileNext}
+                  aria-label="Next program"
+                  className="absolute right-1 top-[35%] -translate-y-1/2 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-[#2C4E5A] shadow-md border border-border/60"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+
+                <div className="flex justify-center gap-1.5 mt-4">
+                  {programs.map((_, dotIdx) => (
+                    <button
+                      key={dotIdx}
+                      onClick={() => setMobileCardIndex(dotIdx)}
+                      aria-label={`Go to program ${dotIdx + 1}`}
+                      className={`h-2 rounded-full transition-all ${dotIdx === mobileCardIndex ? "w-6 bg-[#2C4E5A]" : "w-2 bg-[#2C4E5A]/20"}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -351,6 +413,74 @@ export default function HomeProgramsSection() {
       {/* Quote Request Modal integrated directly within the framework */}
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </section>
+  );
+}
+
+type ProgramItem = (typeof programCategories)[keyof typeof programCategories]["programs"][number];
+
+function ProgramCard({ prog, onQuoteClick }: { prog: ProgramItem; onQuoteClick: () => void }) {
+  return (
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-border/60 hover:shadow-xl transition-all duration-500 flex flex-col w-full text-left">
+      {/* Image Section — not clickable, user can swipe freely */}
+      <div className="relative aspect-[16/10] overflow-hidden block shrink-0">
+        <img
+          src={prog.image}
+          alt={prog.name}
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content Section */}
+      <div className="p-4 sm:p-5 flex flex-col flex-grow text-left">
+        {/* Title — plain text, no link */}
+        <h3 className="text-base sm:text-lg font-bold text-[#2C4E5A] mb-2 leading-tight min-h-[2.5rem] flex items-start">
+          {prog.name}
+        </h3>
+
+        {/* Rating Row Only */}
+        <div className="flex items-center justify-between mb-3 shrink-0">
+          <div className="flex items-center gap-1">
+            <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400 shrink-0" />
+            <span className="text-xs font-black text-[#2C4E5A]">({prog.rating} rating)</span>
+          </div>
+        </div>
+
+        {/* Tags Row */}
+        <div className="flex flex-wrap gap-1.5 mb-3.5 shrink-0">
+          {prog.tags.map((tag, tIdx) => (
+            <span key={tIdx} className="bg-[#E5E7E2]/60 text-[#2C4E5A] text-[10px] font-bold px-2 py-0.5 rounded-full border border-primary/5">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Description */}
+        <p className="text-xs sm:text-sm leading-relaxed text-foreground/80 mb-5 line-clamp-3 flex-grow font-light">
+          {prog.description}
+        </p>
+
+        {/* Buttons Container */}
+        <div className="mt-auto pt-3 border-t border-border/50 shrink-0">
+          <div className="grid grid-cols-2 gap-2">
+            {/* View Details → opens in new tab */}
+            <Link
+              to={prog.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-[#E0E5DF] hover:bg-[#FF7A28] hover:text-white active:bg-[#FF7A28] active:text-white text-[#2C4E5A] font-bold py-3 sm:py-3.5 rounded-xl transition-all duration-300 text-xs flex items-center justify-center text-center"
+            >
+              View Details
+            </Link>
+            <Button
+              onClick={onQuoteClick}
+              className="w-full bg-[#2C4E5A] hover:bg-[#1e363e] text-white font-bold py-3 sm:py-3.5 rounded-xl shadow-lg shadow-[#2C4E5A]/20 transition-all duration-300 hover:scale-[1.02] text-xs h-auto border-none"
+            >
+              Get Quote
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
