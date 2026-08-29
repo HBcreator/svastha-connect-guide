@@ -10,6 +10,7 @@ import HomeTreatmentsGuide from "@/components/home/HomeTreatmentsGuide";
 import HomeProcessRoadmap from "@/components/home/HomeProcessRoadmap";
 import HomeTestimonials from "@/components/home/HomeTestimonials";
 import HomeFAQ from "@/components/home/HomeFAQ";
+import HomeHolisticHealing from "@/components/home/HomeHolisticHealing";
 import { Button } from "@/components/ui/button";
 import { Activity, ChevronLeft, ChevronRight, Search, X, ClipboardList, Phone, MapPin, Star, Sparkles, Award, ShieldCheck, HeartHandshake, Stethoscope, Hospital, CalendarCheck, HeartPulse, ArrowRight } from "lucide-react";
 
@@ -189,90 +190,13 @@ export default function Index() {
         <MedicalFinder />
       </div>
 
-      {/* QUICK NAVIGATION: 4 Main Site Sections */}
-      <section id="quick-nav" className="max-w-6xl mx-auto px-4 pt-12 pb-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-widest text-primary/80 bg-primary/5 px-3 py-1 rounded-full">
-            Explore My Vaidyam
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mt-3 mb-4">
-            Everything You Need, All in One Place
-          </h2>
-          <p className="text-sm sm:text-base text-[#7F543D] leading-relaxed">
-            From curated healing programs and elite certified centers to targeted treatments — navigate every aspect of your Ayurvedic journey with ease.
-          </p>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-
-          {/* Card 1: Services */}
-          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
-              <Stethoscope className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Ayurvedic Healing</h3>
-            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
-              Explore our full range of traditional healing modalities — from authentic Panchakarma and Ayurveda to Yoga, Touch Therapies, Mind-Body interventions, and Biological plant-based treatments.
-            </p>
-            <Link to="/ayurvedic-healing" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
-              View All Healing Services →
-            </Link>
-          </div>
-
-          {/* Card 2: Top Centers */}
-          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
-              <Hospital className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Top Centers of My Vaidyam</h3>
-            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
-              Discover India's most prestigious NABH-accredited Ayurvedic hospitals and retreat sanctuaries — handpicked across Kerala, the Himalayas, Goa, Bangalore, and beyond.
-            </p>
-            <Link to="/top-ayurvedic-centers-in-india" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
-              Browse All Centers →
-            </Link>
-          </div>
-
-          {/* Card 3: Ayurveda Packages */}
-          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
-              <CalendarCheck className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Ayurveda Packages</h3>
-            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
-              Browse structured inpatient wellness packages — from 21-Day Panchakarma Detox and Burnout Recovery to Anti-Aging, Weight Loss, and disease-specific healing retreats.
-            </p>
-            <button 
-              onClick={() => setIsProgramsModalOpen(true)} 
-              className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto"
-            >
-              Explore All Programs →
-            </button>
-          </div>
-
-          {/* Card 4: Treatments */}
-          <div className="p-6 rounded-2xl bg-white border border-primary/10 hover:shadow-xl transition-all group flex flex-col items-center text-center">
-            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all mb-4">
-              <HeartPulse className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold text-lg text-primary mb-2">Treatments by Condition</h3>
-            <p className="text-xs text-[#7F543D] leading-relaxed mb-4 flex-1">
-              Find Ayurvedic solutions tailored to your specific health condition — from Arthritis, Sciatica, and Psoriasis to Parkinson's, Stroke Rehab, Weight Management, and 23+ more.
-            </p>
-            <Link to="/ayurveda-treatments" className="text-xs font-bold text-primary inline-flex items-center gap-1 hover:underline mt-auto">
-              View All Treatments →
-            </Link>
-          </div>
-
-        </div>
-      </section>
 
 
       {/* MODULE 3 PREVIEW: Handpicked Elite Centers */}
-      <section id="top-centers" className="pt-12 pb-2">
+      <section id="top-centers" className="pt-6 sm:pt-12 pb-2">
         <div className="container mx-auto px-4 md:px-8">
           
-          <div className="text-center space-y-2 md:space-y-3 px-4 mb-12">
+          <div className="text-center space-y-2 md:space-y-3 px-4 mb-6 sm:mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-[#335765]">Top Ayurvedic Centers in India</h2>
             <p className="text-sm md:text-base text-[#7F543D] max-w-2xl mx-auto">Handpicked hospitals and retreats with specialized care and authentic healing programs.</p>
           </div>
@@ -397,14 +321,19 @@ export default function Index() {
         <HomeTreatmentsGuide />
       </div>
 
-      {/* MODULE 6: Patient Process Roadmap */}
-      <div id="process">
-        <HomeProcessRoadmap />
+      {/* MODULE 5B: Holistic Healing Programs with Dropdown */}
+      <div id="holistic-healing">
+        <HomeHolisticHealing />
       </div>
 
-      {/* MODULE 7: Global Patient Testimonials */}
+      {/* MODULE 6: Global Patient Testimonials */}
       <div id="testimonials">
         <HomeTestimonials />
+      </div>
+
+      {/* MODULE 7: Patient Process Roadmap / Why Choose Us (About Us) */}
+      <div id="process">
+        <HomeProcessRoadmap />
       </div>
 
       {/* MODULE 8: Western Travel & Medical FAQ */}
