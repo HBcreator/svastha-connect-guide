@@ -36,6 +36,7 @@ const regionsList = [
   { name: "Goa Seaside Wellness Resorts",    path: "/top-15-ayurvedic-centers-hospitals-goa-india",                                                           desc: "Beachside luxurious recovery combining traditional treatments and ocean breeze.",         keywords: "goa beach seaside ocean resort luxury coastal" },
   { name: "Bangalore & South India Hubs",    path: "/top-10-ayurvedic-centers-hospitals-bangalore-hyderabad-chennai-south-india",               desc: "State-of-the-art accredited clinical institutions and organic farm retreats.",           keywords: "bangalore hyderabad chennai south clinical hospital farm organic" },
   { name: "Mumbai, Pune & West India",       path: "/mumbai-pune-nashik-west-india-ayurvedic-centers-and-hospitals",                                 desc: "Easily accessible premium holistic hospitals and eco-villages.",                         keywords: "mumbai pune nashik west india accessible city eco village" },
+  { name: "Delhi, NCR & North India",        path: "/delhi-and-north-india-region-ayurvedic-centers-and-hospitals",                                           desc: "Top-tier Ayurvedic facilities and wellness centers accessible from the capital region.",  keywords: "delhi ncr north capital accessible urban facility" },
 ];
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────

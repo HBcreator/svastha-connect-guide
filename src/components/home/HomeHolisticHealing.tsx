@@ -62,7 +62,7 @@ export default function HomeHolisticHealing() {
   const currentCard = holisticPrograms[mobileSlide];
 
   return (
-    <section className="py-6 sm:py-12 relative">
+    <section className="py-12 sm:py-16 md:py-20 relative">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
 
         {/* Header */}
