@@ -193,7 +193,7 @@ export default function Index() {
 
 
       {/* MODULE 3 PREVIEW: Handpicked Elite Centers */}
-      <section id="top-centers" className="pt-6 sm:pt-12 pb-2">
+      <section id="top-centers" className="pt-12 sm:pt-16 md:pt-20 pb-10 sm:pb-16">
         <div className="container mx-auto px-4 md:px-8">
           
           <div className="text-center space-y-2 md:space-y-3 px-4 mb-6 sm:mb-12">

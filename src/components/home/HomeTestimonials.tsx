@@ -55,7 +55,7 @@ export default function HomeTestimonials() {
   const featuredTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="pt-4 pb-4 bg-primary/[0.02]">
+    <section className="py-12 sm:py-16 md:py-20 bg-primary/[0.02]">
       <div className="container mx-auto px-4 max-w-6xl">
         
         {/* Header Block */}

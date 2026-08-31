@@ -32,7 +32,7 @@ export default function HomeFAQ() {
   };
 
   return (
-    <section className="pt-4 pb-16 bg-primary/[0.01]">
+    <section className="py-12 sm:py-16 md:py-20 bg-primary/[0.01]">
       <div className="container mx-auto px-4 max-w-4xl">
         
         {/* Top Titles */}

@@ -35,7 +35,7 @@ const whyChoosePoints = [
 
 export default function HomeProcessRoadmap() {
   return (
-    <section className="pt-4 pb-4 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         
         {/* Main Themed Container */}

@@ -322,7 +322,7 @@ export default function HomeProgramsSection() {
   const goMobileNext = () => setMobileCardIndex((prev) => (prev + 1) % programs.length);
 
   return (
-    <section className="pt-4 pb-4 relative">
+    <section className="py-12 sm:py-16 md:py-20 relative">
       <div className="container mx-auto px-4">
         
         {/* Section Header */}

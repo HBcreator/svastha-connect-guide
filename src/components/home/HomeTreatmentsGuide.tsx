@@ -74,7 +74,7 @@ export default function HomeTreatmentsGuide() {
   const visibleConditions = isMobile ? filteredConditions.slice(0, MOBILE_RESULTS_LIMIT) : filteredConditions;
 
   return (
-    <section className="pt-2 pb-4 sm:pt-4 relative">
+    <section className="py-12 sm:py-16 md:py-20 relative">
       <div className="container mx-auto px-4 max-w-6xl">
         
         {/* Header Block - Centered Layout */}

@@ -471,7 +471,7 @@ const ApolloAyurVAIDHospitalsNehruEnclave: DelhiCenter = {
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-[17px] sm:text-lg md:text-4xl lg:text-5xl font-bold leading-[1.35] md:leading-[1.75] animate-fade-in px-2 md:px-4">
               <span className="block whitespace-nowrap">Top Ayurvedic Centers and Hospitals in</span>
-              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Delhi, NCR Region.</span>
+              <span className="block mt-2 md:mt-4 md:whitespace-nowrap">Delhi, NCR Region</span>
             </h2>
             <p
               className="text-[13px] md:text-lg text-white/80 mt-4 md:mt-8 animate-fade-in max-w-4xl mx-auto md:whitespace-nowrap"
