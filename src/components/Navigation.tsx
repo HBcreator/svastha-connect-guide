@@ -90,39 +90,16 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 Home
               </Link>
               
-              {/* Services Dropdown */}
-              <div
-                className="relative group"
-                onMouseEnter={() => setServicesDropdownOpen(true)}
-                onMouseLeave={() => setServicesDropdownOpen(false)}
+              <Link
+                to="/ayurveda-treatments"
+                className={`font-poppins font-medium transition-colors ${
+                  location.pathname === "/ayurveda-treatments"
+                    ? "text-primary"
+                    : "text-foreground hover:text-primary"
+                }`}
               >
-                <div
-                  className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
-                    location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
-                      ? "text-primary"
-                      : "text-foreground hover:text-primary"
-                  }`}
-                >
-                  Holistic Healing
-                  <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
-                </div>
-
-                {/* Dropdown Menu */}
-                <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
-                  <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[320px]">
-                    {servicesLinks.map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
-                        onClick={() => setServicesDropdownOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
+                Ayurveda treatments
+              </Link>
 
               {/* Top Centers Dropdown */}
               <div 
@@ -264,16 +241,39 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 </div>
               </div>
 
-              <Link
-                to="/ayurveda-treatments"
-                className={`font-poppins font-medium transition-colors ${
-                  location.pathname === "/ayurveda-treatments"
-                    ? "text-primary"
-                    : "text-foreground hover:text-primary"
-                }`}
+              {/* Services Dropdown */}
+              <div
+                className="relative group"
+                onMouseEnter={() => setServicesDropdownOpen(true)}
+                onMouseLeave={() => setServicesDropdownOpen(false)}
               >
-                Ayurveda treatments
-              </Link>
+                <div
+                  className={`flex items-center gap-1 font-poppins font-medium cursor-pointer transition-colors ${
+                    location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  }`}
+                >
+                  Holistic Healing
+                  <ChevronDown size={16} className={`transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
+                </div>
+
+                {/* Dropdown Menu */}
+                <div className={`absolute top-full left-0 pt-2 transition-all duration-200 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}>
+                  <div className="bg-white border border-border rounded-lg shadow-xl overflow-hidden min-w-[320px]">
+                    {servicesLinks.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className="block px-6 py-4 text-sm font-medium text-foreground hover:bg-primary/5 hover:text-primary transition-colors border-l-4 border-transparent hover:border-primary"
+                        onClick={() => setServicesDropdownOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
               <Link
                 to="/about-myvaidyam"
@@ -350,37 +350,18 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                 Home
               </Link>
               
-              {/* Mobile Services Section */}
-              <div className="space-y-1">
-                <button
-                  className={`flex items-center justify-between w-full text-left py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                    location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:bg-gray-100"
-                  }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setMobileServicesOpen((prev) => !prev);
-                  }}
-                >
-                  <span>Holistic Healing</span>
-                  <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
-                </button>
-                {mobileServicesOpen && (
-                  <div className="space-y-1 pl-2">
-                    {servicesLinks.map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
-                        onClick={closeMenu}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+
+              <Link
+                to="/ayurveda-treatments"
+                className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                  location.pathname === "/ayurveda-treatments"
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:bg-gray-100"
+                }`}
+                onClick={closeMenu}
+              >
+                Ayurveda treatments
+              </Link>
               
               {/* Mobile Centers Section */}
               <div className="space-y-1">
@@ -454,18 +435,37 @@ const Navigation = ({ onQuoteClick }: NavigationProps) => {
                   </div>
                 )}
               </div>
-
-              <Link
-                to="/ayurveda-treatments"
-                className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
-                  location.pathname === "/ayurveda-treatments"
-                    ? "text-primary bg-primary/10"
-                    : "text-foreground hover:bg-gray-100"
-                }`}
-                onClick={closeMenu}
-              >
-                Ayurveda treatments
-              </Link>
+              {/* Mobile Services Section */}
+              <div className="space-y-1">
+                <button
+                  className={`flex items-center justify-between w-full text-left py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
+                    location.pathname === "/holistic-healing/ayurveda-ancient-wisdom-for-modern-wellness-in-india" || location.pathname.startsWith("/holistic-healing")
+                      ? "text-primary bg-primary/10"
+                      : "text-foreground hover:bg-gray-100"
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileServicesOpen((prev) => !prev);
+                  }}
+                >
+                  <span>Holistic Healing</span>
+                  <ChevronDown size={18} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileServicesOpen && (
+                  <div className="space-y-1 pl-2">
+                    {servicesLinks.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className="block py-2.5 px-4 text-sm font-medium text-foreground hover:bg-gray-50 border-l-2 border-primary/20 rounded-md"
+                        onClick={closeMenu}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
               <Link
                 to="/about-myvaidyam"
                 className={`block py-3 px-4 rounded-lg font-poppins font-medium transition-colors ${
